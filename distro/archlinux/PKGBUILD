@@ -1,0 +1,46 @@
+pkgname=mate-applets
+pkgver=2011.11.14
+pkgrel=1
+pkgdesc="Applets for MATE panel"
+arch=(i686 x86_64)
+license=('GPL')
+depends=('gstreamer0.10-base-plugins' 'mate-panel' 'libgtop' 'libmatenotify' 'cpufrequtils')
+makedepends=('mate-doc-utils' 'pkgconfig' 'mate-settings-daemon' 'intltool' 'mate-icon-theme' 'networkmanager' 'mate-character-map') # 'mate-python-desktop'
+groups=('mate-extras')
+options=(!emptydirs)
+replace=('gnome-applets')
+conflicts=('gnome-applets')
+url="http://matsusoft.com.ar/projects"
+install=mate-applets.install
+source=(http://sourceforge.net/projects/matede/files/${pkgver}/${pkgname}.tar.gz/download)
+sha256sums=('795f38d3e2be522c3fabf3a49bb2bd9ff010abf2d7f0b9a3e026a7b7773aeefc')
+
+build() {
+    cd "${srcdir}/${pkgname}"
+    PYTHON=/usr/bin/python2 ./autogen.sh \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --libexecdir=/usr/lib/${pkgname} \
+        --disable-static \
+        --disable-scrollkeeper \
+        --enable-polkit \
+        --enable-networkmanager \
+        --enable-mixer-applet \
+        --disable-scrollkeeper \
+        --enable-mini-commander \
+        --enable-frequency-selector \
+        --enable-ipv6 \
+        --disable-schemas-install || return 1
+    make || return 1
+}
+
+package() {
+    cd "${srcdir}/${pkgname}"
+
+    make MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR="${pkgdir}" install || return 1
+
+    install -m755 -d "${pkgdir}/usr/share/mateconf/schemas"
+    mateconf-merge-schema "${pkgdir}/usr/share/mateconf/schemas/${pkgname}.schemas" --domain ${pkgname} ${pkgdir}/etc/mateconf/schemas/*.schemas || return 1
+    rm -f ${pkgdir}/etc/mateconf/schemas/*.schemas
+}
