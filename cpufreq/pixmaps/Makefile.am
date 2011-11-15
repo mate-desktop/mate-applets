@@ -1,5 +1,5 @@
 
-cpufreq_pixmapdir = $(pixmapsdir)/cpufreq-applet
+cpufreq_pixmapdir = $(pixmapsdir)/mate-cpufreq-applet
 cpufreq_pixmap_DATA =		\
 	cpufreq-100.png         \
 	cpufreq-75.png          \
