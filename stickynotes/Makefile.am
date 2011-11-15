@@ -16,7 +16,7 @@ INCLUDES =					\
 	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
-	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/stickynotes/\"
+	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
 
 libexec_PROGRAMS = stickynotes_applet
 

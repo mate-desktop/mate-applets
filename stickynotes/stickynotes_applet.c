@@ -58,13 +58,12 @@ static const GtkToggleActionEntry stickynotes_applet_menu_toggle_actions[] =
 };
 
 /* Sticky Notes Icons */
-static const StickyNotesStockIcon stickynotes_icons[] =
-{
-	{ STICKYNOTES_STOCK_LOCKED, STICKYNOTES_ICONDIR "/locked.png" },
-	{ STICKYNOTES_STOCK_UNLOCKED, STICKYNOTES_ICONDIR "/unlocked.png" },
-	{ STICKYNOTES_STOCK_CLOSE, STICKYNOTES_ICONDIR "/close.png" },
-	{ STICKYNOTES_STOCK_RESIZE_SE, STICKYNOTES_ICONDIR "/resize_se.png" },
-	{ STICKYNOTES_STOCK_RESIZE_SW, STICKYNOTES_ICONDIR "/resize_sw.png" }
+static const StickyNotesStockIcon stickynotes_icons[] = {
+	{STICKYNOTES_STOCK_LOCKED, STICKYNOTES_ICONDIR "/locked.png"},
+	{STICKYNOTES_STOCK_UNLOCKED, STICKYNOTES_ICONDIR "/unlocked.png"},
+	{STICKYNOTES_STOCK_CLOSE, STICKYNOTES_ICONDIR "/close.png"},
+	{STICKYNOTES_STOCK_RESIZE_SE, STICKYNOTES_ICONDIR "/resize_se.png"},
+	{STICKYNOTES_STOCK_RESIZE_SW, STICKYNOTES_ICONDIR "/resize_sw.png"}
 };
 
 /* Sticky Notes applet factory */
