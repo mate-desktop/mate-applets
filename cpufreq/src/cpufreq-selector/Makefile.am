@@ -8,11 +8,11 @@ INCLUDES += \
 	$(POLKIT_CFLAGS)
 endif
 
-bin_PROGRAMS = cpufreq-selector
+bin_PROGRAMS = mate-cpufreq-selector
 
 install-exec-hook:
 if CPUFREQ_SELECTOR_SUID
-	chmod 4755 $(DESTDIR)$(bindir)/cpufreq-selector
+	chmod 4755 $(DESTDIR)$(bindir)/mate-cpufreq-selector
 endif
 
 
@@ -24,7 +24,7 @@ if HAVE_POLKIT
 service_files=cpufreq-selector-service.c       cpufreq-selector-service.h
 endif
 
-cpufreq_selector_SOURCES = \
+mate_cpufreq_selector_SOURCES = \
 	cpufreq-selector.c               cpufreq-selector.h        	\
 	cpufreq-selector-sysfs.c         cpufreq-selector-sysfs.h  	\
 	cpufreq-selector-procfs.c        cpufreq-selector-procfs.h 	\
@@ -34,17 +34,17 @@ cpufreq_selector_SOURCES = \
 	$(BUILT_SOURCES)						\
 	main.c
 
-cpufreq_selector_LDADD = \
+mate_cpufreq_selector_LDADD = \
 	$(CPUFREQ_SELECTOR_LIBS) 	\
 	$(LIBCPUFREQ_LIBS)
 
 if HAVE_POLKIT
-cpufreq_selector_LDADD += \
+mate_cpufreq_selector_LDADD += \
 	$(DBUS_LIBS)		\
 	$(POLKIT_LIBS)
 endif
 
-cpufreq_selector_LDFLAGS = $(LDFLAGS) -Wl,-z,now
+mate_cpufreq_selector_LDFLAGS = $(LDFLAGS) -Wl,-z,now
 
 dbus_services_in_files = org.mate.CPUFreqSelector.service.in
 polkit_in_files = org.mate.cpufreqselector.policy.in
