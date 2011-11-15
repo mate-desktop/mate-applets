@@ -2,7 +2,7 @@ SUBDIRS = docs pixmaps
 
 INCLUDES = \
 	$(MATE_APPLETS3_CFLAGS) \
-	-DACCESSX_PIXMAPS_DIR=\""$(datadir)/pixmaps/accessx-status-applet"\" \
+	-DACCESSX_PIXMAPS_DIR=\""$(datadir)/pixmaps/mate-accessx-status-applet"\" \
 	-DACCESSX_MENU_UI_DIR=\""$(uidir)"\"
 
 libexec_PROGRAMS = accessx-status-applet
