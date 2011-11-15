@@ -1,7 +1,7 @@
 accessx_status_iconsdir = $(iconsdir)/mate/48x48/apps
 accessx_status_icons_DATA = ax-applet.png
 
-accessx_status_pixmapsdir  = $(pixmapsdir)/accessx-status-applet
+accessx_status_pixmapsdir  = $(pixmapsdir)/mate-accessx-status-applet
 accessx_status_pixmaps_DATA =	\
 	ax-applet.png			\
 	ax-key-base.png			\
