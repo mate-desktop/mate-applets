@@ -1,6 +1,6 @@
 EXTRA_DIST = $(GKB_MAPS) $(xmm_xml_in_file)
 
-gkbmapsdir = $(datadir)/xmodmap
+gkbmapsdir = $(datadir)/mate/xmodmap
 gkbmaps_DATA = $(GKB_MAPS) $(XMM_XML)
 
 GKB_MAPS = \
