@@ -1,7 +1,7 @@
 include $(top_srcdir)/mate-doc-utils.make
 dist-hook: doc-dist-hook
 
-DOC_MODULE = char-palette
+DOC_MODULE = mate-char-palette
 DOC_ENTITIES = legal.xml
 
 DOC_FIGURES = figures/charpalette_applet.png \
