@@ -1,7 +1,7 @@
 include $(top_srcdir)/mate-doc-utils.make
 dist-hook: doc-dist-hook
 
-DOC_MODULE = battstat
+DOC_MODULE = mate-battstat
 DOC_ENTITIES = legal.xml
 
 DOC_FIGURES = figures/battstat-applet-expanded.png \
