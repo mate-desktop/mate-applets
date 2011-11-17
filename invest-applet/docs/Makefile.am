@@ -1,7 +1,7 @@
 include $(top_srcdir)/mate-doc-utils.make
 dist-hook: doc-dist-hook
 
-DOC_MODULE = invest-applet
+DOC_MODULE = mate-invest-applet
 DOC_ENTITIES = legal.xml
 
 DOC_FIGURES = figures/symbol-search.png
