@@ -376,17 +376,6 @@ matelocaledir='${prefix}/${DATADIRNAME}/locale'
 AC_SUBST(matelocaledir)
 
 dnl ***************************************************************************
-dnl *** mate-doc-utils                                                     ***
-dnl ***************************************************************************
-MATE_DOC_INIT
-
-case "$host" in
-	sparc-*-solaris*)	gkb_type_sun=true;;
-	*)			gkb_type_sun=false;;
-esac
-AM_CONDITIONAL(GKB_SUN, $gkb_type_sun)
-
-dnl ***************************************************************************
 dnl *** battstat specific checks                                            ***
 dnl ***************************************************************************
 
