@@ -1,7 +1,7 @@
 include $(top_srcdir)/mate-doc-utils.make
 dist-hook: doc-dist-hook
 
-DOC_MODULE = command-line
+DOC_MODULE = mate-command-line
 DOC_ENTITIES = legal.xml
 
 DOC_FIGURES = figures/command-line.png \
