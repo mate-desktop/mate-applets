@@ -1,7 +1,7 @@
 include $(top_srcdir)/mate-doc-utils.make
 dist-hook: doc-dist-hook
 
-DOC_MODULE = multiload
+DOC_MODULE = mate-multiload
 DOC_ENTITIES = legal.xml
 
 DOC_FIGURES = figures/multiload-preferences.png \
