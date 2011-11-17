@@ -64,26 +64,21 @@ G_DEFINE_TYPE(MateWeatherDialog, mateweather_dialog, GTK_TYPE_DIALOG);
 static void mateweather_dialog_save_geometry(MateWeatherDialog* dialog)
 {
 	MateWeatherMateConf* mateconf;
-	int w, h,;
-	//int x, y;
+	int w, h;
 
 	mateconf = dialog->priv->applet->mateconf;
 
-	//gtk_window_get_position(GTK_WINDOW(dialog), &x, &y);
 	gtk_window_get_size(GTK_WINDOW(dialog), &w, &h);
 
 	mateweather_mateconf_set_int(mateconf, "dialog_width", w, NULL);
 	mateweather_mateconf_set_int(mateconf, "dialog_height", h, NULL);
-	// The x and y position must not be stored
-	//mateweather_mateconf_set_int(mateconf, "dialog_x", x, NULL);
-	//mateweather_mateconf_set_int(mateconf, "dialog_y", y, NULL);
 }
 
 static void mateweather_dialog_load_geometry(MateWeatherDialog* dialog)
 {
 	MateWeatherMateConf* mateconf;
 	int w, h;
-	//int x, y;
+
 	GError *error;
 
 	mateconf = dialog->priv->applet->mateconf;
@@ -107,33 +102,10 @@ static void mateweather_dialog_load_geometry(MateWeatherDialog* dialog)
 		return;
 	}
 
-	/*x = mateweather_mateconf_get_int(mateconf, "dialog_x", &error);
-
-	if (error)
-	{
-		g_message ("mateweather: no spatial information available");
-		g_error_free (error);
-		return;
-	}
-
-	y = mateweather_mateconf_get_int(mateconf, "dialog_y", &error);
-
-	if (error)
-	{
-		g_message("mateweather: no spatial information available");
-		g_error_free(error);
-		return;
-	}*/
-
 	if (w > 0 && h > 0)
 	{
 		gtk_window_resize(GTK_WINDOW(dialog), w, h);
 	}
-
-	/*if (x > 0 && y > 0)
-	{
-		gtk_window_move(GTK_WINDOW(dialog), x, y);
-	}*/
 }
 
 static void response_cb(MateWeatherDialog* dialog, gint id, gpointer data)
