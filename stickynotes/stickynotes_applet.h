@@ -30,7 +30,7 @@
 
 #define MATECONF_PATH	"/apps/stickynotes_applet"
 #define BUILDER_PATH	GTK_BUILDERDIR "/stickynotes.ui"
-#define XML_PATH	"/.mate2/stickynotes_applet"
+#define XML_PATH	"/.config/mate/stickynotes_applet"
 #define ICON_PATH	STICKYNOTES_ICONDIR
 
 #define STICKYNOTES_STOCK_LOCKED	"stickynotes-stock-locked"
@@ -42,7 +42,7 @@
 /* Global Sticky Notes instance */
 typedef struct
 {
-	GtkBuilder *builder;		
+	GtkBuilder *builder;
 
 	GtkWidget *w_prefs;		/* The prefs dialog */
 	GtkAdjustment *w_prefs_width;
@@ -58,7 +58,7 @@ typedef struct
 
 	GList *notes;			/* Linked-List of all the sticky notes */
 	GList *applets;			/* Linked-List of all the applets */
-	
+
 	GdkPixbuf *icon_normal;		/* Normal applet icon */
 	GdkPixbuf *icon_prelight;	/* Prelighted applet icon */
 
@@ -85,7 +85,7 @@ typedef struct
 	GtkWidget *w_image;		/* The applet icon */
 
 	GtkWidget *destroy_all_dialog;	/* The applet it's destroy all dialog */
-	
+
 	gboolean prelighted;		/* Whether applet is prelighted */
 	gboolean pressed;		/* Whether applet is pressed */
 
@@ -95,7 +95,7 @@ typedef struct
 	GtkActionGroup *action_group;
 	GtkWidget *menu_tip;
 } StickyNotesApplet;
-	
+
 typedef enum
 {
 	STICKYNOTES_NEW = 0,

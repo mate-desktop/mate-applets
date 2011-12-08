@@ -42,7 +42,7 @@ else:
 	BUILDER_DATA_DIR = BUILDERDIR
 	ART_DATA_DIR = SHARED_DATA_DIR
 
-USER_INVEST_DIR = expanduser("~/.mate2/invest-applet")
+USER_INVEST_DIR = expanduser("~/.config/mate/invest-applet")
 if not exists(USER_INVEST_DIR):
 	try:
 		os.makedirs(USER_INVEST_DIR, 0744)

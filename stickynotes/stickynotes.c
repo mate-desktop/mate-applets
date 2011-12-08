@@ -839,7 +839,7 @@ stickynotes_save_now (void)
 		g_free(body);
 	}
 
-	/* The XML file is $HOME/.mate2/stickynotes_applet, most probably */
+	/* The XML file is $HOME/.config/mate/stickynotes_applet, most probably */
 	{
 		gchar *file = g_strdup_printf("%s%s", g_get_home_dir(),
 				XML_PATH);
@@ -875,7 +875,7 @@ stickynotes_load (GdkScreen *screen)
 	GList *new_notes, *tmp1;  /* Lists of StickyNote*'s */
 	GList *new_nodes; /* Lists of xmlNodePtr's */
 	int x, y, w, h;
-	/* The XML file is $HOME/.mate2/stickynotes_applet, most probably */
+	/* The XML file is $HOME/.config/mate/stickynotes_applet, most probably */
 	{
 		gchar *file = g_strdup_printf("%s%s", g_get_home_dir(),
 				XML_PATH);
