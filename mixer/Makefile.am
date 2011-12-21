@@ -20,10 +20,11 @@ noinst_HEADERS = \
 	keys.h \
 	preferences.h
 
-mixer_applet2_LDADD = 					\
-	$(MIXER_LIBS) 					\
-	$(MATE_APPLETS3_LIBS)				\
-	$(MATEDESKTOP_LIBS)
+mixer_applet2_LDADD = \
+	$(MIXER_LIBS) \
+	$(MATE_APPLETS3_LIBS) \
+	$(MATEDESKTOP_LIBS) \
+	-lm
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.MixerApplet.mate-panel-applet.in
