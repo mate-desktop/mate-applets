@@ -30,7 +30,6 @@
 
 #define MATECONF_PATH	"/apps/stickynotes_applet"
 #define BUILDER_PATH	GTK_BUILDERDIR "/stickynotes.ui"
-#define XML_PATH	"/.config/mate/stickynotes_applet"
 #define ICON_PATH	STICKYNOTES_ICONDIR
 
 #define STICKYNOTES_STOCK_LOCKED	"stickynotes-stock-locked"
