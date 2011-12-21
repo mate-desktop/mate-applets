@@ -35,7 +35,8 @@ stickynotes_applet_SOURCES = \
 stickynotes_applet_LDADD =	\
 	$(MATE_APPLETS3_LIBS)	\
 	$(LIBWNCK_LIBS)		\
-	$(XML2_LIBS)
+	$(XML2_LIBS) \
+	-lX11
 
 builder_DATA = $(builder_files)
 
