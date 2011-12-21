@@ -840,12 +840,13 @@ stickynotes_save_now (void)
 	}
 
 	/* The XML file is $HOME/.config/mate/stickynotes_applet, most probably */
-	{
-		gchar *file = g_strdup_printf("%s%s", g_get_home_dir(),
-				XML_PATH);
+	//{
+		gchar* file = g_build_filename(g_get_home_dir(), ".config", "mate", "stickynotes-applet.xml", NULL);
+
 		xmlSaveFormatFile(file, doc, 1);
+		
 		g_free(file);
-	}
+	//}
 
 	xmlFreeDoc(doc);
 
@@ -868,7 +869,7 @@ stickynotes_save (void)
 void
 stickynotes_load (GdkScreen *screen)
 {
-	xmlDocPtr doc;
+	xmlDocPtr doc = NULL;
 	xmlNodePtr root;
 	xmlNodePtr node;
 	/* WnckScreen *wnck_screen; */
@@ -877,9 +878,28 @@ stickynotes_load (GdkScreen *screen)
 	int x, y, w, h;
 	/* The XML file is $HOME/.config/mate/stickynotes_applet, most probably */
 	{
-		gchar *file = g_strdup_printf("%s%s", g_get_home_dir(),
-				XML_PATH);
-		doc = xmlParseFile(file);
+		/* retro-compatibilidad con ~/.mate2/ */
+		gchar* file = g_build_filename(g_get_home_dir(), ".config", "mate", "stickynotes-applet.xml", NULL);
+
+		if (g_file_test(file, G_FILE_TEST_EXISTS))
+		{
+			/* load file */
+			doc = xmlParseFile(file);
+		}
+		else
+		{
+			/* old one */
+			g_free(file);
+			
+			file = g_build_filename(g_get_home_dir(), ".mate2", "stickynotes_applet", NULL);
+
+			if (g_file_test(file, G_FILE_TEST_EXISTS))
+			{
+				/* load file */
+				doc = xmlParseFile(file);
+			}
+		}
+		
 		g_free(file);
 	}
 
