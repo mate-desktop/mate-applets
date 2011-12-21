@@ -15,8 +15,9 @@ geyes_applet2_SOURCES =	\
 	themes.c \
 	geyes.h
 
-geyes_applet2_LDADD = 		\
-	$(MATE_APPLETS3_LIBS)
+geyes_applet2_LDADD = \
+	$(MATE_APPLETS3_LIBS) \
+	-lm
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.GeyesApplet.mate-panel-applet.in
