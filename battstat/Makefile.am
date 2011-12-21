@@ -51,10 +51,11 @@ battstat_applet_2_SOURCES = \
 
 
 battstat_applet_2_LDADD = \
-		     $(MATE_APPLETS3_LIBS) \
-		     $(LIBMATENOTIFY_LIBS) \
-		     $(HAL_LIBS) \
-		     $(APMLIB)
+	$(MATE_APPLETS3_LIBS) \
+	$(LIBMATENOTIFY_LIBS) \
+	$(HAL_LIBS) \
+	$(APMLIB) \
+	-lm
 
 schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
 schemas_in_files = battstat.schemas.in
