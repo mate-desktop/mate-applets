@@ -14,6 +14,7 @@ trashapplet_SOURCES = \
 
 trashapplet_LDADD = 		\
 	$(MATE_APPLETS3_LIBS) 	\
-	$(GIO_LIBS)
+	$(GIO_LIBS) \
+	-lX11
 
 -include $(top_srcdir)/git.mk
