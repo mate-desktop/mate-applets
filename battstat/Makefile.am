@@ -51,9 +51,9 @@ battstat_applet_2_SOURCES = \
 
 
 battstat_applet_2_LDADD = \
-	$(MATE_APPLETS3_LIBS) \
-	$(LIBMATENOTIFY_LIBS) \
-	$(HAL_LIBS) \
+		     $(MATE_APPLETS3_LIBS) \
+		     $(LIBMATENOTIFY_LIBS) \
+		     $(HAL_LIBS) \
 	$(APMLIB) \
 	-lm
 

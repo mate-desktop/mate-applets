@@ -20,9 +20,9 @@ noinst_HEADERS = \
 	keys.h \
 	preferences.h
 
-mixer_applet2_LDADD = \
-	$(MIXER_LIBS) \
-	$(MATE_APPLETS3_LIBS) \
+mixer_applet2_LDADD = 					\
+	$(MIXER_LIBS) 					\
+	$(MATE_APPLETS3_LIBS)				\
 	$(MATEDESKTOP_LIBS) \
 	-lm
 

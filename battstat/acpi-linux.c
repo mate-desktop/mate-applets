@@ -1,4 +1,4 @@
-/* battstat        A MATE battery meter for laptops. 
+/* battstat        A MATE battery meter for laptops.
  * Copyright (C) 2000 by Jörgen Pehrson <jp@spektr.eu.org>
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -24,7 +24,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+	#include <config.h>
 #endif
 
 #ifdef __linux__
@@ -44,54 +44,65 @@
 #include <dirent.h>
 #include "acpi-linux.h"
 
-static GHashTable *
-read_file (const char *file, char *buf, size_t bufsize)
+static GHashTable* read_file(const char* file, char* buf, size_t bufsize)
 {
-  GHashTable *hash = NULL;
+	GHashTable* hash = NULL;
 
-  int fd, len, i;
-  char *key, *value;
-  gboolean reading_key;
+	int fd, len, i;
+	char* key;
+	char* value;
+	gboolean reading_key;
 
-  fd = open (file, O_RDONLY);
+	fd = open(file, O_RDONLY);
 
-  if (fd == -1) {
-    return hash;
-  }
+	if (fd == -1)
+	{
+		return hash;
+	}
 
-  len = read (fd, buf, bufsize);
+	len = read(fd, buf, bufsize);
 
-  close (fd);
+	close (fd);
 
-  if (len < 0) {
-    if (getenv ("BATTSTAT_DEBUG"))
-      g_message ("Error reading %s: %s", file, g_strerror (errno));
-    return hash;
-  }
+	if (len < 0)
+	{
+		if (getenv("BATTSTAT_DEBUG"))
+		{
+			g_message("Error reading %s: %s", file, g_strerror(errno));
+		}
 
-  hash = g_hash_table_new (g_str_hash, g_str_equal);
+		return hash;
+	}
 
-  for (i = 0, value = key = buf, reading_key = TRUE; i < len; i++) {
-    if (buf[i] == ':' && reading_key) {
-      reading_key = FALSE;
-      buf[i] = '\0';
-      value = buf + i + 1;
-    } else if (buf[i] == '\n') {
-      reading_key = TRUE;
-      buf[i] = '\0';
-      /* g_message ("Read: %s => %s\n", key, value); */
-      g_hash_table_insert (hash, key, g_strstrip (value));
-      key = buf + i + 1;
-    } else if (reading_key) {
-      /* in acpi 20020214 it switched to lower-case proc
-       * entries.  fixing this up here simplifies the
-       * code.
-       */
-      buf[i] = g_ascii_tolower (buf[i]);
-    }
-  }
+	hash = g_hash_table_new(g_str_hash, g_str_equal);
 
-  return hash;
+	for (i = 0, value = key = buf, reading_key = TRUE; i < len; i++)
+	{
+		if (buf[i] == ':' && reading_key)
+		{
+			reading_key = FALSE;
+			buf[i] = '\0';
+			value = buf + i + 1;
+		}
+		else if (buf[i] == '\n')
+		{
+			reading_key = TRUE;
+			buf[i] = '\0';
+			/* g_message ("Read: %s => %s\n", key, value); */
+			g_hash_table_insert(hash, key, g_strstrip(value));
+			key = buf + i + 1;
+		}
+		else if (reading_key)
+		{
+			/* in acpi 20020214 it switched to lower-case proc
+			 * entries.  fixing this up here simplifies the
+			 * code.
+			 */
+			buf[i] = g_ascii_tolower(buf[i]);
+		}
+	}
+
+	return hash;
 }
 
 #if 0
@@ -111,13 +122,13 @@ read_bool (GHashTable *hash, const char *key)
 static long
 read_long (GHashTable *hash, const char *key)
 {
-  char *s;
+	char* s;
 
-  g_return_val_if_fail (hash, 0);
-  g_return_val_if_fail (key, 0);
+	g_return_val_if_fail(hash, 0);
+	g_return_val_if_fail(key, 0);
 
-  s = g_hash_table_lookup (hash, key);
-  return s ? strtol (s, NULL, 10) : 0;
+	s = g_hash_table_lookup(hash, key);
+	return s ? strtol(s, NULL, 10) : 0;
 }
 
 static gulong
@@ -190,44 +201,47 @@ static gboolean update_ac_info(struct acpi_info * acpiinfo)
 
 /* Reads the ACPI info for the system batteries, and finds
  * the total capacity, which is stored in acpiinfo. */
-static gboolean update_battery_info(struct acpi_info * acpiinfo)
+static gboolean update_battery_info(struct acpi_info* acpiinfo)
 {
-  gchar* batt_info = NULL;
-  GHashTable *hash;
-  DIR * procdir;
-  struct dirent * procdirentry;
-  char buf[BUFSIZ];
+	gchar* batt_info = NULL;
+	GHashTable* hash;
+	DIR* procdir;
+	struct dirent* procdirentry;
+	char buf[BUFSIZ];
 
-  acpiinfo->max_capacity = 0;
-  acpiinfo->low_capacity = 0;
-  acpiinfo->critical_capacity = 0;
+	acpiinfo->max_capacity = 0;
+	acpiinfo->low_capacity = 0;
+	acpiinfo->critical_capacity = 0;
 
-  procdir=opendir("/proc/acpi/battery/");
-  if (!procdir)
-    return FALSE;
+	procdir = opendir("/proc/acpi/battery/");
 
-  while ((procdirentry=readdir(procdir)))
-   {
-    if (procdirentry->d_name[0]!='.')
-     {
-      batt_info = g_strconcat("/proc/acpi/battery/",
-			      procdirentry->d_name,
-			      "/info",
-			      NULL);
-      hash = read_file (batt_info, buf, sizeof (buf));
-      if (hash)
-       {
-        acpiinfo->max_capacity += read_long (hash, "last full capacity");
-        acpiinfo->low_capacity += read_long (hash, "design capacity warning");
-        acpiinfo->critical_capacity += read_long (hash, "design capacity low");
-        g_hash_table_destroy (hash);
-       }
-      g_free(batt_info);
-     }
-   }
-  closedir(procdir);
+	if (!procdir)
+	{
+		return FALSE;
+	}
 
-  return TRUE;
+	while ((procdirentry = readdir(procdir)))
+	{
+		if (procdirentry->d_name[0] != '.')
+		{
+			batt_info = g_strconcat("/proc/acpi/battery/", procdirentry->d_name, "/info", NULL);
+			hash = read_file(batt_info, buf, sizeof(buf));
+
+			if (hash)
+			{
+				acpiinfo->max_capacity += read_long(hash, "last full capacity");
+				acpiinfo->low_capacity += read_long(hash, "design capacity warning");
+				acpiinfo->critical_capacity += read_long(hash, "design capacity low");
+
+				g_hash_table_destroy(hash);
+			}
+			g_free(batt_info);
+		}
+	}
+
+	closedir(procdir);
+
+	return TRUE;
 }
 
 
@@ -267,7 +281,7 @@ gboolean acpi_linux_init(struct acpi_info * acpiinfo)
 
   if (!update_battery_info(acpiinfo) || !update_ac_info(acpiinfo))
     return FALSE;
-  
+
   fd = open("/proc/acpi/event", 0);
   if (fd >= 0) {
     acpiinfo->event_fd = fd;
@@ -314,7 +328,7 @@ void acpi_linux_cleanup(struct acpi_info * acpiinfo)
  * to the next event. */
 static int parse_acpi_event(GString *buffer)
 {
-  
+
   if (strstr(buffer->str, "ac_adapter"))
     return ACPI_EVENT_AC;
   if (strstr(buffer->str, "battery") )
@@ -336,7 +350,7 @@ gboolean acpi_process_event(struct acpi_info * acpiinfo)
     buffer=g_string_new(NULL);
     g_io_channel_read_line_string   ( acpiinfo->channel,buffer,&i,&gerror);
 
-    
+
     evt = parse_acpi_event(buffer);
       switch (evt) {
         case ACPI_EVENT_AC:
@@ -377,7 +391,7 @@ gboolean acpi_linux_read(struct apm_info *apminfo, struct acpi_info * acpiinfo)
    * apminfo.battery_percentage must contain batter charge percentage
    * apminfo.battery_flags & 0x8 must be nonzero when charging
    */
-  
+
   g_assert(apminfo);
 
   charging = FALSE;
@@ -436,4 +450,4 @@ gboolean acpi_linux_read(struct apm_info *apminfo, struct acpi_info * acpiinfo)
 }
 
 
-#endif
+#endif /* __linux__ */

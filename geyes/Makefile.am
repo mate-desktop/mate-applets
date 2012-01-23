@@ -15,7 +15,7 @@ geyes_applet2_SOURCES =	\
 	themes.c \
 	geyes.h
 
-geyes_applet2_LDADD = \
+geyes_applet2_LDADD = 		\
 	$(MATE_APPLETS3_LIBS) \
 	-lm
 

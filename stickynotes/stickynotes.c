@@ -840,13 +840,13 @@ stickynotes_save_now (void)
 	}
 
 	/* The XML file is $HOME/.config/mate/stickynotes_applet, most probably */
-	//{
+	{
 		gchar* file = g_build_filename(g_get_home_dir(), ".config", "mate", "stickynotes-applet.xml", NULL);
 
 		xmlSaveFormatFile(file, doc, 1);
 		
 		g_free(file);
-	//}
+	}
 
 	xmlFreeDoc(doc);
 
@@ -884,7 +884,7 @@ stickynotes_load (GdkScreen *screen)
 		if (g_file_test(file, G_FILE_TEST_EXISTS))
 		{
 			/* load file */
-			doc = xmlParseFile(file);
+		doc = xmlParseFile(file);
 		}
 		else
 		{

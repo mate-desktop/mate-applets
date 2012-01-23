@@ -22,8 +22,8 @@ multiload_applet_2_SOURCES = \
 			autoscaler.h
 
 multiload_applet_2_LDADD = \
-	$(MATE_APPLETS3_LIBS) \
-	$(GTOP_APPLETS_LIBS) \
+				$(MATE_APPLETS3_LIBS) 	\
+				$(GTOP_APPLETS_LIBS)	\
 	$(MATEDESKTOP_LIBS) \
 	-lm
 
