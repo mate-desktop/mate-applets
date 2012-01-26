@@ -10,13 +10,13 @@ groups=('mate-extras')
 options=(!emptydirs)
 replace=('gnome-applets')
 conflicts=('gnome-applets')
-url="http://matsusoft.com.ar/projects"
+url="http://matsusoft.com.ar/projects/mate/"
 install=mate-applets.install
-source=(http://sourceforge.net/projects/matede/files/${pkgver}/${pkgname}.tar.gz/download)
-sha256sums=('795f38d3e2be522c3fabf3a49bb2bd9ff010abf2d7f0b9a3e026a7b7773aeefc')
+source=()
+sha256sums=()
 
 build() {
-    cd "${srcdir}/${pkgname}"
+	cd "${srcdir}/../../../"
     PYTHON=/usr/bin/python2 ./autogen.sh \
         --prefix=/usr \
         --sysconfdir=/etc \
@@ -35,7 +35,7 @@ build() {
 }
 
 package() {
-    cd "${srcdir}/${pkgname}"
+	cd "${srcdir}/../../../"
 
     make MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR="${pkgdir}" install || return 1
 
