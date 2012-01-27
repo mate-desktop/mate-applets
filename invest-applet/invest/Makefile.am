@@ -5,7 +5,7 @@ bin_SCRIPTS = mate-invest-chart
 
 libexec_SCRIPTS = invest-applet
 
-investdir = $(pythondir)/mate-invest
+investdir = $(pythondir)/mate_invest
 invest_PYTHON = \
 	__init__.py \
 	about.py \

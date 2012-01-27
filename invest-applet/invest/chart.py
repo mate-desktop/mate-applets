@@ -3,9 +3,9 @@
 import gtk, gtk.gdk
 import gobject
 import os
-import mate-invest
+import mate_invest
 from gettext import gettext as _
-from mate-invest import *
+from mate_invest import *
 import sys
 from os.path import join
 import urllib
@@ -48,9 +48,9 @@ class ImageRetriever(Thread, _IdleObject):
 		
 	def run(self):
 		self.image = gtk.Image()
-		try: sock = urllib.urlopen(self.image_url, proxies = mate-invest.PROXY)
+		try: sock = urllib.urlopen(self.image_url, proxies = mate_invest.PROXY)
 		except Exception, msg:
-			mate-invest.debug("Error while opening %s: %s" % (self.image_url, msg))
+			mate_invest.debug("Error while opening %s: %s" % (self.image_url, msg))
 		else:
 			loader = gtk.gdk.PixbufLoader()
 			loader.connect("closed", lambda loader: self.image.set_from_pixbuf(loader.get_pixbuf()))
@@ -107,10 +107,10 @@ class FinancialChart:
 		win.set_title(_("Financial Chart"))
 		
 		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(mate-invest.ART_DATA_DIR, "invest_neutral.svg"), 96,96)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(mate_invest.ART_DATA_DIR, "invest_neutral.svg"), 96,96)
 			self.ui.get_object("plot").set_from_pixbuf(pixbuf)
 		except Exception, msg:
-			mate-invest.debug("Could not load 'invest-neutral.svg' file: %s" % msg)
+			mate_invest.debug("Could not load 'invest-neutral.svg' file: %s" % msg)
 			pass
 		
 		# Defaut comboboxes values
@@ -249,7 +249,7 @@ class FinancialChart:
 
 def show_chart(tickers):
 	ui = gtk.Builder();
-	ui.add_from_file(os.path.join(mate-invest.BUILDER_DATA_DIR, "financialchart.ui"))
+	ui.add_from_file(os.path.join(mate_invest.BUILDER_DATA_DIR, "financialchart.ui"))
 	chart = FinancialChart(ui)
 	ui.get_object("s").set_text(' '.join(tickers))
 	chart.on_refresh_chart()
