@@ -5,7 +5,7 @@ import sys, mate_invest.chart, gtk
 # Prepare i18n
 import gettext, locale
 gettext.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
-gettext.textdomain(invest.defs.GETTEXT_PACKAGE)
+gettext.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
 locale.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
 locale.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
 
