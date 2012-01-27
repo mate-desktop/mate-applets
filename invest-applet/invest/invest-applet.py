@@ -19,20 +19,20 @@ else:
 	sys.path.insert(0, abspath("@PYTHONDIR@"))
 
 # Now the path is set, import our applet
-import invest, invest.applet, invest.defs, invest.help
+import mate-invest, mate-invest.applet, mate-invest.defs, mate-invest.help
 
 # Prepare i18n
 import gettext, locale
-gettext.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.MATELOCALEDIR)
-gettext.textdomain(invest.defs.GETTEXT_PACKAGE)
-locale.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.MATELOCALEDIR)
-locale.textdomain(invest.defs.GETTEXT_PACKAGE)
+gettext.bindtextdomain(mate-invest.defs.GETTEXT_PACKAGE, mate-invest.defs.MATELOCALEDIR)
+gettext.textdomain(mate-invest.defs.GETTEXT_PACKAGE)
+locale.bindtextdomain(mate-invest.defs.GETTEXT_PACKAGE, mate-invest.defs.MATELOCALEDIR)
+locale.textdomain(mate-invest.defs.GETTEXT_PACKAGE)
 
 from gettext import gettext as _
 
 def applet_factory(applet, iid):
-	invest.debug('Starting invest instance: %s %s'% ( applet, iid ))
-	invest.applet.InvestApplet(applet)
+	mate-invest.debug('Starting invest instance: %s %s'% ( applet, iid ))
+	mate-invest.applet.InvestApplet(applet)
 	return True
 
 # Return a standalone window that holds the applet
@@ -77,12 +77,12 @@ if __name__ == "__main__":
 		if o in ("-h", "--help"):
 			usage()
 		elif o in ("-d", "--debug"):
-			invest.DEBUGGING = True
-			invest.debug("Debugging enabled")
-			# these messages cannot be turned by invest.DEBUGGING at their originating location,
+			mate-invest.DEBUGGING = True
+			mate-invest.debug("Debugging enabled")
+			# these messages cannot be turned by mate-invest.DEBUGGING at their originating location,
 			# because that variable was set here to be True
-			invest.debug("Data Dir: %s" % invest.SHARED_DATA_DIR)
-			invest.debug("Detected PROXY: %s" % invest.PROXY)
+			mate-invest.debug("Data Dir: %s" % mate-invest.SHARED_DATA_DIR)
+			mate-invest.debug("Detected PROXY: %s" % mate-invest.PROXY)
 		elif o in ("-w", "--window"):
 			standalone = True
 
@@ -93,6 +93,6 @@ if __name__ == "__main__":
 		mateapplet.matecomponent_factory(
 			"OAFIID:Invest_Applet_Factory",
 			mateapplet.Applet.__gtype__,
-			invest.defs.PACKAGE,
-			invest.defs.VERSION,
+			mate-invest.defs.PACKAGE,
+			mate-invest.defs.VERSION,
 			applet_factory)

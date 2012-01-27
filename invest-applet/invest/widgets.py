@@ -4,7 +4,7 @@ import mateapplet, gtk, gtk.gdk, mateconf, gobject, pango
 from gettext import gettext as _
 import locale
 import csv
-import invest, invest.about, invest.chart
+import mate-invest, mate-invest.about, mate-invest.chart
 
 COLORSCALE_POSITIVE = [
 	"white",
@@ -154,7 +154,7 @@ class InvestWidget(gtk.TreeView):
 		if ticker == None:
 			return
 
-		invest.chart.show_chart([ticker])
+		mate-invest.chart.show_chart([ticker])
 
 #class InvestTicker(gtk.Label):
 #	def __init__(self):
@@ -215,7 +215,7 @@ class InvestTrend(gtk.Image):
 					int(color.red*factor)<<24|int(color.green*factor)<<16|int(color.blue*factor)<<8|opacity)
 				self.set_from_pixbuf(self.pixbuf)
 			except Exception, msg:
-				invest.error("Could not set color: %s" % msg)
+				mate-invest.error("Could not set color: %s" % msg)
 
 	def on_quotes_update(self, updater):
 		start_total = 0
@@ -230,7 +230,7 @@ class InvestTrend(gtk.Image):
 
 			start = now / (1 + var)
 
-			portfolio_number = sum([purchase["amount"] for purchase in invest.STOCKS[row[updater.SYMBOL]]["purchases"]])
+			portfolio_number = sum([purchase["amount"] for purchase in mate-invest.STOCKS[row[updater.SYMBOL]]["purchases"]])
 			start_total += start * portfolio_number
 			now_total += now * portfolio_number
 

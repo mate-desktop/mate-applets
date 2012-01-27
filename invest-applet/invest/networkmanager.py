@@ -1,4 +1,4 @@
-import invest
+import mate-invest
 from dbus.mainloop.glib import DBusGMainLoop
 import dbus
 
@@ -19,7 +19,7 @@ class NetworkManager:
 			loop = DBusGMainLoop()
 
 			# get the NetworkManager object from D-Bus
-			invest.debug("Connecting to Network Manager via D-Bus")
+			mate-invest.debug("Connecting to Network Manager via D-Bus")
 			bus = dbus.SystemBus(mainloop=loop)
 			nmobj = bus.get_object('org.freedesktop.NetworkManager', '/org/freedesktop/NetworkManager')
 			nm = dbus.Interface(nmobj, 'org.freedesktop.NetworkManager')
@@ -32,9 +32,9 @@ class NetworkManager:
 
 			# get the current status of the network manager
 			self.state = nm.state()
-			invest.debug("Current Network Manager status is %d" % self.state)
+			mate-invest.debug("Current Network Manager status is %d" % self.state)
 		except Exception, msg:
-			invest.error("Could not connect to the Network Manager: %s" % msg )
+			mate-invest.error("Could not connect to the Network Manager: %s" % msg )
 
 	def online(self):
 		return self.state == STATE_UNKNOWN or self.state == STATE_CONNECTED
@@ -47,7 +47,7 @@ class NetworkManager:
 		if isinstance(signal, dict):
 			state = signal.get('State')
 			if state != None:
-				invest.debug("Network Manager change state %d => %d" % (self.state, state) );
+				mate-invest.debug("Network Manager change state %d => %d" % (self.state, state) );
 				self.state = state
 
 				# notify about state change

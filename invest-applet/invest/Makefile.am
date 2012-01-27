@@ -1,11 +1,11 @@
 invest-applet: invest-applet.py
 	sed -e "s|\@PYTHONDIR\@|$(pythondir)/|" $< > $@
 
-bin_SCRIPTS = invest-chart
+bin_SCRIPTS = mate-invest-chart
 
 libexec_SCRIPTS = invest-applet
 
-investdir = $(pythondir)/invest
+investdir = $(pythondir)/mate-invest
 invest_PYTHON = \
 	__init__.py \
 	about.py \
@@ -33,7 +33,7 @@ DISTCLEANFILES = \
 EXTRA_DIST = \
 	defs.py.in \
 	invest-applet.py \
-	invest-chart \
+	mate-invest-chart \
 	test.py
 
 #TESTS = test.py

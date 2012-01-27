@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from os.path import join
 from gettext import gettext as _
-from invest.defs import VERSION
-import invest
+from mate-invest.defs import VERSION
+import mate-invest
 import gtk, gtk.gdk
 
 invest_logo = None
 try:
-	invest_logo = gtk.gdk.pixbuf_new_from_file_at_size(join(invest.ART_DATA_DIR, "invest_neutral.svg"), 96, 96)
+	invest_logo = gtk.gdk.pixbuf_new_from_file_at_size(join(mate-invest.ART_DATA_DIR, "invest_neutral.svg"), 96, 96)
 except Exception, msg:
 	pass
 	

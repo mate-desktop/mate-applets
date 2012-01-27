@@ -2,14 +2,14 @@ from gettext import gettext as _
 import locale
 from os.path import join
 import gtk, gobject, mateconf
-import invest
+import mate-invest
 import currencies
 import cPickle
 
 class PrefsDialog:
 	def __init__(self, applet):
 		self.ui = gtk.Builder()
-		self.ui.add_from_file(join(invest.BUILDER_DATA_DIR, "prefs-dialog.ui"))
+		self.ui.add_from_file(join(mate-invest.BUILDER_DATA_DIR, "prefs-dialog.ui"))
 
 		self.dialog = self.ui.get_object("preferences")
 		self.treeview = self.ui.get_object("stocks")
@@ -44,8 +44,8 @@ class PrefsDialog:
 		completion.set_match_func(self.match_func, 0)
 		completion.connect("match-selected", self.on_completion_selection, 1)
 
-		if invest.CONFIG.has_key("currency"):
-			code = invest.CONFIG["currency"];
+		if mate-invest.CONFIG.has_key("currency"):
+			code = mate-invest.CONFIG["currency"];
 			if self.currencies.has_key(code):
 				self.currency_code = code;
 				currency = self.format_currency(self.currencies[self.currency_code], self.currency_code)
@@ -56,7 +56,7 @@ class PrefsDialog:
 		if self.currency_code != None:
 			self.add_exchange_column()
 
-		stock_items = invest.STOCKS.items ()
+		stock_items = mate-invest.STOCKS.items ()
 		stock_items.sort ()
 		for key, data in stock_items:
 			label = data["label"]
@@ -80,7 +80,7 @@ class PrefsDialog:
 				value = locale.atof(new_text)
 				self.model[path][col] = value
 		except Exception, msg:
-			invest.error('Exception while processing cell change: %s' % msg)
+			mate-invest.error('Exception while processing cell change: %s' % msg)
 			pass
 
 	def format(self, fmt, value):
@@ -138,16 +138,16 @@ class PrefsDialog:
 			pass
 		self.dialog.destroy()
 
-		invest.STOCKS = {}
+		mate-invest.STOCKS = {}
 
 		def save_symbol(model, path, iter):
 			#if int(model[iter][1]) == 0 or float(model[iter][2]) < 0.0001:
 			#	return
 
-			if not model[iter][0] in invest.STOCKS:
-				invest.STOCKS[model[iter][0]] = { 'label': model[iter][1], 'purchases': [] }
+			if not model[iter][0] in mate-invest.STOCKS:
+				mate-invest.STOCKS[model[iter][0]] = { 'label': model[iter][1], 'purchases': [] }
 				
-			invest.STOCKS[model[iter][0]]["purchases"].append({
+			mate-invest.STOCKS[model[iter][0]]["purchases"].append({
 				"amount": float(model[iter][2]),
 				"bought": float(model[iter][3]),
 				"comission": float(model[iter][4]),
@@ -155,19 +155,19 @@ class PrefsDialog:
 			})
 		self.model.foreach(save_symbol)
 		try:
-			cPickle.dump(invest.STOCKS, file(invest.STOCKS_FILE, 'w'))
-			invest.debug('Stocks written to file')
+			cPickle.dump(mate-invest.STOCKS, file(mate-invest.STOCKS_FILE, 'w'))
+			mate-invest.debug('Stocks written to file')
 		except Exception, msg:
-			invest.error('Could not save stocks file: %s' % msg)
+			mate-invest.error('Could not save stocks file: %s' % msg)
 
-		invest.CONFIG = {}
+		mate-invest.CONFIG = {}
 		if self.currency_code != None and len(self.currency_code) == 3:
-			invest.CONFIG['currency'] = self.currency_code
+			mate-invest.CONFIG['currency'] = self.currency_code
 		try:
-			cPickle.dump(invest.CONFIG, file(invest.CONFIG_FILE, 'w'))
-			invest.debug('Configuration written to file')
+			cPickle.dump(invest.CONFIG, file(mate-invest.CONFIG_FILE, 'w'))
+			mate-invest.debug('Configuration written to file')
 		except Exception, msg:
-			invest.debug('Could not save configuration file: %s' % msg)
+			mate-invest.debug('Could not save configuration file: %s' % msg)
 
 	def sync_ui(self):
 		pass
@@ -183,7 +183,7 @@ class PrefsDialog:
 			model.remove(model.get_iter(path))
 
 	def on_help(self, w):
-		invest.help.show_help_section("invest-applet-usage")
+		mate-invest.help.show_help_section("invest-applet-usage")
 
 	def on_tree_keypress(self, w, event):
 		if event.keyval == 65535:
