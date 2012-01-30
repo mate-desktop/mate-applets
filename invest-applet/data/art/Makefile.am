@@ -1,7 +1,7 @@
 # ******************************************************************************
 # Images and icon
 # ******************************************************************************
-icons = invest-applet.16.png invest-applet.22.png invest-applet.48.png invest-applet.svg
+icons = mate-invest-applet.16.png mate-invest-applet.22.png mate-invest-applet.48.png mate-invest-applet.svg
 
 artdir = $(pkgdatadir)/invest-applet
 art_DATA = invest-16_neutral.png invest-22_neutral.png invest_neutral.svg \

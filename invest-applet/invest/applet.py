@@ -5,11 +5,11 @@ gobject.threads_init()
 from gettext import gettext as _
 import mateconf
 
-import invest, invest.about, invest.chart, invest.preferences, invest.defs
-from invest.quotes import QuoteUpdater
-from invest.widgets import *
+import mate_invest, mate_invest.about, mate_invest.chart, mate_invest.preferences, mate_invest.defs
+from mate_invest.quotes import QuoteUpdater
+from mate_invest.widgets import *
 
-gtk.window_set_default_icon_from_file(join(invest.ART_DATA_DIR, "invest_neutral.svg"))
+gtk.window_set_default_icon_from_file(join(mate_invest.ART_DATA_DIR, "invest_neutral.svg"))
 
 class InvestApplet:
 	def __init__(self, applet):
@@ -45,9 +45,9 @@ class InvestApplet:
 	def button_clicked(self, widget,event):
 		if event.type == gtk.gdk.BUTTON_PRESS and event.button == 1:
 			# Three cases...
-			if len (invest.STOCKS) == 0:
+			if len (mate_invest.STOCKS) == 0:
 				# a) We aren't configured yet
-				invest.preferences.show_preferences(self, _("<b>You have not entered any stock information yet</b>"))
+				mate_invest.preferences.show_preferences(self, _("<b>You have not entered any stock information yet</b>"))
 				self.reload_ilw()
 			elif not self.quotes_updater.quotes_valid:
 				# b) We can't get the data (e.g. offline)
@@ -61,13 +61,13 @@ class InvestApplet:
 				self.ilw.toggle_show()
 	
 	def on_about(self, component, verb):
-		invest.about.show_about()
+		mate_invest.about.show_about()
 	
 	def on_help(self, component, verb):
-		invest.help.show_help()
+		mate_invest.help.show_help()
 
 	def on_preferences(self, component, verb):
-		invest.preferences.show_preferences(self)
+		mate_invest.preferences.show_preferences(self)
 		self.reload_ilw()
 	
 	def on_refresh(self, component, verb):
@@ -75,11 +75,11 @@ class InvestApplet:
 
 	def set_applet_icon(self, change):
 		if change == 1:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(invest.ART_DATA_DIR, "invest-22_up.png"), -1,-1)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(mate_invest.ART_DATA_DIR, "invest-22_up.png"), -1,-1)
 		elif change == 0:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(invest.ART_DATA_DIR, "invest-22_neutral.png"), -1,-1)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(mate_invest.ART_DATA_DIR, "invest-22_neutral.png"), -1,-1)
 		else:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(invest.ART_DATA_DIR, "invest-22_down.png"), -1,-1)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(mate_invest.ART_DATA_DIR, "invest-22_down.png"), -1,-1)
 		self.applet_icon.set_from_pixbuf(pixbuf)
 	
 	def set_applet_tooltip(self, text):

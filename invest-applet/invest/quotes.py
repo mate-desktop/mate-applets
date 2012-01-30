@@ -7,7 +7,7 @@ from urllib import urlopen
 import datetime
 from threading import Thread
 
-import invest, invest.about, invest.chart
+import mate_invest, mate_invest.about, mate_invest.chart
 import currencies
 
 CHUNK_SIZE = 512*1024 # 512 kB
@@ -55,11 +55,11 @@ class QuotesRetriever(Thread, _IdleObject):
 	def run(self):
 		quotes_url = QUOTES_URL % {"s": self.tickers}
 		try:
-			quotes_file = urlopen(quotes_url, proxies = invest.PROXY)
+			quotes_file = urlopen(quotes_url, proxies = mate_invest.PROXY)
 			self.data = quotes_file.readlines ()
 			quotes_file.close ()
 		except Exception, msg:
-			invest.debug("Error while retrieving quotes data (url = %s): %s" % (quotes_url, msg))
+			mate_invest.debug("Error while retrieving quotes data (url = %s): %s" % (quotes_url, msg))
 		else:
 			self.retrieved = True
 		self.emit("completed")
@@ -80,37 +80,37 @@ class QuoteUpdater(gtk.ListStore):
 		self.refresh()
 
 		# tell the network manager to notify me when network status changes
-		invest.nm.set_statechange_callback(self.nm_state_changed)
+		mate_invest.nm.set_statechange_callback(self.nm_state_changed)
 
 	def set_update_interval(self, interval):
 		if self.timeout_id != None:
-			invest.debug("Canceling refresh timer")
+			mate_invest.debug("Canceling refresh timer")
 			gobject.source_remove(self.timeout_id)
 			self.timeout_id = None
 		if interval > 0:
-			invest.debug("Setting refresh timer to %s:%02d.%03d" % ( interval / 60000, interval % 60000 / 1000, interval % 1000) )
+			mate_invest.debug("Setting refresh timer to %s:%02d.%03d" % ( interval / 60000, interval % 60000 / 1000, interval % 1000) )
 			self.timeout_id = gobject.timeout_add(interval, self.refresh)
 
 	def nm_state_changed(self):
 		# when nm is online but we do not have an update timer, create it and refresh
-		if invest.nm.online():
+		if mate_invest.nm.online():
 			if self.timeout_id == None:
 				self.set_update_interval(AUTOREFRESH_TIMEOUT)
 				self.refresh()
 
 	def refresh(self):
-		invest.debug("Refreshing")
+		mate_invest.debug("Refreshing")
 
 		# when nm tells me I am offline, stop the update interval
-		if invest.nm.offline():
-			invest.debug("We are offline, stopping update timer")
+		if mate_invest.nm.offline():
+			mate_invest.debug("We are offline, stopping update timer")
 			self.set_update_interval(0)
 			return False
 
-		if len(invest.STOCKS) == 0:
+		if len(mate_invest.STOCKS) == 0:
 			return True
 
-		tickers = '+'.join(invest.STOCKS.keys())
+		tickers = '+'.join(mate_invest.STOCKS.keys())
 		quotes_retriever = QuotesRetriever(tickers)
 		quotes_retriever.connect("completed", self.on_retriever_completed)
 		quotes_retriever.start()
@@ -141,7 +141,7 @@ class QuoteUpdater(gtk.ListStore):
 
 	def on_currency_retriever_completed(self, retriever):
 		if retriever.retrieved == False:
-			invest.error("Failed to retrieve currency rates!")
+			mate_invest.error("Failed to retrieve currency rates!")
 		else:
 			self.convert_currencies(self.parse_yahoo_csv(csv.reader(retriever.data)))
 		self.update_tooltip()
@@ -239,7 +239,7 @@ class QuoteUpdater(gtk.ListStore):
 				pb = None
 
 				# get the label of this stock for later reuse
-				label = invest.STOCKS[ticker]["label"]
+				label = mate_invest.STOCKS[ticker]["label"]
 				if len(label) == 0:
 					if len(val["label"]) != 0:
 						label = val["label"]
@@ -260,7 +260,7 @@ class QuoteUpdater(gtk.ListStore):
 
 				# sometimes, funny currencies are returned (special characters), only consider known currencies
 				if len(val["currency"]) > 0 and val["currency"] not in currencies.Currencies.currencies:
-					invest.debug("Currency '%s' is not known, dropping" % val["currency"])
+					mate_invest.debug("Currency '%s' is not known, dropping" % val["currency"])
 					val["currency"] = ""
 
 				# if this is a currency not yet seen and different from the target currency, memorize it
@@ -269,7 +269,7 @@ class QuoteUpdater(gtk.ListStore):
 
 				# Check whether the symbol is a simple quote, or a portfolio value
 				is_simple_quote = True
-				for purchase in invest.STOCKS[ticker]["purchases"]:
+				for purchase in mate_invest.STOCKS[ticker]["purchases"]:
 					if purchase["amount"] != 0:
 						is_simple_quote = False
 						break
@@ -279,7 +279,7 @@ class QuoteUpdater(gtk.ListStore):
 					row = self.insert(0, [ticker, label, val["currency"], True, 0, 0, val["trade"], val["variation_pct"], pb])
 					simple_quotes_change += val['variation_pct']
 				else:
-					(balance, change) = self.balance(invest.STOCKS[ticker]["purchases"], val["trade"])
+					(balance, change) = self.balance(mate_invest.STOCKS[ticker]["purchases"], val["trade"])
 					row = self.insert(0, [ticker, label, val["currency"], False, balance, change, val["trade"], val["variation_pct"], pb])
 					self.add_balance_change(balance, change, val["currency"])
 
@@ -288,7 +288,7 @@ class QuoteUpdater(gtk.ListStore):
 				else:
 					url = 'http://ichart.yahoo.com/h?s=%s' % ticker
 
-				image_retriever = invest.chart.ImageRetriever(url)
+				image_retriever = mate_invest.chart.ImageRetriever(url)
 				image_retriever.connect("completed", self.set_pb_callback, row)
 				image_retriever.start()
 
@@ -313,21 +313,21 @@ class QuoteUpdater(gtk.ListStore):
 			self.quotes_valid = True
 
 		except Exception, msg:
-			invest.debug("Failed to populate quotes: %s" % msg)
-			invest.debug(quotes)
+			mate_invest.debug("Failed to populate quotes: %s" % msg)
+			mate_invest.debug(quotes)
 			self.quotes_valid = False
 
 		# start retrieving currency conversion rates
-		if invest.CONFIG.has_key("currency"):
-			target_currency = invest.CONFIG["currency"]
+		if mate_invest.CONFIG.has_key("currency"):
+			target_currency = mate_invest.CONFIG["currency"]
 			symbols = []
 
-			invest.debug("These currencies occur: %s" % self.currencies)
+			mate_invest.debug("These currencies occur: %s" % self.currencies)
 			for currency in self.currencies:
 				if currency == target_currency:
 					continue
 
-				invest.debug("%s will be converted to %s" % ( currency, target_currency ))
+				mate_invest.debug("%s will be converted to %s" % ( currency, target_currency ))
 				symbol = currency + target_currency + "=X"
 				symbols.append(symbol)
 
@@ -339,7 +339,7 @@ class QuoteUpdater(gtk.ListStore):
 
 	def convert_currencies(self, quotes):
 		# if there is no target currency, this method should never have been called
-		if not invest.CONFIG.has_key("currency"):
+		if not mate_invest.CONFIG.has_key("currency"):
 			return
 
 		# reset the overall balance
@@ -353,7 +353,7 @@ class QuoteUpdater(gtk.ListStore):
 			rates[currency] = rate
 
 		# convert all non target currencies
-		target_currency = invest.CONFIG["currency"]
+		target_currency = mate_invest.CONFIG["currency"]
 		iter = self.get_iter_first()
 		while iter != None:
 			currency = self.get_value(iter, self.CURRENCY)
@@ -367,7 +367,7 @@ class QuoteUpdater(gtk.ListStore):
 				if not self.get_value(iter, self.TICKER_ONLY):
 					ticker = self.get_value(iter, self.SYMBOL)
 					value = self.get_value(iter, self.VALUE)
-					(balance, change) = self.balance(invest.STOCKS[ticker]["purchases"], value, rates[currency])
+					(balance, change) = self.balance(mate_invest.STOCKS[ticker]["purchases"], value, rates[currency])
 					self.set(iter, self.BALANCE, balance)
 					self.set(iter, self.BALANCE_PCT, change)
 					self.add_balance_change(balance, change, target_currency)
@@ -402,7 +402,7 @@ class QuoteUpdater(gtk.ListStore):
 	# check if we have only simple quotes
 	def simple_quotes_only(self):
 		res = True
-		for entry, data in invest.STOCKS.iteritems():
+		for entry, data in mate_invest.STOCKS.iteritems():
 			purchases = data["purchases"]
 			for purchase in purchases:
 				if purchase["amount"] != 0:

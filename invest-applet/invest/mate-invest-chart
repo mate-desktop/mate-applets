@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+import sys, mate_invest.chart, gtk
+
+# Prepare i18n
+import gettext, locale
+gettext.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
+gettext.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
+locale.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
+locale.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
+
+if __name__ == "__main__":
+	win = mate_invest.chart.show_chart(sys.argv[1:])
+	win.connect("destroy", lambda x: gtk.main_quit())
+	gtk.main()
