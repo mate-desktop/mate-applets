@@ -226,11 +226,14 @@
      <title>Power Management Backends</title>
 
      <para>
-      The battery monitor supports a number of power management backends. If it
-      is available, the monitor will attempt to use the freedesktop.org
-      <ulink url="http://freedesktop.org/Software/hal">HAL (Hardware Abstraction
-      Layer)</ulink>. If it is unavailable or unsupported on your platform, the
-      battery monitor will attempt direct access to the power management system.
+       The battery monitor supports a number of power management backends.
+       If it is available, the monitor will attempt to use the freedesktop.org
+       <ulink url="http://upower.freedesktop.org/">upower</ulink> interface.
+       If it is unavailable or unsupported on your platform, it will fall back
+       to the freedesktop.org
+       <ulink url="http://freedesktop.org/Software/hal">HAL (Hardware
+       Abstraction Layer)</ulink>. If that is also not availble, the
+       battery monitor will attempt direct access to the power management system
      </para>
      <para>
       Not all power management backends are available from all vendors, and some
@@ -410,10 +413,10 @@
     <sect2 id="battstat-troubleshooting-backends">
      <title>Determining the backend</title>
      <para>
-       If you are using the Hardware Abstraction Layer
-       (see <xref linkend="battstat-power-backends"/>) then that will be
-       indicated in the about dialog by placing a star next to the author of the
-       HAL backend.
+       If you are using the upower interface, or the the Hardware
+       Abstraction Layer (see <xref linkend="battstat-power-backends"/>) then
+       that will be indicated in the about dialog by placing a star next to the
+       author of the HAL backend.
     <figure id="battstat-credits-hal"> 
       <title>Check you're using the HAL backend</title> 
       <screenshot> 

@@ -1,7 +1,7 @@
 dnl ***************************************************************************
 dnl *** configure.in for MATE-APPLETS                                      ***
 dnl ***************************************************************************
-AC_INIT(mate-applets, 1.2.1)
+AC_INIT(mate-applets, 1.2.2)
 AC_PREREQ(2.59)
 
 AM_CONFIG_HEADER(config.h)
@@ -24,6 +24,7 @@ LIBWNCK_REQUIRED=2.9.3
 LIBMATE_DESKTOP_REQUIRED=1.1.0
 LIBMATENOTIFY_REQUIRED=1.1.0
 HAL_REQUIRED=0.5.3
+UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
 PYGTK_REQUIRED=2.6
@@ -226,6 +227,26 @@ fi
 
 AC_SUBST(HAL_CFLAGS)
 AC_SUBST(HAL_LIBS)
+
+dnl -- checkf or libupower-glib (optional) ------------------------------------
+UPOWER_CFLAGS=
+UPOWER_LIBS=
+AC_ARG_WITH(upower, [   --without-upower           build without upower support])
+
+if test "x$with_upower" != xno; then
+   PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED,
+         HAVE_UPOWER="yes",
+         HAVE_UPOWER="no")
+         
+   if test "x$HAVE_UPOWER" = "xyes"; then
+       AC_DEFINE(HAVE_UPOWER, 1, [UPOWER available])
+   fi
+else
+   AC_MSG_WARN(["upower support disabled"])
+fi
+
+AC_SUBST(UPOWER_CFLAGS)
+AC_SUBST(UPOWER_LIBS)
 
 dnl -- check for gucharmap (optional) -----------------------------------------
 
@@ -752,5 +773,6 @@ mate-applets-$VERSION configure summary:
     Using DBUS:                    $HAVE_DBUS
     Using NetworkManager:          $HAVE_NETWORKMANAGER
     Using HAL:                     $HAVE_HAL
+    Using UPOWER:                  $HAVE_UPOWER
     Enabling IPv6:                 $have_ipv6
 " >&2

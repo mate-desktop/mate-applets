@@ -27,6 +27,7 @@ INCLUDES =					\
 	$(MATE_APPLETS3_CFLAGS)		\
 	$(LIBMATENOTIFY_CFLAGS)			\
 	$(HAL_CFLAGS)				\
+	$(UPOWER_CFLAGS)	\
 	$(APMINC)				\
 	$(ACPIINC)				\
 	-DG_LOG_DOMAIN=\"battstat_applet\"	\
@@ -47,15 +48,18 @@ battstat_applet_2_SOURCES = \
 	acpi-freebsd.c \
 	acpi-freebsd.h \
 	battstat-hal.c \
-	battstat-hal.h
+	battstat-hal.h \
+	battstat-upower.c \
+	battstat-upower.h
 
 
 battstat_applet_2_LDADD = \
 		     $(MATE_APPLETS3_LIBS) \
 		     $(LIBMATENOTIFY_LIBS) \
 		     $(HAL_LIBS) \
-	$(APMLIB) \
-	-lm
+			 $(APMLIB) \
+			 $(UPOWER_LIBS) \
+			 -lm
 
 schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
 schemas_in_files = battstat.schemas.in

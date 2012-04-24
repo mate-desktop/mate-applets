@@ -1230,7 +1230,7 @@ about_cb( GtkAction *action, ProgressData *battstat )
   const gchar *authors[] = {
     "J\xC3\xB6rgen Pehrson <jp@spektr.eu.org>",
     "Lennart Poettering <lennart@poettering.de> (Linux ACPI support)",
-    "Seth Nickell <snickell@stanford.edu> (MATE2 port)",
+    "Seth Nickell <snickell@stanford.edu> (GNOME2 port)",
     "Davyd Madeley <davyd@madeley.id.au>",
     "Ryan Lortie <desrt@desrt.ca>",
     "Joe Marcus Clarke <marcus@FreeBSD.org> (FreeBSD ACPI support)",
@@ -1246,9 +1246,11 @@ about_cb( GtkAction *action, ProgressData *battstat )
 
   char *comments = g_strdup_printf ("%s\n\n%s",
 		  _("This utility shows the status of your laptop battery."),
-		  power_management_using_hal () ?
+		  power_management_using_upower () ?
+		    /* ture */ _("upower backend enabled.") :
+		  (power_management_using_hal () ?
 		  	/* true */ _("HAL backend enabled.") :
-			/* false */ _("Legacy (non-HAL) backend enabled."));
+			/* false */ _("Legacy (non-HAL) backend enabled.")));
 
   gtk_show_about_dialog( NULL,
     "version",             VERSION,
