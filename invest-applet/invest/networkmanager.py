@@ -1,13 +1,35 @@
 import mate_invest
+from mate_invest.defs import NETWORKMANAGER_VERSION
 from dbus.mainloop.glib import DBusGMainLoop
 import dbus
 
-# possible states, see http://projects.mate.org/NetworkManager/developers/spec-08.html#type-NM_STATE
+# possible states, see http://projects.gnome.org/NetworkManager/developers/ -> spec 0.8 -> NM_STATE
 STATE_UNKNOWN		= dbus.UInt32(0)
 STATE_ASLEEP		= dbus.UInt32(1)
 STATE_CONNECTING	= dbus.UInt32(2)
 STATE_CONNECTED		= dbus.UInt32(3)
 STATE_DISCONNEDTED	= dbus.UInt32(4)
+
+# numerical values of these states depend on the network manager version, they changed with 0.8.995
+fields = NETWORKMANAGER_VERSION.split('.')
+if len(fields) >= 2:
+    major = int(fields[0])
+    minor = int(fields[1])
+    if len(fields) > 2:
+        micro = int(fields[2])
+
+    if major > 0 or major == 0 and (minor >= 9 or len(fields) > 2 and minor == 8 and micro >= 995):
+        # see http://projects.gnome.org/NetworkManager/developers/ -> spec 0.9 -> NM_STATE
+        print("Found NetworkManager spec 0.9 (%s)" % NETWORKMANAGER_VERSION)
+        STATE_UNKNOWN = dbus.UInt32(0)
+        STATE_ASLEEP = dbus.UInt32(10)
+        STATE_DISCONNECTED = dbus.UInt32(20)
+        STATE_DISCONNECTING = dbus.UInt32(30)
+        STATE_CONNECTING = dbus.UInt32(40)
+        STATE_CONNECTED_LOCAL = dbus.UInt32(50)
+        STATE_CONNECTED_SITE = dbus.UInt32(60)
+        STATE_CONNECTED_GLOBAL = dbus.UInt32(70)
+        STATE_CONNECTED = STATE_CONNECTED_GLOBAL # backward compatibility with < 0.9
 
 class NetworkManager:
 	def __init__(self):

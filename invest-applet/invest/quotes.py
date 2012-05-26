@@ -148,9 +148,9 @@ class QuoteUpdater(gtk.ListStore):
 
 	def update_tooltip(self):
 		tooltip = []
-		if self.simple_quotes_count > 0:
+		if self.quotes_count > 0:
 			# Translators: This is share-market jargon. It is the average percentage change of all stock prices. The %s gets replaced with the string value of the change (localized), including the percent sign.
-			tooltip.append(_('Average change: %s') % self.format_percent(self.avg_simple_quotes_change))
+			tooltip.append(_('Average change: %s') % self.format_percent(self.avg_quotes_change))
 		for currency, stats in self.statistics.items():
 			# get the statsitics
 			balance = stats["balance"]
@@ -231,8 +231,8 @@ class QuoteUpdater(gtk.ListStore):
 			quote_items = quotes.items ()
 			quote_items.sort ()
 
-			simple_quotes_change = 0
-			self.simple_quotes_count = 0
+			quotes_change = 0
+			self.quotes_count = 0
 			self.statistics = {}
 
 			for ticker, val in quote_items:
@@ -275,9 +275,7 @@ class QuoteUpdater(gtk.ListStore):
 						break
 
 				if is_simple_quote:
-					self.simple_quotes_count += 1
 					row = self.insert(0, [ticker, label, val["currency"], True, 0, 0, val["trade"], val["variation_pct"], pb])
-					simple_quotes_change += val['variation_pct']
 				else:
 					(balance, change) = self.balance(mate_invest.STOCKS[ticker]["purchases"], val["trade"])
 					row = self.insert(0, [ticker, label, val["currency"], False, balance, change, val["trade"], val["variation_pct"], pb])
@@ -292,22 +290,20 @@ class QuoteUpdater(gtk.ListStore):
 				image_retriever.connect("completed", self.set_pb_callback, row)
 				image_retriever.start()
 
-			if self.simple_quotes_count > 0:
-				self.avg_simple_quotes_change = simple_quotes_change/float(self.simple_quotes_count)
-			else:
-				self.avg_simple_quotes_change = 0
+			        quotes_change += val['variation_pct']
+			        self.quotes_count += 1
 
-			if self.avg_simple_quotes_change != 0:
-				simple_quotes_change_sign = self.avg_simple_quotes_change / abs(self.avg_simple_quotes_change)
-			else:
-				simple_quotes_change_sign = 0
+			# we can only compute an avg quote if there are quotes
+			if self.quotes_count > 0:
+			        self.avg_quotes_change = quotes_change / float(self.quotes_count)
 
-			# change icon
-			if self.simple_quotes_count > 0:
-				self.change_icon_callback(simple_quotes_change_sign)
+			        # change icon
+			        quotes_change_sign = 0
+			        if self.avg_quotes_change != 0:
+			                quotes_change_sign = self.avg_quotes_change / abs(self.avg_quotes_change)
+			        self.change_icon_callback(quotes_change_sign)
 			else:
-				positions_balance_sign = self.positions_balance/abs(self.positions_balance)
-				self.change_icon_callback(positions_balance_sign)
+				self.avg_quotes_change = 0
 				
 			# mark quotes to finally be valid
 			self.quotes_valid = True
