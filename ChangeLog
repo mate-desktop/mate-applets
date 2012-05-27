@@ -1,3 +1,39 @@
+commit b5344715824cb89183a0fc5400586e82e383fc55
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Sun May 27 13:29:42 2012 -0400
+
+    Forgot to push the update to configure.in
+
+ configure.in |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 21d19c8d7ff85e23355ff9ec092e4c6a77fd4e34
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Sat May 26 19:29:57 2012 -0400
+
+    Fixed https://github.com/mate-desktop/mate-applets/issues/6
+
+ invest-applet/invest/defs.py.in        |    1 +
+ invest-applet/invest/networkmanager.py |   24 +++++++++++++++++++++-
+ invest-applet/invest/quotes.py         |   34 ++++++++++++++-----------------
+ 3 files changed, 39 insertions(+), 20 deletions(-)
+
+commit b958403a2e06dfc271b121eb325783bc923b089a
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Tue Apr 24 15:28:36 2012 -0400
+
+    upower support added to battstat. Preparing for 1.2.2 release.
+
+ ChangeLog                         |   15 ++
+ battstat/Makefile.am              |   10 +-
+ battstat/battstat-upower.c        |  330 +++++++++++++++++++++++++++++++++++++
+ battstat/battstat-upower.h        |   33 ++++
+ battstat/battstat_applet.c        |    8 +-
+ battstat/docs/C/mate-battstat.xml |   21 ++-
+ battstat/power-management.c       |   76 +++++++--
+ configure.in                      |   24 +++-
+ 8 files changed, 485 insertions(+), 32 deletions(-)
+
 commit 8939ec49c5218f4aaf2d49c7dd80954817f1bbb9
 Author: Steve Zesch <stevezesch2@gmail.com>
 Date:   Fri Apr 20 21:29:12 2012 -0400
