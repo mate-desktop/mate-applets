@@ -13,7 +13,7 @@ INCLUDES =					\
 	-I.					\
 	-I$(srcdir)				\
 	$(MATE_APPLETS3_CFLAGS)		\
-	$(LIBWNCK_CFLAGS)			\
+	$(LIBMATEWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
 	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
@@ -34,7 +34,7 @@ stickynotes_applet_SOURCES = \
 
 stickynotes_applet_LDADD =	\
 	$(MATE_APPLETS3_LIBS)	\
-	$(LIBWNCK_LIBS)		\
+	$(LIBMATEWNCK_LIBS)		\
 	$(XML2_LIBS) \
 	-lX11
 

@@ -20,7 +20,7 @@ LIBPANEL_REQUIRED=1.1.0
 LIBPANEL3_REQUIRED=1.1.0
 LIBGTOP_REQUIRED=2.11.92
 LIBXKLAVIER_REQUIRED=4.0
-LIBWNCK_REQUIRED=2.9.3
+LIBMATEWNCK_REQUIRED=1.3.0
 LIBMATE_DESKTOP_REQUIRED=1.1.0
 LIBMATENOTIFY_REQUIRED=1.1.0
 HAL_REQUIRED=0.5.3
@@ -152,12 +152,12 @@ fi
 AC_SUBST(MATE_SETTINGS_DAEMON_CFLAGS)
 AC_SUBST(MATE_SETTINGS_DAEMON_LIBS)
 
-dnl -- check for libwnck (required) -------------------------------------------
-PKG_CHECK_MODULES(LIBWNCK, libwnck-1.0 >= $LIBWNCK_REQUIRED,,
-	AC_MSG_ERROR([libwnck is required to build mate-applets.], 1))
+dnl -- check for libmatewnck (required) -------------------------------------------
+PKG_CHECK_MODULES(LIBMATEWNCK, libmatewnck >= $LIBMATEWNCK_REQUIRED,,
+	AC_MSG_ERROR([libmatewnck is required to build mate-applets.], 1))
 
-AC_SUBST(LIBWNCK_CFLAGS)
-AC_SUBST(LIBWNCK_LIBS)
+AC_SUBST(LIBMATEWNCK_CFLAGS)
+AC_SUBST(LIBMATEWNCK_LIBS)
 
 dnl -- check for libmatenotify (optional) -----------------------------------------
 LIBMATENOTIFY_CFLAGS=
