@@ -39,6 +39,10 @@ if BUILD_MIXER_APPLET
 mixer_applet_SUBDIR = mixer
 endif
 
+if BUILD_TIMER_APPLET
+timer_applet_SUBDIR = timer-applet
+endif
+
 always_built_SUBDIRS = \
 	charpick \
 	drivemount \
@@ -59,7 +63,8 @@ SUBDIRS = \
 	$(accessx_status_SUBDIR) \
 	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
-	$(mixer_applet_SUBDIR)
+	$(mixer_applet_SUBDIR) \
+	$(timer_applet_SUBDIR)
 
 DIST_SUBDIRS = \
 	po \
@@ -78,6 +83,7 @@ DIST_SUBDIRS = \
 	cpufreq \
 	invest-applet \
 	mixer \
+	timer-applet \
 	null_applet
 
 EXTRA_DIST = \

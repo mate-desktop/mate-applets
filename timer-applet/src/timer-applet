@@ -1,0 +1,136 @@
+#!/usr/bin/env python
+# Copyright (C) 2010 Kenny Meyer <knny.myer@gmail.com>
+# Copyright (C) 2008 Jimmy Do <jimmydo@users.sourceforge.net>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+from os import path
+import gettext
+import locale
+import sys
+import gtk
+import mateapplet
+from timerapplet import config
+from timerapplet.controllers import GlobalController, TimerApplet, TimerService, TimerManagerService
+from timerapplet.core import AppletMateConfWrapper, Timer
+
+from dbus.mainloop.glib import DBusGMainLoop
+DBusGMainLoop(set_as_default=True)
+
+DBUS_BUS_NAME = 'net.launchpad.timerapplet.TimerApplet'
+DBUS_OBJ_NAMESPACE = '/net/launchpad/timerapplet/TimerApplet'
+
+gettext.bindtextdomain(config.GETTEXT_PACKAGE, config.LOCALE_DIR)
+gettext.bind_textdomain_codeset(config.GETTEXT_PACKAGE, 'UTF-8')
+gettext.textdomain(config.GETTEXT_PACKAGE)
+locale.bindtextdomain(config.GETTEXT_PACKAGE, config.LOCALE_DIR)
+locale.bind_textdomain_codeset(config.GETTEXT_PACKAGE, 'UTF-8')
+locale.textdomain(config.GETTEXT_PACKAGE)
+
+global_controller = GlobalController()
+timer_manager_obj_path = path.join(DBUS_OBJ_NAMESPACE, 'TimerManager')
+print 'Timer Manager D-Bus object path: %s' % timer_manager_obj_path
+
+timer_manager = None
+try:
+    timer_manager = TimerManagerService(DBUS_BUS_NAME, timer_manager_obj_path)
+except Exception, err:
+    print 'ERROR: Could not start TimerManagerService. D-Bus support will not be available. Error message: %s' % err
+
+def check_dependencies():
+    # Check for optional dependencies
+    try:
+        import dbus # >= 0.80
+    except ImportError, err:
+        print 'Missing optional dependency: %s' % err
+
+    # Check for required dependencies
+    try:
+        import gobject # >= 2.12
+        import gtk # >= 2.10, includes pango
+        import gtk.glade # >= 2.10
+        import mateconf # >= 2.18
+        import mate # >= 2.18, includes matecomponent.ui
+        import mateapplet # >= 2.18, included in python-mate2-desktop
+        import pynotify # >= 0.1.1
+    except ImportError, err:
+        dialog = gtk.MessageDialog(type=gtk.MESSAGE_ERROR,
+                                    buttons=gtk.BUTTONS_CLOSE,
+                                    message_format='%s\n\nPlease install required dependencies.' % err)
+        dialog.run()
+        dialog.destroy()
+        sys.exit(1)
+
+def get_timer_id(mateconf_wrapper):
+    path_components = mateconf_wrapper.get_base_path().split('/')
+    
+    # Use the second component from the end, which should usually be 'applet_*',
+    # where '*' is some integer assigned by the system.
+    # It could also be 'timer-applet' if we're running in standalone mode.
+    # D-Bus doesn't like hyphens in object paths, so we have to replace them
+    # with underscores.
+    return path_components[-2].replace('-', '_')
+
+def applet_factory(applet, iid):
+    check_dependencies()
+
+    timer = Timer()
+    mateconf_wrapper = AppletMateConfWrapper(applet,
+                                       '/schemas/apps/timer-applet/prefs',
+                                       '/apps/timer-applet/prefs')
+    timer_id = get_timer_id(mateconf_wrapper)
+    print 'Timer ID: %s' % timer_id
+    
+    if timer_manager is not None:
+        timer_manager.register_timer_id(timer_id)
+        applet.connect('destroy', lambda sender: timer_manager.unregister_timer_id(timer_id))
+
+    TimerApplet(global_controller.get_presets_store(),
+                global_controller.get_manage_presets_dialog(),
+                applet,
+                timer,
+                mateconf_wrapper)
+    
+    timer_obj_path = path.join(DBUS_OBJ_NAMESPACE, 'Timers', timer_id)
+    print 'Timer D-Bus object path: %s' % timer_obj_path
+    
+    try:
+        TimerService(DBUS_BUS_NAME, timer_obj_path, timer)
+    except Exception, err:
+        print 'ERROR: Could not start TimerService. D-Bus support will not be available. Error message: %s' % err
+    
+    return True
+
+if __name__ == '__main__':
+    windowed_mode = (len(sys.argv) > 1 and sys.argv[1] == '-w')
+    
+    if windowed_mode:
+        win = gtk.Window()
+        win.set_title('Timer Applet')
+        applet = mateapplet.Applet()
+        applet_factory(applet, None)
+        applet.reparent(win)
+        
+        applet.connect('destroy', gtk.main_quit)
+        win.show()
+        
+        gtk.main()
+    else:
+        mateapplet.matecomponent_factory(
+            'OAFIID:TimerApplet_Factory',
+            mateapplet.Applet.__gtype__,
+            config.PACKAGE,
+            config.VERSION,
+            applet_factory)

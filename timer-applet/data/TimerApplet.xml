@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<Root>
+  <popups>
+    <popup name="button3">
+      <menuitem verb="PauseTimer" name="Pause Item" _label="Pa_use"/>
+      <menuitem verb="ContinueTimer" name="Continue Item" _label="_Continue"/>
+      <menuitem verb="StopTimer" name="Stop Item" _label="_Stop"/>
+      <menuitem verb="RestartTimer" name="Restart Item" _label="R_estart"/>
+      <menuitem verb="StartNextTimer" name="Start next item" _label="Next"/>
+      <submenu name="Presets" _label="Pre_sets">
+      </submenu>
+      <separator name="Separator1"/>
+      <menuitem verb="ManagePresets" name="Manage Presets Item" _label="Ma_nage Presets"/>
+      <menuitem verb="Preferences" pixtype="stock" pixname="gtk-properties" name="Preferences Item" _label="_Preferences"/>
+      <menuitem verb="About" pixtype="stock" pixname="mate-stock-about" name="About Item" _label="_About"/>
+    </popup>
+  </popups>
+</Root>
+
