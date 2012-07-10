@@ -1,76 +1,25 @@
-# Esperanto translation for mate-applets
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
-# This file is distributed under the same license as the mate-applets package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 # Joop EGGEN <joop_eggen@yahoo.de>, 2006.
 # Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets\n"
-"Report-Msgid-Bugs-To: http://bugzilla.mate.org/enter_bug.cgi?product=mate-"
-"applets&component=general\n"
-"POT-Creation-Date: 2010-06-14 09:33+0000\n"
-"PO-Revision-Date: 2010-06-20 21:22+0200\n"
-"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
-"Language-Team: Esperanto <ubuntu-l10n-eo@lists.launchpad.net>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"POT-Creation-Date: 2012-06-13 00:13+0200\n"
+"PO-Revision-Date: 2012-06-12 22:14+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Esperanto (http://www.transifex.com/projects/p/MATE/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: eo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Launchpad-Export-Date: 2010-06-20 19:04+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
 
-#: ../accessx-status/MATE_AccessxApplet.xml.h:1
-#: ../battstat/MATE_BattstatApplet.xml.h:1
-#: ../charpick/MATE_CharpickerApplet.xml.h:1
-#: ../cpufreq/MATE_CPUFreqApplet.xml.h:1
-#: ../drivemount/MATE_DriveMountApplet.xml.h:1
-#: ../geyes/MATE_GeyesApplet.xml.h:1 ../mateweather/MATE_MateWeatherApplet.xml.h:1
-#: ../invest-applet/data/Invest_Applet.xml.h:1
-#: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:1
-#: ../mixer/MATE_MixerApplet.xml.h:2 ../modemlights/MATE_ModemLights.xml.h:1
-#: ../multiload/MATE_MultiloadApplet.xml.h:1
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:2
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:1
-msgid "_About"
-msgstr "_Pri"
-
-#: ../accessx-status/MATE_AccessxApplet.xml.h:2
-#: ../battstat/MATE_BattstatApplet.xml.h:2
-#: ../charpick/MATE_CharpickerApplet.xml.h:2
-#: ../cpufreq/MATE_CPUFreqApplet.xml.h:2
-#: ../drivemount/MATE_DriveMountApplet.xml.h:2
-#: ../geyes/MATE_GeyesApplet.xml.h:2 ../mateweather/MATE_MateWeatherApplet.xml.h:3
-#: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:2
-#: ../mixer/MATE_MixerApplet.xml.h:3 ../modemlights/MATE_ModemLights.xml.h:4
-#: ../multiload/MATE_MultiloadApplet.xml.h:2
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:4
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:3
-msgid "_Help"
-msgstr "_Helpo"
-
-#: ../accessx-status/MATE_AccessxApplet.xml.h:3
-msgid "_Keyboard Accessibility Preferences"
-msgstr "Uzfaciligaj Preferaĵoj por la _Klavaro"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:1
-msgid "AccessX Status Applet Factory"
-msgstr "Fabrikejo por la StatApleto 'AccessX'"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:2
-#: ../accessx-status/applet.c:1333
-msgid "Keyboard Accessibility Status"
-msgstr "Uzfaciliga Stato de la Klavaro"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:3
-msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "Fabrikejo de StatApletoj por Uzfaciligo de la Klavaro"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:4
-msgid "Shows the status of keyboard accessibility features"
-msgstr "Montras la staton de la funkcioj de uzfaciligo de la klavaro"
-
-#: ../accessx-status/applet.c:137
+#: ../accessx-status/applet.c:136
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Montras la staton de funkcioj de 'AccessX', ekz. modifiloj."
 
@@ -78,135 +27,159 @@ msgstr "Montras la staton de funkcioj de 'AccessX', ekz. modifiloj."
 #. about.set_documenters([])
 #. translators: These appear in the About dialog, usual format applies.
 #. "documenters",        documenters,
-#: ../accessx-status/applet.c:142 ../battstat/battstat_applet.c:1246
-#: ../charpick/charpick.c:611 ../cpufreq/src/cpufreq-applet.c:617
-#: ../drivemount/drivemount.c:117 ../geyes/geyes.c:197
-#: ../mateweather/mateweather-about.c:55 ../invest-applet/invest/about.py:29
-#: ../mini-commander/src/about.c:54 ../mixer/applet.c:1437
-#: ../modemlights/modem-applet.c:1025 ../multiload/main.c:62
-#: ../stickynotes/stickynotes_applet_callbacks.c:384
+#: ../accessx-status/applet.c:140 ../battstat/battstat_applet.c:1263
+#: ../charpick/charpick.c:610 ../cpufreq/src/cpufreq-applet.c:613
+#: ../drivemount/drivemount.c:117 ../geyes/geyes.c:196
+#: ../mateweather/mateweather-about.c:52 ../invest-applet/invest/about.py:29
+#: ../mini-commander/src/about.c:53 ../mixer/applet.c:1467
+#: ../modemlights/modem-applet.c:1023 ../multiload/main.c:61
+#: ../stickynotes/stickynotes_applet_callbacks.c:425
 #: ../trashapplet/src/trashapplet.c:432
 msgid "translator-credits"
-msgstr ""
-"Joop EGGEN <joop_eggen@yahoo.de>\n"
-"Launchpad Contributions:\n"
-"  Donald Rogers https://launchpad.net/~dero9753\n"
-"  Ed Glez https://launchpad.net/~herzo2\n"
-"  Emmanuel Gil Peyrot https://launchpad.net/~linkmauve\n"
-"  Kristjan SCHMIDT https://launchpad.net/~kristjan-eo"
+msgstr "Joop EGGEN <joop_eggen@yahoo.de>\nLaunchpad Contributions:\n  Donald Rogers https://launchpad.net/~dero9753\n  Ed Glez https://launchpad.net/~herzo2\n  Emmanuel Gil Peyrot https://launchpad.net/~linkmauve\n  Kristjan SCHMIDT https://launchpad.net/~kristjan-eo"
 
-#: ../accessx-status/applet.c:168
+#: ../accessx-status/applet.c:156
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Eraro okazis dum la lanĉo de la helpovidigilo: %s"
 
-#: ../accessx-status/applet.c:218
+#: ../accessx-status/applet.c:195
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Eraro okazis dum la lanĉo de la dialogo pri klavaraj preferaĵoj: %s"
 
-#. Note to translators: the first letter of the alphabet, not the indefinite article
-#: ../accessx-status/applet.c:472 ../accessx-status/applet.c:512
+#: ../accessx-status/applet.c:208
+msgid "_Keyboard Accessibility Preferences"
+msgstr "Uzfaciligaj Preferaĵoj por la _Klavaro"
+
+#: ../accessx-status/applet.c:209 ../battstat/battstat_applet.c:64
+#: ../charpick/charpick.c:717 ../cpufreq/src/cpufreq-applet.c:125
+#: ../drivemount/drivemount.c:153 ../geyes/geyes.c:361
+#: ../mateweather/mateweather-applet.c:124
+#: ../invest-applet/data/Invest_Applet.xml.h:3
+#: ../mini-commander/src/mini-commander_applet.c:56 ../mixer/applet.c:387
+#: ../modemlights/modem-applet.c:151 ../multiload/main.c:439
+#: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:75
+msgid "_Help"
+msgstr "_Helpo"
+
+#: ../accessx-status/applet.c:210 ../battstat/battstat_applet.c:67
+#: ../charpick/charpick.c:720 ../cpufreq/src/cpufreq-applet.c:128
+#: ../drivemount/drivemount.c:156 ../geyes/geyes.c:364
+#: ../mateweather/mateweather-applet.c:127
+#: ../invest-applet/data/Invest_Applet.xml.h:4
+#: ../mini-commander/src/mini-commander_applet.c:59 ../mixer/applet.c:390
+#: ../modemlights/modem-applet.c:154 ../multiload/main.c:442
+#: ../stickynotes/stickynotes_applet.c:48
+#: ../timer-applet/data/TimerApplet.xml.h:9
+#: ../trashapplet/src/trashapplet.c:78
+msgid "_About"
+msgstr "_Pri"
+
+#. Note to translators: the first letter of the alphabet, not the indefinite
+#. article
+#: ../accessx-status/applet.c:480 ../accessx-status/applet.c:514
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:985 ../accessx-status/applet.c:1059
-#: ../accessx-status/applet.c:1128 ../accessx-status/applet.c:1336
+#: ../accessx-status/applet.c:997 ../accessx-status/applet.c:1063
+#: ../accessx-status/applet.c:1133 ../accessx-status/applet.c:1344
 msgid "AccessX Status"
 msgstr "Stato de 'AccessX'"
 
-#: ../accessx-status/applet.c:986 ../accessx-status/applet.c:1129
+#: ../accessx-status/applet.c:998 ../accessx-status/applet.c:1134
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Montras la klavara stato kiam uzfaciligiloj estas uzataj."
 
-#: ../accessx-status/applet.c:1021
+#: ../accessx-status/applet.c:1033
 msgid "XKB Extension is not enabled"
 msgstr "XKB-Kromaĵo ne ŝaltita"
 
-#: ../accessx-status/applet.c:1026
+#: ../accessx-status/applet.c:1038
 msgid "Unknown error"
 msgstr "Nekonata eraro"
 
-#: ../accessx-status/applet.c:1034
+#: ../accessx-status/applet.c:1042
 #, c-format
 msgid "Error: %s"
 msgstr "Eraro: %s"
 
-#: ../accessx-status/applet.c:1338
+#: ../accessx-status/applet.c:1341
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
+msgid "Keyboard Accessibility Status"
+msgstr "Uzfaciliga Stato de la Klavaro"
+
+#: ../accessx-status/applet.c:1345
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Montras la aktuala state de funkcioj de uzfaciligo de la klavaro"
 
-#: ../battstat/MATE_BattstatApplet.server.in.in.h:1
-#: ../battstat/battstat_applet.c:1610 ../battstat/battstat_applet.c:1663
-msgid "Battery Charge Monitor"
-msgstr "Indikilo de Ŝargo de Baterioj"
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:1
+msgid "AccessX Status Applet Factory"
+msgstr "Fabrikejo por la StatApleto 'AccessX'"
 
-#: ../battstat/MATE_BattstatApplet.server.in.in.h:2
-msgid "Battstat Factory"
-msgstr "Fabrikejo por BattStat"
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:2
+msgid "Keyboard Accessibility Status Applet Factory"
+msgstr "Fabrikejo de StatApletoj por Uzfaciligo de la Klavaro"
 
-#: ../battstat/MATE_BattstatApplet.server.in.in.h:3
-#: ../battstat/battstat_applet.c:1664
-msgid "Monitor a laptop's remaining power"
-msgstr "Kontroli restantan ŝargon de tekkomputilo"
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:4
+msgid "Shows the status of keyboard accessibility features"
+msgstr "Montras la staton de la funkcioj de uzfaciligo de la klavaro"
 
-#: ../battstat/MATE_BattstatApplet.xml.h:3
-#: ../charpick/MATE_CharpickerApplet.xml.h:3
-#: ../cpufreq/MATE_CPUFreqApplet.xml.h:3 ../geyes/MATE_GeyesApplet.xml.h:3
-#: ../mateweather/MATE_MateWeatherApplet.xml.h:4
+#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:714
+#: ../cpufreq/src/cpufreq-applet.c:122 ../geyes/geyes.c:358
+#: ../mateweather/mateweather-applet.c:121
 #: ../invest-applet/data/Invest_Applet.xml.h:2
-#: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:3
-#: ../mixer/MATE_MixerApplet.xml.h:5
-#: ../multiload/MATE_MultiloadApplet.xml.h:4
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:7
+#: ../mini-commander/src/mini-commander_applet.c:53 ../mixer/applet.c:393
+#: ../multiload/main.c:433 ../stickynotes/stickynotes_applet.c:42
+#: ../timer-applet/data/TimerApplet.xml.h:8
 msgid "_Preferences"
 msgstr "_Preferoj"
 
-#: ../battstat/battstat_applet.c:67
+#: ../battstat/battstat_applet.c:72
 msgid "System is running on AC power"
 msgstr "Sistemo funkcias per alterna kurento"
 
-#: ../battstat/battstat_applet.c:68
+#: ../battstat/battstat_applet.c:73
 msgid "System is running on battery power"
 msgstr "Sistemo funkcias per bateria kurento"
 
-#: ../battstat/battstat_applet.c:370
+#: ../battstat/battstat_applet.c:375
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Baterio ŝargita (%d%%)"
 
-#: ../battstat/battstat_applet.c:372
+#: ../battstat/battstat_applet.c:377
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Nekonata tempo (%d%%) restas"
 
-#: ../battstat/battstat_applet.c:374
+#: ../battstat/battstat_applet.c:379
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Nekonata tempo (%d%%) ĝis ŝargite"
 
-#: ../battstat/battstat_applet.c:379
+#: ../battstat/battstat_applet.c:384
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] "%d minuto (%d%%) restas"
 msgstr[1] "%d minutoj (%d%%) restas"
 
-#: ../battstat/battstat_applet.c:384
+#: ../battstat/battstat_applet.c:389
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] "%d minuto ĝis ŝargite (%d%%)"
 msgstr[1] "%d minutoj ĝis ŝargite (%d%%)"
 
-#: ../battstat/battstat_applet.c:390
+#: ../battstat/battstat_applet.c:395
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] "%d horo ĝis (%d%%) restas"
 msgstr[1] "%d horoj (%d%%) restas"
 
-#: ../battstat/battstat_applet.c:395
+#: ../battstat/battstat_applet.c:400
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -215,18 +188,18 @@ msgstr[1] "%d horoj ĝis ŝargite (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:402
+#: ../battstat/battstat_applet.c:407
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "%d %s %d %s (%d%%) restas"
 
-#: ../battstat/battstat_applet.c:403 ../battstat/battstat_applet.c:410
+#: ../battstat/battstat_applet.c:408 ../battstat/battstat_applet.c:415
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "horo"
 msgstr[1] "horoj"
 
-#: ../battstat/battstat_applet.c:404 ../battstat/battstat_applet.c:411
+#: ../battstat/battstat_applet.c:409 ../battstat/battstat_applet.c:416
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minuto"
@@ -234,156 +207,165 @@ msgstr[1] "minutoj"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:409
+#: ../battstat/battstat_applet.c:414
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s ĝis ŝargita (%d%%)"
 
-#: ../battstat/battstat_applet.c:423
+#: ../battstat/battstat_applet.c:428
 msgid "Battery Monitor"
 msgstr "Bateria indikilo"
 
-#: ../battstat/battstat_applet.c:433 ../battstat/battstat_applet.c:493
+#: ../battstat/battstat_applet.c:438 ../battstat/battstat_applet.c:498
 msgid "Your battery is now fully recharged"
 msgstr "Via baterio nun estas plene reŝargita"
 
-#: ../battstat/battstat_applet.c:469 ../battstat/battstat_applet.c:625
+#: ../battstat/battstat_applet.c:474 ../battstat/battstat_applet.c:630
 msgid "Battery Notice"
 msgstr "Bateria sciigo"
 
 #. we don't know the remaining time
-#: ../battstat/battstat_applet.c:570
+#: ../battstat/battstat_applet.c:575
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "Restas al vi %d%% da via tuta bateria kapacito."
 
-#: ../battstat/battstat_applet.c:576
+#: ../battstat/battstat_applet.c:581
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] ""
-"Vi havas %d minuton da bateria energio restanta (%d%% de la tuta kapacito)."
-msgstr[1] ""
-"Vi havas %d minutojn da bateria energio restanta (%d%% de la tuta kapacito)."
+msgstr[0] "Vi havas %d minuton da bateria energio restanta (%d%% de la tuta kapacito)."
+msgstr[1] "Vi havas %d minutojn da bateria energio restanta (%d%% de la tuta kapacito)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
 #. * locale.  This is if the laptop does not support suspend.
-#: ../battstat/battstat_applet.c:588
+#: ../battstat/battstat_applet.c:593
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr ""
-"Por eviti perdon de via laboro:\n"
-" • ŝtopu vian tekkomputilon en eksterna kurento, aŭ\n"
-" • savu malfermitajn dokumentojn kaj elŝaltu vian tekkomputilon."
+msgstr "Por eviti perdon de via laboro:\n • ŝtopu vian tekkomputilon en eksterna kurento, aŭ\n • savu malfermitajn dokumentojn kaj elŝaltu vian tekkomputilon."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
 #. * locale.  This is if the laptop supports suspend.
-#: ../battstat/battstat_applet.c:596
+#: ../battstat/battstat_applet.c:601
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr ""
-"Por eviti perdon de via laboro:\n"
-" • prokrastu vian tekkomputilon por savi energion,\n"
-" • ŝtopu vian tekkomputilon en eksterna kurento, aŭ\n"
-" • savu malfermitajn dokumentojn kaj elŝaltu vian tekkomputilon."
+msgstr "Por eviti perdon de via laboro:\n • prokrastu vian tekkomputilon por savi energion,\n • ŝtopu vian tekkomputilon en eksterna kurento, aŭ\n • savu malfermitajn dokumentojn kaj elŝaltu vian tekkomputilon."
 
-#: ../battstat/battstat_applet.c:604
+#: ../battstat/battstat_applet.c:609
 msgid "Your battery is running low"
 msgstr "Via baterio funkcias malaltnivele"
 
-#: ../battstat/battstat_applet.c:701
+#: ../battstat/battstat_applet.c:706
 msgid "No battery present"
 msgstr "Neniu baterio ĉeesta"
 
-#: ../battstat/battstat_applet.c:704
+#: ../battstat/battstat_applet.c:709
 msgid "Battery status unknown"
 msgstr "Bateria stato nekonata"
 
-#: ../battstat/battstat_applet.c:863
+#: ../battstat/battstat_applet.c:868
 msgid "N/A"
 msgstr "N.a."
 
-#: ../battstat/battstat_applet.c:1193 ../drivemount/drivemount.c:142
-#: ../geyes/geyes.c:348 ../geyes/themes.c:244 ../mateweather/mateweather-applet.c:72
-#: ../mateweather/mateweather-pref.c:748 ../mini-commander/src/preferences.c:366
-#: ../stickynotes/stickynotes_applet_callbacks.c:349
-#: ../stickynotes/stickynotes_applet_callbacks.c:559
-#: ../trashapplet/src/trashapplet.c:398
+#: ../battstat/battstat_applet.c:1208 ../drivemount/drivemount.c:141
+#: ../geyes/geyes.c:346 ../geyes/themes.c:248
+#: ../mateweather/mateweather-applet.c:70
+#: ../mateweather/mateweather-pref.c:816
+#: ../mini-commander/src/preferences.c:366
+#: ../stickynotes/stickynotes_applet_callbacks.c:391
+#: ../stickynotes/stickynotes_applet_callbacks.c:607
+#: ../trashapplet/src/trashapplet.c:399
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Estis eraro vidigante helpon: %s"
 
-#: ../battstat/battstat_applet.c:1233
+#: ../battstat/battstat_applet.c:1248
 msgid "This utility shows the status of your laptop battery."
 msgstr "Ĉi tiu utilaĵo montras la staton de via tekkomputila baterio."
 
+#. ture
+#: ../battstat/battstat_applet.c:1250
+msgid "upower backend enabled."
+msgstr ""
+
 #. true
-#: ../battstat/battstat_applet.c:1235
+#: ../battstat/battstat_applet.c:1252
 msgid "HAL backend enabled."
 msgstr "HAL interna interface ŝaltita."
 
 #. false
-#: ../battstat/battstat_applet.c:1236
+#: ../battstat/battstat_applet.c:1253
 msgid "Legacy (non-HAL) backend enabled."
 msgstr "Heredita (ne-HAL) interna interfaco ŝaltita."
 
+#: ../battstat/battstat_applet.c:1629 ../battstat/battstat_applet.c:1683
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
+msgid "Battery Charge Monitor"
+msgstr "Indikilo de Ŝargo de Baterioj"
+
+#: ../battstat/battstat_applet.c:1684
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
+msgid "Monitor a laptop's remaining power"
+msgstr "Kontroli restantan ŝargon de tekkomputilo"
+
 #: ../battstat/battstat_applet.ui.h:1
-msgid "(shows single image for status and charge)"
-msgstr ""
-
-#: ../battstat/battstat_applet.ui.h:2
-msgid "(two images: one for status, one for charge)"
-msgstr ""
-
-#: ../battstat/battstat_applet.ui.h:3
-msgid "Appearance"
-msgstr "Aspekto"
-
-#: ../battstat/battstat_applet.ui.h:4
 msgid "Battery Charge Monitor Preferences"
 msgstr "Preferoj de bateriŝarga indikilo"
 
-#: ../battstat/battstat_applet.ui.h:5
-msgid "Notifications"
-msgstr "Atentigoj"
+#: ../battstat/battstat_applet.ui.h:2
+msgid "Appearance"
+msgstr "Aspekto"
 
-#: ../battstat/battstat_applet.ui.h:6
-msgid "Show _percentage remaining"
-msgstr "Montru _elcenton restantan"
-
-#: ../battstat/battstat_applet.ui.h:7
-msgid "Show _time remaining"
-msgstr "Montru _tempon restantan"
-
-#: ../battstat/battstat_applet.ui.h:8
+#: ../battstat/battstat_applet.ui.h:3
 msgid "_Compact view"
 msgstr "_Kompakta vido"
 
-#: ../battstat/battstat_applet.ui.h:9
+#: ../battstat/battstat_applet.ui.h:4
+msgid "(shows single image for status and charge)"
+msgstr ""
+
+#: ../battstat/battstat_applet.ui.h:5
 msgid "_Expanded view"
 msgstr "_Etendita vido"
 
-#: ../battstat/battstat_applet.ui.h:10
-msgid "_Notify when battery is fully recharged"
-msgstr "_Sciigu kiam baterio estos plene reŝargita"
+#: ../battstat/battstat_applet.ui.h:6
+msgid "(two images: one for status, one for charge)"
+msgstr ""
 
-#: ../battstat/battstat_applet.ui.h:11
+#: ../battstat/battstat_applet.ui.h:7
 msgid "_Show time/percentage:"
 msgstr "_Montru tempon/elcenton:"
 
-#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge drops to: [XX] percent/minutes remaining'
-#: ../battstat/battstat_applet.ui.h:13
+#: ../battstat/battstat_applet.ui.h:8
+msgid "Show _time remaining"
+msgstr "Montru _tempon restantan"
+
+#: ../battstat/battstat_applet.ui.h:9
+msgid "Show _percentage remaining"
+msgstr "Montru _elcenton restantan"
+
+#: ../battstat/battstat_applet.ui.h:10
+msgid "Notifications"
+msgstr "Atentigoj"
+
+#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
+#. drops to: [XX] percent/minutes remaining'
+#: ../battstat/battstat_applet.ui.h:12
 msgid "_Warn when battery charge drops to:"
 msgstr "_Avertu kiam bateria ŝargo falas al:"
+
+#: ../battstat/battstat_applet.ui.h:13
+msgid "_Notify when battery is fully recharged"
+msgstr "_Sciigu kiam baterio estos plene reŝargita"
 
 #: ../battstat/battstat-hal.c:343 ../battstat/battstat-hal.c:368
 msgid "HAL error"
@@ -403,131 +385,114 @@ msgid "Unable to initialise HAL: %s: %s"
 msgstr "Ne povas startigi HAL: %s: %s"
 
 #: ../battstat/battstat.schemas.in.h:1
-msgid "0 for no label, 1 for percentage and 2 for time remaining."
-msgstr "0 por sen etikedo, 1 por elcentaĵo kaj 2 por tempo restanta."
-
-#: ../battstat/battstat.schemas.in.h:2
-msgid "Beep for warnings"
-msgstr "Pepi por avertoj"
-
-#: ../battstat/battstat.schemas.in.h:3
-msgid "Beep when displaying a warning."
-msgstr "Pepu kiam vidigas averton."
-
-#: ../battstat/battstat.schemas.in.h:4
-msgid "Drain from top"
-msgstr "Malplenigi ekde la supro"
-
-#: ../battstat/battstat.schemas.in.h:5
-msgid "Full Battery Notification"
-msgstr "Atentigi kiam Baterio Plene Ŝargitas"
-
-#: ../battstat/battstat.schemas.in.h:6
-msgid "Low Battery Notification"
-msgstr "Atentigi kiam Restas Minimuma Ŝargo"
-
-#: ../battstat/battstat.schemas.in.h:7
-msgid "Notify user when the battery is full."
-msgstr "Sciigu uzanton kiam la baterio estas plena."
-
-#: ../battstat/battstat.schemas.in.h:8
-msgid "Notify user when the battery is low."
-msgstr "Sciigu uzanton kiam la baterio estas malalte plena."
-
-#: ../battstat/battstat.schemas.in.h:9
 msgid "Red value level"
 msgstr "Ruĝvalora nivelo"
 
+#: ../battstat/battstat.schemas.in.h:2
+msgid ""
+"The battery level below which the battery is displayed as red. Also the "
+"value at which the low battery warning is displayed."
+msgstr "La bateria nivelo sub kiu la baterio estas vidigata ruĝa. Ankaŭ la valoro je kiu la averto pri malaltnivela baterio estas vidigata."
+
+#: ../battstat/battstat.schemas.in.h:3
+msgid "Warn on low time rather than low percentage"
+msgstr "Avertu pri malaltnivela tempo anstataŭ ol malaltnivela elcento"
+
+#: ../battstat/battstat.schemas.in.h:4
+msgid ""
+"Use the value defined in red_value as a time remaining to show the warning "
+"dialog rather than a percentage."
+msgstr "Uzu la valoron difinitan en red_value kiel tempo restanta por vidigi la avertan dialogon anstataŭ elcentaĵon."
+
+#: ../battstat/battstat.schemas.in.h:5
+msgid "Low Battery Notification"
+msgstr "Atentigi kiam Restas Minimuma Ŝargo"
+
+#: ../battstat/battstat.schemas.in.h:6
+msgid "Notify user when the battery is low."
+msgstr "Sciigu uzanton kiam la baterio estas malalte plena."
+
+#: ../battstat/battstat.schemas.in.h:7
+msgid "Full Battery Notification"
+msgstr "Atentigi kiam Baterio Plene Ŝargitas"
+
+#: ../battstat/battstat.schemas.in.h:8
+msgid "Notify user when the battery is full."
+msgstr "Sciigu uzanton kiam la baterio estas plena."
+
+#: ../battstat/battstat.schemas.in.h:9
+msgid "Beep for warnings"
+msgstr "Pepi por avertoj"
+
 #: ../battstat/battstat.schemas.in.h:10
+msgid "Beep when displaying a warning."
+msgstr "Pepu kiam vidigas averton."
+
+#: ../battstat/battstat.schemas.in.h:11
+msgid "Drain from top"
+msgstr "Malplenigi ekde la supro"
+
+#: ../battstat/battstat.schemas.in.h:12
 msgid ""
 "Show the battery meter draining from the top of the battery. Only "
 "implemented for traditional battery view."
-msgstr ""
-"Montru la baterian mezurilon elĉerpatan de la supro de la baterio. Nur "
-"implementita por tradicia bateria vido."
-
-#: ../battstat/battstat.schemas.in.h:11
-msgid "Show the horizontal battery"
-msgstr "Montru la horizontalan baterion"
-
-#: ../battstat/battstat.schemas.in.h:12
-msgid "Show the time/percent label"
-msgstr "Montru la etikedon tempo/elcento"
+msgstr "Montru la baterian mezurilon elĉerpatan de la supro de la baterio. Nur implementita por tradicia bateria vido."
 
 #: ../battstat/battstat.schemas.in.h:13
-msgid "Show the traditional, horizontal battery on the panel."
-msgstr "Vidigu la tradician, horizontalan baterion je la panelo."
+msgid "Upright (small) battery"
+msgstr "Staranta (malgranda) baterio"
 
 #: ../battstat/battstat.schemas.in.h:14
 msgid "Show the upright, smaller battery on the panel."
 msgstr "Vidigu la vertikalan, pli malgrandan baterion je la panelo."
 
 #: ../battstat/battstat.schemas.in.h:15
-msgid ""
-"The battery level below which the battery is displayed as red. Also the "
-"value at which the low battery warning is displayed."
-msgstr ""
-"La bateria nivelo sub kiu la baterio estas vidigata ruĝa. Ankaŭ la valoro je "
-"kiu la averto pri malaltnivela baterio estas vidigata."
+msgid "Show the horizontal battery"
+msgstr "Montru la horizontalan baterion"
 
 #: ../battstat/battstat.schemas.in.h:16
-msgid "Upright (small) battery"
-msgstr "Staranta (malgranda) baterio"
+msgid "Show the traditional, horizontal battery on the panel."
+msgstr "Vidigu la tradician, horizontalan baterion je la panelo."
 
 #: ../battstat/battstat.schemas.in.h:17
-msgid ""
-"Use the value defined in red_value as a time remaining to show the warning "
-"dialog rather than a percentage."
-msgstr ""
-"Uzu la valoron difinitan en red_value kiel tempo restanta por vidigi la "
-"avertan dialogon anstataŭ elcentaĵon."
+msgid "Show the time/percent label"
+msgstr "Montru la etikedon tempo/elcento"
 
 #: ../battstat/battstat.schemas.in.h:18
-msgid "Warn on low time rather than low percentage"
-msgstr "Avertu pri malaltnivela tempo anstataŭ ol malaltnivela elcento"
+msgid "0 for no label, 1 for percentage and 2 for time remaining."
+msgstr "0 por sen etikedo, 1 por elcentaĵo kaj 2 por tempo restanta."
+
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
+msgid "Battstat Factory"
+msgstr "Fabrikejo por BattStat"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
-#.
-#: ../battstat/properties.c:315
+#. 
+#: ../battstat/properties.c:314
 msgid "Percent"
 msgstr "Elcento"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#.
-#: ../battstat/properties.c:321
+#. 
+#: ../battstat/properties.c:320
 msgid "Minutes Remaining"
 msgstr "Minutoj restantaj"
 
-#: ../battstat/sounds/battstat_applet.soundlist.in.h:1
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:1
 msgid "Battery Status Utility"
 msgstr "Bateria stata utilaĵo"
 
-#: ../battstat/sounds/battstat_applet.soundlist.in.h:2
-msgid "Battery fully re-charged"
-msgstr "Baterio plene reŝargita"
-
-#: ../battstat/sounds/battstat_applet.soundlist.in.h:3
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:2
 msgid "Battery power low"
 msgstr "Bateria energio malalta"
 
-#: ../charpick/MATE_CharpickerApplet.server.in.in.h:1
-#: ../charpick/charpick.c:741 ../charpick/charpick.c:753
-#: ../charpick/properties.c:452
-msgid "Character Palette"
-msgstr "Signa paletro"
-
-#: ../charpick/MATE_CharpickerApplet.server.in.in.h:2
-msgid "Charpicker Applet Factory"
-msgstr "Signoelekta aplikaĵeta fabrikejo"
-
-#: ../charpick/MATE_CharpickerApplet.server.in.in.h:3
-#: ../charpick/charpick.c:741
-msgid "Insert characters"
-msgstr "Enmetu signojn"
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:3
+msgid "Battery fully re-charged"
+msgstr "Baterio plene reŝargita"
 
 #: ../charpick/charpick.c:436
 msgid "Available palettes"
@@ -536,7 +501,7 @@ msgstr "Haveblaj paletroj"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#.
+#. 
 #: ../charpick/charpick.c:483
 #, c-format
 msgid "Insert \"%s\""
@@ -551,37 +516,48 @@ msgstr "Enmetu specialan signon"
 msgid "insert special character %s"
 msgstr "enmetu specialajn signojn %s"
 
-#: ../charpick/charpick.c:606
+#: ../charpick/charpick.c:605
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
-msgstr ""
-"Gnoma panela apleto por elekti strangajn signojn ne troviĝantajn sur mia "
-"klavaro. Publikigita sub GNU Ĝenerala Publika Licenco."
+msgstr "Gnoma panela apleto por elekti strangajn signojn ne troviĝantajn sur mia klavaro. Publikigita sub GNU Ĝenerala Publika Licenco."
+
+#: ../charpick/charpick.c:743 ../charpick/charpick.c:757
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
+#: ../charpick/properties.c:452
+msgid "Character Palette"
+msgstr "Signa paletro"
+
+#: ../charpick/charpick.c:743
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
+msgid "Insert characters"
+msgstr "Enmetu signojn"
 
 #: ../charpick/charpick.schemas.in.h:1
-msgid "Characters shown on applet startup"
-msgstr "Signojn montratajn dum aplikaĵeta lanĉo"
-
-#: ../charpick/charpick.schemas.in.h:2
 msgid "DEPRECATED - Characters shown on applet startup"
 msgstr "ANTIKVE - Signojn montratajn dum aplikaĵeta lanĉo"
 
-#: ../charpick/charpick.schemas.in.h:3 ../charpick/properties.c:379
-msgid "List of available palettes"
-msgstr "Listo de haveblaj paletroj"
+#: ../charpick/charpick.schemas.in.h:2
+msgid "Characters shown on applet startup"
+msgstr "Signojn montratajn dum aplikaĵeta lanĉo"
 
-#: ../charpick/charpick.schemas.in.h:4
-msgid "List of strings containing the available palettes."
-msgstr "Listo de ĉenoj kiuj enhavas la disponeblajn paletrojn."
-
-#: ../charpick/charpick.schemas.in.h:5
+#: ../charpick/charpick.schemas.in.h:3
 msgid ""
 "The string that the user had selected when the applet was last used. This "
 "string will be displayed when the user starts the applet."
-msgstr ""
-"La teksto kiun la uzanto estis elektinta kiam la aplikaĵeto estis laste "
-"uzata. Ĉi tiu teksto estos vidigata kiam la uzanto lanĉos la aplikaĵeton."
+msgstr "La teksto kiun la uzanto estis elektinta kiam la aplikaĵeto estis laste uzata. Ĉi tiu teksto estos vidigata kiam la uzanto lanĉos la aplikaĵeton."
+
+#: ../charpick/charpick.schemas.in.h:4 ../charpick/properties.c:379
+msgid "List of available palettes"
+msgstr "Listo de haveblaj paletroj"
+
+#: ../charpick/charpick.schemas.in.h:5
+msgid "List of strings containing the available palettes."
+msgstr "Listo de ĉenoj kiuj enhavas la disponeblajn paletrojn."
+
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:1
+msgid "Charpicker Applet Factory"
+msgstr "Signoelekta aplikaĵeta fabrikejo"
 
 #: ../charpick/properties.c:28
 msgid "_Edit"
@@ -639,93 +615,87 @@ msgstr "Butono Forigi"
 msgid "Click to delete the selected palette"
 msgstr "Alklaku por forigi la elektitan paletron"
 
-#: ../charpick/properties.c:542
+#: ../charpick/properties.c:541
 msgid "Character Palette Preferences"
 msgstr "Preferoj de la Paletro de Signoj"
 
-#: ../cpufreq/MATE_CPUFreqApplet.server.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:949 ../cpufreq/src/cpufreq-applet.c:1005
-msgid "CPU Frequency Scaling Monitor"
-msgstr "Monitoro por CPU-a frekvenca skalado"
-
-#: ../cpufreq/MATE_CPUFreqApplet.server.in.in.h:2
-msgid "Monitor the CPU Frequency Scaling"
-msgstr "Monitoru la CPU-an frekvencan skaladon"
-
 #: ../cpufreq/cpufreq-applet.schemas.in.h:1
-msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
-"to show percentage instead of frequency."
-msgstr ""
-"Valoro 0 signifas montri cpu-an frekvencon, 1 montri frekvencon kaj unuojn, "
-"kaj 2 montri elcenton anstataŭ frekvenco"
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:2
-msgid ""
-"A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
-"the applet in text mode (not to show the pixmap) and 2 to show the applet in "
-"graphic and text mode."
-msgstr ""
-"Valoro 0 signifas montri la aplikaĵeton en grafika reĝimo (nur "
-"bildrastrumon), 1 montri la aplikaĵeton en teksta reĝimo (ne montri la  "
-"bildrastrumon) kaj 2 montri la aplikaĵeto en grafika kaj teksta reĝimo."
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:3
 msgid "CPU to Monitor"
 msgstr "CPU al monitoro"
 
-#: ../cpufreq/cpufreq-applet.schemas.in.h:4
-msgid "Mode to show cpu usage"
-msgstr "Reĝimo por montri cpu-uzon"
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:5
+#: ../cpufreq/cpufreq-applet.schemas.in.h:2
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
-msgstr ""
-"Agordu la CPU al monitoro. En unuprocezila sistemo vi ne bezonas ŝanĝi tion."
+msgstr "Agordu la CPU al monitoro. En unuprocezila sistemo vi ne bezonas ŝanĝi tion."
 
-#: ../cpufreq/cpufreq-applet.schemas.in.h:6
+#: ../cpufreq/cpufreq-applet.schemas.in.h:3
+msgid "Mode to show cpu usage"
+msgstr "Reĝimo por montri cpu-uzon"
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:4
+msgid ""
+"A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
+"the applet in text mode (not to show the pixmap) and 2 to show the applet in"
+" graphic and text mode."
+msgstr "Valoro 0 signifas montri la aplikaĵeton en grafika reĝimo (nur bildrastrumon), 1 montri la aplikaĵeton en teksta reĝimo (ne montri la  bildrastrumon) kaj 2 montri la aplikaĵeto en grafika kaj teksta reĝimo."
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:5
 msgid "The type of text to display (if the text is enabled)."
 msgstr "La tipo de teksto por vidigi (se la teksto estas ŝaltita)."
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:6
+msgid ""
+"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"to show percentage instead of frequency."
+msgstr "Valoro 0 signifas montri cpu-an frekvencon, 1 montri frekvencon kaj unuojn, kaj 2 montri elcenton anstataŭ frekvenco"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
 msgstr "Preferoj de CPU-a frekvenca monitoro"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
-msgid "Display Settings"
-msgstr "Montraj agordoj"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "Monitor Settings"
 msgstr "Montrilaj agordoj"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:4
-msgid "Show CPU frequency as _frequency"
-msgstr "Montru CPU-an frekvencon kiel _frekvenco"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:5
-msgid "Show CPU frequency as _percentage"
-msgstr "Montru CPU-an frekvencon kiel _elcenton"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:6
-msgid "Show frequency _units"
-msgstr "Montru frekvencajn _unuojn"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:7
-msgid "_Appearance:"
-msgstr "_Aspekto:"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:8
+#: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "_Monitored CPU:"
 msgstr "_Monitorata CPU:"
 
-#: ../cpufreq/src/cpufreq-applet.c:584 ../cpufreq/src/cpufreq-prefs.c:478
+#: ../cpufreq/cpufreq-preferences.ui.h:4
+msgid "Display Settings"
+msgstr "Montraj agordoj"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:5
+msgid "_Appearance:"
+msgstr "_Aspekto:"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:6
+msgid "Show CPU frequency as _frequency"
+msgstr "Montru CPU-an frekvencon kiel _frekvenco"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:7
+msgid "Show frequency _units"
+msgstr "Montru frekvencajn _unuojn"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:8
+msgid "Show CPU frequency as _percentage"
+msgstr "Montru CPU-an frekvencon kiel _elcenton"
+
+#: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
+#: ../cpufreq/src/cpufreq-applet.c:946 ../cpufreq/src/cpufreq-applet.c:1005
+msgid "CPU Frequency Scaling Monitor"
+msgstr "Monitoro por CPU-a frekvenca skalado"
+
+#: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:2
+msgid "Monitor the CPU Frequency Scaling"
+msgstr "Monitoru la CPU-an frekvencan skaladon"
+
+#: ../cpufreq/src/cpufreq-applet.c:581 ../cpufreq/src/cpufreq-prefs.c:478
 msgid "Could not open help document"
 msgstr "Ne povis malfermi helpdokumenton"
 
-#: ../cpufreq/src/cpufreq-applet.c:612
+#: ../cpufreq/src/cpufreq-applet.c:608
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ĉi tiu utilaĵo montras la aktualan CPU-frekvencan skaladon."
 
@@ -750,9 +720,10 @@ msgid "Frequency Scaling Unsupported"
 msgstr "Frekvenca skalado ne subtenata"
 
 #. If there is no cpufreq support it shows only the cpu frequency,
-#. * I think is better than do nothing. I have to notify it to the user, because
+#. * I think is better than do nothing. I have to notify it to the user,
+#. because
 #. * he could think that cpufreq is supported but it doesn't work succesfully
-#.
+#. 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
 msgstr "CPU-frekvenca skalado ne subtenata"
@@ -761,9 +732,7 @@ msgstr "CPU-frekvenca skalado ne subtenata"
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr ""
-"Vi ne kapablos modifi la frekvencon de via maŝino.Via maŝino eble estas "
-"miskonfigurita aŭ ne havas aparataran subtenon por CPU-frekvenca skalado."
+msgstr "Vi ne kapablos modifi la frekvencon de via maŝino.Via maŝino eble estas miskonfigurita aŭ ne havas aparataran subtenon por CPU-frekvenca skalado."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
@@ -772,23 +741,6 @@ msgstr "Ŝanĝu la nivelojn de la procezila frenkvenco"
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:2
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Necesas priviegioj por ŝanĝi la nivelojn de la procezila frenkvenco"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:1
-#: ../drivemount/drivemount.c:169 ../drivemount/drivemount.c:201
-msgid "Disk Mounter"
-msgstr "Disksurmetilo"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:2
-msgid "Drive Mount Applet Factory"
-msgstr "Disksurmeta aplikaĵeta fabrikejo"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:3
-msgid "Factory for drive mount applet"
-msgstr "Fabrikejo por disksurmeta aplikaĵeto"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:4
-msgid "Mount local disks and devices"
-msgstr "Surmetu lokajn diskojn kaj aparatojn"
 
 #: ../drivemount/drive-button.c:342 ../drivemount/drive-button.c:355
 msgid "(mounted)"
@@ -835,6 +787,11 @@ msgstr "_Elĵetu %s"
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Aplikaĵeto por surmetado kaj demetado de blokdatumportiloj."
 
+#: ../drivemount/drivemount.c:173 ../drivemount/drivemount.c:210
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
+msgid "Disk Mounter"
+msgstr "Disksurmetilo"
+
 #: ../drivemount/drivemount.schemas.in.h:1
 msgid "Interval timeout to check mount point status"
 msgstr "Intervala atendo por kontroli surmetpunktan staton"
@@ -843,24 +800,28 @@ msgstr "Intervala atendo por kontroli surmetpunktan staton"
 msgid "Time in seconds between status updates"
 msgstr "Tempo laŭ sekundoj inter statĝisdatigoj"
 
-#: ../geyes/MATE_GeyesApplet.server.in.in.h:1
-msgid "A set of eyeballs for your panel"
-msgstr "Paro de okuloj por via panelo"
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:1
+msgid "Drive Mount Applet Factory"
+msgstr "Disksurmeta aplikaĵeta fabrikejo"
 
-#: ../geyes/MATE_GeyesApplet.server.in.in.h:2 ../geyes/geyes.c:387
-#: ../geyes/geyes.c:417 ../geyes/geyes.c:419
-msgid "Eyes"
-msgstr "Okuloj"
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:2
+msgid "Factory for drive mount applet"
+msgstr "Fabrikejo por disksurmeta aplikaĵeto"
 
-#: ../geyes/MATE_GeyesApplet.server.in.in.h:3
-msgid "Geyes Applet Factory"
-msgstr "Aplikaĵeta fabrikejo por Gokuloj"
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:4
+msgid "Mount local disks and devices"
+msgstr "Surmetu lokajn diskojn kaj aparatojn"
 
-#: ../geyes/geyes.c:192
+#: ../geyes/geyes.c:191
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Malseriozaj okuloj por la MATE-panel. Ili sekvas vian muskursoron."
 
-#: ../geyes/geyes.c:420
+#: ../geyes/geyes.c:391 ../geyes/geyes.c:422 ../geyes/geyes.c:424
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
+msgid "Eyes"
+msgstr "Okuloj"
+
+#: ../geyes/geyes.c:425
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "La okuloj rigardas en la direkto de la musindikilo"
 
@@ -868,984 +829,374 @@ msgstr "La okuloj rigardas en la direkto de la musindikilo"
 msgid "Directory in which the theme is located"
 msgstr "Dosierujo en kiu la etoso troviĝas"
 
-#: ../geyes/themes.c:127
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
+msgid "Geyes Applet Factory"
+msgstr "Aplikaĵeta fabrikejo por Gokuloj"
+
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
+msgid "A set of eyeballs for your panel"
+msgstr "Paro de okuloj por via panelo"
+
+#: ../geyes/themes.c:131
 msgid "Can not launch the eyes applet."
 msgstr "Ne povas lanĉi la okuloj-aplikaĵeton."
 
-#: ../geyes/themes.c:128
+#: ../geyes/themes.c:132
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Estis fatala eraro dum klopodo ŝargi la etoson."
 
-#: ../geyes/themes.c:304
+#: ../geyes/themes.c:307
 msgid "Geyes Preferences"
 msgstr "Preferoj de Gokuloj"
 
-#: ../geyes/themes.c:338
+#: ../geyes/themes.c:341
 msgid "Themes"
 msgstr "Etosoj"
 
-#: ../geyes/themes.c:359
+#: ../geyes/themes.c:362
 msgid "_Select a theme:"
 msgstr "Elektu eto_son:"
 
-#: ../gkb-new/xmodmap/base.xml.in.h:1 ../gkb-new/xmodmap.sun/base.xml.in.h:1
-msgid "Alt+Control changes layout."
-msgstr "Alt+Ktrl ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:2 ../gkb-new/xmodmap.sun/base.xml.in.h:2
-msgid "Alt+Shift changes layout."
-msgstr "Alt+Maj ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:3
-msgid "Arabic keymap"
-msgstr "Araba klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:4
-msgid "Armenian"
-msgstr "Armena"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:5
-msgid "Basque"
-msgstr "Eŭska"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:6
-msgid "Belgian"
-msgstr "Belga"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:7 ../gkb-new/xmodmap.sun/base.xml.in.h:6
-msgid "Both Alt keys together change layout."
-msgstr "Ambaŭ Alt-klavoj kune ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:8 ../gkb-new/xmodmap.sun/base.xml.in.h:7
-msgid "Both Ctrl keys together change layout."
-msgstr "Ambaŭ Ktrl-klavoj kune ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:9 ../gkb-new/xmodmap.sun/base.xml.in.h:8
-msgid "Both Shift keys together change layout."
-msgstr "Ambaŭ Maj-klavoj kune ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:10
-msgid "Brazil Portuguese keymap"
-msgstr "Brazilportugala klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:11
-msgid "Bulgarian Cyrillic"
-msgstr "Bulgara cirila"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:12
-msgid "Bulgarian keymap"
-msgstr "Bulgara klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:13 ../gkb-new/xmodmap.sun/base.xml.in.h:16
-msgid "CapsLock key changes layout."
-msgstr "majuskla baskula klavo ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:14 ../gkb-new/xmodmap.sun/base.xml.in.h:17
-msgid "Control+Shift changes layout."
-msgstr "Ktrl+Maj ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:15
-msgid "Czech keymap"
-msgstr "Ĉeĥa klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:16
-msgid "Danish keymap"
-msgstr "Dana klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:17
-msgid "Dutch keymap"
-msgstr "Nederlanda klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:18
-msgid "English keymap"
-msgstr "Angla klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:19
-msgid "Estonian keymap"
-msgstr "Estona klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:20
-msgid "Finnish keymap"
-msgstr "Finna klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:21
-msgid "French Swiss"
-msgstr "Francsvisa"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:22
-msgid "French Swiss keymap"
-msgstr "Francsvisa klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:23
-msgid "French keymap"
-msgstr "Franca klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:24
-msgid "French-Canadian 105-key"
-msgstr "Franckanada 105-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:25
-msgid "GB 102-key"
-msgstr "GB 102-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:26
-msgid "GB 105-key"
-msgstr "GB 105-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:27 ../gkb-new/xmodmap.sun/base.xml.in.h:27
-msgid "Generic Keyboard"
-msgstr "Genera klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:28
-msgid "Georgian Latin"
-msgstr "Kartvela latina"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:29
-msgid "Georgian Russian layout"
-msgstr "Kartvela rusa aranĝo"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:30
-msgid "Georgian keymap"
-msgstr "Kartvela klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:31
-msgid "German"
-msgstr "Germana"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:32
-msgid "German Swiss with Euro"
-msgstr "Germansvisa kun eŭro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:33
-msgid "German keymap"
-msgstr "Germana klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:34
-msgid "Greek keymap"
-msgstr "Greka klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:35
-msgid "Hebrew keymap"
-msgstr "Hebrea klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:36
-msgid "Hungarian 101-key latin 1"
-msgstr "Hungara 101-klavaro latina 1"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:37
-msgid "Hungarian 101-key latin 2"
-msgstr "Hungara 101-klavaro latina 2"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:38
-msgid "Hungarian 105-key latin 1"
-msgstr "Hungara 105-klavaro latina 1"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:39
-msgid "Hungarian 105-key latin 2"
-msgstr "Hungara 102-klavaro latina 2"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:40
-msgid "Hungarian PC/AT 101 keyboard"
-msgstr "Hungara PC/AT 101-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:41
-msgid "Hungarian latin1"
-msgstr "Hungara latina 1"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:42
-msgid "Icelandic keymap"
-msgstr "Islanda klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:43
-msgid "Italian keymap"
-msgstr "Itala klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:44
-msgid "Japanese keymap"
-msgstr "Japana klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:45
-msgid "Lao keymap"
-msgstr "Laosa klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:46 ../gkb-new/xmodmap.sun/base.xml.in.h:41
-msgid "Layout shift behavior"
-msgstr "Aranĝa ŝovkonduto"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:47 ../gkb-new/xmodmap.sun/base.xml.in.h:42
-msgid "Left Alt key changes layout."
-msgstr "Maldekstra Alt-klavo ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:48 ../gkb-new/xmodmap.sun/base.xml.in.h:43
-msgid "Left Ctrl key changes group."
-msgstr "Maldekstra Ktrl-klavo ŝanĝas grupon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:49 ../gkb-new/xmodmap.sun/base.xml.in.h:44
-msgid "Left Shift key changes group."
-msgstr "Maldekstra Maj-klavo ŝanĝas grupon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:50 ../gkb-new/xmodmap.sun/base.xml.in.h:45
-msgid "Left Win-key changes layout."
-msgstr "Maldekstra Fenestro-klavo ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:51
-msgid "Lithuanian keymap"
-msgstr "Litova klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:52
-msgid "Macedonian"
-msgstr "Makedona"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:53 ../gkb-new/xmodmap.sun/base.xml.in.h:48
-msgid "Menu key changes layout."
-msgstr "Menu-klavo ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:54
-msgid "Mongolian alt keymap"
-msgstr "Mongola alt-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:55
-msgid "Mongolian keymap"
-msgstr "Mongola klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:56
-msgid "Mongolian phonetic keymap"
-msgstr "Mongola foneta klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:57
-msgid "Norwegian"
-msgstr "Norvega"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:58
-msgid "Plain Russian keymap"
-msgstr "Pura rusa klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:59
-msgid "Polish"
-msgstr "Pola"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:60
-msgid "Polish deadkeys"
-msgstr "Pola kun mortklavoj"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:61
-msgid "Portugal"
-msgstr "Portugala"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:62
-msgid "Portugal Deadkeys"
-msgstr "Portugala kun mortklavoj"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:63
-msgid "Portuguese keymap"
-msgstr "Portugala klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:64 ../gkb-new/xmodmap.sun/base.xml.in.h:53
-msgid "Right Alt key changes layout."
-msgstr "Dekstra Alt-klavo ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:65 ../gkb-new/xmodmap.sun/base.xml.in.h:54
-msgid "Right Ctrl key changes group."
-msgstr "Dekstra Ktrl-klavo ŝanĝas grupon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:66 ../gkb-new/xmodmap.sun/base.xml.in.h:55
-msgid "Right Shift key changes group."
-msgstr "Dekstra Maj-klavo ŝanĝas grupon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:67 ../gkb-new/xmodmap.sun/base.xml.in.h:56
-msgid "Right Win-key changes layout."
-msgstr "Dekstra Fenestro-klavo ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:68
-msgid "Russian Cyrillic"
-msgstr "Rusa cirila"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:69
-msgid "Russian keymap"
-msgstr "Rusa klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:70
-msgid "Serbian keymap"
-msgstr "Serba klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:71 ../gkb-new/xmodmap.sun/base.xml.in.h:60
-msgid "Shift+CapsLock changes layout."
-msgstr "Maj+MajBaskul ŝanĝas aranĝon."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:72
-msgid "Slovak keymap"
-msgstr "Slovaka klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:73
-msgid "Slovenian"
-msgstr "Slovena"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:74
-msgid "Slovenian keymap"
-msgstr "Slovena klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:75
-msgid "Spanish keymap"
-msgstr "Hispana klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:76
-msgid "Sun (!not PC!) type5 Hungarian latin 2"
-msgstr "Sun (!ne PC!) tipo5 hungara latina 2"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:77
-msgid "Swedish"
-msgstr "Sveda"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:78
-msgid "Swedish keymap"
-msgstr "Sveda klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:79
-msgid "Swiss keymap"
-msgstr "Svisa klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:80
-msgid "Thai"
-msgstr "Taja"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:81
-msgid "Thai Kedmanee"
-msgstr "Taja kedmanea"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:82
-msgid "Thai keymap"
-msgstr "Taja klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:83
-msgid "Turkish \"F\" keyboard"
-msgstr "Turka \"F\"  klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:84
-msgid "Turkish \"Q\" keyboard"
-msgstr "Turka \"Q\" klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:85
-msgid "Turkish keymap"
-msgstr "Turka klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:86
-msgid "UK 105-key"
-msgstr "UK 105-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:87
-msgid "UK PC/AT keyboard"
-msgstr "UK PC/AT klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:88
-msgid "US 101-key keyboard"
-msgstr "US 101-klava klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:89
-msgid "US 105-key keyboard (with windows keys)"
-msgstr "US 105-klava klavaro (kun fenestroklavoj)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:90
-msgid "US 84-key"
-msgstr "US 84-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:91
-msgid "US DEC 450"
-msgstr "US DEC 450"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:92
-msgid "US IBM RS/6000"
-msgstr "US IBM RS/6000"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:93
-msgid "US International"
-msgstr "US Internacia"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:94
-msgid "US Macintosh"
-msgstr "US Makintoŝa"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:95
-msgid "US PC/AT 101 keyboard"
-msgstr "US PC/AT 101-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:96
-msgid "US Silicon Graphics 101-key"
-msgstr "US Silicon Graphics 101-klavaro"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:97
-msgid "US Sun type5"
-msgstr "US Sun-tipo5-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:3
-msgid "Armenian Sun keymap"
-msgstr "Armena Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:4
-msgid "Azerbaijani Turkish Sun keymap"
-msgstr "Azerbajĝana turka Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:5
-msgid "Belarusian Sun keymap"
-msgstr "Berarusa Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:9
-msgid "Brazil Portuguese Sun USB keymap"
-msgstr "Brazilportugala Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:10
-msgid "Brazil Portuguese Sun keymap"
-msgstr "Brazilportugala Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:11
-msgid "British Sun Type-4 keymap"
-msgstr "Brita Sun-Tajpo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:12
-msgid "British Sun USB keymap"
-msgstr "Brita Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:13
-msgid "British Sun keymap"
-msgstr "Brita Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:14
-msgid "Bulgarian Sun keymap"
-msgstr "Bulgara Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:15
-msgid "Canadian Sun keymap"
-msgstr "Kanada Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:18
-msgid "Czech Sun keymap"
-msgstr "Ĉeĥa Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:19
-msgid "Danish Sun Type-4 keymap"
-msgstr "Dana Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:20
-msgid "Danish Sun USB keymap"
-msgstr "Dana Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:21
-msgid "Danish Sun keymap"
-msgstr "Dana Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:22
-msgid "Dutch Sun keymap"
-msgstr "Nederlanda Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:23
-msgid "Estonian Sun keymap"
-msgstr "Estona Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:24
-msgid "Finnish Sun keymap"
-msgstr "Finna Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:25
-msgid "French Sun USB keymap"
-msgstr "Franca Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:26
-msgid "French Sun keymap"
-msgstr "Franca Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:28
-msgid "German Sun Type-4 keymap"
-msgstr "Germana Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:29
-msgid "German Sun USB keymap"
-msgstr "Germana Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:30
-msgid "German Sun keymap"
-msgstr "Germana Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:31
-msgid "Hebrew Sun keymap"
-msgstr "Hebrea Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:32
-msgid "Hungarian latin2 Sun keymap"
-msgstr "Hungara latina 2 Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:33
-msgid "Hungarian type5 latin 1 keymap"
-msgstr "Hungara  tipo 5 latina 1 klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:34
-msgid "Icelandic Sun keymap"
-msgstr "Islanda Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:35
-msgid "Italian Sun Type-4 keymap"
-msgstr "Itala Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:36
-msgid "Italian Sun USB keymap"
-msgstr "Itala Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:37
-msgid "Italian Sun keymap"
-msgstr "Itala Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:38
-msgid "Japanese Sun Type-4 keymap"
-msgstr "Japana Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:39
-msgid "Japanese Sun keymap"
-msgstr "Japana Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:40
-msgid "Latvian Sun keymap"
-msgstr "Latva Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:46
-msgid "Lithuanian Sun keymap"
-msgstr "Litova Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:47
-msgid "Macedonian Sun keymap"
-msgstr "Makedona Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:49
-msgid "Norwegian Sun keymap"
-msgstr "Norvega Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:50
-msgid "Polish Sun keymap"
-msgstr "Pola Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:51
-msgid "Portuguese Sun Type-4 keymap"
-msgstr "Portugala Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:52
-msgid "Portuguese Sun keymap"
-msgstr "Portugala Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:57
-msgid "Romanian Sun keymap"
-msgstr "Rumana Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:58
-msgid "Russian Sun keymap"
-msgstr "Rusa Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:59
-msgid "Serbian Sun standard keymap"
-msgstr "Serba Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:61
-msgid "Slovak Sun keymap"
-msgstr "Slovaka Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:62
-msgid "Slovenian Sun keymap"
-msgstr "Slovena Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:63
-msgid "Spanish Sun Type-4 keymap"
-msgstr "Hispana Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:64
-msgid "Spanish Sun USB keymap"
-msgstr "Hispana Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:65
-msgid "Spanish Sun keymap"
-msgstr "Hispana Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:66
-msgid "Swedish Sun Type-4 keymap"
-msgstr "Sveda Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:67
-msgid "Swedish Sun USB keymap"
-msgstr "Sveda Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:68
-msgid "Swedish Sun keymap"
-msgstr "Sveda Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:69
-msgid "Swiss German Sun keymap"
-msgstr "Svisgermana Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:70
-msgid "Thai Sun keymap"
-msgstr "Taja Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:71
-msgid "Turkish Sun keymap"
-msgstr "Turka Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:72
-msgid "US Sun Type-4 keymap"
-msgstr "US Sun-Tipo-4-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:73
-msgid "US Sun USB keymap"
-msgstr "US Sun-USB-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:74
-msgid "US Sun type5 keymap"
-msgstr "US Sun-Tipo-5-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:75
-msgid "Ukrainian Sun keymap"
-msgstr "Ukraina Sun-klavaro"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:76
-msgid "Vietnamese Sun keymap"
-msgstr "Vjetnama Sun-klavaro"
-
-#: ../mateweather/MATE_MateWeatherApplet.xml.h:2
-msgid "_Details"
-msgstr "_Detaloj"
-
-#: ../mateweather/MATE_MateWeatherApplet.xml.h:5 ../mateweather/mateweather-dialog.c:215
-msgid "_Update"
-msgstr "Ĝ_isdatigu"
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:1
-msgid "Factory for creating the weather applet."
-msgstr "Fabrikejo por krei la veteran aplikaĵeton."
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:2
-msgid "Gweather Applet Factory"
-msgstr "Gvetera aplikaĵeta fabrikejo"
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:3
-msgid "Monitor the current weather conditions, and forecasts"
-msgstr "Monitoru la aktualajn veterstaton, kaj prognozojn"
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:4
-#: ../mateweather/mateweather-applet.c:324
-msgid "Weather Report"
-msgstr "Vetera raporto"
-
-#: ../mateweather/mateweather-about.c:50
+#: ../mateweather/mateweather-about.c:48
 msgid "© 1999-2005 by S. Papadimitriou and others"
 msgstr "© 1999-2005 by S. Papadimitriou kaj aliaj"
 
-#: ../mateweather/mateweather-about.c:51
+#: ../mateweather/mateweather-about.c:49
 msgid "A panel application for monitoring local weather conditions."
 msgstr "Panela aplikaĵo por inspektado de la loka veterstato."
 
-#: ../mateweather/mateweather-applet.c:342 ../mateweather/mateweather-applet.c:346
+#: ../mateweather/mateweather-applet.c:115
+msgid "_Details"
+msgstr "_Detaloj"
+
+#: ../mateweather/mateweather-applet.c:118
+#: ../mateweather/mateweather-dialog.c:198
+msgid "_Update"
+msgstr "Ĝ_isdatigu"
+
+#: ../mateweather/mateweather-applet.c:329
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
+msgid "Weather Report"
+msgstr "Vetera raporto"
+
+#: ../mateweather/mateweather-applet.c:347
+#: ../mateweather/mateweather-applet.c:351
 msgid "MATE Weather"
 msgstr "GNOMA Vetero"
 
-#: ../mateweather/mateweather-applet.c:447
+#: ../mateweather/mateweather-applet.c:453
 msgid "Weather Forecast"
 msgstr "Veterprognozo"
 
-#: ../mateweather/mateweather-applet.c:459
+#: ../mateweather/mateweather-applet.c:465
 #, c-format
 msgid ""
 "City: %s\n"
 "Sky: %s\n"
 "Temperature: %s"
-msgstr ""
-"Urbo: %s\n"
-"Ĉielo: %s\n"
-"Temperaturo: %s"
+msgstr "Urbo: %s\nĈielo: %s\nTemperaturo: %s"
 
-#: ../mateweather/mateweather-applet.c:509
+#: ../mateweather/mateweather-applet.c:515
 msgid "Updating..."
 msgstr "Ĝisdatigante..."
 
-#: ../mateweather/mateweather-dialog.c:213
+#: ../mateweather/mateweather-dialog.c:196
 msgid "Details"
 msgstr "Detaloj"
 
-#: ../mateweather/mateweather-dialog.c:256
+#: ../mateweather/mateweather-dialog.c:239
 msgid "City:"
 msgstr "Urbo:"
 
-#: ../mateweather/mateweather-dialog.c:264
+#: ../mateweather/mateweather-dialog.c:247
 msgid "Last update:"
 msgstr "Lasta ĝisdatigo:"
 
-#: ../mateweather/mateweather-dialog.c:272
+#: ../mateweather/mateweather-dialog.c:255
 msgid "Conditions:"
 msgstr "Kondiĉoj:"
 
-#: ../mateweather/mateweather-dialog.c:280
+#: ../mateweather/mateweather-dialog.c:263
 msgid "Sky:"
 msgstr "Ĉielo:"
 
-#: ../mateweather/mateweather-dialog.c:288
+#: ../mateweather/mateweather-dialog.c:271
 msgid "Temperature:"
 msgstr "Temperaturo:"
 
-#: ../mateweather/mateweather-dialog.c:296
+#: ../mateweather/mateweather-dialog.c:279
 msgid "Feels like:"
 msgstr "Sentas kiel:"
 
-#: ../mateweather/mateweather-dialog.c:304
+#: ../mateweather/mateweather-dialog.c:287
 msgid "Dew point:"
 msgstr "Rosa punkto:"
 
-#: ../mateweather/mateweather-dialog.c:312
+#: ../mateweather/mateweather-dialog.c:295
 msgid "Relative humidity:"
 msgstr "Relativa humideco:"
 
-#: ../mateweather/mateweather-dialog.c:320
+#: ../mateweather/mateweather-dialog.c:303
 msgid "Wind:"
 msgstr "Vento:"
 
-#: ../mateweather/mateweather-dialog.c:328
+#: ../mateweather/mateweather-dialog.c:311
 msgid "Pressure:"
 msgstr "Aerpremo:"
 
-#: ../mateweather/mateweather-dialog.c:336
+#: ../mateweather/mateweather-dialog.c:319
 msgid "Visibility:"
 msgstr "Videbleco:"
 
-#: ../mateweather/mateweather-dialog.c:344
+#: ../mateweather/mateweather-dialog.c:327
 msgid "Sunrise:"
 msgstr "Sunleviĝo:"
 
-#: ../mateweather/mateweather-dialog.c:352
+#: ../mateweather/mateweather-dialog.c:335
 msgid "Sunset:"
 msgstr "Sunsubiro:"
 
-#: ../mateweather/mateweather-dialog.c:486
+#: ../mateweather/mateweather-dialog.c:469
 msgid "Current Conditions"
 msgstr "Aktuala stato"
 
-#: ../mateweather/mateweather-dialog.c:503
+#: ../mateweather/mateweather-dialog.c:486
 msgid "Forecast Report"
 msgstr "Prognoza raporto"
 
-#: ../mateweather/mateweather-dialog.c:503
+#: ../mateweather/mateweather-dialog.c:486
 msgid "See the ForeCast Details"
 msgstr "Vidu la prognozajn detalojn"
 
-#: ../mateweather/mateweather-dialog.c:513
+#: ../mateweather/mateweather-dialog.c:496
 msgid "Forecast"
 msgstr "Prognozo"
 
-#: ../mateweather/mateweather-dialog.c:521
+#: ../mateweather/mateweather-dialog.c:504
 msgid "Radar Map"
 msgstr "Radara mapo"
 
-#: ../mateweather/mateweather-dialog.c:552
+#: ../mateweather/mateweather-dialog.c:535
 msgid "_Visit Weather.com"
 msgstr "_Vizitu Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:553
+#: ../mateweather/mateweather-dialog.c:536
 msgid "Visit Weather.com"
 msgstr "Vizitu Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:553
+#: ../mateweather/mateweather-dialog.c:536
 msgid "Click to Enter Weather.com"
 msgstr "Alklaku por eniri Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:638
+#: ../mateweather/mateweather-dialog.c:621
 msgid "Forecast not currently available for this location."
 msgstr "Prognozo ĉi momente ne havebla por ĉi tiu situo."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:171
+#: ../mateweather/mateweather-pref.c:179
 msgid "Location view"
 msgstr "Situa vido"
 
-#: ../mateweather/mateweather-pref.c:171
+#: ../mateweather/mateweather-pref.c:179
 msgid "Select Location from the list"
 msgstr "Elektu situon el la listo"
 
-#: ../mateweather/mateweather-pref.c:172
+#: ../mateweather/mateweather-pref.c:180
 msgid "Update spin button"
 msgstr "Ĝisdatigu radbutonon"
 
-#: ../mateweather/mateweather-pref.c:172
+#: ../mateweather/mateweather-pref.c:180
 msgid "Spinbutton for updating"
 msgstr "Radbutono ĝisdatigata"
 
-#: ../mateweather/mateweather-pref.c:173
+#: ../mateweather/mateweather-pref.c:181
 msgid "Address Entry"
 msgstr "Adresenigo"
 
-#: ../mateweather/mateweather-pref.c:173
+#: ../mateweather/mateweather-pref.c:181
 msgid "Enter the URL"
 msgstr "Entajpu la URLon"
 
-#: ../mateweather/mateweather-pref.c:317
+#: ../mateweather/mateweather-pref.c:332
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
-msgstr ""
-"Malsukcesis ŝargi la XML-a datumbazo kun Lokoj. Bonvolu raportu ĉi tion kiel "
-"cimon."
+msgstr "Malsukcesis ŝargi la XML-a datumbazo kun Lokoj. Bonvolu raportu ĉi tion kiel cimon."
 
-#: ../mateweather/mateweather-pref.c:807
+#: ../mateweather/mateweather-pref.c:878
 msgid "Weather Preferences"
 msgstr "Veterpreferoj"
 
-#: ../mateweather/mateweather-pref.c:839 ../mateweather/mateweather-pref.c:1024
+#: ../mateweather/mateweather-pref.c:906
+#: ../mateweather/mateweather-pref.c:1092
 msgid "_Automatically update every:"
 msgstr "_Aŭtomate ĝisdatigu je ĉiu:"
 
-#.
 #. * Units settings page.
-#.
+#. 
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:852
+#: ../mateweather/mateweather-pref.c:921
 msgid "_Temperature unit:"
 msgstr "_Temperatura unuo:"
 
-#: ../mateweather/mateweather-pref.c:861 ../mateweather/mateweather-pref.c:881
-#: ../mateweather/mateweather-pref.c:907 ../mateweather/mateweather-pref.c:935
+#: ../mateweather/mateweather-pref.c:930 ../mateweather/mateweather-pref.c:952
+#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:1009
 msgid "Default"
 msgstr "Defaŭlta"
 
-#: ../mateweather/mateweather-pref.c:862
+#: ../mateweather/mateweather-pref.c:931
 msgid "Kelvin"
 msgstr "Kelvinoj"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:933
 msgid "Celsius"
 msgstr "Celsiuso"
 
-#: ../mateweather/mateweather-pref.c:865
+#: ../mateweather/mateweather-pref.c:934
 msgid "Fahrenheit"
 msgstr "Farenhejto"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:872
+#: ../mateweather/mateweather-pref.c:943
 msgid "_Wind speed unit:"
 msgstr "_Ventrapideca unuo:"
 
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:883
+#: ../mateweather/mateweather-pref.c:954
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:956
 msgid "km/h"
 msgstr "km/h"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:958
 msgid "mph"
 msgstr "mejloj/h"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:960
 msgid "knots"
 msgstr "nodoj"
 
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:961
 msgid "Beaufort scale"
 msgstr "Boforta skalo"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:898
+#: ../mateweather/mateweather-pref.c:970
 msgid "_Pressure unit:"
 msgstr "Aer_prema unuo:"
 
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:909
+#: ../mateweather/mateweather-pref.c:981
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:911
+#: ../mateweather/mateweather-pref.c:983
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:913
+#: ../mateweather/mateweather-pref.c:985
 msgid "mb"
 msgstr "mbar"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:915
+#: ../mateweather/mateweather-pref.c:987
 msgid "mmHg"
 msgstr "mmHg"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:917
+#: ../mateweather/mateweather-pref.c:989
 msgid "inHg"
 msgstr "coloj Hg"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:991
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:926
+#: ../mateweather/mateweather-pref.c:1000
 msgid "_Visibility unit:"
 msgstr "_Videbleca unuo:"
 
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:937
+#: ../mateweather/mateweather-pref.c:1011
 msgid "meters"
 msgstr "metroj"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:939
+#: ../mateweather/mateweather-pref.c:1013
 msgid "km"
 msgstr "km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:941
+#: ../mateweather/mateweather-pref.c:1015
 msgid "miles"
 msgstr "mejloj"
 
-#: ../mateweather/mateweather-pref.c:975
+#: ../mateweather/mateweather-pref.c:1041
 msgid "Enable _radar map"
 msgstr "Ŝaltu _radaran mapon"
 
-#: ../mateweather/mateweather-pref.c:989
+#: ../mateweather/mateweather-pref.c:1057
 msgid "Use _custom address for radar map"
 msgstr "Uzu _propran adreson por radara mapo"
 
-#: ../mateweather/mateweather-pref.c:1006
+#: ../mateweather/mateweather-pref.c:1075
 msgid "A_ddress:"
 msgstr "A_dreso:"
 
-#: ../mateweather/mateweather-pref.c:1020
+#: ../mateweather/mateweather-pref.c:1088
 msgid "Update"
 msgstr "Ĝisdatigu"
 
-#: ../mateweather/mateweather-pref.c:1044
+#: ../mateweather/mateweather-pref.c:1111
 msgid "minutes"
 msgstr "minutoj"
 
-#: ../mateweather/mateweather-pref.c:1060
+#: ../mateweather/mateweather-pref.c:1129
 msgid "Display"
 msgstr "Vidigo"
 
-#: ../mateweather/mateweather-pref.c:1075
-#: ../mini-commander/src/mini-commander.ui.h:9
+#: ../mateweather/mateweather-pref.c:1143
+#: ../mini-commander/src/mini-commander.ui.h:12
 msgid "General"
 msgstr "Ĝenerale"
 
-#: ../mateweather/mateweather-pref.c:1088
+#: ../mateweather/mateweather-pref.c:1154
 msgid "_Select a location:"
 msgstr "Elektu situon:"
 
-#: ../mateweather/mateweather-pref.c:1113
+#: ../mateweather/mateweather-pref.c:1176
 msgid "_Find:"
 msgstr "_Serĉu:"
 
-#: ../mateweather/mateweather-pref.c:1120
+#: ../mateweather/mateweather-pref.c:1182
 msgid "Find _Next"
 msgstr "Serĉu sekva_n"
 
-#: ../mateweather/mateweather-pref.c:1142
+#: ../mateweather/mateweather-pref.c:1203
 msgid "Location"
 msgstr "Situo"
+
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
+msgid "Mateweather Applet Factory"
+msgstr ""
+
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
+msgid "Factory for creating the weather applet."
+msgstr "Fabrikejo por krei la veteran aplikaĵeton."
+
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
+msgid "Monitor the current weather conditions, and forecasts"
+msgstr "Monitoru la aktualajn veterstaton, kaj prognozojn"
 
 #: ../invest-applet/data/Invest_Applet.server.in.in.h:1
 #: ../invest-applet/invest/about.py:17
@@ -1857,192 +1208,229 @@ msgstr "Investo"
 msgid "Track your invested money."
 msgstr "Ĝisŝpuru vian investitan monon."
 
-#: ../invest-applet/data/Invest_Applet.xml.h:3
+#: ../invest-applet/data/Invest_Applet.xml.h:1
 msgid "_Refresh"
 msgstr "_Aktualigu"
 
 #: ../invest-applet/data/financialchart.ui.h:1
-msgid "1 Year"
-msgstr "1 jaro"
+msgid "Today"
+msgstr "Hodiaŭ"
 
 #: ../invest-applet/data/financialchart.ui.h:2
-msgid "10"
-msgstr "10"
-
-#: ../invest-applet/data/financialchart.ui.h:3
-msgid "100"
-msgstr "100"
-
-#: ../invest-applet/data/financialchart.ui.h:4
-msgid "20"
-msgstr "20"
-
-#: ../invest-applet/data/financialchart.ui.h:5
-msgid "200"
-msgstr "200"
-
-#: ../invest-applet/data/financialchart.ui.h:6
-msgid "3 Months"
-msgstr "3 monatoj"
-
-#: ../invest-applet/data/financialchart.ui.h:7
-msgid "5"
-msgstr "5"
-
-#: ../invest-applet/data/financialchart.ui.h:8
 msgid "5 Days"
 msgstr "5 tagoj"
 
-#: ../invest-applet/data/financialchart.ui.h:9
-msgid "5 Years"
-msgstr "5 jaroj"
+#: ../invest-applet/data/financialchart.ui.h:3
+msgid "3 Months"
+msgstr "3 monatoj"
 
-#: ../invest-applet/data/financialchart.ui.h:10
-msgid "50"
-msgstr "50"
-
-#: ../invest-applet/data/financialchart.ui.h:11
+#: ../invest-applet/data/financialchart.ui.h:4
 msgid "6 Months"
 msgstr "6 monatoj"
 
-#: ../invest-applet/data/financialchart.ui.h:12
+#: ../invest-applet/data/financialchart.ui.h:5
+msgid "1 Year"
+msgstr "1 jaro"
+
+#: ../invest-applet/data/financialchart.ui.h:6
+msgid "5 Years"
+msgstr "5 jaroj"
+
+#: ../invest-applet/data/financialchart.ui.h:7
+msgid "Maximum"
+msgstr "Maksimumo"
+
+#: ../invest-applet/data/financialchart.ui.h:8
+#: ../invest-applet/invest/chart.py:107
+msgid "Financial Chart"
+msgstr "Financa diagramo"
+
+#: ../invest-applet/data/financialchart.ui.h:9
+msgid "_Ticker symbol: "
+msgstr "_Telegrafa simbolo: "
+
+#: ../invest-applet/data/financialchart.ui.h:10
 msgid "Auto _refresh"
 msgstr "Aŭtomata _aktualigo"
 
+#: ../invest-applet/data/financialchart.ui.h:11
+msgid "_Graph style: "
+msgstr "_Grafika stilo: "
+
+#. see http://biz.yahoo.com/charts/guide11.html and
+#. http://en.wikipedia.org/wiki/Moving_average
 #: ../invest-applet/data/financialchart.ui.h:13
-msgid "Bollinger"
-msgstr "Bollinger"
+msgid "Moving average: "
+msgstr "Movanta meznombro: "
 
-#: ../invest-applet/data/financialchart.ui.h:14
-msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "Elŝutado de diagramo de <b>Yahoo!</b>"
-
+#. see http://biz.yahoo.com/charts/guide12.html and
+#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
 #: ../invest-applet/data/financialchart.ui.h:15
 msgid "Exponential moving average: "
 msgstr "Eksponenciale movanta meznombro: "
 
 #: ../invest-applet/data/financialchart.ui.h:16
-msgid "Fast stoch"
-msgstr "Rapida stokasto"
+msgid "5"
+msgstr "5"
 
 #: ../invest-applet/data/financialchart.ui.h:17
-#: ../invest-applet/invest/chart.py:107
-msgid "Financial Chart"
-msgstr "Financa diagramo"
+msgid "10"
+msgstr "10"
 
 #: ../invest-applet/data/financialchart.ui.h:18
-msgid "Indicators: "
-msgstr "Indikiloj: "
+msgid "20"
+msgstr "20"
 
 #: ../invest-applet/data/financialchart.ui.h:19
-msgid "MACD"
-msgstr "MACD"
+msgid "50"
+msgstr "50"
 
 #: ../invest-applet/data/financialchart.ui.h:20
-msgid "MFI"
-msgstr "MFI"
+msgid "100"
+msgstr "100"
 
 #: ../invest-applet/data/financialchart.ui.h:21
-msgid "Maximum"
-msgstr "Maksimumo"
+msgid "200"
+msgstr "200"
 
-#: ../invest-applet/data/financialchart.ui.h:22
-msgid "Moving average: "
-msgstr "Movanta meznombro: "
-
+#. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
 #: ../invest-applet/data/financialchart.ui.h:23
 msgid "Overlays: "
 msgstr "Supertavoloj: "
 
-#: ../invest-applet/data/financialchart.ui.h:24
-msgid "ROC"
-msgstr "ROC"
-
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide13.html and
+#. http://en.wikipedia.org/wiki/Bollinger_bands
 #: ../invest-applet/data/financialchart.ui.h:25
-msgid "RSI"
-msgstr "RSI"
+msgid "Bollinger"
+msgstr "Bollinger"
 
-#: ../invest-applet/data/financialchart.ui.h:26
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide16.html and
+#. http://en.wikipedia.org/wiki/Parabolic_SAR
+#: ../invest-applet/data/financialchart.ui.h:27
 msgid "SAR"
 msgstr "SAR"
 
-#: ../invest-applet/data/financialchart.ui.h:27
-msgid "Slow stoch"
-msgstr "Malrapida stokasto"
-
-#: ../invest-applet/data/financialchart.ui.h:28
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide6.html and
+#. http://en.wikipedia.org/wiki/Stock_split
+#: ../invest-applet/data/financialchart.ui.h:29
 msgid "Splits"
 msgstr "Disigoj"
 
-#: ../invest-applet/data/financialchart.ui.h:29
-msgid "Today"
-msgstr "Hodiaŭ"
-
-#: ../invest-applet/data/financialchart.ui.h:30
-msgid "Vol"
-msgstr "Vol"
-
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide20.html and
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
 #: ../invest-applet/data/financialchart.ui.h:31
-msgid "Vol+MA"
-msgstr "Vol+MA"
-
-#: ../invest-applet/data/financialchart.ui.h:32
 msgid "Volumes"
 msgstr "Volumoj"
 
-#: ../invest-applet/data/financialchart.ui.h:34
+#. see http://biz.yahoo.com/charts/guide10.html and
+#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
+#: ../invest-applet/data/financialchart.ui.h:33
+msgid "Indicators: "
+msgstr "Indikiloj: "
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Relative_Strength_Index
+#: ../invest-applet/data/financialchart.ui.h:35
+msgid "RSI"
+msgstr "RSI"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
+#: ../invest-applet/data/financialchart.ui.h:37
+msgid "Vol"
+msgstr "Vol"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Money_flow_index
+#: ../invest-applet/data/financialchart.ui.h:39
+msgid "MFI"
+msgstr "MFI"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Stochastic_oscillator
+#: ../invest-applet/data/financialchart.ui.h:41
+msgid "Slow stoch"
+msgstr "Malrapida stokasto"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
+#: ../invest-applet/data/financialchart.ui.h:43
+msgid "Vol+MA"
+msgstr "Vol+MA"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
+#: ../invest-applet/data/financialchart.ui.h:45
+msgid "ROC"
+msgstr "ROC"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Stochastic_oscillator
+#: ../invest-applet/data/financialchart.ui.h:47
+msgid "Fast stoch"
+msgstr "Rapida stokasto"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Williams_%25R
+#: ../invest-applet/data/financialchart.ui.h:50
 #, no-c-format
 msgid "W%R"
 msgstr "V%R"
 
-#: ../invest-applet/data/financialchart.ui.h:35
-msgid "_Graph style: "
-msgstr "_Grafika stilo: "
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/MACD
+#: ../invest-applet/data/financialchart.ui.h:52
+msgid "MACD"
+msgstr "MACD"
 
-#: ../invest-applet/data/financialchart.ui.h:36
+#: ../invest-applet/data/financialchart.ui.h:53
 msgid "_Options"
 msgstr "_Opcioj"
 
-#: ../invest-applet/data/financialchart.ui.h:37
-msgid "_Ticker symbol: "
-msgstr "_Telegrafa simbolo: "
+#: ../invest-applet/data/financialchart.ui.h:54
+msgid "Downloading chart from <b>Yahoo!</b>"
+msgstr "Elŝutado de diagramo de <b>Yahoo!</b>"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:1
-msgid ""
-"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
-"<b>Source: </b> Yahoo!</small></i>"
-msgstr ""
-"<i><small><b>Notu:</b> Kvotoj estas prokrastataj dum minimume 15 minutoj.\n"
-"<b>Fonto: </b> Yahoo!</small></i>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:3
 msgid "Invest Preferences"
 msgstr "Investaj preferoj"
 
-#: ../invest-applet/data/prefs-dialog.ui.h:4
-msgid "Stocks"
-msgstr "Stokoj"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:5
+#: ../invest-applet/data/prefs-dialog.ui.h:2
 msgid "label"
 msgstr "etikedo"
 
+#: ../invest-applet/data/prefs-dialog.ui.h:3
+msgid "Stocks"
+msgstr "Stokoj"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:4
+msgid ""
+"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
+"<b>Source: </b> Yahoo!</small></i>"
+msgstr "<i><small><b>Notu:</b> Kvotoj estas prokrastataj dum minimume 15 minutoj.\n<b>Fonto: </b> Yahoo!</small></i>"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:6
+msgid "Currency"
+msgstr ""
+
 #. a) We aren't configured yet
-#: ../invest-applet/invest/applet.py:49
+#: ../invest-applet/invest/applet.py:50
 msgid "<b>You have not entered any stock information yet</b>"
 msgstr "<b>Vi neniam enigis informojn pri akcioj.</b>"
 
-#: ../invest-applet/invest/applet.py:54
+#: ../invest-applet/invest/applet.py:55
 msgid "<b>No stock quotes are currently available</b>"
 msgstr "<b>Nun ne disponeblas akciaj informoj.</b>"
 
-#: ../invest-applet/invest/applet.py:55
+#: ../invest-applet/invest/applet.py:56
 msgid ""
 "The server could not be contacted. The computer is either offline or the "
 "servers are down. Try again later."
-msgstr ""
-"Ne eblis kontakto al la servilo. Eble vi ne havas ret-konekton aŭ la servilo "
-"ne estas alirebla. Bonvolu reprovi aliam."
+msgstr "Ne eblis kontakto al la servilo. Eble vi ne havas ret-konekton aŭ la servilo ne estas alirebla. Bonvolu reprovi aliam."
 
 #: ../invest-applet/invest/chart.py:156
 #, python-format
@@ -2065,72 +1453,85 @@ msgstr "Ne eblis deŝuti la diagramon."
 msgid "Invest Applet"
 msgstr "Investa aplikaĵeto"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Symbol"
 msgstr "Simbolo"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Label"
 msgstr "Etikedo"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Amount"
 msgstr "Kvanto"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Price"
 msgstr "Prezo"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Commission"
 msgstr "Komisipago"
 
-#: ../invest-applet/invest/quotes.py:120
+#: ../invest-applet/invest/preferences.py:31
+msgid "Currency Rate"
+msgstr ""
+
+#: ../invest-applet/invest/quotes.py:131
 msgid "Invest could not connect to Yahoo! Finance"
 msgstr "Investo ne povis konekti al Yahoo!Finance"
 
-#: ../invest-applet/invest/quotes.py:122 ../invest-applet/invest/quotes.py:135
+#. Translators: %s is an hour (%H:%M)
+#: ../invest-applet/invest/quotes.py:134 ../invest-applet/invest/quotes.py:163
 #, python-format
 msgid "Updated at %s"
 msgstr "Aktualigita je %s."
 
-#. Translators: This is share-market jargon. It is the percentage change in the price of a stock. The %% gets changed to a single percent sign and the %+.2f gets replaced with the value of the change.
-#: ../invest-applet/invest/quotes.py:131
+#. Translators: This is share-market jargon. It is the average percentage
+#. change of all stock prices. The %s gets replaced with the string value of
+#. the change (localized), including the percent sign.
+#: ../invest-applet/invest/quotes.py:153
 #, python-format
-msgid "Quotes average change %%: %+.2f%%"
-msgstr "Kvotavaraĝa ŝanĝo %%: %+.2f%%"
+msgid "Average change: %s"
+msgstr ""
 
-#. Translators: This is share-market jargon. It refers to the total difference between the current price and purchase price for all the shares put together. i.e. How much money would be earned if they were sold right now.
-#: ../invest-applet/invest/quotes.py:134
+#. Translators: This is share-market jargon. It refers to the total difference
+#. between the current price and purchase price for all the shares put
+#. together for a particular currency. i.e. How much money would be earned if
+#. they were sold right now. The first string is the change value, the second
+#. the currency, and the third value is the percentage of the change,
+#. formatted using user's locale.
+#: ../invest-applet/invest/quotes.py:162
 #, python-format
-msgid "Positions balance: %+.2f"
-msgstr "Pozicia balanco: %+.2f"
+msgid "Positions balance: %s %s (%s)"
+msgstr ""
 
-#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE, VARIATION_PCT, PB
+#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
+#. VARIATION_PCT, PB
 #. Translators: these words all refer to a stock. Last is short
 #. for "last price". Gain is referring to the gain since the
 #. stock was purchased.
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Ticker"
 msgstr "Rulumado de teksto"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Last"
 msgstr "Lasta"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Change %"
 msgstr "Ŝanĝo %s"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Chart"
 msgstr "Diagramo"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Gain"
 msgstr "Gajno"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Gain %"
 msgstr "Gajno %s"
 
@@ -2142,26 +1543,11 @@ msgstr "Oficbendo (eks Komandanteto)"
 msgid "Deskbar (transparent upgrade from Mini-Commander)"
 msgstr "Tabullistelo (travidebla ĝisdatigo de Mini-Komandanto)"
 
-#: ../mini-commander/src/MATE_MiniCommanderApplet.server.in.in.h:1
-#: ../mini-commander/src/mini-commander_applet.c:355
-msgid "Command Line"
-msgstr "Komandlinio"
-
-#: ../mini-commander/src/MATE_MiniCommanderApplet.server.in.in.h:2
-msgid "Mini-Commander"
-msgstr "Mini-Komandanto"
-
-#: ../mini-commander/src/MATE_MiniCommanderApplet.server.in.in.h:3
-msgid "MiniCommander Applet Factory"
-msgstr "MiniKomandanta aplikaĵeta fabrikejo"
-
-#: ../mini-commander/src/about.c:49
+#: ../mini-commander/src/about.c:48
 msgid ""
 "This MATE applet adds a command line to the panel. It features command "
 "completion, command history, and changeable macros."
-msgstr ""
-"Ĉi tiu GNOMA aplikaĵeto aldonas komandlinion al la panelo. Ĝiaj trajtoj "
-"inkludas komandkompletigon, komandhistorion, kaj ŝanĝeblajn makroojn."
+msgstr "Ĉi tiu GNOMA aplikaĵeto aldonas komandlinion al la panelo. Ĝiaj trajtoj inkludas komandkompletigon, komandhistorion, kaj ŝanĝeblajn makroojn."
 
 #: ../mini-commander/src/command_line.c:345
 msgid "No items in history"
@@ -2197,9 +1583,9 @@ msgstr "Agordu implicitan listvaloron por %s\n"
 
 #: ../mini-commander/src/mc-install-default-macros.c:129
 #, c-format
-msgid "MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL is set, not installing schemas\n"
-msgstr ""
-"MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL estas agordata, ne instalante skemojn\n"
+msgid ""
+"MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL is set, not installing schemas\n"
+msgstr "MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL estas agordata, ne instalante skemojn\n"
 
 #: ../mini-commander/src/mc-install-default-macros.c:137
 #, c-format
@@ -2217,240 +1603,247 @@ msgid "Error syncing config data: %s"
 msgstr "Eraro dum sinkronigado de datumoj: %s"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:1
-msgid "List of MateConfValue entries containing strings for the macro commands."
-msgstr ""
-"Listo de elementoj de MateConfValue enhavantaj tekstojn por la makrokomandoj."
+#: ../mini-commander/src/mini-commander.schemas.in.h:26
+msgid "Macro pattern list"
+msgstr "Makroŝablona listo"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:2
-msgid "List of MateConfValue entries containing strings for the macro patterns."
-msgstr ""
-"Listo de elementoj de MateConfValue enhavantaj tekstojn por la makroŝablonojn."
+msgid ""
+"List of MateConfValue entries containing strings for the macro patterns."
+msgstr "Listo de elementoj de MateConfValue enhavantaj tekstojn por la makroŝablonojn."
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:3
-#: ../mini-commander/src/mini-commander.schemas.in.h:10
+#: ../mini-commander/src/mini-commander.schemas.in.h:28
 msgid "Macro command list"
 msgstr "Makrokomanda listo"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:4
-#: ../mini-commander/src/mini-commander.schemas.in.h:11
-msgid "Macro pattern list"
-msgstr "Makroŝablona listo"
+msgid ""
+"List of MateConfValue entries containing strings for the macro commands."
+msgstr "Listo de elementoj de MateConfValue enhavantaj tekstojn por la makrokomandoj."
 
 #: ../mini-commander/src/mini-commander.ui.h:1
-msgid "Add New Macro"
-msgstr "Aldonu novan makroon"
+msgid "Command Line Preferences"
+msgstr "Komandliniaj preferoj"
 
 #: ../mini-commander/src/mini-commander.ui.h:2
 msgid "Auto Completion"
 msgstr "Aŭtomata plenumigo"
 
 #: ../mini-commander/src/mini-commander.ui.h:3
-msgid "Co_mmand:"
-msgstr "Ko_mando:"
-
-#: ../mini-commander/src/mini-commander.ui.h:4 ../multiload/properties.c:571
-msgid "Colors"
-msgstr "Koloroj"
-
-#: ../mini-commander/src/mini-commander.ui.h:5
-msgid "Command Line Preferences"
-msgstr "Komandliniaj preferoj"
-
-#: ../mini-commander/src/mini-commander.ui.h:6
-msgid "Command line _background:"
-msgstr "Komandlinia _fono:"
-
-#: ../mini-commander/src/mini-commander.ui.h:7
-msgid "Command line _foreground:"
-msgstr "Komandlinia _antaŭa plano:"
-
-#: ../mini-commander/src/mini-commander.ui.h:8
 msgid "E_nable history-based auto completion"
 msgstr "Ŝaltu aŭtomatan kompletigon bazitan sur historio"
 
+#: ../mini-commander/src/mini-commander.ui.h:4
+msgid "Size"
+msgstr "Grando"
+
+#: ../mini-commander/src/mini-commander.ui.h:5
+#: ../stickynotes/stickynotes.ui.h:19
+msgid "_Width:"
+msgstr "_Larĝo:"
+
+#: ../mini-commander/src/mini-commander.ui.h:6 ../multiload/properties.c:526
+msgid "pixels"
+msgstr "bilderoj"
+
+#: ../mini-commander/src/mini-commander.ui.h:7 ../multiload/properties.c:571
+msgid "Colors"
+msgstr "Koloroj"
+
+#: ../mini-commander/src/mini-commander.ui.h:8
+msgid "_Use default theme colors"
+msgstr "_Uzu implicitajn etosajn kolorojn"
+
+#: ../mini-commander/src/mini-commander.ui.h:9
+msgid "Command line _foreground:"
+msgstr "Komandlinia _antaŭa plano:"
+
 #: ../mini-commander/src/mini-commander.ui.h:10
-msgid "Macros"
-msgstr "Makrooj"
+msgid "Command line _background:"
+msgstr "Komandlinia _fono:"
 
 #: ../mini-commander/src/mini-commander.ui.h:11
 msgid "Pick a color"
 msgstr "Elektu koloron"
 
-#: ../mini-commander/src/mini-commander.ui.h:12
-msgid "Size"
-msgstr "Grando"
-
 #: ../mini-commander/src/mini-commander.ui.h:13
-msgid "_Add Macro..."
-msgstr "_Aldonu makroon..."
-
-#: ../mini-commander/src/mini-commander.ui.h:14
-msgid "_Delete Macro"
-msgstr "_Forigu makroon"
-
-#: ../mini-commander/src/mini-commander.ui.h:15
 msgid "_Macros:"
 msgstr "_Makrooj:"
 
+#: ../mini-commander/src/mini-commander.ui.h:14
+msgid "_Add Macro..."
+msgstr "_Aldonu makroon..."
+
+#: ../mini-commander/src/mini-commander.ui.h:15
+msgid "_Delete Macro"
+msgstr "_Forigu makroon"
+
 #: ../mini-commander/src/mini-commander.ui.h:16
+msgid "Macros"
+msgstr "Makrooj"
+
+#: ../mini-commander/src/mini-commander.ui.h:17
+msgid "Add New Macro"
+msgstr "Aldonu novan makroon"
+
+#: ../mini-commander/src/mini-commander.ui.h:18
 msgid "_Pattern:"
 msgstr "Ŝa_blono:"
 
-#: ../mini-commander/src/mini-commander.ui.h:17
-msgid "_Use default theme colors"
-msgstr "_Uzu implicitajn etosajn kolorojn"
-
-#: ../mini-commander/src/mini-commander.ui.h:18
-#: ../stickynotes/stickynotes.ui.h:40
-msgid "_Width:"
-msgstr "_Larĝo:"
-
-#: ../mini-commander/src/mini-commander.ui.h:19 ../multiload/properties.c:526
-msgid "pixels"
-msgstr "bilderoj"
+#: ../mini-commander/src/mini-commander.ui.h:19
+msgid "Co_mmand:"
+msgstr "Ko_mando:"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:1
-msgid "Attempt to autocomplete a command from the history of commands entered."
-msgstr ""
-"Klopodo por aŭtomate kompletigi komandon el la historio de komandoj "
-"entajpitaj."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:2
-msgid "Background color, blue component"
-msgstr "Fona koloro, blua komponanto"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:3
-msgid "Background color, green component"
-msgstr "Fona koloro, verda komponanto"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:4
-msgid "Background color, red component"
-msgstr "Fona koloro, ruĝa komponanto"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:5
-msgid "Foreground color, blue component"
-msgstr "Antaŭplana koloro, blua komponanto"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:6
-msgid "Foreground color, green component"
-msgstr "Antaŭplana koloro, verda komponanto"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:7
-msgid "Foreground color, red component"
-msgstr "Antaŭplana koloro, ruĝa komponanto"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:8
-msgid "History list"
-msgstr "Historia listo"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:9
-msgid "List of MateConfValue entries containing strings for history entries."
-msgstr ""
-"Listo de MateConfValue elementoj enhavantaj tekstoj por historiaj elementoj."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:12
-msgid "Not used anymore"
-msgstr "Ne plu uzata"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:13
-msgid "Perform history autocompletion"
-msgstr "Plenumu historian aŭtomatan kompletigon"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:14
-msgid "Show a frame surrounding the applet."
-msgstr "Montru kadron ĉirkaŭantan la aplikaĵeton."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:15
-msgid "Show a handle so the applet can be detached from the panel."
-msgstr ""
-"Montru dosiernumeron tiel ke la aplikaĵeto povas esti malkonektata de la "
-"panelo."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:16
-msgid "Show frame"
-msgstr "Montru kadron"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:17
 msgid "Show handle"
 msgstr "Montru dosiernumeron"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:18
-msgid "The blue component of the background color."
-msgstr "La blua komponanto de la fona koloro."
+#: ../mini-commander/src/mini-commander.schemas.in.h:2
+msgid "Show a handle so the applet can be detached from the panel."
+msgstr "Montru dosiernumeron tiel ke la aplikaĵeto povas esti malkonektata de la panelo."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:19
-msgid "The blue component of the foreground color."
-msgstr "La blua komponanto de la antaŭplana koloro."
+#: ../mini-commander/src/mini-commander.schemas.in.h:3
+msgid "Show frame"
+msgstr "Montru kadron"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:20
-msgid "The green component of the background color."
-msgstr "La verda komponanto de la fona koloro."
+#: ../mini-commander/src/mini-commander.schemas.in.h:4
+msgid "Show a frame surrounding the applet."
+msgstr "Montru kadron ĉirkaŭantan la aplikaĵeton."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:21
-msgid "The green component of the foreground color."
-msgstr "La verda komponanto de la antaŭplana koloro."
+#: ../mini-commander/src/mini-commander.schemas.in.h:5
+msgid "Perform history autocompletion"
+msgstr "Plenumu historian aŭtomatan kompletigon"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:22
-msgid "The red component of the background color."
-msgstr "La ruĝa komponanto de la fona koloro."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:23
-msgid "The red component of the foreground color."
-msgstr "La ruĝa komponanto de la antaŭplana koloro."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:24
+#: ../mini-commander/src/mini-commander.schemas.in.h:6
 msgid ""
-"This per-applet key is deprecated in favour of the global key, /schemas/apps/"
-"mini-commander-global/macro_patterns."
-msgstr ""
-"Ĉi tiu po-aplikaĵeta ŝlosilo estas malrekomendata favore al la ĝenerala "
-"ŝlosilo, /schemas/apps/mini-commander-global/macro_patterns."
+"Attempt to autocomplete a command from the history of commands entered."
+msgstr "Klopodo por aŭtomate kompletigi komandon el la historio de komandoj entajpitaj."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:25
-msgid "Use the default theme colors"
-msgstr "Uzu la kolorojn de la implicita etoso"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:26
-msgid "Use theme colors instead of custom ones."
-msgstr "Uzu etosajn kolorojn anstataŭ iuj propraj."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:27
+#: ../mini-commander/src/mini-commander.schemas.in.h:7
 msgid "Width"
 msgstr "Larĝo"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:28
+#: ../mini-commander/src/mini-commander.schemas.in.h:8
 msgid "Width of the applet"
 msgstr "Larĝo de la aplikaĵeto"
 
-#: ../mini-commander/src/mini-commander_applet.c:238
+#: ../mini-commander/src/mini-commander.schemas.in.h:9
+msgid "Not used anymore"
+msgstr "Ne plu uzata"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:10
+msgid "Use the default theme colors"
+msgstr "Uzu la kolorojn de la implicita etoso"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:11
+msgid "Use theme colors instead of custom ones."
+msgstr "Uzu etosajn kolorojn anstataŭ iuj propraj."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:12
+msgid "Foreground color, red component"
+msgstr "Antaŭplana koloro, ruĝa komponanto"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:13
+msgid "The red component of the foreground color."
+msgstr "La ruĝa komponanto de la antaŭplana koloro."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:14
+msgid "Foreground color, green component"
+msgstr "Antaŭplana koloro, verda komponanto"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:15
+msgid "The green component of the foreground color."
+msgstr "La verda komponanto de la antaŭplana koloro."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:16
+msgid "Foreground color, blue component"
+msgstr "Antaŭplana koloro, blua komponanto"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:17
+msgid "The blue component of the foreground color."
+msgstr "La blua komponanto de la antaŭplana koloro."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:18
+msgid "Background color, red component"
+msgstr "Fona koloro, ruĝa komponanto"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:19
+msgid "The red component of the background color."
+msgstr "La ruĝa komponanto de la fona koloro."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:20
+msgid "Background color, green component"
+msgstr "Fona koloro, verda komponanto"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:21
+msgid "The green component of the background color."
+msgstr "La verda komponanto de la fona koloro."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:22
+msgid "Background color, blue component"
+msgstr "Fona koloro, blua komponanto"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:23
+msgid "The blue component of the background color."
+msgstr "La blua komponanto de la fona koloro."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:24
+msgid "History list"
+msgstr "Historia listo"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:25
+msgid "List of MateConfValue entries containing strings for history entries."
+msgstr "Listo de MateConfValue elementoj enhavantaj tekstoj por historiaj elementoj."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:27
+msgid ""
+"This per-applet key is deprecated in favour of the global key, /schemas/apps"
+"/mini-commander-global/macro_patterns."
+msgstr "Ĉi tiu po-aplikaĵeta ŝlosilo estas malrekomendata favore al la ĝenerala ŝlosilo, /schemas/apps/mini-commander-global/macro_patterns."
+
 #: ../mini-commander/src/mini-commander_applet.c:242
+#: ../mini-commander/src/mini-commander_applet.c:246
 msgid "Browser"
 msgstr "Foliumilo"
 
-#: ../mini-commander/src/mini-commander_applet.c:243
+#: ../mini-commander/src/mini-commander_applet.c:247
 msgid "Click this button to start the browser"
 msgstr "Alklaku ĉi tiun butonon por lanĉi la foliumilon"
 
-#: ../mini-commander/src/mini-commander_applet.c:256
 #: ../mini-commander/src/mini-commander_applet.c:260
+#: ../mini-commander/src/mini-commander_applet.c:264
 msgid "History"
 msgstr "Historio"
 
-#: ../mini-commander/src/mini-commander_applet.c:261
+#: ../mini-commander/src/mini-commander_applet.c:265
 msgid "Click this button for the list of previous commands"
 msgstr "Alklaku ĉi tiun butonon por la listo de antaŭaj komandoj"
 
-#: ../mini-commander/src/mini-commander_applet.c:340
+#: ../mini-commander/src/mini-commander_applet.c:346
 msgid "Command line has been disabled by your system administrator"
 msgstr "Komandlinio estas elŝaltita de via sistemadministranto"
 
-#: ../mini-commander/src/mini-commander_applet.c:402
+#: ../mini-commander/src/mini-commander_applet.c:361
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:2
+msgid "Command Line"
+msgstr "Komandlinio"
+
+#: ../mini-commander/src/mini-commander_applet.c:407
 msgid "Mini-Commander applet"
 msgstr "Mini-Komdanta aplikaĵeto"
 
-#: ../mini-commander/src/mini-commander_applet.c:403
+#: ../mini-commander/src/mini-commander_applet.c:408
 msgid "This applet adds a command line to the panel"
 msgstr "Ĉi tiu aplikaĵeto aldonas komandlinion al la panelo"
+
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:1
+msgid "MiniCommander Applet Factory"
+msgstr "MiniKomandanta aplikaĵeta fabrikejo"
+
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:3
+msgid "Mini-Commander"
+msgstr "Mini-Komandanto"
 
 #: ../mini-commander/src/preferences.c:401
 msgid "You must specify a pattern"
@@ -2476,55 +1869,43 @@ msgstr "Ŝablono"
 msgid "Command"
 msgstr "Komando"
 
-#: ../mixer/MATE_MixerApplet.server.in.in.h:1
-#: ../null_applet/MATE_MixerApplet.server.in.h:1
-msgid "Adjust the sound volume"
-msgstr "Alĝustigu la sonan laŭtecon"
+#: ../mixer/applet.c:184
+msgid "Volume Applet"
+msgstr "Laŭteca aplikaĵeto"
 
 #. tooltip over applet
-#: ../mixer/MATE_MixerApplet.server.in.in.h:2 ../mixer/applet.c:206
-#: ../mixer/applet.c:227 ../null_applet/null_applet.c:44
+#: ../mixer/applet.c:200 ../mixer/applet.c:221 ../null_applet/null_applet.c:44
 #: ../null_applet/null_applet.c:46
 msgid "Volume Control"
 msgstr "Laŭteca regilo"
 
-#: ../mixer/MATE_MixerApplet.xml.h:1
-msgid "Mu_te"
-msgstr "Mu_ta"
-
-#: ../mixer/MATE_MixerApplet.xml.h:4
+#: ../mixer/applet.c:384
 msgid "_Open Volume Control"
 msgstr "_Malfermu laŭtecan regilon"
 
-#: ../mixer/applet.c:190
-msgid "Volume Applet"
-msgstr "Laŭteca aplikaĵeto"
+#: ../mixer/applet.c:398
+msgid "Mu_te"
+msgstr "Mu_ta"
 
-#: ../mixer/applet.c:545
+#: ../mixer/applet.c:564
 msgid ""
-"The volume control did not find any elements and/or devices to control. This "
-"means either that you don't have the right GStreamer plugins installed, or "
+"The volume control did not find any elements and/or devices to control. This"
+" means either that you don't have the right GStreamer plugins installed, or "
 "that you don't have a sound card configured."
-msgstr ""
-"La laŭteca regilo ne trovis iujn elementojn kaj/aŭ aparatojn por regi. Ĉi "
-"tio signifas ĉu ke vi ne havas la ĝustajn instalitajn GStreamer-kromaĵojn, "
-"ĉu ke vi ne havas konfiguritan sonkarton."
+msgstr "La laŭteca regilo ne trovis iujn elementojn kaj/aŭ aparatojn por regi. Ĉi tio signifas ĉu ke vi ne havas la ĝustajn instalitajn GStreamer-kromaĵojn, ĉu ke vi ne havas konfiguritan sonkarton."
 
-#: ../mixer/applet.c:549
+#: ../mixer/applet.c:568
 msgid ""
 "You can remove the volume control from the panel by right-clicking the "
 "speaker icon on the panel and selecting \"Remove From Panel\" from the menu."
-msgstr ""
-"Vi povas forigi la laŭtecan regilon el la panelo per dekstra alklakado sur "
-"la laŭtparolila piktogramo de la panelo kaj elektado de \"Forigu el panelo\" "
-"el la menuo."
+msgstr "Vi povas forigi la laŭtecan regilon el la panelo per dekstra alklakado sur la laŭtparolila piktogramo de la panelo kaj elektado de \"Forigu el panelo\" el la menuo."
 
-#: ../mixer/applet.c:721
+#: ../mixer/applet.c:754
 #, c-format
 msgid "Failed to start Volume Control: %s"
 msgstr "Malsukcesis lanĉi laŭtecan regilon: %s"
 
-#: ../mixer/applet.c:1171
+#: ../mixer/applet.c:1203
 #, c-format
 msgid "%s: muted"
 msgstr "%s: muta"
@@ -2533,21 +1914,21 @@ msgstr "%s: muta"
 #. * to mark as a translation, but anyway. The string is a list of
 #. * selected tracks, the number is the volume in percent. You
 #. * most likely want to keep this as-is.
-#: ../mixer/applet.c:1177
+#: ../mixer/applet.c:1209
 #, c-format
 msgid "%s: %d%%"
 msgstr "%s: %d%%"
 
-#: ../mixer/applet.c:1415
+#: ../mixer/applet.c:1445
 #, c-format
 msgid "Failed to display help: %s"
 msgstr "Malsukcesis vidigi helpon: %s"
 
-#: ../mixer/applet.c:1428
+#: ../mixer/applet.c:1458
 msgid "Volume control for your MATE Panel."
 msgstr "Laŭteca regilo por via GNOMA panelo."
 
-#: ../mixer/applet.c:1429
+#: ../mixer/applet.c:1459
 msgid "Using GStreamer 0.10."
 msgstr "Uzante GStreamer 0.10."
 
@@ -2585,198 +1966,169 @@ msgstr "Preferoj de laŭteca regilo"
 msgid "Select the device and track to control."
 msgstr "Elektu la disponaĵon kaj ŝpuron por regi."
 
-#: ../modemlights/MATE_ModemLights.server.in.in.h:1
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Aktivigu kaj monitoru komutebla reta konekto"
-
-#: ../modemlights/MATE_ModemLights.server.in.in.h:2
-#: ../modemlights/modem-applet.c:178
-msgid "Modem Monitor"
-msgstr "Modema monitoro"
-
-#: ../modemlights/MATE_ModemLights.xml.h:2
+#: ../modemlights/modem-applet.c:142
 msgid "_Activate"
 msgstr "_Aktivigu"
 
-#: ../modemlights/MATE_ModemLights.xml.h:3
+#: ../modemlights/modem-applet.c:145
 msgid "_Deactivate"
 msgstr "_Malaktivigu"
 
-#: ../modemlights/MATE_ModemLights.xml.h:5
+#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
 msgid "_Properties"
 msgstr "_Atributoj"
 
-#: ../modemlights/modem-applet.c:708
+#: ../modemlights/modem-applet.c:184
+#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
+msgid "Modem Monitor"
+msgstr "Modema monitoro"
+
+#: ../modemlights/modem-applet.c:710
 msgid "Connection active, but could not get connection time"
 msgstr "Konekto aktivas, sed ne povis ricevi konektan tempon"
 
-#: ../modemlights/modem-applet.c:724
+#: ../modemlights/modem-applet.c:726
 #, c-format
 msgid "Time connected: %.1d:%.2d"
 msgstr "Tempo konektita: %.1d:%.2d"
 
-#: ../modemlights/modem-applet.c:728
+#: ../modemlights/modem-applet.c:730
 msgid "Not connected"
 msgstr "Ne konektita"
 
-#: ../modemlights/modem-applet.c:750
+#: ../modemlights/modem-applet.c:752
 msgid ""
 "To connect to your Internet service provider, you need administrator "
 "privileges"
-msgstr ""
-"Por konekti al via interreta servoprovizanto, vi bezonas administrajn "
-"privilegiojn"
+msgstr "Por konekti al via interreta servoprovizanto, vi bezonas administrajn privilegiojn"
 
-#: ../modemlights/modem-applet.c:751
+#: ../modemlights/modem-applet.c:753
 msgid ""
 "To disconnect from your Internet service provider, you need administrator "
 "privileges"
-msgstr ""
-"Por malkonekti de via interreta servoprovizanto, vi bezonas administrajn "
-"privilegiojn"
+msgstr "Por malkonekti de via interreta servoprovizanto, vi bezonas administrajn privilegiojn"
 
-#: ../modemlights/modem-applet.c:826
+#: ../modemlights/modem-applet.c:828
 msgid "The entered password is invalid"
 msgstr "La tajpita pasvorto ne estas valida"
 
-#: ../modemlights/modem-applet.c:828
+#: ../modemlights/modem-applet.c:830
 msgid ""
 "Check that you have typed it correctly and that you haven't activated the "
 "\"caps lock\" key"
-msgstr ""
-"Kontrolu ke vi korekte tajpis ĝin kaj ke vi ne estas aktiviginta la klavon "
-"\"majuskla bajusklo\""
+msgstr "Kontrolu ke vi korekte tajpis ĝin kaj ke vi ne estas aktiviginta la klavon \"majuskla bajusklo\""
 
-#: ../modemlights/modem-applet.c:930
+#: ../modemlights/modem-applet.c:932
 msgid "Do you want to connect?"
 msgstr "Ĉu vi volas konekti?"
 
-#: ../modemlights/modem-applet.c:931
+#: ../modemlights/modem-applet.c:933
 msgid "Do you want to disconnect?"
 msgstr "Ĉu vi volas malkonekti?"
 
-#: ../modemlights/modem-applet.c:940
+#: ../modemlights/modem-applet.c:942
 msgid "C_onnect"
 msgstr "K_onekti"
 
-#: ../modemlights/modem-applet.c:940
+#: ../modemlights/modem-applet.c:942
 msgid "_Disconnect"
 msgstr "Malkonekti"
 
-#: ../modemlights/modem-applet.c:996
+#: ../modemlights/modem-applet.c:995
 msgid "Could not launch network configuration tool"
 msgstr "Ne povis lanĉi retkonfigurilon"
 
-#: ../modemlights/modem-applet.c:998
+#: ../modemlights/modem-applet.c:997
 msgid ""
 "Check that it's installed in the correct path and that it has the correct "
 "permissions"
-msgstr ""
-"Kontrolu ke ĝi estas instalita en la korekta vojindiko kaj ke ĝi havas la "
-"korektajn permesojn"
+msgstr "Kontrolu ke ĝi estas instalita en la korekta vojindiko kaj ke ĝi havas la korektajn permesojn"
 
-#: ../modemlights/modem-applet.c:1022
+#: ../modemlights/modem-applet.c:1020
 msgid "Applet for activating and monitoring a dial-up network connection."
 msgstr "Aplikaĵeto por aktivigo kaj monitorado de komutebla reta konekto"
 
 #: ../modemlights/modemlights.ui.h:1
-msgid "Connecting with Internet Service Provider"
-msgstr "Konektanta per provizanto de retservoj"
-
-#: ../modemlights/modemlights.ui.h:2
 msgid "Enter password"
 msgstr "Entajpi pasvorton"
+
+#: ../modemlights/modemlights.ui.h:2
+msgid "Root password required"
+msgstr "Bezonata pasvorton de ĉefuzanto"
 
 #: ../modemlights/modemlights.ui.h:3
 msgid "Password:"
 msgstr "Pasvorto:"
 
 #: ../modemlights/modemlights.ui.h:4
-msgid "Root password required"
-msgstr "Bezonata pasvorton de ĉefuzanto"
+msgid "Connecting with Internet Service Provider"
+msgstr "Konektanta per provizanto de retservoj"
 
-#: ../multiload/MATE_MultiLoadApplet_Factory.server.in.in.h:1
-msgid "A system load indicator"
-msgstr "Sistemŝarga indikilo"
+#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
+msgid "Activate and monitor a dial-up network connection"
+msgstr "Aktivigu kaj monitoru komutebla reta konekto"
 
-#: ../multiload/MATE_MultiLoadApplet_Factory.server.in.in.h:2
-#: ../multiload/main.c:496
-msgid "System Monitor"
-msgstr "Sistemvidigilo"
-
-#: ../multiload/MATE_MultiloadApplet.xml.h:3
-msgid "_Open System Monitor"
-msgstr "_Malfermu sistemvidigilon"
-
-#: ../multiload/main.c:57
+#: ../multiload/main.c:56
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
-msgstr ""
-"Sistemŝarga vidigilo kapabla vidigi diagramojn por uzo de CPU, labormemoro, "
-"kaj virtuala memoro, plus reta trafiko."
+msgstr "Sistemŝarga vidigilo kapabla vidigi diagramojn por uzo de CPU, labormemoro, kaj virtuala memoro, plus reta trafiko."
 
-#: ../multiload/main.c:126
+#: ../multiload/main.c:124
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Estis eraro dum rulado de '%s': %s"
 
-#: ../multiload/main.c:288 ../multiload/properties.c:596
+#: ../multiload/main.c:252 ../multiload/properties.c:596
 msgid "Processor"
 msgstr "Procesoro"
 
-#: ../multiload/main.c:290 ../multiload/properties.c:604
+#: ../multiload/main.c:254 ../multiload/properties.c:604
 msgid "Memory"
 msgstr "Memoro"
 
-#: ../multiload/main.c:292 ../multiload/properties.c:612
+#: ../multiload/main.c:256 ../multiload/properties.c:612
 msgid "Network"
 msgstr "Reto"
 
-#: ../multiload/main.c:294 ../multiload/properties.c:619
+#: ../multiload/main.c:258 ../multiload/properties.c:619
 msgid "Swap Space"
 msgstr "Virtuala memoro"
 
-#: ../multiload/main.c:296 ../multiload/main.c:378
+#: ../multiload/main.c:260 ../multiload/main.c:339
 msgid "Load Average"
 msgstr "Ŝargmeznombro"
 
-#: ../multiload/main.c:298
+#: ../multiload/main.c:262
 msgid "Disk"
 msgstr "Disko"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#.
-#: ../multiload/main.c:317
+#. 
+#: ../multiload/main.c:278
 #, c-format
 msgid ""
 "%s:\n"
 "%u%% in use by programs\n"
 "%u%% in use as cache"
-msgstr ""
-"%s:\n"
-"%u%% uzataj de programoj\n"
-"%u%% uzataj kiel kaŝmemoro"
+msgstr "%s:\n%u%% uzataj de programoj\n%u%% uzataj kiel kaŝmemoro"
 
-#: ../multiload/main.c:325
+#: ../multiload/main.c:286
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "La sistema ŝarga meznombro estas %0.02f"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:333
+#: ../multiload/main.c:294
 #, c-format
 msgid ""
 "%s:\n"
 "Receiving %s\n"
 "Sending %s"
-msgstr ""
-"%s:\n"
-"Recevante je %s\n"
-"Sendante je %s"
+msgstr "%s:\nRecevante je %s\nSendante je %s"
 
-#: ../multiload/main.c:349
+#: ../multiload/main.c:310
 #, c-format
 msgid ""
 "%s:\n"
@@ -2784,156 +2136,159 @@ msgid ""
 msgid_plural ""
 "%s:\n"
 "%u%% in use"
-msgstr[0] ""
-"%s:\n"
-"%u%% uzata"
-msgstr[1] ""
-"%s:\n"
-"%u%% uzataj"
+msgstr[0] "%s:\n%u%% uzata"
+msgstr[1] "%s:\n%u%% uzataj"
 
-#: ../multiload/main.c:374
+#: ../multiload/main.c:335
 msgid "CPU Load"
 msgstr "CPU-ŝargo"
 
-#: ../multiload/main.c:375
+#: ../multiload/main.c:336
 msgid "Memory Load"
 msgstr "Memorŝargo"
 
-#: ../multiload/main.c:376
+#: ../multiload/main.c:337
 msgid "Net Load"
 msgstr "Reta ŝargo"
 
-#: ../multiload/main.c:377
+#: ../multiload/main.c:338
 msgid "Swap Load"
 msgstr "Virtualmemora ŝargo"
 
-#: ../multiload/main.c:379
+#: ../multiload/main.c:340
 msgid "Disk Load"
 msgstr "Diska ŝargo"
 
+#: ../multiload/main.c:436
+msgid "_Open System Monitor"
+msgstr "_Malfermu sistemvidigilon"
+
+#: ../multiload/main.c:464
+#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
+msgid "System Monitor"
+msgstr "Sistemvidigilo"
+
 #: ../multiload/multiload.schemas.in.h:1
-msgid "Applet refresh rate in milliseconds"
-msgstr "Aplikaĵeta refreŝiga grado en milisekundoj"
-
-#: ../multiload/multiload.schemas.in.h:2
-msgid "Background color for disk load graph"
-msgstr "Fona koloro por diskŝarga diagramo"
-
-#: ../multiload/multiload.schemas.in.h:3
-msgid "CPU graph background color"
-msgstr "CPU-grafikaĵa fona koloro"
-
-#: ../multiload/multiload.schemas.in.h:4
 msgid "Enable CPU load graph"
 msgstr "Ŝaltu CPU-ŝargan grafikaĵon"
 
-#: ../multiload/multiload.schemas.in.h:5
-msgid "Enable disk load graph"
-msgstr "Ŝaltu diskŝargan grafikaĵon"
-
-#: ../multiload/multiload.schemas.in.h:6
-msgid "Enable load average graph"
-msgstr "Ŝaltu ŝargmeznombran grafikaĵon"
-
-#: ../multiload/multiload.schemas.in.h:7
+#: ../multiload/multiload.schemas.in.h:2
 msgid "Enable memory load graph"
 msgstr "Ŝaltu memorŝargan grafikaĵon"
 
-#: ../multiload/multiload.schemas.in.h:8
+#: ../multiload/multiload.schemas.in.h:3
 msgid "Enable network load graph"
 msgstr "Ŝaltu retŝargan grafikaĵon"
 
-#: ../multiload/multiload.schemas.in.h:9
+#: ../multiload/multiload.schemas.in.h:4
 msgid "Enable swap load graph"
 msgstr "Ŝaltu virtualmemorŝargan grafikaĵon"
 
-#: ../multiload/multiload.schemas.in.h:10
+#: ../multiload/multiload.schemas.in.h:5
+msgid "Enable load average graph"
+msgstr "Ŝaltu ŝargmeznombran grafikaĵon"
+
+#: ../multiload/multiload.schemas.in.h:6
+msgid "Enable disk load graph"
+msgstr "Ŝaltu diskŝargan grafikaĵon"
+
+#: ../multiload/multiload.schemas.in.h:7
+msgid "Applet refresh rate in milliseconds"
+msgstr "Aplikaĵeta refreŝiga grado en milisekundoj"
+
+#: ../multiload/multiload.schemas.in.h:8
+msgid "Graph size"
+msgstr "Grafikaĵa grando"
+
+#: ../multiload/multiload.schemas.in.h:9
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr ""
-"Por horizontalaj paneloj, la larĝo de la grafikaĵo en bilderoj. Por "
-"vertikalaj paneloj, ĉi tio estas la alto de la grafikaĵoj."
+msgstr "Por horizontalaj paneloj, la larĝo de la grafikaĵo en bilderoj. Por vertikalaj paneloj, ĉi tio estas la alto de la grafikaĵoj."
 
-#: ../multiload/multiload.schemas.in.h:11
-msgid "Graph color for buffer memory"
-msgstr "Grafikaĵa koloro por bufra memoro"
-
-#: ../multiload/multiload.schemas.in.h:12
-msgid "Graph color for cached memory"
-msgstr "Grafikaĵa koloro por kaŝmemoro"
-
-#: ../multiload/multiload.schemas.in.h:13
-msgid "Graph color for disk read"
-msgstr "Grafikaĵa koloro por disklegado"
-
-#: ../multiload/multiload.schemas.in.h:14
-msgid "Graph color for disk write"
-msgstr "Grafikaĵa koloro por diskskribado"
-
-#: ../multiload/multiload.schemas.in.h:15
-msgid "Graph color for input network activity"
-msgstr "Diagrama koloro por eniga retaktiveco"
-
-#: ../multiload/multiload.schemas.in.h:16
-msgid "Graph color for iowait related CPU activity"
-msgstr "Grafikaĵa koloro por iowait-rilata CPU-aktiveco"
-
-#: ../multiload/multiload.schemas.in.h:17
-msgid "Graph color for load average"
-msgstr "Grafikaĵa koloro por ŝarga meznombro"
-
-#: ../multiload/multiload.schemas.in.h:18
-msgid "Graph color for loopback network usage"
-msgstr "Diagrama koloro por inverscikla retuzado"
-
-#: ../multiload/multiload.schemas.in.h:19
-msgid "Graph color for nice-related CPU activity"
-msgstr "Grafikaĵa koloro por nice-rilata CPU-aktiveco"
-
-#: ../multiload/multiload.schemas.in.h:20
-msgid "Graph color for output network activity"
-msgstr "Diagrama koloro por eliga retuzado"
-
-#: ../multiload/multiload.schemas.in.h:21
-msgid "Graph color for shared memory"
-msgstr "Grafikaĵa koloro por komuna memoro"
-
-#: ../multiload/multiload.schemas.in.h:22
-msgid "Graph color for system-related CPU activity"
-msgstr "Grafikaĵa koloro por sistemrilata CPU-aktiveco"
-
-#: ../multiload/multiload.schemas.in.h:23
+#: ../multiload/multiload.schemas.in.h:10
 msgid "Graph color for user-related CPU activity"
 msgstr "Grafikaĵa koloro por uzantrilata CPU-aktiveco"
 
-#: ../multiload/multiload.schemas.in.h:24
+#: ../multiload/multiload.schemas.in.h:11
+msgid "Graph color for system-related CPU activity"
+msgstr "Grafikaĵa koloro por sistemrilata CPU-aktiveco"
+
+#: ../multiload/multiload.schemas.in.h:12
+msgid "Graph color for nice-related CPU activity"
+msgstr "Grafikaĵa koloro por nice-rilata CPU-aktiveco"
+
+#: ../multiload/multiload.schemas.in.h:13
+msgid "Graph color for iowait related CPU activity"
+msgstr "Grafikaĵa koloro por iowait-rilata CPU-aktiveco"
+
+#: ../multiload/multiload.schemas.in.h:14
+msgid "CPU graph background color"
+msgstr "CPU-grafikaĵa fona koloro"
+
+#: ../multiload/multiload.schemas.in.h:15
 msgid "Graph color for user-related memory usage"
 msgstr "Grafikaĵa koloro por uzantrilata memoruzo"
 
-#: ../multiload/multiload.schemas.in.h:25
+#: ../multiload/multiload.schemas.in.h:16
+msgid "Graph color for shared memory"
+msgstr "Grafikaĵa koloro por komuna memoro"
+
+#: ../multiload/multiload.schemas.in.h:17
+msgid "Graph color for buffer memory"
+msgstr "Grafikaĵa koloro por bufra memoro"
+
+#: ../multiload/multiload.schemas.in.h:18
+msgid "Graph color for cached memory"
+msgstr "Grafikaĵa koloro por kaŝmemoro"
+
+#: ../multiload/multiload.schemas.in.h:19
+msgid "Memory graph background color"
+msgstr "Fona koloro de memora grafikaĵo"
+
+#: ../multiload/multiload.schemas.in.h:20
+msgid "Graph color for input network activity"
+msgstr "Diagrama koloro por eniga retaktiveco"
+
+#: ../multiload/multiload.schemas.in.h:21
+msgid "Graph color for output network activity"
+msgstr "Diagrama koloro por eliga retuzado"
+
+#: ../multiload/multiload.schemas.in.h:22
+msgid "Graph color for loopback network usage"
+msgstr "Diagrama koloro por inverscikla retuzado"
+
+#: ../multiload/multiload.schemas.in.h:23
+msgid "Network graph background color"
+msgstr "Reta grafikaĵa fona koloro"
+
+#: ../multiload/multiload.schemas.in.h:24
 msgid "Graph color for user-related swap usage"
 msgstr "Grafikaĵa koloro por uzantrilata virtualmemora uzo"
 
+#: ../multiload/multiload.schemas.in.h:25
+msgid "Swap graph background color"
+msgstr "Virtualmemora grafikaĵa fona koloro"
+
 #: ../multiload/multiload.schemas.in.h:26
-msgid "Graph size"
-msgstr "Grafikaĵa grando"
+msgid "Graph color for load average"
+msgstr "Grafikaĵa koloro por ŝarga meznombro"
 
 #: ../multiload/multiload.schemas.in.h:27
 msgid "Load graph background color"
 msgstr "Fona koloro de ŝarga grafikaĵo"
 
 #: ../multiload/multiload.schemas.in.h:28
-msgid "Memory graph background color"
-msgstr "Fona koloro de memora grafikaĵo"
+msgid "Graph color for disk read"
+msgstr "Grafikaĵa koloro por disklegado"
 
 #: ../multiload/multiload.schemas.in.h:29
-msgid "Network graph background color"
-msgstr "Reta grafikaĵa fona koloro"
+msgid "Graph color for disk write"
+msgstr "Grafikaĵa koloro por diskskribado"
 
 #: ../multiload/multiload.schemas.in.h:30
-msgid "Swap graph background color"
-msgstr "Virtualmemora grafikaĵa fona koloro"
+msgid "Background color for disk load graph"
+msgstr "Fona koloro por diskŝarga diagramo"
 
 #: ../multiload/multiload.schemas.in.h:31
 msgid "The desktop description file to execute as the system monitor"
@@ -2943,6 +2298,10 @@ msgstr "La labortabla priskriba dosiero plenumenda kiel sistemobservilo"
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
+
+#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
+msgid "A system load indicator"
+msgstr "Sistemŝarga indikilo"
 
 #: ../multiload/properties.c:357
 msgid "Monitored Resources"
@@ -3073,7 +2432,7 @@ msgstr "_Lego"
 msgid "_Write"
 msgstr "_Skribo"
 
-#: ../multiload/properties.c:658
+#: ../multiload/properties.c:657
 msgid "System Monitor Preferences"
 msgstr "Sistemmonitoraj preferoj"
 
@@ -3086,32 +2445,36 @@ msgid "Panel applet for playing audio CDs"
 msgstr "Panela aplikaĵeto por ludi aŭdio-KD-ojn"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
-msgid "Alert you when new mail arrives"
-msgstr "Avertu kiam nova poŝto alvenas"
-
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
 msgid "Inbox Monitor (Deprecated)"
 msgstr "Enkesta monitoro (malrekomendata)"
 
-#: ../null_applet/MATE_MixerApplet.server.in.h:2
+#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
+msgid "Alert you when new mail arrives"
+msgstr "Avertu kiam nova poŝto alvenas"
+
+#: ../null_applet/MATE_MixerApplet.server.in.h:1
 msgid "Volume Control (Deprecated)"
 msgstr "Regi sonfortecon (evitinda)"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
-msgid "Factory for deprecating applets"
-msgstr "Fabrikejo por malrekomdado dej aplikaĵetoj"
+#: ../null_applet/MATE_MixerApplet.server.in.h:2
+msgid "Adjust the sound volume"
+msgstr "Alĝustigu la sonan laŭtecon"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
+#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
 msgid "Null Applet Factory"
 msgstr "Nula aplikaĵeta fabrikejo"
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
-msgid "Monitor the quality of a wireless network link"
-msgstr "Monitoru la kvaliton de sendrata interreta ligo"
+#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
+msgid "Factory for deprecating applets"
+msgstr "Fabrikejo por malrekomdado dej aplikaĵetoj"
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
+#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
 msgid "Wireless Link Monitor"
 msgstr "Sendrata liga monitoro"
+
+#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
+msgid "Monitor the quality of a wireless network link"
+msgstr "Monitoru la kvaliton de sendrata interreta ligo"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:1
 msgid "Keyboard Indicator (Deprecated)"
@@ -3159,389 +2522,786 @@ msgstr "Tomboy (ne Stickynotes)"
 msgid "Tomboy (transparent upgrade from stickynotes)"
 msgstr "Tomboy (travidebla aktualigo de stickynotes)"
 
-#: ../stickynotes/MATE_StickyNotesApplet.server.in.in.h:1
-msgid "Create, view, and manage sticky notes on the desktop"
-msgstr "Kreu, vidu, kaj administru algluiĝajn notojn sur la tabulo"
-
-#: ../stickynotes/MATE_StickyNotesApplet.server.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:130
-#: ../stickynotes/stickynotes_applet.c:402
-msgid "Sticky Notes"
-msgstr "Algluiĝaj notoj"
-
-#: ../stickynotes/MATE_StickyNotesApplet.server.in.in.h:3
+#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
 msgstr "Algluiĝaj notaj aplikaĵeta fabrikejo"
 
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:1
-msgid "Hi_de Notes"
-msgstr "_Kaŝu notojn"
+#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
+#: ../stickynotes/stickynotes_applet.c:147
+#: ../stickynotes/stickynotes_applet.c:428
+msgid "Sticky Notes"
+msgstr "Algluiĝaj notoj"
 
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:3
-msgid "_Delete Notes"
-msgstr "_Forigu notojn"
+#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:3
+msgid "Create, view, and manage sticky notes on the desktop"
+msgstr "Kreu, vidu, kaj administru algluiĝajn notojn sur la tabulo"
 
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:5
-msgid "_Lock Notes"
-msgstr "Ŝ_losu notojn"
-
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:6
-msgid "_New Note"
-msgstr "_Nova noto"
-
-#: ../stickynotes/stickynotes.c:635
+#: ../stickynotes/stickynotes.c:634
 msgid "This note is locked."
 msgstr "Ĉi tiu noto estas ŝlosita."
 
-#: ../stickynotes/stickynotes.c:639
+#: ../stickynotes/stickynotes.c:638
 msgid "This note is unlocked."
 msgstr "Ĉi tiu noto estas malŝlosita."
 
-#: ../stickynotes/stickynotes.ui.h:1
-msgid "Behavior"
-msgstr "Konduto"
+#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
+msgid "_New Note"
+msgstr "_Nova noto"
 
 #: ../stickynotes/stickynotes.ui.h:2
-msgid "Choose a base color to use for all sticky notes"
-msgstr "Elektu bazan koloron por uzi por ĉiuj algluiĝaj notoj"
+msgid "_Delete Note..."
+msgstr ""
 
 #: ../stickynotes/stickynotes.ui.h:3
-msgid "Choose a color for the note"
-msgstr "Elektu koloron por la noto"
-
-#: ../stickynotes/stickynotes.ui.h:4
-msgid "Choose a font for the note"
-msgstr "Elektu tiparon por la noton"
+msgid "_Lock Note"
+msgstr ""
 
 #: ../stickynotes/stickynotes.ui.h:5
-msgid "Choose a font to use for all sticky notes"
-msgstr "Elektu tiparon por uzi por ĉiuj algluiĝaj notoj"
-
-#: ../stickynotes/stickynotes.ui.h:6
-msgid "Choose if notes are visible on all workspaces"
-msgstr "Elektu ĉu notoj videblas sur ĉiuj laborspacoj"
-
-#: ../stickynotes/stickynotes.ui.h:7
-msgid "Choose if the default style is forced on all notes"
-msgstr "Elektu ĉu la implicita stilo estas devigata sur ĉiuj notoj"
-
-#: ../stickynotes/stickynotes.ui.h:8
-msgid "Close note"
-msgstr "Fermu noton"
-
-#: ../stickynotes/stickynotes.ui.h:9
-msgid "Default Note Properties"
-msgstr ""
-
-#: ../stickynotes/stickynotes.ui.h:10
-msgid "Delete all sticky notes?"
-msgstr ""
-
-#: ../stickynotes/stickynotes.ui.h:11
-msgid "Delete this sticky note?"
-msgstr ""
-
-#: ../stickynotes/stickynotes.ui.h:12
-msgid "Font C_olor:"
-msgstr "K_oloro de Tiparo"
-
-#: ../stickynotes/stickynotes.ui.h:13
-msgid "Font Co_lor:"
-msgstr "Ko_loro de Tiparo"
-
-#: ../stickynotes/stickynotes.ui.h:14
-msgid "Force _default color and font on notes"
-msgstr "_Devigu implicitajn koloron kaj tiparon sur notoj"
-
-#: ../stickynotes/stickynotes.ui.h:15
-msgid "H_eight:"
-msgstr "_Alto:"
-
-#: ../stickynotes/stickynotes.ui.h:16
-msgid "Lock/Unlock note"
-msgstr "Ŝlosu/malŝlosu noton"
-
-#: ../stickynotes/stickynotes.ui.h:17
-msgid "Note C_olor:"
-msgstr "K_oloro de noto"
-
-#: ../stickynotes/stickynotes.ui.h:18
-msgid "Note _Color:"
-msgstr "_Koloro de Noto:"
-
-#: ../stickynotes/stickynotes.ui.h:19
-msgid "Pick a color for the sticky note"
-msgstr "Elektu koloron por la algluiĝa noto"
-
-#: ../stickynotes/stickynotes.ui.h:20
-msgid "Pick a default sticky note color"
-msgstr "Elektu implicitan algluiĝan notan koloron"
-
-#: ../stickynotes/stickynotes.ui.h:21
-msgid "Pick a default sticky note font"
-msgstr "Elektu implicitan algluiĝan notan tiparon"
-
-#: ../stickynotes/stickynotes.ui.h:22
-msgid "Pick a font for the sticky note"
-msgstr "Elektu tiparon por la algluiĝa noto"
-
-#: ../stickynotes/stickynotes.ui.h:23
-msgid "Properties"
-msgstr "Ecoj"
-
-#: ../stickynotes/stickynotes.ui.h:24
-msgid "Resize note"
-msgstr "Aligrandigu noton"
-
-#: ../stickynotes/stickynotes.ui.h:25
-msgid "Specify a title for the note"
-msgstr "Specifu titolon por la noto"
-
-#: ../stickynotes/stickynotes.ui.h:26
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "Specifu la implicitan alton (en bilderoj) de novaj notoj"
-
-#: ../stickynotes/stickynotes.ui.h:27
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "Specifu la implicitan larĝon (en bilderoj) de novaj notoj"
-
-#: ../stickynotes/stickynotes.ui.h:28
-msgid "Sticky Note"
-msgstr "Algluiĝa noto"
-
-#: ../stickynotes/stickynotes.ui.h:29
-msgid "Sticky Note Properties"
-msgstr "Algluiĝaj notaj atributoj"
-
-#: ../stickynotes/stickynotes.ui.h:30
 msgid "Sticky Notes Preferences"
 msgstr "Algluiĝaj notaj preferoj"
 
-#: ../stickynotes/stickynotes.ui.h:31
-msgid "This cannot be undone."
-msgstr "Vi ne povos malfarigi tion."
+#: ../stickynotes/stickynotes.ui.h:6
+msgid "Default Note Properties"
+msgstr ""
 
-#: ../stickynotes/stickynotes.ui.h:32
-msgid "Use co_lor from the system theme"
-msgstr "Uzu ko_loron de la sistema etoso"
+#: ../stickynotes/stickynotes.ui.h:7
+msgid "Choose a font to use for all sticky notes"
+msgstr "Elektu tiparon por uzi por ĉiuj algluiĝaj notoj"
 
-#: ../stickynotes/stickynotes.ui.h:33
-msgid "Use default co_lor"
-msgstr "Uzu implicitan ko_loron"
+#: ../stickynotes/stickynotes.ui.h:8
+msgid "Pick a default sticky note font"
+msgstr "Elektu implicitan algluiĝan notan tiparon"
 
-#: ../stickynotes/stickynotes.ui.h:34
-msgid "Use default fo_nt"
-msgstr "Uzu implicitan tiparo_n"
-
-#: ../stickynotes/stickynotes.ui.h:35
-msgid "Use fo_nt from the system theme"
-msgstr "Uzu tiparo_n de la sistema etoso"
-
-#: ../stickynotes/stickynotes.ui.h:36
-msgid "_Delete All"
-msgstr "_Forigu ĉiujn"
-
-#: ../stickynotes/stickynotes.ui.h:37
+#: ../stickynotes/stickynotes.ui.h:9
 msgid "_Font:"
 msgstr "_Tiparo:"
 
-#: ../stickynotes/stickynotes.ui.h:38
+#: ../stickynotes/stickynotes.ui.h:10
+msgid "Use fo_nt from the system theme"
+msgstr "Uzu tiparo_n de la sistema etoso"
+
+#: ../stickynotes/stickynotes.ui.h:11
+msgid "Note C_olor:"
+msgstr "K_oloro de noto"
+
+#: ../stickynotes/stickynotes.ui.h:12
+msgid "Font Co_lor:"
+msgstr "Ko_loro de Tiparo"
+
+#: ../stickynotes/stickynotes.ui.h:13
+msgid "Choose a base color to use for all sticky notes"
+msgstr "Elektu bazan koloron por uzi por ĉiuj algluiĝaj notoj"
+
+#: ../stickynotes/stickynotes.ui.h:14
+msgid "Pick a default sticky note color"
+msgstr "Elektu implicitan algluiĝan notan koloron"
+
+#: ../stickynotes/stickynotes.ui.h:15
+msgid "Use co_lor from the system theme"
+msgstr "Uzu ko_loron de la sistema etoso"
+
+#: ../stickynotes/stickynotes.ui.h:16
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "Specifu la implicitan alton (en bilderoj) de novaj notoj"
+
+#: ../stickynotes/stickynotes.ui.h:17
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "Specifu la implicitan larĝon (en bilderoj) de novaj notoj"
+
+#: ../stickynotes/stickynotes.ui.h:18
+msgid "H_eight:"
+msgstr "_Alto:"
+
+#: ../stickynotes/stickynotes.ui.h:20
+msgid "Behavior"
+msgstr "Konduto"
+
+#: ../stickynotes/stickynotes.ui.h:21
+msgid "Hide notes when the des_ktop is clicked on"
+msgstr ""
+
+#: ../stickynotes/stickynotes.ui.h:22
+msgid "Choose whether to hide all notes when selecting on the desktop"
+msgstr ""
+
+#: ../stickynotes/stickynotes.ui.h:23
+msgid "Force _default color and font on notes"
+msgstr "_Devigu implicitajn koloron kaj tiparon sur notoj"
+
+#: ../stickynotes/stickynotes.ui.h:24
+msgid "Choose if the default style is forced on all notes"
+msgstr "Elektu ĉu la implicita stilo estas devigata sur ĉiuj notoj"
+
+#: ../stickynotes/stickynotes.ui.h:25
 msgid "_Put notes on all workspaces"
 msgstr "_Metu notojn sur ĉiuj laborspacoj"
 
+#: ../stickynotes/stickynotes.ui.h:26
+msgid "Choose if notes are visible on all workspaces"
+msgstr "Elektu ĉu notoj videblas sur ĉiuj laborspacoj"
+
+#: ../stickynotes/stickynotes.ui.h:27
+msgid "Delete this sticky note?"
+msgstr ""
+
+#: ../stickynotes/stickynotes.ui.h:28
+msgid "This cannot be undone."
+msgstr "Vi ne povos malfarigi tion."
+
+#: ../stickynotes/stickynotes.ui.h:29
+msgid "Delete all sticky notes?"
+msgstr ""
+
+#: ../stickynotes/stickynotes.ui.h:30
+msgid "_Delete All"
+msgstr "_Forigu ĉiujn"
+
+#: ../stickynotes/stickynotes.ui.h:31
+msgid "Sticky Note"
+msgstr "Algluiĝa noto"
+
+#: ../stickynotes/stickynotes.ui.h:32
+msgid "Lock/Unlock note"
+msgstr "Ŝlosu/malŝlosu noton"
+
+#: ../stickynotes/stickynotes.ui.h:33
+msgid "Close note"
+msgstr "Fermu noton"
+
+#: ../stickynotes/stickynotes.ui.h:34
+msgid "Resize note"
+msgstr "Aligrandigu noton"
+
+#: ../stickynotes/stickynotes.ui.h:35
+msgid "Sticky Note Properties"
+msgstr "Algluiĝaj notaj atributoj"
+
+#: ../stickynotes/stickynotes.ui.h:36
+msgid "Properties"
+msgstr "Ecoj"
+
+#: ../stickynotes/stickynotes.ui.h:37
+msgid "Choose a font for the note"
+msgstr "Elektu tiparon por la noton"
+
+#: ../stickynotes/stickynotes.ui.h:38
+msgid "Pick a font for the sticky note"
+msgstr "Elektu tiparon por la algluiĝa noto"
+
 #: ../stickynotes/stickynotes.ui.h:39
+msgid "Use default fo_nt"
+msgstr "Uzu implicitan tiparo_n"
+
+#: ../stickynotes/stickynotes.ui.h:40
+msgid "Choose a color for the note"
+msgstr "Elektu koloron por la noto"
+
+#: ../stickynotes/stickynotes.ui.h:41
+msgid "Pick a color for the sticky note"
+msgstr "Elektu koloron por la algluiĝa noto"
+
+#: ../stickynotes/stickynotes.ui.h:42
+msgid "Note _Color:"
+msgstr "_Koloro de Noto:"
+
+#: ../stickynotes/stickynotes.ui.h:43
+msgid "Font C_olor:"
+msgstr "K_oloro de Tiparo"
+
+#: ../stickynotes/stickynotes.ui.h:44
+msgid "Use default co_lor"
+msgstr "Uzu implicitan ko_loron"
+
+#: ../stickynotes/stickynotes.ui.h:45
+msgid "Specify a title for the note"
+msgstr "Specifu titolon por la noto"
+
+#: ../stickynotes/stickynotes.ui.h:46
 msgid "_Title:"
 msgstr "_Titolo:"
 
 #: ../stickynotes/stickynotes.schemas.in.h:1
+msgid "Default width for new notes"
+msgstr "Implicita larĝo por novaj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:2
+msgid "Default width for new sticky notes in pixels."
+msgstr "Implicita larĝo por novaj algluiĝaj notoj en bilderoj."
+
+#: ../stickynotes/stickynotes.schemas.in.h:3
+msgid "Default height for new notes"
+msgstr "Implicita alto por novaj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:4
+msgid "Default height for new sticky notes in pixels."
+msgstr "Implicita alto por novaj algluiĝaj notoj en bilderoj."
+
+#: ../stickynotes/stickynotes.schemas.in.h:5
+msgid "Default color for new notes"
+msgstr "Implicita koloro por novaj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:6
+msgid ""
+"Default color for new sticky notes. This should be in html hex "
+"specification, for example \"#30FF50\"."
+msgstr "Implicita koloro por novaj algluiĝaj notoj. Ĉi tio estu laŭ html deksesuma specifo, ekzemple \"#30FF50\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:7
+msgid "Default color for font"
+msgstr "Implicita koloro por tiparo"
+
+#: ../stickynotes/stickynotes.schemas.in.h:8
+msgid ""
+"Default font color for new sticky notes. This should be in html hex "
+"specification, for example \"#000000\"."
+msgstr "Implicita tipara koloro por novaj algluiĝaj notoj. Ĉi tio estu laŭ html deksesuma specifo, ekzemple \"#000000\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:9
+msgid "Default font for new notes"
+msgstr "Implicita tiparo por novaj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:10
+msgid ""
+"Default font for new sticky notes. This should be a Pango Font Name, for "
+"example \"Sans Italic 10\"."
+msgstr "Defaŭlta tiparo por novaj gluecaj notoj. Ĉi tio estu Pango Tipara Nomo, ekzemple \"Sans Italic 10\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:11
+msgid "Sticky notes' workspace stickyness"
+msgstr "Algluiĝeco al laborspaco de algluiĝaj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:12
+msgid ""
+"Specifies whether the sticky notes are visible on ALL workspaces on the "
+"desktop, or not."
+msgstr "Specifas ĉu la algluiĝaj notoj estas videblaj sur ĈIUJ laborspacoj sur la tabulo, ĉu ne."
+
+#: ../stickynotes/stickynotes.schemas.in.h:13
+msgid "Sticky notes' locked state"
+msgstr "Ŝlositeco de algluiĝaj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:14
+msgid "Specifies whether the sticky notes are locked (non-editable) or not."
+msgstr "Specifas ĉu la algluiĝaj notoj estas ŝlositaj (neredakteblaj) ĉu ne."
+
+#: ../stickynotes/stickynotes.schemas.in.h:15
+msgid "Date format of note's title"
+msgstr "Datformato de nota titolo"
+
+#: ../stickynotes/stickynotes.schemas.in.h:16
 msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr ""
-"Implicite, al algluiĝaj notoj la aktuala dato estas donata kiel titolo kiam "
-"ili estas kreataj. Ĉi tiu formato estas uzata; iu ajn kio estas analizebla "
-"de strftime() estas valida."
-
-#: ../stickynotes/stickynotes.schemas.in.h:2
-msgid "Date format of note's title"
-msgstr "Datformato de nota titolo"
-
-#: ../stickynotes/stickynotes.schemas.in.h:3
-msgid "Default color for font"
-msgstr "Implicita koloro por tiparo"
-
-#: ../stickynotes/stickynotes.schemas.in.h:4
-msgid "Default color for new notes"
-msgstr "Implicita koloro por novaj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:5
-msgid ""
-"Default color for new sticky notes. This should be in html hex "
-"specification, for example \"#30FF50\"."
-msgstr ""
-"Implicita koloro por novaj algluiĝaj notoj. Ĉi tio estu laŭ html deksesuma "
-"specifo, ekzemple \"#30FF50\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:6
-msgid ""
-"Default font color for new sticky notes. This should be in html hex "
-"specification, for example \"#000000\"."
-msgstr ""
-"Implicita tipara koloro por novaj algluiĝaj notoj. Ĉi tio estu laŭ html "
-"deksesuma specifo, ekzemple \"#000000\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:7
-msgid "Default font for new notes"
-msgstr "Implicita tiparo por novaj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:8
-msgid ""
-"Default font for new sticky notes. This should be a Pango Font Name, for "
-"example \"Sans Italic 10\"."
-msgstr ""
-"Defaŭlta tiparo por novaj gluecaj notoj. Ĉi tio estu Pango Tipara Nomo, "
-"ekzemple \"Sans Italic 10\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:9
-msgid "Default height for new notes"
-msgstr "Implicita alto por novaj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:10
-msgid "Default height for new sticky notes in pixels."
-msgstr "Implicita alto por novaj algluiĝaj notoj en bilderoj."
-
-#: ../stickynotes/stickynotes.schemas.in.h:11
-msgid "Default width for new notes"
-msgstr "Implicita larĝo por novaj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:12
-msgid "Default width for new sticky notes in pixels."
-msgstr "Implicita larĝo por novaj algluiĝaj notoj en bilderoj."
-
-#: ../stickynotes/stickynotes.schemas.in.h:13
-msgid "Empty notes are always deleted without confirmation."
-msgstr "Malplenajn notojn ĉiam forigas senkonfirme."
-
-#: ../stickynotes/stickynotes.schemas.in.h:14
-msgid ""
-"If this option is disabled, a custom color can be used as the default color "
-"for all sticky notes."
-msgstr ""
-"Se ĉi tiu opcio estas malŝaltita, propra koloro estas uzebla kiel la "
-"implicita koloro por ĉiuj algluiĝaj notoj."
-
-#: ../stickynotes/stickynotes.schemas.in.h:15
-msgid ""
-"If this option is disabled, a custom font can be used as the default font "
-"for all sticky notes."
-msgstr ""
-"Se ĉi tiu opcio estas malŝaltita, propra tiparo estas uzebla kiel la "
-"implicita tiparo por ĉiuj algluiĝaj notoj."
-
-#: ../stickynotes/stickynotes.schemas.in.h:16
-msgid ""
-"If this option is enabled, the custom colors and fonts that have been "
-"assigned to individual notes will be ignored."
-msgstr ""
-"Se ĉi tiu opcio estas ŝaltita, la propraj koloroj kaj tiparoj kiuj estas "
-"atribuitaj al individuaj notoj estos ignorataj."
+msgstr "Implicite, al algluiĝaj notoj la aktuala dato estas donata kiel titolo kiam ili estas kreataj. Ĉi tiu formato estas uzata; iu ajn kio estas analizebla de strftime() estas valida."
 
 #: ../stickynotes/stickynotes.schemas.in.h:17
-msgid "Specifies whether the sticky notes are locked (non-editable) or not."
-msgstr "Specifas ĉu la algluiĝaj notoj estas ŝlositaj (neredakteblaj) ĉu ne."
-
-#: ../stickynotes/stickynotes.schemas.in.h:18
-msgid ""
-"Specifies whether the sticky notes are visible on ALL workspaces on the "
-"desktop, or not."
-msgstr ""
-"Specifas ĉu la algluiĝaj notoj estas videblaj sur ĈIUJ laborspacoj sur la "
-"tabulo, ĉu ne."
-
-#: ../stickynotes/stickynotes.schemas.in.h:19
-msgid "Sticky notes' locked state"
-msgstr "Ŝlositeco de algluiĝaj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:20
-msgid "Sticky notes' workspace stickyness"
-msgstr "Algluiĝeco al laborspaco de algluiĝaj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:21
-msgid "Whether to ask for confirmation when deleting a note"
-msgstr "Ĉu peti konfirmon kiam forigante noton"
-
-#: ../stickynotes/stickynotes.schemas.in.h:22
-msgid "Whether to force the default color and font on all notes"
-msgstr "Ĉu devigi la implicitajn koloron kaj tiparon pri ĉiuj notoj"
-
-#: ../stickynotes/stickynotes.schemas.in.h:23
 msgid "Whether to use the default system color"
 msgstr "Ĉu uzi la implicitan sisteman koloron"
 
-#: ../stickynotes/stickynotes.schemas.in.h:24
+#: ../stickynotes/stickynotes.schemas.in.h:18
+msgid ""
+"If this option is disabled, a custom color can be used as the default color "
+"for all sticky notes."
+msgstr "Se ĉi tiu opcio estas malŝaltita, propra koloro estas uzebla kiel la implicita koloro por ĉiuj algluiĝaj notoj."
+
+#: ../stickynotes/stickynotes.schemas.in.h:19
 msgid "Whether to use the default system font"
 msgstr "Ĉu uzi la implicitan sisteman tiparon"
 
-#: ../stickynotes/stickynotes_applet.c:580
+#: ../stickynotes/stickynotes.schemas.in.h:20
+msgid ""
+"If this option is disabled, a custom font can be used as the default font "
+"for all sticky notes."
+msgstr "Se ĉi tiu opcio estas malŝaltita, propra tiparo estas uzebla kiel la implicita tiparo por ĉiuj algluiĝaj notoj."
+
+#: ../stickynotes/stickynotes.schemas.in.h:21
+msgid "Whether to force the default color and font on all notes"
+msgstr "Ĉu devigi la implicitajn koloron kaj tiparon pri ĉiuj notoj"
+
+#: ../stickynotes/stickynotes.schemas.in.h:22
+msgid ""
+"If this option is enabled, the custom colors and fonts that have been "
+"assigned to individual notes will be ignored."
+msgstr "Se ĉi tiu opcio estas ŝaltita, la propraj koloroj kaj tiparoj kiuj estas atribuitaj al individuaj notoj estos ignorataj."
+
+#: ../stickynotes/stickynotes.schemas.in.h:23
+msgid "Whether to hide all notes when the desktop is selected"
+msgstr ""
+
+#: ../stickynotes/stickynotes.schemas.in.h:24
+msgid ""
+"If this option is enabled, selecting the desktop in any way will "
+"automatically hide all the open notes."
+msgstr ""
+
+#: ../stickynotes/stickynotes.schemas.in.h:25
+msgid "Whether to ask for confirmation when deleting a note"
+msgstr "Ĉu peti konfirmon kiam forigante noton"
+
+#: ../stickynotes/stickynotes.schemas.in.h:26
+msgid "Empty notes are always deleted without confirmation."
+msgstr "Malplenajn notojn ĉiam forigas senkonfirme."
+
+#: ../stickynotes/stickynotes_applet.c:36
+msgid "Hi_de Notes"
+msgstr "_Kaŝu notojn"
+
+#: ../stickynotes/stickynotes_applet.c:39
+msgid "_Delete Notes"
+msgstr "_Forigu notojn"
+
+#: ../stickynotes/stickynotes_applet.c:55
+msgid "_Lock Notes"
+msgstr "Ŝ_losu notojn"
+
+#: ../stickynotes/stickynotes_applet.c:621
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d noto"
 msgstr[1] "%d notoj"
 
-#: ../stickynotes/stickynotes_applet.c:581
+#: ../stickynotes/stickynotes_applet.c:622
 msgid "Show sticky notes"
 msgstr "Montru algluiĝajn notojn"
 
-#: ../stickynotes/stickynotes_applet_callbacks.c:380
+#: ../stickynotes/stickynotes_applet_callbacks.c:421
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Algluiĝaj notoj por la GNOMA Tabula Medio"
 
-#: ../trashapplet/MATE_Panel_TrashApplet.server.in.in.h:1
-msgid "Go to Trash"
-msgstr "Iru al rubujo"
+#: ../timer-applet/data/TimerApplet.server.in.in.h:1
+msgid "Timer Applet Factory"
+msgstr ""
 
-#: ../trashapplet/MATE_Panel_TrashApplet.server.in.in.h:2
+#: ../timer-applet/data/TimerApplet.server.in.in.h:2
+msgid "A Timer Applet factory that creates Timer Applets"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.server.in.in.h:3
+msgid "Timer"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.server.in.in.h:4
+msgid "Start a timer and receive a notification when it is finished"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:1
+msgid "Pa_use"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:2
+msgid "_Continue"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:3
+msgid "_Stop"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:4
+msgid "R_estart"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:5
+msgid "Next"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:6
+msgid "Pre_sets"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:7
+msgid "Ma_nage Presets"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:1
+msgid "Start Timer"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:2
+msgid "_Name:"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:3
+msgid "Start automatically"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:4
+msgid "<b>Define next timer</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:5
+msgid "Execute:"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:6
+msgid "<b>Run custom command</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:7
+msgid "Run executable after timer finished."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:8
+msgid "Advanced"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:9
+msgid "S_ave as Preset"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:10
+msgid "Mana_ge Presets"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:11
+msgid "<b>_Presets</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:12
+msgid "S_tart Timer"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:13
+msgid "Manage Presets"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:14
+msgid "_Delete"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:15
+msgid "_Edit..."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:16
+msgid "_Add..."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:17
+msgid "Timer Preferences"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:18
+msgid "_Show remaining time while timer is running"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:19
+msgid "_Play notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:20
+msgid "Use d_efault sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:21
+msgid "Use c_ustom sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:22
+msgid "Choose A Sound File"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:23
+msgid "_Show popup notification"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:24
+msgid "_Show popup notification after timer has ended."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:25
+msgid "S_how pulsing panel icon"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:26
+msgid "Show pulsing panel icon after timer has ended."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:27
+#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
+msgid "Add Preset"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:28
+msgid "<b>_Name</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:29
+msgid "<b>_Duration</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:30
+msgid "Run custom command after timer has ended."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:31
+msgid "<b>Custom command</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:32
+msgid "Initiate automatically"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:33
+msgid "<b>Interval timer</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:34
+msgid "A timer applet for the perfect egg and beyond!"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:35
+msgid "Timer Applet"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:1
+msgid "Play notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:2
+msgid "Play a notification sound when the timer finishes a countdown"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:3
+msgid "Use a custom notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:4
+msgid ""
+"Use the custom notification sound specified in "
+"custom_notification_sound_path"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:5
+msgid "Path to a custom notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:6
+msgid ""
+"Path to a sound file that will be played when the timer finishes a countdown"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:7
+msgid "Show Pulsing icon"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:8
+msgid "Show pulsing tray icon when timer finished"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:9
+msgid "Show Popup notification"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:10
+msgid "Show Popup notification in the notification area"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:11
+msgid "Show remaining time"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:12
+msgid "Show the remaining time while the timer is running or paused"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:13
+msgid "Play a beep sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:14
+msgid ""
+"Play a beep sound on a computer's internal speaker when the timer finishes. "
+"This may not have an effect on all computers."
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
+msgid "Edit Preset"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
+msgid "Continue timer countdown?"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
+msgid "The timer is currently paused. Would you like to continue countdown?"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:193
+msgid "Click to start a new timer countdown."
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:198
+msgid "Paused. Click to continue timer countdown."
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:201
+msgid "Finished"
+msgstr ""
+
+#. "<timer name>" finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:206
+#, python-format
+msgid ""
+"\"%s\" finished at %s.\n"
+"Click to stop timer."
+msgstr ""
+
+#. Timer finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:209
+#, python-format
+msgid ""
+"Timer finished at %s.\n"
+"Click to stop timer."
+msgstr ""
+
+#. HH:MM:SS (<timer name>)
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:385
+#, python-format
+msgid "%02d:%02d:%02d (%s)"
+msgstr ""
+
+#. HH:MM:SS
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:388
+#: ../timer-applet/src/timerapplet/utils.py:52
+#, python-format
+msgid "%02d:%02d:%02d"
+msgstr ""
+
+#. "<timer name>" Finished
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:410
+#, python-format
+msgid "\"%s\" Finished"
+msgstr ""
+
+#. "<timer name>" finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:413
+#, python-format
+msgid "\"%s\" finished at %s"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
+msgid "Timer Finished"
+msgstr ""
+
+#. Timer finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:418
+#, python-format
+msgid "Timer finished at %s"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:425
+#, python-format
+msgid "Timer finished about <b>%d second</b> ago"
+msgid_plural "Timer finished about <b>%d seconds</b> ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:430
+#, python-format
+msgid "Timer finished about <b>%d minute</b> ago"
+msgid_plural "Timer finished about <b>%d minutes</b> ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
+msgid "Continue Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
+msgid "_Stop Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
+msgid "_Keep Paused"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
+msgid "_Continue Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
+msgid "<b>Command not found.</b>"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
+msgid "Start Next Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
+msgid "_Don't start next timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
+msgid "_Start next timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
+msgid "_Hours:"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
+msgid "_Minutes:"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
+msgid "_Seconds:"
+msgstr ""
+
+#. HH:MM
+#. MM:SS
+#: ../timer-applet/src/timerapplet/utils.py:56
+#: ../timer-applet/src/timerapplet/utils.py:59
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+#. <preset name> (HH:MM:SS)
+#: ../timer-applet/src/timerapplet/utils.py:69
+#, python-format
+msgid "%s (%02d:%02d:%02d)"
+msgstr ""
+
+#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
 msgstr "Rubujo"
 
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:2
-#: ../trashapplet/src/trash-empty.c:351
+#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:2
+msgid "Go to Trash"
+msgstr "Iru al rubujo"
+
+#: ../trashapplet/src/trashapplet.c:69 ../trashapplet/src/trash-empty.c:351
 msgid "_Empty Trash"
 msgstr "Malpl_enigu rubujon"
 
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:4
+#: ../trashapplet/src/trashapplet.c:72
 msgid "_Open Trash"
 msgstr "_Malfermi rubujon"
 
-#: ../trashapplet/src/trashapplet.c:124
+#: ../trashapplet/src/trashapplet.c:128
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
 msgstr[0] "%d Elemento en rubujo"
 msgstr[1] "%d Elementoj en rubujo"
 
-#: ../trashapplet/src/trashapplet.c:132
+#: ../trashapplet/src/trashapplet.c:136
 msgid "No Items in Trash"
 msgstr "Neniuj elementoj en rubujo"
 
-#: ../trashapplet/src/trashapplet.c:376
+#: ../trashapplet/src/trashapplet.c:378
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
 "%s"
-msgstr ""
-"Eraro dum lanĉado de naŭtilo:\n"
-"%s"
+msgstr "Eraro dum lanĉado de naŭtilo:\n%s"
 
 #: ../trashapplet/src/trashapplet.c:427
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
-msgstr ""
-"GNOMA ruba korbo kiu vivas en via panelo. Vi povas utiligi ĝin por vidi la "
-"rubon aŭ ŝovi kaj faligi elementoj en la rubujon."
+msgstr "GNOMA ruba korbo kiu vivas en via panelo. Vi povas utiligi ĝin por vidi la rubon aŭ ŝovi kaj faligi elementoj en la rubujon."
 
 #: ../trashapplet/src/trashapplet.c:452
 msgid "Delete Immediately?"
@@ -3554,10 +3314,9 @@ msgstr "Ne eblas movi elementojn rubujen, ĉu vi volas forigi ilin tuj?"
 #: ../trashapplet/src/trashapplet.c:487
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
-msgstr ""
-"Ne eblas movi kelkajn elementojn rubujen, ĉu vi volas forigi tiujn tuj?"
+msgstr "Ne eblas movi kelkajn elementojn rubujen, ĉu vi volas forigi tiujn tuj?"
 
-#: ../trashapplet/src/trashapplet.c:614
+#: ../trashapplet/src/trashapplet.c:617
 msgid "Trash Applet"
 msgstr "Rubuja aplikaĵeto"
 
@@ -3581,9 +3340,7 @@ msgstr "Ĉu forigi ĉiujn elementojn el rubujo?"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr ""
-"Se vi elektas malplenigi la rubujon, ĉiuj elementoj en ĝi estos perdataj por "
-"ĉiam. Bonvolu noti ke vi same povas forigi ilin unuope."
+msgstr "Se vi elektas malplenigi la rubujon, ĉiuj elementoj en ĝi estos perdataj por ĉiam. Bonvolu noti ke vi same povas forigi ilin unuope."
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"

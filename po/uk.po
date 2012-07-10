@@ -1,73 +1,26 @@
-# Ukrainian translation of mate-applets.
-# Copyright (C) 2000 Free Software Foundation, Inc.
-# Yuri Syrota <rasta@renome.rovno.ua>, 2000
-# Maxim Dziumanenko <dziumanenko@gmail.com>, 2004-2009
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 # wanderlust <wanderlust@ukr.net>, 2009.
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2012.
+# Yuri Syrota <rasta@renome.rovno.ua>, 2000.
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-26 14:13+0200\n"
-"PO-Revision-Date: 2010-03-26 08:31+0300\n"
-"Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
-"Language-Team: ukrainian <Ukrainian <uk@li.org>>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"POT-Creation-Date: 2012-06-13 00:13+0200\n"
+"PO-Revision-Date: 2012-06-12 22:14+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Ukrainian (http://www.transifex.com/projects/p/MATE/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ../accessx-status/MATE_AccessxApplet.xml.h:1
-#: ../battstat/MATE_BattstatApplet.xml.h:1
-#: ../charpick/MATE_CharpickerApplet.xml.h:1
-#: ../cpufreq/MATE_CPUFreqApplet.xml.h:1
-#: ../drivemount/MATE_DriveMountApplet.xml.h:1
-#: ../geyes/MATE_GeyesApplet.xml.h:1 ../mateweather/MATE_MateWeatherApplet.xml.h:1
-#: ../invest-applet/data/Invest_Applet.xml.h:1
-#: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:1
-#: ../mixer/MATE_MixerApplet.xml.h:2 ../modemlights/MATE_ModemLights.xml.h:1
-#: ../multiload/MATE_MultiloadApplet.xml.h:1
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:2
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:1
-msgid "_About"
-msgstr "_Про програму"
-
-#: ../accessx-status/MATE_AccessxApplet.xml.h:2
-#: ../battstat/MATE_BattstatApplet.xml.h:2
-#: ../charpick/MATE_CharpickerApplet.xml.h:2
-#: ../cpufreq/MATE_CPUFreqApplet.xml.h:2
-#: ../drivemount/MATE_DriveMountApplet.xml.h:2
-#: ../geyes/MATE_GeyesApplet.xml.h:2 ../mateweather/MATE_MateWeatherApplet.xml.h:3
-#: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:2
-#: ../mixer/MATE_MixerApplet.xml.h:3 ../modemlights/MATE_ModemLights.xml.h:4
-#: ../multiload/MATE_MultiloadApplet.xml.h:2
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:4
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:3
-msgid "_Help"
-msgstr "_Довідка"
-
-#: ../accessx-status/MATE_AccessxApplet.xml.h:3
-msgid "_Keyboard Accessibility Preferences"
-msgstr "Параметри спеціальних можливостей _клавіатури"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:1
-msgid "AccessX Status Applet Factory"
-msgstr "Фабрика аплету стану AccessX"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:2
-#: ../accessx-status/applet.c:1322
-msgid "Keyboard Accessibility Status"
-msgstr "Стан спеціальних можливостей клавіатури"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:3
-msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "Фабрика стану спеціальних можливостей клавіатури"
-
-#: ../accessx-status/MATE_AccessxStatusApplet.server.in.in.h:4
-msgid "Shows the status of keyboard accessibility features"
-msgstr "Показує стан спеціальних можливостей можливостей клавіатури"
-
-#: ../accessx-status/applet.c:137
+#: ../accessx-status/applet.c:136
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Показує стан особливостей AccessX, наприклад, увімкнутих модифікаторів"
 
@@ -75,111 +28,138 @@ msgstr "Показує стан особливостей AccessX, наприкл
 #. about.set_documenters([])
 #. translators: These appear in the About dialog, usual format applies.
 #. "documenters",        documenters,
-#: ../accessx-status/applet.c:142 ../battstat/battstat_applet.c:1246
-#: ../charpick/charpick.c:611 ../cpufreq/src/cpufreq-applet.c:611
-#: ../drivemount/drivemount.c:117 ../geyes/geyes.c:195
-#: ../mateweather/mateweather-about.c:55 ../invest-applet/invest/about.py:32
-#: ../mini-commander/src/about.c:54 ../mixer/applet.c:1430
-#: ../modemlights/modem-applet.c:1025 ../multiload/main.c:62
-#: ../stickynotes/stickynotes_applet_callbacks.c:384
+#: ../accessx-status/applet.c:140 ../battstat/battstat_applet.c:1263
+#: ../charpick/charpick.c:610 ../cpufreq/src/cpufreq-applet.c:613
+#: ../drivemount/drivemount.c:117 ../geyes/geyes.c:196
+#: ../mateweather/mateweather-about.c:52 ../invest-applet/invest/about.py:29
+#: ../mini-commander/src/about.c:53 ../mixer/applet.c:1467
+#: ../modemlights/modem-applet.c:1023 ../multiload/main.c:61
+#: ../stickynotes/stickynotes_applet_callbacks.c:425
 #: ../trashapplet/src/trashapplet.c:432
 msgid "translator-credits"
-msgstr ""
-"Юрій Сирота <yuri@beer.com>\n"
-"Максим Дзюманенко <dziumanenko@gmail.com>\n"
-"Wanderlust <wanderlust@ukr.net>"
+msgstr "Юрій Сирота <yuri@beer.com>\nМаксим Дзюманенко <dziumanenko@gmail.com>\nWanderlust <wanderlust@ukr.net>"
 
-#: ../accessx-status/applet.c:168
+#: ../accessx-status/applet.c:156
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Помилка при запуску переглядача довідки: %s"
 
-#: ../accessx-status/applet.c:218
+#: ../accessx-status/applet.c:195
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Помилка під час запуску діалогу параметрів клавіатури: %s"
 
-#. Note to translators: the first letter of the alphabet, not the indefinite article
-#: ../accessx-status/applet.c:468 ../accessx-status/applet.c:506
+#: ../accessx-status/applet.c:208
+msgid "_Keyboard Accessibility Preferences"
+msgstr "Параметри спеціальних можливостей _клавіатури"
+
+#: ../accessx-status/applet.c:209 ../battstat/battstat_applet.c:64
+#: ../charpick/charpick.c:717 ../cpufreq/src/cpufreq-applet.c:125
+#: ../drivemount/drivemount.c:153 ../geyes/geyes.c:361
+#: ../mateweather/mateweather-applet.c:124
+#: ../invest-applet/data/Invest_Applet.xml.h:3
+#: ../mini-commander/src/mini-commander_applet.c:56 ../mixer/applet.c:387
+#: ../modemlights/modem-applet.c:151 ../multiload/main.c:439
+#: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:75
+msgid "_Help"
+msgstr "_Довідка"
+
+#: ../accessx-status/applet.c:210 ../battstat/battstat_applet.c:67
+#: ../charpick/charpick.c:720 ../cpufreq/src/cpufreq-applet.c:128
+#: ../drivemount/drivemount.c:156 ../geyes/geyes.c:364
+#: ../mateweather/mateweather-applet.c:127
+#: ../invest-applet/data/Invest_Applet.xml.h:4
+#: ../mini-commander/src/mini-commander_applet.c:59 ../mixer/applet.c:390
+#: ../modemlights/modem-applet.c:154 ../multiload/main.c:442
+#: ../stickynotes/stickynotes_applet.c:48
+#: ../timer-applet/data/TimerApplet.xml.h:9
+#: ../trashapplet/src/trashapplet.c:78
+msgid "_About"
+msgstr "_Про програму"
+
+#. Note to translators: the first letter of the alphabet, not the indefinite
+#. article
+#: ../accessx-status/applet.c:480 ../accessx-status/applet.c:514
 msgid "a"
 msgstr "а"
 
-#: ../accessx-status/applet.c:975 ../accessx-status/applet.c:1048
-#: ../accessx-status/applet.c:1117 ../accessx-status/applet.c:1325
+#: ../accessx-status/applet.c:997 ../accessx-status/applet.c:1063
+#: ../accessx-status/applet.c:1133 ../accessx-status/applet.c:1344
 msgid "AccessX Status"
 msgstr "Стан AccessX"
 
-#: ../accessx-status/applet.c:976 ../accessx-status/applet.c:1118
+#: ../accessx-status/applet.c:998 ../accessx-status/applet.c:1134
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Показує стан клавіатури при використанні спеціальних можливостей"
 
-#: ../accessx-status/applet.c:1010
+#: ../accessx-status/applet.c:1033
 msgid "XKB Extension is not enabled"
 msgstr "XKB розширення не ввімкнено"
 
-#: ../accessx-status/applet.c:1015
+#: ../accessx-status/applet.c:1038
 msgid "Unknown error"
 msgstr "Невідома помилка"
 
-#: ../accessx-status/applet.c:1023
+#: ../accessx-status/applet.c:1042
 #, c-format
 msgid "Error: %s"
 msgstr "Помилка: %s"
 
-#: ../accessx-status/applet.c:1327
+#: ../accessx-status/applet.c:1341
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
+msgid "Keyboard Accessibility Status"
+msgstr "Стан спеціальних можливостей клавіатури"
+
+#: ../accessx-status/applet.c:1345
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Відображає поточний стан спеціальних можливостей клавіатури"
 
-#: ../battstat/MATE_BattstatApplet.server.in.in.h:1
-#: ../battstat/battstat_applet.c:1610 ../battstat/battstat_applet.c:1663
-msgid "Battery Charge Monitor"
-msgstr "Індикатор зарядження акумулятора"
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:1
+msgid "AccessX Status Applet Factory"
+msgstr "Фабрика аплету стану AccessX"
 
-#: ../battstat/MATE_BattstatApplet.server.in.in.h:2
-msgid "Battstat Factory"
-msgstr "Фабрика стану акумулятора"
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:2
+msgid "Keyboard Accessibility Status Applet Factory"
+msgstr "Фабрика стану спеціальних можливостей клавіатури"
 
-#: ../battstat/MATE_BattstatApplet.server.in.in.h:3
-#: ../battstat/battstat_applet.c:1664
-msgid "Monitor a laptop's remaining power"
-msgstr "Слідкує за зарядом акумулятора портативного комп'ютера"
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:4
+msgid "Shows the status of keyboard accessibility features"
+msgstr "Показує стан спеціальних можливостей можливостей клавіатури"
 
-#: ../battstat/MATE_BattstatApplet.xml.h:3
-#: ../charpick/MATE_CharpickerApplet.xml.h:3
-#: ../cpufreq/MATE_CPUFreqApplet.xml.h:3 ../geyes/MATE_GeyesApplet.xml.h:3
-#: ../mateweather/MATE_MateWeatherApplet.xml.h:4
+#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:714
+#: ../cpufreq/src/cpufreq-applet.c:122 ../geyes/geyes.c:358
+#: ../mateweather/mateweather-applet.c:121
 #: ../invest-applet/data/Invest_Applet.xml.h:2
-#: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:3
-#: ../mixer/MATE_MixerApplet.xml.h:5
-#: ../multiload/MATE_MultiloadApplet.xml.h:4
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:7
+#: ../mini-commander/src/mini-commander_applet.c:53 ../mixer/applet.c:393
+#: ../multiload/main.c:433 ../stickynotes/stickynotes_applet.c:42
+#: ../timer-applet/data/TimerApplet.xml.h:8
 msgid "_Preferences"
 msgstr "П_араметри"
 
-#: ../battstat/battstat_applet.c:67
+#: ../battstat/battstat_applet.c:72
 msgid "System is running on AC power"
 msgstr "Система працює від мережі змінного струму"
 
-#: ../battstat/battstat_applet.c:68
+#: ../battstat/battstat_applet.c:73
 msgid "System is running on battery power"
 msgstr "Система працює від акумулятора"
 
-#: ../battstat/battstat_applet.c:370
+#: ../battstat/battstat_applet.c:375
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Акумулятор повністю перезаряджена (%d%%)"
 
-#: ../battstat/battstat_applet.c:372
+#: ../battstat/battstat_applet.c:377
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Час завершення невідомий (%d%%)"
 
-#: ../battstat/battstat_applet.c:374
+#: ../battstat/battstat_applet.c:379
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Час до повного перезарядження (%d%%) невідомий"
 
-#: ../battstat/battstat_applet.c:379
+#: ../battstat/battstat_applet.c:384
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
@@ -187,7 +167,7 @@ msgstr[0] "залишилась %d хвилина (%d%%)"
 msgstr[1] "залишилось %d хвилини (%d%%)"
 msgstr[2] "залишилось %d хвилин (%d%%)"
 
-#: ../battstat/battstat_applet.c:384
+#: ../battstat/battstat_applet.c:389
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
@@ -195,7 +175,7 @@ msgstr[0] "%d хвилина (%d%%) до повного зарядження"
 msgstr[1] "%d хвилини (%d%%) до повного зарядження"
 msgstr[2] "%d хвилин (%d%%) до повного зарядження"
 
-#: ../battstat/battstat_applet.c:390
+#: ../battstat/battstat_applet.c:395
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
@@ -203,7 +183,7 @@ msgstr[0] "залишилась %d година (%d%%)"
 msgstr[1] "залишилось %d години (%d%%)"
 msgstr[2] "залишилось %d годин (%d%%)"
 
-#: ../battstat/battstat_applet.c:395
+#: ../battstat/battstat_applet.c:400
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -213,19 +193,19 @@ msgstr[2] "%d годин (%d%%) до повного зарядження"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:402
+#: ../battstat/battstat_applet.c:407
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "залишилось %d %s %d %s (%d%%)"
 
-#: ../battstat/battstat_applet.c:403 ../battstat/battstat_applet.c:410
+#: ../battstat/battstat_applet.c:408 ../battstat/battstat_applet.c:415
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "година"
 msgstr[1] "години"
 msgstr[2] "годин"
 
-#: ../battstat/battstat_applet.c:404 ../battstat/battstat_applet.c:411
+#: ../battstat/battstat_applet.c:409 ../battstat/battstat_applet.c:416
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "хвилина"
@@ -234,161 +214,166 @@ msgstr[2] "хвилин"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:409
+#: ../battstat/battstat_applet.c:414
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s до повного зарядження (%d%%)"
 
-#: ../battstat/battstat_applet.c:423
+#: ../battstat/battstat_applet.c:428
 msgid "Battery Monitor"
 msgstr "Індикатор заряду акумулятора"
 
-#: ../battstat/battstat_applet.c:433 ../battstat/battstat_applet.c:493
+#: ../battstat/battstat_applet.c:438 ../battstat/battstat_applet.c:498
 msgid "Your battery is now fully recharged"
 msgstr "Акумулятор повністю перезаряджено."
 
-#: ../battstat/battstat_applet.c:469 ../battstat/battstat_applet.c:625
+#: ../battstat/battstat_applet.c:474 ../battstat/battstat_applet.c:630
 msgid "Battery Notice"
 msgstr "Інформація про акумулятор"
 
 #. we don't know the remaining time
-#: ../battstat/battstat_applet.c:570
+#: ../battstat/battstat_applet.c:575
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "Залишилось %d%% ємності акумулятора."
 
-#: ../battstat/battstat_applet.c:576
+#: ../battstat/battstat_applet.c:581
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] ""
-"Час роботи від акумулятора, що лишився - %d хвилина (%d%% від загальної "
-"ємності)."
-msgstr[1] ""
-"Час роботи від акумулятора, що лишився - %d хвилини (%d%% від загальної "
-"ємності)."
-msgstr[2] ""
-"Час роботи від акумулятора, що лишився - %d хвилин (%d%% від загальної "
-"ємності)."
+msgstr[0] "Час роботи від акумулятора, що лишився - %d хвилина (%d%% від загальної ємності)."
+msgstr[1] "Час роботи від акумулятора, що лишився - %d хвилини (%d%% від загальної ємності)."
+msgstr[2] "Час роботи від акумулятора, що лишився - %d хвилин (%d%% від загальної ємності)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
 #. * locale.  This is if the laptop does not support suspend.
-#: ../battstat/battstat_applet.c:588
+#: ../battstat/battstat_applet.c:593
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr ""
-"Щоб запобігти втраті вашої роботи:\n"
-" • підключіть ноутбук до зовнішнього джерела живлення, або\n"
-" • збережіть відкриті документи та завершіть роботу комп'ютера."
+msgstr "Щоб запобігти втраті вашої роботи:\n • підключіть ноутбук до зовнішнього джерела живлення, або\n • збережіть відкриті документи та завершіть роботу комп'ютера."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
 #. * locale.  This is if the laptop supports suspend.
-#: ../battstat/battstat_applet.c:596
+#: ../battstat/battstat_applet.c:601
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr ""
-"Щоб запобігти втраті вашої роботи:\n"
-" • переведіть ноутбук у режим сну,\n"
-" • підключіть ноутбук до зовнішнього джерела живлення, або\n"
-" • збережіть відкриті документи та завершіть роботу комп'ютера."
+msgstr "Щоб запобігти втраті вашої роботи:\n • переведіть ноутбук у режим сну,\n • підключіть ноутбук до зовнішнього джерела живлення, або\n • збережіть відкриті документи та завершіть роботу комп'ютера."
 
-#: ../battstat/battstat_applet.c:604
+#: ../battstat/battstat_applet.c:609
 msgid "Your battery is running low"
 msgstr "Заряд акумулятора низький"
 
-#: ../battstat/battstat_applet.c:701
+#: ../battstat/battstat_applet.c:706
 msgid "No battery present"
 msgstr "Акумулятор відсутній"
 
-#: ../battstat/battstat_applet.c:704
+#: ../battstat/battstat_applet.c:709
 msgid "Battery status unknown"
 msgstr "Стан акумулятора невідомий"
 
-#: ../battstat/battstat_applet.c:863
+#: ../battstat/battstat_applet.c:868
 msgid "N/A"
 msgstr "Н/Д"
 
-#: ../battstat/battstat_applet.c:1193 ../drivemount/drivemount.c:142
-#: ../geyes/geyes.c:346 ../geyes/themes.c:244 ../mateweather/mateweather-applet.c:72
-#: ../mateweather/mateweather-pref.c:748 ../mini-commander/src/preferences.c:366
-#: ../stickynotes/stickynotes_applet_callbacks.c:349
-#: ../stickynotes/stickynotes_applet_callbacks.c:559
-#: ../trashapplet/src/trashapplet.c:398
+#: ../battstat/battstat_applet.c:1208 ../drivemount/drivemount.c:141
+#: ../geyes/geyes.c:346 ../geyes/themes.c:248
+#: ../mateweather/mateweather-applet.c:70
+#: ../mateweather/mateweather-pref.c:816
+#: ../mini-commander/src/preferences.c:366
+#: ../stickynotes/stickynotes_applet_callbacks.c:391
+#: ../stickynotes/stickynotes_applet_callbacks.c:607
+#: ../trashapplet/src/trashapplet.c:399
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Помилка при відображенні довідки: %s"
 
-#: ../battstat/battstat_applet.c:1233
+#: ../battstat/battstat_applet.c:1248
 msgid "This utility shows the status of your laptop battery."
 msgstr "Ця утиліта показує стан акумулятора вашого комп'ютера."
 
+#. ture
+#: ../battstat/battstat_applet.c:1250
+msgid "upower backend enabled."
+msgstr ""
+
 #. true
-#: ../battstat/battstat_applet.c:1235
+#: ../battstat/battstat_applet.c:1252
 msgid "HAL backend enabled."
 msgstr "Увімкнено драйвер HAL."
 
 #. false
-#: ../battstat/battstat_applet.c:1236
+#: ../battstat/battstat_applet.c:1253
 msgid "Legacy (non-HAL) backend enabled."
 msgstr "Включено застарілий (не-HAL) драйвер."
 
+#: ../battstat/battstat_applet.c:1629 ../battstat/battstat_applet.c:1683
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
+msgid "Battery Charge Monitor"
+msgstr "Індикатор зарядження акумулятора"
+
+#: ../battstat/battstat_applet.c:1684
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
+msgid "Monitor a laptop's remaining power"
+msgstr "Слідкує за зарядом акумулятора портативного комп'ютера"
+
 #: ../battstat/battstat_applet.ui.h:1
-msgid "(shows single image for status and charge)"
-msgstr "(показує єдине зображення зміни статусу та заряду)"
-
-#: ../battstat/battstat_applet.ui.h:2
-msgid "(two images: one for status, one for charge)"
-msgstr "(два зображення: одне для статусу, одне для заряду)"
-
-#: ../battstat/battstat_applet.ui.h:3
-msgid "Appearance"
-msgstr "_Вигляд"
-
-#: ../battstat/battstat_applet.ui.h:4
 msgid "Battery Charge Monitor Preferences"
 msgstr "Параметри індикатора заряду акумулятора"
 
-#: ../battstat/battstat_applet.ui.h:5
-msgid "Notifications"
-msgstr "Сповіщення"
+#: ../battstat/battstat_applet.ui.h:2
+msgid "Appearance"
+msgstr "_Вигляд"
 
-#: ../battstat/battstat_applet.ui.h:6
-msgid "Show _percentage remaining"
-msgstr "Показувати _відсотки, що залишились"
-
-#: ../battstat/battstat_applet.ui.h:7
-msgid "Show _time remaining"
-msgstr "Показувати _час, що залишився"
-
-#: ../battstat/battstat_applet.ui.h:8
+#: ../battstat/battstat_applet.ui.h:3
 msgid "_Compact view"
 msgstr "_Компактний вигляд"
 
-#: ../battstat/battstat_applet.ui.h:9
+#: ../battstat/battstat_applet.ui.h:4
+msgid "(shows single image for status and charge)"
+msgstr "(показує єдине зображення зміни статусу та заряду)"
+
+#: ../battstat/battstat_applet.ui.h:5
 msgid "_Expanded view"
 msgstr "_Розширений вигляд"
 
-#: ../battstat/battstat_applet.ui.h:10
-msgid "_Notify when battery is fully recharged"
-msgstr "_Сповіщати про повний перезаряд акумулятора"
+#: ../battstat/battstat_applet.ui.h:6
+msgid "(two images: one for status, one for charge)"
+msgstr "(два зображення: одне для статусу, одне для заряду)"
 
-#: ../battstat/battstat_applet.ui.h:11
+#: ../battstat/battstat_applet.ui.h:7
 msgid "_Show time/percentage:"
 msgstr "_Показувати час/відсотки:"
 
-#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge drops to: [XX] percent/minutes remaining'
-#: ../battstat/battstat_applet.ui.h:13
+#: ../battstat/battstat_applet.ui.h:8
+msgid "Show _time remaining"
+msgstr "Показувати _час, що залишився"
+
+#: ../battstat/battstat_applet.ui.h:9
+msgid "Show _percentage remaining"
+msgstr "Показувати _відсотки, що залишились"
+
+#: ../battstat/battstat_applet.ui.h:10
+msgid "Notifications"
+msgstr "Сповіщення"
+
+#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
+#. drops to: [XX] percent/minutes remaining'
+#: ../battstat/battstat_applet.ui.h:12
 msgid "_Warn when battery charge drops to:"
 msgstr "_Попереджувати коли заряд спадає до:"
+
+#: ../battstat/battstat_applet.ui.h:13
+msgid "_Notify when battery is fully recharged"
+msgstr "_Сповіщати про повний перезаряд акумулятора"
 
 #: ../battstat/battstat-hal.c:343 ../battstat/battstat-hal.c:368
 msgid "HAL error"
@@ -408,129 +393,114 @@ msgid "Unable to initialise HAL: %s: %s"
 msgstr "Неможливо ініціалізувати HAL: %s: %s"
 
 #: ../battstat/battstat.schemas.in.h:1
-msgid "0 for no label, 1 for percentage and 2 for time remaining."
-msgstr "0 - без позначки, 1 - відсотки, та  2 - залишок часу"
-
-#: ../battstat/battstat.schemas.in.h:2
-msgid "Beep for warnings"
-msgstr "Попередження звуковим сигналом"
-
-#: ../battstat/battstat.schemas.in.h:3
-msgid "Beep when displaying a warning."
-msgstr "Супроводжувати вивід попереджень звуковим сигналом."
-
-#: ../battstat/battstat.schemas.in.h:4
-msgid "Drain from top"
-msgstr "Зменшується згори"
-
-#: ../battstat/battstat.schemas.in.h:5
-msgid "Full Battery Notification"
-msgstr "Сповіщення про повний заряд"
-
-#: ../battstat/battstat.schemas.in.h:6
-msgid "Low Battery Notification"
-msgstr "Сповіщення про низький рівень заряду"
-
-#: ../battstat/battstat.schemas.in.h:7
-msgid "Notify user when the battery is full."
-msgstr "Сповіщати про повний рівень заряду акумулятора."
-
-#: ../battstat/battstat.schemas.in.h:8
-msgid "Notify user when the battery is low."
-msgstr "Сповіщати про низький рівень заряду акумулятора."
-
-#: ../battstat/battstat.schemas.in.h:9
 msgid "Red value level"
 msgstr "Рівень червоного кольору"
 
+#: ../battstat/battstat.schemas.in.h:2
+msgid ""
+"The battery level below which the battery is displayed as red. Also the "
+"value at which the low battery warning is displayed."
+msgstr "Рівень зарядження, нижче якого батарея зображується червоною. Також значення, при якому виводиться попередження про низький заряд."
+
+#: ../battstat/battstat.schemas.in.h:3
+msgid "Warn on low time rather than low percentage"
+msgstr "Попереджувати при маленькому часі, а не при низькому відсотки"
+
+#: ../battstat/battstat.schemas.in.h:4
+msgid ""
+"Use the value defined in red_value as a time remaining to show the warning "
+"dialog rather than a percentage."
+msgstr "Встановлене у параметрі red_value значення є часом, що залишився до показу діалогу попередження, а не відсотком заряду"
+
+#: ../battstat/battstat.schemas.in.h:5
+msgid "Low Battery Notification"
+msgstr "Сповіщення про низький рівень заряду"
+
+#: ../battstat/battstat.schemas.in.h:6
+msgid "Notify user when the battery is low."
+msgstr "Сповіщати про низький рівень заряду акумулятора."
+
+#: ../battstat/battstat.schemas.in.h:7
+msgid "Full Battery Notification"
+msgstr "Сповіщення про повний заряд"
+
+#: ../battstat/battstat.schemas.in.h:8
+msgid "Notify user when the battery is full."
+msgstr "Сповіщати про повний рівень заряду акумулятора."
+
+#: ../battstat/battstat.schemas.in.h:9
+msgid "Beep for warnings"
+msgstr "Попередження звуковим сигналом"
+
 #: ../battstat/battstat.schemas.in.h:10
+msgid "Beep when displaying a warning."
+msgstr "Супроводжувати вивід попереджень звуковим сигналом."
+
+#: ../battstat/battstat.schemas.in.h:11
+msgid "Drain from top"
+msgstr "Зменшується згори"
+
+#: ../battstat/battstat.schemas.in.h:12
 msgid ""
 "Show the battery meter draining from the top of the battery. Only "
 "implemented for traditional battery view."
 msgstr "При розряді акумулятора індикатор спускається згори"
 
-#: ../battstat/battstat.schemas.in.h:11
-msgid "Show the horizontal battery"
-msgstr "Показувати батарею горизонтально"
-
-#: ../battstat/battstat.schemas.in.h:12
-msgid "Show the time/percent label"
-msgstr "Показувати позначку часу/заряду"
-
 #: ../battstat/battstat.schemas.in.h:13
-msgid "Show the traditional, horizontal battery on the panel."
-msgstr "Традиційний вигляд, горизонтальна батарея на панелі."
+msgid "Upright (small) battery"
+msgstr "Вертикальна (маленька) батарея"
 
 #: ../battstat/battstat.schemas.in.h:14
 msgid "Show the upright, smaller battery on the panel."
 msgstr "Вертикальний вигляд, менша батарея на панелі."
 
 #: ../battstat/battstat.schemas.in.h:15
-msgid ""
-"The battery level below which the battery is displayed as red. Also the "
-"value at which the low battery warning is displayed."
-msgstr ""
-"Рівень зарядження, нижче якого батарея зображується червоною. Також "
-"значення, при якому виводиться попередження про низький заряд."
+msgid "Show the horizontal battery"
+msgstr "Показувати батарею горизонтально"
 
 #: ../battstat/battstat.schemas.in.h:16
-msgid "Upright (small) battery"
-msgstr "Вертикальна (маленька) батарея"
+msgid "Show the traditional, horizontal battery on the panel."
+msgstr "Традиційний вигляд, горизонтальна батарея на панелі."
 
 #: ../battstat/battstat.schemas.in.h:17
-msgid ""
-"Use the value defined in red_value as a time remaining to show the warning "
-"dialog rather than a percentage."
-msgstr ""
-"Встановлене у параметрі red_value значення є часом, що залишився до показу "
-"діалогу попередження, а не відсотком заряду"
+msgid "Show the time/percent label"
+msgstr "Показувати позначку часу/заряду"
 
 #: ../battstat/battstat.schemas.in.h:18
-msgid "Warn on low time rather than low percentage"
-msgstr "Попереджувати при маленькому часі, а не при низькому відсотки"
+msgid "0 for no label, 1 for percentage and 2 for time remaining."
+msgstr "0 - без позначки, 1 - відсотки, та  2 - залишок часу"
+
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
+msgid "Battstat Factory"
+msgstr "Фабрика стану акумулятора"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
-#.
-#: ../battstat/properties.c:315
+#. 
+#: ../battstat/properties.c:314
 msgid "Percent"
 msgstr "Відсоток"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#.
-#: ../battstat/properties.c:321
+#. 
+#: ../battstat/properties.c:320
 msgid "Minutes Remaining"
 msgstr "Залишилось часу"
 
-#: ../battstat/sounds/battstat_applet.soundlist.in.h:1
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:1
 msgid "Battery Status Utility"
 msgstr "Утиліта індикації стану акумулятора"
 
-#: ../battstat/sounds/battstat_applet.soundlist.in.h:2
-msgid "Battery fully re-charged"
-msgstr "Акумулятор повністю перезаряджено"
-
-#: ../battstat/sounds/battstat_applet.soundlist.in.h:3
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:2
 msgid "Battery power low"
 msgstr "Акумулятор розряджений"
 
-#: ../charpick/MATE_CharpickerApplet.server.in.in.h:1
-#: ../charpick/charpick.c:741 ../charpick/charpick.c:753
-#: ../charpick/properties.c:452
-msgid "Character Palette"
-msgstr "Палітра символів"
-
-#: ../charpick/MATE_CharpickerApplet.server.in.in.h:2
-msgid "Charpicker Applet Factory"
-msgstr "Фабрика аплету вибору символів"
-
-#: ../charpick/MATE_CharpickerApplet.server.in.in.h:3
-#: ../charpick/charpick.c:741
-msgid "Insert characters"
-msgstr "Вставка символів"
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:3
+msgid "Battery fully re-charged"
+msgstr "Акумулятор повністю перезаряджено"
 
 #: ../charpick/charpick.c:436
 msgid "Available palettes"
@@ -539,7 +509,7 @@ msgstr "Наявні палітри"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#.
+#. 
 #: ../charpick/charpick.c:483
 #, c-format
 msgid "Insert \"%s\""
@@ -554,37 +524,48 @@ msgstr "Вставити спеціальний символ"
 msgid "insert special character %s"
 msgstr "вставити спеціальний символ %s"
 
-#: ../charpick/charpick.c:606
+#: ../charpick/charpick.c:605
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
-msgstr ""
-"Аплет для вибору спеціальних знаків, котрих немає на клавіатурі. Випущено "
-"під ліцензією GNU General Public Licence."
+msgstr "Аплет для вибору спеціальних знаків, котрих немає на клавіатурі. Випущено під ліцензією GNU General Public Licence."
+
+#: ../charpick/charpick.c:743 ../charpick/charpick.c:757
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
+#: ../charpick/properties.c:452
+msgid "Character Palette"
+msgstr "Палітра символів"
+
+#: ../charpick/charpick.c:743
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
+msgid "Insert characters"
+msgstr "Вставка символів"
 
 #: ../charpick/charpick.schemas.in.h:1
-msgid "Characters shown on applet startup"
-msgstr "Символи, що відображаються після запуску"
-
-#: ../charpick/charpick.schemas.in.h:2
 msgid "DEPRECATED - Characters shown on applet startup"
 msgstr "НЕ РЕКОМЕНДУЮТЬСЯ - Символи, що показуватимуться після запуску"
 
-#: ../charpick/charpick.schemas.in.h:3 ../charpick/properties.c:379
-msgid "List of available palettes"
-msgstr "Список наявних палітр"
+#: ../charpick/charpick.schemas.in.h:2
+msgid "Characters shown on applet startup"
+msgstr "Символи, що відображаються після запуску"
 
-#: ../charpick/charpick.schemas.in.h:4
-msgid "List of strings containing the available palettes."
-msgstr "Список рядків, що містять доступні шаблони."
-
-#: ../charpick/charpick.schemas.in.h:5
+#: ../charpick/charpick.schemas.in.h:3
 msgid ""
 "The string that the user had selected when the applet was last used. This "
 "string will be displayed when the user starts the applet."
-msgstr ""
-"Рядок, який вибрав користувач під час останнього використання аплету. Цей "
-"рядок відображатиметься після наступного запуску."
+msgstr "Рядок, який вибрав користувач під час останнього використання аплету. Цей рядок відображатиметься після наступного запуску."
+
+#: ../charpick/charpick.schemas.in.h:4 ../charpick/properties.c:379
+msgid "List of available palettes"
+msgstr "Список наявних палітр"
+
+#: ../charpick/charpick.schemas.in.h:5
+msgid "List of strings containing the available palettes."
+msgstr "Список рядків, що містять доступні шаблони."
+
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:1
+msgid "Charpicker Applet Factory"
+msgstr "Фабрика аплету вибору символів"
 
 #: ../charpick/properties.c:28
 msgid "_Edit"
@@ -642,98 +623,91 @@ msgstr "Видалити"
 msgid "Click to delete the selected palette"
 msgstr "Клацніть для видалення вибраної палітри"
 
-#: ../charpick/properties.c:542
+#: ../charpick/properties.c:541
 msgid "Character Palette Preferences"
 msgstr "Параметри палітри символів"
 
-#: ../cpufreq/MATE_CPUFreqApplet.server.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:943 ../cpufreq/src/cpufreq-applet.c:999
-msgid "CPU Frequency Scaling Monitor"
-msgstr "Індикатор зміни частоти процесора"
-
-#: ../cpufreq/MATE_CPUFreqApplet.server.in.in.h:2
-msgid "Monitor the CPU Frequency Scaling"
-msgstr "Відслідковує зміну частоти процесора"
-
 #: ../cpufreq/cpufreq-applet.schemas.in.h:1
-msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
-"to show percentage instead of frequency."
-msgstr ""
-"0 - відображати частоту ЦП, 1 - частоту та одиниці, 2 - відсотки замість "
-"частоти."
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:2
-msgid ""
-"A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
-"the applet in text mode (not to show the pixmap) and 2 to show the applet in "
-"graphic and text mode."
-msgstr ""
-"0 - відображати аплет у графічному режимі (лише зображення), 1 - текстовий "
-"режим (не відображати зображення), 2 - показувати текст та зображення."
-
-#
-#: ../cpufreq/cpufreq-applet.schemas.in.h:3
 msgid "CPU to Monitor"
 msgstr "Процесор, що відслідковується"
 
-#: ../cpufreq/cpufreq-applet.schemas.in.h:4
-msgid "Mode to show cpu usage"
-msgstr "Режим показу використання ЦП"
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:5
+#: ../cpufreq/cpufreq-applet.schemas.in.h:2
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
-msgstr ""
-"Встановлює центральний процесор. На однопроцесорній системі змінювати не "
-"треба."
+msgstr "Встановлює центральний процесор. На однопроцесорній системі змінювати не треба."
 
-#: ../cpufreq/cpufreq-applet.schemas.in.h:6
+#: ../cpufreq/cpufreq-applet.schemas.in.h:3
+msgid "Mode to show cpu usage"
+msgstr "Режим показу використання ЦП"
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:4
+msgid ""
+"A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
+"the applet in text mode (not to show the pixmap) and 2 to show the applet in"
+" graphic and text mode."
+msgstr "0 - відображати аплет у графічному режимі (лише зображення), 1 - текстовий режим (не відображати зображення), 2 - показувати текст та зображення."
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:5
 msgid "The type of text to display (if the text is enabled)."
 msgstr "Введіть текст для відображення (якщо текст увімкнено)."
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:6
+msgid ""
+"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"to show percentage instead of frequency."
+msgstr "0 - відображати частоту ЦП, 1 - частоту та одиниці, 2 - відсотки замість частоти."
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
 msgstr "Параметри індикатора частоти ЦП"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
-msgid "Display Settings"
-msgstr "Параметри екрану"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "Monitor Settings"
 msgstr "Параметри монітору"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:4
-msgid "Show CPU frequency as _frequency"
-msgstr "Показувати частоту ЦП як _частоту"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:5
-msgid "Show CPU frequency as _percentage"
-msgstr "Показувати частоту ЦП у _відсотках"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:6
-msgid "Show frequency _units"
-msgstr "Показувати _одиниці частоти"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:7
-msgid "_Appearance:"
-msgstr "_Вигляд:"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:8
+#: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "_Monitored CPU:"
 msgstr "_Контрольований процесор:"
 
-#: ../cpufreq/src/cpufreq-applet.c:578 ../cpufreq/src/cpufreq-prefs.c:478
+#: ../cpufreq/cpufreq-preferences.ui.h:4
+msgid "Display Settings"
+msgstr "Параметри екрану"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:5
+msgid "_Appearance:"
+msgstr "_Вигляд:"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:6
+msgid "Show CPU frequency as _frequency"
+msgstr "Показувати частоту ЦП як _частоту"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:7
+msgid "Show frequency _units"
+msgstr "Показувати _одиниці частоти"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:8
+msgid "Show CPU frequency as _percentage"
+msgstr "Показувати частоту ЦП у _відсотках"
+
+#: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
+#: ../cpufreq/src/cpufreq-applet.c:946 ../cpufreq/src/cpufreq-applet.c:1005
+msgid "CPU Frequency Scaling Monitor"
+msgstr "Індикатор зміни частоти процесора"
+
+#: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:2
+msgid "Monitor the CPU Frequency Scaling"
+msgstr "Відслідковує зміну частоти процесора"
+
+#: ../cpufreq/src/cpufreq-applet.c:581 ../cpufreq/src/cpufreq-prefs.c:478
 msgid "Could not open help document"
 msgstr "Не вдається відкрити документ довідки"
 
-#: ../cpufreq/src/cpufreq-applet.c:606
+#: ../cpufreq/src/cpufreq-applet.c:608
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ця утиліта відображає поточну частоту процесора."
 
-#: ../cpufreq/src/cpufreq-applet.c:1000
+#: ../cpufreq/src/cpufreq-applet.c:1006
 msgid "This utility shows the current CPU Frequency"
 msgstr "Ця утиліта відображає поточну частоту ЦП"
 
@@ -754,9 +728,10 @@ msgid "Frequency Scaling Unsupported"
 msgstr "Зміна частоти не підтримується"
 
 #. If there is no cpufreq support it shows only the cpu frequency,
-#. * I think is better than do nothing. I have to notify it to the user, because
+#. * I think is better than do nothing. I have to notify it to the user,
+#. because
 #. * he could think that cpufreq is supported but it doesn't work succesfully
-#.
+#. 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
 msgstr "Зміна частоти процесора не підтримується"
@@ -765,10 +740,7 @@ msgstr "Зміна частоти процесора не підтримуєть
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr ""
-"Ви не зможете змінити частоту процесора на вашому комп'ютері. Можливо, ваш "
-"комп'ютер неправильно налаштований, або не має апаратної підтримки зміни "
-"частоти."
+msgstr "Ви не зможете змінити частоту процесора на вашому комп'ютері. Можливо, ваш комп'ютер неправильно налаштований, або не має апаратної підтримки зміни частоти."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
@@ -778,60 +750,43 @@ msgstr "Змінити частоту процесора"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Для зміни частоти процесора потрібні привілеї адміністратора."
 
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:1
-#: ../drivemount/drivemount.c:169 ../drivemount/drivemount.c:201
-msgid "Disk Mounter"
-msgstr "Підключення дисків"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:2
-msgid "Drive Mount Applet Factory"
-msgstr "Фабрика аплету підключення"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:3
-msgid "Factory for drive mount applet"
-msgstr "Фабрика для аплету підключення дисків"
-
-#: ../drivemount/MATE_DriveMountApplet.server.in.in.h:4
-msgid "Mount local disks and devices"
-msgstr "Підключення локальних дисків і пристроїв"
-
-#: ../drivemount/drive-button.c:338 ../drivemount/drive-button.c:351
+#: ../drivemount/drive-button.c:342 ../drivemount/drive-button.c:355
 msgid "(mounted)"
 msgstr "(підключено)"
 
-#: ../drivemount/drive-button.c:340
+#: ../drivemount/drive-button.c:344
 msgid "(not mounted)"
 msgstr " (не підключено)"
 
-#: ../drivemount/drive-button.c:552
+#: ../drivemount/drive-button.c:556
 #, c-format
 msgid "Cannot execute '%s'"
 msgstr "Не вдається виконати \"%s\""
 
-#: ../drivemount/drive-button.c:875
+#: ../drivemount/drive-button.c:879
 msgid "_Play DVD"
 msgstr "_Грати DVD"
 
-#: ../drivemount/drive-button.c:879
+#: ../drivemount/drive-button.c:883
 msgid "_Play CD"
 msgstr "_Грати CD"
 
-#: ../drivemount/drive-button.c:882
+#: ../drivemount/drive-button.c:886
 #, c-format
 msgid "_Open %s"
 msgstr "_Відкрити %s"
 
-#: ../drivemount/drive-button.c:891
+#: ../drivemount/drive-button.c:895
 #, c-format
 msgid "Un_mount %s"
 msgstr "В_ідключити %s"
 
-#: ../drivemount/drive-button.c:898
+#: ../drivemount/drive-button.c:902
 #, c-format
 msgid "_Mount %s"
 msgstr "_Підключити %s"
 
-#: ../drivemount/drive-button.c:906
+#: ../drivemount/drive-button.c:910
 #, c-format
 msgid "_Eject %s"
 msgstr "Ви_тягти %s"
@@ -839,6 +794,11 @@ msgstr "Ви_тягти %s"
 #: ../drivemount/drivemount.c:114
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Аплет для підключення та відключення блочних томів."
+
+#: ../drivemount/drivemount.c:173 ../drivemount/drivemount.c:210
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
+msgid "Disk Mounter"
+msgstr "Підключення дисків"
 
 #: ../drivemount/drivemount.schemas.in.h:1
 msgid "Interval timeout to check mount point status"
@@ -848,24 +808,28 @@ msgstr "Період перевірки стану точки підключен
 msgid "Time in seconds between status updates"
 msgstr "Час, в секундах, між оновленнями стану"
 
-#: ../geyes/MATE_GeyesApplet.server.in.in.h:1
-msgid "A set of eyeballs for your panel"
-msgstr "Встановлює аплет \"Очі\" на вашу панель"
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:1
+msgid "Drive Mount Applet Factory"
+msgstr "Фабрика аплету підключення"
 
-#: ../geyes/MATE_GeyesApplet.server.in.in.h:2 ../geyes/geyes.c:385
-#: ../geyes/geyes.c:415 ../geyes/geyes.c:417
-msgid "Eyes"
-msgstr "Очі"
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:2
+msgid "Factory for drive mount applet"
+msgstr "Фабрика для аплету підключення дисків"
 
-#: ../geyes/MATE_GeyesApplet.server.in.in.h:3
-msgid "Geyes Applet Factory"
-msgstr "Фабрика аплету \"Очі\""
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:4
+msgid "Mount local disks and devices"
+msgstr "Підключення локальних дисків і пристроїв"
 
-#: ../geyes/geyes.c:190
+#: ../geyes/geyes.c:191
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Безглузді очі для панелі MATE, що слідкують за курсором миші."
 
-#: ../geyes/geyes.c:418
+#: ../geyes/geyes.c:391 ../geyes/geyes.c:422 ../geyes/geyes.c:424
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
+msgid "Eyes"
+msgstr "Очі"
+
+#: ../geyes/geyes.c:425
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Очі, що дивляться в напрямку вказівника миші"
 
@@ -873,1179 +837,608 @@ msgstr "Очі, що дивляться в напрямку вказівника
 msgid "Directory in which the theme is located"
 msgstr "Каталог, де розташована тема"
 
-#: ../geyes/themes.c:127
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
+msgid "Geyes Applet Factory"
+msgstr "Фабрика аплету \"Очі\""
+
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
+msgid "A set of eyeballs for your panel"
+msgstr "Встановлює аплет \"Очі\" на вашу панель"
+
+#: ../geyes/themes.c:131
 msgid "Can not launch the eyes applet."
 msgstr "Не вдається запустити аплет \"Очі\"."
 
-#: ../geyes/themes.c:128
+#: ../geyes/themes.c:132
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Фатальна помилка при спробі завантажити тему."
 
-#: ../geyes/themes.c:304
+#: ../geyes/themes.c:307
 msgid "Geyes Preferences"
 msgstr "Параметри аплету \"Очі\""
 
-#: ../geyes/themes.c:338
+#: ../geyes/themes.c:341
 msgid "Themes"
 msgstr "Теми"
 
-#: ../geyes/themes.c:359
+#: ../geyes/themes.c:362
 msgid "_Select a theme:"
 msgstr "_Виберіть тему:"
 
-#: ../gkb-new/xmodmap/base.xml.in.h:1 ../gkb-new/xmodmap.sun/base.xml.in.h:1
-msgid "Alt+Control changes layout."
-msgstr "Alt+Control перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:2 ../gkb-new/xmodmap.sun/base.xml.in.h:2
-msgid "Alt+Shift changes layout."
-msgstr "Alt+Shift перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:3
-msgid "Arabic keymap"
-msgstr "Арабська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:4
-msgid "Armenian"
-msgstr "Вірменська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:5
-msgid "Basque"
-msgstr "Баскська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:6
-msgid "Belgian"
-msgstr "Бельгійська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:7 ../gkb-new/xmodmap.sun/base.xml.in.h:6
-msgid "Both Alt keys together change layout."
-msgstr "Обидві клавіші Alt перемикають розкладу."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:8 ../gkb-new/xmodmap.sun/base.xml.in.h:7
-msgid "Both Ctrl keys together change layout."
-msgstr "Обидві клавіші Ctrl перемикають розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:9 ../gkb-new/xmodmap.sun/base.xml.in.h:8
-msgid "Both Shift keys together change layout."
-msgstr "Обидві клавіші Shift перемикають розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:10
-msgid "Brazil Portuguese keymap"
-msgstr "Бразильська португальська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:11
-msgid "Bulgarian Cyrillic"
-msgstr "Болгарська кирилиця"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:12
-msgid "Bulgarian keymap"
-msgstr "Болгарська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:13 ../gkb-new/xmodmap.sun/base.xml.in.h:16
-msgid "CapsLock key changes layout."
-msgstr "CapsLock перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:14 ../gkb-new/xmodmap.sun/base.xml.in.h:17
-msgid "Control+Shift changes layout."
-msgstr "Control+Shift перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:15
-msgid "Czech keymap"
-msgstr "Чеська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:16
-msgid "Danish keymap"
-msgstr "Датська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:17
-msgid "Dutch keymap"
-msgstr "Голландська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:18
-msgid "English keymap"
-msgstr "Англійська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:19
-msgid "Estonian keymap"
-msgstr "Естонська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:20
-msgid "Finnish keymap"
-msgstr "Фінська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:21
-msgid "French Swiss"
-msgstr "Швейцарська французька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:22
-msgid "French Swiss keymap"
-msgstr "Швейцарська французька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:23
-msgid "French keymap"
-msgstr "Французька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:24
-msgid "French-Canadian 105-key"
-msgstr "Канадська французька (105 клавіш)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:25
-msgid "GB 102-key"
-msgstr "Велика Британія (102 клавіші)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:26
-msgid "GB 105-key"
-msgstr "Велика Британія (105 клавіш)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:27 ../gkb-new/xmodmap.sun/base.xml.in.h:27
-msgid "Generic Keyboard"
-msgstr "Стандартна клавіатура"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:28
-msgid "Georgian Latin"
-msgstr "Грузинська латиниця"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:29
-msgid "Georgian Russian layout"
-msgstr "Грузинська російська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:30
-msgid "Georgian keymap"
-msgstr "Грузинська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:31
-msgid "German"
-msgstr "Німецька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:32
-msgid "German Swiss with Euro"
-msgstr "Швейцарська німецька з Євро"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:33
-msgid "German keymap"
-msgstr "Німецька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:34
-msgid "Greek keymap"
-msgstr "Грецька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:35
-msgid "Hebrew keymap"
-msgstr "Єврейська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:36
-msgid "Hungarian 101-key latin 1"
-msgstr "Угорська Latin1 (101 клавіша)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:37
-msgid "Hungarian 101-key latin 2"
-msgstr "Угорська Latin2 (101 клавіша)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:38
-msgid "Hungarian 105-key latin 1"
-msgstr "Угорська Latin1 (105 клавіш)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:39
-msgid "Hungarian 105-key latin 2"
-msgstr "Угорська Latin2 (105 клавіш)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:40
-msgid "Hungarian PC/AT 101 keyboard"
-msgstr "Угорська клавіатура PC/AT 101"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:41
-msgid "Hungarian latin1"
-msgstr "Угорська Latin1"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:42
-msgid "Icelandic keymap"
-msgstr "Ісландська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:43
-msgid "Italian keymap"
-msgstr "Італійська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:44
-msgid "Japanese keymap"
-msgstr "Японська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:45
-msgid "Lao keymap"
-msgstr "Лаоська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:46 ../gkb-new/xmodmap.sun/base.xml.in.h:41
-msgid "Layout shift behavior"
-msgstr "Поведінка перемикача розкладки"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:47 ../gkb-new/xmodmap.sun/base.xml.in.h:42
-msgid "Left Alt key changes layout."
-msgstr "Ліва клавіша Alt перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:48 ../gkb-new/xmodmap.sun/base.xml.in.h:43
-msgid "Left Ctrl key changes group."
-msgstr "Ліва клавіша Ctrl перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:49 ../gkb-new/xmodmap.sun/base.xml.in.h:44
-msgid "Left Shift key changes group."
-msgstr "Ліва клавіша Shift перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:50 ../gkb-new/xmodmap.sun/base.xml.in.h:45
-msgid "Left Win-key changes layout."
-msgstr "Ліва клавіша Win перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:51
-msgid "Lithuanian keymap"
-msgstr "Литовська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:52
-msgid "Macedonian"
-msgstr "Македонська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:53 ../gkb-new/xmodmap.sun/base.xml.in.h:48
-msgid "Menu key changes layout."
-msgstr "Клавіша Menu перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:54
-msgid "Mongolian alt keymap"
-msgstr "Монгольська альтернативна"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:55
-msgid "Mongolian keymap"
-msgstr "Монгольська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:56
-msgid "Mongolian phonetic keymap"
-msgstr "Монгольська фонетична"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:57
-msgid "Norwegian"
-msgstr "Норвезька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:58
-msgid "Plain Russian keymap"
-msgstr "Російська проста"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:59
-msgid "Polish"
-msgstr "Польська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:60
-msgid "Polish deadkeys"
-msgstr "Польська із спеціальними клавішами"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:61
-msgid "Portugal"
-msgstr "Португалія"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:62
-msgid "Portugal Deadkeys"
-msgstr "Португальська із спеціальними клавішами"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:63
-msgid "Portuguese keymap"
-msgstr "Португальська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:64 ../gkb-new/xmodmap.sun/base.xml.in.h:53
-msgid "Right Alt key changes layout."
-msgstr "Права клавіша Alt перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:65 ../gkb-new/xmodmap.sun/base.xml.in.h:54
-msgid "Right Ctrl key changes group."
-msgstr "Права клавіша Ctrl перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:66 ../gkb-new/xmodmap.sun/base.xml.in.h:55
-msgid "Right Shift key changes group."
-msgstr "Права клавіша Shift перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:67 ../gkb-new/xmodmap.sun/base.xml.in.h:56
-msgid "Right Win-key changes layout."
-msgstr "Права клавіша Win перемикає розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:68
-msgid "Russian Cyrillic"
-msgstr "Російська кирилиця"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:69
-msgid "Russian keymap"
-msgstr "Російська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:70
-msgid "Serbian keymap"
-msgstr "Сербська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:71 ../gkb-new/xmodmap.sun/base.xml.in.h:60
-msgid "Shift+CapsLock changes layout."
-msgstr "Shift+CapsLock перемикають розкладку."
-
-#: ../gkb-new/xmodmap/base.xml.in.h:72
-msgid "Slovak keymap"
-msgstr "Словацька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:73
-msgid "Slovenian"
-msgstr "Словенська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:74
-msgid "Slovenian keymap"
-msgstr "Словенська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:75
-msgid "Spanish keymap"
-msgstr "Іспанська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:76
-msgid "Sun (!not PC!) type5 Hungarian latin 2"
-msgstr "Угорська Latin2 Type-5 від Sun (не PC)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:77
-msgid "Swedish"
-msgstr "Шведська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:78
-msgid "Swedish keymap"
-msgstr "Шведська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:79
-msgid "Swiss keymap"
-msgstr "Швейцарська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:80
-msgid "Thai"
-msgstr "Тайська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:81
-msgid "Thai Kedmanee"
-msgstr "Тайська (Кедмані)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:82
-msgid "Thai keymap"
-msgstr "Тайська"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:83
-msgid "Turkish \"F\" keyboard"
-msgstr "Турецька клавіатура \"F\""
-
-#: ../gkb-new/xmodmap/base.xml.in.h:84
-msgid "Turkish \"Q\" keyboard"
-msgstr "Турецька клавіатура \"Q\""
-
-#: ../gkb-new/xmodmap/base.xml.in.h:85
-msgid "Turkish keymap"
-msgstr "Турецька"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:86
-msgid "UK 105-key"
-msgstr "Велика Британія (105 клавіш)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:87
-msgid "UK PC/AT keyboard"
-msgstr "Велика Британія (PC/AT)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:88
-msgid "US 101-key keyboard"
-msgstr "США (101 клавіша)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:89
-msgid "US 105-key keyboard (with windows keys)"
-msgstr "США (105 клавіш, без клавіш \"Windows\")"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:90
-msgid "US 84-key"
-msgstr "США (84 клавіші)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:91
-msgid "US DEC 450"
-msgstr "США для DEC 450"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:92
-msgid "US IBM RS/6000"
-msgstr "США для IBM RS/6000"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:93
-msgid "US International"
-msgstr "США міжнародна"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:94
-msgid "US Macintosh"
-msgstr "США для Макінтош"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:95
-msgid "US PC/AT 101 keyboard"
-msgstr "США клавіатура PC/AT 101"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:96
-msgid "US Silicon Graphics 101-key"
-msgstr "США для Silicon Graphics (101 клавіша)"
-
-#: ../gkb-new/xmodmap/base.xml.in.h:97
-msgid "US Sun type5"
-msgstr "США Type-5 від Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:3
-msgid "Armenian Sun keymap"
-msgstr "Вірменська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:4
-msgid "Azerbaijani Turkish Sun keymap"
-msgstr "Азербайджанська турецька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:5
-msgid "Belarusian Sun keymap"
-msgstr "Білоруська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:9
-msgid "Brazil Portuguese Sun USB keymap"
-msgstr "Бразильська португальська Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:10
-msgid "Brazil Portuguese Sun keymap"
-msgstr "Бразильська португальська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:11
-msgid "British Sun Type-4 keymap"
-msgstr "Британська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:12
-msgid "British Sun USB keymap"
-msgstr "Британська Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:13
-msgid "British Sun keymap"
-msgstr "Британська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:14
-msgid "Bulgarian Sun keymap"
-msgstr "Болгарська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:15
-msgid "Canadian Sun keymap"
-msgstr "Канадська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:18
-msgid "Czech Sun keymap"
-msgstr "Чеська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:19
-msgid "Danish Sun Type-4 keymap"
-msgstr "Датська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:20
-msgid "Danish Sun USB keymap"
-msgstr "Датська Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:21
-msgid "Danish Sun keymap"
-msgstr "Датська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:22
-msgid "Dutch Sun keymap"
-msgstr "Голландська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:23
-msgid "Estonian Sun keymap"
-msgstr "Естонська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:24
-msgid "Finnish Sun keymap"
-msgstr "Фінська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:25
-msgid "French Sun USB keymap"
-msgstr "Французька Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:26
-msgid "French Sun keymap"
-msgstr "Французька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:28
-msgid "German Sun Type-4 keymap"
-msgstr "Німецька Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:29
-msgid "German Sun USB keymap"
-msgstr "Німецька Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:30
-msgid "German Sun keymap"
-msgstr "Німецька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:31
-msgid "Hebrew Sun keymap"
-msgstr "Єврейська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:32
-msgid "Hungarian latin2 Sun keymap"
-msgstr "Угорська Latin2 Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:33
-msgid "Hungarian type5 latin 1 keymap"
-msgstr "Угорська type5 latin 1"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:34
-msgid "Icelandic Sun keymap"
-msgstr "Ісландська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:35
-msgid "Italian Sun Type-4 keymap"
-msgstr "Італійська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:36
-msgid "Italian Sun USB keymap"
-msgstr "Італійська Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:37
-msgid "Italian Sun keymap"
-msgstr "Італійська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:38
-msgid "Japanese Sun Type-4 keymap"
-msgstr "Японська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:39
-msgid "Japanese Sun keymap"
-msgstr "Японська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:40
-msgid "Latvian Sun keymap"
-msgstr "Латвійська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:46
-msgid "Lithuanian Sun keymap"
-msgstr "Литовська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:47
-msgid "Macedonian Sun keymap"
-msgstr "Македонська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:49
-msgid "Norwegian Sun keymap"
-msgstr "Норвезька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:50
-msgid "Polish Sun keymap"
-msgstr "Польська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:51
-msgid "Portuguese Sun Type-4 keymap"
-msgstr "Португальська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:52
-msgid "Portuguese Sun keymap"
-msgstr "Португальська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:57
-msgid "Romanian Sun keymap"
-msgstr "Румунська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:58
-msgid "Russian Sun keymap"
-msgstr "Російська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:59
-msgid "Serbian Sun standard keymap"
-msgstr "Сербська стандартна Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:61
-msgid "Slovak Sun keymap"
-msgstr "Словацька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:62
-msgid "Slovenian Sun keymap"
-msgstr "Словенська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:63
-msgid "Spanish Sun Type-4 keymap"
-msgstr "Іспанська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:64
-msgid "Spanish Sun USB keymap"
-msgstr "Іспанська Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:65
-msgid "Spanish Sun keymap"
-msgstr "Іспанська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:66
-msgid "Swedish Sun Type-4 keymap"
-msgstr "Шведська Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:67
-msgid "Swedish Sun USB keymap"
-msgstr "Шведська Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:68
-msgid "Swedish Sun keymap"
-msgstr "Шведська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:69
-msgid "Swiss German Sun keymap"
-msgstr "Швейцарська Німецька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:70
-msgid "Thai Sun keymap"
-msgstr "Тайська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:71
-msgid "Turkish Sun keymap"
-msgstr "Турецька Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:72
-msgid "US Sun Type-4 keymap"
-msgstr "США Sun Type-4"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:73
-msgid "US Sun USB keymap"
-msgstr "США Sun USB"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:74
-msgid "US Sun type5 keymap"
-msgstr "США Type-5 від Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:75
-msgid "Ukrainian Sun keymap"
-msgstr "Українська Sun"
-
-#: ../gkb-new/xmodmap.sun/base.xml.in.h:76
-msgid "Vietnamese Sun keymap"
-msgstr "В'єтнамська Sun"
-
-#: ../mateweather/MATE_MateWeatherApplet.xml.h:2
-msgid "_Details"
-msgstr "Подро_биці"
-
-#: ../mateweather/MATE_MateWeatherApplet.xml.h:5 ../mateweather/mateweather-dialog.c:215
-msgid "_Update"
-msgstr "_Оновити"
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:1
-msgid "Factory for creating the weather applet."
-msgstr "Фабрика для створення аплету погоди."
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:2
-msgid "Gweather Applet Factory"
-msgstr "Фабрика аплетів погоди"
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:3
-msgid "Monitor the current weather conditions, and forecasts"
-msgstr "Слідкує за поточними погодними умовами і робить прогнози"
-
-#: ../mateweather/MATE_MateWeatherApplet_Factory.server.in.in.h:4
-#: ../mateweather/mateweather-applet.c:324
-msgid "Weather Report"
-msgstr "Зведення погоди"
-
-#: ../mateweather/mateweather-about.c:50
+#: ../mateweather/mateweather-about.c:48
 msgid "© 1999-2005 by S. Papadimitriou and others"
 msgstr "Авторське право © 1999-2005 by S. Papadimitriou та інші."
 
-#: ../mateweather/mateweather-about.c:51
+#: ../mateweather/mateweather-about.c:49
 msgid "A panel application for monitoring local weather conditions."
 msgstr "Аплет відображення погодних умов."
 
-#: ../mateweather/mateweather-applet.c:342 ../mateweather/mateweather-applet.c:346
+#: ../mateweather/mateweather-applet.c:115
+msgid "_Details"
+msgstr "Подро_биці"
+
+#: ../mateweather/mateweather-applet.c:118
+#: ../mateweather/mateweather-dialog.c:198
+msgid "_Update"
+msgstr "_Оновити"
+
+#: ../mateweather/mateweather-applet.c:329
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
+msgid "Weather Report"
+msgstr "Зведення погоди"
+
+#: ../mateweather/mateweather-applet.c:347
+#: ../mateweather/mateweather-applet.c:351
 msgid "MATE Weather"
 msgstr "Аплет \"Зведення погоди\""
 
-#: ../mateweather/mateweather-applet.c:447
+#: ../mateweather/mateweather-applet.c:453
 msgid "Weather Forecast"
 msgstr "Прогноз погоди"
 
-#: ../mateweather/mateweather-applet.c:459
+#: ../mateweather/mateweather-applet.c:465
 #, c-format
 msgid ""
 "City: %s\n"
 "Sky: %s\n"
 "Temperature: %s"
-msgstr ""
-"Місто: %s\n"
-"Небо: %s\n"
-"Температура: %s"
+msgstr "Місто: %s\nНебо: %s\nТемпература: %s"
 
-#: ../mateweather/mateweather-applet.c:509
+#: ../mateweather/mateweather-applet.c:515
 msgid "Updating..."
 msgstr "Триває оновлення..."
 
-#: ../mateweather/mateweather-dialog.c:213
+#: ../mateweather/mateweather-dialog.c:196
 msgid "Details"
 msgstr "Подробиці"
 
-#: ../mateweather/mateweather-dialog.c:256
+#: ../mateweather/mateweather-dialog.c:239
 msgid "City:"
 msgstr "Місто:"
 
-#: ../mateweather/mateweather-dialog.c:264
+#: ../mateweather/mateweather-dialog.c:247
 msgid "Last update:"
 msgstr "Останнє оновлення:"
 
-#: ../mateweather/mateweather-dialog.c:272
+#: ../mateweather/mateweather-dialog.c:255
 msgid "Conditions:"
 msgstr "Погодні умови:"
 
-#: ../mateweather/mateweather-dialog.c:280
+#: ../mateweather/mateweather-dialog.c:263
 msgid "Sky:"
 msgstr "Небо:"
 
-#: ../mateweather/mateweather-dialog.c:288
+#: ../mateweather/mateweather-dialog.c:271
 msgid "Temperature:"
 msgstr "Температура:"
 
-#: ../mateweather/mateweather-dialog.c:296
+#: ../mateweather/mateweather-dialog.c:279
 msgid "Feels like:"
 msgstr "Комфортність:"
 
-#: ../mateweather/mateweather-dialog.c:304
+#: ../mateweather/mateweather-dialog.c:287
 msgid "Dew point:"
 msgstr "Точка роси:"
 
-#: ../mateweather/mateweather-dialog.c:312
+#: ../mateweather/mateweather-dialog.c:295
 msgid "Relative humidity:"
 msgstr "Відносна вологість:"
 
-#: ../mateweather/mateweather-dialog.c:320
+#: ../mateweather/mateweather-dialog.c:303
 msgid "Wind:"
 msgstr "Вітер:"
 
-#: ../mateweather/mateweather-dialog.c:328
+#: ../mateweather/mateweather-dialog.c:311
 msgid "Pressure:"
 msgstr "Тиск:"
 
-#: ../mateweather/mateweather-dialog.c:336
+#: ../mateweather/mateweather-dialog.c:319
 msgid "Visibility:"
 msgstr "Видимість:"
 
-#: ../mateweather/mateweather-dialog.c:344
+#: ../mateweather/mateweather-dialog.c:327
 msgid "Sunrise:"
 msgstr "Схід сонця:"
 
-#: ../mateweather/mateweather-dialog.c:352
+#: ../mateweather/mateweather-dialog.c:335
 msgid "Sunset:"
 msgstr "Захід сонця:"
 
-#: ../mateweather/mateweather-dialog.c:486
+#: ../mateweather/mateweather-dialog.c:469
 msgid "Current Conditions"
 msgstr "Поточні погодні умови"
 
-#: ../mateweather/mateweather-dialog.c:503
+#: ../mateweather/mateweather-dialog.c:486
 msgid "Forecast Report"
 msgstr "Прогноз погоди"
 
-#: ../mateweather/mateweather-dialog.c:503
+#: ../mateweather/mateweather-dialog.c:486
 msgid "See the ForeCast Details"
 msgstr "Переглянути докладний прогноз"
 
-#: ../mateweather/mateweather-dialog.c:513
+#: ../mateweather/mateweather-dialog.c:496
 msgid "Forecast"
 msgstr "Прогноз"
 
-#: ../mateweather/mateweather-dialog.c:521
+#: ../mateweather/mateweather-dialog.c:504
 msgid "Radar Map"
 msgstr "Радарна мапа"
 
-#: ../mateweather/mateweather-dialog.c:552
+#: ../mateweather/mateweather-dialog.c:535
 msgid "_Visit Weather.com"
 msgstr "_Відвідати Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:553
+#: ../mateweather/mateweather-dialog.c:536
 msgid "Visit Weather.com"
 msgstr "Відвідати Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:553
+#: ../mateweather/mateweather-dialog.c:536
 msgid "Click to Enter Weather.com"
 msgstr "Клацніть, щоб відвідати Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:638
+#: ../mateweather/mateweather-dialog.c:621
 msgid "Forecast not currently available for this location."
 msgstr "Для цієї місцевості прогноз наразі недоступний."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:171
+#: ../mateweather/mateweather-pref.c:179
 msgid "Location view"
 msgstr "Перегляд місцевості"
 
-#: ../mateweather/mateweather-pref.c:171
+#: ../mateweather/mateweather-pref.c:179
 msgid "Select Location from the list"
 msgstr "Виберіть місцевість із списку"
 
-#: ../mateweather/mateweather-pref.c:172
+#: ../mateweather/mateweather-pref.c:180
 msgid "Update spin button"
 msgstr "Кнопка оновлення"
 
-#: ../mateweather/mateweather-pref.c:172
+#: ../mateweather/mateweather-pref.c:180
 msgid "Spinbutton for updating"
 msgstr "Кнопка оновлення"
 
-#: ../mateweather/mateweather-pref.c:173
+#: ../mateweather/mateweather-pref.c:181
 msgid "Address Entry"
 msgstr "Поле адреси"
 
-#: ../mateweather/mateweather-pref.c:173
+#: ../mateweather/mateweather-pref.c:181
 msgid "Enter the URL"
 msgstr "Введіть адресу (URL)"
 
-#: ../mateweather/mateweather-pref.c:317
+#: ../mateweather/mateweather-pref.c:332
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Не вдається завантажити XML базу даних місць. Сповістіть про помилку."
 
-#: ../mateweather/mateweather-pref.c:807
+#: ../mateweather/mateweather-pref.c:878
 msgid "Weather Preferences"
 msgstr "Параметри аплету \"Зведення погоди\""
 
-#: ../mateweather/mateweather-pref.c:839 ../mateweather/mateweather-pref.c:1024
+#: ../mateweather/mateweather-pref.c:906
+#: ../mateweather/mateweather-pref.c:1092
 msgid "_Automatically update every:"
 msgstr "Автоматично оновлювати _кожні "
 
-#.
 #. * Units settings page.
-#.
+#. 
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:852
+#: ../mateweather/mateweather-pref.c:921
 msgid "_Temperature unit:"
 msgstr "_Температурі одиниці:"
 
-#: ../mateweather/mateweather-pref.c:861 ../mateweather/mateweather-pref.c:881
-#: ../mateweather/mateweather-pref.c:907 ../mateweather/mateweather-pref.c:935
+#: ../mateweather/mateweather-pref.c:930 ../mateweather/mateweather-pref.c:952
+#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:1009
 msgid "Default"
 msgstr "Типово"
 
-#: ../mateweather/mateweather-pref.c:862
+#: ../mateweather/mateweather-pref.c:931
 msgid "Kelvin"
 msgstr "за Кельвіном"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:933
 msgid "Celsius"
 msgstr "за Цельсієм"
 
-#: ../mateweather/mateweather-pref.c:865
+#: ../mateweather/mateweather-pref.c:934
 msgid "Fahrenheit"
 msgstr "за Фаренгейтом"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:872
+#: ../mateweather/mateweather-pref.c:943
 msgid "_Wind speed unit:"
 msgstr "Одиниці швидкості _вітру:"
 
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:883
+#: ../mateweather/mateweather-pref.c:954
 msgid "m/s"
 msgstr "м/с"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:956
 msgid "km/h"
 msgstr "км/с"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:958
 msgid "mph"
 msgstr "миль/год"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:960
 msgid "knots"
 msgstr "вузол"
 
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:961
 msgid "Beaufort scale"
 msgstr "Шкала Beaufort"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:898
+#: ../mateweather/mateweather-pref.c:970
 msgid "_Pressure unit:"
 msgstr "Одиниці т_иску:"
 
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:909
+#: ../mateweather/mateweather-pref.c:981
 msgid "kPa"
 msgstr "кПа"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:911
+#: ../mateweather/mateweather-pref.c:983
 msgid "hPa"
 msgstr "ГПа"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:913
+#: ../mateweather/mateweather-pref.c:985
 msgid "mb"
 msgstr "мбар"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:915
+#: ../mateweather/mateweather-pref.c:987
 msgid "mmHg"
 msgstr "мм рт.ст."
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:917
+#: ../mateweather/mateweather-pref.c:989
 msgid "inHg"
 msgstr "дюймів рт.ст."
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:991
 msgid "atm"
 msgstr "атм"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:926
+#: ../mateweather/mateweather-pref.c:1000
 msgid "_Visibility unit:"
 msgstr "Одиниці види_мості:"
 
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:937
+#: ../mateweather/mateweather-pref.c:1011
 msgid "meters"
 msgstr "метрів"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:939
+#: ../mateweather/mateweather-pref.c:1013
 msgid "km"
 msgstr "км"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:941
+#: ../mateweather/mateweather-pref.c:1015
 msgid "miles"
 msgstr "миль"
 
-#: ../mateweather/mateweather-pref.c:975
+#: ../mateweather/mateweather-pref.c:1041
 msgid "Enable _radar map"
 msgstr "Увімкнути _радарну мапу"
 
-#: ../mateweather/mateweather-pref.c:989
+#: ../mateweather/mateweather-pref.c:1057
 msgid "Use _custom address for radar map"
 msgstr "В_ласна адреса радарної мапи"
 
-#: ../mateweather/mateweather-pref.c:1006
+#: ../mateweather/mateweather-pref.c:1075
 msgid "A_ddress:"
 msgstr "_Адреса:"
 
-#: ../mateweather/mateweather-pref.c:1020
+#: ../mateweather/mateweather-pref.c:1088
 msgid "Update"
 msgstr "Оновлення"
 
-#: ../mateweather/mateweather-pref.c:1044
+#: ../mateweather/mateweather-pref.c:1111
 msgid "minutes"
 msgstr "хв"
 
-#: ../mateweather/mateweather-pref.c:1060
+#: ../mateweather/mateweather-pref.c:1129
 msgid "Display"
 msgstr "Відображення"
 
-#: ../mateweather/mateweather-pref.c:1075
-#: ../mini-commander/src/mini-commander.ui.h:9
+#: ../mateweather/mateweather-pref.c:1143
+#: ../mini-commander/src/mini-commander.ui.h:12
 msgid "General"
 msgstr "Загальне"
 
-#: ../mateweather/mateweather-pref.c:1088
+#: ../mateweather/mateweather-pref.c:1154
 msgid "_Select a location:"
 msgstr "_Місцевість:"
 
-#: ../mateweather/mateweather-pref.c:1113
+#: ../mateweather/mateweather-pref.c:1176
 msgid "_Find:"
 msgstr "Зна_йти:"
 
-#: ../mateweather/mateweather-pref.c:1120
+#: ../mateweather/mateweather-pref.c:1182
 msgid "Find _Next"
 msgstr "Знайти _наступний"
 
-#: ../mateweather/mateweather-pref.c:1142
+#: ../mateweather/mateweather-pref.c:1203
 msgid "Location"
 msgstr "Місцевість"
 
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
+msgid "Mateweather Applet Factory"
+msgstr ""
+
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
+msgid "Factory for creating the weather applet."
+msgstr "Фабрика для створення аплету погоди."
+
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
+msgid "Monitor the current weather conditions, and forecasts"
+msgstr "Слідкує за поточними погодними умовами і робить прогнози"
+
 #: ../invest-applet/data/Invest_Applet.server.in.in.h:1
-#: ../invest-applet/invest/about.py:20
+#: ../invest-applet/invest/about.py:17
 msgid "Invest"
 msgstr "Інвестиції"
 
 #: ../invest-applet/data/Invest_Applet.server.in.in.h:2
-#: ../invest-applet/invest/about.py:23
+#: ../invest-applet/invest/about.py:20
 msgid "Track your invested money."
 msgstr "Слідкування за інвестованими грошами."
 
-#: ../invest-applet/data/Invest_Applet.xml.h:3
+#: ../invest-applet/data/Invest_Applet.xml.h:1
 msgid "_Refresh"
 msgstr "_Оновити"
 
 #: ../invest-applet/data/financialchart.ui.h:1
-msgid "1 Year"
-msgstr "1 рік"
+msgid "Today"
+msgstr "Сьогодні"
 
 #: ../invest-applet/data/financialchart.ui.h:2
-msgid "10"
-msgstr "10"
-
-#: ../invest-applet/data/financialchart.ui.h:3
-msgid "100"
-msgstr "100"
-
-#: ../invest-applet/data/financialchart.ui.h:4
-msgid "20"
-msgstr "20"
-
-#: ../invest-applet/data/financialchart.ui.h:5
-msgid "200"
-msgstr "200"
-
-#: ../invest-applet/data/financialchart.ui.h:6
-msgid "3 Months"
-msgstr "3 місяці"
-
-#: ../invest-applet/data/financialchart.ui.h:7
-msgid "5"
-msgstr "5"
-
-#: ../invest-applet/data/financialchart.ui.h:8
 msgid "5 Days"
 msgstr "5 днів"
 
-#: ../invest-applet/data/financialchart.ui.h:9
-msgid "5 Years"
-msgstr "5 років"
+#: ../invest-applet/data/financialchart.ui.h:3
+msgid "3 Months"
+msgstr "3 місяці"
 
-#: ../invest-applet/data/financialchart.ui.h:10
-msgid "50"
-msgstr "50"
-
-#: ../invest-applet/data/financialchart.ui.h:11
+#: ../invest-applet/data/financialchart.ui.h:4
 msgid "6 Months"
 msgstr "6 місяців"
 
-#: ../invest-applet/data/financialchart.ui.h:12
+#: ../invest-applet/data/financialchart.ui.h:5
+msgid "1 Year"
+msgstr "1 рік"
+
+#: ../invest-applet/data/financialchart.ui.h:6
+msgid "5 Years"
+msgstr "5 років"
+
+#: ../invest-applet/data/financialchart.ui.h:7
+msgid "Maximum"
+msgstr "Максимум"
+
+#: ../invest-applet/data/financialchart.ui.h:8
+#: ../invest-applet/invest/chart.py:107
+msgid "Financial Chart"
+msgstr "Фінансова діаграма"
+
+#: ../invest-applet/data/financialchart.ui.h:9
+msgid "_Ticker symbol: "
+msgstr "Символ _маятника:"
+
+#: ../invest-applet/data/financialchart.ui.h:10
 msgid "Auto _refresh"
 msgstr "Автоматичне _оновлення"
 
+#: ../invest-applet/data/financialchart.ui.h:11
+msgid "_Graph style: "
+msgstr "Стиль _графіка: "
+
+#. see http://biz.yahoo.com/charts/guide11.html and
+#. http://en.wikipedia.org/wiki/Moving_average
 #: ../invest-applet/data/financialchart.ui.h:13
-msgid "Bollinger"
-msgstr "Боллінгер"
+msgid "Moving average: "
+msgstr "Середнє переміщення: "
 
-#: ../invest-applet/data/financialchart.ui.h:14
-msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "Завантажити діаграму з <b>Yahoo!</b>"
-
+#. see http://biz.yahoo.com/charts/guide12.html and
+#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
 #: ../invest-applet/data/financialchart.ui.h:15
 msgid "Exponential moving average: "
 msgstr "Експоненціальне середнє переміщення: "
 
 #: ../invest-applet/data/financialchart.ui.h:16
-msgid "Fast stoch"
-msgstr "Швидкий stoch"
+msgid "5"
+msgstr "5"
 
 #: ../invest-applet/data/financialchart.ui.h:17
-#: ../invest-applet/invest/chart.py:107
-msgid "Financial Chart"
-msgstr "Фінансова діаграма"
+msgid "10"
+msgstr "10"
 
 #: ../invest-applet/data/financialchart.ui.h:18
-msgid "Indicators: "
-msgstr "Індикатори:"
+msgid "20"
+msgstr "20"
 
 #: ../invest-applet/data/financialchart.ui.h:19
-msgid "MACD"
-msgstr "MACD"
+msgid "50"
+msgstr "50"
 
 #: ../invest-applet/data/financialchart.ui.h:20
-msgid "MFI"
-msgstr "MFI"
+msgid "100"
+msgstr "100"
 
 #: ../invest-applet/data/financialchart.ui.h:21
-msgid "Maximum"
-msgstr "Максимум"
+msgid "200"
+msgstr "200"
 
-#: ../invest-applet/data/financialchart.ui.h:22
-msgid "Moving average: "
-msgstr "Середнє переміщення: "
-
+#. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
 #: ../invest-applet/data/financialchart.ui.h:23
 msgid "Overlays: "
 msgstr "Оверлеї: "
 
-#: ../invest-applet/data/financialchart.ui.h:24
-msgid "ROC"
-msgstr "ROC"
-
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide13.html and
+#. http://en.wikipedia.org/wiki/Bollinger_bands
 #: ../invest-applet/data/financialchart.ui.h:25
-msgid "RSI"
-msgstr "RSI"
+msgid "Bollinger"
+msgstr "Боллінгер"
 
-#: ../invest-applet/data/financialchart.ui.h:26
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide16.html and
+#. http://en.wikipedia.org/wiki/Parabolic_SAR
+#: ../invest-applet/data/financialchart.ui.h:27
 msgid "SAR"
 msgstr "SAR"
 
-#: ../invest-applet/data/financialchart.ui.h:27
-msgid "Slow stoch"
-msgstr "Повільний stoch"
-
-#: ../invest-applet/data/financialchart.ui.h:28
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide6.html and
+#. http://en.wikipedia.org/wiki/Stock_split
+#: ../invest-applet/data/financialchart.ui.h:29
 msgid "Splits"
 msgstr "Части"
 
-#: ../invest-applet/data/financialchart.ui.h:29
-msgid "Today"
-msgstr "Сьогодні"
-
-#: ../invest-applet/data/financialchart.ui.h:30
-msgid "Vol"
-msgstr "Vol"
-
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide20.html and
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
 #: ../invest-applet/data/financialchart.ui.h:31
-msgid "Vol+MA"
-msgstr "Vol+MA"
-
-#: ../invest-applet/data/financialchart.ui.h:32
 msgid "Volumes"
 msgstr "Обсяги"
 
-#: ../invest-applet/data/financialchart.ui.h:34
+#. see http://biz.yahoo.com/charts/guide10.html and
+#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
+#: ../invest-applet/data/financialchart.ui.h:33
+msgid "Indicators: "
+msgstr "Індикатори:"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Relative_Strength_Index
+#: ../invest-applet/data/financialchart.ui.h:35
+msgid "RSI"
+msgstr "RSI"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
+#: ../invest-applet/data/financialchart.ui.h:37
+msgid "Vol"
+msgstr "Vol"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Money_flow_index
+#: ../invest-applet/data/financialchart.ui.h:39
+msgid "MFI"
+msgstr "MFI"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Stochastic_oscillator
+#: ../invest-applet/data/financialchart.ui.h:41
+msgid "Slow stoch"
+msgstr "Повільний stoch"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
+#: ../invest-applet/data/financialchart.ui.h:43
+msgid "Vol+MA"
+msgstr "Vol+MA"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
+#: ../invest-applet/data/financialchart.ui.h:45
+msgid "ROC"
+msgstr "ROC"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Stochastic_oscillator
+#: ../invest-applet/data/financialchart.ui.h:47
+msgid "Fast stoch"
+msgstr "Швидкий stoch"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Williams_%25R
+#: ../invest-applet/data/financialchart.ui.h:50
 #, no-c-format
 msgid "W%R"
 msgstr "W%R"
 
-#: ../invest-applet/data/financialchart.ui.h:35
-msgid "_Graph style: "
-msgstr "Стиль _графіка: "
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/MACD
+#: ../invest-applet/data/financialchart.ui.h:52
+msgid "MACD"
+msgstr "MACD"
 
-#: ../invest-applet/data/financialchart.ui.h:36
+#: ../invest-applet/data/financialchart.ui.h:53
 msgid "_Options"
 msgstr "_Параметри"
 
-#: ../invest-applet/data/financialchart.ui.h:37
-msgid "_Ticker symbol: "
-msgstr "Символ _маятника:"
+#: ../invest-applet/data/financialchart.ui.h:54
+msgid "Downloading chart from <b>Yahoo!</b>"
+msgstr "Завантажити діаграму з <b>Yahoo!</b>"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:1
-msgid ""
-"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
-"<b>Source: </b> Yahoo!</small></i>"
-msgstr ""
-"<i><small><b>Примітка:</b> Котирування затримано на, принаймні, 15 хвилин.\n"
-"<b>Джерело: </b> Yahoo!</small></i>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:3
 msgid "Invest Preferences"
 msgstr "Параметри інвертицій"
 
-#: ../invest-applet/data/prefs-dialog.ui.h:4
-msgid "Stocks"
-msgstr "Акції"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:5
+#: ../invest-applet/data/prefs-dialog.ui.h:2
 msgid "label"
 msgstr "label"
 
+#: ../invest-applet/data/prefs-dialog.ui.h:3
+msgid "Stocks"
+msgstr "Акції"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:4
+msgid ""
+"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
+"<b>Source: </b> Yahoo!</small></i>"
+msgstr "<i><small><b>Примітка:</b> Котирування затримано на, принаймні, 15 хвилин.\n<b>Джерело: </b> Yahoo!</small></i>"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:6
+msgid "Currency"
+msgstr "Валюта"
+
 #. a) We aren't configured yet
-#: ../invest-applet/invest/applet.py:49
+#: ../invest-applet/invest/applet.py:50
 msgid "<b>You have not entered any stock information yet</b>"
 msgstr "<b>Ви покищо не ввели ніяку біржову інформацію</b>"
 
-#: ../invest-applet/invest/applet.py:54
+#: ../invest-applet/invest/applet.py:55
 msgid "<b>No stock quotes are currently available</b>"
 msgstr "<b>Наразі біржові котирування недоступні</b>"
 
-#: ../invest-applet/invest/applet.py:55
+#: ../invest-applet/invest/applet.py:56
 msgid ""
 "The server could not be contacted. The computer is either offline or the "
 "servers are down. Try again later."
-msgstr ""
-"Неможливо зв'язатись з сервром. Або комп'ютер у автономному режимі, або "
-"сервери непрауюють. Спробуйте пізніше."
+msgstr "Неможливо зв'язатись з сервром. Або комп'ютер у автономному режимі, або сервери непрауюють. Спробуйте пізніше."
 
 #: ../invest-applet/invest/chart.py:156
 #, python-format
@@ -2068,72 +1461,85 @@ msgstr "Діаграму неможливо завантажити"
 msgid "Invest Applet"
 msgstr "Аплет інвестицій"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Symbol"
 msgstr "Символ"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Label"
 msgstr "Позначка"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Amount"
 msgstr "Кількість"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Price"
 msgstr "Ціна"
 
-#: ../invest-applet/invest/preferences.py:24
+#: ../invest-applet/invest/preferences.py:31
 msgid "Commission"
 msgstr "Комісія"
 
-#: ../invest-applet/invest/quotes.py:120
+#: ../invest-applet/invest/preferences.py:31
+msgid "Currency Rate"
+msgstr "Обмінний курс"
+
+#: ../invest-applet/invest/quotes.py:131
 msgid "Invest could not connect to Yahoo! Finance"
 msgstr "Аплету Інвестиції не вдається з'єднатися з Yahoo! Finance"
 
-#: ../invest-applet/invest/quotes.py:122 ../invest-applet/invest/quotes.py:135
+#. Translators: %s is an hour (%H:%M)
+#: ../invest-applet/invest/quotes.py:134 ../invest-applet/invest/quotes.py:163
 #, python-format
 msgid "Updated at %s"
 msgstr "Оновлено на %s"
 
-#. Translators: This is share-market jargon. It is the percentage change in the price of a stock. The %% gets changed to a single percent sign and the %+.2f gets replaced with the value of the change.
-#: ../invest-applet/invest/quotes.py:131
+#. Translators: This is share-market jargon. It is the average percentage
+#. change of all stock prices. The %s gets replaced with the string value of
+#. the change (localized), including the percent sign.
+#: ../invest-applet/invest/quotes.py:153
 #, python-format
-msgid "Quotes average change %%: %+.2f%%"
-msgstr "Зміна котирування %%: %+.2f%%"
+msgid "Average change: %s"
+msgstr ""
 
-#. Translators: This is share-market jargon. It refers to the total difference between the current price and purchase price for all the shares put together. i.e. How much money would be earned if they were sold right now.
-#: ../invest-applet/invest/quotes.py:134
+#. Translators: This is share-market jargon. It refers to the total difference
+#. between the current price and purchase price for all the shares put
+#. together for a particular currency. i.e. How much money would be earned if
+#. they were sold right now. The first string is the change value, the second
+#. the currency, and the third value is the percentage of the change,
+#. formatted using user's locale.
+#: ../invest-applet/invest/quotes.py:162
 #, python-format
-msgid "Positions balance: %+.2f"
-msgstr "Позиційний баланс: %+.2f"
+msgid "Positions balance: %s %s (%s)"
+msgstr ""
 
-#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE, VARIATION_PCT, PB
+#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
+#. VARIATION_PCT, PB
 #. Translators: these words all refer to a stock. Last is short
 #. for "last price". Gain is referring to the gain since the
 #. stock was purchased.
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Ticker"
 msgstr "Лічильник"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Last"
 msgstr "Останнє"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Change %"
 msgstr "Зміна %"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Chart"
 msgstr "Діаграма"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Gain"
 msgstr "Ціль"
 
-#: ../invest-applet/invest/widgets.py:53
+#: ../invest-applet/invest/widgets.py:51
 msgid "Gain %"
 msgstr "Ціль %"
 
@@ -2145,26 +1551,11 @@ msgstr "Deskbar (раніше відомий як \"Мініатюрний ко�
 msgid "Deskbar (transparent upgrade from Mini-Commander)"
 msgstr "Deskbar (прозоре оновлення аплету Мініатюрний командний рядок)"
 
-#: ../mini-commander/src/MATE_MiniCommanderApplet.server.in.in.h:1
-#: ../mini-commander/src/mini-commander_applet.c:355
-msgid "Command Line"
-msgstr "Командний рядок"
-
-#: ../mini-commander/src/MATE_MiniCommanderApplet.server.in.in.h:2
-msgid "Mini-Commander"
-msgstr "Мініатюрний командний рядок"
-
-#: ../mini-commander/src/MATE_MiniCommanderApplet.server.in.in.h:3
-msgid "MiniCommander Applet Factory"
-msgstr "Фабрика аплету командного рядка"
-
-#: ../mini-commander/src/about.c:49
+#: ../mini-commander/src/about.c:48
 msgid ""
 "This MATE applet adds a command line to the panel. It features command "
 "completion, command history, and changeable macros."
-msgstr ""
-"Цей аплет MATE додає на панель командний рядок. У ньому реалізовано "
-"доповнення команд, історія команд та змінювані макроси."
+msgstr "Цей аплет MATE додає на панель командний рядок. У ньому реалізовано доповнення команд, історія команд та змінювані макроси."
 
 #: ../mini-commander/src/command_line.c:345
 msgid "No items in history"
@@ -2200,10 +1591,9 @@ msgstr "Встановити початкове значення перелік�
 
 #: ../mini-commander/src/mc-install-default-macros.c:129
 #, c-format
-msgid "MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL is set, not installing schemas\n"
-msgstr ""
-"Виставлено MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL, схему не буде "
-"встановлено.\n"
+msgid ""
+"MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL is set, not installing schemas\n"
+msgstr "Виставлено MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL, схему не буде встановлено.\n"
 
 #: ../mini-commander/src/mc-install-default-macros.c:137
 #, c-format
@@ -2221,235 +1611,247 @@ msgid "Error syncing config data: %s"
 msgstr "Помилка узгодження даних параметрів: %s"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:1
-msgid "List of MateConfValue entries containing strings for the macro commands."
-msgstr "Список записів MateConfValue, що містять рядки макрокоманд."
+#: ../mini-commander/src/mini-commander.schemas.in.h:26
+msgid "Macro pattern list"
+msgstr "Список шаблонів макрокоманд"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:2
-msgid "List of MateConfValue entries containing strings for the macro patterns."
+msgid ""
+"List of MateConfValue entries containing strings for the macro patterns."
 msgstr "Список записів MateConfValue, що містять рядки шаблонів макрокоманд."
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:3
-#: ../mini-commander/src/mini-commander.schemas.in.h:10
+#: ../mini-commander/src/mini-commander.schemas.in.h:28
 msgid "Macro command list"
 msgstr "Список макрокоманд"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:4
-#: ../mini-commander/src/mini-commander.schemas.in.h:11
-msgid "Macro pattern list"
-msgstr "Список шаблонів макрокоманд"
+msgid ""
+"List of MateConfValue entries containing strings for the macro commands."
+msgstr "Список записів MateConfValue, що містять рядки макрокоманд."
 
 #: ../mini-commander/src/mini-commander.ui.h:1
-msgid "Add New Macro"
-msgstr "Додати новий макрос"
+msgid "Command Line Preferences"
+msgstr "Параметри аплету \"Командний рядок\""
 
 #: ../mini-commander/src/mini-commander.ui.h:2
 msgid "Auto Completion"
 msgstr "Автоматичне доповнення"
 
 #: ../mini-commander/src/mini-commander.ui.h:3
-msgid "Co_mmand:"
-msgstr "К_оманда:"
-
-#: ../mini-commander/src/mini-commander.ui.h:4 ../multiload/properties.c:571
-msgid "Colors"
-msgstr "Кольори"
-
-#: ../mini-commander/src/mini-commander.ui.h:5
-msgid "Command Line Preferences"
-msgstr "Параметри аплету \"Командний рядок\""
-
-#: ../mini-commander/src/mini-commander.ui.h:6
-msgid "Command line _background:"
-msgstr "_Тло командного рядка:"
-
-#: ../mini-commander/src/mini-commander.ui.h:7
-msgid "Command line _foreground:"
-msgstr "_Колір тексту командного рядка:"
-
-#: ../mini-commander/src/mini-commander.ui.h:8
 msgid "E_nable history-based auto completion"
 msgstr "Ввімкнути _автодоповнення, що ґрунтується на історії"
 
+#: ../mini-commander/src/mini-commander.ui.h:4
+msgid "Size"
+msgstr "Розмір"
+
+#: ../mini-commander/src/mini-commander.ui.h:5
+#: ../stickynotes/stickynotes.ui.h:19
+msgid "_Width:"
+msgstr "Ш_ирина:"
+
+#: ../mini-commander/src/mini-commander.ui.h:6 ../multiload/properties.c:526
+msgid "pixels"
+msgstr "точок"
+
+#: ../mini-commander/src/mini-commander.ui.h:7 ../multiload/properties.c:571
+msgid "Colors"
+msgstr "Кольори"
+
+#: ../mini-commander/src/mini-commander.ui.h:8
+msgid "_Use default theme colors"
+msgstr "_Використовувати звичайні кольори теми"
+
+#: ../mini-commander/src/mini-commander.ui.h:9
+msgid "Command line _foreground:"
+msgstr "_Колір тексту командного рядка:"
+
 #: ../mini-commander/src/mini-commander.ui.h:10
-msgid "Macros"
-msgstr "Макроси"
+msgid "Command line _background:"
+msgstr "_Тло командного рядка:"
 
 #: ../mini-commander/src/mini-commander.ui.h:11
 msgid "Pick a color"
 msgstr "Виберіть колір"
 
-#: ../mini-commander/src/mini-commander.ui.h:12
-msgid "Size"
-msgstr "Розмір"
-
 #: ../mini-commander/src/mini-commander.ui.h:13
-msgid "_Add Macro..."
-msgstr "Д_одати макрос..."
-
-#: ../mini-commander/src/mini-commander.ui.h:14
-msgid "_Delete Macro"
-msgstr "В_идалити макрос"
-
-#: ../mini-commander/src/mini-commander.ui.h:15
 msgid "_Macros:"
 msgstr "_Макроси:"
 
+#: ../mini-commander/src/mini-commander.ui.h:14
+msgid "_Add Macro..."
+msgstr "Д_одати макрос..."
+
+#: ../mini-commander/src/mini-commander.ui.h:15
+msgid "_Delete Macro"
+msgstr "В_идалити макрос"
+
 #: ../mini-commander/src/mini-commander.ui.h:16
+msgid "Macros"
+msgstr "Макроси"
+
+#: ../mini-commander/src/mini-commander.ui.h:17
+msgid "Add New Macro"
+msgstr "Додати новий макрос"
+
+#: ../mini-commander/src/mini-commander.ui.h:18
 msgid "_Pattern:"
 msgstr "_Шаблон:"
 
-#: ../mini-commander/src/mini-commander.ui.h:17
-msgid "_Use default theme colors"
-msgstr "_Використовувати звичайні кольори теми"
-
-#: ../mini-commander/src/mini-commander.ui.h:18
-#: ../stickynotes/stickynotes.ui.h:40
-msgid "_Width:"
-msgstr "Ш_ирина:"
-
-#: ../mini-commander/src/mini-commander.ui.h:19 ../multiload/properties.c:526
-msgid "pixels"
-msgstr "точок"
+#: ../mini-commander/src/mini-commander.ui.h:19
+msgid "Co_mmand:"
+msgstr "К_оманда:"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:1
-msgid "Attempt to autocomplete a command from the history of commands entered."
-msgstr ""
-"Намагатись автоматично доповнювати команду, ґрунтуючись на історії введених "
-"команд."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:2
-msgid "Background color, blue component"
-msgstr "Синій компонент кольору тла"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:3
-msgid "Background color, green component"
-msgstr "Зелений компонент кольору тла"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:4
-msgid "Background color, red component"
-msgstr "Червоний компонент кольору тла"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:5
-msgid "Foreground color, blue component"
-msgstr "Синій компонент кольору переднього плану"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:6
-msgid "Foreground color, green component"
-msgstr "Зелений компонент кольору переднього плану"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:7
-msgid "Foreground color, red component"
-msgstr "Червоний компонент кольору переднього плану"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:8
-msgid "History list"
-msgstr "Список історії"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:9
-msgid "List of MateConfValue entries containing strings for history entries."
-msgstr "Список записів MateConfValue, що містять рядки записів історії."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:12
-msgid "Not used anymore"
-msgstr "Більше не використовується"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:13
-msgid "Perform history autocompletion"
-msgstr "Ввімкнути автодоповнення на основі історії команд"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:14
-msgid "Show a frame surrounding the applet."
-msgstr "Показувати рамку навколо аплету."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:15
-msgid "Show a handle so the applet can be detached from the panel."
-msgstr "Показувати держак, яким можна виймати аплет із панелі."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:16
-msgid "Show frame"
-msgstr "Показувати рамку"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:17
 msgid "Show handle"
 msgstr "Показувати заголовок"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:18
-msgid "The blue component of the background color."
-msgstr "Синій компонент кольору тла."
+#: ../mini-commander/src/mini-commander.schemas.in.h:2
+msgid "Show a handle so the applet can be detached from the panel."
+msgstr "Показувати держак, яким можна виймати аплет із панелі."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:19
-msgid "The blue component of the foreground color."
-msgstr "Синій компонент кольору переднього плану."
+#: ../mini-commander/src/mini-commander.schemas.in.h:3
+msgid "Show frame"
+msgstr "Показувати рамку"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:20
-msgid "The green component of the background color."
-msgstr "Зелений компонент кольору тла."
+#: ../mini-commander/src/mini-commander.schemas.in.h:4
+msgid "Show a frame surrounding the applet."
+msgstr "Показувати рамку навколо аплету."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:21
-msgid "The green component of the foreground color."
-msgstr "Зелений компонент кольору переднього плану."
+#: ../mini-commander/src/mini-commander.schemas.in.h:5
+msgid "Perform history autocompletion"
+msgstr "Ввімкнути автодоповнення на основі історії команд"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:22
-msgid "The red component of the background color."
-msgstr "Червоний компонент кольору тла."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:23
-msgid "The red component of the foreground color."
-msgstr "Червоний компонент кольору переднього плану."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:24
+#: ../mini-commander/src/mini-commander.schemas.in.h:6
 msgid ""
-"This per-applet key is deprecated in favour of the global key, /schemas/apps/"
-"mini-commander-global/macro_patterns."
-msgstr ""
-"Цей індивідуальний ключ застарів, натомість використовується глобальний "
-"ключ /schemas/apps/mini-commander-global/macro_patterns."
+"Attempt to autocomplete a command from the history of commands entered."
+msgstr "Намагатись автоматично доповнювати команду, ґрунтуючись на історії введених команд."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:25
-msgid "Use the default theme colors"
-msgstr "Використовувати звичайні кольори теми"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:26
-msgid "Use theme colors instead of custom ones."
-msgstr "Використовувати кольори теми."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:27
+#: ../mini-commander/src/mini-commander.schemas.in.h:7
 msgid "Width"
 msgstr "Ширина"
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:28
+#: ../mini-commander/src/mini-commander.schemas.in.h:8
 msgid "Width of the applet"
 msgstr "Ширина аплету"
 
-#: ../mini-commander/src/mini-commander_applet.c:238
+#: ../mini-commander/src/mini-commander.schemas.in.h:9
+msgid "Not used anymore"
+msgstr "Більше не використовується"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:10
+msgid "Use the default theme colors"
+msgstr "Використовувати звичайні кольори теми"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:11
+msgid "Use theme colors instead of custom ones."
+msgstr "Використовувати кольори теми."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:12
+msgid "Foreground color, red component"
+msgstr "Червоний компонент кольору переднього плану"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:13
+msgid "The red component of the foreground color."
+msgstr "Червоний компонент кольору переднього плану."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:14
+msgid "Foreground color, green component"
+msgstr "Зелений компонент кольору переднього плану"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:15
+msgid "The green component of the foreground color."
+msgstr "Зелений компонент кольору переднього плану."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:16
+msgid "Foreground color, blue component"
+msgstr "Синій компонент кольору переднього плану"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:17
+msgid "The blue component of the foreground color."
+msgstr "Синій компонент кольору переднього плану."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:18
+msgid "Background color, red component"
+msgstr "Червоний компонент кольору тла"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:19
+msgid "The red component of the background color."
+msgstr "Червоний компонент кольору тла."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:20
+msgid "Background color, green component"
+msgstr "Зелений компонент кольору тла"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:21
+msgid "The green component of the background color."
+msgstr "Зелений компонент кольору тла."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:22
+msgid "Background color, blue component"
+msgstr "Синій компонент кольору тла"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:23
+msgid "The blue component of the background color."
+msgstr "Синій компонент кольору тла."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:24
+msgid "History list"
+msgstr "Список історії"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:25
+msgid "List of MateConfValue entries containing strings for history entries."
+msgstr "Список записів MateConfValue, що містять рядки записів історії."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:27
+msgid ""
+"This per-applet key is deprecated in favour of the global key, /schemas/apps"
+"/mini-commander-global/macro_patterns."
+msgstr "Цей індивідуальний ключ застарів, натомість використовується глобальний ключ /schemas/apps/mini-commander-global/macro_patterns."
+
 #: ../mini-commander/src/mini-commander_applet.c:242
+#: ../mini-commander/src/mini-commander_applet.c:246
 msgid "Browser"
 msgstr "Огляд"
 
-#: ../mini-commander/src/mini-commander_applet.c:243
+#: ../mini-commander/src/mini-commander_applet.c:247
 msgid "Click this button to start the browser"
 msgstr "Клацніть на цю кнопку, щоб запустити переглядач"
 
-#: ../mini-commander/src/mini-commander_applet.c:256
 #: ../mini-commander/src/mini-commander_applet.c:260
+#: ../mini-commander/src/mini-commander_applet.c:264
 msgid "History"
 msgstr "Історія"
 
-#: ../mini-commander/src/mini-commander_applet.c:261
+#: ../mini-commander/src/mini-commander_applet.c:265
 msgid "Click this button for the list of previous commands"
 msgstr "Натисніть на цю кнопку для отримання списку попередніх команд"
 
-#: ../mini-commander/src/mini-commander_applet.c:340
+#: ../mini-commander/src/mini-commander_applet.c:346
 msgid "Command line has been disabled by your system administrator"
 msgstr "Командний рядок заблокований системним адміністратором"
 
-#: ../mini-commander/src/mini-commander_applet.c:402
+#: ../mini-commander/src/mini-commander_applet.c:361
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:2
+msgid "Command Line"
+msgstr "Командний рядок"
+
+#: ../mini-commander/src/mini-commander_applet.c:407
 msgid "Mini-Commander applet"
 msgstr "Аплет мініатюрний командний рядок"
 
-#: ../mini-commander/src/mini-commander_applet.c:403
+#: ../mini-commander/src/mini-commander_applet.c:408
 msgid "This applet adds a command line to the panel"
 msgstr "Цей аплет додає командний рядок до панелі"
+
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:1
+msgid "MiniCommander Applet Factory"
+msgstr "Фабрика аплету командного рядка"
+
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:3
+msgid "Mini-Commander"
+msgstr "Мініатюрний командний рядок"
 
 #: ../mini-commander/src/preferences.c:401
 msgid "You must specify a pattern"
@@ -2475,54 +1877,43 @@ msgstr "Шаблон"
 msgid "Command"
 msgstr "Команда"
 
-#: ../mixer/MATE_MixerApplet.server.in.in.h:1
-#: ../null_applet/MATE_MixerApplet.server.in.h:1
-msgid "Adjust the sound volume"
-msgstr "Регулює гучність звуку"
+#: ../mixer/applet.c:184
+msgid "Volume Applet"
+msgstr "Регулятор гучності"
 
 #. tooltip over applet
-#: ../mixer/MATE_MixerApplet.server.in.in.h:2 ../mixer/applet.c:203
-#: ../mixer/applet.c:224 ../null_applet/null_applet.c:44
+#: ../mixer/applet.c:200 ../mixer/applet.c:221 ../null_applet/null_applet.c:44
 #: ../null_applet/null_applet.c:46
 msgid "Volume Control"
 msgstr "Регулятор гучності"
 
-#: ../mixer/MATE_MixerApplet.xml.h:1
-msgid "Mu_te"
-msgstr "_Вимкнути"
-
-#: ../mixer/MATE_MixerApplet.xml.h:4
+#: ../mixer/applet.c:384
 msgid "_Open Volume Control"
 msgstr "Відкрити _регулятор гучності"
 
-#: ../mixer/applet.c:187
-msgid "Volume Applet"
-msgstr "Регулятор гучності"
+#: ../mixer/applet.c:398
+msgid "Mu_te"
+msgstr "_Вимкнути"
 
-#: ../mixer/applet.c:542
+#: ../mixer/applet.c:564
 msgid ""
-"The volume control did not find any elements and/or devices to control. This "
-"means either that you don't have the right GStreamer plugins installed, or "
+"The volume control did not find any elements and/or devices to control. This"
+" means either that you don't have the right GStreamer plugins installed, or "
 "that you don't have a sound card configured."
-msgstr ""
-"Регулятор гучності не знайшов ніяких компонентів та/чи пристроїв "
-"регулювання. Це означає, що у вас не встановлені відповідні модулі "
-"GStreamer, або не налаштована звукова карта."
+msgstr "Регулятор гучності не знайшов ніяких компонентів та/чи пристроїв регулювання. Це означає, що у вас не встановлені відповідні модулі GStreamer, або не налаштована звукова карта."
 
-#: ../mixer/applet.c:546
+#: ../mixer/applet.c:568
 msgid ""
 "You can remove the volume control from the panel by right-clicking the "
 "speaker icon on the panel and selecting \"Remove From Panel\" from the menu."
-msgstr ""
-"регулятор гучності можна видалити з панелі, якщо клацнути правою кнопкою на "
-"панелі, а потім у меню вибрати \"Видалити з панелі\""
+msgstr "регулятор гучності можна видалити з панелі, якщо клацнути правою кнопкою на панелі, а потім у меню вибрати \"Видалити з панелі\""
 
-#: ../mixer/applet.c:714
+#: ../mixer/applet.c:754
 #, c-format
 msgid "Failed to start Volume Control: %s"
 msgstr "Не вдається запустити регулятор гучності: %s"
 
-#: ../mixer/applet.c:1164
+#: ../mixer/applet.c:1203
 #, c-format
 msgid "%s: muted"
 msgstr "%s: заглушено"
@@ -2531,21 +1922,21 @@ msgstr "%s: заглушено"
 #. * to mark as a translation, but anyway. The string is a list of
 #. * selected tracks, the number is the volume in percent. You
 #. * most likely want to keep this as-is.
-#: ../mixer/applet.c:1170
+#: ../mixer/applet.c:1209
 #, c-format
 msgid "%s: %d%%"
 msgstr "%s: %d%%"
 
-#: ../mixer/applet.c:1408
+#: ../mixer/applet.c:1445
 #, c-format
 msgid "Failed to display help: %s"
 msgstr "Не вдається відобразити довідку: %s"
 
-#: ../mixer/applet.c:1421
+#: ../mixer/applet.c:1458
 msgid "Volume control for your MATE Panel."
 msgstr "Регулятор гучності для панелі MATE."
 
-#: ../mixer/applet.c:1422
+#: ../mixer/applet.c:1459
 msgid "Using GStreamer 0.10."
 msgstr "Використовує GStreamer 0.10."
 
@@ -2583,201 +1974,169 @@ msgstr "Параметри керування гучністю"
 msgid "Select the device and track to control."
 msgstr "Виберіть пристрій та канал для регулювання."
 
-#: ../modemlights/MATE_ModemLights.server.in.in.h:1
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Активує та відображає стан модемного з'єднання"
-
-#
-#: ../modemlights/MATE_ModemLights.server.in.in.h:2
-#: ../modemlights/modem-applet.c:178
-msgid "Modem Monitor"
-msgstr "Індикатор модему"
-
-#: ../modemlights/MATE_ModemLights.xml.h:2
+#: ../modemlights/modem-applet.c:142
 msgid "_Activate"
 msgstr "_Активувати"
 
-#: ../modemlights/MATE_ModemLights.xml.h:3
+#: ../modemlights/modem-applet.c:145
 msgid "_Deactivate"
 msgstr "_Деактивувати"
 
-#: ../modemlights/MATE_ModemLights.xml.h:5
+#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
 msgid "_Properties"
 msgstr "В_ластивості"
 
-#: ../modemlights/modem-applet.c:708
+#: ../modemlights/modem-applet.c:184
+#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
+msgid "Modem Monitor"
+msgstr "Індикатор модему"
+
+#: ../modemlights/modem-applet.c:710
 msgid "Connection active, but could not get connection time"
 msgstr "З'єднання активне, але час з'єднання отримати не вдається"
 
-#: ../modemlights/modem-applet.c:724
+#: ../modemlights/modem-applet.c:726
 #, c-format
 msgid "Time connected: %.1d:%.2d"
 msgstr "Час з'єднання: %.1d:%.2d"
 
-#: ../modemlights/modem-applet.c:728
+#: ../modemlights/modem-applet.c:730
 msgid "Not connected"
 msgstr "Немає з'єднання"
 
-#: ../modemlights/modem-applet.c:750
+#: ../modemlights/modem-applet.c:752
 msgid ""
 "To connect to your Internet service provider, you need administrator "
 "privileges"
-msgstr ""
-"Щоб встановити з'єднання з постачальником Інтернет, необхідні привілеї "
-"адміністратора"
+msgstr "Щоб встановити з'єднання з постачальником Інтернет, необхідні привілеї адміністратора"
 
-#: ../modemlights/modem-applet.c:751
+#: ../modemlights/modem-applet.c:753
 msgid ""
 "To disconnect from your Internet service provider, you need administrator "
 "privileges"
-msgstr ""
-"Щоб розірвати з'єднання з постачальником Інтернет, необхідні привілеї "
-"адміністратора"
+msgstr "Щоб розірвати з'єднання з постачальником Інтернет, необхідні привілеї адміністратора"
 
-#: ../modemlights/modem-applet.c:826
+#: ../modemlights/modem-applet.c:828
 msgid "The entered password is invalid"
 msgstr "Введено неправильний пароль"
 
-#: ../modemlights/modem-applet.c:828
+#: ../modemlights/modem-applet.c:830
 msgid ""
 "Check that you have typed it correctly and that you haven't activated the "
 "\"caps lock\" key"
-msgstr ""
-"Переконайтесь, що пароль введено правильно та клавіша \"caps lock\" не була "
-"активована"
+msgstr "Переконайтесь, що пароль введено правильно та клавіша \"caps lock\" не була активована"
 
-#: ../modemlights/modem-applet.c:930
+#: ../modemlights/modem-applet.c:932
 msgid "Do you want to connect?"
 msgstr "Встановити з'єднання?"
 
-#: ../modemlights/modem-applet.c:931
+#: ../modemlights/modem-applet.c:933
 msgid "Do you want to disconnect?"
 msgstr "Розірвати з'єднання?"
 
-#: ../modemlights/modem-applet.c:940
+#: ../modemlights/modem-applet.c:942
 msgid "C_onnect"
 msgstr "З'_єднатись"
 
-#: ../modemlights/modem-applet.c:940
+#: ../modemlights/modem-applet.c:942
 msgid "_Disconnect"
 msgstr "_Роз'єднатись"
 
-#: ../modemlights/modem-applet.c:996
+#: ../modemlights/modem-applet.c:995
 msgid "Could not launch network configuration tool"
 msgstr "Не вдається запустити утиліту налаштовування мережі"
 
-#: ../modemlights/modem-applet.c:998
+#: ../modemlights/modem-applet.c:997
 msgid ""
 "Check that it's installed in the correct path and that it has the correct "
 "permissions"
-msgstr ""
-"Переконайтесь, що вона встановлена за шляхом пошуку та має правильні права "
-"доступу"
+msgstr "Переконайтесь, що вона встановлена за шляхом пошуку та має правильні права доступу"
 
-#: ../modemlights/modem-applet.c:1022
+#: ../modemlights/modem-applet.c:1020
 msgid "Applet for activating and monitoring a dial-up network connection."
 msgstr "Аплет для підключення та відображення стану модемних з'єднань."
 
 #: ../modemlights/modemlights.ui.h:1
-msgid "Connecting with Internet Service Provider"
-msgstr "Підключення до постачальника послуг Інтернет"
-
-#: ../modemlights/modemlights.ui.h:2
 msgid "Enter password"
 msgstr "Введіть пароль"
+
+#: ../modemlights/modemlights.ui.h:2
+msgid "Root password required"
+msgstr "Потрібен пароль адміністратора"
 
 #: ../modemlights/modemlights.ui.h:3
 msgid "Password:"
 msgstr "Пароль:"
 
 #: ../modemlights/modemlights.ui.h:4
-msgid "Root password required"
-msgstr "Потрібен пароль адміністратора"
+msgid "Connecting with Internet Service Provider"
+msgstr "Підключення до постачальника послуг Інтернет"
 
-#: ../multiload/MATE_MultiLoadApplet_Factory.server.in.in.h:1
-msgid "A system load indicator"
-msgstr "Індикатор завантаження системи"
+#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
+msgid "Activate and monitor a dial-up network connection"
+msgstr "Активує та відображає стан модемного з'єднання"
 
-#
-#: ../multiload/MATE_MultiLoadApplet_Factory.server.in.in.h:2
-#: ../multiload/main.c:496
-msgid "System Monitor"
-msgstr "Системний монітор"
-
-#
-#: ../multiload/MATE_MultiloadApplet.xml.h:3
-msgid "_Open System Monitor"
-msgstr "Відкрити _Системний монітор"
-
-#: ../multiload/main.c:57
+#: ../multiload/main.c:56
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
-msgstr ""
-"Монітор навантаження системи відображає графіки використання процесора, "
-"пам'яті, файлу підкачки, дискового простору та мережі."
+msgstr "Монітор навантаження системи відображає графіки використання процесора, пам'яті, файлу підкачки, дискового простору та мережі."
 
-#: ../multiload/main.c:126
+#: ../multiload/main.c:124
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Помилка при виконанні \"%s\": %s"
 
-#: ../multiload/main.c:288 ../multiload/properties.c:596
+#: ../multiload/main.c:252 ../multiload/properties.c:596
 msgid "Processor"
 msgstr "Процесор"
 
-#: ../multiload/main.c:290 ../multiload/properties.c:604
+#: ../multiload/main.c:254 ../multiload/properties.c:604
 msgid "Memory"
 msgstr "Пам'ять"
 
-#: ../multiload/main.c:292 ../multiload/properties.c:612
+#: ../multiload/main.c:256 ../multiload/properties.c:612
 msgid "Network"
 msgstr "Мережа"
 
-#: ../multiload/main.c:294 ../multiload/properties.c:619
+#: ../multiload/main.c:258 ../multiload/properties.c:619
 msgid "Swap Space"
 msgstr "Підкачка"
 
-#: ../multiload/main.c:296 ../multiload/main.c:378
+#: ../multiload/main.c:260 ../multiload/main.c:339
 msgid "Load Average"
 msgstr "Середнє завантаження"
 
-#: ../multiload/main.c:298
+#: ../multiload/main.c:262
 msgid "Disk"
 msgstr "Диск"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#.
-#: ../multiload/main.c:317
+#. 
+#: ../multiload/main.c:278
 #, c-format
 msgid ""
 "%s:\n"
 "%u%% in use by programs\n"
 "%u%% in use as cache"
-msgstr ""
-"%s:\n"
-"%u%% використовується програмами\n"
-"%u%% використано під кеш"
+msgstr "%s:\n%u%% використовується програмами\n%u%% використано під кеш"
 
-#: ../multiload/main.c:325
+#: ../multiload/main.c:286
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Середнє завантаження системи - %0.02f"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:333
+#: ../multiload/main.c:294
 #, c-format
 msgid ""
 "%s:\n"
 "Receiving %s\n"
 "Sending %s"
-msgstr ""
-"%s:\n"
-"Отримую %s\n"
-"Надсилаю %s"
+msgstr "%s:\nОтримую %s\nНадсилаю %s"
 
-#: ../multiload/main.c:349
+#: ../multiload/main.c:310
 #, c-format
 msgid ""
 "%s:\n"
@@ -2785,159 +2144,160 @@ msgid ""
 msgid_plural ""
 "%s:\n"
 "%u%% in use"
-msgstr[0] ""
-"%s:\n"
-"%u%% використовується"
-msgstr[1] ""
-"%s:\n"
-"%u%% використовується"
-msgstr[2] ""
-"%s:\n"
-"%u%% використовується"
+msgstr[0] "%s:\n%u%% використовується"
+msgstr[1] "%s:\n%u%% використовується"
+msgstr[2] "%s:\n%u%% використовується"
 
-#: ../multiload/main.c:374
+#: ../multiload/main.c:335
 msgid "CPU Load"
 msgstr "Завантаження ЦП"
 
-#: ../multiload/main.c:375
+#: ../multiload/main.c:336
 msgid "Memory Load"
 msgstr "Використання пам'яті"
 
-#: ../multiload/main.c:376
+#: ../multiload/main.c:337
 msgid "Net Load"
 msgstr "Завантаження мережі"
 
-#: ../multiload/main.c:377
+#: ../multiload/main.c:338
 msgid "Swap Load"
 msgstr "Завантаження підкачки"
 
-#: ../multiload/main.c:379
+#: ../multiload/main.c:340
 msgid "Disk Load"
 msgstr "Завантаження диска"
 
+#: ../multiload/main.c:436
+msgid "_Open System Monitor"
+msgstr "Відкрити _Системний монітор"
+
+#: ../multiload/main.c:464
+#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
+msgid "System Monitor"
+msgstr "Системний монітор"
+
 #: ../multiload/multiload.schemas.in.h:1
-msgid "Applet refresh rate in milliseconds"
-msgstr "Частота оновлення аплету (в мілісекундах)"
-
-#: ../multiload/multiload.schemas.in.h:2
-msgid "Background color for disk load graph"
-msgstr "Колір тла для графіка завантаження диска"
-
-#: ../multiload/multiload.schemas.in.h:3
-msgid "CPU graph background color"
-msgstr "Колір тла графіка використання ЦП"
-
-#: ../multiload/multiload.schemas.in.h:4
 msgid "Enable CPU load graph"
 msgstr "Ввімкнути графік використання ЦП"
 
-#: ../multiload/multiload.schemas.in.h:5
-msgid "Enable disk load graph"
-msgstr "Ввімкнути графік використання диска"
-
-#: ../multiload/multiload.schemas.in.h:6
-msgid "Enable load average graph"
-msgstr "Ввімкнути графік середнього завантаження"
-
-#: ../multiload/multiload.schemas.in.h:7
+#: ../multiload/multiload.schemas.in.h:2
 msgid "Enable memory load graph"
 msgstr "Ввімкнути графік використання пам'яті"
 
-#: ../multiload/multiload.schemas.in.h:8
+#: ../multiload/multiload.schemas.in.h:3
 msgid "Enable network load graph"
 msgstr "Ввімкнути графік використання мережі"
 
-#: ../multiload/multiload.schemas.in.h:9
+#: ../multiload/multiload.schemas.in.h:4
 msgid "Enable swap load graph"
 msgstr "Ввімкнути графік використання підкачки"
 
-#: ../multiload/multiload.schemas.in.h:10
+#: ../multiload/multiload.schemas.in.h:5
+msgid "Enable load average graph"
+msgstr "Ввімкнути графік середнього завантаження"
+
+#: ../multiload/multiload.schemas.in.h:6
+msgid "Enable disk load graph"
+msgstr "Ввімкнути графік використання диска"
+
+#: ../multiload/multiload.schemas.in.h:7
+msgid "Applet refresh rate in milliseconds"
+msgstr "Частота оновлення аплету (в мілісекундах)"
+
+#: ../multiload/multiload.schemas.in.h:8
+msgid "Graph size"
+msgstr "Розмір графіка"
+
+#: ../multiload/multiload.schemas.in.h:9
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr ""
-"Для горизонтальних панелей — ширина графіка в точках. Для вертикальних — "
-"висота графіка."
+msgstr "Для горизонтальних панелей — ширина графіка в точках. Для вертикальних — висота графіка."
 
-#: ../multiload/multiload.schemas.in.h:11
-msgid "Graph color for buffer memory"
-msgstr "Колір графіка буфера пам'яті"
-
-#: ../multiload/multiload.schemas.in.h:12
-msgid "Graph color for cached memory"
-msgstr "Колір графіка кешованої пам'яті"
-
-#: ../multiload/multiload.schemas.in.h:13
-msgid "Graph color for disk read"
-msgstr "Колір графіка для читання з диска"
-
-#: ../multiload/multiload.schemas.in.h:14
-msgid "Graph color for disk write"
-msgstr "Колір графіка для запису на диск"
-
-#: ../multiload/multiload.schemas.in.h:15
-msgid "Graph color for input network activity"
-msgstr "Колір графіка активності для вхідних пакетів мережі"
-
-#: ../multiload/multiload.schemas.in.h:16
-msgid "Graph color for iowait related CPU activity"
-msgstr "Колір графіка для відображення активності ЦП з урахуванням iowait"
-
-#: ../multiload/multiload.schemas.in.h:17
-msgid "Graph color for load average"
-msgstr "Колір графіка середньої завантаженості"
-
-#: ../multiload/multiload.schemas.in.h:18
-msgid "Graph color for loopback network usage"
-msgstr "Колір графіка для локального використання мережі"
-
-#: ../multiload/multiload.schemas.in.h:19
-msgid "Graph color for nice-related CPU activity"
-msgstr "Колір графіка активності ЦП з урахуванням пріоритету"
-
-#: ../multiload/multiload.schemas.in.h:20
-msgid "Graph color for output network activity"
-msgstr "Колір графіка активності для вихідних даних мережі"
-
-#: ../multiload/multiload.schemas.in.h:21
-msgid "Graph color for shared memory"
-msgstr "Колір графіка спільної пам'яті"
-
-#: ../multiload/multiload.schemas.in.h:22
-msgid "Graph color for system-related CPU activity"
-msgstr "Колір графіка системної активності процесора"
-
-#: ../multiload/multiload.schemas.in.h:23
+#: ../multiload/multiload.schemas.in.h:10
 msgid "Graph color for user-related CPU activity"
 msgstr "Колір графіка завантаженості процесора користувачем"
 
-#: ../multiload/multiload.schemas.in.h:24
+#: ../multiload/multiload.schemas.in.h:11
+msgid "Graph color for system-related CPU activity"
+msgstr "Колір графіка системної активності процесора"
+
+#: ../multiload/multiload.schemas.in.h:12
+msgid "Graph color for nice-related CPU activity"
+msgstr "Колір графіка активності ЦП з урахуванням пріоритету"
+
+#: ../multiload/multiload.schemas.in.h:13
+msgid "Graph color for iowait related CPU activity"
+msgstr "Колір графіка для відображення активності ЦП з урахуванням iowait"
+
+#: ../multiload/multiload.schemas.in.h:14
+msgid "CPU graph background color"
+msgstr "Колір тла графіка використання ЦП"
+
+#: ../multiload/multiload.schemas.in.h:15
 msgid "Graph color for user-related memory usage"
 msgstr "Колір графіка використання пам'яті користувачем"
 
-#: ../multiload/multiload.schemas.in.h:25
+#: ../multiload/multiload.schemas.in.h:16
+msgid "Graph color for shared memory"
+msgstr "Колір графіка спільної пам'яті"
+
+#: ../multiload/multiload.schemas.in.h:17
+msgid "Graph color for buffer memory"
+msgstr "Колір графіка буфера пам'яті"
+
+#: ../multiload/multiload.schemas.in.h:18
+msgid "Graph color for cached memory"
+msgstr "Колір графіка кешованої пам'яті"
+
+#: ../multiload/multiload.schemas.in.h:19
+msgid "Memory graph background color"
+msgstr "Колір тла графіка пам'яті"
+
+#: ../multiload/multiload.schemas.in.h:20
+msgid "Graph color for input network activity"
+msgstr "Колір графіка активності для вхідних пакетів мережі"
+
+#: ../multiload/multiload.schemas.in.h:21
+msgid "Graph color for output network activity"
+msgstr "Колір графіка активності для вихідних даних мережі"
+
+#: ../multiload/multiload.schemas.in.h:22
+msgid "Graph color for loopback network usage"
+msgstr "Колір графіка для локального використання мережі"
+
+#: ../multiload/multiload.schemas.in.h:23
+msgid "Network graph background color"
+msgstr "Колір тла графіка мережі"
+
+#: ../multiload/multiload.schemas.in.h:24
 msgid "Graph color for user-related swap usage"
 msgstr "Колір графіка використання підкачки користувачем"
 
+#: ../multiload/multiload.schemas.in.h:25
+msgid "Swap graph background color"
+msgstr "Колір тла графіка підкачки"
+
 #: ../multiload/multiload.schemas.in.h:26
-msgid "Graph size"
-msgstr "Розмір графіка"
+msgid "Graph color for load average"
+msgstr "Колір графіка середньої завантаженості"
 
 #: ../multiload/multiload.schemas.in.h:27
 msgid "Load graph background color"
 msgstr "Колір тла графіка завантаженості"
 
 #: ../multiload/multiload.schemas.in.h:28
-msgid "Memory graph background color"
-msgstr "Колір тла графіка пам'яті"
+msgid "Graph color for disk read"
+msgstr "Колір графіка для читання з диска"
 
 #: ../multiload/multiload.schemas.in.h:29
-msgid "Network graph background color"
-msgstr "Колір тла графіка мережі"
+msgid "Graph color for disk write"
+msgstr "Колір графіка для запису на диск"
 
 #: ../multiload/multiload.schemas.in.h:30
-msgid "Swap graph background color"
-msgstr "Колір тла графіка підкачки"
+msgid "Background color for disk load graph"
+msgstr "Колір тла для графіка завантаження диска"
 
 #: ../multiload/multiload.schemas.in.h:31
 msgid "The desktop description file to execute as the system monitor"
@@ -2947,6 +2307,10 @@ msgstr "Файл опису для виконання як системний м
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
+
+#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
+msgid "A system load indicator"
+msgstr "Індикатор завантаження системи"
 
 #: ../multiload/properties.c:357
 msgid "Monitored Resources"
@@ -3077,7 +2441,7 @@ msgstr "_Читання"
 msgid "_Write"
 msgstr "_Запис"
 
-#: ../multiload/properties.c:658
+#: ../multiload/properties.c:657
 msgid "System Monitor Preferences"
 msgstr "Параметри системного монітору"
 
@@ -3090,32 +2454,36 @@ msgid "Panel applet for playing audio CDs"
 msgstr "Аплет для програвання музичних компакт-дисків"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
-msgid "Alert you when new mail arrives"
-msgstr "Повідомляти про прибуття нової пошти"
-
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
 msgid "Inbox Monitor (Deprecated)"
 msgstr "Індикатор пошти (застарілий)"
 
-#: ../null_applet/MATE_MixerApplet.server.in.h:2
+#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
+msgid "Alert you when new mail arrives"
+msgstr "Повідомляти про прибуття нової пошти"
+
+#: ../null_applet/MATE_MixerApplet.server.in.h:1
 msgid "Volume Control (Deprecated)"
 msgstr "Параметри керування гучністю (застарілі)"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
-msgid "Factory for deprecating applets"
-msgstr "Фабрика для застарілих аплетів"
+#: ../null_applet/MATE_MixerApplet.server.in.h:2
+msgid "Adjust the sound volume"
+msgstr "Регулює гучність звуку"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
+#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
 msgid "Null Applet Factory"
 msgstr "Фабрика нульового аплету"
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
-msgid "Monitor the quality of a wireless network link"
-msgstr "Індикатор якості бездротового зв'язку"
+#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
+msgid "Factory for deprecating applets"
+msgstr "Фабрика для застарілих аплетів"
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
+#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
 msgid "Wireless Link Monitor"
 msgstr "Індикатор бездротового зв'язку"
+
+#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
+msgid "Monitor the quality of a wireless network link"
+msgstr "Індикатор якості бездротового зв'язку"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:1
 msgid "Keyboard Indicator (Deprecated)"
@@ -3125,7 +2493,6 @@ msgstr "Індикатор клавіатури (застарілий)"
 msgid "Keyboard layout indicator"
 msgstr "Індикатор розкладки клавіатури"
 
-#
 #: ../null_applet/null_applet.c:40
 msgid "Inbox Monitor"
 msgstr "Індикатор вхідної кореспонденції"
@@ -3146,9 +2513,7 @@ msgstr "Деякі елементи панелі вже більше недос�
 msgid ""
 "One or more panel items (also referred to as applets) are no longer "
 "available in the MATE desktop."
-msgstr ""
-"Один або більше елементів панелі (аплетів) більше недоступні у середовищі "
-"MATE."
+msgstr "Один або більше елементів панелі (аплетів) більше недоступні у середовищі MATE."
 
 #: ../null_applet/null_applet.c:154
 msgid "These items will now be removed from your configuration:"
@@ -3166,329 +2531,340 @@ msgstr "Tomboy (не Липкі примітки)"
 msgid "Tomboy (transparent upgrade from stickynotes)"
 msgstr "Tomboy (прозоре оновлення липких приміток)"
 
-#: ../stickynotes/MATE_StickyNotesApplet.server.in.in.h:1
-msgid "Create, view, and manage sticky notes on the desktop"
-msgstr "Створення, показ і керування примітками на робочому столі"
-
-#: ../stickynotes/MATE_StickyNotesApplet.server.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:130
-#: ../stickynotes/stickynotes_applet.c:402
-msgid "Sticky Notes"
-msgstr "Липкі примітки"
-
-#: ../stickynotes/MATE_StickyNotesApplet.server.in.in.h:3
+#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
 msgstr "Фабрика аплету липких приміток"
 
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:1
-msgid "Hi_de Notes"
-msgstr "С_ховати примітки"
+#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
+#: ../stickynotes/stickynotes_applet.c:147
+#: ../stickynotes/stickynotes_applet.c:428
+msgid "Sticky Notes"
+msgstr "Липкі примітки"
 
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:3
-msgid "_Delete Notes"
-msgstr "Видалити _примітки"
+#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:3
+msgid "Create, view, and manage sticky notes on the desktop"
+msgstr "Створення, показ і керування примітками на робочому столі"
 
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:5
-msgid "_Lock Notes"
-msgstr "_Блокувати примітки"
-
-#: ../stickynotes/MATE_StickyNotesApplet.xml.h:6
-msgid "_New Note"
-msgstr "_Створити примітку"
-
-#: ../stickynotes/stickynotes.c:635
+#: ../stickynotes/stickynotes.c:634
 msgid "This note is locked."
 msgstr "Ця примітка заблокована."
 
-#: ../stickynotes/stickynotes.c:639
+#: ../stickynotes/stickynotes.c:638
 msgid "This note is unlocked."
 msgstr "Ця примітка розблокована."
 
-#: ../stickynotes/stickynotes.ui.h:1
-msgid "Behavior"
-msgstr "Поведінка"
+#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
+msgid "_New Note"
+msgstr "_Створити примітку"
 
 #: ../stickynotes/stickynotes.ui.h:2
-msgid "Choose a base color to use for all sticky notes"
-msgstr "Вибрати основний колір для всіх приміток"
+msgid "_Delete Note..."
+msgstr ""
 
 #: ../stickynotes/stickynotes.ui.h:3
-msgid "Choose a color for the note"
-msgstr "Вибрати колір примітки"
-
-#: ../stickynotes/stickynotes.ui.h:4
-msgid "Choose a font for the note"
-msgstr "Вибрати шрифт примітки"
+msgid "_Lock Note"
+msgstr ""
 
 #: ../stickynotes/stickynotes.ui.h:5
-msgid "Choose a font to use for all sticky notes"
-msgstr "Вибрати шрифт для всіх приміток"
-
-#: ../stickynotes/stickynotes.ui.h:6
-msgid "Choose if notes are visible on all workspaces"
-msgstr "Відмітьте для показу приміток на всіх робочих областях"
-
-#: ../stickynotes/stickynotes.ui.h:7
-msgid "Choose if the default style is forced on all notes"
-msgstr "Відмітьте, щоб стандартний стиль застосовувався до всіх приміток"
-
-#: ../stickynotes/stickynotes.ui.h:8
-msgid "Close note"
-msgstr "Закрити приміток"
-
-#: ../stickynotes/stickynotes.ui.h:9
-msgid "Default Note Properties"
-msgstr "Первинні властивості примітки"
-
-#: ../stickynotes/stickynotes.ui.h:10
-msgid "Delete all sticky notes?"
-msgstr "Видалити всі липкі нотатки?"
-
-#: ../stickynotes/stickynotes.ui.h:11
-msgid "Delete this sticky note?"
-msgstr "Видалити цю липку нотатку?"
-
-#: ../stickynotes/stickynotes.ui.h:12
-msgid "Font C_olor:"
-msgstr "   _Колір шрифту:"
-
-#: ../stickynotes/stickynotes.ui.h:13
-msgid "Font Co_lor:"
-msgstr "К_олір шрифту:"
-
-#: ../stickynotes/stickynotes.ui.h:14
-msgid "Force _default color and font on notes"
-msgstr "С_тандартний колір і шрифт для всіх приміток"
-
-#: ../stickynotes/stickynotes.ui.h:15
-msgid "H_eight:"
-msgstr "_Висота:"
-
-#: ../stickynotes/stickynotes.ui.h:16
-msgid "Lock/Unlock note"
-msgstr "Розблокувати/заблокувати приміток"
-
-#: ../stickynotes/stickynotes.ui.h:17
-msgid "Note C_olor:"
-msgstr "_Колір примітки:"
-
-#: ../stickynotes/stickynotes.ui.h:18
-msgid "Note _Color:"
-msgstr "К_олір примітки:"
-
-#: ../stickynotes/stickynotes.ui.h:19
-msgid "Pick a color for the sticky note"
-msgstr "Вибір кольору приміток"
-
-#: ../stickynotes/stickynotes.ui.h:20
-msgid "Pick a default sticky note color"
-msgstr "Вибір початкового кольору примітки"
-
-#: ../stickynotes/stickynotes.ui.h:21
-msgid "Pick a default sticky note font"
-msgstr "Вибір початкового шрифту примітку"
-
-#: ../stickynotes/stickynotes.ui.h:22
-msgid "Pick a font for the sticky note"
-msgstr "Вибір шрифту примітки"
-
-#: ../stickynotes/stickynotes.ui.h:23
-msgid "Properties"
-msgstr "В_ластивості"
-
-#: ../stickynotes/stickynotes.ui.h:24
-msgid "Resize note"
-msgstr "Змінити розмір примітки"
-
-#: ../stickynotes/stickynotes.ui.h:25
-msgid "Specify a title for the note"
-msgstr "Вказати заголовок примітки"
-
-#: ../stickynotes/stickynotes.ui.h:26
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "Початкова висота нових приміток (в точках)"
-
-#: ../stickynotes/stickynotes.ui.h:27
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "Початкова висота нових приміток (в точках)"
-
-#: ../stickynotes/stickynotes.ui.h:28
-msgid "Sticky Note"
-msgstr "Липка примітка"
-
-#: ../stickynotes/stickynotes.ui.h:29
-msgid "Sticky Note Properties"
-msgstr "Властивості липкої примітки"
-
-#: ../stickynotes/stickynotes.ui.h:30
 msgid "Sticky Notes Preferences"
 msgstr "Параметри липких приміток"
 
-#: ../stickynotes/stickynotes.ui.h:31
-msgid "This cannot be undone."
-msgstr "Не можна скасувати."
+#: ../stickynotes/stickynotes.ui.h:6
+msgid "Default Note Properties"
+msgstr "Первинні властивості примітки"
 
-#: ../stickynotes/stickynotes.ui.h:32
-msgid "Use co_lor from the system theme"
-msgstr "Використовувати ко_лір системної теми"
+#: ../stickynotes/stickynotes.ui.h:7
+msgid "Choose a font to use for all sticky notes"
+msgstr "Вибрати шрифт для всіх приміток"
 
-#: ../stickynotes/stickynotes.ui.h:33
-msgid "Use default co_lor"
-msgstr "Використовувати початковий _колір"
+#: ../stickynotes/stickynotes.ui.h:8
+msgid "Pick a default sticky note font"
+msgstr "Вибір початкового шрифту примітку"
 
-#: ../stickynotes/stickynotes.ui.h:34
-msgid "Use default fo_nt"
-msgstr "Використовувати початковий _шрифт"
-
-#: ../stickynotes/stickynotes.ui.h:35
-msgid "Use fo_nt from the system theme"
-msgstr "Використовувати ш_рифт системної теми"
-
-#: ../stickynotes/stickynotes.ui.h:36
-msgid "_Delete All"
-msgstr "В_идалити всі"
-
-#: ../stickynotes/stickynotes.ui.h:37
+#: ../stickynotes/stickynotes.ui.h:9
 msgid "_Font:"
 msgstr "_Шрифт:"
 
-#: ../stickynotes/stickynotes.ui.h:38
+#: ../stickynotes/stickynotes.ui.h:10
+msgid "Use fo_nt from the system theme"
+msgstr "Використовувати ш_рифт системної теми"
+
+#: ../stickynotes/stickynotes.ui.h:11
+msgid "Note C_olor:"
+msgstr "_Колір примітки:"
+
+#: ../stickynotes/stickynotes.ui.h:12
+msgid "Font Co_lor:"
+msgstr "К_олір шрифту:"
+
+#: ../stickynotes/stickynotes.ui.h:13
+msgid "Choose a base color to use for all sticky notes"
+msgstr "Вибрати основний колір для всіх приміток"
+
+#: ../stickynotes/stickynotes.ui.h:14
+msgid "Pick a default sticky note color"
+msgstr "Вибір початкового кольору примітки"
+
+#: ../stickynotes/stickynotes.ui.h:15
+msgid "Use co_lor from the system theme"
+msgstr "Використовувати ко_лір системної теми"
+
+#: ../stickynotes/stickynotes.ui.h:16
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "Початкова висота нових приміток (в точках)"
+
+#: ../stickynotes/stickynotes.ui.h:17
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "Початкова висота нових приміток (в точках)"
+
+#: ../stickynotes/stickynotes.ui.h:18
+msgid "H_eight:"
+msgstr "_Висота:"
+
+#: ../stickynotes/stickynotes.ui.h:20
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: ../stickynotes/stickynotes.ui.h:21
+msgid "Hide notes when the des_ktop is clicked on"
+msgstr ""
+
+#: ../stickynotes/stickynotes.ui.h:22
+msgid "Choose whether to hide all notes when selecting on the desktop"
+msgstr ""
+
+#: ../stickynotes/stickynotes.ui.h:23
+msgid "Force _default color and font on notes"
+msgstr "С_тандартний колір і шрифт для всіх приміток"
+
+#: ../stickynotes/stickynotes.ui.h:24
+msgid "Choose if the default style is forced on all notes"
+msgstr "Відмітьте, щоб стандартний стиль застосовувався до всіх приміток"
+
+#: ../stickynotes/stickynotes.ui.h:25
 msgid "_Put notes on all workspaces"
 msgstr "_Показувати примітки на всіх робочих областях"
 
+#: ../stickynotes/stickynotes.ui.h:26
+msgid "Choose if notes are visible on all workspaces"
+msgstr "Відмітьте для показу приміток на всіх робочих областях"
+
+#: ../stickynotes/stickynotes.ui.h:27
+msgid "Delete this sticky note?"
+msgstr "Видалити цю липку нотатку?"
+
+#: ../stickynotes/stickynotes.ui.h:28
+msgid "This cannot be undone."
+msgstr "Не можна скасувати."
+
+#: ../stickynotes/stickynotes.ui.h:29
+msgid "Delete all sticky notes?"
+msgstr "Видалити всі липкі нотатки?"
+
+#: ../stickynotes/stickynotes.ui.h:30
+msgid "_Delete All"
+msgstr "В_идалити всі"
+
+#: ../stickynotes/stickynotes.ui.h:31
+msgid "Sticky Note"
+msgstr "Липка примітка"
+
+#: ../stickynotes/stickynotes.ui.h:32
+msgid "Lock/Unlock note"
+msgstr "Розблокувати/заблокувати приміток"
+
+#: ../stickynotes/stickynotes.ui.h:33
+msgid "Close note"
+msgstr "Закрити приміток"
+
+#: ../stickynotes/stickynotes.ui.h:34
+msgid "Resize note"
+msgstr "Змінити розмір примітки"
+
+#: ../stickynotes/stickynotes.ui.h:35
+msgid "Sticky Note Properties"
+msgstr "Властивості липкої примітки"
+
+#: ../stickynotes/stickynotes.ui.h:36
+msgid "Properties"
+msgstr "В_ластивості"
+
+#: ../stickynotes/stickynotes.ui.h:37
+msgid "Choose a font for the note"
+msgstr "Вибрати шрифт примітки"
+
+#: ../stickynotes/stickynotes.ui.h:38
+msgid "Pick a font for the sticky note"
+msgstr "Вибір шрифту примітки"
+
 #: ../stickynotes/stickynotes.ui.h:39
+msgid "Use default fo_nt"
+msgstr "Використовувати початковий _шрифт"
+
+#: ../stickynotes/stickynotes.ui.h:40
+msgid "Choose a color for the note"
+msgstr "Вибрати колір примітки"
+
+#: ../stickynotes/stickynotes.ui.h:41
+msgid "Pick a color for the sticky note"
+msgstr "Вибір кольору приміток"
+
+#: ../stickynotes/stickynotes.ui.h:42
+msgid "Note _Color:"
+msgstr "К_олір примітки:"
+
+#: ../stickynotes/stickynotes.ui.h:43
+msgid "Font C_olor:"
+msgstr "   _Колір шрифту:"
+
+#: ../stickynotes/stickynotes.ui.h:44
+msgid "Use default co_lor"
+msgstr "Використовувати початковий _колір"
+
+#: ../stickynotes/stickynotes.ui.h:45
+msgid "Specify a title for the note"
+msgstr "Вказати заголовок примітки"
+
+#: ../stickynotes/stickynotes.ui.h:46
 msgid "_Title:"
 msgstr "_Заголовок:"
 
 #: ../stickynotes/stickynotes.schemas.in.h:1
+msgid "Default width for new notes"
+msgstr "Початкова ширина нових приміток"
+
+#: ../stickynotes/stickynotes.schemas.in.h:2
+msgid "Default width for new sticky notes in pixels."
+msgstr "Початкова ширина нових приміток в точках."
+
+#: ../stickynotes/stickynotes.schemas.in.h:3
+msgid "Default height for new notes"
+msgstr "Початкова висота нових приміток"
+
+#: ../stickynotes/stickynotes.schemas.in.h:4
+msgid "Default height for new sticky notes in pixels."
+msgstr "Початкова висота нових приміток в точках."
+
+#: ../stickynotes/stickynotes.schemas.in.h:5
+msgid "Default color for new notes"
+msgstr "Початковий колір нових приміток"
+
+#: ../stickynotes/stickynotes.schemas.in.h:6
+msgid ""
+"Default color for new sticky notes. This should be in html hex "
+"specification, for example \"#30FF50\"."
+msgstr "Початковий колір нових приміток у шістнадцятковому форматі HTML, наприклад, \"#30FF50\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:7
+msgid "Default color for font"
+msgstr "Типовий колір шрифту"
+
+#: ../stickynotes/stickynotes.schemas.in.h:8
+msgid ""
+"Default font color for new sticky notes. This should be in html hex "
+"specification, for example \"#000000\"."
+msgstr "Початковий колір нових приміток у шістнадцятковому форматі HTML, наприклад, \"#000000\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:9
+msgid "Default font for new notes"
+msgstr "Початковий шрифт нових приміток"
+
+#: ../stickynotes/stickynotes.schemas.in.h:10
+msgid ""
+"Default font for new sticky notes. This should be a Pango Font Name, for "
+"example \"Sans Italic 10\"."
+msgstr "Початковий шрифт у нових приміток. Це має бути назва шрифту у форматі Pango, наприклад, \"Sans Italic 10\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:11
+msgid "Sticky notes' workspace stickyness"
+msgstr "Липкість приміток до робочої області"
+
+#: ../stickynotes/stickynotes.schemas.in.h:12
+msgid ""
+"Specifies whether the sticky notes are visible on ALL workspaces on the "
+"desktop, or not."
+msgstr "Визначає, чи показуються примітки на всіх робочих областях робочого столу."
+
+#: ../stickynotes/stickynotes.schemas.in.h:13
+msgid "Sticky notes' locked state"
+msgstr "Заблокований стан приміток"
+
+#: ../stickynotes/stickynotes.schemas.in.h:14
+msgid "Specifies whether the sticky notes are locked (non-editable) or not."
+msgstr "Визначає, чи примітки заблоковані (їх заборонено редагувати)."
+
+#: ../stickynotes/stickynotes.schemas.in.h:15
+msgid "Date format of note's title"
+msgstr "Формат дати заголовка примітки"
+
+#: ../stickynotes/stickynotes.schemas.in.h:16
 msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr ""
-"Зазвичай, новим приміткам призначається заголовок з поточною датою. "
-"Використовується формат, який розпізнає функція strftime()."
-
-#: ../stickynotes/stickynotes.schemas.in.h:2
-msgid "Date format of note's title"
-msgstr "Формат дати заголовка примітки"
-
-#: ../stickynotes/stickynotes.schemas.in.h:3
-msgid "Default color for font"
-msgstr "Типовий колір шрифту"
-
-#: ../stickynotes/stickynotes.schemas.in.h:4
-msgid "Default color for new notes"
-msgstr "Початковий колір нових приміток"
-
-#: ../stickynotes/stickynotes.schemas.in.h:5
-msgid ""
-"Default color for new sticky notes. This should be in html hex "
-"specification, for example \"#30FF50\"."
-msgstr ""
-"Початковий колір нових приміток у шістнадцятковому форматі HTML, наприклад, "
-"\"#30FF50\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:6
-msgid ""
-"Default font color for new sticky notes. This should be in html hex "
-"specification, for example \"#000000\"."
-msgstr ""
-"Початковий колір нових приміток у шістнадцятковому форматі HTML, наприклад, "
-"\"#000000\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:7
-msgid "Default font for new notes"
-msgstr "Початковий шрифт нових приміток"
-
-#: ../stickynotes/stickynotes.schemas.in.h:8
-msgid ""
-"Default font for new sticky notes. This should be a Pango Font Name, for "
-"example \"Sans Italic 10\"."
-msgstr ""
-"Початковий шрифт у нових приміток. Це має бути назва шрифту у форматі Pango, "
-"наприклад, \"Sans Italic 10\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:9
-msgid "Default height for new notes"
-msgstr "Початкова висота нових приміток"
-
-#: ../stickynotes/stickynotes.schemas.in.h:10
-msgid "Default height for new sticky notes in pixels."
-msgstr "Початкова висота нових приміток в точках."
-
-#: ../stickynotes/stickynotes.schemas.in.h:11
-msgid "Default width for new notes"
-msgstr "Початкова ширина нових приміток"
-
-#: ../stickynotes/stickynotes.schemas.in.h:12
-msgid "Default width for new sticky notes in pixels."
-msgstr "Початкова ширина нових приміток в точках."
-
-#: ../stickynotes/stickynotes.schemas.in.h:13
-msgid "Empty notes are always deleted without confirmation."
-msgstr "Порожні примітки завжди знищуються без попередження."
-
-#: ../stickynotes/stickynotes.schemas.in.h:14
-msgid ""
-"If this option is disabled, a custom color can be used as the default color "
-"for all sticky notes."
-msgstr ""
-"Якщо цей параметр вимкнено, то власний колір може бути використано в якості "
-"стандартного кольору для всіх приміток."
-
-#: ../stickynotes/stickynotes.schemas.in.h:15
-msgid ""
-"If this option is disabled, a custom font can be used as the default font "
-"for all sticky notes."
-msgstr ""
-"Якщо цей параметр вимкнено, то власний шрифт може бути використано в якості "
-"стандартного кольору для всіх приміток."
-
-#: ../stickynotes/stickynotes.schemas.in.h:16
-msgid ""
-"If this option is enabled, the custom colors and fonts that have been "
-"assigned to individual notes will be ignored."
-msgstr ""
-"Якщо цей параметр увімкнено, то власні призначені приміткам кольори і шрифти "
-"будуть ігноруватись."
+msgstr "Зазвичай, новим приміткам призначається заголовок з поточною датою. Використовується формат, який розпізнає функція strftime()."
 
 #: ../stickynotes/stickynotes.schemas.in.h:17
-msgid "Specifies whether the sticky notes are locked (non-editable) or not."
-msgstr "Визначає, чи примітки заблоковані (їх заборонено редагувати)."
-
-#: ../stickynotes/stickynotes.schemas.in.h:18
-msgid ""
-"Specifies whether the sticky notes are visible on ALL workspaces on the "
-"desktop, or not."
-msgstr ""
-"Визначає, чи показуються примітки на всіх робочих областях робочого столу."
-
-#: ../stickynotes/stickynotes.schemas.in.h:19
-msgid "Sticky notes' locked state"
-msgstr "Заблокований стан приміток"
-
-#: ../stickynotes/stickynotes.schemas.in.h:20
-msgid "Sticky notes' workspace stickyness"
-msgstr "Липкість приміток до робочої області"
-
-#: ../stickynotes/stickynotes.schemas.in.h:21
-msgid "Whether to ask for confirmation when deleting a note"
-msgstr "Чи запитувати підтвердження перед знищенням нотатки"
-
-#: ../stickynotes/stickynotes.schemas.in.h:22
-msgid "Whether to force the default color and font on all notes"
-msgstr "Чи застосовувати стандартний колір та шрифт до всіх приміток"
-
-#: ../stickynotes/stickynotes.schemas.in.h:23
 msgid "Whether to use the default system color"
 msgstr "Чи використовувати типовий системний колір"
 
-#: ../stickynotes/stickynotes.schemas.in.h:24
+#: ../stickynotes/stickynotes.schemas.in.h:18
+msgid ""
+"If this option is disabled, a custom color can be used as the default color "
+"for all sticky notes."
+msgstr "Якщо цей параметр вимкнено, то власний колір може бути використано в якості стандартного кольору для всіх приміток."
+
+#: ../stickynotes/stickynotes.schemas.in.h:19
 msgid "Whether to use the default system font"
 msgstr "Чи використовувати типовий системний шрифт"
 
-#: ../stickynotes/stickynotes_applet.c:580
+#: ../stickynotes/stickynotes.schemas.in.h:20
+msgid ""
+"If this option is disabled, a custom font can be used as the default font "
+"for all sticky notes."
+msgstr "Якщо цей параметр вимкнено, то власний шрифт може бути використано в якості стандартного кольору для всіх приміток."
+
+#: ../stickynotes/stickynotes.schemas.in.h:21
+msgid "Whether to force the default color and font on all notes"
+msgstr "Чи застосовувати стандартний колір та шрифт до всіх приміток"
+
+#: ../stickynotes/stickynotes.schemas.in.h:22
+msgid ""
+"If this option is enabled, the custom colors and fonts that have been "
+"assigned to individual notes will be ignored."
+msgstr "Якщо цей параметр увімкнено, то власні призначені приміткам кольори і шрифти будуть ігноруватись."
+
+#: ../stickynotes/stickynotes.schemas.in.h:23
+msgid "Whether to hide all notes when the desktop is selected"
+msgstr ""
+
+#: ../stickynotes/stickynotes.schemas.in.h:24
+msgid ""
+"If this option is enabled, selecting the desktop in any way will "
+"automatically hide all the open notes."
+msgstr ""
+
+#: ../stickynotes/stickynotes.schemas.in.h:25
+msgid "Whether to ask for confirmation when deleting a note"
+msgstr "Чи запитувати підтвердження перед знищенням нотатки"
+
+#: ../stickynotes/stickynotes.schemas.in.h:26
+msgid "Empty notes are always deleted without confirmation."
+msgstr "Порожні примітки завжди знищуються без попередження."
+
+#: ../stickynotes/stickynotes_applet.c:36
+msgid "Hi_de Notes"
+msgstr "С_ховати примітки"
+
+#: ../stickynotes/stickynotes_applet.c:39
+msgid "_Delete Notes"
+msgstr "Видалити _примітки"
+
+#: ../stickynotes/stickynotes_applet.c:55
+msgid "_Lock Notes"
+msgstr "_Блокувати примітки"
+
+#: ../stickynotes/stickynotes_applet.c:621
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
@@ -3496,32 +2872,426 @@ msgstr[0] "%d нотатка"
 msgstr[1] "%d нотатки"
 msgstr[2] "%d приміток"
 
-#: ../stickynotes/stickynotes_applet.c:581
+#: ../stickynotes/stickynotes_applet.c:622
 msgid "Show sticky notes"
 msgstr "Показує липкі нотаки"
 
-#: ../stickynotes/stickynotes_applet_callbacks.c:380
+#: ../stickynotes/stickynotes_applet_callbacks.c:421
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "\"Липкі\" нотатки для середовища MATE"
 
-#: ../trashapplet/MATE_Panel_TrashApplet.server.in.in.h:1
-msgid "Go to Trash"
-msgstr "Перейти у смітник"
+#: ../timer-applet/data/TimerApplet.server.in.in.h:1
+msgid "Timer Applet Factory"
+msgstr ""
 
-#: ../trashapplet/MATE_Panel_TrashApplet.server.in.in.h:2
+#: ../timer-applet/data/TimerApplet.server.in.in.h:2
+msgid "A Timer Applet factory that creates Timer Applets"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.server.in.in.h:3
+msgid "Timer"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.server.in.in.h:4
+msgid "Start a timer and receive a notification when it is finished"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:1
+msgid "Pa_use"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:2
+msgid "_Continue"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:3
+msgid "_Stop"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:4
+msgid "R_estart"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:5
+msgid "Next"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:6
+msgid "Pre_sets"
+msgstr ""
+
+#: ../timer-applet/data/TimerApplet.xml.h:7
+msgid "Ma_nage Presets"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:1
+msgid "Start Timer"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:2
+msgid "_Name:"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:3
+msgid "Start automatically"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:4
+msgid "<b>Define next timer</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:5
+msgid "Execute:"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:6
+msgid "<b>Run custom command</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:7
+msgid "Run executable after timer finished."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:8
+msgid "Advanced"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:9
+msgid "S_ave as Preset"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:10
+msgid "Mana_ge Presets"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:11
+msgid "<b>_Presets</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:12
+msgid "S_tart Timer"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:13
+msgid "Manage Presets"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:14
+msgid "_Delete"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:15
+msgid "_Edit..."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:16
+msgid "_Add..."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:17
+msgid "Timer Preferences"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:18
+msgid "_Show remaining time while timer is running"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:19
+msgid "_Play notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:20
+msgid "Use d_efault sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:21
+msgid "Use c_ustom sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:22
+msgid "Choose A Sound File"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:23
+msgid "_Show popup notification"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:24
+msgid "_Show popup notification after timer has ended."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:25
+msgid "S_how pulsing panel icon"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:26
+msgid "Show pulsing panel icon after timer has ended."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:27
+#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
+msgid "Add Preset"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:28
+msgid "<b>_Name</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:29
+msgid "<b>_Duration</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:30
+msgid "Run custom command after timer has ended."
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:31
+msgid "<b>Custom command</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:32
+msgid "Initiate automatically"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:33
+msgid "<b>Interval timer</b>"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:34
+msgid "A timer applet for the perfect egg and beyond!"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.glade.h:35
+msgid "Timer Applet"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:1
+msgid "Play notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:2
+msgid "Play a notification sound when the timer finishes a countdown"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:3
+msgid "Use a custom notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:4
+msgid ""
+"Use the custom notification sound specified in "
+"custom_notification_sound_path"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:5
+msgid "Path to a custom notification sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:6
+msgid ""
+"Path to a sound file that will be played when the timer finishes a countdown"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:7
+msgid "Show Pulsing icon"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:8
+msgid "Show pulsing tray icon when timer finished"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:9
+msgid "Show Popup notification"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:10
+msgid "Show Popup notification in the notification area"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:11
+msgid "Show remaining time"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:12
+msgid "Show the remaining time while the timer is running or paused"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:13
+msgid "Play a beep sound"
+msgstr ""
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:14
+msgid ""
+"Play a beep sound on a computer's internal speaker when the timer finishes. "
+"This may not have an effect on all computers."
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
+msgid "Edit Preset"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
+msgid "Continue timer countdown?"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
+msgid "The timer is currently paused. Would you like to continue countdown?"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:193
+msgid "Click to start a new timer countdown."
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:198
+msgid "Paused. Click to continue timer countdown."
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:201
+msgid "Finished"
+msgstr ""
+
+#. "<timer name>" finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:206
+#, python-format
+msgid ""
+"\"%s\" finished at %s.\n"
+"Click to stop timer."
+msgstr ""
+
+#. Timer finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:209
+#, python-format
+msgid ""
+"Timer finished at %s.\n"
+"Click to stop timer."
+msgstr ""
+
+#. HH:MM:SS (<timer name>)
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:385
+#, python-format
+msgid "%02d:%02d:%02d (%s)"
+msgstr ""
+
+#. HH:MM:SS
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:388
+#: ../timer-applet/src/timerapplet/utils.py:52
+#, python-format
+msgid "%02d:%02d:%02d"
+msgstr ""
+
+#. "<timer name>" Finished
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:410
+#, python-format
+msgid "\"%s\" Finished"
+msgstr ""
+
+#. "<timer name>" finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:413
+#, python-format
+msgid "\"%s\" finished at %s"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
+msgid "Timer Finished"
+msgstr ""
+
+#. Timer finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:418
+#, python-format
+msgid "Timer finished at %s"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:425
+#, python-format
+msgid "Timer finished about <b>%d second</b> ago"
+msgid_plural "Timer finished about <b>%d seconds</b> ago"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:430
+#, python-format
+msgid "Timer finished about <b>%d minute</b> ago"
+msgid_plural "Timer finished about <b>%d minutes</b> ago"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
+msgid "Continue Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
+msgid "_Stop Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
+msgid "_Keep Paused"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
+msgid "_Continue Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
+msgid "<b>Command not found.</b>"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
+msgid "Start Next Timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
+msgid "_Don't start next timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
+msgid "_Start next timer"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
+msgid "_Hours:"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
+msgid "_Minutes:"
+msgstr ""
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
+msgid "_Seconds:"
+msgstr ""
+
+#. HH:MM
+#. MM:SS
+#: ../timer-applet/src/timerapplet/utils.py:56
+#: ../timer-applet/src/timerapplet/utils.py:59
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+#. <preset name> (HH:MM:SS)
+#: ../timer-applet/src/timerapplet/utils.py:69
+#, python-format
+msgid "%s (%02d:%02d:%02d)"
+msgstr ""
+
+#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
 msgstr "Смітник"
 
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:2
-#: ../trashapplet/src/trash-empty.c:351
+#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:2
+msgid "Go to Trash"
+msgstr "Перейти у смітник"
+
+#: ../trashapplet/src/trashapplet.c:69 ../trashapplet/src/trash-empty.c:351
 msgid "_Empty Trash"
 msgstr "О_чистити смітник"
 
-#: ../trashapplet/MATE_Panel_TrashApplet.xml.h:4
+#: ../trashapplet/src/trashapplet.c:72
 msgid "_Open Trash"
 msgstr "_Відкрити смітник"
 
-#: ../trashapplet/src/trashapplet.c:124
+#: ../trashapplet/src/trashapplet.c:128
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
@@ -3529,26 +3299,22 @@ msgstr[0] "%d елемент у смітнику"
 msgstr[1] "%d елементи у смітнику"
 msgstr[2] "%d елементів у смітнику"
 
-#: ../trashapplet/src/trashapplet.c:132
+#: ../trashapplet/src/trashapplet.c:136
 msgid "No Items in Trash"
 msgstr "У смітнику немає елементів"
 
-#: ../trashapplet/src/trashapplet.c:376
+#: ../trashapplet/src/trashapplet.c:378
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
 "%s"
-msgstr ""
-"Помилка запуску caja:\n"
-"%s"
+msgstr "Помилка запуску caja:\n%s"
 
 #: ../trashapplet/src/trashapplet.c:427
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
-msgstr ""
-"Смітник середовища MATE, яка живе у вашій панелі. Ви можете використовувати "
-"її для перегляду корзини або перетягування у неї елементів."
+msgstr "Смітник середовища MATE, яка живе у вашій панелі. Ви можете використовувати її для перегляду корзини або перетягування у неї елементів."
 
 #: ../trashapplet/src/trashapplet.c:452
 msgid "Delete Immediately?"
@@ -3563,7 +3329,7 @@ msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "Не вдається перемістити елементи в смітник, видалити їх остаточно?"
 
-#: ../trashapplet/src/trashapplet.c:614
+#: ../trashapplet/src/trashapplet.c:617
 msgid "Trash Applet"
 msgstr "Аплет смітника"
 
@@ -3587,9 +3353,7 @@ msgstr "Очистити усі елементи зі смітника?"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr ""
-"Якщо ви очистите смітник, елементи будуть видалені остаточно. Зауважте, їх "
-"також можна видаляти по одному."
+msgstr "Якщо ви очистите смітник, елементи будуть видалені остаточно. Зауважте, їх також можна видаляти по одному."
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"
@@ -3598,161 +3362,3 @@ msgstr "Очищення смітника"
 #: ../trashapplet/trashapplet-empty-progress.ui.h:2
 msgid "From:"
 msgstr "Від:"
-
-#~ msgid "Keyboard _Preferences"
-#~ msgstr "_Параметри клавіатури"
-
-#~ msgid "Pl_ugins"
-#~ msgstr "М_одулі"
-
-#~ msgid "Show Current _Layout"
-#~ msgstr "Показати поточну _розкладку"
-
-#~ msgid "_Groups"
-#~ msgstr "_Групи"
-
-#~ msgid "Keyboard applet factory"
-#~ msgstr "Фабрика аплету клавіатури"
-
-#~ msgid "Unknown"
-#~ msgstr "Невідомо"
-
-#~ msgid "Keyboard Layout \"%s\""
-#~ msgstr "Розкладка клавіатури \"%s\""
-
-#~ msgid "Copyright (c) Sergey V. Udaltsov 1999-2004"
-#~ msgstr "Авторські права (c) Сергій В. Удальцов 1999-2004"
-
-#~ msgid "Keyboard layout indicator applet for MATE"
-#~ msgstr "Аплет індикатор розкладки клавіатури для MATE"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "Розкладка клавіатури"
-
-#~ msgid "<b>Appearance</b>"
-#~ msgstr "<b>Зовнішній вигляд</b>"
-
-#~ msgid "    "
-#~ msgstr "    "
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "<b>Colors</b>"
-#~ msgstr "<b>Кольори</b>"
-
-#~ msgid "<b>Size</b>"
-#~ msgstr "<b>Розмір</b>"
-
-#~ msgid "Using GStreamer 0.8."
-#~ msgstr "Використовує GStreamer 0.8."
-
-#~ msgid "-"
-#~ msgstr "-"
-
-#~ msgid "+"
-#~ msgstr "+"
-
-#~ msgid "<span weight=\"bold\" size=\"larger\">Root password required</span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"larger\">Вимагається пароль root</span>"
-
-#~ msgid "Graph color for PLIP network activity"
-#~ msgstr "Колір графіка активності в мережі протоколу PLIP"
-
-#~ msgid "Graph color for SLIP network activity"
-#~ msgstr "Колір графіка активності в мережі протоколу SLIP"
-
-#~ msgid "_SLIP"
-#~ msgstr "_SLIP"
-
-#~ msgid "PL_IP"
-#~ msgstr "_PLIP"
-
-#~ msgid "_Ethernet"
-#~ msgstr "_Ethernet"
-
-#~ msgid "Othe_r"
-#~ msgstr "_Інше"
-
-#~ msgid ""
-#~ "<b>Delete all sticky notes?</b>\n"
-#~ "\n"
-#~ "This cannot be undone."
-#~ msgstr ""
-#~ "<b>Знищити всі примітки?</b>\n"
-#~ "\n"
-#~ "Скасувати зміни буде неможливо."
-
-#~ msgid ""
-#~ "<b>Delete this sticky note?</b>\n"
-#~ "\n"
-#~ "This cannot be undone."
-#~ msgstr ""
-#~ "<b>Знищити цю примітку?</b>\n"
-#~ "\n"
-#~ "Скасувати зміну буде неможливо."
-
-#~ msgid "<b>Properties</b>"
-#~ msgstr "<b>Властивості</b>"
-
-#~ msgid "_Delete Note..."
-#~ msgstr "В_идалити примітку..."
-
-#~ msgid "_Lock Note"
-#~ msgstr "_Блокувати примітку"
-
-#~ msgid "_Open"
-#~ msgstr "_Відкрити"
-
-#~ msgid "<b>From:</b>"
-#~ msgstr " <b>З:</b>"
-
-#~ msgid "<big><b>Emptying the Trash</b></big>"
-#~ msgstr "<big><b>Очищення смітника</b></big>"
-
-#~ msgid "(not connected)"
-#~ msgstr "(немає з'єднання)"
-
-#
-#~ msgid "Mount Error"
-#~ msgstr "Помилка підключення"
-
-#~ msgid "Unmount Error"
-#~ msgstr "Помилка відключення"
-
-#~ msgid "Eject Error"
-#~ msgstr "Помилка витягування"
-
-#~ msgid "Error"
-#~ msgstr "Помилка"
-
-#~ msgid ""
-#~ "1d\n"
-#~ "5d\n"
-#~ "3m\n"
-#~ "6m\n"
-#~ "1y\n"
-#~ "3y"
-#~ msgstr ""
-#~ "1д\n"
-#~ "5д\n"
-#~ "3м\n"
-#~ "6м\n"
-#~ "1р\n"
-#~ "3р"
-
-#~ msgid ""
-#~ "l\n"
-#~ "b\n"
-#~ "c"
-#~ msgstr ""
-#~ "l\n"
-#~ "b\n"
-#~ "c"
-
-#~ msgid "Downloading Chart"
-#~ msgstr "Завантаження діаграми"
-
-#~ msgid "Reading Chart chunk"
-#~ msgstr "Читання частини діаграми"

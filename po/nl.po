@@ -8,11 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/Perberos/Mate-Desktop-Environment/issues\n"
-"POT-Creation-Date: 2012-01-26 11:46+0100\n"
-"PO-Revision-Date: 2012-02-07 13:20+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"POT-Creation-Date: 2012-06-13 00:13+0200\n"
+"PO-Revision-Date: 2012-06-24 07:40+0000\n"
 "Last-Translator: Michael Steenbeek <m.o.steenbeek@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.net/projects/p/MATE/language/nl/)\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/MATE/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,7 @@ msgstr "Toont de status van de AccessX-mogelijkheden"
 #. about.set_documenters([])
 #. translators: These appear in the About dialog, usual format applies.
 #. "documenters",        documenters,
-#: ../accessx-status/applet.c:140 ../battstat/battstat_applet.c:1261
+#: ../accessx-status/applet.c:140 ../battstat/battstat_applet.c:1263
 #: ../charpick/charpick.c:610 ../cpufreq/src/cpufreq-applet.c:613
 #: ../drivemount/drivemount.c:117 ../geyes/geyes.c:196
 #: ../mateweather/mateweather-about.c:52 ../invest-applet/invest/about.py:29
@@ -56,7 +56,7 @@ msgstr "_Toetsenbord toegankelijkheidsvoorkeuren"
 #: ../charpick/charpick.c:717 ../cpufreq/src/cpufreq-applet.c:125
 #: ../drivemount/drivemount.c:153 ../geyes/geyes.c:361
 #: ../mateweather/mateweather-applet.c:124
-#: ../invest-applet/data/Invest_Applet.xml.h:2
+#: ../invest-applet/data/Invest_Applet.xml.h:3
 #: ../mini-commander/src/mini-commander_applet.c:56 ../mixer/applet.c:387
 #: ../modemlights/modem-applet.c:151 ../multiload/main.c:439
 #: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:75
@@ -67,10 +67,12 @@ msgstr "_Hulp"
 #: ../charpick/charpick.c:720 ../cpufreq/src/cpufreq-applet.c:128
 #: ../drivemount/drivemount.c:156 ../geyes/geyes.c:364
 #: ../mateweather/mateweather-applet.c:127
-#: ../invest-applet/data/Invest_Applet.xml.h:1
+#: ../invest-applet/data/Invest_Applet.xml.h:4
 #: ../mini-commander/src/mini-commander_applet.c:59 ../mixer/applet.c:390
 #: ../modemlights/modem-applet.c:154 ../multiload/main.c:442
-#: ../stickynotes/stickynotes_applet.c:48 ../trashapplet/src/trashapplet.c:78
+#: ../stickynotes/stickynotes_applet.c:48
+#: ../timer-applet/data/TimerApplet.xml.h:9
+#: ../trashapplet/src/trashapplet.c:78
 msgid "_About"
 msgstr "I_nfo"
 
@@ -103,7 +105,7 @@ msgid "Error: %s"
 msgstr "Fout: %s"
 
 #: ../accessx-status/applet.c:1341
-#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:2
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Toetsenbord toegankelijkheidsstatus"
 
@@ -115,7 +117,7 @@ msgstr "Toont de huidige status van de toegankelijkheidsmogelijkheden"
 msgid "AccessX Status Applet Factory"
 msgstr "AccessX-status Appletfabriek"
 
-#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
+#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:2
 msgid "Keyboard Accessibility Status Applet Factory"
 msgstr "Toetsenbord toegankelijkheidsstatus appletfabriek"
 
@@ -126,9 +128,10 @@ msgstr "Toont de status van de toegankelijkheidsmogelijkheden"
 #: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:714
 #: ../cpufreq/src/cpufreq-applet.c:122 ../geyes/geyes.c:358
 #: ../mateweather/mateweather-applet.c:121
-#: ../invest-applet/data/Invest_Applet.xml.h:3
+#: ../invest-applet/data/Invest_Applet.xml.h:2
 #: ../mini-commander/src/mini-commander_applet.c:53 ../mixer/applet.c:393
 #: ../multiload/main.c:433 ../stickynotes/stickynotes_applet.c:42
+#: ../timer-applet/data/TimerApplet.xml.h:8
 msgid "_Preferences"
 msgstr "_Voorkeuren"
 
@@ -274,7 +277,7 @@ msgid "N/A"
 msgstr "N/B"
 
 #: ../battstat/battstat_applet.c:1208 ../drivemount/drivemount.c:141
-#: ../geyes/geyes.c:346 ../geyes/themes.c:243
+#: ../geyes/geyes.c:346 ../geyes/themes.c:248
 #: ../mateweather/mateweather-applet.c:70
 #: ../mateweather/mateweather-pref.c:816
 #: ../mini-commander/src/preferences.c:366
@@ -289,75 +292,80 @@ msgstr "Er is een fout opgetreden bij de hulpweergave: %s"
 msgid "This utility shows the status of your laptop battery."
 msgstr "Dit programma laat de status van de laptop-accu zien."
 
-#. true
+#. ture
 #: ../battstat/battstat_applet.c:1250
+msgid "upower backend enabled."
+msgstr "upower-backend ingeschakeld"
+
+#. true
+#: ../battstat/battstat_applet.c:1252
 msgid "HAL backend enabled."
 msgstr "HAL backend ingeschakeld."
 
 #. false
-#: ../battstat/battstat_applet.c:1251
+#: ../battstat/battstat_applet.c:1253
 msgid "Legacy (non-HAL) backend enabled."
 msgstr "Traditioneel (non-HAL) backend ingeschakeld."
 
-#: ../battstat/battstat_applet.c:1627 ../battstat/battstat_applet.c:1681
-#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
+#: ../battstat/battstat_applet.c:1629 ../battstat/battstat_applet.c:1683
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
 msgstr "Accumeter"
 
-#: ../battstat/battstat_applet.c:1682
+#: ../battstat/battstat_applet.c:1684
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
 msgstr "De toestand van de laptopaccu in de gaten houden"
 
 #: ../battstat/battstat_applet.ui.h:1
-msgid "(shows single image for status and charge)"
-msgstr "(toont één afbeelding voor zowel status als spanning)"
-
-#: ../battstat/battstat_applet.ui.h:2
-msgid "(two images: one for status, one for charge)"
-msgstr "(twee afbeeldingen: een voor status, een voor spanning)"
-
-#: ../battstat/battstat_applet.ui.h:3
-msgid "Appearance"
-msgstr "Uiterlijk"
-
-#: ../battstat/battstat_applet.ui.h:4
 msgid "Battery Charge Monitor Preferences"
 msgstr "Voorkeuren accumeter"
 
-#: ../battstat/battstat_applet.ui.h:5
-msgid "Notifications"
-msgstr "Mededelingen"
+#: ../battstat/battstat_applet.ui.h:2
+msgid "Appearance"
+msgstr "Uiterlijk"
 
-#: ../battstat/battstat_applet.ui.h:6
-msgid "Show _percentage remaining"
-msgstr "Toon overgebleven _percentage"
-
-#: ../battstat/battstat_applet.ui.h:7
-msgid "Show _time remaining"
-msgstr "_Toon resterende tijd"
-
-#: ../battstat/battstat_applet.ui.h:8
+#: ../battstat/battstat_applet.ui.h:3
 msgid "_Compact view"
 msgstr "_Compacte weergave"
 
-#: ../battstat/battstat_applet.ui.h:9
+#: ../battstat/battstat_applet.ui.h:4
+msgid "(shows single image for status and charge)"
+msgstr "(toont één afbeelding voor zowel status als spanning)"
+
+#: ../battstat/battstat_applet.ui.h:5
 msgid "_Expanded view"
 msgstr "Uit_gebreide weergave"
 
-#: ../battstat/battstat_applet.ui.h:10
-msgid "_Notify when battery is fully recharged"
-msgstr "W_aarschuwen wanneer de accu volledig opgeladen is"
+#: ../battstat/battstat_applet.ui.h:6
+msgid "(two images: one for status, one for charge)"
+msgstr "(twee afbeeldingen: een voor status, een voor spanning)"
 
-#: ../battstat/battstat_applet.ui.h:11
+#: ../battstat/battstat_applet.ui.h:7
 msgid "_Show time/percentage:"
 msgstr "Tijd of percentage tonen:"
 
+#: ../battstat/battstat_applet.ui.h:8
+msgid "Show _time remaining"
+msgstr "_Toon resterende tijd"
+
+#: ../battstat/battstat_applet.ui.h:9
+msgid "Show _percentage remaining"
+msgstr "Toon overgebleven _percentage"
+
+#: ../battstat/battstat_applet.ui.h:10
+msgid "Notifications"
+msgstr "Mededelingen"
+
 #. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
 #. drops to: [XX] percent/minutes remaining'
-#: ../battstat/battstat_applet.ui.h:13
+#: ../battstat/battstat_applet.ui.h:12
 msgid "_Warn when battery charge drops to:"
 msgstr "_Waarschuwen wanneer het accupercentage minder is dan:"
+
+#: ../battstat/battstat_applet.ui.h:13
+msgid "_Notify when battery is fully recharged"
+msgstr "W_aarschuwen wanneer de accu volledig opgeladen is"
 
 #: ../battstat/battstat-hal.c:343 ../battstat/battstat-hal.c:368
 msgid "HAL error"
@@ -377,84 +385,84 @@ msgid "Unable to initialise HAL: %s: %s"
 msgstr "Kon HAL niet initialiseren: %s: %s"
 
 #: ../battstat/battstat.schemas.in.h:1
-msgid "0 for no label, 1 for percentage and 2 for time remaining."
-msgstr "0 voor geen label, 1 voor percentage en 2 voor overgebleven tijd"
-
-#: ../battstat/battstat.schemas.in.h:2
-msgid "Beep for warnings"
-msgstr "Piepen bij waarschuwingen"
-
-#: ../battstat/battstat.schemas.in.h:3
-msgid "Beep when displaying a warning."
-msgstr "Piepen bij weergave van een waarschuwing"
-
-#: ../battstat/battstat.schemas.in.h:4
-msgid "Drain from top"
-msgstr "Van boven naar beneden leeglopen"
-
-#: ../battstat/battstat.schemas.in.h:5
-msgid "Full Battery Notification"
-msgstr "Melding bij volle accu"
-
-#: ../battstat/battstat.schemas.in.h:6
-msgid "Low Battery Notification"
-msgstr "Melding bij lege accu"
-
-#: ../battstat/battstat.schemas.in.h:7
-msgid "Notify user when the battery is full."
-msgstr "Gebruiker attenderen als de accu volledig opgeladen is."
-
-#: ../battstat/battstat.schemas.in.h:8
-msgid "Notify user when the battery is low."
-msgstr "Gebruiker attenderen als de accu bijna leeg is."
-
-#: ../battstat/battstat.schemas.in.h:9
 msgid "Red value level"
 msgstr "Rode waarde niveau"
 
+#: ../battstat/battstat.schemas.in.h:2
+msgid ""
+"The battery level below which the battery is displayed as red. Also the "
+"value at which the low battery warning is displayed."
+msgstr "Het niveau waaronder de accu rood getoond wordt. Dit is tevens de de waarde waarbij de waarschuwing voor een lege accu wordt tonen."
+
+#: ../battstat/battstat.schemas.in.h:3
+msgid "Warn on low time rather than low percentage"
+msgstr "Bij weinig tijd (in plaats van een laag percentage) waarschuwen"
+
+#: ../battstat/battstat.schemas.in.h:4
+msgid ""
+"Use the value defined in red_value as a time remaining to show the warning "
+"dialog rather than a percentage."
+msgstr "Gebruik de waarde gedefiniëerd in ‘red_value’ als resterende tijd om te tonen in het waarschuwingsdialoog in plaats van een percentage."
+
+#: ../battstat/battstat.schemas.in.h:5
+msgid "Low Battery Notification"
+msgstr "Melding bij lege accu"
+
+#: ../battstat/battstat.schemas.in.h:6
+msgid "Notify user when the battery is low."
+msgstr "Gebruiker attenderen als de accu bijna leeg is."
+
+#: ../battstat/battstat.schemas.in.h:7
+msgid "Full Battery Notification"
+msgstr "Melding bij volle accu"
+
+#: ../battstat/battstat.schemas.in.h:8
+msgid "Notify user when the battery is full."
+msgstr "Gebruiker attenderen als de accu volledig opgeladen is."
+
+#: ../battstat/battstat.schemas.in.h:9
+msgid "Beep for warnings"
+msgstr "Piepen bij waarschuwingen"
+
 #: ../battstat/battstat.schemas.in.h:10
+msgid "Beep when displaying a warning."
+msgstr "Piepen bij weergave van een waarschuwing"
+
+#: ../battstat/battstat.schemas.in.h:11
+msgid "Drain from top"
+msgstr "Van boven naar beneden leeglopen"
+
+#: ../battstat/battstat.schemas.in.h:12
 msgid ""
 "Show the battery meter draining from the top of the battery. Only "
 "implemented for traditional battery view."
 msgstr "De accuweergave van boven naar beneden laten leeglopen."
 
-#: ../battstat/battstat.schemas.in.h:11
-msgid "Show the horizontal battery"
-msgstr "De horizontale accu tonen"
-
-#: ../battstat/battstat.schemas.in.h:12
-msgid "Show the time/percent label"
-msgstr "Label met tijd/percentage tonen"
-
 #: ../battstat/battstat.schemas.in.h:13
-msgid "Show the traditional, horizontal battery on the panel."
-msgstr "De traditionele, horizontale accu op het paneel tonen."
+msgid "Upright (small) battery"
+msgstr "Verticale (kleine) accu"
 
 #: ../battstat/battstat.schemas.in.h:14
 msgid "Show the upright, smaller battery on the panel."
 msgstr "De verticale, kleinere accu op het paneel tonen"
 
 #: ../battstat/battstat.schemas.in.h:15
-msgid ""
-"The battery level below which the battery is displayed as red. Also the "
-"value at which the low battery warning is displayed."
-msgstr "Het niveau waaronder de accu rood getoond wordt. Dit is tevens de de waarde waarbij de waarschuwing voor een lege accu wordt tonen."
+msgid "Show the horizontal battery"
+msgstr "De horizontale accu tonen"
 
 #: ../battstat/battstat.schemas.in.h:16
-msgid "Upright (small) battery"
-msgstr "Verticale (kleine) accu"
+msgid "Show the traditional, horizontal battery on the panel."
+msgstr "De traditionele, horizontale accu op het paneel tonen."
 
 #: ../battstat/battstat.schemas.in.h:17
-msgid ""
-"Use the value defined in red_value as a time remaining to show the warning "
-"dialog rather than a percentage."
-msgstr "Gebruik de waarde gedefiniëerd in ‘red_value’ als resterende tijd om te tonen in het waarschuwingsdialoog in plaats van een percentage."
+msgid "Show the time/percent label"
+msgstr "Label met tijd/percentage tonen"
 
 #: ../battstat/battstat.schemas.in.h:18
-msgid "Warn on low time rather than low percentage"
-msgstr "Bij weinig tijd (in plaats van een laag percentage) waarschuwen"
+msgid "0 for no label, 1 for percentage and 2 for time remaining."
+msgstr "0 voor geen label, 1 voor percentage en 2 voor overgebleven tijd"
 
-#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
+#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
 msgid "Battstat Factory"
 msgstr "Battstat fabriek"
 
@@ -479,12 +487,12 @@ msgid "Battery Status Utility"
 msgstr "Accumeter"
 
 #: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:2
-msgid "Battery fully re-charged"
-msgstr "Accu is volledig opgeladen"
-
-#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:3
 msgid "Battery power low"
 msgstr "Accu bijna leeg"
+
+#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:3
+msgid "Battery fully re-charged"
+msgstr "Accu is volledig opgeladen"
 
 #: ../charpick/charpick.c:436
 msgid "Available palettes"
@@ -515,7 +523,7 @@ msgid ""
 msgstr "Applet voor het kiezen van bijzondere tekens en symbolen die niet op het toetsenbord zitten. Uitgegeven onder de GNU General Public Licence."
 
 #: ../charpick/charpick.c:743 ../charpick/charpick.c:757
-#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:1
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:452
 msgid "Character Palette"
 msgstr "Palet met tekens en symbolen"
@@ -526,28 +534,28 @@ msgid "Insert characters"
 msgstr "Vreemde tekens en symbolen invoegen"
 
 #: ../charpick/charpick.schemas.in.h:1
-msgid "Characters shown on applet startup"
-msgstr "Weer te geven tekens bij starten"
-
-#: ../charpick/charpick.schemas.in.h:2
 msgid "DEPRECATED - Characters shown on applet startup"
 msgstr "VEROUDERD - Weer te geven tekens bij starten"
 
-#: ../charpick/charpick.schemas.in.h:3 ../charpick/properties.c:379
-msgid "List of available palettes"
-msgstr "Lijst met beschikbare paletten"
+#: ../charpick/charpick.schemas.in.h:2
+msgid "Characters shown on applet startup"
+msgstr "Weer te geven tekens bij starten"
 
-#: ../charpick/charpick.schemas.in.h:4
-msgid "List of strings containing the available palettes."
-msgstr "Lijst van karakters op de beschikbare paletten"
-
-#: ../charpick/charpick.schemas.in.h:5
+#: ../charpick/charpick.schemas.in.h:3
 msgid ""
 "The string that the user had selected when the applet was last used. This "
 "string will be displayed when the user starts the applet."
 msgstr "De laatst gekozen tekst. Deze tekst zal weergegeven worden wanneer de gebruiker het applet start."
 
-#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
+#: ../charpick/charpick.schemas.in.h:4 ../charpick/properties.c:379
+msgid "List of available palettes"
+msgstr "Lijst met beschikbare paletten"
+
+#: ../charpick/charpick.schemas.in.h:5
+msgid "List of strings containing the available palettes."
+msgstr "Lijst van karakters op de beschikbare paletten"
+
+#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:1
 msgid "Charpicker Applet Factory"
 msgstr "Tekens-kiezer appletfabriek"
 
@@ -612,67 +620,67 @@ msgid "Character Palette Preferences"
 msgstr "Voorkeuren letterpalet"
 
 #: ../cpufreq/cpufreq-applet.schemas.in.h:1
-msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
-"to show percentage instead of frequency."
-msgstr "De waarde 0 betekent dat de cpu-frequentie wordt getoond, de waarde 1dat zowel frequentie als eenheden worden getoond en de waarde 2 dat het percentage in plaats van de frequentie wordt getoond."
+msgid "CPU to Monitor"
+msgstr "De te beheren processor"
 
 #: ../cpufreq/cpufreq-applet.schemas.in.h:2
+msgid ""
+"Set the CPU to monitor. In a single processor system you don't have to "
+"change it."
+msgstr "Stel de te beheren processor in. In een systeem met een enkele processorhoeft dit niet veranderd te worden.\t"
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:3
+msgid "Mode to show cpu usage"
+msgstr "Mode om processorgebruik te laten zien"
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:4
 msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
 msgstr "De waarde 0 toont het applet enkel als afbeelding, de waarde 1 enkel als tekst. De waarde 2 toont zowel een afbeelding als tekst."
 
-#: ../cpufreq/cpufreq-applet.schemas.in.h:3
-msgid "CPU to Monitor"
-msgstr "De te beheren processor"
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:4
-msgid "Mode to show cpu usage"
-msgstr "Mode om processorgebruik te laten zien"
-
 #: ../cpufreq/cpufreq-applet.schemas.in.h:5
-msgid ""
-"Set the CPU to monitor. In a single processor system you don't have to "
-"change it."
-msgstr "Stel de te beheren processor in. In een systeem met een enkele processorhoeft dit niet veranderd te worden.\t"
-
-#: ../cpufreq/cpufreq-applet.schemas.in.h:6
 msgid "The type of text to display (if the text is enabled)."
 msgstr "Het type tekst om weer te geven (indien tekst ingeschakeld is)"
+
+#: ../cpufreq/cpufreq-applet.schemas.in.h:6
+msgid ""
+"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"to show percentage instead of frequency."
+msgstr "De waarde 0 betekent dat de cpu-frequentie wordt getoond, de waarde 1dat zowel frequentie als eenheden worden getoond en de waarde 2 dat het percentage in plaats van de frequentie wordt getoond."
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
 msgstr "Processorsnelheid-instellingen"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
-msgid "Display Settings"
-msgstr "Weergave-instellingen"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "Monitor Settings"
 msgstr "Monitorinstellingen"
 
+#: ../cpufreq/cpufreq-preferences.ui.h:3
+msgid "_Monitored CPU:"
+msgstr "_Beheerde processor:"
+
 #: ../cpufreq/cpufreq-preferences.ui.h:4
-msgid "Show CPU frequency as _frequency"
-msgstr "Processorsnelheid tonen als _frequentie"
+msgid "Display Settings"
+msgstr "Weergave-instellingen"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:5
-msgid "Show CPU frequency as _percentage"
-msgstr "Processorsnelheid tonen als _percentage"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:6
-msgid "Show frequency _units"
-msgstr "Bekijk frequentie-_eenheden"
-
-#: ../cpufreq/cpufreq-preferences.ui.h:7
 msgid "_Appearance:"
 msgstr "_Uiterlijk:"
 
+#: ../cpufreq/cpufreq-preferences.ui.h:6
+msgid "Show CPU frequency as _frequency"
+msgstr "Processorsnelheid tonen als _frequentie"
+
+#: ../cpufreq/cpufreq-preferences.ui.h:7
+msgid "Show frequency _units"
+msgstr "Bekijk frequentie-_eenheden"
+
 #: ../cpufreq/cpufreq-preferences.ui.h:8
-msgid "_Monitored CPU:"
-msgstr "_Beheerde processor:"
+msgid "Show CPU frequency as _percentage"
+msgstr "Processorsnelheid tonen als _percentage"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
 #: ../cpufreq/src/cpufreq-applet.c:946 ../cpufreq/src/cpufreq-applet.c:1005
@@ -780,7 +788,7 @@ msgid "Applet for mounting and unmounting block volumes."
 msgstr "Applet om blok-volumina te koppelen en te ontkoppelen"
 
 #: ../drivemount/drivemount.c:173 ../drivemount/drivemount.c:210
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:1
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
 msgid "Disk Mounter"
 msgstr "Schijfkoppelaar"
 
@@ -792,11 +800,11 @@ msgstr "Tijdslimiet-interval voor de controle van de status van het koppelpunt"
 msgid "Time in seconds between status updates"
 msgstr "Tijd in seconden voor status-updates"
 
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:2
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:1
 msgid "Drive Mount Applet Factory"
 msgstr "Schijfkoppelaar appletfabriek"
 
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
+#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for drive mount applet"
 msgstr "Fabriek voor schijfkoppelaar"
 
@@ -822,30 +830,30 @@ msgid "Directory in which the theme is located"
 msgstr "Map waar het thema zich bevindt"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "A set of eyeballs for your panel"
-msgstr "Twee ogen voor op het paneel"
-
-#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "Geyes Applet Factory"
 msgstr "Geyes Applet-Fabriek"
 
-#: ../geyes/themes.c:126
+#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
+msgid "A set of eyeballs for your panel"
+msgstr "Twee ogen voor op het paneel"
+
+#: ../geyes/themes.c:131
 msgid "Can not launch the eyes applet."
 msgstr "Kan het eyes-applet niet opstarten."
 
-#: ../geyes/themes.c:127
+#: ../geyes/themes.c:132
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Er is een fout opgetreden bij het laden van het thema."
 
-#: ../geyes/themes.c:302
+#: ../geyes/themes.c:307
 msgid "Geyes Preferences"
 msgstr "Voorkeuren Geyes"
 
-#: ../geyes/themes.c:336
+#: ../geyes/themes.c:341
 msgid "Themes"
 msgstr "Thema's"
 
-#: ../geyes/themes.c:357
+#: ../geyes/themes.c:362
 msgid "_Select a theme:"
 msgstr "_Kies een thema:"
 
@@ -867,7 +875,7 @@ msgid "_Update"
 msgstr "V_erversen"
 
 #: ../mateweather/mateweather-applet.c:329
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
 msgid "Weather Report"
 msgstr "Weerbericht"
 
@@ -1158,7 +1166,7 @@ msgid "Display"
 msgstr "Weergave"
 
 #: ../mateweather/mateweather-pref.c:1143
-#: ../mini-commander/src/mini-commander.ui.h:9
+#: ../mini-commander/src/mini-commander.ui.h:12
 msgid "General"
 msgstr "Algemeen"
 
@@ -1179,14 +1187,14 @@ msgid "Location"
 msgstr "Locatie"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
-msgid "Factory for creating the weather applet."
-msgstr "Fabriek om het mate weer-applet te maken"
-
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Mateweather Applet Factory"
 msgstr "Mateweather Applet Factory"
 
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
+msgid "Factory for creating the weather applet."
+msgstr "Fabriek om het mate weer-applet te maken"
+
+#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Bekijk het huidige weer, en vooruitzichten"
 
@@ -1200,124 +1208,129 @@ msgstr "Invest"
 msgid "Track your invested money."
 msgstr "Uw huidige investeringen volgen."
 
-#: ../invest-applet/data/Invest_Applet.xml.h:4
+#: ../invest-applet/data/Invest_Applet.xml.h:1
 msgid "_Refresh"
 msgstr "_Verversen"
 
 #: ../invest-applet/data/financialchart.ui.h:1
-msgid "1 Year"
-msgstr "1 jaar"
+msgid "Today"
+msgstr "Vandaag"
 
 #: ../invest-applet/data/financialchart.ui.h:2
-msgid "10"
-msgstr "10"
-
-#: ../invest-applet/data/financialchart.ui.h:3
-msgid "100"
-msgstr "100"
-
-#: ../invest-applet/data/financialchart.ui.h:4
-msgid "20"
-msgstr "20"
-
-#: ../invest-applet/data/financialchart.ui.h:5
-msgid "200"
-msgstr "200"
-
-#: ../invest-applet/data/financialchart.ui.h:6
-msgid "3 Months"
-msgstr "3 maanden"
-
-#: ../invest-applet/data/financialchart.ui.h:7
-msgid "5"
-msgstr "5"
-
-#: ../invest-applet/data/financialchart.ui.h:8
 msgid "5 Days"
 msgstr "5 dagen"
 
-#: ../invest-applet/data/financialchart.ui.h:9
-msgid "5 Years"
-msgstr "5 jaar"
+#: ../invest-applet/data/financialchart.ui.h:3
+msgid "3 Months"
+msgstr "3 maanden"
 
-#: ../invest-applet/data/financialchart.ui.h:10
-msgid "50"
-msgstr "50"
-
-#: ../invest-applet/data/financialchart.ui.h:11
+#: ../invest-applet/data/financialchart.ui.h:4
 msgid "6 Months"
 msgstr "6 maanden"
 
-#: ../invest-applet/data/financialchart.ui.h:12
-msgid "Auto _refresh"
-msgstr "Automatisch _verversen"
+#: ../invest-applet/data/financialchart.ui.h:5
+msgid "1 Year"
+msgstr "1 jaar"
 
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide13.html and
-#. http://en.wikipedia.org/wiki/Bollinger_bands
-#: ../invest-applet/data/financialchart.ui.h:14
-msgid "Bollinger"
-msgstr "Bollinger"
+#: ../invest-applet/data/financialchart.ui.h:6
+msgid "5 Years"
+msgstr "5 jaar"
 
-#: ../invest-applet/data/financialchart.ui.h:15
-msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "Grafiek downloaden van <b>Yahoo!</b>"
+#: ../invest-applet/data/financialchart.ui.h:7
+msgid "Maximum"
+msgstr "Maximum"
 
-#. see http://biz.yahoo.com/charts/guide12.html and
-#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
-#: ../invest-applet/data/financialchart.ui.h:17
-msgid "Exponential moving average: "
-msgstr "Exponentieel bewegend gemiddelde: "
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:19
-msgid "Fast stoch"
-msgstr "Fast stoch"
-
-#: ../invest-applet/data/financialchart.ui.h:20
+#: ../invest-applet/data/financialchart.ui.h:8
 #: ../invest-applet/invest/chart.py:107
 msgid "Financial Chart"
 msgstr "Financiële grafiek"
 
-#. see http://biz.yahoo.com/charts/guide10.html and
-#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
-#: ../invest-applet/data/financialchart.ui.h:22
-msgid "Indicators: "
-msgstr "Indicators:"
+#: ../invest-applet/data/financialchart.ui.h:9
+msgid "_Ticker symbol: "
+msgstr "_Aandeelsymbool: "
 
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/MACD
-#: ../invest-applet/data/financialchart.ui.h:24
-msgid "MACD"
-msgstr "MACD"
+#: ../invest-applet/data/financialchart.ui.h:10
+msgid "Auto _refresh"
+msgstr "Automatisch _verversen"
 
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Money_flow_index
-#: ../invest-applet/data/financialchart.ui.h:26
-msgid "MFI"
-msgstr "MFI"
-
-#: ../invest-applet/data/financialchart.ui.h:27
-msgid "Maximum"
-msgstr "Maximum"
+#: ../invest-applet/data/financialchart.ui.h:11
+msgid "_Graph style: "
+msgstr "_Grafiekstijl: "
 
 #. see http://biz.yahoo.com/charts/guide11.html and
 #. http://en.wikipedia.org/wiki/Moving_average
-#: ../invest-applet/data/financialchart.ui.h:29
+#: ../invest-applet/data/financialchart.ui.h:13
 msgid "Moving average: "
 msgstr "Bewegend gemiddelde: "
 
+#. see http://biz.yahoo.com/charts/guide12.html and
+#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
+#: ../invest-applet/data/financialchart.ui.h:15
+msgid "Exponential moving average: "
+msgstr "Exponentieel bewegend gemiddelde: "
+
+#: ../invest-applet/data/financialchart.ui.h:16
+msgid "5"
+msgstr "5"
+
+#: ../invest-applet/data/financialchart.ui.h:17
+msgid "10"
+msgstr "10"
+
+#: ../invest-applet/data/financialchart.ui.h:18
+msgid "20"
+msgstr "20"
+
+#: ../invest-applet/data/financialchart.ui.h:19
+msgid "50"
+msgstr "50"
+
+#: ../invest-applet/data/financialchart.ui.h:20
+msgid "100"
+msgstr "100"
+
+#: ../invest-applet/data/financialchart.ui.h:21
+msgid "200"
+msgstr "200"
+
 #. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
-#: ../invest-applet/data/financialchart.ui.h:31
+#: ../invest-applet/data/financialchart.ui.h:23
 msgid "Overlays: "
 msgstr "Overlays: "
 
 #. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
+#. http://biz.yahoo.com/charts/guide13.html and
+#. http://en.wikipedia.org/wiki/Bollinger_bands
+#: ../invest-applet/data/financialchart.ui.h:25
+msgid "Bollinger"
+msgstr "Bollinger"
+
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide16.html and
+#. http://en.wikipedia.org/wiki/Parabolic_SAR
+#: ../invest-applet/data/financialchart.ui.h:27
+msgid "SAR"
+msgstr "SAR"
+
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide6.html and
+#. http://en.wikipedia.org/wiki/Stock_split
+#: ../invest-applet/data/financialchart.ui.h:29
+msgid "Splits"
+msgstr "Splits"
+
+#. Please keep this term short. For its meaning, see
+#. http://biz.yahoo.com/charts/guide20.html and
+#. http://en.wikipedia.org/wiki/Volume_%28finance%29
+#: ../invest-applet/data/financialchart.ui.h:31
+msgid "Volumes"
+msgstr "Volumes"
+
+#. see http://biz.yahoo.com/charts/guide10.html and
+#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
 #: ../invest-applet/data/financialchart.ui.h:33
-msgid "ROC"
-msgstr "ROC"
+msgid "Indicators: "
+msgstr "Indicators:"
 
 #. Please keep this term short. For its meaning, see
 #. http://en.wikipedia.org/wiki/Relative_Strength_Index
@@ -1326,88 +1339,83 @@ msgid "RSI"
 msgstr "RSI"
 
 #. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide16.html and
-#. http://en.wikipedia.org/wiki/Parabolic_SAR
-#: ../invest-applet/data/financialchart.ui.h:37
-msgid "SAR"
-msgstr "SAR"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:39
-msgid "Slow stoch"
-msgstr "Slow stoch"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide6.html and
-#. http://en.wikipedia.org/wiki/Stock_split
-#: ../invest-applet/data/financialchart.ui.h:41
-msgid "Splits"
-msgstr "Splits"
-
-#: ../invest-applet/data/financialchart.ui.h:42
-msgid "Today"
-msgstr "Vandaag"
-
-#. Please keep this term short. For its meaning, see
 #. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:44
+#: ../invest-applet/data/financialchart.ui.h:37
 msgid "Vol"
 msgstr "Vol"
 
 #. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Money_flow_index
+#: ../invest-applet/data/financialchart.ui.h:39
+msgid "MFI"
+msgstr "MFI"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Stochastic_oscillator
+#: ../invest-applet/data/financialchart.ui.h:41
+msgid "Slow stoch"
+msgstr "Slow stoch"
+
+#. Please keep this term short. For its meaning, see
 #. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:46
+#: ../invest-applet/data/financialchart.ui.h:43
 msgid "Vol+MA"
 msgstr "Vol+MA"
 
 #. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide20.html and
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:48
-msgid "Volumes"
-msgstr "Volumes"
+#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
+#: ../invest-applet/data/financialchart.ui.h:45
+msgid "ROC"
+msgstr "ROC"
+
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/Stochastic_oscillator
+#: ../invest-applet/data/financialchart.ui.h:47
+msgid "Fast stoch"
+msgstr "Fast stoch"
 
 #. Please keep this term short. For its meaning, see
 #. http://en.wikipedia.org/wiki/Williams_%25R
-#: ../invest-applet/data/financialchart.ui.h:51
+#: ../invest-applet/data/financialchart.ui.h:50
 #, no-c-format
 msgid "W%R"
 msgstr "W%R"
 
+#. Please keep this term short. For its meaning, see
+#. http://en.wikipedia.org/wiki/MACD
 #: ../invest-applet/data/financialchart.ui.h:52
-msgid "_Graph style: "
-msgstr "_Grafiekstijl: "
+msgid "MACD"
+msgstr "MACD"
 
 #: ../invest-applet/data/financialchart.ui.h:53
 msgid "_Options"
 msgstr "_Opties"
 
 #: ../invest-applet/data/financialchart.ui.h:54
-msgid "_Ticker symbol: "
-msgstr "_Aandeelsymbool: "
+msgid "Downloading chart from <b>Yahoo!</b>"
+msgstr "Grafiek downloaden van <b>Yahoo!</b>"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:1
+msgid "Invest Preferences"
+msgstr "Invest-voorkeuren"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:2
+msgid "label"
+msgstr "label"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:3
+msgid "Stocks"
+msgstr "Aandelen"
+
+#: ../invest-applet/data/prefs-dialog.ui.h:4
 msgid ""
 "<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
 "<b>Source: </b> Yahoo!</small></i>"
 msgstr "<i><small><b>Merk op:</b> Quotes zijn ten minste 15 minuten vertraagd\n<b>Bron: </b> Yahoo!</small></i>"
 
-#: ../invest-applet/data/prefs-dialog.ui.h:3
+#: ../invest-applet/data/prefs-dialog.ui.h:6
 msgid "Currency"
 msgstr "Munteenheid"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:4
-msgid "Invest Preferences"
-msgstr "Invest-voorkeuren"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:5
-msgid "Stocks"
-msgstr "Aandelen"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:6
-msgid "label"
-msgstr "label"
 
 #. a) We aren't configured yet
 #: ../invest-applet/invest/applet.py:50
@@ -1595,9 +1603,9 @@ msgid "Error syncing config data: %s"
 msgstr "Fout bij synchroniseren van configuratie: %s"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:1
-msgid ""
-"List of MateConfValue entries containing strings for the macro commands."
-msgstr "Lijst van gConfWaarde ingangen die tekenreeksen voor de macro-opdrachten bevatten."
+#: ../mini-commander/src/mini-commander.schemas.in.h:26
+msgid "Macro pattern list"
+msgstr "Macropatronenlijst"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:2
 msgid ""
@@ -1605,194 +1613,194 @@ msgid ""
 msgstr "Lijst van gConfWaarde ingangen die tekenreeksen voor de macropatronen bevatten."
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:3
-#: ../mini-commander/src/mini-commander.schemas.in.h:10
+#: ../mini-commander/src/mini-commander.schemas.in.h:28
 msgid "Macro command list"
 msgstr "Macro-opdrachtenlijst"
 
 #: ../mini-commander/src/mini-commander-global.schemas.in.h:4
-#: ../mini-commander/src/mini-commander.schemas.in.h:11
-msgid "Macro pattern list"
-msgstr "Macropatronenlijst"
+msgid ""
+"List of MateConfValue entries containing strings for the macro commands."
+msgstr "Lijst van gConfWaarde ingangen die tekenreeksen voor de macro-opdrachten bevatten."
 
 #: ../mini-commander/src/mini-commander.ui.h:1
-msgid "Add New Macro"
-msgstr "Nieuwe macro toevoegen"
+msgid "Command Line Preferences"
+msgstr "Opdrachtregel Voorkeuren"
 
 #: ../mini-commander/src/mini-commander.ui.h:2
 msgid "Auto Completion"
 msgstr "Auto-aanvullen"
 
 #: ../mini-commander/src/mini-commander.ui.h:3
-msgid "Co_mmand:"
-msgstr "O_pdracht:"
-
-#: ../mini-commander/src/mini-commander.ui.h:4 ../multiload/properties.c:571
-msgid "Colors"
-msgstr "Kleuren"
-
-#: ../mini-commander/src/mini-commander.ui.h:5
-msgid "Command Line Preferences"
-msgstr "Opdrachtregel Voorkeuren"
-
-#: ../mini-commander/src/mini-commander.ui.h:6
-msgid "Command line _background:"
-msgstr "A_chtergrond opdrachtregel:"
-
-#: ../mini-commander/src/mini-commander.ui.h:7
-msgid "Command line _foreground:"
-msgstr "_Voorgrond opdrachtregel:"
-
-#: ../mini-commander/src/mini-commander.ui.h:8
 msgid "E_nable history-based auto completion"
 msgstr "_Geschiedenis gebaseerd auto-aanvullen gebruiken"
 
+#: ../mini-commander/src/mini-commander.ui.h:4
+msgid "Size"
+msgstr "Grootte"
+
+#: ../mini-commander/src/mini-commander.ui.h:5
+#: ../stickynotes/stickynotes.ui.h:19
+msgid "_Width:"
+msgstr "_Breedte:"
+
+#: ../mini-commander/src/mini-commander.ui.h:6 ../multiload/properties.c:526
+msgid "pixels"
+msgstr "beeldpunten"
+
+#: ../mini-commander/src/mini-commander.ui.h:7 ../multiload/properties.c:571
+msgid "Colors"
+msgstr "Kleuren"
+
+#: ../mini-commander/src/mini-commander.ui.h:8
+msgid "_Use default theme colors"
+msgstr "Standaar standaard themakleuren _gebruiken"
+
+#: ../mini-commander/src/mini-commander.ui.h:9
+msgid "Command line _foreground:"
+msgstr "_Voorgrond opdrachtregel:"
+
 #: ../mini-commander/src/mini-commander.ui.h:10
-msgid "Macros"
-msgstr "Macro's"
+msgid "Command line _background:"
+msgstr "A_chtergrond opdrachtregel:"
 
 #: ../mini-commander/src/mini-commander.ui.h:11
 msgid "Pick a color"
 msgstr "Kies een kleur"
 
-#: ../mini-commander/src/mini-commander.ui.h:12
-msgid "Size"
-msgstr "Grootte"
-
 #: ../mini-commander/src/mini-commander.ui.h:13
-msgid "_Add Macro..."
-msgstr "_Macro toevoegen..."
-
-#: ../mini-commander/src/mini-commander.ui.h:14
-msgid "_Delete Macro"
-msgstr "Macro _verwijderen"
-
-#: ../mini-commander/src/mini-commander.ui.h:15
 msgid "_Macros:"
 msgstr "_Macro's:"
 
+#: ../mini-commander/src/mini-commander.ui.h:14
+msgid "_Add Macro..."
+msgstr "_Macro toevoegen..."
+
+#: ../mini-commander/src/mini-commander.ui.h:15
+msgid "_Delete Macro"
+msgstr "Macro _verwijderen"
+
 #: ../mini-commander/src/mini-commander.ui.h:16
+msgid "Macros"
+msgstr "Macro's"
+
+#: ../mini-commander/src/mini-commander.ui.h:17
+msgid "Add New Macro"
+msgstr "Nieuwe macro toevoegen"
+
+#: ../mini-commander/src/mini-commander.ui.h:18
 msgid "_Pattern:"
 msgstr "_Patroon:"
 
-#: ../mini-commander/src/mini-commander.ui.h:17
-msgid "_Use default theme colors"
-msgstr "Standaar standaard themakleuren _gebruiken"
-
-#: ../mini-commander/src/mini-commander.ui.h:18
-#: ../stickynotes/stickynotes.ui.h:46
-msgid "_Width:"
-msgstr "_Breedte:"
-
-#: ../mini-commander/src/mini-commander.ui.h:19 ../multiload/properties.c:526
-msgid "pixels"
-msgstr "beeldpunten"
+#: ../mini-commander/src/mini-commander.ui.h:19
+msgid "Co_mmand:"
+msgstr "O_pdracht:"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:1
+msgid "Show handle"
+msgstr "Greep weergeven"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:2
+msgid "Show a handle so the applet can be detached from the panel."
+msgstr "Greep weergeven zodat het applet losgemaakt kan worden van het paneel."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:3
+msgid "Show frame"
+msgstr "Kader weergeven"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:4
+msgid "Show a frame surrounding the applet."
+msgstr "Kader om applet weergeven"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:5
+msgid "Perform history autocompletion"
+msgstr "Geschiedenis gebaseerd auto-aanvullen gebruiken"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:6
 msgid ""
 "Attempt to autocomplete a command from the history of commands entered."
 msgstr "Opdrachten automatisch afmaken vanuit de opdrachtengeschiedenis."
 
-#: ../mini-commander/src/mini-commander.schemas.in.h:2
-msgid "Background color, blue component"
-msgstr "Blauwe component van achtergrondkleur"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:3
-msgid "Background color, green component"
-msgstr "Groene component van achtergrondkleur"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:4
-msgid "Background color, red component"
-msgstr "Rode component van achtergrondkleur"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:5
-msgid "Foreground color, blue component"
-msgstr "Blauwe component van voorgrondkleur"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:6
-msgid "Foreground color, green component"
-msgstr "Groene component van voorgrondkleur"
-
 #: ../mini-commander/src/mini-commander.schemas.in.h:7
-msgid "Foreground color, red component"
-msgstr "Rode component van voorgrondkleur"
+msgid "Width"
+msgstr "Breedte"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:8
-msgid "History list"
-msgstr "Geschiedenis"
+msgid "Width of the applet"
+msgstr "Breedte van het applet"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:9
-msgid "List of MateConfValue entries containing strings for history entries."
-msgstr "Lijst van gConfWaarde ingangen die tekenreeksen voor de geschiedenis bevatten."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:12
 msgid "Not used anymore"
 msgstr "Niet meer gebruikt"
 
+#: ../mini-commander/src/mini-commander.schemas.in.h:10
+msgid "Use the default theme colors"
+msgstr "Standaard themakleuren gebruiken"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:11
+msgid "Use theme colors instead of custom ones."
+msgstr "Standaard themalettertypen en -kleuren gebruiken in plaats van aangepaste."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:12
+msgid "Foreground color, red component"
+msgstr "Rode component van voorgrondkleur"
+
 #: ../mini-commander/src/mini-commander.schemas.in.h:13
-msgid "Perform history autocompletion"
-msgstr "Geschiedenis gebaseerd auto-aanvullen gebruiken"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:14
-msgid "Show a frame surrounding the applet."
-msgstr "Kader om applet weergeven"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:15
-msgid "Show a handle so the applet can be detached from the panel."
-msgstr "Greep weergeven zodat het applet losgemaakt kan worden van het paneel."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:16
-msgid "Show frame"
-msgstr "Kader weergeven"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:17
-msgid "Show handle"
-msgstr "Greep weergeven"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:18
-msgid "The blue component of the background color."
-msgstr "De blauwe component van de achtergrondkleur."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:19
-msgid "The blue component of the foreground color."
-msgstr "De blauwe component van de voorgrondkleur."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:20
-msgid "The green component of the background color."
-msgstr "De groene component van de achtergrondkleur."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:21
-msgid "The green component of the foreground color."
-msgstr "De groene component van de voorgrondkleur."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:22
-msgid "The red component of the background color."
-msgstr "De rode component van de achtergrondkleur."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:23
 msgid "The red component of the foreground color."
 msgstr "De rode component van de voorgrondkleur."
 
+#: ../mini-commander/src/mini-commander.schemas.in.h:14
+msgid "Foreground color, green component"
+msgstr "Groene component van voorgrondkleur"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:15
+msgid "The green component of the foreground color."
+msgstr "De groene component van de voorgrondkleur."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:16
+msgid "Foreground color, blue component"
+msgstr "Blauwe component van voorgrondkleur"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:17
+msgid "The blue component of the foreground color."
+msgstr "De blauwe component van de voorgrondkleur."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:18
+msgid "Background color, red component"
+msgstr "Rode component van achtergrondkleur"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:19
+msgid "The red component of the background color."
+msgstr "De rode component van de achtergrondkleur."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:20
+msgid "Background color, green component"
+msgstr "Groene component van achtergrondkleur"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:21
+msgid "The green component of the background color."
+msgstr "De groene component van de achtergrondkleur."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:22
+msgid "Background color, blue component"
+msgstr "Blauwe component van achtergrondkleur"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:23
+msgid "The blue component of the background color."
+msgstr "De blauwe component van de achtergrondkleur."
+
 #: ../mini-commander/src/mini-commander.schemas.in.h:24
+msgid "History list"
+msgstr "Geschiedenis"
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:25
+msgid "List of MateConfValue entries containing strings for history entries."
+msgstr "Lijst van gConfWaarde ingangen die tekenreeksen voor de geschiedenis bevatten."
+
+#: ../mini-commander/src/mini-commander.schemas.in.h:27
 msgid ""
 "This per-applet key is deprecated in favour of the global key, /schemas/apps"
 "/mini-commander-global/macro_patterns."
 msgstr "Deze per-applet key is verouderd om plaats te maken voor de globale key, /schemas/apps/mini-commander-global/macro_patterns."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:25
-msgid "Use the default theme colors"
-msgstr "Standaard themakleuren gebruiken"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:26
-msgid "Use theme colors instead of custom ones."
-msgstr "Standaard themalettertypen en -kleuren gebruiken in plaats van aangepaste."
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:27
-msgid "Width"
-msgstr "Breedte"
-
-#: ../mini-commander/src/mini-commander.schemas.in.h:28
-msgid "Width of the applet"
-msgstr "Breedte van het applet"
 
 #: ../mini-commander/src/mini-commander_applet.c:242
 #: ../mini-commander/src/mini-commander_applet.c:246
@@ -1817,7 +1825,7 @@ msgid "Command line has been disabled by your system administrator"
 msgstr "De opdrachtregel is uitgeschakeld door uw systeembeheerder"
 
 #: ../mini-commander/src/mini-commander_applet.c:361
-#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:1
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:2
 msgid "Command Line"
 msgstr "Opdrachtregel"
 
@@ -1829,13 +1837,13 @@ msgstr "Mini-Commander Applet"
 msgid "This applet adds a command line to the panel"
 msgstr "Dit applet voegt een opdrachtregel toe aan het paneel"
 
-#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:2
-msgid "Mini-Commander"
-msgstr "Mini-Commander"
-
-#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:3
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:1
 msgid "MiniCommander Applet Factory"
 msgstr "MiniCommander Applet Fabriek"
+
+#: ../mini-commander/src/org.mate.applets.MiniCommanderApplet.mate-panel-applet.in.in.h:3
+msgid "Mini-Commander"
+msgstr "Mini-Commander"
 
 #: ../mini-commander/src/preferences.c:401
 msgid "You must specify a pattern"
@@ -1966,12 +1974,12 @@ msgstr "_Activeren"
 msgid "_Deactivate"
 msgstr "_Deactiveren"
 
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:43
+#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
 msgid "_Properties"
 msgstr "_Eigenschappen"
 
 #: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
+#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
 msgid "Modem Monitor"
 msgstr "Modem-monitor"
 
@@ -2041,22 +2049,22 @@ msgid "Applet for activating and monitoring a dial-up network connection."
 msgstr "Applet om een dial-up netwerkverbinding te activeren en te bekijken."
 
 #: ../modemlights/modemlights.ui.h:1
-msgid "Connecting with Internet Service Provider"
-msgstr "Verbinden met Internet Service Provider"
-
-#: ../modemlights/modemlights.ui.h:2
 msgid "Enter password"
 msgstr "Voer wachtwoord in"
+
+#: ../modemlights/modemlights.ui.h:2
+msgid "Root password required"
+msgstr "Root-wachtwoord vereist"
 
 #: ../modemlights/modemlights.ui.h:3
 msgid "Password:"
 msgstr "Wachtwoord:"
 
 #: ../modemlights/modemlights.ui.h:4
-msgid "Root password required"
-msgstr "Root-wachtwoord vereist"
+msgid "Connecting with Internet Service Provider"
+msgstr "Verbinden met Internet Service Provider"
 
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
+#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
 msgid "Activate and monitor a dial-up network connection"
 msgstr "Activeer en volg een dial-up netwerkverbinding"
 
@@ -2156,131 +2164,131 @@ msgid "_Open System Monitor"
 msgstr "Procesbeheer _openen"
 
 #: ../multiload/main.c:464
-#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
+#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
 msgstr "Systeembelasting-meter"
 
 #: ../multiload/multiload.schemas.in.h:1
-msgid "Applet refresh rate in milliseconds"
-msgstr "Verversingsfrequentie van het applet in milliseconden"
-
-#: ../multiload/multiload.schemas.in.h:2
-msgid "Background color for disk load graph"
-msgstr "Achtergrondkleur voor schijfgebruik grafiek"
-
-#: ../multiload/multiload.schemas.in.h:3
-msgid "CPU graph background color"
-msgstr "CPU-grafiek achtergrondkleur"
-
-#: ../multiload/multiload.schemas.in.h:4
 msgid "Enable CPU load graph"
 msgstr "CPU-belastingsgrafiek tonen"
 
-#: ../multiload/multiload.schemas.in.h:5
-msgid "Enable disk load graph"
-msgstr "Activeer schijfgebruik grafiek"
-
-#: ../multiload/multiload.schemas.in.h:6
-msgid "Enable load average graph"
-msgstr "Belastingsgemiddelde tonen"
-
-#: ../multiload/multiload.schemas.in.h:7
+#: ../multiload/multiload.schemas.in.h:2
 msgid "Enable memory load graph"
 msgstr "Geheugengebruik tonen"
 
-#: ../multiload/multiload.schemas.in.h:8
+#: ../multiload/multiload.schemas.in.h:3
 msgid "Enable network load graph"
 msgstr "Netwerkgebruik tonen"
 
-#: ../multiload/multiload.schemas.in.h:9
+#: ../multiload/multiload.schemas.in.h:4
 msgid "Enable swap load graph"
 msgstr "Wisselbestand-gebruik tonen"
 
-#: ../multiload/multiload.schemas.in.h:10
+#: ../multiload/multiload.schemas.in.h:5
+msgid "Enable load average graph"
+msgstr "Belastingsgemiddelde tonen"
+
+#: ../multiload/multiload.schemas.in.h:6
+msgid "Enable disk load graph"
+msgstr "Activeer schijfgebruik grafiek"
+
+#: ../multiload/multiload.schemas.in.h:7
+msgid "Applet refresh rate in milliseconds"
+msgstr "Verversingsfrequentie van het applet in milliseconden"
+
+#: ../multiload/multiload.schemas.in.h:8
+msgid "Graph size"
+msgstr "Grafiekgrootte"
+
+#: ../multiload/multiload.schemas.in.h:9
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
 msgstr "Voor horizontale panelen is dit de breedte, voor verticale is dit de hoogte, van de grafieken."
 
-#: ../multiload/multiload.schemas.in.h:11
-msgid "Graph color for buffer memory"
-msgstr "Kleur van grafiek voor buffergeheugen"
-
-#: ../multiload/multiload.schemas.in.h:12
-msgid "Graph color for cached memory"
-msgstr "Kleur van grafiek voor gebufferd geheugen"
-
-#: ../multiload/multiload.schemas.in.h:13
-msgid "Graph color for disk read"
-msgstr "Grafiekkleur voor schijflees-activiteit"
-
-#: ../multiload/multiload.schemas.in.h:14
-msgid "Graph color for disk write"
-msgstr "Grafiekkleur voor schijfschrijf-activiteit"
-
-#: ../multiload/multiload.schemas.in.h:15
-msgid "Graph color for input network activity"
-msgstr "Kleur van de grafiek voor inkomende netwerkactiviteit"
-
-#: ../multiload/multiload.schemas.in.h:16
-msgid "Graph color for iowait related CPU activity"
-msgstr "Grafiekkleur voor iowait-gerelateerde CPU activiteit"
-
-#: ../multiload/multiload.schemas.in.h:17
-msgid "Graph color for load average"
-msgstr "Kleur van de grafiek voor het belastingsgemiddelde"
-
-#: ../multiload/multiload.schemas.in.h:18
-msgid "Graph color for loopback network usage"
-msgstr "Kleur van de grafiek voor loopback-netwerkactiviteit"
-
-#: ../multiload/multiload.schemas.in.h:19
-msgid "Graph color for nice-related CPU activity"
-msgstr "Kleur van grafiek voor aardige (hoge 'nice'-waarde) processen"
-
-#: ../multiload/multiload.schemas.in.h:20
-msgid "Graph color for output network activity"
-msgstr "Kleur van de grafiek voor uitgaande netwerkactiviteit"
-
-#: ../multiload/multiload.schemas.in.h:21
-msgid "Graph color for shared memory"
-msgstr "Kleur van grafiek voor gedeeld geheugen"
-
-#: ../multiload/multiload.schemas.in.h:22
-msgid "Graph color for system-related CPU activity"
-msgstr "Kleur van grafiek voor systeemprocessen"
-
-#: ../multiload/multiload.schemas.in.h:23
+#: ../multiload/multiload.schemas.in.h:10
 msgid "Graph color for user-related CPU activity"
 msgstr "Kleur van grafiek voor normale processen"
 
-#: ../multiload/multiload.schemas.in.h:24
+#: ../multiload/multiload.schemas.in.h:11
+msgid "Graph color for system-related CPU activity"
+msgstr "Kleur van grafiek voor systeemprocessen"
+
+#: ../multiload/multiload.schemas.in.h:12
+msgid "Graph color for nice-related CPU activity"
+msgstr "Kleur van grafiek voor aardige (hoge 'nice'-waarde) processen"
+
+#: ../multiload/multiload.schemas.in.h:13
+msgid "Graph color for iowait related CPU activity"
+msgstr "Grafiekkleur voor iowait-gerelateerde CPU activiteit"
+
+#: ../multiload/multiload.schemas.in.h:14
+msgid "CPU graph background color"
+msgstr "CPU-grafiek achtergrondkleur"
+
+#: ../multiload/multiload.schemas.in.h:15
 msgid "Graph color for user-related memory usage"
 msgstr "Kleur van de grafiek voor gebruikersgerelateerd geheugengebruik"
 
-#: ../multiload/multiload.schemas.in.h:25
+#: ../multiload/multiload.schemas.in.h:16
+msgid "Graph color for shared memory"
+msgstr "Kleur van grafiek voor gedeeld geheugen"
+
+#: ../multiload/multiload.schemas.in.h:17
+msgid "Graph color for buffer memory"
+msgstr "Kleur van grafiek voor buffergeheugen"
+
+#: ../multiload/multiload.schemas.in.h:18
+msgid "Graph color for cached memory"
+msgstr "Kleur van grafiek voor gebufferd geheugen"
+
+#: ../multiload/multiload.schemas.in.h:19
+msgid "Memory graph background color"
+msgstr "Geheugengrafiek achtergrondkleur"
+
+#: ../multiload/multiload.schemas.in.h:20
+msgid "Graph color for input network activity"
+msgstr "Kleur van de grafiek voor inkomende netwerkactiviteit"
+
+#: ../multiload/multiload.schemas.in.h:21
+msgid "Graph color for output network activity"
+msgstr "Kleur van de grafiek voor uitgaande netwerkactiviteit"
+
+#: ../multiload/multiload.schemas.in.h:22
+msgid "Graph color for loopback network usage"
+msgstr "Kleur van de grafiek voor loopback-netwerkactiviteit"
+
+#: ../multiload/multiload.schemas.in.h:23
+msgid "Network graph background color"
+msgstr "Netwerkgebruik achtergrondkleur"
+
+#: ../multiload/multiload.schemas.in.h:24
 msgid "Graph color for user-related swap usage"
 msgstr "Kleur van de grafiek voor gebruikersgerelateerd wisselbestandgebruik"
 
+#: ../multiload/multiload.schemas.in.h:25
+msgid "Swap graph background color"
+msgstr "Wisselbestand-grafiek achtergrondkleur"
+
 #: ../multiload/multiload.schemas.in.h:26
-msgid "Graph size"
-msgstr "Grafiekgrootte"
+msgid "Graph color for load average"
+msgstr "Kleur van de grafiek voor het belastingsgemiddelde"
 
 #: ../multiload/multiload.schemas.in.h:27
 msgid "Load graph background color"
 msgstr "Belastingsgrafiek achtergrondkleur"
 
 #: ../multiload/multiload.schemas.in.h:28
-msgid "Memory graph background color"
-msgstr "Geheugengrafiek achtergrondkleur"
+msgid "Graph color for disk read"
+msgstr "Grafiekkleur voor schijflees-activiteit"
 
 #: ../multiload/multiload.schemas.in.h:29
-msgid "Network graph background color"
-msgstr "Netwerkgebruik achtergrondkleur"
+msgid "Graph color for disk write"
+msgstr "Grafiekkleur voor schijfschrijf-activiteit"
 
 #: ../multiload/multiload.schemas.in.h:30
-msgid "Swap graph background color"
-msgstr "Wisselbestand-grafiek achtergrondkleur"
+msgid "Background color for disk load graph"
+msgstr "Achtergrondkleur voor schijfgebruik grafiek"
 
 #: ../multiload/multiload.schemas.in.h:31
 msgid "The desktop description file to execute as the system monitor"
@@ -2291,7 +2299,7 @@ msgstr "Het desktop-bestand dat uitgevoerd dient te worden voor de systeemmonito
 msgid "%s/s"
 msgstr "%s/s"
 
-#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
+#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
 msgid "A system load indicator"
 msgstr "Een systeembelasting-meter"
 
@@ -2437,36 +2445,36 @@ msgid "Panel applet for playing audio CDs"
 msgstr "Applet om audio-cd's af te spelen"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
-msgid "Alert you when new mail arrives"
-msgstr "Waarschuwing bij nieuwe e-mail"
-
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
 msgid "Inbox Monitor (Deprecated)"
 msgstr "Inbox monitor (verouderd)"
 
-#: ../null_applet/MATE_MixerApplet.server.in.h:1
-msgid "Adjust the sound volume"
-msgstr "Geluidsvolume aanpassen"
+#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
+msgid "Alert you when new mail arrives"
+msgstr "Waarschuwing bij nieuwe e-mail"
 
-#: ../null_applet/MATE_MixerApplet.server.in.h:2
+#: ../null_applet/MATE_MixerApplet.server.in.h:1
 msgid "Volume Control (Deprecated)"
 msgstr "Volumeregeling (verouderd)"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
-msgid "Factory for deprecating applets"
-msgstr "Fabriek voor verouderde applets"
+#: ../null_applet/MATE_MixerApplet.server.in.h:2
+msgid "Adjust the sound volume"
+msgstr "Geluidsvolume aanpassen"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
+#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
 msgid "Null Applet Factory"
 msgstr "Null Applet-fabriek"
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
-msgid "Monitor the quality of a wireless network link"
-msgstr "De kwaliteit van een draadloze verbinding volgen"
+#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
+msgid "Factory for deprecating applets"
+msgstr "Fabriek voor verouderde applets"
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
+#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
 msgid "Wireless Link Monitor"
 msgstr "Monitor voor draadloze verbindingen"
+
+#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
+msgid "Monitor the quality of a wireless network link"
+msgstr "De kwaliteit van een draadloze verbinding volgen"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:1
 msgid "Keyboard Indicator (Deprecated)"
@@ -2515,8 +2523,8 @@ msgid "Tomboy (transparent upgrade from stickynotes)"
 msgstr "Tomboy (vervanger van memo's)"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
-msgid "Create, view, and manage sticky notes on the desktop"
-msgstr "Memo's op uw bureaublad tonen en beheren"
+msgid "Sticky Notes Applet Factory"
+msgstr "Memo appletfabriek"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
 #: ../stickynotes/stickynotes_applet.c:147
@@ -2525,315 +2533,315 @@ msgid "Sticky Notes"
 msgstr "Memo's"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:3
-msgid "Sticky Notes Applet Factory"
-msgstr "Memo appletfabriek"
+msgid "Create, view, and manage sticky notes on the desktop"
+msgstr "Memo's op uw bureaublad tonen en beheren"
 
-#: ../stickynotes/stickynotes.c:635
+#: ../stickynotes/stickynotes.c:634
 msgid "This note is locked."
 msgstr "Deze memo is vergrendeld."
 
-#: ../stickynotes/stickynotes.c:639
+#: ../stickynotes/stickynotes.c:638
 msgid "This note is unlocked."
 msgstr "Deze memo is niet op slot."
 
-#: ../stickynotes/stickynotes.ui.h:1
-msgid "Behavior"
-msgstr "Gedrag"
-
-#: ../stickynotes/stickynotes.ui.h:2
-msgid "Choose a base color to use for all sticky notes"
-msgstr "Kies een basiskleur voor alle memo's"
-
-#: ../stickynotes/stickynotes.ui.h:3
-msgid "Choose a color for the note"
-msgstr "Kies een kleur voor de memo"
-
-#: ../stickynotes/stickynotes.ui.h:4
-msgid "Choose a font for the note"
-msgstr "Kies een lettertype voor de memo"
-
-#: ../stickynotes/stickynotes.ui.h:5
-msgid "Choose a font to use for all sticky notes"
-msgstr "Kies een lettertype voor alle memo's"
-
-#: ../stickynotes/stickynotes.ui.h:6
-msgid "Choose if notes are visible on all workspaces"
-msgstr "Of de memo's op alle werkbladen zichtbaar moeten zijn"
-
-#: ../stickynotes/stickynotes.ui.h:7
-msgid "Choose if the default style is forced on all notes"
-msgstr "Of de standaardstijl geldt voor alle memo's"
-
-#: ../stickynotes/stickynotes.ui.h:8
-msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr "Geeft aan of alle memo's verborgen worden als op het het bureaublad geslecteerd wordt."
-
-#: ../stickynotes/stickynotes.ui.h:9
-msgid "Close note"
-msgstr "Memo sluiten"
-
-#: ../stickynotes/stickynotes.ui.h:10
-msgid "Default Note Properties"
-msgstr "Standaard memo-eigenschappen"
-
-#: ../stickynotes/stickynotes.ui.h:11
-msgid "Delete all sticky notes?"
-msgstr "Alle memo's verwijderen?"
-
-#: ../stickynotes/stickynotes.ui.h:12
-msgid "Delete this sticky note?"
-msgstr "Deze memo verwijderen?"
-
-#: ../stickynotes/stickynotes.ui.h:13
-msgid "Font C_olor:"
-msgstr "Tekstkle_ur:"
-
-#: ../stickynotes/stickynotes.ui.h:14
-msgid "Font Co_lor:"
-msgstr "Tekst_kleur:"
-
-#: ../stickynotes/stickynotes.ui.h:15
-msgid "Force _default color and font on notes"
-msgstr "_Standaardkleur en lettertype gebruiken voor alle memo's"
-
-#: ../stickynotes/stickynotes.ui.h:16
-msgid "H_eight:"
-msgstr "_Hoogte:"
-
-#: ../stickynotes/stickynotes.ui.h:17
-msgid "Hide notes when the des_ktop is clicked on"
-msgstr "Memo's verbergen als op het bureaublad geklikt wordt"
-
-#: ../stickynotes/stickynotes.ui.h:18
-msgid "Lock/Unlock note"
-msgstr "Memo vastzetten/losmaken"
-
-#: ../stickynotes/stickynotes.ui.h:19
-msgid "Note C_olor:"
-msgstr "Memokle_ur:"
-
-#: ../stickynotes/stickynotes.ui.h:20
-msgid "Note _Color:"
-msgstr "Memo_kleur:"
-
-#: ../stickynotes/stickynotes.ui.h:21
-msgid "Pick a color for the sticky note"
-msgstr "Kies een kleur voor de memo"
-
-#: ../stickynotes/stickynotes.ui.h:22
-msgid "Pick a default sticky note color"
-msgstr "Kies een standaardkleur voor de memo's"
-
-#: ../stickynotes/stickynotes.ui.h:23
-msgid "Pick a default sticky note font"
-msgstr "Kies een standaardlettertype voor de memo's"
-
-#: ../stickynotes/stickynotes.ui.h:24
-msgid "Pick a font for the sticky note"
-msgstr "Kies een lettertype voor de memo's"
-
-#: ../stickynotes/stickynotes.ui.h:25
-msgid "Properties"
-msgstr "Eigenschappen"
-
-#: ../stickynotes/stickynotes.ui.h:26
-msgid "Resize note"
-msgstr "Afmetingen wijzigen"
-
-#: ../stickynotes/stickynotes.ui.h:27
-msgid "Specify a title for the note"
-msgstr "Geef een naam aan de memo"
-
-#: ../stickynotes/stickynotes.ui.h:28
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "Geef de standaardhoogte (in beeldpunten) van nieuwe memo's"
-
-#: ../stickynotes/stickynotes.ui.h:29
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "Geef de standaardbreedte (in beeldpunten) van nieuwe memo's"
-
-#: ../stickynotes/stickynotes.ui.h:30
-msgid "Sticky Note"
-msgstr "Memo"
-
-#: ../stickynotes/stickynotes.ui.h:31
-msgid "Sticky Note Properties"
-msgstr "Eigenschappen memo"
-
-#: ../stickynotes/stickynotes.ui.h:32
-msgid "Sticky Notes Preferences"
-msgstr "Voorkeuren memo's"
-
-#: ../stickynotes/stickynotes.ui.h:33
-msgid "This cannot be undone."
-msgstr "Dit kan niet ongedaan worden gemaakt."
-
-#: ../stickynotes/stickynotes.ui.h:34
-msgid "Use co_lor from the system theme"
-msgstr "_Themakleuren gebruiken"
-
-#: ../stickynotes/stickynotes.ui.h:35
-msgid "Use default co_lor"
-msgstr "_Gebruik standaardkleur"
-
-#: ../stickynotes/stickynotes.ui.h:36
-msgid "Use default fo_nt"
-msgstr "Gebruik stan_daardlettertype"
-
-#: ../stickynotes/stickynotes.ui.h:37
-msgid "Use fo_nt from the system theme"
-msgstr "Themalettert_ype gebruiken"
-
-#: ../stickynotes/stickynotes.ui.h:38
-msgid "_Delete All"
-msgstr "Alles _verwijderen"
-
-#: ../stickynotes/stickynotes.ui.h:39
-msgid "_Delete Note..."
-msgstr "Memo _verwijderen…"
-
-#: ../stickynotes/stickynotes.ui.h:40
-msgid "_Font:"
-msgstr "_Lettertype:"
-
-#: ../stickynotes/stickynotes.ui.h:41
-msgid "_Lock Note"
-msgstr "Memo ver_grendelen"
-
-#: ../stickynotes/stickynotes.ui.h:42 ../stickynotes/stickynotes_applet.c:33
+#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
 msgid "_New Note"
 msgstr "_Nieuwe memo"
 
-#: ../stickynotes/stickynotes.ui.h:44
+#: ../stickynotes/stickynotes.ui.h:2
+msgid "_Delete Note..."
+msgstr "Memo _verwijderen…"
+
+#: ../stickynotes/stickynotes.ui.h:3
+msgid "_Lock Note"
+msgstr "Memo ver_grendelen"
+
+#: ../stickynotes/stickynotes.ui.h:5
+msgid "Sticky Notes Preferences"
+msgstr "Voorkeuren memo's"
+
+#: ../stickynotes/stickynotes.ui.h:6
+msgid "Default Note Properties"
+msgstr "Standaard memo-eigenschappen"
+
+#: ../stickynotes/stickynotes.ui.h:7
+msgid "Choose a font to use for all sticky notes"
+msgstr "Kies een lettertype voor alle memo's"
+
+#: ../stickynotes/stickynotes.ui.h:8
+msgid "Pick a default sticky note font"
+msgstr "Kies een standaardlettertype voor de memo's"
+
+#: ../stickynotes/stickynotes.ui.h:9
+msgid "_Font:"
+msgstr "_Lettertype:"
+
+#: ../stickynotes/stickynotes.ui.h:10
+msgid "Use fo_nt from the system theme"
+msgstr "Themalettert_ype gebruiken"
+
+#: ../stickynotes/stickynotes.ui.h:11
+msgid "Note C_olor:"
+msgstr "Memokle_ur:"
+
+#: ../stickynotes/stickynotes.ui.h:12
+msgid "Font Co_lor:"
+msgstr "Tekst_kleur:"
+
+#: ../stickynotes/stickynotes.ui.h:13
+msgid "Choose a base color to use for all sticky notes"
+msgstr "Kies een basiskleur voor alle memo's"
+
+#: ../stickynotes/stickynotes.ui.h:14
+msgid "Pick a default sticky note color"
+msgstr "Kies een standaardkleur voor de memo's"
+
+#: ../stickynotes/stickynotes.ui.h:15
+msgid "Use co_lor from the system theme"
+msgstr "_Themakleuren gebruiken"
+
+#: ../stickynotes/stickynotes.ui.h:16
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "Geef de standaardhoogte (in beeldpunten) van nieuwe memo's"
+
+#: ../stickynotes/stickynotes.ui.h:17
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "Geef de standaardbreedte (in beeldpunten) van nieuwe memo's"
+
+#: ../stickynotes/stickynotes.ui.h:18
+msgid "H_eight:"
+msgstr "_Hoogte:"
+
+#: ../stickynotes/stickynotes.ui.h:20
+msgid "Behavior"
+msgstr "Gedrag"
+
+#: ../stickynotes/stickynotes.ui.h:21
+msgid "Hide notes when the des_ktop is clicked on"
+msgstr "Memo's verbergen als op het bureaublad geklikt wordt"
+
+#: ../stickynotes/stickynotes.ui.h:22
+msgid "Choose whether to hide all notes when selecting on the desktop"
+msgstr "Geeft aan of alle memo's verborgen worden als op het het bureaublad geslecteerd wordt."
+
+#: ../stickynotes/stickynotes.ui.h:23
+msgid "Force _default color and font on notes"
+msgstr "_Standaardkleur en lettertype gebruiken voor alle memo's"
+
+#: ../stickynotes/stickynotes.ui.h:24
+msgid "Choose if the default style is forced on all notes"
+msgstr "Of de standaardstijl geldt voor alle memo's"
+
+#: ../stickynotes/stickynotes.ui.h:25
 msgid "_Put notes on all workspaces"
 msgstr "_Memo's weergeven op alle werkbladen"
 
+#: ../stickynotes/stickynotes.ui.h:26
+msgid "Choose if notes are visible on all workspaces"
+msgstr "Of de memo's op alle werkbladen zichtbaar moeten zijn"
+
+#: ../stickynotes/stickynotes.ui.h:27
+msgid "Delete this sticky note?"
+msgstr "Deze memo verwijderen?"
+
+#: ../stickynotes/stickynotes.ui.h:28
+msgid "This cannot be undone."
+msgstr "Dit kan niet ongedaan worden gemaakt."
+
+#: ../stickynotes/stickynotes.ui.h:29
+msgid "Delete all sticky notes?"
+msgstr "Alle memo's verwijderen?"
+
+#: ../stickynotes/stickynotes.ui.h:30
+msgid "_Delete All"
+msgstr "Alles _verwijderen"
+
+#: ../stickynotes/stickynotes.ui.h:31
+msgid "Sticky Note"
+msgstr "Memo"
+
+#: ../stickynotes/stickynotes.ui.h:32
+msgid "Lock/Unlock note"
+msgstr "Memo vastzetten/losmaken"
+
+#: ../stickynotes/stickynotes.ui.h:33
+msgid "Close note"
+msgstr "Memo sluiten"
+
+#: ../stickynotes/stickynotes.ui.h:34
+msgid "Resize note"
+msgstr "Afmetingen wijzigen"
+
+#: ../stickynotes/stickynotes.ui.h:35
+msgid "Sticky Note Properties"
+msgstr "Eigenschappen memo"
+
+#: ../stickynotes/stickynotes.ui.h:36
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: ../stickynotes/stickynotes.ui.h:37
+msgid "Choose a font for the note"
+msgstr "Kies een lettertype voor de memo"
+
+#: ../stickynotes/stickynotes.ui.h:38
+msgid "Pick a font for the sticky note"
+msgstr "Kies een lettertype voor de memo's"
+
+#: ../stickynotes/stickynotes.ui.h:39
+msgid "Use default fo_nt"
+msgstr "Gebruik stan_daardlettertype"
+
+#: ../stickynotes/stickynotes.ui.h:40
+msgid "Choose a color for the note"
+msgstr "Kies een kleur voor de memo"
+
+#: ../stickynotes/stickynotes.ui.h:41
+msgid "Pick a color for the sticky note"
+msgstr "Kies een kleur voor de memo"
+
+#: ../stickynotes/stickynotes.ui.h:42
+msgid "Note _Color:"
+msgstr "Memo_kleur:"
+
+#: ../stickynotes/stickynotes.ui.h:43
+msgid "Font C_olor:"
+msgstr "Tekstkle_ur:"
+
+#: ../stickynotes/stickynotes.ui.h:44
+msgid "Use default co_lor"
+msgstr "_Gebruik standaardkleur"
+
 #: ../stickynotes/stickynotes.ui.h:45
+msgid "Specify a title for the note"
+msgstr "Geef een naam aan de memo"
+
+#: ../stickynotes/stickynotes.ui.h:46
 msgid "_Title:"
 msgstr "_Titel:"
 
 #: ../stickynotes/stickynotes.schemas.in.h:1
+msgid "Default width for new notes"
+msgstr "Standaardbreedte van nieuwe memo's"
+
+#: ../stickynotes/stickynotes.schemas.in.h:2
+msgid "Default width for new sticky notes in pixels."
+msgstr "Standaardbreedte van nieuwe memo's in beeldpunten."
+
+#: ../stickynotes/stickynotes.schemas.in.h:3
+msgid "Default height for new notes"
+msgstr "Standaardhoogte van nieuwe memo's"
+
+#: ../stickynotes/stickynotes.schemas.in.h:4
+msgid "Default height for new sticky notes in pixels."
+msgstr "Standaardhoogte van nieuwe memo's in beeldpunten."
+
+#: ../stickynotes/stickynotes.schemas.in.h:5
+msgid "Default color for new notes"
+msgstr "Standaardkleur van nieuwe memo's"
+
+#: ../stickynotes/stickynotes.schemas.in.h:6
+msgid ""
+"Default color for new sticky notes. This should be in html hex "
+"specification, for example \"#30FF50\"."
+msgstr "Standaardkleur voor nieuwe memo's. Dit zou in html hex gegeven moeten worden, bijv. \"#30FF50\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:7
+msgid "Default color for font"
+msgstr "Standaardkleur voor tekst"
+
+#: ../stickynotes/stickynotes.schemas.in.h:8
+msgid ""
+"Default font color for new sticky notes. This should be in html hex "
+"specification, for example \"#000000\"."
+msgstr "Standaardkleur voor nieuwe memo's. Dit zou in html hex gegeven moeten worden, bijvoorbeeld \"#30FF50\"."
+
+#: ../stickynotes/stickynotes.schemas.in.h:9
+msgid "Default font for new notes"
+msgstr "Standaardlettertype van nieuwe memo's"
+
+#: ../stickynotes/stickynotes.schemas.in.h:10
+msgid ""
+"Default font for new sticky notes. This should be a Pango Font Name, for "
+"example \"Sans Italic 10\"."
+msgstr "Standaardlettertype voor nieuwe memo's. Dit moet een Pango-naam zijn, zoals ‘Sans Italic 10’"
+
+#: ../stickynotes/stickynotes.schemas.in.h:11
+msgid "Sticky notes' workspace stickyness"
+msgstr "Plakken op werkbladen van memo's"
+
+#: ../stickynotes/stickynotes.schemas.in.h:12
+msgid ""
+"Specifies whether the sticky notes are visible on ALL workspaces on the "
+"desktop, or not."
+msgstr "Bepaalt of de memo's zichtbaar zijn op alle werkbladen van het bureaublad, of niet."
+
+#: ../stickynotes/stickynotes.schemas.in.h:13
+msgid "Sticky notes' locked state"
+msgstr "Memo's vastgezet of niet"
+
+#: ../stickynotes/stickynotes.schemas.in.h:14
+msgid "Specifies whether the sticky notes are locked (non-editable) or not."
+msgstr "Bepaalt of de memo's vastgezet zijn of niet (aanpasbaar)."
+
+#: ../stickynotes/stickynotes.schemas.in.h:15
+msgid "Date format of note's title"
+msgstr "Datumnotitie van memotitel"
+
+#: ../stickynotes/stickynotes.schemas.in.h:16
 msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
 msgstr "Nieuwe memo's krijgen standaard de huidige datum als titel. Dit formaat wordt daarvoor gebruikt. Alles wat door strftime() begrepen wordt, is geldig."
 
-#: ../stickynotes/stickynotes.schemas.in.h:2
-msgid "Date format of note's title"
-msgstr "Datumnotitie van memotitel"
+#: ../stickynotes/stickynotes.schemas.in.h:17
+msgid "Whether to use the default system color"
+msgstr "Standaard themakleuren gebruiken"
 
-#: ../stickynotes/stickynotes.schemas.in.h:3
-msgid "Default color for font"
-msgstr "Standaardkleur voor tekst"
-
-#: ../stickynotes/stickynotes.schemas.in.h:4
-msgid "Default color for new notes"
-msgstr "Standaardkleur van nieuwe memo's"
-
-#: ../stickynotes/stickynotes.schemas.in.h:5
-msgid ""
-"Default color for new sticky notes. This should be in html hex "
-"specification, for example \"#30FF50\"."
-msgstr "Standaardkleur voor nieuwe memo's. Dit zou in html hex gegeven moeten worden, bijv. \"#30FF50\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:6
-msgid ""
-"Default font color for new sticky notes. This should be in html hex "
-"specification, for example \"#000000\"."
-msgstr "Standaardkleur voor nieuwe memo's. Dit zou in html hex gegeven moeten worden, bijvoorbeeld \"#30FF50\"."
-
-#: ../stickynotes/stickynotes.schemas.in.h:7
-msgid "Default font for new notes"
-msgstr "Standaardlettertype van nieuwe memo's"
-
-#: ../stickynotes/stickynotes.schemas.in.h:8
-msgid ""
-"Default font for new sticky notes. This should be a Pango Font Name, for "
-"example \"Sans Italic 10\"."
-msgstr "Standaardlettertype voor nieuwe memo's. Dit moet een Pango-naam zijn, zoals ‘Sans Italic 10’"
-
-#: ../stickynotes/stickynotes.schemas.in.h:9
-msgid "Default height for new notes"
-msgstr "Standaardhoogte van nieuwe memo's"
-
-#: ../stickynotes/stickynotes.schemas.in.h:10
-msgid "Default height for new sticky notes in pixels."
-msgstr "Standaardhoogte van nieuwe memo's in beeldpunten."
-
-#: ../stickynotes/stickynotes.schemas.in.h:11
-msgid "Default width for new notes"
-msgstr "Standaardbreedte van nieuwe memo's"
-
-#: ../stickynotes/stickynotes.schemas.in.h:12
-msgid "Default width for new sticky notes in pixels."
-msgstr "Standaardbreedte van nieuwe memo's in beeldpunten."
-
-#: ../stickynotes/stickynotes.schemas.in.h:13
-msgid "Empty notes are always deleted without confirmation."
-msgstr "Lege memo's worden altijd verwijderd zonder bevestiging."
-
-#: ../stickynotes/stickynotes.schemas.in.h:14
+#: ../stickynotes/stickynotes.schemas.in.h:18
 msgid ""
 "If this option is disabled, a custom color can be used as the default color "
 "for all sticky notes."
 msgstr "Als deze optie uitgeschakeld is, kan een eigen kleur als standaard gebruikt worden voor alle memo's."
 
-#: ../stickynotes/stickynotes.schemas.in.h:15
+#: ../stickynotes/stickynotes.schemas.in.h:19
+msgid "Whether to use the default system font"
+msgstr "Standaardlettertype gebruiken"
+
+#: ../stickynotes/stickynotes.schemas.in.h:20
 msgid ""
 "If this option is disabled, a custom font can be used as the default font "
 "for all sticky notes."
 msgstr "Als deze optie uitgeschakeld is, kan een eigen lettertype als standaard gebruikt worden voor alle memo's."
 
-#: ../stickynotes/stickynotes.schemas.in.h:16
-msgid ""
-"If this option is enabled, selecting the desktop in any way will "
-"automatically hide all the open notes."
-msgstr "Indien ingeschakeld worden alle memo's verborgen als er iets op het bureaublad geselecteerd wordt."
+#: ../stickynotes/stickynotes.schemas.in.h:21
+msgid "Whether to force the default color and font on all notes"
+msgstr "Standaardkleur en -lettertype gebruiken voor alle memo's"
 
-#: ../stickynotes/stickynotes.schemas.in.h:17
+#: ../stickynotes/stickynotes.schemas.in.h:22
 msgid ""
 "If this option is enabled, the custom colors and fonts that have been "
 "assigned to individual notes will be ignored."
 msgstr "Als deze optie is ingeschakeld, zullen de eigen kleuren en lettertypes per memo genegeerd worden."
 
-#: ../stickynotes/stickynotes.schemas.in.h:18
-msgid "Specifies whether the sticky notes are locked (non-editable) or not."
-msgstr "Bepaalt of de memo's vastgezet zijn of niet (aanpasbaar)."
-
-#: ../stickynotes/stickynotes.schemas.in.h:19
-msgid ""
-"Specifies whether the sticky notes are visible on ALL workspaces on the "
-"desktop, or not."
-msgstr "Bepaalt of de memo's zichtbaar zijn op alle werkbladen van het bureaublad, of niet."
-
-#: ../stickynotes/stickynotes.schemas.in.h:20
-msgid "Sticky notes' locked state"
-msgstr "Memo's vastgezet of niet"
-
-#: ../stickynotes/stickynotes.schemas.in.h:21
-msgid "Sticky notes' workspace stickyness"
-msgstr "Plakken op werkbladen van memo's"
-
-#: ../stickynotes/stickynotes.schemas.in.h:22
-msgid "Whether to ask for confirmation when deleting a note"
-msgstr "Bevestiging vragen bij verwijderen van een memo"
-
 #: ../stickynotes/stickynotes.schemas.in.h:23
-msgid "Whether to force the default color and font on all notes"
-msgstr "Standaardkleur en -lettertype gebruiken voor alle memo's"
-
-#: ../stickynotes/stickynotes.schemas.in.h:24
 msgid "Whether to hide all notes when the desktop is selected"
 msgstr "Geeft aan of alle memo's verborgen moeten worden als er iets op het bureaublad geselecteerd wordt."
 
+#: ../stickynotes/stickynotes.schemas.in.h:24
+msgid ""
+"If this option is enabled, selecting the desktop in any way will "
+"automatically hide all the open notes."
+msgstr "Indien ingeschakeld worden alle memo's verborgen als er iets op het bureaublad geselecteerd wordt."
+
 #: ../stickynotes/stickynotes.schemas.in.h:25
-msgid "Whether to use the default system color"
-msgstr "Standaard themakleuren gebruiken"
+msgid "Whether to ask for confirmation when deleting a note"
+msgstr "Bevestiging vragen bij verwijderen van een memo"
 
 #: ../stickynotes/stickynotes.schemas.in.h:26
-msgid "Whether to use the default system font"
-msgstr "Standaardlettertype gebruiken"
+msgid "Empty notes are always deleted without confirmation."
+msgstr "Lege memo's worden altijd verwijderd zonder bevestiging."
 
 #: ../stickynotes/stickynotes_applet.c:36
 msgid "Hi_de Notes"
@@ -2862,13 +2870,406 @@ msgstr "Memo's tonen"
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Memo's voor de Mate-desktop"
 
-#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
-msgid "Go to Trash"
-msgstr "Ga naar de prullenbak"
+#: ../timer-applet/data/TimerApplet.server.in.in.h:1
+msgid "Timer Applet Factory"
+msgstr "Timer Applet Factory"
 
-#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:2
+#: ../timer-applet/data/TimerApplet.server.in.in.h:2
+msgid "A Timer Applet factory that creates Timer Applets"
+msgstr "Een 'Timer Applet Factiry' die Timer Applets creëert"
+
+#: ../timer-applet/data/TimerApplet.server.in.in.h:3
+msgid "Timer"
+msgstr "Timer"
+
+#: ../timer-applet/data/TimerApplet.server.in.in.h:4
+msgid "Start a timer and receive a notification when it is finished"
+msgstr "Een timer starten en een melding ontvangen wanneer deze is voltooid"
+
+#: ../timer-applet/data/TimerApplet.xml.h:1
+msgid "Pa_use"
+msgstr "Pa_uzeren"
+
+#: ../timer-applet/data/TimerApplet.xml.h:2
+msgid "_Continue"
+msgstr "Doorgaan"
+
+#: ../timer-applet/data/TimerApplet.xml.h:3
+msgid "_Stop"
+msgstr "_Stoppen"
+
+#: ../timer-applet/data/TimerApplet.xml.h:4
+msgid "R_estart"
+msgstr "H_erstarten"
+
+#: ../timer-applet/data/TimerApplet.xml.h:5
+msgid "Next"
+msgstr "Volgende"
+
+#: ../timer-applet/data/TimerApplet.xml.h:6
+msgid "Pre_sets"
+msgstr "In_stellingen"
+
+#: ../timer-applet/data/TimerApplet.xml.h:7
+msgid "Ma_nage Presets"
+msgstr "I_nstellingen beheren"
+
+#: ../timer-applet/data/timer-applet.glade.h:1
+msgid "Start Timer"
+msgstr "Timer starten"
+
+#: ../timer-applet/data/timer-applet.glade.h:2
+msgid "_Name:"
+msgstr "_Naam:"
+
+#: ../timer-applet/data/timer-applet.glade.h:3
+msgid "Start automatically"
+msgstr "Automatisch starten"
+
+#: ../timer-applet/data/timer-applet.glade.h:4
+msgid "<b>Define next timer</b>"
+msgstr "<b>Volgende timer definiëren</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:5
+msgid "Execute:"
+msgstr "Uitvoeren:"
+
+#: ../timer-applet/data/timer-applet.glade.h:6
+msgid "<b>Run custom command</b>"
+msgstr "<b>Aangepast commando uitvoeren</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:7
+msgid "Run executable after timer finished."
+msgstr "Uitvoerbaar bestand uitvoeren nadat timer is voltooid."
+
+#: ../timer-applet/data/timer-applet.glade.h:8
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#: ../timer-applet/data/timer-applet.glade.h:9
+msgid "S_ave as Preset"
+msgstr "Instelling opsl_aan"
+
+#: ../timer-applet/data/timer-applet.glade.h:10
+msgid "Mana_ge Presets"
+msgstr "Instellin_gen beheren"
+
+#: ../timer-applet/data/timer-applet.glade.h:11
+msgid "<b>_Presets</b>"
+msgstr "<b>Instellingen</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:12
+msgid "S_tart Timer"
+msgstr "_Timer starten"
+
+#: ../timer-applet/data/timer-applet.glade.h:13
+msgid "Manage Presets"
+msgstr "Instellingen beheren"
+
+#: ../timer-applet/data/timer-applet.glade.h:14
+msgid "_Delete"
+msgstr "Verwij_deren"
+
+#: ../timer-applet/data/timer-applet.glade.h:15
+msgid "_Edit..."
+msgstr "B_ewerken..."
+
+#: ../timer-applet/data/timer-applet.glade.h:16
+msgid "_Add..."
+msgstr "Toevoegen..."
+
+#: ../timer-applet/data/timer-applet.glade.h:17
+msgid "Timer Preferences"
+msgstr "Timervoorkeuren"
+
+#: ../timer-applet/data/timer-applet.glade.h:18
+msgid "_Show remaining time while timer is running"
+msgstr "Re_sterende tijd tonen wanneer timer draait."
+
+#: ../timer-applet/data/timer-applet.glade.h:19
+msgid "_Play notification sound"
+msgstr "Meldingsgeluid afs_pelen"
+
+#: ../timer-applet/data/timer-applet.glade.h:20
+msgid "Use d_efault sound"
+msgstr "Standaardg_eluid gebruiken"
+
+#: ../timer-applet/data/timer-applet.glade.h:21
+msgid "Use c_ustom sound"
+msgstr "Aangepast gel_uid gebruiken"
+
+#: ../timer-applet/data/timer-applet.glade.h:22
+msgid "Choose A Sound File"
+msgstr "Kies een geluidsbestand"
+
+#: ../timer-applet/data/timer-applet.glade.h:23
+msgid "_Show popup notification"
+msgstr "Popup tonen"
+
+#: ../timer-applet/data/timer-applet.glade.h:24
+msgid "_Show popup notification after timer has ended."
+msgstr "Popup tonen nadat timer is voltooid."
+
+#: ../timer-applet/data/timer-applet.glade.h:25
+msgid "S_how pulsing panel icon"
+msgstr "Pulserend paneelpictogram tonen"
+
+#: ../timer-applet/data/timer-applet.glade.h:26
+msgid "Show pulsing panel icon after timer has ended."
+msgstr "Pulserend paneelpictogram tonen nadat timer is voltooid."
+
+#: ../timer-applet/data/timer-applet.glade.h:27
+#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
+msgid "Add Preset"
+msgstr "Instelling toevoegen"
+
+#: ../timer-applet/data/timer-applet.glade.h:28
+msgid "<b>_Name</b>"
+msgstr "<b>_Naam</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:29
+msgid "<b>_Duration</b>"
+msgstr "<b>_Duur</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:30
+msgid "Run custom command after timer has ended."
+msgstr "Aangepast commando uitvoeren nadat timer is voltooid."
+
+#: ../timer-applet/data/timer-applet.glade.h:31
+msgid "<b>Custom command</b>"
+msgstr "<b>Aangepast commando</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:32
+msgid "Initiate automatically"
+msgstr "Automatisch starten"
+
+#: ../timer-applet/data/timer-applet.glade.h:33
+msgid "<b>Interval timer</b>"
+msgstr "<b>Intervaltimer</b>"
+
+#: ../timer-applet/data/timer-applet.glade.h:34
+msgid "A timer applet for the perfect egg and beyond!"
+msgstr "Een timerapplet voor een perfect gekookt ei en meer!"
+
+#: ../timer-applet/data/timer-applet.glade.h:35
+msgid "Timer Applet"
+msgstr "Timerapplet"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:1
+msgid "Play notification sound"
+msgstr "Meldingsgeluid afspelen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:2
+msgid "Play a notification sound when the timer finishes a countdown"
+msgstr "Meldingsgeluid afspelen als timer klaar is met aftellen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:3
+msgid "Use a custom notification sound"
+msgstr "Aangepast meldingsgeluid gebruiken"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:4
+msgid ""
+"Use the custom notification sound specified in "
+"custom_notification_sound_path"
+msgstr "Gebruik het aangepaste meldingsgeluid gespecificeerd in custom_notification_sound_path"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:5
+msgid "Path to a custom notification sound"
+msgstr "Aangepast meldingsgeluid afspelen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:6
+msgid ""
+"Path to a sound file that will be played when the timer finishes a countdown"
+msgstr "Pad naar een geluidsbestand dat zal worden afgespeeld wanneer de timer klaar is met aftellen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:7
+msgid "Show Pulsing icon"
+msgstr "Pulserend pictogram tonen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:8
+msgid "Show pulsing tray icon when timer finished"
+msgstr "Pulserend traypictogrammeren tonen wanneer de timer is voltooid"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:9
+msgid "Show Popup notification"
+msgstr "Popup tonen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:10
+msgid "Show Popup notification in the notification area"
+msgstr "Popuptonen in het meldingsgebied"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:11
+msgid "Show remaining time"
+msgstr "Resterende tijd tonen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:12
+msgid "Show the remaining time while the timer is running or paused"
+msgstr "Resterende tijd tonen wanneer de timer loopt of gepauzeerd is"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:13
+msgid "Play a beep sound"
+msgstr "Pieptoon afspelen"
+
+#: ../timer-applet/data/timer-applet.schemas.in.h:14
+msgid ""
+"Play a beep sound on a computer's internal speaker when the timer finishes. "
+"This may not have an effect on all computers."
+msgstr "Laat een pieptoon horen door de interne speaker in de computer wanneer de timer is voltooid. Dit werkt mogelijk niet op alle computers."
+
+#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
+msgid "Edit Preset"
+msgstr "Instelling wijzigen"
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
+msgid "Continue timer countdown?"
+msgstr "Doorgaan met aftellen?"
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
+msgid "The timer is currently paused. Would you like to continue countdown?"
+msgstr "De timer is momentaal gepauzeerd. Wilt u doorgaan met aftellen?"
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:193
+msgid "Click to start a new timer countdown."
+msgstr "Klik op een nieuwe aftelling te beginnen."
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:198
+msgid "Paused. Click to continue timer countdown."
+msgstr "Gepauzeerd. Klik op door te gaan met aftellen."
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:201
+msgid "Finished"
+msgstr "Voltooid"
+
+#. "<timer name>" finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:206
+#, python-format
+msgid ""
+"\"%s\" finished at %s.\n"
+"Click to stop timer."
+msgstr "\"%s\" is voltooid op %s\nKlik om de timer te stoppen."
+
+#. Timer finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:209
+#, python-format
+msgid ""
+"Timer finished at %s.\n"
+"Click to stop timer."
+msgstr "Timer voltooid op %s.\nKlik om de timer te stoppen."
+
+#. HH:MM:SS (<timer name>)
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:385
+#, python-format
+msgid "%02d:%02d:%02d (%s)"
+msgstr "%02d:%02d:%02d (%s)"
+
+#. HH:MM:SS
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:388
+#: ../timer-applet/src/timerapplet/utils.py:52
+#, python-format
+msgid "%02d:%02d:%02d"
+msgstr "%02d:%02d:%02d"
+
+#. "<timer name>" Finished
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:410
+#, python-format
+msgid "\"%s\" Finished"
+msgstr "\"%s\" voltooid"
+
+#. "<timer name>" finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:413
+#, python-format
+msgid "\"%s\" finished at %s"
+msgstr "\"%s\" voltooid op %s"
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
+msgid "Timer Finished"
+msgstr "Timer voltooid"
+
+#. Timer finished at <time>
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:418
+#, python-format
+msgid "Timer finished at %s"
+msgstr "Timer voltooid op %s"
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:425
+#, python-format
+msgid "Timer finished about <b>%d second</b> ago"
+msgid_plural "Timer finished about <b>%d seconds</b> ago"
+msgstr[0] "Timer is ongeveer <b>%d seconde</b> geleden afgelopen"
+msgstr[1] "Timer is ongeveer <b>%d seconden</b> geleden afgelopen"
+
+#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:430
+#, python-format
+msgid "Timer finished about <b>%d minute</b> ago"
+msgid_plural "Timer finished about <b>%d minutes</b> ago"
+msgstr[0] "Timer is ongeveer <b>%d minuut</b> geleden afgelopen"
+msgstr[1] "Timer is ongeveer <b>%d minuten</b> geleden afgelopen"
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
+msgid "Continue Timer"
+msgstr "Doorgaan met timer"
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
+msgid "_Stop Timer"
+msgstr "Timer _stoppen"
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
+msgid "_Keep Paused"
+msgstr "Gepauzeerd houden"
+
+#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
+msgid "_Continue Timer"
+msgstr "Doorgaan met timer"
+
+#: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
+msgid "<b>Command not found.</b>"
+msgstr "<b>Commando niet gevonden.</b>"
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
+msgid "Start Next Timer"
+msgstr "Volgende timer starten"
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
+msgid "_Don't start next timer"
+msgstr "Volgen_de timer niet starten"
+
+#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
+msgid "_Start next timer"
+msgstr "Volgende timer _starten"
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
+msgid "_Hours:"
+msgstr "_Uren:"
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
+msgid "_Minutes:"
+msgstr "_Minuten:"
+
+#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
+msgid "_Seconds:"
+msgstr "_Seconden:"
+
+#. HH:MM
+#. MM:SS
+#: ../timer-applet/src/timerapplet/utils.py:56
+#: ../timer-applet/src/timerapplet/utils.py:59
+#, python-format
+msgid "%02d:%02d"
+msgstr "%02d:%02d"
+
+#. <preset name> (HH:MM:SS)
+#: ../timer-applet/src/timerapplet/utils.py:69
+#, python-format
+msgid "%s (%02d:%02d:%02d)"
+msgstr "%s (%02d:%02d:%02d)"
+
+#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
 msgstr "Prullenbak"
+
+#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:2
+msgid "Go to Trash"
+msgstr "Ga naar de prullenbak"
 
 #: ../trashapplet/src/trashapplet.c:69 ../trashapplet/src/trash-empty.c:351
 msgid "_Empty Trash"
