@@ -1,3 +1,217 @@
+commit b4ab7a8edf48bf70a35a43121237be33e3fdc22b
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jul 10 15:54:35 2012 +0200
+
+    sync translations with transifex
+
+ po/af.po          | 4479 +++++++++++-------------
+ po/ar.po          | 2877 +++++++--------
+ po/as.po          | 5395 ++++++++++++----------------
+ po/ast.po         | 3483 +++++++++---------
+ po/az.po          | 7947 +++++++++++++----------------------------
+ po/be.po          | 5757 +++++++++++++-----------------
+ po/bg.po          | 2733 +++++++--------
+ po/bn.po          | 5600 ++++++++++++-----------------
+ po/bn_IN.po       | 4724 ++++++++++++-------------
+ po/br.po          | 4320 +++++++++++------------
+ po/bs.po          | 7919 +++++++++++++----------------------------
+ po/ca.po          | 8089 +++++++-----------------------------------
+ po/ca@valencia.po |10118 ++++++++++++-----------------------------------------
+ po/crh.po         | 3931 ++++++++-------------
+ po/cs.po          | 2722 +++++++-------
+ po/cy.po          | 5650 ++++++++++++------------------
+ po/da.po          | 4311 +++++++----------------
+ po/de.po          | 1653 +++++----
+ po/dz.po          | 4565 ++++++++++--------------
+ po/el.po          | 2854 +++++++--------
+ po/en_CA.po       | 4864 ++++++++++---------------
+ po/en_GB.po       | 3774 +++++++-------------
+ po/eo.po          | 3231 ++++++++---------
+ po/es.po          | 3677 +++++++++----------
+ po/es_AR.po       | 5981 +++++++++++++------------------
+ po/es_CL.po       | 5908 ++++++++++++-------------------
+ po/es_CO.po       | 5981 +++++++++++++------------------
+ po/es_CR.po       | 5981 +++++++++++++------------------
+ po/es_DO.po       | 5981 +++++++++++++------------------
+ po/es_EC.po       | 5981 +++++++++++++------------------
+ po/es_ES.po       | 4781 ++++++++++++-------------
+ po/es_MX.po       | 5981 +++++++++++++------------------
+ po/es_NI.po       | 5981 +++++++++++++------------------
+ po/es_PA.po       | 5981 +++++++++++++------------------
+ po/es_PE.po       | 5981 +++++++++++++------------------
+ po/es_PR.po       | 5981 +++++++++++++------------------
+ po/es_SV.po       | 5981 +++++++++++++------------------
+ po/es_UY.po       | 5981 +++++++++++++------------------
+ po/es_VE.po       | 5981 +++++++++++++------------------
+ po/et.po          | 1653 +++++----
+ po/eu.po          | 2728 +++++++--------
+ po/fa.po          | 6057 ++++++++++++--------------------
+ po/fi.po          | 4225 ++++++++--------------
+ po/fr.po          | 3599 +++++++++----------
+ po/ga.po          | 4141 +++++++++++-----------
+ po/gl.po          | 4724 ++++++++++++-------------
+ po/gu.po          | 4695 ++++++++++++-------------
+ po/he.po          | 4743 ++++++++++++-------------
+ po/hi.po          | 4683 ++++++++++++-------------
+ po/hr.po          | 3913 ++++++++++-----------
+ po/hu.po          | 2739 +++++++--------
+ po/hy.po          | 4031 +++++++++------------
+ po/id.po          | 2691 +++++++-------
+ po/is.po          | 4462 ++++++++++++-----------
+ po/it.po          | 2869 +++++++--------
+ po/ja.po          | 2760 +++++++--------
+ po/ka.po          | 5878 ++++++++++++-------------------
+ po/kk.po          | 3440 +++++++++---------
+ po/kn.po          | 4696 ++++++++++++-------------
+ po/ko.po          | 3781 ++++++++------------
+ po/ku.po          | 5805 +++++++++++++-----------------
+ po/ky.po          | 4677 ++++++++++---------------
+ po/lt.po          | 4821 ++++++++++++-------------
+ po/lv.po          | 4772 ++++++++++++-------------
+ po/mai.po         | 4422 ++++++++++++-----------
+ po/mg.po          | 5838 +++++++++++++------------------
+ po/mk.po          | 4502 ++++++++++++------------
+ po/ml.po          | 4679 ++++++++++++-------------
+ po/mn.po          | 8526 +++++++++++++-------------------------------
+ po/mr.po          | 4668 ++++++++++++------------
+ po/ms.po          | 7799 +++++++++++++----------------------------
+ po/nb.po          | 4675 ++++++++++++-------------
+ po/ne.po          | 4830 ++++++++++---------------
+ po/nl.po          | 1653 +++++----
+ po/nn.po          | 3248 ++++++++---------
+ po/oc.po          | 4840 ++++++++++++-------------
+ po/or.po          | 3241 ++++++++---------
+ po/pa.po          | 3800 ++++++++------------
+ po/pl.po          | 2740 +++++++--------
+ po/ps.po          | 3687 ++++++++++---------
+ po/pt_BR.po       | 1653 +++++----
+ po/ro.po          | 4768 ++++++++++++-------------
+ po/ru.po          | 3247 ++++++++---------
+ po/si.po          | 5319 ++++++++++++----------------
+ po/sk.po          | 4070 +++++++++------------
+ po/sl.po          | 4808 ++++++++++++-------------
+ po/sq.po          | 4465 ++++++++++++-----------
+ po/sr.po          | 4867 ++++++++++++--------------
+ po/sr@latin.po    | 4867 ++++++++++++--------------
+ po/sv.po          | 3312 ++++++++----------
+ po/ta.po          | 2707 +++++++-------
+ po/te.po          | 4665 ++++++++++++------------
+ po/th.po          | 4590 ++++++++----------------
+ po/tr.po          | 3801 +++++++++-----------
+ po/ug.po          | 3499 +++++++++---------
+ po/uk.po          | 3418 ++++++++----------
+ po/vi.po          | 3498 +++++++++---------
+ po/wa.po          | 6784 +++++++++++------------------------
+ po/xh.po          | 5972 +++++++++++++------------------
+ po/zh_CN.po       | 3286 ++++++++---------
+ po/zh_HK.po       | 2758 +++++++--------
+ po/zh_TW.po       | 2916 +++++++--------
+ 102 files changed, 192865 insertions(+), 275251 deletions(-)
+
+commit ad754fdb764eb6b2cb2dd0c3277a08085fb348ad
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jul 10 15:38:33 2012 +0200
+
+    add po gnome copyrights file
+
+ po/gnome-copyrights.txt | 1557 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 1557 insertions(+)
+
+commit 2d4e5f982a5cc97e43c7a358788ff5f773bbd17d
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Thu Jun 14 16:37:25 2012 +0200
+
+    1.3.1 release
+
+ configure.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4bbd16182dab69da9ca7ad13309962af40529469
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jun 12 17:49:56 2012 +0200
+
+    add timer-applet
+
+ Makefile.am                                        |    8 +-
+ configure.in                                       |   20 +-
+ po/POTFILES.in                                     |   11 +
+ timer-applet/AUTHORS                               |    2 +
+ timer-applet/Makefile.am                           |    1 +
+ timer-applet/data/Makefile.am                      |   37 +
+ timer-applet/data/TimerApplet.server.in.in         |   22 +
+ timer-applet/data/TimerApplet.xml                  |   19 +
+ timer-applet/data/timer-applet.glade               | 1302 ++++++++++++++++++++
+ timer-applet/data/timer-applet.schemas.in          |   87 ++
+ timer-applet/images/Makefile.am                    |    5 +
+ timer-applet/images/timer-applet.png               |  Bin 0 -> 2820 bytes
+ timer-applet/images/timer-applet.svg               |  725 +++++++++++
+ timer-applet/src/Makefile.am                       |    6 +
+ timer-applet/src/timer-applet                      |  136 ++
+ timer-applet/src/timerapplet/Makefile.am           |   27 +
+ timer-applet/src/timerapplet/__init__.py           |    1 +
+ timer-applet/src/timerapplet/config.py             |   39 +
+ .../timerapplet/controllers/GlobalController.py    |   91 ++
+ .../src/timerapplet/controllers/Makefile.am        |    8 +
+ .../src/timerapplet/controllers/TimerApplet.py     |  635 ++++++++++
+ .../timerapplet/controllers/TimerManagerService.py |   42 +
+ .../src/timerapplet/controllers/TimerService.py    |   49 +
+ .../src/timerapplet/controllers/__init__.py        |   20 +
+ .../src/timerapplet/core/AppletMateConfWrapper.py  |   89 ++
+ timer-applet/src/timerapplet/core/Makefile.am      |    6 +
+ timer-applet/src/timerapplet/core/PresetsStore.py  |  160 +++
+ timer-applet/src/timerapplet/core/Timer.py         |  175 +++
+ timer-applet/src/timerapplet/core/__init__.py      |   19 +
+ timer-applet/src/timerapplet/defs.py.in            |    7 +
+ timer-applet/src/timerapplet/logger.py             |   23 +
+ .../src/timerapplet/ui/AddEditPresetDialog.py      |   75 ++
+ .../src/timerapplet/ui/ContinueTimerDialog.py      |   63 +
+ timer-applet/src/timerapplet/ui/DurationChooser.py |  166 +++
+ timer-applet/src/timerapplet/ui/Makefile.am        |   15 +
+ .../src/timerapplet/ui/ManagePresetsDialog.py      |   86 ++
+ timer-applet/src/timerapplet/ui/Notifier.py        |   73 ++
+ timer-applet/src/timerapplet/ui/PieMeter.py        |   77 ++
+ .../src/timerapplet/ui/PreferencesDialog.py        |  192 +++
+ timer-applet/src/timerapplet/ui/PulseButton.py     |   69 ++
+ .../src/timerapplet/ui/ScrollableButtonList.py     |   65 +
+ .../src/timerapplet/ui/StartNextTimerDialog.py     |   66 +
+ .../src/timerapplet/ui/StartTimerDialog.py         |  267 ++++
+ timer-applet/src/timerapplet/ui/StatusButton.py    |  101 ++
+ timer-applet/src/timerapplet/ui/__init__.py        |   28 +
+ timer-applet/src/timerapplet/utils.py              |   79 ++
+ 46 files changed, 5192 insertions(+), 2 deletions(-)
+
+commit c9b9454068f090a7132c6bea6ac07c91843ffb6e
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Fri Jun 8 17:56:47 2012 +0200
+
+    port to libmatewnck
+
+ README                    |    2 +-
+ configure.in              |   12 ++++++------
+ stickynotes/Makefile.am   |    4 ++--
+ stickynotes/stickynotes.c |   47 ++++++++++++++++++++++-----------------------
+ stickynotes/stickynotes.h |    3 +--
+ 5 files changed, 33 insertions(+), 35 deletions(-)
+
+commit ea879f570f86aaded57607af1ddd239e67160f79
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Sun May 27 14:21:13 2012 -0400
+
+    Fixed typo.
+
+ configure.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 984a72061761e485706ac12f71bdfb0fd7f3681b
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Sun May 27 14:20:27 2012 -0400
+
+    Preparing for 1.2.3 release.
+
+ ChangeLog    |   36 ++++++++++++++++++++++++++++++++++++
+ configure.in |    2 +-
+ 2 files changed, 37 insertions(+), 1 deletion(-)
+
 commit b5344715824cb89183a0fc5400586e82e383fc55
 Author: Steve Zesch <stevezesch2@gmail.com>
 Date:   Sun May 27 13:29:42 2012 -0400
@@ -5,7 +219,7 @@ Date:   Sun May 27 13:29:42 2012 -0400
     Forgot to push the update to configure.in
 
  configure.in |    4 ++++
- 1 files changed, 4 insertions(+), 0 deletions(-)
+ 1 file changed, 4 insertions(+)
 
 commit 21d19c8d7ff85e23355ff9ec092e4c6a77fd4e34
 Author: Steve Zesch <stevezesch2@gmail.com>
@@ -15,7 +229,7 @@ Date:   Sat May 26 19:29:57 2012 -0400
 
  invest-applet/invest/defs.py.in        |    1 +
  invest-applet/invest/networkmanager.py |   24 +++++++++++++++++++++-
- invest-applet/invest/quotes.py         |   34 ++++++++++++++-----------------
+ invest-applet/invest/quotes.py         |   34 ++++++++++++++------------------
  3 files changed, 39 insertions(+), 20 deletions(-)
 
 commit b958403a2e06dfc271b121eb325783bc923b089a
@@ -31,7 +245,7 @@ Date:   Tue Apr 24 15:28:36 2012 -0400
  battstat/battstat_applet.c        |    8 +-
  battstat/docs/C/mate-battstat.xml |   21 ++-
  battstat/power-management.c       |   76 +++++++--
- configure.in                      |   24 +++-
+ configure.in                      |   24 ++-
  8 files changed, 485 insertions(+), 32 deletions(-)
 
 commit 8939ec49c5218f4aaf2d49c7dd80954817f1bbb9
@@ -56,7 +270,7 @@ Date:   Fri Apr 20 19:48:25 2012 -0300
     Fixes https://github.com/mate-desktop/mate-desktop/issues/10
 
  .../org.mate.CPUFreqSelector.service.in            |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit f36ab4333ed4d5afca8b38c29073e79d5f3790c6
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -65,9 +279,9 @@ Date:   Sun Mar 11 11:58:57 2012 +0100
     update translations (de, et, nl, pt_BR)
 
  po/de.po    | 3162 +++++++++++++----------------------------------------------
- po/et.po    | 1732 ++++++++++++++++++---------------
+ po/et.po    | 1732 +++++++++++++++++---------------
  po/nl.po    | 1284 +++++-------------------
- po/pt_BR.po | 1308 +++++--------------------
+ po/pt_BR.po | 1308 +++++-------------------
  4 files changed, 2186 insertions(+), 5300 deletions(-)
 
 commit e8acd5748fecce9fdec50a74ae665ecc8bcc0fea
@@ -90,7 +304,7 @@ Date:   Thu Feb 16 17:20:06 2012 +0100
     fix urls in README, thanks to elacheche_anis
 
  README |   14 +++++++-------
- 1 files changed, 7 insertions(+), 7 deletions(-)
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
 commit 764b33d33ca2884e606e722cedd9e33bd88d901e
 Merge: 934a0a1 e094167
@@ -105,8 +319,8 @@ Date:   Mon Jan 30 12:06:56 2012 -0300
 
     g_get_user_config_dir() would be better (https://github.com/mate-desktop/mate-panel/issues/8)
 
- geyes/themes.c            |  105 +++++++++++++++++++++++---------------------
- stickynotes/stickynotes.c |   22 ++++++---
+ geyes/themes.c            |  105 ++++++++++++++++++++++++---------------------
+ stickynotes/stickynotes.c |   22 +++++++---
  2 files changed, 70 insertions(+), 57 deletions(-)
 
 commit e094167059fd482d254e3724ddc28a640d8a4156
@@ -116,7 +330,7 @@ Date:   Sat Jan 28 00:05:21 2012 +0100
     missing one rename in invest applet
 
  invest-applet/invest/mate-invest-chart |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 0c7fa5832b5b2a1d5bd321851ceb64690435aa11
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -144,8 +358,8 @@ Date:   Fri Jan 27 14:37:19 2012 +0100
  invest-applet/invest/networkmanager.py |   10 +++---
  invest-applet/invest/preferences.py    |   38 +++++++++++-----------
  invest-applet/invest/quotes.py         |   56 ++++++++++++++++----------------
- invest-applet/invest/test.py           |    4 +-
- invest-applet/invest/widgets.py        |    8 ++--
+ invest-applet/invest/test.py           |    4 +--
+ invest-applet/invest/widgets.py        |    8 ++---
  11 files changed, 100 insertions(+), 100 deletions(-)
 
 commit c7b2e180e6cfb4aec22f8ab3e0aebc6773032216
@@ -159,13 +373,13 @@ Date:   Fri Jan 27 11:19:49 2012 +0100
  invest-applet/invest/applet.py         |   24 +++++++-------
  invest-applet/invest/chart.py          |   14 ++++----
  invest-applet/invest/invest-applet.py  |   28 ++++++++--------
- invest-applet/invest/invest-chart      |   15 --------
- invest-applet/invest/mate-invest-chart |   15 ++++++++
+ invest-applet/invest/invest-chart      |   15 ---------
+ invest-applet/invest/mate-invest-chart |   15 +++++++++
  invest-applet/invest/networkmanager.py |   10 +++---
  invest-applet/invest/preferences.py    |   38 +++++++++++-----------
  invest-applet/invest/quotes.py         |   56 ++++++++++++++++----------------
- invest-applet/invest/test.py           |    4 +-
- invest-applet/invest/widgets.py        |    8 ++--
+ invest-applet/invest/test.py           |    4 +--
+ invest-applet/invest/widgets.py        |    8 ++---
  12 files changed, 112 insertions(+), 112 deletions(-)
 
 commit 843576a9e066a18dce191d96eb962d3b0bbde63b
@@ -211,7 +425,7 @@ Date:   Thu Jan 26 15:07:23 2012 +0100
     fixed POTFILES.in for MATE
 
  po/POTFILES.in |    4 +---
- 1 files changed, 1 insertions(+), 3 deletions(-)
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
 commit 2208fdb23d8766b344ff5e756028d3c241daa93a
 Author: Perberos <perberos@gmail.com>
@@ -220,7 +434,7 @@ Date:   Thu Jan 26 11:00:39 2012 -0300
     changing pkgbuild source method
 
  distro/archlinux/PKGBUILD |   10 +++++-----
- 1 files changed, 5 insertions(+), 5 deletions(-)
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 commit 505b2b7ad119acaaa7435db7b3d552e613cdd834
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -229,7 +443,7 @@ Date:   Thu Jan 26 00:24:08 2012 +0100
     fix gettext package name
 
  configure.in |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit fc0bf53ecb1c7bf20bc4deca1e1e140865633de7
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -251,7 +465,7 @@ Date:   Mon Jan 23 11:45:30 2012 -0300
  battstat/Makefile.am             |    6 +-
  battstat/acpi-linux.c            |  206 ++++++++++++++++++++------------------
  geyes/Makefile.am                |    2 +-
- geyes/themes.c                   |  102 ++++++++++----------
+ geyes/themes.c                   |  102 +++++++++----------
  mixer/Makefile.am                |    6 +-
  multiload/Makefile.am            |    4 +-
  stickynotes/stickynotes.c        |    6 +-
@@ -265,7 +479,7 @@ Date:   Mon Jan 9 21:38:32 2012 -0500
     Changed mate.gr.jp to gnome.gr.jp as requested in Issue 86
 
  po/ja.po |   20 ++++++++++----------
- 1 files changed, 10 insertions(+), 10 deletions(-)
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
 commit 9a72f8098ee1969a46047fc6648999a35eac8395
 Author: Perberos <perberos@gmail.com>
@@ -274,7 +488,7 @@ Date:   Wed Dec 21 00:38:43 2011 -0200
     adding missing libX11 on ld flag
 
  trashapplet/src/Makefile.am |    3 ++-
- 1 files changed, 2 insertions(+), 1 deletions(-)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 commit 17cff1fcdb4712dae55a3e646eab4f44e0a50bd7
 Author: Perberos <perberos@gmail.com>
@@ -283,7 +497,7 @@ Date:   Wed Dec 21 00:23:56 2011 -0200
     removing unused constant XML_PATH
 
  stickynotes/stickynotes_applet.h |    1 -
- 1 files changed, 0 insertions(+), 1 deletions(-)
+ 1 file changed, 1 deletion(-)
 
 commit 932f6f535f3cf5f799ff71c70033ac4d83188d5e
 Author: Perberos <perberos@gmail.com>
@@ -292,7 +506,7 @@ Date:   Wed Dec 21 00:22:32 2011 -0200
     using ~/.config/mate/ instead of ~/.mate2/
 
  stickynotes/stickynotes.c |   36 ++++++++++++++++++++++++++++--------
- 1 files changed, 28 insertions(+), 8 deletions(-)
+ 1 file changed, 28 insertions(+), 8 deletions(-)
 
 commit 0a5d00fa15e087784d4a3498a7de7e110a64c00f
 Author: Perberos <perberos@gmail.com>
@@ -301,7 +515,7 @@ Date:   Wed Dec 21 00:21:16 2011 -0200
     adding missing libX11 on ld flags
 
  stickynotes/Makefile.am |    3 ++-
- 1 files changed, 2 insertions(+), 1 deletions(-)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 commit 85396111c2afcd721852a4342626d75f523f8f83
 Author: Perberos <perberos@gmail.com>
@@ -310,7 +524,7 @@ Date:   Wed Dec 21 00:20:13 2011 -0200
     adding missing libm to ld flags
 
  multiload/Makefile.am |    7 ++++---
- 1 files changed, 4 insertions(+), 3 deletions(-)
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 commit 1a89a5d9d024bffb6dd8a5ad8f0fb723cd33d004
 Author: Perberos <perberos@gmail.com>
@@ -319,7 +533,7 @@ Date:   Wed Dec 21 00:19:43 2011 -0200
     adding missing libm to ld flags
 
  mixer/Makefile.am |    9 +++++----
- 1 files changed, 5 insertions(+), 4 deletions(-)
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 commit e588f354333f68c0e62c04513f31bded008f1214
 Author: Perberos <perberos@gmail.com>
@@ -328,7 +542,7 @@ Date:   Wed Dec 21 00:18:41 2011 -0200
     adding missing libm to ld flags
 
  geyes/Makefile.am |    5 +++--
- 1 files changed, 3 insertions(+), 2 deletions(-)
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 commit a4b4670bd644f7ead7500f1fcfdf104f590a25f0
 Author: Perberos <perberos@gmail.com>
@@ -337,7 +551,7 @@ Date:   Wed Dec 21 00:16:48 2011 -0200
     adding missing libm to ld flags
 
  battstat/Makefile.am |    9 +++++----
- 1 files changed, 5 insertions(+), 4 deletions(-)
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 commit b4256fb61fb3f96ea220d353ab3a6f8676514cef
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -361,7 +575,7 @@ Date:   Thu Dec 8 13:35:59 2011 -0300
  geyes/themes.c                             |  105 ++++++++++++++--------------
  invest-applet/invest/__init__.py           |    2 +-
  stickynotes/stickynotes.c                  |    4 +-
- stickynotes/stickynotes_applet.h           |   10 ++--
+ stickynotes/stickynotes_applet.h           |   10 +--
  stickynotes/stickynotes_applet_callbacks.c |    4 +-
  6 files changed, 63 insertions(+), 64 deletions(-)
 
@@ -393,7 +607,7 @@ Date:   Thu Nov 17 11:09:31 2011 -0300
     fixing omf multiload
 
  multiload/docs/Makefile.am |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 5152c19339f9fda326c1589ee9de48a50a2135ff
 Author: Perberos <perberos@gmail.com>
@@ -414,7 +628,7 @@ Date:   Thu Nov 17 11:07:49 2011 -0300
     fixing omf mini-commander
 
  mini-commander/help/Makefile.am |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit aabe51f3aae4d0dd04430f890fddf7fc90c82953
 Author: Perberos <perberos@gmail.com>
@@ -461,7 +675,7 @@ Date:   Thu Nov 17 10:52:29 2011 -0300
     fixing omf drivemount
 
  drivemount/help/mate-drivemount.omf.in |    9 +++++++++
- 1 files changed, 9 insertions(+), 0 deletions(-)
+ 1 file changed, 9 insertions(+)
 
 commit cb26b0943659cec1daf90c510a499cbb7886fa86
 Author: Perberos <perberos@gmail.com>
@@ -511,7 +725,7 @@ Date:   Thu Nov 17 08:40:44 2011 -0300
  drivemount/help/C/drivemount.xml      |  262 ---------------------------------
  drivemount/help/C/mate-drivemount.xml |  262 +++++++++++++++++++++++++++++++++
  drivemount/help/Makefile.am           |    2 +-
- drivemount/help/drivemount.omf.in     |    9 -
+ drivemount/help/drivemount.omf.in     |    9 --
  4 files changed, 263 insertions(+), 272 deletions(-)
 
 commit 05ab0d994ee32ed215798ab8799b3570db9ee8ba
@@ -527,7 +741,7 @@ Date:   Wed Nov 16 22:02:24 2011 -0300
  m4/ltversion.m4      |   23 -
  m4/lt~obsolete.m4    |   98 -
  m4/mate-doc-utils.m4 |   56 -
- 7 files changed, 0 insertions(+), 8882 deletions(-)
+ 7 files changed, 8882 deletions(-)
 
 commit a8c7682f1433e944bfc6f89c8a46a89b2a998409
 Author: Perberos <perberos@gmail.com>
@@ -536,7 +750,7 @@ Date:   Wed Nov 16 21:57:33 2011 -0300
     removing double configure flag
 
  distro/archlinux/PKGBUILD |    1 -
- 1 files changed, 0 insertions(+), 1 deletions(-)
+ 1 file changed, 1 deletion(-)
 
 commit cd07243ada482a69a238bb54851a002900b2816e
 Author: Perberos <perberos@gmail.com>
@@ -545,7 +759,7 @@ Date:   Wed Nov 16 21:57:06 2011 -0300
     removing deleted folders
 
  Makefile.am |  103 ++++++++++++++++++++++++++++++-----------------------------
- 1 files changed, 52 insertions(+), 51 deletions(-)
+ 1 file changed, 52 insertions(+), 51 deletions(-)
 
 commit 413fd17ad0764b9a76bff87f91ae355504e4e95f
 Author: Perberos <perberos@gmail.com>
@@ -554,7 +768,7 @@ Date:   Wed Nov 16 21:56:24 2011 -0300
     removing the store of x and y position
 
  mateweather/mateweather-dialog.c |   32 ++------------------------------
- 1 files changed, 2 insertions(+), 30 deletions(-)
+ 1 file changed, 2 insertions(+), 30 deletions(-)
 
 commit d6ba97471dd9e57b8793dbb17fdf96a2cd3c5b47
 Author: Perberos <perberos@gmail.com>
@@ -563,7 +777,7 @@ Date:   Wed Nov 16 21:39:02 2011 -0300
     restoring missing MATE_DOC_INIT
 
  configure.in |    5 +++++
- 1 files changed, 5 insertions(+), 0 deletions(-)
+ 1 file changed, 5 insertions(+)
 
 commit d809a5df8ef776eaf69af6f83748262fdd05d5e4
 Author: Perberos <perberos@gmail.com>
@@ -572,7 +786,7 @@ Date:   Wed Nov 16 21:36:45 2011 -0300
     removing unused GKB_SUN from configure.in
 
  configure.in |   11 -----------
- 1 files changed, 0 insertions(+), 11 deletions(-)
+ 1 file changed, 11 deletions(-)
 
 commit 2eb7f393a623a7e68102813825f68171cbf21fc5
 Author: Perberos <perberos@gmail.com>
@@ -752,7 +966,7 @@ Date:   Wed Nov 16 21:35:41 2011 -0300
  gswitchit/help/sv/sv.po              |  242 ------------
  gswitchit/help/uk/uk.po              |  488 ------------------------
  gswitchit/help/zh_CN/zh_CN.po        |  426 ---------------------
- 172 files changed, 0 insertions(+), 26650 deletions(-)
+ 172 files changed, 26650 deletions(-)
 
 commit 2cadeb84dc64ab8d33dc6cff72e510f2b6038918
 Author: Perberos <perberos@gmail.com>
@@ -760,7 +974,7 @@ Date:   Wed Nov 16 21:19:33 2011 -0300
 
     moving xmodmaps to mate/xmodmaps on instalation
 
- gkb-new/xmodmap.sun/Makefile.am |  124 +++++++++++++++++++-------------------
+ gkb-new/xmodmap.sun/Makefile.am |  124 +++++++++++++++++++--------------------
  gkb-new/xmodmap/Makefile.am     |    2 +-
  2 files changed, 63 insertions(+), 63 deletions(-)
 
@@ -781,7 +995,7 @@ Date:   Tue Nov 15 18:55:47 2011 -0300
     renaming cpufreq-selector to mate-cpufreq-selector
 
  cpufreq/src/cpufreq-selector/Makefile.am |   12 ++++++------
- 1 files changed, 6 insertions(+), 6 deletions(-)
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 commit e640782c60a07ff48ec35d7b54cb2a0279d56783
 Author: Perberos <perberos@gmail.com>
@@ -790,7 +1004,7 @@ Date:   Tue Nov 15 18:55:07 2011 -0300
     fixing file conflicts con accessx-status applet
 
  battstat/sounds/Makefile.am |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 237f016f4f8441212f85f268f0806c33fed7591b
 Author: Perberos <perberos@gmail.com>
@@ -830,7 +1044,7 @@ Date:   Tue Nov 15 17:58:52 2011 -0300
     fixing file conflicts con accessx-status applet
 
  accessx-status/pixmaps/Makefile.am |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 9025ac21fe2c765393fd46a42e437bc8618449f9
 Author: Perberos <perberos@gmail.com>
@@ -839,7 +1053,7 @@ Date:   Tue Nov 15 17:58:13 2011 -0300
     fixing file conflicts con accessx-status applet
 
  accessx-status/Makefile.am |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit c5a66e075b5ebc66c75b6a2df0033148176d2110
 Author: Perberos <perberos@gmail.com>
@@ -848,7 +1062,7 @@ Date:   Mon Nov 14 19:04:02 2011 -0300
     updating README
 
  README |    9 ++++++---
- 1 files changed, 6 insertions(+), 3 deletions(-)
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
 commit 312ba610a1e98fc656fb58178227d7d45a64494e
 Author: Perberos <perberos@gmail.com>
@@ -2183,4 +2397,4 @@ Date:   Mon Nov 14 18:24:48 2011 -0300
  trashapplet/src/xstuff.h                           |   35 +
  trashapplet/trashapplet-empty-progress.ui          |  124 +
  trashapplet/trashapplet-menu.xml                   |    6 +
- 1327 files changed, 695639 insertions(+), 0 deletions(-)
+ 1327 files changed, 695639 insertions(+)
