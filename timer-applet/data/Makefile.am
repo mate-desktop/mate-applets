@@ -3,7 +3,7 @@ server_in_files = TimerApplet.server.in
 server_DATA = $(server_in_files:.server.in=.server)
 
 $(server_in_files): $(server_in_files:.server.in=.server.in.in) Makefile
-	sed -e "s|\@LIBEXECDIR\@|$(pkglibdir)|" $< > $@
+	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
 schemasdir = $(MATECONF_SCHEMA_FILE_DIR)
 schemas_in_files = timer-applet.schemas.in
