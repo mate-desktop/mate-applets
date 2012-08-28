@@ -4,7 +4,7 @@ pkgrel=1
 pkgdesc="Applets for MATE panel"
 arch=(i686 x86_64)
 license=('GPL')
-depends=('gstreamer0.10-base-plugins' 'mate-panel' 'libgtop' 'libmatenotify' 'cpufrequtils')
+depends=('gstreamer0.10-base-plugins' 'mate-panel' 'libgtop' 'libmatenotify')
 makedepends=('mate-doc-utils' 'pkgconfig' 'mate-settings-daemon' 'intltool' 'mate-icon-theme' 'networkmanager' 'mate-character-map') # 'mate-python-desktop'
 groups=('mate-extras')
 options=(!emptydirs)
@@ -22,6 +22,7 @@ build() {
         --sysconfdir=/etc \
         --localstatedir=/var \
         --libexecdir=/usr/lib/mate-applets \
+        --disable-cpufreq \
         --disable-static \
         --disable-scrollkeeper \
         --enable-polkit \
