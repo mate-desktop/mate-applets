@@ -45,7 +45,7 @@ about_cb (GtkAction       *action,
     const gchar * const documenters[] =
     {
 		"Chee Bin HOH <cbhoh@gnome.org>",
-		"Sun MATE Documentation Team <gdocteam@sun.com>",
+		"Sun GNOME Documentation Team <gdocteam@sun.com>",
 		NULL
     };
 
