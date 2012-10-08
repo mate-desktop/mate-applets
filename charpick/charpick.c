@@ -594,13 +594,13 @@ about (GtkAction     *action,
 
   static const gchar * const documenters[] = {
           "Dan Mueth <d-mueth@uchicago.edu>",
-          "Sun MATE Documentation Team <gdocteam@sun.com>",
+          "Sun GNOME Documentation Team <gdocteam@sun.com>",
 	  NULL
   };
 
   gtk_show_about_dialog (NULL,
 	"version",	VERSION,
-	"copyright",	"\xC2\xA9 1998, 2004-2005 MATE Applets Maintainers "
+	"copyright",	"\xC2\xA9 1998, 2004-2005 GNOME Applets Maintainers "
 			"and others",
 	"comments",	_("Mate Panel applet for selecting strange "
 			  "characters that are not on my keyboard. "
