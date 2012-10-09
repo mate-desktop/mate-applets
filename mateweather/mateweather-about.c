@@ -38,7 +38,7 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 	const gchar* documenters[] = {
 		"Dan Mueth <d-mueth@uchicago.edu>",
 		"Spiros Papadimitriou <spapadim+@cs.cmu.edu>",
-		"Sun MATE Documentation Team <gdocteam@sun.com>",
+		"Sun GNOME Documentation Team <gdocteam@sun.com>",
 		"Davyd Madeley <davyd@madeley.id.au>",
 		NULL
 	};
