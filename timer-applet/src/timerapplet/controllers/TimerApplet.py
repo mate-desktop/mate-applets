@@ -128,7 +128,9 @@ class TimerApplet(object):
         
         self._status_button.set_relief(gtk.RELIEF_NONE)
         self._status_button.set_icon(config.ICON_PATH);
-        
+       
+        self._applet.set_tooltip_text("Timer Applet")
+
         self._connect_signals()
         self._update_status_button()
         self._update_popup_menu()
