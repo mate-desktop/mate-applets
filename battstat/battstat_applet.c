@@ -38,7 +38,7 @@
 #include <gtk/gtk.h>
 
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #ifdef HAVE_LIBMATENOTIFY
 #include <libmatenotify/notify.h>
@@ -51,7 +51,7 @@
 #define gettext_noop(String) (String)
 #endif
 
-#define MATECONF_PATH ""
+#define BATTSTAT_SCHEMA "org.mate.panel.applet.battstat"
 
 static gboolean check_for_updates (gpointer data);
 static void about_cb( GtkAction *, ProgressData * );
@@ -1329,20 +1329,19 @@ size_allocate( MatePanelApplet *applet, GtkAllocation *allocation,
   reconfigure_layout( battstat );
 }
 
-/* Get our settings out of mateconf.
+/* Get our settings out of gsettings.
  */
 static void
 load_preferences(ProgressData *battstat)
 {
   MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
+  GSettings *settings = battstat->settings;
 
   if (DEBUG) g_print("load_preferences()\n");
 
-  battstat->red_val = mate_panel_applet_mateconf_get_int (applet, MATECONF_PATH "red_value", NULL);
+  battstat->red_val = g_settings_get_int (settings, "red-value");
   battstat->red_val = CLAMP (battstat->red_val, 0, 100);
-  battstat->red_value_is_time = mate_panel_applet_mateconf_get_bool (applet,
-		  MATECONF_PATH "red_value_is_time",
-		  NULL);
+  battstat->red_value_is_time = g_settings_get_boolean (settings, "red-value-is-time");
 
   /* automatically calculate orangle and yellow values from the red value */
   battstat->orange_val = battstat->red_val * ORANGE_MULTIPLIER;
@@ -1351,19 +1350,19 @@ load_preferences(ProgressData *battstat)
   battstat->yellow_val = battstat->red_val * YELLOW_MULTIPLIER;
   battstat->yellow_val = CLAMP (battstat->yellow_val, 0, 100);
 
-  battstat->lowbattnotification = mate_panel_applet_mateconf_get_bool (applet, MATECONF_PATH "low_battery_notification", NULL);
-  battstat->fullbattnot = mate_panel_applet_mateconf_get_bool (applet, MATECONF_PATH "full_battery_notification", NULL);
-  battstat->beep = mate_panel_applet_mateconf_get_bool (applet, MATECONF_PATH "beep", NULL);
-  battstat->draintop = mate_panel_applet_mateconf_get_bool (applet, MATECONF_PATH "drain_from_top", NULL);
+  battstat->lowbattnotification = g_settings_get_boolean (settings, "low-battery-notification");
+  battstat->fullbattnot = g_settings_get_boolean (settings, "full-battery-notification");
+  battstat->beep = g_settings_get_boolean (settings, "beep");
+  battstat->draintop = g_settings_get_boolean (settings, "drain-from-top");
 
-  battstat->showstatus = mate_panel_applet_mateconf_get_bool (applet, MATECONF_PATH "show_status", NULL);
-  battstat->showbattery = mate_panel_applet_mateconf_get_bool (applet, MATECONF_PATH "show_battery", NULL);
+  battstat->showstatus = g_settings_get_boolean (settings, "show-status");
+  battstat->showbattery = g_settings_get_boolean (settings, "show-battery");
 
   /* for miagration from older versions */
   if (battstat->showstatus && battstat->showbattery)
 	  battstat->showbattery = FALSE;
 
-  battstat->showtext = mate_panel_applet_mateconf_get_int (applet, MATECONF_PATH "show_text", NULL);
+  battstat->showtext = g_settings_get_int (settings, "show-text");
 }
 
 /* Convenience function to attach a child widget to a GtkTable in the
@@ -1630,11 +1629,10 @@ battstat_applet_fill (MatePanelApplet *applet)
 
   gtk_window_set_default_icon_name ("battery");
 
-  mate_panel_applet_add_preferences (applet, "/schemas/apps/battstat-applet/prefs",
-                                NULL);
   mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
   battstat = g_new0 (ProgressData, 1);
+  battstat->settings = mate_panel_applet_settings_new (applet, BATTSTAT_SCHEMA);
 
   /* Some starting values... */
   battstat->applet = GTK_WIDGET (applet);
@@ -1684,7 +1682,7 @@ battstat_applet_fill (MatePanelApplet *applet)
 	  atk_object_set_description(atk_widget, _("Monitor a laptop's remaining power"));
   }
 
-  no_hal = mate_panel_applet_mateconf_get_bool( applet, "no_hal", NULL );
+  no_hal = g_settings_get_boolean (battstat->settings, "no-hal");
 
   if ((err = static_global_initialisation (no_hal, battstat)))
     battstat_error_dialog (GTK_WIDGET (applet), err);

@@ -24,7 +24,7 @@ SUBDIRS = docs sounds $(APMDIR)
 DIST_SUBDIRS = docs sounds apmlib
 
 INCLUDES =					\
-	$(MATE_APPLETS3_CFLAGS)		\
+	$(MATE_APPLETS4_CFLAGS)		\
 	$(LIBMATENOTIFY_CFLAGS)			\
 	$(HAL_CFLAGS)				\
 	$(UPOWER_CFLAGS)	\
@@ -54,23 +54,19 @@ battstat_applet_2_SOURCES = \
 
 
 battstat_applet_2_LDADD = \
-		     $(MATE_APPLETS3_LIBS) \
+		     $(MATE_APPLETS4_LIBS) \
 		     $(LIBMATENOTIFY_LIBS) \
 		     $(HAL_LIBS) \
 			 $(APMLIB) \
 			 $(UPOWER_LIBS) \
 			 -lm
 
-schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = battstat.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.battstat.gschema.xml
+@GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(schemas_DATA) ;
-endif
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.BattstatApplet.mate-panel-applet.in
@@ -93,7 +89,7 @@ org.mate.panel.applet.BattstatAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
 
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = battstat-applet-menu.xml
@@ -103,7 +99,7 @@ EXTRA_DIST = 							\
 	$(ui_DATA)						\
 	org.mate.applets.BattstatApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
-	$(schemas_in_files)
+	$(gsettings_SCHEMAS_in_in)
 
 
 -include $(top_srcdir)/git.mk

@@ -24,9 +24,10 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #define DEBUG 0
 
@@ -96,7 +97,8 @@ typedef struct _ProgressData {
   GtkWidget *full_toggle;
   GtkWidget *hbox_ptr;
 
-  /* flags set from mateconf or the properties dialog */
+  /* flags set from gsettings or the properties dialog */
+  GSettings *settings;
   guint red_val;
   guint orange_val;
   guint yellow_val;

@@ -42,10 +42,10 @@
 
 #include <gtk/gtk.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #include "battstat.h"
 
@@ -87,10 +87,9 @@ combo_ptr_cb (GtkWidget *combo_ptr, gpointer data)
 	else
 		battstat->red_value_is_time = FALSE;
 	
-	mate_panel_applet_mateconf_set_bool (MATE_PANEL_APPLET (battstat->applet),
-			"red_value_is_time",
-			battstat->red_value_is_time,
-			NULL);
+	g_settings_set_boolean (battstat->settings,
+			"red-value-is-time",
+			battstat->red_value_is_time);
 }
 
 static void
@@ -109,28 +108,9 @@ spin_ptr_cb (GtkWidget *spin_ptr, gpointer data)
 	battstat->yellow_val = battstat->red_val * YELLOW_MULTIPLIER;
 	battstat->yellow_val = CLAMP (battstat->yellow_val, 0, 100);
 	
-	mate_panel_applet_mateconf_set_int (MATE_PANEL_APPLET (battstat->applet),
-			"red_value",
-			battstat->red_val,
-			NULL);
-}
-
-static gboolean
-key_writable (MatePanelApplet *applet, const char *key)
-{
-	gboolean writable;
-	char *fullkey;
-	static MateConfClient *client = NULL;
-	if (client == NULL)
-		client = mateconf_client_get_default ();
-
-	fullkey = mate_panel_applet_mateconf_get_full_key (applet, key);
-
-	writable = mateconf_client_key_is_writable (client, fullkey, NULL);
-
-	g_free (fullkey);
-
-	return writable;
+	g_settings_set_int (battstat->settings,
+			"red-value",
+			battstat->red_val);
 }
 
 static void
@@ -150,8 +130,8 @@ radio_traditional_toggled (GtkToggleButton *button, gpointer data)
   battstat->showbattery = toggled;
   reconfigure_layout( battstat );
 
-  mate_panel_applet_mateconf_set_bool   (applet, "show_battery", 
-  				 battstat->showbattery, NULL);
+  g_settings_set_boolean (battstat->settings, "show-battery", 
+  				 battstat->showbattery);
   				 
 }
 
@@ -172,8 +152,8 @@ radio_ubuntu_toggled (GtkToggleButton *button, gpointer data)
   battstat->showstatus = toggled;
   reconfigure_layout( battstat );
   
-  mate_panel_applet_mateconf_set_bool   (applet, "show_status", 
-  				 battstat->showstatus, NULL);
+  g_settings_set_boolean (battstat->settings, "show-status", 
+  				 battstat->showstatus);
   				 
 }
 
@@ -203,8 +183,7 @@ show_text_toggled (GtkToggleButton *button, gpointer data)
   gtk_widget_set_sensitive (GTK_WIDGET (battstat->radio_text_2),
 		  battstat->showtext);
 	
-  mate_panel_applet_mateconf_set_int   (applet, "show_text", 
-  				 battstat->showtext, NULL);
+  g_settings_set_int (battstat->settings, "show-text", battstat->showtext);
 }
 
 static void
@@ -214,8 +193,8 @@ lowbatt_toggled (GtkToggleButton *button, gpointer data)
   MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
   
   battstat->lowbattnotification = gtk_toggle_button_get_active (button);
-  mate_panel_applet_mateconf_set_bool   (applet,"low_battery_notification", 
-  				 battstat->lowbattnotification, NULL);  
+  g_settings_set_boolean   (battstat->settings, "low-battery-notification", 
+  				 battstat->lowbattnotification);  
 
   hard_set_sensitive (battstat->hbox_ptr, battstat->lowbattnotification);
 }
@@ -227,8 +206,8 @@ full_toggled (GtkToggleButton *button, gpointer data)
   MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
   
   battstat->fullbattnot = gtk_toggle_button_get_active (button);
-  mate_panel_applet_mateconf_set_bool   (applet,"full_battery_notification", 
-  				 battstat->fullbattnot, NULL);  
+  g_settings_set_boolean   (battstat->settings, "full-battery-notification", 
+  				 battstat->fullbattnot);  
 }
 
 static void
@@ -248,15 +227,9 @@ prop_cb (GtkAction    *action,
 {
   GtkBuilder *builder;
   GtkWidget *combo_ptr, *spin_ptr;
-  MateConfClient *client;
   GtkListStore *liststore;
   GtkCellRenderer *renderer;
   GtkTreeIter iter;
-  /* Shouldn't this be used for something later on? */
-  gboolean   inhibit_command_line;
-
-  client = mateconf_client_get_default ();
-  inhibit_command_line = mateconf_client_get_bool (client, "/desktop/mate/lockdown/inhibit_command_line", NULL);
 
   if (DEBUG) g_print("prop_cb()\n");
 
@@ -282,8 +255,8 @@ prop_cb (GtkAction    *action,
   g_signal_connect (G_OBJECT (battstat->lowbatt_toggle), "toggled",
   		    G_CALLBACK (lowbatt_toggled), battstat);
 
-  if (!key_writable (MATE_PANEL_APPLET (battstat->applet),
-			  "low_battery_notification"))
+  if (!g_settings_is_writable (battstat->settings,
+			  "low-battery-notification"))
   {
 	  hard_set_sensitive (battstat->lowbatt_toggle, FALSE);
   }
@@ -334,8 +307,8 @@ prop_cb (GtkAction    *action,
   g_signal_connect (G_OBJECT (battstat->full_toggle), "toggled",
   		    G_CALLBACK (full_toggled), battstat);
 
-  if (!key_writable (MATE_PANEL_APPLET (battstat->applet),
-			  "full_battery_notification"))
+  if (!g_settings_is_writable (battstat->settings,
+			  "full-battery-notification"))
   {
 	  hard_set_sensitive (battstat->full_toggle, FALSE);
   }
@@ -355,7 +328,7 @@ prop_cb (GtkAction    *action,
   g_signal_connect (G_OBJECT (battstat->radio_traditional_battery), "toggled",
   		    G_CALLBACK (radio_traditional_toggled), battstat);
 
-  if (!key_writable (MATE_PANEL_APPLET (battstat->applet), "show_battery"))
+  if (!g_settings_is_writable (battstat->settings, "show-battery"))
 	  hard_set_sensitive (battstat->radio_traditional_battery, FALSE);
   
   if (battstat->showbattery)
@@ -370,7 +343,7 @@ prop_cb (GtkAction    *action,
   g_signal_connect (G_OBJECT (battstat->radio_ubuntu_battery), "toggled",
   		    G_CALLBACK (radio_ubuntu_toggled), battstat);
 
-  if (!key_writable (MATE_PANEL_APPLET (battstat->applet), "show_status"))
+  if (!g_settings_is_writable (battstat->settings, "show-status"))
 	  hard_set_sensitive (battstat->radio_ubuntu_battery, FALSE);
 	
   if (battstat->showstatus)
@@ -394,7 +367,7 @@ prop_cb (GtkAction    *action,
   g_signal_connect (G_OBJECT (battstat->check_text), "toggled",
 		  G_CALLBACK (show_text_toggled), battstat);
   
-  if (!key_writable (MATE_PANEL_APPLET (battstat->applet), "show_text"))
+  if (!g_settings_is_writable (battstat->settings, "show-text"))
   {
 	  hard_set_sensitive (battstat->check_text, FALSE);
 	  hard_set_sensitive (battstat->radio_text_1, FALSE);
