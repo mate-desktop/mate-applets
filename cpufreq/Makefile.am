@@ -1,10 +1,11 @@
 SUBDIRS = help pixmaps src
 
-schemasdir       = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = cpufreq-applet.schemas.in
-schemas_DATA     = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.cpufreq.gschema.xml
+@GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.CPUFreqApplet.mate-panel-applet.in
@@ -32,23 +33,20 @@ builder_DATA = cpufreq-preferences.ui
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = cpufreq-applet-menu.xml
 
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	-MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(top_builddir)/cpufreq/$(schemas_DATA) ;
-endif
-
 CLEANFILES = \
              $(applet_DATA)			\
              $(applet_DATA).in			\
              $(service_DATA)			\
-	     cpufreq-applet.schemas             \
+	     $(gsettings_SCHEMAS_in)            \
+	     $(gsettings_SCHEMAS)               \
+	     *.gschema.valid                    \
 	     *.bak                              \
 	     *.gladep
 
 EXTRA_DIST = \
              org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in	\
              $(service_in_files)				\
-	     $(schemas_in_files)             			\
+	     $(gsettings_SCHEMAS_in_in)				\
 	     $(builder_DATA)                 			\
 	     $(ui_DATA)
 	     

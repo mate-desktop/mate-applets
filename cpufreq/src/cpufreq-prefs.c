@@ -25,22 +25,21 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "cpufreq-prefs.h"
 #include "cpufreq-utils.h"
 
 enum {
 	PROP_0,
-	PROP_MATECONF_KEY,
+	PROP_GSETTINGS,
 	PROP_CPU,
 	PROP_SHOW_MODE,
 	PROP_SHOW_TEXT_MODE,
 };
 
 struct _CPUFreqPrefsPrivate {
-	MateConfClient        *mateconf_client;
-	gchar              *mateconf_key;
+	GSettings          *settings;
 	
 	guint               cpu;
 	CPUFreqShowMode     show_mode;
@@ -82,8 +81,7 @@ cpufreq_prefs_init (CPUFreqPrefs *prefs)
 {
 	prefs->priv = CPUFREQ_PREFS_GET_PRIVATE (prefs);
 
-	prefs->priv->mateconf_client = mateconf_client_get_default ();
-	prefs->priv->mateconf_key = NULL;
+	prefs->priv->settings = NULL;
 
 	prefs->priv->cpu = 0;
 }
@@ -100,10 +98,10 @@ cpufreq_prefs_class_init (CPUFreqPrefsClass *klass)
 
 	/* Properties */
 	g_object_class_install_property (g_object_class,
-					 PROP_MATECONF_KEY,
-					 g_param_spec_string ("mateconf-key",
-							      "MateConfKey",
-							      "The applet mateconf key",
+					 PROP_GSETTINGS,
+					 g_param_spec_string ("gsettings",
+							      "GSettings",
+							      "The applet gsettings object",
 							      NULL,
 							      G_PARAM_WRITABLE |
 							      G_PARAM_CONSTRUCT_ONLY));
@@ -141,14 +139,9 @@ cpufreq_prefs_finalize (GObject *object)
 {
 	CPUFreqPrefs *prefs = CPUFREQ_PREFS (object);
 
-	if (prefs->priv->mateconf_client) {
-		g_object_unref (prefs->priv->mateconf_client);
-		prefs->priv->mateconf_client = NULL;
-	}
-
-	if (prefs->priv->mateconf_key) {
-		g_free (prefs->priv->mateconf_key);
-		prefs->priv->mateconf_key = NULL;
+	if (prefs->priv->settings) {
+		g_object_unref (prefs->priv->settings);
+		prefs->priv->settings = NULL;
 	}
 
 	if (prefs->priv->dialog) {
@@ -169,25 +162,17 @@ cpufreq_prefs_set_property (GObject      *object,
 	gboolean      update_sensitivity = FALSE;
 
 	switch (prop_id) {
-	case PROP_MATECONF_KEY:
-		prefs->priv->mateconf_key = g_value_dup_string (value);
+	case PROP_GSETTINGS:
+		prefs->priv->settings = g_value_get_object (value);
 		break;
 	case PROP_CPU: {
 		guint cpu;
 
 		cpu = g_value_get_uint (value);
 		if (prefs->priv->cpu != cpu) {
-			gchar *key;
-			
 			prefs->priv->cpu = cpu;
-			key = g_strjoin ("/",
-					 prefs->priv->mateconf_key,
-					 "cpu",
-					 NULL);
-			mateconf_client_set_int (prefs->priv->mateconf_client,
-					      key, prefs->priv->cpu,
-					      NULL);
-			g_free (key);
+			g_settings_set_int (prefs->priv->settings,
+					      "cpu", prefs->priv->cpu);
 		}
 	}
 		break;
@@ -196,18 +181,10 @@ cpufreq_prefs_set_property (GObject      *object,
 
 		mode = g_value_get_enum (value);
 		if (prefs->priv->show_mode != mode) {
-			gchar *key;
-
 			update_sensitivity = TRUE;
 			prefs->priv->show_mode = mode;
-			key = g_strjoin ("/",
-					 prefs->priv->mateconf_key,
-					 "show_mode",
-					 NULL);
-			mateconf_client_set_int (prefs->priv->mateconf_client,
-					      key, prefs->priv->show_mode,
-					      NULL);
-			g_free (key);
+			g_settings_set_int (prefs->priv->settings,
+					      "show-mode", prefs->priv->show_mode);
 		}
 	}
 		break;
@@ -216,18 +193,10 @@ cpufreq_prefs_set_property (GObject      *object,
 
 		mode = g_value_get_enum (value);
 		if (prefs->priv->show_text_mode != mode) {
-			gchar *key;
-
 			update_sensitivity = TRUE;
 			prefs->priv->show_text_mode = mode;
-			key = g_strjoin ("/",
-					 prefs->priv->mateconf_key,
-					 "show_text_mode",
-					 NULL);
-			mateconf_client_set_int (prefs->priv->mateconf_client,
-					      key, prefs->priv->show_text_mode,
-					      NULL);
-			g_free (key);
+			g_settings_set_int (prefs->priv->settings,
+					      "show-text-mode", prefs->priv->show_text_mode);
 		}
 	}
 		break;
@@ -248,7 +217,7 @@ cpufreq_prefs_get_property (GObject    *object,
 	CPUFreqPrefs *prefs = CPUFREQ_PREFS (object);
 
 	switch (prop_id) {
-	case PROP_MATECONF_KEY:
+	case PROP_GSETTINGS:
 		/* Is not readable */
 		break;
 	case PROP_CPU:
@@ -268,72 +237,23 @@ cpufreq_prefs_get_property (GObject    *object,
 static void
 cpufreq_prefs_setup (CPUFreqPrefs *prefs)
 {
-	guint                cpu;
-	CPUFreqShowMode      show_mode;
-	CPUFreqShowTextMode  show_text_mode;
-	gchar               *key;
-	GError              *error = NULL;
+	g_assert (G_IS_SETTINGS (prefs->priv->settings));
+	g_assert (prefs->priv->settings != NULL);
 
-	g_assert (MATECONF_IS_CLIENT (prefs->priv->mateconf_client));
-	g_assert (prefs->priv->mateconf_key != NULL);
-
-	key = g_strjoin ("/", prefs->priv->mateconf_key, "cpu", NULL);
-	cpu = mateconf_client_get_int (prefs->priv->mateconf_client,
-				    key, &error);
-	g_free (key);
-	/* In case anything went wrong with mateconf, get back to the default */
-	if (error) {
-		g_warning ("%s", error->message);
-		cpu = 0;
-		g_error_free (error);
-		error = NULL;
-	}
-	prefs->priv->cpu = cpu;
-
-	key = g_strjoin ("/", prefs->priv->mateconf_key, "show_mode", NULL);
-	show_mode = mateconf_client_get_int (prefs->priv->mateconf_client,
-					  key, &error);
-	g_free (key);
-	/* In case anything went wrong with mateconf, get back to the default */
-	if (error ||
-	    show_mode < CPUFREQ_MODE_GRAPHIC ||
-	    show_mode > CPUFREQ_MODE_BOTH) {
-		show_mode = CPUFREQ_MODE_BOTH;
-		if (error) {
-			g_warning ("%s", error->message);
-			g_error_free (error);
-			error = NULL;
-		}
-	}
-	prefs->priv->show_mode = show_mode;
-
-	key = g_strjoin ("/", prefs->priv->mateconf_key, "show_text_mode", NULL);
-	show_text_mode = mateconf_client_get_int (prefs->priv->mateconf_client,
-					       key, &error);
-	g_free (key);
-	/* In case anything went wrong with mateconf, get back to the default */
-	if (error ||
-	    show_text_mode < CPUFREQ_MODE_TEXT_FREQUENCY ||
-	    show_text_mode > CPUFREQ_MODE_TEXT_PERCENTAGE) {
-		show_text_mode = CPUFREQ_MODE_TEXT_FREQUENCY_UNIT;
-		if (error) {
-			g_warning ("%s", error->message);
-			g_error_free (error);
-			error = NULL;
-		}
-	}
-	prefs->priv->show_text_mode = show_text_mode;
+	prefs->priv->cpu = g_settings_get_int (prefs->priv->settings, "cpu");
+	prefs->priv->show_mode = g_settings_get_int (prefs->priv->settings, "show-mode");
+	prefs->priv->show_text_mode = g_settings_get_int (prefs->priv->settings, "show-text-mode");
 }
 
 CPUFreqPrefs *
-cpufreq_prefs_new (const gchar *mateconf_key)
+cpufreq_prefs_new (GSettings *settings)
 {
 	CPUFreqPrefs *prefs;
 
-	g_return_val_if_fail (mateconf_key != NULL, NULL);
+	g_return_val_if_fail (settings != NULL, NULL);
 
 	prefs = CPUFREQ_PREFS (g_object_new (CPUFREQ_TYPE_PREFS,
-					     "mateconf-key", mateconf_key,
+					     "gsettings", settings,
 					     NULL));
 	
 	cpufreq_prefs_setup (prefs);
@@ -373,14 +293,10 @@ static gboolean
 cpufreq_prefs_key_is_writable (CPUFreqPrefs *prefs, const gchar *key)
 {
         gboolean  writable;
-        gchar    *fullkey;
 
-	g_assert (prefs->priv->mateconf_client != NULL);
+	g_assert (prefs->priv->settings != NULL);
 
-	fullkey = g_strjoin ("/", prefs->priv->mateconf_key, key, NULL);
-        writable = mateconf_client_key_is_writable (prefs->priv->mateconf_client,
-						 fullkey, NULL);
-        g_free (fullkey);
+        writable = g_settings_is_writable (prefs->priv->settings, key);
 
         return writable;
 }
@@ -498,12 +414,12 @@ static void
 cpufreq_prefs_dialog_update_sensitivity (CPUFreqPrefs *prefs)
 {
 	gtk_widget_set_sensitive (prefs->priv->show_mode_combo,
-				  cpufreq_prefs_key_is_writable (prefs, "show_mode"));
+				  cpufreq_prefs_key_is_writable (prefs, "show-mode"));
 	
 	if (prefs->priv->show_mode != CPUFREQ_MODE_GRAPHIC) {
 		gboolean key_writable;
 		
-		key_writable = cpufreq_prefs_key_is_writable (prefs, "show_text_mode");
+		key_writable = cpufreq_prefs_key_is_writable (prefs, "show-text-mode");
 		
 		gtk_widget_set_sensitive (prefs->priv->show_freq,
 					  (TRUE && key_writable));

@@ -24,6 +24,7 @@
 
 #include <gdk/gdk.h>
 #include <glib-object.h>
+#include <gio/gio.h>
 #include "cpufreq-applet.h"
 
 G_BEGIN_DECLS
@@ -51,7 +52,7 @@ struct _CPUFreqPrefsClass {
 
 GType               cpufreq_prefs_get_type           (void) G_GNUC_CONST;
 
-CPUFreqPrefs       *cpufreq_prefs_new                (const gchar  *mateconf_key);
+CPUFreqPrefs       *cpufreq_prefs_new                (GSettings *settings);
 
 guint               cpufreq_prefs_get_cpu            (CPUFreqPrefs *prefs);
 CPUFreqShowMode     cpufreq_prefs_get_show_mode      (CPUFreqPrefs *prefs);

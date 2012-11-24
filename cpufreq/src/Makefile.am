@@ -6,7 +6,7 @@ SUBDIRS = $(selector_SUBDIR)
 
 INCLUDES = \
 	-DCPUFREQ_MENU_UI_DIR=\""$(datadir)/mate-2.0/ui"\" 	\
-	$(MATE_APPLETS3_CFLAGS) 				\
+	$(MATE_APPLETS4_CFLAGS) 				\
 	$(LIBGLADE_CFLAGS)					\
 	$(DBUS_CFLAGS)
 
@@ -30,7 +30,7 @@ cpufreq_applet_SOURCES =  \
 	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
 
 cpufreq_applet_LDADD =  \
-	$(MATE_APPLETS3_LIBS)   	\
+	$(MATE_APPLETS4_LIBS)   	\
 	$(LIBGLADE_LIBS)		\
 	$(LIBCPUFREQ_LIBS)		\
 	$(DBUS_LIBS)

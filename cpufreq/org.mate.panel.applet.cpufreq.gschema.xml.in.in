@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.cpufreq">
+    <key name="cpu" type="i">
+      <default>0</default>
+      <summary>CPU to Monitor</summary>
+      <description>Set the CPU to monitor. In a single processor system you don't have to change it.</description>
+    </key>
+    <key name="show-mode" type="i">
+      <default>2</default>
+      <summary>Mode to show cpu usage</summary>
+      <description>A 0 value means to show the applet in graphic mode (pixmap only), 1 to show the applet in text mode (not to show the pixmap) and 2 to show the applet in graphic and text mode.</description>
+    </key>
+    <key name="show-text-mode" type="i">
+      <default>1</default>
+      <summary>The type of text to display (if the text is enabled).</summary>
+      <description>A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 to show percentage instead of frequency.</description>
+    </key>
+  </schema>
+</schemalist>

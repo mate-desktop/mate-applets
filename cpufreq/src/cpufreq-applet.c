@@ -25,8 +25,9 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 #include <glib/gi18n.h>
 #include <stdlib.h>
 #include <string.h>
@@ -942,21 +943,18 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
 	gchar          *ui_path;
         AtkObject      *atk_obj;
         gchar          *prefs_key;
+	GSettings      *settings;
 
 	g_set_application_name  (_("CPU Frequency Scaling Monitor"));
 
 	gtk_window_set_default_icon_name ("mate-cpu-frequency-applet");
 
-        mate_panel_applet_add_preferences (MATE_PANEL_APPLET (applet),
-                                      "/schemas/apps/cpufreq-applet/prefs", NULL);
-
         /* Preferences */
         if (applet->prefs)
                 g_object_unref (applet->prefs);
 
-        prefs_key = mate_panel_applet_get_preferences_key (MATE_PANEL_APPLET (applet));
-        applet->prefs = cpufreq_prefs_new (prefs_key);
-        g_free (prefs_key);
+        settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (applet), "org.mate.panel.applet.cpufreq");
+        applet->prefs = cpufreq_prefs_new (settings);
 
 	g_signal_connect (G_OBJECT (applet->prefs),
 			  "notify::cpu",
