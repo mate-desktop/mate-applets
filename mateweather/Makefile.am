@@ -6,7 +6,7 @@ INCLUDES =					\
 	-I$(srcdir)				\
 	-I$(top_srcdir)				\
 	-DMATEWEATHER_MENU_UI_DIR=\""$(uidir)"\"	\
-	$(MATE_APPLETS3_CFLAGS)		\
+	$(MATE_APPLETS4_CFLAGS)		\
 	$(LIBMATENOTIFY_CFLAGS)			\
 	$(LIBMATEWEATHER_CFLAGS)			\
 	$(NETWORKMANAGER_CFLAGS)
@@ -23,7 +23,7 @@ mateweather_applet_2_SOURCES = \
 
 mateweather_applet_2_LDADD = 	\
 	$(LIBMATENOTIFY_LIBS) 	\
-	$(MATE_APPLETS3_LIBS)	\
+	$(MATE_APPLETS4_LIBS)	\
 	$(MATE_LIBS2_LIBS)	\
 	$(LIBMATEWEATHER_LIBS) 	\
 	$(NETWORKMANAGER_LIBS)

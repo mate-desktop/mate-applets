@@ -12,9 +12,10 @@
  */
 #include <glib/gi18n.h>
 
+#include <gio/gio.h>
+
 #include <mate-panel-applet.h>
 
-#include <libmateweather/mateweather-mateconf.h>
 #include <libmateweather/mateweather-prefs.h>
 
 
@@ -27,7 +28,7 @@ typedef struct _MateWeatherApplet {
 	MatePanelApplet* applet;
 	WeatherInfo* mateweather_info;
 
-	MateWeatherMateConf* mateconf;
+	GSettings* settings;
 
 	GtkWidget* container;
 	GtkWidget* box;

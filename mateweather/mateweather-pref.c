@@ -25,7 +25,7 @@
 #include <locale.h>
 
 #include <mate-panel-applet.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #define MATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
 
@@ -92,28 +92,6 @@ static void soft_set_sensitive(GtkWidget* w, gboolean sensitivity)
 	{
 		gtk_widget_set_sensitive(w, sensitivity);
 	}
-}
-
-
-static gboolean key_writable(MateWeatherPref* pref, const char* key)
-{
-	MateWeatherApplet* applet = pref->priv->applet;
-	gboolean writable;
-	char* fullkey;
-	static MateConfClient* client = NULL;
-
-	if (client == NULL)
-	{
-		client = mateconf_client_get_default();
-	}
-
-	fullkey = mateweather_mateconf_get_full_key(applet->mateconf, key);
-
-	writable = mateconf_client_key_is_writable(client, fullkey, NULL);
-
-	g_free(fullkey);
-
-	return writable;
 }
 
 /* sets up ATK Relation between the widgets */
@@ -193,41 +171,13 @@ static gboolean update_dialog(MateWeatherPref* pref)
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_update_btn), gw_applet->mateweather_pref.update_enabled);
     soft_set_sensitive(pref->priv->basic_update_spin, gw_applet->mateweather_pref.update_enabled);
 
-    if (gw_applet->mateweather_pref.use_temperature_default)
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_temp_combo), 0);
-    }
-    else
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_temp_combo), gw_applet->mateweather_pref.temperature_unit -1);
-    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_temp_combo), gw_applet->mateweather_pref.temperature_unit -1);
 
-    if (gw_applet->mateweather_pref.use_speed_default)
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_speed_combo), 0);
-    }
-    else
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_speed_combo), gw_applet->mateweather_pref.speed_unit -1);
-    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_speed_combo), gw_applet->mateweather_pref.speed_unit -1);
 
-    if (gw_applet->mateweather_pref.use_pressure_default)
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_pres_combo), 0);
-    }
-    else
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_pres_combo), gw_applet->mateweather_pref.pressure_unit -1);
-    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_pres_combo), gw_applet->mateweather_pref.pressure_unit -1);
 
-    if (gw_applet->mateweather_pref.use_distance_default)
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), 0);
-    }
-    else
-    {
-        gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), gw_applet->mateweather_pref.distance_unit -1);
-    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), gw_applet->mateweather_pref.distance_unit -1);
 
 	#if 0
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_detailed_btn), gw_applet->mateweather_pref.detailed);
@@ -268,18 +218,20 @@ static void row_selected_cb(GtkTreeSelection* selection, MateWeatherPref* pref)
 		return;
 	}
 
-	mateweather_mateconf_set_string(gw_applet->mateconf, "location1", loc->code, NULL);
-	mateweather_mateconf_set_string(gw_applet->mateconf, "location2", loc->zone, NULL);
-	mateweather_mateconf_set_string(gw_applet->mateconf, "location3", loc->radar, NULL);
-	mateweather_mateconf_set_string(gw_applet->mateconf, "location4", loc->name, NULL);
-	mateweather_mateconf_set_string(gw_applet->mateconf, "coordinates", loc->coordinates, NULL);
+	g_settings_set_string (gw_applet->settings, "location1", loc->code);
+	g_settings_set_string (gw_applet->settings, "location2", loc->zone);
+	g_settings_set_string (gw_applet->settings, "location3", loc->radar);
+	g_settings_set_string (gw_applet->settings, "location4", loc->name);
+	g_settings_set_string (gw_applet->settings, "coordinates", loc->coordinates);
 
 	if (gw_applet->mateweather_pref.location)
 	{
 		weather_location_free(gw_applet->mateweather_pref.location);
 	}
 
-	gw_applet->mateweather_pref.location = mateweather_mateconf_get_location(gw_applet->mateconf);
+	gw_applet->mateweather_pref.location = 
+		weather_location_new (loc->name, loc->code, loc->zone, loc->radar, loc->coordinates,
+			NULL, NULL);
 
 	mateweather_update(gw_applet);
 }
@@ -352,7 +304,7 @@ static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 	toggled = gtk_toggle_button_get_active(button);
 	gw_applet->mateweather_pref.update_enabled = toggled;
 	soft_set_sensitive(pref->priv->basic_update_spin, toggled);
-	mateweather_mateconf_set_bool(gw_applet->mateconf, "auto_update", toggled, NULL);
+	g_settings_set_boolean (gw_applet->settings, "auto-update", toggled);
 
 	if (gw_applet->timeout_tag > 0)
 	{
@@ -384,7 +336,7 @@ static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 
 		toggled = gtk_toggle_button_get_active(button);
 		gw_applet->mateweather_pref.detailed = toggled;
-		mateweather_mateconf_set_bool(gw_applet->mateconf, "enable_detailed_forecast", toggled, NULL);
+		g_settings_set_boolean (gw_applet->settings, "enable-detailed-forecast", toggled);
 	}
 #endif
 
@@ -397,24 +349,16 @@ static void temp_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	new_unit = gtk_combo_box_get_active(combo) + 1;
 
-	if (gw_applet->mateweather_pref.use_temperature_default)
-	{
-		old_unit = TEMP_UNIT_DEFAULT;
-	}
-	else
-	{
-		old_unit = gw_applet->mateweather_pref.temperature_unit;
-	}
+	old_unit = gw_applet->mateweather_pref.temperature_unit;
 
 	if (new_unit == old_unit)
 	{
 		return;
 	}
 
-	gw_applet->mateweather_pref.use_temperature_default = new_unit == TEMP_UNIT_DEFAULT;
 	gw_applet->mateweather_pref.temperature_unit = new_unit;
 
-	mateweather_mateconf_set_string(gw_applet->mateconf, MATECONF_TEMP_UNIT, mateweather_prefs_temp_enum_to_string(new_unit), NULL);
+	g_settings_set_enum (gw_applet->settings, "temperature-unit", new_unit);
 
 	gtk_label_set_text(GTK_LABEL(gw_applet->label), weather_info_get_temp_summary(gw_applet->mateweather_info));
 
@@ -433,24 +377,16 @@ static void speed_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	new_unit = gtk_combo_box_get_active(combo) + 1;
 
-	if (gw_applet->mateweather_pref.use_speed_default)
-	{
-		old_unit = SPEED_UNIT_DEFAULT;
-	}
-	else
-	{
-		old_unit = gw_applet->mateweather_pref.speed_unit;
-	}
+	old_unit = gw_applet->mateweather_pref.speed_unit;
 
 	if (new_unit == old_unit)
 	{
 		return;
 	}
 
-	gw_applet->mateweather_pref.use_speed_default = new_unit == SPEED_UNIT_DEFAULT;
 	gw_applet->mateweather_pref.speed_unit = new_unit;
 
-	mateweather_mateconf_set_string(gw_applet->mateconf, MATECONF_SPEED_UNIT, mateweather_prefs_speed_enum_to_string(new_unit), NULL);
+	g_settings_set_enum (gw_applet->settings, "speed-unit", new_unit);
 
 	if (gw_applet->details_dialog)
 	{
@@ -467,24 +403,16 @@ static void pres_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	new_unit = gtk_combo_box_get_active(combo) + 1;
 
-	if (gw_applet->mateweather_pref.use_pressure_default)
-	{
-		old_unit = PRESSURE_UNIT_DEFAULT;
-	}
-	else
-	{
-		old_unit = gw_applet->mateweather_pref.pressure_unit;
-	}
+	old_unit = gw_applet->mateweather_pref.pressure_unit;
 
 	if (new_unit == old_unit)
 	{
 		return;
 	}
 
-	gw_applet->mateweather_pref.use_pressure_default = new_unit == PRESSURE_UNIT_DEFAULT;
 	gw_applet->mateweather_pref.pressure_unit = new_unit;
 
-	mateweather_mateconf_set_string(gw_applet->mateconf, MATECONF_PRESSURE_UNIT, mateweather_prefs_pressure_enum_to_string(new_unit), NULL);
+	g_settings_set_enum (gw_applet->settings, "pressure-unit", new_unit);
 
 	if (gw_applet->details_dialog)
 	{
@@ -501,24 +429,16 @@ static void dist_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	new_unit = gtk_combo_box_get_active(combo) + 1;
 
-	if (gw_applet->mateweather_pref.use_distance_default)
-	{
-		old_unit = DISTANCE_UNIT_DEFAULT;
-	}
-	else
-	{
-		old_unit = gw_applet->mateweather_pref.distance_unit;
-	}
+	old_unit = gw_applet->mateweather_pref.distance_unit;
 
 	if (new_unit == old_unit)
 	{
 		return;
 	}
 
-	gw_applet->mateweather_pref.use_distance_default = new_unit == DISTANCE_UNIT_DEFAULT;
 	gw_applet->mateweather_pref.distance_unit = new_unit;
 
-	mateweather_mateconf_set_string(gw_applet->mateconf, MATECONF_DISTANCE_UNIT, mateweather_prefs_distance_enum_to_string(new_unit), NULL);
+	g_settings_set_enum (gw_applet->settings, "distance-unit", new_unit);
 
 	if (gw_applet->details_dialog)
 	{
@@ -533,7 +453,7 @@ static void radar_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 
     toggled = gtk_toggle_button_get_active(button);
     gw_applet->mateweather_pref.radar_enabled = toggled;
-    mateweather_mateconf_set_bool(gw_applet->mateconf, "enable_radar_map", toggled, NULL);
+    g_settings_set_boolean (gw_applet->settings, "enable-radar-map", toggled);
     soft_set_sensitive(pref->priv->basic_radar_url_btn, toggled);
 
     if (toggled == FALSE || gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON (pref->priv->basic_radar_url_btn)) == TRUE)
@@ -549,7 +469,7 @@ static void use_radar_url_toggled(GtkToggleButton* button, MateWeatherPref* pref
 
     toggled = gtk_toggle_button_get_active(button);
     gw_applet->mateweather_pref.use_custom_radar_url = toggled;
-    mateweather_mateconf_set_bool(gw_applet->mateconf, "use_custom_radar_url", toggled, NULL);
+    g_settings_set_boolean (gw_applet->settings, "use-custom-radar-url", toggled);
     soft_set_sensitive(pref->priv->basic_radar_url_hbox, toggled);
 }
 
@@ -575,7 +495,7 @@ static gboolean radar_url_changed(GtkWidget* widget, GdkEventFocus* event, MateW
 		gw_applet->mateweather_pref.radar = NULL;
 	}
 
-	mateweather_mateconf_set_string(gw_applet->mateconf, "radar", gw_applet->mateweather_pref.radar, NULL);
+	g_settings_set_string (gw_applet->settings, "radar", gw_applet->mateweather_pref.radar);
 
 	return FALSE;
 }
@@ -585,7 +505,7 @@ static void update_interval_changed(GtkSpinButton* button, MateWeatherPref* pref
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 
 	gw_applet->mateweather_pref.update_interval = gtk_spin_button_get_value_as_int(button)*60;
-	mateweather_mateconf_set_int(gw_applet->mateconf, "auto_update_interval", gw_applet->mateweather_pref.update_interval, NULL);
+	g_settings_set_int (gw_applet->settings, "auto-update-interval", gw_applet->mateweather_pref.update_interval);
 
 	if (gw_applet->timeout_tag > 0)
 	{
@@ -908,7 +828,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_container_add (GTK_CONTAINER (pref_basic_update_alignment), pref->priv->basic_update_btn);
 	g_signal_connect (G_OBJECT (pref->priv->basic_update_btn), "toggled", G_CALLBACK (auto_update_toggled), pref);
 
-	if (!key_writable (pref, "auto_update"))
+	if (!g_settings_is_writable (pref->priv->applet->settings, "auto-update"))
 	{
 		hard_set_sensitive (pref->priv->basic_update_btn, FALSE);
 	}
@@ -934,7 +854,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Fahrenheit"));
 	gtk_widget_show (temp_combo);
 
-	if ( ! key_writable (pref, MATECONF_TEMP_UNIT))
+	if ( ! g_settings_is_writable (pref->priv->applet->settings, "temperature-unit"))
 	{
 		hard_set_sensitive (pref->priv->basic_temp_combo, FALSE);
 	}
@@ -961,7 +881,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Beaufort scale"));
 	gtk_widget_show (speed_combo);
 
-	if (!key_writable(pref, MATECONF_SPEED_UNIT))
+	if (!g_settings_is_writable (pref->priv->applet->settings, "speed-unit"))
 	{
 		hard_set_sensitive (pref->priv->basic_speed_combo, FALSE);
 	}
@@ -991,7 +911,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("atm"));
 	gtk_widget_show (pres_combo);
 
-	if (!key_writable(pref, MATECONF_PRESSURE_UNIT))
+	if (!g_settings_is_writable(pref->priv->applet->settings, "pressure-unit"))
 	{
 		hard_set_sensitive(pref->priv->basic_pres_combo, FALSE);
 	}
@@ -1015,7 +935,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("miles"));
 	gtk_widget_show (dist_combo);
 
-	if ( ! key_writable (pref, MATECONF_DISTANCE_UNIT))
+	if ( ! g_settings_is_writable (pref->priv->applet->settings, "distance-unit"))
 		hard_set_sensitive (pref->priv->basic_dist_combo, FALSE);
 
 	unit_table = gtk_table_new(5, 2, FALSE);
@@ -1042,7 +962,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		gtk_widget_show (pref->priv->basic_radar_btn);
 		g_signal_connect (G_OBJECT (pref->priv->basic_radar_btn), "toggled", G_CALLBACK (radar_toggled), pref);
 
-		if (!key_writable (pref, "enable_radar_map"))
+		if (!g_settings_is_writable (pref->priv->applet->settings, "enable-radar-map"))
 		{
 			hard_set_sensitive(pref->priv->basic_radar_btn, FALSE);
 		}
@@ -1060,7 +980,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 		g_signal_connect (G_OBJECT (pref->priv->basic_radar_url_btn), "toggled", G_CALLBACK (use_radar_url_toggled), pref);
 
-		if ( ! key_writable (pref, "use_custom_radar_url"))
+		if ( ! g_settings_is_writable (pref->priv->applet->settings, "use-custom-radar-url"))
 		{
 			hard_set_sensitive (pref->priv->basic_radar_url_btn, FALSE);
 		}
@@ -1079,7 +999,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		gtk_widget_show (pref->priv->basic_radar_url_entry);
 		gtk_box_pack_start (GTK_BOX (pref->priv->basic_radar_url_hbox), pref->priv->basic_radar_url_entry, TRUE, TRUE, 0);
 		g_signal_connect (G_OBJECT (pref->priv->basic_radar_url_entry), "focus_out_event", G_CALLBACK (radar_url_changed), pref);
-		if ( ! key_writable (pref, "radar"))
+		if ( ! g_settings_is_writable (pref->priv->applet->settings, "radar"))
 		{
 			hard_set_sensitive (pref->priv->basic_radar_url_entry, FALSE);
 		}
@@ -1111,7 +1031,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	pref_basic_update_sec_lbl = gtk_label_new (_("minutes"));
 	gtk_widget_show (pref_basic_update_sec_lbl);
 
-	if ( ! key_writable (pref, "auto_update_interval"))
+	if ( ! g_settings_is_writable (pref->priv->applet->settings, "auto-update-interval"))
 	{
 		hard_set_sensitive (pref->priv->basic_update_spin, FALSE);
 		hard_set_sensitive (pref_basic_update_sec_lbl, FALSE);
@@ -1195,7 +1115,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	gtk_box_pack_start (GTK_BOX (pref_loc_hbox), pref_find_hbox, FALSE, FALSE, 0);
 
-	if ( ! key_writable (pref, "location0"))
+	if ( ! g_settings_is_writable (pref->priv->applet->settings, "location0"))
 	{
 		hard_set_sensitive (scrolled_window, FALSE);
 	}

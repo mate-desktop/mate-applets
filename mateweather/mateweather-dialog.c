@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #define MATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
 
@@ -58,54 +58,42 @@ G_DEFINE_TYPE(MateWeatherDialog, mateweather_dialog, GTK_TYPE_DIALOG);
 #define MATEWEATHER_DIALOG_GET_PRIVATE(obj) \
 	(G_TYPE_INSTANCE_GET_PRIVATE((obj), MATEWEATHER_TYPE_DIALOG, MateWeatherDialogPrivate))
 
-#define MONOSPACE_FONT_DIR "/desktop/mate/interface"
-#define MONOSPACE_FONT_KEY MONOSPACE_FONT_DIR "/monospace_font_name"
+#define MONOSPACE_FONT_SCHEMA  "org.mate.interface"
+#define MONOSPACE_FONT_KEY     "monospace-font-name"
 
 static void mateweather_dialog_save_geometry(MateWeatherDialog* dialog)
 {
-	MateWeatherMateConf* mateconf;
+	GSettings* settings;
 	int w, h;
 
-	mateconf = dialog->priv->applet->mateconf;
+	settings = dialog->priv->applet->settings;
 
 	gtk_window_get_size(GTK_WINDOW(dialog), &w, &h);
 
-	mateweather_mateconf_set_int(mateconf, "dialog_width", w, NULL);
-	mateweather_mateconf_set_int(mateconf, "dialog_height", h, NULL);
+#if 0
+	/* FIXME those keys are not in org.mate.weather! */
+	g_settings_set_int (settings, "dialog-width", w);
+	g_settings_set_int (settings, "dialog-height", h);
+#endif
 }
 
 static void mateweather_dialog_load_geometry(MateWeatherDialog* dialog)
 {
-	MateWeatherMateConf* mateconf;
+	GSettings* settings;
 	int w, h;
 
-	GError *error;
+	settings = dialog->priv->applet->settings;
 
-	mateconf = dialog->priv->applet->mateconf;
-	error = NULL;
-
-	w = mateweather_mateconf_get_int(mateconf, "dialog_width", &error);
-
-	if (error)
-	{
-		g_message ("mateweather: no spatial information available");
-		g_error_free (error);
-		return;
-	}
-
-	h = mateweather_mateconf_get_int(mateconf, "dialog_height", &error);
-
-	if (error)
-	{
-		g_message ("mateweather: no spatial information available");
-		g_error_free (error);
-		return;
-	}
+#if 0
+	/* FIXME those keys are not in org.mate.weather! */
+	w = g_settings_get_int (settings, "dialog-width");
+	h = g_settings_get_int (settings, "dialog-height");
 
 	if (w > 0 && h > 0)
 	{
 		gtk_window_resize(GTK_WINDOW(dialog), w, h);
 	}
+#endif
 }
 
 static void response_cb(MateWeatherDialog* dialog, gint id, gpointer data)
@@ -536,7 +524,7 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
       set_access_namedesc (radar_link_btn, _("Visit Weather.com"), _("Click to Enter Weather.com"));
       gtk_widget_set_size_request (radar_link_btn, 450, -2);
       gtk_widget_show (radar_link_btn);
-      if (!mateweather_mateconf_get_bool (gw_applet->mateconf, "use_custom_radar_url", NULL))
+      if (!g_settings_get_boolean (gw_applet->settings, "use-custom-radar-url"))
           gtk_container_add (GTK_CONTAINER (radar_link_alignment), radar_link_btn);
 
       g_signal_connect (G_OBJECT (radar_link_btn), "clicked",
@@ -551,18 +539,18 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
 static PangoFontDescription* get_system_monospace_font(void)
 {
     PangoFontDescription *desc = NULL;
-    MateConfClient *conf;
+    GSettings *settings;
     char *name;
 
-    conf = mateconf_client_get_default ();
-    name = mateconf_client_get_string (conf, MONOSPACE_FONT_KEY, NULL);
+    settings = g_settings_new (MONOSPACE_FONT_SCHEMA);
+    name = g_settings_get_string (settings, MONOSPACE_FONT_KEY);
 
     if (name) {
     	desc = pango_font_description_from_string (name);
     	g_free (name);
     }
 
-    g_object_unref (conf);
+    g_object_unref (settings);
 
     return desc;
 }

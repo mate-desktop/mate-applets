@@ -13,11 +13,12 @@
 #include <glib.h>
 #include <config.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
+#include <mate-panel-applet-gsettings.h>
 
 #define MATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
 
-#include <libmateweather/mateweather-mateconf.h>
 #include <libmateweather/mateweather-prefs.h>
 
 #include "mateweather.h"
@@ -30,21 +31,15 @@ static gboolean mateweather_applet_new(MatePanelApplet* applet, const gchar* iid
 {
 	MateWeatherApplet* gw_applet;
 
-	char* prefs_key = mate_panel_applet_get_preferences_key(applet);
-
-	mate_panel_applet_add_preferences(applet, "/schemas/apps/mateweather/prefs", NULL);
-
 	gw_applet = g_new0(MateWeatherApplet, 1);
 
 	gw_applet->applet = applet;
 	gw_applet->mateweather_info = NULL;
-	gw_applet->mateconf = mateweather_mateconf_new(prefs_key);
-
-	g_free(prefs_key);
+	gw_applet->settings = mate_panel_applet_settings_new (applet, "org.mate.weather");
 
 	mateweather_applet_create(gw_applet);
 
-	mateweather_prefs_load(&gw_applet->mateweather_pref, gw_applet->mateconf);
+	mateweather_prefs_load(&gw_applet->mateweather_pref, gw_applet->settings);
 
 	mateweather_update(gw_applet);
 

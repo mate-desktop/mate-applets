@@ -21,9 +21,9 @@
 #include <arpa/nameser.h>
 #include <resolv.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #include <gdk/gdkkeysyms.h>
 
@@ -294,8 +294,9 @@ applet_destroy (GtkWidget *widget, MateWeatherApplet *gw_applet)
        gw_applet->suncalc_timeout_tag = 0;
     }
 	
-    if (gw_applet->mateconf) {
-       mateweather_mateconf_free (gw_applet->mateconf);
+    if (gw_applet->settings) {
+       g_object_unref (gw_applet->settings);
+       gw_applet->settings = NULL;
     }
 
     weather_info_abort (gw_applet->mateweather_info);
@@ -394,7 +395,6 @@ update_finish (WeatherInfo *info, gpointer data)
     static int gw_fault_counter = 0;
 #ifdef HAVE_LIBMATENOTIFY
     char *message, *detail;
-    MateConfClient *conf;
 #endif
     char *s;
     MateWeatherApplet *gw_applet = (MateWeatherApplet *)data;
@@ -443,9 +443,6 @@ update_finish (WeatherInfo *info, gpointer data)
 	    place_widgets(gw_applet);
 
 #ifdef HAVE_LIBMATENOTIFY
-	    if (mate_panel_applet_mateconf_get_bool (gw_applet->applet,
-				    "show_notifications", NULL))
-	    {
 		    NotifyNotification *n;
 	            
 		    /* Show notifications if possible */
@@ -484,7 +481,6 @@ update_finish (WeatherInfo *info, gpointer data)
 		   	 g_free (message);
 		   	 g_free (detail);
 		    }
-	    }
 #endif
     }
     else
