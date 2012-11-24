@@ -5,6 +5,7 @@
 #include <config.h>
 #include <string.h>
 #include <mate-panel-applet.h>
+#include <mate-panel-applet-gsettings.h>
 #ifdef HAVE_GUCHARMAP
 #	include <gucharmap/gucharmap.h>
 #endif
@@ -111,25 +112,6 @@ static const gunichar * const chartable[] = {
 	ZA_code,
 	af_ZA_code
 };
-
-gboolean
-key_writable (MatePanelApplet *applet, const char *key)
-{
-	gboolean writable;
-	char *fullkey;
-	static MateConfClient *client = NULL;
-	if (client == NULL)
-		client = mateconf_client_get_default ();
-
-	fullkey = mate_panel_applet_mateconf_get_full_key (applet, key);
-
-	writable = mateconf_client_key_is_writable (client, fullkey, NULL);
-
-	g_free (fullkey);
-
-	return writable;
-}
-
 
 /* sets the picked character as the selection when it gets a request */
 static void
@@ -299,8 +281,8 @@ menuitem_activated (GtkMenuItem *menuitem, charpick_data *curr_data)
 	
 	curr_data->charlist = string;
 	build_table (curr_data);
-	if (key_writable (applet, "current_list"))
-		mate_panel_applet_mateconf_set_string (applet, "current_list", curr_data->charlist, NULL);
+	if (g_settings_is_writable (curr_data->settings, "current-list"))
+		g_settings_set_string (curr_data->settings, "current-list", curr_data->charlist);
 }
 
 void
@@ -653,46 +635,20 @@ applet_destroy (GtkWidget *widget, gpointer data)
 void 
 save_chartable (charpick_data *curr_data)
 {
-	MatePanelApplet *applet = MATE_PANEL_APPLET (curr_data->applet);
-	MateConfValue *value;
-	GList *list = curr_data->chartable;
-	GSList *slist = NULL;
-	
-	while (list) {
-		gchar *charlist = list->data;
-		MateConfValue *v1;
-		v1 = mateconf_value_new_from_string (MATECONF_VALUE_STRING, charlist, NULL);
-		slist = g_slist_append (slist, v1);
-		list = g_list_next (list);
-	}
-	
-	value = mateconf_value_new (MATECONF_VALUE_LIST);
-	mateconf_value_set_list_type (value, MATECONF_VALUE_STRING);
-	mateconf_value_set_list_nocopy (value, slist);
-	mate_panel_applet_mateconf_set_value (applet, "chartable", value, NULL);
-	mateconf_value_free (value);
+	mate_panel_applet_settings_set_glist (curr_data->settings,
+		"chartable", curr_data->chartable);
 }
 
 static void
 get_chartable (charpick_data *curr_data)
 {
 	MatePanelApplet *applet = MATE_PANEL_APPLET (curr_data->applet);
-	MateConfValue *value;
 	gint i, n;
+	GSList *value = NULL;
 	
-	value = mate_panel_applet_mateconf_get_value (applet, "chartable", NULL);
+	value = mate_panel_applet_settings_get_gslist (curr_data->settings, "chartable");
 	if (value) {
-		GSList *slist = mateconf_value_get_list (value);
-		while (slist) {
-			MateConfValue *v1 = slist->data;
-			gchar *charlist;
-			
-			charlist = g_strdup (mateconf_value_get_string (v1));
-			curr_data->chartable = g_list_append (curr_data->chartable, charlist);
-			
-			slist = g_slist_next (slist);
-		}
-		mateconf_value_free (value);
+		curr_data->chartable = value;
 	}
 	else {
 		n = G_N_ELEMENTS (chartable);
@@ -703,7 +659,7 @@ get_chartable (charpick_data *curr_data)
 			curr_data->chartable = g_list_append (curr_data->chartable, string);
 		
 		}
-		if ( ! key_writable (MATE_PANEL_APPLET (curr_data->applet), "chartable"))
+		if ( ! g_settings_is_writable (curr_data->settings, "chartable"))
 			save_chartable (curr_data);
 	}
 	
@@ -760,7 +716,6 @@ charpicker_applet_fill (MatePanelApplet *applet)
 
   mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
 
-  mate_panel_applet_add_preferences (applet, "/schemas/apps/charpick/prefs", NULL);
   mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
    
   curr_data = g_new0 (charpick_data, 1);
@@ -768,10 +723,11 @@ charpicker_applet_fill (MatePanelApplet *applet)
   curr_data->applet = GTK_WIDGET (applet);
   curr_data->about_dialog = NULL;
   curr_data->add_edit_dialog = NULL;
+  curr_data->settings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.charpick");
  
   get_chartable (curr_data);
   
-  string  = mate_panel_applet_mateconf_get_string (applet, "current_list", NULL);
+  string  = g_settings_get_string (curr_data->settings, "current-list");
   if (string) {
   	list = curr_data->chartable;
   	while (list) {

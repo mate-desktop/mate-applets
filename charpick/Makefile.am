@@ -4,7 +4,7 @@ INCLUDES =					\
 	-I.					\
 	-I$(srcdir)				\
 	-DCHARPICK_MENU_UI_DIR=\""$(uidir)"\"	\
-	$(MATE_APPLETS3_CFLAGS)		\
+	$(MATE_APPLETS4_CFLAGS)		\
 	$(GUCHARMAP_CFLAGS)
 
 libexec_PROGRAMS = charpick_applet2
@@ -14,7 +14,7 @@ charpick_applet2_SOURCES = charpick.c \
                           properties.c
 
 charpick_applet2_LDADD = \
-		       $(MATE_APPLETS3_LIBS)	\
+		       $(MATE_APPLETS4_LIBS)	\
 		       $(GUCHARMAP_LIBS)
 
 appletdir       = $(datadir)/mate-panel/applets
@@ -38,25 +38,22 @@ org.mate.panel.applet.CharpickerAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.charpick.gschema.xml
+@GSETTINGS_RULES@
 
-schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = charpick.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
-@INTLTOOL_SCHEMAS_RULE@
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = charpick-applet-menu.xml
+
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
 
 EXTRA_DIST =							\
 	org.mate.applets.CharpickerApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(ui_DATA)						\
-	$(schemas_in_files)
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(schemas_DATA) ;
-endif
+	$(gsettings_SCHEMAS_in_in)
 
 -include $(top_srcdir)/git.mk

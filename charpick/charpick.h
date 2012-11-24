@@ -3,9 +3,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #define NO_LAST_INDEX -1
 
@@ -28,6 +28,7 @@ struct _charpick_data {
   GtkWidget *menu;
   GtkWidget *add_edit_dialog;
   GtkWidget *add_edit_entry;
+  GSettings *settings;
 };
 
 
