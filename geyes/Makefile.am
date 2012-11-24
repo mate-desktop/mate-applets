@@ -3,7 +3,7 @@ SUBDIRS = themes docs
 INCLUDES =						\
 	-I.						\
 	-I$(srcdir) 					\
-	$(MATE_APPLETS3_CFLAGS)			\
+	$(MATE_APPLETS4_CFLAGS)			\
 	-I$(includedir) 				\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
 	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"
@@ -16,7 +16,7 @@ geyes_applet2_SOURCES =	\
 	geyes.h
 
 geyes_applet2_LDADD = 		\
-	$(MATE_APPLETS3_LIBS) \
+	$(MATE_APPLETS4_LIBS) \
 	-lm
 
 appletdir       = $(datadir)/mate-panel/applets
@@ -40,16 +40,15 @@ org.mate.panel.applet.GeyesAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
-
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = geyes-applet-menu.xml
 
-schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = geyes.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.geyes.gschema.xml
+@GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 themesdir = $(pkgdatadir)/geyes
 
@@ -60,11 +59,13 @@ icons =	\
 	mate-eyes-applet.22.png \
 	mate-eyes-applet.16.png
 
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+
 EXTRA_DIST = \
 	     README.themes					\
 	     org.mate.applets.GeyesApplet.mate-panel-applet.in.in 	\
              $(service_in_files)				\
-	     $(schemas_in_files)				\
+	     $(gsettings_SCHEMAS_in_in)				\
 	     $(ui_DATA)						\
 	     $(icons)
 
@@ -110,8 +111,5 @@ install-data-local:
 		echo "*** Icon cache not updated. After install, run this:"; \
 		echo "***   $(gtk_update_icon_cache)"; \
 	fi
-if MATECONF_SCHEMAS_INSTALL
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(schemas_DATA) ;
-endif
 
 -include $(top_srcdir)/git.mk

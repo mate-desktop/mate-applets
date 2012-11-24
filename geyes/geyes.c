@@ -21,7 +21,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 #include "geyes.h"
 
 #define UPDATE_TIMEOUT 100
@@ -203,8 +203,7 @@ properties_load (EyesApplet *eyes_applet)
 {
         gchar *theme_path = NULL;
 
-	theme_path = mate_panel_applet_mateconf_get_string (
-		eyes_applet->applet, "theme_path", NULL);
+	theme_path = g_settings_get_string (eyes_applet->settings, "theme-path");
 
 	if (theme_path == NULL)
 		theme_path = g_strdup (GEYES_THEMES_DIR "Default-tiny");
@@ -290,6 +289,8 @@ create_eyes (MatePanelApplet *applet)
 
         eyes_applet->applet = applet;
         eyes_applet->vbox = gtk_vbox_new (FALSE, 0);
+	eyes_applet->settings = 
+		mate_panel_applet_settings_new (applet, "org.mate.panel.applet.geyes");
 
 	gtk_container_add (GTK_CONTAINER (applet), eyes_applet->vbox);
 
@@ -325,7 +326,11 @@ destroy_cb (GtkObject *object, EyesApplet *eyes_applet)
 	eyes_applet->pupil_filename = NULL;
 	
 	if (eyes_applet->prop_box.pbox)
-	  	gtk_widget_destroy (eyes_applet->prop_box.pbox);
+		gtk_widget_destroy (eyes_applet->prop_box.pbox);
+
+	if (eyes_applet->settings)
+		g_object_unref (eyes_applet->settings);
+	eyes_applet->settings = NULL;
 
 	g_free (eyes_applet);
 }
@@ -394,8 +399,6 @@ geyes_applet_fill (MatePanelApplet *applet)
 	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 	
         eyes_applet = create_eyes (applet);
-
-	mate_panel_applet_add_preferences (applet, "/schemas/apps/geyes/prefs", NULL);
 
         eyes_applet->timeout_id = g_timeout_add (
 		UPDATE_TIMEOUT, (GtkFunction) timer_cb, eyes_applet);

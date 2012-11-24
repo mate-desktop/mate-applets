@@ -24,6 +24,7 @@
 #include <glib/gi18n.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
 
 #define MAX_EYES 1000
@@ -61,6 +62,9 @@ typedef struct
 
 	/* Properties */
 	EyesPropertyBox prop_box;
+
+	/* Settings */
+	GSettings *settings;
 } EyesApplet;
 
 /* eyes.c */
