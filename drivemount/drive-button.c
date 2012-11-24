@@ -29,7 +29,6 @@
 #include "drive-button.h"
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
-#include <mateconf/mateconf-client.h>
 
 #include <string.h>
 
@@ -39,8 +38,6 @@ enum {
     CMD_UNMOUNT,
     CMD_EJECT
 };
-
-#define MATECONF_ROOT_AUTOPLAY  "/desktop/mate/volume_manager/"
 
 /* type registration boilerplate code */
 G_DEFINE_TYPE(DriveButton, drive_button, GTK_TYPE_BUTTON)
@@ -809,34 +806,23 @@ eject_drive (DriveButton *self, GtkWidget *item)
     }
 }
 static void
-play_autoplay_media (DriveButton *self, const char *autoplay_key, 
-		     const char *dflt)
+play_autoplay_media (DriveButton *self, const char *dflt)
 {
-	MateConfClient *mateconf_client = mateconf_client_get_default ();
-	char *command = mateconf_client_get_string (mateconf_client,
-			autoplay_key, NULL);
-
-	if (!command)
-	    command = g_strdup (dflt);
-
-	run_command (self, command);
-
-	g_free (command);
-	g_object_unref (mateconf_client);
+	run_command (self, dflt);
 }
 
 static void
 play_dvd (DriveButton *self, GtkWidget *item)
 {
-        play_autoplay_media (self, MATECONF_ROOT_AUTOPLAY "autoplay_dvd_command",
-			     "totem %d");
+        /* FIXME add an option to set this */
+        play_autoplay_media (self, "totem %d");
 }
 
 static void
 play_cda (DriveButton *self, GtkWidget *item)
 {
-        play_autoplay_media (self, MATECONF_ROOT_AUTOPLAY "autoplay_cda_command",
-			     "sound-juicer -d %d");
+        /* FIXME add an option to set this */
+        play_autoplay_media (self, "sound-juicer -d %d");
 }
 
 static void

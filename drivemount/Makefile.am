@@ -4,7 +4,7 @@ INCLUDES =					\
 	-I.					\
 	-I$(srcdir)				\
 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
-	$(MATE_APPLETS3_CFLAGS)
+	$(MATE_APPLETS4_CFLAGS)
 
 libexec_PROGRAMS = drivemount_applet2
 
@@ -16,7 +16,7 @@ drivemount_applet2_SOURCES =	\
 	drive-button.h
 
 drivemount_applet2_LDADD =	\
-	$(MATE_APPLETS3_LIBS)
+	$(MATE_APPLETS4_LIBS)
 
 
 appletdir       = $(datadir)/mate-panel/applets
@@ -43,29 +43,11 @@ org.mate.panel.applet.DriveMountAppletFactory.service: $(service_in_files)
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = drivemount-applet-menu.xml
 
-schemasdir   = $(MATECONF_SCHEMA_FILE_DIR)
-schemas_in_files = drivemount.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
-
-@INTLTOOL_SCHEMAS_RULE@
-
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA)
 
 EXTRA_DIST = \
  org.mate.applets.DriveMountApplet.mate-panel-applet.in.in	\
  $(service_in_files)					\
- $(schemas_in_files)					\
  $(ui_DATA)
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-		MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(top_builddir)/drivemount/$$p ; \
-		done ; \
-	fi
-else
-install-data-local:
-endif
 
 -include $(top_srcdir)/git.mk
