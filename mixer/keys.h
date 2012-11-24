@@ -1,7 +1,7 @@
 /* MATE Volume Applet
  * Copyright (C) 2004 Ronald Bultje <rbultje@ronald.bitfreak.net>
  *
- * keys.h: MateConf key macros
+ * keys.h: GSettings key macros
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,11 +24,8 @@
 
 G_BEGIN_DECLS
 
-#define MATE_VOLUME_APPLET_KEY(x) x
-#define MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT \
-  MATE_VOLUME_APPLET_KEY ("active-element")
-#define MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK \
-  MATE_VOLUME_APPLET_KEY ("active-track")
+#define MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT  "active-element"
+#define MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK    "active-track"
 
 G_END_DECLS
 

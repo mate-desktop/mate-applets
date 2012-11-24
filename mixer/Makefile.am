@@ -3,7 +3,7 @@ SUBDIRS = docs
 INCLUDES = -I. -I$(srcdir) 			\
 	-DMIXER_MENU_UI_DIR=\""$(uidir)"\"	\
 	$(MIXER_CFLAGS)				\
-	$(MATE_APPLETS3_CFLAGS)		\
+	$(MATE_APPLETS4_CFLAGS)		\
 	$(MATEDESKTOP_CFLAGS)
 
 libexec_PROGRAMS = mixer_applet2
@@ -22,7 +22,7 @@ noinst_HEADERS = \
 
 mixer_applet2_LDADD = 					\
 	$(MIXER_LIBS) 					\
-	$(MATE_APPLETS3_LIBS)				\
+	$(MATE_APPLETS4_LIBS)				\
 	$(MATEDESKTOP_LIBS) \
 	-lm
 
@@ -50,23 +50,19 @@ org.mate.panel.applet.MixerAppletFactory.service: $(service_in_files)
 uidir   = $(datadir)/mate-2.0/ui
 ui_DATA = mixer-applet-menu.xml
 
-schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = mixer.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.mixer.gschema.xml
+@GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 EXTRA_DIST = 							\
 	org.mate.applets.MixerApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(ui_DATA) 						\
-	$(schemas_in_files)
+	$(gsettings_SCHEMAS_in_in)
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(schemas_DATA) ;
-endif
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
 
 -include $(top_srcdir)/git.mk

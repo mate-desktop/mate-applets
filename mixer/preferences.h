@@ -24,8 +24,9 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 #include <gst/interfaces/mixer.h>
 
 G_BEGIN_DECLS
@@ -55,8 +56,8 @@ typedef struct _MateVolumeAppletPreferences {
   /* is the track list currently locked */
   gboolean track_lock;
 
-  /* for mateconf */
-  MatePanelApplet *applet;
+  /* for gsettings */
+  MateVolumeApplet *applet;
 
   /* treeview inside us */
   GtkWidget *optionmenu, *treeview;
@@ -67,7 +68,7 @@ typedef struct _MateVolumeAppletPreferencesClass {
 } MateVolumeAppletPreferencesClass;
 
 GType	mate_volume_applet_preferences_get_type (void);
-GtkWidget *mate_volume_applet_preferences_new	(MatePanelApplet *applet,
+GtkWidget *mate_volume_applet_preferences_new	(MateVolumeApplet *applet,
 						 GList       *elements,
 						 GstMixer    *mixer,
 						 GList       *track);

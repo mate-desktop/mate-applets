@@ -34,7 +34,7 @@
 
 #include <gtk/gtk.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "applet.h"
 #include "keys.h"
@@ -87,9 +87,8 @@ static gboolean	cb_check			(gpointer   data);
 static void	cb_volume			(GtkAdjustment *adj,
 						 gpointer   data);
 
-static void	cb_mateconf			(MateConfClient     *client,
-						 guint            connection_id,
-						 MateConfEntry      *entry,
+static void	cb_gsettings			(GSettings *settings,
+						 gchar           *key,
 						 gpointer         data);
 
 static void	cb_verb				(GtkAction *action,
@@ -171,7 +170,7 @@ mate_volume_applet_init (MateVolumeApplet *applet)
 
   applet->timeout = 0;
   applet->elements = NULL;
-  applet->client = mateconf_client_get_default ();
+  applet->settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (applet), "org.mate.panel.applet.mixer");
   applet->mixer = NULL;
   applet->tracks = NULL;
   applet->lock = FALSE;
@@ -210,9 +209,6 @@ mate_volume_applet_init (MateVolumeApplet *applet)
 		    applet);
 
   /* other stuff */
-  mate_panel_applet_add_preferences (MATE_PANEL_APPLET (applet),
-				"/schemas/apps/mixer_applet/prefs",
-				NULL);
   mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet),
 			  MATE_PANEL_APPLET_EXPAND_MINOR);
 
@@ -228,7 +224,7 @@ mate_volume_applet_init (MateVolumeApplet *applet)
 
 }
 
-/* Parse the list of tracks that are stored in MateConf */
+/* Parse the list of tracks that are stored in GSettings */
 
 static char **
 parse_track_list (const char *track_list)
@@ -400,20 +396,17 @@ mate_volume_applet_setup (MateVolumeApplet *applet,
       G_CALLBACK (cb_verb), FALSE }
   };
 
-  gchar *key;
   gchar *active_element_name;
   gchar *active_track_name;
   gchar *ui_path;
   GstMixerTrack *first_track;
   gboolean res;
 
-  active_element_name = mate_panel_applet_mateconf_get_string (MATE_PANEL_APPLET (applet),
-						       MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT,
-						       NULL);
+  active_element_name = g_settings_get_string (applet->settings,
+						       MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT);
 
-  active_track_name = mate_panel_applet_mateconf_get_string (MATE_PANEL_APPLET (applet),
-						     MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK,
-						     NULL);
+  active_track_name = g_settings_get_string (applet->settings,
+						     MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK);
 
   res = select_element_and_track (applet, elements, active_element_name,
 				  active_track_name);
@@ -459,17 +452,11 @@ mate_volume_applet_setup (MateVolumeApplet *applet,
   if (res) {
     mate_volume_applet_setup_timeout (applet);
 
-    /* mateconf */
-    key = mate_panel_applet_mateconf_get_full_key (MATE_PANEL_APPLET (applet),
-				MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT);
-    mateconf_client_notify_add (applet->client, key,
-			     cb_mateconf, applet, NULL, NULL);
-    g_free (key);
-    key = mate_panel_applet_mateconf_get_full_key (MATE_PANEL_APPLET (applet),
-				MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK);
-    mateconf_client_notify_add (applet->client, key,
-			     cb_mateconf, applet, NULL, NULL);
-    g_free (key);
+    /* gsettings */
+    g_signal_connect (applet->settings, "changed::" MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT,
+			     G_CALLBACK (cb_gsettings), applet);
+    g_signal_connect (applet->settings, "changed::" MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK,
+			     G_CALLBACK (cb_gsettings), applet);
   }
 
   gtk_widget_show (GTK_WIDGET (applet));
@@ -1317,40 +1304,23 @@ cb_check (gpointer data)
 }
 
 /*
- * MateConf callback.
+ * GSettings callback.
  */
 
 static void
-cb_mateconf (MateConfClient *client,
-	  guint        connection_id,
-	  MateConfEntry  *entry,
-	  gpointer     data)
+cb_gsettings (GSettings *settings, gchar *key, gpointer data)
 {
   MateVolumeApplet *applet = data;
-  MateConfValue *value;
-  const gchar *str, *key;
+  const gchar *str;
   const GList *item;
   gboolean newdevice = FALSE;
-  gchar *keyroot;
   GList *active_tracks;
 
   active_tracks = NULL;
 
-  keyroot = mate_panel_applet_mateconf_get_full_key (MATE_PANEL_APPLET (applet), "");
-  key = mateconf_entry_get_key (entry);
-  if (strncmp (key, keyroot, strlen (keyroot))) {
-    g_free (keyroot);
-    return;
-  }
-  key += strlen (keyroot);
-  g_free (keyroot);
-
   g_list_free(applet->elements);
   applet->elements = mate_volume_applet_create_mixer_collection ();
 
-  if ((value = mateconf_entry_get_value (entry)) != NULL &&
-      (value->type == MATECONF_VALUE_STRING) &&
-      (str = mateconf_value_get_string (value)) != NULL) {
     if (!strcmp (key, MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT)) {
       for (item = applet->elements; item != NULL; item = item->next) {
         gchar *cur_el_str = g_object_get_data (item->data,
@@ -1406,7 +1376,6 @@ cb_mateconf (MateConfClient *client,
         applet->force_next_update = TRUE;
       }
     }
-  }
 }
 
 /*
@@ -1480,7 +1449,7 @@ cb_verb (GtkAction   *action,
       g_list_free(applet->elements);
       applet->elements = mate_volume_applet_create_mixer_collection ();
 
-      applet->prefs = mate_volume_applet_preferences_new (MATE_PANEL_APPLET (applet),
+      applet->prefs = mate_volume_applet_preferences_new (applet,
 							   applet->elements,
 							   applet->mixer,
 							   applet->tracks);

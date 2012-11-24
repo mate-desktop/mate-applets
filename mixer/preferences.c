@@ -155,7 +155,7 @@ mate_volume_applet_preferences_init (MateVolumeAppletPreferences *prefs)
 }
 
 GtkWidget *
-mate_volume_applet_preferences_new (MatePanelApplet *applet,
+mate_volume_applet_preferences_new (MateVolumeApplet *applet,
 				     GList       *elements,
 				     GstMixer    *mixer,
 				     GList       *tracks)
@@ -319,19 +319,15 @@ cb_dev_selected (GtkComboBox *box,
 
   if (gtk_combo_box_get_active_iter (box, &iter)) {
     gchar *label;
-    MateConfValue *value;
 
     gtk_tree_model_get (gtk_combo_box_get_model (box),
 			&iter, COL_LABEL, &label, -1);
 
-    /* write to mateconf */
-    value = mateconf_value_new (MATECONF_VALUE_STRING);
-    mateconf_value_set_string (value, label);
-    mate_panel_applet_mateconf_set_value (MATE_PANEL_APPLET (prefs->applet),
+    /* write to gsettings */
+    g_settings_set_string (prefs->applet->settings,
 		      MATE_VOLUME_APPLET_KEY_ACTIVE_ELEMENT,
-		      value, NULL);
+		      label);
     g_free (label);
-    mateconf_value_free (value);
   }
 }
 
@@ -367,9 +363,8 @@ cb_track_select (GtkTreeSelection *selection,
   MateVolumeAppletPreferences *prefs = data;
   GtkTreeIter iter;
   gchar *label;
-  MateConfValue *value;
   GtkTreeSelection *sel;
-  GString *mateconf_string;
+  GString *gsettings_string;
   GstMixerTrack *selected_track; /* the track just selected */
   MateVolumeApplet *applet = (MateVolumeApplet*) prefs->applet; /* required to update the track settings */
   int volume_percent;
@@ -377,7 +372,7 @@ cb_track_select (GtkTreeSelection *selection,
   if (prefs->track_lock)
     return TRUE;
 
-  mateconf_string = g_string_new ("");
+  gsettings_string = g_string_new ("");
 
   /* get value */
   gtk_tree_model_get_iter (model, &iter, path);
@@ -409,9 +404,9 @@ cb_track_select (GtkTreeSelection *selection,
 	applet->tracks = g_list_append (applet->tracks, curr);
 
 	if (!path_selected) {
-	  g_string_append_printf (mateconf_string, "%s:", curr->label);
+	  g_string_append_printf (gsettings_string, "%s:", curr->label);
 	} else {
-	  mateconf_string = g_string_append (mateconf_string, curr->label);
+	  gsettings_string = g_string_append (gsettings_string, curr->label);
 	}
       }
     }
@@ -426,7 +421,7 @@ cb_track_select (GtkTreeSelection *selection,
 
     gtk_tree_model_get_iter (model, &iter, path);
     gtk_tree_model_get (model, &iter, COL_TRACK, &curr, -1);
-    mateconf_string = g_string_append (mateconf_string, curr->label);
+    gsettings_string = g_string_append (gsettings_string, curr->label);
 
     applet->tracks = g_list_append (applet->tracks, curr);
 
@@ -436,15 +431,12 @@ cb_track_select (GtkTreeSelection *selection,
     }
   }
 
-  /* write to mateconf */
-  value = mateconf_value_new (MATECONF_VALUE_STRING);
-  mateconf_value_set_string (value, mateconf_string->str);
-  mate_panel_applet_mateconf_set_value (MATE_PANEL_APPLET (prefs->applet),
+  /* write to gsettings */
+  g_settings_set_string (prefs->applet->settings,
 				MATE_VOLUME_APPLET_KEY_ACTIVE_TRACK,
-				value, NULL);
+				gsettings_string->str);
   g_free (label);
-  g_string_free (mateconf_string, TRUE);
-  mateconf_value_free (value);
+  g_string_free (gsettings_string, TRUE);
   
   return TRUE;
 }

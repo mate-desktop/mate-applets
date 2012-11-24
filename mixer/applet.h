@@ -27,8 +27,8 @@
 #include <glib/gi18n.h>
 
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
-#include <mate-panel-applet-mateconf.h>
+#include <gio/gio.h>
+#include <mate-panel-applet-gsettings.h>
 #include <gst/gst.h>
 #include <gst/interfaces/mixer.h>
 
@@ -67,8 +67,8 @@ struct _MateVolumeApplet {
   /* list of volume control elements */
   GList *elements;
 
-  /* mateconf */
-  MateConfClient *client;
+  /* gsettings */
+  GSettings *settings;
 
   /* element */
   GstMixer *mixer;
