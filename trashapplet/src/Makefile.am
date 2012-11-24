@@ -1,5 +1,5 @@
 INCLUDES = -I$(top_srcdir)		\
-	   $(MATE_APPLETS3_CFLAGS)	\
+	   $(MATE_APPLETS4_CFLAGS)	\
 	   $(GIO_CFLAGS)		\
            -DTRASH_MENU_UI_DIR=\""$(datadir)/mate-2.0/ui"\"
 
@@ -13,7 +13,7 @@ trashapplet_SOURCES = \
 	xstuff.h
 
 trashapplet_LDADD = 		\
-	$(MATE_APPLETS3_LIBS) 	\
+	$(MATE_APPLETS4_LIBS) 	\
 	$(GIO_LIBS) \
 	-lX11
 

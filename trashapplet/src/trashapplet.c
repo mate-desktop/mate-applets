@@ -30,7 +30,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <mateconf/mateconf-client.h>
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
 
@@ -244,20 +243,21 @@ trash_applet_init (TrashApplet *applet)
   trash_applet_monitor_changed (applet);
 }
 
-#define PANEL_ENABLE_ANIMATIONS "/apps/panel/global/enable_animations"
+#define PANEL_SCHEMA "org.mate.panel"
+#define PANEL_ENABLE_ANIMATIONS "enable-animations"
 static gboolean
 trash_applet_button_release (GtkWidget      *widget,
                              GdkEventButton *event)
 {
   TrashApplet *applet = TRASH_APPLET (widget);
-  static MateConfClient *client;
+  static GSettings *settings;
 
-  if (client == NULL)
-    client = mateconf_client_get_default ();
+  if (settings == NULL)
+    settings = g_settings_new (PANEL_SCHEMA);
 
   if (event->button == 1)
     {
-      if (mateconf_client_get_bool (client, PANEL_ENABLE_ANIMATIONS, NULL))
+      if (g_settings_get_boolean (settings, PANEL_ENABLE_ANIMATIONS))
         xstuff_zoom_animate (widget, NULL);
 
       trash_applet_open_folder (NULL, applet);

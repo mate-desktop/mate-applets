@@ -19,7 +19,6 @@
  * 02110-1301, USA.
  */
 
-#include <mateconf/mateconf-client.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
@@ -287,9 +286,12 @@ trash_empty_start (GtkWidget *parent)
 static gboolean
 trash_empty_require_confirmation (void)
 {
-  return mateconf_client_get_bool (mateconf_client_get_default (),
-                                "/apps/caja/preferences/confirm_trash",
-                                NULL);
+  gboolean confirm_trash;
+  GSettings *settings;
+  settings = g_settings_new ("org.mate.caja.preferences");
+  confirm_trash = g_settings_get_boolean (settings, "confirm-trash");
+  g_object_unref (settings);
+  return confirm_trash;
 }
 
 static void
