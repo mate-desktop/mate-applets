@@ -24,11 +24,11 @@
 #include <gdk/gdk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mateconf/mateconf-client.h>
 
 
-#define MATECONF_PATH	"/apps/stickynotes_applet"
+#define STICKYNOTES_SCHEMA	"org.mate.stickynotes"
 #define BUILDER_PATH	GTK_BUILDERDIR "/stickynotes.ui"
 #define ICON_PATH	STICKYNOTES_ICONDIR
 
@@ -61,7 +61,7 @@ typedef struct
 	GdkPixbuf *icon_normal;		/* Normal applet icon */
 	GdkPixbuf *icon_prelight;	/* Prelighted applet icon */
 
-	MateConfClient *mateconf;		/* MateConf Client */
+	GSettings *settings;		/* Shared GSettings */
 
 	gint max_height;
 	guint last_timeout_data;

@@ -12,7 +12,7 @@ if BUILD_STICKYNOTES_APPLET
 INCLUDES =					\
 	-I.					\
 	-I$(srcdir)				\
-	$(MATE_APPLETS3_CFLAGS)		\
+	$(MATE_APPLETS4_CFLAGS)		\
 	$(LIBMATEWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
@@ -33,7 +33,7 @@ stickynotes_applet_SOURCES = \
 	stickynotes_applet_callbacks.c
 
 stickynotes_applet_LDADD =	\
-	$(MATE_APPLETS3_LIBS)	\
+	$(MATE_APPLETS4_LIBS)	\
 	$(LIBMATEWNCK_LIBS)		\
 	$(XML2_LIBS) \
 	-lX11
@@ -43,10 +43,12 @@ builder_DATA = $(builder_files)
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = $(ui_files)
 
-schemasdir = @MATECONF_SCHEMA_FILE_DIR@
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.stickynotes.gschema.xml
+@GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 appletdir   = $(datadir)/mate-panel/applets
 applet_DATA = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
@@ -67,19 +69,14 @@ org.mate.panel.applet.StickyNotesAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
 
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) \
-	$(MATECONFTOOL) --makefile-install-rule $(schemas_DATA)
-endif
 endif
 
 EXTRA_DIST = \
 	     $(builder_files) \
 	     $(ui_files) \
-	     $(schemas_in_files) \
+	     $(gsettings_SCHEMAS_in_in) \
              $(service_in_files) \
 	     org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in
 

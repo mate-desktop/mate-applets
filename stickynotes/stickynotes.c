@@ -166,16 +166,13 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 	note->h = h;
 
 	/* Customize the window */
-	if (mateconf_client_get_bool(stickynotes->mateconf,
-				MATECONF_PATH "/settings/sticky", NULL))
+	if (g_settings_get_boolean (stickynotes->settings, "sticky"))
 		gtk_window_stick(GTK_WINDOW(note->w_window));
 
 	if (w == 0 || h == 0)
 		gtk_window_resize (GTK_WINDOW(note->w_window),
-				mateconf_client_get_int(stickynotes->mateconf,
-					MATECONF_PATH "/defaults/width", NULL),
-				mateconf_client_get_int(stickynotes->mateconf,
-					MATECONF_PATH "/defaults/height", NULL));
+				g_settings_get_int (stickynotes->settings, "default-width"),
+				g_settings_get_int (stickynotes->settings, "default-height"));
 	else
 		gtk_window_resize (GTK_WINDOW(note->w_window),
 				note->w,
@@ -330,9 +327,7 @@ void stickynote_change_properties (StickyNote *note)
 		color_str = g_strdup (note->color);
 	else
 	{
-		color_str = mateconf_client_get_string (
-			            stickynotes->mateconf,
-				    MATECONF_PATH "/defaults/color", NULL);
+		color_str = g_settings_get_string (stickynotes->settings, "default-color");
 	}
 
 	if (color_str)
@@ -347,9 +342,7 @@ void stickynote_change_properties (StickyNote *note)
 		color_str = g_strdup (note->font_color);
 	else
 	{
-		color_str = mateconf_client_get_string (
-			            stickynotes->mateconf,
-				    MATECONF_PATH "/defaults/font_color", NULL);
+		color_str = g_settings_get_string (stickynotes->settings, "default-font-color");
 	}
 
 	if (color_str)
@@ -395,7 +388,7 @@ void stickynote_set_title(StickyNote *note, const gchar *title)
 	/* If title is NULL, use the current date as the title. */
 	if (!title) {
 		gchar *date_title, *tmp;
-		gchar *date_format = mateconf_client_get_string(stickynotes->mateconf, MATECONF_PATH "/settings/date_format", NULL);
+		gchar *date_format = g_settings_get_string (stickynotes->settings, "date-format");
 		if (!date_format)
 			date_format = g_strdup ("%x");
 		tmp = get_current_date (date_format);
@@ -447,31 +440,22 @@ stickynote_set_color (StickyNote  *note,
 
 	/* If "force_default" is enabled or color_str is NULL,
 	 * then we use the default color instead of color_str. */
-	if (!color_str || mateconf_client_get_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/force_default", NULL))
+	if (!color_str || g_settings_get_boolean (stickynotes->settings, "force-default"))
 	{
-		if (mateconf_client_get_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_color", NULL))
+		if (g_settings_get_boolean (stickynotes->settings, "use-system-color"))
 			color_str_actual = NULL;
 		else
-			color_str_actual = mateconf_client_get_string (
-					stickynotes->mateconf,
-					MATECONF_PATH "/defaults/color", NULL);
+			color_str_actual = g_settings_get_string (stickynotes->settings, "default-color");
 	}
 	else
 		color_str_actual = g_strdup (color_str);
 
-	if (!font_color_str || mateconf_client_get_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/force_default", NULL))
+	if (!font_color_str || g_settings_get_boolean (stickynotes->settings, "force-default"))
 	{
-		if (mateconf_client_get_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_color", NULL))
+		if (g_settings_get_boolean (stickynotes->settings, "use-system-color"))
 			font_color_str_actual = NULL;
 		else
-			font_color_str_actual = mateconf_client_get_string (
-					stickynotes->mateconf,
-					MATECONF_PATH "/defaults/font_color",
-					NULL);
+			font_color_str_actual = g_settings_get_string (stickynotes->settings, "default-font-color");
 	}
 	else
 		font_color_str_actual = g_strdup (font_color_str);
@@ -587,17 +571,12 @@ stickynote_set_font (StickyNote *note, const gchar *font_str, gboolean save)
 
 	/* If "force_default" is enabled or font_str is NULL,
 	 * then we use the default font instead of font_str. */
-	if (!font_str || mateconf_client_get_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/force_default", NULL))
+	if (!font_str || g_settings_get_boolean (stickynotes->settings, "force-default"))
 	{
-		if (mateconf_client_get_bool (stickynotes->mateconf,
-					MATECONF_PATH "/settings/use_system_font",
-					NULL))
+		if (g_settings_get_boolean (stickynotes->settings, "use-system-font"))
 			font_str_actual = NULL;
 		else
-			font_str_actual = mateconf_client_get_string (
-					stickynotes->mateconf,
-					MATECONF_PATH "/defaults/font", NULL);
+			font_str_actual = g_settings_get_string (stickynotes->settings, "default-font");
 	}
 	else
 		font_str_actual = g_strdup (font_str);
@@ -655,8 +634,7 @@ stickynote_set_visible (StickyNote *note, gboolean visible)
 			gtk_window_move (GTK_WINDOW (note->w_window),
 					note->x, note->y);
 		/* Put the note on all workspaces if necessary. */
-		if (mateconf_client_get_bool(stickynotes->mateconf,
-					MATECONF_PATH "/settings/sticky", NULL))
+		if (g_settings_get_boolean (stickynotes->settings, "sticky"))
 			gtk_window_stick(GTK_WINDOW(note->w_window));
 		else if (note->workspace > 0)
 		{
@@ -722,7 +700,7 @@ void stickynotes_remove(StickyNote *note)
 	gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(note->w_window));
 
 	if (stickynote_get_empty(note)
-	    || !mateconf_client_get_bool(stickynotes->mateconf, MATECONF_PATH "/settings/confirm_deletion", NULL)
+	    || !g_settings_get_boolean (stickynotes->settings, "confirm-deletion")
 	    || gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_OK) {
 		stickynote_free(note);
 
@@ -781,8 +759,7 @@ stickynotes_save_now (void)
 		xid = GDK_WINDOW_XID (gtk_widget_get_window (note->w_window));
 		matewnck_win = matewnck_window_get (xid);
 
-		if (!mateconf_client_get_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/sticky", NULL) &&
+		if (!g_settings_get_boolean (stickynotes->settings, "sticky") &&
 			matewnck_win)
 			note->workspace = 1 +
 				matewnck_workspace_get_number (

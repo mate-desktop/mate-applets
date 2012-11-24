@@ -50,7 +50,7 @@ void menu_about_cb(GtkAction *action, StickyNotesApplet *applet);
 void preferences_save_cb(gpointer data);
 void preferences_color_cb (GtkWidget *button, gpointer data);
 void preferences_font_cb (GtkWidget *button, gpointer data);
-void preferences_apply_cb(MateConfClient *client, guint cnxn_id, MateConfEntry *entry, gpointer data);
+void preferences_apply_cb(GSettings *settings, gchar *key, gpointer data);
 void preferences_response_cb(GtkWidget *dialog, gint response, gpointer data);
 gboolean preferences_delete_cb(GtkWidget *widget, GdkEvent *event, gpointer data);
 

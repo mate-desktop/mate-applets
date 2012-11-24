@@ -165,21 +165,17 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 			gdk_pixbuf_get_height (stickynotes->icon_normal));
 	stickynotes_make_prelight_icon (stickynotes->icon_prelight,
 			stickynotes->icon_normal, 30);
-	stickynotes->mateconf = mateconf_client_get_default();
+	stickynotes->settings = g_settings_new (STICKYNOTES_SCHEMA);
 	stickynotes->visible = TRUE;
 
 	stickynotes_applet_init_icons();
 	stickynotes_applet_init_prefs();
 
-	/* Watch MateConf values */
-	mateconf_client_add_dir (stickynotes->mateconf, MATECONF_PATH,
-			MATECONF_CLIENT_PRELOAD_NONE, NULL);
-	mateconf_client_notify_add (stickynotes->mateconf, MATECONF_PATH "/defaults",
-			(MateConfClientNotifyFunc) preferences_apply_cb,
-			NULL, NULL, NULL);
-	mateconf_client_notify_add (stickynotes->mateconf, MATECONF_PATH "/settings",
-			(MateConfClientNotifyFunc) preferences_apply_cb,
-			NULL, NULL, NULL);
+	/* Watch GSettings values */
+	g_signal_connect (stickynotes->settings,
+			"changed",
+			G_CALLBACK (preferences_apply_cb),
+			NULL);
 
 	/* Max height for large notes*/
 	stickynotes->max_height = 0.8*gdk_screen_get_height( gdk_screen_get_default() );
@@ -290,8 +286,7 @@ void stickynotes_applet_init_prefs(void)
 		g_object_unref(group);
 	}
 
-	if (!mateconf_client_key_is_writable(stickynotes->mateconf,
-				MATECONF_PATH "/defaults/width", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "default-width"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 					stickynotes->builder, "width_label")),
@@ -300,8 +295,7 @@ void stickynotes_applet_init_prefs(void)
 					stickynotes->builder, "width_spin")),
 				FALSE);
 	}
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/height", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "default-height"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 					stickynotes->builder, "height_label")),
@@ -310,16 +304,14 @@ void stickynotes_applet_init_prefs(void)
 					stickynotes->builder, "height_spin")),
 				FALSE);
 	}
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/color", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "default-color"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 					stickynotes->builder, "prefs_color_label")),
 				FALSE);
 		gtk_widget_set_sensitive (stickynotes->w_prefs_color, FALSE);
 	}
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/font_color", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "default-font-color"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 					stickynotes->builder, "prefs_font_color_label")),
@@ -327,27 +319,22 @@ void stickynotes_applet_init_prefs(void)
 		gtk_widget_set_sensitive (stickynotes->w_prefs_font_color,
 				FALSE);
 	}
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_color", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "use-system-color"))
 		gtk_widget_set_sensitive (stickynotes->w_prefs_sys_color,
 				FALSE);
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/font", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "default-font"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 					stickynotes->builder, "prefs_font_label")),
 				FALSE);
 		gtk_widget_set_sensitive (stickynotes->w_prefs_font, FALSE);
 	}
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_font", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "use-system-font"))
 		gtk_widget_set_sensitive (stickynotes->w_prefs_sys_font,
 				FALSE);
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/sticky", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "sticky"))
 		gtk_widget_set_sensitive (stickynotes->w_prefs_sticky, FALSE);
-	if (!mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/force_default", NULL))
+	if (!g_settings_is_writable (stickynotes->settings, "force-default"))
 		gtk_widget_set_sensitive (stickynotes->w_prefs_force, FALSE);
 
 	stickynotes_applet_update_prefs();
@@ -469,40 +456,30 @@ stickynotes_applet_update_prefs (void)
 	char *color_str, *font_color_str;
 	GdkColor color, font_color;
 
-	gint width = mateconf_client_get_int(stickynotes->mateconf,
-			MATECONF_PATH "/defaults/width", NULL);
+	gint width = g_settings_get_int (stickynotes->settings, "default-width");
 
 	width = MAX (width, 1);
-	height = mateconf_client_get_int (stickynotes->mateconf,
-			MATECONF_PATH "/defaults/height", NULL);
+	height = g_settings_get_int (stickynotes->settings, "default-height");
 	height = MAX (height, 1);
 
-	sys_color = mateconf_client_get_bool (stickynotes->mateconf,
-			MATECONF_PATH "/settings/use_system_color", NULL);
-	sys_font = mateconf_client_get_bool (stickynotes->mateconf,
-			MATECONF_PATH "/settings/use_system_font", NULL);
-	sticky = mateconf_client_get_bool (stickynotes->mateconf,
-			MATECONF_PATH "/settings/sticky", NULL);
-	force_default = mateconf_client_get_bool (stickynotes->mateconf,
-			MATECONF_PATH "/settings/force_default", NULL);
-	font_str = mateconf_client_get_string (stickynotes->mateconf,
-			MATECONF_PATH "/defaults/font", NULL);
-	desktop_hide = mateconf_client_get_bool (stickynotes->mateconf,
-			MATECONF_PATH "/settings/desktop_hide", NULL);
+	sys_color = g_settings_get_boolean (stickynotes->settings, "use-system-color");
+	sys_font = g_settings_get_boolean (stickynotes->settings, "use-system-font");
+	sticky = g_settings_get_boolean (stickynotes->settings, "sticky");
+	force_default = g_settings_get_boolean (stickynotes->settings, "force-default");
+	font_str = g_settings_get_string (stickynotes->settings, "default-font");
+	desktop_hide = g_settings_get_boolean (stickynotes->settings, "desktop-hide");
 
 	if (!font_str)
 	{
 		font_str = g_strdup ("Sans 10");
 	}
 
-	color_str = mateconf_client_get_string (stickynotes->mateconf,
-			MATECONF_PATH "/defaults/color", NULL);
+	color_str = g_settings_get_string (stickynotes->settings, "default-color");
 	if (!color_str)
 	{
 		color_str = g_strdup ("#ECF833");
 	}
-	font_color_str = mateconf_client_get_string (stickynotes->mateconf,
-			MATECONF_PATH "/defaults/font_color", NULL);
+	font_color_str = g_settings_get_string (stickynotes->settings, "default-font-color");
 	if (!font_color_str)
 	{
 		font_color_str = g_strdup ("#000000");
@@ -541,8 +518,7 @@ stickynotes_applet_update_prefs (void)
 			GTK_FONT_BUTTON (stickynotes->w_prefs_font), font_str);
 	g_free (font_str);
 
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/color", NULL))
+	if (g_settings_is_writable (stickynotes->settings, "default-color"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 				stickynotes->builder, "prefs_color_label")),
@@ -550,8 +526,7 @@ stickynotes_applet_update_prefs (void)
 		gtk_widget_set_sensitive (stickynotes->w_prefs_color,
 				!sys_color);
 	}
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/prefs_font_color", NULL))
+	if (g_settings_is_writable (stickynotes->settings, "default-font-color"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 				stickynotes->builder, "prefs_font_color_label")),
@@ -559,8 +534,7 @@ stickynotes_applet_update_prefs (void)
 		gtk_widget_set_sensitive (stickynotes->w_prefs_font_color,
 				!sys_color);
 	}
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/font", NULL))
+	if (g_settings_is_writable (stickynotes->settings, "default-font"))
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (
 				stickynotes->builder, "prefs_font_label")),
@@ -575,8 +549,8 @@ void stickynotes_applet_update_menus(void)
 	GList *l;
 	gboolean inconsistent = FALSE;
 
-	gboolean locked = mateconf_client_get_bool(stickynotes->mateconf, MATECONF_PATH "/settings/locked", NULL);
-	gboolean locked_writable = mateconf_client_key_is_writable(stickynotes->mateconf, MATECONF_PATH "/settings/locked", NULL);
+	gboolean locked = g_settings_get_boolean (stickynotes->settings, "locked");
+	gboolean locked_writable = g_settings_is_writable (stickynotes->settings, "locked");
 
 	for (l = stickynotes->notes; l != NULL; l = l->next) {
 		StickyNote *note = l->data;

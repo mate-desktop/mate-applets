@@ -1,0 +1,69 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.stickynotes" path="/org/mate/stickynotes/">
+    <key name="default-width" type="i">
+      <default>100</default>
+      <_summary>Default width for new notes</_summary>
+      <_description>Default width for new sticky notes in pixels.</_description>
+    </key>
+    <key name="default-height" type="i">
+      <default>100</default>
+      <_summary>Default height for new notes</_summary>
+      <_description>Default height for new sticky notes in pixels.</_description>
+    </key>
+    <key name="default-color" type="s">
+      <default>'#ECF833'</default>
+      <_summary>Default color for new notes</_summary>
+      <_description>Default color for new sticky notes. This should be in html hex specification, for example "#30FF50".</_description>
+    </key>
+    <key name="default-font-color" type="s">
+      <default>'#000000'</default>
+      <_summary>Default color for font</_summary>
+      <_description>Default font color for new sticky notes. This should be in html hex specification, for example "#000000".</_description>
+    </key>
+    <key name="default-font" type="s">
+      <default>'Sans 10'</default>
+      <_summary>Default font for new notes</_summary>
+      <_description>Default font for new sticky notes. This should be a Pango Font Name, for example "Sans Italic 10".</_description>
+    </key>
+    <key name="sticky" type="b">
+      <default>true</default>
+      <_summary>Sticky notes' workspace stickyness</_summary>
+      <_description>Specifies whether the sticky notes are visible on ALL workspaces on the desktop, or not.</_description>
+    </key>
+    <key name="locked" type="b">
+      <default>false</default>
+      <_summary>Sticky notes' locked state</_summary>
+      <_description>Specifies whether the sticky notes are locked (non-editable) or not.</_description>
+    </key>
+    <key name="date-format" type="s">
+      <default>'%x'</default>
+      <_summary>Date format of note's title</_summary>
+      <_description>By default, sticky notes are given the current date as the title when they are created. This format is used; anything that can be parsed by strftime() is valid.</_description>
+    </key>
+    <key name="use-system-color" type="b">
+      <default>true</default>
+      <_summary>Whether to use the default system color</_summary>
+      <_description>If this option is disabled, a custom color can be used as the default color for all sticky notes.</_description>
+    </key>
+    <key name="use-system-font" type="b">
+      <default>true</default>
+      <_summary>Whether to use the default system font</_summary>
+      <_description>If this option is disabled, a custom font can be used as the default font for all sticky notes.</_description>
+    </key>
+    <key name="force-default" type="b">
+      <default>false</default>
+      <_summary>Whether to force the default color and font on all notes</_summary>
+      <_description>If this option is enabled, the custom colors and fonts that have been assigned to individual notes will be ignored.</_description>
+    </key>
+    <key name="desktop-hide" type="b">
+      <default>true</default>
+      <_summary>Whether to hide all notes when the desktop is selected</_summary>
+      <_description>If this option is enabled, selecting the desktop in any way will automatically hide all the open notes.</_description>
+    </key>
+    <key name="confirm-deletion" type="b">
+      <default>true</default>
+      <_summary>Whether to ask for confirmation when deleting a note</_summary>
+      <_description>Empty notes are always deleted without confirmation.</_description>
+    </key>
+  </schema>
+</schemalist>

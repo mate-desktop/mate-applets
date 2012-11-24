@@ -144,8 +144,7 @@ static GdkFilterReturn desktop_window_event_filter (GdkXEvent *xevent,
 						    GdkEvent  *event,
 						    gpointer   data)
 {
-	gboolean desktop_hide = mateconf_client_get_bool (stickynotes->mateconf,
-			MATECONF_PATH "/settings/desktop_hide", NULL);
+	gboolean desktop_hide = g_settings_get_boolean (stickynotes->settings, "desktop-hide");
 	if (desktop_hide  &&
 	    (((XEvent*)xevent)->xany.type == PropertyNotify) &&
 	    (((XEvent*)xevent)->xproperty.atom == gdk_x11_get_xatom_by_name ("_NET_WM_USER_TIME"))) {
@@ -366,8 +365,8 @@ void menu_toggle_lock_cb(GtkAction *action, StickyNotesApplet *applet)
 {
 	gboolean locked = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
 
-	if (mateconf_client_key_is_writable(stickynotes->mateconf, MATECONF_PATH "/settings/locked", NULL))
-		mateconf_client_set_bool(stickynotes->mateconf, MATECONF_PATH "/settings/locked", locked, NULL);
+	if (g_settings_is_writable (stickynotes->settings, "locked"))
+		g_settings_set_boolean (stickynotes->settings, "locked", locked);
 }
 
 /* Menu Callback : Configure preferences */
@@ -444,38 +443,20 @@ preferences_save_cb (gpointer data)
 	gboolean desktop_hide = gtk_toggle_button_get_active (
 			GTK_TOGGLE_BUTTON (stickynotes->w_prefs_desktop));
 
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/width", NULL))
-		mateconf_client_set_int (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/width", width, NULL);
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/height", NULL))
-		mateconf_client_set_int (stickynotes->mateconf,
-				MATECONF_PATH "/defaults/height", height, NULL);
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_color", NULL))
-		mateconf_client_set_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_color",
-				sys_color, NULL);
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_font", NULL))
-		mateconf_client_set_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/use_system_font",
-				sys_font, NULL);
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/sticky", NULL))
-		mateconf_client_set_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/sticky", sticky, NULL);
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/force_default", NULL))
-		mateconf_client_set_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/force_default",
-				force_default, NULL);
-	if (mateconf_client_key_is_writable (stickynotes->mateconf,
-				MATECONF_PATH "/settings/desktop_hide", NULL))
-		mateconf_client_set_bool (stickynotes->mateconf,
-				MATECONF_PATH "/settings/desktop_hide",
-				desktop_hide, NULL);
+	if (g_settings_is_writable (stickynotes->settings,"default-width"))
+		g_settings_set_int (stickynotes->settings,"default-width", width);
+	if (g_settings_is_writable (stickynotes->settings,"default-height"))
+		g_settings_set_int (stickynotes->settings,"default-height", height);
+	if (g_settings_is_writable (stickynotes->settings,"use-system-color"))
+		g_settings_set_boolean (stickynotes->settings,"use-system-color", sys_color);
+	if (g_settings_is_writable (stickynotes->settings,"use-system-font"))
+		g_settings_set_boolean (stickynotes->settings,"use-system-font", sys_font);
+	if (g_settings_is_writable (stickynotes->settings,"sticky"))
+		g_settings_set_boolean (stickynotes->settings,"sticky", sticky);
+	if (g_settings_is_writable (stickynotes->settings,"force-default"))
+		g_settings_set_boolean (stickynotes->settings,"force-default", force_default);
+	if (g_settings_is_writable (stickynotes->settings,"desktop-hide"))
+		g_settings_set_boolean (stickynotes->settings,"desktop-hide", desktop_hide);
 }
 
 /* Preferences Callback : Change color. */
@@ -500,11 +481,8 @@ preferences_color_cb (GtkWidget *button, gpointer data)
 			font_color.green / 256,
 			font_color.blue / 256);
 
-	mateconf_client_set_string (stickynotes->mateconf,
-			MATECONF_PATH "/defaults/color", color_str, NULL);
-	mateconf_client_set_string (stickynotes->mateconf,
-			MATECONF_PATH "/defaults/font_color", font_color_str,
-			NULL);
+	g_settings_set_string (stickynotes->settings, "default-color", color_str);
+	g_settings_set_string (stickynotes->settings, "default-font-color", font_color_str);
 
 	g_free (color_str);
 	g_free (font_color_str);
@@ -516,19 +494,18 @@ void preferences_font_cb (GtkWidget *button, gpointer data)
 	const char *font_str;
 
 	font_str = gtk_font_button_get_font_name (GTK_FONT_BUTTON (button));
-	mateconf_client_set_string(stickynotes->mateconf,
-			MATECONF_PATH "/defaults/font", font_str, NULL);
+	g_settings_set_string (stickynotes->settings, "default-font", font_str);
 }
 
 /* Preferences Callback : Apply to existing notes. */
-void preferences_apply_cb(MateConfClient *client, guint cnxn_id, MateConfEntry *entry, gpointer data)
+void preferences_apply_cb(GSettings *settings, gchar *key, gpointer data)
 {
 	GList *l;
 	StickyNote *note;
 
-	if (!strcmp (entry->key, MATECONF_PATH "/settings/sticky"))
+	if (!strcmp (key, "sticky"))
 	{
-		if (mateconf_value_get_bool(entry->value))
+		if (g_settings_get_boolean (settings, key))
 			for (l = stickynotes->notes; l; l = l->next)
 			{
 				note = l->data;
@@ -543,20 +520,19 @@ void preferences_apply_cb(MateConfClient *client, guint cnxn_id, MateConfEntry *
 			}
 	}
 
-	else if (!strcmp (entry->key, MATECONF_PATH "/settings/locked"))
+	else if (!strcmp (key, "locked"))
 	{
 		for (l = stickynotes->notes; l; l = l->next)
 		{
 			note = l->data;
 			stickynote_set_locked (note,
-					mateconf_value_get_bool (entry->value));
+					g_settings_get_boolean (settings, key));
 		}
 		stickynotes_save();
 	}
 
-	else if (!strcmp (entry->key,
-				MATECONF_PATH "/settings/use_system_color") ||
-		 !strcmp (entry->key, MATECONF_PATH "/defaults/color"))
+	else if (!strcmp (key, "use-system-color") ||
+		 !strcmp (key, "default-color"))
 	{
 		for (l = stickynotes->notes; l; l = l->next)
 		{
@@ -567,8 +543,8 @@ void preferences_apply_cb(MateConfClient *client, guint cnxn_id, MateConfEntry *
 		}
 	}
 
-	else if (!strcmp (entry->key, MATECONF_PATH "/settings/use_system_font") ||
-		 !strcmp (entry->key, MATECONF_PATH "/defaults/font"))
+	else if (!strcmp (key, "use-system-font") ||
+		 !strcmp (key, "default-font"))
 	{
 		for (l = stickynotes->notes; l; l = l->next)
 		{
@@ -577,7 +553,7 @@ void preferences_apply_cb(MateConfClient *client, guint cnxn_id, MateConfEntry *
 		}
 	}
 
-	else if (!strcmp (entry->key, MATECONF_PATH "/settings/force_default"))
+	else if (!strcmp (key, "force-default"))
 	{
 		for (l = stickynotes->notes; l; l = l->next)
 		{
