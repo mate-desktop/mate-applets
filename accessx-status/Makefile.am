@@ -1,7 +1,7 @@
 SUBDIRS = docs pixmaps
 
 INCLUDES = \
-	$(MATE_APPLETS3_CFLAGS) \
+	$(MATE_APPLETS4_CFLAGS) \
 	-DACCESSX_PIXMAPS_DIR=\""$(datadir)/pixmaps/mate-accessx-status-applet"\" \
 	-DACCESSX_MENU_UI_DIR=\""$(uidir)"\"
 
@@ -12,7 +12,7 @@ accessx_status_applet_SOURCES = \
 	applet.h
 
 accessx_status_applet_LDADD = \
-	$(MATE_APPLETS3_LIBS) \
+	$(MATE_APPLETS4_LIBS) \
 	$(X_LIBS)
 
 appletdir       = $(datadir)/mate-panel/applets

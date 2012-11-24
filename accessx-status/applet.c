@@ -27,7 +27,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet.h>
 #include <X11/XKBlib.h>
 
 #define XK_MISCELLANY
