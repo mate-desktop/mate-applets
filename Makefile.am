@@ -47,10 +47,9 @@ always_built_SUBDIRS = \
 	charpick \
 	drivemount \
 	geyes \
-	mini-commander \
 	stickynotes \
-	trashapplet \
-	null_applet
+	trashapplet
+#	null_applet
 
 SUBDIRS = \
 	po \
@@ -72,7 +71,6 @@ DIST_SUBDIRS = \
 	drivemount \
 	charpick \
 	geyes \
-	mini-commander \
 	battstat \
 	multiload \
 	mateweather \
@@ -100,8 +98,6 @@ EXTRA_DIST = \
 	mate-doc-utils.make
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--disable-scrollkeeper \
-	--enable-mini-commander \
 	--enable-mixer-applet
 
 # We build the ChangeLog from the git log
@@ -114,11 +110,6 @@ dist: ChangeLog
 
 # Make sure the ChangeLog is updated every time
 .PHONY: ChangeLog
-
-# hack from sound-juicer to get around scrollkeeper's leaving a big
-# mess behind.
-distuninstallcheck_listfiles = \
-        find -regex '.*/var/scrollkeeper/.*' -prune -or -type f -print
 
 ACLOCAL_AMFLAGS = -I m4
 
