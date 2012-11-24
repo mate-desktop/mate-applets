@@ -5,6 +5,7 @@
 #include <glib/gi18n.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
 
 G_BEGIN_DECLS
@@ -59,6 +60,8 @@ struct _LoadGraph {
 struct _MultiloadApplet
 {
 	MatePanelApplet *applet;
+	
+	GSettings *settings;
 	
 	LoadGraph *graphs[NGRAPHS];
 	

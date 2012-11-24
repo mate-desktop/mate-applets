@@ -3,7 +3,7 @@ SUBDIRS = docs
 INCLUDES =			\
 	-I$(srcdir)		\
 	-DMULTILOAD_MENU_UI_DIR=\""$(uidir)"\" \
-	$(MATE_APPLETS3_CFLAGS)	\
+	$(MATE_APPLETS4_CFLAGS)	\
 	$(GTOP_APPLETS_CFLAGS)	\
 	$(MATEDESKTOP_CFLAGS)
 
@@ -22,21 +22,22 @@ multiload_applet_2_SOURCES = \
 			autoscaler.h
 
 multiload_applet_2_LDADD = \
-				$(MATE_APPLETS3_LIBS) 	\
+				$(MATE_APPLETS4_LIBS) 	\
 				$(GTOP_APPLETS_LIBS)	\
 	$(MATEDESKTOP_LIBS) \
 	-lm
 
-schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = multiload.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.multiload.gschema.xml
+@GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 EXTRA_DIST =							\
 	org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
-	$(schemas_in_files)					\
+	$(gsettings_SCHEMAS_in_in)			\
 	$(ui_DATA)
 
 uidir		= $(datadir)/mate-2.0/ui
@@ -63,11 +64,6 @@ org.mate.panel.applet.MultiLoadAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(schemas_DATA) ;
-endif
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
 
 -include $(top_srcdir)/git.mk

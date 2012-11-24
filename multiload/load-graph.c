@@ -9,8 +9,9 @@
 #include <glib.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #include "global.h"
 
@@ -155,7 +156,7 @@ load_graph_unalloc (LoadGraph *g)
     g->pos = NULL;
     g->data = NULL;
     
-    g->size = mate_panel_applet_mateconf_get_int(g->multiload->applet, "size", NULL);
+    g->size = g_settings_get_int(g->multiload->settings, "size");
     g->size = MAX (g->size, 10);
 
     if (g->pixmap) {
@@ -302,8 +303,8 @@ load_graph_load_config (LoadGraph *g)
 		
 	for (i = 0; i < g->n; i++)
 	{
-		g_snprintf(name, sizeof(name), "%s_color%u", g->name, i);
-		temp = mate_panel_applet_mateconf_get_string(g->multiload->applet, name, NULL);
+		g_snprintf(name, sizeof(name), "%s-color%u", g->name, i);
+		temp = g_settings_get_string(g->multiload->settings, name);
 		if (!temp)
 			temp = g_strdup ("#000000");
 		gdk_color_parse(temp, &(g->colors[i]));

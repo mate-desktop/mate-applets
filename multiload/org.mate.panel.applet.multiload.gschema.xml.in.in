@@ -1,0 +1,125 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.multiload">
+    <key name="view-cpuload" type="b">
+      <default>true</default>
+      <summary>Enable CPU load graph</summary>
+    </key>
+    <key name="view-memload" type="b">
+      <default>false</default>
+      <summary>Enable memory load graph</summary>
+    </key>
+    <key name="view-netload" type="b">
+      <default>false</default>
+      <summary>Enable network load graph</summary>
+    </key>
+    <key name="view-swapload" type="b">
+      <default>false</default>
+      <summary>Enable swap load graph</summary>
+    </key>
+    <key name="view-loadavg" type="b">
+      <default>false</default>
+      <summary>Enable load average graph</summary>
+    </key>
+    <key name="view-diskload" type="b">
+      <default>false</default>
+      <summary>Enable disk load graph</summary>
+    </key>
+    <key name="speed" type="i">
+      <default>500</default>
+      <summary>Applet refresh rate in milliseconds</summary>
+    </key>
+    <key name="size" type="i">
+      <default>40</default>
+      <summary>Graph size</summary>
+      <description>For horizontal panels, the width of the graphs in pixels.  For vertical panels, this is the height of the graphs.</description>
+    </key>
+    <key name="cpuload-color0" type="s">
+      <default>'#0072b3'</default>
+      <summary>Graph color for user-related CPU activity</summary>
+    </key>
+    <key name="cpuload-color1" type="s">
+      <default>'#0092e6'</default>
+      <summary>Graph color for system-related CPU activity</summary>
+    </key>
+    <key name="cpuload-color2" type="s">
+      <default>'#00a3ff'</default>
+      <summary>Graph color for nice-related CPU activity</summary>
+    </key>
+    <key name="cpuload-color3" type="s">
+      <default>'#002f3d'</default>
+      <summary>Graph color for iowait related CPU activity</summary>
+    </key>
+    <key name="cpuload-color4" type="s">
+      <default>'#000000'</default>
+      <summary>CPU graph background color</summary>
+    </key>
+    <key name="memload-color0" type="s">
+      <default>'#00b35b'</default>
+      <summary>Graph color for user-related memory usage</summary>
+    </key>
+    <key name="memload-color1" type="s">
+      <default>'#00e675'</default>
+      <summary>Graph color for shared memory</summary>
+    </key>
+    <key name="memload-color2" type="s">
+      <default>'#00ff82'</default>
+      <summary>Graph color for buffer memory</summary>
+    </key>
+    <key name="memload-color3" type="s">
+      <default>'#AAF5D0'</default>
+      <summary>Graph color for cached memory</summary>
+    </key>
+    <key name="memload-color4" type="s">
+      <default>'#000000'</default>
+      <summary>Memory graph background color</summary>
+    </key>
+    <key name="netload2-color0" type="s">
+      <default>'#fce94f'</default>
+      <summary>Graph color for input network activity</summary>
+    </key>
+    <key name="netload2-color1" type="s">
+      <default>'#edd400'</default>
+      <summary>Graph color for output network activity</summary>
+    </key>
+    <key name="netload2-color2" type="s">
+      <default>'#c4a000'</default>
+      <summary>Graph color for loopback network usage</summary>
+    </key>
+    <key name="netload2-color3" type="s">
+      <default>'#000000'</default>
+      <summary>Network graph background color</summary>
+    </key>
+    <key name="swapload-color0" type="s">
+      <default>'#8b00c3'</default>
+      <summary>Graph color for user-related swap usage</summary>
+    </key>
+    <key name="swapload-color1" type="s">
+      <default>'#000000'</default>
+      <summary>Swap graph background color</summary>
+    </key>
+    <key name="loadavg-color0" type="s">
+      <default>'#d50000'</default>
+      <summary>Graph color for load average</summary>
+    </key>
+    <key name="loadavg-color1" type="s">
+      <default>'#000000'</default>
+      <summary>Load graph background color</summary>
+    </key>
+    <key name="diskload-color0" type="s">
+      <default>'#C65000'</default>
+      <summary>Graph color for disk read</summary>
+    </key>
+    <key name="diskload-color1" type="s">
+      <default>'#FF6700'</default>
+      <summary>Graph color for disk write</summary>
+    </key>
+    <key name="diskload-color2" type="s">
+      <default>'#000000'</default>
+      <summary>Background color for disk load graph</summary>
+    </key>
+    <key name="system-monitor" type="s">
+      <default>'mate-system-monitor.desktop'</default>
+      <summary>The desktop description file to execute as the system monitor</summary>
+    </key>
+  </schema>
+</schemalist>

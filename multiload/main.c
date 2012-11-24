@@ -22,10 +22,10 @@
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
-#include <mateconf/mateconf-client.h>
-#include <libmate/mate-desktop-item.h> 
+#include <gio/gio.h>
+#include <gio/gdesktopappinfo.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
+#include <mate-panel-applet-gsettings.h>
 
 #include "global.h"
 
@@ -90,24 +90,27 @@ static void
 start_procman (MultiloadApplet *ma)
 {
 	GError *error = NULL;
-	MateDesktopItem *ditem;
+	GDesktopAppInfo *appinfo;
 	gchar *monitor;
 
 	g_return_if_fail (ma != NULL);
 
-	monitor = mate_panel_applet_mateconf_get_string (ma->applet, "system_monitor", NULL);
+	monitor = g_settings_get_string (ma->settings, "system-monitor");
 	if (monitor == NULL)
 	        monitor = g_strdup ("mate-system-monitor.desktop");
 
-	if ((ditem = mate_desktop_item_new_from_basename (monitor, 0, NULL))) {
-		mate_desktop_item_set_launch_time (ditem, gtk_get_current_event_time ());
-		mate_desktop_item_launch_on_screen (ditem, NULL,
-		                                     MATE_DESKTOP_ITEM_LAUNCH_ONLY_ONE,
-		                                     gtk_widget_get_screen (GTK_WIDGET (ma->applet)),
-		                                     -1, &error);
-		mate_desktop_item_unref (ditem);
+	appinfo = g_desktop_app_info_new (monitor);
+	if (appinfo) {
+		GdkScreen *screen;
+		GdkAppLaunchContext *context;
+		screen = gtk_widget_get_screen (GTK_WIDGET (ma->applet));
+		context = gdk_app_launch_context_new ();
+		gdk_app_launch_context_set_screen (context, screen);
+		g_app_info_launch (G_APP_INFO (appinfo), NULL, G_APP_LAUNCH_CONTEXT (context), &error);
+		g_object_unref (context);
+		g_object_unref (appinfo);
 	}
-	else {	
+	else {
 	     	gdk_spawn_command_line_on_screen (
 				gtk_widget_get_screen (GTK_WIDGET (ma->applet)),
 				"mate-system-monitor", &error);
@@ -343,8 +346,8 @@ multiload_create_graphs(MultiloadApplet *ma)
 	gint speed, size;
 	gint i;
 
-	speed = mate_panel_applet_mateconf_get_int (ma->applet, "speed", NULL);
-	size = mate_panel_applet_mateconf_get_int (ma->applet, "size", NULL);
+	speed = g_settings_get_int (ma->settings, "speed");
+	size = g_settings_get_int (ma->settings, "size");
 	speed = MAX (speed, 50);
 	size = CLAMP (size, 10, 400);
 
@@ -357,11 +360,11 @@ multiload_create_graphs(MultiloadApplet *ma)
 		 * older version of netload to a newer one in the
 		 * 2.25.1 release. */
 		if (g_strcmp0 ("netload2", graph_types[i].name) == 0) {
-		  key = g_strdup ("view_netload");
+		  key = g_strdup ("view-netload");
 		} else {
-		  key = g_strdup_printf ("view_%s", graph_types[i].name);
+		  key = g_strdup_printf ("view-%s", graph_types[i].name);
 		}
-		visible = mate_panel_applet_mateconf_get_bool (ma->applet, key, NULL);
+		visible = g_settings_get_boolean (ma->settings, key);
 		g_free (key);
 
 		ma->graphs[i] = load_graph_new (ma,
@@ -410,7 +413,7 @@ multiload_applet_refresh(MultiloadApplet *ma)
 	
 	gtk_container_add(GTK_CONTAINER(ma->applet), ma->box);
 			
-	/* create the NGRAPHS graphs, passing in their user-configurable properties with mateconf. */
+	/* create the NGRAPHS graphs, passing in their user-configurable properties with gsettings. */
 	multiload_create_graphs (ma);
 
 	/* only start and display the graphs the user has turned on */
@@ -449,7 +452,7 @@ static gboolean
 multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 {
 	MultiloadApplet *ma;
-	MateConfClient *client;
+	GSettings *lockdown_settings;
 	GtkActionGroup *action_group;
 	gchar *ui_path;
 	
@@ -466,7 +469,7 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 	gtk_window_set_default_icon_name ("utilities-system-monitor");
 	mate_panel_applet_set_background_widget (applet, GTK_WIDGET(applet));
 	
-	mate_panel_applet_add_preferences (applet, "/schemas/apps/multiload/prefs", NULL);
+	ma->settings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.multiload");
 	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
 	action_group = gtk_action_group_new ("Multiload Applet Actions");
@@ -487,8 +490,8 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 		gtk_action_set_visible (action, FALSE);
 	}
 
-	client = mateconf_client_get_default ();
-	if (mateconf_client_get_bool (client, "/desktop/mate/lockdown/inhibit_command_line", NULL) ||
+	lockdown_settings = g_settings_new ("org.mate.lockdown");
+	if (g_settings_get_boolean (lockdown_settings, "disable-command-line") ||
 	    mate_panel_applet_get_locked_down (applet)) {
 		GtkAction *action;
 
@@ -497,6 +500,7 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 		action = gtk_action_group_get_action (action_group, "MultiLoadRunProcman");
 		gtk_action_set_visible (action, FALSE);
 	}
+	g_object_unref (lockdown_settings);
 
 	g_object_unref (action_group);
 
