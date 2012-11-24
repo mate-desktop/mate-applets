@@ -2,7 +2,7 @@
 
 INCLUDES = -I. -I$(srcdir) 				\
 	-DMODEM_MENU_UI_DIR=\""$(uidir)"\"		\
-	$(MATE_APPLETS3_CFLAGS)
+	$(MATE_APPLETS4_CFLAGS)
 
 libexec_PROGRAMS = modem_applet
 
@@ -11,7 +11,7 @@ modem_applet_SOURCES = \
 	modem-applet.h
 
 modem_applet_LDADD = 		\
-	$(MATE_APPLETS3_LIBS)	\
+	$(MATE_APPLETS4_LIBS)	\
 	$(MODEMLIGHTS_LIBS)
 
 uidir	= $(datadir)/mate-2.0/ui
