@@ -645,6 +645,7 @@ AC_SUBST(builderdir)
 
 AC_DEFINE_DIR(MATE_ICONDIR, "${iconsdir}", [Mate Icon Directory])
 AC_DEFINE_DIR(MATE_PIXMAPSDIR, "${pixmapsdir}", [Mate Pixmaps Directory])
+AC_DEFINE_DIR(PKGDATADIR, "${pkgdatadir}", [Mate Applets Directory])
 AC_DEFINE_DIR(GTK_BUILDERDIR, "${builderdir}", [GtkBuilder Resources Directory])
 AC_DEFINE_DIR(DATADIR, "${datadir}", [datadir])
 AC_DEFINE_DIR(SYSCONFDIR, "${sysconfdir}", [sysconfdir])
@@ -660,6 +661,7 @@ AC_SUBST(PACKAGE)
 AC_SUBST(DATADIR)
 AC_SUBST(LIBDIR)
 AC_SUBST(PYTHONDIR)
+AC_SUBST(PKGDATADIR)
 AC_SUBST(BUILDERDIR)
 
 dnl ***************************************************************************

@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 
-import gtk, gtk.gdk
-import gobject
+import gi
+gi.require_version("Gtk", "2.0")
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GdkPixbuf
+from gi.repository import GObject
 import os
 import mate_invest
 from gettext import gettext as _
@@ -15,16 +19,16 @@ import time
 AUTOREFRESH_TIMEOUT = 20*60*1000 # 15 minutes
 
 # based on http://www.johnstowers.co.nz/blog/index.php/2007/03/12/threading-and-pygtk/
-class _IdleObject(gobject.GObject):
+class _IdleObject(GObject.GObject):
 	"""
-	Override gobject.GObject to always emit signals in the main thread
+	Override GObject.GObject to always emit signals in the main thread
 	by emmitting on an idle handler
 	"""
 	def __init__(self):
-		gobject.GObject.__init__(self)
+		GObject.GObject.__init__(self)
 
 	def emit(self, *args):
-		gobject.idle_add(gobject.GObject.emit,self,*args)
+		GObject.idle_add(GObject.GObject.emit,self,*args)
 
 class ImageRetriever(Thread, _IdleObject):
 	"""
@@ -33,11 +37,11 @@ class ImageRetriever(Thread, _IdleObject):
 	"""
 	__gsignals__ =  { 
 			"completed": (
-				gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, []),
+				GObject.SignalFlags.RUN_LAST, None, []),
 			# FIXME: should we be making use of this?
 			#"progress": (
-			#	gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, [
-			#	gobject.TYPE_FLOAT])        #percent complete
+			#	GObject.SignalFlags.RUN_LAST, None, [
+			#	GObject.TYPE_FLOAT])        #percent complete
 			}
 
 	def __init__(self, image_url):
@@ -47,12 +51,12 @@ class ImageRetriever(Thread, _IdleObject):
 		self.retrieved = False
 		
 	def run(self):
-		self.image = gtk.Image()
+		self.image = Gtk.Image()
 		try: sock = urllib.urlopen(self.image_url, proxies = mate_invest.PROXY)
 		except Exception, msg:
 			mate_invest.debug("Error while opening %s: %s" % (self.image_url, msg))
 		else:
-			loader = gtk.gdk.PixbufLoader()
+			loader = GdkPixbuf.PixbufLoader()
 			loader.connect("closed", lambda loader: self.image.set_from_pixbuf(loader.get_pixbuf()))
 			loader.write(sock.read())
 			sock.close()
@@ -107,7 +111,7 @@ class FinancialChart:
 		win.set_title(_("Financial Chart"))
 		
 		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(join(mate_invest.ART_DATA_DIR, "invest_neutral.svg"), 96,96)
+			pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(join(mate_invest.ART_DATA_DIR, "invest_neutral.svg"), 96,96)
 			self.ui.get_object("plot").set_from_pixbuf(pixbuf)
 		except Exception, msg:
 			mate_invest.debug("Could not load 'invest-neutral.svg' file: %s" % msg)
@@ -241,14 +245,14 @@ class FinancialChart:
 	
 	def on_autorefresh_toggled(self, autorefresh):
 		if self.autorefresh_id != 0:
-			gobject.source_remove(self.autorefresh_id)
+			GObject.source_remove(self.autorefresh_id)
 			self.autorefresh_id = 0
 			
 		if autorefresh.get_active():
-			self.autorefresh_id = gobject.timeout_add(AUTOREFRESH_TIMEOUT, self.on_refresh_chart, True)
+			self.autorefresh_id = GObject.timeout_add(AUTOREFRESH_TIMEOUT, self.on_refresh_chart, True)
 
 def show_chart(tickers):
-	ui = gtk.Builder();
+	ui = Gtk.Builder();
 	ui.add_from_file(os.path.join(mate_invest.BUILDER_DATA_DIR, "financialchart.ui"))
 	chart = FinancialChart(ui)
 	ui.get_object("s").set_text(' '.join(tickers))

@@ -1,14 +1,17 @@
 from gettext import gettext as _
 import locale
 from os.path import join
-import gtk, gobject, mateconf
+import gi
+gi.require_version("Gtk", "2.0")
+from gi.repository import Gtk
+from gi.repository import GObject
 import mate_invest
 import currencies
 import cPickle
 
 class PrefsDialog:
 	def __init__(self, applet):
-		self.ui = gtk.Builder()
+		self.ui = Gtk.Builder()
 		self.ui.add_from_file(join(mate_invest.BUILDER_DATA_DIR, "prefs-dialog.ui"))
 
 		self.dialog = self.ui.get_object("preferences")
@@ -29,14 +32,14 @@ class PrefsDialog:
 
 		self.typs = (str, str, float, float, float, float)
 		self.names = (_("Symbol"), _("Label"), _("Amount"), _("Price"), _("Commission"), _("Currency Rate"))
-		store = gtk.ListStore(*self.typs)
-		store.set_sort_column_id(0, gtk.SORT_ASCENDING)
+		store = Gtk.ListStore(*self.typs)
+		store.set_sort_column_id(0, Gtk.SortType.ASCENDING)
 		self.treeview.set_model(store)
 		self.model = store
 
-		completion = gtk.EntryCompletion()
+		completion = Gtk.EntryCompletion()
 		self.currency.set_completion(completion)
-		liststore = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
+		liststore = Gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING)
 		completion.set_model(liststore)
 		completion.set_text_column(0)
 		for code, label in self.currencies.items():
@@ -66,7 +69,7 @@ class PrefsDialog:
 					exchange =  purchase["exchange"]
 				else:
 					exchange = 0.0
-				store.append([key, label, purchase["amount"], purchase["bought"], purchase["comission"], exchange])
+				store.append([key, label, float(purchase["amount"]), float(purchase["bought"]), float(purchase["comission"]), float(exchange)])
 
 		self.sync_ui()
 
@@ -88,16 +91,16 @@ class PrefsDialog:
 
 	def get_cell_data(self, column, cell, model, iter, data):
 		typ, col = data
+		val = model[iter][col]
 		if typ == int:
-			cell.set_property('text', "%d" % typ(model[iter][col]))
+			cell.set_property('text', "%d" % typ(val))
 		elif typ == float:
 			# provide float numbers with at least 2 fractional digits
-			val = model[iter][col]
 			digits = self.fraction_digits(val)
 			fmt = "%%.%df" % max(digits, 2)
 			cell.set_property('text', self.format(fmt, val))
 		else:
-			cell.set_property('text', typ(model[iter][col]))
+			cell.set_property('text', typ(val))
 
 	# determine the number of non zero digits in the fraction of the value
 	def fraction_digits(self, value):
@@ -107,17 +110,16 @@ class PrefsDialog:
 		return len(text) - text.find(".") - 1
 
 	def create_cell (self, view, column, name, typ):
-		cell_description = gtk.CellRendererText ()
+		cell_description = Gtk.CellRendererText ()
 		if typ == float:
 			cell_description.set_property("xalign", 1.0)
 		cell_description.set_property("editable", True)
 		cell_description.connect("edited", self.on_cell_edited, column, typ)
-		column_description = gtk.TreeViewColumn (name, cell_description)
+		column_description = Gtk.TreeViewColumn (name, cell_description)
 		if typ == str:
-			column_description.set_attributes (cell_description, text=column)
+			#column_description.add_attribute (cell_description, column, 0)
 			column_description.set_sort_column_id(column)
-		if typ == float:
-			column_description.set_cell_data_func(cell_description, self.get_cell_data, (float, column))
+		column_description.set_cell_data_func(cell_description, self.get_cell_data, (typ, column))
 		view.append_column(column_description)
 
 	def add_exchange_column(self):
@@ -140,7 +142,7 @@ class PrefsDialog:
 
 		mate_invest.STOCKS = {}
 
-		def save_symbol(model, path, iter):
+		def save_symbol(model, path, iter, data):
 			#if int(model[iter][1]) == 0 or float(model[iter][2]) < 0.0001:
 			#	return
 
@@ -153,7 +155,7 @@ class PrefsDialog:
 				"comission": float(model[iter][4]),
 				"exchange": float(model[iter][5])
 			})
-		self.model.foreach(save_symbol)
+		self.model.foreach(save_symbol, None)
 		try:
 			cPickle.dump(mate_invest.STOCKS, file(mate_invest.STOCKS_FILE, 'w'))
 			mate_invest.debug('Stocks written to file')
@@ -164,7 +166,7 @@ class PrefsDialog:
 		if self.currency_code != None and len(self.currency_code) == 3:
 			mate_invest.CONFIG['currency'] = self.currency_code
 		try:
-			cPickle.dump(invest.CONFIG, file(mate_invest.CONFIG_FILE, 'w'))
+			cPickle.dump(mate_invest.CONFIG, file(mate_invest.CONFIG_FILE, 'w'))
 			mate_invest.debug('Configuration written to file')
 		except Exception, msg:
 			mate_invest.debug('Could not save configuration file: %s' % msg)
@@ -173,7 +175,7 @@ class PrefsDialog:
 		pass
 
 	def on_add_stock(self, w):
-		iter = self.model.append(["GOOG", "Google Inc.", 0, 0, 0, 0])
+		iter = self.model.append(["GOOG", "Google Inc.", 0.0, 0.0, 0.0, 0.0])
 		path = self.model.get_path(iter)
 		self.treeview.set_cursor(path, self.treeview.get_column(0), True)
 

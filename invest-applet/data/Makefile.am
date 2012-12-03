@@ -1,26 +1,38 @@
 SUBDIRS = art
 
 # ******************************************************************************
-# Panel applet matecomponent stuff
+# Panel applet DBUS stuff
 # ******************************************************************************
-serverdir = $(libdir)/matecomponent/servers
-server_in_files = Invest_Applet.server.in
-server_DATA = \
-	$(server_in_files:.server.in=.server) \
-	MATE_GtikApplet.server
+servicedir       = $(datadir)/dbus-1/services
+service_in_files = org.mate.panel.applet.InvestAppletFactory.service.in
+service_DATA     = $(service_in_files:.service.in=.service)
+
+org.mate.panel.applet.InvestAppletFactory.service: $(service_in_files)
+	$(AM_V_GEN)sed \
+            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+            $< > $@
 
 # ******************************************************************************
-# MateConf Schemas
+# Panel stuff
 # ******************************************************************************
-# MateConf Preference Schemas
-#schemadir = $(MATECONF_SCHEMA_FILE_DIR)
-#schema_in_files = deskbar-applet.schemas.in
-#schema_DATA = $(schema_in_files:.schemas.in=.schemas)
+
+appletdir       = $(datadir)/mate-panel/applets
+applet_in_files = org.mate.applets.InvestApplet.mate-panel-applet.in
+applet_DATA     = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
+
+$(applet_in_files): $(applet_in_files).in Makefile
+	$(AM_V_GEN)sed \
+            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+            -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
+            $< > $@
+
+%.mate-panel-applet: %.mate-panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
 
 # ******************************************************************************
 # Misc data
 # ******************************************************************************
-uidir = $(datadir)/mate-2.0/ui
+
+uidir = $(datadir)/mate-applets
 ui_DATA = \
 	Invest_Applet.xml
 builder_DATA = \
@@ -32,26 +44,14 @@ investbindir = $(libdir)/invest-applet
 # ******************************************************************************
 # Build rules
 # ******************************************************************************
-@INTLTOOL_SERVER_RULE@
-@INTLTOOL_SCHEMAS_RULE@
-
-$(server_in_files): $(server_in_files:.server.in=.server.in.in)
-	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
-
-#if MATECONF_SCHEMAS_INSTALL
-#install-data-local: install-schemas
-#install-schemas:
-#	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) \
-#		$(MATECONFTOOL) --makefile-install-rule $(schema_DATA)
-#endif
 
 DISTCLEANFILES = \
 	$(server_in_files) \
 	$(server_in_files:.server.in=.server)
 
 EXTRA_DIST = \
-	Invest_Applet.server.in.in \
-	MATE_GtikApplet.server \
+	org.mate.applets.InvestApplet.mate-panel-applet.in.in \
+	$(service_in_files) \
 	$(ui_DATA) \
 	$(builder_DATA)
 

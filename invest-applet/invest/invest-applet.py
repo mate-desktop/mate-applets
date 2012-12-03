@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 #
 
-import gobject
-import gtk, mateapplet
+import gi
+gi.require_version("Gtk", "2.0")
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import MatePanelApplet
 
 import getopt, sys
 from os.path import *
@@ -30,20 +33,20 @@ locale.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
 
 from gettext import gettext as _
 
-def applet_factory(applet, iid):
+def applet_factory(applet, iid, data):
 	mate_invest.debug('Starting invest instance: %s %s'% ( applet, iid ))
 	mate_invest.applet.InvestApplet(applet)
 	return True
 
 # Return a standalone window that holds the applet
 def build_window():
-	app = gtk.Window(gtk.WINDOW_TOPLEVEL)
+	app = Gtk.Window(Gtk.WindowType.TOPLEVEL)
 	app.set_title(_("Invest Applet"))
-	app.connect("destroy", gtk.main_quit)
+	app.connect("destroy", Gtk.main_quit)
 	app.set_property('resizable', False)
 
-	applet = mateapplet.Applet()
-	applet_factory(applet, None)
+	applet = MatePanelApplet.Applet()
+	applet_factory(applet, None, None)
 	applet.reparent(app)
 
 	app.show_all()
@@ -88,11 +91,11 @@ if __name__ == "__main__":
 
 	if standalone:
 		build_window()
-		gtk.main()
+		Gtk.main()
 	else:
-		mateapplet.matecomponent_factory(
-			"OAFIID:Invest_Applet_Factory",
-			mateapplet.Applet.__gtype__,
-			mate_invest.defs.PACKAGE,
-			mate_invest.defs.VERSION,
-			applet_factory)
+		MatePanelApplet.Applet.factory_main(
+			"InvestAppletFactory",
+			True,
+			MatePanelApplet.Applet.__gtype__,
+			applet_factory,
+			None)

@@ -1,5 +1,10 @@
 from os.path import join
-import mateapplet, gtk, gtk.gdk, mateconf, gobject
+import gi
+gi.require_version("Gtk", "2.0")
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GdkPixbuf
+from gi.repository import GObject
 from gettext import gettext as _
 import csv
 import locale
@@ -19,16 +24,16 @@ QUOTES_URL="http://finance.yahoo.com/d/quotes.csv?s=%(s)s&f=snc4l1d1t1c1ohgv&e=.
 QUOTES_CSV_FIELDS=["ticker", "label", "currency", ("trade", float), "date", "time", ("variation", float), ("open", float), ("high", float), ("low", float), ("volume", int)]
 
 # based on http://www.johnstowers.co.nz/blog/index.php/2007/03/12/threading-and-pygtk/
-class _IdleObject(gobject.GObject):
+class _IdleObject(GObject.GObject):
 	"""
-	Override gobject.GObject to always emit signals in the main thread
+	Override GObject.GObject to always emit signals in the main thread
 	by emmitting on an idle handler
 	"""
 	def __init__(self):
-		gobject.GObject.__init__(self)
+		GObject.GObject.__init__(self)
 
 	def emit(self, *args):
-		gobject.idle_add(gobject.GObject.emit,self,*args)
+		GObject.idle_add(GObject.GObject.emit,self,*args)
 
 class QuotesRetriever(Thread, _IdleObject):
 	"""
@@ -37,11 +42,11 @@ class QuotesRetriever(Thread, _IdleObject):
 	"""
 	__gsignals__ =  {
 			"completed": (
-				gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, []),
+				GObject.SignalFlags.RUN_LAST, None, []),
 			# FIXME: We don't monitor progress, yet ...
 			#"progress": (
-			#	gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, [
-			#	gobject.TYPE_FLOAT])        #percent complete
+			#	GObject.SignalFlags.RUN_LAST, None, [
+			#	GObject.TYPE_FLOAT])        #percent complete
 			}
 
 	def __init__(self, tickers):
@@ -65,18 +70,18 @@ class QuotesRetriever(Thread, _IdleObject):
 		self.emit("completed")
 
 
-class QuoteUpdater(gtk.ListStore):
+class QuoteUpdater(Gtk.ListStore):
 	updated = False
 	last_updated = None
 	quotes_valid = False
 	timeout_id = None
 	SYMBOL, LABEL, CURRENCY, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE, VARIATION_PCT, PB = range(9)
 	def __init__ (self, change_icon_callback, set_tooltip_callback):
-		gtk.ListStore.__init__ (self, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, bool, float, float, float, float, gtk.gdk.Pixbuf)
+		Gtk.ListStore.__init__ (self, GObject.TYPE_STRING, GObject.TYPE_STRING, GObject.TYPE_STRING, bool, float, float, float, float, GdkPixbuf.Pixbuf)
 		self.set_update_interval(AUTOREFRESH_TIMEOUT)
 		self.change_icon_callback = change_icon_callback
 		self.set_tooltip_callback = set_tooltip_callback
-		self.set_sort_column_id(1, gtk.SORT_ASCENDING)
+		self.set_sort_column_id(1, Gtk.SortType.ASCENDING)
 		self.refresh()
 
 		# tell the network manager to notify me when network status changes
@@ -85,11 +90,11 @@ class QuoteUpdater(gtk.ListStore):
 	def set_update_interval(self, interval):
 		if self.timeout_id != None:
 			mate_invest.debug("Canceling refresh timer")
-			gobject.source_remove(self.timeout_id)
+			GObject.source_remove(self.timeout_id)
 			self.timeout_id = None
 		if interval > 0:
 			mate_invest.debug("Setting refresh timer to %s:%02d.%03d" % ( interval / 60000, interval % 60000 / 1000, interval % 1000) )
-			self.timeout_id = gobject.timeout_add(interval, self.refresh)
+			self.timeout_id = GObject.timeout_add(interval, self.refresh)
 
 	def nm_state_changed(self):
 		# when nm is online but we do not have an update timer, create it and refresh
@@ -275,10 +280,10 @@ class QuoteUpdater(gtk.ListStore):
 						break
 
 				if is_simple_quote:
-					row = self.insert(0, [ticker, label, val["currency"], True, 0, 0, val["trade"], val["variation_pct"], pb])
+					row = self.insert(0, [ticker, label, val["currency"], True, 0.0, 0.0, val["trade"], val["variation_pct"], pb])
 				else:
 					(balance, change) = self.balance(mate_invest.STOCKS[ticker]["purchases"], val["trade"])
-					row = self.insert(0, [ticker, label, val["currency"], False, balance, change, val["trade"], val["variation_pct"], pb])
+					row = self.insert(0, [ticker, label, val["currency"], False, float(balance), float(change), val["trade"], val["variation_pct"], pb])
 					self.add_balance_change(balance, change, val["currency"])
 
 				if len(ticker.split('.')) == 2:
@@ -364,15 +369,15 @@ class QuoteUpdater(gtk.ListStore):
 					ticker = self.get_value(iter, self.SYMBOL)
 					value = self.get_value(iter, self.VALUE)
 					(balance, change) = self.balance(mate_invest.STOCKS[ticker]["purchases"], value, rates[currency])
-					self.set(iter, self.BALANCE, balance)
-					self.set(iter, self.BALANCE_PCT, change)
+					self.set_value(iter, self.BALANCE, balance)
+					self.set_value(iter, self.BALANCE_PCT, change)
 					self.add_balance_change(balance, change, target_currency)
 
 				# now, convert the value
 				value = self.get_value(iter, self.VALUE)
 				value *= rates[currency]
-				self.set(iter, self.VALUE, value)
-				self.set(iter, self.CURRENCY, target_currency)
+				self.set_value(iter, self.VALUE, value)
+				self.set_value(iter, self.CURRENCY, target_currency)
 
 			else:
 				# consider non-converted stocks here
@@ -406,5 +411,5 @@ class QuoteUpdater(gtk.ListStore):
 					break
 		return res
 
-if gtk.pygtk_version < (2,8,0):
-	gobject.type_register(QuoteUpdater)
+#if Gtk.pygtk_version < (2,8,0):
+#	GObject.type_register(QuoteUpdater)
