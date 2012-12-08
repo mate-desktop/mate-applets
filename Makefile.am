@@ -35,10 +35,6 @@ if BUILD_INVEST_APPLET
 invest_applet_SUBDIR = invest-applet
 endif
 
-if BUILD_MIXER_APPLET
-mixer_applet_SUBDIR = mixer
-endif
-
 if BUILD_TIMER_APPLET
 timer_applet_SUBDIR = timer-applet
 endif
@@ -62,7 +58,6 @@ SUBDIRS = \
 	$(accessx_status_SUBDIR) \
 	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
-	$(mixer_applet_SUBDIR) \
 	$(timer_applet_SUBDIR)
 
 DIST_SUBDIRS = \
@@ -80,7 +75,6 @@ DIST_SUBDIRS = \
 	trashapplet \
 	cpufreq \
 	invest-applet \
-	mixer \
 	timer-applet \
 	null_applet
 
@@ -96,9 +90,6 @@ EXTRA_DIST = \
 	xmldocs.make \
 	omf.make \
 	mate-doc-utils.make
-
-DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-mixer-applet
 
 # We build the ChangeLog from the git log
 ChangeLog:
