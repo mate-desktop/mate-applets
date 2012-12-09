@@ -5,7 +5,8 @@ INCLUDES =			\
 	-DMULTILOAD_MENU_UI_DIR=\""$(uidir)"\" \
 	$(MATE_APPLETS4_CFLAGS)	\
 	$(GTOP_APPLETS_CFLAGS)	\
-	$(MATEDESKTOP_CFLAGS)
+	$(MATEDESKTOP_CFLAGS)	\
+	$(GIO_CFLAGS)
 
 libexec_PROGRAMS = multiload-applet-2
 
@@ -24,8 +25,9 @@ multiload_applet_2_SOURCES = \
 multiload_applet_2_LDADD = \
 				$(MATE_APPLETS4_LIBS) 	\
 				$(GTOP_APPLETS_LIBS)	\
-	$(MATEDESKTOP_LIBS) \
-	-lm
+				$(MATEDESKTOP_LIBS)		\
+				$(GIO_LIBS)				\
+				-lm
 
 @INTLTOOL_XML_NOMERGE_RULE@
 gsettings_SCHEMAS = org.mate.panel.applet.multiload.gschema.xml
