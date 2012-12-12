@@ -127,7 +127,7 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 
 	const gchar* documenters[] = {
 		"Bill Haneman <bill.haneman@sun.com>",
-		"Sun MATE Documentation Team <gdocteam@sun.com>",
+		"Sun GNOME Documentation Team <gdocteam@sun.com>",
 		NULL
 	};
 
