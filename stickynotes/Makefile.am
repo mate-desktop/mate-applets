@@ -50,6 +50,9 @@ gsettings_SCHEMAS = org.mate.stickynotes.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = stickynotes-applet.convert
+
 appletdir   = $(datadir)/mate-panel/applets
 applet_DATA = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
 
@@ -77,6 +80,7 @@ EXTRA_DIST = \
 	     $(builder_files) \
 	     $(ui_files) \
 	     $(gsettings_SCHEMAS_in_in) \
+	     $(convert_DATA) \
              $(service_in_files) \
 	     org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in
 
