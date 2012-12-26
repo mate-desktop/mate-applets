@@ -45,6 +45,9 @@ gsettings_SCHEMAS = org.mate.panel.applet.charpick.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = charpick-applet.convert
+
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = charpick-applet-menu.xml
 
@@ -54,6 +57,7 @@ EXTRA_DIST =							\
 	org.mate.applets.CharpickerApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(ui_DATA)						\
+	$(convert_DATA)						\
 	$(gsettings_SCHEMAS_in_in)
 
 -include $(top_srcdir)/git.mk
