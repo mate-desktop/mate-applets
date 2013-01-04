@@ -36,10 +36,14 @@ gsettings_SCHEMAS = org.mate.panel.applet.multiload.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = multiload-applet.convert
+
 EXTRA_DIST =							\
 	org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(gsettings_SCHEMAS_in_in)			\
+	$(convert_DATA)					\
 	$(ui_DATA)
 
 uidir		= $(datadir)/mate-2.0/ui

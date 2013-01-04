@@ -68,6 +68,9 @@ gsettings_SCHEMAS = org.mate.panel.applet.battstat.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = battstat-applet.convert
+
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.BattstatApplet.mate-panel-applet.in
 applet_DATA     = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
@@ -99,6 +102,7 @@ EXTRA_DIST = 							\
 	$(ui_DATA)						\
 	org.mate.applets.BattstatApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
+	$(convert_DATA)						\
 	$(gsettings_SCHEMAS_in_in)
 
 

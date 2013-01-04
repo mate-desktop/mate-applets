@@ -50,6 +50,9 @@ gsettings_SCHEMAS = org.mate.panel.applet.geyes.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = geyes-applet.convert
+
 themesdir = $(pkgdatadir)/geyes
 
 icons =	\
@@ -66,6 +69,7 @@ EXTRA_DIST = \
 	     org.mate.applets.GeyesApplet.mate-panel-applet.in.in 	\
              $(service_in_files)				\
 	     $(gsettings_SCHEMAS_in_in)				\
+	     $(convert_DATA)					\
 	     $(ui_DATA)						\
 	     $(icons)
 

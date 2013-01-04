@@ -7,6 +7,9 @@ gsettings_SCHEMAS = org.mate.panel.applet.cpufreq.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = cpufreq-applet.convert
+
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.CPUFreqApplet.mate-panel-applet.in
 applet_DATA     = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
@@ -47,6 +50,7 @@ EXTRA_DIST = \
              org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in	\
              $(service_in_files)				\
 	     $(gsettings_SCHEMAS_in_in)				\
+	     $(convert_DATA)					\
 	     $(builder_DATA)                 			\
 	     $(ui_DATA)
 	     
