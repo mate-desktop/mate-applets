@@ -171,13 +171,13 @@ static gboolean update_dialog(MateWeatherPref* pref)
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_update_btn), gw_applet->mateweather_pref.update_enabled);
     soft_set_sensitive(pref->priv->basic_update_spin, gw_applet->mateweather_pref.update_enabled);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_temp_combo), gw_applet->mateweather_pref.temperature_unit -1);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_temp_combo), gw_applet->mateweather_pref.temperature_unit - 2);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_speed_combo), gw_applet->mateweather_pref.speed_unit -1);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_speed_combo), gw_applet->mateweather_pref.speed_unit - 2);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_pres_combo), gw_applet->mateweather_pref.pressure_unit -1);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_pres_combo), gw_applet->mateweather_pref.pressure_unit - 2);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), gw_applet->mateweather_pref.distance_unit -1);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), gw_applet->mateweather_pref.distance_unit - 2);
 
 	#if 0
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_detailed_btn), gw_applet->mateweather_pref.detailed);
@@ -347,7 +347,7 @@ static void temp_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	g_return_if_fail(gw_applet != NULL);
 
-	new_unit = gtk_combo_box_get_active(combo) + 1;
+	new_unit = gtk_combo_box_get_active(combo) + 2;
 
 	old_unit = gw_applet->mateweather_pref.temperature_unit;
 
@@ -375,7 +375,7 @@ static void speed_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	g_return_if_fail(gw_applet != NULL);
 
-	new_unit = gtk_combo_box_get_active(combo) + 1;
+	new_unit = gtk_combo_box_get_active(combo) + 2;
 
 	old_unit = gw_applet->mateweather_pref.speed_unit;
 
@@ -401,7 +401,7 @@ static void pres_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	g_return_if_fail(gw_applet != NULL);
 
-	new_unit = gtk_combo_box_get_active(combo) + 1;
+	new_unit = gtk_combo_box_get_active(combo) + 2;
 
 	old_unit = gw_applet->mateweather_pref.pressure_unit;
 
@@ -427,7 +427,7 @@ static void dist_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 
 	g_return_if_fail(gw_applet != NULL);
 
-	new_unit = gtk_combo_box_get_active(combo) + 1;
+	new_unit = gtk_combo_box_get_active(combo) + 2;
 
 	old_unit = gw_applet->mateweather_pref.distance_unit;
 
@@ -847,7 +847,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	temp_combo = gtk_combo_box_new_text ();
 	pref->priv->basic_temp_combo = temp_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (temp_label), temp_combo);
-	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
+	//gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
 	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Kelvin"));
 	/* TRANSLATORS: Celsius is sometimes referred Centigrade */
 	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Celsius"));
@@ -869,7 +869,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	speed_combo = gtk_combo_box_new_text ();
 	pref->priv->basic_speed_combo = speed_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (speed_label), speed_combo);
-	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
+	//gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 	/* TRANSLATOR: The wind speed unit "meters per second" */
 	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("m/s"));
 	/* TRANSLATOR: The wind speed unit "kilometers per hour" */
@@ -896,7 +896,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	pres_combo = gtk_combo_box_new_text ();
 	pref->priv->basic_pres_combo = pres_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (pres_label), pres_combo);
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
+	//gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 	/* TRANSLATOR: The pressure unit "kiloPascals" */
 	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("kPa"));
 	/* TRANSLATOR: The pressure unit "hectoPascals" */
@@ -926,7 +926,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	dist_combo = gtk_combo_box_new_text ();
 	pref->priv->basic_dist_combo = dist_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (dist_label), dist_combo);
-	gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
+	//gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 	/* TRANSLATOR: The distance unit "meters" */
 	gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("meters"));
 	/* TRANSLATOR: The distance unit "kilometers" */
