@@ -1,3 +1,734 @@
+commit bbf589fbb561fb1c011194115c17abb447dccea4
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sun Jan 20 19:16:56 2013 +0100
+
+    mateweather: Fix libmateweather units
+
+ mateweather/mateweather-pref.c |   24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit de2b4863dfab23329a958a683e2e6cc29259a17c
+Author: Yaakov Selkowitz <yselkowitz@users.sourceforge.net>
+Date:   Tue Dec 25 19:14:52 2012 -0600
+
+    stickynotes: Add mateconf-gsettings-data-convert file
+
+ stickynotes/Makefile.am                |    4 ++++
+ stickynotes/stickynotes-applet.convert |   14 ++++++++++++++
+ 2 files changed, 18 insertions(+)
+
+commit 8a7a11a421187a1c2b664df7c24a3897e24c2be5
+Merge: e373c24 48fad55
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Wed Dec 12 08:09:12 2012 -0800
+
+    Merge pull request #25 from cardpuncher/patch-6
+    
+    Update accessx-status/applet.c
+
+commit 48fad55e88afa2111ca0dceecda7234310f5ba34
+Author: cardpuncher <mauron@vmail.me>
+Date:   Wed Dec 12 17:06:26 2012 +0100
+
+    Update accessx-status/applet.c
+    
+    Fix a typo in the about window.
+
+ accessx-status/applet.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e373c2400657386cc9f70bedb76900d45123f855
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Dec 11 20:51:17 2012 +0100
+
+    add gio-unix-2.0 to gio requirements
+    it fixes "main.c:26:33: fatal error: gio/gdesktopappinfo.h: No such file or directory"
+
+ configure.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4a7f182d70f31ce39f00261b43b02ec6f30962a6
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sun Dec 9 18:09:39 2012 +0100
+
+    multiload: add GIO in Makefile
+
+ multiload/Makefile.am |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 54d9e6582cbeec1505b8b1f5d909018b65f64c8f
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Dec 8 22:35:06 2012 +0100
+
+    bump version to 1.5.0
+
+ configure.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 51623a44dd1af177cc7609996367a37bcabd9954
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Dec 8 22:34:12 2012 +0100
+
+    NEWS: fix mistake
+
+ NEWS |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e0ce3b5268bc89d6f620c858e69f76629629c1ae
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Dec 8 22:17:07 2012 +0100
+
+    remove mixer applet (moved to mate-media package)
+
+ Makefile.am                                        |    9 -
+ configure.in                                       |   23 -
+ mixer/AUTHORS                                      |    4 -
+ mixer/Makefile.am                                  |   68 -
+ mixer/applet.c                                     | 1494 --------------------
+ mixer/applet.h                                     |  110 --
+ mixer/dock.c                                       |  354 -----
+ mixer/dock.h                                       |   79 --
+ mixer/docs/C/figures/volumecontrol_applet.png      |  Bin 987 -> 0 bytes
+ mixer/docs/C/legal.xml                             |   76 -
+ mixer/docs/C/mate-mixer_applet2.xml                |  264 ----
+ mixer/docs/Makefile.am                             |   11 -
+ mixer/docs/ca/ca.po                                |  315 -----
+ mixer/docs/cs/cs.po                                |  470 ------
+ mixer/docs/da/da.po                                |  479 -------
+ mixer/docs/de/de.po                                |  478 -------
+ mixer/docs/de/figures/volumecontrol_applet.png     |  Bin 1025 -> 0 bytes
+ mixer/docs/el/el.po                                |  359 -----
+ mixer/docs/en_GB/en_GB.po                          |  334 -----
+ mixer/docs/es/es.po                                |  487 -------
+ mixer/docs/eu/eu.po                                |  319 -----
+ mixer/docs/fi/fi.po                                |  361 -----
+ mixer/docs/fr/figures/volumecontrol_applet.png     |  Bin 723 -> 0 bytes
+ mixer/docs/fr/fr.po                                |  480 -------
+ mixer/docs/hu/hu.po                                |  356 -----
+ mixer/docs/it/it.po                                |  437 ------
+ mixer/docs/ko/ko.po                                |  457 ------
+ mixer/docs/mate-mixer_applet2.omf.in               |    9 -
+ mixer/docs/oc/oc.po                                |  408 ------
+ mixer/docs/pa/pa.po                                |  340 -----
+ mixer/docs/pt_BR/pt_BR.po                          |  334 -----
+ mixer/docs/ru/ru.po                                |  461 ------
+ mixer/docs/sv/sv.po                                |  333 -----
+ mixer/docs/uk/figures/volumecontrol_applet.png     |  Bin 987 -> 0 bytes
+ mixer/docs/uk/uk.po                                |  470 ------
+ mixer/docs/zh_CN/zh_CN.po                          |  444 ------
+ mixer/keys.h                                       |   32 -
+ mixer/load.c                                       |  181 ---
+ mixer/mixer-applet-menu.xml                        |    7 -
+ ...ate.applets.MixerApplet.mate-panel-applet.in.in |   16 -
+ ...mate.panel.applet.MixerAppletFactory.service.in |    3 -
+ .../org.mate.panel.applet.mixer.gschema.xml.in.in  |   12 -
+ mixer/preferences.c                                |  442 ------
+ mixer/preferences.h                                |   81 --
+ null_applet/Makefile.am                            |   15 +-
+ 45 files changed, 3 insertions(+), 11409 deletions(-)
+
+commit f4c572e425cfe95fffb6eb62ecef169c97fb8031
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Dec 8 22:16:08 2012 +0100
+
+    add NEWS for MATE
+
+ NEWS |    8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 94cc4f84928cd3d57b7a1e32f1c32016ae7e37d7
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Dec 8 20:34:59 2012 +0100
+
+    rename NEWS => NEWS.GNOME
+
+ NEWS       | 3184 ------------------------------------------------------------
+ NEWS.GNOME | 3184 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3184 insertions(+), 3184 deletions(-)
+
+commit 0df6a79c9b4eb635b2ee4bdbc4ec2eeecf673262
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Dec 4 23:59:57 2012 +0100
+
+    gir migration script moved to wiki
+    http://wiki.mate-desktop.org/docs:devel:mate-panel
+
+ invest-applet/pygi-mate-convert.sh |  234 ------------------------------------
+ 1 file changed, 234 deletions(-)
+
+commit 540e2e460c8155a22b10c1712eec71c9bf25aea9
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Mon Dec 3 23:48:48 2012 +0100
+
+    invest-applet: port to gobject introspection
+    there is an issue to fix with self.applet.window.get_origin in applet.py
+
+ configure.in                                       |    2 +
+ invest-applet/data/Invest_Applet.server.in.in      |   25 ---
+ invest-applet/data/Invest_Applet.xml               |   15 +-
+ invest-applet/data/MATE_GtikApplet.server          |   18 --
+ invest-applet/data/Makefile.am                     |   52 ++---
+ ...te.applets.InvestApplet.mate-panel-applet.in.in |   17 ++
+ ...ate.panel.applet.InvestAppletFactory.service.in |    3 +
+ invest-applet/invest/__init__.py                   |   63 ++----
+ invest-applet/invest/about.py                      |   13 +-
+ invest-applet/invest/applet.py                     |  100 +++++----
+ invest-applet/invest/chart.py                      |   34 +--
+ invest-applet/invest/defs.py.in                    |    1 +
+ invest-applet/invest/help.py                       |   10 +-
+ invest-applet/invest/invest-applet.py              |   31 +--
+ invest-applet/invest/mate-invest-chart             |   10 +-
+ invest-applet/invest/preferences.py                |   40 ++--
+ invest-applet/invest/quotes.py                     |   47 ++--
+ invest-applet/invest/widgets.py                    |   67 +++---
+ invest-applet/pygi-mate-convert.sh                 |  234 ++++++++++++++++++++
+ 19 files changed, 516 insertions(+), 266 deletions(-)
+
+commit ba7f835eb79762dd65356a0722aa3e64ad03decb
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:27:43 2012 +0100
+
+    update configure
+
+ configure.in |   67 ++++++++++++----------------------------------------------
+ 1 file changed, 13 insertions(+), 54 deletions(-)
+
+commit e4c24e9ec23deca528d3bdd51a43ad430a23cff3
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:26:36 2012 +0100
+
+    update Makefile
+
+ Makefile.am |   13 ++-----------
+ 1 file changed, 2 insertions(+), 11 deletions(-)
+
+commit 010956796f9111d3d5cdbddc5041588ebe4d0126
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:25:57 2012 +0100
+
+    update README
+
+ README |    5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 6f81f2bfc41ca4c4e3def03c545b92a15e8832dc
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:25:27 2012 +0100
+
+    trashapplet: migrate to gsettings
+
+ trashapplet/src/Makefile.am   |    4 ++--
+ trashapplet/src/trash-empty.c |   10 ++++++----
+ trashapplet/src/trashapplet.c |   12 ++++++------
+ 3 files changed, 14 insertions(+), 12 deletions(-)
+
+commit 18b437378c338287fec39b2e8f2ec2baf04f8cd1
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:24:52 2012 +0100
+
+    stickynotes: migrate to gsettings
+
+ stickynotes/Makefile.am                            |   21 ++-
+ stickynotes/org.mate.stickynotes.gschema.xml.in.in |   69 +++++++++
+ stickynotes/stickynotes.c                          |   59 +++----
+ stickynotes/stickynotes.schemas.in                 |  161 --------------------
+ stickynotes/stickynotes_applet.c                   |   86 ++++-------
+ stickynotes/stickynotes_applet.h                   |    6 +-
+ stickynotes/stickynotes_applet_callbacks.c         |   84 ++++------
+ stickynotes/stickynotes_applet_callbacks.h         |    2 +-
+ 8 files changed, 160 insertions(+), 328 deletions(-)
+
+commit 167eb3ed1e82658e6ea969a8c5ffd220256cfd11
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:24:14 2012 +0100
+
+    multiload: migrate to gsettings
+    replace libmate with GIO
+
+ multiload/Makefile.am                              |   22 +-
+ multiload/global.h                                 |    3 +
+ multiload/load-graph.c                             |    9 +-
+ multiload/main.c                                   |   50 ++--
+ multiload/multiload.schemas.in                     |  284 --------------------
+ ...g.mate.panel.applet.multiload.gschema.xml.in.in |  125 +++++++++
+ multiload/properties.c                             |  156 +++++------
+ 7 files changed, 233 insertions(+), 416 deletions(-)
+
+commit 3e890433f60a9af8b0a414fb8b06277b24391fde
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:22:09 2012 +0100
+
+    modemlights: update
+
+ modemlights/Makefile.am |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0c04e2ff1829d565de7032db4a92dc27fdae6042
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:21:39 2012 +0100
+
+    mixer: migrate to gsettings
+
+ mixer/Makefile.am                                  |   22 +++----
+ mixer/applet.c                                     |   67 ++++++--------------
+ mixer/applet.h                                     |    8 +--
+ mixer/keys.h                                       |    9 +--
+ mixer/mixer.schemas.in                             |   36 -----------
+ .../org.mate.panel.applet.mixer.gschema.xml.in.in  |   12 ++++
+ mixer/preferences.c                                |   34 ++++------
+ mixer/preferences.h                                |    9 +--
+ 8 files changed, 64 insertions(+), 133 deletions(-)
+
+commit e41ba47bb489bb79ff8a3251fd896900bb3e42c3
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:21:18 2012 +0100
+
+    mateweather: migrate to gsettings
+
+ mateweather/Makefile.am          |    4 +-
+ mateweather/main.c               |   13 +---
+ mateweather/mateweather-applet.c |   14 ++--
+ mateweather/mateweather-dialog.c |   56 ++++++--------
+ mateweather/mateweather-pref.c   |  154 +++++++++-----------------------------
+ mateweather/mateweather.h        |    5 +-
+ 6 files changed, 73 insertions(+), 173 deletions(-)
+
+commit 75d606567d8e4923e83a58ec8fce410bee89d473
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:20:32 2012 +0100
+
+    geyes: migrate to gsettings
+
+ geyes/Makefile.am                                  |   22 +++++++--------
+ geyes/geyes.c                                      |   15 ++++++-----
+ geyes/geyes.h                                      |    4 +++
+ geyes/geyes.schemas.in                             |   17 ------------
+ .../org.mate.panel.applet.geyes.gschema.xml.in.in  |    9 +++++++
+ geyes/themes.c                                     |   28 +++-----------------
+ 6 files changed, 36 insertions(+), 59 deletions(-)
+
+commit 23536328cce34467f2a106662e2bb2c0d8507467
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:19:46 2012 +0100
+
+    drivemount: remove mateconf usage
+
+ drivemount/Makefile.am           |   24 ++------------
+ drivemount/drive-button.c        |   26 ++++------------
+ drivemount/drivemount.c          |    3 --
+ drivemount/drivemount.schemas.in |   64 --------------------------------------
+ 4 files changed, 9 insertions(+), 108 deletions(-)
+
+commit 8c30f31702202aed1b7e8c21b204a44ac2dc37cc
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:18:51 2012 +0100
+
+    cpufreq: migrate to gsettings
+
+ cpufreq/Makefile.am                                |   20 ++-
+ cpufreq/README                                     |    3 -
+ cpufreq/cpufreq-applet.schemas.in                  |   36 -----
+ ...org.mate.panel.applet.cpufreq.gschema.xml.in.in |   20 +++
+ cpufreq/src/Makefile.am                            |    4 +-
+ cpufreq/src/cpufreq-applet.c                       |   12 +-
+ cpufreq/src/cpufreq-prefs.c                        |  150 +++++---------------
+ cpufreq/src/cpufreq-prefs.h                        |    3 +-
+ 8 files changed, 71 insertions(+), 177 deletions(-)
+
+commit d2d15da67e19e821d051d1b2382885854acd140c
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:17:36 2012 +0100
+
+    charpick: migrate to gsettings
+
+ charpick/Makefile.am                               |   23 +++----
+ charpick/charpick.c                                |   66 ++++----------------
+ charpick/charpick.h                                |    5 +-
+ charpick/charpick.schemas.in                       |   36 -----------
+ ...rg.mate.panel.applet.charpick.gschema.xml.in.in |   14 +++++
+ charpick/properties.c                              |   18 +++---
+ 6 files changed, 47 insertions(+), 115 deletions(-)
+
+commit 8ea3054c1e05445f990c98db033754cf190d2a7a
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:16:24 2012 +0100
+
+    battstat: migrate to gsettings
+
+ battstat/Makefile.am                               |   22 ++---
+ battstat/battstat.h                                |    6 +-
+ battstat/battstat.schemas.in                       |  104 --------------------
+ battstat/battstat_applet.c                         |   32 +++---
+ battstat/docs/C/mate-battstat.xml                  |    2 +-
+ ...rg.mate.panel.applet.battstat.gschema.xml.in.in |   54 ++++++++++
+ battstat/properties.c                              |   75 +++++---------
+ 7 files changed, 107 insertions(+), 188 deletions(-)
+
+commit 9456b72c5117b9784e5b99b4940c5f9d98d6cc32
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:14:45 2012 +0100
+
+    accessx-status: update
+
+ accessx-status/Makefile.am |    4 ++--
+ accessx-status/applet.c    |    2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 03beef19aed6291da9093c1fc2dacc147a1bbd72
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Sat Nov 24 18:14:02 2012 +0100
+
+    remove mini-commander applet
+
+ mini-commander/AUTHORS                             |    2 -
+ mini-commander/MATE_MiniCommanderApplet.server.in  |   28 -
+ mini-commander/Makefile.am                         |   24 -
+ mini-commander/NEWS                                |  207 ----
+ mini-commander/README                              |   35 -
+ mini-commander/TODO                                |   81 --
+ mini-commander/help/C/figures/command-line.png     |  Bin 1702 -> 0 bytes
+ mini-commander/help/C/figures/prefs-macros.png     |  Bin 30123 -> 0 bytes
+ mini-commander/help/C/figures/prefs.png            |  Bin 24581 -> 0 bytes
+ mini-commander/help/C/legal.xml                    |   76 --
+ mini-commander/help/C/mate-command-line.xml        |  608 -----------
+ mini-commander/help/Makefile.am                    |   13 -
+ mini-commander/help/ca/ca.po                       | 1016 ------------------
+ mini-commander/help/de/de.po                       | 1027 ------------------
+ mini-commander/help/de/figures/prefs-macros.png    |  Bin 36555 -> 0 bytes
+ mini-commander/help/de/figures/prefs.png           |  Bin 29849 -> 0 bytes
+ mini-commander/help/el/el.po                       |  665 ------------
+ mini-commander/help/en_GB/en_GB.po                 |  652 -----------
+ mini-commander/help/es/es.po                       | 1021 ------------------
+ mini-commander/help/es/figures/prefs-macros.png    |  Bin 43620 -> 0 bytes
+ mini-commander/help/es/figures/prefs.png           |  Bin 24616 -> 0 bytes
+ mini-commander/help/eu/eu.po                       |  623 -----------
+ mini-commander/help/eu/figures/command-line.png    |  Bin 1068 -> 0 bytes
+ mini-commander/help/fr/figures/prefs-macros.png    |  Bin 34602 -> 0 bytes
+ mini-commander/help/fr/figures/prefs.png           |  Bin 26939 -> 0 bytes
+ mini-commander/help/fr/fr.po                       | 1029 ------------------
+ mini-commander/help/ko/ko.po                       |  690 ------------
+ mini-commander/help/mate-command-line.omf.in       |    9 -
+ mini-commander/help/oc/oc.po                       |  822 --------------
+ mini-commander/help/pt_BR/pt_BR.po                 | 1017 ------------------
+ mini-commander/help/sv/figures/command-line.png    |  Bin 1068 -> 0 bytes
+ mini-commander/help/sv/sv.po                       |  653 -----------
+ mini-commander/help/uk/figures/command-line.png    |  Bin 1068 -> 0 bytes
+ mini-commander/help/uk/figures/prefs-macros.png    |  Bin 40225 -> 0 bytes
+ mini-commander/help/uk/figures/prefs.png           |  Bin 29814 -> 0 bytes
+ mini-commander/help/uk/uk.po                       |  998 -----------------
+ mini-commander/help/zh_CN/figures/command-line.png |  Bin 1068 -> 0 bytes
+ mini-commander/help/zh_CN/zh_CN.po                 |  932 ----------------
+ mini-commander/src/Makefile.am                     |  115 --
+ mini-commander/src/about.c                         |   56 -
+ mini-commander/src/about.h                         |    4 -
+ mini-commander/src/browser-mini.xpm                |   11 -
+ mini-commander/src/cmd_completion.c                |  246 -----
+ mini-commander/src/cmd_completion.h                |   34 -
+ mini-commander/src/command_line.c                  |  598 -----------
+ mini-commander/src/command_line.h                  |   41 -
+ mini-commander/src/exec.c                          |   93 --
+ mini-commander/src/exec.h                          |   35 -
+ mini-commander/src/help.c                          |   42 -
+ mini-commander/src/help.h                          |    4 -
+ mini-commander/src/history-mini.xpm                |   11 -
+ mini-commander/src/history.c                       |  144 ---
+ mini-commander/src/history.h                       |    6 -
+ mini-commander/src/macro.c                         |  155 ---
+ mini-commander/src/macro.h                         |   42 -
+ mini-commander/src/mate-mini-commander.png         |  Bin 703 -> 0 bytes
+ mini-commander/src/mc-default-macros.h             |   65 --
+ mini-commander/src/mc-install-default-macros.c     |  179 ----
+ mini-commander/src/mini-commander-applet-menu.xml  |    4 -
+ .../src/mini-commander-global.schemas.in           |   31 -
+ mini-commander/src/mini-commander.schemas.in       |  193 ----
+ mini-commander/src/mini-commander.ui               |  713 -------------
+ mini-commander/src/mini-commander_applet.c         |  430 --------
+ mini-commander/src/mini-commander_applet.h         |   72 --
+ ...ets.MiniCommanderApplet.mate-panel-applet.in.in |   16 -
+ ...el.applet.MiniCommanderAppletFactory.service.in |    3 -
+ mini-commander/src/preferences.c                   | 1128 --------------------
+ mini-commander/src/preferences.h                   |  109 --
+ 68 files changed, 16808 deletions(-)
+
+commit 5fe5821ef2b69faee48d0b04f60e9b3b080ce203
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Sat Nov 24 00:32:03 2012 -0500
+
+    Fixed spelling error.
+
+ invest-applet/invest/invest-applet.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cc1669e86f8b9dce5e1cdaf7de0a0f96ad211fb0
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Thu Nov 15 12:47:57 2012 +0100
+
+    transatable tooltip
+
+ .../src/timerapplet/controllers/TimerApplet.py     |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b7aff8ee5ea6a17c0f9a1cc08cadfc0123f9f785
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Wed Nov 14 11:05:01 2012 -0500
+
+    Added tooltip to Timer Applet. Closes #14
+
+ .../src/timerapplet/controllers/TimerApplet.py     |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit aefa05e5727a2a3355fb0af79ed63ff885c253b3
+Merge: b2582f5 d4c6ec0
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Tue Nov 13 14:24:00 2012 -0800
+
+    Merge pull request #23 from NiceandGently/master
+    
+    fix incorrect fsf adress in COPYING
+
+commit d4c6ec08789353bcce303bbed9bb4f10cd01c221
+Author: raveit <chat-to-me@raveit.de>
+Date:   Tue Nov 13 23:18:39 2012 +0100
+
+    fix fsf address in COPYING
+
+ COPYING |  639 +++++++++++++++++++++++++--------------------------------------
+ 1 file changed, 248 insertions(+), 391 deletions(-)
+
+commit b2582f5b9afa5fbb5673f4e9a31256480b1e117e
+Merge: 0d9a417 ee428c3
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Thu Oct 11 04:03:58 2012 -0700
+
+    Merge pull request #21 from cardpuncher/patch-4
+    
+    Typo fix in mateweather-about.c
+
+commit ee428c3603c30e59188d6c469744f27b6157f24c
+Author: cardpuncher <mauron@vmail.me>
+Date:   Tue Oct 9 20:57:24 2012 +0300
+
+    Typo fix in mateweather-about.c
+    
+    Just found another typo in the documentation credits of the weather applet.
+
+ mateweather/mateweather-about.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0d9a417255df1620855f232717463097761b09d6
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Tue Oct 9 11:52:46 2012 -0400
+
+    Fixed fsf addresses. Closes #18.
+
+ accessx-status/applet.c                            |    4 ++--
+ accessx-status/applet.h                            |    4 ++--
+ battstat/acpi-freebsd.c                            |    2 +-
+ battstat/acpi-freebsd.h                            |    4 ++--
+ battstat/acpi-linux.c                              |    2 +-
+ battstat/acpi-linux.h                              |    2 +-
+ battstat/apmlib/apm.h                              |    2 +-
+ battstat/apmlib/apmlib.c                           |    2 +-
+ battstat/battstat-hal.c                            |    2 +-
+ battstat/battstat-hal.h                            |    2 +-
+ battstat/battstat-upower.c                         |    2 +-
+ battstat/battstat-upower.h                         |    2 +-
+ battstat/battstat.h                                |    2 +-
+ battstat/battstat_applet.c                         |    2 +-
+ battstat/pixmaps.h                                 |    2 +-
+ battstat/power-management.c                        |    2 +-
+ battstat/properties.c                              |    2 +-
+ cpufreq/src/cpufreq-applet.c                       |    2 +-
+ cpufreq/src/cpufreq-applet.h                       |    2 +-
+ cpufreq/src/cpufreq-monitor-cpuinfo.c              |    2 +-
+ cpufreq/src/cpufreq-monitor-cpuinfo.h              |    2 +-
+ cpufreq/src/cpufreq-monitor-factory.c              |    2 +-
+ cpufreq/src/cpufreq-monitor-factory.h              |    2 +-
+ cpufreq/src/cpufreq-monitor-libcpufreq.c           |    2 +-
+ cpufreq/src/cpufreq-monitor-libcpufreq.h           |    2 +-
+ cpufreq/src/cpufreq-monitor-procfs.c               |    2 +-
+ cpufreq/src/cpufreq-monitor-procfs.h               |    2 +-
+ cpufreq/src/cpufreq-monitor-sysfs.c                |    2 +-
+ cpufreq/src/cpufreq-monitor-sysfs.h                |    2 +-
+ cpufreq/src/cpufreq-monitor.c                      |    2 +-
+ cpufreq/src/cpufreq-monitor.h                      |    2 +-
+ cpufreq/src/cpufreq-popup.c                        |    2 +-
+ cpufreq/src/cpufreq-popup.h                        |    2 +-
+ cpufreq/src/cpufreq-prefs.c                        |    2 +-
+ cpufreq/src/cpufreq-prefs.h                        |    2 +-
+ cpufreq/src/cpufreq-selector.c                     |    2 +-
+ cpufreq/src/cpufreq-selector.h                     |    2 +-
+ .../cpufreq-selector/cpufreq-selector-factory.c    |    2 +-
+ .../cpufreq-selector/cpufreq-selector-factory.h    |    2 +-
+ .../cpufreq-selector/cpufreq-selector-libcpufreq.c |    2 +-
+ .../cpufreq-selector/cpufreq-selector-libcpufreq.h |    2 +-
+ .../src/cpufreq-selector/cpufreq-selector-procfs.c |    2 +-
+ .../src/cpufreq-selector/cpufreq-selector-procfs.h |    2 +-
+ .../cpufreq-selector/cpufreq-selector-service.c    |    2 +-
+ .../cpufreq-selector/cpufreq-selector-service.h    |    2 +-
+ .../src/cpufreq-selector/cpufreq-selector-sysfs.c  |    2 +-
+ .../src/cpufreq-selector/cpufreq-selector-sysfs.h  |    2 +-
+ cpufreq/src/cpufreq-selector/cpufreq-selector.c    |    2 +-
+ cpufreq/src/cpufreq-selector/cpufreq-selector.h    |    2 +-
+ cpufreq/src/cpufreq-selector/main.c                |    2 +-
+ cpufreq/src/cpufreq-utils.c                        |    2 +-
+ cpufreq/src/cpufreq-utils.h                        |    2 +-
+ drivemount/drive-button.c                          |    2 +-
+ drivemount/drive-button.h                          |    2 +-
+ drivemount/drive-list.c                            |    2 +-
+ drivemount/drive-list.h                            |    2 +-
+ drivemount/drivemount.c                            |    2 +-
+ geyes/geyes.c                                      |    2 +-
+ geyes/geyes.h                                      |    2 +-
+ geyes/themes.c                                     |    2 +-
+ mini-commander/src/about.c                         |    2 +-
+ mini-commander/src/cmd_completion.c                |    2 +-
+ mini-commander/src/cmd_completion.h                |    2 +-
+ mini-commander/src/command_line.c                  |    2 +-
+ mini-commander/src/command_line.h                  |    2 +-
+ mini-commander/src/exec.c                          |    2 +-
+ mini-commander/src/exec.h                          |    2 +-
+ mini-commander/src/help.c                          |    2 +-
+ mini-commander/src/history.c                       |    2 +-
+ mini-commander/src/macro.c                         |    2 +-
+ mini-commander/src/macro.h                         |    2 +-
+ mini-commander/src/mc-default-macros.h             |    2 +-
+ mini-commander/src/mc-install-default-macros.c     |    2 +-
+ mini-commander/src/mini-commander_applet.c         |    2 +-
+ mini-commander/src/mini-commander_applet.h         |    2 +-
+ mini-commander/src/preferences.c                   |    2 +-
+ mini-commander/src/preferences.h                   |    2 +-
+ mixer/applet.c                                     |    4 ++--
+ mixer/applet.h                                     |    4 ++--
+ mixer/dock.c                                       |    4 ++--
+ mixer/dock.h                                       |    4 ++--
+ mixer/keys.h                                       |    4 ++--
+ mixer/load.c                                       |    4 ++--
+ mixer/preferences.c                                |    4 ++--
+ mixer/preferences.h                                |    4 ++--
+ modemlights/modem-applet.c                         |    2 +-
+ modemlights/modem-applet.h                         |    2 +-
+ null_applet/null_applet.c                          |    2 +-
+ stickynotes/stickynotes.c                          |    4 ++--
+ stickynotes/stickynotes.h                          |    4 ++--
+ stickynotes/stickynotes_applet.c                   |    4 ++--
+ stickynotes/stickynotes_applet.h                   |    4 ++--
+ stickynotes/stickynotes_applet_callbacks.c         |    4 ++--
+ stickynotes/stickynotes_applet_callbacks.h         |    4 ++--
+ stickynotes/stickynotes_callbacks.c                |    4 ++--
+ stickynotes/stickynotes_callbacks.h                |    4 ++--
+ stickynotes/util.c                                 |    4 ++--
+ stickynotes/util.h                                 |    4 ++--
+ timer-applet/src/timerapplet/config.py             |    2 +-
+ .../timerapplet/controllers/GlobalController.py    |    2 +-
+ .../src/timerapplet/controllers/TimerApplet.py     |    2 +-
+ .../timerapplet/controllers/TimerManagerService.py |    2 +-
+ .../src/timerapplet/controllers/TimerService.py    |    2 +-
+ .../src/timerapplet/controllers/__init__.py        |    2 +-
+ .../src/timerapplet/core/AppletMateConfWrapper.py  |    2 +-
+ timer-applet/src/timerapplet/core/PresetsStore.py  |    2 +-
+ timer-applet/src/timerapplet/core/Timer.py         |    2 +-
+ timer-applet/src/timerapplet/core/__init__.py      |    2 +-
+ timer-applet/src/timerapplet/logger.py             |    2 +-
+ .../src/timerapplet/ui/AddEditPresetDialog.py      |    2 +-
+ .../src/timerapplet/ui/ContinueTimerDialog.py      |    2 +-
+ timer-applet/src/timerapplet/ui/DurationChooser.py |    2 +-
+ .../src/timerapplet/ui/ManagePresetsDialog.py      |    2 +-
+ timer-applet/src/timerapplet/ui/Notifier.py        |    2 +-
+ timer-applet/src/timerapplet/ui/PieMeter.py        |    2 +-
+ .../src/timerapplet/ui/PreferencesDialog.py        |    2 +-
+ timer-applet/src/timerapplet/ui/PulseButton.py     |    2 +-
+ .../src/timerapplet/ui/ScrollableButtonList.py     |    2 +-
+ .../src/timerapplet/ui/StartNextTimerDialog.py     |    2 +-
+ .../src/timerapplet/ui/StartTimerDialog.py         |    2 +-
+ timer-applet/src/timerapplet/ui/StatusButton.py    |    2 +-
+ timer-applet/src/timerapplet/ui/__init__.py        |    2 +-
+ timer-applet/src/timerapplet/utils.py              |    2 +-
+ trashapplet/src/trash-empty.c                      |    4 ++--
+ trashapplet/src/trash-empty.h                      |    4 ++--
+ trashapplet/src/trashapplet.c                      |    2 +-
+ 126 files changed, 149 insertions(+), 149 deletions(-)
+
+commit aa7404034434537a1841d26ead87351047736a89
+Merge: e543551 216dc4c
+Author: Nelson Marques <nmo.marques@gmail.com>
+Date:   Tue Oct 9 05:21:26 2012 -0700
+
+    Merge pull request #20 from cardpuncher/master
+    
+    Typo fix in geyes/geyes.c
+
+commit 216dc4ca0d02d163069348bebacb20785f4a79a4
+Author: cardpuncher <mauron@vmail.me>
+Date:   Tue Oct 9 15:05:18 2012 +0300
+
+    Typo fix in geyes/geyes.c
+    
+    Fix a typo in documentation credits which was probably introduced during the automatic renaming with sed.
+
+ geyes/geyes.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5435519365b8974f1d2bddb05fc164a9ae77d5a
+Merge: 4c47458 55c6d92
+Author: Nelson Marques <nmo.marques@gmail.com>
+Date:   Mon Oct 8 14:49:42 2012 -0700
+
+    Merge pull request #19 from cardpuncher/patch-2
+    
+    Typo fix in charpick/charpick.c
+
+commit 55c6d925811cf7c74e5ef11d0e8574d6bcd0863c
+Author: cardpuncher <mauron@vmail.me>
+Date:   Tue Oct 9 00:35:53 2012 +0300
+
+    Typo fix in charpick/charpick.c
+    
+    This should fix a couple of typos introduced by sed. You may want to update the copyright information rather than merely accepting the change.
+
+ charpick/charpick.c |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 4c4745847ce1502c7db59d739a9cc482a57e7e47
+Merge: ba4817c 60eb628
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Sep 4 03:07:49 2012 -0700
+
+    Merge pull request #13 from cardpuncher/patch-1
+    
+    Update multiload/main.c
+
+commit 60eb628ffe1512949d9d322ada90d4402d272def
+Author: cardpuncher <mauron@vmail.me>
+Date:   Tue Sep 4 10:07:32 2012 +0300
+
+    Update multiload/main.c
+    
+    Corrects a typo which appears in the about window of the applet.
+
+ multiload/main.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ba4817ca9666d8173ba26bad2e7288e7b188533d
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Wed Jul 11 14:42:15 2012 +0200
+
+    fix timer-applet server file
+    thanks to Nice&Gently (https://github.com/mate-desktop/mate-applets/issues/8)
+
+ timer-applet/data/Makefile.am |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5c39c32a3ed4dec4b52a644918a56f1c6029497c
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Tue Jul 10 22:08:17 2012 -0400
+
+    Preparing for 1.4 release.
+
+ ChangeLog    |  310 +++++++++++++++++++++++++++++++++++++++++++++++++---------
+ configure.in |    2 +-
+ 2 files changed, 263 insertions(+), 49 deletions(-)
+
 commit b4ab7a8edf48bf70a35a43121237be33e3fdc22b
 Author: Stefano Karapetsas <stefano@karapetsas.com>
 Date:   Tue Jul 10 15:54:35 2012 +0200
