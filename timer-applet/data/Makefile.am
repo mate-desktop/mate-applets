@@ -25,13 +25,3 @@ CLEANFILES = \
 
 @INTLTOOL_SERVER_RULE@
 @INTLTOOL_SCHEMAS_RULE@
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) \
-	$(MATECONFTOOL) --makefile-install-rule $(schemas_DATA)
-	
-uninstall-local:
-	MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) \
-	$(MATECONFTOOL) --makefile-uninstall-rule $(schemas_DATA)
-endif
