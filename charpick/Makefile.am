@@ -5,7 +5,7 @@ INCLUDES =					\
 	-I$(srcdir)				\
 	-DCHARPICK_MENU_UI_DIR=\""$(uidir)"\"	\
 	$(MATE_APPLETS4_CFLAGS)		\
-	$(GUCHARMAP_CFLAGS)
+	$(MUCHARMAP_CFLAGS)
 
 libexec_PROGRAMS = charpick_applet2
 
@@ -15,7 +15,7 @@ charpick_applet2_SOURCES = charpick.c \
 
 charpick_applet2_LDADD = \
 		       $(MATE_APPLETS4_LIBS)	\
-		       $(GUCHARMAP_LIBS)
+		       $(MUCHARMAP_LIBS)
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.CharpickerApplet.mate-panel-applet.in
