@@ -23,7 +23,7 @@ SUBDIRS = docs sounds $(APMDIR)
 
 DIST_SUBDIRS = docs sounds apmlib
 
-INCLUDES =					\
+AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)		\
 	$(LIBMATENOTIFY_CFLAGS)			\
 	$(HAL_CFLAGS)				\

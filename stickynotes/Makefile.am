@@ -9,7 +9,7 @@ service_in_files = org.mate.panel.applet.StickyNotesAppletFactory.service.in
 schemas_in_files = stickynotes.schemas.in
 
 if BUILD_STICKYNOTES_APPLET
-INCLUDES =					\
+AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
 	$(MATE_APPLETS4_CFLAGS)		\

@@ -1,6 +1,6 @@
 SUBDIRS = docs
 
-INCLUDES =			\
+AM_CPPFLAGS =			\
 	-I$(srcdir)		\
 	-DMULTILOAD_MENU_UI_DIR=\""$(uidir)"\" \
 	$(MATE_APPLETS4_CFLAGS)	\

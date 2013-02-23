@@ -1,6 +1,6 @@
 SUBDIRS = help
 
-INCLUDES =					\
+AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
