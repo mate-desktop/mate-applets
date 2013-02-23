@@ -10,13 +10,13 @@ INCLUDES = \
 	$(LIBGLADE_CFLAGS)					\
 	$(DBUS_CFLAGS)
 
-libexec_PROGRAMS = cpufreq-applet
+libexec_PROGRAMS = mate-cpufreq-applet
 
 if HAVE_LIBCPUFREQ
 cpufreq_files=cpufreq-monitor-libcpufreq.c    cpufreq-monitor-libcpufreq.h
 endif
 
-cpufreq_applet_SOURCES =  \
+mate_cpufreq_applet_SOURCES =  \
 	cpufreq-applet.c        	cpufreq-applet.h        	\
 	cpufreq-utils.c			cpufreq-utils.h			\
 	cpufreq-prefs.c         	cpufreq-prefs.h         	\
@@ -29,7 +29,7 @@ cpufreq_applet_SOURCES =  \
 	$(cpufreq_files)						\
 	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
 
-cpufreq_applet_LDADD =  \
+mate_cpufreq_applet_LDADD =  \
 	$(MATE_APPLETS4_LIBS)   	\
 	$(LIBGLADE_LIBS)		\
 	$(LIBCPUFREQ_LIBS)		\
