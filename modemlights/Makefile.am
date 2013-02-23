@@ -1,6 +1,6 @@
 #SUBDIRS = docs
 
-INCLUDES = -I. -I$(srcdir) 				\
+AM_CPPFLAGS = -I. -I$(srcdir) 				\
 	-DMODEM_MENU_UI_DIR=\""$(uidir)"\"		\
 	$(MATE_APPLETS4_CFLAGS)
 
