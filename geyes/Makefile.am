@@ -1,6 +1,6 @@
 SUBDIRS = themes docs
 
-INCLUDES =						\
+AM_CPPFLAGS =						\
 	-I.						\
 	-I$(srcdir) 					\
 	$(MATE_APPLETS4_CFLAGS)			\
