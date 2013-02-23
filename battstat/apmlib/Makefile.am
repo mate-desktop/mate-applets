@@ -4,7 +4,7 @@
 # Created: Thu Jun 15 23:08:41 CEST 2000
 #
 
-INCLUDES =					\
+AM_CPPFLAGS =					\
 	-I$(top_srcdir)				\
 	-I$(top_srcdir)/apmlib			\
 	$(MATE_APPLETS_CFLAGS)			\

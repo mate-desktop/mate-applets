@@ -1,6 +1,6 @@
 cpufreqselectordir = $(bindir)
 
-INCLUDES = $(CPUFREQ_SELECTOR_CFLAGS)
+AM_CPPFLAGS = $(CPUFREQ_SELECTOR_CFLAGS)
 
 if HAVE_POLKIT
 INCLUDES += \
