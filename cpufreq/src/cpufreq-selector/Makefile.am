@@ -3,7 +3,7 @@ cpufreqselectordir = $(bindir)
 AM_CPPFLAGS = $(CPUFREQ_SELECTOR_CFLAGS)
 
 if HAVE_POLKIT
-INCLUDES += \
+AM_CPPFLAGS += \
 	$(DBUS_CFLAGS)		\
 	$(POLKIT_CFLAGS)
 endif
