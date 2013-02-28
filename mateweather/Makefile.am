@@ -7,9 +7,10 @@ INCLUDES =					\
 	-I$(top_srcdir)				\
 	-DMATEWEATHER_MENU_UI_DIR=\""$(uidir)"\"	\
 	$(MATE_APPLETS4_CFLAGS)		\
-	$(LIBMATENOTIFY_CFLAGS)			\
+	$(LIBNOTIFY_CFLAGS)			\
 	$(LIBMATEWEATHER_CFLAGS)			\
-	$(NETWORKMANAGER_CFLAGS)
+	$(NETWORKMANAGER_CFLAGS)			\
+	$(DBUS_CFLAGS)
 
 libexec_PROGRAMS = mateweather-applet-2
 
@@ -22,11 +23,12 @@ mateweather_applet_2_SOURCES = \
 	mateweather-applet.c mateweather-applet.h
 
 mateweather_applet_2_LDADD = 	\
-	$(LIBMATENOTIFY_LIBS) 	\
+	$(LIBNOTIFY_LIBS) 	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MATE_LIBS2_LIBS)	\
-	$(LIBMATEWEATHER_LIBS) 	\
-	$(NETWORKMANAGER_LIBS)
+	$(LIBMATEWEATHER_LIBS)	\
+	$(NETWORKMANAGER_LIBS)	\
+	$(DBUS_LIBS)
 
 uidir = $(datadir)/mate-2.0/ui
 ui_DATA = mateweather-applet-menu.xml

@@ -40,8 +40,8 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 
-#ifdef HAVE_LIBMATENOTIFY
-#include <libmatenotify/notify.h>
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
 #endif
 
 #include "battstat.h"
@@ -420,7 +420,7 @@ get_remaining (BatteryStatus *info)
 static gboolean
 battery_full_notify (GtkWidget *applet)
 {
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
 	GError *error = NULL;
 	GdkPixbuf *icon;
 	gboolean result;
@@ -435,7 +435,7 @@ battery_full_notify (GtkWidget *applet)
 			GTK_ICON_LOOKUP_USE_BUILTIN,
 			NULL);
 
-	NotifyNotification *n = notify_notification_new (_("Your battery is now fully recharged"), "", /* "battery" */ NULL, applet);
+	NotifyNotification *n = notify_notification_new (_("Your battery is now fully recharged"), "", /* "battery" */ NULL);
 
 	/* XXX: it would be nice to pass this as a named icon */
 	notify_notification_set_icon_from_pixbuf (n, icon);
@@ -462,7 +462,7 @@ battery_full_notify (GtkWidget *applet)
 static void
 battery_full_dialog (GtkWidget *applet)
 {
-  /* first attempt to use libmatenotify */
+  /* first attempt to use libnotify */
   if (battery_full_notify (applet))
 	  return;
 

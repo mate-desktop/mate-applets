@@ -19,7 +19,7 @@ LIBGTOP_REQUIRED=2.11.92
 LIBXKLAVIER_REQUIRED=4.0
 LIBMATEWNCK_REQUIRED=1.3.0
 LIBMATE_DESKTOP_REQUIRED=1.1.0
-LIBMATENOTIFY_REQUIRED=1.1.0
+LIBNOTIFY_REQUIRED=0.7.0
 HAL_REQUIRED=0.5.3
 UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
@@ -149,18 +149,18 @@ PKG_CHECK_MODULES(LIBMATEWNCK, libmatewnck >= $LIBMATEWNCK_REQUIRED,,
 AC_SUBST(LIBMATEWNCK_CFLAGS)
 AC_SUBST(LIBMATEWNCK_LIBS)
 
-dnl -- check for libmatenotify (optional) -----------------------------------------
-LIBMATENOTIFY_CFLAGS=
-LIBMATENOTIFY_LIBS=
-PKG_CHECK_MODULES(LIBMATENOTIFY, libmatenotify >= $LIBMATENOTIFY_REQUIRED,
-		  HAVE_LIBMATENOTIFY="yes", HAVE_LIBMATENOTIFY="no")
+dnl -- check for libnotify (optional) -----------------------------------------
+LIBNOTIFY_CFLAGS=
+LIBNOTIFY_LIBS=
+PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED,
+		  HAVE_LIBNOTIFY="yes", HAVE_LIBNOTIFY="no")
 
-if test "x$HAVE_LIBMATENOTIFY" = "xyes"; then
-	AC_DEFINE(HAVE_LIBMATENOTIFY, 1, [libmatenotify available])
+if test "x$HAVE_LIBNOTIFY" = "xyes"; then
+	AC_DEFINE(HAVE_LIBNOTIFY, 1, [libnotify available])
 fi
 
-AC_SUBST(LIBMATENOTIFY_CFLAGS)
-AC_SUBST(LIBMATENOTIFY_LIBS)
+AC_SUBST(LIBNOTIFY_CFLAGS)
+AC_SUBST(LIBNOTIFY_LIBS)
 
 dnl -- check for glib/gobject (required) --------------------------------------
 PKG_CHECK_MODULES(CPUFREQ_SELECTOR, glib-2.0 >= $GLIB_REQUIRED gobject-2.0 >= $GLIB_REQUIRED)
@@ -734,5 +734,6 @@ mate-applets-$VERSION configure summary:
     Using NetworkManager:          $HAVE_NETWORKMANAGER
     Using HAL:                     $HAVE_HAL
     Using UPOWER:                  $HAVE_UPOWER
+    Using libnotify:               $HAVE_LIBNOTIFY
     Enabling IPv6:                 $have_ipv6
 " >&2

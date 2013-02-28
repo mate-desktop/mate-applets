@@ -27,9 +27,8 @@
 
 #include <gdk/gdkkeysyms.h>
 
-#ifdef HAVE_LIBMATENOTIFY
-#include <libmatenotify/notify.h>
-#include <libmatenotify/notification.h>
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
 #endif
 
 #define MATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
@@ -393,7 +392,7 @@ static void
 update_finish (WeatherInfo *info, gpointer data)
 {
     static int gw_fault_counter = 0;
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
     char *message, *detail;
 #endif
     char *s;
@@ -442,7 +441,7 @@ update_finish (WeatherInfo *info, gpointer data)
 	    /* update applet */
 	    place_widgets(gw_applet);
 
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
 		    NotifyNotification *n;
 	            
 		    /* Show notifications if possible */
@@ -468,8 +467,7 @@ update_finish (WeatherInfo *info, gpointer data)
 			 if (icon == NULL)
 				 icon = "stock-unknown";
 	           	 
-			 n = notify_notification_new (message, detail, icon,
-					 gw_applet->container);
+			 n = notify_notification_new (message, detail, icon);
 	
 		   	 notify_notification_show (n, &error);
 			 if (error)
