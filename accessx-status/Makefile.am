@@ -1,6 +1,6 @@
 SUBDIRS = docs pixmaps
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	$(MATE_APPLETS4_CFLAGS) \
 	-DACCESSX_PIXMAPS_DIR=\""$(datadir)/pixmaps/mate-accessx-status-applet"\" \
 	-DACCESSX_MENU_UI_DIR=\""$(uidir)"\"
