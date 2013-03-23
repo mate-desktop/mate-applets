@@ -5,13 +5,13 @@ AM_CPPFLAGS = \
 	-DACCESSX_PIXMAPS_DIR=\""$(datadir)/pixmaps/mate-accessx-status-applet"\" \
 	-DACCESSX_MENU_UI_DIR=\""$(uidir)"\"
 
-libexec_PROGRAMS = accessx-status-applet
+libexec_PROGRAMS = mate-accessx-status-applet
 
-accessx_status_applet_SOURCES = \
+mate_accessx_status_applet_SOURCES = \
 	applet.c \
 	applet.h
 
-accessx_status_applet_LDADD = \
+mate_accessx_status_applet_LDADD = \
 	$(MATE_APPLETS4_LIBS) \
 	$(X_LIBS)
 
