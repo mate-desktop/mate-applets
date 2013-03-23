@@ -1,4 +1,3 @@
-
 builder_DATA = battstat_applet.ui
 
 ACPIINC= @ACPIINC@
@@ -34,10 +33,10 @@ AM_CPPFLAGS =					\
 	-DBATTSTAT_MENU_UI_DIR=\""$(uidir)"\"
 
 
-libexec_PROGRAMS = battstat-applet-2
+libexec_PROGRAMS = mate-battstat-applet-2
 
 
-battstat_applet_2_SOURCES = \
+mate_battstat_applet_2_SOURCES = \
 	battstat.h \
 	pixmaps.h \
 	properties.c \
@@ -53,7 +52,7 @@ battstat_applet_2_SOURCES = \
 	battstat-upower.h
 
 
-battstat_applet_2_LDADD = \
+mate_battstat_applet_2_LDADD = \
 		     $(MATE_APPLETS4_LIBS) \
 		     $(LIBNOTIFY_LIBS) \
 		     $(HAL_LIBS) \
