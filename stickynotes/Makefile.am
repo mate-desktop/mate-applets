@@ -18,9 +18,9 @@ AM_CPPFLAGS =					\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
 	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
 
-libexec_PROGRAMS = stickynotes_applet
+libexec_PROGRAMS = mate_stickynotes_applet
 
-stickynotes_applet_SOURCES = \
+mate_stickynotes_applet_SOURCES = \
 	util.h \
 	util.c \
 	stickynotes.h \
@@ -32,7 +32,7 @@ stickynotes_applet_SOURCES = \
 	stickynotes_applet.c \
 	stickynotes_applet_callbacks.c
 
-stickynotes_applet_LDADD =	\
+mate_stickynotes_applet_LDADD =	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(LIBMATEWNCK_LIBS)		\
 	$(XML2_LIBS) \
