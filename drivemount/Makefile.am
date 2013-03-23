@@ -6,16 +6,16 @@ AM_CPPFLAGS =					\
 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
 	$(MATE_APPLETS4_CFLAGS)
 
-libexec_PROGRAMS = drivemount_applet2
+libexec_PROGRAMS = mate_drivemount_applet2
 
-drivemount_applet2_SOURCES =	\
+mate_drivemount_applet2_SOURCES =	\
 	drivemount.c		\
 	drive-list.c		\
 	drive-list.h		\
 	drive-button.c		\
 	drive-button.h
 
-drivemount_applet2_LDADD =	\
+mate_drivemount_applet2_LDADD =	\
 	$(MATE_APPLETS4_LIBS)
 
 
