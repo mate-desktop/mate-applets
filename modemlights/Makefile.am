@@ -4,13 +4,13 @@ AM_CPPFLAGS = -I. -I$(srcdir) 				\
 	-DMODEM_MENU_UI_DIR=\""$(uidir)"\"		\
 	$(MATE_APPLETS4_CFLAGS)
 
-libexec_PROGRAMS = modem_applet
+libexec_PROGRAMS = mate_modem_applet
 
-modem_applet_SOURCES = \
+mate_modem_applet_SOURCES = \
 	modem-applet.c \
 	modem-applet.h
 
-modem_applet_LDADD = 		\
+mate_modem_applet_LDADD = 		\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MODEMLIGHTS_LIBS)
 

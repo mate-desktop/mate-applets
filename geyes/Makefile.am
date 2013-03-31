@@ -8,14 +8,14 @@ AM_CPPFLAGS =						\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
 	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"
 
-libexec_PROGRAMS = geyes_applet2
+libexec_PROGRAMS = mate_geyes_applet2
 
-geyes_applet2_SOURCES =	\
+mate_geyes_applet2_SOURCES =	\
         geyes.c \
 	themes.c \
 	geyes.h
 
-geyes_applet2_LDADD = 		\
+mate_geyes_applet2_LDADD = 		\
 	$(MATE_APPLETS4_LIBS) \
 	-lm
 

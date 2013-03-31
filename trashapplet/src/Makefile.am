@@ -3,16 +3,16 @@ INCLUDES = -I$(top_srcdir)		\
 	   $(GIO_CFLAGS)		\
            -DTRASH_MENU_UI_DIR=\""$(datadir)/mate-2.0/ui"\"
 
-libexec_PROGRAMS = trashapplet
+libexec_PROGRAMS = mate-trashapplet
 
-trashapplet_SOURCES = \
+mate_trashapplet_SOURCES = \
 	trashapplet.c \
 	trash-empty.h \
 	trash-empty.c \
 	xstuff.c \
 	xstuff.h
 
-trashapplet_LDADD = 		\
+mate_trashapplet_LDADD = 		\
 	$(MATE_APPLETS4_LIBS) 	\
 	$(GIO_LIBS) \
 	-lX11

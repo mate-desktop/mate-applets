@@ -7,13 +7,13 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)		\
 	$(MUCHARMAP_CFLAGS)
 
-libexec_PROGRAMS = charpick_applet2
+libexec_PROGRAMS = mate_charpick_applet2
 
-charpick_applet2_SOURCES = charpick.c \
+mate_charpick_applet2_SOURCES = charpick.c \
                           charpick.h \
                           properties.c
 
-charpick_applet2_LDADD = \
+mate_charpick_applet2_LDADD = \
 		       $(MATE_APPLETS4_LIBS)	\
 		       $(MUCHARMAP_LIBS)
 
