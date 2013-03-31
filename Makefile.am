@@ -82,8 +82,6 @@ EXTRA_DIST = \
 	MAINTAINERS \
 	m4/ac-define-dir.m4 \
 	COPYING-DOCS \
-	mate-applets.spec.in \
-	mate-applets.spec \
 	intltool-update.in \
 	intltool-extract.in \
 	intltool-merge.in \

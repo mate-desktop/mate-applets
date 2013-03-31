@@ -648,7 +648,6 @@ dnl ***************************************************************************
 dnl *** Output Makefiles et al                                              ***
 dnl ***************************************************************************
 AC_OUTPUT([
-mate-applets.spec
 Makefile
 po/Makefile.in
 accessx-status/Makefile
