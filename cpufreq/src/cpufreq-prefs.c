@@ -238,7 +238,6 @@ static void
 cpufreq_prefs_setup (CPUFreqPrefs *prefs)
 {
 	g_assert (G_IS_SETTINGS (prefs->priv->settings));
-	g_assert (prefs->priv->settings != NULL);
 
 	prefs->priv->cpu = g_settings_get_int (prefs->priv->settings, "cpu");
 	prefs->priv->show_mode = g_settings_get_int (prefs->priv->settings, "show-mode");
@@ -256,6 +255,7 @@ cpufreq_prefs_new (GSettings *settings)
 					     "gsettings", settings,
 					     NULL));
 	
+	prefs->priv->settings = settings;
 	cpufreq_prefs_setup (prefs);
 
 	return prefs;
