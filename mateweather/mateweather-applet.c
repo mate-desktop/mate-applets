@@ -312,6 +312,7 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
     AtkObject      *atk_obj;
 
     gw_applet->mateweather_pref.location = NULL;
+    gw_applet->mateweather_pref.show_notifications = FALSE;
     gw_applet->mateweather_pref.update_interval = 1800;
     gw_applet->mateweather_pref.update_enabled = TRUE;
     gw_applet->mateweather_pref.detailed = FALSE;
@@ -442,6 +443,8 @@ update_finish (WeatherInfo *info, gpointer data)
 	    place_widgets(gw_applet);
 
 #ifdef HAVE_LIBNOTIFY
+        if (gw_applet->mateweather_pref.show_notifications)
+        {
 		    NotifyNotification *n;
 	            
 		    /* Show notifications if possible */
@@ -479,6 +482,7 @@ update_finish (WeatherInfo *info, gpointer data)
 		   	 g_free (message);
 		   	 g_free (detail);
 		    }
+        }
 #endif
     }
     else
