@@ -53,6 +53,10 @@ struct _MateWeatherPrefPrivate {
 		GtkWidget* basic_radar_url_entry;
 	#endif /* RADARMAP */
 
+    #ifdef HAVE_LIBNOTIFY
+        GtkWidget* basic_show_notifications_btn;
+    #endif
+
 	GtkWidget* basic_update_spin;
 	GtkWidget* basic_update_btn;
 	GtkWidget* tree;
@@ -197,7 +201,9 @@ static gboolean update_dialog(MateWeatherPref* pref)
 
 	#endif /* RADARMAP */
 
-
+	#ifdef HAVE_LIBNOTIFY
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_show_notifications_btn), gw_applet->mateweather_pref.show_notifications);
+	#endif
     return TRUE;
 }
 
@@ -292,6 +298,22 @@ static void load_locations(MateWeatherPref* pref)
 	{
 		/* Select the current (default) location */
 		gtk_tree_model_foreach(GTK_TREE_MODEL(pref->priv->model), compare_location, pref);
+	}
+}
+
+static void show_notifications_toggled(GtkToggleButton* button, MateWeatherPref* pref)
+{
+	MateWeatherApplet* gw_applet = pref->priv->applet;
+	
+	gboolean toggled = gtk_toggle_button_get_active(button);
+	
+	if (toggled != gw_applet->mateweather_pref.show_notifications)
+	{
+		/* sync with mateweather_pref struct */
+		gw_applet->mateweather_pref.show_notifications = toggled;
+	    
+		/* sync with gsettings */
+		g_settings_set_boolean (gw_applet->settings, "show-notifications", toggled);
 	}
 }
 
@@ -1005,6 +1027,18 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		}
 	#endif /* RADARMAP */
 
+    #ifdef HAVE_LIBNOTIFY
+		/* setup show-notifications button */
+		pref->priv->basic_show_notifications_btn = gtk_check_button_new_with_mnemonic (_("Show _notifications"));
+
+		if (!g_settings_is_writable (pref->priv->applet->settings, "show-notifications"))
+		{
+			hard_set_sensitive (pref->priv->basic_show_notifications_btn, FALSE);
+		}
+
+		g_signal_connect (G_OBJECT (pref->priv->basic_show_notifications_btn), "toggled", G_CALLBACK (show_notifications_toggled), pref);
+    #endif
+
 	frame = create_hig_catagory (pref_basic_vbox, _("Update"));
 
 	pref_basic_update_hbox = gtk_hbox_new (FALSE, 12);
@@ -1057,6 +1091,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		gtk_box_pack_start (GTK_BOX (vbox), radar_toggle_hbox, TRUE, TRUE, 0);
 		gtk_box_pack_start (GTK_BOX (vbox), pref->priv->basic_radar_url_hbox, TRUE, TRUE, 0);
 	#endif /* RADARMAP */
+	
+	#ifdef HAVE_LIBNOTIFY
+		/* add the show-notification toggle button to the vbox of the display section */
+		gtk_box_pack_start (GTK_BOX (vbox), pref->priv->basic_show_notifications_btn, TRUE, TRUE, 0);
+	#endif
 
 	gtk_container_add (GTK_CONTAINER (frame), vbox);
 
