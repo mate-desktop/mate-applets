@@ -277,7 +277,7 @@ AC_SUBST(XML2_LIBS)
 
  dnl -- check for libmateweather (required for mateweather applet) ------------------
 build_libmateweather_applets=false
-PKG_CHECK_MODULES(LIBMATEWEATHER, mateweather >= 1.5.0,
+PKG_CHECK_MODULES(LIBMATEWEATHER, mateweather >= 1.6.1,
 	          build_libmateweather_applets=true,
 		  AC_MSG_WARN([libmateweather not found. Not building the weather applet.]))
 AC_SUBST(LIBMATEWEATHER_CFLAGS)
