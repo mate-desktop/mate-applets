@@ -1,4 +1,4 @@
-INCLUDES = -I$(top_srcdir)		\
+AM_CPPFLAGS = -I$(top_srcdir)		\
 	   $(MATE_APPLETS4_CFLAGS)	\
 	   $(GIO_CFLAGS)		\
            -DTRASH_MENU_UI_DIR=\""$(datadir)/mate-2.0/ui"\"
