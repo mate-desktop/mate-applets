@@ -219,7 +219,7 @@ phelp_cb (GtkDialog *dialog)
 	GError *error = NULL;
 
 	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-		"ghelp:geyes?geyes-settings",
+		"help:geyes?geyes-settings",
 		gtk_get_current_event_time (),
 		&error);
 

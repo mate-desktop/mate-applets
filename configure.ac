@@ -357,9 +357,9 @@ matelocaledir='${prefix}/${DATADIRNAME}/locale'
 AC_SUBST(matelocaledir)
 
 dnl ***************************************************************************
-dnl *** mate-doc-utils                                                     ***
+dnl *** yelp-tools                                                          ***
 dnl ***************************************************************************
-MATE_DOC_INIT
+YELPHELP_INIT
 
 dnl ***************************************************************************
 dnl *** battstat specific checks                                            ***
