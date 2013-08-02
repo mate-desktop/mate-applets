@@ -386,7 +386,7 @@ cpufreq_prefs_dialog_response_cb (CPUFreqPrefs *prefs,
 
         if (response == GTK_RESPONSE_HELP) {
 		gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (prefs->priv->dialog)),
-			"ghelp:cpufreq-applet?cpufreq-applet-prefs",
+			"help:cpufreq-applet?cpufreq-applet-prefs",
 			gtk_get_current_event_time (),
 			&error);
 

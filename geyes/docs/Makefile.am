@@ -1,11 +1,10 @@
-include $(top_srcdir)/mate-doc-utils.make
-dist-hook: doc-dist-hook
+@YELP_HELP_RULES@
 
-DOC_MODULE = mate-geyes
-DOC_ENTITIES = legal.xml
+HELP_ID = mate-geyes
+HELP_FILES = index.docbook legal.xml
 
-DOC_FIGURES = figures/geyes_applet.png
+HELP_MEDIA = figures/geyes_applet.png
 
-DOC_LINGUAS = ast bg ca cs da de el en_GB es eu fi fr it ko oc ru sv uk zh_CN zh_HK zh_TW
+HELP_LINGUAS = ast bg ca cs da de el en_GB es eu fi fr it ko oc ru sv uk zh_CN zh_HK zh_TW
 
 -include $(top_srcdir)/git.mk

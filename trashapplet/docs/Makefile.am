@@ -1,11 +1,10 @@
-include $(top_srcdir)/mate-doc-utils.make
-dist-hook: doc-dist-hook
+@YELP_HELP_RULES@
 
-DOC_MODULE = mate-trashapplet
-DOC_ENTITIES = legal.xml
+HELP_ID = mate-trashapplet
+HELP_FILES = index.docbook legal.xml
 
-DOC_FIGURES = figures/trash-applet.png
+HELP_MEDIA = figures/trash-applet.png
 
-DOC_LINGUAS = ca cs da de el en_GB es eu fi fr hu it nl oc pa pt_BR ru sv uk zh_CN zh_HK zh_TW
+HELP_LINGUAS = ca cs da de el en_GB es eu fi fr hu it nl oc pa pt_BR ru sv uk zh_CN zh_HK zh_TW
 
 -include $(top_srcdir)/git.mk

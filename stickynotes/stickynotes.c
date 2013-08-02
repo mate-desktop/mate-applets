@@ -369,7 +369,7 @@ response_cb (GtkWidget *dialog, gint id, gpointer data)
 {
         if (id == GTK_RESPONSE_HELP)
 		gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-				"ghelp:stickynotes_applet?stickynotes-settings-individual",
+				"help:stickynotes_applet?stickynotes-settings-individual",
 				gtk_get_current_event_time (),
 				NULL);
         else if (id == GTK_RESPONSE_CLOSE)

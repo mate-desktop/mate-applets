@@ -127,7 +127,7 @@ display_help (GtkAction *action,
     GError *error = NULL;
 
     gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (drive_list)),
-		"ghelp:drivemount?drivemount",
+		"help:drivemount?drivemount",
 		gtk_get_current_event_time (),
 		&error);
 

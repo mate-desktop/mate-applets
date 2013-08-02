@@ -86,8 +86,7 @@ EXTRA_DIST = \
 	intltool-extract.in \
 	intltool-merge.in \
 	xmldocs.make \
-	omf.make \
-	mate-doc-utils.make
+	omf.make
 
 # We build the ChangeLog from the git log
 ChangeLog:
@@ -104,8 +103,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 DISTCLEANFILES = intltool-extract \
 	intltool-merge \
-	intltool-update \
-	mate-doc-utils.make
+	intltool-update
 
 -include $(top_srcdir)/git.mk
 
