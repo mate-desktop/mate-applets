@@ -501,7 +501,7 @@ phelp_cb (GtkDialog *dialog, gint tab, gpointer data)
   GError *error = NULL;
 
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-                "ghelp:char-palette?charpick-prefs",
+                "help:char-palette?charpick-prefs",
                 gtk_get_current_event_time (),
                 &error);
 

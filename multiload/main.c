@@ -71,7 +71,7 @@ help_cb (GtkAction       *action,
  	GError *error = NULL;
                                                                                 
 	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (ma->applet)),
-			"ghelp:multiload",
+			"help:multiload",
 			gtk_get_current_event_time (),
 			&error);
 

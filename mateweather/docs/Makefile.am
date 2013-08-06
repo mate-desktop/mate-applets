@@ -1,10 +1,9 @@
-include $(top_srcdir)/mate-doc-utils.make
-dist-hook: doc-dist-hook
+@YELP_HELP_RULES@
 
-DOC_MODULE = mateweather
-DOC_ENTITIES = legal.xml
+HELP_ID = mateweather
+HELP_FILES = index.docbook legal.xml
 
-DOC_FIGURES = figures/mateweather_applet.png \
+HELP_MEDIA = figures/mateweather_applet.png \
 		figures/mateweather-details.png \
 		figures/mateweather-menu-prefs.png \
 		figures/mateweather-prefs-general.png \
@@ -19,6 +18,6 @@ DOC_FIGURES = figures/mateweather_applet.png \
 		figures/stock_weather-storm.png \
 		figures/stock_weather-sunny.png
 
-DOC_LINGUAS = ar ca cs de el en_GB es eu fi fr ko nl oc pa pt_BR ru sv uk zh_CN
+HELP_LINGUAS = ar ca cs de el en_GB es eu fi fr ko nl oc pa pt_BR ru sv uk zh_CN
 
 -include $(top_srcdir)/git.mk

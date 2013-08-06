@@ -574,7 +574,7 @@ cpufreq_applet_help_cb (GtkAction     *action,
         GError *error = NULL;
 
 	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
-			"ghelp:cpufreq-applet",
+			"help:cpufreq-applet",
 			gtk_get_current_event_time (),
 			&error);
 
