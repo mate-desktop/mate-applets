@@ -13,7 +13,7 @@ AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
 	$(MATE_APPLETS4_CFLAGS)		\
-	$(LIBMATEWNCK_CFLAGS)			\
+	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
 	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
@@ -34,7 +34,7 @@ stickynotes_applet_SOURCES = \
 
 stickynotes_applet_LDADD =	\
 	$(MATE_APPLETS4_LIBS)	\
-	$(LIBMATEWNCK_LIBS)		\
+	$(LIBWNCK_LIBS)		\
 	$(XML2_LIBS) \
 	-lX11
 

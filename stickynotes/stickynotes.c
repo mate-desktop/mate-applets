@@ -21,7 +21,8 @@
 #include <libxml/parser.h>
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE 1
+#include <libwnck/libwnck.h>
 #include <string.h>
 
 #include "stickynotes.h"
@@ -36,7 +37,7 @@ static gboolean save_scheduled = FALSE;
 
 static void response_cb (GtkWidget *dialog, gint id, gpointer data);
 
-/* Based on a function found in matewnck */
+/* Based on a function found in wnck */
 static void
 set_icon_geometry  (GdkWindow *window,
                   int        x,
@@ -639,23 +640,23 @@ stickynote_set_visible (StickyNote *note, gboolean visible)
 		else if (note->workspace > 0)
 		{
 #if 0
-			MatewnckWorkspace *matewnck_ws;
+			WnckWorkspace *wnck_ws;
 			gulong xid;
-			MatewnckWindow *matewnck_win;
-			MatewnckScreen *matewnck_screen;
+			WnckWindow *wnck_win;
+			WnckScreen *wnck_screen;
 
 			g_print ("set_visible(): workspace = %i\n",
 					note->workspace);
 
 			xid = GDK_WINDOW_XID (note->w_window->window);
-			matewnck_screen = matewnck_screen_get_default ();
-			matewnck_win = matewnck_window_get (xid);
-			matewnck_ws = matewnck_screen_get_workspace (
-					matewnck_screen,
+			wnck_screen = wnck_screen_get_default ();
+			wnck_win = wnck_window_get (xid);
+			wnck_ws = wnck_screen_get_workspace (
+					wnck_screen,
 					note->workspace - 1);
-			if (matewnck_win && matewnck_ws)
-				matewnck_window_move_to_workspace (
-						matewnck_win, matewnck_ws);
+			if (wnck_win && wnck_ws)
+				wnck_window_move_to_workspace (
+						wnck_win, wnck_ws);
 			else
 				g_print ("set_visible(): errr\n");
 #endif
@@ -722,7 +723,7 @@ void stickynotes_remove(StickyNote *note)
 gboolean
 stickynotes_save_now (void)
 {
-	MatewnckScreen *matewnck_screen;
+	WnckScreen *wnck_screen;
 	const gchar *title;
 	GtkTextBuffer *buffer;
 	GtkTextIter start, end;
@@ -737,12 +738,12 @@ stickynotes_save_now (void)
 	xmlDocSetRootElement(doc, root);
 	xmlNewProp(root, XML_CHAR("version"), XML_CHAR (VERSION));
 
-	matewnck_screen = matewnck_screen_get_default ();
-	matewnck_screen_force_update (matewnck_screen);
+	wnck_screen = wnck_screen_get_default ();
+	wnck_screen_force_update (wnck_screen);
 
 	/* For all sticky notes */
 	for (i = 0; i < g_list_length(stickynotes->notes); i++) {
-		MatewnckWindow *matewnck_win;
+		WnckWindow *wnck_win;
 		gulong xid = 0;
 
 		/* Access the current note in the list */
@@ -757,13 +758,13 @@ stickynotes_save_now (void)
 		gchar *y_str = g_strdup_printf("%d", note->y);
 
 		xid = GDK_WINDOW_XID (gtk_widget_get_window (note->w_window));
-		matewnck_win = matewnck_window_get (xid);
+		wnck_win = wnck_window_get (xid);
 
 		if (!g_settings_get_boolean (stickynotes->settings, "sticky") &&
-			matewnck_win)
+			wnck_win)
 			note->workspace = 1 +
-				matewnck_workspace_get_number (
-				matewnck_window_get_workspace (matewnck_win));
+				wnck_workspace_get_number (
+				wnck_window_get_workspace (wnck_win));
 		else
 			note->workspace = 0;
 
@@ -852,7 +853,7 @@ stickynotes_load (GdkScreen *screen)
 	xmlDocPtr doc = NULL;
 	xmlNodePtr root;
 	xmlNodePtr node;
-	/* MatewnckScreen *matewnck_screen; */
+	/* WnckScreen *wnck_screen; */
 	GList *new_notes, *tmp1;  /* Lists of StickyNote*'s */
 	GList *new_nodes; /* Lists of xmlNodePtr's */
 	int x, y, w, h;
@@ -1040,8 +1041,8 @@ stickynotes_load (GdkScreen *screen)
 
 	tmp1 = new_notes;
 	/*
-	matewnck_screen = matewnck_screen_get_default ();
-	matewnck_screen_force_update (matewnck_screen);
+	wnck_screen = wnck_screen_get_default ();
+	wnck_screen_force_update (wnck_screen);
 	*/
 
 	while (tmp1)
