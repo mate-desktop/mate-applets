@@ -28,8 +28,8 @@ PYGTK_REQUIRED=2.6
 PYGOBJECT_REQUIRED=2.6
 MATE_ICON_THEME_REQUIRED=1.1.0
 LIBXML_REQUIRED=2.5.0
-MUCHARMAP2_REQUIRED=1.5.0
-MUCHARMAP_REQUIRED=1.4.0
+GUCHARMAP2_REQUIRED=2.33.0
+GUCHARMAP_REQUIRED=1.4.0
 POLKIT_REQUIRED=0.92
 NETWORKMANAGER_REQUIRED=0.7
 dnl ***************************************************************************
@@ -238,27 +238,27 @@ fi
 AC_SUBST(UPOWER_CFLAGS)
 AC_SUBST(UPOWER_LIBS)
 
-dnl -- check for mucharmap (optional) -----------------------------------------
+dnl -- check for gucharmap (optional) -----------------------------------------
 
-PKG_CHECK_EXISTS([mucharmap-2 >= $MUCHARMAP2_REQUIRED],
-                 [have_mucharmap=yes have_mucharmap_2=yes],[have_mucharmap_2=no])
-if test "$have_mucharmap_2" = "yes"; then
-      PKG_CHECK_MODULES([MUCHARMAP],[mucharmap-2 >= $MUCHARMAP2_REQUIRED])
+PKG_CHECK_EXISTS([gucharmap-2 >= $GUCHARMAP2_REQUIRED],
+                 [have_gucharmap=yes have_gucharmap_2=yes],[have_gucharmap_2=no])
+if test "$have_gucharmap_2" = "yes"; then
+      PKG_CHECK_MODULES([GUCHARMAP],[gucharmap-2 >= $GUCHARMAP2_REQUIRED])
 else
-      PKG_CHECK_MODULES([MUCHARMAP], [mucharmap >= $MUCHARMAP_REQUIRED],
-                        [have_mucharmap=yes],[have_mucharmap=no])
+      PKG_CHECK_MODULES([GUCHARMAP], [gucharmap >= $GUCHARMAP_REQUIRED],
+                        [have_gucharmap=yes],[have_gucharmap=no])
 fi
 
-if test "$have_mucharmap_2" = "yes"; then
-        AC_DEFINE([HAVE_MUCHARMAP_2],[1],[Define if mucharmap API is version 2])
+if test "$have_gucharmap_2" = "yes"; then
+        AC_DEFINE([HAVE_GUCHARMAP_2],[1],[Define if gucharmap API is version 2])
 fi
-if test "$have_mucharmap" = "yes"; then
-	AC_DEFINE([HAVE_MUCHARMAP],[1],[Mucharmap Available])
+if test "$have_gucharmap" = "yes"; then
+	AC_DEFINE([HAVE_GUCHARMAP],[1],[Gucharmap Available])
 else
-  AC_MSG_WARN([*** 'charpick' applet will not be built with mucharmap support ***])
+  AC_MSG_WARN([*** 'charpick' applet will not be built with gucharmap support ***])
 fi
-AC_SUBST(MUCHARMAP_CFLAGS)
-AC_SUBST(MUCHARMAP_LIBS)
+AC_SUBST(GUCHARMAP_CFLAGS)
+AC_SUBST(GUCHARMAP_LIBS)
 
 dnl -- check for Python modules (optional) ------------------------------
 PYGTK_CFLAGS=
@@ -713,8 +713,8 @@ mate-applets-$VERSION configure summary:
         - accessx-status           $HAVE_XKB
         - battstat                 $build_battstat_applet
         - charpick                 always
-            - mucharmap support    $have_mucharmap
-            - mucharmap-2 support  $have_mucharmap_2
+            - gucharmap support    $have_gucharmap
+            - gucharmap-2 support  $have_gucharmap_2
         - cpufreq                  $build_cpufreq_applet
             - building selector    $enable_selector
             - using PolicyKit      $HAVE_POLKIT
