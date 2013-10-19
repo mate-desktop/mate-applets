@@ -5,7 +5,7 @@ AM_CPPFLAGS =					\
 	-I$(srcdir)				\
 	-DCHARPICK_MENU_UI_DIR=\""$(uidir)"\"	\
 	$(MATE_APPLETS4_CFLAGS)		\
-	$(MUCHARMAP_CFLAGS)
+	$(GUCHARMAP_CFLAGS)
 
 libexec_PROGRAMS = charpick_applet2
 
@@ -15,7 +15,7 @@ charpick_applet2_SOURCES = charpick.c \
 
 charpick_applet2_LDADD = \
 		       $(MATE_APPLETS4_LIBS)	\
-		       $(MUCHARMAP_LIBS)
+		       $(GUCHARMAP_LIBS)
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.CharpickerApplet.mate-panel-applet.in
@@ -54,6 +54,6 @@ EXTRA_DIST =							\
 	org.mate.applets.CharpickerApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(ui_DATA)						\
-	$(gsettings_SCHEMAS_in_in)
+	$(gsettings_SCHEMAS).in.in
 
 -include $(top_srcdir)/git.mk
