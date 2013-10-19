@@ -45,9 +45,13 @@ investbindir = $(libdir)/invest-applet
 # Build rules
 # ******************************************************************************
 
-DISTCLEANFILES = \
-	$(server_in_files) \
-	$(server_in_files:.server.in=.server)
+CLEANFILES = \
+	$(applet_DATA) \
+	$(applet_DATA).in \
+	$(service_in_files) \
+	$(service_in_files:.service.in=.service)
+
+
 
 EXTRA_DIST = \
 	org.mate.applets.InvestApplet.mate-panel-applet.in.in \
