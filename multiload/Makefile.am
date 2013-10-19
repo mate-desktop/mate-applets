@@ -39,7 +39,7 @@ gsettings_SCHEMAS = org.mate.panel.applet.multiload.gschema.xml
 EXTRA_DIST =							\
 	org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
-	$(gsettings_SCHEMAS_in_in)			\
+	$(gsettings_SCHEMAS).in.in			\
 	$(ui_DATA)
 
 uidir		= $(datadir)/mate-2.0/ui

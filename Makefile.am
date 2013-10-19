@@ -79,7 +79,6 @@ DIST_SUBDIRS = \
 	null_applet
 
 EXTRA_DIST = \
-	MAINTAINERS \
 	m4/ac-define-dir.m4 \
 	COPYING-DOCS \
 	intltool-update.in \
