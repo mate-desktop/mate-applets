@@ -99,7 +99,7 @@ EXTRA_DIST = 							\
 	$(ui_DATA)						\
 	org.mate.applets.BattstatApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
-	$(gsettings_SCHEMAS_in_in)
+	$(gsettings_SCHEMAS).in.in
 
 
 -include $(top_srcdir)/git.mk

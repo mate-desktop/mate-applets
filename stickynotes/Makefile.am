@@ -79,7 +79,7 @@ endif
 EXTRA_DIST = \
 	     $(builder_files) \
 	     $(ui_files) \
-	     $(gsettings_SCHEMAS_in_in) \
+	     $(gsettings_SCHEMAS).in.in \
 	     $(convert_DATA) \
              $(service_in_files) \
 	     org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in

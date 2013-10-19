@@ -54,6 +54,6 @@ EXTRA_DIST =							\
 	org.mate.applets.CharpickerApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(ui_DATA)						\
-	$(gsettings_SCHEMAS_in_in)
+	$(gsettings_SCHEMAS).in.in
 
 -include $(top_srcdir)/git.mk
