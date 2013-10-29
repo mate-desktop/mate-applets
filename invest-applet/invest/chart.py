@@ -210,7 +210,7 @@ class FinancialChart:
 				a += "%s%s," % (name[1:], param)
 		
 		# Create the image URL -----------------------------------------------------
-		chart_base_url = "http://ichart.europe.yahoo.com/z?s=%(s)s&t=%(t)s&q=%(q)s&l=%(l)s&z=%(z)s&p=%(p)s&a=%(a)s%(opt)s"
+		chart_base_url = "http://chart.finance.yahoo.com/z?s=%(s)s&t=%(t)s&q=%(q)s&l=%(l)s&z=%(z)s&p=%(p)s&a=%(a)s%(opt)s"
 		url = chart_base_url % {
 			"s": tickers[0],
 			"t": self.time_ranges[self.ui.get_object("t").get_active()],
