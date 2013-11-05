@@ -409,7 +409,7 @@ menu_about_cb (GtkAction *action,
 
 	static const gchar *documenters[] = {
 		"Loban A Rahman <loban@earthling.net>",
-		"Sun MATE Documentation Team <gdocteam@sun.com>",
+		"Sun GNOME Documentation Team <gdocteam@sun.com>",
 		NULL
 	};
 
