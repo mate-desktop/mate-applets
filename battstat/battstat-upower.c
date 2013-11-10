@@ -86,7 +86,7 @@ battstat_upower_initialise (void (*callback) (void))
   GCancellable *cancellable = g_cancellable_new();
   GError *gerror;
 
-#if !UP_CHECK_VERSION(0, 9, 99)
+#if !UP_CHECK_VERSION(0, 99, 0)
   if (! up_client_enumerate_devices_sync( upc, cancellable, &gerror ) ) {
     sprintf(error_str, "Unable to enumerate upower devices: %s\n", gerror->message);
     goto error_shutdownclient;
