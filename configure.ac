@@ -5,7 +5,7 @@ AC_INIT(mate-applets, 1.6.1)
 AC_PREREQ(2.59)
 
 AC_CONFIG_HEADERS(config.h)
-AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gz])
+AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip])
 AC_CONFIG_MACRO_DIR(m4)
 
 dnl ***************************************************************************
