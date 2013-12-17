@@ -92,8 +92,11 @@ battstat_upower_initialise (void (*callback) (void))
     goto error_shutdownclient;
   }
 #endif
-
+#if UP_CHECK_VERSION(0, 99, 0)
+  g_signal_connect_after( upc, "notify", device_cb, NULL );
+#else
   g_signal_connect_after( upc, "device-changed", device_cb, NULL );
+#endif
   g_signal_connect_after( upc, "device-added", device_cb, NULL );
   g_signal_connect_after( upc, "device-removed", device_cb, NULL );
 
