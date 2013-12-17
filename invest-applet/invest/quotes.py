@@ -287,7 +287,7 @@ class QuoteUpdater(Gtk.ListStore):
 					self.add_balance_change(balance, change, val["currency"])
 
 				if len(ticker.split('.')) == 2:
-					url = 'http://ichart.europe.yahoo.com/h?s=%s' % ticker
+					url = 'http://chart.finance.yahoo.com/h?s=%s' % ticker
 				else:
 					url = 'http://ichart.yahoo.com/h?s=%s' % ticker
 
