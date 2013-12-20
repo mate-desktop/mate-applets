@@ -713,7 +713,7 @@ mate-applets-$VERSION configure summary:
         - drivemount               always
         - geyes                    always
         - mateweather              $build_libmateweather_applets
-        - invest-applet            $BUILD_INVEST_APPLET
+        - invest-applet            $HAVE_PYGOBJECT
         - modemlights              $BUILD_MODEM_LIGHTS
         - multiload                $build_gtop_applets
         - stickynotes              $enable_stickynotes
