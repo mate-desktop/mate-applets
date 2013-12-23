@@ -24,8 +24,6 @@ HAL_REQUIRED=0.5.3
 UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
-PYGTK_REQUIRED=2.6
-PYGOBJECT_REQUIRED=2.6
 MATE_ICON_THEME_REQUIRED=1.1.0
 LIBXML_REQUIRED=2.5.0
 GUCHARMAP2_REQUIRED=2.33.0
@@ -261,14 +259,7 @@ AC_SUBST(GUCHARMAP_CFLAGS)
 AC_SUBST(GUCHARMAP_LIBS)
 
 dnl -- check for Python modules (optional) ------------------------------
-PYGTK_CFLAGS=
-PYGTK_LIBS=
-PKG_CHECK_MODULES(PYGTK,
-	pygtk-2.0	>= $PYGTK_REQUIRED
-	pygobject-2.0	>= $PYGOBJECT_REQUIRED,
-	HAVE_PYGTK="yes", HAVE_PYGTK="no")
-AC_SUBST(PYGTK_LIBS)
-AC_SUBST(PYGTK_CFLAGS)
+PKG_CHECK_MODULES(PYGOBJECT, pygobject-3.0, HAVE_PYGOBJECT="yes", HAVE_PYGOBJECT="no")
 
 dnl -- check for libxml2 (required) ------------------------------------------
 PKG_CHECK_MODULES(XML2, libxml-2.0 >= $LIBXML_REQUIRED)
@@ -536,7 +527,7 @@ dnl ***************************************************************************
 dnl *** invest-applet specific checks                                       ***
 dnl ***************************************************************************
 
-AM_CONDITIONAL(BUILD_INVEST_APPLET, test "x$HAVE_PYGTK" = "xyes")
+AM_CONDITIONAL(BUILD_INVEST_APPLET, test "x$HAVE_PYGOBJECT" = "xyes")
 
 dnl ***************************************************************************
 dnl *** Check if IPv6 is available                                          ***
@@ -722,7 +713,7 @@ mate-applets-$VERSION configure summary:
         - drivemount               always
         - geyes                    always
         - mateweather              $build_libmateweather_applets
-        - invest-applet            $BUILD_INVEST_APPLET
+        - invest-applet            $HAVE_PYGOBJECT
         - modemlights              $BUILD_MODEM_LIGHTS
         - multiload                $build_gtop_applets
         - stickynotes              $enable_stickynotes
