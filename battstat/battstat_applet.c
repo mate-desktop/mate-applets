@@ -854,9 +854,9 @@ update_percent_label( ProgressData *battstat, BatteryStatus *info )
     new_label = g_strdup_printf ("%d%%", info->percent);
   else if (info->present && battstat->showtext == APPLET_SHOW_TIME)
   {
-    /* Fully charged or unknown (-1) time remaining displays -:-- */
+    /* Fully charged or unknown (-1) time remaining display none */
     if ((info->on_ac_power && info->percent == 100) || info->minutes < 0)
-      new_label = g_strdup ("-:--");
+      new_label = g_strdup ("");
     else
     {
       int time;
