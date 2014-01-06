@@ -98,7 +98,7 @@ dist: ChangeLog
 # Make sure the ChangeLog is updated every time
 .PHONY: ChangeLog
 
-ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 DISTCLEANFILES = intltool-extract \
 	intltool-merge \
