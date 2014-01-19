@@ -28,6 +28,10 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define GDK_WINDOW_XWINDOW GDK_WINDOW_XID
+#endif
+
 /* Returns the current date in a customizable form, the default
  * looks like this: "Nov 30, '78" */
 gchar * get_current_date(const gchar *format)

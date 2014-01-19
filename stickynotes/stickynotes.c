@@ -46,7 +46,11 @@ set_icon_geometry  (GdkWindow *window,
                   int        height)
 {
       gulong data[4];
+#if GTK_CHECK_VERSION (3, 0, 0)
+      Display *dpy = gdk_x11_display_get_xdisplay (gdk_window_get_display (window));
+#else
       Display *dpy = gdk_x11_drawable_get_xdisplay (window);
+#endif
 
       data[0] = x;
       data[1] = y;
@@ -56,7 +60,11 @@ set_icon_geometry  (GdkWindow *window,
       XChangeProperty (dpy,
                        GDK_WINDOW_XID (window),
                        gdk_x11_get_xatom_by_name_for_display (
+#if GTK_CHECK_VERSION (3, 0, 0)
+			       gdk_window_get_display (window),
+#else
 			       gdk_drawable_get_display (window),
+#endif
 			       "_NET_WM_ICON_GEOMETRY"),
 		       XA_CARDINAL, 32, PropModeReplace,
                        (guchar *)&data, 4);
@@ -485,10 +493,12 @@ stickynote_set_color (StickyNote  *note,
 		gdk_color_parse ("black", &colors[4]);
 		gdk_color_parse ("white", &colors[5]);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		/* Allocate these colors */
 		gdk_colormap_alloc_colors (gtk_widget_get_colormap (
 					note->w_window),
 				colors, 6, FALSE, TRUE, success);
+#endif
 
 		/* Apply colors to style */
 		rc_style->base[GTK_STATE_NORMAL] = colors[0];

@@ -22,6 +22,9 @@
 #include "stickynotes_applet_callbacks.h"
 #include "stickynotes.h"
 #include <gdk/gdkkeysyms.h>
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gdk/gdkkeysyms-compat.h>
+#endif
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
 
@@ -164,8 +167,14 @@ void install_check_click_on_desktop (void)
 		return;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	/* Access the desktop window. desktop_window is the root window for the
+	* default screen, so we know using gdk_display_get_default() is correct. */
+	window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), desktop_window);
+#else
 	/* Access the desktop window */
 	window = gdk_window_foreign_new (desktop_window);
+#endif
 
 	/* It may contain an atom to tell us which other window to monitor */
 	user_time_window = gdk_x11_get_xatom_by_name ("_NET_WM_USER_TIME_WINDOW");
@@ -193,7 +202,11 @@ void install_check_click_on_desktop (void)
 			{
 				/* We have another window to monitor */
 				desktop_window = *data;
+#if GTK_CHECK_VERSION (3, 0, 0)
+				window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window), desktop_window);
+#else
 				window = gdk_window_foreign_new (desktop_window);
+#endif
 			}
 		}
 	}
@@ -233,9 +246,14 @@ void
 applet_change_bg_cb (MatePanelApplet *mate_panel_applet,
 		     MatePanelAppletBackgroundType type,
 		     GdkColor *color,
+#if GTK_CHECK_VERSION (3, 0, 0)
+		     cairo_pattern_t *pattern,
+#else
 		     GdkPixmap *pixmap,
+#endif
 		     StickyNotesApplet *applet)
 {
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	/* Taken from TrashApplet */
 	GtkRcStyle *rc_style;
 	GtkStyle *style;
@@ -269,6 +287,7 @@ applet_change_bg_cb (MatePanelApplet *mate_panel_applet,
 			g_object_unref (style);
 			break;
 	}
+#endif
 }
 
 /* Applet Callback : Deletes the applet. */
