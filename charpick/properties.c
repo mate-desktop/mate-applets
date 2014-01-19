@@ -92,8 +92,7 @@ add_edit_dialog_create (charpick_data *curr_data, gchar *string, gchar *title)
 	GtkWidget *label;
 
 	dialog = gtk_dialog_new_with_buttons (_(title), GTK_WINDOW (curr_data->propwindow),
-							    GTK_DIALOG_DESTROY_WITH_PARENT |
-							    GTK_DIALOG_NO_SEPARATOR, 
+							    GTK_DIALOG_DESTROY_WITH_PARENT,
 							    GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 							    GTK_STOCK_OK, GTK_RESPONSE_OK,
 							    NULL);
@@ -550,7 +549,9 @@ show_preferences_dialog (GtkAction     *action,
   gtk_container_set_border_width (GTK_CONTAINER (curr_data->propwindow), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG (curr_data->propwindow))), 2);
   gtk_dialog_set_default_response (GTK_DIALOG (curr_data->propwindow), GTK_RESPONSE_CLOSE);
+#if !GTK_CHECK_VERSION (3, 0, 0)
   gtk_dialog_set_has_separator (GTK_DIALOG (curr_data->propwindow), FALSE);
+#endif
 
   default_chars_frame_create(curr_data);
   g_signal_connect (G_OBJECT (curr_data->propwindow), "response",

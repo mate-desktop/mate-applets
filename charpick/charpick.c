@@ -11,6 +11,10 @@
 #endif
 #include "charpick.h"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define GTK_OBJECT(x) G_OBJECT(x)
+#endif
+
 /* The comment for each char list has the html entity names of the chars */
 /* All gunicar codes should end in 0 */
 
@@ -325,8 +329,12 @@ get_menu_pos (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer data)
 	
 	gtk_widget_size_request (GTK_WIDGET (menu), &reqmenu);
 	gdk_window_get_origin (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), &tempx, &tempy);
-     	gdk_window_get_geometry (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), NULL, NULL,
-     				 &width, &height, NULL);
+	gdk_window_get_geometry (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), NULL, NULL,
+				 &width, &height
+#if !GTK_CHECK_VERSION (3, 0, 0)
+				 , NULL
+#endif
+				 );
      			      
      	switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (curr_data->applet))) {
      	case MATE_PANEL_APPLET_ORIENT_DOWN:
