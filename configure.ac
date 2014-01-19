@@ -11,14 +11,12 @@ AC_CONFIG_MACRO_DIR(m4)
 dnl ***************************************************************************
 dnl *** Minimum library versions for MATE-APPLETS                          ***
 dnl ***************************************************************************
-GTK_REQUIRED=2.20.0
 GLIB_REQUIRED=2.22.0
 GIO_REQUIRED=2.15.3
-LIBPANEL4_REQUIRED=1.5.2
+LIBPANEL4_REQUIRED=1.7.0
 LIBGTOP_REQUIRED=2.11.92
 LIBXKLAVIER_REQUIRED=4.0
-LIBWNCK_REQUIRED=2.30.0
-LIBMATE_DESKTOP_REQUIRED=1.1.0
+LIBMATE_DESKTOP_REQUIRED=1.7.0
 LIBNOTIFY_REQUIRED=0.7.0
 HAL_REQUIRED=0.5.3
 UPOWER_REQUIRED=0.9.4
@@ -93,6 +91,34 @@ fi
 dnl ***************************************************************************
 
 dnl ***************************************************************************
+dnl *** Check for GTK+ version to use                                       ***
+dnl ***************************************************************************
+AC_MSG_CHECKING([which gtk+ version to compile against])
+AC_ARG_WITH([gtk],
+  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
+  [case "$with_gtk" in
+     2.0|3.0) ;;
+     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
+   esac],
+  [with_gtk=2.0])
+AC_MSG_RESULT([$with_gtk])
+
+case "$with_gtk" in
+  2.0) GTK_API_VERSION=2.0
+       GTK_REQUIRED=2.20.0
+       LIBWNCK_API_VERSION=1.0
+       LIBWNCK_REQUIRED=2.30.0
+       ;;
+  3.0) GTK_API_VERSION=3.0
+       GTK_REQUIRED=3.0.0
+       LIBWNCK_API_VERSION=3.0
+       LIBWNCK_REQUIRED=3.0.0
+       ;;
+esac
+dnl ***************************************************************************
+
+
+dnl ***************************************************************************
 dnl *** Use pkg-config to check for dependancies                            ***
 dnl ***************************************************************************
 
@@ -105,7 +131,7 @@ AC_SUBST(GIO_CFLAGS)
 AC_SUBST(GIO_LIBS)
 
 dnl -- Check for GTK+ 2.0 (required) ------------------------------------------
-PKG_CHECK_MODULES(GTK, gtk+-2.0 >= $GTK_REQUIRED)
+PKG_CHECK_MODULES(GTK, gtk+-$GTK_API_VERSION >= $GTK_REQUIRED)
 AC_SUBST(GTK_FLAGS)
 AC_SUBST(GTK_LIBS)
 
@@ -141,7 +167,7 @@ AC_SUBST(MATE_SETTINGS_DAEMON_CFLAGS)
 AC_SUBST(MATE_SETTINGS_DAEMON_LIBS)
 
 dnl -- check for libwnck (required) -------------------------------------------
-PKG_CHECK_MODULES(LIBWNCK, libwnck-1.0 >= $LIBWNCK_REQUIRED,,
+PKG_CHECK_MODULES(LIBWNCK, libwnck-$LIBWNCK_API_VERSION >= $LIBWNCK_REQUIRED,,
 	AC_MSG_ERROR([libwnck is required to build mate-applets.], 1))
 
 AC_SUBST(LIBWNCK_CFLAGS)
@@ -699,6 +725,8 @@ mate-applets-$VERSION configure summary:
     Prefix:                        ${prefix}
     Source code location:          ${srcdir}
     Compiler:                      ${CC}
+
+    GTK+ version:                  ${GTK_API_VERSION}
 
     Building:
         - accessx-status           $HAVE_XKB
