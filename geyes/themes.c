@@ -130,7 +130,9 @@ load_theme (EyesApplet *eyes_applet, const gchar *theme_dir)
 				_("Can not launch the eyes applet."),
 				_("There was a fatal error while trying to load the theme."));
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
+#endif
 
 		gtk_dialog_run (GTK_DIALOG (dialog));
 		gtk_widget_destroy (dialog);
@@ -295,7 +297,9 @@ properties_cb (GtkAction  *action,
 
 	gtk_widget_set_size_request (GTK_WIDGET (pbox), 300, 200);
         gtk_dialog_set_default_response(GTK_DIALOG (pbox), GTK_RESPONSE_CLOSE);
+#if !GTK_CHECK_VERSION (3, 0, 0)
         gtk_dialog_set_has_separator (GTK_DIALOG (pbox), FALSE);
+#endif
         gtk_container_set_border_width (GTK_CONTAINER (pbox), 5);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (pbox))), 2);
 
