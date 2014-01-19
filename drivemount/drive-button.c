@@ -29,6 +29,10 @@
 #include "drive-button.h"
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gio/gdesktopappinfo.h>
+#include <gdk/gdkkeysyms-compat.h>
+#endif
 
 #include <string.h>
 
@@ -49,7 +53,11 @@ static void     drive_button_set_mount    (DriveButton    *self,
 static void     drive_button_reset_popup  (DriveButton    *self);
 static void     drive_button_ensure_popup (DriveButton    *self);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void     drive_button_dispose      (GObject        *object);
+#else
 static void     drive_button_destroy      (GtkObject      *object);
+#endif
 #if 0
 static void     drive_button_unrealize    (GtkWidget      *widget);
 #endif /* 0 */
@@ -63,7 +71,11 @@ static void drive_button_theme_change     (GtkIconTheme   *icon_theme,
 static void
 drive_button_class_init (DriveButtonClass *class)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+    G_OBJECT_CLASS(class)->dispose = drive_button_dispose;
+#else
     GTK_OBJECT_CLASS(class)->destroy = drive_button_destroy;
+#endif
     GTK_WIDGET_CLASS(class)->button_press_event = drive_button_button_press;
     GTK_WIDGET_CLASS(class)->key_press_event = drive_button_key_press;
 
@@ -130,7 +142,11 @@ drive_button_new_from_mount (GMount *mount)
 }
 
 static void
+#if GTK_CHECK_VERSION (3, 0, 0)
+drive_button_dispose (GObject *object)
+#else
 drive_button_destroy (GtkObject *object)
+#endif
 {
     DriveButton *self = DRIVE_BUTTON (object);
 
@@ -142,8 +158,13 @@ drive_button_destroy (GtkObject *object)
 
     drive_button_reset_popup (self);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    if (G_OBJECT_CLASS (drive_button_parent_class)->dispose)
+	(* G_OBJECT_CLASS (drive_button_parent_class)->dispose) (object);
+#else
     if (GTK_OBJECT_CLASS (drive_button_parent_class)->destroy)
 	(* GTK_OBJECT_CLASS (drive_button_parent_class)->destroy) (object);
+#endif
 }
 
 #if 0
@@ -455,7 +476,11 @@ static void
 drive_button_reset_popup (DriveButton *self)
 {
     if (self->popup_menu)
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_destroy (GTK_WIDGET (self->popup_menu));
+#else
 	gtk_object_destroy (GTK_OBJECT (self->popup_menu));
+#endif
     self->popup_menu = NULL;
 }
 
@@ -516,49 +541,99 @@ open_drive (DriveButton *self, GtkWidget *item)
     GdkScreen *screen;
     GtkWidget *dialog;
     GError *error = NULL;
+#if GTK_CHECK_VERSION (3, 0, 0)
+    GFile *file = NULL;
+    GList *files = NULL;
+    GdkAppLaunchContext *launch_context;
+    GDesktopAppInfo *app_info;
+#else
     char *argv[3] = { "caja", NULL, NULL };
 
     screen = gtk_widget_get_screen (GTK_WIDGET (self));
+#endif
 
     if (self->volume) {
 	GMount *mount;
 
 	mount = g_volume_get_mount (self->volume);
 	if (mount) {
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	    GFile *file;
+#endif
 
 	    file = g_mount_get_root (mount);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	    argv[1] = g_file_get_uri (file);
 	    g_object_unref(file);
+#endif
 
 	    g_object_unref(mount);
 	}
     } else if (self->mount) {
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GFile *file;
+#endif
 
 	file = g_mount_get_root (self->mount);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	argv[1] = g_file_get_uri (file);
 	g_object_unref(file);
+#endif
     } else
 	g_return_if_reached();
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    app_info = g_desktop_app_info_new ("caja.desktop");
+
+    if (app_info) {
+	launch_context = gdk_app_launch_context_new ();
+	screen = gtk_widget_get_screen (GTK_WIDGET (self));
+	gdk_app_launch_context_set_screen (launch_context, screen);
+	files = g_list_prepend (files, file);
+	g_app_info_launch (G_APP_INFO (app_info),
+	files,
+	G_APP_LAUNCH_CONTEXT (launch_context),
+	&error);
+
+	g_object_unref (launch_context);
+	g_list_free (files);
+    }
+
+    if (!app_info || error) {
+#else
     if (!gdk_spawn_on_screen (screen, NULL, argv, NULL,
 			      G_SPAWN_SEARCH_PATH,
 			      NULL, NULL, NULL, &error)) {
+#endif
 	dialog = gtk_message_dialog_new (GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (self))),
 						     GTK_DIALOG_DESTROY_WITH_PARENT,
 						     GTK_MESSAGE_ERROR,
 						     GTK_BUTTONS_OK,
+#if GTK_CHECK_VERSION (3, 0, 0)
+						     _("Cannot execute Caja"));
+#else
 						     _("Cannot execute '%s'"),
 						     argv[0]);
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), error->message, NULL);
+#endif
+	if (error)
+	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), error->message, NULL);
+	else
+	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "Could not find Caja", NULL);
 	g_signal_connect (dialog, "response",
+#if GTK_CHECK_VERSION (3, 0, 0)
+			  G_CALLBACK (gtk_widget_destroy), NULL);
+#else
 			  G_CALLBACK (gtk_object_destroy), NULL);
+#endif
 	gtk_widget_show (dialog);
 	g_error_free (error);
     }
+#if GTK_CHECK_VERSION (3, 0, 0)
+    g_object_unref(file);
+#else
     g_free (argv[1]);
+#endif
 }
 
 /* copied from mate-volume-manager/src/manager.c maybe there is a better way than
