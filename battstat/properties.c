@@ -411,7 +411,9 @@ prop_cb (GtkAction    *action,
    gtk_dialog_set_default_response (GTK_DIALOG (battstat->prop_win),
 		   GTK_RESPONSE_CLOSE);
    gtk_window_set_resizable (GTK_WINDOW (battstat->prop_win), FALSE);
+#if !GTK_CHECK_VERSION (3, 0, 0)
    gtk_dialog_set_has_separator (GTK_DIALOG (battstat->prop_win), FALSE);
+#endif
    
    g_signal_connect (G_OBJECT (battstat->prop_win), "response",
    		     G_CALLBACK (response_cb), battstat);

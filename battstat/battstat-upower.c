@@ -325,9 +325,15 @@ error_dialog( const char *fmt , ...)
   dialog = gtk_message_dialog_new( NULL, 0, GTK_MESSAGE_ERROR,
                                    GTK_BUTTONS_OK, "%s", str);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  g_signal_connect_swapped( G_OBJECT (dialog), "response",
+                            G_CALLBACK (gtk_widget_destroy),
+                            G_OBJECT (dialog) );
+#else
   g_signal_connect_swapped( GTK_OBJECT (dialog), "response",
                             G_CALLBACK (gtk_widget_destroy),
                             GTK_OBJECT (dialog) );
+#endif
 
   gtk_widget_show_all( dialog );
 }
