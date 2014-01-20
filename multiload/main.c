@@ -19,13 +19,22 @@
 #include <time.h>
 
 #include <glibtop.h>
-#include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gdk/gdkkeysyms-compat.h>
+#endif
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define MATE_DESKTOP_USE_UNSTABLE_API
+#include <libmate-desktop/mate-desktop-utils.h>
+#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
+#endif
 
 #include "global.h"
 
