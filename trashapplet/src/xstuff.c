@@ -24,6 +24,11 @@
 
 #include "xstuff.h"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define GDK_WINDOW_XWINDOW(x) GDK_WINDOW_XID(x)
+#define gdk_x11_drawable_get_xid(x) GDK_WINDOW_XID(x)
+#endif
+
 static Atom
 panel_atom_get (const char *atom_name)
 {
@@ -177,11 +182,13 @@ xstuff_is_compliant_wm (void)
 	return TRUE;
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 gboolean
 xstuff_net_wm_supports (const char *hint)
 {
 	return gdk_net_wm_supports (gdk_atom_intern (hint, FALSE));
 }
+#endif
 
 void
 xstuff_set_no_group (GdkWindow *win)
@@ -337,11 +344,17 @@ draw_zoom_animation (GdkScreen *gscreen,
 	dpy = gdk_x11_display_get_xdisplay (gdk_screen_get_display (gscreen));
 	root_win = gdk_x11_drawable_get_xid (gdk_screen_get_root_window (gscreen));
 	screen = gdk_screen_get_number (gscreen);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	depth = DefaultDepth(dpy,screen);
+#else
 	depth = gdk_drawable_get_depth (gdk_screen_get_root_window (gscreen));
+#endif
 
 	/* frame GC */
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	gdk_colormap_alloc_color (
 		gdk_screen_get_system_colormap (gscreen), &color, FALSE, TRUE);
+#endif
 	gcv.function = GXxor;
 	/* this will raise the probability of the XORed color being different
 	 * of the original color in PseudoColor when not all color cells are
@@ -432,8 +445,10 @@ draw_zoom_animation (GdkScreen *gscreen,
     
 	XUngrabServer(dpy);
 	XFreeGC (dpy, frame_gc);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	gdk_colormap_free_colors (gdk_screen_get_system_colormap (gscreen),
 				  &color, 1);
+#endif
 }
 #undef FRAMES
 
@@ -484,7 +499,11 @@ xstuff_get_current_workspace (GdkScreen *screen)
 				gdk_screen_get_root_window (screen));
 
 	gdk_error_trap_push ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+	result = XGetWindowProperty (GDK_SCREEN_XDISPLAY (screen),
+#else
 	result = XGetWindowProperty (gdk_display,
+#endif
 				     root_window,
 				     panel_atom_get ("_NET_CURRENT_DESKTOP"),
 				     0, G_MAXLONG,

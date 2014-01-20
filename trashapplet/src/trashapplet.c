@@ -30,6 +30,9 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gdk/gdkkeysyms-compat.h>
+#endif
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
 
@@ -184,7 +187,11 @@ trash_applet_size_allocate (GtkWidget    *widget,
 }
 
 static void
+#if GTK_CHECK_VERSION (3, 0, 0)
+trash_applet_dispose (GObject *object)
+#else
 trash_applet_destroy (GtkObject *object)
+#endif
 {
   TrashApplet *applet = TRASH_APPLET (object);
 
@@ -204,8 +211,11 @@ trash_applet_destroy (GtkObject *object)
     g_object_unref (applet->icon);
   applet->icon = NULL;
 
-  GTK_OBJECT_CLASS (trash_applet_parent_class)
-    ->destroy (object);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  G_OBJECT_CLASS (trash_applet_parent_class)->dispose (object);
+#else
+  GTK_OBJECT_CLASS (trash_applet_parent_class)->destroy (object);
+#endif
 }
 
 static void
@@ -309,7 +319,11 @@ trash_applet_drag_motion (GtkWidget      *widget,
   GList *target;
 
   /* refuse drops of panel applets */
+#if GTK_CHECK_VERSION (3, 0, 0)
+  for (target = gdk_drag_context_list_targets (context); target; target = target->next)
+#else
   for (target = context->targets; target; target = target->next)
+#endif
     {
       const char *name = gdk_atom_name (target->data);
 
@@ -450,7 +464,9 @@ confirm_delete_immediately (GtkWidget *parent_view,
   gtk_window_set_screen (GTK_WINDOW (dialog), screen);
   atk_object_set_role (gtk_widget_get_accessible (dialog), ATK_ROLE_ALERT);
   gtk_window_set_title (GTK_WINDOW (dialog), _("Delete Immediately?"));
+#if !GTK_CHECK_VERSION (3, 0, 0)
   gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
+#endif
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
@@ -516,7 +532,11 @@ confirm_delete_immediately (GtkWidget *parent_view,
 
   response = gtk_dialog_run (GTK_DIALOG (dialog));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_destroy (GTK_WIDGET (dialog));
+#else
   gtk_object_destroy (GTK_OBJECT (dialog));
+#endif
 
   return response == GTK_RESPONSE_YES;
 }
@@ -591,10 +611,18 @@ trash_applet_drag_data_received (GtkWidget        *widget,
 static void
 trash_applet_class_init (TrashAppletClass *class)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  GObjectClass *gobject_class = G_OBJECT_CLASS (class);
+#else
   GtkObjectClass *gtkobject_class = GTK_OBJECT_CLASS (class);
+#endif
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (class);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gobject_class->dispose = trash_applet_dispose;
+#else
   gtkobject_class->destroy = trash_applet_destroy;
+#endif
   widget_class->size_allocate = trash_applet_size_allocate;
   widget_class->button_release_event = trash_applet_button_release;
   widget_class->key_press_event = trash_applet_key_press;

@@ -7,7 +7,9 @@
 void xstuff_delete_property		(GdkWindow *window,
 					 const char *name);
 gboolean xstuff_is_compliant_wm		(void);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 gboolean xstuff_net_wm_supports         (const char *hint);
+#endif
 
 void xstuff_set_no_group	        (GdkWindow *win);
 
