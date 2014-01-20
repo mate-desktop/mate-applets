@@ -789,7 +789,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	GtkWidget* pref_basic_update_alignment;
 	GtkWidget* pref_basic_update_lbl;
 	GtkWidget* pref_basic_update_hbox;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GObject* pref_basic_update_spin_adj;
+#else
 	GtkObject* pref_basic_update_spin_adj;
+#endif
 	GtkWidget* pref_basic_update_sec_lbl;
 	GtkWidget* pref_basic_note_lbl;
 	GtkWidget* pref_loc_hbox;
@@ -820,7 +824,9 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_window_set_title (GTK_WINDOW (pref), _("Weather Preferences"));
 	gtk_dialog_add_buttons (GTK_DIALOG (pref), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, GTK_STOCK_HELP, GTK_RESPONSE_HELP, NULL);
 	gtk_dialog_set_default_response (GTK_DIALOG (pref), GTK_RESPONSE_CLOSE);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	gtk_dialog_set_has_separator (GTK_DIALOG (pref), FALSE);
+#endif
 	gtk_container_set_border_width (GTK_CONTAINER (pref), 5);
 	gtk_window_set_resizable (GTK_WINDOW (pref), TRUE);
 	gtk_window_set_screen (GTK_WINDOW (pref), gtk_widget_get_screen (GTK_WIDGET (pref->priv->applet->applet)));
@@ -866,14 +872,14 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_misc_set_alignment (GTK_MISC (temp_label), 0, 0.5);
 	gtk_widget_show (temp_label);
 
-	temp_combo = gtk_combo_box_new_text ();
+	temp_combo = gtk_combo_box_text_new ();
 	pref->priv->basic_temp_combo = temp_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (temp_label), temp_combo);
 	//gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Kelvin"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (temp_combo), _("Kelvin"));
 	/* TRANSLATORS: Celsius is sometimes referred Centigrade */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Celsius"));
-	gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Fahrenheit"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (temp_combo), _("Celsius"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (temp_combo), _("Fahrenheit"));
 	gtk_widget_show (temp_combo);
 
 	if ( ! g_settings_is_writable (pref->priv->applet->settings, "temperature-unit"))
@@ -888,19 +894,19 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_misc_set_alignment (GTK_MISC (speed_label), 0, 0.5);
 	gtk_widget_show (speed_label);
 
-	speed_combo = gtk_combo_box_new_text ();
+	speed_combo = gtk_combo_box_text_new ();
 	pref->priv->basic_speed_combo = speed_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (speed_label), speed_combo);
 	//gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 	/* TRANSLATOR: The wind speed unit "meters per second" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("m/s"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (speed_combo), _("m/s"));
 	/* TRANSLATOR: The wind speed unit "kilometers per hour" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("km/h"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (speed_combo), _("km/h"));
 	/* TRANSLATOR: The wind speed unit "miles per hour" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("mph"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (speed_combo), _("mph"));
 	/* TRANSLATOR: The wind speed unit "knots" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("knots"));
-	gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Beaufort scale"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (speed_combo), _("knots"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (speed_combo), _("Beaufort scale"));
 	gtk_widget_show (speed_combo);
 
 	if (!g_settings_is_writable (pref->priv->applet->settings, "speed-unit"))
@@ -915,22 +921,22 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_misc_set_alignment (GTK_MISC (pres_label), 0, 0.5);
 	gtk_widget_show (pres_label);
 
-	pres_combo = gtk_combo_box_new_text ();
+	pres_combo = gtk_combo_box_text_new ();
 	pref->priv->basic_pres_combo = pres_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (pres_label), pres_combo);
 	//gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 	/* TRANSLATOR: The pressure unit "kiloPascals" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("kPa"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (pres_combo), _("kPa"));
 	/* TRANSLATOR: The pressure unit "hectoPascals" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("hPa"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (pres_combo), _("hPa"));
 	/* TRANSLATOR: The pressure unit "millibars" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("mb"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (pres_combo), _("mb"));
 	/* TRANSLATOR: The pressure unit "millibars of mercury" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("mmHg"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (pres_combo), _("mmHg"));
 	/* TRANSLATOR: The pressure unit "inches of mercury" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("inHg"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (pres_combo), _("inHg"));
 	/* TRANSLATOR: The pressure unit "atmospheres" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("atm"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (pres_combo), _("atm"));
 	gtk_widget_show (pres_combo);
 
 	if (!g_settings_is_writable(pref->priv->applet->settings, "pressure-unit"))
@@ -945,16 +951,16 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_misc_set_alignment (GTK_MISC (dist_label), 0, 0.5);
 	gtk_widget_show (dist_label);
 
-	dist_combo = gtk_combo_box_new_text ();
+	dist_combo = gtk_combo_box_text_new ();
 	pref->priv->basic_dist_combo = dist_combo;
 	gtk_label_set_mnemonic_widget (GTK_LABEL (dist_label), dist_combo);
 	//gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 	/* TRANSLATOR: The distance unit "meters" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("meters"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (dist_combo), _("meters"));
 	/* TRANSLATOR: The distance unit "kilometers" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("km"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (dist_combo), _("km"));
 	/* TRANSLATOR: The distance unit "miles" */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("miles"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (dist_combo), _("miles"));
 	gtk_widget_show (dist_combo);
 
 	if ( ! g_settings_is_writable (pref->priv->applet->settings, "distance-unit"))

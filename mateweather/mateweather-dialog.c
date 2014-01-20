@@ -187,7 +187,9 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   			  GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
 			  NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
+#if !GTK_CHECK_VERSION (3, 0, 0)
   gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
+#endif
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 2);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
