@@ -3,26 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Andras Timar <timar at mate dot hu>, 2001, 2002, 2003.
-# Emese Kovacs <emese at mate dot hu>, 2000, 2001, 2002.
-# Gabor Kelemen <kelemeng at mate dot hu>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Gabor Sari <saga at mate dot hu>, 2003.
-# Laszlo Dvornik <dvornik at mate dot hu>, 2004.
-# Mate ORY <orymate at gmail d0t com>, 2006.
-# Szabolcs Ban <shooby at mate dot hu>, 1999, 2000, 2001, 2002, 2003.
+# Andras Timar <timar at mate dot hu>, 2001-2003
+# Emese Kovacs <emese at mate dot hu>, 2000-2002
+# Gabor Kelemen <kelemeng at mate dot hu>, 2004-2010
+# Gabor Sari <saga at mate dot hu>, 2003
+# Laszlo Dvornik <dvornik at mate dot hu>, 2004
+# Mate ORY <orymate at gmail d0t com>, 2006
+# Rezső Páder <rezso@rezso.net>, 2013
+# Szabolcs Ban <shooby at mate dot hu>, 1999-2003
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-13 00:13+0200\n"
-"PO-Revision-Date: 2012-06-12 22:14+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2013-10-01 13:52+0000\n"
+"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hu\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../accessx-status/applet.c:136
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -300,7 +301,7 @@ msgstr "Ez a kisalkalmazás a laptop akkumulátorának töltöttségi állapotá
 #. ture
 #: ../battstat/battstat_applet.c:1250
 msgid "upower backend enabled."
-msgstr ""
+msgstr "upower háttérprogram engedélyezve."
 
 #. true
 #: ../battstat/battstat_applet.c:1252
@@ -474,7 +475,6 @@ msgstr "Akkumulátortöltöttség-figyelő factory"
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
-#. 
 #: ../battstat/properties.c:314
 msgid "Percent"
 msgstr "százalék alá esik"
@@ -482,7 +482,6 @@ msgstr "százalék alá esik"
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#. 
 #: ../battstat/properties.c:320
 msgid "Minutes Remaining"
 msgstr "perc hátralévő idő alá esik"
@@ -506,7 +505,6 @@ msgstr "Elérhető paletták"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#. 
 #: ../charpick/charpick.c:483
 #, c-format
 msgid "Insert \"%s\""
@@ -728,7 +726,6 @@ msgstr "Az órajel változtatása nem támogatott"
 #. * I think is better than do nothing. I have to notify it to the user,
 #. because
 #. * he could think that cpufreq is supported but it doesn't work succesfully
-#. 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
 msgstr "A CPU órajelének változtatása nem támogatott"
@@ -1037,7 +1034,6 @@ msgid "_Automatically update every:"
 msgstr "_Automatikus frissítés:"
 
 #. * Units settings page.
-#. 
 #. Temperature Unit
 #: ../mateweather/mateweather-pref.c:921
 msgid "_Temperature unit:"
@@ -2110,7 +2106,6 @@ msgstr "Lemez"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#. 
 #: ../multiload/main.c:278
 #, c-format
 msgid ""
@@ -2885,31 +2880,31 @@ msgstr ""
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:3
 msgid "Timer"
-msgstr ""
+msgstr "Időzítő"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:4
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
+msgstr "Időzítő indítása, és jelzés az idő lejáratakor"
 
 #: ../timer-applet/data/TimerApplet.xml.h:1
 msgid "Pa_use"
-msgstr ""
+msgstr "S_zünet"
 
 #: ../timer-applet/data/TimerApplet.xml.h:2
 msgid "_Continue"
-msgstr ""
+msgstr "_Folytatás"
 
 #: ../timer-applet/data/TimerApplet.xml.h:3
 msgid "_Stop"
-msgstr ""
+msgstr "_Leállítás"
 
 #: ../timer-applet/data/TimerApplet.xml.h:4
 msgid "R_estart"
-msgstr ""
+msgstr "Új_raindítás"
 
 #: ../timer-applet/data/TimerApplet.xml.h:5
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: ../timer-applet/data/TimerApplet.xml.h:6
 msgid "Pre_sets"
@@ -2921,27 +2916,27 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:1
 msgid "Start Timer"
-msgstr ""
+msgstr "Időzítő indítása"
 
 #: ../timer-applet/data/timer-applet.glade.h:2
 msgid "_Name:"
-msgstr ""
+msgstr "_Név:"
 
 #: ../timer-applet/data/timer-applet.glade.h:3
 msgid "Start automatically"
-msgstr ""
+msgstr "Automatikus indítás"
 
 #: ../timer-applet/data/timer-applet.glade.h:4
 msgid "<b>Define next timer</b>"
-msgstr ""
+msgstr "<b>Következő időzítő megadása</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:5
 msgid "Execute:"
-msgstr ""
+msgstr "Végrehajtás:"
 
 #: ../timer-applet/data/timer-applet.glade.h:6
 msgid "<b>Run custom command</b>"
-msgstr ""
+msgstr "<b>Egyéni parancs végrehajtása</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:7
 msgid "Run executable after timer finished."
@@ -2949,7 +2944,7 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:8
 msgid "Advanced"
-msgstr ""
+msgstr "Speciális"
 
 #: ../timer-applet/data/timer-applet.glade.h:9
 msgid "S_ave as Preset"
@@ -2965,7 +2960,7 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:12
 msgid "S_tart Timer"
-msgstr ""
+msgstr "Időzítő indí_tása"
 
 #: ../timer-applet/data/timer-applet.glade.h:13
 msgid "Manage Presets"
@@ -2973,19 +2968,19 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:14
 msgid "_Delete"
-msgstr ""
+msgstr "_Törlés"
 
 #: ../timer-applet/data/timer-applet.glade.h:15
 msgid "_Edit..."
-msgstr ""
+msgstr "_Szerkesztés"
 
 #: ../timer-applet/data/timer-applet.glade.h:16
 msgid "_Add..."
-msgstr ""
+msgstr "Ú_j..."
 
 #: ../timer-applet/data/timer-applet.glade.h:17
 msgid "Timer Preferences"
-msgstr ""
+msgstr "Időzítő beállítások"
 
 #: ../timer-applet/data/timer-applet.glade.h:18
 msgid "_Show remaining time while timer is running"
@@ -2997,23 +2992,23 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:20
 msgid "Use d_efault sound"
-msgstr ""
+msgstr "Alapért_elmezett hang használata"
 
 #: ../timer-applet/data/timer-applet.glade.h:21
 msgid "Use c_ustom sound"
-msgstr ""
+msgstr "Egyéni _hang használata"
 
 #: ../timer-applet/data/timer-applet.glade.h:22
 msgid "Choose A Sound File"
-msgstr ""
+msgstr "Válasszon hangfájlt"
 
 #: ../timer-applet/data/timer-applet.glade.h:23
 msgid "_Show popup notification"
-msgstr ""
+msgstr "Felugró értesíté_s megjelenítése"
 
 #: ../timer-applet/data/timer-applet.glade.h:24
 msgid "_Show popup notification after timer has ended."
-msgstr ""
+msgstr "Felugró értesíté_s megjelenítése az időzítés végén"
 
 #: ../timer-applet/data/timer-applet.glade.h:25
 msgid "S_how pulsing panel icon"
@@ -3030,11 +3025,11 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:28
 msgid "<b>_Name</b>"
-msgstr ""
+msgstr "<b>_Név</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:29
 msgid "<b>_Duration</b>"
-msgstr ""
+msgstr "<b>_Időtartam</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:30
 msgid "Run custom command after timer has ended."
@@ -3042,7 +3037,7 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:31
 msgid "<b>Custom command</b>"
-msgstr ""
+msgstr "<b>Egyéni parancs</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:32
 msgid "Initiate automatically"
@@ -3058,11 +3053,11 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:35
 msgid "Timer Applet"
-msgstr ""
+msgstr "Időzítő kisalkalmazás"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:1
 msgid "Play notification sound"
-msgstr ""
+msgstr "Értesítési hang lejátszása"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:2
 msgid "Play a notification sound when the timer finishes a countdown"
@@ -3097,15 +3092,15 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:9
 msgid "Show Popup notification"
-msgstr ""
+msgstr "Felugró értesítés megjelenítése"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:10
 msgid "Show Popup notification in the notification area"
-msgstr ""
+msgstr "Felugró értesítés megjelenítése az értesítési területen"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:11
 msgid "Show remaining time"
-msgstr ""
+msgstr "Hátralévő idő megjelenítése"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:12
 msgid "Show the remaining time while the timer is running or paused"
@@ -3143,7 +3138,7 @@ msgstr ""
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:201
 msgid "Finished"
-msgstr ""
+msgstr "Kész"
 
 #. "<timer name>" finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:206
@@ -3165,20 +3160,20 @@ msgstr ""
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:385
 #, python-format
 msgid "%02d:%02d:%02d (%s)"
-msgstr ""
+msgstr "%02d:%02d:%02d (%s)"
 
 #. HH:MM:SS
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:388
 #: ../timer-applet/src/timerapplet/utils.py:52
 #, python-format
 msgid "%02d:%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d:%02d"
 
 #. "<timer name>" Finished
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:410
 #, python-format
 msgid "\"%s\" Finished"
-msgstr ""
+msgstr "\"%s\" kész"
 
 #. "<timer name>" finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:413
@@ -3228,7 +3223,7 @@ msgstr ""
 
 #: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
 msgid "<b>Command not found.</b>"
-msgstr ""
+msgstr "<b>A parancs nem található.</b>"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
 msgid "Start Next Timer"
@@ -3244,15 +3239,15 @@ msgstr ""
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
 msgid "_Hours:"
-msgstr ""
+msgstr "Ó_rák:"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
 msgid "_Minutes:"
-msgstr ""
+msgstr "_Percek:"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
 msgid "_Seconds:"
-msgstr ""
+msgstr "_Másodpercek:"
 
 #. HH:MM
 #. MM:SS
@@ -3260,13 +3255,13 @@ msgstr ""
 #: ../timer-applet/src/timerapplet/utils.py:59
 #, python-format
 msgid "%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d"
 
 #. <preset name> (HH:MM:SS)
 #: ../timer-applet/src/timerapplet/utils.py:69
 #, python-format
 msgid "%s (%02d:%02d:%02d)"
-msgstr ""
+msgstr "%s (%02d:%02d:%02d)"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"

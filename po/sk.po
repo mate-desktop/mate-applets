@@ -3,21 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Marcel Telka <marcel@telka.sk>, 2005.
-# Peter Tuharsky <tuharsky@misbb.sk>, 2007, 2008.
+# Ján Ďanovský <dagsoftware@yahoo.com>, 2013
+# SGOrava <sgd.orava@gmail.com>, 2013
+# Marcel Telka <marcel@telka.sk>, 2005
+# Michelozzo <michalslovak2@hotmail.com>, 2013
+# Peter Tuharsky <tuharsky@misbb.sk>, 2007, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-13 00:13+0200\n"
-"PO-Revision-Date: 2012-06-12 22:14+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2013-12-30 20:05+0000\n"
+"Last-Translator: Michelozzo <michalslovak2@hotmail.com>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sk\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../accessx-status/applet.c:136
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -36,7 +39,7 @@ msgstr "Zobrazuje stav funkcií AccessX, ako sú prepínacie modifikátory"
 #: ../stickynotes/stickynotes_applet_callbacks.c:425
 #: ../trashapplet/src/trashapplet.c:432
 msgid "translator-credits"
-msgstr "Stanislav Višňovský\nMarcel Telka <marcel@telka.sk>\nPeter Tuhársky <tuharsky@misbb.sk>"
+msgstr "Stanislav Višňovský\nMarcel Telka <marcel@telka.sk>\nPeter Tuhársky <tuharsky@misbb.sk>\nJán Ďanovský <dagsoftware@yahoo.com>"
 
 #: ../accessx-status/applet.c:156
 #, c-format
@@ -243,8 +246,8 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] "Zostáva vám %d minúta kapacity batérie (%d%% z celkovej kapacity)."
-msgstr[1] "Zostáva vám %d minút kapacity batérie (%d%% z celkovej kapacity)."
-msgstr[2] ""
+msgstr[1] "Zostáva vám %d minúty kapacity batérie (%d%% z celkovej kapacity)."
+msgstr[2] "Zostáva vám %d minút kapacity batérie (%d%% z celkovej kapacity)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -302,7 +305,7 @@ msgstr "Tento nástroj zobrazuje stav batérie vášho prenosného počítača."
 #. ture
 #: ../battstat/battstat_applet.c:1250
 msgid "upower backend enabled."
-msgstr ""
+msgstr "upower backend povolený."
 
 #. true
 #: ../battstat/battstat_applet.c:1252
@@ -330,7 +333,7 @@ msgstr "Predvoľby Sledovania stavu batérie"
 
 #: ../battstat/battstat_applet.ui.h:2
 msgid "Appearance"
-msgstr ""
+msgstr "Vzhľad"
 
 #: ../battstat/battstat_applet.ui.h:3
 msgid "_Compact view"
@@ -338,7 +341,7 @@ msgstr "Úsporné zobrazenie"
 
 #: ../battstat/battstat_applet.ui.h:4
 msgid "(shows single image for status and charge)"
-msgstr ""
+msgstr "(zobrazuje jeden obrázok pre stav a nabíjanie)"
 
 #: ../battstat/battstat_applet.ui.h:5
 msgid "_Expanded view"
@@ -346,7 +349,7 @@ msgstr "Rozšír_ené zobrazenie"
 
 #: ../battstat/battstat_applet.ui.h:6
 msgid "(two images: one for status, one for charge)"
-msgstr ""
+msgstr "(dva obrázky: jeden pre stav, jeden pre nabíjanie)"
 
 #: ../battstat/battstat_applet.ui.h:7
 msgid "_Show time/percentage:"
@@ -362,7 +365,7 @@ msgstr "Zobraziť zostávajúce _percentá"
 
 #: ../battstat/battstat_applet.ui.h:10
 msgid "Notifications"
-msgstr ""
+msgstr "Upozornenia"
 
 #. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
 #. drops to: [XX] percent/minutes remaining'
@@ -476,7 +479,6 @@ msgstr "Vytváracie rozhranie pre Battstat"
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
-#. 
 #: ../battstat/properties.c:314
 msgid "Percent"
 msgstr "percent"
@@ -484,7 +486,6 @@ msgstr "percent"
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#. 
 #: ../battstat/properties.c:320
 msgid "Minutes Remaining"
 msgstr "zostávajúcich minút"
@@ -508,7 +509,6 @@ msgstr "Dostupné palety"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#. 
 #: ../charpick/charpick.c:483
 #, c-format
 msgid "Insert \"%s\""
@@ -663,7 +663,7 @@ msgstr "Predvoľby sledovania frekvencie procesora"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
 msgid "Monitor Settings"
-msgstr ""
+msgstr "Nastavenie monitoru"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "_Monitored CPU:"
@@ -671,7 +671,7 @@ msgstr "_Sledovaný procesor:"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:4
 msgid "Display Settings"
-msgstr ""
+msgstr "Nastavenie zobrazenia"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:5
 msgid "_Appearance:"
@@ -730,7 +730,6 @@ msgstr "Škálovanie frekvencie nie je podporované"
 #. * I think is better than do nothing. I have to notify it to the user,
 #. because
 #. * he could think that cpufreq is supported but it doesn't work succesfully
-#. 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
 msgstr "Škálovanie frekvencie procesora nie je podporované"
@@ -1039,7 +1038,6 @@ msgid "_Automatically update every:"
 msgstr "_Automaticky aktualizovať každých:"
 
 #. * Units settings page.
-#. 
 #. Temperature Unit
 #: ../mateweather/mateweather-pref.c:921
 msgid "_Temperature unit:"
@@ -1195,7 +1193,7 @@ msgstr "Umiestnenie"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr ""
+msgstr "Vytváracie rozhranie pre applet Počasie"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
@@ -1221,31 +1219,31 @@ msgstr "_Obnoviť"
 
 #: ../invest-applet/data/financialchart.ui.h:1
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: ../invest-applet/data/financialchart.ui.h:2
 msgid "5 Days"
-msgstr ""
+msgstr "5 dní"
 
 #: ../invest-applet/data/financialchart.ui.h:3
 msgid "3 Months"
-msgstr ""
+msgstr "3 mesiace"
 
 #: ../invest-applet/data/financialchart.ui.h:4
 msgid "6 Months"
-msgstr ""
+msgstr "6 mesiacov"
 
 #: ../invest-applet/data/financialchart.ui.h:5
 msgid "1 Year"
-msgstr ""
+msgstr "1 rok"
 
 #: ../invest-applet/data/financialchart.ui.h:6
 msgid "5 Years"
-msgstr ""
+msgstr "5 rokov"
 
 #: ../invest-applet/data/financialchart.ui.h:7
 msgid "Maximum"
-msgstr ""
+msgstr "Maximim"
 
 #: ../invest-applet/data/financialchart.ui.h:8
 #: ../invest-applet/invest/chart.py:107
@@ -1412,7 +1410,7 @@ msgstr "označenie"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:3
 msgid "Stocks"
-msgstr ""
+msgstr "Akcie"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:4
 msgid ""
@@ -1422,7 +1420,7 @@ msgstr "<i><small><b>Upozornenie:</b> Citácie sú pozdržané najmenej 15 minú
 
 #: ../invest-applet/data/prefs-dialog.ui.h:6
 msgid "Currency"
-msgstr ""
+msgstr "Mena"
 
 #. a) We aren't configured yet
 #: ../invest-applet/invest/applet.py:50
@@ -1431,7 +1429,7 @@ msgstr "<b>Zatiaľ ste nevložili žiadne burzové informácie</b>"
 
 #: ../invest-applet/invest/applet.py:55
 msgid "<b>No stock quotes are currently available</b>"
-msgstr ""
+msgstr "<b>Aktuálne nie sú k dispozícii žiadne ceny akcií</b>"
 
 #: ../invest-applet/invest/applet.py:56
 msgid ""
@@ -1466,7 +1464,7 @@ msgstr "Symbol"
 
 #: ../invest-applet/invest/preferences.py:31
 msgid "Label"
-msgstr ""
+msgstr "Popisok"
 
 #: ../invest-applet/invest/preferences.py:31
 msgid "Amount"
@@ -1482,11 +1480,11 @@ msgstr "Komisia"
 
 #: ../invest-applet/invest/preferences.py:31
 msgid "Currency Rate"
-msgstr ""
+msgstr "Kurz meny"
 
 #: ../invest-applet/invest/quotes.py:131
 msgid "Invest could not connect to Yahoo! Finance"
-msgstr ""
+msgstr "Nepodarilo sa pripojiť k Yahoo! Finance"
 
 #. Translators: %s is an hour (%H:%M)
 #: ../invest-applet/invest/quotes.py:134 ../invest-applet/invest/quotes.py:163
@@ -1500,7 +1498,7 @@ msgstr "Aktualizované na %s"
 #: ../invest-applet/invest/quotes.py:153
 #, python-format
 msgid "Average change: %s"
-msgstr ""
+msgstr "Priemerný pohyb: %s"
 
 #. Translators: This is share-market jargon. It refers to the total difference
 #. between the current price and purchase price for all the shares put
@@ -1511,7 +1509,7 @@ msgstr ""
 #: ../invest-applet/invest/quotes.py:162
 #, python-format
 msgid "Positions balance: %s %s (%s)"
-msgstr ""
+msgstr "Bilancia akcií: %s %s (%s)"
 
 #. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
 #. VARIATION_PCT, PB
@@ -1520,7 +1518,7 @@ msgstr ""
 #. stock was purchased.
 #: ../invest-applet/invest/widgets.py:51
 msgid "Ticker"
-msgstr ""
+msgstr "Burzový telegraf"
 
 #: ../invest-applet/invest/widgets.py:51
 msgid "Last"
@@ -1528,11 +1526,11 @@ msgstr "Posledné"
 
 #: ../invest-applet/invest/widgets.py:51
 msgid "Change %"
-msgstr ""
+msgstr "Zmena v %"
 
 #: ../invest-applet/invest/widgets.py:51
 msgid "Chart"
-msgstr ""
+msgstr "Graf"
 
 #: ../invest-applet/invest/widgets.py:51
 msgid "Gain"
@@ -1635,7 +1633,7 @@ msgstr "Nastavenie Príkazového riadku"
 
 #: ../mini-commander/src/mini-commander.ui.h:2
 msgid "Auto Completion"
-msgstr ""
+msgstr "Automatické doplňovanie"
 
 #: ../mini-commander/src/mini-commander.ui.h:3
 msgid "E_nable history-based auto completion"
@@ -1643,7 +1641,7 @@ msgstr "Povoliť automatické dopĺňanie založené na _histórii"
 
 #: ../mini-commander/src/mini-commander.ui.h:4
 msgid "Size"
-msgstr ""
+msgstr "Veľkosť"
 
 #: ../mini-commander/src/mini-commander.ui.h:5
 #: ../stickynotes/stickynotes.ui.h:19
@@ -1941,11 +1939,11 @@ msgstr "Používa sa GStreamer 0.10."
 
 #: ../mixer/dock.c:218
 msgid "Mute"
-msgstr ""
+msgstr "Stlmiť"
 
 #: ../mixer/dock.c:224
 msgid "Volume Control..."
-msgstr ""
+msgstr "Ovládanie hlasitosti..."
 
 #: ../mixer/load.c:86
 #, c-format
@@ -2061,7 +2059,7 @@ msgstr "Zadajte heslo"
 
 #: ../modemlights/modemlights.ui.h:2
 msgid "Root password required"
-msgstr ""
+msgstr "Je vyžadované heslo superpoužívateľa"
 
 #: ../modemlights/modemlights.ui.h:3
 msgid "Password:"
@@ -2069,7 +2067,7 @@ msgstr "Heslo:"
 
 #: ../modemlights/modemlights.ui.h:4
 msgid "Connecting with Internet Service Provider"
-msgstr ""
+msgstr "Pripájanie k poskytovateľovi internetového pripojenia"
 
 #: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
 msgid "Activate and monitor a dial-up network connection"
@@ -2112,7 +2110,6 @@ msgstr "Disk"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#. 
 #: ../multiload/main.c:278
 #, c-format
 msgid ""
@@ -2133,7 +2130,7 @@ msgid ""
 "%s:\n"
 "Receiving %s\n"
 "Sending %s"
-msgstr ""
+msgstr "%s: \nPríjem %s \nOdosielanie %s"
 
 #: ../multiload/main.c:310
 #, c-format
@@ -2305,7 +2302,7 @@ msgstr "Opisný súbor na ploche, ktorý sa má vykonať ako systémový monitor
 #: ../multiload/netspeed.c:40
 #, c-format
 msgid "%s/s"
-msgstr ""
+msgstr "%s/s"
 
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
 msgid "A system load indicator"
@@ -2397,15 +2394,15 @@ msgstr "V_oľná"
 
 #: ../multiload/properties.c:614
 msgid "_In"
-msgstr ""
+msgstr "Vst_up"
 
 #: ../multiload/properties.c:615
 msgid "_Out"
-msgstr ""
+msgstr "Výs_tup"
 
 #: ../multiload/properties.c:616
 msgid "_Local"
-msgstr ""
+msgstr "_Miestne"
 
 #: ../multiload/properties.c:617 ../multiload/properties.c:627
 #: ../multiload/properties.c:633
@@ -2462,7 +2459,7 @@ msgstr "Upozorniť, keď príde nová pošta"
 
 #: ../null_applet/MATE_MixerApplet.server.in.h:1
 msgid "Volume Control (Deprecated)"
-msgstr ""
+msgstr "Ovládanie hlasitosti (zastaralé)"
 
 #: ../null_applet/MATE_MixerApplet.server.in.h:2
 msgid "Adjust the sound volume"
@@ -2486,7 +2483,7 @@ msgstr "Sledovať kvalitu bezdrôtového sieťového spojenia"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:1
 msgid "Keyboard Indicator (Deprecated)"
-msgstr ""
+msgstr "Indikátor klávesnice (zastaralý)"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:2
 msgid "Keyboard layout indicator"
@@ -2494,11 +2491,11 @@ msgstr "Indikátor rozloženia klávesnice"
 
 #: ../null_applet/null_applet.c:40
 msgid "Inbox Monitor"
-msgstr ""
+msgstr "Sledovanie doručenej pošty"
 
 #: ../null_applet/null_applet.c:42
 msgid "CD Player"
-msgstr ""
+msgstr "Prehrávač CD"
 
 #: ../null_applet/null_applet.c:48
 msgid "Keyboard Indicator"
@@ -2570,7 +2567,7 @@ msgstr "Predvoľby Poznámok"
 
 #: ../stickynotes/stickynotes.ui.h:6
 msgid "Default Note Properties"
-msgstr ""
+msgstr "Východzie vlastnosti poznámky"
 
 #: ../stickynotes/stickynotes.ui.h:7
 msgid "Choose a font to use for all sticky notes"
@@ -2622,15 +2619,15 @@ msgstr "_Výška:"
 
 #: ../stickynotes/stickynotes.ui.h:20
 msgid "Behavior"
-msgstr ""
+msgstr "Správanie"
 
 #: ../stickynotes/stickynotes.ui.h:21
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr ""
+msgstr "S_kryť poznámky pri kliknutí na pracovnú plochu"
 
 #: ../stickynotes/stickynotes.ui.h:22
 msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr ""
+msgstr "Vyberte, či se pri výbere pracovnej plochy majú skryť všetky poznámky"
 
 #: ../stickynotes/stickynotes.ui.h:23
 msgid "Force _default color and font on notes"
@@ -2650,15 +2647,15 @@ msgstr "Vyberte, či sú poznámky viditeľné na všetkých plochách"
 
 #: ../stickynotes/stickynotes.ui.h:27
 msgid "Delete this sticky note?"
-msgstr ""
+msgstr "Vymazať túto lepiacu poznámku?"
 
 #: ../stickynotes/stickynotes.ui.h:28
 msgid "This cannot be undone."
-msgstr ""
+msgstr "Krok sa nedá vziať späť."
 
 #: ../stickynotes/stickynotes.ui.h:29
 msgid "Delete all sticky notes?"
-msgstr ""
+msgstr "Vymazať všetky lepiace poznámky?"
 
 #: ../stickynotes/stickynotes.ui.h:30
 msgid "_Delete All"
@@ -2686,7 +2683,7 @@ msgstr "Vlastnosti poznámky"
 
 #: ../stickynotes/stickynotes.ui.h:36
 msgid "Properties"
-msgstr ""
+msgstr "Vlastnosti"
 
 #: ../stickynotes/stickynotes.ui.h:37
 msgid "Choose a font for the note"
@@ -2835,13 +2832,13 @@ msgstr "Ak je toto zapnuté, farby a písma jednotlivých poznámok budú ignoro
 
 #: ../stickynotes/stickynotes.schemas.in.h:23
 msgid "Whether to hide all notes when the desktop is selected"
-msgstr ""
+msgstr "Či sa pri výbere pracovnej plochy majú skrývať všetky poznámky"
 
 #: ../stickynotes/stickynotes.schemas.in.h:24
 msgid ""
 "If this option is enabled, selecting the desktop in any way will "
 "automatically hide all the open notes."
-msgstr ""
+msgstr "Ak je táto možnosť zapnutá, vybratie pracovnej plochy akýmkoľvek spôsobom skryje automaticky všetky otvorené poznámky."
 
 #: ../stickynotes/stickynotes.schemas.in.h:25
 msgid "Whether to ask for confirmation when deleting a note"
@@ -2881,7 +2878,7 @@ msgstr "Poznámkové papieriky pre pracovné prostredie MATE"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:1
 msgid "Timer Applet Factory"
-msgstr ""
+msgstr "Vytváracie rozhranie pre applet Časovač"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:2
 msgid "A Timer Applet factory that creates Timer Applets"
@@ -2889,63 +2886,63 @@ msgstr ""
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:3
 msgid "Timer"
-msgstr ""
+msgstr "Časovač"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:4
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
+msgstr "Spustiť časovač a zobraziť upozornenie, keď skončí"
 
 #: ../timer-applet/data/TimerApplet.xml.h:1
 msgid "Pa_use"
-msgstr ""
+msgstr "Pa_uza"
 
 #: ../timer-applet/data/TimerApplet.xml.h:2
 msgid "_Continue"
-msgstr ""
+msgstr "_Pokračovať"
 
 #: ../timer-applet/data/TimerApplet.xml.h:3
 msgid "_Stop"
-msgstr ""
+msgstr "Za_staviť"
 
 #: ../timer-applet/data/TimerApplet.xml.h:4
 msgid "R_estart"
-msgstr ""
+msgstr "R_eštartovať"
 
 #: ../timer-applet/data/TimerApplet.xml.h:5
 msgid "Next"
-msgstr ""
+msgstr "Ďalej"
 
 #: ../timer-applet/data/TimerApplet.xml.h:6
 msgid "Pre_sets"
-msgstr ""
+msgstr "Pred-voľby"
 
 #: ../timer-applet/data/TimerApplet.xml.h:7
 msgid "Ma_nage Presets"
-msgstr ""
+msgstr "Sprav_ovať predvoľby"
 
 #: ../timer-applet/data/timer-applet.glade.h:1
 msgid "Start Timer"
-msgstr ""
+msgstr "Spustiť časovať"
 
 #: ../timer-applet/data/timer-applet.glade.h:2
 msgid "_Name:"
-msgstr ""
+msgstr "_Názov:"
 
 #: ../timer-applet/data/timer-applet.glade.h:3
 msgid "Start automatically"
-msgstr ""
+msgstr "Spustiť automaticky"
 
 #: ../timer-applet/data/timer-applet.glade.h:4
 msgid "<b>Define next timer</b>"
-msgstr ""
+msgstr "<b>Nastaviť ďalší časovač</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:5
 msgid "Execute:"
-msgstr ""
+msgstr "Spustiť:"
 
 #: ../timer-applet/data/timer-applet.glade.h:6
 msgid "<b>Run custom command</b>"
-msgstr ""
+msgstr "<b>Spustiť vlastný príkaz</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:7
 msgid "Run executable after timer finished."
@@ -2953,43 +2950,43 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:8
 msgid "Advanced"
-msgstr ""
+msgstr "Pokročilé"
 
 #: ../timer-applet/data/timer-applet.glade.h:9
 msgid "S_ave as Preset"
-msgstr ""
+msgstr "U_ložiť predvoľbu"
 
 #: ../timer-applet/data/timer-applet.glade.h:10
 msgid "Mana_ge Presets"
-msgstr ""
+msgstr "Spravov_ať predvoľby"
 
 #: ../timer-applet/data/timer-applet.glade.h:11
 msgid "<b>_Presets</b>"
-msgstr ""
+msgstr "<b>_Predvoľby</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:12
 msgid "S_tart Timer"
-msgstr ""
+msgstr "S_pustiť časovať"
 
 #: ../timer-applet/data/timer-applet.glade.h:13
 msgid "Manage Presets"
-msgstr ""
+msgstr "Spravovať predvoľby"
 
 #: ../timer-applet/data/timer-applet.glade.h:14
 msgid "_Delete"
-msgstr ""
+msgstr "_Vymazať"
 
 #: ../timer-applet/data/timer-applet.glade.h:15
 msgid "_Edit..."
-msgstr ""
+msgstr "_Upraviť..."
 
 #: ../timer-applet/data/timer-applet.glade.h:16
 msgid "_Add..."
-msgstr ""
+msgstr "Prid_ať.."
 
 #: ../timer-applet/data/timer-applet.glade.h:17
 msgid "Timer Preferences"
-msgstr ""
+msgstr "Nastavenia časovača"
 
 #: ../timer-applet/data/timer-applet.glade.h:18
 msgid "_Show remaining time while timer is running"
@@ -2997,23 +2994,23 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:19
 msgid "_Play notification sound"
-msgstr ""
+msgstr "_Prehrať zvuk upozornenia"
 
 #: ../timer-applet/data/timer-applet.glade.h:20
 msgid "Use d_efault sound"
-msgstr ""
+msgstr "Použiť vých_odzí zvuk"
 
 #: ../timer-applet/data/timer-applet.glade.h:21
 msgid "Use c_ustom sound"
-msgstr ""
+msgstr "Po_užiť vlastný zvuk"
 
 #: ../timer-applet/data/timer-applet.glade.h:22
 msgid "Choose A Sound File"
-msgstr ""
+msgstr "Vybrať zvukový súbor"
 
 #: ../timer-applet/data/timer-applet.glade.h:23
 msgid "_Show popup notification"
-msgstr ""
+msgstr "_Zobraziť upozornenie"
 
 #: ../timer-applet/data/timer-applet.glade.h:24
 msgid "_Show popup notification after timer has ended."
@@ -3030,15 +3027,15 @@ msgstr ""
 #: ../timer-applet/data/timer-applet.glade.h:27
 #: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
 msgid "Add Preset"
-msgstr ""
+msgstr "Pridať predvoľbu"
 
 #: ../timer-applet/data/timer-applet.glade.h:28
 msgid "<b>_Name</b>"
-msgstr ""
+msgstr "<b>_Názov</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:29
 msgid "<b>_Duration</b>"
-msgstr ""
+msgstr "<b>_Trvanie</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:30
 msgid "Run custom command after timer has ended."
@@ -3046,11 +3043,11 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:31
 msgid "<b>Custom command</b>"
-msgstr ""
+msgstr "<b>Vlastný príkaz</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:32
 msgid "Initiate automatically"
-msgstr ""
+msgstr "Spustiť automaticky"
 
 #: ../timer-applet/data/timer-applet.glade.h:33
 msgid "<b>Interval timer</b>"
@@ -3062,11 +3059,11 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.glade.h:35
 msgid "Timer Applet"
-msgstr ""
+msgstr "Applet Časovač"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:1
 msgid "Play notification sound"
-msgstr ""
+msgstr "Prehrať zvuk upozornenia"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:2
 msgid "Play a notification sound when the timer finishes a countdown"
@@ -3074,7 +3071,7 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:3
 msgid "Use a custom notification sound"
-msgstr ""
+msgstr "Použiť vlastný zvuk upozornenia"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:4
 msgid ""
@@ -3084,7 +3081,7 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:5
 msgid "Path to a custom notification sound"
-msgstr ""
+msgstr "Cesta k vlastnému zvuku upozornenia"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:6
 msgid ""
@@ -3101,15 +3098,15 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:9
 msgid "Show Popup notification"
-msgstr ""
+msgstr "Zobraziť upozornenie"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:10
 msgid "Show Popup notification in the notification area"
-msgstr ""
+msgstr "Zobraziť upozornenie v oblasti upozornení"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:11
 msgid "Show remaining time"
-msgstr ""
+msgstr "Zobraziť zostávajúci čas"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:12
 msgid "Show the remaining time while the timer is running or paused"
@@ -3117,7 +3114,7 @@ msgstr ""
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:13
 msgid "Play a beep sound"
-msgstr ""
+msgstr "Prehrať zvuk pípnutia"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:14
 msgid ""
@@ -3127,7 +3124,7 @@ msgstr ""
 
 #: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
 msgid "Edit Preset"
-msgstr ""
+msgstr "Upraviť predvoľbu"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
 msgid "Continue timer countdown?"
@@ -3147,7 +3144,7 @@ msgstr ""
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:201
 msgid "Finished"
-msgstr ""
+msgstr "Dokončené"
 
 #. "<timer name>" finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:206
@@ -3155,7 +3152,7 @@ msgstr ""
 msgid ""
 "\"%s\" finished at %s.\n"
 "Click to stop timer."
-msgstr ""
+msgstr "\"%s\" skončil za %s Kliknite na ukončenie časovača"
 
 #. Timer finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:209
@@ -3163,42 +3160,42 @@ msgstr ""
 msgid ""
 "Timer finished at %s.\n"
 "Click to stop timer."
-msgstr ""
+msgstr "Časovač skončil za %s. Kliknite na ukončenie časovača"
 
 #. HH:MM:SS (<timer name>)
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:385
 #, python-format
 msgid "%02d:%02d:%02d (%s)"
-msgstr ""
+msgstr "%02d:%02d:%02d (%s)"
 
 #. HH:MM:SS
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:388
 #: ../timer-applet/src/timerapplet/utils.py:52
 #, python-format
 msgid "%02d:%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d:%02d"
 
 #. "<timer name>" Finished
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:410
 #, python-format
 msgid "\"%s\" Finished"
-msgstr ""
+msgstr "\"%s\" Skončil"
 
 #. "<timer name>" finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:413
 #, python-format
 msgid "\"%s\" finished at %s"
-msgstr ""
+msgstr "\"%s\" skončil za %s"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
 msgid "Timer Finished"
-msgstr ""
+msgstr "Časovač skončil"
 
 #. Timer finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:418
 #, python-format
 msgid "Timer finished at %s"
-msgstr ""
+msgstr "Časovač skončil za %s"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:425
 #, python-format
@@ -3218,47 +3215,47 @@ msgstr[2] ""
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
 msgid "Continue Timer"
-msgstr ""
+msgstr "Pokračovať časovač"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
 msgid "_Stop Timer"
-msgstr ""
+msgstr "Za_staviť časovač"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
 msgid "_Keep Paused"
-msgstr ""
+msgstr "_Ponechať pozastavené"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
 msgid "_Continue Timer"
-msgstr ""
+msgstr "Po_kračovať časovač"
 
 #: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
 msgid "<b>Command not found.</b>"
-msgstr ""
+msgstr "<b>Príkaz nenájdený.</b>"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
 msgid "Start Next Timer"
-msgstr ""
+msgstr "Spustiť ďalší časovač"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
 msgid "_Don't start next timer"
-msgstr ""
+msgstr "_Nespúšťať ďalší časovač"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
 msgid "_Start next timer"
-msgstr ""
+msgstr "_Spustiť ďalší časovač"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
 msgid "_Hours:"
-msgstr ""
+msgstr "_Hodiny:"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
 msgid "_Minutes:"
-msgstr ""
+msgstr "_Minúty:"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
 msgid "_Seconds:"
-msgstr ""
+msgstr "_Sekundy:"
 
 #. HH:MM
 #. MM:SS
@@ -3266,13 +3263,13 @@ msgstr ""
 #: ../timer-applet/src/timerapplet/utils.py:59
 #, python-format
 msgid "%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d"
 
 #. <preset name> (HH:MM:SS)
 #: ../timer-applet/src/timerapplet/utils.py:69
 #, python-format
 msgid "%s (%02d:%02d:%02d)"
-msgstr ""
+msgstr "%s (%02d:%02d:%02d)"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
@@ -3288,7 +3285,7 @@ msgstr "_Vyprázdniť kôš"
 
 #: ../trashapplet/src/trashapplet.c:72
 msgid "_Open Trash"
-msgstr ""
+msgstr "_Otvoriť kôš"
 
 #: ../trashapplet/src/trashapplet.c:128
 #, c-format
@@ -3342,7 +3339,7 @@ msgstr "Odstraňuje sa položka %s z %s"
 #: ../trashapplet/src/trash-empty.c:107
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Odstraňovanie: %s"
 
 #: ../trashapplet/src/trash-empty.c:330
 msgid "Empty all of the items from the trash?"
@@ -3360,4 +3357,4 @@ msgstr "Vyprázdňovanie koša"
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:2
 msgid "From:"
-msgstr ""
+msgstr "Z:"

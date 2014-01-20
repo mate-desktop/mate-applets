@@ -3,29 +3,30 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
-# Abou Manal <aboumanal@gmail.com>, 2008.
-# Anas Afif Emad <anas.e87@gmail.com, 2008.
-# Arafat Medini <lumina@silverpen.de>, 2003.
-# Ayman Hourieh <aymanh@gmail.com>, 2004.
-# Djihed Afifi <djihed@gmail.com>, 2007, 2008.
-# Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2009, 2010.
-#   <noureddin@barid.com>, 2012.
-# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
+# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004
+# Abou Manal <aboumanal@gmail.com>, 2008
+# Anas Afif Emad <anas.e87@gmail.com, 2008
+# Arafat Medini <lumina@silverpen.de>, 2003
+# Ayman Hourieh <aymanh@gmail.com>, 2004
+# Djihed Afifi <djihed@gmail.com>, 2007, 2008
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2002
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2009, 2010
+# moceap <moceap@hotmail.com>, 2013
+# noureddin <noureddin@barid.com>, 2012
+# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-13 00:13+0200\n"
-"PO-Revision-Date: 2012-06-12 22:14+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2013-10-05 15:52+0000\n"
+"Last-Translator: mauron\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/MATE/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../accessx-status/applet.c:136
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -44,7 +45,7 @@ msgstr "يعرض حالة ميزات AccessX مثل المغيرات المثب�
 #: ../stickynotes/stickynotes_applet_callbacks.c:425
 #: ../trashapplet/src/trashapplet.c:432
 msgid "translator-credits"
-msgstr "فريق عربآيز للترجمة http://www.arabeyes.org :\nيوسف رفه\t<yousef@raffah.com>\nجهاد عفيفي\t<djihed@gmail.com>\nخالد حسني\t<khaledhosny@eglug.org>\nأنس عفيف عماد\t<anas.e87@gmail.com>"
+msgstr "فريق عيون العرب للترجمة http://www.arabeyes.org :\nيوسف رفه\t<yousef@raffah.com>\nجهاد عفيفي\t<djihed@gmail.com>\nخالد حسني\t<khaledhosny@eglug.org>\nأنس عفيف عماد\t<anas.e87@gmail.com>\nمصعب الزعبي\t<moceap@hotmail.com>\n\nمراجعة و إتمام بواسطة عيون العرب http://arabeyes.org و مجتمع لينكس العربي http://linuxac.org عام 1434 بإشراف مصعب الزعبي moceap@hotmail.com"
 
 #: ../accessx-status/applet.c:156
 #, c-format
@@ -331,7 +332,7 @@ msgstr "هذه الأداة تظهر حالة بطارية حاسوبك المح
 #. ture
 #: ../battstat/battstat_applet.c:1250
 msgid "upower backend enabled."
-msgstr ""
+msgstr "تم تمكين upower في الخلفية"
 
 #. true
 #: ../battstat/battstat_applet.c:1252
@@ -401,11 +402,11 @@ msgstr "_حذّر عندما يقل شحن البطارية عن:"
 
 #: ../battstat/battstat_applet.ui.h:13
 msgid "_Notify when battery is fully recharged"
-msgstr "نبّه عندما تُشحن البطارية تماما"
+msgstr "نبّه عندما تُشحن البطارية تمامًا"
 
 #: ../battstat/battstat-hal.c:343 ../battstat/battstat-hal.c:368
 msgid "HAL error"
-msgstr "خطأ في هال"
+msgstr "خطأ في HAL"
 
 #: ../battstat/battstat-hal.c:343
 msgid "Could not create libhal_ctx"
@@ -418,7 +419,7 @@ msgstr "لم يُعثر على أي بطارية"
 #: ../battstat/battstat-hal.c:417
 #, c-format
 msgid "Unable to initialise HAL: %s: %s"
-msgstr "لا يمكن بدأ هال: %s: %s"
+msgstr "لا يمكن بدأ HAL: %s: %s"
 
 #: ../battstat/battstat.schemas.in.h:1
 msgid "Red value level"
@@ -432,13 +433,13 @@ msgstr "مستوى البطارية الذي تحته تعرض البطارية 
 
 #: ../battstat/battstat.schemas.in.h:3
 msgid "Warn on low time rather than low percentage"
-msgstr "تنبيه عند انخفاض الوقت المتبقي بدلا من انخفاض النسبة المئويه"
+msgstr "تنبيه عند انخفاض الوقت المتبقي بدلا من انخفاض النسبة المئوية"
 
 #: ../battstat/battstat.schemas.in.h:4
 msgid ""
 "Use the value defined in red_value as a time remaining to show the warning "
 "dialog rather than a percentage."
-msgstr "استخدم القيمة المحددة في red_value كوقت متبقٍ بدلا من النسبة المئوية لعرض حوار التحذير."
+msgstr "استخدم القيمة المحددة في red_value كوقت متبقٍ بدلًا من النسبة المئوية لعرض حوار التحذير."
 
 #: ../battstat/battstat.schemas.in.h:5
 msgid "Low Battery Notification"
@@ -476,7 +477,7 @@ msgstr "اعرض مسطرة البطارية وهي تفرغ من أعلى ال�
 
 #: ../battstat/battstat.schemas.in.h:13
 msgid "Upright (small) battery"
-msgstr "بطارية صغيرة نحو الاعلى"
+msgstr "بطارية صغيرة نحو الأعلى"
 
 #: ../battstat/battstat.schemas.in.h:14
 msgid "Show the upright, smaller battery on the panel."
@@ -496,7 +497,7 @@ msgstr "اعرض الوقت/النسبة"
 
 #: ../battstat/battstat.schemas.in.h:18
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
-msgstr "0 لِبِلا عنوان، 1 للنسبة المئوية و 2 للوقت المتبقي."
+msgstr "0 للّا عنوان، 1 للنسبة المئوية و 2 للوقت المتبقي."
 
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
 msgid "Battstat Factory"
@@ -505,7 +506,6 @@ msgstr "مصنع حالة البطارية"
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
-#. 
 #: ../battstat/properties.c:314
 msgid "Percent"
 msgstr "نسبة"
@@ -513,7 +513,6 @@ msgstr "نسبة"
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#. 
 #: ../battstat/properties.c:320
 msgid "Minutes Remaining"
 msgstr "الدقائق المتبقية"
@@ -528,7 +527,7 @@ msgstr "طاقة البطارية منخفضة"
 
 #: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:3
 msgid "Battery fully re-charged"
-msgstr "أُعيد شحن البطارية تماما"
+msgstr "أُعيد شحن البطارية تمامًا"
 
 #: ../charpick/charpick.c:436
 msgid "Available palettes"
@@ -537,7 +536,6 @@ msgstr "اللوحات المتوفرة"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#. 
 #: ../charpick/charpick.c:483
 #, c-format
 msgid "Insert \"%s\""
@@ -545,18 +543,18 @@ msgstr "أدرج  \"%s\""
 
 #: ../charpick/charpick.c:486
 msgid "Insert special character"
-msgstr "أدرِج محرف خاص"
+msgstr "أدرِج محرفًا خاصًا"
 
 #: ../charpick/charpick.c:490
 #, c-format
 msgid "insert special character %s"
-msgstr "أدرِج محرف خاص %s"
+msgstr "أدرِج محرفًا خاصًا %s"
 
 #: ../charpick/charpick.c:605
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
-msgstr "بريمج شريط جنوم لاختيار المحارِف الغريبة التي لا توجد على لوحة مفاتيحي. منشور تحت ترخيص جنو العام."
+msgstr "بريمج شريط متّة لاختيار المحارِف الغريبة التي لا توجد على لوحة مفاتيحي. منشور تحت ترخيص غنّو العام."
 
 #: ../charpick/charpick.c:743 ../charpick/charpick.c:757
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
@@ -571,7 +569,7 @@ msgstr "أدرِج محارِف"
 
 #: ../charpick/charpick.schemas.in.h:1
 msgid "DEPRECATED - Characters shown on applet startup"
-msgstr "ملغى - المحارِف المعروضة عند بدأ البريمج"
+msgstr "ملغى - المحارِف المعروضة عند بدء البريمج"
 
 #: ../charpick/charpick.schemas.in.h:2
 msgid "Characters shown on applet startup"
@@ -581,7 +579,7 @@ msgstr "المحارف التي ستعرض عند بدأ البريمج"
 msgid ""
 "The string that the user had selected when the applet was last used. This "
 "string will be displayed when the user starts the applet."
-msgstr "السلسلة التي اختارها المستخدم آخر مرة استخدم فيها البريمج. ستعرض هذه السلسلة عند بدأ المستخدم للبريمج"
+msgstr "السلسلة التي اختارها المستخدم آخر مرة استخدم فيها البريمج. ستعرض هذه السلسلة عند بدء المستخدم للبريمج"
 
 #: ../charpick/charpick.schemas.in.h:4 ../charpick/properties.c:379
 msgid "List of available palettes"
@@ -629,7 +627,7 @@ msgstr "ال_لوحات:"
 
 #: ../charpick/properties.c:473
 msgid "Add button"
-msgstr "أضِف زرا"
+msgstr "أضِف زرًا"
 
 #: ../charpick/properties.c:474
 msgid "Click to add a new palette"
@@ -674,7 +672,7 @@ msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
-msgstr "القيمة 0 تعني اعرض البريمج في النمط الرسومي، 1 لعرضه في النمط النصّي (لا تظهر بكسمابالصورة) و 2 لإظهار البريمج في النمط النصي والرسومي."
+msgstr "القيمة 0 تعني اعرض البريمج في النمط الرسومي، 1 لعرضه في النمط النصّي (لا تظهر بكسماب الصورة) و 2 لإظهار البريمج في النمط النصي والرسومي."
 
 #: ../cpufreq/cpufreq-applet.schemas.in.h:5
 msgid "The type of text to display (if the text is enabled)."
@@ -745,11 +743,11 @@ msgstr "رسومي"
 
 #: ../cpufreq/src/cpufreq-prefs.c:618
 msgid "Text"
-msgstr "نص"
+msgstr "نصّي"
 
 #: ../cpufreq/src/cpufreq-prefs.c:623
 msgid "Graphic and Text"
-msgstr "نص و رسوم"
+msgstr "نصّي و رسومي"
 
 #: ../cpufreq/src/cpufreq-monitor-cpuinfo.c:117
 msgid "Frequency Scaling Unsupported"
@@ -759,7 +757,6 @@ msgstr "تغيير التردد غير مدعوم"
 #. * I think is better than do nothing. I have to notify it to the user,
 #. because
 #. * he could think that cpufreq is supported but it doesn't work succesfully
-#. 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
 msgstr "تغيير تردد المعالج غير مدعوم"
@@ -768,7 +765,7 @@ msgstr "تغيير تردد المعالج غير مدعوم"
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr "لن تكون قادرا على تغيير تردد جهازك. ربما لا يكون جهازك معدا بشكل صحيح أو لا يدعم معالجك تغيير السرعة."
+msgstr "لن تكون قادرا على تغيير تردد جهازك. ربما لا يكون جهازك معدًا بشكل صحيح أو لا يدعم معالجك تغيير السرعة."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
@@ -867,7 +864,7 @@ msgstr "الدليل الذي بِه السِمة"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Geyes Applet Factory"
-msgstr "مصنع بريمج عيون جنوم"
+msgstr "مصنع بريمج عيون متّة"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -883,7 +880,7 @@ msgstr "حصل خطأ فادح عند محاولة تحميل السِمة."
 
 #: ../geyes/themes.c:307
 msgid "Geyes Preferences"
-msgstr "تفضيلات عيون جنوم"
+msgstr "تفضيلات عيون متّة"
 
 #: ../geyes/themes.c:341
 msgid "Themes"
@@ -899,7 +896,7 @@ msgstr "© 1999-2005 لِـ س. باباديميتريو و آخرون"
 
 #: ../mateweather/mateweather-about.c:49
 msgid "A panel application for monitoring local weather conditions."
-msgstr "تطبيق لوحة لمراقبة حالات الطقس المحلية."
+msgstr "تطبيق لوحي لمراقبة حالات الطقس المحلية."
 
 #: ../mateweather/mateweather-applet.c:115
 msgid "_Details"
@@ -918,7 +915,7 @@ msgstr "تقرير حالة الطقس"
 #: ../mateweather/mateweather-applet.c:347
 #: ../mateweather/mateweather-applet.c:351
 msgid "MATE Weather"
-msgstr "طقس جنوم"
+msgstr "طقس متّة"
 
 #: ../mateweather/mateweather-applet.c:453
 msgid "Weather Forecast"
@@ -1035,7 +1032,7 @@ msgstr "مشهد المكان"
 
 #: ../mateweather/mateweather-pref.c:179
 msgid "Select Location from the list"
-msgstr "اختر مكانا من القائمة"
+msgstr "اختر مكانًا من القائمة"
 
 #: ../mateweather/mateweather-pref.c:180
 msgid "Update spin button"
@@ -1051,12 +1048,12 @@ msgstr "خانة العنوان"
 
 #: ../mateweather/mateweather-pref.c:181
 msgid "Enter the URL"
-msgstr "أدخل المسار"
+msgstr "أدخل الرّابط"
 
 #: ../mateweather/mateweather-pref.c:332
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
-msgstr "فشل تحميل قاعدة بيانات XML المواقع. من فضلك أرسل تقريرا بهذه العلّة."
+msgstr "فشل تحميل قاعدة بيانات XML المواقع. من فضلك أرسل تقريرًا بهذه العلّة."
 
 #: ../mateweather/mateweather-pref.c:878
 msgid "Weather Preferences"
@@ -1068,7 +1065,6 @@ msgid "_Automatically update every:"
 msgstr "_حدّث آليًا كل:"
 
 #. * Units settings page.
-#. 
 #. Temperature Unit
 #: ../mateweather/mateweather-pref.c:921
 msgid "_Temperature unit:"
@@ -1078,7 +1074,7 @@ msgstr "وحدة ال_حرارة:"
 #: ../mateweather/mateweather-pref.c:979
 #: ../mateweather/mateweather-pref.c:1009
 msgid "Default"
-msgstr "المبدئي"
+msgstr "الافتراضي"
 
 #: ../mateweather/mateweather-pref.c:931
 msgid "Kelvin"
@@ -1101,17 +1097,17 @@ msgstr "وحدة سرعة ال_رياح:"
 #. TRANSLATOR: The wind speed unit "meters per second"
 #: ../mateweather/mateweather-pref.c:954
 msgid "m/s"
-msgstr "م/ث"
+msgstr "م/ثا"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
 #: ../mateweather/mateweather-pref.c:956
 msgid "km/h"
-msgstr "كم/ث"
+msgstr "كم/سا"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
 #: ../mateweather/mateweather-pref.c:958
 msgid "mph"
-msgstr "ميل في السّاعة"
+msgstr "ميل/س"
 
 #. TRANSLATOR: The wind speed unit "knots"
 #: ../mateweather/mateweather-pref.c:960
@@ -1145,17 +1141,17 @@ msgstr "ميلي بار"
 #. TRANSLATOR: The pressure unit "millibars of mercury"
 #: ../mateweather/mateweather-pref.c:987
 msgid "mmHg"
-msgstr "مم زئبق"
+msgstr "مم زئبقي"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
 #: ../mateweather/mateweather-pref.c:989
 msgid "inHg"
-msgstr "إنش زئبق"
+msgstr "بوصة زئبقية"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
 #: ../mateweather/mateweather-pref.c:991
 msgid "atm"
-msgstr "ض.ج."
+msgstr "جو"
 
 #. Distance Unit
 #: ../mateweather/mateweather-pref.c:1000
@@ -1165,7 +1161,7 @@ msgstr "وحدة ال_رؤية:"
 #. TRANSLATOR: The distance unit "meters"
 #: ../mateweather/mateweather-pref.c:1011
 msgid "meters"
-msgstr "أمتار"
+msgstr "م"
 
 #. TRANSLATOR: The distance unit "kilometers"
 #: ../mateweather/mateweather-pref.c:1013
@@ -1183,7 +1179,7 @@ msgstr "فعّل خريطة ال_رادار"
 
 #: ../mateweather/mateweather-pref.c:1057
 msgid "Use _custom address for radar map"
-msgstr "استخدم عنوان _خاص لخريطة الرادار"
+msgstr "استخدم عنوانًا _خاصًا لخريطة الرادار"
 
 #: ../mateweather/mateweather-pref.c:1075
 msgid "A_ddress:"
@@ -1195,7 +1191,7 @@ msgstr "حدّث"
 
 #: ../mateweather/mateweather-pref.c:1111
 msgid "minutes"
-msgstr "دقائق"
+msgstr "دقيقة"
 
 #: ../mateweather/mateweather-pref.c:1129
 msgid "Display"
@@ -1208,7 +1204,7 @@ msgstr "عام"
 
 #: ../mateweather/mateweather-pref.c:1154
 msgid "_Select a location:"
-msgstr "ا_ختر موقعا:"
+msgstr "ا_ختر موقعًا:"
 
 #: ../mateweather/mateweather-pref.c:1176
 msgid "_Find:"
@@ -1224,7 +1220,7 @@ msgstr "المكان"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr "مصنع بريمج طقس جنوم"
+msgstr "مصنع بريمج طقس متّة"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
@@ -1232,7 +1228,7 @@ msgstr "مصنع لإنشاء بريمج حالة الطقس."
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
-msgstr "راقب أحوال وتوقعات الطقس الحالي"
+msgstr "راقب أحوال و توقعات الطقس الحالي"
 
 #: ../invest-applet/data/Invest_Applet.server.in.in.h:1
 #: ../invest-applet/invest/about.py:17
@@ -1287,7 +1283,7 @@ msgstr "رمز البور_صة:"
 
 #: ../invest-applet/data/financialchart.ui.h:10
 msgid "Auto _refresh"
-msgstr "_حدِّث تلقائيا"
+msgstr "_حدِّث تلقائيًا"
 
 #: ../invest-applet/data/financialchart.ui.h:11
 msgid "_Graph style: "
@@ -1303,7 +1299,7 @@ msgstr "متوسط الحركة:  "
 #. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
 #: ../invest-applet/data/financialchart.ui.h:15
 msgid "Exponential moving average: "
-msgstr ""
+msgstr "معدل الحركات الأسيّة:"
 
 #: ../invest-applet/data/financialchart.ui.h:16
 msgid "5"
@@ -1332,7 +1328,7 @@ msgstr "200"
 #. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
 #: ../invest-applet/data/financialchart.ui.h:23
 msgid "Overlays: "
-msgstr ""
+msgstr "التّراكبات:"
 
 #. Please keep this term short. For its meaning, see
 #. http://biz.yahoo.com/charts/guide13.html and
@@ -1390,7 +1386,7 @@ msgstr "MFI"
 #. http://en.wikipedia.org/wiki/Stochastic_oscillator
 #: ../invest-applet/data/financialchart.ui.h:41
 msgid "Slow stoch"
-msgstr ""
+msgstr "stoch البطيئة"
 
 #. Please keep this term short. For its meaning, see
 #. http://en.wikipedia.org/wiki/Volume_%28finance%29
@@ -1408,7 +1404,7 @@ msgstr "ROC"
 #. http://en.wikipedia.org/wiki/Stochastic_oscillator
 #: ../invest-applet/data/financialchart.ui.h:47
 msgid "Fast stoch"
-msgstr ""
+msgstr "stoch السّريع"
 
 #. Please keep this term short. For its meaning, see
 #. http://en.wikipedia.org/wiki/Williams_%25R
@@ -1460,7 +1456,7 @@ msgstr "<b>لم تُدخل أيّة معلومات للأسهم حتى الآن 
 
 #: ../invest-applet/invest/applet.py:55
 msgid "<b>No stock quotes are currently available</b>"
-msgstr "<b>أسعار الأسهم غير متاحة حالياً</b>"
+msgstr "<b>أسعار الأسهم غير متاحة حاليًا</b>"
 
 #: ../invest-applet/invest/applet.py:56
 msgid ""
@@ -1499,11 +1495,11 @@ msgstr "العنوان"
 
 #: ../invest-applet/invest/preferences.py:31
 msgid "Amount"
-msgstr "قَدْر"
+msgstr "الكميّة"
 
 #: ../invest-applet/invest/preferences.py:31
 msgid "Price"
-msgstr "السعر"
+msgstr "السّعر"
 
 #: ../invest-applet/invest/preferences.py:31
 msgid "Commission"
@@ -1515,7 +1511,7 @@ msgstr "سعر العملة"
 
 #: ../invest-applet/invest/quotes.py:131
 msgid "Invest could not connect to Yahoo! Finance"
-msgstr "لم يستَطع المستثمر الاتصال بـ  Yahoo! Finance"
+msgstr "لم يستَطع المستثمر الاتصال بـ ماليات ياهو"
 
 #. Translators: %s is an hour (%H:%M)
 #: ../invest-applet/invest/quotes.py:134 ../invest-applet/invest/quotes.py:163
@@ -1549,7 +1545,7 @@ msgstr "موازنة الصفقات: %s ‏%s ‏(%s)"
 #. stock was purchased.
 #: ../invest-applet/invest/widgets.py:51
 msgid "Ticker"
-msgstr "تيكر"
+msgstr "مؤشر الأسهم"
 
 #: ../invest-applet/invest/widgets.py:51
 msgid "Last"
@@ -1573,7 +1569,7 @@ msgstr "الربح %"
 
 #: ../mini-commander/MATE_MiniCommanderApplet.server.in.h:1
 msgid "Deskbar (formerly Mini-Commander)"
-msgstr "شريط المكتب (ميني كوماندر سابقا)"
+msgstr "شريط المكتب (ميني كوماندر سابقًا)"
 
 #: ../mini-commander/MATE_MiniCommanderApplet.server.in.h:2
 msgid "Deskbar (transparent upgrade from Mini-Commander)"
@@ -1600,7 +1596,7 @@ msgstr "سطر الأوامر"
 
 #: ../mini-commander/src/command_line.c:523
 msgid "Type a command here and Mate will execute it for you"
-msgstr "اكتب أمرا هنا وسوف تنفذه جنوم لك"
+msgstr "اكتب أمرًا هنا وسوف تحاول متّة تنفيذه لك"
 
 #: ../mini-commander/src/mc-install-default-macros.c:80
 #, c-format
@@ -1689,7 +1685,7 @@ msgstr "الألوان"
 
 #: ../mini-commander/src/mini-commander.ui.h:8
 msgid "_Use default theme colors"
-msgstr "ا_ستعمل ألوان السِمة المبدئية"
+msgstr "ا_ستعمل ألوان السِمة الافتراضية"
 
 #: ../mini-commander/src/mini-commander.ui.h:9
 msgid "Command line _foreground:"
@@ -1745,11 +1741,11 @@ msgstr "اعرض الإطار"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:4
 msgid "Show a frame surrounding the applet."
-msgstr "اعرض إطار محيط بالبرنامج."
+msgstr "اعرض إطارًا يحيط بالبرنامج."
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:5
 msgid "Perform history autocompletion"
-msgstr "قم بالتكملة الآليّة باعتبار التاريخ"
+msgstr "قم بالتكملة الآليّة باعتبار التأريخ"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:6
 msgid ""
@@ -1766,15 +1762,15 @@ msgstr "عرض البريمج"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:9
 msgid "Not used anymore"
-msgstr "لم يعد مستخدما"
+msgstr "لم يعد مستخدمًا"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:10
 msgid "Use the default theme colors"
-msgstr "استعمل ألوان السِمة المبدئية"
+msgstr "استعمل ألوان السِمة الافتراضية"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:11
 msgid "Use theme colors instead of custom ones."
-msgstr "استعمال ألوان السِمة عوض ألوان خاصة."
+msgstr "استعمال ألوان السِمة عوضًا عن  الألوان الخاصة."
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:12
 msgid "Foreground color, red component"
@@ -1826,11 +1822,11 @@ msgstr "المكون الأزرق للون الخلفية."
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:24
 msgid "History list"
-msgstr "قائمة التاريخ"
+msgstr "قائمة التأريخ"
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:25
 msgid "List of MateConfValue entries containing strings for history entries."
-msgstr "قائمة خانات MateConfValue الحاوية لسلاسل لخانات التاريخ."
+msgstr "قائمة خانات MateConfValue الحاوية لسلاسل لخانات التأريخ."
 
 #: ../mini-commander/src/mini-commander.schemas.in.h:27
 msgid ""
@@ -1850,7 +1846,7 @@ msgstr "انقر هذا الزر لبدء المتصفح"
 #: ../mini-commander/src/mini-commander_applet.c:260
 #: ../mini-commander/src/mini-commander_applet.c:264
 msgid "History"
-msgstr "التاريخ"
+msgstr "التأريخ"
 
 #: ../mini-commander/src/mini-commander_applet.c:265
 msgid "Click this button for the list of previous commands"
@@ -1883,15 +1879,15 @@ msgstr "آمر صغير"
 
 #: ../mini-commander/src/preferences.c:401
 msgid "You must specify a pattern"
-msgstr "يجب أن تحدد نمطا"
+msgstr "يجب أن تحدد نمطًا"
 
 #: ../mini-commander/src/preferences.c:405
 msgid "You must specify a pattern and a command"
-msgstr "يجب أن تحدد نمطا و أمرا"
+msgstr "يجب أن تحدد نمطًا و أمرًا"
 
 #: ../mini-commander/src/preferences.c:406
 msgid "You must specify a command"
-msgstr "يجب أن تحدد أمرا"
+msgstr "يجب أن تحدد أمرًا"
 
 #: ../mini-commander/src/preferences.c:409
 msgid "You may not specify duplicate patterns"
@@ -1907,17 +1903,17 @@ msgstr "الأمر"
 
 #: ../mixer/applet.c:184
 msgid "Volume Applet"
-msgstr "بريمج شدة الصوت"
+msgstr "بريمج شدة الصّوت"
 
 #. tooltip over applet
 #: ../mixer/applet.c:200 ../mixer/applet.c:221 ../null_applet/null_applet.c:44
 #: ../null_applet/null_applet.c:46
 msgid "Volume Control"
-msgstr "متحكم شدة الصوت"
+msgstr "متحكم شدة الصّوت"
 
 #: ../mixer/applet.c:384
 msgid "_Open Volume Control"
-msgstr "ا_فتح متحكم شدة الصوت"
+msgstr "ا_فتح متحكم شدة الصّوت"
 
 #: ../mixer/applet.c:398
 msgid "Mu_te"
@@ -1934,12 +1930,12 @@ msgstr "لم يجد متحكم شدة الصوت أي عناصر أو أجهزة
 msgid ""
 "You can remove the volume control from the panel by right-clicking the "
 "speaker icon on the panel and selecting \"Remove From Panel\" from the menu."
-msgstr "يمكنك حذف متحكم شدة الصوت من الشريط بالنقر بالزر الأيمن على الايقونة واختر خيار الحذف."
+msgstr "يمكنك حذف متحكم شدة الصوت من الشريط بالنقر بالزر الأيمن على رمزه و اختيار الحذف."
 
 #: ../mixer/applet.c:754
 #, c-format
 msgid "Failed to start Volume Control: %s"
-msgstr "تعذّر تشغيل متحكم شدة الصوت: %s"
+msgstr "تعذّر تشغيل متحكم شدة الصّوت: %s"
 
 #: ../mixer/applet.c:1203
 #, c-format
@@ -1962,7 +1958,7 @@ msgstr "فشل عرض المساعدة: %s"
 
 #: ../mixer/applet.c:1458
 msgid "Volume control for your MATE Panel."
-msgstr "تحكم بشدة الصوت من شريط جنوم."
+msgstr "تحكم بشدة الصوت من شريط متّة."
 
 #: ../mixer/applet.c:1459
 msgid "Using GStreamer 0.10."
@@ -1974,7 +1970,7 @@ msgstr "أصمِت"
 
 #: ../mixer/dock.c:224
 msgid "Volume Control..."
-msgstr "تحكم شدة الصوت..."
+msgstr "تحكم شدة الصّوت..."
 
 #: ../mixer/load.c:86
 #, c-format
@@ -1983,7 +1979,7 @@ msgstr "متحكم مجهول لشدة الصوت %Id"
 
 #: ../mixer/mixer.schemas.in.h:1
 msgid "Channel controlled by applet. Only for OSS setups"
-msgstr "القنوات التي يتحطم فيها بريمجك. فقط لإعدادات OSS"
+msgstr "القنوات التي يتحكم فيها بريمجك. فقط لإعدادات OSS"
 
 #: ../mixer/mixer.schemas.in.h:2
 msgid "Saved mute state"
@@ -2036,17 +2032,17 @@ msgstr "غير متّصل"
 msgid ""
 "To connect to your Internet service provider, you need administrator "
 "privileges"
-msgstr "للاتصال بمزوّد خدمة الإنترنت، تحتاج صلاحيات الإدارة"
+msgstr "للاتصال بمزوّد الشّابكة، تحتاج صلاحيات الإدارة"
 
 #: ../modemlights/modem-applet.c:753
 msgid ""
 "To disconnect from your Internet service provider, you need administrator "
 "privileges"
-msgstr "لإلغاء الاتصال من مزوّد خدمة الإنترنت، تحتاج صلاحيات الإدارة"
+msgstr "لإلغاء الاتصال من مزوّد الشّابكة، تحتاج صلاحيات الإدارة"
 
 #: ../modemlights/modem-applet.c:828
 msgid "The entered password is invalid"
-msgstr "كلمة السر المدخلة غير صحيحة"
+msgstr "كلمة المرور المدخلة غير صحيحة"
 
 #: ../modemlights/modem-applet.c:830
 msgid ""
@@ -2082,27 +2078,27 @@ msgstr "تأكد انه تم تثبيته في المسار الصحيح و أن
 
 #: ../modemlights/modem-applet.c:1020
 msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "بريمج لتشغيل و مراقبة اتصال إنترنت هاتفي."
+msgstr "بريمج لتشغيل و مراقبة اتصال شابكة هاتفي."
 
 #: ../modemlights/modemlights.ui.h:1
 msgid "Enter password"
-msgstr "أدخل كلمة السر"
+msgstr "أدخل كلمة المرور"
 
 #: ../modemlights/modemlights.ui.h:2
 msgid "Root password required"
-msgstr "كلمة سر الجذر مطلوبة"
+msgstr "كلمة مرور الجذر مطلوبة"
 
 #: ../modemlights/modemlights.ui.h:3
 msgid "Password:"
-msgstr "كلمة السر:"
+msgstr "كلمة المرور:"
 
 #: ../modemlights/modemlights.ui.h:4
 msgid "Connecting with Internet Service Provider"
-msgstr "يتّصل بمزود خدمة الإنترنت"
+msgstr "يتّصل بمزود الشّابكة"
 
 #: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
 msgid "Activate and monitor a dial-up network connection"
-msgstr "فعّل وراقب اتصال إنترنت هاتفي"
+msgstr "فعّل وراقب اتصال الشابكة الهاتفي"
 
 #: ../multiload/main.c:56
 msgid ""
@@ -2141,7 +2137,6 @@ msgstr "القرص"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#. 
 #: ../multiload/main.c:278
 #, c-format
 msgid ""
@@ -2197,16 +2192,16 @@ msgstr "حِمْل التبديل"
 
 #: ../multiload/main.c:340
 msgid "Disk Load"
-msgstr "حمولة القرص"
+msgstr "حِمْل القرص"
 
 #: ../multiload/main.c:436
 msgid "_Open System Monitor"
-msgstr "ا_فتح مراقب النظام"
+msgstr "ا_فتح مرقاب النظام"
 
 #: ../multiload/main.c:464
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
-msgstr "مراقب النظام"
+msgstr "مرقاب النظام"
 
 #: ../multiload/multiload.schemas.in.h:1
 msgid "Enable CPU load graph"
@@ -2226,11 +2221,11 @@ msgstr "فعّل رسم حِمْل ذاكرة التبديل"
 
 #: ../multiload/multiload.schemas.in.h:5
 msgid "Enable load average graph"
-msgstr "فعّل رسم موسط الحِمْل"
+msgstr "فعّل رسم متوسط الحِمْل"
 
 #: ../multiload/multiload.schemas.in.h:6
 msgid "Enable disk load graph"
-msgstr "فعّل الرسم البياني لحمولة القرص"
+msgstr "فعّل الرسم البياني لحمل القرص"
 
 #: ../multiload/multiload.schemas.in.h:7
 msgid "Applet refresh rate in milliseconds"
@@ -2308,11 +2303,11 @@ msgstr "لون الرسم البياني لاستخدام الذاكرة الب�
 
 #: ../multiload/multiload.schemas.in.h:25
 msgid "Swap graph background color"
-msgstr "لون خلفية الذاكرة البديلة"
+msgstr "لون خلفية مساحة التّبديل"
 
 #: ../multiload/multiload.schemas.in.h:26
 msgid "Graph color for load average"
-msgstr "لون الرسم البياني لموسط الحِمْل"
+msgstr "لون الرسم البياني لمتوسط الحِمْل"
 
 #: ../multiload/multiload.schemas.in.h:27
 msgid "Load graph background color"
@@ -2328,7 +2323,7 @@ msgstr "لون الرسم البياني لكتابة القرص"
 
 #: ../multiload/multiload.schemas.in.h:30
 msgid "Background color for disk load graph"
-msgstr "لون الخلفية للرسم البياني لحمولة القرص"
+msgstr "لون الخلفية للرسم البياني لحمل القرص"
 
 #: ../multiload/multiload.schemas.in.h:31
 msgid "The desktop description file to execute as the system monitor"
@@ -2337,7 +2332,7 @@ msgstr "ملف وصف سطح المكتب الذي سيتم تنفيذه كمر�
 #: ../multiload/netspeed.c:40
 #, c-format
 msgid "%s/s"
-msgstr "%s/ث"
+msgstr "%s/ثا"
 
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
 msgid "A system load indicator"
@@ -2377,15 +2372,15 @@ msgstr "الخيارات"
 
 #: ../multiload/properties.c:493
 msgid "System m_onitor width: "
-msgstr "عرض مرا_قب النظام: "
+msgstr "عرض مر_قاب النظام: "
 
 #: ../multiload/properties.c:495
 msgid "System m_onitor height: "
-msgstr "ارتفاع مرا_قب النظام: "
+msgstr "ارتفاع مرق_اب النظام: "
 
 #: ../multiload/properties.c:534
 msgid "Sys_tem monitor update interval: "
-msgstr "مدة تحديث مراقب ال_نظام: "
+msgstr "مدة تحديث مرقاب ال_نظام: "
 
 #: ../multiload/properties.c:560
 msgid "milliseconds"
@@ -2474,11 +2469,11 @@ msgstr "_كتابة"
 
 #: ../multiload/properties.c:657
 msgid "System Monitor Preferences"
-msgstr "تفضيلات مراقب النظام"
+msgstr "تفضيلات مرقاب النظام"
 
 #: ../null_applet/MATE_CDPlayerApplet.server.in.h:1
 msgid "CD Player (Deprecated)"
-msgstr "قارئ القرص (ملغى)"
+msgstr "قارئ القرص (مهجور)"
 
 #: ../null_applet/MATE_CDPlayerApplet.server.in.h:2
 msgid "Panel applet for playing audio CDs"
@@ -2486,7 +2481,7 @@ msgstr "بريمج الشريط لعزف الأقراص المدمجة"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
 msgid "Inbox Monitor (Deprecated)"
-msgstr "مراقب البريد (ملغى)"
+msgstr "مراقب البريد (مهجور)"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
 msgid "Alert you when new mail arrives"
@@ -2494,7 +2489,7 @@ msgstr "ينبهك عند وصول بريد جديد"
 
 #: ../null_applet/MATE_MixerApplet.server.in.h:1
 msgid "Volume Control (Deprecated)"
-msgstr "متحكم الصوت (مُلغى)"
+msgstr "متحكم الصوت (مهجور)"
 
 #: ../null_applet/MATE_MixerApplet.server.in.h:2
 msgid "Adjust the sound volume"
@@ -2518,7 +2513,7 @@ msgstr "راقِب جودة الاتصال اللاسلكي للشبكة"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:1
 msgid "Keyboard Indicator (Deprecated)"
-msgstr "موضّح لوحة المفاتيح (مُبطل)"
+msgstr "موضّح لوحة المفاتيح (مهجور)"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:2
 msgid "Keyboard layout indicator"
@@ -2544,7 +2539,7 @@ msgstr "بعض عناصر الشريط لم تعد متوفرة"
 msgid ""
 "One or more panel items (also referred to as applets) are no longer "
 "available in the MATE desktop."
-msgstr "واحد أو أكثر من عناصر الشريط (تسمّى أيضا بريمجات) غير متوفرة في سطح مكتب جنوم."
+msgstr "واحد أو أكثر من عناصر الشريط (تسمّى أيضا بريمجات) غير متوفرة في سطح مكتب متّة."
 
 #: ../null_applet/null_applet.c:154
 msgid "These items will now be removed from your configuration:"
@@ -2556,7 +2551,7 @@ msgstr "لن تستقبل هذه الرسالة مرّة أخرى."
 
 #: ../stickynotes/data/MATE_StickyNotesApplet.server.in.h:1
 msgid "Tomboy (ne Stickynotes)"
-msgstr "تومبوي (ملاحظات لاصقة سابقا)"
+msgstr "تومبوي (ملاحظات لاصقة سابقًا)"
 
 #: ../stickynotes/data/MATE_StickyNotesApplet.server.in.h:2
 msgid "Tomboy (transparent upgrade from stickynotes)"
@@ -2602,15 +2597,15 @@ msgstr "تفضيلات الملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:6
 msgid "Default Note Properties"
-msgstr "سلوك الملاحظة المبدئي"
+msgstr "سلوك الملاحظة الافتراضي"
 
 #: ../stickynotes/stickynotes.ui.h:7
 msgid "Choose a font to use for all sticky notes"
-msgstr "اختر خطا ليُستخدم في كل الملاحظات اللاصقة"
+msgstr "اختر خطًا ليُستخدم في كلّ الملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:8
 msgid "Pick a default sticky note font"
-msgstr "اختر خطا مبدئيا للملاحظات اللاصقة"
+msgstr "اختر خطًا افتراضيًا للملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:9
 msgid "_Font:"
@@ -2618,7 +2613,7 @@ msgstr "ال_خط:"
 
 #: ../stickynotes/stickynotes.ui.h:10
 msgid "Use fo_nt from the system theme"
-msgstr "استخدم خط سِمة ال_نظام"
+msgstr "استخدم خط سِمة ال_نّظام"
 
 #: ../stickynotes/stickynotes.ui.h:11
 msgid "Note C_olor:"
@@ -2630,23 +2625,23 @@ msgstr "لون ال_خط:"
 
 #: ../stickynotes/stickynotes.ui.h:13
 msgid "Choose a base color to use for all sticky notes"
-msgstr "اختر لونا أساسيا ليُستخدم في كل الملاحظات اللاصقة"
+msgstr "اختر لونًا أساسيًا ليُستخدم في كل الملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:14
 msgid "Pick a default sticky note color"
-msgstr "اختر لونا مبدئيا للملاحظات اللاصقة"
+msgstr "اختر لونًا افتراضيًا للملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:15
 msgid "Use co_lor from the system theme"
-msgstr "استخدم ألوان سِمة ال_نظام"
+msgstr "استخدم ألوان سِمة ال_نّظام"
 
 #: ../stickynotes/stickynotes.ui.h:16
 msgid "Specify the default height (in pixels) of new notes"
-msgstr "حدد الارتفاع المبدئي للملاحظات الجديدة (بالبكسل)"
+msgstr "حدّد الارتفاع الافتراضي للملاحظات الجديدة (بالبكسل)"
 
 #: ../stickynotes/stickynotes.ui.h:17
 msgid "Specify the default width (in pixels) of new notes"
-msgstr "حدد العرض المبدئي للملاحظات الجديدة (بالبكسل)"
+msgstr "حدّد العرض الافتراضي للملاحظات الجديدة (بالبكسل)"
 
 #: ../stickynotes/stickynotes.ui.h:18
 msgid "H_eight:"
@@ -2658,7 +2653,7 @@ msgstr "السلوك"
 
 #: ../stickynotes/stickynotes.ui.h:21
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr "أخف الملاحظات عند النقر على _سطح المكتب"
+msgstr "أخف الملاحظات عند النّقر على _سطح المكتب"
 
 #: ../stickynotes/stickynotes.ui.h:22
 msgid "Choose whether to hide all notes when selecting on the desktop"
@@ -2666,11 +2661,11 @@ msgstr "اختر ما إذا ستُخفى كل الملاحظات عند إظه�
 
 #: ../stickynotes/stickynotes.ui.h:23
 msgid "Force _default color and font on notes"
-msgstr "افرض اللون و الخط المبدئيين على كل الملاحظات"
+msgstr "افرض كلًا من اللّون و الخط الافتراضيين على كل الملاحظات"
 
 #: ../stickynotes/stickynotes.ui.h:24
 msgid "Choose if the default style is forced on all notes"
-msgstr "اختر فرض التنسيق المبدئي على كل الملاحظات"
+msgstr "اختر فرض التنسيق الافتراضي على كل الملاحظات"
 
 #: ../stickynotes/stickynotes.ui.h:25
 msgid "_Put notes on all workspaces"
@@ -2686,7 +2681,7 @@ msgstr "أأحذف هذه الملاحظة اللاصقة؟"
 
 #: ../stickynotes/stickynotes.ui.h:28
 msgid "This cannot be undone."
-msgstr "لا يمكن استرجاع هذا."
+msgstr "لا يُمكن التّراجع عن هذا."
 
 #: ../stickynotes/stickynotes.ui.h:29
 msgid "Delete all sticky notes?"
@@ -2722,23 +2717,23 @@ msgstr "الخصائص"
 
 #: ../stickynotes/stickynotes.ui.h:37
 msgid "Choose a font for the note"
-msgstr "اختر خطا للملاحظة"
+msgstr "اختر خطًا للملاحظة"
 
 #: ../stickynotes/stickynotes.ui.h:38
 msgid "Pick a font for the sticky note"
-msgstr "اختر خطا للملاحظة اللاصقة"
+msgstr "اختر خطًا للملاحظة اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:39
 msgid "Use default fo_nt"
-msgstr "استخدم ال_خط المبدئي"
+msgstr "استخدم ال_خط الافتراضي"
 
 #: ../stickynotes/stickynotes.ui.h:40
 msgid "Choose a color for the note"
-msgstr "اختر لونا للملاحظة"
+msgstr "اختر لونًا للملاحظة"
 
 #: ../stickynotes/stickynotes.ui.h:41
 msgid "Pick a color for the sticky note"
-msgstr "اختر لونا للملاحظة اللاصقة"
+msgstr "اختر لونًا للملاحظة اللاصقة"
 
 #: ../stickynotes/stickynotes.ui.h:42
 msgid "Note _Color:"
@@ -2750,11 +2745,11 @@ msgstr "_لون الخط:"
 
 #: ../stickynotes/stickynotes.ui.h:44
 msgid "Use default co_lor"
-msgstr "استخدم ال_لون المبدئي"
+msgstr "استخدم ال_لون الافتراضي"
 
 #: ../stickynotes/stickynotes.ui.h:45
 msgid "Specify a title for the note"
-msgstr "حدد عنوانا للملاحظة"
+msgstr "حدّد عنوانًا للملاحظة"
 
 #: ../stickynotes/stickynotes.ui.h:46
 msgid "_Title:"
@@ -2762,49 +2757,49 @@ msgstr "ال_عنوان:"
 
 #: ../stickynotes/stickynotes.schemas.in.h:1
 msgid "Default width for new notes"
-msgstr "العرض المبدئي للملاحظات الجديدة"
+msgstr "العرض الافتراضي للملاحظات الجديدة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:2
 msgid "Default width for new sticky notes in pixels."
-msgstr "العرض المبدئي لملاحظة لاصقة جديدة بالبكسل."
+msgstr "العرض الافتراضي للملاحظة اللاصقة الجديدة بالبكسل."
 
 #: ../stickynotes/stickynotes.schemas.in.h:3
 msgid "Default height for new notes"
-msgstr "الارتفاع المبدئي للملاحظات الجديدة"
+msgstr "الارتفاع الافتراضي للملاحظات الجديدة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:4
 msgid "Default height for new sticky notes in pixels."
-msgstr "الارتفاع المبدئي للملاحظات اللاصقة الجديدة بالبكسل."
+msgstr "الارتفاع الافتراضي للملاحظات اللاصقة الجديدة بالبكسل."
 
 #: ../stickynotes/stickynotes.schemas.in.h:5
 msgid "Default color for new notes"
-msgstr "اللون المبدئي للملاحظات الجديدة"
+msgstr "اللون الافتراضي للملاحظات الجديدة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:6
 msgid ""
 "Default color for new sticky notes. This should be in html hex "
 "specification, for example \"#30FF50\"."
-msgstr "اللون المبدئي للملاحظات اللاصقة. يجب أن يكون بمواصفات html hex، مثلا \"#30FF50\"."
+msgstr "اللون الافتراضي للملاحظات اللاصقة. يجب أن يكون بمواصفات html hex، مثلا \"#30FF50\"."
 
 #: ../stickynotes/stickynotes.schemas.in.h:7
 msgid "Default color for font"
-msgstr "اللون المبدئي للخط"
+msgstr "اللون الافتراضي للخط"
 
 #: ../stickynotes/stickynotes.schemas.in.h:8
 msgid ""
 "Default font color for new sticky notes. This should be in html hex "
 "specification, for example \"#000000\"."
-msgstr "الخط المبدئي للملاحظات اللاصقة. يجب أن يكون بمواصفات html hex، مثلا \"#000000\"."
+msgstr "الخط الافتراضي للملاحظات اللاصقة. يجب أن يكون بمواصفات html hex، مثلا \"#000000\"."
 
 #: ../stickynotes/stickynotes.schemas.in.h:9
 msgid "Default font for new notes"
-msgstr "الخط المبدئي للملاحظات الجديدة"
+msgstr "الخط الافتراضي للملاحظات الجديدة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:10
 msgid ""
 "Default font for new sticky notes. This should be a Pango Font Name, for "
 "example \"Sans Italic 10\"."
-msgstr "الخط المبدئي للملاحظات اللاصقة الجديدة. يجب أن يكون اسم خط بانغو، مثلا \"Sans Italic 10\"."
+msgstr "الخط الافتراضي للملاحظات اللاصقة الجديدة. يجب أن يكون اسم خط بانغو، مثلا \"Sans Italic 10\"."
 
 #: ../stickynotes/stickynotes.schemas.in.h:11
 msgid "Sticky notes' workspace stickyness"
@@ -2814,50 +2809,50 @@ msgstr "التصاق الملاحظات اللاصقة على مساحات ال�
 msgid ""
 "Specifies whether the sticky notes are visible on ALL workspaces on the "
 "desktop, or not."
-msgstr "يحدد ما إذا كانت الملاحظات اللاصقة مرئية على جميع مساحات العمل أم لا."
+msgstr "يحدّد ما إذا كانت الملاحظات اللاصقة مرئية على جميع مساحات العمل أم لا."
 
 #: ../stickynotes/stickynotes.schemas.in.h:13
 msgid "Sticky notes' locked state"
-msgstr "حالة القفل للملاحظات اللاصقة"
+msgstr "حالة وصد للملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:14
 msgid "Specifies whether the sticky notes are locked (non-editable) or not."
-msgstr "يحدد ما إذا كانت الملاحظات اللاصقة موصدة أم لا (غير قالبة للتحرير)."
+msgstr "يحدّد ما إذا كانت الملاحظات اللاصقة موصدة أم لا (غير قالبة للتحرير)."
 
 #: ../stickynotes/stickynotes.schemas.in.h:15
 msgid "Date format of note's title"
-msgstr "هيئة التاريخ في عنوان الملاحظة"
+msgstr "صيغة التاريخ في عنوان الملاحظة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:16
 msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr "مبدئيا، عنوان الملاحظات اللاصقة هو التاريخ الحالي. هذه التهيئة مستخدمة؛ أي شيء يمكن تحليله من قبل ‪strftime()‬ مقبول."
+msgstr "بشكل افتراضي، عنوان الملاحظات اللاصقة هو التاريخ الحالي. هذه الصّيغة مستخدمة؛ أي شيء يمكن تحليله من قبل ‪strftime()‬ مقبول."
 
 #: ../stickynotes/stickynotes.schemas.in.h:17
 msgid "Whether to use the default system color"
-msgstr "ما إذا كان سيستخدم لون النظام المبدئي أم لا"
+msgstr "ما إذا كان سيستخدم لون النظام الافتراضي أم لا"
 
 #: ../stickynotes/stickynotes.schemas.in.h:18
 msgid ""
 "If this option is disabled, a custom color can be used as the default color "
 "for all sticky notes."
-msgstr "إذا عطّل هذا الخيار، سيمكن استخدام لون مخصّص كلون مبدئي لجميع الملاحظات اللّاصقة."
+msgstr "إذا عطّل هذا الخيار، سيمكن استخدام لون مخصّص كلون افتراضي لجميع الملاحظات اللّاصقة."
 
 #: ../stickynotes/stickynotes.schemas.in.h:19
 msgid "Whether to use the default system font"
-msgstr "ما إذا كان سيستخدم خط النظام المبدئي أم لا"
+msgstr "ما إذا كان سيستخدم خط النظام الافتراضي أم لا"
 
 #: ../stickynotes/stickynotes.schemas.in.h:20
 msgid ""
 "If this option is disabled, a custom font can be used as the default font "
 "for all sticky notes."
-msgstr "إذا عطّل هذا الخيار، سيمكن استخدام خط خاص كخط مبدئي لجميع الملاحظات اللّاصقة."
+msgstr "إذا عطّل هذا الخيار، سيمكن استخدام خط خاص كخط افتراضي لجميع الملاحظات اللّاصقة."
 
 #: ../stickynotes/stickynotes.schemas.in.h:21
 msgid "Whether to force the default color and font on all notes"
-msgstr "ما إذا سيجبر استخدام اللون و الخط المبدئيين على كل الملاحظات"
+msgstr "ما إذا سيجبر استخدام اللون و الخط الافتراضي على كل الملاحظات"
 
 #: ../stickynotes/stickynotes.schemas.in.h:22
 msgid ""
@@ -2867,21 +2862,21 @@ msgstr "إذا فعّل هذا الخيار، ستُتَجاهل الألوان 
 
 #: ../stickynotes/stickynotes.schemas.in.h:23
 msgid "Whether to hide all notes when the desktop is selected"
-msgstr ""
+msgstr "ما إذا ستُخفى كل الملاحظات عند إظهار سطح المكتب"
 
 #: ../stickynotes/stickynotes.schemas.in.h:24
 msgid ""
 "If this option is enabled, selecting the desktop in any way will "
 "automatically hide all the open notes."
-msgstr "عند تفعيل هذا الخيار ، تحديد سطح المكتب بأى طريقة سيخفي كل الملاحظات المفتوحة تلقائيًا."
+msgstr "عند تفعيل هذا الخيار ، النّقر في سطح المكتب بأي طريقة سيخفي كل الملاحظات المفتوحة تلقائيًا."
 
 #: ../stickynotes/stickynotes.schemas.in.h:25
 msgid "Whether to ask for confirmation when deleting a note"
-msgstr "ما إذا يجب السؤال عن تأكيد عند حذف ملاحظة"
+msgstr "ما إذا وجب السؤال عن تأكيد عند حذف ملاحظة"
 
 #: ../stickynotes/stickynotes.schemas.in.h:26
 msgid "Empty notes are always deleted without confirmation."
-msgstr "الملاحظات الفارغة تُحذف دائما دون طلب تأكيد."
+msgstr "الملاحظات الفارغة تُحذف دومًا دون طلب تأكيد."
 
 #: ../stickynotes/stickynotes_applet.c:36
 msgid "Hi_de Notes"
@@ -2912,277 +2907,277 @@ msgstr "اعرض الملاحظات اللاصقة"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:421
 msgid "Sticky Notes for the MATE Desktop Environment"
-msgstr "ملاحظات لاصقة لبيئة سطح المكتب جنوم"
+msgstr "ملاحظات لاصقة لبيئة سطح المكتب متّة"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:1
 msgid "Timer Applet Factory"
-msgstr ""
+msgstr "مصنع بريمج المؤقّت"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:2
 msgid "A Timer Applet factory that creates Timer Applets"
-msgstr ""
+msgstr "مصنع بريمج المؤقّت لصناعة بريمجات مؤقّتية"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:3
 msgid "Timer"
-msgstr ""
+msgstr "مؤقّت"
 
 #: ../timer-applet/data/TimerApplet.server.in.in.h:4
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
+msgstr "ابدأ مؤقّتًا و استقبل إشعارًا بالإكمال"
 
 #: ../timer-applet/data/TimerApplet.xml.h:1
 msgid "Pa_use"
-msgstr ""
+msgstr "ألبِ_ث"
 
 #: ../timer-applet/data/TimerApplet.xml.h:2
 msgid "_Continue"
-msgstr ""
+msgstr "اس_تمر"
 
 #: ../timer-applet/data/TimerApplet.xml.h:3
 msgid "_Stop"
-msgstr ""
+msgstr "ت_وقّف"
 
 #: ../timer-applet/data/TimerApplet.xml.h:4
 msgid "R_estart"
-msgstr ""
+msgstr "أعِد"
 
 #: ../timer-applet/data/TimerApplet.xml.h:5
 msgid "Next"
-msgstr ""
+msgstr "التّالي"
 
 #: ../timer-applet/data/TimerApplet.xml.h:6
 msgid "Pre_sets"
-msgstr ""
+msgstr "الا_فتراضيات"
 
 #: ../timer-applet/data/TimerApplet.xml.h:7
 msgid "Ma_nage Presets"
-msgstr ""
+msgstr "أدِر الإعدادات الافتراضية"
 
 #: ../timer-applet/data/timer-applet.glade.h:1
 msgid "Start Timer"
-msgstr ""
+msgstr "ابدأ المؤقّت"
 
 #: ../timer-applet/data/timer-applet.glade.h:2
 msgid "_Name:"
-msgstr ""
+msgstr "الا_سم:"
 
 #: ../timer-applet/data/timer-applet.glade.h:3
 msgid "Start automatically"
-msgstr ""
+msgstr "ابدأ تلقائيًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:4
 msgid "<b>Define next timer</b>"
-msgstr ""
+msgstr "<b>عرّف المؤقت التالي</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:5
 msgid "Execute:"
-msgstr ""
+msgstr "تنفيذ:"
 
 #: ../timer-applet/data/timer-applet.glade.h:6
 msgid "<b>Run custom command</b>"
-msgstr ""
+msgstr "<b>شغّل أمرًا مخصّصًا</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:7
 msgid "Run executable after timer finished."
-msgstr ""
+msgstr "شغّل تطبيقًا بعد انتهاء المؤقّت."
 
 #: ../timer-applet/data/timer-applet.glade.h:8
 msgid "Advanced"
-msgstr ""
+msgstr "متقدّم"
 
 #: ../timer-applet/data/timer-applet.glade.h:9
 msgid "S_ave as Preset"
-msgstr ""
+msgstr "احفظه ك_افتراضي"
 
 #: ../timer-applet/data/timer-applet.glade.h:10
 msgid "Mana_ge Presets"
-msgstr ""
+msgstr "أدِر الافتراضيا_ت"
 
 #: ../timer-applet/data/timer-applet.glade.h:11
 msgid "<b>_Presets</b>"
-msgstr ""
+msgstr "<b>الاف_تراضيات</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:12
 msgid "S_tart Timer"
-msgstr ""
+msgstr "ابدأ الم_ؤقّت"
 
 #: ../timer-applet/data/timer-applet.glade.h:13
 msgid "Manage Presets"
-msgstr ""
+msgstr "أدِر الافتراضيات"
 
 #: ../timer-applet/data/timer-applet.glade.h:14
 msgid "_Delete"
-msgstr ""
+msgstr "ا_حذف"
 
 #: ../timer-applet/data/timer-applet.glade.h:15
 msgid "_Edit..."
-msgstr ""
+msgstr "_حرّر..."
 
 #: ../timer-applet/data/timer-applet.glade.h:16
 msgid "_Add..."
-msgstr ""
+msgstr "أ_ضف..."
 
 #: ../timer-applet/data/timer-applet.glade.h:17
 msgid "Timer Preferences"
-msgstr ""
+msgstr "تفضيلات المؤقّت"
 
 #: ../timer-applet/data/timer-applet.glade.h:18
 msgid "_Show remaining time while timer is running"
-msgstr ""
+msgstr "أظهِر الوقت المتبقي أ_ثناء عمل المؤقّت"
 
 #: ../timer-applet/data/timer-applet.glade.h:19
 msgid "_Play notification sound"
-msgstr ""
+msgstr "ش_غّل تنبيهًا صوتيًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:20
 msgid "Use d_efault sound"
-msgstr ""
+msgstr "استخد_م الصوت الافتراضي"
 
 #: ../timer-applet/data/timer-applet.glade.h:21
 msgid "Use c_ustom sound"
-msgstr ""
+msgstr "است_خدم صوتًا مخصّصًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:22
 msgid "Choose A Sound File"
-msgstr ""
+msgstr "اختر ملفًا صوتيًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:23
 msgid "_Show popup notification"
-msgstr ""
+msgstr "أظهر تنبي_هًا منبثقًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:24
 msgid "_Show popup notification after timer has ended."
-msgstr ""
+msgstr "أ_ظهر تنبيهًا منبثقًا بعد انتهاء المؤقّت."
 
 #: ../timer-applet/data/timer-applet.glade.h:25
 msgid "S_how pulsing panel icon"
-msgstr ""
+msgstr "أظه_ر رمزًا نابِضًا على الشّريط"
 
 #: ../timer-applet/data/timer-applet.glade.h:26
 msgid "Show pulsing panel icon after timer has ended."
-msgstr ""
+msgstr "أظهِر رمزًا نابضًا على الشّريط بعد انتهاء المؤقّت."
 
 #: ../timer-applet/data/timer-applet.glade.h:27
 #: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
 msgid "Add Preset"
-msgstr ""
+msgstr "أضف إعدادًا افتراضيًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:28
 msgid "<b>_Name</b>"
-msgstr ""
+msgstr "<b>_الاسم</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:29
 msgid "<b>_Duration</b>"
-msgstr ""
+msgstr "<b>الم_دّة</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:30
 msgid "Run custom command after timer has ended."
-msgstr ""
+msgstr "شغّل أمرًا مخصصًا بعد انتهاء المؤقّت."
 
 #: ../timer-applet/data/timer-applet.glade.h:31
 msgid "<b>Custom command</b>"
-msgstr ""
+msgstr "<b>الأمر المُخصّص</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:32
 msgid "Initiate automatically"
-msgstr ""
+msgstr "ابدأ تلقائيًا"
 
 #: ../timer-applet/data/timer-applet.glade.h:33
 msgid "<b>Interval timer</b>"
-msgstr ""
+msgstr "<b>مؤقت بفترات</b>"
 
 #: ../timer-applet/data/timer-applet.glade.h:34
 msgid "A timer applet for the perfect egg and beyond!"
-msgstr ""
+msgstr "بريمج المؤقّت للبيضة المثالية و ما بعدها!"
 
 #: ../timer-applet/data/timer-applet.glade.h:35
 msgid "Timer Applet"
-msgstr ""
+msgstr "بريمج المؤقّت"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:1
 msgid "Play notification sound"
-msgstr ""
+msgstr "شغّل تنبيهًا صوتيًا"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:2
 msgid "Play a notification sound when the timer finishes a countdown"
-msgstr ""
+msgstr "شغّل تنبيهًا صوتيًا عندما ينهي المؤقّت عدّه التّنازلي"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:3
 msgid "Use a custom notification sound"
-msgstr ""
+msgstr "استخدم تنبيهًا صوتيًا مخصّصًا"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:4
 msgid ""
 "Use the custom notification sound specified in "
 "custom_notification_sound_path"
-msgstr ""
+msgstr "استخدم التّنبيه الصّوتي المخصّص المحدّد في custom_notification_sound_path"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:5
 msgid "Path to a custom notification sound"
-msgstr ""
+msgstr "مسار التّنبيه الصّوتي المُخصّص"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:6
 msgid ""
 "Path to a sound file that will be played when the timer finishes a countdown"
-msgstr ""
+msgstr "المسار الذي يؤدّي إلى الملف الصّوتي الذي سيحاول المؤقّت تشغيله عندما يُنهي عدّه التّنازلي"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:7
 msgid "Show Pulsing icon"
-msgstr ""
+msgstr "أظهر رمزًا نابِضًا"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:8
 msgid "Show pulsing tray icon when timer finished"
-msgstr ""
+msgstr "أظهر رمزًا نابِضًا في صينية النّظام عند انتهاء المؤّقت"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:9
 msgid "Show Popup notification"
-msgstr ""
+msgstr "أظهر تنبيهًا مُنبثقًا"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:10
 msgid "Show Popup notification in the notification area"
-msgstr ""
+msgstr "أظهر تنبيهًا مُنبثقًا في مساحة التّنبيهات"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:11
 msgid "Show remaining time"
-msgstr ""
+msgstr "أظهر الوقت المُتبقي"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:12
 msgid "Show the remaining time while the timer is running or paused"
-msgstr ""
+msgstr "أظهر الوقت المُتبقي أثناء عمل المؤقّت أو أثناء إلباثِه"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:13
 msgid "Play a beep sound"
-msgstr ""
+msgstr "شغّل صافرة صوتية"
 
 #: ../timer-applet/data/timer-applet.schemas.in.h:14
 msgid ""
 "Play a beep sound on a computer's internal speaker when the timer finishes. "
 "This may not have an effect on all computers."
-msgstr ""
+msgstr "شغّل صافرةً صوتية في سماعة الحاسب الدّاخلية عند انتهاء المؤقّت. قد لا تتوفّر على حاسبك."
 
 #: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
 msgid "Edit Preset"
-msgstr ""
+msgstr "حرر الافتراضي"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
 msgid "Continue timer countdown?"
-msgstr ""
+msgstr "أيستمر عدّ المؤقّت التّنازلي؟"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
 msgid "The timer is currently paused. Would you like to continue countdown?"
-msgstr ""
+msgstr "المؤقّت مُلبَثٌ حاليًا. هل ترغب باستمراريته؟"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:193
 msgid "Click to start a new timer countdown."
-msgstr ""
+msgstr "انقر لبدء عدٍّ تنازلي مؤقّتي جديد."
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:198
 msgid "Paused. Click to continue timer countdown."
-msgstr ""
+msgstr "مُلبَث. انقر لاستمرارية العد التّنازلي للمؤقّت."
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:201
 msgid "Finished"
-msgstr ""
+msgstr "انتهى"
 
 #. "<timer name>" finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:206
@@ -3190,7 +3185,7 @@ msgstr ""
 msgid ""
 "\"%s\" finished at %s.\n"
 "Click to stop timer."
-msgstr ""
+msgstr "\"%s\" انتهى في %s.\nانقر لإيقاف المؤقّت."
 
 #. Timer finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:209
@@ -3198,108 +3193,108 @@ msgstr ""
 msgid ""
 "Timer finished at %s.\n"
 "Click to stop timer."
-msgstr ""
+msgstr "انتهى المؤقّت في %s.\nانقر لإيقافه."
 
 #. HH:MM:SS (<timer name>)
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:385
 #, python-format
 msgid "%02d:%02d:%02d (%s)"
-msgstr ""
+msgstr "%02d:%02d:%02d (%s)"
 
 #. HH:MM:SS
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:388
 #: ../timer-applet/src/timerapplet/utils.py:52
 #, python-format
 msgid "%02d:%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d:%02d"
 
 #. "<timer name>" Finished
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:410
 #, python-format
 msgid "\"%s\" Finished"
-msgstr ""
+msgstr "\"%s\" انتهى"
 
 #. "<timer name>" finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:413
 #, python-format
 msgid "\"%s\" finished at %s"
-msgstr ""
+msgstr "\"%s\" انتهى في \"%s\""
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
 msgid "Timer Finished"
-msgstr ""
+msgstr "انتهى المؤقّت"
 
 #. Timer finished at <time>
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:418
 #, python-format
 msgid "Timer finished at %s"
-msgstr ""
+msgstr "انتهى المؤقّت في %s"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:425
 #, python-format
 msgid "Timer finished about <b>%d second</b> ago"
 msgid_plural "Timer finished about <b>%d seconds</b> ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
+msgstr[1] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
+msgstr[2] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
+msgstr[3] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
+msgstr[4] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
+msgstr[5] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
 
 #: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:430
 #, python-format
 msgid "Timer finished about <b>%d minute</b> ago"
 msgid_plural "Timer finished about <b>%d minutes</b> ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
+msgstr[1] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
+msgstr[2] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
+msgstr[3] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
+msgstr[4] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
+msgstr[5] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
 msgid "Continue Timer"
-msgstr ""
+msgstr "واصل المؤقّت"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
 msgid "_Stop Timer"
-msgstr ""
+msgstr "_أوقف المؤقّت"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
 msgid "_Keep Paused"
-msgstr ""
+msgstr "أبقهِ مُلب_ثًا"
 
 #: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
 msgid "_Continue Timer"
-msgstr ""
+msgstr "واصل المؤ_قّت"
 
 #: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
 msgid "<b>Command not found.</b>"
-msgstr ""
+msgstr "<b>الأمر غير موجود.</b>"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
 msgid "Start Next Timer"
-msgstr ""
+msgstr "ابدأ المؤقّت التّالي"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
 msgid "_Don't start next timer"
-msgstr ""
+msgstr "لا تبدأ الم_ؤقّت التّالي"
 
 #: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
 msgid "_Start next timer"
-msgstr ""
+msgstr "ا_بدأ المُؤقّت التّالي"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
 msgid "_Hours:"
-msgstr ""
+msgstr "_ساعات:"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
 msgid "_Minutes:"
-msgstr ""
+msgstr "_دقائق:"
 
 #: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
 msgid "_Seconds:"
-msgstr ""
+msgstr "_ثوانٍ:"
 
 #. HH:MM
 #. MM:SS
@@ -3307,13 +3302,13 @@ msgstr ""
 #: ../timer-applet/src/timerapplet/utils.py:59
 #, python-format
 msgid "%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d"
 
 #. <preset name> (HH:MM:SS)
 #: ../timer-applet/src/timerapplet/utils.py:69
 #, python-format
 msgid "%s (%02d:%02d:%02d)"
-msgstr ""
+msgstr "%s (%02d:%02d:%02d)"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
@@ -3344,20 +3339,20 @@ msgstr[5] "%Id عنصر في المهملات"
 
 #: ../trashapplet/src/trashapplet.c:136
 msgid "No Items in Trash"
-msgstr "لا عناصر في المهملات"
+msgstr "المهملات فارغة"
 
 #: ../trashapplet/src/trashapplet.c:378
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
 "%s"
-msgstr "خطأ أثناء بدأ نوتلس:\n%s"
+msgstr "خطأ أثناء بدء كاجا:\n%s"
 
 #: ../trashapplet/src/trashapplet.c:427
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
-msgstr "سلّة مهملات لجنوم تقطنُ في الشريط. يمكنك استخدامها لعرض المهملات أو اسحب وأسقطالعناصر إلى المهملات."
+msgstr "سلّة مهملات لمتّة تقطنُ في الشريط. يمكنك استخدامها لعرض المهملات أو اسحب وأسقط العناصر إلى المهملات."
 
 #: ../trashapplet/src/trashapplet.c:452
 msgid "Delete Immediately?"
@@ -3365,12 +3360,12 @@ msgstr "أأحذف في الحال؟"
 
 #: ../trashapplet/src/trashapplet.c:482
 msgid "Cannot move items to trash, do you want to delete them immediately?"
-msgstr "لا يمكن نقل العناصر إلى المهملات، هل تريد حذفها فورا؟"
+msgstr "لا يمكن نقل العناصر إلى المهملات، هل تريد حذفها فورًا؟"
 
 #: ../trashapplet/src/trashapplet.c:487
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
-msgstr "لا يمكن نقل بعض العناصر إلى المهملات، هل تريد حذفها فورا؟"
+msgstr "لا يمكن نقل بعض العناصر إلى المهملات، هل تريد حذفها فورًا؟"
 
 #: ../trashapplet/src/trashapplet.c:617
 msgid "Trash Applet"
@@ -3396,7 +3391,7 @@ msgstr "أأحذف كل العناصر من المهملات؟"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "إذا اخترت إفراغ المهملات، ستفقد كل العناصر الموجودة بها نهائيًا. رجاء ملاحظة إمكانية حذفهم بشكل منفصل."
+msgstr "إذا اخترت إفراغ المهملات، ستفقد كل العناصر الموجودة بها نهائيًا. لاحظ رجاءً إمكانية حذفهم بشكل منفصل."
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"
