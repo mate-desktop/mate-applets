@@ -48,7 +48,6 @@ investbindir = $(libdir)/invest-applet
 CLEANFILES = \
 	$(applet_DATA) \
 	$(applet_DATA).in \
-	$(service_in_files) \
 	$(service_in_files:.service.in=.service)
 
 
