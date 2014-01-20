@@ -24,9 +24,12 @@
 
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gdk/gdkkeysyms.h>
-#include <gdk/gdkx.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gdk/gdkkeysyms-compat.h>
+#endif
+#include <gdk/gdkx.h>
 #include <mate-panel-applet.h>
 #include <X11/XKBlib.h>
 
@@ -35,6 +38,12 @@
 
 #include <X11/keysymdef.h>
 #include "applet.h"
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define MATE_DESKTOP_USE_UNSTABLE_API
+#include <libmate-desktop/mate-desktop-utils.h>
+#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
+#endif
 
 static int xkb_base_event_type = 0;
 
@@ -382,21 +391,39 @@ static gboolean timer_reset_bouncekeys_image(gpointer user_data)
 
 static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sapplet, GtkWidget* widget, GdkPixbuf* base, GdkColor* fg, GdkColor* bg, gchar* glyphstring)
 {
-	GdkPixbuf* glyph_pixbuf, *alpha_pixbuf;
+	GdkPixbuf* glyph_pixbuf;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	cairo_t *cr;
+	cairo_surface_t *surface;
+#else
+	GdkPixbuf *alpha_pixbuf;
 	GdkPixmap* pixmap;
+#endif
 	PangoLayout* layout;
 	PangoRectangle ink, logic;
 	PangoContext* pango_context;
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GdkColormap* cmap;
 	GdkGC* gc;
 	GdkVisual* visual = gdk_visual_get_best();
+#endif
 	gint w = gdk_pixbuf_get_width(base);
 	gint h = gdk_pixbuf_get_height(base);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	surface = gdk_window_create_similar_surface (gdk_get_default_root_window (), CAIRO_CONTENT_COLOR_ALPHA, w, h);
+#else
 	pixmap = gdk_pixmap_new(NULL, gdk_pixbuf_get_width(base), gdk_pixbuf_get_height(base), visual->depth);
+#endif
 	pango_context = gtk_widget_get_pango_context(widget);
 	layout = pango_layout_new(pango_context);
 	pango_layout_set_alignment(layout, PANGO_ALIGN_CENTER);
 	pango_layout_set_text(layout, glyphstring, -1);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	cr = cairo_create (surface);
+	gdk_cairo_set_source_color (cr, bg);
+	cairo_paint (cr);
+	gdk_cairo_set_source_color (cr, fg);
+#else
 	gc = gdk_gc_new(GDK_DRAWABLE(pixmap));
 	cmap = gdk_drawable_get_colormap(GDK_DRAWABLE(pixmap));
 
@@ -417,9 +444,22 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 	gdk_gc_set_foreground(gc, fg);
 	gdk_gc_set_background(gc, bg);
 	gdk_gc_set_function(gc, GDK_COPY);
+#endif
 	pango_layout_get_pixel_extents(layout, &ink, &logic);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	cairo_move_to (cr, (w - ink.x - ink.width)/2, (h - ink.y - ink.height)/2);
+	pango_cairo_show_layout (cr, layout);
+	cairo_destroy (cr);
+#else
 	gdk_draw_layout(GDK_DRAWABLE(pixmap), gc, (w - ink.x - ink.width) / 2, (h - ink.y - ink.height) / 2, layout);
+#endif
 	g_object_unref(layout);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	glyph_pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0, w, h);
+	cairo_surface_destroy (surface);
+
+	return glyph_pixbuf;
+#else
 	glyph_pixbuf = gdk_pixbuf_get_from_drawable(NULL, pixmap, cmap, 0, 0, 0, 0, w, h);
 	g_object_unref(pixmap);
 	alpha_pixbuf = gdk_pixbuf_add_alpha(glyph_pixbuf, TRUE, bg->red >> 8, bg->green >> 8, bg->blue >> 8);
@@ -428,6 +468,7 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 	g_object_unref(G_OBJECT(gc));
 
 	return alpha_pixbuf;
+#endif
 }
 
 static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapplet, XkbAccessXNotifyEvent* event)
@@ -596,7 +637,7 @@ static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sap
 
 static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxStatusNotifyType notify_type, XkbEvent* event)
 {
-	GtkWindow* window;
+	GdkWindow* window;
 	gint i;
 
 	window = gtk_widget_get_window(GTK_WIDGET(sapplet->applet));
@@ -1180,6 +1221,7 @@ static void accessx_status_applet_resize(GtkWidget* widget, int size, gpointer u
 	/* TODO: either rescale icons to fit panel, or tile them when possible */
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void accessx_status_applet_background(MatePanelApplet* a, MatePanelAppletBackgroundType type, GdkColor* color, GdkPixmap* pixmap, gpointer user_data)
 {
 	AccessxStatusApplet* sapplet = user_data;
@@ -1217,6 +1259,7 @@ static void accessx_status_applet_background(MatePanelApplet* a, MatePanelApplet
 			break;
 	}
 }
+#endif
 
 static gboolean button_press_cb(GtkWidget* widget, GdkEventButton* event, AccessxStatusApplet* sapplet)
 {
@@ -1317,7 +1360,9 @@ static gboolean accessx_status_applet_fill(MatePanelApplet* applet)
 		"signal::destroy", accessx_status_applet_destroy, sapplet,
 		"signal::change_orient", accessx_status_applet_reorient, sapplet,
 		"signal::change_size", accessx_status_applet_resize, sapplet,
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		"signal::change_background", accessx_status_applet_background, sapplet,
+#endif
 		NULL);
 
 	g_signal_connect(sapplet->applet, "button_press_event", G_CALLBACK(button_press_cb), sapplet);
@@ -1349,6 +1394,8 @@ static gboolean accessx_status_applet_fill(MatePanelApplet* applet)
 	{
 		accessx_status_applet_reset(sapplet);
 	}
+
+	mate_panel_applet_set_background_widget (sapplet->applet, GTK_WIDGET (sapplet->applet));
 
 	return TRUE;
 }
