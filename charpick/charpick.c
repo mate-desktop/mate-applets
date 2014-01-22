@@ -7,7 +7,7 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 #ifdef HAVE_GUCHARMAP
-#	include <gucharmap/gucharmap.h>
+#include <gucharmap/gucharmap.h>
 #endif
 #include "charpick.h"
 

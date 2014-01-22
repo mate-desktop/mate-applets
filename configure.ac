@@ -24,8 +24,6 @@ DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
 MATE_ICON_THEME_REQUIRED=1.1.0
 LIBXML_REQUIRED=2.5.0
-GUCHARMAP2_REQUIRED=2.33.0
-GUCHARMAP_REQUIRED=1.4.0
 POLKIT_REQUIRED=0.92
 NETWORKMANAGER_REQUIRED=0.7
 dnl ***************************************************************************
@@ -108,11 +106,15 @@ case "$with_gtk" in
        GTK_REQUIRED=2.24.0
        LIBWNCK_API_VERSION=1.0
        LIBWNCK_REQUIRED=2.30.0
+       GUCHARMAP_API_VERSION=2
+       GUCHARMAP_REQUIRED=2.32.1
        ;;
   3.0) GTK_API_VERSION=3.0
        GTK_REQUIRED=3.0.0
        LIBWNCK_API_VERSION=3.0
        LIBWNCK_REQUIRED=3.0.0
+       GUCHARMAP_API_VERSION=2.90
+       GUCHARMAP_REQUIRED=3.0.0
        ;;
 esac
 dnl ***************************************************************************
@@ -264,22 +266,13 @@ AC_SUBST(UPOWER_LIBS)
 
 dnl -- check for gucharmap (optional) -----------------------------------------
 
-PKG_CHECK_EXISTS([gucharmap-2 >= $GUCHARMAP2_REQUIRED],
-                 [have_gucharmap=yes have_gucharmap_2=yes],[have_gucharmap_2=no])
-if test "$have_gucharmap_2" = "yes"; then
-      PKG_CHECK_MODULES([GUCHARMAP],[gucharmap-2 >= $GUCHARMAP2_REQUIRED])
-else
-      PKG_CHECK_MODULES([GUCHARMAP], [gucharmap >= $GUCHARMAP_REQUIRED],
-                        [have_gucharmap=yes],[have_gucharmap=no])
-fi
-
-if test "$have_gucharmap_2" = "yes"; then
-        AC_DEFINE([HAVE_GUCHARMAP_2],[1],[Define if gucharmap API is version 2])
-fi
+PKG_CHECK_EXISTS([gucharmap-$GUCHARMAP_API_VERSION >= $GUCHARMAP_REQUIRED],
+                 [have_gucharmap=yes], [have_gucharmap=no])
 if test "$have_gucharmap" = "yes"; then
-	AC_DEFINE([HAVE_GUCHARMAP],[1],[Gucharmap Available])
+	PKG_CHECK_MODULES([GUCHARMAP], [gucharmap-$GUCHARMAP_API_VERSION >= $GUCHARMAP_REQUIRED])
+	AC_DEFINE([HAVE_GUCHARMAP], [1] ,[Gucharmap Available])
 else
-  AC_MSG_WARN([*** 'charpick' applet will not be built with gucharmap support ***])
+  AC_MSG_WARN([*** 'charpick' applet will be built without gucharmap support ***])
 fi
 AC_SUBST(GUCHARMAP_CFLAGS)
 AC_SUBST(GUCHARMAP_LIBS)
@@ -733,7 +726,6 @@ mate-applets-$VERSION configure summary:
         - battstat                 $build_battstat_applet
         - charpick                 always
             - gucharmap support    $have_gucharmap
-            - gucharmap-2 support  $have_gucharmap_2
         - cpufreq                  $build_cpufreq_applet
             - building selector    $enable_selector
             - using PolicyKit      $HAVE_POLKIT
