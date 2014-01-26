@@ -36,6 +36,8 @@
 #define INTERVAL_KEY   "interval"
 #define SHOW_ICON_KEY  "show-icon"
 
+#define MAX_OUTPUT_LENGHT 30
+
 typedef struct
 {
     MatePanelApplet   *applet;
@@ -211,9 +213,19 @@ command_execute (CommandApplet *command_applet)
     {
         if ((output != NULL) && (output[0] != 0))
         {
-            if (g_str_has_suffix (output, "\n")) {
+            if (strlen(output) > MAX_OUTPUT_LENGHT)
+            {
+                GString *strip_output;
+                strip_output = g_string_new_len (output, MAX_OUTPUT_LENGHT);
+                g_free (output);
+                output = strip_output->str;
+                g_string_free (strip_output, FALSE);
+            }
+            if (g_str_has_suffix (output, "\n"))
+            {
                 output[strlen(output) - 1] = 0;
             }
+
             gtk_label_set_text (command_applet->label, output);
         }
         else
