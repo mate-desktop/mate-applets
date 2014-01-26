@@ -39,15 +39,22 @@
 typedef struct
 {
     MatePanelApplet   *applet;
+
     GSettings         *settings;
+
     GtkLabel          *label;
     GtkImage          *image;
     GtkHBox           *hbox;
+
+    gchar             *command;
+    gint               interval;
+
     guint              timeout_id;
 } CommandApplet;
 
 static void command_about_callback (GtkAction *action, CommandApplet *command_applet);
 static void command_settings_callback (GtkAction *action, CommandApplet *command_applet);
+static gboolean command_execute (CommandApplet *command_applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
     { "Properties", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK (command_settings_callback) },
@@ -66,6 +73,12 @@ command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_a
     {
         g_source_remove(command_applet->timeout_id);
         command_applet->timeout_id = 0;
+    }
+
+    if (command_applet->command != NULL)
+    {
+        g_free (command_applet->command);
+        command_applet->command = NULL;
     }
 
     g_object_unref (command_applet->settings);
@@ -143,27 +156,54 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
 
+static void
+settings_command_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
+{
+    gchar *command;
+
+    command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
+
+    if (command_applet->command)
+        g_free (command_applet->command);
+
+    if (command != NULL && command[0] != 0)
+        command_applet->command = command;
+    else
+        command_applet->command = g_strdup ("");
+}
+
+static void
+settings_interval_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
+{
+    gint interval;
+
+    interval = g_settings_get_int (command_applet->settings, INTERVAL_KEY);
+
+    /* minimum interval */
+    if (interval < 1)
+        interval = 1;
+
+    command_applet->interval = interval;
+
+    /* stop current timer */
+    if (command_applet->timeout_id != 0)
+    {
+        g_source_remove(command_applet->timeout_id);
+        command_applet->timeout_id = 0;
+    }
+
+    /* execute command to start new timer */
+    command_execute (command_applet);
+}
+
 static gboolean
 command_execute (CommandApplet *command_applet)
 {
     GError *error = NULL;
-    gchar *command = NULL;
     gchar *output = NULL;
-    gint interval = 0;
     gint ret = 0;
 
-    /* FIXME: use GSettings changed event */
-    interval = g_settings_get_int (command_applet->settings, INTERVAL_KEY);
-    command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
-
-    g_return_if_fail (command != NULL);
-    g_return_if_fail (command[0] != 0);
-
-    /* minimum interval */
-    if (interval <= 0)
-        interval = 1;
-
-    if (g_spawn_command_line_sync (command, &output, NULL, &ret, &error))
+    if (g_spawn_command_line_sync (command_applet->command, &output, NULL, &ret, &error))
     {
         if ((output != NULL) && (output[0] != 0))
         {
@@ -179,10 +219,9 @@ command_execute (CommandApplet *command_applet)
         gtk_label_set_text (command_applet->label, "#");
 
     g_free (output);
-    g_free (command);
 
     /* start timer for next execution */
-    command_applet->timeout_id = g_timeout_add_seconds (interval,
+    command_applet->timeout_id = g_timeout_add_seconds (command_applet->interval,
                                                         (GSourceFunc) command_execute,
                                                         command_applet);
 
@@ -203,6 +242,10 @@ command_applet_fill (MatePanelApplet* applet)
     command_applet = g_malloc0(sizeof(CommandApplet));
     command_applet->applet = applet;
     command_applet->settings = mate_panel_applet_settings_new (applet, COMMAND_SCHEMA);
+
+    command_applet->interval = g_settings_get_int (command_applet->settings, INTERVAL_KEY);
+    command_applet->command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
+
     command_applet->hbox = gtk_hbox_new (FALSE, 0);
     command_applet->image = gtk_image_new_from_icon_name ("terminal", 24);
     command_applet->label = gtk_label_new ("#");
@@ -229,6 +272,16 @@ command_applet_fill (MatePanelApplet* applet)
 
     g_signal_connect(G_OBJECT (command_applet->applet), "destroy",
                      G_CALLBACK (command_applet_destroy),
+                     command_applet);
+
+    /* GSettings signals */
+    g_signal_connect(command_applet->settings,
+                     "changed::" COMMAND_KEY,
+                     G_CALLBACK (settings_command_changed),
+                     command_applet);
+    g_signal_connect(command_applet->settings,
+                     "changed::" INTERVAL_KEY,
+                     G_CALLBACK (settings_interval_changed),
                      command_applet);
 
     /* set up context menu */
