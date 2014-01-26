@@ -36,7 +36,7 @@
 #define INTERVAL_KEY   "interval"
 #define SHOW_ICON_KEY  "show-icon"
 
-#define MAX_OUTPUT_LENGHT 30
+#define MAX_OUTPUT_LENGTH 30
 
 typedef struct
 {
@@ -213,10 +213,10 @@ command_execute (CommandApplet *command_applet)
     {
         if ((output != NULL) && (output[0] != 0))
         {
-            if (strlen(output) > MAX_OUTPUT_LENGHT)
+            if (strlen(output) > MAX_OUTPUT_LENGTH)
             {
                 GString *strip_output;
-                strip_output = g_string_new_len (output, MAX_OUTPUT_LENGHT);
+                strip_output = g_string_new_len (output, MAX_OUTPUT_LENGTH);
                 g_free (output);
                 output = strip_output->str;
                 g_string_free (strip_output, FALSE);
