@@ -706,6 +706,7 @@ timer-applet/src/timerapplet/Makefile
 timer-applet/src/timerapplet/controllers/Makefile
 timer-applet/src/timerapplet/core/Makefile
 timer-applet/src/timerapplet/ui/Makefile
+command/Makefile
 null_applet/Makefile
 ])
 

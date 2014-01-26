@@ -44,7 +44,8 @@ always_built_SUBDIRS = \
 	drivemount \
 	geyes \
 	stickynotes \
-	trashapplet
+	trashapplet \
+	command
 #	null_applet
 
 SUBDIRS = \
@@ -76,6 +77,7 @@ DIST_SUBDIRS = \
 	cpufreq \
 	invest-applet \
 	timer-applet \
+	command \
 	null_applet
 
 EXTRA_DIST = \
