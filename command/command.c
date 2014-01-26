@@ -116,10 +116,13 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
     table = gtk_table_new (3, 2, FALSE);
+    gtk_table_set_row_spacings (table, 6);
+    gtk_table_set_col_spacings (table, 12);
 
     gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
 
     widget = gtk_label_new (_("Command:"));
+    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
     gtk_table_attach (table, widget, 1, 2, 0, 1,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -129,7 +132,8 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
 
-    widget = gtk_label_new (_("Interval:"));
+    widget = gtk_label_new (_("Interval (seconds):"));
+    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
     gtk_table_attach (table, widget, 1, 2, 1, 2,
                       GTK_FILL, GTK_FILL,
                       0, 0);
