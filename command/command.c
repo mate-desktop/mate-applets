@@ -225,6 +225,8 @@ command_execute (CommandApplet *command_applet)
 
     if (g_spawn_command_line_sync (command_applet->command, &output, NULL, &ret, &error))
     {
+        gtk_widget_set_tooltip_text (GTK_WIDGET (command_applet->label), command_applet->command);
+
         if ((output != NULL) && (output[0] != 0))
         {
             /* check if output is a custom GKeyFile */
