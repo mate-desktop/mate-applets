@@ -31,11 +31,17 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 
+/* Applet constants */
+#define APPLET_ICON    "terminal"
+#define ERROR_OUTPUT   "#"
+
+/* GSettings constants */
 #define COMMAND_SCHEMA "org.mate.panel.applet.command"
 #define COMMAND_KEY    "command"
 #define INTERVAL_KEY   "interval"
 #define SHOW_ICON_KEY  "show-icon"
 
+/* Max output lenght accepted from commands */
 #define MAX_OUTPUT_LENGTH 30
 
 typedef struct
@@ -86,6 +92,7 @@ command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_a
     g_object_unref (command_applet->settings);
 }
 
+/* Show the about dialog */
 static void
 command_about_callback (GtkAction *action, CommandApplet *command_applet)
 {
@@ -97,10 +104,11 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
                           "authors", authors,
                           "comments", _("Shows the output of a command"),
                           "translator-credits", _("translator-credits"),
-                          "logo-icon-name", "terminal",
+                          "logo-icon-name", APPLET_ICON,
     NULL );
 }
 
+/* Show the preferences dialog */
 static void
 command_settings_callback (GtkAction *action, CommandApplet *command_applet)
 {
@@ -118,7 +126,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
     table = gtk_table_new (3, 2, FALSE);
-    gtk_table_set_row_spacings (table, 6);
+    gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
 
     gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
@@ -162,6 +170,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
 
+/* GSettings signal callbacks */
 static void
 settings_command_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
 {
@@ -213,6 +222,7 @@ command_execute (CommandApplet *command_applet)
     {
         if ((output != NULL) && (output[0] != 0))
         {
+            /* check output length */
             if (strlen(output) > MAX_OUTPUT_LENGTH)
             {
                 GString *strip_output;
@@ -221,6 +231,7 @@ command_execute (CommandApplet *command_applet)
                 output = strip_output->str;
                 g_string_free (strip_output, FALSE);
             }
+            /* remove last char if it is '\n' to avoid aligment problems */
             if (g_str_has_suffix (output, "\n"))
             {
                 output[strlen(output) - 1] = 0;
@@ -229,10 +240,10 @@ command_execute (CommandApplet *command_applet)
             gtk_label_set_text (command_applet->label, output);
         }
         else
-            gtk_label_set_text (command_applet->label, "#");
+            gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
     }
     else
-        gtk_label_set_text (command_applet->label, "#");
+        gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
 
     g_free (output);
 
@@ -250,7 +261,7 @@ command_applet_fill (MatePanelApplet* applet)
     CommandApplet *command_applet;
 
     g_set_application_name (_("Command Applet"));
-    gtk_window_set_default_icon_name ("terminal");
+    gtk_window_set_default_icon_name (APPLET_ICON);
 
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
     mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
@@ -263,8 +274,8 @@ command_applet_fill (MatePanelApplet* applet)
     command_applet->command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
 
     command_applet->hbox = gtk_hbox_new (FALSE, 0);
-    command_applet->image = gtk_image_new_from_icon_name ("terminal", 24);
-    command_applet->label = gtk_label_new ("#");
+    command_applet->image = gtk_image_new_from_icon_name (APPLET_ICON, 24);
+    command_applet->label = gtk_label_new (ERROR_OUTPUT);
     command_applet->timeout_id = 0;
 
     /* we add the Gtk label into the applet */
@@ -280,12 +291,6 @@ command_applet_fill (MatePanelApplet* applet)
 
     gtk_widget_show_all (GTK_WIDGET (command_applet->applet));
 
-    g_settings_bind (command_applet->settings,
-                     SHOW_ICON_KEY,
-                     command_applet->image,
-                     "visible",
-                     G_SETTINGS_BIND_DEFAULT);
-
     g_signal_connect(G_OBJECT (command_applet->applet), "destroy",
                      G_CALLBACK (command_applet_destroy),
                      command_applet);
@@ -299,6 +304,11 @@ command_applet_fill (MatePanelApplet* applet)
                      "changed::" INTERVAL_KEY,
                      G_CALLBACK (settings_interval_changed),
                      command_applet);
+    g_settings_bind (command_applet->settings,
+                     SHOW_ICON_KEY,
+                     command_applet->image,
+                     "visible",
+                     G_SETTINGS_BIND_DEFAULT);
 
     /* set up context menu */
     GtkActionGroup *action_group = gtk_action_group_new ("Command Applet Actions");
