@@ -70,11 +70,11 @@ static void command_settings_callback (GtkAction *action, CommandApplet *command
 static gboolean command_execute (CommandApplet *command_applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
-    { "Properties", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK (command_settings_callback) },
-    { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (command_about_callback) }
+    { "Preferences", GTK_STOCK_PROPERTIES, N_("_Preferences"), NULL, NULL, G_CALLBACK (command_settings_callback) },
+    { "About", GTK_STOCK_ABOUT, N_("_About"), NULL, NULL, G_CALLBACK (command_about_callback) }
 };
 
-static char *ui = "<menuitem name='Item 1' action='Properties' />"
+static char *ui = "<menuitem name='Item 1' action='Preferences' />"
                   "<menuitem name='Item 2' action='About' />";
 
 static void
