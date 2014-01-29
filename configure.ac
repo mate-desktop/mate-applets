@@ -543,6 +543,12 @@ AM_CONDITIONAL(BUILD_CPUFREQ_SELECTOR, test x$enable_selector = xyes)
 AM_CONDITIONAL(CPUFREQ_SELECTOR_SUID, test x$suid = xyes)
 
 dnl ***************************************************************************
+dnl *** timerapplet specific checks                                       ***
+dnl ***************************************************************************
+
+AM_CONDITIONAL(BUILD_TIMERAPPLET, test "x$HAVE_LIBNOTIFY" = "xyes")
+
+dnl ***************************************************************************
 dnl *** invest-applet specific checks                                       ***
 dnl ***************************************************************************
 
@@ -698,6 +704,7 @@ cpufreq/src/Makefile
 cpufreq/src/cpufreq-selector/Makefile
 cpufreq/pixmaps/Makefile
 cpufreq/help/Makefile
+timerapplet/Makefile
 timer-applet/Makefile
 timer-applet/data/Makefile
 timer-applet/images/Makefile
@@ -738,6 +745,7 @@ mate-applets-$VERSION configure summary:
         - modemlights              $BUILD_MODEM_LIGHTS
         - multiload                $build_gtop_applets
         - stickynotes              $enable_stickynotes
+        - timerapplet              $HAVE_LIBNOTIFY
         - trashapplet              always
         - timer-applet             $enable_timerapplet
 
