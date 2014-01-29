@@ -417,6 +417,7 @@ timer_applet_fill (MatePanelApplet* applet_widget)
 
     /* set up context menu */
     applet->action_group = gtk_action_group_new ("Timer Applet Actions");
+    gtk_action_group_set_translation_domain (applet->action_group, GETTEXT_PACKAGE);
     gtk_action_group_add_actions (applet->action_group, applet_menu_actions,
                                   G_N_ELEMENTS (applet_menu_actions), applet);
     mate_panel_applet_setup_menu (applet->applet, ui, applet->action_group);
