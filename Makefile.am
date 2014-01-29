@@ -39,10 +39,6 @@ if BUILD_TIMERAPPLET
 timerapplet_SUBDIR = timerapplet
 endif
 
-if BUILD_TIMER_APPLET
-timer_applet_SUBDIR = timer-applet
-endif
-
 always_built_SUBDIRS = \
 	charpick \
 	drivemount \
@@ -63,8 +59,7 @@ SUBDIRS = \
 	$(accessx_status_SUBDIR) \
 	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
-	$(timerapplet_SUBDIR) \
-	$(timer_applet_SUBDIR)
+	$(timerapplet_SUBDIR)
 
 DIST_SUBDIRS = \
 	po \
@@ -82,7 +77,6 @@ DIST_SUBDIRS = \
 	trashapplet \
 	cpufreq \
 	invest-applet \
-	timer-applet \
 	command \
 	null_applet
 

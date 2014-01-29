@@ -1,1 +1,0 @@
-SUBDIRS = data images src

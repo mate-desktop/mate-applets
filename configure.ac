@@ -438,15 +438,6 @@ enable_stickynotes="yes"
 AM_CONDITIONAL(BUILD_STICKYNOTES_APPLET, test "x$enable_stickynotes" = "xyes")
 
 dnl ***************************************************************************
-dnl *** Timer applet specific checks                                        ***
-dnl ***************************************************************************
-AC_ARG_ENABLE([timer-applet],
-    AC_HELP_STRING([--enable-timer-applet], [Enable the timer applet.]),
-    enable_timerapplet=$enableval,
-    enable_timerapplet=no)
-AM_CONDITIONAL(BUILD_TIMER_APPLET, test "x$enable_timerapplet" = "xyes")
-
-dnl ***************************************************************************
 dnl *** keyboard accessibility status applet check                          ***
 dnl ***************************************************************************
 
@@ -705,14 +696,6 @@ cpufreq/src/cpufreq-selector/Makefile
 cpufreq/pixmaps/Makefile
 cpufreq/help/Makefile
 timerapplet/Makefile
-timer-applet/Makefile
-timer-applet/data/Makefile
-timer-applet/images/Makefile
-timer-applet/src/Makefile
-timer-applet/src/timerapplet/Makefile
-timer-applet/src/timerapplet/controllers/Makefile
-timer-applet/src/timerapplet/core/Makefile
-timer-applet/src/timerapplet/ui/Makefile
 command/Makefile
 null_applet/Makefile
 ])
@@ -747,7 +730,6 @@ mate-applets-$VERSION configure summary:
         - stickynotes              $enable_stickynotes
         - timerapplet              $HAVE_LIBNOTIFY
         - trashapplet              always
-        - timer-applet             $enable_timerapplet
 
     Using DBUS:                    $HAVE_DBUS
     Using NetworkManager:          $HAVE_NETWORKMANAGER
