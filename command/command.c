@@ -346,6 +346,7 @@ command_applet_fill (MatePanelApplet* applet)
 
     /* set up context menu */
     GtkActionGroup *action_group = gtk_action_group_new ("Command Applet Actions");
+    gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
     gtk_action_group_add_actions (action_group, applet_menu_actions,
                                   G_N_ELEMENTS (applet_menu_actions), command_applet);
     mate_panel_applet_setup_menu (command_applet->applet, ui, action_group);
