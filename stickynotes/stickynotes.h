@@ -24,6 +24,13 @@
 #include <libwnck/libwnck.h>
 #include <stickynotes_applet.h>
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gtksourceview/gtksource.h>
+#else
+#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksourcebuffer.h>
+#endif
+
 typedef struct
 {
 	GtkWidget *w_window;		/* Sticky Note window */
@@ -47,6 +54,8 @@ typedef struct
 	GtkWidget *w_close;		/* Sticky Note close button */
 	GtkWidget *w_resize_se;		/* Sticky Note resize button (south east) */
 	GtkWidget *w_resize_sw;		/* Sticky Note resize button (south west) */
+
+	GtkSourceBuffer *buffer;	/* Sticky Note text buffer for undo/redo */
 
 	GtkToggleAction *ta_lock_toggle_item; /* Lock item in the popup menu */
 

@@ -432,9 +432,14 @@ AM_CONDITIONAL(BUILD_BATTSTAT_APPLET, test x$build_battstat_applet = xyes)
 dnl ***************************************************************************
 dnl *** Stickynotes specific checks                                         ***
 dnl ***************************************************************************
-# AC_ARG_ENABLE(stickynotes, [  --enable-stickynotes build stickynotes
-#                           [@<:@default: no, transparent upgrade to Tomboy@:>@]], enable_stickynotes="yes", enable_stickynotes="no")
-enable_stickynotes="yes"
+AC_ARG_ENABLE([stickynotes],
+    AC_HELP_STRING([--enable-stickynotes], [Enable stickynotes applet.]),
+    enable_stickynotes=$enableval,
+    enable_stickynotes=yes)
+if test "x$enable_stickynotes" = "xyes"; then
+    PKG_CHECK_MODULES(STICKYNOTES, gtksourceview-$GTK_API_VERSION,
+                      enable_stickynotes=yes, enable_stickynotes=no)
+fi
 AM_CONDITIONAL(BUILD_STICKYNOTES_APPLET, test "x$enable_stickynotes" = "xyes")
 
 dnl ***************************************************************************

@@ -12,6 +12,7 @@ if BUILD_STICKYNOTES_APPLET
 AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
+	$(STICKYNOTES_CFLAGS)		\
 	$(MATE_APPLETS4_CFLAGS)		\
 	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
@@ -33,6 +34,7 @@ stickynotes_applet_SOURCES = \
 	stickynotes_applet_callbacks.c
 
 stickynotes_applet_LDADD =	\
+	$(STICKYNOTES_LIBS)	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(LIBWNCK_LIBS)		\
 	$(XML2_LIBS) \

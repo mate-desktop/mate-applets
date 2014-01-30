@@ -775,6 +775,9 @@
       <action-widget response="-5">button4</action-widget>
     </action-widgets>
   </object>
+  <object class="GtkSourceBuffer" id="body_buffer">
+    <property name="max_undo_levels">-1</property>
+  </object>
   <object class="GtkWindow" id="stickynote_window">
     <property name="title" translatable="yes">Sticky Note</property>
     <child>
@@ -846,12 +849,13 @@
             <property name="hscrollbar_policy">never</property>
             <property name="vscrollbar_policy">never</property>
             <child>
-              <object class="GtkTextView" id="body_text">
+              <object class="GtkSourceView" id="body_text">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="wrap_mode">word</property>
                 <property name="left_margin">4</property>
                 <property name="right_margin">4</property>
+                <property name="buffer">body_buffer</property>
               </object>
             </child>
           </object>

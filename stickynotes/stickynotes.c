@@ -21,9 +21,17 @@
 #include <libxml/parser.h>
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
+#include <gtk/gtk.h>
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE 1
 #include <libwnck/libwnck.h>
 #include <string.h>
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gtksourceview/gtksource.h>
+#else
+#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksourcebuffer.h>
+#endif
 
 #include "stickynotes.h"
 #include "stickynotes_callbacks.h"
@@ -121,6 +129,8 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 	note->w_scroller = GTK_WIDGET (gtk_builder_get_object (builder, "body_scroller"));
 	note->w_lock = GTK_WIDGET (gtk_builder_get_object (builder, "lock_button"));
 	gtk_widget_add_events (note->w_lock, GDK_BUTTON_PRESS_MASK);
+
+	note->buffer = GTK_SOURCE_BUFFER(gtk_text_view_get_buffer(GTK_TEXT_VIEW(note->w_body)));
 
 	note->w_close = GTK_WIDGET (gtk_builder_get_object (builder, "close_button"));
 	gtk_widget_add_events (note->w_close, GDK_BUTTON_PRESS_MASK);
