@@ -443,15 +443,6 @@ fi
 AM_CONDITIONAL(BUILD_STICKYNOTES_APPLET, test "x$enable_stickynotes" = "xyes")
 
 dnl ***************************************************************************
-dnl *** Timer applet specific checks                                        ***
-dnl ***************************************************************************
-AC_ARG_ENABLE([timer-applet],
-    AC_HELP_STRING([--enable-timer-applet], [Enable the timer applet.]),
-    enable_timerapplet=$enableval,
-    enable_timerapplet=no)
-AM_CONDITIONAL(BUILD_TIMER_APPLET, test "x$enable_timerapplet" = "xyes")
-
-dnl ***************************************************************************
 dnl *** keyboard accessibility status applet check                          ***
 dnl ***************************************************************************
 
@@ -546,6 +537,12 @@ fi
 AM_CONDITIONAL(BUILD_CPUFREQ_APPLET, test x$build_cpufreq_applet = xyes)
 AM_CONDITIONAL(BUILD_CPUFREQ_SELECTOR, test x$enable_selector = xyes)
 AM_CONDITIONAL(CPUFREQ_SELECTOR_SUID, test x$suid = xyes)
+
+dnl ***************************************************************************
+dnl *** timerapplet specific checks                                       ***
+dnl ***************************************************************************
+
+AM_CONDITIONAL(BUILD_TIMERAPPLET, test "x$HAVE_LIBNOTIFY" = "xyes")
 
 dnl ***************************************************************************
 dnl *** invest-applet specific checks                                       ***
@@ -703,14 +700,7 @@ cpufreq/src/Makefile
 cpufreq/src/cpufreq-selector/Makefile
 cpufreq/pixmaps/Makefile
 cpufreq/help/Makefile
-timer-applet/Makefile
-timer-applet/data/Makefile
-timer-applet/images/Makefile
-timer-applet/src/Makefile
-timer-applet/src/timerapplet/Makefile
-timer-applet/src/timerapplet/controllers/Makefile
-timer-applet/src/timerapplet/core/Makefile
-timer-applet/src/timerapplet/ui/Makefile
+timerapplet/Makefile
 command/Makefile
 null_applet/Makefile
 ])
@@ -743,8 +733,8 @@ mate-applets-$VERSION configure summary:
         - modemlights              $BUILD_MODEM_LIGHTS
         - multiload                $build_gtop_applets
         - stickynotes              $enable_stickynotes
+        - timerapplet              $HAVE_LIBNOTIFY
         - trashapplet              always
-        - timer-applet             $enable_timerapplet
 
     Using DBUS:                    $HAVE_DBUS
     Using NetworkManager:          $HAVE_NETWORKMANAGER

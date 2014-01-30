@@ -35,8 +35,8 @@ if BUILD_INVEST_APPLET
 invest_applet_SUBDIR = invest-applet
 endif
 
-if BUILD_TIMER_APPLET
-timer_applet_SUBDIR = timer-applet
+if BUILD_TIMERAPPLET
+timerapplet_SUBDIR = timerapplet
 endif
 
 always_built_SUBDIRS = \
@@ -59,7 +59,7 @@ SUBDIRS = \
 	$(accessx_status_SUBDIR) \
 	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
-	$(timer_applet_SUBDIR)
+	$(timerapplet_SUBDIR)
 
 DIST_SUBDIRS = \
 	po \
@@ -73,10 +73,10 @@ DIST_SUBDIRS = \
 	man \
 	accessx-status \
 	stickynotes \
+	timerapplet \
 	trashapplet \
 	cpufreq \
 	invest-applet \
-	timer-applet \
 	command \
 	null_applet
 

@@ -1,0 +1,20 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.timer">
+    <key name="name" type="s">
+      <default>'Timer'</default>
+      <_summary>Name of timer</_summary>
+    </key>
+    <key name="duration" type="i">
+      <default>10</default>
+      <_summary>Duration of timer in seconds</_summary>
+    </key>
+    <key name="show-notification" type="b">
+      <default>true</default>
+      <_summary>Show notification popup when timer finish</_summary>
+    </key>
+    <key name="show-dialog" type="b">
+      <default>false</default>
+      <_summary>Show dialog window when timer finish</_summary>
+    </key>
+  </schema>
+</schemalist>
