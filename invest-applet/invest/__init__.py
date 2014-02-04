@@ -3,8 +3,11 @@ from os.path import join, exists, isdir, isfile, dirname, abspath, expanduser
 from types import ListType
 import datetime
 
+# Autotools set the actual data_dir in defs.py
+from defs import *
+
 import gi
-gi.require_version("Gtk", "2.0")
+gi.require_version("Gtk", GTK_API_VERSION)
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
@@ -14,8 +17,7 @@ import cPickle
 
 import networkmanager
 
-# Autotools set the actual data_dir in defs.py
-from defs import *
+
 
 DEBUGGING = False
 

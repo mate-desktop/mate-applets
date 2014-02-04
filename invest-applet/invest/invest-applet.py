@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#
+import mate_invest.defs
 
 import gi
-gi.require_version("Gtk", "2.0")
+gi.require_version("Gtk", mate_invest.GTK_API_VERSION)
 from gi.repository import Gtk
 from gi.repository import GObject
 from gi.repository import MatePanelApplet
@@ -22,7 +22,7 @@ else:
 	sys.path.insert(0, abspath("@PYTHONDIR@"))
 
 # Now the path is set, import our applet
-import mate_invest, mate_invest.applet, mate_invest.defs, mate_invest.help
+import mate_invest, mate_invest.applet, mate_invest.help
 
 # Prepare i18n
 import gettext, locale

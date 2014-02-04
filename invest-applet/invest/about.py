@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from os.path import join
 from gettext import gettext as _
-from mate_invest.defs import VERSION
+from mate_invest.defs import VERSION, GTK_API_VERSION
 import mate_invest
 
 import gi
-gi.require_version("Gtk", "2.0")
+gi.require_version("Gtk", GTK_API_VERSION)
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf

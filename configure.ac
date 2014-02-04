@@ -117,6 +117,8 @@ case "$with_gtk" in
        GUCHARMAP_REQUIRED=3.0.0
        ;;
 esac
+AC_SUBST(GTK_API_VERSION)
+
 dnl ***************************************************************************
 
 
