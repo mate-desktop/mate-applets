@@ -824,9 +824,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_window_set_title (GTK_WINDOW (pref), _("Weather Preferences"));
 	gtk_dialog_add_buttons (GTK_DIALOG (pref), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, GTK_STOCK_HELP, GTK_RESPONSE_HELP, NULL);
 	gtk_dialog_set_default_response (GTK_DIALOG (pref), GTK_RESPONSE_CLOSE);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	gtk_dialog_set_has_separator (GTK_DIALOG (pref), FALSE);
-#endif
 	gtk_container_set_border_width (GTK_CONTAINER (pref), 5);
 	gtk_window_set_resizable (GTK_WINDOW (pref), TRUE);
 	gtk_window_set_screen (GTK_WINDOW (pref), gtk_widget_get_screen (GTK_WIDGET (pref->priv->applet->applet)));

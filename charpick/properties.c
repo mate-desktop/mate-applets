@@ -549,9 +549,6 @@ show_preferences_dialog (GtkAction     *action,
   gtk_container_set_border_width (GTK_CONTAINER (curr_data->propwindow), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG (curr_data->propwindow))), 2);
   gtk_dialog_set_default_response (GTK_DIALOG (curr_data->propwindow), GTK_RESPONSE_CLOSE);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  gtk_dialog_set_has_separator (GTK_DIALOG (curr_data->propwindow), FALSE);
-#endif
 
   default_chars_frame_create(curr_data);
   g_signal_connect (G_OBJECT (curr_data->propwindow), "response",

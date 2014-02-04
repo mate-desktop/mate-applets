@@ -524,9 +524,6 @@ battery_full_dialog (GtkWidget *applet)
 #endif
 
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
-#endif
   hbox = gtk_hbox_new (FALSE, 6);
   pixbuf = gtk_icon_theme_load_icon (
 		gtk_icon_theme_get_default (),
@@ -691,10 +688,6 @@ battery_low_dialog( ProgressData *battery, BatteryStatus *info )
 
   gtk_container_set_border_width (GTK_CONTAINER (battery->battery_low_dialog),
 		  6);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  gtk_dialog_set_has_separator (GTK_DIALOG (battery->battery_low_dialog),
-		  FALSE);
-#endif
   hbox = gtk_hbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
   pixbuf = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),

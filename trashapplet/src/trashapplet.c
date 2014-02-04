@@ -464,9 +464,6 @@ confirm_delete_immediately (GtkWidget *parent_view,
   gtk_window_set_screen (GTK_WINDOW (dialog), screen);
   atk_object_set_role (gtk_widget_get_accessible (dialog), ATK_ROLE_ALERT);
   gtk_window_set_title (GTK_WINDOW (dialog), _("Delete Immediately?"));
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
-#endif
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
