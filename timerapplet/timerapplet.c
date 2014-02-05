@@ -361,7 +361,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
                       0, 0);
     g_settings_bind (applet->settings, SHOW_DIALOG_KEY, widget, "active", G_SETTINGS_BIND_DEFAULT);
 
-    gtk_box_pack_start_defaults (GTK_BOX (dialog->vbox), GTK_WIDGET (table));
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (table), TRUE, TRUE, 0);
 
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
