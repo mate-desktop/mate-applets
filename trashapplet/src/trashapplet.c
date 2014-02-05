@@ -403,7 +403,7 @@ trash_applet_show_help (GtkAction   *action,
 
   /* FIXME - Actually, we need a user guide */
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
-                "help:trashapplet",
+                "help:mate-trashapplet",
                 gtk_get_current_event_time (),
                 &err);
 
