@@ -610,7 +610,7 @@ help_cb (GtkAction     *action,
   GError *error = NULL;
 
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (curr_data->applet)),
-                "help:char-palette",
+                "help:mate-char-palette",
                 gtk_get_current_event_time (),
                 &error);
 

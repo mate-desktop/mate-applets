@@ -351,7 +351,7 @@ help_cb (GtkAction  *action,
 	GError *error = NULL;
 
 	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (eyes_applet->applet)),
-		"help:geyes",
+		"help:mate-geyes",
 		gtk_get_current_event_time (),
 		&error);
 

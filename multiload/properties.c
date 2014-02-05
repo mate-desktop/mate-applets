@@ -84,7 +84,7 @@ properties_close_cb (GtkWidget *widget, gint arg, MultiloadApplet *ma)
 		case GTK_RESPONSE_HELP:
 
 			gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (ma->applet)),
-					"help:multiload?multiload-prefs",
+					"help:mate-multiload/multiload-prefs",
 					gtk_get_current_event_time (),
 					&error);
 

@@ -1358,9 +1358,9 @@ battstat_show_help( ProgressData *battstat, const char *section )
   char *uri;
 
   if (section)
-    uri = g_strdup_printf ("help:battstat?%s", section);
+    uri = g_strdup_printf ("help:mate-battstat/%s", section);
   else
-    uri = g_strdup ("help:battstat");
+    uri = g_strdup ("help:mate-battstat");
 
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (battstat->applet)),
                 uri,

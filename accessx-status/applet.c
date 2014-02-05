@@ -156,7 +156,7 @@ static void help_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 	GError* error = NULL;
 	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(sapplet->applet));
 
-	gtk_show_uri(screen, "help:accessx-status", gtk_get_current_event_time(), &error);
+	gtk_show_uri(screen, "help:mate-accessx-status", gtk_get_current_event_time(), &error);
 
 	if (error)
 	{
