@@ -163,7 +163,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
 
-    gtk_box_pack_start_defaults (GTK_BOX (dialog->vbox), table);
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), table, TRUE, TRUE, 0);
 
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
