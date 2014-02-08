@@ -58,8 +58,10 @@ class QuotesRetriever(Thread, _IdleObject):
 		self.retrieved = False
 		self.data = []
 		self.currencies = []
+                invest.debug("QuotesRetriever created");
 
 	def run(self):
+                invest.debug("QuotesRetriever started");
 		quotes_url = QUOTES_URL % {"s": self.tickers}
 		try:
 			quotes_file = urlopen(quotes_url, proxies = mate_invest.PROXY)
@@ -115,12 +117,16 @@ class QuoteUpdater(Gtk.ListStore):
 			return False
 
 		if len(mate_invest.STOCKS) == 0:
+                        invest.debug("No stocks configured")
 			return True
 
 		tickers = '+'.join(mate_invest.STOCKS.keys())
+                invest.debug("creating QuotesRetriever")
 		quotes_retriever = QuotesRetriever(tickers)
 		quotes_retriever.connect("completed", self.on_retriever_completed)
+                invest.debug("starting QuotesRetriever")
 		quotes_retriever.start()
+                invest.debug("started QuotesRetriever")
 
 		return True
 
@@ -135,12 +141,14 @@ class QuoteUpdater(Gtk.ListStore):
 
 	def on_retriever_completed(self, retriever):
 		if retriever.retrieved == False:
+                        invest.debug("QuotesRetriever failed");
 			tooltip = [_('Invest could not connect to Yahoo! Finance')]
 			if self.last_updated != None:
 				# Translators: %s is an hour (%H:%M)
 				tooltip.append(_('Updated at %s') % self.last_updated.strftime("%H:%M"))
 			self.set_tooltip_callback('\n'.join(tooltip))
 		else:
+                        invest.debug("QuotesRetriever completed");
 			self.populate(self.parse_yahoo_csv(csv.reader(retriever.data)))
 			self.updated = True
 			self.last_updated = datetime.datetime.now()
