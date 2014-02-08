@@ -104,9 +104,15 @@ class FinancialChart:
 	def __init__(self, ui):
 		self.ui = ui
 		
-		#Time ranges of the plot
+		#Time ranges of the plot (parameter / combo-box t)
 		self.time_ranges = ["1d", "5d", "3m", "6m", "1y", "5y", "my"]
 		
+		#plot types (parameter / combo-box q)
+		self.plot_types = ["l", "b", "c"]
+
+		#plot scales (parameter / combo-box l)
+		self.plot_scales = ["off", "on"]
+
 		# Window Properties
 		win = ui.get_object("window")
 		win.set_title(_("Financial Chart"))
@@ -119,7 +125,7 @@ class FinancialChart:
 			pass
 		
 		# Defaut comboboxes values
-		for widget in ["t", "q"]:
+		for widget in ["t", "q", "l"]:
 			ui.get_object(widget).set_active(0)
 		
 		# Connect every option widget to its corresponding change signal	
@@ -131,7 +137,7 @@ class FinancialChart:
 			"pe5","pe10", "pe20","pe50","pe100","pe200",
 			"pb","pp","ps","pv",
 			"ar","af","ap","aw","am","ass","afs","av","avm"), "toggled"),
-			(("t", "q"), "changed"),
+			(("t", "q", "l"), "changed"),
 			(("s",), "activate"),
 		]:
 			for widget in widgets:
@@ -215,8 +221,8 @@ class FinancialChart:
 		url = chart_base_url % {
 			"s": tickers[0],
 			"t": self.time_ranges[self.ui.get_object("t").get_active()],
-			"q": self.ui.get_object("q").get_active_text(),
-			"l": "off",
+			"q": self.plot_types[self.ui.get_object("q").get_active()],
+			"l": self.plot_scales[self.ui.get_object("l").get_active()],
 			"z": "l",
 			"p": p,
 			"a": a,
