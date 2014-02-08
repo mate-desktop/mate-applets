@@ -279,6 +279,11 @@ class QuoteUpdater(Gtk.ListStore):
 			for ticker, val in quote_items:
 				pb = None
 
+                                # ignore unknown stocks
+                                if ticker not in invest.STOCKS.keys():
+                                    invest.debug("Observed unknown stock: %s" % ticker)
+                                    continue
+
 				# get the label of this stock for later reuse
 				label = mate_invest.STOCKS[ticker]["label"]
 				if len(label) == 0:
