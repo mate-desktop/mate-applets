@@ -149,6 +149,8 @@ try:
 except Exception, msg:
 	CONFIG = {}       # default configuration
 
+QUOTES_FILE = join(USER_INVEST_DIR, "quotes.csv")
+
 
 # set default proxy config
 PROXY = None

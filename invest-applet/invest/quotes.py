@@ -1,4 +1,4 @@
-from os.path import join
+from os.path import join, getmtime
 from mate_invest.defs import GTK_API_VERSION
 
 import gi
@@ -65,7 +65,7 @@ class QuotesRetriever(Thread, _IdleObject):
 		quotes_url = QUOTES_URL % {"s": self.tickers}
 		try:
 			quotes_file = urlopen(quotes_url, proxies = mate_invest.PROXY)
-			self.data = quotes_file.readlines ()
+			self.data = quotes_file.read ()
 			quotes_file.close ()
 		except Exception, msg:
 			mate_invest.debug("Error while retrieving quotes data (url = %s): %s" % (quotes_url, msg))
@@ -86,10 +86,36 @@ class QuoteUpdater(Gtk.ListStore):
 		self.change_icon_callback = change_icon_callback
 		self.set_tooltip_callback = set_tooltip_callback
 		self.set_sort_column_id(1, Gtk.SortType.ASCENDING)
-		self.refresh()
+		self.load()	# read the last cached quotes file
+		self.refresh()	# download a new quotes file, this may fail if disconnected
 
 		# tell the network manager to notify me when network status changes
 		mate_invest.nm.set_statechange_callback(self.nm_state_changed)
+
+	# loads the cached csv file and its last-modification-time as self.last_updated
+	def load(self):
+		invest.debug("Loading quotes");
+		try:
+			f = open(invest.QUOTES_FILE, 'r')
+			data = f.readlines()
+			f.close()
+
+			self.populate(self.parse_yahoo_csv(csv.reader(data)))
+			self.updated = True
+			self.last_updated = datetime.datetime.fromtimestamp(getmtime(invest.QUOTES_FILE))
+			self.update_tooltip()
+		except Exception, msg:
+			invest.error("Could not load the cached quotes file %s: %s" % (invest.QUOTES_FILE, msg) )
+
+	# stores the csv content on disk so it can be used on next start up
+	def save(self, data):
+		invest.debug("Storing quotes")
+		try:
+			f = open(invest.QUOTES_FILE, 'w')
+			f.write(data)
+			f.close()
+		except Exception, msg:
+			invest.error("Could not save the retrieved quotes file to %s: %s" % (invest.QUOTES_FILE, msg) )
 
 	def set_update_interval(self, interval):
 		if self.timeout_id != None:
@@ -142,17 +168,14 @@ class QuoteUpdater(Gtk.ListStore):
 	def on_retriever_completed(self, retriever):
 		if retriever.retrieved == False:
                         invest.debug("QuotesRetriever failed");
-			tooltip = [_('Invest could not connect to Yahoo! Finance')]
-			if self.last_updated != None:
-				# Translators: %s is an hour (%H:%M)
-				tooltip.append(_('Updated at %s') % self.last_updated.strftime("%H:%M"))
-			self.set_tooltip_callback('\n'.join(tooltip))
+                        self.update_tooltip(_('Invest could not connect to Yahoo! Finance'))
+
 		else:
                         invest.debug("QuotesRetriever completed");
-			self.populate(self.parse_yahoo_csv(csv.reader(retriever.data)))
-			self.updated = True
-			self.last_updated = datetime.datetime.now()
-			self.update_tooltip()
+                        # cache the retrieved csv file
+                        self.save(retriever.data)
+                        # load the cache and parse it
+                        self.load()
 
 	def on_currency_retriever_completed(self, retriever):
 		if retriever.retrieved == False:
@@ -161,7 +184,7 @@ class QuoteUpdater(Gtk.ListStore):
 			self.convert_currencies(self.parse_yahoo_csv(csv.reader(retriever.data)))
 		self.update_tooltip()
 
-	def update_tooltip(self):
+	def update_tooltip(self, msg = None):
 		tooltip = []
 		if self.quotes_count > 0:
 			# Translators: This is share-market jargon. It is the average percentage change of all stock prices. The %s gets replaced with the string value of the change (localized), including the percent sign.
@@ -175,7 +198,10 @@ class QuoteUpdater(Gtk.ListStore):
 
 			# Translators: This is share-market jargon. It refers to the total difference between the current price and purchase price for all the shares put together for a particular currency. i.e. How much money would be earned if they were sold right now. The first string is the change value, the second the currency, and the third value is the percentage of the change, formatted using user's locale.
 			tooltip.append(_('Positions balance: %s %s (%s)') % (balance, currency, change))
-		tooltip.append(_('Updated at %s') % self.last_updated.strftime("%H:%M"))
+		if self.last_updated != None:
+			tooltip.append(_('Updated at %s') % self.last_updated.strftime("%H:%M"))
+		if msg != None:
+			tooltip.append(msg)
 		self.set_tooltip_callback('\n'.join(tooltip))
 
 
