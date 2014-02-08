@@ -131,72 +131,69 @@ class InvestmentsListWindow(Gtk.Window):
 		"""
 		self.realize()
 
+		window = self.applet.get_window()
+		screen = window.get_screen()
+		monitor = screen.get_monitor_geometry (screen.get_monitor_at_window (window))
+
 		# Get our own dimensions & position
 		#(wx, wy) = self.get_origin()
-		ax=0
-		ay=0
-		#FIXME this doesnt work with gir
-		self.applet.window.get_origin(ax, ay)
+		(ret, ax, ay) = window.get_origin()
 
-		(ww, wh) = self.get_size ()
-		(aw, ah) = self.applet.window.get_size ()
-
-		screen = self.applet.get_screen()
-		monitor = Gdk.Rectangle(0, 0, 0, 0)
-		screen.get_monitor_geometry (screen.get_monitor_at_window (self.applet.window), monitor)
+		(ww, wh) = self.get_size()
+		(ignored, ignored, aw, ah) = window.get_geometry()
 
 		if self.alignment == MatePanelApplet.AppletOrient.LEFT:
-				x = ax - ww
-				y = ay
+			x = ax - ww
+			y = ay
 
-				if (y + wh > monitor.y + monitor.height):
-					y = monitor.y + monitor.height - wh
+			if (y + wh > monitor.y + monitor.height):
+				y = monitor.y + monitor.height - wh
 
-				if (y < 0):
-					y = 0
-				
-				if (y + wh > monitor.height / 2):
-					gravity = Gdk.Gravity.SOUTH_WEST
-				else:
-					gravity = Gdk.Gravity.NORTH_WEST
-					
+			if (y < 0):
+				y = 0
+
+			if (y + wh > monitor.height / 2):
+				gravity = Gdk.Gravity.SOUTH_WEST
+			else:
+				gravity = Gdk.Gravity.NORTH_WEST
+
 		elif self.alignment == MatePanelApplet.AppletOrient.RIGHT:
-				x = ax + aw
-				y = ay
+			x = ax + aw
+			y = ay
 
-				if (y + wh > monitor.y + monitor.height):
-					y = monitor.y + monitor.height - wh
-				
-				if (y < 0):
-					y = 0
-				
-				if (y + wh > monitor.height / 2):
-					gravity = Gdk.Gravity.SOUTH_EAST
-				else:
-					gravity = Gdk.Gravity.NORTH_EAST
+			if (y + wh > monitor.y + monitor.height):
+				y = monitor.y + monitor.height - wh
+
+			if (y < 0):
+				y = 0
+
+			if (y + wh > monitor.height / 2):
+				gravity = Gdk.Gravity.SOUTH_EAST
+			else:
+				gravity = Gdk.Gravity.NORTH_EAST
 
 		elif self.alignment == MatePanelApplet.AppletOrient.DOWN:
-				x = ax
-				y = ay + ah
+			x = ax
+			y = ay + ah
 
-				if (x + ww > monitor.x + monitor.width):
-					x = monitor.x + monitor.width - ww
+			if (x + ww > monitor.x + monitor.width):
+				x = monitor.x + monitor.width - ww
 
-				if (x < 0):
-					x = 0
+			if (x < 0):
+				x = 0
 
-				gravity = Gdk.Gravity.NORTH_WEST
+			gravity = Gdk.Gravity.NORTH_WEST
 		elif self.alignment == MatePanelApplet.AppletOrient.UP:
-				x = ax
-				y = ay - wh
+			x = ax
+			y = ay - wh
 
-				if (x + ww > monitor.x + monitor.width):
-					x = monitor.x + monitor.width - ww
+			if (x + ww > monitor.x + monitor.width):
+				x = monitor.x + monitor.width - ww
 
-				if (x < 0):
-					x = 0
+			if (x < 0):
+				x = 0
 
-				gravity = Gdk.Gravity.SOUTH_WEST
+			gravity = Gdk.Gravity.SOUTH_WEST
 
 		self.move(x, y)
 		self.set_gravity(gravity)
