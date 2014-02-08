@@ -58,10 +58,10 @@ class QuotesRetriever(Thread, _IdleObject):
 		self.retrieved = False
 		self.data = []
 		self.currencies = []
-                invest.debug("QuotesRetriever created");
+                mate_invest.debug("QuotesRetriever created");
 
 	def run(self):
-                invest.debug("QuotesRetriever started");
+                mate_invest.debug("QuotesRetriever started");
 		quotes_url = QUOTES_URL % {"s": self.tickers}
 		try:
 			quotes_file = urlopen(quotes_url, proxies = mate_invest.PROXY)
@@ -94,28 +94,28 @@ class QuoteUpdater(Gtk.ListStore):
 
 	# loads the cached csv file and its last-modification-time as self.last_updated
 	def load(self):
-		invest.debug("Loading quotes");
+		mate_invest.debug("Loading quotes");
 		try:
-			f = open(invest.QUOTES_FILE, 'r')
+			f = open(mate_invest.QUOTES_FILE, 'r')
 			data = f.readlines()
 			f.close()
 
 			self.populate(self.parse_yahoo_csv(csv.reader(data)))
 			self.updated = True
-			self.last_updated = datetime.datetime.fromtimestamp(getmtime(invest.QUOTES_FILE))
+			self.last_updated = datetime.datetime.fromtimestamp(getmtime(mate_invest.QUOTES_FILE))
 			self.update_tooltip()
 		except Exception, msg:
-			invest.error("Could not load the cached quotes file %s: %s" % (invest.QUOTES_FILE, msg) )
+			mate_invest.error("Could not load the cached quotes file %s: %s" % (mate_invest.QUOTES_FILE, msg) )
 
 	# stores the csv content on disk so it can be used on next start up
 	def save(self, data):
-		invest.debug("Storing quotes")
+		mate_invest.debug("Storing quotes")
 		try:
-			f = open(invest.QUOTES_FILE, 'w')
+			f = open(mate_invest.QUOTES_FILE, 'w')
 			f.write(data)
 			f.close()
 		except Exception, msg:
-			invest.error("Could not save the retrieved quotes file to %s: %s" % (invest.QUOTES_FILE, msg) )
+			mate_invest.error("Could not save the retrieved quotes file to %s: %s" % (mate_invest.QUOTES_FILE, msg) )
 
 	def set_update_interval(self, interval):
 		if self.timeout_id != None:
@@ -143,16 +143,16 @@ class QuoteUpdater(Gtk.ListStore):
 			return False
 
 		if len(mate_invest.STOCKS) == 0:
-                        invest.debug("No stocks configured")
+                        mate_invest.debug("No stocks configured")
 			return True
 
 		tickers = '+'.join(mate_invest.STOCKS.keys())
-                invest.debug("creating QuotesRetriever")
+                mate_invest.debug("creating QuotesRetriever")
 		quotes_retriever = QuotesRetriever(tickers)
 		quotes_retriever.connect("completed", self.on_retriever_completed)
-                invest.debug("starting QuotesRetriever")
+                mate_invest.debug("starting QuotesRetriever")
 		quotes_retriever.start()
-                invest.debug("started QuotesRetriever")
+                mate_invest.debug("started QuotesRetriever")
 
 		return True
 
@@ -167,11 +167,11 @@ class QuoteUpdater(Gtk.ListStore):
 
 	def on_retriever_completed(self, retriever):
 		if retriever.retrieved == False:
-                        invest.debug("QuotesRetriever failed");
+                        mate_invest.debug("QuotesRetriever failed");
                         self.update_tooltip(_('Invest could not connect to Yahoo! Finance'))
 
 		else:
-                        invest.debug("QuotesRetriever completed");
+                        mate_invest.debug("QuotesRetriever completed");
                         # cache the retrieved csv file
                         self.save(retriever.data)
                         # load the cache and parse it
@@ -280,8 +280,8 @@ class QuoteUpdater(Gtk.ListStore):
 				pb = None
 
                                 # ignore unknown stocks
-                                if ticker not in invest.STOCKS.keys():
-                                    invest.debug("Observed unknown stock: %s" % ticker)
+                                if ticker not in mate_invest.STOCKS.keys():
+                                    mate_invest.debug("Observed unknown stock: %s" % ticker)
                                     continue
 
 				# get the label of this stock for later reuse
