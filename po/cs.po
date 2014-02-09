@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-29 22:17+0100\n"
-"PO-Revision-Date: 2014-01-30 13:46+0000\n"
+"POT-Creation-Date: 2014-02-03 18:28+0100\n"
+"PO-Revision-Date: 2014-02-04 13:10+0000\n"
 "Last-Translator: Allconius <sinope@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/MATE/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "Zobrazí stav vlastností AccessX, například zablokovaných modifikát
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
 #: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
-#: ../trashapplet/src/trashapplet.c:446
+#: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
 msgstr "David Šauer <davids@penguin.cz>\nGIS <gis@academy.cas.cz>\nGeorge Lebl <jirka@5z.com>\nStanislav Brabec <utx@penguin.cz>\nMichal Bukovjan <bukm@centrum.cz>\nMiloslav Trmač <mitr@volny.cz>\nPetr Tomeš <ptomes@gmail.com>\nJakub Friedl <jfriedl@suse.cz>\nPetr Kovář <pknbe@volny.cz>"
 
@@ -77,8 +77,7 @@ msgstr "Nápo_věda"
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
 #: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
-#: ../stickynotes/stickynotes_applet.c:48
-#: ../timer-applet/data/TimerApplet.xml.h:9
+#: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
 msgstr "O _aplikaci"
@@ -136,7 +135,7 @@ msgstr "Zobrazí stav vlastností zpřístupnění klávesnice"
 #: ../command/command.c:73 ../cpufreq/src/cpufreq-applet.c:136
 #: ../geyes/geyes.c:372 ../mateweather/mateweather-applet.c:123
 #: ../multiload/main.c:445 ../stickynotes/stickynotes_applet.c:42
-#: ../timer-applet/data/TimerApplet.xml.h:8
+#: ../timerapplet/timerapplet.c:80
 msgid "_Preferences"
 msgstr "Př_edvolby"
 
@@ -2356,401 +2355,77 @@ msgstr "Zobrazit lepicí poznámky"
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Lepicí poznámky pro prostředí MATE"
 
-#: ../timer-applet/data/TimerApplet.server.in.in.h:1
-msgid "Timer Applet Factory"
-msgstr "Generátor appletu Timer"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:2
-msgid "A Timer Applet factory that creates Timer Applets"
-msgstr "Generátor appletu Timer, který vytváří applety Timeru"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:3
-msgid "Timer"
-msgstr "Časovač"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:4
-msgid "Start a timer and receive a notification when it is finished"
-msgstr "Zahájit časovač a zobrazit upozornění, až skončí"
-
-#: ../timer-applet/data/TimerApplet.xml.h:1
-msgid "Pa_use"
-msgstr "Pa_uza"
-
-#: ../timer-applet/data/TimerApplet.xml.h:2
-msgid "_Continue"
-msgstr "_Pokračovat"
-
-#: ../timer-applet/data/TimerApplet.xml.h:3
-msgid "_Stop"
-msgstr "_Stop"
-
-#: ../timer-applet/data/TimerApplet.xml.h:4
-msgid "R_estart"
-msgstr "R_estartovat"
-
-#: ../timer-applet/data/TimerApplet.xml.h:5
-msgid "Next"
-msgstr "Další"
-
-#: ../timer-applet/data/TimerApplet.xml.h:6
-msgid "Pre_sets"
-msgstr "Předvolby"
-
-#: ../timer-applet/data/TimerApplet.xml.h:7
-msgid "Ma_nage Presets"
-msgstr "Spravovat předvolby"
-
-#: ../timer-applet/data/timer-applet.glade.h:1
-msgid "Start Timer"
-msgstr "Spustit odpočet"
-
-#: ../timer-applet/data/timer-applet.glade.h:2
-msgid "_Name:"
-msgstr "Jmé_no:"
-
-#: ../timer-applet/data/timer-applet.glade.h:3
-msgid "Start automatically"
-msgstr "Spustit automaticky"
-
-#: ../timer-applet/data/timer-applet.glade.h:4
-msgid "<b>Define next timer</b>"
-msgstr "<b>Nastav příští časovač</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:5
-msgid "Execute:"
-msgstr "Proveď:"
-
-#: ../timer-applet/data/timer-applet.glade.h:6
-msgid "<b>Run custom command</b>"
-msgstr "<b>Spustit vlastní příkaz</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:7
-msgid "Run executable after timer finished."
-msgstr "Spustit spustitelný soubor po skončení časovače."
-
-#: ../timer-applet/data/timer-applet.glade.h:8
-msgid "Advanced"
-msgstr "Pokročilé"
-
-#: ../timer-applet/data/timer-applet.glade.h:9
-msgid "S_ave as Preset"
-msgstr "Uložit jako předvolbu"
-
-#: ../timer-applet/data/timer-applet.glade.h:10
-msgid "Mana_ge Presets"
-msgstr "Spravovat předvolby"
-
-#: ../timer-applet/data/timer-applet.glade.h:11
-msgid "<b>_Presets</b>"
-msgstr "<b>_Předvolby</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:12
-msgid "S_tart Timer"
-msgstr "Spustit odpočet"
-
-#: ../timer-applet/data/timer-applet.glade.h:13
-msgid "Manage Presets"
-msgstr "Spravovat předvolby"
-
-#: ../timer-applet/data/timer-applet.glade.h:14
-msgid "_Delete"
-msgstr "_Smazat"
-
-#: ../timer-applet/data/timer-applet.glade.h:15
-msgid "_Edit..."
-msgstr "_Upravit..."
-
-#: ../timer-applet/data/timer-applet.glade.h:16
-msgid "_Add..."
-msgstr "Přid_at..."
-
-#: ../timer-applet/data/timer-applet.glade.h:17
-msgid "Timer Preferences"
-msgstr "Nastavení časovače"
-
-#: ../timer-applet/data/timer-applet.glade.h:18
-msgid "_Show remaining time while timer is running"
-msgstr "Ukázat zbývající čas, když běží odpočet"
-
-#: ../timer-applet/data/timer-applet.glade.h:19
-msgid "_Play notification sound"
-msgstr "_Přehrát zvuk upozornění"
-
-#: ../timer-applet/data/timer-applet.glade.h:20
-msgid "Use d_efault sound"
-msgstr "Použít výchozí zvuk"
-
-#: ../timer-applet/data/timer-applet.glade.h:21
-msgid "Use c_ustom sound"
-msgstr "Použít vlastní zvuk"
-
-#: ../timer-applet/data/timer-applet.glade.h:22
-msgid "Choose A Sound File"
-msgstr "Zvol zvukový soubor"
-
-#: ../timer-applet/data/timer-applet.glade.h:23
-msgid "_Show popup notification"
-msgstr "_Zobrazit vyskakovací upozornění"
-
-#: ../timer-applet/data/timer-applet.glade.h:24
-msgid "_Show popup notification after timer has ended."
-msgstr "Zobrazit vyskakovací notifikaci po tom, co odpočet doběhl."
-
-#: ../timer-applet/data/timer-applet.glade.h:25
-msgid "S_how pulsing panel icon"
-msgstr "Zobrazit pulsující ikonu na panelu"
-
-#: ../timer-applet/data/timer-applet.glade.h:26
-msgid "Show pulsing panel icon after timer has ended."
-msgstr "Zobrazit pulsující ikonu na panelu po tom, co časovač doběhl."
-
-#: ../timer-applet/data/timer-applet.glade.h:27
-#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
-msgid "Add Preset"
-msgstr "Přidat předvolbu"
-
-#: ../timer-applet/data/timer-applet.glade.h:28
-msgid "<b>_Name</b>"
-msgstr "<b>Jmé_no</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:29
-msgid "<b>_Duration</b>"
-msgstr "<b>_Doba trvání</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:30
-msgid "Run custom command after timer has ended."
-msgstr "Spustit vlastní příkaz po skončení časovače."
-
-#: ../timer-applet/data/timer-applet.glade.h:31
-msgid "<b>Custom command</b>"
-msgstr "<b>Vlastní příkat</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:32
-msgid "Initiate automatically"
-msgstr "Automatické spuštění"
-
-#: ../timer-applet/data/timer-applet.glade.h:33
-msgid "<b>Interval timer</b>"
-msgstr "<b>Interval časovače</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:34
-msgid "A timer applet for the perfect egg and beyond!"
-msgstr "Časovač pro perfektní vejce a mnohem víc"
-
-#: ../timer-applet/data/timer-applet.glade.h:35
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:132
-msgid "Timer Applet"
-msgstr "Applet časovače"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:1
-msgid "Play notification sound"
-msgstr "Přehrát zvuk upozornění"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:2
-msgid "Play a notification sound when the timer finishes a countdown"
-msgstr "Přehrát upozornění, když časovač dokončí odpočet."
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:3
-msgid "Use a custom notification sound"
-msgstr "Použít vlastní zvuk upozornění"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:4
-msgid ""
-"Use the custom notification sound specified in "
-"custom_notification_sound_path"
-msgstr "Použít vlastní upozornění specifikované v custom_notification_sound_path"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:5
-msgid "Path to a custom notification sound"
-msgstr "Umístění vlastního zvuku upozornění"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:6
-msgid ""
-"Path to a sound file that will be played when the timer finishes a countdown"
-msgstr "Umístění zvukového souboru, přehrávaného po skončení časovače."
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:7
-msgid "Show Pulsing icon"
-msgstr "Zobrazit pulsující ikonu"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:8
-msgid "Show pulsing tray icon when timer finished"
-msgstr "Zobrazit pulsující tray ikonu po skončení časovače"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:9
-msgid "Show Popup notification"
-msgstr "Zobrazit vyskakovací upozornení"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:10
-msgid "Show Popup notification in the notification area"
-msgstr "Zobrazit popup upozornění v notifikační oblasti"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:11
-msgid "Show remaining time"
-msgstr "Zobrazit zbývající čas"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:12
-msgid "Show the remaining time while the timer is running or paused"
-msgstr "Zobrazit zbývající čas při běhu nebo pauze časovače"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:13
-msgid "Play a beep sound"
-msgstr "Přehrát pípnutí"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:14
-msgid ""
-"Play a beep sound on a computer's internal speaker when the timer finishes. "
-"This may not have an effect on all computers."
-msgstr "Přehrát \"píp\"zvuk na speakeru, když odpočet doběhne. Nemusí fungovat na všech počítačích."
-
-#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
-msgid "Edit Preset"
-msgstr "Upravit předvolbu"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
-msgid "Continue timer countdown?"
-msgstr "Pokračovat v odpočtu?"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
-msgid "The timer is currently paused. Would you like to continue countdown?"
-msgstr "Časovač je pozastaven. Chcete pokračovat v odpočtu?"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:195
-msgid "Click to start a new timer countdown."
-msgstr "Klikem zahájit nový odpočet."
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:200
-msgid "Paused. Click to continue timer countdown."
-msgstr "Pozastaven. Klikem pokračovat v odpočtu."
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:203
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:1
+msgid "Name of timer"
+msgstr "Název časovače"
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:2
+msgid "Duration of timer in seconds"
+msgstr "Doba trvání časovače v sekundách"
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:3
+msgid "Show notification popup when timer finish"
+msgstr "Po doběhu časovače ukázat oznámení ve vyskakovacím okně"
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:4
+msgid "Show dialog window when timer finish"
+msgstr "Po doběhu časovače ukázat dialogové okno"
+
+#: ../timerapplet/timerapplet.c:77
+msgid "_Start timer"
+msgstr "_Spustit časovač"
+
+#: ../timerapplet/timerapplet.c:78
+msgid "P_ause timer"
+msgstr "Poz_astavit časovač"
+
+#: ../timerapplet/timerapplet.c:79
+msgid "S_top timer"
+msgstr "Zas_tavit časovač"
+
+#: ../timerapplet/timerapplet.c:139
 msgid "Finished"
 msgstr "Zkončeno"
 
-#. "<timer name>" finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:208
-#, python-format
-msgid ""
-"\"%s\" finished at %s.\n"
-"Click to stop timer."
-msgstr "\"%s\" skončil v %s\nKlikněte k ukončení časovače"
+#: ../timerapplet/timerapplet.c:146 ../timerapplet/timerapplet.c:158
+msgid "Timer finished!"
+msgstr "Časovač skončil!"
 
-#. Timer finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:211
-#, python-format
-msgid ""
-"Timer finished at %s.\n"
-"Click to stop timer."
-msgstr "Časovač skončil v %s.\nKlikněte k ukončení časovače"
+#: ../timerapplet/timerapplet.c:253
+msgid "Start a timer and receive a notification when it is finished"
+msgstr "Zahájit časovač a zobrazit upozornění, až skončí"
 
-#. HH:MM:SS (<timer name>)
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:387
-#, python-format
-msgid "%02d:%02d:%02d (%s)"
-msgstr "%02d:%02d:%02d (%s)"
+#: ../timerapplet/timerapplet.c:286
+msgid "Timer Applet Preferences"
+msgstr "Nastavení appletu časovače"
 
-#. HH:MM:SS
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:390
-#: ../timer-applet/src/timerapplet/utils.py:52
-#, python-format
-msgid "%02d:%02d:%02d"
-msgstr "%02d:%02d:%02d"
+#: ../timerapplet/timerapplet.c:298
+msgid "Name:"
+msgstr "Jméno:"
 
-#. "<timer name>" Finished
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:412
-#, python-format
-msgid "\"%s\" Finished"
-msgstr "\"%s\" Skončil"
+#: ../timerapplet/timerapplet.c:310
+msgid "Hours:"
+msgstr "Hodiny:"
 
-#. "<timer name>" finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
-#, python-format
-msgid "\"%s\" finished at %s"
-msgstr "\"%s\" skončil v %s"
+#: ../timerapplet/timerapplet.c:324
+msgid "Minutes:"
+msgstr "Minuty:"
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:417
-msgid "Timer Finished"
-msgstr "Časovač skončil"
+#: ../timerapplet/timerapplet.c:338
+msgid "Seconds:"
+msgstr "Sekundy:"
 
-#. Timer finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:420
-#, python-format
-msgid "Timer finished at %s"
-msgstr "Časovač skončil v %s"
+#: ../timerapplet/timerapplet.c:352
+msgid "Show notification popup"
+msgstr "Zobrazit vyskakovací upozornění"
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:427
-#, python-format
-msgid "Timer finished about <b>%d second</b> ago"
-msgid_plural "Timer finished about <b>%d seconds</b> ago"
-msgstr[0] "Časovač doběhl cca před <b>%d sekundou</b>"
-msgstr[1] "Časovač doběhl cca před <b>%d sekundami</b>"
-msgstr[2] "Časovač doběhl cca před <b>%d sekundami</b>"
+#: ../timerapplet/timerapplet.c:358
+msgid "Show dialog"
+msgstr "Zobrazit dialog"
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:432
-#, python-format
-msgid "Timer finished about <b>%d minute</b> ago"
-msgid_plural "Timer finished about <b>%d minutes</b> ago"
-msgstr[0] "Časovač doběhl cca před <b>%d minutou</b>"
-msgstr[1] "Časovač doběhl cca před <b>%d minutami</b>"
-msgstr[2] "Časovač doběhl cca před <b>%d minutami</b>"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
-msgid "Continue Timer"
-msgstr "Pokračovat v odpočtu"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
-msgid "_Stop Timer"
-msgstr "Zastavit odpočet"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
-msgid "_Keep Paused"
-msgstr "Ponechat pozastavené"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
-msgid "_Continue Timer"
-msgstr "Pokračovat v odpočtu"
-
-#: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
-msgid "<b>Command not found.</b>"
-msgstr "<b>Příkaz nenalezen.</b>"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
-msgid "Start Next Timer"
-msgstr "Zahájit další časovač"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
-msgid "_Don't start next timer"
-msgstr "Nespouštět další odpočet"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
-msgid "_Start next timer"
-msgstr "Spustit další odpočet"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
-msgid "_Hours:"
-msgstr "_Hodiny:"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
-msgid "_Minutes:"
-msgstr "_Minuty:"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
-msgid "_Seconds:"
-msgstr "_Sekundy:"
-
-#. HH:MM
-#. MM:SS
-#: ../timer-applet/src/timerapplet/utils.py:56
-#: ../timer-applet/src/timerapplet/utils.py:59
-#, python-format
-msgid "%02d:%02d"
-msgstr "%02d:%02d"
-
-#. <preset name> (HH:MM:SS)
-#: ../timer-applet/src/timerapplet/utils.py:69
-#, python-format
-msgid "%s (%02d:%02d:%02d)"
-msgstr "%s (%02d:%02d:%02d)"
+#: ../timerapplet/timerapplet.c:376
+msgid "Timer Applet"
+msgstr "Applet časovače"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"

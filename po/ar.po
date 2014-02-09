@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-29 22:17+0100\n"
-"PO-Revision-Date: 2014-01-29 21:19+0000\n"
+"POT-Creation-Date: 2014-02-03 18:28+0100\n"
+"PO-Revision-Date: 2014-02-03 18:03+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/MATE/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "يعرض حالة ميزات AccessX مثل المغيرات المثب�
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
 #: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
-#: ../trashapplet/src/trashapplet.c:446
+#: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
 msgstr "فريق عيون العرب للترجمة http://www.arabeyes.org :\nيوسف رفه\t<yousef@raffah.com>\nجهاد عفيفي\t<djihed@gmail.com>\nخالد حسني\t<khaledhosny@eglug.org>\nأنس عفيف عماد\t<anas.e87@gmail.com>\nمصعب الزعبي\t<moceap@hotmail.com>\n\nمراجعة و إتمام بواسطة عيون العرب http://arabeyes.org و مجتمع لينكس العربي http://linuxac.org عام 1434 بإشراف مصعب الزعبي moceap@hotmail.com"
 
@@ -76,8 +76,7 @@ msgstr "_مساعدة"
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
 #: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
-#: ../stickynotes/stickynotes_applet.c:48
-#: ../timer-applet/data/TimerApplet.xml.h:9
+#: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
 msgstr "_عنْ"
@@ -135,7 +134,7 @@ msgstr "يعرض حالة ميزات الإعانة للوحة المفاتيح"
 #: ../command/command.c:73 ../cpufreq/src/cpufreq-applet.c:136
 #: ../geyes/geyes.c:372 ../mateweather/mateweather-applet.c:123
 #: ../multiload/main.c:445 ../stickynotes/stickynotes_applet.c:42
-#: ../timer-applet/data/TimerApplet.xml.h:8
+#: ../timerapplet/timerapplet.c:80
 msgid "_Preferences"
 msgstr "ال_تفضيلات"
 
@@ -2382,407 +2381,77 @@ msgstr "اعرض الملاحظات اللاصقة"
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "ملاحظات لاصقة لبيئة سطح المكتب متّة"
 
-#: ../timer-applet/data/TimerApplet.server.in.in.h:1
-msgid "Timer Applet Factory"
-msgstr "مصنع بريمج المؤقّت"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:2
-msgid "A Timer Applet factory that creates Timer Applets"
-msgstr "مصنع بريمج المؤقّت لصناعة بريمجات مؤقّتية"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:3
-msgid "Timer"
-msgstr "مؤقّت"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:4
-msgid "Start a timer and receive a notification when it is finished"
-msgstr "ابدأ مؤقّتًا و استقبل إشعارًا بالإكمال"
-
-#: ../timer-applet/data/TimerApplet.xml.h:1
-msgid "Pa_use"
-msgstr "ألبِ_ث"
-
-#: ../timer-applet/data/TimerApplet.xml.h:2
-msgid "_Continue"
-msgstr "اس_تمر"
-
-#: ../timer-applet/data/TimerApplet.xml.h:3
-msgid "_Stop"
-msgstr "ت_وقّف"
-
-#: ../timer-applet/data/TimerApplet.xml.h:4
-msgid "R_estart"
-msgstr "أعِد"
-
-#: ../timer-applet/data/TimerApplet.xml.h:5
-msgid "Next"
-msgstr "التّالي"
-
-#: ../timer-applet/data/TimerApplet.xml.h:6
-msgid "Pre_sets"
-msgstr "الا_فتراضيات"
-
-#: ../timer-applet/data/TimerApplet.xml.h:7
-msgid "Ma_nage Presets"
-msgstr "أدِر الإعدادات الافتراضية"
-
-#: ../timer-applet/data/timer-applet.glade.h:1
-msgid "Start Timer"
-msgstr "ابدأ المؤقّت"
-
-#: ../timer-applet/data/timer-applet.glade.h:2
-msgid "_Name:"
-msgstr "الا_سم:"
-
-#: ../timer-applet/data/timer-applet.glade.h:3
-msgid "Start automatically"
-msgstr "ابدأ تلقائيًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:4
-msgid "<b>Define next timer</b>"
-msgstr "<b>عرّف المؤقت التالي</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:5
-msgid "Execute:"
-msgstr "تنفيذ:"
-
-#: ../timer-applet/data/timer-applet.glade.h:6
-msgid "<b>Run custom command</b>"
-msgstr "<b>شغّل أمرًا مخصّصًا</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:7
-msgid "Run executable after timer finished."
-msgstr "شغّل تطبيقًا بعد انتهاء المؤقّت."
-
-#: ../timer-applet/data/timer-applet.glade.h:8
-msgid "Advanced"
-msgstr "متقدّم"
-
-#: ../timer-applet/data/timer-applet.glade.h:9
-msgid "S_ave as Preset"
-msgstr "احفظه ك_افتراضي"
-
-#: ../timer-applet/data/timer-applet.glade.h:10
-msgid "Mana_ge Presets"
-msgstr "أدِر الافتراضيا_ت"
-
-#: ../timer-applet/data/timer-applet.glade.h:11
-msgid "<b>_Presets</b>"
-msgstr "<b>الاف_تراضيات</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:12
-msgid "S_tart Timer"
-msgstr "ابدأ الم_ؤقّت"
-
-#: ../timer-applet/data/timer-applet.glade.h:13
-msgid "Manage Presets"
-msgstr "أدِر الافتراضيات"
-
-#: ../timer-applet/data/timer-applet.glade.h:14
-msgid "_Delete"
-msgstr "ا_حذف"
-
-#: ../timer-applet/data/timer-applet.glade.h:15
-msgid "_Edit..."
-msgstr "_حرّر..."
-
-#: ../timer-applet/data/timer-applet.glade.h:16
-msgid "_Add..."
-msgstr "أ_ضف..."
-
-#: ../timer-applet/data/timer-applet.glade.h:17
-msgid "Timer Preferences"
-msgstr "تفضيلات المؤقّت"
-
-#: ../timer-applet/data/timer-applet.glade.h:18
-msgid "_Show remaining time while timer is running"
-msgstr "أظهِر الوقت المتبقي أ_ثناء عمل المؤقّت"
-
-#: ../timer-applet/data/timer-applet.glade.h:19
-msgid "_Play notification sound"
-msgstr "ش_غّل تنبيهًا صوتيًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:20
-msgid "Use d_efault sound"
-msgstr "استخد_م الصوت الافتراضي"
-
-#: ../timer-applet/data/timer-applet.glade.h:21
-msgid "Use c_ustom sound"
-msgstr "است_خدم صوتًا مخصّصًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:22
-msgid "Choose A Sound File"
-msgstr "اختر ملفًا صوتيًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:23
-msgid "_Show popup notification"
-msgstr "أظهر تنبي_هًا منبثقًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:24
-msgid "_Show popup notification after timer has ended."
-msgstr "أ_ظهر تنبيهًا منبثقًا بعد انتهاء المؤقّت."
-
-#: ../timer-applet/data/timer-applet.glade.h:25
-msgid "S_how pulsing panel icon"
-msgstr "أظه_ر رمزًا نابِضًا على الشّريط"
-
-#: ../timer-applet/data/timer-applet.glade.h:26
-msgid "Show pulsing panel icon after timer has ended."
-msgstr "أظهِر رمزًا نابضًا على الشّريط بعد انتهاء المؤقّت."
-
-#: ../timer-applet/data/timer-applet.glade.h:27
-#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
-msgid "Add Preset"
-msgstr "أضف إعدادًا افتراضيًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:28
-msgid "<b>_Name</b>"
-msgstr "<b>_الاسم</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:29
-msgid "<b>_Duration</b>"
-msgstr "<b>الم_دّة</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:30
-msgid "Run custom command after timer has ended."
-msgstr "شغّل أمرًا مخصصًا بعد انتهاء المؤقّت."
-
-#: ../timer-applet/data/timer-applet.glade.h:31
-msgid "<b>Custom command</b>"
-msgstr "<b>الأمر المُخصّص</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:32
-msgid "Initiate automatically"
-msgstr "ابدأ تلقائيًا"
-
-#: ../timer-applet/data/timer-applet.glade.h:33
-msgid "<b>Interval timer</b>"
-msgstr "<b>مؤقت بفترات</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:34
-msgid "A timer applet for the perfect egg and beyond!"
-msgstr "بريمج المؤقّت للبيضة المثالية و ما بعدها!"
-
-#: ../timer-applet/data/timer-applet.glade.h:35
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:132
-msgid "Timer Applet"
-msgstr "بريمج المؤقّت"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:1
-msgid "Play notification sound"
-msgstr "شغّل تنبيهًا صوتيًا"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:2
-msgid "Play a notification sound when the timer finishes a countdown"
-msgstr "شغّل تنبيهًا صوتيًا عندما ينهي المؤقّت عدّه التّنازلي"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:3
-msgid "Use a custom notification sound"
-msgstr "استخدم تنبيهًا صوتيًا مخصّصًا"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:4
-msgid ""
-"Use the custom notification sound specified in "
-"custom_notification_sound_path"
-msgstr "استخدم التّنبيه الصّوتي المخصّص المحدّد في custom_notification_sound_path"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:5
-msgid "Path to a custom notification sound"
-msgstr "مسار التّنبيه الصّوتي المُخصّص"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:6
-msgid ""
-"Path to a sound file that will be played when the timer finishes a countdown"
-msgstr "المسار الذي يؤدّي إلى الملف الصّوتي الذي سيحاول المؤقّت تشغيله عندما يُنهي عدّه التّنازلي"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:7
-msgid "Show Pulsing icon"
-msgstr "أظهر رمزًا نابِضًا"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:8
-msgid "Show pulsing tray icon when timer finished"
-msgstr "أظهر رمزًا نابِضًا في صينية النّظام عند انتهاء المؤّقت"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:9
-msgid "Show Popup notification"
-msgstr "أظهر تنبيهًا مُنبثقًا"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:10
-msgid "Show Popup notification in the notification area"
-msgstr "أظهر تنبيهًا مُنبثقًا في مساحة التّنبيهات"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:11
-msgid "Show remaining time"
-msgstr "أظهر الوقت المُتبقي"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:12
-msgid "Show the remaining time while the timer is running or paused"
-msgstr "أظهر الوقت المُتبقي أثناء عمل المؤقّت أو أثناء إلباثِه"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:13
-msgid "Play a beep sound"
-msgstr "شغّل صافرة صوتية"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:14
-msgid ""
-"Play a beep sound on a computer's internal speaker when the timer finishes. "
-"This may not have an effect on all computers."
-msgstr "شغّل صافرةً صوتية في سماعة الحاسب الدّاخلية عند انتهاء المؤقّت. قد لا تتوفّر على حاسبك."
-
-#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
-msgid "Edit Preset"
-msgstr "حرر الافتراضي"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
-msgid "Continue timer countdown?"
-msgstr "أيستمر عدّ المؤقّت التّنازلي؟"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
-msgid "The timer is currently paused. Would you like to continue countdown?"
-msgstr "المؤقّت مُلبَثٌ حاليًا. هل ترغب باستمراريته؟"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:195
-msgid "Click to start a new timer countdown."
-msgstr "انقر لبدء عدٍّ تنازلي مؤقّتي جديد."
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:200
-msgid "Paused. Click to continue timer countdown."
-msgstr "مُلبَث. انقر لاستمرارية العد التّنازلي للمؤقّت."
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:203
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:1
+msgid "Name of timer"
+msgstr ""
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:2
+msgid "Duration of timer in seconds"
+msgstr ""
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:3
+msgid "Show notification popup when timer finish"
+msgstr ""
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:4
+msgid "Show dialog window when timer finish"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:77
+msgid "_Start timer"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:78
+msgid "P_ause timer"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:79
+msgid "S_top timer"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:139
 msgid "Finished"
 msgstr "انتهى"
 
-#. "<timer name>" finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:208
-#, python-format
-msgid ""
-"\"%s\" finished at %s.\n"
-"Click to stop timer."
-msgstr "\"%s\" انتهى في %s.\nانقر لإيقاف المؤقّت."
+#: ../timerapplet/timerapplet.c:146 ../timerapplet/timerapplet.c:158
+msgid "Timer finished!"
+msgstr ""
 
-#. Timer finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:211
-#, python-format
-msgid ""
-"Timer finished at %s.\n"
-"Click to stop timer."
-msgstr "انتهى المؤقّت في %s.\nانقر لإيقافه."
+#: ../timerapplet/timerapplet.c:253
+msgid "Start a timer and receive a notification when it is finished"
+msgstr "ابدأ مؤقّتًا و استقبل إشعارًا بالإكمال"
 
-#. HH:MM:SS (<timer name>)
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:387
-#, python-format
-msgid "%02d:%02d:%02d (%s)"
-msgstr "%02d:%02d:%02d (%s)"
+#: ../timerapplet/timerapplet.c:286
+msgid "Timer Applet Preferences"
+msgstr ""
 
-#. HH:MM:SS
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:390
-#: ../timer-applet/src/timerapplet/utils.py:52
-#, python-format
-msgid "%02d:%02d:%02d"
-msgstr "%02d:%02d:%02d"
+#: ../timerapplet/timerapplet.c:298
+msgid "Name:"
+msgstr ""
 
-#. "<timer name>" Finished
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:412
-#, python-format
-msgid "\"%s\" Finished"
-msgstr "\"%s\" انتهى"
+#: ../timerapplet/timerapplet.c:310
+msgid "Hours:"
+msgstr ""
 
-#. "<timer name>" finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
-#, python-format
-msgid "\"%s\" finished at %s"
-msgstr "\"%s\" انتهى في \"%s\""
+#: ../timerapplet/timerapplet.c:324
+msgid "Minutes:"
+msgstr ""
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:417
-msgid "Timer Finished"
-msgstr "انتهى المؤقّت"
+#: ../timerapplet/timerapplet.c:338
+msgid "Seconds:"
+msgstr ""
 
-#. Timer finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:420
-#, python-format
-msgid "Timer finished at %s"
-msgstr "انتهى المؤقّت في %s"
+#: ../timerapplet/timerapplet.c:352
+msgid "Show notification popup"
+msgstr ""
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:427
-#, python-format
-msgid "Timer finished about <b>%d second</b> ago"
-msgid_plural "Timer finished about <b>%d seconds</b> ago"
-msgstr[0] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
-msgstr[1] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
-msgstr[2] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
-msgstr[3] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
-msgstr[4] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
-msgstr[5] "انتهى المؤقّت منذ حوالي <b>%d ثانية</b>"
+#: ../timerapplet/timerapplet.c:358
+msgid "Show dialog"
+msgstr ""
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:432
-#, python-format
-msgid "Timer finished about <b>%d minute</b> ago"
-msgid_plural "Timer finished about <b>%d minutes</b> ago"
-msgstr[0] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
-msgstr[1] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
-msgstr[2] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
-msgstr[3] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
-msgstr[4] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
-msgstr[5] "انتهى المؤقّت منذ حوالي <b>%d دقيقة</b>"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
-msgid "Continue Timer"
-msgstr "واصل المؤقّت"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
-msgid "_Stop Timer"
-msgstr "_أوقف المؤقّت"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
-msgid "_Keep Paused"
-msgstr "أبقهِ مُلب_ثًا"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
-msgid "_Continue Timer"
-msgstr "واصل المؤ_قّت"
-
-#: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
-msgid "<b>Command not found.</b>"
-msgstr "<b>الأمر غير موجود.</b>"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
-msgid "Start Next Timer"
-msgstr "ابدأ المؤقّت التّالي"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
-msgid "_Don't start next timer"
-msgstr "لا تبدأ الم_ؤقّت التّالي"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
-msgid "_Start next timer"
-msgstr "ا_بدأ المُؤقّت التّالي"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
-msgid "_Hours:"
-msgstr "_ساعات:"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
-msgid "_Minutes:"
-msgstr "_دقائق:"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
-msgid "_Seconds:"
-msgstr "_ثوانٍ:"
-
-#. HH:MM
-#. MM:SS
-#: ../timer-applet/src/timerapplet/utils.py:56
-#: ../timer-applet/src/timerapplet/utils.py:59
-#, python-format
-msgid "%02d:%02d"
-msgstr "%02d:%02d"
-
-#. <preset name> (HH:MM:SS)
-#: ../timer-applet/src/timerapplet/utils.py:69
-#, python-format
-msgid "%s (%02d:%02d:%02d)"
-msgstr "%s (%02d:%02d:%02d)"
+#: ../timerapplet/timerapplet.c:376
+msgid "Timer Applet"
+msgstr "بريمج المؤقّت"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"

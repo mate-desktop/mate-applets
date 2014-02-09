@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-29 22:17+0100\n"
-"PO-Revision-Date: 2014-01-30 13:10+0000\n"
+"POT-Creation-Date: 2014-02-03 18:28+0100\n"
+"PO-Revision-Date: 2014-02-03 18:22+0000\n"
 "Last-Translator: Tubuntu\n"
 "Language-Team: French (http://www.transifex.com/projects/p/MATE/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Affiche l'état des fonctionnalités AccessX telles que les modificateur
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
 #: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
-#: ../trashapplet/src/trashapplet.c:446
+#: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
 msgstr "Christophe Merlet <redfox@redfoxcenter.org>\nChristophe Fergeau <teuf@users.sourceforge.net>\nSébastien Bacher <seb128@debian.org>\nBenoît Dejean <tazforever@dlfp.org>\nRobert-André Mauchin <zebob.m@pengzone.org>\nChristophe Bliard <christophe.bliard@trux.info>\nJonathan Ernst <jonathan@ernstfamily.ch>\nStéphane Raimbault <stephane.raimbault@gmail.com>"
 
@@ -74,8 +74,7 @@ msgstr "Aid_e"
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
 #: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
-#: ../stickynotes/stickynotes_applet.c:48
-#: ../timer-applet/data/TimerApplet.xml.h:9
+#: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
 msgstr "À _propos"
@@ -133,7 +132,7 @@ msgstr "Affiche l'état des fonctionnalités d'accessibilité du clavier"
 #: ../command/command.c:73 ../cpufreq/src/cpufreq-applet.c:136
 #: ../geyes/geyes.c:372 ../mateweather/mateweather-applet.c:123
 #: ../multiload/main.c:445 ../stickynotes/stickynotes_applet.c:42
-#: ../timer-applet/data/TimerApplet.xml.h:8
+#: ../timerapplet/timerapplet.c:80
 msgid "_Preferences"
 msgstr "P_références"
 
@@ -2344,399 +2343,77 @@ msgstr "Afficher les pense-bêtes"
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Pense-bêtes pour l'environnement de bureau MATE"
 
-#: ../timer-applet/data/TimerApplet.server.in.in.h:1
-msgid "Timer Applet Factory"
-msgstr "Fabrique d'applets de minuterie"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:2
-msgid "A Timer Applet factory that creates Timer Applets"
-msgstr "Fabrique d'applets de minuterie permettant de créer des applets de compte à rebours"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:3
-msgid "Timer"
-msgstr "Minuterie"
-
-#: ../timer-applet/data/TimerApplet.server.in.in.h:4
-msgid "Start a timer and receive a notification when it is finished"
-msgstr "Démarrez une minuterie et recevez une notification lorsqu'elle est terminée"
-
-#: ../timer-applet/data/TimerApplet.xml.h:1
-msgid "Pa_use"
-msgstr "Pa_use"
-
-#: ../timer-applet/data/TimerApplet.xml.h:2
-msgid "_Continue"
-msgstr "_Continuer"
-
-#: ../timer-applet/data/TimerApplet.xml.h:3
-msgid "_Stop"
-msgstr "_Arrêter"
-
-#: ../timer-applet/data/TimerApplet.xml.h:4
-msgid "R_estart"
-msgstr "R_edémarrer"
-
-#: ../timer-applet/data/TimerApplet.xml.h:5
-msgid "Next"
-msgstr "Suivant"
-
-#: ../timer-applet/data/TimerApplet.xml.h:6
-msgid "Pre_sets"
-msgstr "Pré-ré_glages"
-
-#: ../timer-applet/data/TimerApplet.xml.h:7
-msgid "Ma_nage Presets"
-msgstr "Gé_rer les pré-réglages"
-
-#: ../timer-applet/data/timer-applet.glade.h:1
-msgid "Start Timer"
-msgstr "Démarrer la minuterie"
-
-#: ../timer-applet/data/timer-applet.glade.h:2
-msgid "_Name:"
-msgstr "_Nom :"
-
-#: ../timer-applet/data/timer-applet.glade.h:3
-msgid "Start automatically"
-msgstr "Démarrer automatiquement"
-
-#: ../timer-applet/data/timer-applet.glade.h:4
-msgid "<b>Define next timer</b>"
-msgstr "<b>Définir la prochaine minuterie</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:5
-msgid "Execute:"
-msgstr "Exécuter :"
-
-#: ../timer-applet/data/timer-applet.glade.h:6
-msgid "<b>Run custom command</b>"
-msgstr "<b>Exécuter une commande personnalisée</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:7
-msgid "Run executable after timer finished."
-msgstr "Lancer un exécutable à la fin du compte à rebours."
-
-#: ../timer-applet/data/timer-applet.glade.h:8
-msgid "Advanced"
-msgstr "Avancé"
-
-#: ../timer-applet/data/timer-applet.glade.h:9
-msgid "S_ave as Preset"
-msgstr "E_nregistrer en tant que pré-réglage"
-
-#: ../timer-applet/data/timer-applet.glade.h:10
-msgid "Mana_ge Presets"
-msgstr "Gé_rer les pré-réglages"
-
-#: ../timer-applet/data/timer-applet.glade.h:11
-msgid "<b>_Presets</b>"
-msgstr "<b>_Pré-réglages</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:12
-msgid "S_tart Timer"
-msgstr "D_émarrer la minuterie"
-
-#: ../timer-applet/data/timer-applet.glade.h:13
-msgid "Manage Presets"
-msgstr "Gérer les pré-réglages"
-
-#: ../timer-applet/data/timer-applet.glade.h:14
-msgid "_Delete"
-msgstr "_Effacer"
-
-#: ../timer-applet/data/timer-applet.glade.h:15
-msgid "_Edit..."
-msgstr "_Édition..."
-
-#: ../timer-applet/data/timer-applet.glade.h:16
-msgid "_Add..."
-msgstr "_Ajouter..."
-
-#: ../timer-applet/data/timer-applet.glade.h:17
-msgid "Timer Preferences"
-msgstr "Préférences de la minuterie"
-
-#: ../timer-applet/data/timer-applet.glade.h:18
-msgid "_Show remaining time while timer is running"
-msgstr "_Afficher le délai restant lorsque le compte à rebours est en cours"
-
-#: ../timer-applet/data/timer-applet.glade.h:19
-msgid "_Play notification sound"
-msgstr "_Jouer un son de notification"
-
-#: ../timer-applet/data/timer-applet.glade.h:20
-msgid "Use d_efault sound"
-msgstr "Utiliser le son par d_éfaut"
-
-#: ../timer-applet/data/timer-applet.glade.h:21
-msgid "Use c_ustom sound"
-msgstr "Utiliser un son _personnalisé"
-
-#: ../timer-applet/data/timer-applet.glade.h:22
-msgid "Choose A Sound File"
-msgstr "Choisir un fichier son"
-
-#: ../timer-applet/data/timer-applet.glade.h:23
-msgid "_Show popup notification"
-msgstr "_Afficher une fenêtre de notification"
-
-#: ../timer-applet/data/timer-applet.glade.h:24
-msgid "_Show popup notification after timer has ended."
-msgstr "_Afficher une fenêtre de notification à la fin du compte à rebours."
-
-#: ../timer-applet/data/timer-applet.glade.h:25
-msgid "S_how pulsing panel icon"
-msgstr "A_fficher une icône clignotante sur le tableau de bord"
-
-#: ../timer-applet/data/timer-applet.glade.h:26
-msgid "Show pulsing panel icon after timer has ended."
-msgstr "Afficher une icône clignotante de tableau de bord à la fin du compte à rebours."
-
-#: ../timer-applet/data/timer-applet.glade.h:27
-#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:47
-msgid "Add Preset"
-msgstr "Ajouter un pré-réglage"
-
-#: ../timer-applet/data/timer-applet.glade.h:28
-msgid "<b>_Name</b>"
-msgstr "<b>_Nom</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:29
-msgid "<b>_Duration</b>"
-msgstr "<b>_Durée</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:30
-msgid "Run custom command after timer has ended."
-msgstr "Exécuter une commande personnalisée à l'expiration du délai."
-
-#: ../timer-applet/data/timer-applet.glade.h:31
-msgid "<b>Custom command</b>"
-msgstr "<b>Commande personnalisée</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:32
-msgid "Initiate automatically"
-msgstr "Lancer automatiquement"
-
-#: ../timer-applet/data/timer-applet.glade.h:33
-msgid "<b>Interval timer</b>"
-msgstr "<b>Intervallomètre</b>"
-
-#: ../timer-applet/data/timer-applet.glade.h:34
-msgid "A timer applet for the perfect egg and beyond!"
-msgstr "Un applet de minuterie pour des œufs mollets et plus encore !"
-
-#: ../timer-applet/data/timer-applet.glade.h:35
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:132
-msgid "Timer Applet"
-msgstr "Applet de minuterie"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:1
-msgid "Play notification sound"
-msgstr "Jouer un son de notification"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:2
-msgid "Play a notification sound when the timer finishes a countdown"
-msgstr "Jouer un son de notification lorsque la minuterie termine un compte à rebours"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:3
-msgid "Use a custom notification sound"
-msgstr "Utiliser un son de notification personnalisé"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:4
-msgid ""
-"Use the custom notification sound specified in "
-"custom_notification_sound_path"
-msgstr "Utiliser le son de notification personnalisé défini dans custom_notification_sound_path"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:5
-msgid "Path to a custom notification sound"
-msgstr "Chemin pour un son de notification personnalisé"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:6
-msgid ""
-"Path to a sound file that will be played when the timer finishes a countdown"
-msgstr "Chemin pour un fichier son qui sera joué lorsque la minuterie terminera un compte à rebours"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:7
-msgid "Show Pulsing icon"
-msgstr "Afficher une icône clignotante"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:8
-msgid "Show pulsing tray icon when timer finished"
-msgstr "Afficher une icône clignotante lorsque le compte à rebours sera terminé"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:9
-msgid "Show Popup notification"
-msgstr "Afficher une fenêtre de notification"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:10
-msgid "Show Popup notification in the notification area"
-msgstr "Afficher une notification dans la zone des notifications"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:11
-msgid "Show remaining time"
-msgstr "Afficher le temps restant"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:12
-msgid "Show the remaining time while the timer is running or paused"
-msgstr "Afficher le temps restant lorsque la minuterie fonctionne ou est suspendue"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:13
-msgid "Play a beep sound"
-msgstr "Émettre un bip sonore"
-
-#: ../timer-applet/data/timer-applet.schemas.in.h:14
-msgid ""
-"Play a beep sound on a computer's internal speaker when the timer finishes. "
-"This may not have an effect on all computers."
-msgstr "Émettre un bip sonore au moyen du haut-parleur interne de l'ordinateur. Cela pourrait ne pas fonctionner sur certains ordinateurs."
-
-#: ../timer-applet/src/timerapplet/controllers/GlobalController.py:62
-msgid "Edit Preset"
-msgstr "Éditer un pré-réglage"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:96
-msgid "Continue timer countdown?"
-msgstr "Reprendre le compte à rebours ?"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:97
-msgid "The timer is currently paused. Would you like to continue countdown?"
-msgstr "La minuterie est actuellement suspendue. Voulez-vous reprendre le compte à rebours ?"
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:195
-msgid "Click to start a new timer countdown."
-msgstr "Cliquez pour démarrer un nouveau compte à rebours."
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:200
-msgid "Paused. Click to continue timer countdown."
-msgstr "Suspendu. Cliquez pour reprendre le compte à rebours."
-
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:203
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:1
+msgid "Name of timer"
+msgstr "Nom de la minuterie"
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:2
+msgid "Duration of timer in seconds"
+msgstr "Durée de la minuterie en secondes"
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:3
+msgid "Show notification popup when timer finish"
+msgstr "Montrer une notification contextuelle lorsque la minuterie se termine"
+
+#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:4
+msgid "Show dialog window when timer finish"
+msgstr "Montrer une fenêtre de dialogue lorsque la minuterie se termine"
+
+#: ../timerapplet/timerapplet.c:77
+msgid "_Start timer"
+msgstr "_Démarrer la minuterie"
+
+#: ../timerapplet/timerapplet.c:78
+msgid "P_ause timer"
+msgstr "Mettre la minuterie en _pause"
+
+#: ../timerapplet/timerapplet.c:79
+msgid "S_top timer"
+msgstr "Arrê_ter la minuterie"
+
+#: ../timerapplet/timerapplet.c:139
 msgid "Finished"
 msgstr "Terminé"
 
-#. "<timer name>" finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:208
-#, python-format
-msgid ""
-"\"%s\" finished at %s.\n"
-"Click to stop timer."
-msgstr "« %s » terminé à %s.\nCliquez pour arrêter la minuterie."
+#: ../timerapplet/timerapplet.c:146 ../timerapplet/timerapplet.c:158
+msgid "Timer finished!"
+msgstr "Minuterie terminée!"
 
-#. Timer finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:211
-#, python-format
-msgid ""
-"Timer finished at %s.\n"
-"Click to stop timer."
-msgstr "Minuterie terminée à %s.\nCliquez pour arrêter la minuterie."
+#: ../timerapplet/timerapplet.c:253
+msgid "Start a timer and receive a notification when it is finished"
+msgstr "Démarrez une minuterie et recevez une notification lorsqu'elle est terminée"
 
-#. HH:MM:SS (<timer name>)
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:387
-#, python-format
-msgid "%02d:%02d:%02d (%s)"
-msgstr "%02d:%02d:%02d (%s)"
+#: ../timerapplet/timerapplet.c:286
+msgid "Timer Applet Preferences"
+msgstr "Préférences de l'applet minuterie"
 
-#. HH:MM:SS
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:390
-#: ../timer-applet/src/timerapplet/utils.py:52
-#, python-format
-msgid "%02d:%02d:%02d"
-msgstr "%02d:%02d:%02d"
+#: ../timerapplet/timerapplet.c:298
+msgid "Name:"
+msgstr "Nom:"
 
-#. "<timer name>" Finished
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:412
-#, python-format
-msgid "\"%s\" Finished"
-msgstr "« %s » Terminé"
+#: ../timerapplet/timerapplet.c:310
+msgid "Hours:"
+msgstr "Heures:"
 
-#. "<timer name>" finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:415
-#, python-format
-msgid "\"%s\" finished at %s"
-msgstr "« %s » terminé à %s"
+#: ../timerapplet/timerapplet.c:324
+msgid "Minutes:"
+msgstr "Minutes:"
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:417
-msgid "Timer Finished"
-msgstr "Minuterie terminée"
+#: ../timerapplet/timerapplet.c:338
+msgid "Seconds:"
+msgstr "Secondes:"
 
-#. Timer finished at <time>
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:420
-#, python-format
-msgid "Timer finished at %s"
-msgstr "Minuterie terminée à %s"
+#: ../timerapplet/timerapplet.c:352
+msgid "Show notification popup"
+msgstr "Afficher la notification contaxtuelle"
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:427
-#, python-format
-msgid "Timer finished about <b>%d second</b> ago"
-msgid_plural "Timer finished about <b>%d seconds</b> ago"
-msgstr[0] "Minuterie terminée il y a environ <b>%d seconde</b>"
-msgstr[1] "Minuterie terminée il y a environ <b>%d secondes</b>"
+#: ../timerapplet/timerapplet.c:358
+msgid "Show dialog"
+msgstr "Afficher un dialogue"
 
-#: ../timer-applet/src/timerapplet/controllers/TimerApplet.py:432
-#, python-format
-msgid "Timer finished about <b>%d minute</b> ago"
-msgid_plural "Timer finished about <b>%d minutes</b> ago"
-msgstr[0] "Minuterie terminée il y a environ <b>%d minute</b>"
-msgstr[1] "Minuterie terminée il y a environ <b>%d minutes</b>"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:24
-msgid "Continue Timer"
-msgstr "Continuer la minuterie"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:27
-msgid "_Stop Timer"
-msgstr "_Arrêter la minuterie"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:28
-msgid "_Keep Paused"
-msgstr "_Maintenir en pause"
-
-#: ../timer-applet/src/timerapplet/ui/ContinueTimerDialog.py:29
-msgid "_Continue Timer"
-msgstr "_Continuer la minuterie"
-
-#: ../timer-applet/src/timerapplet/ui/StartTimerDialog.py:197
-msgid "<b>Command not found.</b>"
-msgstr "<b>Commande introuvable</b>"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:30
-msgid "Start Next Timer"
-msgstr "Démarrer la minuterie suivante"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:33
-msgid "_Don't start next timer"
-msgstr "_Ne pas démarrer la minuterie suivante"
-
-#: ../timer-applet/src/timerapplet/ui/StartNextTimerDialog.py:34
-msgid "_Start next timer"
-msgstr "_Démarrer la minuterie suivante"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:31
-msgid "_Hours:"
-msgstr "_Heures :"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:34
-msgid "_Minutes:"
-msgstr "_Minutes :"
-
-#: ../timer-applet/src/timerapplet/ui/DurationChooser.py:37
-msgid "_Seconds:"
-msgstr "_Secondes :"
-
-#. HH:MM
-#. MM:SS
-#: ../timer-applet/src/timerapplet/utils.py:56
-#: ../timer-applet/src/timerapplet/utils.py:59
-#, python-format
-msgid "%02d:%02d"
-msgstr "%02d:%02d"
-
-#. <preset name> (HH:MM:SS)
-#: ../timer-applet/src/timerapplet/utils.py:69
-#, python-format
-msgid "%s (%02d:%02d:%02d)"
-msgstr "%s (%02d:%02d:%02d)"
+#: ../timerapplet/timerapplet.c:376
+msgid "Timer Applet"
+msgstr "Applet de minuterie"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
