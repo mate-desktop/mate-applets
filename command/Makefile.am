@@ -38,7 +38,8 @@ gsettings_SCHEMAS = org.mate.panel.applet.command.gschema.xml
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 EXTRA_DIST = \
-	$(applets_in_files) \
+	$(applets_in_files).in \
 	$(service_in_files) \
 	$(gsettings_SCHEMAS).in.in
 
+CLEANFILES = $(applets_DATA) $(applets_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
