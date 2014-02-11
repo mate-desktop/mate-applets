@@ -87,7 +87,8 @@ EXTRA_DIST = \
 	intltool-extract.in \
 	intltool-merge.in \
 	xmldocs.make \
-	omf.make
+	omf.make \
+	autogen.sh
 
 # We build the ChangeLog from the git log
 ChangeLog:
