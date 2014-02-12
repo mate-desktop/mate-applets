@@ -33,7 +33,7 @@ msgstr "Shfaq statusin e tipareve të AccessX si ndryshues të kyçura"
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -56,7 +56,7 @@ msgstr "_Preferimet e Tastierës së Lehtësuar"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -66,7 +66,7 @@ msgstr "_Ndihmë"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1550,108 +1550,6 @@ msgstr "Fitimi"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Fitimi %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Aktivo"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "Ç_aktivo"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "_Pronësitë"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Monitori i Modem-it"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "Lidhja është aktive,por nuk arrita të llogaris kohën e lidhjes"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Koha i lidhur: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "I shkëputur"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Për tu lidhur me furnizuesin tënd të shërbimit Internet (ISP), të duhen të drejta administratimi"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Për tu shkëputur nga furnizuesi yt i shërbimit Internet(ISP), të duhen të drejta administrimi"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "Fjalëkalimi është i gabuar"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Kontrollo që e ke shkruar saktë dhe që tasti \"caps lock\" nuk është aktivizuar"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Dëshiron të lidhesh?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Dëshiron të shkëputesh?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "Li_dhu"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "_Shkëputu"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "Nuk munda të ekzekutoj programin e konfigurimit të rrjetit"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Kontrollo që është instaluar në shtegun e saktë dhe që ka lejet e duhura"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Applet për të aktivizuar dhe vëzhguar lidhjen e rrjetit me telefonatë (dial-up)."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Shkruaj fjalëkalimin"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Kërkohet fjalëkalimi Root"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Fjalëkalimi:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr ""
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Aktivizo dhe kontrollo lidhjen e rrjetit me telefonatë (dial-up)"
 
 #: ../multiload/main.c:65
 msgid ""

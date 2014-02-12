@@ -35,7 +35,7 @@ msgstr "Arată starea facilităților AccessX precum modificatorii blocanți"
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -58,7 +58,7 @@ msgstr "Preferințe _accesibilitate tastatură"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -68,7 +68,7 @@ msgstr "_Ajutor"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1559,108 +1559,6 @@ msgstr "Câștig"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Câștig %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Activează"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "_Dezactivează"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "_Proprietăți"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Monitor modem"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "Conexiune activă, dar nu am putut obține durata de conectare"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Durată conectare: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "Neconectat"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Pentru a vă conecta la furnizorul dumneavoastră de servicii Internet, aveți nevoie de drepturi de administrare"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Pentru a vă deconecta de la furnizorul dumneavoastră de servicii Internet, aveți nevoie de drepturi de administrare"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "Parola introdusă este invalidă"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Verificați faptul că ați scris-o corect și că nu aveți activată tasta „caps lock”"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Doriți să vă conectați?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Doriți să vă deconectați?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "_Conectare"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "_Deconectare"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "Nu s-a putut lansa utilitarul pentru configurarea rețelei"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Verificați faptul că este instalat în locația corectă și că permisiunile sunt cele corecte"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Miniaplicație pentru activarea și monitorizarea conexiunilor de rețea dial-up."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Introduceți parola"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Se cere parola de administrare"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Parola:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "Conectare la furnizorul de servicii Internet"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Activează și monitorizează o conexiune de rețea dial-up"
 
 #: ../multiload/main.c:65
 msgid ""

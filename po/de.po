@@ -41,7 +41,7 @@ msgstr "Zeigt den Status von AccessX-Funktionen wie gesperrten Umschaltern an"
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -64,7 +64,7 @@ msgstr "_Barrierefreiheitseinstellungen der Tastatur"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -74,7 +74,7 @@ msgstr "_Hilfe"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1558,108 +1558,6 @@ msgstr "Gewinn"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Gewinn %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Aktivieren"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "_Deaktivieren"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "Ei_genschaften"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Modem überwachen"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "Die Verbindung ist aktiv, es konnte jedoch keine Verbindungsdauer ermittelt werden"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Verbindungsdauer: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "Nicht verbunden"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Um eine Internet-Verbindung herzustellen, benötigen Sie Administrationsrechte"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Um eine Internet-Verbindung zu trennen, benötigen Sie Administrationsrechte"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "Das eingegebene Passwort ist ungültig"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Bitte stellen Sie sicher, dass Sie das Passwort korrekt eingegeben haben und dass die »Feststelltaste« nicht aktiv ist"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Möchten Sie verbinden?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Möchten Sie die Verbindung trennen?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "_Verbinden"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "_Trennen"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "Das Programm zum Einstellen der Netzwerkverbindungen konnte nicht gestartet werden"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Bitte überprüfen Sie, dass es im richtigen Pfad installiert ist und das es die notwendigen Zugriffsrechte besitzt"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Applet zum Aktivieren und Überwachen von Einwahlverbindung in ein Netzwerk."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Passwort eingeben"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Root-Passwort ist erforderlich"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Passwort:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "Verbindung mit dem Internet wird hergestellt"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Eine Einwahlverbindung aktivieren und überwachen"
 
 #: ../multiload/main.c:65
 msgid ""

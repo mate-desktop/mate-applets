@@ -34,7 +34,7 @@ msgstr "AccessX ৰ গুণ যেনে latched modifiers ৰ অৱস্থ
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -57,7 +57,7 @@ msgstr "চাবিৰ ফলক অভিগমন কৰাৰ পছন্�
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -67,7 +67,7 @@ msgstr "সহায় (_H)"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1551,108 +1551,6 @@ msgstr "লাভ"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "লাভ %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "সক্ৰিয় কৰক (_A)"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "নিষ্ক্ৰিয় কৰক (_D)"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "বৈশিষ্ট্যাবলি (_P)"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "মোডেম মনিটৰ"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "সংযোগ সক্ৰিয় হলেও সংযোগেৰ সময় পাৱ যায়নি"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "সংযোগ স্থাপনেৰ সময়কাল: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "সংযোগ স্থাপিত হয়নি"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "ইন্টাৰনেট সেৱা উপলব্ধকৰ্তাৰ (ISP) সৈতে সংযোগ স্থাপনেৰ বাবে প্ৰশাসনিক অধিকাৰ আৱশ্যক ।"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "ইন্টাৰনেট সেৱা উপলব্ধকৰ্তাৰ (ISP) থেকে সংযোগ বিচ্ছিন্ন কৰাৰ বাবে প্ৰশাসনিক অধিকাৰ আৱশ্যক ।"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "উল্লিখিত গুপ্তশব্দ বৈধ নয়"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "অনুগ্ৰহ কৰে পৰীক্ষা কৰক সঠিক গুপ্তশব্দ টাইপ কৰা হৈছে কিনা এবং \"ক্যাপস-লক\" কি সক্ৰিয় কৰা হৈছে কিনা ।"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "সংযোগ স্থাপন কৰা হ'ব নেকি ?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "সংযোগ বিচ্ছিন্ন কৰা হ'ব নেকি ?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "সংযোগ স্থাপন কৰা হ'ব(_o)"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "সংযোগ বিচ্ছিন্ন কৰা হ'ব (_D)"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "নেটৱৰ্ক কনফিগাৰেশন সৰঞ্জাম আৰম্ভ কৰিবলৈ ব্যৰ্থ"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "অনুগ্ৰহ কৰে পৰীক্ষা কৰক এটি সঠিক পাথে ইনস্টল কৰা হৈছে কিনা এবং যথাযত অনুমতি উপস্থিত ৰয়েছে কিনা"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "ডায়েল-আপ নেটৱৰ্ক সংযোগ সক্ৰিয়কৰণ আৰু নিৰীক্ষণৰ এপ্লেট ।"
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "গুপ্তশব্দ লিখুন"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Root গুপ্তশব্দ লিখা আৱশ্যক"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "গুপ্তশব্দ:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "ইন্টাৰনেট সেৱা উপলব্ধকৰ্তাৰ সৈতে সংযোগ স্থাপন কৰা হৈছে"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "a"
 
 #: ../multiload/main.c:65
 msgid ""

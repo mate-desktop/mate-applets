@@ -33,7 +33,7 @@ msgstr "Prikazuje stanje mogućnosti u vezi sa upotrebljivošću kao što su zad
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -56,7 +56,7 @@ msgstr "Postavke za upotrebljivost _tastature"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -66,7 +66,7 @@ msgstr "_Pomoć"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1557,108 +1557,6 @@ msgstr "Dobit"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Dobit %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Uspostavi"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "Pre_kini"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "Oso_bine"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Praćenje modema"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "Veza je uspostavljena, ali ne mogu da saznam njeno trajanje"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Trajanje veze: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "Nepovezan"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Da se povežete na vašeg dobavljača Internet usluga, trebaju vam administratorska ovlašćenja"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Da prekinete vezu sa vašim dobavljačem Internet usluga, trebaju vam administratorska ovlašćenja"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "Uneta lozinka je neispravna"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Proverite da li ste je ispravno uneli i da niste pritisnuli „Caps Lock“ taster"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Želite da uspostavite vezu?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Želite da prekinete vezu?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "P_oveži se"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "_Prekini vezu"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "Ne mogu da pokrenem alat za podešavanje mreže"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Proverite da li je instaliran na ispravnom mestu i da ima odgovarajuća ovlašćenja"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Programče za povezivanje i praćenje modemske mrežne veze."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Unesite lozinku"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Potrebna je administratorska lozinka"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Lozinka:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "Povezujem se sa prodavcem Internet usluga"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Pokreni i prati modemsku mrežnu vezu"
 
 #: ../multiload/main.c:65
 msgid ""

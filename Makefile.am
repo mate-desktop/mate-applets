@@ -12,13 +12,6 @@ if BUILD_LIBMATEWEATHER_APPLETS
 libmateweather_SUBDIRS = $(libmateweather_applets)
 endif
 
-modemlights_applets = \
-	modemlights
-
-if APPLET_MODEMLIGHTS
-modemlights_SUBDIRS = $(modemlights_applets)
-endif
-
 if BUILD_BATTSTAT_APPLET
 battstat_SUBDIR = battstat
 endif
@@ -51,7 +44,6 @@ always_built_SUBDIRS = \
 SUBDIRS = \
 	po \
 	$(always_built_SUBDIRS) \
-	$(modemlights_SUBDIRS) \
 	$(gtop_SUBDIRS) \
 	$(libmateweather_SUBDIRS) \
 	$(vfs_SUBDIRS) \
@@ -63,7 +55,6 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	po \
-	modemlights \
 	drivemount \
 	charpick \
 	geyes \
