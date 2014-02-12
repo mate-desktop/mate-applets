@@ -131,16 +131,25 @@ class InvestmentsListWindow(Gtk.Window):
 		"""
 		self.realize()
 
-		window = self.applet.get_window()
-		screen = window.get_screen()
-		monitor = screen.get_monitor_geometry (screen.get_monitor_at_window (window))
-
 		# Get our own dimensions & position
 		#(wx, wy) = self.get_origin()
-		(ret, ax, ay) = window.get_origin()
+
+		window = self.applet.get_window()
+                if GTK_API_VERSION == '3.0':
+		    screen = window.get_screen()
+                    monitor = screen.get_monitor_geometry (screen.get_monitor_at_window (window))
+                    (ret, ax, ay) = window.get_origin()
+                    (aw, ah) = self.applet.window.get_size ()
+                    (ignored, ignored, aw, ah) = window.get_geometry()
+                else:
+                    screen = self.applet.get_screen()
+                    monitor = Gdk.Rectangle(0, 0, 0, 0)
+                    ax = ay = 0
+                    self.applet.window.get_origin(ax, ay)
+                    (aw, ah) = self.applet.window.get_size ()
+                    screen.get_monitor_geometry (screen.get_monitor_at_window (self.applet.window), monitor)
 
 		(ww, wh) = self.get_size()
-		(ignored, ignored, aw, ah) = window.get_geometry()
 
 		if self.alignment == MatePanelApplet.AppletOrient.LEFT:
 			x = ax - ww
