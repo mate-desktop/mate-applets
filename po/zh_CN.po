@@ -40,7 +40,7 @@ msgstr "显示 AccessX 特性的状态，如插销修饰"
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -63,7 +63,7 @@ msgstr "键盘辅助功能首选项(_K)"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -73,7 +73,7 @@ msgstr "帮助(_H)"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1550,108 +1550,6 @@ msgstr "收益"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "收益百分比"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "激活(_A)"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "断开(_D)"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "属性(_P)"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "调制解调器监视器"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "连接已通，但无法获得连接时间"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "已连接的时间：%.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "未连接"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "要连接到您的 ISP，您需要有管理员权限"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "要从您的 ISP 断开连接，您需要有管理员权限"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "输入的密码无效"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "请检查您输入的内容是否正确，而且您没有按下“Caps Lock”键"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "你想连接吗？"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "你想断开连接吗？"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "连接(_O)"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "断开(_D)"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "无法调用网络配置工具"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "请检查该工具是否已经安装在正确路径中，权限是否正确"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "激活并监视拨号网络连接的小程序。"
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "输入密码"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "需要 root 口令"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "密码："
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "正在连接互联网服务提供商"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "激活并监视拨号网络连接"
 
 #: ../multiload/main.c:65
 msgid ""

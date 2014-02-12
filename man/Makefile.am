@@ -8,7 +8,6 @@ man_MANS = \
 	mateweather.1		\
 	mini_commander_applet.1	\
 	mixer_applet.1		\
-	modemlights_applet.1	\
 	multiload_applet.1	\
 	screenshooter_applet.1	\
 	sound-monitor_applet.1	\

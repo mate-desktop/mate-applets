@@ -32,7 +32,7 @@ msgstr "ಲ್ಯಾಚ್ ಮಾಡಲಾದ ಮಾರ್ಪಡಕಗಳಂತ�
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -55,7 +55,7 @@ msgstr "ಕೀಲಿಮಣೆ ನಿಲುಕಣೆ ಆದ್ಯತೆಗಳು(
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -65,7 +65,7 @@ msgstr "ಸಹಾಯ(_H)"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1542,108 +1542,6 @@ msgstr "ಲಾಭ"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "ಲಾಭ %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "ಸಕ್ರಿಯಗೊಳಿಸು(_A)"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು(_D)"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "ಗುಣಲಕ್ಷಣಗಳು(_P)"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "ಮಾಡೆಮ್ ಮೇಲ್ವಿಚಾರಕ"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "ಸಂಪರ್ಕವು ಸಕ್ರಿಯವಾಗಿದೆ ಆದರೆ ಸಂಪರ್ಕದ ಸಮಯವನ್ನು ಪಡೆಯಲಾಗಿಲ್ಲ"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "ಸಂಪರ್ಕಿತಗೊಂಡ ಸಮಯ: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "ಸಂಪರ್ಕಿತಗೊಂಡಿಲ್ಲ"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "ನಿಮ್ಮ ಅಂತರ್ಜಾಲ ಸೇವಾಕರ್ತಗಳೊಂದಿಗೆ ಸಂಪರ್ಕಸಾಧಿಸಲು ನಿಮಗೆ ವ್ಯವಸ್ಥಾಪಕ ಸವಲತ್ತುಗಳ ಅಗತ್ಯವಿದೆ"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "ನಿಮ್ಮ ಅಂತರ್ಜಾಲ ಸೇವಾಕರ್ತಗಳೊಂದಿಗೆ ಸಂಪರ್ಕವನ್ನು ಕಡಿಯಲು ನಿಮಗೆ ವ್ಯವಸ್ಥಾಪಕ ಸವಲತ್ತುಗಳ ಅಗತ್ಯವಿದೆ"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "ನೀವು ನಮೂದಿಸಿದ ಗುಪ್ತಪದವು ಅಮಾನ್ಯವಾಗಿದೆ"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "ನೀವು ಅದನ್ನು ಸರಿಯಾಗಿ ನಮೂದಿಸಿದ್ದೀರಿ ಹಾಗು \"caps lock\" ಕೀಲಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿಲ್ಲ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "ನೀವು ಸಂಪರ್ಕಸಾಧಿಸಲು ಬಯಸುತ್ತೀರೆ?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "ನೀವು ಸಂಪರ್ಕವನ್ನು ತಪ್ಪಿಸಲು ಬಯಸುತ್ತೀರೆ?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "ಸಂಪರ್ಕಸಾಧಿಸು(_o)"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "ಸಂಪರ್ಕ ಕಡಿದು ಹಾಕು(_D)"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "ಜಾಲಬಂಧ ಸಂರಚನಾ ಉಪಕರಣವನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "ಅದನ್ನು ಸರಿಯಾದ ಮಾರ್ಗದಲ್ಲಿ ಅನುಸ್ಥಾಪಿಸಲಾಗಿದೆ ಹಾಗು ಅದು ಸರಿಯಾದ ಅನುಮತಿಗಳನ್ನು ಹೊಂದಿದೆಯೆ ಎಂದು ಪರಿಶೀಲಿಸಿ"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "ಡಯಲ್‌-ಅಪ್ ಜಾಲಬಂಧ ಸಂಪರ್ಕವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವ ಹಾಗು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡುವ ಆಪ್ಲೆಟ್‌."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "ಗುಪ್ತಪದವನ್ನು ನಮೂದಿಸಿ"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "ನಿರ್ವಾಹಕ (ರೂಟ್‌) ಗುಪ್ತಪದದ ಅಗತ್ಯವಿದೆ"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "ಗುಪ್ತಪದ:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "ಅಂತರ್ಜಾಲ ಸೇವಾಕರ್ತರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲಾಗುತ್ತಿದೆ"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "ಡಯಲ್‌-ಅಪ್ ಜಾಲಬಂಧ ಸಂಪರ್ಕವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವ ಹಾಗು ಮೇಲ್ವಿಚಾರಣೆ ನಡೆಸು"
 
 #: ../multiload/main.c:65
 msgid ""

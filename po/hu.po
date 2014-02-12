@@ -40,7 +40,7 @@ msgstr "Az AccessX szolgáltatások, mint a lezárt módosítóbillentyűk álla
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -63,7 +63,7 @@ msgstr "_Billentyűzet akadálymentesítésének beállítása"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -73,7 +73,7 @@ msgstr "_Súgó"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1557,108 +1557,6 @@ msgstr "Nyereség"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Nyereség %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Aktiválás"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "_Deaktiválás"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "_Tulajdonságok"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Modemfigyelő"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "A kapcsolat aktív, de a kapcsolat ideje nem érhető el"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Kapcsolat ideje: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "Nincs kapcsolat"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Rendszergazdai jogosultság szükséges az internetszolgáltatójához való kapcsolódáshoz"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Rendszergazdai jogosultság szükséges az internetszolgáltatójától való lekapcsolódáshoz"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "A megadott jelszó érvénytelen"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Ellenőrizze, hogy helyesen írta-e be és a Caps Lock billentyű nincs bekapcsolva"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Kapcsolódni akar?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Bontja a kapcsolatot?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "Kapcs_olódás"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "_Bontás"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "A hálózatbeállító eszköz nem indítható el"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Ellenőrizze, hogy a megfelelő helyre van-e telepítve és megfelelőek-e a jogosultságai"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Betárcsázós hálózati kapcsolat aktiválására és figyelésére használható kisalkalmazás."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Adja meg a jelszót"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Rendszergazdai jelszó szükséges"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Jelszó:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "Kapcsolódás az internetszolgáltatóhoz"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Betárcsázós hálózati kapcsolat aktiválása és megfigyelése"
 
 #: ../multiload/main.c:65
 msgid ""

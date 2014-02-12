@@ -39,7 +39,7 @@ msgstr "Показує стан особливостей AccessX, наприкл
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -62,7 +62,7 @@ msgstr "Параметри спеціальних можливостей _кла
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -72,7 +72,7 @@ msgstr "_Довідка"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1563,108 +1563,6 @@ msgstr "Мета"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Мета %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Активувати"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "_Деактивувати"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "В_ластивості"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Індикатор модему"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "З'єднання активне, але час з'єднання отримати не вдається"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Час з'єднання: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "Немає з'єднання"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Щоб встановити з'єднання з постачальником Інтернет, необхідні привілеї адміністратора"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Щоб розірвати з'єднання з постачальником Інтернет, необхідні привілеї адміністратора"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "Введено неправильний пароль"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Переконайтеся, що пароль введено правильно та клавіша \"caps lock\" не була активована"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Встановити з'єднання?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Розірвати з'єднання?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "З'_єднатися"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "_Роз'єднатися"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "Не вдається запустити утиліту налаштовування мережі"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Переконайтеся, що вона встановлена за шляхом пошуку та має правильні права доступу"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Аплет для під’єднання та показу стану модемних з'єднань."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Введіть пароль"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Потрібен пароль адміністратора"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Пароль:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "Під’єднання до постачальника послуг Інтернет"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Активує та показує стан модемного з'єднання"
 
 #: ../multiload/main.c:65
 msgid ""

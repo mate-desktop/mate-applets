@@ -43,7 +43,7 @@ msgstr "修飾キーなどの AccessX 機能のステータスを表示します
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -66,7 +66,7 @@ msgstr "キーボード操作性の設定(_K)"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -76,7 +76,7 @@ msgstr "ヘルプ(_H)"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1553,108 +1553,6 @@ msgstr "利益"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "利益 %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "有効にする(_A)"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "無効にする(_D)"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "プロパティ(_P)"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "モデムモニタ"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "接続しましたが、接続時間を取得できませんでした"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "接続時間: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "接続していません"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "ご契約のインターネットサービスプロバイダに接続するには、管理者の権限が必要です"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "ご契約のインターネットサービスプロバイダから接続を切るには、管理者の権限が必要です"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "入力したパスワードが間違っています"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "入力したパスワードが正しいか、あるいは [Caps Lock] が押されたままになっていないか確認してください。"
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "接続してもよろしいですか?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "接続を切ってもよろしいですか?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "接続する(_O)"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "切断する(_D)"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "ネットワーク設定ツールを起動できませんでした"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "ツールが正しい場所にインストールされているか、そして正しい権限になっているか確認してください。"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "ダイアルアップネットワーク接続を起動したりモニターするアプレットです"
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "パスワードの入力"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "root のパスワードが必要です"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "パスワード:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "プロバイダに接続中"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "ダイアルアップネットワーク接続の起動とモニターを行います"
 
 #: ../multiload/main.c:65
 msgid ""

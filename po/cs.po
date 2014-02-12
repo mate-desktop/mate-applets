@@ -43,7 +43,7 @@ msgstr "Zobrazí stav vlastností AccessX, například zablokovaných modifikát
 #: ../charpick/charpick.c:600 ../command/command.c:111
 #: ../cpufreq/src/cpufreq-applet.c:697 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:201 ../mateweather/mateweather-about.c:52
-#: ../invest-applet/invest/about.py:34 ../modemlights/modem-applet.c:1023
+#: ../invest-applet/invest/about.py:34 
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
@@ -66,7 +66,7 @@ msgstr "Předvolby zpřístupnění _klávesnice"
 #: ../accessx-status/applet.c:218 ../battstat/battstat_applet.c:64
 #: ../charpick/charpick.c:681 ../cpufreq/src/cpufreq-applet.c:139
 #: ../drivemount/drivemount.c:157 ../geyes/geyes.c:375
-#: ../mateweather/mateweather-applet.c:126 ../modemlights/modem-applet.c:151
+#: ../mateweather/mateweather-applet.c:126 
 #: ../multiload/main.c:451 ../stickynotes/stickynotes_applet.c:45
 #: ../trashapplet/src/trashapplet.c:77
 msgid "_Help"
@@ -76,7 +76,7 @@ msgstr "Nápo_věda"
 #: ../charpick/charpick.c:684 ../command/command.c:74
 #: ../cpufreq/src/cpufreq-applet.c:142 ../drivemount/drivemount.c:160
 #: ../geyes/geyes.c:378 ../mateweather/mateweather-applet.c:129
-#: ../modemlights/modem-applet.c:154 ../multiload/main.c:454
+#:  ../multiload/main.c:454
 #: ../stickynotes/stickynotes_applet.c:48 ../timerapplet/timerapplet.c:81
 #: ../trashapplet/src/trashapplet.c:80
 msgid "_About"
@@ -1567,108 +1567,6 @@ msgstr "Zisk"
 #: ../invest-applet/invest/widgets.py:58
 msgid "Gain %"
 msgstr "Zisk v %"
-
-#: ../modemlights/modem-applet.c:142
-msgid "_Activate"
-msgstr "_Aktivovat"
-
-#: ../modemlights/modem-applet.c:145
-msgid "_Deactivate"
-msgstr "_Deaktivovat"
-
-#: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
-msgid "_Properties"
-msgstr "_Vlastnosti"
-
-#: ../modemlights/modem-applet.c:184
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
-msgid "Modem Monitor"
-msgstr "Sledování modemu"
-
-#: ../modemlights/modem-applet.c:710
-msgid "Connection active, but could not get connection time"
-msgstr "Spojení aktivní, ale nelze získat dobu spojení"
-
-#: ../modemlights/modem-applet.c:726
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Doba spojení: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:730
-msgid "Not connected"
-msgstr "Nepřipojeno"
-
-#: ../modemlights/modem-applet.c:752
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr "Chcete-li se připojit ke svému poskytovateli internetového připojení, potřebujete oprávnění správce"
-
-#: ../modemlights/modem-applet.c:753
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr "Chcete-li se odpojit od svého poskytovatele internetového připojení, je nutné mít oprávnění správce"
-
-#: ../modemlights/modem-applet.c:828
-msgid "The entered password is invalid"
-msgstr "Zadané heslo není platné"
-
-#: ../modemlights/modem-applet.c:830
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr "Zkontrolujte prosím, že jste jej zadali správně a že jste neaktivovali klávesu \"Caps Lock\""
-
-#: ../modemlights/modem-applet.c:932
-msgid "Do you want to connect?"
-msgstr "Chcete se připojit?"
-
-#: ../modemlights/modem-applet.c:933
-msgid "Do you want to disconnect?"
-msgstr "Chcete se odpojit?"
-
-#: ../modemlights/modem-applet.c:942
-msgid "C_onnect"
-msgstr "Přip_ojit"
-
-#: ../modemlights/modem-applet.c:942
-msgid "_Disconnect"
-msgstr "O_dpojit"
-
-#: ../modemlights/modem-applet.c:995
-msgid "Could not launch network configuration tool"
-msgstr "Nelze spustit nástroj na nastavení sítě"
-
-#: ../modemlights/modem-applet.c:997
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr "Zkontrolujte prosím, že je instalován se správnou cestou a že má správná oprávnění"
-
-#: ../modemlights/modem-applet.c:1020
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr "Applet na aktivaci a sledování vytáčeného připojení k síti."
-
-#: ../modemlights/modemlights.ui.h:1
-msgid "Enter password"
-msgstr "Zadejte heslo"
-
-#: ../modemlights/modemlights.ui.h:2
-msgid "Root password required"
-msgstr "Vyžadováno heslo superuživatele"
-
-#: ../modemlights/modemlights.ui.h:3
-msgid "Password:"
-msgstr "Heslo:"
-
-#: ../modemlights/modemlights.ui.h:4
-msgid "Connecting with Internet Service Provider"
-msgstr "Připojování k poskytovateli internetového připojení"
-
-#: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:2
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Aktivuje a sleduje vytáčené připojení k síti"
 
 #: ../multiload/main.c:65
 msgid ""

@@ -34,7 +34,7 @@ msgstr ""
 #: ../mateweather/MATE_MateWeatherApplet.xml.h:1
 #: ../invest-applet/data/Invest_Applet.xml.h:1
 #: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:1
-#: ../mixer/MATE_MixerApplet.xml.h:2 ../modemlights/MATE_ModemLights.xml.h:1
+#: ../mixer/MATE_MixerApplet.xml.h:2 
 #: ../multiload/MATE_MultiloadApplet.xml.h:1
 #: ../stickynotes/MATE_StickyNotesApplet.xml.h:2
 #: ../trashapplet/MATE_Panel_TrashApplet.xml.h:1
@@ -50,7 +50,7 @@ msgstr "_Acerca de"
 #: ../gswitchit/MATE_GSwitchItApplet.xml.h:5
 #: ../mateweather/MATE_MateWeatherApplet.xml.h:3
 #: ../mini-commander/src/MATE_MiniCommanderApplet.xml.h:2
-#: ../mixer/MATE_MixerApplet.xml.h:3 ../modemlights/MATE_ModemLights.xml.h:4
+#: ../mixer/MATE_MixerApplet.xml.h:3 
 #: ../multiload/MATE_MultiloadApplet.xml.h:2
 #: ../stickynotes/MATE_StickyNotesApplet.xml.h:4
 #: ../trashapplet/MATE_Panel_TrashApplet.xml.h:3
@@ -98,7 +98,7 @@ msgstr ""
 #: ../drivemount/drivemount.c:120 ../geyes/geyes.c:196
 #: ../gswitchit/gswitchit-applet.c:431 ../mateweather/mateweather-about.c:56
 #: ../invest-applet/invest/about.py:40 ../mini-commander/src/about.c:55
-#: ../mixer/applet.c:1324 ../modemlights/modem-applet.c:1049
+#: ../mixer/applet.c:1324 
 #: ../multiload/main.c:64 ../stickynotes/stickynotes_applet_callbacks.c:371
 #: ../trashapplet/src/trashapplet.c:742
 msgid "translator-credits"
@@ -3569,125 +3569,6 @@ msgstr "Preferencias del control de volumen"
 #: ../mixer/preferences.c:143
 msgid "Select the device and track to control."
 msgstr "Seleccione el dispositivo y pista para controlar."
-
-#: ../modemlights/MATE_ModemLights.server.in.in.h:1
-msgid "Activate and monitor a dial-up network connection"
-msgstr "Activar y monitorizar una conexión de marcado telefónico"
-
-#: ../modemlights/MATE_ModemLights.server.in.in.h:2
-#: ../modemlights/modem-applet.c:1043
-msgid "Modem Monitor"
-msgstr "Monitor del módem"
-
-#: ../modemlights/MATE_ModemLights.xml.h:2
-msgid "_Activate"
-msgstr "_Activar"
-
-#: ../modemlights/MATE_ModemLights.xml.h:3
-msgid "_Deactivate"
-msgstr "_Desactivar"
-
-#: ../modemlights/MATE_ModemLights.xml.h:5
-#: ../stickynotes/stickynotes.glade.h:45
-msgid "_Properties"
-msgstr "_Propiedades"
-
-#: ../modemlights/modem-applet.c:731
-msgid "Connection active, but could not get connection time"
-msgstr "Conexión activa, pero no se pudo obtener el tiempo de conexión"
-
-#: ../modemlights/modem-applet.c:747
-#, c-format
-msgid "Time connected: %.1d:%.2d"
-msgstr "Tiempo conectado: %.1d:%.2d"
-
-#: ../modemlights/modem-applet.c:751
-msgid "Not connected"
-msgstr "Desconectado"
-
-#: ../modemlights/modem-applet.c:773
-msgid ""
-"To connect to your Internet service provider, you need administrator "
-"privileges"
-msgstr ""
-"Para conectarse a su proveedor de servicios de Internet, necesita "
-"privilegios de administrador"
-
-#: ../modemlights/modem-applet.c:774
-msgid ""
-"To disconnect from your Internet service provider, you need administrator "
-"privileges"
-msgstr ""
-"Para desconectarse de su proveedor de servicios de Internet, necesita "
-"privilegios de administrador"
-
-#: ../modemlights/modem-applet.c:849
-msgid "The entered password is invalid"
-msgstr "La contraseña introducida no es válida"
-
-#: ../modemlights/modem-applet.c:851
-msgid ""
-"Check that you have typed it correctly and that you haven't activated the "
-"\"caps lock\" key"
-msgstr ""
-"Comprueba que la ha tecleado correctamente y  que no ha activado la tecla "
-"«Bloq. Mayús.»"
-
-#: ../modemlights/modem-applet.c:953
-msgid "Do you want to connect?"
-msgstr "¿Desea conectarse?"
-
-#: ../modemlights/modem-applet.c:954
-msgid "Do you want to disconnect?"
-msgstr "¿Desea desconectarse?"
-
-#: ../modemlights/modem-applet.c:963
-msgid "C_onnect"
-msgstr "C_onectar"
-
-#: ../modemlights/modem-applet.c:963
-msgid "_Disconnect"
-msgstr "_Desconectar"
-
-#: ../modemlights/modem-applet.c:1019
-msgid "Could not launch network configuration tool"
-msgstr "No se pudo lanzar la herramienta de configuración de red"
-
-#: ../modemlights/modem-applet.c:1021
-msgid ""
-"Check that it's installed in the correct path and that it has the correct "
-"permissions"
-msgstr ""
-"Comprueba que está instalado en la ruta correcta y que tienen los permisos "
-"correctos"
-
-#: ../modemlights/modem-applet.c:1046
-msgid "Applet for activating and monitoring a dial-up network connection."
-msgstr ""
-"Miniaplicación para activar y monitorizar una conexión de red de marcado "
-"telefónico."
-
-#: ../modemlights/modemlights.glade.h:1
-msgid ""
-"<span weight=\"bold\" size=\"larger\">Connecting with Internet Service "
-"Provider</span>"
-msgstr ""
-"<span weight=\"bold\" size=\"larger\">Conectando con el proveedor de "
-"servicios de Internet</span>"
-
-#: ../modemlights/modemlights.glade.h:2
-msgid "<span weight=\"bold\" size=\"larger\">Root password required</span>"
-msgstr ""
-"<span weight=\"bold\" size=\"larger\">Se necesita la contraseña de root</"
-"span>"
-
-#: ../modemlights/modemlights.glade.h:3
-msgid "Enter password"
-msgstr "Introduzca la contraseña"
-
-#: ../modemlights/modemlights.glade.h:4
-msgid "Password:"
-msgstr "Contraseña:"
 
 #: ../multiload/MATE_MultiLoadApplet_Factory.server.in.in.h:1
 msgid "A system load indicator"
