@@ -163,10 +163,6 @@ dnl -- check for mate-settings-daemon (optional) -----------------------------
 PKG_CHECK_MODULES(MATE_SETTINGS_DAEMON, mate-settings-daemon,
 	HAVE_MATE_SETTINGS_DAEMON=yes, HAVE_MATE_SETTINGS_DAEMON=no)
 
-if test "x$HAVE_MATE_SETTINGS_DAEMON" = "xno"; then
-	AC_MSG_WARN([mate-settings-daemon DBUS API is required to build modem-applet.])
-fi
-
 AC_SUBST(MATE_SETTINGS_DAEMON_CFLAGS)
 AC_SUBST(MATE_SETTINGS_DAEMON_LIBS)
 
@@ -459,32 +455,11 @@ if test "x$APPLET_ACCESSX" = "xtrue"; then
 fi
 CPPFLAGS=$savecppflags
 
-dnl ***************************************************************************
-dnl *** modemlights applet check                                            ***
-dnl ***************************************************************************
-
 SU_TOOL=
 HAVE_LIBUTIL=
 
 AC_PATH_PROG(SU_TOOL, su)
 AC_CHECK_LIB(util, forkpty, HAVE_LIBUTIL=true, HAVE_LIBUTIL=false)
-
-dnl ***
-dnl *** Modem lights does not currently compile. It needs to be ported to a
-dnl *** modern mate-system-tools backend.
-dnl ***
-dnl if test "x$HAVE_LIBUTIL" = "xtrue" -a "x$HAVE_MATE_SETTINGS_DAEMON" = "xyes"; then
-dnl   MODEMLIGHTS_LIBS=" -lutil"
-dnl   AC_SUBST(MODEMLIGHTS_LIBS)
-dnl   AC_DEFINE_UNQUOTED(STB_SCRIPTS_DIR, "$STB_SCRIPTS_DIR", [System tools backends])
-dnl   AC_DEFINE_UNQUOTED(SU_PATH, "${SU_TOOL}", [su executable path])
-dnl   BUILD_MODEM_LIGHTS=yes
-dnl else
-  AC_MSG_WARN([*** modemlights applet will not be built ***])
-  BUILD_MODEM_LIGHTS=no
-dnl fi
-
-AM_CONDITIONAL(APPLET_MODEMLIGHTS, test "x$BUILD_MODEM_LIGHTS" = "xyes")
 
 dnl ***************************************************************************
 dnl *** cpufreq applet check                                                ***
@@ -669,7 +644,6 @@ accessx-status/docs/Makefile
 accessx-status/pixmaps/Makefile
 drivemount/Makefile
 drivemount/help/Makefile
-modemlights/Makefile
 multiload/Makefile
 multiload/docs/Makefile
 charpick/Makefile
@@ -732,7 +706,6 @@ mate-applets-$VERSION configure summary:
         - geyes                    always
         - mateweather              $build_libmateweather_applets
         - invest-applet            $HAVE_PYGOBJECT
-        - modemlights              $BUILD_MODEM_LIGHTS
         - multiload                $build_gtop_applets
         - stickynotes              $enable_stickynotes
         - timerapplet              $HAVE_LIBNOTIFY
