@@ -34,7 +34,7 @@
 #include <mate-panel-applet-gsettings.h>
 
 /* Applet constants */
-#define APPLET_ICON  "time"
+#define APPLET_ICON  "mate-panel-clock"
 #define STEP         100
 
 /* GSettings constants */
