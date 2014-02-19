@@ -143,7 +143,7 @@ timer_callback (TimerApplet *applet)
             if (g_settings_get_boolean (applet->settings, SHOW_NOTIFICATION_KEY))
             {
                 NotifyNotification *n;
-                n = notify_notification_new (name, _("Timer finished!"), "time");
+                n = notify_notification_new (name, _("Timer finished!"), APPLET_ICON);
                 notify_notification_set_timeout (n, 30000);
                 notify_notification_show (n, NULL);
                 g_object_unref (G_OBJECT (n));
