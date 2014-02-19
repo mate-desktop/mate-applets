@@ -7,6 +7,7 @@
 # Alexander Sokolov <sisokolov@gmail.com>, 2012
 # Alexandre Prokhudine, 2002
 # Alexei Sorokin <sor.alexei@meowr.ru>, 2012-2013
+# Alexei Sorokin <sor.alexei@meowr.ru>, 2014
 # Den Arefyev <>, 2012
 # Leonid Kanter <leon@asplinux.ru>, 2002-2004, 2005, 2006, 2007, 2010
 # Michael Yakhontov <mvy@asplinux.ru>, 2003
@@ -18,8 +19,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-03 18:28+0100\n"
-"PO-Revision-Date: 2014-02-03 18:03+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-02-15 18:37+0000\n"
+"Last-Translator: Alexei Sorokin <sor.alexei@meowr.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/MATE/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +46,7 @@ msgstr "Показывает состояние возможностей AccessX
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
-msgstr "Алексей Сорокин <sor.alexei@hotbox.ru>\nМакс Валянский <max.valjanski@gmail.com>\nСергей Панов <sipan@mit.edu>\nВалёк Филиппов <frob@df.ru>\nАлександр Прокудин\nДмитрий Мастрюков <dmitry@taurussoft.org>\nМихаил Яхонтов <mvy@asplinux.ru>\nЛеонид Кантер <leon@asplinux.ru>"
+msgstr "Алексей Сорокин <sor.alexei@meowr.ru>\nМакс Валянский <max.valjanski@gmail.com>\nСергей Панов <sipan@mit.edu>\nВалек Филиппов <frob@df.ru>\nАлександр Прокудин\nДмитрий Мастрюков <dmitry@taurussoft.org>\nМихаил Яхонтов <mvy@asplinux.ru>\nЛеонид Кантер <leon@asplinux.ru>"
 
 #: ../accessx-status/applet.c:165
 #, c-format
@@ -476,11 +477,11 @@ msgstr "0 - без метки, 1 - проценты, 2 - оставшееся в
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:19
 msgid "Disable HAL"
-msgstr ""
+msgstr "Отключить HAL"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:20
 msgid "Disable HAL if true"
-msgstr ""
+msgstr "Отключить HAL, если истинно"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
@@ -631,48 +632,48 @@ msgstr "Параметры кассы символов"
 
 #: ../command/command.c:110
 msgid "Shows the output of a command"
-msgstr ""
+msgstr "Показывает вывод команды"
 
 #: ../command/command.c:127
 msgid "Command Applet Preferences"
-msgstr ""
+msgstr "Параметры командного апплета"
 
 #: ../command/command.c:139
 msgid "Command:"
-msgstr ""
+msgstr "Команда:"
 
 #: ../command/command.c:150
 msgid "Interval (seconds):"
-msgstr ""
+msgstr "Интервал (секунды):"
 
 #: ../command/command.c:161
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:5
 msgid "Show icon"
-msgstr ""
+msgstr "Показывать значок"
 
 #: ../command/command.c:297
 msgid "Command Applet"
-msgstr ""
+msgstr "Командный апплет"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:1
 msgid "Command to execute"
-msgstr ""
+msgstr "Команда для исполнения"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:2
 msgid "Command/script to execute to get the output"
-msgstr ""
+msgstr "Команда/скрипт, выполняемая для получения вывода"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:3
 msgid "Interval for the command"
-msgstr ""
+msgstr "Интервал команды"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:4
 msgid "Interval to execute the command (in seconds)"
-msgstr ""
+msgstr "Интервал для исполнения команды (в секундах)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:6
 msgid "If applet icon is shown or not"
-msgstr ""
+msgstr "Показывается значок апплета или нет"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
@@ -775,7 +776,7 @@ msgstr "(не подключён)"
 
 #: ../drivemount/drive-button.c:614
 msgid "Cannot execute Caja"
-msgstr ""
+msgstr "Не удается выполнить Caja"
 
 #: ../drivemount/drive-button.c:616
 #, c-format
@@ -1172,7 +1173,7 @@ msgstr "А_дрес:"
 #. setup show-notifications button
 #: ../mateweather/mateweather-pref.c:1038
 msgid "Show _notifications"
-msgstr ""
+msgstr "Показывать _уведомления"
 
 #: ../mateweather/mateweather-pref.c:1048
 msgid "Update"
@@ -1434,19 +1435,19 @@ msgstr "Отслеживает ваши инвестиции"
 #. name, stock_id, label, accellerator, tooltip, callback
 #: ../invest-applet/invest/applet.py:27
 msgid "About"
-msgstr ""
+msgstr "О программе"
 
 #: ../invest-applet/invest/applet.py:28
 msgid "Help"
-msgstr ""
+msgstr "Справка"
 
 #: ../invest-applet/invest/applet.py:29
 msgid "Preferences"
-msgstr ""
+msgstr "Параметры"
 
 #: ../invest-applet/invest/applet.py:30
 msgid "Refresh"
-msgstr ""
+msgstr "Обновить"
 
 #. a) We aren't configured yet
 #: ../invest-applet/invest/applet.py:62
@@ -2355,31 +2356,31 @@ msgstr "Липкие записки для среды MATE"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:1
 msgid "Name of timer"
-msgstr ""
+msgstr "Название таймера"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:2
 msgid "Duration of timer in seconds"
-msgstr ""
+msgstr "Продолжительность таймера в секундах"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:3
 msgid "Show notification popup when timer finish"
-msgstr ""
+msgstr "Показать всплывающее уведомление, когда таймер окончен"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:4
 msgid "Show dialog window when timer finish"
-msgstr ""
+msgstr "Показать диалоговое окно, когда таймер окончен"
 
 #: ../timerapplet/timerapplet.c:77
 msgid "_Start timer"
-msgstr ""
+msgstr "З_апустить таймер"
 
 #: ../timerapplet/timerapplet.c:78
 msgid "P_ause timer"
-msgstr ""
+msgstr "_Приостановить таймер"
 
 #: ../timerapplet/timerapplet.c:79
 msgid "S_top timer"
-msgstr ""
+msgstr "_Остановить таймер"
 
 #: ../timerapplet/timerapplet.c:139
 msgid "Finished"
@@ -2387,7 +2388,7 @@ msgstr "Завершено"
 
 #: ../timerapplet/timerapplet.c:146 ../timerapplet/timerapplet.c:158
 msgid "Timer finished!"
-msgstr ""
+msgstr "Таймер завершён!"
 
 #: ../timerapplet/timerapplet.c:253
 msgid "Start a timer and receive a notification when it is finished"
@@ -2395,31 +2396,31 @@ msgstr "Выставить таймер и получить уведомлени
 
 #: ../timerapplet/timerapplet.c:286
 msgid "Timer Applet Preferences"
-msgstr ""
+msgstr "Настройки апплета таймера"
 
 #: ../timerapplet/timerapplet.c:298
 msgid "Name:"
-msgstr ""
+msgstr "Имя:"
 
 #: ../timerapplet/timerapplet.c:310
 msgid "Hours:"
-msgstr ""
+msgstr "Часы:"
 
 #: ../timerapplet/timerapplet.c:324
 msgid "Minutes:"
-msgstr ""
+msgstr "Минуты:"
 
 #: ../timerapplet/timerapplet.c:338
 msgid "Seconds:"
-msgstr ""
+msgstr "Секунды:"
 
 #: ../timerapplet/timerapplet.c:352
 msgid "Show notification popup"
-msgstr ""
+msgstr "Показать всплывающее уведомление"
 
 #: ../timerapplet/timerapplet.c:358
 msgid "Show dialog"
-msgstr ""
+msgstr "Отобразить диалог"
 
 #: ../timerapplet/timerapplet.c:376
 msgid "Timer Applet"
