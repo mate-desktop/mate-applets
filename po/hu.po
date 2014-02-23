@@ -8,6 +8,7 @@
 # Gabor Kelemen <kelemeng at mate dot hu>, 2004-2010
 # Gabor Sari <saga at mate dot hu>, 2003
 # i_sty <szollosi.istv4n@gmail.com>, 2014
+# i_sty <szollosi.istv4n@gmail.com>, 2014
 # Laszlo Dvornik <dvornik at mate dot hu>, 2004
 # Mate ORY <orymate at gmail d0t com>, 2006
 # Rezső Páder <rezso@rezso.net>, 2013
@@ -17,8 +18,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-03 18:28+0100\n"
-"PO-Revision-Date: 2014-02-03 18:08+0000\n"
-"Last-Translator: i_sty <szollosi.istv4n@gmail.com>\n"
+"PO-Revision-Date: 2014-02-22 20:47+0000\n"
+"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -468,11 +469,11 @@ msgstr "0, ha nincs címke, 1 a százalékos és 2 a hátralévő idő megjelen�
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:19
 msgid "Disable HAL"
-msgstr ""
+msgstr "HAL letiltása"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:20
 msgid "Disable HAL if true"
-msgstr ""
+msgstr "HAL letiltása, ha igaz"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
@@ -623,7 +624,7 @@ msgstr "Karakterpaletta beállításai"
 
 #: ../command/command.c:110
 msgid "Shows the output of a command"
-msgstr ""
+msgstr "Parancs kimenetének megjelenítése"
 
 #: ../command/command.c:127
 msgid "Command Applet Preferences"
@@ -635,12 +636,12 @@ msgstr "Parancs:"
 
 #: ../command/command.c:150
 msgid "Interval (seconds):"
-msgstr ""
+msgstr "Időköz (másodperc):"
 
 #: ../command/command.c:161
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:5
 msgid "Show icon"
-msgstr ""
+msgstr "Ikon megjelenítése"
 
 #: ../command/command.c:297
 msgid "Command Applet"
@@ -648,7 +649,7 @@ msgstr ""
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:1
 msgid "Command to execute"
-msgstr ""
+msgstr "Végrehajtandó parancs"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:2
 msgid "Command/script to execute to get the output"
@@ -767,7 +768,7 @@ msgstr "(leválasztva)"
 
 #: ../drivemount/drive-button.c:614
 msgid "Cannot execute Caja"
-msgstr ""
+msgstr "A Caja nem futtatható"
 
 #: ../drivemount/drive-button.c:616
 #, c-format
@@ -1164,7 +1165,7 @@ msgstr "_Cím:"
 #. setup show-notifications button
 #: ../mateweather/mateweather-pref.c:1038
 msgid "Show _notifications"
-msgstr ""
+msgstr "Értesítések megjele_nítése"
 
 #: ../mateweather/mateweather-pref.c:1048
 msgid "Update"
@@ -1426,19 +1427,19 @@ msgstr "Befektetések követése."
 #. name, stock_id, label, accellerator, tooltip, callback
 #: ../invest-applet/invest/applet.py:27
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: ../invest-applet/invest/applet.py:28
 msgid "Help"
-msgstr ""
+msgstr "Súgó"
 
 #: ../invest-applet/invest/applet.py:29
 msgid "Preferences"
-msgstr ""
+msgstr "Beállítások"
 
 #: ../invest-applet/invest/applet.py:30
 msgid "Refresh"
-msgstr ""
+msgstr "Frissítés"
 
 #. a) We aren't configured yet
 #: ../invest-applet/invest/applet.py:62
@@ -2345,7 +2346,7 @@ msgstr "Ragadós cetlik a MATE asztali környezethez"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:1
 msgid "Name of timer"
-msgstr ""
+msgstr "Időzítő neve"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:2
 msgid "Duration of timer in seconds"
@@ -2361,15 +2362,15 @@ msgstr ""
 
 #: ../timerapplet/timerapplet.c:77
 msgid "_Start timer"
-msgstr ""
+msgstr "Időzítő _indítása"
 
 #: ../timerapplet/timerapplet.c:78
 msgid "P_ause timer"
-msgstr ""
+msgstr "Időzítő _szünet"
 
 #: ../timerapplet/timerapplet.c:79
 msgid "S_top timer"
-msgstr ""
+msgstr "Időzí_tő leállítása"
 
 #: ../timerapplet/timerapplet.c:139
 msgid "Finished"
@@ -2385,23 +2386,23 @@ msgstr "Időzítő indítása, és jelzés az idő lejáratakor"
 
 #: ../timerapplet/timerapplet.c:286
 msgid "Timer Applet Preferences"
-msgstr ""
+msgstr "Időzítő applet beállításai"
 
 #: ../timerapplet/timerapplet.c:298
 msgid "Name:"
-msgstr ""
+msgstr "Név:"
 
 #: ../timerapplet/timerapplet.c:310
 msgid "Hours:"
-msgstr ""
+msgstr "Óra:"
 
 #: ../timerapplet/timerapplet.c:324
 msgid "Minutes:"
-msgstr ""
+msgstr "Perc:"
 
 #: ../timerapplet/timerapplet.c:338
 msgid "Seconds:"
-msgstr ""
+msgstr "Másodperc:"
 
 #: ../timerapplet/timerapplet.c:352
 msgid "Show notification popup"
