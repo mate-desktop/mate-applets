@@ -3,17 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Changwoo Ryu <cwryu@debian.org>, 2007-2010
 # Changwoo Ryu <cwryu@debian.org>, 2007, 2008, 2009, 2010
+# ChiDeok, Hwang <hwang@mizi.co.kr>, 2001
 # GwanSun Back <backiss@kornet.net>, 2001
+# Darkcircle <darkcircle.0426@gmail.com>, 2014
 # update by ChiDeok, Hwang <hwang@mizi.co.kr>, 2001
 # update by Young-Ho, Cha <ganadist@chollian.net>, 2001
+# Young-Ho, Cha <ganadist@chollian.net>, 2001
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-03 18:28+0100\n"
-"PO-Revision-Date: 2014-02-03 18:03+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-02-27 15:45+0000\n"
+"Last-Translator: Darkcircle <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/MATE/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +27,7 @@ msgstr ""
 
 #: ../accessx-status/applet.c:145
 msgid "Shows the state of AccessX features such as latched modifiers"
-msgstr "AccessX 기능의 상태를 보여줍니다 (예를 들어 변경 키 고정(latched modifiers))"
+msgstr "AccessX 기능의 상태를 보여줍니다(예를 들어 변경 키 고정(latched modifiers))"
 
 #. about.set_authors("Raphael Slinckx <raphael@slinckx.net>\nEnrico Minack
 #. <enrico-minack@gmx.de>")
@@ -39,7 +43,7 @@ msgstr "AccessX 기능의 상태를 보여줍니다 (예를 들어 변경 키 �
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
-msgstr "류창우 <cwryu@debian.org>\n차영호 <ganadist@chollian.net>\n황치덕 <hwang@mizi.co.kr>\n백관선 <backiss@kornet.net>"
+msgstr "류창우 <cwryu@debian.org>\n차영호 <ganadist@chollian.net>\n황치덕 <hwang@mizi.co.kr>\n백관선 <backiss@kornet.net>\n조성호 <darkcircle.0426@gmail.com>"
 
 #: ../accessx-status/applet.c:165
 #, c-format
@@ -226,7 +230,7 @@ msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] "배터리 전원이 %d 분 남았습니다 (전체 용량의 %d%%)."
+msgstr[0] "배터리 전원이 %d 분 남았습니다(전체 용량의 %d%%)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -283,7 +287,7 @@ msgstr "이 유틸리티는 랩탑 배터리의 상태를 보여 줍니다."
 #. ture
 #: ../battstat/battstat_applet.c:1425
 msgid "upower backend enabled."
-msgstr ""
+msgstr "upower 백엔드를 활성화했습니다."
 
 #. true
 #: ../battstat/battstat_applet.c:1427
@@ -293,7 +297,7 @@ msgstr "HAL 백엔드를 사용합니다."
 #. false
 #: ../battstat/battstat_applet.c:1428
 msgid "Legacy (non-HAL) backend enabled."
-msgstr "전통적 방식의 (HAL 아님) 백엔드를 사용합니다."
+msgstr "전통적 방식의(HAL 아님) 백엔드를 사용합니다."
 
 #: ../battstat/battstat_applet.c:1809 ../battstat/battstat_applet.c:1864
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
@@ -432,7 +436,7 @@ msgstr "배터리의 맨 위에서부터 배터리 표시를 줄여 나갑니다
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:13
 msgid "Upright (small) battery"
-msgstr "위 아래 (작은) 배터리"
+msgstr "위 아래(작은) 배터리"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:14
 msgid "Show the upright, smaller battery on the panel."
@@ -456,11 +460,11 @@ msgstr "0이면 레이블이 없고, 1이면 퍼센트이고, 2이면 남은 시
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:19
 msgid "Disable HAL"
-msgstr ""
+msgstr "HAL 비활성화"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:20
 msgid "Disable HAL if true"
-msgstr ""
+msgstr "참이면 HAL을 비활성화합니다"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
@@ -611,52 +615,52 @@ msgstr "문자 팔레트 기본 설정"
 
 #: ../command/command.c:110
 msgid "Shows the output of a command"
-msgstr ""
+msgstr "명령 출력을 표시합니다"
 
 #: ../command/command.c:127
 msgid "Command Applet Preferences"
-msgstr ""
+msgstr "명령 애플릿 기본 설정"
 
 #: ../command/command.c:139
 msgid "Command:"
-msgstr ""
+msgstr "명령:"
 
 #: ../command/command.c:150
 msgid "Interval (seconds):"
-msgstr ""
+msgstr "주기(초):"
 
 #: ../command/command.c:161
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:5
 msgid "Show icon"
-msgstr ""
+msgstr "아이콘 표시"
 
 #: ../command/command.c:297
 msgid "Command Applet"
-msgstr ""
+msgstr "명령 애플릿"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:1
 msgid "Command to execute"
-msgstr ""
+msgstr "실행할 명령"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:2
 msgid "Command/script to execute to get the output"
-msgstr ""
+msgstr "출력을 보기위해 실행할 명령/스크립트"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:3
 msgid "Interval for the command"
-msgstr ""
+msgstr "명령 주기"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:4
 msgid "Interval to execute the command (in seconds)"
-msgstr ""
+msgstr "명령을 실행할 주기입니다(초)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:6
 msgid "If applet icon is shown or not"
-msgstr ""
+msgstr "애플릿 아이콘 표시"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
-msgstr "CPU 클럭 정보 기본 설정"
+msgstr "CPU 주파수 정보 기본 설정"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
 msgid "Monitor Settings"
@@ -676,24 +680,24 @@ msgstr "모양(_A):"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:6
 msgid "Show CPU frequency as _frequency"
-msgstr "CPU 클럭을 주파수로 보기(_F)"
+msgstr "CPU 주파수을 주파수로 표시(_F)"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:7
 msgid "Show frequency _units"
-msgstr "주파수 단위 보기(_U)"
+msgstr "주파수 단위 표시(_U)"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:8
 msgid "Show CPU frequency as _percentage"
-msgstr "CPU 클럭을 퍼센트로 보기(_P)"
+msgstr "CPU 주파수을 퍼센트로 표시(_P)"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
 #: ../cpufreq/src/cpufreq-applet.c:1035 ../cpufreq/src/cpufreq-applet.c:1090
 msgid "CPU Frequency Scaling Monitor"
-msgstr "CPU 클럭 스케일링 정보"
+msgstr "CPU 주파수 스케일링 정보"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:2
 msgid "Monitor the CPU Frequency Scaling"
-msgstr "CPU 클럭 스케일링을 봅니다"
+msgstr "CPU 주파수 스케일링을 봅니다"
 
 #: ../cpufreq/src/cpufreq-applet.c:665 ../cpufreq/src/cpufreq-prefs.c:394
 msgid "Could not open help document"
@@ -701,11 +705,11 @@ msgstr "도움말 문서를 열 수 없습니다"
 
 #: ../cpufreq/src/cpufreq-applet.c:692
 msgid "This utility shows the current CPU Frequency Scaling."
-msgstr "이 유틸리티는 CPU 클럭 스케일링을 표시합니다."
+msgstr "이 유틸리티는 CPU 주파수 스케일링을 표시합니다."
 
 #: ../cpufreq/src/cpufreq-applet.c:1091
 msgid "This utility shows the current CPU Frequency"
-msgstr "이 유틸리티는 현재 CPU 클럭을 표시합니다."
+msgstr "이 유틸리티는 현재 CPU 주파수을 표시합니다."
 
 #: ../cpufreq/src/cpufreq-prefs.c:529
 msgid "Graphic"
@@ -721,7 +725,7 @@ msgstr "그래픽 및 텍스트"
 
 #: ../cpufreq/src/cpufreq-monitor-cpuinfo.c:117
 msgid "Frequency Scaling Unsupported"
-msgstr "클럭 스케일링을 지원하지 않습니다"
+msgstr "주파수 스케일링을 지원하지 않습니다"
 
 #. If there is no cpufreq support it shows only the cpu frequency,
 #. * I think is better than do nothing. I have to notify it to the user,
@@ -729,21 +733,21 @@ msgstr "클럭 스케일링을 지원하지 않습니다"
 #. * he could think that cpufreq is supported but it doesn't work succesfully
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
-msgstr "CPU 클럭 스케일링을 지원하지 않습니다"
+msgstr "CPU 주파수 스케일링을 지원하지 않습니다"
 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:60
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr "컴퓨터의 클럭을 바꿀 수 없습니다. 컴퓨터 설정이 틀렸거나 CPU 클럭 스케일링을 하드웨어에서 지원하지 않습니다."
+msgstr "컴퓨터의 주파수을 바꿀 수 없습니다. 컴퓨터 설정이 틀렸거나 CPU 주파수 스케일링을 하드웨어에서 지원하지 않습니다."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
-msgstr "CPU 클럭 스케일링 바꾸기"
+msgstr "CPU 주파수 스케일링 바꾸기"
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:2
 msgid "Privileges are required to change the CPU Frequency scaling."
-msgstr "CPU 클럭 스케일링을 바꾸려면 권한이 필요합니다."
+msgstr "CPU 주파수 스케일링을 바꾸려면 권한이 필요합니다."
 
 #: ../drivemount/drive-button.c:360 ../drivemount/drive-button.c:373
 msgid "(mounted)"
@@ -755,7 +759,7 @@ msgstr "(마운트하지 않음)"
 
 #: ../drivemount/drive-button.c:614
 msgid "Cannot execute Caja"
-msgstr ""
+msgstr " Caja를 실행할 수 없습니다"
 
 #: ../drivemount/drive-button.c:616
 #, c-format
@@ -1152,7 +1156,7 @@ msgstr "주소(_D):"
 #. setup show-notifications button
 #: ../mateweather/mateweather-pref.c:1038
 msgid "Show _notifications"
-msgstr ""
+msgstr "알림 표시(_N)"
 
 #: ../mateweather/mateweather-pref.c:1048
 msgid "Update"
@@ -1188,7 +1192,7 @@ msgstr "위치"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr ""
+msgstr "Mateweather 애플릿 팩토리"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
@@ -1401,7 +1405,7 @@ msgstr "<i><small><b>알림:</b> 정보 인용이 최소 15분 이상 지연되�
 
 #: ../invest-applet/data/prefs-dialog.ui.h:6
 msgid "Currency"
-msgstr ""
+msgstr "통화"
 
 #: ../invest-applet/invest/about.py:22
 msgid "Invest"
@@ -1414,19 +1418,19 @@ msgstr "투자한 사항을 살펴 봅니다."
 #. name, stock_id, label, accellerator, tooltip, callback
 #: ../invest-applet/invest/applet.py:27
 msgid "About"
-msgstr ""
+msgstr "정보"
 
 #: ../invest-applet/invest/applet.py:28
 msgid "Help"
-msgstr ""
+msgstr "도움말"
 
 #: ../invest-applet/invest/applet.py:29
 msgid "Preferences"
-msgstr ""
+msgstr "기본 설정"
 
 #: ../invest-applet/invest/applet.py:30
 msgid "Refresh"
-msgstr ""
+msgstr "새로 고침"
 
 #. a) We aren't configured yet
 #: ../invest-applet/invest/applet.py:62
@@ -1486,7 +1490,7 @@ msgstr "수수료"
 
 #: ../invest-applet/invest/preferences.py:34
 msgid "Currency Rate"
-msgstr ""
+msgstr "환율"
 
 #: ../invest-applet/invest/quotes.py:136
 msgid "Invest could not connect to Yahoo! Finance"
@@ -1504,7 +1508,7 @@ msgstr "업데이트 시각: %s"
 #: ../invest-applet/invest/quotes.py:158
 #, python-format
 msgid "Average change: %s"
-msgstr ""
+msgstr "평균 변동: %s"
 
 #. Translators: This is share-market jargon. It refers to the total difference
 #. between the current price and purchase price for all the shares put
@@ -1515,7 +1519,7 @@ msgstr ""
 #: ../invest-applet/invest/quotes.py:167
 #, python-format
 msgid "Positions balance: %s %s (%s)"
-msgstr ""
+msgstr "거래 수지: %s %s (%s)"
 
 #. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
 #. VARIATION_PCT, PB
@@ -1898,7 +1902,7 @@ msgstr "시스템 정보 기본 설정"
 
 #: ../null_applet/MATE_CDPlayerApplet.server.in.h:1
 msgid "CD Player (Deprecated)"
-msgstr "CD 플레이어 (사용하지 않기를 권장)"
+msgstr "CD 플레이어(사용하지 않기를 권장)"
 
 #: ../null_applet/MATE_CDPlayerApplet.server.in.h:2
 msgid "Panel applet for playing audio CDs"
@@ -1906,7 +1910,7 @@ msgstr "오디오 CD를 재생하는 패널 애플릿"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
 msgid "Inbox Monitor (Deprecated)"
-msgstr "받은 편지함 상태 보기 (사용하지 않기를 권장)"
+msgstr "받은 편지함 상태 보기(사용하지 않기를 권장)"
 
 #: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
 msgid "Alert you when new mail arrives"
@@ -1930,11 +1934,11 @@ msgstr "무선통신 장치의 감도를 봅니다"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:1
 msgid "Keyboard Indicator (Deprecated)"
-msgstr ""
+msgstr "키보드 표시등(오래됨)"
 
 #: ../null_applet/MATE_KeyboardApplet.server.in.h:2
 msgid "Keyboard layout indicator"
-msgstr ""
+msgstr "키보드 배치 표시"
 
 #: ../null_applet/null_applet.c:40
 msgid "Inbox Monitor"
@@ -1942,7 +1946,7 @@ msgstr "받은 편지함 정보"
 
 #: ../null_applet/null_applet.c:42
 msgid "CD Player"
-msgstr "CD 플레이"
+msgstr "CD 플레이어"
 
 #: ../null_applet/null_applet.c:44 ../null_applet/null_applet.c:46
 msgid "Volume Control"
@@ -1950,7 +1954,7 @@ msgstr "볼륨 조절"
 
 #: ../null_applet/null_applet.c:48
 msgid "Keyboard Indicator"
-msgstr ""
+msgstr "키보드 표시등"
 
 #: ../null_applet/null_applet.c:151
 msgid "Some panel items are no longer available"
@@ -1960,7 +1964,7 @@ msgstr "일부 패널 항목을 더 이상 사용할 수 없습니다"
 msgid ""
 "One or more panel items (also referred to as applets) are no longer "
 "available in the MATE desktop."
-msgstr "그놈 데스크탑에 더 이상 사용할 수 없는 패널 아이템(애플릿)이 있습니다."
+msgstr "그놈 데스크톱에 더 이상 사용할 수 없는 패널 항목(애플릿)이 있습니다."
 
 #: ../null_applet/null_applet.c:154
 msgid "These items will now be removed from your configuration:"
@@ -1972,11 +1976,11 @@ msgstr "이 메시지는 다시 나타나지 않습니다."
 
 #: ../stickynotes/data/MATE_StickyNotesApplet.server.in.h:1
 msgid "Tomboy (ne Stickynotes)"
-msgstr "톰보이 (메모지와 별도)"
+msgstr "톰보이(메모지와 별도)"
 
 #: ../stickynotes/data/MATE_StickyNotesApplet.server.in.h:2
 msgid "Tomboy (transparent upgrade from stickynotes)"
-msgstr "톰보이 (메모지에서 바로 업그레이드)"
+msgstr "톰보이(메모지에서 바로 업그레이드)"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
@@ -1990,7 +1994,7 @@ msgstr "메모지"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:3
 msgid "Create, view, and manage sticky notes on the desktop"
-msgstr "데스크탑에 메모지를 만들고, 보여주고, 관리합니다"
+msgstr "데스크톱에 메모지를 만들고, 보여주고, 관리합니다"
 
 #: ../stickynotes/stickynotes.c:634
 msgid "This note is locked."
@@ -2006,11 +2010,11 @@ msgstr "새 메모(_N)"
 
 #: ../stickynotes/stickynotes.ui.h:2
 msgid "_Delete Note..."
-msgstr ""
+msgstr "메모 삭제(_D)..."
 
 #: ../stickynotes/stickynotes.ui.h:3
 msgid "_Lock Note"
-msgstr ""
+msgstr "메모 잠금(_L)"
 
 #: ../stickynotes/stickynotes.ui.h:5
 msgid "Sticky Notes Preferences"
@@ -2058,11 +2062,11 @@ msgstr "시스템 테마에서 색 사용(_L)"
 
 #: ../stickynotes/stickynotes.ui.h:16
 msgid "Specify the default height (in pixels) of new notes"
-msgstr "새 메모의 기본 높이를 지정합니다 (픽셀 수)"
+msgstr "새 메모의 기본 높이를 지정합니다(픽셀)"
 
 #: ../stickynotes/stickynotes.ui.h:17
 msgid "Specify the default width (in pixels) of new notes"
-msgstr "새 메모의 기본 너비를 지정합니다 (픽셀 수)"
+msgstr "새 메모의 기본 너비를 지정합니다(픽셀)"
 
 #: ../stickynotes/stickynotes.ui.h:18
 msgid "H_eight:"
@@ -2078,11 +2082,11 @@ msgstr "동작"
 
 #: ../stickynotes/stickynotes.ui.h:21
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr ""
+msgstr "데스크톱을 누르면 메모 숨기기(_K)"
 
 #: ../stickynotes/stickynotes.ui.h:22
 msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr ""
+msgstr "데스크톱을 선택했을 때 메모를 모두 숨길지 선택하십시오"
 
 #: ../stickynotes/stickynotes.ui.h:23
 msgid "Force _default color and font on notes"
@@ -2234,7 +2238,7 @@ msgstr "메모지 작업 공간 고정"
 msgid ""
 "Specifies whether the sticky notes are visible on ALL workspaces on the "
 "desktop, or not."
-msgstr "메모지가 데스크탑의 모든 작업 공간에서 보여줄 지 여부를 지정합니다."
+msgstr "메모지가 데스크톱의 모든 작업 공간에서 보여줄 지 여부를 지정합니다."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:13
 msgid "Sticky notes' locked state"
@@ -2287,13 +2291,13 @@ msgstr "이 옵션을 켜면, 메모지마다 하나하나 설정한 색과 글�
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:23
 msgid "Whether to hide all notes when the desktop is selected"
-msgstr ""
+msgstr "데스크톱을 선택했을 때 메모 모두 숨김"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:24
 msgid ""
 "If this option is enabled, selecting the desktop in any way will "
 "automatically hide all the open notes."
-msgstr ""
+msgstr "이 옵션을 활성화 하면, 어떤 방식으로든 데스크톱을 선택하면 열려있는 모든 메모를 자동으로 숨깁니다."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:25
 msgid "Whether to ask for confirmation when deleting a note"
@@ -2327,79 +2331,79 @@ msgstr "메모지 보기"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:439
 msgid "Sticky Notes for the MATE Desktop Environment"
-msgstr "그놈 데스크탑 환경을 위한 메모지"
+msgstr "그놈 데스크톱 환경을 위한 메모지"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:1
 msgid "Name of timer"
-msgstr ""
+msgstr "타이머 이름"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:2
 msgid "Duration of timer in seconds"
-msgstr ""
+msgstr "초단위 타이머 길이 "
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:3
 msgid "Show notification popup when timer finish"
-msgstr ""
+msgstr "타이머 동작이 끝나면 풍선 알림을 표시합니다"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in.h:4
 msgid "Show dialog window when timer finish"
-msgstr ""
+msgstr "타이머 동작이 끝나면 대화상자 창을 표시합니다"
 
 #: ../timerapplet/timerapplet.c:77
 msgid "_Start timer"
-msgstr ""
+msgstr "타이머 시작(_S)"
 
 #: ../timerapplet/timerapplet.c:78
 msgid "P_ause timer"
-msgstr ""
+msgstr "타이머 일시정지(_A)"
 
 #: ../timerapplet/timerapplet.c:79
 msgid "S_top timer"
-msgstr ""
+msgstr "타이머 멈춤(_T)"
 
 #: ../timerapplet/timerapplet.c:139
 msgid "Finished"
-msgstr ""
+msgstr "동작 끝"
 
 #: ../timerapplet/timerapplet.c:146 ../timerapplet/timerapplet.c:158
 msgid "Timer finished!"
-msgstr ""
+msgstr "타이머 동작이 끝났습니다!"
 
 #: ../timerapplet/timerapplet.c:253
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
+msgstr "타이머를 시작하고 끝나면 알림을 받습니다"
 
 #: ../timerapplet/timerapplet.c:286
 msgid "Timer Applet Preferences"
-msgstr ""
+msgstr "타이머 애플릿 기본 설정"
 
 #: ../timerapplet/timerapplet.c:298
 msgid "Name:"
-msgstr ""
+msgstr "이름:"
 
 #: ../timerapplet/timerapplet.c:310
 msgid "Hours:"
-msgstr ""
+msgstr "시:"
 
 #: ../timerapplet/timerapplet.c:324
 msgid "Minutes:"
-msgstr ""
+msgstr "분:"
 
 #: ../timerapplet/timerapplet.c:338
 msgid "Seconds:"
-msgstr ""
+msgstr "초:"
 
 #: ../timerapplet/timerapplet.c:352
 msgid "Show notification popup"
-msgstr ""
+msgstr "풍선 알림 표시"
 
 #: ../timerapplet/timerapplet.c:358
 msgid "Show dialog"
-msgstr ""
+msgstr "대화 상자 표시"
 
 #: ../timerapplet/timerapplet.c:376
 msgid "Timer Applet"
-msgstr ""
+msgstr "타이머 애플릿"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
@@ -2477,7 +2481,7 @@ msgstr "휴지통에 들어 있는 항목을 모두 비우시겠습니까?"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "휴지통을 비우면, 그 안의 항목들은 완전히 지워집니다. 휴지통을 비우지 않고 따로 따로 삭제할 수도 있습니다."
+msgstr "휴지통을 비우면, 그 안의 항목은 완전히 지워집니다. 휴지통을 비우지 않고 따로 따로 삭제할 수도 있습니다."
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"
