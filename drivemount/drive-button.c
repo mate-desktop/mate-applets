@@ -545,7 +545,7 @@ open_drive (DriveButton *self, GtkWidget *item)
     GFile *file = NULL;
     GList *files = NULL;
     GdkAppLaunchContext *launch_context;
-    GDesktopAppInfo *app_info;
+    GAppInfo *app_info;
 #else
     char *argv[3] = { "caja", NULL, NULL };
 
@@ -584,14 +584,16 @@ open_drive (DriveButton *self, GtkWidget *item)
 	g_return_if_reached();
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-    app_info = g_desktop_app_info_new ("caja.desktop");
+    app_info = g_app_info_get_default_for_type("inode/directory", FALSE);
+    if (!app_info)
+      app_info = G_APP_INFO (g_desktop_app_info_new ("caja.desktop"));
 
     if (app_info) {
 	launch_context = gdk_app_launch_context_new ();
 	screen = gtk_widget_get_screen (GTK_WIDGET (self));
 	gdk_app_launch_context_set_screen (launch_context, screen);
 	files = g_list_prepend (files, file);
-	g_app_info_launch (G_APP_INFO (app_info),
+	g_app_info_launch (app_info,
 	files,
 	G_APP_LAUNCH_CONTEXT (launch_context),
 	&error);
