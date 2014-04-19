@@ -1,6 +1,6 @@
 # Makefile.am
 #
-# Author: Jörgen Pehrson <jp@spektr.eu.org>
+# Author: JÃ¶rgen Pehrson <jp@spektr.eu.org>
 # Created: Thu Jun 15 23:08:41 CEST 2000
 #
 
