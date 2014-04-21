@@ -1,0 +1,43 @@
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH "mate-invest-chart" "1"
+.SH "NAME"
+mate-invest-chart \(em tool to set CPU frequency
+.SH "SYNOPSIS"
+'nh
+.fi
+.ad l
+.PP
+\fBmate-invest-chart\fR
+.SH "DESCRIPTION"
+.PP
+The \fBmate-invest-chart\fR is a MATE panel applet that downloads current quotes for stocks,
+stock indices, currencies and precious metals. Quotes are downloaded from Yahoo! Finance and
+are displayed in a drop-down list.
+.SH "OPTIONS"
+.PP
+Invest provides the following features:
+.IP \(bu 4
+Retrieve quotes for any stock, stock index, currency or precious metal known by Yahoo! Finance
+.IP \(bu 4
+Quotes are automatically updated every 15 minutes
+.IP \(bu 4
+The current price, today's change, and a chart of today's changes are displayed
+.IP \(bu 4
+The currency of the quote is displayed, and if configured, automatically translated into a target currency
+.IP \(bu 4
+The amount of the increase or decrease in the price since purchase, also translatable into the target currency
+.IP \(bu 4
+The percentage increase or decrease in the price since purchase
+.SH "AUTHOR"
+.PP
+\fBmate-invest-chart\fR, as part of mate-applets (derived from gnome-applets), has been written by Raphael Slinckx
+and other GNOME/MATE contributors.
+.PP
+This \fBmate-invest-chart\fR manual page has been written by Mike Gabriel
+<mike.gabriel@das-netzwerkteam.de> for the \fBDebian\fR system (but may be used
+by others.
