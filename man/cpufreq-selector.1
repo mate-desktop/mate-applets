@@ -1,0 +1,29 @@
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH "mate-cpufreq-selector" "1"
+.SH "NAME"
+mate-cpufreq-selector \(em tool to set CPU frequency
+.SH "SYNOPSIS"
+'nh
+.fi
+.ad l
+.PP
+\fBmate-cpufreq-selector\fR
+.SH "DESCRIPTION"
+.PP
+
+The \fBmate-cpufreq-selector\fR is a MATE panel applet that allows one to monitor
+and configure the CPU frequency scaling for the system's CPUs.
+.SH "AUTHOR"
+.PP
+\fBmate-cpufreq-selector\fR, as part of mate-applets (derived from gnome-applets),
+has been written by Carlos García
+Campos, Davyd Madeley and other GNOME/MATE contributors.
+.PP
+This manual page has been written by Mike Gabriel
+<mike.gabriel@das-netzwerkteam.de> for the \fBDebian\fR system (but may be used
+by others.
