@@ -5,13 +5,15 @@
 # Translators:
 # Alex Nehaichik <nab@mail.by>, 2003-2004
 # Ihar Hrachyshka <boox.svaboda2006@gmail.com>, 2006
+# meequz <meequz@gmail.com>, 2014
+# meequz <meequz@gmail.com>, 2014
 # Vital Khilko <dojlid@mova.org>, 2002-2003,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-03 18:28+0100\n"
-"PO-Revision-Date: 2014-02-27 09:08+0000\n"
+"PO-Revision-Date: 2014-03-28 13:41+0000\n"
 "Last-Translator: meequz <meequz@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -157,10 +159,10 @@ msgstr "Невядомы час (%d%%) да поўнага насілкоўва�
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d хвіліна (%d%%) засталася"
+msgstr[1] "%d хвіліны (%d%%) засталося"
+msgstr[2] "%d хвілін (%d%%) засталося"
+msgstr[3] "%d хвілін (%d%%) засталося"
 
 #: ../battstat/battstat_applet.c:425
 #, c-format
@@ -331,7 +333,7 @@ msgstr "Настáўленні назіральніка за батарэяй"
 
 #: ../battstat/battstat_applet.ui.h:2
 msgid "Appearance"
-msgstr "Знешні выгляд"
+msgstr "Выгляд"
 
 #: ../battstat/battstat_applet.ui.h:3
 msgid "_Compact view"
@@ -631,11 +633,11 @@ msgstr "Настáўленні палітры знакаў"
 
 #: ../command/command.c:110
 msgid "Shows the output of a command"
-msgstr ""
+msgstr "Паказавае вывад пэўнага загаду"
 
 #: ../command/command.c:127
 msgid "Command Applet Preferences"
-msgstr ""
+msgstr "Настáўленні аплета загаду"
 
 #: ../command/command.c:139
 msgid "Command:"
@@ -676,7 +678,7 @@ msgstr ""
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
-msgstr "Настáўленні назіральніка за частатой працэсара"
+msgstr "Настáўленні назіральніка за чашчынёй працэсара"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
 msgid "Monitor Settings"
@@ -692,28 +694,28 @@ msgstr "Настáўленні выгляду"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:5
 msgid "_Appearance:"
-msgstr "_Знешні выгляд:"
+msgstr "_Выгляд:"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:6
 msgid "Show CPU frequency as _frequency"
-msgstr "Паказваць частату працэсара як _частату"
+msgstr "Паказваць чашчыню працэсара як _частату"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:7
 msgid "Show frequency _units"
-msgstr "Паказваць частату ў _адзінках"
+msgstr "Паказваць чашчыню ў _адзінках"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:8
 msgid "Show CPU frequency as _percentage"
-msgstr "Паказваць частату працэсара ў _адсотках"
+msgstr "Паказваць чашчыню працэсара ў _адсотках"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
 #: ../cpufreq/src/cpufreq-applet.c:1035 ../cpufreq/src/cpufreq-applet.c:1090
 msgid "CPU Frequency Scaling Monitor"
-msgstr "Назіральнік за частатой працэсара"
+msgstr "Назіральнік за чашчынёй працэсара"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:2
 msgid "Monitor the CPU Frequency Scaling"
-msgstr "Назірае за маштабаваннем частаты CPU"
+msgstr "Назірае за маштабаваннем чашчыні CPU"
 
 #: ../cpufreq/src/cpufreq-applet.c:665 ../cpufreq/src/cpufreq-prefs.c:394
 msgid "Could not open help document"
@@ -721,11 +723,11 @@ msgstr "Немагчыма адкрыць дакумент даведкі"
 
 #: ../cpufreq/src/cpufreq-applet.c:692
 msgid "This utility shows the current CPU Frequency Scaling."
-msgstr "Гэтая ўтыліта паказвае дзейны стан частаты працэсара."
+msgstr "Гэтая ўтыліта паказвае дзейны стан чашчыні працэсара."
 
 #: ../cpufreq/src/cpufreq-applet.c:1091
 msgid "This utility shows the current CPU Frequency"
-msgstr "Гэтая ўтыліта паказвае дзейны стан частаты працэсара"
+msgstr "Гэтая ўтыліта паказвае дзейны стан чашчыні працэсара"
 
 #: ../cpufreq/src/cpufreq-prefs.c:529
 msgid "Graphic"
@@ -741,7 +743,7 @@ msgstr "Графічна-тэкставы"
 
 #: ../cpufreq/src/cpufreq-monitor-cpuinfo.c:117
 msgid "Frequency Scaling Unsupported"
-msgstr "Змена частаты не падтрымліваецца"
+msgstr "Змена чашчыні не падтрымліваецца"
 
 #. If there is no cpufreq support it shows only the cpu frequency,
 #. * I think is better than do nothing. I have to notify it to the user,
@@ -749,21 +751,21 @@ msgstr "Змена частаты не падтрымліваецца"
 #. * he could think that cpufreq is supported but it doesn't work succesfully
 #: ../cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
-msgstr "Змена частаты працэсара не падтрымліваецца гэтай сістэмай"
+msgstr "Змена чашчыні працэсара не падтрымліваецца гэтай сістэмай"
 
 #: ../cpufreq/src/cpufreq-monitor-factory.c:60
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr "Вы не зможаце змяніць частату працэсара гэтай машыны. Вашая машына можа быць няправільна настаўлена, ці апаратура гэтай сістэмы не падтрымлівае змену частаты працэсара."
+msgstr "Вы не зможаце змяніць чашчыню працэсара гэтай машыны. Вашая машына можа быць няправільна настаўлена, ці апаратура гэтай сістэмы не падтрымлівае змену чашчыні працэсара."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
-msgstr "Змяніць маштабаванне частаты працэсара"
+msgstr "Змяніць маштабаванне чашчыні працэсара"
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:2
 msgid "Privileges are required to change the CPU Frequency scaling."
-msgstr "Патрэбуюцца прывілеі, каб змяніць маштабаванне частаты працэсара."
+msgstr "Патрэбуюцца прывілеі, каб змяніць маштабаванне чашчыні працэсара."
 
 #: ../drivemount/drive-button.c:360 ../drivemount/drive-button.c:373
 msgid "(mounted)"
@@ -833,7 +835,7 @@ msgstr "Прымантоўвае лакальныя дыскі і прылады
 
 #: ../geyes/geyes.c:196
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
-msgstr "Пара вачэй для панэлі MATE. Сочаць за перасоўваннем мышы."
+msgstr "Вочы для панэлі MATE. Сочаць за перасоўваннем мышы."
 
 #: ../geyes/geyes.c:405 ../geyes/geyes.c:438 ../geyes/geyes.c:440
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
@@ -1129,7 +1131,7 @@ msgstr "мілібары мэркура"
 #. TRANSLATOR: The pressure unit "inches of mercury"
 #: ../mateweather/mateweather-pref.c:937
 msgid "inHg"
-msgstr "дзюймы мэркура"
+msgstr "цалі мэркура"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
 #: ../mateweather/mateweather-pref.c:939
@@ -1411,7 +1413,7 @@ msgstr ""
 
 #: ../invest-applet/data/prefs-dialog.ui.h:3
 msgid "Stocks"
-msgstr ""
+msgstr "Акцыі"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:4
 msgid ""
@@ -1451,17 +1453,17 @@ msgstr "Абнавіць"
 #. a) We aren't configured yet
 #: ../invest-applet/invest/applet.py:62
 msgid "<b>You have not entered any stock information yet</b>"
-msgstr ""
+msgstr "<b>Вы яшчэ не задалі аніводных акцый</b>"
 
 #: ../invest-applet/invest/applet.py:67
 msgid "<b>No stock quotes are currently available</b>"
-msgstr ""
+msgstr "<b>Каціроўкі акцый недаступныя</b>"
 
 #: ../invest-applet/invest/applet.py:68
 msgid ""
 "The server could not be contacted. The computer is either offline or the "
 "servers are down. Try again later."
-msgstr ""
+msgstr "Не выходзіць злучыцца з серверам. Або кампутар афлайн, або сервер не працуе. Паспрабуйце пазней."
 
 #: ../invest-applet/invest/chart.py:160
 #, python-format
@@ -1502,7 +1504,7 @@ msgstr "Кошт"
 
 #: ../invest-applet/invest/preferences.py:34
 msgid "Commission"
-msgstr "Камісыя"
+msgstr "Камісія"
 
 #: ../invest-applet/invest/preferences.py:34
 msgid "Currency Rate"
@@ -1544,7 +1546,7 @@ msgstr ""
 #. stock was purchased.
 #: ../invest-applet/invest/widgets.py:58
 msgid "Ticker"
-msgstr ""
+msgstr "Тыкер"
 
 #: ../invest-applet/invest/widgets.py:58
 msgid "Last"
@@ -1820,7 +1822,7 @@ msgstr "_Вышыня сістэмнага назіральніка: "
 
 #: ../multiload/properties.c:500
 msgid "pixels"
-msgstr "піксэлі"
+msgstr "піксэляў"
 
 #: ../multiload/properties.c:508
 msgid "Sys_tem monitor update interval: "
@@ -1828,7 +1830,7 @@ msgstr "_Пэрыяд абнаўлення сістэмнага назіраль
 
 #: ../multiload/properties.c:534
 msgid "milliseconds"
-msgstr "мілісекунды"
+msgstr "мілісекунд"
 
 #: ../multiload/properties.c:545
 msgid "Colors"
@@ -1872,15 +1874,15 @@ msgstr "_Вольная"
 
 #: ../multiload/properties.c:588
 msgid "_In"
-msgstr ""
+msgstr "_Уваходныя пакеты"
 
 #: ../multiload/properties.c:589
 msgid "_Out"
-msgstr ""
+msgstr "_Выходныя"
 
 #: ../multiload/properties.c:590
 msgid "_Local"
-msgstr ""
+msgstr "_Лакальныя"
 
 #: ../multiload/properties.c:591 ../multiload/properties.c:601
 #: ../multiload/properties.c:607
@@ -1983,7 +1985,7 @@ msgstr "Некаторыя элементы панэлі больш недаст
 msgid ""
 "One or more panel items (also referred to as applets) are no longer "
 "available in the MATE desktop."
-msgstr "Адзін ці болей элементаў панэлі (аплетаў) больш не даступныя ў асяродздзі MATE."
+msgstr "Адзін ці болей элементаў панэлі (аплетаў) больш не даступныя ў асяроддзі MATE."
 
 #: ../null_applet/null_applet.c:154
 msgid "These items will now be removed from your configuration:"
@@ -2041,7 +2043,7 @@ msgstr "Настáўленні ліпучых нататак"
 
 #: ../stickynotes/stickynotes.ui.h:6
 msgid "Default Note Properties"
-msgstr ""
+msgstr "Стандартныя ўласцівасці нататкі"
 
 #: ../stickynotes/stickynotes.ui.h:7
 msgid "Choose a font to use for all sticky notes"
@@ -2101,19 +2103,19 @@ msgstr "Паводзіны"
 
 #: ../stickynotes/stickynotes.ui.h:21
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr ""
+msgstr "Хаваць нататкі па пстрыку на стале"
 
 #: ../stickynotes/stickynotes.ui.h:22
 msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr ""
+msgstr "Ці хаваць усе нататкі, калі пстрыкаеш па стале"
 
 #: ../stickynotes/stickynotes.ui.h:23
 msgid "Force _default color and font on notes"
-msgstr "Скарыстаць ст_андартныя шрыфт і колер для ўсіх нататак"
+msgstr "Ужываць ст_андартныя шрыфт і колер для ўсіх нататак"
 
 #: ../stickynotes/stickynotes.ui.h:24
 msgid "Choose if the default style is forced on all notes"
-msgstr "Абярыце, ці ўжываць стандартны стыль для ўсіх нататак"
+msgstr "Ці ўжываць стандартны стыль для ўсіх нататак"
 
 #: ../stickynotes/stickynotes.ui.h:25
 msgid "_Put notes on all workspaces"
@@ -2121,7 +2123,7 @@ msgstr "_Размясціць нататкі на ўсіх працоўных п
 
 #: ../stickynotes/stickynotes.ui.h:26
 msgid "Choose if notes are visible on all workspaces"
-msgstr "Абярыце, ці трэба паказваць ліпучыя нататкі на ўсіх працоўных прасторах"
+msgstr "Ці трэба паказваць ліпучыя нататкі на ўсіх працоўных прасторах"
 
 #: ../stickynotes/stickynotes.ui.h:27
 msgid "Delete this sticky note?"
@@ -2342,10 +2344,10 @@ msgstr "_Замкнуць нататкі"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d нататка"
+msgstr[1] "%d нататкі"
+msgstr[2] "%d нататак"
+msgstr[3] "%d нататак"
 
 #: ../stickynotes/stickynotes_applet.c:596
 msgid "Show sticky notes"
@@ -2393,7 +2395,7 @@ msgstr "Таймер скончыўся!"
 
 #: ../timerapplet/timerapplet.c:253
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
+msgstr "Запуск таймера і атрыманне абвяшчэння, калі час выйдзе"
 
 #: ../timerapplet/timerapplet.c:286
 msgid "Timer Applet Preferences"
@@ -2454,7 +2456,7 @@ msgstr[3] "%d аб'ектаў у сметніцы"
 
 #: ../trashapplet/src/trashapplet.c:138
 msgid "No Items in Trash"
-msgstr "Няма аб'ектаў у сметніцы"
+msgstr "Сметніца пустая"
 
 #: ../trashapplet/src/trashapplet.c:392
 #, c-format
@@ -2467,7 +2469,7 @@ msgstr "Памылка падчас запуску caja:\n%s"
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
-msgstr "Сметніца MATE, што жыве на вашай панэлі. Да магчымасць праглядаць сметніцу і перацягваць у яе аб'екты."
+msgstr "Сметніца MATE, што жыве на вашай панэлі. Дае магчымасць праглядаць сметніцу і перацягваць у яе аб'екты."
 
 #: ../trashapplet/src/trashapplet.c:466
 msgid "Delete Immediately?"
@@ -2506,7 +2508,7 @@ msgstr "Выдаліць усе аб'екты ў сметніцы?"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Калі вы спусташаеце сметніцу, усе ейныя элементы страчваюцца назаўсёды. Заўважце таксама, што вы можаце выдаляць іх паасобку."
+msgstr "Калі вы спусташаеце сметніцу, усе ейныя элементы страчваюцца назаўсёды. Заўважце таксама, што іх можна выдаляць паасобку."
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"
