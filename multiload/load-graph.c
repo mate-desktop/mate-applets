@@ -50,105 +50,43 @@ load_graph_draw (LoadGraph *g)
 {
     GtkStyle *style;
     guint i, j;
-#if GTK_CHECK_VERSION (3, 0, 0)
     cairo_t *cr;
-#endif
 
     /* we might get called before the configure event so that
      * g->disp->allocation may not have the correct size
      * (after the user resized the applet in the prop dialog). */
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     if (!g->surface)
 		g->surface = gdk_window_create_similar_surface (gtk_widget_get_window (g->disp),
 								CAIRO_CONTENT_COLOR,
 								g->draw_width, g->draw_height);
-#else
-    if (!g->pixmap)
-		g->pixmap = gdk_pixmap_new (gtk_widget_get_window (g->disp),
-					    g->draw_width, g->draw_height,
-					    gtk_widget_get_visual (g->disp)->depth);
-#endif
 
     style = gtk_widget_get_style (g->disp);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     cr = cairo_create (g->surface);
     cairo_set_line_width (cr, 1.0);
-    cairo_set_line_cap (cr, CAIRO_LINE_CAP_SQUARE);
-#else
-    /* Create GC if necessary. */
-    if (!g->gc)
-    {
-		g->gc = gdk_gc_new (gtk_widget_get_window (g->disp));
-		gdk_gc_copy (g->gc, style->black_gc);
-    }
-
-    /* Allocate colors. */
-    if (!g->colors_allocated)
-    {
-		GdkColormap *colormap;
-
-		colormap = gdk_drawable_get_colormap (gtk_widget_get_window (g->disp));
-		
-		for (i = 0; i < g->n; i++)
-	 	   gdk_colormap_alloc_color (colormap, &(g->colors [i]),
-					     FALSE, TRUE);
-
-		g->colors_allocated = 1;
-    }
-	
-    /* Erase Rectangle */
-    gdk_draw_rectangle (g->pixmap,
-			style->black_gc,
-			TRUE, 0, 0,
-			g->draw_width,
-			g->draw_height);
-#endif
+    cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+    cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
 
     for (i = 0; i < g->draw_width; i++)
 		g->pos [i] = g->draw_height - 1;
 
     for (j = 0; j < g->n; j++)
     {
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gdk_cairo_set_source_color (cr, &(g->colors [j]));
-#else
-		gdk_gc_set_foreground (g->gc, &(g->colors [j]));
-#endif
 
 		for (i = 0; i < g->draw_width; i++) {
 			if (g->data [i][j] != 0) {
-#if GTK_CHECK_VERSION (3, 0, 0)
 				cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
 				cairo_line_to (cr, g->draw_width - i - 0.5, g->pos[i] - (g->data [i][j] - 0.5));
-#else
-				gdk_draw_line (g->pixmap, g->gc,
-					       g->draw_width - i - 1,
-					       g->pos[i],
-					       g->draw_width - i - 1,
-					       g->pos[i] - (g->data [i][j] - 1));
-#endif
 
 				g->pos [i] -= g->data [i][j];
 			}
 		}
-#if GTK_CHECK_VERSION (3, 0, 0)
 		cairo_stroke (cr);
-#endif
     }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     gtk_widget_queue_draw (g->disp);
-#else
-    gdk_draw_drawable (gtk_widget_get_window (g->disp),
-		       style->fg_gc [gtk_widget_get_state (g->disp)],
-		       g->pixmap,
-		       0, 0,
-		       0, 0,
-		       g->draw_width,
-		       g->draw_height);
-#endif
 }
 
 /* Updates the load graph when the timeout expires */
@@ -191,22 +129,10 @@ load_graph_unalloc (LoadGraph *g)
     g->size = g_settings_get_int(g->multiload->settings, "size");
     g->size = MAX (g->size, 10);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     if (g->surface) {
 		cairo_surface_destroy (g->surface);
 		g->surface = NULL;
     }
-#else
-    if (g->pixmap) {
-		g_object_unref (g->pixmap);
-		g->pixmap = NULL;
-    }
-
-    if (g->gc) {
-		g_object_unref (g->gc);
-		g->gc = NULL;
-    }
-#endif
 
     g->allocated = FALSE;
 }
@@ -249,32 +175,11 @@ load_graph_configure (GtkWidget *widget, GdkEventConfigure *event,
     
     load_graph_alloc (c);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     if (!c->surface)
 	c->surface = gdk_window_create_similar_surface (gtk_widget_get_window (c->disp),
 							CAIRO_CONTENT_COLOR,
 							c->draw_width, c->draw_height);
     gtk_widget_queue_draw (widget);
-#else
-    if (!c->pixmap)
-	c->pixmap = gdk_pixmap_new (gtk_widget_get_window (c->disp),
-				    c->draw_width,
-				    c->draw_height,
-				    gtk_widget_get_visual (c->disp)->depth);
-
-    gdk_draw_rectangle (c->pixmap,
-			(gtk_widget_get_style (widget))->black_gc,
-			TRUE, 0,0,
-			c->draw_width,
-			c->draw_height);
-    gdk_draw_drawable (gtk_widget_get_window (widget),
-		       (gtk_widget_get_style (c->disp))->fg_gc [gtk_widget_get_state (widget)],
-		       c->pixmap,
-		       0, 0,
-		       0, 0,
-		       c->draw_width,
-		       c->draw_height);
-#endif
 
     return TRUE;
 }
@@ -290,17 +195,15 @@ load_graph_expose (GtkWidget *widget,
 {
     LoadGraph *g = (LoadGraph *) data_ptr;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
+#if !GTK_CHECK_VERSION (3, 0, 0)
+    cairo_t *cr;
+    cr = gdk_cairo_create (event->window);
+    gdk_cairo_region (cr, event->region);
+    cairo_clip (cr);
+#endif
+
     cairo_set_source_surface (cr, g->surface, 0, 0);
     cairo_paint (cr);
-#else
-    gdk_draw_drawable (gtk_widget_get_window (widget),
-		       (gtk_widget_get_style (widget))->fg_gc [gtk_widget_get_state (widget)],
-		       g->pixmap,
-		       event->area.x, event->area.y,
-		       event->area.x, event->area.y,
-		       event->area.width, event->area.height);
-#endif
 
     return FALSE;
 }
