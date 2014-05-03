@@ -1,5 +1,6 @@
 AM_CPPFLAGS = \
 	$(MATE_APPLETS4_CFLAGS) \
+	$(MATEDESKTOP_CFLAGS) \
 	$(LIBNOTIFY_CFLAGS) \
 	-I$(srcdir) \
 	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
@@ -9,7 +10,7 @@ APPLET_LOCATION = $(libexecdir)/timer-applet
 
 libexec_PROGRAMS = timer-applet
 timer_applet_SOURCES = timerapplet.c
-timer_applet_LDADD = $(MATE_APPLETS4_LIBS) $(LIBNOTIFY_LIBS)
+timer_applet_LDADD = $(MATE_APPLETS4_LIBS) $(MATEDESKTOP_LIBS) $(LIBNOTIFY_LIBS)
 timer_applet_CFLAGS = $(WARN_CFLAGS)
 
 appletsdir       = $(datadir)/mate-panel/applets

@@ -20,6 +20,7 @@
 #include <config.h>
 #include <math.h>
 #include <stdlib.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 #include "geyes.h"
@@ -191,7 +192,7 @@ about_cb (GtkAction   *action,
 		NULL
 	};
 
-	gtk_show_about_dialog (NULL,
+	mate_show_about_dialog (NULL,
 		"version",	VERSION,
 		"comments",	_("A goofy set of eyes for the MATE "
 				  "panel. They follow your mouse."),

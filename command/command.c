@@ -27,6 +27,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
@@ -103,7 +104,7 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
 {
     const char* authors[] = { "Stefano Karapetsas <stefano@karapetsas.com>", NULL };
 
-    gtk_show_about_dialog(NULL,
+    mate_show_about_dialog(NULL,
                           "version", VERSION,
                           "copyright", "Copyright © 2013-2014 Stefano Karapetsas",
                           "authors", authors,

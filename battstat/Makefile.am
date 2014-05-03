@@ -25,6 +25,7 @@ DIST_SUBDIRS = docs sounds apmlib
 
 AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)		\
+	$(MATEDESKTOP_CFLAGS)		\
 	$(LIBNOTIFY_CFLAGS)			\
 	$(HAL_CFLAGS)				\
 	$(UPOWER_CFLAGS)	\
@@ -55,6 +56,7 @@ battstat_applet_2_SOURCES = \
 
 battstat_applet_2_LDADD = \
 		     $(MATE_APPLETS4_LIBS) \
+		     $(MATEDESKTOP_LIBS) \
 		     $(LIBNOTIFY_LIBS) \
 		     $(HAL_LIBS) \
 			 $(APMLIB) \

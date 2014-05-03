@@ -27,6 +27,7 @@
 #endif
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 
 static gboolean get_desktop_window (Window *window)
 {
@@ -432,7 +433,7 @@ menu_about_cb (GtkAction *action,
 		NULL
 	};
 
-	gtk_show_about_dialog (NULL,
+	mate_show_about_dialog (NULL,
 		"version",	VERSION,
 		"copyright",	"\xC2\xA9 2002-2003 Loban A Rahman, "
 				"\xC2\xA9 2005 Davyd Madeley",

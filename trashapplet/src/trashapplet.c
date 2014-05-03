@@ -34,6 +34,7 @@
 #include <gdk/gdkkeysyms-compat.h>
 #endif
 #include <gio/gio.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 #include <mate-panel-applet.h>
 
 #include "trash-empty.h"
@@ -434,7 +435,7 @@ trash_applet_show_about (GtkAction   *action,
     NULL
   };
 
-  gtk_show_about_dialog (NULL,
+  mate_show_about_dialog (NULL,
                          "version", VERSION,
                          "copyright", "Copyright \xC2\xA9 2004 Michiel Sikkes,"
                                       "\xC2\xA9 2008 Ryan Lortie",

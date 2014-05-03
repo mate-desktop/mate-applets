@@ -32,6 +32,7 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 #include <glib/gi18n.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -686,7 +687,7 @@ cpufreq_applet_about_cb (GtkAction     *action,
                 NULL
         };
 
-        gtk_show_about_dialog (NULL,
+        mate_show_about_dialog (NULL,
                                "version",       VERSION,
                                "copyright",     "\xC2\xA9 2004 Carlos Garcia Campos",
                                "comments",      _("This utility shows the current CPU "

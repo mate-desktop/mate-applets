@@ -39,6 +39,7 @@
 #include <X11/keysymdef.h>
 #include "applet.h"
 
+#include <libmate-desktop/mate-aboutdialog.h>
 #if GTK_CHECK_VERSION (3, 0, 0)
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
@@ -140,7 +141,7 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		NULL
 	};
 
-	gtk_show_about_dialog(NULL,
+	mate_show_about_dialog(NULL,
 		"version", VERSION,
 		"comments", _("Shows the state of AccessX features such as latched modifiers"),
 		"copyright", "\xC2\xA9 2003 Sun Microsystems",

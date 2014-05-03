@@ -29,6 +29,7 @@
 #include <gtk/gtk.h>
 
 #include <libnotify/notify.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
@@ -246,7 +247,7 @@ timer_about_callback (GtkAction *action, TimerApplet *applet)
 {
     const char* authors[] = { "Stefano Karapetsas <stefano@karapetsas.com>", NULL };
 
-    gtk_show_about_dialog(NULL,
+    mate_show_about_dialog(NULL,
                           "version", VERSION,
                           "copyright", "Copyright © 2014 Stefano Karapetsas",
                           "authors", authors,

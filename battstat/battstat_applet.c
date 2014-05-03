@@ -44,6 +44,8 @@
 #include <libnotify/notify.h>
 #endif
 
+#include <libmate-desktop/mate-aboutdialog.h>
+
 #include "battstat.h"
 #include "pixmaps.h"
 
@@ -1420,7 +1422,7 @@ about_cb( GtkAction *action, ProgressData *battstat )
 		  	/* true */ _("HAL backend enabled.") :
 			/* false */ _("Legacy (non-HAL) backend enabled.")));
 
-  gtk_show_about_dialog( NULL,
+  mate_show_about_dialog( NULL,
     "version",             VERSION,
     "copyright",           "\xC2\xA9 2000 The Gnulix Society, "
                            "\xC2\xA9 2002-2005 Free Software Foundation and "

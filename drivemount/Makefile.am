@@ -4,7 +4,8 @@ AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
-	$(MATE_APPLETS4_CFLAGS)
+	$(MATE_APPLETS4_CFLAGS)			\
+	$(MATEDESKTOP_CFLAGS)
 
 libexec_PROGRAMS = drivemount_applet2
 
@@ -16,7 +17,8 @@ drivemount_applet2_SOURCES =	\
 	drive-button.h
 
 drivemount_applet2_LDADD =	\
-	$(MATE_APPLETS4_LIBS)
+	$(MATE_APPLETS4_LIBS)	\
+	$(MATEDESKTOP_LIBS)
 
 
 appletdir       = $(datadir)/mate-panel/applets

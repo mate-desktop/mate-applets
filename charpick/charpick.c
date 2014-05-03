@@ -9,6 +9,7 @@
 #ifdef HAVE_GUCHARMAP
 #include <gucharmap/gucharmap.h>
 #endif
+#include <libmate-desktop/mate-aboutdialog.h>
 #include "charpick.h"
 
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -588,7 +589,7 @@ about (GtkAction     *action,
 	  NULL
   };
 
-  gtk_show_about_dialog (NULL,
+  mate_show_about_dialog (NULL,
 	"version",	VERSION,
 	"copyright",	"\xC2\xA9 1998, 2004-2005 GNOME Applets Maintainers "
 			"and others",

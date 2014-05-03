@@ -28,6 +28,7 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#include <libmate-desktop/mate-aboutdialog.h>
 #include <mate-panel-applet.h>
 
 #include "drive-list.h"
@@ -112,7 +113,7 @@ display_about_dialog (GtkAction *action,
 	NULL
     };
 
-    gtk_show_about_dialog (NULL,
+    mate_show_about_dialog (NULL,
 	"version",     VERSION,
 	"copyright",   "Copyright \xC2\xA9 2004 Canonical Ltd",
 	"comments",    _("Applet for mounting and unmounting block volumes."),

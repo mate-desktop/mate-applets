@@ -30,6 +30,7 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 
+#include <libmate-desktop/mate-aboutdialog.h>
 #if GTK_CHECK_VERSION (3, 0, 0)
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
@@ -58,7 +59,7 @@ about_cb (GtkAction       *action,
 		NULL
     };
 
-    gtk_show_about_dialog (NULL,
+    mate_show_about_dialog (NULL,
 	"version",	VERSION,
 	"copyright",	"\xC2\xA9 1999-2005 Free Software Foundation "
 			"and others",
