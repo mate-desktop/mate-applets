@@ -800,18 +800,23 @@ run_command (DriveButton *self, const char *command)
 	g_free (device_path);
 }
 
+static void dummy_async_ready_callback(GObject *source_object, GAsyncResult *res, gpointer user_data) {
+	/* do nothing */
+}
+
 static void
 mount_drive (DriveButton *self, GtkWidget *item)
 {
     if (self->volume) {
         GMountOperation *mount_op = gtk_mount_operation_new (NULL);
 	g_volume_mount (self->volume, G_MOUNT_MOUNT_NONE,
-			mount_op, NULL, NULL, NULL);
+			mount_op, NULL, dummy_async_ready_callback, NULL);
         g_object_unref (mount_op);
     } else {
 	g_return_if_reached();
     }
 }
+
 static void
 unmount_drive (DriveButton *self, GtkWidget *item)
 {
@@ -822,12 +827,12 @@ unmount_drive (DriveButton *self, GtkWidget *item)
 	if (mount)
 	{
 	    g_mount_unmount_with_operation (mount, G_MOUNT_UNMOUNT_NONE,
-	                                    NULL, NULL, NULL, NULL);
+	                                    NULL, NULL, dummy_async_ready_callback, NULL);
 	    g_object_unref (mount);
 	}
     } else if (self->mount) {
 	g_mount_unmount_with_operation (self->mount, G_MOUNT_UNMOUNT_NONE,
-			                NULL, NULL, NULL, NULL);
+			                NULL, NULL, dummy_async_ready_callback, NULL);
     } else {
 	g_return_if_reached();
     }
