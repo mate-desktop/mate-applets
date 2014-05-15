@@ -139,7 +139,6 @@ class InvestmentsListWindow(Gtk.Window):
 		    screen = window.get_screen()
                     monitor = screen.get_monitor_geometry (screen.get_monitor_at_window (window))
                     (ret, ax, ay) = window.get_origin()
-                    (aw, ah) = self.applet.window.get_size ()
                     (ignored, ignored, aw, ah) = window.get_geometry()
                 else:
                     screen = self.applet.get_screen()
