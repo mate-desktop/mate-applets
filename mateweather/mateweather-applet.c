@@ -327,8 +327,10 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
     
     mate_panel_applet_set_flags (gw_applet->applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
     mate_panel_applet_set_background_widget(gw_applet->applet,
                                        GTK_WIDGET(gw_applet->applet));
+#endif
 
     g_set_application_name (_("Weather Report"));
 
