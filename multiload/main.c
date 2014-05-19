@@ -114,7 +114,12 @@ start_procman (MultiloadApplet *ma)
 		GdkScreen *screen;
 		GdkAppLaunchContext *context;
 		screen = gtk_widget_get_screen (GTK_WIDGET (ma->applet));
+#if GTK_CHECK_VERSION (3, 0, 0)
+		GdkDisplay *display = gdk_screen_get_display (screen);
+		context = gdk_display_get_app_launch_context (display);
+#else
 		context = gdk_app_launch_context_new ();
+#endif
 		gdk_app_launch_context_set_screen (context, screen);
 		g_app_info_launch (G_APP_INFO (appinfo), NULL, G_APP_LAUNCH_CONTEXT (context), &error);
 		g_object_unref (context);
@@ -416,11 +421,20 @@ multiload_applet_refresh(MultiloadApplet *ma)
 	
 	if ( (orientation == MATE_PANEL_APPLET_ORIENT_UP) || 
 	     (orientation == MATE_PANEL_APPLET_ORIENT_DOWN) ) {
-	     	ma->box = gtk_hbox_new(FALSE, 0);
+#if GTK_CHECK_VERSION (3, 0, 0)
+		ma->box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+#else
+		ma->box = gtk_hbox_new(FALSE, 0);
+#endif
 	}
-	else
+	else {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		ma->box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+#else
 		ma->box = gtk_vbox_new(FALSE, 0);
-	
+#endif
+	}
+
 	gtk_container_add(GTK_CONTAINER(ma->applet), ma->box);
 			
 	/* create the NGRAPHS graphs, passing in their user-configurable properties with gsettings. */
