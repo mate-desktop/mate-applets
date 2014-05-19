@@ -197,8 +197,13 @@ add_page(GtkWidget *notebook, gchar *label)
 {
 	GtkWidget *page;
 	GtkWidget *page_label;
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	page = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+	gtk_box_set_homogeneous(GTK_BOX(page), TRUE);
+#else
 	page = gtk_hbox_new(TRUE, 0);
+#endif
 	page_label = gtk_label_new(label);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 6);
 		
@@ -211,9 +216,17 @@ add_page(GtkWidget *notebook, gchar *label)
 static void
 color_picker_set_cb(GtkColorButton *color_picker, gchar *key)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gchar *color_string;
+#else
 	gchar color_string[8];
+#endif
 	guint8 prop_type;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA color;
+#else
 	GdkColor color;
+#endif
 	MultiloadApplet *ma;
 
 	ma = g_object_get_data (G_OBJECT (color_picker), "MultiloadApplet");
@@ -234,15 +247,30 @@ color_picker_set_cb(GtkColorButton *color_picker, gchar *key)
 		prop_type = PROP_DISK;
 	else
 		g_assert_not_reached();
-		
+
+#if GTK_CHECK_VERSION (3, 4, 0)
+	gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(color_picker), &color);
+#elif GTK_CHECK_VERSION (3, 0, 0)
+	gtk_color_button_get_rgba(color_picker, &color);
+#else
 	gtk_color_button_get_color(color_picker, &color);
-	
+#endif
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	color_string = gdk_rgba_to_string(&color);
+#else
 	snprintf(color_string, 8, "#%02X%02X%02X", 
 		 color.red / 256, color.green / 256, color.blue / 256);
+#endif
 	g_settings_set_string(ma->settings, key, color_string);
-	
-	gdk_color_parse(color_string, 
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_rgba_parse(&(ma->graphs[prop_type]->colors[g_ascii_digit_value(key[strlen(key) - 1]) ]), color_string);
+	g_free(color_string);
+#else
+	gdk_color_parse(color_string,
 			&(ma->graphs[prop_type]->colors[g_ascii_digit_value(key[strlen(key) - 1]) ]) );
+#endif
 	
 #if !GTK_CHECK_VERSION (3, 0, 0)
 	ma->graphs[prop_type]->colors_allocated = FALSE;
@@ -258,21 +286,34 @@ add_color_selector(GtkWidget *page, gchar *name, gchar *key, MultiloadApplet *ma
 	GtkWidget *vbox;
 	GtkWidget *label;
 	GtkWidget *color_picker;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA color;
+#else
 	GdkColor color;
+#endif
 	gchar *color_string;
-	
+
 	color_string = g_settings_get_string (ma->settings, key);
 	if (!color_string)
 		color_string = g_strdup ("#000000");
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_rgba_parse(&color, color_string);
+#else
 	color.red   = (g_ascii_xdigit_value(color_string[1]) * 16 
                        + g_ascii_xdigit_value(color_string[2])) * 256;
 	color.green = (g_ascii_xdigit_value(color_string[3]) * 16 
                        + g_ascii_xdigit_value(color_string[4])) * 256;
 	color.blue  = (g_ascii_xdigit_value(color_string[5]) * 16
                        + g_ascii_xdigit_value(color_string[6])) * 256;
+#endif
 	g_free (color_string);
-		
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	label = gtk_label_new_with_mnemonic(name);
 	color_picker = gtk_color_button_new();
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), color_picker);
@@ -284,7 +325,13 @@ add_color_selector(GtkWidget *page, gchar *name, gchar *key, MultiloadApplet *ma
 	
 	g_object_set_data (G_OBJECT (color_picker), "MultiloadApplet", ma);
 
+#if GTK_CHECK_VERSION (3, 4, 0)
+	gtk_color_chooser_set_rgba(GTK_COLOR_CHOOSER(color_picker), &color);
+#elif GTK_CHECK_VERSION (3, 0, 0)
+	gtk_color_button_set_rgba(GTK_COLOR_BUTTON(color_picker), &color);
+#else
 	gtk_color_button_set_color(GTK_COLOR_BUTTON(color_picker), &color);
+#endif
 
 	g_signal_connect(G_OBJECT(color_picker), "color_set", G_CALLBACK(color_picker_set_cb), key);
 
@@ -314,18 +361,30 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gchar *label_text;
 	gchar *title;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+#else
 	vbox = gtk_vbox_new (FALSE, 0);
+#endif
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
 	gtk_widget_show (vbox);
 	
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), vbox,
 			    TRUE, TRUE, 0);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	categories_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
+#else
 	categories_vbox = gtk_vbox_new (FALSE, 18);
+#endif
 	gtk_box_pack_start (GTK_BOX (vbox), categories_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (categories_vbox);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	category_vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (category_vbox);
 	
@@ -336,8 +395,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
 	gtk_box_pack_start (GTK_BOX (category_vbox), label, FALSE, FALSE, 0);
 	g_free (title);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
 	hbox = gtk_hbox_new (FALSE, 0);
+#endif
 	gtk_box_pack_start (GTK_BOX (category_vbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 	
@@ -345,12 +408,20 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_label_set_justify (GTK_LABEL (indent), GTK_JUSTIFY_LEFT);
 	gtk_box_pack_start (GTK_BOX (hbox), indent, FALSE, FALSE, 0);
 	gtk_widget_show (indent);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	control_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	control_vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (hbox), control_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_vbox);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	control_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+#else
 	control_hbox = gtk_hbox_new (FALSE, 12);
+#endif
 	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_hbox);
 	
@@ -430,7 +501,11 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 			G_CALLBACK (property_toggled_cb), "view-diskload");
 	gtk_box_pack_start (GTK_BOX (control_hbox), check_box, FALSE, FALSE, 0);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	category_vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (category_vbox);
 
@@ -442,8 +517,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (category_vbox), label, FALSE, FALSE, 0);
 	gtk_widget_show (label);
 	g_free (title);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
 	hbox = gtk_hbox_new (FALSE, 0);
+#endif
 	gtk_box_pack_start (GTK_BOX (category_vbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 
@@ -452,11 +531,19 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (hbox), indent, FALSE, FALSE, 0);
 	gtk_widget_show (indent);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	control_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	control_vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (hbox), control_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_vbox);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	control_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+#else
 	control_hbox = gtk_hbox_new (FALSE, 12);
+#endif
 	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_hbox);
 	
@@ -472,8 +559,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
 	gtk_size_group_add_widget (label_size, label);
         gtk_box_pack_start (GTK_BOX (control_hbox), label, FALSE, FALSE, 0);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+#else
 	hbox = gtk_hbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (control_hbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 
@@ -500,8 +591,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	label = gtk_label_new (_("pixels"));
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
 	gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	control_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+#else
 	control_hbox = gtk_hbox_new (FALSE, 12);
+#endif
 	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_hbox);
 	
@@ -509,8 +604,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
 	gtk_size_group_add_widget (label_size, label);
 	gtk_box_pack_start (GTK_BOX (control_hbox), label, FALSE, FALSE, 0);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+#else
 	hbox = gtk_hbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (control_hbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 	
@@ -536,9 +635,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
 	
 	g_free(label_text);
-	
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	category_vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (category_vbox);
 
@@ -550,8 +652,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (category_vbox), label, FALSE, FALSE, 0);
 	gtk_widget_show (label);
 	g_free (title);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
 	hbox = gtk_hbox_new (FALSE, 0);
+#endif
 	gtk_box_pack_start (GTK_BOX (category_vbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 
@@ -560,7 +666,11 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (hbox), indent, FALSE, FALSE, 0);
 	gtk_widget_show (indent);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	control_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+#else
 	control_vbox = gtk_vbox_new (FALSE, 6);
+#endif
 	gtk_box_pack_start (GTK_BOX (hbox), control_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_vbox);
 
@@ -630,8 +740,13 @@ multiload_properties_cb (GtkAction       *action,
 	
 	dialog = gtk_dialog_new_with_buttons (_("System Monitor Preferences"),
 					      NULL, 0,
+#if GTK_CHECK_VERSION (3, 10, 0)
+					   _("_Help"), GTK_RESPONSE_HELP,
+					   _("_Close"), GTK_RESPONSE_CLOSE,
+#else
 					   GTK_STOCK_HELP, GTK_RESPONSE_HELP,
 					   GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+#endif
 					      NULL);
 	gtk_window_set_screen (GTK_WINDOW (dialog),
 			       gtk_widget_get_screen (GTK_WIDGET (ma->applet)));

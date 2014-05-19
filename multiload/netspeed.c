@@ -36,7 +36,11 @@ void netspeed_add(NetSpeed *ns, gulong tx)
 static char*
 format_rate_for_display(guint rate)
 {
+#if GLIB_CHECK_VERSION (2, 30, 0)
+	char* bytes = g_format_size(rate);
+#else
 	char* bytes = g_format_size_for_display(rate);
+#endif
 	return g_strdup_printf(_("%s/s"), bytes);
 }
 
