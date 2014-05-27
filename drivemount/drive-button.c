@@ -71,6 +71,23 @@ drive_button_class_init (DriveButtonClass *class)
     GTK_WIDGET_CLASS(class)->button_press_event = drive_button_button_press;
     GTK_WIDGET_CLASS(class)->key_press_event = drive_button_key_press;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    GtkCssProvider *provider;
+
+    provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (provider,
+                                     "DriveButton {\n"
+                                     " border-width: 0px;\n"
+                                     " -GtkWidget-focus-line-width: 0px;\n"
+                                     " -GtkWidget-focus-padding: 0px;\n"
+                                     "}",
+                                     -1, NULL);
+    gtk_style_context_add_provider_for_screen (gdk_screen_get_default(),
+                                    GTK_STYLE_PROVIDER (provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_object_unref (provider);
+
+#else
     gtk_rc_parse_string ("\n"
 			 "   style \"drive-button-style\"\n"
 			 "   {\n"
@@ -84,6 +101,7 @@ drive_button_class_init (DriveButtonClass *class)
 			 "\n"
 			 "    class \"DriveButton\" style \"drive-button-style\"\n"
 			 "\n");
+#endif
 }
 
 static void
@@ -375,7 +393,11 @@ drive_button_update (gpointer user_data)
     if (icon_info)
     {
 	pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	g_object_unref (icon_info);
+#else
 	gtk_icon_info_free (icon_info);
+#endif
     }
 
     g_object_unref (icon);
@@ -568,7 +590,12 @@ open_drive (DriveButton *self, GtkWidget *item)
       app_info = G_APP_INFO (g_desktop_app_info_new ("caja.desktop"));
 
     if (app_info) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkDisplay *display = gtk_widget_get_display (item);
+	launch_context = gdk_display_get_app_launch_context (display);
+#else
 	launch_context = gdk_app_launch_context_new ();
+#endif
 	screen = gtk_widget_get_screen (GTK_WIDGET (self));
 	gdk_app_launch_context_set_screen (launch_context, screen);
 	files = g_list_prepend (files, file);
@@ -600,7 +627,7 @@ open_drive (DriveButton *self, GtkWidget *item)
 	if (error)
 	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), error->message, NULL);
 	else
-	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "Could not find Caja", NULL);
+	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "Could not find Caja");
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (gtk_widget_destroy), NULL);
 	gtk_widget_show (dialog);
