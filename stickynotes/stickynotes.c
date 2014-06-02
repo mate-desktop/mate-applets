@@ -838,11 +838,7 @@ stickynotes_save_now (void)
 
 	/* The XML file is $HOME/.config/mate/stickynotes-applet, most probably */
 	{
-		#if GLIB_CHECK_VERSION(2, 6, 0)
 			gchar* file = g_build_filename(g_get_user_config_dir(), "mate", "stickynotes-applet.xml", NULL);
-		#else // glib version < 2.6.0
-			gchar* file = g_build_filename(g_get_home_dir(), ".config", "mate", "stickynotes-applet.xml", NULL);
-		#endif
 
 		xmlSaveFormatFile(file, doc, 1);
 
@@ -879,12 +875,7 @@ stickynotes_load (GdkScreen *screen)
 	int x, y, w, h;
 	/* The XML file is $HOME/.config/mate/stickynotes-applet, most probably */
 	{
-		/* retro-compatibilidad con ~/.mate2/ */
-		#if GLIB_CHECK_VERSION(2, 6, 0)
 			gchar* file = g_build_filename(g_get_user_config_dir(), "mate", "stickynotes-applet.xml", NULL);
-		#else // glib version < 2.6.0
-			gchar* file = g_build_filename(g_get_home_dir(), ".config", "mate", "stickynotes-applet.xml", NULL);
-		#endif
 
 		if (g_file_test(file, G_FILE_TEST_EXISTS))
 		{

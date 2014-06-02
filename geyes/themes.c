@@ -46,11 +46,7 @@ void theme_dirs_create (void)
 
 	theme_directories[0] = g_build_filename(GEYES_THEMES_DIR, NULL);
 
-	#if GLIB_CHECK_VERSION(2, 6, 0)
 		theme_directories[1] = g_build_filename(g_get_user_config_dir(), "mate", "geyes-themes", NULL);
-	#else // glib version < 2.6.0
-		theme_directories[1] = g_build_filename(g_get_home_dir(), ".config", "mate", "geyes-themes", NULL);
-	#endif
 
 	themes_created = TRUE;
 }
