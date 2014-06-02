@@ -183,8 +183,6 @@ main (gint argc, gchar **argv)
 	}
 #endif
 	
-	g_type_init ();
-
 	context = g_option_context_new ("- CPUFreq Selector");
 	g_option_context_add_main_entries (context, options, NULL);
 	
