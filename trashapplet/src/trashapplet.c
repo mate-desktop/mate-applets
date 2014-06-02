@@ -188,11 +188,7 @@ trash_applet_size_allocate (GtkWidget    *widget,
 }
 
 static void
-#if GTK_CHECK_VERSION (3, 0, 0)
 trash_applet_dispose (GObject *object)
-#else
-trash_applet_destroy (GtkObject *object)
-#endif
 {
   TrashApplet *applet = TRASH_APPLET (object);
 
@@ -212,11 +208,7 @@ trash_applet_destroy (GtkObject *object)
     g_object_unref (applet->icon);
   applet->icon = NULL;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   G_OBJECT_CLASS (trash_applet_parent_class)->dispose (object);
-#else
-  GTK_OBJECT_CLASS (trash_applet_parent_class)->destroy (object);
-#endif
 }
 
 static void
@@ -530,11 +522,7 @@ confirm_delete_immediately (GtkWidget *parent_view,
 
   response = gtk_dialog_run (GTK_DIALOG (dialog));
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   gtk_widget_destroy (GTK_WIDGET (dialog));
-#else
-  gtk_object_destroy (GTK_OBJECT (dialog));
-#endif
 
   return response == GTK_RESPONSE_YES;
 }
@@ -609,18 +597,10 @@ trash_applet_drag_data_received (GtkWidget        *widget,
 static void
 trash_applet_class_init (TrashAppletClass *class)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
   GObjectClass *gobject_class = G_OBJECT_CLASS (class);
-#else
-  GtkObjectClass *gtkobject_class = GTK_OBJECT_CLASS (class);
-#endif
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (class);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   gobject_class->dispose = trash_applet_dispose;
-#else
-  gtkobject_class->destroy = trash_applet_destroy;
-#endif
   widget_class->size_allocate = trash_applet_size_allocate;
   widget_class->button_release_event = trash_applet_button_release;
   widget_class->key_press_event = trash_applet_key_press;

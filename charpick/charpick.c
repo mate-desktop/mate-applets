@@ -12,10 +12,6 @@
 #include <libmate-desktop/mate-aboutdialog.h>
 #include "charpick.h"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define GTK_OBJECT(x) G_OBJECT(x)
-#endif
-
 /* The comment for each char list has the html entity names of the chars */
 /* All gunicar codes should end in 0 */
 
@@ -495,10 +491,10 @@ build_table(charpick_data *p_curr_data)
   
     g_object_set_data (G_OBJECT (toggle_button[i]), "unichar", 
 				GINT_TO_POINTER(g_utf8_get_char (label)));
-    g_signal_connect (GTK_OBJECT (toggle_button[i]), "toggled",
+    g_signal_connect (G_OBJECT (toggle_button[i]), "toggled",
 		      G_CALLBACK (toggle_button_toggled_cb),
                         p_curr_data);
-    g_signal_connect (GTK_OBJECT (toggle_button[i]), "button_press_event", 
+    g_signal_connect (G_OBJECT (toggle_button[i]), "button_press_event", 
                       G_CALLBACK (button_press_hack), p_curr_data->applet);
   }
   
@@ -774,10 +770,10 @@ charpicker_applet_fill (MatePanelApplet *applet)
 			    GDK_SELECTION_CLIPBOARD,
                             utf8_atom,
 			    0);
-  g_signal_connect (GTK_OBJECT (curr_data->applet), "selection_get",
+  g_signal_connect (G_OBJECT (curr_data->applet), "selection_get",
 		      G_CALLBACK (charpick_selection_handler),
 		      curr_data);
-  g_signal_connect (GTK_OBJECT (curr_data->applet), "selection_clear_event",
+  g_signal_connect (G_OBJECT (curr_data->applet), "selection_clear_event",
 		      G_CALLBACK (selection_clear_cb),
 		      curr_data);
  

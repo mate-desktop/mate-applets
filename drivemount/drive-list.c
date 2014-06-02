@@ -35,11 +35,7 @@ G_DEFINE_TYPE (DriveList, drive_list, GTK_TYPE_TABLE);
 static GVolumeMonitor *volume_monitor = NULL;
 
 static void drive_list_finalize (GObject *object);
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void drive_list_dispose  (GObject *object);
-#else
-static void drive_list_destroy  (GtkObject *object);
-#endif
 static void drive_list_add      (GtkContainer *container, GtkWidget *child);
 static void drive_list_remove   (GtkContainer *container, GtkWidget *child);
 
@@ -74,11 +70,7 @@ static void
 drive_list_class_init (DriveListClass *class)
 {
     G_OBJECT_CLASS (class)->finalize = drive_list_finalize;
-#if GTK_CHECK_VERSION (3, 0, 0)
     G_OBJECT_CLASS (class)->dispose = drive_list_dispose;
-#else
-    GTK_OBJECT_CLASS (class)->destroy = drive_list_destroy;
-#endif
     GTK_CONTAINER_CLASS (class)->add = drive_list_add;
     GTK_CONTAINER_CLASS (class)->remove = drive_list_remove;
 }
@@ -152,11 +144,7 @@ drive_list_finalize (GObject *object)
 }
 
 static void
-#if GTK_CHECK_VERSION (3, 0, 0)
 drive_list_dispose (GObject *object)
-#else
-drive_list_destroy (GtkObject *object)
-#endif
 {
     DriveList *self = DRIVE_LIST (object);
 
@@ -177,13 +165,8 @@ drive_list_destroy (GtkObject *object)
 	g_source_remove (self->layout_tag);
     self->layout_tag = 0;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     if (G_OBJECT_CLASS (drive_list_parent_class)->dispose)
 	(* G_OBJECT_CLASS (drive_list_parent_class)->dispose) (object);
-#else
-    if (GTK_OBJECT_CLASS (drive_list_parent_class)->destroy)
-	(* GTK_OBJECT_CLASS (drive_list_parent_class)->destroy) (object);
-#endif
 }
 
 static void

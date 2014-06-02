@@ -99,11 +99,7 @@ static void     cpufreq_applet_update            (CPUFreqApplet      *applet,
                                                   CPUFreqMonitor     *monitor);
 static void     cpufreq_applet_refresh           (CPUFreqApplet      *applet);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void     cpufreq_applet_dispose           (GObject            *widget);
-#else
-static void     cpufreq_applet_destroy           (GtkObject          *widget);
-#endif
 static gboolean cpufreq_applet_button_press      (GtkWidget          *widget,
                                                   GdkEventButton     *event);
 static gboolean cpufreq_applet_key_press         (GtkWidget          *widget,
@@ -228,18 +224,10 @@ static void
 cpufreq_applet_class_init (CPUFreqAppletClass *klass)
 {
         MatePanelAppletClass *applet_class = MATE_PANEL_APPLET_CLASS (klass);
-#if GTK_CHECK_VERSION (3, 0, 0)
         GObjectClass     *gobject_class = G_OBJECT_CLASS (klass);
-#else
-        GtkObjectClass   *gtkobject_class = GTK_OBJECT_CLASS (klass);
-#endif
         GtkWidgetClass   *widget_class = GTK_WIDGET_CLASS (klass);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         gobject_class->dispose = cpufreq_applet_dispose;
-#else
-        gtkobject_class->destroy = cpufreq_applet_destroy;
-#endif
 
         widget_class->size_allocate = cpufreq_applet_size_allocate;
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -254,11 +242,7 @@ cpufreq_applet_class_init (CPUFreqAppletClass *klass)
 }
 
 static void
-#if GTK_CHECK_VERSION (3, 0, 0)
 cpufreq_applet_dispose (GObject *widget)
-#else
-cpufreq_applet_destroy (GtkObject *widget)
-#endif
 {
         CPUFreqApplet *applet;
         gint           i;
@@ -287,11 +271,7 @@ cpufreq_applet_destroy (GtkObject *widget)
                 applet->popup = NULL;
         }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         G_OBJECT_CLASS (cpufreq_applet_parent_class)->dispose (widget);
-#else
-        GTK_OBJECT_CLASS (cpufreq_applet_parent_class)->destroy (widget);
-#endif
 }
 
 static void

@@ -304,11 +304,7 @@ create_eyes (MatePanelApplet *applet)
 }
 
 static void
-#if GTK_CHECK_VERSION (3, 0, 0)
 dispose_cb (GObject *object, EyesApplet *eyes_applet)
-#else
-destroy_cb (GtkObject *object, EyesApplet *eyes_applet)
-#endif
 {
 	g_return_if_fail (eyes_applet);
 
@@ -446,13 +442,8 @@ geyes_applet_fill (MatePanelApplet *applet)
 			  G_CALLBACK (applet_back_change),
 			  eyes_applet);
 	g_signal_connect (eyes_applet->vbox,
-#if GTK_CHECK_VERSION (3, 0, 0)
 			  "dispose",
 			  G_CALLBACK (dispose_cb),
-#else
-			  "destroy",
-			  G_CALLBACK (destroy_cb),
-#endif
 			  eyes_applet);
 
 	gtk_widget_show_all (GTK_WIDGET (eyes_applet->applet));

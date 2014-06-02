@@ -384,15 +384,9 @@ battstat_error_dialog( GtkWidget *applet, const char *msg )
   gtk_window_set_screen( GTK_WINDOW (dialog),
                          gtk_widget_get_screen (GTK_WIDGET (applet)) );
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   g_signal_connect_swapped( G_OBJECT (dialog), "response",
                             G_CALLBACK (gtk_widget_destroy),
                             G_OBJECT (dialog) );
-#else
-  g_signal_connect_swapped( GTK_OBJECT (dialog), "response",
-                            G_CALLBACK (gtk_widget_destroy),
-                            GTK_OBJECT (dialog) );
-#endif
 
   gtk_widget_show_all( dialog );
 }
@@ -515,15 +509,9 @@ battery_full_dialog (GtkWidget *applet)
 		GTK_STOCK_OK,
 		GTK_RESPONSE_ACCEPT,
 		NULL);
-#if GTK_CHECK_VERSION (3, 0, 0)
   g_signal_connect_swapped (G_OBJECT (dialog), "response",
 			    G_CALLBACK (gtk_widget_destroy),
 			    G_OBJECT (dialog));
-#else
-  g_signal_connect_swapped (GTK_OBJECT (dialog), "response",
-			    G_CALLBACK (gtk_widget_destroy),
-			    GTK_OBJECT (dialog));
-#endif
 
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
   hbox = gtk_hbox_new (FALSE, 6);
@@ -679,11 +667,7 @@ battery_low_dialog( ProgressData *battery, BatteryStatus *info )
   gtk_dialog_set_default_response( GTK_DIALOG (battery->battery_low_dialog),
                                    GTK_RESPONSE_ACCEPT );
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   g_signal_connect_swapped( G_OBJECT (battery->battery_low_dialog),
-#else
-  g_signal_connect_swapped( GTK_OBJECT (battery->battery_low_dialog),
-#endif
                             "response",
                             G_CALLBACK (battery_low_dialog_destroy),
                             battery );
@@ -1749,15 +1733,9 @@ create_layout(ProgressData *battstat)
   g_object_ref( battstat->status );
   g_object_ref( battstat->percent );
   g_object_ref( battstat->battery );
-#if GTK_CHECK_VERSION (3, 0, 0)
   g_object_ref_sink( G_OBJECT( battstat->status ) );
   g_object_ref_sink( G_OBJECT( battstat->percent ) );
   g_object_ref_sink( G_OBJECT( battstat->battery ) );
-#else
-  g_object_ref_sink( GTK_OBJECT( battstat->status ) );
-  g_object_ref_sink( GTK_OBJECT( battstat->percent ) );
-  g_object_ref_sink( GTK_OBJECT( battstat->battery ) );
-#endif
 
   /* Let reconfigure_layout know that the table is currently empty. */
   battstat->layout.status = LAYOUT_NONE;

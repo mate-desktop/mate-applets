@@ -343,11 +343,7 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
                        G_CALLBACK(size_allocate_cb), gw_applet);
     g_signal_connect (G_OBJECT(gw_applet->applet), "destroy", 
                        G_CALLBACK (applet_destroy), gw_applet);
-#if GTK_CHECK_VERSION (3, 0, 0)
     g_signal_connect (G_OBJECT(gw_applet->applet), "button_press_event",
-#else
-    g_signal_connect (GTK_OBJECT(gw_applet->applet), "button_press_event",
-#endif
                        G_CALLBACK(clicked_cb), gw_applet);
     g_signal_connect (G_OBJECT(gw_applet->applet), "key_press_event",           
 			G_CALLBACK(key_press_cb), gw_applet);

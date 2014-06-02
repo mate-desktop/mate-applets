@@ -789,11 +789,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	GtkWidget* pref_basic_update_alignment;
 	GtkWidget* pref_basic_update_lbl;
 	GtkWidget* pref_basic_update_hbox;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GObject* pref_basic_update_spin_adj;
-#else
-	GtkObject* pref_basic_update_spin_adj;
-#endif
 	GtkWidget* pref_basic_update_sec_lbl;
 	GtkWidget* pref_basic_note_lbl;
 	GtkWidget* pref_loc_hbox;
