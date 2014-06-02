@@ -28,10 +28,6 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define GDK_WINDOW_XWINDOW GDK_WINDOW_XID
-#endif
-
 /* Returns the current date in a customizable form, the default
  * looks like this: "Nov 30, '78" */
 gchar * get_current_date(const gchar *format)
@@ -92,9 +88,9 @@ xstuff_get_current_workspace (GtkWindow *window)
 	int     retval;
 	Display *gdk_display;
 
-	root_window = GDK_WINDOW_XWINDOW (gdk_screen_get_root_window (
+	root_window = GDK_WINDOW_XID (gdk_screen_get_root_window (
 				gtk_widget_get_screen (GTK_WIDGET (window))));
-	root_window = GDK_WINDOW_XWINDOW (gtk_widget_get_window (GTK_WIDGET (window)));
+	root_window = GDK_WINDOW_XID (gtk_widget_get_window (GTK_WIDGET (window)));
 	gdk_display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
 
 	gdk_error_trap_push ();
@@ -129,7 +125,7 @@ xstuff_change_workspace (GtkWindow *window,
   Screen *screen;
 
   gdk_display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-  xwindow = GDK_WINDOW_XWINDOW (GDK_WINDOW (gtk_widget_get_window (GTK_WIDGET (window))));
+  xwindow = GDK_WINDOW_XID (GDK_WINDOW (gtk_widget_get_window (GTK_WIDGET (window))));
   screen = GDK_SCREEN_XSCREEN (gtk_widget_get_screen (GTK_WIDGET (window)));
   
   xev.xclient.type = ClientMessage;

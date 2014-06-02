@@ -54,12 +54,7 @@ set_icon_geometry  (GdkWindow *window,
                   int        height)
 {
       gulong data[4];
-#if GTK_CHECK_VERSION (3, 0, 0)
       Display *dpy = gdk_x11_display_get_xdisplay (gdk_window_get_display (window));
-#else
-      Display *dpy = gdk_x11_drawable_get_xdisplay (window);
-#endif
-
       data[0] = x;
       data[1] = y;
       data[2] = width;
@@ -68,11 +63,7 @@ set_icon_geometry  (GdkWindow *window,
       XChangeProperty (dpy,
                        GDK_WINDOW_XID (window),
                        gdk_x11_get_xatom_by_name_for_display (
-#if GTK_CHECK_VERSION (3, 0, 0)
 			       gdk_window_get_display (window),
-#else
-			       gdk_drawable_get_display (window),
-#endif
 			       "_NET_WM_ICON_GEOMETRY"),
 		       XA_CARDINAL, 32, PropModeReplace,
                        (guchar *)&data, 4);

@@ -1004,12 +1004,8 @@ copy_gdk_pixmap( GdkPixmap *src, GdkGC *gc )
   gint height, width;
   GdkPixmap *dest;
 
-	#if GTK_CHECK_VERSION(3, 0, 0)
 		width = gdk_window_get_width(GDK_WINDOW(src));
 		height = gdk_window_get_height(GDK_WINDOW(src));
-	#else
-		gdk_drawable_get_size(GDK_DRAWABLE(src), &width, &height);
-	#endif
 
   dest = gdk_pixmap_new( GDK_DRAWABLE( src ), width, height, -1 );
 
