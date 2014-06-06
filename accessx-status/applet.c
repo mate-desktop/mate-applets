@@ -1396,8 +1396,9 @@ static gboolean accessx_status_applet_fill(MatePanelApplet* applet)
 		accessx_status_applet_reset(sapplet);
 	}
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	mate_panel_applet_set_background_widget (sapplet->applet, GTK_WIDGET (sapplet->applet));
-
+#endif
 	return TRUE;
 }
 

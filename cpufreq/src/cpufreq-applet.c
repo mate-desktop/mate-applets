@@ -200,7 +200,9 @@ cpufreq_applet_init (CPUFreqApplet *applet)
 	applet->need_refresh = TRUE;
 
         mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	mate_panel_applet_set_background_widget (MATE_PANEL_APPLET (applet), GTK_WIDGET (applet));
+#endif
 
         applet->size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet));
         applet->orient = mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet));

@@ -219,9 +219,11 @@ trash_applet_init (TrashApplet *applet)
   /* needed to clamp ourselves to the panel size */
   mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
   /* enable transparency hack */
   mate_panel_applet_set_background_widget (MATE_PANEL_APPLET (applet),
                                       GTK_WIDGET (applet));
+#endif
 
   /* setup the image */
   applet->image = g_object_ref_sink (gtk_image_new ());

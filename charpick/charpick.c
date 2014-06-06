@@ -719,7 +719,9 @@ charpicker_applet_fill (MatePanelApplet *applet)
   
   gtk_window_set_default_icon_name ("accessories-character-map");
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
   mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
+#endif
 
   mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
    
