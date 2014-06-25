@@ -21,7 +21,7 @@ org.mate.panel.applet.TrashAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = trashapplet-menu.xml
 
 builder_DATA = trashapplet-empty-progress.ui

@@ -7,16 +7,16 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(MATEDESKTOP_CFLAGS)
 
-libexec_PROGRAMS = drivemount_applet2
+libexec_PROGRAMS = drivemount-applet
 
-drivemount_applet2_SOURCES =	\
+drivemount_applet_SOURCES =	\
 	drivemount.c		\
 	drive-list.c		\
 	drive-list.h		\
 	drive-button.c		\
 	drive-button.h
 
-drivemount_applet2_LDADD =	\
+drivemount_applet_LDADD =	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MATEDESKTOP_LIBS)
 
@@ -42,7 +42,7 @@ org.mate.panel.applet.DriveMountAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = drivemount-applet-menu.xml
 
 CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA)

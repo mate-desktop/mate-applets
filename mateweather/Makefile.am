@@ -13,9 +13,9 @@ AM_CPPFLAGS =					\
 	$(NETWORKMANAGER_CFLAGS)			\
 	$(DBUS_CFLAGS)
 
-libexec_PROGRAMS = mateweather-applet-2
+libexec_PROGRAMS = mateweather-applet
 
-mateweather_applet_2_SOURCES = \
+mateweather_applet_SOURCES = \
 	mateweather.h \
 	main.c \
 	mateweather-about.c mateweather-about.h \
@@ -23,7 +23,7 @@ mateweather_applet_2_SOURCES = \
 	mateweather-dialog.c mateweather-dialog.h \
 	mateweather-applet.c mateweather-applet.h
 
-mateweather_applet_2_LDADD = 	\
+mateweather_applet_LDADD = 	\
 	$(LIBNOTIFY_LIBS) 	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MATEDESKTOP_LIBS)	\
@@ -32,7 +32,7 @@ mateweather_applet_2_LDADD = 	\
 	$(NETWORKMANAGER_LIBS)	\
 	$(DBUS_LIBS)
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = mateweather-applet-menu.xml
 
 appletdir       = $(datadir)/mate-panel/applets

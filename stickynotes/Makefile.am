@@ -44,7 +44,7 @@ stickynotes_applet_LDADD =	\
 
 builder_DATA = $(builder_files)
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = $(ui_files)
 
 @INTLTOOL_XML_NOMERGE_RULE@

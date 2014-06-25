@@ -8,9 +8,9 @@ AM_CPPFLAGS =			\
 	$(MATEDESKTOP_CFLAGS)	\
 	$(GIO_CFLAGS)
 
-libexec_PROGRAMS = multiload-applet-2
+libexec_PROGRAMS = multiload-applet
 
-multiload_applet_2_SOURCES = \
+multiload_applet_SOURCES = \
 			global.h	\
 			linux-proc.h	\
 			load-graph.h	\
@@ -22,7 +22,7 @@ multiload_applet_2_SOURCES = \
 			autoscaler.c	\
 			autoscaler.h
 
-multiload_applet_2_LDADD = \
+multiload_applet_LDADD = \
 				$(MATE_APPLETS4_LIBS) 	\
 				$(GTOP_APPLETS_LIBS)	\
 				$(MATEDESKTOP_LIBS)		\
@@ -42,7 +42,7 @@ EXTRA_DIST =							\
 	$(gsettings_SCHEMAS).in.in			\
 	$(ui_DATA)
 
-uidir		= $(datadir)/mate-2.0/ui
+uidir		= $(datadir)/mate/ui
 ui_DATA		= multiload-applet-menu.xml
 
 appletdir       = $(datadir)/mate-panel/applets

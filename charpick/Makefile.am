@@ -8,13 +8,13 @@ AM_CPPFLAGS =					\
 	$(MATEDESKTOP_CFLAGS)		\
 	$(GUCHARMAP_CFLAGS)
 
-libexec_PROGRAMS = charpick_applet2
+libexec_PROGRAMS = charpick-applet
 
-charpick_applet2_SOURCES = charpick.c \
+charpick_applet_SOURCES = charpick.c \
                           charpick.h \
                           properties.c
 
-charpick_applet2_LDADD = \
+charpick_applet_LDADD = \
 		       $(MATE_APPLETS4_LIBS)	\
 		       $(MATEDESKTOP_LIBS)	\
 		       $(GUCHARMAP_LIBS)
@@ -47,7 +47,7 @@ gsettings_SCHEMAS = org.mate.panel.applet.charpick.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = charpick-applet-menu.xml
 
 CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid

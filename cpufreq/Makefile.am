@@ -30,7 +30,7 @@ org.mate.panel.applet.CPUFreqAppletFactory.service: $(service_in_files)
 
 builder_DATA = cpufreq-preferences.ui
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = cpufreq-applet-menu.xml
 
 CLEANFILES = \

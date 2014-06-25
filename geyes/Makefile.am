@@ -9,14 +9,14 @@ AM_CPPFLAGS =						\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
 	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"
 
-libexec_PROGRAMS = geyes_applet2
+libexec_PROGRAMS = geyes-applet
 
-geyes_applet2_SOURCES =	\
+geyes_applet_SOURCES =	\
         geyes.c \
 	themes.c \
 	geyes.h
 
-geyes_applet2_LDADD = 		\
+geyes_applet_LDADD = 		\
 	$(MATE_APPLETS4_LIBS) \
 	$(MATEDESKTOP_LIBS) \
 	-lm
@@ -42,7 +42,7 @@ org.mate.panel.applet.GeyesAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = geyes-applet-menu.xml
 
 @INTLTOOL_XML_NOMERGE_RULE@

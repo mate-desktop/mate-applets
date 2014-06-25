@@ -38,7 +38,7 @@ org.mate.panel.applet.AccessxStatusAppletFactory.service: $(service_in_files)
 		-e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
 		$< > $@
 
-uidir   = $(datadir)/mate-2.0/ui
+uidir   = $(datadir)/mate/ui
 ui_DATA = accessx-status-applet-menu.xml
 
 CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(ACCESSX_STATUS_APPLET_CLEANFILES)

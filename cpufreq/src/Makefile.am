@@ -5,7 +5,7 @@ endif
 SUBDIRS = $(selector_SUBDIR)
 
 AM_CPPFLAGS = \
-	-DCPUFREQ_MENU_UI_DIR=\""$(datadir)/mate-2.0/ui"\" 	\
+	-DCPUFREQ_MENU_UI_DIR=\""$(datadir)/mate/ui"\" 	\
 	$(MATE_APPLETS4_CFLAGS) 				\
 	$(MATEDESKTOP_CFLAGS) 				\
 	$(LIBGLADE_CFLAGS)					\

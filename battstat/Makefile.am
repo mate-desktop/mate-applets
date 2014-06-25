@@ -35,10 +35,10 @@ AM_CPPFLAGS =					\
 	-DBATTSTAT_MENU_UI_DIR=\""$(uidir)"\"
 
 
-libexec_PROGRAMS = battstat-applet-2
+libexec_PROGRAMS = battstat-applet
 
 
-battstat_applet_2_SOURCES = \
+battstat_applet_SOURCES = \
 	battstat.h \
 	pixmaps.h \
 	properties.c \
@@ -54,7 +54,7 @@ battstat_applet_2_SOURCES = \
 	battstat-upower.h
 
 
-battstat_applet_2_LDADD = \
+battstat_applet_LDADD = \
 		     $(MATE_APPLETS4_LIBS) \
 		     $(MATEDESKTOP_LIBS) \
 		     $(LIBNOTIFY_LIBS) \
@@ -93,7 +93,7 @@ org.mate.panel.applet.BattstatAppletFactory.service: $(service_in_files)
 
 CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
 
-uidir = $(datadir)/mate-2.0/ui
+uidir = $(datadir)/mate/ui
 ui_DATA = battstat-applet-menu.xml
 
 EXTRA_DIST = 							\
