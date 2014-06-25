@@ -87,6 +87,8 @@ load_graph_draw (LoadGraph *g)
     }
 
     gtk_widget_queue_draw (g->disp);
+
+    cairo_destroy (cr);
 }
 
 /* Updates the load graph when the timeout expires */
@@ -204,6 +206,10 @@ load_graph_expose (GtkWidget *widget,
 
     cairo_set_source_surface (cr, g->surface, 0, 0);
     cairo_paint (cr);
+
+#if !GTK_CHECK_VERSION (3, 0, 0)
+    cairo_destroy (cr);
+#endif
 
     return FALSE;
 }
