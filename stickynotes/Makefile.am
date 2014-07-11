@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = pixmaps docs data
+SUBDIRS = pixmaps docs
 
 ui_files = stickynotes-applet-menu.xml
 builder_files = stickynotes.ui

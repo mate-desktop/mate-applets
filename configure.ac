@@ -667,7 +667,6 @@ man/Makefile
 stickynotes/Makefile
 stickynotes/pixmaps/Makefile
 stickynotes/docs/Makefile
-stickynotes/data/Makefile
 trashapplet/Makefile
 trashapplet/src/Makefile
 trashapplet/docs/Makefile
