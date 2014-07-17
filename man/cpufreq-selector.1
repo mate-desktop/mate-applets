@@ -1,29 +1,48 @@
-.if \n(.g .ds T< \\FC
-.if \n(.g .ds T> \\F[\n[.fam]]
-.de URL
-\\$2 \(la\\$1\(ra\\$3
-..
-.if \n(.g .mso www.tmac
-.TH "mate-cpufreq-selector" "1"
+.\" Man page for mate-cpufreq-selector.
+.TH MATE-CPUFREQ-SELECTOR 1 "18 April 2014" "MATE Desktop Environment"
+.\" Please adjust this date when revising the manpage.
+.\"
 .SH "NAME"
-mate-cpufreq-selector \(em tool to set CPU frequency
+mate\-cpufreq\-selector \- A generic command line tool to change the cpu frequency.
 .SH "SYNOPSIS"
-'nh
-.fi
-.ad l
-.PP
-\fBmate-cpufreq-selector\fR
+.B mate\-cpufreq\-selector [OPTIONS]
 .SH "DESCRIPTION"
+This tool is a part of the CPU Frequency Scaling Monitor Applet for the MATE Panel. It can be called from the command line when installed. \fBmate\-cpufreq\-selector\fR is used to adjust the CPU Frequency settings if the system supports scaling.
 .PP
+This manual page briefly documents the \fBmate\-cpufreq\-selector\fR command.
 
-The \fBmate-cpufreq-selector\fR is a MATE panel applet that allows one to monitor
-and configure the CPU frequency scaling for the system's CPUs.
-.SH "AUTHOR"
+.SH "OPTIONS"
+.TP
+\fB\-c NUMBER, \-\-cpu=NUMBER\fR
+Specify the CPU Number to adjust settings for. If no CPU is specified, CPU0 is assumed.
+.TP
+\fB\-g GOVERNOR, \-\-governor=GOVERNOR\fR
+Specify a valid CPU Governor to use. (ie. conservative, ondemand, performance, powersave)
+.TP
+\fB\-f FREQ, \-\-frequency=FREQ\fR
+Specify a CPU Frequency to set in KHz.
+.TP
+\fB\-?, \-h, \-\-help\fR
+Print standard command line options.
+.SH "EXAMPLES"
+\fBmate\-cpufreq\-selector \-\-cpu=1 \-g powersave\fR
+.RS 4
+Set scaling Governor "Powersave" on CPU1
+.RE
 .PP
-\fBmate-cpufreq-selector\fR, as part of mate-applets (derived from gnome-applets),
-has been written by Carlos García
-Campos, Davyd Madeley and other GNOME/MATE contributors.
+\fBmate\-cpufreq\-selector \-f 1200\fR
+.RS 4
+Set max CPU Frequency to 1200KHz (1.2GHz) on CPU0
+.RE
 .PP
-This manual page has been written by Mike Gabriel
-<mike.gabriel@das-netzwerkteam.de> for the \fBDebian\fR system (but may be used
-by others.
+.SH "BUGS"
+.SS Should you encounter any bugs, they may be reported at: 
+http://github.com/mate-desktop/mate-applets/issues
+.SH "AUTHORS"
+.SS This Man Page has been written for the MATE Desktop Environment by:
+Adam Erdman <hekel@archlinux.info> (2014)
+.SH "HISTORY"
+.SS cpufreq\-selector was originally written for gnome-applets by:
+Carlos García Campos <carlosgc@gnome.org> (2004)
+.SH "SEE ALSO"
+.SS Further information may also be available at: http://wiki.mate-desktop.org/docs
