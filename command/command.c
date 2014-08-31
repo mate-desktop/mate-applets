@@ -67,7 +67,7 @@ typedef struct
 
 static void command_about_callback (GtkAction *action, CommandApplet *command_applet);
 static void command_settings_callback (GtkAction *action, CommandApplet *command_applet);
-static void command_width_callback (GtkAction *action, CommandApplet *command_applet);
+
 static gboolean command_execute (CommandApplet *command_applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
