@@ -27,6 +27,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
+/*#include <libmate-desktop/mate-aboutdialog.h>*/
 
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
@@ -40,14 +41,12 @@
 #define COMMAND_KEY    "command"
 #define INTERVAL_KEY   "interval"
 #define SHOW_ICON_KEY  "show-icon"
+#define WIDTH_KEY      "width"
 
 /* GKeyFile constants */
 #define GK_COMMAND_GROUP   "Command"
 #define GK_COMMAND_OUTPUT  "Output"
 #define GK_COMMAND_ICON    "Icon"
-
-/* Max output lenght accepted from commands */
-#define MAX_OUTPUT_LENGTH 30
 
 typedef struct
 {
@@ -61,20 +60,22 @@ typedef struct
 
     gchar             *command;
     gint               interval;
+    gint               width;
 
     guint              timeout_id;
 } CommandApplet;
 
 static void command_about_callback (GtkAction *action, CommandApplet *command_applet);
 static void command_settings_callback (GtkAction *action, CommandApplet *command_applet);
+static void command_width_callback (GtkAction *action, CommandApplet *command_applet);
 static gboolean command_execute (CommandApplet *command_applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
-    { "Properties", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK (command_settings_callback) },
-    { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (command_about_callback) }
+    { "Preferences", GTK_STOCK_PROPERTIES, N_("_Preferences"), NULL, NULL, G_CALLBACK (command_settings_callback) },
+    { "About", GTK_STOCK_ABOUT, N_("_About"), NULL, NULL, G_CALLBACK (command_about_callback) }
 };
 
-static char *ui = "<menuitem name='Item 1' action='Properties' />"
+static char *ui = "<menuitem name='Item 1' action='Preferences' />"
                   "<menuitem name='Item 2' action='About' />";
 
 static void
@@ -122,6 +123,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     GtkWidget *widget;
     GtkWidget *command;
     GtkWidget *interval;
+    GtkWidget *width;
     GtkWidget *showicon;
 
     dialog = GTK_DIALOG (gtk_dialog_new_with_buttons(_("Command Applet Preferences"),
@@ -130,7 +132,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                                                      GTK_STOCK_CLOSE,
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
-    table = gtk_table_new (3, 2, FALSE);
+    table = gtk_table_new (4, 2, FALSE);
     gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
 
@@ -158,18 +160,30 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
 
+    widget = gtk_label_new (_("Width:"));
+    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+    gtk_table_attach (table, widget, 1, 2, 2, 3,
+                      GTK_FILL, GTK_FILL,
+                      0, 0);
+
+    width = gtk_spin_button_new_with_range(1.0, 100.0, 1.0);
+    gtk_table_attach (table, width, 2, 3, 2, 3,
+                      GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
+                      0, 0);
+
     showicon = gtk_check_button_new_with_label (_("Show icon"));
     gtk_table_attach (table, showicon, 2, 3, 3, 4,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
 
-    gtk_box_pack_start_defaults (GTK_BOX (dialog->vbox), table);
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), table, TRUE, TRUE, 0);
 
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
     /* use g_settings_bind to manage settings */
     g_settings_bind (command_applet->settings, COMMAND_KEY, command, "text", G_SETTINGS_BIND_DEFAULT);
     g_settings_bind (command_applet->settings, INTERVAL_KEY, interval, "value", G_SETTINGS_BIND_DEFAULT);
+    g_settings_bind (command_applet->settings, WIDTH_KEY, width, "value", G_SETTINGS_BIND_DEFAULT);
     g_settings_bind (command_applet->settings, SHOW_ICON_KEY, showicon, "active", G_SETTINGS_BIND_DEFAULT);
 
     gtk_widget_show_all (GTK_WIDGET (dialog));
@@ -190,6 +204,17 @@ settings_command_changed (GSettings *settings, gchar *key, CommandApplet *comman
         command_applet->command = command;
     else
         command_applet->command = g_strdup ("");
+}
+
+static void
+settings_width_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
+{
+    gint width;
+
+    width = g_settings_get_int (command_applet->settings, WIDTH_KEY);
+
+    command_applet->width = width;
+    command_execute(command_applet);
 }
 
 static void
@@ -222,6 +247,7 @@ command_execute (CommandApplet *command_applet)
     GError *error = NULL;
     gchar *output = NULL;
     gint ret = 0;
+    gint MAX_OUTPUT_LENGTH = command_applet->width;
 
     if (g_spawn_command_line_sync (command_applet->command, &output, NULL, &ret, &error))
     {
@@ -305,7 +331,8 @@ command_applet_fill (MatePanelApplet* applet)
     command_applet->settings = mate_panel_applet_settings_new (applet, COMMAND_SCHEMA);
 
     command_applet->interval = g_settings_get_int (command_applet->settings, INTERVAL_KEY);
-    command_applet->command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
+    command_applet->width    = g_settings_get_int (command_applet->settings, WIDTH_KEY);
+    command_applet->command  = g_settings_get_string (command_applet->settings, COMMAND_KEY);
 
     command_applet->hbox = gtk_hbox_new (FALSE, 0);
     command_applet->image = gtk_image_new_from_icon_name (APPLET_ICON, 24);
@@ -338,6 +365,10 @@ command_applet_fill (MatePanelApplet* applet)
                      "changed::" INTERVAL_KEY,
                      G_CALLBACK (settings_interval_changed),
                      command_applet);
+    g_signal_connect(command_applet->settings,
+                    "changed::" WIDTH_KEY,
+                    G_CALLBACK (settings_width_changed),
+                    command_applet);
     g_settings_bind (command_applet->settings,
                      SHOW_ICON_KEY,
                      command_applet->image,
@@ -346,6 +377,7 @@ command_applet_fill (MatePanelApplet* applet)
 
     /* set up context menu */
     GtkActionGroup *action_group = gtk_action_group_new ("Command Applet Actions");
+    gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
     gtk_action_group_add_actions (action_group, applet_menu_actions,
                                   G_N_ELEMENTS (applet_menu_actions), command_applet);
     mate_panel_applet_setup_menu (command_applet->applet, ui, action_group);
