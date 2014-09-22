@@ -295,6 +295,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_table_set_col_spacings (table, 12);
 
     gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
+    gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Name:"));
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
