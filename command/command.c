@@ -41,14 +41,12 @@
 #define COMMAND_KEY    "command"
 #define INTERVAL_KEY   "interval"
 #define SHOW_ICON_KEY  "show-icon"
+#define WIDTH_KEY      "width"
 
 /* GKeyFile constants */
 #define GK_COMMAND_GROUP   "Command"
 #define GK_COMMAND_OUTPUT  "Output"
 #define GK_COMMAND_ICON    "Icon"
-
-/* Max output lenght accepted from commands */
-#define MAX_OUTPUT_LENGTH 30
 
 typedef struct
 {
@@ -62,6 +60,7 @@ typedef struct
 
     gchar             *command;
     gint               interval;
+    gint               width;
 
     guint              timeout_id;
 } CommandApplet;
@@ -123,6 +122,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     GtkWidget *widget;
     GtkWidget *command;
     GtkWidget *interval;
+    GtkWidget *width;
     GtkWidget *showicon;
 
     dialog = GTK_DIALOG (gtk_dialog_new_with_buttons(_("Command Applet Preferences"),
@@ -131,7 +131,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                                                      GTK_STOCK_CLOSE,
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
-    table = gtk_table_new (3, 2, FALSE);
+    table = gtk_table_new (4, 2, FALSE);
     gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
 
@@ -159,6 +159,17 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
 
+    widget = gtk_label_new (_("Maximum width (chars):"));
+    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+    gtk_table_attach (table, widget, 1, 2, 2, 3,
+                      GTK_FILL, GTK_FILL,
+                      0, 0);
+
+    width = gtk_spin_button_new_with_range(1.0, 100.0, 1.0);
+    gtk_table_attach (table, width, 2, 3, 2, 3,
+                      GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
+                      0, 0);
+
     showicon = gtk_check_button_new_with_label (_("Show icon"));
     gtk_table_attach (table, showicon, 2, 3, 3, 4,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
@@ -171,6 +182,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     /* use g_settings_bind to manage settings */
     g_settings_bind (command_applet->settings, COMMAND_KEY, command, "text", G_SETTINGS_BIND_DEFAULT);
     g_settings_bind (command_applet->settings, INTERVAL_KEY, interval, "value", G_SETTINGS_BIND_DEFAULT);
+    g_settings_bind (command_applet->settings, WIDTH_KEY, width, "value", G_SETTINGS_BIND_DEFAULT);
     g_settings_bind (command_applet->settings, SHOW_ICON_KEY, showicon, "active", G_SETTINGS_BIND_DEFAULT);
 
     gtk_widget_show_all (GTK_WIDGET (dialog));
@@ -191,6 +203,18 @@ settings_command_changed (GSettings *settings, gchar *key, CommandApplet *comman
         command_applet->command = command;
     else
         command_applet->command = g_strdup ("");
+}
+
+settings_width_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
+{
+    gint width;
+
+    width = g_settings_get_int (command_applet->settings, WIDTH_KEY);
+
+    command_applet->width = width;
+
+    /* execute command to start new timer */
+    command_execute(command_applet);
 }
 
 static void
@@ -257,10 +281,10 @@ command_execute (CommandApplet *command_applet)
             else
             {
                 /* check output length */
-                if (strlen(output) > MAX_OUTPUT_LENGTH)
+                if (strlen(output) > command_applet->width)
                 {
                     GString *strip_output;
-                    strip_output = g_string_new_len (output, MAX_OUTPUT_LENGTH);
+                    strip_output = g_string_new_len (output, command_applet->width);
                     g_free (output);
                     output = strip_output->str;
                     g_string_free (strip_output, FALSE);
@@ -307,6 +331,7 @@ command_applet_fill (MatePanelApplet* applet)
 
     command_applet->interval = g_settings_get_int (command_applet->settings, INTERVAL_KEY);
     command_applet->command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
+    command_applet->width = g_settings_get_int (command_applet->settings, WIDTH_KEY);
 
     command_applet->hbox = gtk_hbox_new (FALSE, 0);
     command_applet->image = gtk_image_new_from_icon_name (APPLET_ICON, 24);
@@ -338,6 +363,10 @@ command_applet_fill (MatePanelApplet* applet)
     g_signal_connect(command_applet->settings,
                      "changed::" INTERVAL_KEY,
                      G_CALLBACK (settings_interval_changed),
+                     command_applet);
+    g_signal_connect(command_applet->settings,
+                     "changed::" WIDTH_KEY,
+                     G_CALLBACK (settings_width_changed),
                      command_applet);
     g_settings_bind (command_applet->settings,
                      SHOW_ICON_KEY,
