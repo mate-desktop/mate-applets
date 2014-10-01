@@ -115,12 +115,13 @@ timer_callback (TimerApplet *applet)
     gint hours, minutes, seconds, duration, remaining;
 
     label = NULL;
-    name = NULL;
     tooltip = NULL;
+
+    name = g_settings_get_string (applet->settings, NAME_KEY);
 
     if (!applet->active)
     {
-        gtk_label_set_text (applet->label, "");
+        gtk_label_set_text (applet->label, name);
         gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), "");
         gtk_widget_hide (GTK_WIDGET (applet->pause_image));
     }
@@ -130,7 +131,6 @@ timer_callback (TimerApplet *applet)
             applet->elapsed += STEP;
 
         duration = g_settings_get_int (applet->settings, DURATION_KEY);
-        name = g_settings_get_string (applet->settings, NAME_KEY);
 
         remaining = duration - (applet->elapsed / 1000);
 
@@ -190,7 +190,6 @@ timer_callback (TimerApplet *applet)
         }
 
         g_free (label);
-        g_free (name);
         g_free (tooltip);
     }
 
@@ -199,6 +198,8 @@ timer_callback (TimerApplet *applet)
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Pause"), applet->active && !applet->pause);
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Stop"), applet->active);
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Preferences"), !applet->active && !applet->pause);
+
+    g_free (name);
 
     return retval;
 }
@@ -370,6 +371,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
 
+static void
+timer_settings_changed (GSettings *settings, gchar *key, TimerApplet *applet)
+{
+    timer_callback (applet);
+}
+
 static gboolean
 timer_applet_fill (MatePanelApplet* applet_widget)
 {
@@ -426,6 +433,10 @@ timer_applet_fill (MatePanelApplet* applet_widget)
 
     /* execute callback to set actions sensitiveness */
     timer_callback (applet);
+
+    /* GSettings callback */
+    g_signal_connect (G_OBJECT (applet->settings), "changed",
+                      G_CALLBACK (timer_settings_changed), applet);
 
     return TRUE;
 }
