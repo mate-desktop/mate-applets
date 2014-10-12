@@ -4,8 +4,8 @@ man_MANS = \
     mate-drivemount-applet.1  \
     mate-geyes-applet.1       \
     mate-invest-chart.1       \
-    mateweather.1       \
-    multiload_applet.1
+    mateweather.1             \
+    mate-multiload-applet.1
 
 EXTRA_DIST = $(man_MANS)
 
