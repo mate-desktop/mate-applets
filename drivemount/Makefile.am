@@ -7,16 +7,16 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(MATEDESKTOP_CFLAGS)
 
-libexec_PROGRAMS = drivemount-applet
+libexec_PROGRAMS = mate-drivemount-applet
 
-drivemount_applet_SOURCES =	\
+mate_drivemount_applet_SOURCES =	\
 	drivemount.c		\
 	drive-list.c		\
 	drive-list.h		\
 	drive-button.c		\
 	drive-button.h
 
-drivemount_applet_LDADD =	\
+mate_drivemount_applet_LDADD =	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MATEDESKTOP_LIBS)
 
