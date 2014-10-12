@@ -8,9 +8,9 @@ AM_CPPFLAGS =			\
 	$(MATEDESKTOP_CFLAGS)	\
 	$(GIO_CFLAGS)
 
-libexec_PROGRAMS = multiload-applet
+libexec_PROGRAMS = mate-multiload-applet
 
-multiload_applet_SOURCES = \
+mate_multiload_applet_SOURCES = \
 			global.h	\
 			linux-proc.h	\
 			load-graph.h	\
@@ -22,7 +22,7 @@ multiload_applet_SOURCES = \
 			autoscaler.c	\
 			autoscaler.h
 
-multiload_applet_LDADD = \
+mate_multiload_applet_LDADD = \
 				$(MATE_APPLETS4_LIBS) 	\
 				$(GTOP_APPLETS_LIBS)	\
 				$(MATEDESKTOP_LIBS)		\
