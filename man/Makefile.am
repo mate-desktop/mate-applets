@@ -1,5 +1,5 @@
 man_MANS = \
-	charpick_applet.1	\
+	mate-charpick-applet.1	\
 	cpufreq-selector.1	\
 	drivemount_applet.1	\
 	geyes_applet.1		\
