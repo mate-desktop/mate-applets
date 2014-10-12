@@ -8,13 +8,13 @@ AM_CPPFLAGS =					\
 	$(MATEDESKTOP_CFLAGS)		\
 	$(GUCHARMAP_CFLAGS)
 
-libexec_PROGRAMS = charpick-applet
+libexec_PROGRAMS = mate-charpick-applet
 
-charpick_applet_SOURCES = charpick.c \
+mate_charpick_applet_SOURCES = charpick.c \
                           charpick.h \
                           properties.c
 
-charpick_applet_LDADD = \
+mate_charpick_applet_LDADD = \
 		       $(MATE_APPLETS4_LIBS)	\
 		       $(MATEDESKTOP_LIBS)	\
 		       $(GUCHARMAP_LIBS)
