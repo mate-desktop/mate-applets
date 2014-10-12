@@ -1,7 +1,7 @@
 man_MANS = \
-    mate-charpick-applet.1  \
-    mate-cpufreq-selector.1 \
-    drivemount_applet.1 \
+    mate-charpick-applet.1    \
+    mate-cpufreq-selector.1   \
+    mate-drivemount-applet.1  \
     geyes_applet.1      \
     invest-chart.1      \
     mateweather.1       \
