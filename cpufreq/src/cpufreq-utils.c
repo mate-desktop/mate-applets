@@ -16,7 +16,7 @@
  *  License along with this library; if not, write to the Free
  *  Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * Authors : Carlos García Campos <carlosgc@gnome.org>
+ * Authors : Carlos GarcÃ­a Campos <carlosgc@gnome.org>
  */
 
 #include <config.h>
@@ -204,7 +204,7 @@ cpufreq_utils_get_frequency_label (guint freq)
 	else
 		divisor = 1000;
 
-	if (((freq % divisor) == 0) || divisor == 1000) /* integer */
+	if (divisor == 1000) /* integer */
 		return g_strdup_printf ("%d", freq / divisor);
 	else /* float */
 		return g_strdup_printf ("%3.2f", ((gfloat)freq / divisor));
