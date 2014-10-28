@@ -16,7 +16,7 @@
  *  License along with this library; if not, write to the Free
  *  Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * Authors : Carlos García Campos <carlosgc@gnome.org>
+ * Authors : Carlos GarcÃ­a Campos <carlosgc@gnome.org>
  */
 
 #include "cpufreq-monitor.h"
@@ -68,7 +68,7 @@ static void   cpufreq_monitor_get_property (GObject             *object,
                                             GValue              *value,
                                             GParamSpec          *spec);
 
-static guint signals[N_SIGNALS];
+static guint signals[N_SIGNALS] = { 0 };
 
 G_DEFINE_ABSTRACT_TYPE (CPUFreqMonitor, cpufreq_monitor, G_TYPE_OBJECT)
 
