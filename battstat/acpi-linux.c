@@ -350,22 +350,28 @@ gboolean acpi_process_event(struct acpi_info * acpiinfo)
     buffer=g_string_new(NULL);
     g_io_channel_read_line_string   ( acpiinfo->channel,buffer,&i,&gerror);
 
+    gboolean result;
 
     evt = parse_acpi_event(buffer);
       switch (evt) {
         case ACPI_EVENT_AC:
-          return update_ac_info(acpiinfo);
+          result = update_ac_info(acpiinfo);
+          break;
         case ACPI_EVENT_BATTERY_INFO:
           if (update_battery_info(acpiinfo)) {
             /* Update AC info on battery info updates.  This works around
              * a bug in ACPI (as per bug #163013).
              */
-            return update_ac_info(acpiinfo);
+            result = update_ac_info(acpiinfo);
+            break;
           }
           /* fall-through */
         default:
-          return FALSE;
+          result = FALSE;
       }
+
+    g_string_free(buffer, FALSE);
+    return result;
 }
 
 /*

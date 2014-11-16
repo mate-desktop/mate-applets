@@ -443,7 +443,6 @@ const char *
 power_management_initialise (int no_hal, void (*callback) (void))
 {
   char *err;
-  err = g_strdup( ":(" );
 #ifdef __linux__
   struct stat statbuf;
 #endif
