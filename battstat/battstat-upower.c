@@ -320,6 +320,7 @@ error_dialog( const char *fmt , ...)
   va_start(ap, fmt);
   char str[1000];
   vsprintf(str, fmt, ap);
+  va_end(ap);
   GtkWidget *dialog;
 
   dialog = gtk_message_dialog_new( NULL, 0, GTK_MESSAGE_ERROR,

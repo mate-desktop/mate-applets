@@ -299,11 +299,12 @@ cpufreq_file_get_contents (const gchar *filename,
 
 	g_free (display_filename);
 
-	if (buffer)
+	if (buffer) {
 		*contents = g_string_free (buffer, FALSE);
-	
-	if (length)
-		*length = strlen (*contents);
+
+		if (length)
+			*length = strlen (*contents);
+	}
 
 	close (fd);
 
