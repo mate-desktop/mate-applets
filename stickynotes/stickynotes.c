@@ -54,7 +54,10 @@ set_icon_geometry  (GdkWindow *window,
                   int        height)
 {
       gulong data[4];
-      Display *dpy = gdk_x11_display_get_xdisplay (gdk_window_get_display (window));
+      Display *dpy;
+
+      dpy = gdk_x11_display_get_xdisplay (gdk_window_get_display (window));
+
       data[0] = x;
       data[1] = y;
       data[2] = width;
@@ -96,7 +99,7 @@ buffer_changed (GtkTextBuffer *buffer, StickyNote *note)
 
 /* Create a new (empty) Sticky Note at a specific position
    and with specific size */
-StickyNote *
+static StickyNote *
 stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 {
 	StickyNote *note;
@@ -476,8 +479,9 @@ stickynote_set_color (StickyNote  *note,
 	if (color_str_actual) {
 		/* Custom colors */
 		GdkColor colors[6];
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gboolean success[6];
-
+#endif
 
 		/* Make 4 shades of the color, getting darker from the
 		 * original, plus black and white */
