@@ -137,8 +137,6 @@ gboolean applet_cross_cb(GtkWidget *widget, GdkEventCrossing *event, StickyNotes
 /* Applet Callback : On focus (in or out) of the applet. */
 gboolean applet_focus_cb(GtkWidget *widget, GdkEventFocus *event, StickyNotesApplet *applet)
 {
-	applet->prelighted = event->in;
-
 	stickynotes_applet_update_icon(applet);
 
 	return FALSE;
@@ -179,10 +177,10 @@ void install_check_click_on_desktop (void)
 	{
 		/* Looks like the atoms are there */
 		Atom actual_type;
-		int  actual_format;
-		long nitems;
-		long bytes;
 		Window *data;
+		int actual_format;
+		gulong nitems;
+		gulong bytes;
 
 		/* We only use this extra property if the actual user-time property's missing */
 		int  status = XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), desktop_window, user_time,
