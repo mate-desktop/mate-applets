@@ -25,7 +25,6 @@ DBUS_GLIB_REQUIRED=0.74
 MATE_ICON_THEME_REQUIRED=1.1.0
 LIBXML_REQUIRED=2.5.0
 POLKIT_REQUIRED=0.92
-NETWORKMANAGER_REQUIRED=0.7
 dnl ***************************************************************************
 
 AM_MAINTAINER_MODE
@@ -292,27 +291,6 @@ AC_SUBST(LIBMATEWEATHER_CFLAGS)
 AC_SUBST(LIBMATEWEATHER_LIBS)
 AM_CONDITIONAL(BUILD_LIBMATEWEATHER_APPLETS, $build_libmateweather_applets)
 
-dnl -- check for NetworkManager -----------------------------------------------
-AC_ARG_ENABLE([networkmanager],
-	AC_HELP_STRING([--enable-networkmanager],
-	[Enable NetworkManager support @<:@default=yes@:>@]),
-	ENABLE_NETWORKMANAGER=$enableval, ENABLE_NETWORKMANAGER=yes)
-
-HAVE_NETWORKMANAGER=no
-NETWORKMANAGER_VERSION=unknown
-AC_SUBST(NETWORKMANAGER_VERSION)
-if test "x$ENABLE_NETWORKMANAGER" = "xyes"; then
-   PKG_CHECK_MODULES(NETWORKMANAGER, NetworkManager >= $NETWORKMANAGER_REQUIRED,
-   		HAVE_NETWORKMANAGER=yes, HAVE_NETWORKMANAGER=no)
-
-   if test "x$HAVE_NETWORKMANAGER" = "xyes"; then
-      AC_DEFINE(HAVE_NETWORKMANAGER, 1, [NetworkManager available])
-      NETWORKMANAGER_VERSION=`$PKG_CONFIG --modversion NetworkManager`
-      AC_SUBST(NETWORKMANAGER_CFLAGS)
-      AC_SUBST(NETWORKMANAGER_LIBS)
-      AC_SUBST(NETWORKMANAGER_VERSION)
-   fi
-fi
 
 dnl ***************************************************************************
 dnl *** find paths to installed binaries                                    ***
@@ -719,7 +697,6 @@ mate-applets-$VERSION configure summary:
         - trashapplet              always
 
     Using DBUS:                    $HAVE_DBUS
-    Using NetworkManager:          $HAVE_NETWORKMANAGER
     Using HAL:                     $HAVE_HAL
     Using UPOWER:                  $HAVE_UPOWER
     Using libnotify:               $HAVE_LIBNOTIFY

@@ -10,7 +10,6 @@ AM_CPPFLAGS =					\
 	$(MATEDESKTOP_CFLAGS)		\
 	$(LIBNOTIFY_CFLAGS)			\
 	$(LIBMATEWEATHER_CFLAGS)			\
-	$(NETWORKMANAGER_CFLAGS)			\
 	$(DBUS_CFLAGS)
 
 libexec_PROGRAMS = mateweather-applet
@@ -29,7 +28,6 @@ mateweather_applet_LDADD = 	\
 	$(MATEDESKTOP_LIBS)	\
 	$(MATE_LIBS2_LIBS)	\
 	$(LIBMATEWEATHER_LIBS)	\
-	$(NETWORKMANAGER_LIBS)	\
 	$(DBUS_LIBS)
 
 uidir = $(datadir)/mate/ui
