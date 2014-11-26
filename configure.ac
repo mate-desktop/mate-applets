@@ -492,11 +492,15 @@ if test "x$HAVE_POLKIT" = "xyes"; then
    suid=no
 fi
 
+AC_ARG_WITH([cpufreq-lib],
+	AS_HELP_STRING([--with-cpufreq-lib=lib], [library to use for cpufreq applet @<:@default=cpufreq@:>@]),
+	[with_cpufreq_lib=$withval], [with_cpufreq_lib="cpufreq"])
+
 AC_CHECK_HEADER(cpufreq.h, have_libcpufreq=yes, have_libcpufreq=no)
 LIBCPUFREQ_LIBS=
 if test "x$have_libcpufreq" = "xyes"; then
    AC_DEFINE([HAVE_LIBCPUFREQ], [1], [Have libcpufreq.])
-   LIBCPUFREQ_LIBS=-lcpufreq
+   LIBCPUFREQ_LIBS="l$with_cpufreq_lib"
 fi
 AM_CONDITIONAL(HAVE_LIBCPUFREQ, test x$have_libcpufreq = xyes)
 AC_SUBST(LIBCPUFREQ_LIBS)
