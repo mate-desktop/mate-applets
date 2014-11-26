@@ -380,8 +380,13 @@ drive_button_update (gpointer user_data)
     g_free (display_name);
 
     /* base the icon size on the desired button size */
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
+    gtk_widget_get_preferred_size (gtk_bin_get_child (GTK_BIN (self)), NULL, &image_req);
+#else
     gtk_widget_size_request (GTK_WIDGET (self), &button_req);
     gtk_widget_size_request (gtk_bin_get_child (GTK_BIN (self)), &image_req);
+#endif
     width = self->icon_size - (button_req.width - image_req.width);
     height = self->icon_size - (button_req.height - image_req.height);
 
@@ -414,7 +419,11 @@ drive_button_update (gpointer user_data)
     gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
     g_object_unref (pixbuf);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
+#else
     gtk_widget_size_request (GTK_WIDGET (self), &button_req);
+#endif
 
     return FALSE;
 }

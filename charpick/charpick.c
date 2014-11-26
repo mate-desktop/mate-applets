@@ -328,8 +328,12 @@ get_menu_pos (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer data)
 	GtkRequisition  reqmenu;
 	gint tempx, tempy, width, height;
 	gint screen_width, screen_height;
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &reqmenu);
+#else
 	gtk_widget_size_request (GTK_WIDGET (menu), &reqmenu);
+#endif
 	gdk_window_get_origin (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), &tempx, &tempy);
 	gdk_window_get_geometry (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), NULL, NULL,
 				 &width, &height
@@ -488,8 +492,12 @@ build_table(charpick_data *p_curr_data)
     force_no_focus_padding (toggle_button[i]);
     gtk_widget_set_tooltip_text (toggle_button[i], name);
     g_free (name);
-                      
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_widget_get_preferred_size (toggle_button[i], NULL, &req);
+#else
     gtk_widget_size_request (toggle_button[i], &req);
+#endif
     
     max_width = MAX (max_width, req.width);
     max_height = MAX (max_height, req.height-2);

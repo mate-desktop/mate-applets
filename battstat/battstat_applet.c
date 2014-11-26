@@ -528,7 +528,11 @@ battery_low_update_text( ProgressData *battstat, BatteryStatus *info )
       battstat->battery_low_dialog == NULL )
     return;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_get_preferred_size (GTK_WIDGET (battstat->battery_low_label), NULL, &size);
+#else
   gtk_widget_size_request( GTK_WIDGET( battstat->battery_low_label ), &size );
+#endif
 
   /* If the label has never been set before, the width will be 0.  If it
      has been set before (width > 0) then we want to keep the size of

@@ -620,7 +620,11 @@ stickynotes_applet_panel_icon_get_geometry (int *x, int *y, int *width, int *hei
 
 	widget = GTK_WIDGET (applet->w_image);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_get_preferred_size (widget, NULL, &requisition);
+#else
 	gtk_widget_size_request (widget, &requisition);
+#endif
 
 	gdk_window_get_origin (gtk_widget_get_window (widget), x, y);
 
