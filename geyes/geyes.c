@@ -105,8 +105,8 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
 	 ny = y - MAX(height- eyes_applet->eye_height, 0) * yalign - eyes_applet->eye_height / 2;
   
 	 h = hypot (nx, ny);
-        if (h < 0.5 || abs (h) 
-            < (abs (hypot (eyes_applet->eye_height / 2, eyes_applet->eye_width / 2)) - eyes_applet->wall_thickness - eyes_applet->pupil_height)) {
+        if (h < 0.5 || fabs (h)
+            < (fabs (hypot (eyes_applet->eye_height / 2, eyes_applet->eye_width / 2)) - eyes_applet->wall_thickness - eyes_applet->pupil_height)) {
                 *pupil_x = nx + eyes_applet->eye_width / 2;
                 *pupil_y = ny + eyes_applet->eye_height / 2;
                 return;
