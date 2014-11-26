@@ -263,7 +263,7 @@ gboolean acpi_linux_init(struct acpi_info * acpiinfo)
   if (g_file_get_contents ("/sys/module/acpi/parameters/acpica_version", &pbuf, NULL, NULL)) {
     acpi_ver = strtoul (pbuf, NULL, 10);
     g_free (pbuf);
-  } else if (hash = read_file ("/proc/acpi/info", buf, sizeof (buf))) {
+  } else if ((hash = read_file ("/proc/acpi/info", buf, sizeof (buf)))) {
       acpi_ver = read_ulong (hash, "version");
       g_hash_table_destroy (hash);
   } else
