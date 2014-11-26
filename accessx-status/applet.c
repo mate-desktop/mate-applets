@@ -1123,6 +1123,9 @@ static AccessxStatusApplet* create_applet(MatePanelApplet* applet)
 		stickyfoo = gtk_hbox_new(TRUE, 0);
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_box_set_homogeneous (GTK_BOX (stickyfoo), TRUE);
+#endif
 	large_toolbar_pixels = 24; /* FIXME */
 
 	if (mate_panel_applet_get_size(sapplet->applet) >= large_toolbar_pixels)
@@ -1212,7 +1215,9 @@ static void accessx_status_applet_reorient(GtkWidget* widget, MatePanelAppletOri
 		box = gtk_hbox_new(FALSE, 0);
 		stickyfoo = gtk_hbox_new(TRUE, 0);
 	}
-
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_box_set_homogeneous (GTK_BOX (stickyfoo), TRUE);
+#endif
 	accessx_status_applet_layout_box(sapplet, box, stickyfoo);
 }
 

@@ -204,6 +204,9 @@ add_page(GtkWidget *notebook, gchar *label)
 	GtkWidget *page_label;
 	
 	page = gtk_hbox_new(TRUE, 0);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_box_set_homogeneous (GTK_BOX (page), TRUE);
+#endif
 	page_label = gtk_label_new(label);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 6);
 		

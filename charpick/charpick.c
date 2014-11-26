@@ -526,6 +526,9 @@ build_table(charpick_data *p_curr_data)
   for (i=0; i < size_ratio; i++) {
   	if (!p_curr_data->panel_vertical) row_box[i] = gtk_hbox_new (TRUE, 0);
   	else row_box[i] = gtk_vbox_new (TRUE, 0);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_box_set_homogeneous (GTK_BOX (stickyfoo), TRUE);
+#endif
   	gtk_box_pack_start (GTK_BOX (button_box), row_box[i], TRUE, TRUE, 0);
   }
   
