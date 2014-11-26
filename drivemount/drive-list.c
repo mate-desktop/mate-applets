@@ -370,6 +370,11 @@ add_mount (DriveList *self, GMount *mount)
     GtkWidget *button;
     GVolume *volume;
 
+    /* ignore mounts reported as shadowed */
+    if (g_mount_is_shadowed (mount)) {
+        return;
+    }
+
     /* ignore mounts attached to a volume */
     volume = g_mount_get_volume (mount);
     if (volume) {
