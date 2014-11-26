@@ -26,9 +26,6 @@
 #include <mate-panel-applet-gsettings.h>
 
 #include <gdk/gdkkeysyms.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
-#include <gdk/gdkkeysyms-compat.h>
-#endif
 
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
@@ -254,24 +251,24 @@ static gboolean
 key_press_cb (GtkWidget *widget, GdkEventKey *event, MateWeatherApplet *gw_applet)
 {
 	switch (event->keyval) {	
-	case GDK_u:
+	case GDK_KEY_u:
 		if (event->state == GDK_CONTROL_MASK) {
 			mateweather_update (gw_applet);
 			return TRUE;
 		}
 		break;
-	case GDK_d:
+	case GDK_KEY_d:
 		if (event->state == GDK_CONTROL_MASK) {
 			details_cb (NULL, gw_applet);
 			return TRUE;
 		}
 		break;		
-	case GDK_KP_Enter:
-	case GDK_ISO_Enter:
-	case GDK_3270_Enter:
-	case GDK_Return:
-	case GDK_space:
-	case GDK_KP_Space:
+	case GDK_KEY_KP_Enter:
+	case GDK_KEY_ISO_Enter:
+	case GDK_KEY_3270_Enter:
+	case GDK_KEY_Return:
+	case GDK_KEY_space:
+	case GDK_KEY_KP_Space:
 		details_cb (NULL, gw_applet);
 		return TRUE;
 	default:

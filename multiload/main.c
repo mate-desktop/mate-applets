@@ -21,9 +21,6 @@
 #include <glibtop.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
-#include <gdk/gdkkeysyms-compat.h>
-#endif
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
@@ -236,12 +233,12 @@ multiload_key_press_event_cb (GtkWidget *widget, GdkEventKey *event, MultiloadAp
 	switch (event->keyval) {
 	/* this list of keyvals taken from mixer applet, which seemed to have
 		a good list of keys to use */
-	case GDK_KP_Enter:
-	case GDK_ISO_Enter:
-	case GDK_3270_Enter:
-	case GDK_Return:
-	case GDK_space:
-	case GDK_KP_Space:
+	case GDK_KEY_KP_Enter:
+	case GDK_KEY_ISO_Enter:
+	case GDK_KEY_3270_Enter:
+	case GDK_KEY_Return:
+	case GDK_KEY_space:
+	case GDK_KEY_KP_Space:
 		/* activate */
 		start_procman (ma);
 		return TRUE;

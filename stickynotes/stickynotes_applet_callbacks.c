@@ -22,9 +22,6 @@
 #include "stickynotes_applet_callbacks.h"
 #include "stickynotes.h"
 #include <gdk/gdkkeysyms.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
-#include <gdk/gdkkeysyms-compat.h>
-#endif
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
 #include <libmate-desktop/mate-aboutdialog.h>
@@ -114,10 +111,10 @@ applet_key_cb (GtkWidget         *widget,
 {
 	switch (event->keyval)
 	{
-		case GDK_KP_Space:
-		case GDK_space:
-		case GDK_KP_Enter:
-		case GDK_Return:
+		case GDK_KEY_KP_Space:
+		case GDK_KEY_space:
+		case GDK_KEY_KP_Enter:
+		case GDK_KEY_Return:
 			stickynote_show_notes (TRUE);
 			return TRUE;
 	}

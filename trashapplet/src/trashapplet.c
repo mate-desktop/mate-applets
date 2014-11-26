@@ -30,9 +30,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
-#include <gdk/gdkkeysyms-compat.h>
-#endif
 #include <gio/gio.h>
 #include <libmate-desktop/mate-aboutdialog.h>
 #include <mate-panel-applet.h>
@@ -287,12 +284,12 @@ trash_applet_key_press (GtkWidget   *widget,
 
   switch (event->keyval)
     {
-     case GDK_KP_Enter:
-     case GDK_ISO_Enter:
-     case GDK_3270_Enter:
-     case GDK_Return:
-     case GDK_space:
-     case GDK_KP_Space:
+     case GDK_KEY_KP_Enter:
+     case GDK_KEY_ISO_Enter:
+     case GDK_KEY_3270_Enter:
+     case GDK_KEY_Return:
+     case GDK_KEY_space:
+     case GDK_KEY_KP_Space:
       trash_applet_open_folder (NULL, applet);
       return TRUE;
 
