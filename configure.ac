@@ -11,7 +11,7 @@ AC_CONFIG_MACRO_DIR(m4)
 dnl ***************************************************************************
 dnl *** Minimum library versions for MATE-APPLETS                          ***
 dnl ***************************************************************************
-GLIB_REQUIRED=2.36.0
+GLIB_REQUIRED=2.32.0
 GIO_REQUIRED=2.15.3
 LIBPANEL4_REQUIRED=1.7.0
 LIBGTOP_REQUIRED=2.11.92
