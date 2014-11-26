@@ -29,6 +29,11 @@
 #define NUM_THEME_DIRECTORIES 2
 #define HIG_IDENTATION  "    "
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 static char *theme_directories[NUM_THEME_DIRECTORIES];
 
 enum {

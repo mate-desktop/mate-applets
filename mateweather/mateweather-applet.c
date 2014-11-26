@@ -50,6 +50,11 @@
 
 #define MAX_CONSECUTIVE_FAULTS (3)
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 static void about_cb (GtkAction      *action,
 		      MateWeatherApplet *gw_applet)
 {

@@ -62,6 +62,10 @@
                            "the ACPI subsystem.  Check to make sure the "   \
                            "ACPI subsystem is properly loaded.")
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#endif
+
 static const char *apm_readinfo (BatteryStatus *status);
 static int pm_initialised;
 #ifdef HAVE_HAL

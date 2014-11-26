@@ -43,6 +43,11 @@
 #include "cpufreq-monitor-factory.h"
 #include "cpufreq-utils.h"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 struct _CPUFreqApplet {
         MatePanelApplet       base;
 
@@ -448,7 +453,7 @@ cpufreq_applet_size_request (GtkWidget *widget, GtkRequisition *requisition)
 		gint icon_width;
 
 		gtk_widget_get_preferred_width (applet->icon, &icon_width, NULL);
-		width = GTK_IS_HBOX (applet->box) ?
+		width = gtk_orientable_get_orientation (GTK_ORIENTABLE (applet->box)) == GTK_ORIENTATION_HORIZONTAL ?
 			labels_width + icon_width + 2 :
 			MAX (labels_width, icon_width + 2);
 #else

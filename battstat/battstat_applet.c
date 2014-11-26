@@ -53,6 +53,11 @@
 #define gettext_noop(String) (String)
 #endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 #define BATTSTAT_SCHEMA "org.mate.panel.applet.battstat"
 
 static gboolean check_for_updates (gpointer data);

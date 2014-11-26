@@ -45,6 +45,10 @@
 #define SHOW_NOTIFICATION_KEY   "show-notification"
 #define SHOW_DIALOG_KEY         "show-dialog"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 typedef struct
 {
     MatePanelApplet   *applet;

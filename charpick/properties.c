@@ -15,6 +15,11 @@
 
 #define CHARPICK_STOCK_EDIT "charpick-stock-edit"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 void
 register_stock_for_edit (void)
 {

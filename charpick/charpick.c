@@ -12,6 +12,11 @@
 #include <libmate-desktop/mate-aboutdialog.h>
 #include "charpick.h"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#endif
+
 /* The comment for each char list has the html entity names of the chars */
 /* All gunicar codes should end in 0 */
 
