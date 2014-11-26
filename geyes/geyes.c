@@ -412,11 +412,7 @@ geyes_applet_fill (MatePanelApplet *applet)
         eyes_applet = create_eyes (applet);
 
         eyes_applet->timeout_id = g_timeout_add (
-#if GTK_CHECK_VERSION (3, 0, 0)
 		UPDATE_TIMEOUT, (GSourceFunc) timer_cb, eyes_applet);
-#else
-		UPDATE_TIMEOUT, (GtkFunction) timer_cb, eyes_applet);
-#endif
 
 	action_group = gtk_action_group_new ("Geyes Applet Actions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
