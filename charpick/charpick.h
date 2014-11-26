@@ -42,7 +42,6 @@ struct _charpick_button_cb_data {
 
 
 void start_callback_update(void);
-void register_stock_for_edit (void);
 
 void build_table              (charpick_data     *curr_data);
 void add_to_popup_menu (charpick_data *curr_data);
