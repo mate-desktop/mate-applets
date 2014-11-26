@@ -67,6 +67,13 @@ device_cb (UpClient *client, UpDevice *device, gpointer user_data) {
   schedule_status_callback();
 }
 
+#if UP_CHECK_VERSION (0, 99, 0)
+static void
+device_removed_cb (UpClient *client, const gchar *object_path, gpointer user_data) {
+  schedule_status_callback();
+}
+#endif
+
 /* ---- public functions ---- */
 
 char *
@@ -76,6 +83,9 @@ battstat_upower_initialise (void (*callback) (void))
   int i, num;
 
   status_updated_callback = callback;
+#if UP_CHECK_VERSION (0, 99, 0)
+  GPtrArray *devices;
+#endif
 
   if( upc != NULL )
     return g_strdup( "Already initialised!" );
@@ -86,19 +96,26 @@ battstat_upower_initialise (void (*callback) (void))
   GCancellable *cancellable = g_cancellable_new();
   GError *gerror;
 
-#if !UP_CHECK_VERSION(0, 99, 0)
+#if UP_CHECK_VERSION(0, 99, 0)
+  devices = up_client_get_devices(upc);
+  if (!devices) {
+    goto error_shutdownclient;
+  }
+  g_ptr_array_unref(devices);
+#else
   if (! up_client_enumerate_devices_sync( upc, cancellable, &gerror ) ) {
     sprintf(error_str, "Unable to enumerate upower devices: %s\n", gerror->message);
     goto error_shutdownclient;
   }
 #endif
+
+  g_signal_connect_after( upc, "device-added", device_cb, NULL );
 #if UP_CHECK_VERSION(0, 99, 0)
-  g_signal_connect_after( upc, "notify", device_cb, NULL );
+  g_signal_connect_after( upc, "device-removed", device_removed_cb, NULL );
 #else
   g_signal_connect_after( upc, "device-changed", device_cb, NULL );
-#endif
-  g_signal_connect_after( upc, "device-added", device_cb, NULL );
   g_signal_connect_after( upc, "device-removed", device_cb, NULL );
+#endif
 
   return NULL;
 
