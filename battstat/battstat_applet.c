@@ -75,12 +75,7 @@ static const GtkActionEntry battstat_menu_actions [] = {
 #define DC_POWER_STRING _("System is running on battery power")
 
 /* The icons for Battery, Critical, AC and Charging */
-#if GTK_CHECK_VERSION (3, 0, 0)
 static GdkPixbuf *statusimage[STATUS_PIXMAP_NUM];
-#else
-static GdkPixmap *statusimage[STATUS_PIXMAP_NUM];
-static GdkBitmap *statusmask[STATUS_PIXMAP_NUM];
-#endif
 
 /* Assuming a horizontal battery, the colour is drawn into it one horizontal
    line at a time as a vertical gradient.  The following arrays decide where
@@ -224,79 +219,21 @@ static GdkColor darkred[] = {
 static void
 initialise_global_pixmaps( void )
 {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  GdkDrawable *defaults;
-
-  defaults = gdk_screen_get_root_window( gdk_screen_get_default() );
-#endif
-
   statusimage[STATUS_PIXMAP_BATTERY] =
-#if GTK_CHECK_VERSION (3, 0, 0)
     gdk_pixbuf_new_from_xpm_data ((const char **) battery_small_xpm);
-#else
-    gdk_pixmap_create_from_xpm_d( defaults, &statusmask[STATUS_PIXMAP_BATTERY],
-                                  NULL, battery_small_xpm );
-#endif
 
   statusimage[STATUS_PIXMAP_METER] =
-#if GTK_CHECK_VERSION (3, 0, 0)
     gdk_pixbuf_new_from_xpm_data ((const char **) battery_small_meter_xpm);
-#else
-    gdk_pixmap_create_from_xpm_d( defaults, &statusmask[STATUS_PIXMAP_METER],
-                                  NULL, battery_small_meter_xpm );
-#endif
 
   statusimage[STATUS_PIXMAP_AC] =
-#if GTK_CHECK_VERSION (3, 0, 0)
     gdk_pixbuf_new_from_xpm_data ((const char **) ac_small_xpm);
-#else
-    gdk_pixmap_create_from_xpm_d( defaults, &statusmask[STATUS_PIXMAP_AC],
-                                  NULL, ac_small_xpm );
-#endif
 
   statusimage[STATUS_PIXMAP_CHARGE] =
-#if GTK_CHECK_VERSION (3, 0, 0)
     gdk_pixbuf_new_from_xpm_data ((const char **) charge_small_xpm);
-#else
-    gdk_pixmap_create_from_xpm_d( defaults, &statusmask[STATUS_PIXMAP_CHARGE],
-                                  NULL, charge_small_xpm );
-#endif
 
   statusimage[STATUS_PIXMAP_WARNING] =
-#if GTK_CHECK_VERSION (3, 0, 0)
     gdk_pixbuf_new_from_xpm_data ((const char **) warning_small_xpm);
-#else
-    gdk_pixmap_create_from_xpm_d( defaults, &statusmask[STATUS_PIXMAP_WARNING],
-                                  NULL, warning_small_xpm );
-#endif
 }
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-/* For non-truecolour displays, each GdkColor has to have a palette entry
-   allocated for it.  This should only be done once for the entire display.
-*/
-static void
-allocate_battery_colours( void )
-{
-  GdkColormap *colourmap;
-  int i;
-
-  colourmap = gdk_colormap_get_system();
-
-  /* assumed: all the colour arrays have the same number of elements */
-  for( i = 0; i < G_N_ELEMENTS( orange ); i++ )
-  {
-     gdk_colormap_alloc_color( colourmap, &darkorange[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &darkyellow[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &darkred[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &darkgreen[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &orange[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &yellow[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &red[i], FALSE, TRUE );
-     gdk_colormap_alloc_color( colourmap, &green[i], FALSE, TRUE );
-  }
-}
-#endif
 
 /* Our backends may be either event driven or poll-based.
  * If they are event driven then we know this the first time we
@@ -348,9 +285,6 @@ static_global_initialisation (int no_hal, ProgressData *battstat)
   if (!first_time)
     return NULL;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  allocate_battery_colours();
-#endif
   initialise_global_pixmaps();
   err = power_management_initialise (no_hal, status_change_callback);
 
@@ -742,7 +676,6 @@ update_tooltip( ProgressData *battstat, BatteryStatus *info )
   g_free (tiptext);
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 pixbuf_draw_line( GdkPixbuf *pixbuf, GdkColor *colour, int x1, int y1, int x2, int y2)
 {
@@ -783,7 +716,6 @@ pixbuf_draw_line( GdkPixbuf *pixbuf, GdkColor *colour, int x1, int y1, int x2, i
     pixels += stride;
   }
 }
-#endif
 
 /* Redraw the battery meter image.
  */
@@ -791,12 +723,7 @@ static void
 update_battery_image (ProgressData *battstat, int batt_percent, int batt_time)
 {
   GdkColor *color, *darkcolor;
-#if GTK_CHECK_VERSION (3, 0, 0)
   GdkPixbuf *pixbuf;
-#else
-  GdkPixmap *pixmap;
-  GdkBitmap *pixmask;
-#endif
   guint progress_value;
   gint i, x;
   int batt_life;
@@ -827,35 +754,13 @@ update_battery_image (ProgressData *battstat, int batt_percent, int batt_time)
     darkcolor = darkgreen;
   }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  /* We keep this pixgc allocated so we don't have to alloc/free it every
-     time.  A widget has to be realized before it has a valid ->window so
-     we do that here for battstat->applet just in case it's not already done.
-  */
-  if( battstat->pixgc == NULL )
-  {
-    gtk_widget_realize( battstat->applet );
-    battstat->pixgc = gdk_gc_new( gtk_widget_get_window (battstat->applet) );
-  }
-#endif
-
   /* Depending on if the meter is horizontally oriented start out with the
      appropriate XPM image (from pixmaps.h)
   */
   if (battstat->horizont)
-#if GTK_CHECK_VERSION (3, 0, 0)
     pixbuf = gdk_pixbuf_new_from_xpm_data ((const char **) battery_gray_xpm);
-#else
-    pixmap = gdk_pixmap_create_from_xpm_d( gtk_widget_get_window (battstat->applet), &pixmask,
-                                           NULL, battery_gray_xpm );
-#endif
   else
-#if GTK_CHECK_VERSION (3, 0, 0)
     pixbuf = gdk_pixbuf_new_from_xpm_data ((const char **) battery_y_gray_xpm);
-#else
-    pixmap = gdk_pixmap_create_from_xpm_d( gtk_widget_get_window (battstat->applet), &pixmask,
-                                           NULL, battery_y_gray_xpm );
-#endif
 
   /* The core code responsible for painting the battery meter.  For each
      colour in our gradient array, draw a vertical or horizontal line
@@ -866,23 +771,11 @@ update_battery_image (ProgressData *battstat, int batt_percent, int batt_time)
 
     for( i = 0; i < G_N_ELEMENTS( orange ); i++ )
     {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-      gdk_gc_set_foreground (battstat->pixgc, &color[i]);
-#endif
-
       if (battstat->horizont)
-#if GTK_CHECK_VERSION (3, 0, 0)
         pixbuf_draw_line (pixbuf, &color[i], pixel_offset_top[i], i + 2,
-#else
-        gdk_draw_line (pixmap, battstat->pixgc, pixel_offset_top[i], i + 2,
-#endif
                        pixel_offset_top[i] + progress_value, i + 2);
       else
-#if GTK_CHECK_VERSION (3, 0, 0)
         pixbuf_draw_line (pixbuf, &color[i], i + 2, pixel_offset_top[i],
-#else
-        gdk_draw_line (pixmap, battstat->pixgc, i + 2, pixel_offset_top[i],
-#endif
                        i + 2, pixel_offset_top[i] + progress_value);
     }
   }
@@ -892,23 +785,11 @@ update_battery_image (ProgressData *battstat, int batt_percent, int batt_time)
 
     for( i = 0; i < G_N_ELEMENTS( orange ); i++)
     {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-      gdk_gc_set_foreground (battstat->pixgc, &color[i]);
-#endif
-
       if (battstat->horizont)
-#if GTK_CHECK_VERSION (3, 0, 0)
         pixbuf_draw_line (pixbuf, &color[i], pixel_offset_bottom[i], i + 2,
-#else
-        gdk_draw_line (pixmap, battstat->pixgc, pixel_offset_bottom[i], i + 2,
-#endif
                        pixel_offset_bottom[i] - progress_value, i + 2);
       else
-#if GTK_CHECK_VERSION (3, 0, 0)
         pixbuf_draw_line (pixbuf, &color[i], i + 2,
-#else
-        gdk_draw_line (pixmap, battstat->pixgc, i + 2,
-#endif
                        pixel_offset_bottom[i] - 1, i + 2,
                        pixel_offset_bottom[i] - progress_value);
     }
@@ -921,24 +802,12 @@ update_battery_image (ProgressData *battstat, int batt_percent, int batt_time)
 
       if (progress_value < 33)
       {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-        gdk_gc_set_foreground (battstat->pixgc, &darkcolor[i]);
-#endif
-
         if (battstat->horizont)
-#if GTK_CHECK_VERSION (3, 0, 0)
           pixbuf_draw_line (pixbuf, &darkcolor[i],
-#else
-          gdk_draw_line (pixmap, battstat->pixgc,
-#endif
                          pixel_offset_bottom[i] - progress_value - 1,
                          i + 2, x, i + 2);
         else
-#if GTK_CHECK_VERSION (3, 0, 0)
           pixbuf_draw_line (pixbuf, &darkcolor[i], i + 2,
-#else
-          gdk_draw_line (pixmap, battstat->pixgc, i + 2,
-#endif
                          pixel_offset_bottom[i] - progress_value - 1,
                          i + 2, x);
       }
@@ -948,24 +817,14 @@ update_battery_image (ProgressData *battstat, int batt_percent, int batt_time)
   /* Store our newly created pixmap into the GtkImage.  This results in
      the last reference to the old pixmap/mask being dropped.
   */
-#if GTK_CHECK_VERSION (3, 0, 0)
   gtk_image_set_from_pixbuf( GTK_IMAGE(battstat->battery),
                              pixbuf);
-#else
-  gtk_image_set_from_pixmap( GTK_IMAGE(battstat->battery),
-                             pixmap, pixmask );
-#endif
 
   /* The GtkImage does not assume a reference to the pixmap or mask;
      you still need to unref them if you own references. GtkImage will
      add its own reference rather than adopting yours.
   */
-#if GTK_CHECK_VERSION (3, 0, 0)
   g_object_unref( G_OBJECT(pixbuf) );
-#else
-  g_object_unref( G_OBJECT(pixmap) );
-  g_object_unref( G_OBJECT(pixmask) );
-#endif
 }
 
 /* Update the text label that either shows the percentage of time left.
@@ -995,26 +854,6 @@ update_percent_label( ProgressData *battstat, BatteryStatus *info )
   gtk_label_set_text (GTK_LABEL (battstat->percent), new_label);
   g_free (new_label);
 }
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-/* Utility function to create a copy of a GdkPixmap */
-static GdkPixmap *
-copy_gdk_pixmap( GdkPixmap *src, GdkGC *gc )
-{
-  gint height, width;
-  GdkPixmap *dest;
-
-		width = gdk_window_get_width(GDK_WINDOW(src));
-		height = gdk_window_get_height(GDK_WINDOW(src));
-
-  dest = gdk_pixmap_new( GDK_DRAWABLE( src ), width, height, -1 );
-
-  gdk_draw_drawable( GDK_DRAWABLE( dest ), gc, GDK_DRAWABLE( src ),
-                     0, 0, 0, 0, width, height );
-
-  return dest;
-}
-#endif
 
 /* Determine what status icon we ought to be displaying and change the
    status icon to display it if it is different from what we are currently
@@ -1061,36 +900,15 @@ possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
        battstat->last_pixmap_index != STATUS_PIXMAP_METER) )
   {
     GdkColor *colour;
-#if GTK_CHECK_VERSION (3, 0, 0)
     GdkPixbuf *meter;
-#else
-    GdkPixmap *meter;
-#endif
     guint progress_value;
     gint i, x;
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-    /* We keep this pixgc allocated so we don't have to alloc/free it every
-       time.  A widget has to be realized before it has a valid ->window so
-       we do that here for battstat->applet just in case it's not already done.
-    */
-    if( battstat->pixgc == NULL )
-    {
-      gtk_widget_realize( battstat->applet );
-      battstat->pixgc = gdk_gc_new( gtk_widget_get_window (battstat->applet) );
-    }
-#endif
 
     /* Pull in a clean version of the icons so that we don't paint over
        top of the same icon over and over.  We neglect to free/update the
        statusmask here since it will always stay the same.
      */
-#if GTK_CHECK_VERSION (3, 0, 0)
     meter = gdk_pixbuf_copy ( statusimage[STATUS_PIXMAP_METER]);
-#else
-    meter = copy_gdk_pixmap( statusimage[STATUS_PIXMAP_METER],
-                             battstat->pixgc );
-#endif
 
     if (batt_life <= battstat->red_val)
     {
@@ -1113,31 +931,18 @@ possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
 
     for( i = 0; i < 10; i++ )
     {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-      gdk_gc_set_foreground( battstat->pixgc, &colour[(i * 13 / 10)] );
-#endif
-
       if( i >= 2 && i <= 7 )
 	x = 17;
       else
 	x = 16;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
       pixbuf_draw_line( meter, &colour[(i * 13 / 10)],
-#else
-      gdk_draw_line( meter, battstat->pixgc,
-#endif
 		     i + 1, x - progress_value,
 		     i + 1, x );
     }
 
     /* force a redraw immediately */
-#if GTK_CHECK_VERSION (3, 0, 0)
     gtk_image_set_from_pixbuf( GTK_IMAGE (battstat->status), meter);
-#else
-    gtk_image_set_from_pixmap( GTK_IMAGE (battstat->status),
-                               meter, statusmask[STATUS_PIXMAP_METER] );
-#endif
 
     /* free our private pixmap copy */
     g_object_unref( G_OBJECT( meter ) );
@@ -1145,14 +950,8 @@ possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
   }
   else if( pixmap_index != battstat->last_pixmap_index )
   {
-#if GTK_CHECK_VERSION (3, 0, 0)
     gtk_image_set_from_pixbuf (GTK_IMAGE (battstat->status),
                                statusimage[pixmap_index]);
-#else
-    gtk_image_set_from_pixmap (GTK_IMAGE (battstat->status),
-                               statusimage[pixmap_index],
-                               statusmask[pixmap_index]);
-#endif
     battstat->last_pixmap_index = pixmap_index;
   }
 }
@@ -1315,11 +1114,6 @@ destroy_applet( GtkWidget *widget, ProgressData *battstat )
 
   if (battstat->timeout_id)
     g_source_remove (battstat->timeout_id);
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  if( battstat->pixgc )
-    g_object_unref( G_OBJECT(battstat->pixgc) );
-#endif
 
   g_object_unref( G_OBJECT(battstat->status) );
   g_object_unref( G_OBJECT(battstat->percent) );
@@ -1795,9 +1589,6 @@ battstat_applet_fill (MatePanelApplet *applet)
   battstat->horizont = TRUE;
   battstat->battery_low_dialog = NULL;
   battstat->battery_low_label = NULL;
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  battstat->pixgc = NULL;
-#endif
   battstat->timeout = -1;
   battstat->timeout_id = 0;
 
