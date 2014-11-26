@@ -969,13 +969,11 @@ drive_button_ensure_popup (DriveButton *self)
     gtk_container_add (GTK_CONTAINER (self->popup_menu), item);
 
     if (mounted) {
-	if (!ejectable) {
-	    label = g_strdup_printf (_("Un_mount %s"), display_name);
-	    item = create_menu_item (self, NULL, label,
-				     G_CALLBACK (unmount_drive), TRUE);
-	    g_free (label);
-	    gtk_container_add (GTK_CONTAINER (self->popup_menu), item);
-	}
+        label = g_strdup_printf (_("Un_mount %s"), display_name);
+        item = create_menu_item (self, NULL, label,
+				 G_CALLBACK (unmount_drive), TRUE);
+        g_free (label);
+        gtk_container_add (GTK_CONTAINER (self->popup_menu), item);
     } else {
 	label = g_strdup_printf (_("_Mount %s"), display_name);
 	item = create_menu_item (self, NULL, label,
