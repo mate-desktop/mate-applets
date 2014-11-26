@@ -285,8 +285,8 @@ properties_cb (GtkAction  *action,
 
         pbox = gtk_dialog_new_with_buttons (_("Geyes Preferences"), NULL,
         				     GTK_DIALOG_DESTROY_WITH_PARENT,
-					     GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
-					     GTK_STOCK_HELP, GTK_RESPONSE_HELP,
+					     _("_Close"), GTK_RESPONSE_CLOSE,
+					     _("_Help"), GTK_RESPONSE_HELP,
 					     NULL);
 
 	gtk_window_set_screen (GTK_WINDOW (pbox),
