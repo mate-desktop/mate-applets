@@ -412,7 +412,7 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 #if GTK_CHECK_VERSION (3, 0, 0)
 	surface = gdk_window_create_similar_surface (gdk_get_default_root_window (), CAIRO_CONTENT_COLOR_ALPHA, w, h);
 #else
-	pixmap = gdk_pixmap_new(NULL, gdk_pixbuf_get_width(base), gdk_pixbuf_get_height(base), visual->depth);
+	pixmap = gdk_pixmap_new(NULL, gdk_pixbuf_get_width(base), gdk_pixbuf_get_height(base), gdk_visual_get_depth(visual));
 #endif
 	pango_context = gtk_widget_get_pango_context(widget);
 	layout = pango_layout_new(pango_context);

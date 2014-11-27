@@ -314,11 +314,7 @@ trash_applet_drag_motion (GtkWidget      *widget,
   GList *target;
 
   /* refuse drops of panel applets */
-#if GTK_CHECK_VERSION (3, 0, 0)
   for (target = gdk_drag_context_list_targets (context); target; target = target->next)
-#else
-  for (target = context->targets; target; target = target->next)
-#endif
     {
       const char *name = gdk_atom_name (target->data);
 
