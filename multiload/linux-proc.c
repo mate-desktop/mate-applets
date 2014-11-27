@@ -285,21 +285,28 @@ is_net_device_virtual(char *device)
      * /sys/class/net/name-of-dev/ .  This second method is more complex
      * but more reliable.
      */
-    char path[PATH_MAX];
+    gboolean ret = FALSE;
+    char *path = malloc (strlen (device) + strlen ("/sys/class/net//device") + 1);
+
+    if (path == NULL)
+        return FALSE;
 
     /* Check if /sys/class/net/name-of-dev/ exists (may be old linux kernel
      * or not linux at all). */
-    if (sprintf(path, "/sys/class/net/%s", device) < 0)
-        return FALSE;
-    if (access(path, F_OK) != 0)
-        return FALSE; /* unknown */
+    do {
+        if (sprintf(path, "/sys/class/net/%s", device) < 0)
+            break;
+        if (access(path, F_OK) != 0)
+            break; /* unknown */
 
-    if (sprintf(path, "/sys/class/net/%s/device", device) < 0)
-        return FALSE;
-    if (access(path, F_OK) != 0)
-        return TRUE;
+        if (sprintf(path, "/sys/class/net/%s/device", device) < 0)
+            break;
+        if (access(path, F_OK) != 0)
+            ret = TRUE;
+    } while (0);
 
-    return FALSE;
+    free (path);
+    return ret;
 }
 
 void
