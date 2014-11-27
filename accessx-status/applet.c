@@ -531,7 +531,7 @@ static GdkPixbuf* accessx_status_applet_bouncekeys_image(AccessxStatusApplet* sa
 {
 	GtkStyle* style;
 	GdkColor fg, bg;
-	GdkPixbuf* icon_base;
+	GdkPixbuf* icon_base = NULL;
 	GdkPixbuf* tmp_pixbuf;
 	/* Note to translators: the first letter of the alphabet, not the indefinite article */
 	gchar* glyphstring = N_("a");
