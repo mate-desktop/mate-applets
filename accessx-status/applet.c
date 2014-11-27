@@ -25,6 +25,8 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
+#include <gio/gdesktopappinfo.h>
 #include <gdk/gdkkeysyms.h>
 #include <gdk/gdkx.h>
 #include <mate-panel-applet.h>
@@ -177,6 +179,9 @@ static void help_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 static void dialog_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 {
 	GError* error = NULL;
+	GdkScreen *screen;
+	GdkAppLaunchContext *launch_context;
+	GAppInfo *appinfo;
 
 	if (sapplet->error_type != ACCESSX_STATUS_ERROR_NONE)
 	{
@@ -185,18 +190,18 @@ static void dialog_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 	}
 
 
-	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(sapplet->applet));
-	/* This is the old way of calling things, we try this just in case
-	 * we're in a mixed-version enviroment. It has to be tried first,
-	 * because the new command doesn't fail in a way useful to
-	 * gdk_spawn_command_line_on_screen and its error parameter. */
-	gdk_spawn_command_line_on_screen(screen, "mate-accessibility-keyboard-properties", &error);
+	screen = gtk_widget_get_screen (GTK_WIDGET (sapplet->applet));
+	appinfo = g_app_info_create_from_commandline ("mate-keyboard-properties --a11y",
+						      _("Open the keyboard preferences dialog"),
+						      G_APP_INFO_CREATE_NONE,
+						      &error);
 
-	if (error != NULL)
-	{
-		g_error_free(error);
-		error = NULL;
-		gdk_spawn_command_line_on_screen(screen, "mate-keyboard-properties --a11y", &error);
+	if (!error) {
+		launch_context = gdk_app_launch_context_new ();
+		gdk_app_launch_context_set_screen (launch_context, screen);
+		g_app_info_launch (appinfo, NULL, G_APP_LAUNCH_CONTEXT (launch_context), &error);
+
+		g_object_unref (launch_context);
 	}
 
 	if (error != NULL)
@@ -211,6 +216,8 @@ static void dialog_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		gtk_widget_show(dialog);
 		g_error_free(error);
 	}
+
+	g_object_unref (appinfo);
 }
 
 static const GtkActionEntry accessx_status_applet_menu_actions[] = {
