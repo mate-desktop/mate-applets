@@ -226,8 +226,6 @@ color_picker_set_cb(GtkColorButton *color_picker, gchar *key)
 
 	ma = g_object_get_data (G_OBJECT (color_picker), "MultiloadApplet");
 
-	prop_type = 0;
-	
 	if (strstr(key, "cpuload"))
 		prop_type = PROP_CPU;
 	else if (strstr(key, "memload"))

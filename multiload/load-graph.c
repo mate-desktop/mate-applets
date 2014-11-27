@@ -51,7 +51,6 @@ shift_right(LoadGraph *g)
 static void
 load_graph_draw (LoadGraph *g)
 {
-    GtkStyle *style;
     guint i, j;
     cairo_t *cr;
 
@@ -63,8 +62,6 @@ load_graph_draw (LoadGraph *g)
 		g->surface = gdk_window_create_similar_surface (gtk_widget_get_window (g->disp),
 								CAIRO_CONTENT_COLOR,
 								g->draw_width, g->draw_height);
-
-    style = gtk_widget_get_style (g->disp);
 
     cr = cairo_create (g->surface);
     cairo_set_line_width (cr, 1.0);
