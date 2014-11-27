@@ -393,7 +393,6 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 {
 	GdkPixbuf* glyph_pixbuf;
 #if GTK_CHECK_VERSION (3, 0, 0)
-	cairo_t *cr;
 	cairo_surface_t *surface;
 #else
 	GdkPixbuf *alpha_pixbuf;
@@ -402,57 +401,35 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 	PangoLayout* layout;
 	PangoRectangle ink, logic;
 	PangoContext* pango_context;
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GdkColormap* cmap;
-	GdkGC* gc;
-	GdkVisual* visual = gdk_visual_get_best();
-#endif
 	gint w = gdk_pixbuf_get_width(base);
 	gint h = gdk_pixbuf_get_height(base);
+	cairo_t *cr;
+
 #if GTK_CHECK_VERSION (3, 0, 0)
 	surface = gdk_window_create_similar_surface (gdk_get_default_root_window (), CAIRO_CONTENT_COLOR_ALPHA, w, h);
 #else
-	pixmap = gdk_pixmap_new(NULL, gdk_pixbuf_get_width(base), gdk_pixbuf_get_height(base), gdk_visual_get_depth(visual));
+	pixmap = gdk_pixmap_new(gdk_get_default_root_window (),w, h, -1);
 #endif
 	pango_context = gtk_widget_get_pango_context(widget);
 	layout = pango_layout_new(pango_context);
 	pango_layout_set_alignment(layout, PANGO_ALIGN_CENTER);
 	pango_layout_set_text(layout, glyphstring, -1);
+
 #if GTK_CHECK_VERSION (3, 0, 0)
 	cr = cairo_create (surface);
+#else
+	cr = gdk_cairo_create (pixmap);
+#endif
 	gdk_cairo_set_source_color (cr, bg);
 	cairo_paint (cr);
 	gdk_cairo_set_source_color (cr, fg);
-#else
-	gc = gdk_gc_new(GDK_DRAWABLE(pixmap));
-	cmap = gdk_drawable_get_colormap(GDK_DRAWABLE(pixmap));
 
-	if (!cmap)
-	{
-		cmap = gdk_colormap_new(visual, FALSE);
-		gdk_drawable_set_colormap(GDK_DRAWABLE(pixmap), cmap);
-	}
-	else
-	{
-		g_object_ref(cmap);
-	}
-
-	gdk_colormap_alloc_color(cmap, fg, FALSE, TRUE);
-	gdk_colormap_alloc_color(cmap, bg, FALSE, TRUE);
-	gdk_gc_set_foreground(gc, bg);
-	gdk_draw_rectangle(pixmap, gc, True, 0, 0, w, h);
-	gdk_gc_set_foreground(gc, fg);
-	gdk_gc_set_background(gc, bg);
-	gdk_gc_set_function(gc, GDK_COPY);
-#endif
 	pango_layout_get_pixel_extents(layout, &ink, &logic);
-#if GTK_CHECK_VERSION (3, 0, 0)
+
 	cairo_move_to (cr, (w - ink.x - ink.width)/2, (h - ink.y - ink.height)/2);
 	pango_cairo_show_layout (cr, layout);
 	cairo_destroy (cr);
-#else
-	gdk_draw_layout(GDK_DRAWABLE(pixmap), gc, (w - ink.x - ink.width) / 2, (h - ink.y - ink.height) / 2, layout);
-#endif
+
 	g_object_unref(layout);
 #if GTK_CHECK_VERSION (3, 0, 0)
 	glyph_pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0, w, h);
@@ -460,12 +437,10 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 
 	return glyph_pixbuf;
 #else
-	glyph_pixbuf = gdk_pixbuf_get_from_drawable(NULL, pixmap, cmap, 0, 0, 0, 0, w, h);
+	glyph_pixbuf = gdk_pixbuf_get_from_drawable(NULL, pixmap, NULL, 0, 0, 0, 0, w, h);
 	g_object_unref(pixmap);
 	alpha_pixbuf = gdk_pixbuf_add_alpha(glyph_pixbuf, TRUE, bg->red >> 8, bg->green >> 8, bg->blue >> 8);
 	g_object_unref(G_OBJECT(glyph_pixbuf));
-	g_object_unref(G_OBJECT(cmap));
-	g_object_unref(G_OBJECT(gc));
 
 	return alpha_pixbuf;
 #endif
