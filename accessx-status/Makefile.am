@@ -16,6 +16,7 @@ accessx_status_applet_SOURCES = \
 accessx_status_applet_LDADD = \
 	$(MATE_APPLETS4_LIBS) \
 	$(MATEDESKTOP_LIBS) \
+	$(GIO_LIBS) \
 	$(X_LIBS)
 
 appletdir       = $(datadir)/mate-panel/applets
