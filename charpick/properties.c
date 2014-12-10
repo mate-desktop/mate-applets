@@ -74,9 +74,7 @@ add_edit_dialog_create (charpick_data *curr_data, gchar *string, gchar *title)
 	GtkWidget *label;
 
 	dialog = gtk_dialog_new_with_buttons (_(title), GTK_WINDOW (curr_data->propwindow),
-#if !GTK_CHECK_VERSION (3, 0, 0)
 							    GTK_DIALOG_DESTROY_WITH_PARENT,
-#endif
 							    _("_Cancel"), GTK_RESPONSE_CANCEL,
 							    _("_OK"), GTK_RESPONSE_OK,
 							    NULL);
