@@ -225,6 +225,7 @@ if test "x$with_upower" != xno; then
        AC_DEFINE(HAVE_UPOWER, 1, [UPOWER available])
    fi
 else
+   HAVE_UPOWER="no"
    AC_MSG_WARN(["upower support disabled"])
 fi
 
