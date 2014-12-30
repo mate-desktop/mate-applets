@@ -40,7 +40,6 @@
 #include <unistd.h>
 
 #include "battstat.h"
-#include "battstat-hal.h"
 #include "battstat-upower.h"
 
 #define ERR_ACPID _("Can't access ACPI events in /var/run/acpid.socket! "    \
@@ -68,9 +67,6 @@
 
 static const char *apm_readinfo (BatteryStatus *status);
 static int pm_initialised;
-#ifdef HAVE_HAL
-static int using_hal;
-#endif
 #ifdef HAVE_UPOWER
 static int using_upower;
 #endif
@@ -179,7 +175,6 @@ apm_readinfo (BatteryStatus *status)
 }
 
 #undef __linux__
-#undef HAVE_HAL
 
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 
@@ -406,14 +401,6 @@ power_management_getinfo( BatteryStatus *status )
     }
   #endif
   
-  #ifdef HAVE_HAL
-    if( using_hal )
-    {
-      battstat_hal_get_battery_info( status );
-      return NULL;
-    }
-  #endif
-
   retval = apm_readinfo( status );
 
   if(status->percent == -1) {
@@ -444,7 +431,7 @@ power_management_getinfo( BatteryStatus *status )
  * the problem might be.  This error message is not to be freed.
  */
 const char *
-power_management_initialise (int no_hal, void (*callback) (void))
+power_management_initialise (void (*callback) (void))
 {
   char *err;
 #ifdef __linux__
@@ -465,22 +452,6 @@ power_management_initialise (int no_hal, void (*callback) (void))
     g_free( err );
 #endif
     
-#ifdef HAVE_HAL
-  if(! no_hal ) {
-    err = battstat_hal_initialise (callback);
-    
-    if( err == NULL) /* HAL is up */
-    {
-      pm_initialised = 1;
-      using_hal = TRUE;
-      return NULL;
-    }
-  }
-    
-    /* fallback to legacy methods */
-    g_free( err );
-#endif
-
 #ifdef __linux__
 
   if (acpi_linux_init(&acpiinfo)) {
@@ -535,15 +506,6 @@ power_management_cleanup( void )
   }
 #endif
 
-#ifdef HAVE_HAL
-  if( using_hal )
-  {
-    battstat_hal_cleanup();
-    pm_initialised = 1;
-    return;
-  }
-#endif
-
 #ifdef __linux__
   if (using_acpi)
   {
@@ -571,12 +533,3 @@ power_management_using_upower( void)
 #endif
 }
 
-int
-power_management_using_hal( void )
-{
-#ifdef HAVE_HAL
-  return using_hal;
-#else
-  return 0;
-#endif
-}

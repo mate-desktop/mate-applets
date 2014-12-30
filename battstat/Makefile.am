@@ -27,7 +27,6 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)		\
 	$(MATEDESKTOP_CFLAGS)		\
 	$(LIBNOTIFY_CFLAGS)			\
-	$(HAL_CFLAGS)				\
 	$(UPOWER_CFLAGS)	\
 	$(APMINC)				\
 	$(ACPIINC)				\
@@ -48,8 +47,6 @@ battstat_applet_SOURCES = \
 	acpi-linux.h \
 	acpi-freebsd.c \
 	acpi-freebsd.h \
-	battstat-hal.c \
-	battstat-hal.h \
 	battstat-upower.c \
 	battstat-upower.h
 
@@ -58,7 +55,6 @@ battstat_applet_LDADD = \
 		     $(MATE_APPLETS4_LIBS) \
 		     $(MATEDESKTOP_LIBS) \
 		     $(LIBNOTIFY_LIBS) \
-		     $(HAL_LIBS) \
 			 $(APMLIB) \
 			 $(UPOWER_LIBS) \
 			 -lm
