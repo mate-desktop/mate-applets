@@ -8,7 +8,6 @@ AM_CPPFLAGS = \
 	-DCPUFREQ_MENU_UI_DIR=\""$(datadir)/mate/ui"\" 	\
 	$(MATE_APPLETS4_CFLAGS) 				\
 	$(MATEDESKTOP_CFLAGS) 				\
-	$(LIBGLADE_CFLAGS)					\
 	$(DBUS_CFLAGS)
 
 libexec_PROGRAMS = mate-cpufreq-applet
@@ -33,7 +32,6 @@ mate_cpufreq_applet_SOURCES =  \
 mate_cpufreq_applet_LDADD =  \
 	$(MATE_APPLETS4_LIBS)   	\
 	$(MATEDESKTOP_LIBS)   	\
-	$(LIBGLADE_LIBS)		\
 	$(LIBCPUFREQ_LIBS)		\
 	$(DBUS_LIBS)
 
