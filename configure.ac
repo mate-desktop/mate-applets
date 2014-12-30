@@ -15,10 +15,8 @@ GLIB_REQUIRED=2.36.0
 GIO_REQUIRED=2.15.3
 LIBPANEL4_REQUIRED=1.7.0
 LIBGTOP_REQUIRED=2.11.92
-LIBXKLAVIER_REQUIRED=4.0
 LIBMATE_DESKTOP_REQUIRED=1.9.0
 LIBNOTIFY_REQUIRED=0.7.0
-HAL_REQUIRED=0.5.3
 UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
@@ -158,13 +156,6 @@ AC_SUBST(GTOP_APPLETS_CFLAGS)
 AC_SUBST(GTOP_APPLETS_LIBS)
 AM_CONDITIONAL(BUILD_GTOP_APPLETS, $build_gtop_applets)
 
-dnl -- check for mate-settings-daemon (optional) -----------------------------
-PKG_CHECK_MODULES(MATE_SETTINGS_DAEMON, mate-settings-daemon,
-	HAVE_MATE_SETTINGS_DAEMON=yes, HAVE_MATE_SETTINGS_DAEMON=no)
-
-AC_SUBST(MATE_SETTINGS_DAEMON_CFLAGS)
-AC_SUBST(MATE_SETTINGS_DAEMON_LIBS)
-
 dnl -- check for libwnck (required) -------------------------------------------
 PKG_CHECK_MODULES(LIBWNCK, libwnck-$LIBWNCK_API_VERSION >= $LIBWNCK_REQUIRED,,
 	AC_MSG_ERROR([libwnck is required to build mate-applets.], 1))
@@ -220,28 +211,7 @@ AM_CONDITIONAL(HAVE_POLKIT, test "x$HAVE_POLKIT" = "xyes")
 AC_SUBST(POLKIT_CFLAGS)
 AC_SUBST(POLKIT_LIBS)
 
-
-dnl -- check for libhal (optional) --------------------------------------------
-HAL_CFLAGS=
-HAL_LIBS=
-AC_ARG_WITH(hal,[  --without-hal           build without hal support])
-
-if test "x$with_hal" != xno; then
-	PKG_CHECK_MODULES(HAL, hal >= $HAL_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED,
-		  HAVE_HAL="yes",
-		  HAVE_HAL="no")
-
-	if test "x$HAVE_HAL" = "xyes"; then
-		AC_DEFINE(HAVE_HAL, 1, [HAL available])
-	fi
-else
-	AC_MSG_WARN(["Hal support disabled"])
-fi
-
-AC_SUBST(HAL_CFLAGS)
-AC_SUBST(HAL_LIBS)
-
-dnl -- checkf or libupower-glib (optional) ------------------------------------
+dnl -- check for libupower-glib (optional) ------------------------------------
 UPOWER_CFLAGS=
 UPOWER_LIBS=
 AC_ARG_WITH(upower, [   --without-upower           build without upower support])
@@ -290,38 +260,6 @@ PKG_CHECK_MODULES(LIBMATEWEATHER, mateweather >= 1.6.1,
 AC_SUBST(LIBMATEWEATHER_CFLAGS)
 AC_SUBST(LIBMATEWEATHER_LIBS)
 AM_CONDITIONAL(BUILD_LIBMATEWEATHER_APPLETS, $build_libmateweather_applets)
-
-
-dnl ***************************************************************************
-dnl *** find paths to installed binaries                                    ***
-dnl ***************************************************************************
-
-dnl -- gdk-pixbuf-csource -----------------------------------------------------
-AC_PATH_PROG(GDK_PIXBUF_CSOURCE, gdk-pixbuf-csource, no)
-
-if test x"$GDK_PIXBUF_CSOURCE" = xno; then
-  AC_MSG_ERROR([gdk-pixbuf-csource executable not found in your path - should be installed with GTK])
-fi
-AC_SUBST(GDK_PIXBUF_CSOURCE)
-
-dnl -- glib-genmarshal --------------------------------------------------------
-AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
-
-dnl -- xsltproc ---------------------------------------------------------------
-AC_PATH_PROG(XSLTPROC, xsltproc, no)
-if test x"$XSLTPROC" = xno; then
-  AC_MSG_ERROR([xsltproc executable not found in your path - should be installed with libxslt])
-fi
-
-dnl -- jw ---------------------------------------------------------------------
-AC_PATH_PROG(JW, jw, no)
-if test x$JW = xno; then
-  HAVE_JW="no"
-else
-  HAVE_JW="yes"
-fi
-AM_CONDITIONAL(HAVE_JW, test "x$HAVE_JW" = "xyes")
-AC_SUBST(HAVE_JW)
 
 dnl ***************************************************************************
 dnl *** GSettings                                                               ***
@@ -436,12 +374,6 @@ if test "x$APPLET_ACCESSX" = "xtrue"; then
   AC_MSG_WARN([*** keyboard accessibility status applet will not be built ***])
 fi
 CPPFLAGS=$savecppflags
-
-SU_TOOL=
-HAVE_LIBUTIL=
-
-AC_PATH_PROG(SU_TOOL, su)
-AC_CHECK_LIB(util, forkpty, HAVE_LIBUTIL=true, HAVE_LIBUTIL=false)
 
 dnl ***************************************************************************
 dnl *** cpufreq applet check                                                ***
@@ -697,7 +629,6 @@ mate-applets-$VERSION configure summary:
         - trashapplet              always
 
     Using DBUS:                    $HAVE_DBUS
-    Using HAL:                     $HAVE_HAL
     Using UPOWER:                  $HAVE_UPOWER
     Using libnotify:               $HAVE_LIBNOTIFY
     Enabling IPv6:                 $have_ipv6
