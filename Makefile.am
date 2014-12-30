@@ -46,7 +46,6 @@ SUBDIRS = \
 	$(always_built_SUBDIRS) \
 	$(gtop_SUBDIRS) \
 	$(libmateweather_SUBDIRS) \
-	$(vfs_SUBDIRS) \
 	$(battstat_SUBDIR) \
 	$(accessx_status_SUBDIR) \
 	$(invest_applet_SUBDIR) \
