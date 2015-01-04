@@ -86,14 +86,14 @@ class QuoteUpdater(Gtk.ListStore):
 		self.change_icon_callback = change_icon_callback
 		self.set_tooltip_callback = set_tooltip_callback
 		self.set_sort_column_id(1, Gtk.SortType.ASCENDING)
-		self.load()	# read the last cached quotes file
+		self.load_quotes()	# read the last cached quotes file
 		self.refresh()	# download a new quotes file, this may fail if disconnected
 
 		# tell the network manager to notify me when network status changes
 		mate_invest.nm.set_statechange_callback(self.nm_state_changed)
 
 	# loads the cached csv file and its last-modification-time as self.last_updated
-	def load(self):
+	def load_quotes(self):
 		mate_invest.debug("Loading quotes");
 		try:
 			f = open(mate_invest.QUOTES_FILE, 'r')
@@ -108,7 +108,7 @@ class QuoteUpdater(Gtk.ListStore):
 			mate_invest.error("Could not load the cached quotes file %s: %s" % (mate_invest.QUOTES_FILE, msg) )
 
 	# stores the csv content on disk so it can be used on next start up
-	def save(self, data):
+	def save_quotes(self, data):
 		mate_invest.debug("Storing quotes")
 		try:
 			f = open(mate_invest.QUOTES_FILE, 'w')
@@ -173,16 +173,38 @@ class QuoteUpdater(Gtk.ListStore):
 		else:
                         mate_invest.debug("QuotesRetriever completed");
                         # cache the retrieved csv file
-                        self.save(retriever.data)
+                        self.save_quotes(retriever.data)
                         # load the cache and parse it
-                        self.load()
+                        self.load_quotes()
 
 	def on_currency_retriever_completed(self, retriever):
 		if retriever.retrieved == False:
 			mate_invest.error("Failed to retrieve currency rates!")
 		else:
-			self.convert_currencies(self.parse_yahoo_csv(csv.reader(retriever.data)))
+			mate_invest.debug("CurrencyRetriever completed")
+			self.save_currencies(retriever.data)
+			self.load_currencies()
 		self.update_tooltip()
+
+	def save_currencies(self, data):
+		mate_invest.debug("Storing currencies to %s" % mate_invest.CURRENCIES_FILE)
+		try:
+			f = open(mate_invest.CURRENCIES_FILE, 'w')
+			f.write(data)
+			f.close()
+		except Exception as msg:
+			mate_invest.error("Could not save the retrieved currencies to %s: %s" % (mate_invest.CURRENCIES_FILE, msg) )
+
+	def load_currencies(self):
+		mate_invest.debug("Loading currencies from %s" % mate_invest.CURRENCIES_FILE)
+		try:
+			f = open(mate_invest.CURRENCIES_FILE, 'r')
+			data = f.readlines()
+			f.close()
+
+			self.convert_currencies(self.parse_yahoo_csv(csv.reader(data)))
+		except Exception as msg:
+			mate_invest.error("Could not load the currencies from %s: %s" % (mate_invest.CURRENCIES_FILE, msg) )
 
 	def update_tooltip(self, msg = None):
 		tooltip = []

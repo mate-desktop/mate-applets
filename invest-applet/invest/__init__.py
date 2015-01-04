@@ -149,6 +149,7 @@ try:
 except Exception, msg:
 	CONFIG = {}       # default configuration
 
+CURRENCIES_FILE = join(USER_INVEST_DIR, "currencies.csv")
 QUOTES_FILE = join(USER_INVEST_DIR, "quotes.csv")
 
 
