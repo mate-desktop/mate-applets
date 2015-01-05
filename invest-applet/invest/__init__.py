@@ -1,5 +1,5 @@
 import os, sys
-from os.path import join, exists, isdir, isfile, dirname, abspath, expanduser
+from os.path import join, exists, isdir, isfile, dirname, abspath
 from types import ListType
 import datetime
 
@@ -12,6 +12,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Gio
+from gi.repository import GLib
 
 import cPickle
 
@@ -50,7 +51,7 @@ else:
 	BUILDER_DATA_DIR = BUILDERDIR
 	ART_DATA_DIR = SHARED_DATA_DIR
 
-USER_INVEST_DIR = expanduser("~/.config/mate/invest-applet")
+USER_INVEST_DIR = join(GLib.get_user_config_dir(), "mate/invest-applet")
 if not exists(USER_INVEST_DIR):
 	try:
 		os.makedirs(USER_INVEST_DIR, 0744)
@@ -60,7 +61,7 @@ if not exists(USER_INVEST_DIR):
 
 # Set the cwd to the home directory so spawned processes behave correctly
 # when presenting save/open dialogs
-os.chdir(expanduser("~"))
+os.chdir(GLib.get_home_dir())
 
 # tests whether the given stocks are in the old labelless format
 def labelless_stock_format(stocks):
