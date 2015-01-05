@@ -428,6 +428,7 @@ stickynote_set_color (StickyNote  *note,
 		      gboolean     save)
 {
 	char *color_str_actual, *font_color_str_actual;
+	gboolean force_default, use_system_color;
 	GtkRcStyle *rc_style;
 
 	if (save) {
@@ -451,11 +452,14 @@ stickynote_set_color (StickyNote  *note,
 				note->color != NULL);
 	}
 
+	force_default = g_settings_get_boolean (stickynotes->settings, "force-default");
+	use_system_color = g_settings_get_boolean (stickynotes->settings, "use-system-color");
+
 	/* If "force_default" is enabled or color_str is NULL,
 	 * then we use the default color instead of color_str. */
-	if (!color_str || g_settings_get_boolean (stickynotes->settings, "force-default"))
+	if (!color_str || force_default)
 	{
-		if (g_settings_get_boolean (stickynotes->settings, "use-system-color"))
+		if (use_system_color)
 			color_str_actual = NULL;
 		else
 			color_str_actual = g_settings_get_string (stickynotes->settings, "default-color");
@@ -463,9 +467,9 @@ stickynote_set_color (StickyNote  *note,
 	else
 		color_str_actual = g_strdup (color_str);
 
-	if (!font_color_str || g_settings_get_boolean (stickynotes->settings, "force-default"))
+	if (!font_color_str || force_default)
 	{
-		if (g_settings_get_boolean (stickynotes->settings, "use-system-color"))
+		if (use_system_color)
 			font_color_str_actual = NULL;
 		else
 			font_color_str_actual = g_settings_get_string (stickynotes->settings, "default-font-color");
