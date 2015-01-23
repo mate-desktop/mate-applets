@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-03 18:28+0100\n"
-"PO-Revision-Date: 2014-05-24 11:23+0000\n"
+"PO-Revision-Date: 2014-12-06 19:05+0000\n"
 "Last-Translator: Carlos Moreira <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -40,17 +40,17 @@ msgstr "Apresenta o estado de funções AccessX, tais como modificadores de aces
 #: ../multiload/main.c:70 ../stickynotes/stickynotes_applet_callbacks.c:443
 #: ../timerapplet/timerapplet.c:254 ../trashapplet/src/trashapplet.c:446
 msgid "translator-credits"
-msgstr "translator-credits"
+msgstr "Sérgio Marques\nStefanok\nCarlos Moreira"
 
 #: ../accessx-status/applet.c:165
 #, c-format
 msgid "There was an error launching the help viewer: %s"
-msgstr "Houve um erro ao lançar o visualizador de ajuda: %s"
+msgstr "Houve um erro ao iniciar o visualizador de ajuda: %s"
 
 #: ../accessx-status/applet.c:204
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
-msgstr "Houve um erro ao lançar o diálogo de preferências do teclado: %s"
+msgstr "Houve um erro ao iniciar o diálogo de preferências do teclado: %s"
 
 #: ../accessx-status/applet.c:217
 msgid "_Keyboard Accessibility Preferences"
@@ -92,7 +92,7 @@ msgstr "Mostra o estado de teclado quando as funções de acessibilidade são us
 
 #: ../accessx-status/applet.c:1074
 msgid "XKB Extension is not enabled"
-msgstr "Extensão XKB não está ativa"
+msgstr "Extensão XKB não está ativada"
 
 #: ../accessx-status/applet.c:1079
 msgid "Unknown error"
@@ -153,7 +153,7 @@ msgstr "Tempo restante desconhecido (%d%%)"
 #: ../battstat/battstat_applet.c:415
 #, c-format
 msgid "Unknown time (%d%%) until charged"
-msgstr "Tempo desconhecido até carregada (%d%%)"
+msgstr "Tempo desconhecido (%d%%) até carregada "
 
 #: ../battstat/battstat_applet.c:420
 #, c-format
@@ -244,7 +244,7 @@ msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr "Para evitar perder o seu trabalho:\n • ligue o portátil a uma fonte externa de energia, ou\n • grave os documentos abertos e desligue o portátil."
+msgstr "Para evitar perder o seu trabalho:\n • ligue o portátil a uma fonte externa de energia, ou\n • guarde os documentos abertos e desligue o portátil."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -255,7 +255,7 @@ msgid ""
 " • suspend your laptop to save power,\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr "Para evitar perder o seu trabalho:\n • suspenda o seu portátil para poupar energia,\n • ligue o portátil a uma fonte externa de energia, ou\n • grave os documentos abertos e desligue o portátil."
+msgstr "Para evitar perder o seu trabalho:\n • suspenda o seu portátil para poupar energia,\n • ligue o portátil a uma fonte externa de energia, ou\n • guarde os documentos abertos e desligue o portátil."
 
 #: ../battstat/battstat_applet.c:653
 msgid "Your battery is running low"
@@ -286,7 +286,7 @@ msgstr "Houve um erro ao mostrar a ajuda: %s"
 
 #: ../battstat/battstat_applet.c:1423
 msgid "This utility shows the status of your laptop battery."
-msgstr "O utilitário que mostra o estado da bateria do portátil."
+msgstr "O utilitário que mostra o estado da bateria do seu portátil."
 
 #. ture
 #: ../battstat/battstat_applet.c:1425
@@ -296,22 +296,22 @@ msgstr "energia posterior ativada."
 #. true
 #: ../battstat/battstat_applet.c:1427
 msgid "HAL backend enabled."
-msgstr "Motor HAL ativo."
+msgstr "Motor HAL ativado."
 
 #. false
 #: ../battstat/battstat_applet.c:1428
 msgid "Legacy (non-HAL) backend enabled."
-msgstr "Motor antigo (não-HAL) ativo."
+msgstr "Painel antigo (não-HAL) ativado."
 
 #: ../battstat/battstat_applet.c:1809 ../battstat/battstat_applet.c:1864
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
-msgstr "Monitor de Carregamento da Bateria"
+msgstr "Monitor de Carga da Bateria"
 
 #: ../battstat/battstat_applet.c:1865
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
-msgstr "Monitoriza a energia restante de um portátil"
+msgstr "Monitorize a energia restante de um portátil"
 
 #: ../battstat/battstat_applet.ui.h:1
 msgid "Battery Charge Monitor Preferences"
@@ -327,7 +327,7 @@ msgstr "Vista _compacta"
 
 #: ../battstat/battstat_applet.ui.h:4
 msgid "(shows single image for status and charge)"
-msgstr "(mostra uma imagem para o estado e carga)"
+msgstr "(mostra uma imagem única para o estado e carga)"
 
 #: ../battstat/battstat_applet.ui.h:5
 msgid "_Expanded view"
@@ -365,7 +365,7 @@ msgstr "_Notificar quando bateria está totalmente recarregada"
 
 #: ../battstat/battstat-hal.c:343 ../battstat/battstat-hal.c:368
 msgid "HAL error"
-msgstr "Erro HAl"
+msgstr "Erro HAL"
 
 #: ../battstat/battstat-hal.c:343
 msgid "Could not create libhal_ctx"
@@ -396,7 +396,7 @@ msgstr "O nível de bateria abaixo do qual a bateria é apresentada como vermelh
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:3
 msgid "Warn on low time rather than low percentage"
-msgstr "Avisar do tempo restante reduzido em vez de percentagem reduzida"
+msgstr "Avisar do tempo restante reduzido em vez de percentagem baixa"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:4
 msgid ""
@@ -436,7 +436,7 @@ msgstr "Consumir do topo"
 msgid ""
 "Show the battery meter draining from the top of the battery. Only "
 "implemented for traditional battery view."
-msgstr "Apresentar o medidor de bateria a consumir do topo. Apenas implementado na vista tradicional de bateria."
+msgstr "Mostrar o medidor de bateria a consumir do topo. Apenas implementado na vista tradicional de bateria."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.in.h:13
 msgid "Upright (small) battery"
@@ -498,7 +498,7 @@ msgstr "Bateria completamente recarregada"
 
 #: ../charpick/charpick.c:426
 msgid "Available palettes"
-msgstr "Paletes disponíveis"
+msgstr "Paletas disponíveis"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
@@ -521,7 +521,7 @@ msgstr "Inserir carácter especial %s"
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
-msgstr "Applet do Painel Mate para selecionar caracteres estranhos que não se encontram no teclado. Distribuído sob a Licença Geral Pública GNU."
+msgstr "Applet do Painel MATE para selecionar caracteres estranhos que não se encontram no teclado. Distribuído sob a Licença Geral Pública GNU."
 
 #: ../charpick/charpick.c:707 ../charpick/charpick.c:721
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
@@ -591,7 +591,7 @@ msgstr "_Paletas:"
 
 #: ../charpick/properties.c:472
 msgid "Add button"
-msgstr "Adicionar"
+msgstr "Adicionar botão"
 
 #: ../charpick/properties.c:473
 msgid "Click to add a new palette"
@@ -599,7 +599,7 @@ msgstr "Clique para adicionar uma nova paleta"
 
 #: ../charpick/properties.c:480
 msgid "Edit button"
-msgstr "Editar"
+msgstr "Editar botão"
 
 #: ../charpick/properties.c:481
 msgid "Click to edit the selected palette"
@@ -648,7 +648,7 @@ msgstr "Comando a executar"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:2
 msgid "Command/script to execute to get the output"
-msgstr "Comando/script a executar para conseguir o resultado"
+msgstr "Comando/script a executar para obter o resultado"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.in.h:3
 msgid "Interval for the command"
@@ -884,7 +884,7 @@ msgstr "At_ualizar"
 #: ../mateweather/mateweather-applet.c:333
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
 msgid "Weather Report"
-msgstr "Relatório meteorológico"
+msgstr "Boletim Meteorológico"
 
 #: ../mateweather/mateweather-applet.c:355
 #: ../mateweather/mateweather-applet.c:359
@@ -893,7 +893,7 @@ msgstr "MATE Weather"
 
 #: ../mateweather/mateweather-applet.c:459
 msgid "Weather Forecast"
-msgstr "Previsão meteorológica"
+msgstr "Previsão do Tempo"
 
 #: ../mateweather/mateweather-applet.c:471
 #, c-format
@@ -997,7 +997,7 @@ msgstr "Clique para entrar em Weather.com"
 
 #: ../mateweather/mateweather-dialog.c:611
 msgid "Forecast not currently available for this location."
-msgstr "Previsão não disponível para esta localidade."
+msgstr "Previsão não disponível para este local."
 
 #. Accessible Name and Description for the components in Preference Dialog
 #: ../mateweather/mateweather-pref.c:161
@@ -1027,7 +1027,7 @@ msgstr "Insira o URL"
 #: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
-msgstr "Falha ao carregar a base de dados XML de Localizações.  Por favor relate isto como um erro."
+msgstr "Falha ao carregar a base de dados XML de Locais.  Por favor relate isto como um erro."
 
 #: ../mateweather/mateweather-pref.c:824
 msgid "Weather Preferences"
@@ -1061,7 +1061,7 @@ msgstr "Fahrenheit"
 #. Speed Unit
 #: ../mateweather/mateweather-pref.c:891
 msgid "_Wind speed unit:"
-msgstr "Unidade de _medida:"
+msgstr "Unidade de _velocidade do vento:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
@@ -1082,7 +1082,7 @@ msgstr "mph"
 #. TRANSLATOR: The wind speed unit "knots"
 #: ../mateweather/mateweather-pref.c:908
 msgid "knots"
-msgstr "knots"
+msgstr "nós"
 
 #: ../mateweather/mateweather-pref.c:909
 msgid "Beaufort scale"
@@ -1091,7 +1091,7 @@ msgstr "Escala Beaufort"
 #. Pressure Unit
 #: ../mateweather/mateweather-pref.c:918
 msgid "_Pressure unit:"
-msgstr "Unidade de me_dida:"
+msgstr "Unidade de _pressão:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
@@ -1127,7 +1127,7 @@ msgstr "atm"
 #. Distance Unit
 #: ../mateweather/mateweather-pref.c:948
 msgid "_Visibility unit:"
-msgstr "_Unidade de medida:"
+msgstr "Unidade de _visibilidade:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
@@ -1180,7 +1180,7 @@ msgstr "Geral"
 
 #: ../mateweather/mateweather-pref.c:1119
 msgid "_Select a location:"
-msgstr "E_scolha a localização:"
+msgstr "E_scolha um local:"
 
 #: ../mateweather/mateweather-pref.c:1141
 msgid "_Find:"
@@ -1192,7 +1192,7 @@ msgstr "Encontrar _Seguinte"
 
 #: ../mateweather/mateweather-pref.c:1168
 msgid "Location"
-msgstr "Localização"
+msgstr "Local"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
@@ -1200,7 +1200,7 @@ msgstr "Fábrica do Applet Mateweather"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
-msgstr "Fábrica de criação do applet de clima."
+msgstr "Fábrica para criar o applet de clima."
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
@@ -1216,7 +1216,7 @@ msgstr "5 Dias"
 
 #: ../invest-applet/data/financialchart.ui.h:3
 msgid "3 Months"
-msgstr "3 meses"
+msgstr "3 Meses"
 
 #: ../invest-applet/data/financialchart.ui.h:4
 msgid "6 Months"
@@ -1224,7 +1224,7 @@ msgstr "6 Meses"
 
 #: ../invest-applet/data/financialchart.ui.h:5
 msgid "1 Year"
-msgstr "1 ano"
+msgstr "1 Ano"
 
 #: ../invest-applet/data/financialchart.ui.h:6
 msgid "5 Years"
@@ -1449,7 +1449,7 @@ msgstr "<b>Neste momento não há cotações de ações disponíveis</b>"
 msgid ""
 "The server could not be contacted. The computer is either offline or the "
 "servers are down. Try again later."
-msgstr "O servidor não pôde ser contacto. O computador ou está fora da rede, ou os servidores estão desligados. Tente novamente mais tarde."
+msgstr "O servidor não pôde ser contactado. O computador ou está fora da rede, ou os servidores estão desligados. Tente novamente mais tarde."
 
 #: ../invest-applet/invest/chart.py:160
 #, python-format
@@ -1564,7 +1564,7 @@ msgstr "_Desativar"
 
 #: ../modemlights/modem-applet.c:148 ../stickynotes/stickynotes.ui.h:4
 msgid "_Properties"
-msgstr "_Propriedade"
+msgstr "_Propriedades"
 
 #: ../modemlights/modem-applet.c:184
 #: ../modemlights/org.mate.applets.ModemApplet.mate-panel-applet.in.in.h:1
@@ -1969,7 +1969,7 @@ msgstr "Alguns itens do painel já não se estão disponíveis"
 msgid ""
 "One or more panel items (also referred to as applets) are no longer "
 "available in the MATE desktop."
-msgstr "Um ou mais itens do painel (também referidos como applets) não se encontram mais disponíveis no ambiente de trabalho MATE."
+msgstr "Um ou mais itens do painel (também referidos como applets) não se encontram mais disponíveis no ambiente MATE."
 
 #: ../null_applet/null_applet.c:154
 msgid "These items will now be removed from your configuration:"
@@ -2063,7 +2063,7 @@ msgstr "Escolha uma cor por defeito para a nota"
 
 #: ../stickynotes/stickynotes.ui.h:15
 msgid "Use co_lor from the system theme"
-msgstr "Uti_lizar cor do tema de sistema"
+msgstr "Usa_r cor do tema de sistema"
 
 #: ../stickynotes/stickynotes.ui.h:16
 msgid "Specify the default height (in pixels) of new notes"
@@ -2079,7 +2079,7 @@ msgstr "Al_tura:"
 
 #: ../stickynotes/stickynotes.ui.h:19
 msgid "_Width:"
-msgstr "_largura:"
+msgstr "_Largura:"
 
 #: ../stickynotes/stickynotes.ui.h:20
 msgid "Behavior"
@@ -2203,7 +2203,7 @@ msgstr "Altura por defeito em novas notas"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:4
 msgid "Default height for new sticky notes in pixels."
-msgstr "Altura padrão em pixeis para novas notas."
+msgstr "Altura padrão das novas notas em pixeis."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:5
 msgid "Default color for new notes"
@@ -2213,7 +2213,7 @@ msgstr "Cor padrão para novas notas"
 msgid ""
 "Default color for new sticky notes. This should be in html hex "
 "specification, for example \"#30FF50\"."
-msgstr "Cor por defeito de novas notas. Deve estar na especificação hexadecimal HTML. Por exemplo, \"#30FF50\"."
+msgstr "Cor por defeito de novas notas. Deve estar na especificação hexadecimal HTML, por exemplo, \"#30FF50\"."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:7
 msgid "Default color for font"
@@ -2262,7 +2262,7 @@ msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr "Por defeito, é dado como título às notas a data do momento da criação. Este formato é o usado; qualquer coisa que possa ser processada por strftime() é válida."
+msgstr "Por defeito, é dado como título às notas a data do momento da criação. Este formato é o utilizado; qualquer coisa que possa ser processada por strftime() é válida."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:17
 msgid "Whether to use the default system color"
@@ -2272,7 +2272,7 @@ msgstr "Se usar ou não a cor padrão do sistema"
 msgid ""
 "If this option is disabled, a custom color can be used as the default color "
 "for all sticky notes."
-msgstr "Se esta opção estiver inativa, pode ser usada uma cor personalizada como cor padrão em todas as notas."
+msgstr "Se esta opção estiver desativada, pode ser usada uma cor personalizada como cor padrão em todas as notas."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:19
 msgid "Whether to use the default system font"
@@ -2282,7 +2282,7 @@ msgstr "Se usar ou não o tipo de letra padrão do sistema"
 msgid ""
 "If this option is disabled, a custom font can be used as the default font "
 "for all sticky notes."
-msgstr "Se esta opção estiver desativada, pode ser usar uma letra personalizada em todas as notas por defeito."
+msgstr "Se esta opção estiver desativada, pode ser usada uma letra personalizada em todas as notas por defeito."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:21
 msgid "Whether to force the default color and font on all notes"
@@ -2302,7 +2302,7 @@ msgstr "Se esconder ou não todas as notas quando o ambiente de trabalho é sele
 msgid ""
 "If this option is enabled, selecting the desktop in any way will "
 "automatically hide all the open notes."
-msgstr "Se esta opção estiver ativa, selecionar a área de trabalho de qualquer forma irá ocultar automaticamente as notas abertas."
+msgstr "Se esta opção estiver ativada, selecionar a área de trabalho de qualquer forma irá ocultar automaticamente todas as notas abertas."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.in.h:25
 msgid "Whether to ask for confirmation when deleting a note"
@@ -2449,7 +2449,7 @@ msgstr "Erro ao expandir o caja:\n%s"
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
-msgstr "Um caixote do lixo MATE que existe no seu painel. Pode utilizá-lo para ver o  lixo, ou arrastar e largar itens no lixo."
+msgstr "Um caixote do lixo MATE que existe no seu painel. Pode utilizá-lo para ver o lixo, ou arrastar e largar itens no lixo."
 
 #: ../trashapplet/src/trashapplet.c:466
 msgid "Delete Immediately?"
