@@ -210,6 +210,7 @@ settings_command_changed (GSettings *settings, gchar *key, CommandApplet *comman
         command_applet->command = g_strdup ("");
 }
 
+static void
 settings_width_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
 {
     gint width;
