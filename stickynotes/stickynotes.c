@@ -499,14 +499,14 @@ stickynote_set_color (StickyNote  *note,
 			colors[i].green = (colors[i].green * (10 - i)) / 10;
 			colors[i].blue = (colors[i].blue * (10 - i)) / 10;
 		}
+
 		gdk_color_parse ("black", &colors[4]);
 		gdk_color_parse ("white", &colors[5]);
 
 #if !GTK_CHECK_VERSION (3, 0, 0)
 		/* Allocate these colors */
-		gdk_colormap_alloc_colors (gtk_widget_get_colormap (
-					note->w_window),
-				colors, 6, FALSE, TRUE, success);
+		gdk_colormap_alloc_colors (gtk_widget_get_colormap (note->w_window),
+		                           colors, 6, FALSE, TRUE, success);
 #endif
 
 		/* Apply colors to style */
@@ -520,7 +520,6 @@ stickynote_set_color (StickyNote  *note,
 			GTK_RC_BG | GTK_RC_BASE;
 		rc_style->color_flags[GTK_STATE_ACTIVE] = GTK_RC_BG;
 	}
-
 	else {
 		rc_style->color_flags[GTK_STATE_PRELIGHT] = 0;
 		rc_style->color_flags[GTK_STATE_NORMAL] = 0;
@@ -554,7 +553,7 @@ stickynote_set_color (StickyNote  *note,
 		gtk_widget_modify_text (note->w_body,
 				GTK_STATE_NORMAL, &font_color);
 		gtk_widget_modify_text (note->w_body,
-				GTK_STATE_NORMAL, &font_color);
+				GTK_STATE_PRELIGHT, &font_color);
 	}
 	else
 	{
@@ -565,7 +564,7 @@ stickynote_set_color (StickyNote  *note,
 		gtk_widget_modify_text (note->w_body,
 				GTK_STATE_NORMAL, NULL);
 		gtk_widget_modify_text (note->w_body,
-				GTK_STATE_NORMAL, NULL);
+				GTK_STATE_PRELIGHT, NULL);
 	}
 
 	if (color_str_actual)
@@ -854,11 +853,11 @@ stickynotes_save_now (void)
 void
 stickynotes_save (void)
 {
-  /* If a save isn't already schedules, save everything a minute from now. */
-  if (!save_scheduled) {
-    g_timeout_add_seconds (60, (GSourceFunc) stickynotes_save_now, NULL);
-    save_scheduled = TRUE;
-  }
+	/* If a save isn't already schedules, save everything a minute from now. */
+	if (!save_scheduled) {
+		g_timeout_add_seconds (60, (GSourceFunc) stickynotes_save_now, NULL);
+		save_scheduled = TRUE;
+	}
 }
 
 /* Load all sticky notes from an XML configuration file */
@@ -872,9 +871,10 @@ stickynotes_load (GdkScreen *screen)
 	GList *new_notes, *tmp1;  /* Lists of StickyNote*'s */
 	GList *new_nodes; /* Lists of xmlNodePtr's */
 	int x, y, w, h;
+
 	/* The XML file is $HOME/.config/mate/stickynotes-applet, most probably */
 	{
-			gchar* file = g_build_filename(g_get_user_config_dir(), "mate", "stickynotes-applet.xml", NULL);
+		gchar* file = g_build_filename(g_get_user_config_dir(), "mate", "stickynotes-applet.xml", NULL);
 
 		if (g_file_test(file, G_FILE_TEST_EXISTS))
 		{
@@ -997,11 +997,11 @@ stickynotes_load (GdkScreen *screen)
 
 			/* Retrieve and set the font of the note */
 			{
-				gchar *font_str = (gchar *)xmlGetProp(node, XML_CHAR ("font"));
+				gchar *font_str = (gchar *)xmlGetProp (node, XML_CHAR ("font"));
 				if (font_str)
 					stickynote_set_font (note, font_str,
 							TRUE);
-				g_free(font_str);
+				g_free (font_str);
 			}
 
 			/* Retrieve the workspace */

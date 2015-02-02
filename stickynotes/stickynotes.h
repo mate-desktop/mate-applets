@@ -49,7 +49,7 @@ typedef struct
 
 	GtkWidget *w_title;		/* Sticky Note title */
 	GtkWidget *w_body;		/* Sticky Note text body */
-        GtkWidget *w_scroller;          /* Sticky Note scroller */
+	GtkWidget *w_scroller;          /* Sticky Note scroller */
 	GtkWidget *w_lock;		/* Sticky Note lock button */
 	GtkWidget *w_close;		/* Sticky Note close button */
 	GtkWidget *w_resize_se;		/* Sticky Note resize button (south east) */
