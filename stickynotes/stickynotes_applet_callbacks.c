@@ -518,7 +518,7 @@ void preferences_apply_cb(GSettings *settings, gchar *key, gpointer data)
 				gtk_window_stick (GTK_WINDOW (note->w_window));
 			}
 		else
-			for (l= stickynotes->notes; l; l = l->next)
+			for (l = stickynotes->notes; l; l = l->next)
 			{
 				note = l->data;
 				gtk_window_unstick (GTK_WINDOW (
