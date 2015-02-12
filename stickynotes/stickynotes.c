@@ -877,7 +877,7 @@ stickynotes_save_now (void)
 void
 stickynotes_save (void)
 {
-	/* If a save isn't already schedules, save everything a minute from now. */
+	/* If a save isn't already scheduled, save everything a minute from now. */
 	if (!save_scheduled) {
 		g_timeout_add_seconds (60, (GSourceFunc) stickynotes_save_now, NULL);
 		save_scheduled = TRUE;

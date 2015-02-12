@@ -33,7 +33,6 @@ stickynote_toggle_lock_cb (GtkWidget *widget, StickyNote *note)
 gboolean
 stickynote_close_cb (GtkWidget *widget, StickyNote *note)
 {
-
 	stickynotes_remove (note);
 	
 	return TRUE;
@@ -103,8 +102,6 @@ gboolean stickynote_delete_cb(GtkWidget *widget, GdkEvent *event, StickyNote *no
 gboolean
 stickynote_show_popup_menu (GtkWidget *widget, GdkEventButton *event, GtkWidget *popup_menu)
 {
-  
-
 	if (event->type == GDK_BUTTON_PRESS && event->button == 3)
 	{
 		gtk_menu_popup (GTK_MENU (popup_menu),
@@ -155,22 +152,29 @@ void properties_apply_color_cb(StickyNote *note)
 	
 	if (!gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(note->w_def_color)))
 	{
-		GdkColor color;
-		GdkColor font_color;
+#if GTK_CHECK_VERSION (3, 0, 0)
+		GdkRGBA color, font_color;
+
+		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_color), &color);
+		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+
+		color_str = gdk_rgba_to_string (&color);
+		font_color_str = gdk_rgba_to_string (&font_color);
+#else
+		GdkColor color, font_color;
 		
-		gtk_color_button_get_color (GTK_COLOR_BUTTON (note->w_color),
-				&color);
-		gtk_color_button_get_color (
-				GTK_COLOR_BUTTON (note->w_font_color),
-				&font_color);
+		gtk_color_button_get_color (GTK_COLOR_BUTTON (note->w_color), &color);
+		gtk_color_button_get_color (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+
 		color_str = g_strdup_printf ("#%.2x%.2x%.2x",
-				color.red / 256,
-				color.green / 256,
-				color.blue / 256);
+		                             color.red   / 256,
+		                             color.green / 256,
+		                             color.blue  / 256);
 		font_color_str = g_strdup_printf ("#%.2x%.2x%.2x",
-				font_color.red / 256,
-				font_color.green / 256,
-				font_color.blue / 256);
+		                                  font_color.red   / 256,
+		                                  font_color.green / 256,
+		                                  font_color.blue  / 256);
+#endif
 	}
 	
 	stickynote_set_color (note, color_str, font_color_str, TRUE);
@@ -202,25 +206,31 @@ properties_color_cb (GtkWidget *button, StickyNote *note)
 	
 	if (!gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(note->w_def_color)))
 	{
-			GdkColor color;
-			GdkColor font_color;
+#if GTK_CHECK_VERSION (3, 0, 0)
+		GdkRGBA color, font_color;
+
+		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_color), &color);
+		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+
+		color_str = gdk_rgba_to_string (&color);
+		font_color_str = gdk_rgba_to_string (&font_color);
+#else
+		GdkColor color, font_color;
 			
-			gtk_color_button_get_color (
-					GTK_COLOR_BUTTON (note->w_color),
-					&color);
-			gtk_color_button_get_color (
-					GTK_COLOR_BUTTON (note->w_font_color),
-					&font_color);
-			color_str = g_strdup_printf ("#%.2x%.2x%.2x",
-					color.red / 256,
-					color.green / 256,
-					color.blue / 256);
-			font_color_str = g_strdup_printf ("#%.2x%.2x%.2x",
-					font_color.red / 256,
-					font_color.green / 256,
-					font_color.blue / 256);
-		}
-	
+		gtk_color_button_get_color (GTK_COLOR_BUTTON (note->w_color), &color);
+		gtk_color_button_get_color (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+
+		color_str = g_strdup_printf ("#%.2x%.2x%.2x",
+		                             color.red   / 256,
+		                             color.green / 256,
+		                             color.blue  / 256);
+		font_color_str = g_strdup_printf ("#%.2x%.2x%.2x",
+		                                  font_color.red   / 256,
+		                                  font_color.green / 256,
+		                                  font_color.blue  / 256);
+#endif
+	}
+
 	stickynote_set_color (note, color_str, font_color_str, TRUE);
 
 	g_free (color_str);
@@ -230,10 +240,7 @@ properties_color_cb (GtkWidget *button, StickyNote *note)
 /* Properties Dialog Callback : Font */
 void properties_font_cb (GtkWidget *button, StickyNote *note)
 {
-        const char *font_str;
-
-        font_str = gtk_font_button_get_font_name (GTK_FONT_BUTTON (button));
-
+	const char *font_str = gtk_font_button_get_font_name (GTK_FONT_BUTTON (button));
 	stickynote_set_font(note, font_str, TRUE);
 }
 
