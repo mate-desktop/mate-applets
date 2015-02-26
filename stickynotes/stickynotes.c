@@ -47,29 +47,29 @@ static void response_cb (GtkWidget *dialog, gint id, gpointer data);
 
 /* Based on a function found in wnck */
 static void
-set_icon_geometry  (GdkWindow *window,
-                  int        x,
-                  int        y,
-                  int        width,
-                  int        height)
+set_icon_geometry (GdkWindow *window,
+                   int        x,
+                   int        y,
+                   int        width,
+                   int        height)
 {
-      gulong data[4];
-      Display *dpy;
+	gulong data[4];
+	Display *dpy;
 
-      dpy = gdk_x11_display_get_xdisplay (gdk_window_get_display (window));
+	dpy = gdk_x11_display_get_xdisplay (gdk_window_get_display (window));
 
-      data[0] = x;
-      data[1] = y;
-      data[2] = width;
-      data[3] = height;
+	data[0] = x;
+	data[1] = y;
+	data[2] = width;
+	data[3] = height;
 
-      XChangeProperty (dpy,
-                       GDK_WINDOW_XID (window),
-                       gdk_x11_get_xatom_by_name_for_display (
-			       gdk_window_get_display (window),
-			       "_NET_WM_ICON_GEOMETRY"),
-		       XA_CARDINAL, 32, PropModeReplace,
-                       (guchar *)&data, 4);
+	XChangeProperty (dpy,
+	                 GDK_WINDOW_XID (window),
+	                 gdk_x11_get_xatom_by_name_for_display (
+	                     gdk_window_get_display (window),
+	                     "_NET_WM_ICON_GEOMETRY"),
+	                 XA_CARDINAL, 32, PropModeReplace,
+	                 (guchar *)&data, 4);
 }
 
 /* Called when a timeout occurs.  */
