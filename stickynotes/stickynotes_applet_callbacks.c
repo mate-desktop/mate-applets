@@ -86,8 +86,8 @@ stickynote_toggle_notes_visible ()
 /* Applet Callback : Mouse button press on the applet. */
 gboolean
 applet_button_cb (GtkWidget         *widget,
-		  GdkEventButton    *event,
-		  StickyNotesApplet *applet)
+                  GdkEventButton    *event,
+                  StickyNotesApplet *applet)
 {
 	if (event->type == GDK_2BUTTON_PRESS)
 	{
@@ -106,8 +106,8 @@ applet_button_cb (GtkWidget         *widget,
 /* Applet Callback : Keypress on the applet. */
 gboolean
 applet_key_cb (GtkWidget         *widget,
-	       GdkEventKey       *event,
-	       StickyNotesApplet *applet)
+               GdkEventKey       *event,
+               StickyNotesApplet *applet)
 {
 	switch (event->keyval)
 	{
@@ -164,8 +164,9 @@ void install_check_click_on_desktop (void)
 	}
 
 	/* Access the desktop window. desktop_window is the root window for the
-	* default screen, so we know using gdk_display_get_default() is correct. */
-	window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), desktop_window);
+	 * default screen, so we know using gdk_display_get_default() is correct. */
+	window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (),
+	                                                 desktop_window);
 
 	/* It may contain an atom to tell us which other window to monitor */
 	user_time_window = gdk_x11_get_xatom_by_name ("_NET_WM_USER_TIME_WINDOW");
@@ -180,20 +181,21 @@ void install_check_click_on_desktop (void)
 		gulong bytes;
 
 		/* We only use this extra property if the actual user-time property's missing */
-		XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), desktop_window, user_time,
+		XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_window_get_display(window)), desktop_window, user_time,
 					0, 4, False, AnyPropertyType, &actual_type, &actual_format,
 					&nitems, &bytes, (unsigned char **)&data );
 		if (actual_type == None)
 		{
 			/* No user-time property, so look for the user-time-window */
-			XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), desktop_window, user_time_window,
+			XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_window_get_display(window)), desktop_window, user_time_window,
 					0, 4, False, AnyPropertyType, &actual_type, &actual_format,
 					&nitems, &bytes, (unsigned char **)&data );
 			if (actual_type != None)
 			{
 				/* We have another window to monitor */
 				desktop_window = *data;
-				window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window), desktop_window);
+				window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window),
+				                                                 desktop_window);
 			}
 		}
 	}
@@ -206,8 +208,6 @@ void install_check_click_on_desktop (void)
 void applet_change_orient_cb(MatePanelApplet *mate_panel_applet, MatePanelAppletOrient orient, StickyNotesApplet *applet)
 {
 	applet->panel_orient = orient;
-
-	return;
 }
 
 /* Applet Callback : Resize the applet. */
@@ -245,15 +245,13 @@ void applet_destroy_cb (MatePanelApplet *mate_panel_applet, StickyNotesApplet *a
 		stickynotes->applets = g_list_remove (stickynotes->applets, applet);
 
 	if (stickynotes->applets == NULL) {
-               notes = stickynotes->notes;
-               while (notes) {
-                       StickyNote *note = notes->data;
-                       stickynote_free (note);
-                       notes = g_list_next (notes);
-               }
+		notes = stickynotes->notes;
+		while (notes) {
+			StickyNote *note = notes->data;
+			stickynote_free (note);
+			notes = g_list_next (notes);
+		}
 	}
-
-
 }
 
 /* Destroy all response Callback: Callback for the destroy all dialog */
@@ -297,7 +295,7 @@ void menu_destroy_all_cb(GtkAction *action, StickyNotesApplet *applet)
 
 	if (applet->destroy_all_dialog != NULL) {
 		gtk_window_set_screen (GTK_WINDOW (applet->destroy_all_dialog),
-				       gtk_widget_get_screen (GTK_WIDGET (applet->w_applet)));
+		                       gtk_widget_get_screen (GTK_WIDGET (applet->w_applet)));
 
 		gtk_window_present (GTK_WINDOW (applet->destroy_all_dialog));
 		return;
@@ -308,11 +306,11 @@ void menu_destroy_all_cb(GtkAction *action, StickyNotesApplet *applet)
 	g_object_unref (builder);
 
 	g_signal_connect (applet->destroy_all_dialog, "response",
-			  G_CALLBACK (destroy_all_response_cb),
-			  applet);
+	                  G_CALLBACK (destroy_all_response_cb),
+	                  applet);
 
 	gtk_window_set_screen (GTK_WINDOW (applet->destroy_all_dialog),
-			gtk_widget_get_screen (applet->w_applet));
+	                       gtk_widget_get_screen (applet->w_applet));
 
 	gtk_widget_show_all (applet->destroy_all_dialog);
 }

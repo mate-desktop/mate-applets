@@ -170,10 +170,8 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 	stickynotes_applet_init_prefs();
 
 	/* Watch GSettings values */
-	g_signal_connect (stickynotes->settings,
-			"changed",
-			G_CALLBACK (preferences_apply_cb),
-			NULL);
+	g_signal_connect (stickynotes->settings, "changed",
+	                  G_CALLBACK (preferences_apply_cb), NULL);
 
 	/* Max height for large notes*/
 	stickynotes->max_height = 0.8*gdk_screen_get_height( gdk_screen_get_default() );
@@ -467,9 +465,9 @@ stickynotes_applet_update_prefs (void)
 	sys_font = g_settings_get_boolean (stickynotes->settings, "use-system-font");
 	sticky = g_settings_get_boolean (stickynotes->settings, "sticky");
 	force_default = g_settings_get_boolean (stickynotes->settings, "force-default");
-	font_str = g_settings_get_string (stickynotes->settings, "default-font");
 	desktop_hide = g_settings_get_boolean (stickynotes->settings, "desktop-hide");
 
+	font_str = g_settings_get_string (stickynotes->settings, "default-font");
 	if (!font_str)
 	{
 		font_str = g_strdup ("Sans 10");
