@@ -404,10 +404,10 @@ StickyNotesApplet * stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 			G_CALLBACK(applet_size_allocate_cb), applet);
 	g_signal_connect(G_OBJECT(applet->w_applet), "change-orient",
 			G_CALLBACK(applet_change_orient_cb), applet);
-	g_signal_connect(G_OBJECT(applet->w_applet), "change_background",
-			G_CALLBACK(applet_change_bg_cb), applet);
 	g_signal_connect(G_OBJECT(applet->w_applet), "destroy",
 			G_CALLBACK(applet_destroy_cb), applet);
+
+	mate_panel_applet_set_background_widget (mate_panel_applet, applet->w_applet);
 
 	atk_obj = gtk_widget_get_accessible (applet->w_applet);
 	atk_object_set_name (atk_obj, _("Sticky Notes"));
