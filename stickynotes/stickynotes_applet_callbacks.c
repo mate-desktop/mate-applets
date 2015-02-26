@@ -228,55 +228,6 @@ void applet_size_allocate_cb(GtkWidget *widget, GtkAllocation *allocation, Stick
 	return;
 }
 
-/* Applet Callback : Change the applet background. */
-void
-applet_change_bg_cb (MatePanelApplet *mate_panel_applet,
-		     MatePanelAppletBackgroundType type,
-		     GdkColor *color,
-#if GTK_CHECK_VERSION (3, 0, 0)
-		     cairo_pattern_t *pattern,
-#else
-		     GdkPixmap *pixmap,
-#endif
-		     StickyNotesApplet *applet)
-{
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	/* Taken from TrashApplet */
-	GtkRcStyle *rc_style;
-	GtkStyle *style;
-
-	if (!applet) g_print ("arrg, no applet!\n");
-
-	/* reset style */
-	gtk_widget_set_style (GTK_WIDGET (applet->w_applet), NULL);
-	rc_style = gtk_rc_style_new ();
-	gtk_widget_modify_style (GTK_WIDGET (applet->w_applet), rc_style);
-	g_object_unref (rc_style);
-
-	switch (type)
-	{
-		case PANEL_NO_BACKGROUND:
-			break;
-		case PANEL_COLOR_BACKGROUND:
-			gtk_widget_modify_bg (GTK_WIDGET (applet->w_applet),
-					GTK_STATE_NORMAL, color);
-			break;
-		case PANEL_PIXMAP_BACKGROUND:
-			style = gtk_style_copy (
-					gtk_widget_get_style (GTK_WIDGET (applet->w_applet)));
-			if (style->bg_pixmap[GTK_STATE_NORMAL])
-				g_object_unref (
-					style->bg_pixmap[GTK_STATE_NORMAL]);
-			style->bg_pixmap[GTK_STATE_NORMAL] = g_object_ref (
-					pixmap);
-			gtk_widget_set_style (
-					GTK_WIDGET (applet->w_applet), style);
-			g_object_unref (style);
-			break;
-	}
-#endif
-}
-
 /* Applet Callback : Deletes the applet. */
 void applet_destroy_cb (MatePanelApplet *mate_panel_applet, StickyNotesApplet *applet)
 {

@@ -30,15 +30,6 @@ gboolean applet_focus_cb(GtkWidget *widget, GdkEventFocus *event, StickyNotesApp
 void install_check_click_on_desktop (void);
 void applet_change_orient_cb(MatePanelApplet *mate_panel_applet, MatePanelAppletOrient orient, StickyNotesApplet *applet);
 void applet_size_allocate_cb(GtkWidget *widget, GtkAllocation *allocation, StickyNotesApplet *applet);
-void applet_change_bg_cb (MatePanelApplet *mate_panel_applet,
-				 MatePanelAppletBackgroundType type,
-				 GdkColor *color,
-#if GTK_CHECK_VERSION (3, 0, 0)
-                     		 cairo_pattern_t *pattern,
-#else
-                     		 GdkPixmap *pixmap,
-#endif
-                     		 StickyNotesApplet *applet);
 void applet_destroy_cb (MatePanelApplet *mate_panel_applet, StickyNotesApplet *applet);
 /* Callbacks for sticky notes applet menu */
 void menu_create_cb(GtkAction *action, StickyNotesApplet *applet);
