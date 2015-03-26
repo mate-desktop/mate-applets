@@ -68,15 +68,6 @@ gboolean stickynote_move_cb(GtkWidget *widget, GdkEventButton *event, StickyNote
 	return TRUE;
 }
 
-/* Sticky Window Callback : Skip taskbar and pager when exposing the window */
-gboolean stickynote_expose_cb(GtkWidget *widget, GdkEventExpose *event, StickyNote *note)
-{
-	gtk_window_set_skip_taskbar_hint(GTK_WINDOW(note->w_window), TRUE);
-	gtk_window_set_skip_pager_hint(GTK_WINDOW(note->w_window), TRUE);
-	
-	return FALSE;
-}
-
 /* Sticky Window Callback : Store settings when resizing/moving the window */
 gboolean stickynote_configure_cb(GtkWidget *widget, GdkEventConfigure *event, StickyNote *note)
 {

@@ -257,8 +257,6 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 
 	g_signal_connect (G_OBJECT (note->w_window), "button-press-event",
 			G_CALLBACK (stickynote_move_cb), note);
-	g_signal_connect (G_OBJECT (note->w_window), "expose-event",
-			G_CALLBACK (stickynote_expose_cb), note);
 	g_signal_connect (G_OBJECT (note->w_window), "configure-event",
 			G_CALLBACK (stickynote_configure_cb), note);
 	g_signal_connect (G_OBJECT (note->w_window), "delete-event",
