@@ -25,7 +25,7 @@ class InvestApplet(MatePanelApplet.Applet):
 		self.applet = applet
 
 		# name, stock_id, label, accellerator, tooltip, callback
-		menu_actions = [("About", Gtk.STOCK_HELP, _("About"), None, None, self.on_about),
+		menu_actions = [("About", Gtk.STOCK_ABOUT, _("About"), None, None, self.on_about),
 				("Help", Gtk.STOCK_HELP, _("Help"), None, None, self.on_help),
 				("Prefs", Gtk.STOCK_PREFERENCES, _("Preferences"), None, None, self.on_preferences),
 				("Refresh", Gtk.STOCK_REFRESH, _("Refresh"), None, None, self.on_refresh)
