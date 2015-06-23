@@ -134,7 +134,7 @@ display_help (GtkAction *action,
     screen = gtk_widget_get_screen (GTK_WIDGET (drive_list));
 
     gtk_show_uri (screen,
-		"help:mate-drivemount/drivemount",
+		"help:mate-drivemount/drivemountapplet-intro",
 		gtk_get_current_event_time (),
 		&error);
 
