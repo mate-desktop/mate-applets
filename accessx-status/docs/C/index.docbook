@@ -8,7 +8,7 @@
 <!-- 
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://developer.mate.org/projects/gdp
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Mar 12, 2002
   
@@ -22,6 +22,10 @@
 	 <abstract role="description">
 	   <para>The <application>&applet;</application> shows the status of the keyboard accessibility features.</para>
 	 </abstract>
+    <copyright>
+      <year>2015</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
 	 <copyright>
 	 	<year>2005</year>
 		<holder>Francisco Javier F. Serrador</holder>
@@ -42,12 +46,19 @@
 	 <publisher role="maintainer"> 
 		<publishername>MATE Documentation Project</publishername> 
 	 </publisher> 
+	 <publisher>
+		<publishername>GNOME Documentation Project</publishername>
+	 </publisher>
 
 &legal;
 
 
 	 <authorgroup>
 	 	<author>
+		  <firstname>MATE Documentation Project</firstname>
+		  <surname></surname>
+		</author>
+		<author>
 		  <firstname>Francisco Javier F.</firstname>
 		  <surname>Serrador</surname>
 		</author>
@@ -58,7 +69,7 @@
 		</author>
 		<author> 
 		  <firstname>Sun</firstname> 
-		  <surname>MATE Documentation Team</surname> 
+		  <surname>GNOME Documentation Team</surname>
 		  <affiliation> 
 			 <orgname>Sun Microsystems</orgname> 
 		  </affiliation> 
@@ -77,16 +88,25 @@
 -->
 	 </authorgroup>
 	 
-	 <releaseinfo revision="2.26" role="review"/>
+	 <releaseinfo revision="1.10.2" role="review"/>
 
 	 <revhistory>
-	        <revision> 
-		  <revnumber>v. 2.12</revnumber> 
-		  <date>August 2005</date> 
+	    <revision>
+		  <revnumber>Keyboard Accessibility Status Applet Manual V0.4</revnumber>
+		  <date>July 2015</date>
 		  <revdescription> 
 			 <para role="author">MATE Documentation Team
 				</para> 
 			 <para role="publisher">MATE Documentation Project</para> 
+		  </revdescription>
+	    </revision>
+	    <revision>
+		  <revnumber>Keyboard Accessibility Status Applet Manual V0.3</revnumber>
+		  <date>August 2005</date>
+		  <revdescription>
+			 <para role="author">GNOME Documentation Team
+				</para>
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 	   
 		<revision> 
@@ -95,20 +115,20 @@
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team
 				</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 		<revision> 
-		  <revnumber>Keyboard Accessibility Status Applet Manual V0.1</revnumber> 
+		  <revnumber>Keyboard Accessibility Status Applet Manual V0.2</revnumber>
 		  <date>May 2003</date> 
 		  <revdescription> 
 			 <para role="author">Bill Haneman
 				</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 	 </revhistory> 
-	 <releaseinfo> This manual describes version 2.12 of the &applet;.
+	 <releaseinfo> This manual describes version 1.10.2 of the &applet;.
 		</releaseinfo> 
 	 <legalnotice>
 		<title>Feedback</title>
