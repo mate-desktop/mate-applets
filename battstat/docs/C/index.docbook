@@ -2,14 +2,14 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appletversion "2.12.0">
+  <!ENTITY appletversion "1.10.2">
   <!ENTITY applet "Battery Charge Monitor">
 ]>
 
 <!-- 
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://developer.mate.org/projects/gdp
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Feb 12, 2002
 -->
@@ -25,6 +25,10 @@
         battery and provides notifications if charge drops below a certain
         threshold.</para>
     </abstract>
+    <copyright>
+      <year>2015</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
     <copyright>
       <year>2005</year>
       <holder>Davyd Madeley</holder>
@@ -58,23 +62,30 @@
     <publisher role="maintainer"> 
       <publishername> MATE Documentation Project </publishername> 
     </publisher> 
+    <publisher>
+      <publishername> GNOME Documentation Project </publishername>
+    </publisher>
   
     &legal;
 <!-- This file  contains link to license for the documentation (GNU FDL), and 
      other legal stuff such as "NO WARRANTY" statement. Please do not change 
      any of this. -->
 
-    <authorgroup> 
+    <authorgroup>
+      <author>
+        <firstname>MATE Documentation Team</firstname>
+        <surname></surname>
+      </author>
       <author>
         <firstname>Sun</firstname>
-        <surname>MATE Documentation Team</surname>
+        <surname>GNOME Documentation Team</surname>
         <affiliation><orgname>Sun Microsystems</orgname></affiliation>
       </author>
       <author>
         <firstname>Trevor</firstname>
         <surname>Curtis</surname>
         <affiliation>
-          <orgname>MATE Documentation Project</orgname>
+          <orgname>GNOME Documentation Project</orgname>
           <address> <email>tcurtis@somaradio.ca</email> </address>
         </affiliation>
       </author>
@@ -82,7 +93,7 @@
         <firstname>Jorgen </firstname> 
         <surname> Pehrson</surname> 
         <affiliation> 
-          <orgname>MATE Documentation Project</orgname> 
+          <orgname>GNOME Documentation Project</orgname>
           <address> <email>jp@spektr.eu.org</email> </address> 
         </affiliation> 
       </author> 
@@ -90,14 +101,14 @@
 	<firstname>Angela</firstname>
 	<surname>Boyle</surname>
 	<affiliation>
-	  <orgname>MATE Documentation Project</orgname>
+	  <orgname>GNOME Documentation Project</orgname>
 	</affiliation>
       </author>
       <author>
         <firstname>Davyd</firstname>
 	<surname>Madeley</surname>
 	<affiliation>
-	  <orgname>MATE Project</orgname>
+	  <orgname>GNOME Project</orgname>
 	</affiliation>
       </author>
         <!-- This is appropriate place for other contributors: translators,
@@ -115,9 +126,17 @@
 
     </authorgroup>
 	
-	<releaseinfo revision="2.26" role="review"/>
+	<releaseinfo revision="1.10.2" role="review"/>
 
     <revhistory>
+      <revision>
+        <revnumber>Version 2.13</revnumber>
+	<date>July 2015</date>
+	<revdescription>
+	  <para role="author">MATE Documentation Team</para>
+	  <para role="publisher">MATE Documentation Project</para>
+	</revdescription>
+      </revision>
       <revision>
         <revnumber>Version 2.12</revnumber>
 	<date>September 2005</date>
@@ -137,7 +156,7 @@
 	<date>September 2004</date>
 	<revdescription>
 	  <para role="author">Angela Boyle</para>
-	  <para role="publisher">MATE Documentation Project</para>
+	  <para role="publisher">GNOME Documentation Project</para>
 	</revdescription>
       </revision>
       <revision>
@@ -145,7 +164,7 @@
         <date>August 2004</date>
         <revdescription>
           <para role="author">Sun GNOME Documentation Team</para>
-          <para role="publisher">MATE Documentation Project</para>
+          <para role="publisher">GNOME Documentation Project</para>
         </revdescription>
       </revision>
       <revision>
@@ -158,7 +177,7 @@
           <para role="author">Jorgen Pehrson
             <email>jp@spektr.eu.org</email>
           </para>
-          <para role="publisher">MATE Documentation Project</para>
+          <para role="publisher">GNOME Documentation Project</para>
         </revdescription>
       </revision>
     </revhistory>
