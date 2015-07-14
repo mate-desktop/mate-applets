@@ -2,16 +2,16 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appletversion "2.8">
+  <!ENTITY appletversion "1.10.2">
   <!ENTITY manrevision "2.8">
-  <!ENTITY date "September 2004">
+  <!ENTITY date "July 2015">
   <!ENTITY applet "Geyes">
 ]>
 
 <!-- 
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://developer.mate.org/projects/gdp
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Mar 12, 2002  
 -->
@@ -26,6 +26,10 @@
              pointer around your screen, through a pair of moving eyes.</para>
 	 </abstract>
 	 <copyright> 
+		<year>2015</year>
+		<holder>MATE Documentation Project</holder>
+	 </copyright>
+	 <copyright>
 		<year>2002</year>
 		<year>2003</year> 
 		<year>2004</year> 
@@ -51,12 +55,23 @@
 	 <publisher role="maintainer"> 
 		<publishername>MATE Documentation Project</publishername> 
 	 </publisher> 
+	 <publisher>
+		<publishername>GNOME Documentation Project</publishername>
+	 </publisher>
 &legal;
 
 	 <authorgroup> 
 		<author> 
+		  <firstname>MATE Documentation Team</firstname>
+		  <surname></surname>
+		  <affiliation>
+			 <orgname>MATE Desktop</orgname>
+			 <address></address>
+		  </affiliation>
+		</author>
+		<author>
 		  <firstname>Sun</firstname> 
-		  <surname>MATE Documentation Team</surname> 
+		  <surname>GNOME Documentation Team</surname>
 		  <affiliation> 
 			 <orgname>Sun Microsystems</orgname> 
 			 <address></address> 
@@ -66,7 +81,7 @@
 		  <firstname>Telsa</firstname> 
 		  <surname>Gwynne</surname> 
 		  <affiliation> 
-			 <orgname>MATE Documentation Project</orgname> 
+			 <orgname>GNOME Documentation Project</orgname>
 			 <address> <email>hobbit@aloss.ukuu.org.uk</email> </address> 
 		  </affiliation> 
 		</author>
@@ -74,7 +89,7 @@
 		  <firstname>Arjan</firstname> 
 		  <surname>Scherpenisse</surname> 
 		  <affiliation> 
-			 <orgname>MATE Documentation Project</orgname> 
+			 <orgname>GNOME Documentation Project</orgname>
 			 <address> <email>acscherp@wins.uva.nl</email> </address> 
 		  </affiliation> 
 		</author> 
@@ -92,23 +107,31 @@
 -->
 	 </authorgroup>
 	 
-	 <releaseinfo revision="2.26" role="review"/>
+	 <releaseinfo revision="1.10.2" role="review"/>
 
 	 <revhistory>
 	   <revision>
-	     <revnumber>Version &manrevision;</revnumber>
+	     <revnumber>&applet; Applet Manual V&manrevision;</revnumber>
 	     <date>&date;</date>
 	     <revdescription>
 	       <para role="author">MATE Documentation Team</para>
 	       <para role="publisher">MATE Documentation Project</para>
 	     </revdescription>
 	   </revision>
+	   <revision>
+	     <revnumber>&applet; Applet Manual V2.7</revnumber>
+	     <date>September 2004</date>
+	     <revdescription>
+	       <para role="author">GNOME Documentation Team</para>
+	       <para role="publisher">GNOME Documentation Project</para>
+	     </revdescription>
+	   </revision>
 		<revision> 
 		  <revnumber>&applet; Applet Manual V2.6</revnumber> 
 		  <date>February 2004</date> 
 		  <revdescription> 
-			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="author">Sun GNOME Documentation Team</para>
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision>
 		<revision> 
@@ -116,7 +139,7 @@
 		  <date>September 2003</date> 
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision>
 		<revision> 
@@ -124,7 +147,7 @@
 		  <date>August 2003</date> 
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision>
 		<revision> 
@@ -132,7 +155,7 @@
 		  <date>January 2003</date> 
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision>
 		<revision> 
@@ -140,7 +163,7 @@
 		  <date>August 2002</date> 
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 		<revision> 
@@ -148,7 +171,7 @@
 		  <date>June 2002</date> 
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 		<revision> 
@@ -156,7 +179,7 @@
 		  <date>March 2002</date> 
 		  <revdescription> 
 			 <para role="author">Sun GNOME Documentation Team</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 		<revision> 
@@ -167,7 +190,7 @@
 				<email>hobbit@aloss.ukuu.org.uk</email></para> 
 			 <para role="author">Arjan Scherpenisse
 				<email>acscherp@wins.uva.nl</email></para>
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 	 </revhistory> 
