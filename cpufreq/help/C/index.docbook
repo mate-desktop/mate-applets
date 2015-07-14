@@ -2,13 +2,13 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appletversion "2.12.0">
+  <!ENTITY appletversion "1.10.2">
   <!ENTITY applet "CPU Frequency Scaling Monitor">
 ]>
 <!-- 
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://developer.mate.org/projects/gdp
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Feb 06, 2003
 -->
@@ -23,12 +23,16 @@
             interface to change the clock speed if the CPU supports it.</para>
 	</abstract>
 	<copyright>
+	  <year>2015</year>
+	  <holder>MATE Documentation Project</holder>
+	</copyright>
+	<copyright>
 	  <year>2005</year>
 	  <holder>Davyd Madeley</holder>
 	</copyright>
         <copyright>
 	   <year>2004</year>
-            <holder>MATE Foundation</holder>
+            <holder>GNOME Foundation</holder>
         </copyright>
 
 <!-- translators: uncomment this:
@@ -40,6 +44,9 @@
 
 	 <publisher role="maintainer"> 
 		<publishername>MATE Documentation Project</publishername> 
+	 </publisher>
+	 <publisher>
+		<publishername>GNOME Documentation Project</publishername>
 	 </publisher> 
 
 &legal;
@@ -49,10 +56,17 @@
 
 	 <authorgroup> 
             <author>
+	       <firstname>MATE Documentation Team</firstname>
+	       <surname></surname>
+	       <affiliation>
+                  <orgname>MATE Desktop</orgname>
+	       </affiliation>
+            </author>
+            <author>
 	       <firstname>Carlos</firstname>
 	       <surname>Garcia Campos</surname>
 	       <affiliation>
-                  <orgname>MATE Project</orgname>
+                  <orgname>GNOME Project</orgname>
 		  <address><email>carlosgc@gnome.org</email></address>
 	       </affiliation>
             </author>
@@ -60,7 +74,7 @@
 	      <firstname>Davyd</firstname>
 	      <surname>Madeley</surname>
 	      <affiliation>
-	        <orgname>MATE Project</orgname>
+	        <orgname>GNOME Project</orgname>
 		<address><email>davyd@madeley.id.au</email></address>
 	      </affiliation>
 	    </author>
@@ -78,18 +92,26 @@
 -->
 	 </authorgroup>
 	 
-	 <releaseinfo revision="2.26" role="review"/>
+	 <releaseinfo revision="1.10.2" role="review"/>
 
 	 <revhistory>
 	   <revision>
-	     <revnumber>MATE 2.12</revnumber>
+	     <revnumber>&applet; Applet Manual V0.6</revnumber>
+	     <date>July 2015</date>
+	     <revdescription>
+	      <para role="author">MATE Documentation Team</para>
+	      <para role="publisher">MATE Documentation Project</para>
+	     </revdescription>
+	   </revision>
+	   <revision>
+	     <revnumber>&applet; Applet Manual V0.5</revnumber>
 	     <date>August 2005</date>
 	     <revdescription>
 	      <para role="author">Davyd Madeley</para>
 	     </revdescription>
 	   </revision>
 	   <revision>
-	     <revnumber>MATE 2.10</revnumber>
+	     <revnumber>&applet; Applet Manual V0.4</revnumber>
 	     <date>March 2005</date>
 	     <revdescription>
 	      <para role="author">Davyd Madeley</para>
@@ -100,7 +122,7 @@
 		  <date>October 2004</date> 
 		  <revdescription> 
                     <para role="author">Carlos Garcia Campos</para>
-                    <para role="publisher">MATE Documentation Project</para>
+                    <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision> 
 	 </revhistory> 
