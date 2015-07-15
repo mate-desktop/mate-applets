@@ -2,17 +2,17 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.32.0">
-  <!ENTITY manrevision "1.0">
-  <!ENTITY date "August 2010">
+  <!ENTITY appversion "1.10.2">
+  <!ENTITY manrevision "1.1">
+  <!ENTITY date "July 2015">
   <!ENTITY app "Invest">
-  <!ENTITY panel-help SYSTEM "/usr/share/mate/help/user-guide/C/user-guide.xml">
+  <!ENTITY panel-help SYSTEM "/usr/share/mate/help/mate-user-guide/C/gospanel.xml">
 ]>
 
 <!-- 
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://developer.mate.org/projects/gdp
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Apr 11, 2002
 -->
@@ -25,6 +25,10 @@
   <articleinfo> 
     <title>&app; Manual</title>       
 
+    <copyright>
+      <year>2015</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
     <copyright>
       <year>2004</year>
       <year>2005</year>
@@ -51,6 +55,9 @@
     <publisher role="maintainer"> 
       <publishername> MATE Documentation Project </publishername> 
     </publisher> 
+    <publisher>
+      <publishername> GNOME Documentation Project </publishername>
+    </publisher>
 
    &legal;
    <!-- This file  contains link to license for the documentation (GNU FDL), and 
@@ -61,6 +68,10 @@
     <author>
       <firstname></firstname>
       <surname>MATE Documentation Team</surname>
+    </author>
+    <author>
+      <firstname></firstname>
+      <surname>GNOME Documentation Team</surname>
     </author>
     <author> 
       <firstname>Terrence</firstname> 
@@ -90,8 +101,12 @@
 	
     <revhistory>
       <revision> 
-	<revnumber></revnumber>
-	<date></date>
+	<revnumber>&app; V&manrevision;</revnumber>
+	<date>&date;</date>
+	   <revdescription>
+	      <para role="author">MATE Documentation Team</para>
+	      <para role="publisher">MATE Documentation Project</para>
+	   </revdescription>
       </revision> 
     </revhistory> 
 
@@ -184,7 +199,7 @@
     </sect2>
     <sect2 id="additional-applet-help">
       <title>More Information</title>
-      <para>More information about the MATE panel can be found in the <ulink url="help:user-guide?panels" type="help">MATE Panel documentation</ulink>.</para>
+      <para>More information about the MATE panel can be found in the <ulink url="help:mate-user-guide/panels" type="help">MATE Panel documentation</ulink>.</para>
     </sect2>
   </sect1>
 
