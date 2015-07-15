@@ -2,9 +2,9 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appletversion "2.14">
-  <!ENTITY manrevision "2.11">
-  <!ENTITY date "August 2006">
+  <!ENTITY appletversion "1.10.2">
+  <!ENTITY manrevision "2.12">
+  <!ENTITY date "July 2015">
   <!ENTITY applet "Panel Trash">
 ]>
 
@@ -17,8 +17,12 @@
 	   <para>&applet; lets you manage your trash from the panel. </para>
 	 </abstract>
 	 <copyright>
-	   <year>2006</year>
+	   <year>2015</year>
 	   <holder>MATE Documentation Project</holder>
+	 </copyright>
+	 <copyright>
+	   <year>2006</year>
+	   <holder>GNOME Documentation Project</holder>
 	 </copyright>	 
 	 <copyright>
 	   <year>2005</year>
@@ -42,6 +46,9 @@
 	 <publisher role="maintainer"> 
 		<publishername> MATE Documentation Project </publishername> 
 	 </publisher> 
+	 <publisher>
+		<publishername> GNOME Documentation Project </publishername>
+	 </publisher>
 
 &legal;
 <!-- This file  contains link to license for the documentation (GNU FDL), and 
@@ -50,17 +57,24 @@
 
 	 <authorgroup> 
 		<author> 
+		  <firstname>MATE Documentation Team</firstname>
+		  <surname></surname>
+		  <affiliation>
+			 <orgname>MATE Desktop</orgname>
+		  </affiliation>
+		</author>
+		<author>
 		  <firstname>Michiel</firstname> 
 		  <surname>Sikkes</surname> 
 		  <affiliation> 
-			 <orgname>MATE Documentation Project</orgname> 
+			 <orgname>GNOME Documentation Project</orgname>
 			 <address> <email>michiel@eyesopened.nl</email> </address> 
 		  </affiliation> 
 		</author> 
 		<author>
 		  <firstname>Davyd</firstname><surname>Madeley</surname>
 		  <affiliation>
-		    <orgname>MATE Project</orgname>
+		    <orgname>GNOME Project</orgname>
 		    <address><email>davyd@madeley.id.au</email></address>
 		  </affiliation>
 		</author>
@@ -78,23 +92,31 @@
 -->
 	 </authorgroup>
 	 
-	 <releaseinfo revision="2.26" role="review"/>
+	 <releaseinfo revision="1.10.2" role="review"/>
 	 
 	 <revhistory>
 	   <revision>
-	     <revnumber>Version 2.10</revnumber>
+	     <revnumber>&applet; V&manrevision;</revnumber>
+	     <date>&date;</date>
+	     <revdescription>
+	       <para role="author">MATE Documentation Team</para>
+	       <para role="publisher">MATE Documentation Project</para>
+	     </revdescription>
+	   </revision>
+	   <revision>
+	     <revnumber>Panel Trash 2.10</revnumber>
 	     <date>March 2005</date>
 	     <revdescription>
 	       <para role="author">Davyd Madeley</para>
-         <para role="publisher">MATE Documentation Project</para> 	       
+         <para role="publisher">GNOME Documentation Project</para>
 	     </revdescription>
 	   </revision>
 		<revision> 
-		  <revnumber>2.8 Applet Manual V&manrevision;</revnumber> 
+		  <revnumber>Panel Trash V2.8</revnumber>
 		  <date>July 2004</date> 
 		  <revdescription> 
 			 <para role="author">Michiel Sikkes</para> 
-			 <para role="publisher">MATE Documentation Project</para> 
+			 <para role="publisher">GNOME Documentation Project</para>
 		  </revdescription> 
 		</revision>
 	  </revhistory>
