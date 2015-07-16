@@ -1,6 +1,6 @@
 @YELP_HELP_RULES@
 
-HELP_ID = mate-stickynotes_applet
+HELP_ID = mate-stickynotes-applet
 HELP_FILES = index.docbook legal.xml
 
 HELP_MEDIA = figures/stickynote-right-menu-lock.png \
