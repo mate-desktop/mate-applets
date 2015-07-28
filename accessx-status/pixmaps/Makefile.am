@@ -1,9 +1,9 @@
-accessx_status_iconsdir = $(iconsdir)/mate/48x48/apps
-accessx_status_icons_DATA = ax-applet.png
+accessx_status_iconsdir = $(iconsdir)/hicolor/48x48/apps
+accessx_status_icons_DATA = mate-ax-applet.png
 
 accessx_status_pixmapsdir  = $(pixmapsdir)/mate-accessx-status-applet
 accessx_status_pixmaps_DATA =	\
-	ax-applet.png			\
+	mate-ax-applet.png		\
 	ax-key-base.png			\
 	ax-key-inverse.png		\
 	ax-key-none.png			\
@@ -40,7 +40,7 @@ accessx_status_pixmaps_DATA =	\
 	ax-slowkeys-no.png		\
 	ax-bouncekeys.png
 
-gtk_update_icon_cache = gtk-update-icon-cache -f -t $(iconsdir)/mate
+gtk_update_icon_cache = gtk-update-icon-cache -f -t $(iconsdir)/hicolor
 install-data-hook: update-icon-cache
 uninstall-hook: update-icon-cache
 update-icon-cache:

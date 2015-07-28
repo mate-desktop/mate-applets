@@ -33,7 +33,7 @@
 #include <mate-panel-applet-gsettings.h>
 
 /* Applet constants */
-#define APPLET_ICON    "terminal"
+#define APPLET_ICON    "utilities-terminal"
 #define ERROR_OUTPUT   "#"
 
 /* GSettings constants */

@@ -61,7 +61,7 @@ typedef struct {
 } AppletStockIcon;
 
 static AppletStockIcon stock_icons[] = {
-	{ACCESSX_APPLET, "ax-applet.png", GTK_STATE_NORMAL, True},
+	{ACCESSX_APPLET, "mate-ax-applet.png", GTK_STATE_NORMAL, True},
 	{ACCESSX_BASE_ICON, "ax-key-base.png", GTK_STATE_NORMAL, True},
 	{ACCESSX_BASE_ICON, "ax-key-none.png", GTK_STATE_INSENSITIVE, False},
 	{ACCESSX_BASE_ICON, "ax-key-inverse.png", GTK_STATE_SELECTED, False},
@@ -149,7 +149,7 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		"authors", authors,
 		"documenters", documenters,
 		"translator-credits", _("translator-credits"),
-		"logo-icon-name", "ax-applet",
+		"logo-icon-name", "mate-ax-applet",
 		NULL);
 }
 
