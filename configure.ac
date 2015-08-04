@@ -316,7 +316,7 @@ if test x$disable_battstat = xno; then
 	   ;;
        # list of supported OS cores that do not use libapm
        i386-*-freebsd*|*-*-netbsd*|*-*-openbsd*|*-*kfreebsd*-gnu)
-          if [ -n "${OS_SYS}" ]; then
+          if test -n "${OS_SYS}"; then
 	       ACPIINC="-I${OS_SYS}"
 	   else
 	       ACPIINC="-I/usr/src/sys"
