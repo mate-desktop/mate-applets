@@ -114,11 +114,6 @@ typedef struct _ProgressData {
   /* label changed type (% <-> h:mm) and must be refreshed */
   gboolean refresh_label;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  /* so we don't have to alloc/dealloc this every refresh */
-  GdkGC *pixgc;
-#endif
-
   /* the main table that contains the visual elements */
   GtkWidget *table;
 
