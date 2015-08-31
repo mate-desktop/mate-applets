@@ -1208,46 +1208,6 @@ static void accessx_status_applet_resize(GtkWidget* widget, int size, gpointer u
 	/* TODO: either rescale icons to fit panel, or tile them when possible */
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-static void accessx_status_applet_background(MatePanelApplet* a, MatePanelAppletBackgroundType type, GdkColor* color, GdkPixmap* pixmap, gpointer user_data)
-{
-	AccessxStatusApplet* sapplet = user_data;
-
-	GtkRcStyle* rc_style;
-	GtkStyle* style;
-
-	/* reset style */
-	gtk_widget_set_style(GTK_WIDGET(sapplet->applet), NULL);
-	rc_style = gtk_rc_style_new();
-	gtk_widget_modify_style(GTK_WIDGET(sapplet->applet), rc_style);
-	g_object_unref(rc_style);
-
-	switch (type)
-	{
-		case PANEL_COLOR_BACKGROUND:
-			gtk_widget_modify_bg(GTK_WIDGET(sapplet->applet), GTK_STATE_NORMAL, color);
-			break;
-
-		case PANEL_PIXMAP_BACKGROUND:
-			style = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(sapplet->applet)));
-
-			if (style->bg_pixmap[GTK_STATE_NORMAL])
-			{
-				g_object_unref(style->bg_pixmap[GTK_STATE_NORMAL]);
-			}
-
-			style->bg_pixmap[GTK_STATE_NORMAL] = g_object_ref(pixmap);
-			gtk_widget_set_style(GTK_WIDGET(sapplet->applet), style);
-			g_object_unref(style);
-			break;
-
-		case PANEL_NO_BACKGROUND:
-		default:
-			break;
-	}
-}
-#endif
-
 static gboolean button_press_cb(GtkWidget* widget, GdkEventButton* event, AccessxStatusApplet* sapplet)
 {
 	if (event->button == 1 && event->type == GDK_BUTTON_PRESS)
@@ -1347,9 +1307,6 @@ static gboolean accessx_status_applet_fill(MatePanelApplet* applet)
 		"signal::destroy", accessx_status_applet_destroy, sapplet,
 		"signal::change_orient", accessx_status_applet_reorient, sapplet,
 		"signal::change_size", accessx_status_applet_resize, sapplet,
-#if !GTK_CHECK_VERSION (3, 0, 0)
-		"signal::change_background", accessx_status_applet_background, sapplet,
-#endif
 		NULL);
 
 	g_signal_connect(sapplet->applet, "button_press_event", G_CALLBACK(button_press_cb), sapplet);
