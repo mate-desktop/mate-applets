@@ -404,7 +404,7 @@ fi
 
 AC_ARG_WITH([cpufreq-lib],
 	AS_HELP_STRING([--with-cpufreq-lib=lib], [library to use for cpufreq applet @<:@default=cpufreq@:>@]),
-	[with_cpufreq_lib=$withval], [with_cpufreq_lib="cpufreq"])
+	[with_cpufreq_lib=$withval], [with_cpufreq_lib="cpupower"])
 
 AC_CHECK_HEADER(cpufreq.h, have_libcpufreq=yes, have_libcpufreq=no)
 LIBCPUFREQ_LIBS=
