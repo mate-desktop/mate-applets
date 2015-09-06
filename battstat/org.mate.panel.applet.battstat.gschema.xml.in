@@ -1,0 +1,49 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.battstat">
+    <key name="red-value" type="i">
+      <default>15</default>
+      <summary>Red value level</summary>
+      <description>The battery level below which the battery is displayed as red. Also the value at which the low battery warning is displayed.</description>
+    </key>
+    <key name="red-value-is-time" type="b">
+      <default>false</default>
+      <summary>Warn on low time rather than low percentage</summary>
+      <description>Use the value defined in red_value as a time remaining to show the warning dialog rather than a percentage.</description>
+    </key>
+    <key name="low-battery-notification" type="b">
+      <default>true</default>
+      <summary>Low Battery Notification</summary>
+      <description>Notify user when the battery is low.</description>
+    </key>
+    <key name="full-battery-notification" type="b">
+      <default>false</default>
+      <summary>Full Battery Notification</summary>
+      <description>Notify user when the battery is full.</description>
+    </key>
+    <key name="beep" type="b">
+      <default>false</default>
+      <summary>Beep for warnings</summary>
+      <description>Beep when displaying a warning.</description>
+    </key>
+    <key name="drain-from-top" type="b">
+      <default>false</default>
+      <summary>Drain from top</summary>
+      <description>Show the battery meter draining from the top of the battery. Only implemented for traditional battery view.</description>
+    </key>
+    <key name="show-status" type="b">
+      <default>true</default>
+      <summary>Upright (small) battery</summary>
+      <description>Show the upright, smaller battery on the panel.</description>
+    </key>
+    <key name="show-battery" type="b">
+      <default>false</default>
+      <summary>Show the horizontal battery</summary>
+      <description>Show the traditional, horizontal battery on the panel.</description>
+    </key>
+    <key name="show-text" type="i">
+      <default>0</default>
+      <summary>Show the time/percent label</summary>
+      <description>0 for no label, 1 for percentage and 2 for time remaining.</description>
+    </key>
+  </schema>
+</schemalist>

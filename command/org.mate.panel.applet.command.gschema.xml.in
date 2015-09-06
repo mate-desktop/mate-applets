@@ -1,0 +1,24 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.command">
+    <key name="command" type="s">
+      <default>'date +%T'</default>
+      <summary>Command to execute</summary>
+      <description>Command/script to execute to get the output</description>
+    </key>
+    <key name="interval" type="i">
+      <default>1</default>
+      <summary>Interval for the command</summary>
+      <description>Interval to execute the command (in seconds)</description>
+    </key>
+    <key name="width" type="i">
+      <default>60</default>
+      <summary>Width of output</summary>
+      <description>Number of characters to display</description>
+    </key>
+    <key name="show-icon" type="b">
+      <default>false</default>
+      <summary>Show icon</summary>
+      <description>If applet icon is shown or not</description>
+    </key>
+  </schema>
+</schemalist>

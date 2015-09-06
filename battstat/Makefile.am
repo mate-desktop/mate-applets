@@ -60,11 +60,9 @@ battstat_applet_LDADD = \
 			 -lm
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.panel.applet.battstat.gschema.xml
+batstat_gschema_in_files = org.mate.panel.applet.battstat.gschema.xml.in
+gsettings_SCHEMAS = $(batstat_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.BattstatApplet.mate-panel-applet.in
@@ -87,7 +85,7 @@ org.mate.panel.applet.BattstatAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 uidir = $(datadir)/mate/ui
 ui_DATA = battstat-applet-menu.xml
@@ -97,7 +95,7 @@ EXTRA_DIST = 							\
 	$(ui_DATA)						\
 	org.mate.applets.BattstatApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
-	$(gsettings_SCHEMAS).in.in
+	$(batstat_gschema_in_files)
 
 
 -include $(top_srcdir)/git.mk

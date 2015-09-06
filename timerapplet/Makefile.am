@@ -33,15 +33,13 @@ org.mate.panel.applet.TimerAppletFactory.service: $(service_in_files)
 		$< > $@
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.panel.applet.timer.gschema.xml
+timer_gschema_in_files = org.mate.panel.applet.timer.gschema.xml.in
+gsettings_SCHEMAS = $(timer_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 EXTRA_DIST = \
 	$(applets_in_files).in \
 	$(service_in_files) \
-	$(gsettings_SCHEMAS).in.in
+	$(timer_gschema_in_files)
 
-CLEANFILES = $(applets_DATA) $(applets_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applets_DATA) $(applets_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid

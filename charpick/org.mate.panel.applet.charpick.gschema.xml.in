@@ -1,0 +1,14 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.charpick">
+    <key name="current-list" type="s">
+      <default>''</default>
+      <summary>Characters shown on applet startup</summary>
+      <description>The string that the user had selected when the applet was last used. This string will be displayed when the user starts the applet.</description>
+    </key>
+    <key name="chartable" type="as">
+      <default>[]</default>
+      <summary>List of available palettes</summary>
+      <description>List of strings containing the available palettes.</description>
+    </key>
+  </schema>
+</schemalist>

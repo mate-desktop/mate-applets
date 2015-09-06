@@ -46,11 +46,9 @@ uidir = $(datadir)/mate/ui
 ui_DATA = geyes-applet-menu.xml
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.panel.applet.geyes.gschema.xml
+geyes_gschema_in_files = org.mate.panel.applet.geyes.gschema.xml.in
+gsettings_SCHEMAS = $(geyes_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 themesdir = $(pkgdatadir)/geyes
 
@@ -61,13 +59,13 @@ icons =	\
 	mate-eyes-applet.22.png \
 	mate-eyes-applet.16.png
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 EXTRA_DIST = \
 	     README.themes					\
 	     org.mate.applets.GeyesApplet.mate-panel-applet.in.in 	\
              $(service_in_files)				\
-	     $(gsettings_SCHEMAS).in.in				\
+	     $(geyes_gschema_in_files)				\
 	     $(ui_DATA)						\
 	     $(icons)
 

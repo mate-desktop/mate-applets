@@ -27,7 +27,7 @@ dnl ***************************************************************************
 
 AM_MAINTAINER_MODE
 
-IT_PROG_INTLTOOL([0.35.0])
+IT_PROG_INTLTOOL([0.50.1])
 PKG_PROG_PKG_CONFIG([0.19])
 
 AC_PROG_CC
@@ -563,8 +563,10 @@ accessx-status/pixmaps/Makefile
 drivemount/Makefile
 drivemount/help/Makefile
 multiload/Makefile
+multiload/org.mate.panel.applet.multiload.gschema.xml
 multiload/docs/Makefile
 charpick/Makefile
+charpick/org.mate.panel.applet.charpick.gschema.xml
 charpick/help/Makefile
 invest-applet/Makefile
 invest-applet/docs/Makefile
@@ -575,14 +577,17 @@ invest-applet/data/art/Makefile
 mateweather/Makefile
 mateweather/docs/Makefile
 geyes/Makefile
+geyes/org.mate.panel.applet.geyes.gschema.xml
 geyes/themes/Makefile
 geyes/docs/Makefile
 battstat/Makefile
+battstat/org.mate.panel.applet.battstat.gschema.xml
 battstat/apmlib/Makefile
 battstat/sounds/Makefile
 battstat/docs/Makefile
 man/Makefile
 stickynotes/Makefile
+stickynotes/org.mate.stickynotes.gschema.xml
 stickynotes/pixmaps/Makefile
 stickynotes/docs/Makefile
 trashapplet/Makefile
@@ -590,11 +595,14 @@ trashapplet/src/Makefile
 trashapplet/docs/Makefile
 cpufreq/Makefile
 cpufreq/src/Makefile
+cpufreq/org.mate.panel.applet.cpufreq.gschema.xml
 cpufreq/src/cpufreq-selector/Makefile
 cpufreq/pixmaps/Makefile
 cpufreq/help/Makefile
 timerapplet/Makefile
+timerapplet/org.mate.panel.applet.timer.gschema.xml
 command/Makefile
+command/org.mate.panel.applet.command.gschema.xml
 null_applet/Makefile
 ])
 

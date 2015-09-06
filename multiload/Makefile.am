@@ -30,16 +30,14 @@ mate_multiload_applet_LDADD = \
 				-lm
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.panel.applet.multiload.gschema.xml
+multiload_gschema_in_files = org.mate.panel.applet.multiload.gschema.xml.in
+gsettings_SCHEMAS = $(multiload_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 EXTRA_DIST =							\
 	org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
-	$(gsettings_SCHEMAS).in.in			\
+	$(multiload_gschema_in_files)				\
 	$(ui_DATA)
 
 uidir		= $(datadir)/mate/ui
@@ -66,6 +64,6 @@ org.mate.panel.applet.MultiLoadAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 -include $(top_srcdir)/git.mk

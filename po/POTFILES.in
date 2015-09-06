@@ -7,19 +7,19 @@ accessx-status/applet.c
 battstat/battstat_applet.c
 [type: gettext/glade]battstat/battstat_applet.ui
 [type: gettext/ini]battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in
-battstat/org.mate.panel.applet.battstat.gschema.xml.in.in
+[type: gettext/gsettings]battstat/org.mate.panel.applet.battstat.gschema.xml.in
 battstat/properties.c
 battstat/sounds/mate-battstat_applet.soundlist.in
 charpick/charpick.c
 [type: gettext/ini]charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in
-charpick/org.mate.panel.applet.charpick.gschema.xml.in.in
+[type: gettext/gsettings]charpick/org.mate.panel.applet.charpick.gschema.xml.in
 charpick/properties.c
 command/command.c
 command/org.mate.applets.CommandApplet.mate-panel-applet.in.in
-command/org.mate.panel.applet.command.gschema.xml.in.in
+[type: gettext/gsettings]command/org.mate.panel.applet.command.gschema.xml.in
 [type: gettext/glade]cpufreq/cpufreq-preferences.ui
 [type: gettext/ini]cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in
-cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.in
+[type: gettext/gsettings]cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in
 cpufreq/src/cpufreq-applet.c
 cpufreq/src/cpufreq-prefs.c
 cpufreq/src/cpufreq-monitor-cpuinfo.c
@@ -32,7 +32,7 @@ drivemount/drivemount.c
 [type: gettext/ini]drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in
 geyes/geyes.c
 [type: gettext/ini]geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in
-geyes/org.mate.panel.applet.geyes.gschema.xml.in.in
+[type: gettext/gsettings]geyes/org.mate.panel.applet.geyes.gschema.xml.in
 geyes/themes.c
 mateweather/mateweather-about.c
 mateweather/mateweather-applet.c
@@ -57,7 +57,7 @@ multiload/load-graph.c
 multiload/main.c
 multiload/netspeed.c
 [type: gettext/ini]multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in
-multiload/org.mate.panel.applet.multiload.gschema.xml.in.in
+[type: gettext/gsettings]multiload/org.mate.panel.applet.multiload.gschema.xml.in
 multiload/properties.c
 null_applet/MATE_CDPlayerApplet.server.in
 null_applet/MATE_MailcheckApplet_Factory.server.in
@@ -69,11 +69,11 @@ null_applet/null_applet.c
 [type: gettext/ini]stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in
 stickynotes/stickynotes.c
 [type: gettext/glade]stickynotes/stickynotes.ui
-stickynotes/org.mate.stickynotes.gschema.xml.in.in
+[type: gettext/gsettings]stickynotes/org.mate.stickynotes.gschema.xml.in
 stickynotes/stickynotes_applet.c
 stickynotes/stickynotes_applet_callbacks.c
 stickynotes/stickynotes_callbacks.c
-timerapplet/org.mate.panel.applet.timer.gschema.xml.in.in
+[type: gettext/gsettings]timerapplet/org.mate.panel.applet.timer.gschema.xml.in
 timerapplet/timerapplet.c
 [type: gettext/ini]trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in
 trashapplet/src/trashapplet.c

@@ -41,21 +41,19 @@ org.mate.panel.applet.CharpickerAppletFactory.service: $(service_in_files)
             $< > $@
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.panel.applet.charpick.gschema.xml
+charpick_gschema_in_files = org.mate.panel.applet.charpick.gschema.xml.in
+gsettings_SCHEMAS = $(charpick_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 uidir = $(datadir)/mate/ui
 ui_DATA = charpick-applet-menu.xml
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 EXTRA_DIST =							\
 	org.mate.applets.CharpickerApplet.mate-panel-applet.in.in	\
 	$(service_in_files)					\
 	$(ui_DATA)						\
-	$(gsettings_SCHEMAS).in.in
+	$(charpick_gschema_in_files)
 
 -include $(top_srcdir)/git.mk

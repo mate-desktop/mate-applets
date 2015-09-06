@@ -1,11 +1,9 @@
 SUBDIRS = help pixmaps src
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.panel.applet.cpufreq.gschema.xml
+cpufreq_gschema_in_files = org.mate.panel.applet.cpufreq.gschema.xml.in
+gsettings_SCHEMAS = $(cpufreq_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.CPUFreqApplet.mate-panel-applet.in
@@ -37,7 +35,6 @@ CLEANFILES = \
              $(applet_DATA)			\
              $(applet_DATA).in			\
              $(service_DATA)			\
-	     $(gsettings_SCHEMAS_in)            \
 	     $(gsettings_SCHEMAS)               \
 	     *.gschema.valid                    \
 	     *.bak                              \
@@ -46,7 +43,7 @@ CLEANFILES = \
 EXTRA_DIST = \
              org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in	\
              $(service_in_files)				\
-	     $(gsettings_SCHEMAS).in.in				\
+	     $(cpufreq_gschema_in_files)			\
 	     $(builder_DATA)                 			\
 	     $(ui_DATA)
 	     

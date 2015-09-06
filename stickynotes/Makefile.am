@@ -48,11 +48,9 @@ uidir = $(datadir)/mate/ui
 ui_DATA = $(ui_files)
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.stickynotes.gschema.xml
+stickynotes_gschema_in_files = org.mate.stickynotes.gschema.xml.in
+gsettings_SCHEMAS = $(stickynotes_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 convertdir = $(datadir)/MateConf/gsettings
 convert_DATA = stickynotes-applet.convert
@@ -76,14 +74,14 @@ org.mate.panel.applet.StickyNotesAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in)  $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 endif
 
 EXTRA_DIST = \
 	     $(builder_files) \
 	     $(ui_files) \
-	     $(gsettings_SCHEMAS).in.in \
+	     $(stickynotes_gschema_in_files) \
 	     $(convert_DATA) \
              $(service_in_files) \
 	     org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in
