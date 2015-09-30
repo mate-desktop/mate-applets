@@ -20,7 +20,6 @@ LIBNOTIFY_REQUIRED=0.7.0
 UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
-MATE_ICON_THEME_REQUIRED=1.1.0
 LIBXML_REQUIRED=2.5.0
 POLKIT_REQUIRED=0.92
 dnl ***************************************************************************
@@ -121,9 +120,6 @@ dnl ***************************************************************************
 dnl ***************************************************************************
 dnl *** Use pkg-config to check for dependancies                            ***
 dnl ***************************************************************************
-
-dnl -- Check for mate-icon-theme (required) ----------------------------------
-PKG_CHECK_MODULES(GIT, mate-icon-theme >= $MATE_ICON_THEME_REQUIRED)
 
 dnl -- check for gio (required) ------------------------------------------
 PKG_CHECK_MODULES(GIO, gio-2.0 >= $GIO_REQUIRED gio-unix-2.0)
