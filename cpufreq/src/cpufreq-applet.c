@@ -16,7 +16,7 @@
  *  License along with this library; if not, write to the Free
  *  Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * Authors : Carlos García Campos <carlosgc@gnome.org>
+ * Authors : Carlos GarcÃ­a Campos <carlosgc@gnome.org>
  */
 
 #ifdef HAVE_CONFIG_H
@@ -543,7 +543,20 @@ cpufreq_applet_menu_popup (CPUFreqApplet *applet,
 
         if (!menu)
                 return;
-
+                
+        /*Set up theme and transparency support*/
+#if GTK_CHECK_VERSION (3, 0, 0) 
+        GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
+        /* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+        GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+        GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+        gtk_widget_set_visual(GTK_WIDGET(toplevel), visual); 
+        /* Set menu and it's toplevel window to follow panel theme */
+        GtkStyleContext *context;
+        context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+        gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+        gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif
         gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
                         cpufreq_applet_popup_position_menu,
                         (gpointer) applet,
