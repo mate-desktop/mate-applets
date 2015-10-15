@@ -953,6 +953,23 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
         }
 
 	if (horizontal) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		applet->labels_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+		if ((label_size + pixmap_size) <= panel_size)
+			applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+		else
+			applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+	} else {
+                if (total_size <= panel_size) {
+                        applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+                        applet->labels_box  = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+                } else if ((label_size + unit_label_size) <= (panel_size - size_step)) {
+                        applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+                        applet->labels_box  = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+                } else {
+                        applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+                        applet->labels_box  = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+#else
 		applet->labels_box = gtk_hbox_new (FALSE, 2);
 		if ((label_size + pixmap_size) <= panel_size)
 			applet->box = gtk_vbox_new (FALSE, 2);
@@ -968,6 +985,7 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
                 } else {
                         applet->box = gtk_vbox_new (FALSE, 2);
                         applet->labels_box  = gtk_vbox_new (FALSE, 2);
+#endif
                 }
 	}
 
