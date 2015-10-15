@@ -543,7 +543,20 @@ cpufreq_applet_menu_popup (CPUFreqApplet *applet,
 
         if (!menu)
                 return;
-
+                
+#if GTK_CHECK_VERSION (3, 0, 0)
+        /*Set up theme and transparency support*/
+        GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
+        /* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+        GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+        GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+        gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+        /* Set menu and it's toplevel window to follow panel theme */
+        GtkStyleContext *context;
+        context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+        gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+        gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif
         gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
                         cpufreq_applet_popup_position_menu,
                         (gpointer) applet,
