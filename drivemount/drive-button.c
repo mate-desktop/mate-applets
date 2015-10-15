@@ -989,4 +989,18 @@ drive_button_ensure_popup (DriveButton *self)
 	g_free (label);
 	gtk_container_add (GTK_CONTAINER (self->popup_menu), item);
     }
+       /*Set up custom theme and transparency support */
+#if GTK_CHECK_VERSION (3, 0, 0)  
+	GtkWidget *toplevel = gtk_widget_get_toplevel (self->popup_menu);
+	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+	GdkScreen *screen2 = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkVisual *visual = gdk_screen_get_rgba_visual(screen2);
+	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual); 
+	/*set menu and it's toplevel window to follow panel theme */
+	GtkStyleContext *context;
+	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+	gtk_style_context_remove_class (context,GTK_STYLE_CLASS_BACKGROUND);
+	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif 
 }

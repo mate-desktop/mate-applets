@@ -319,6 +319,20 @@ populate_menu (charpick_data *curr_data)
 		list = g_list_next (list);
 	}
 	build_table(curr_data);
+	
+	/*Set up custom theme and transparency support*/
+#if GTK_CHECK_VERSION (3, 0, 0) 
+	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
+	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual); 
+	/* Set menu and it's toplevel window to follow panel theme */
+	GtkStyleContext *context;
+	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif	
 }
 
 static void
