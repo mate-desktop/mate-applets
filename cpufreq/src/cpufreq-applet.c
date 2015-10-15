@@ -432,17 +432,17 @@ cpufreq_applet_size_request (GtkWidget *widget, GtkRequisition *requisition)
 	if (applet->orient == MATE_PANEL_APPLET_ORIENT_LEFT ||
 	    applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
 		return;
-
+	/*Specify numerical values so labels in gtk3 don't get zero width  */
 	if (applet->show_freq) {
-		labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
+		labels_width += 50;
 	}
 
 	if (applet->show_perc) {
-		labels_width += cpufreq_applet_get_max_perc_width (applet);
+		labels_width += 50;
 	}
 
 	if (applet->show_unit) {
-		labels_width += cpufreq_applet_get_max_unit_width (applet);
+		labels_width += 20;
 	}
 
 	if (applet->show_icon) {
@@ -521,7 +521,7 @@ cpufreq_applet_popup_position_menu (GtkMenu  *menu,
 
         *x = menu_xpos;
         *y = menu_ypos;
-        *push_in = TRUE;
+        if (push_in) *push_in = FALSE;  /*fix botttom panel menu rendering in gtk3*/
 }
 
 static void
