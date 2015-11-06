@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-06 21:58+0200\n"
+"POT-Creation-Date: 2015-11-06 15:28+0300\n"
 "PO-Revision-Date: 2015-10-08 14:50+0000\n"
 "Last-Translator: Ir0nsh007er <eerlemm@hotmail.com>\n"
 "Language-Team: French (Canada) (http://www.transifex.com/mate/MATE/language/fr_CA/)\n"
@@ -28,8 +28,8 @@ msgstr ""
 #. about.set_documenters([])
 #. translators: These appear in the About dialog, usual format applies.
 #: ../accessx-status/applet.c:151 ../battstat/battstat_applet.c:1214
-#: ../charpick/charpick.c:637 ../command/command.c:115
-#: ../cpufreq/src/cpufreq-applet.c:680 ../drivemount/drivemount.c:122
+#: ../charpick/charpick.c:651 ../command/command.c:115
+#: ../cpufreq/src/cpufreq-applet.c:711 ../drivemount/drivemount.c:122
 #: ../geyes/geyes.c:173 ../mateweather/mateweather-about.c:54
 #: ../invest-applet/invest/about.py:34 ../multiload/main.c:70
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
@@ -56,7 +56,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr ""
 
 #: ../accessx-status/applet.c:225 ../battstat/battstat_applet.c:71
-#: ../charpick/charpick.c:718 ../cpufreq/src/cpufreq-applet.c:138
+#: ../charpick/charpick.c:732 ../cpufreq/src/cpufreq-applet.c:138
 #: ../drivemount/drivemount.c:160 ../geyes/geyes.c:343
 #: ../mateweather/mateweather-applet.c:122 ../multiload/main.c:464
 #: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:80
@@ -64,7 +64,7 @@ msgid "_Help"
 msgstr "_Aide"
 
 #: ../accessx-status/applet.c:226 ../battstat/battstat_applet.c:74
-#: ../charpick/charpick.c:721 ../command/command.c:78
+#: ../charpick/charpick.c:735 ../command/command.c:78
 #: ../cpufreq/src/cpufreq-applet.c:141 ../drivemount/drivemount.c:163
 #: ../geyes/geyes.c:346 ../mateweather/mateweather-applet.c:125
 #: ../multiload/main.c:467 ../stickynotes/stickynotes_applet.c:48
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Shows the status of keyboard accessibility features"
 msgstr ""
 
-#: ../battstat/battstat_applet.c:68 ../charpick/charpick.c:715
+#: ../battstat/battstat_applet.c:68 ../charpick/charpick.c:729
 #: ../command/command.c:77 ../cpufreq/src/cpufreq-applet.c:135
 #: ../geyes/geyes.c:340 ../mateweather/mateweather-applet.c:119
 #: ../multiload/main.c:458 ../stickynotes/stickynotes_applet.c:42
@@ -345,7 +345,8 @@ msgstr ""
 msgid "Notifications"
 msgstr ""
 
-#. TRANSLATOR: This is the beginning of the sentence
+#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
+#. drops to: [XX] percent/minutes remaining'
 #: ../battstat/battstat_applet.ui.h:12
 msgid "_Warn when battery charge drops to:"
 msgstr ""
@@ -462,40 +463,40 @@ msgstr ""
 msgid "Battery fully re-charged"
 msgstr ""
 
-#: ../charpick/charpick.c:456
+#: ../charpick/charpick.c:470
 msgid "Available palettes"
 msgstr ""
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:503
+#: ../charpick/charpick.c:517
 #, c-format
 msgid "Insert \"%s\""
 msgstr ""
 
-#: ../charpick/charpick.c:506
+#: ../charpick/charpick.c:520
 msgid "Insert special character"
 msgstr ""
 
-#: ../charpick/charpick.c:510
+#: ../charpick/charpick.c:524
 #, c-format
 msgid "insert special character %s"
 msgstr ""
 
-#: ../charpick/charpick.c:632
+#: ../charpick/charpick.c:646
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: ../charpick/charpick.c:744 ../charpick/charpick.c:758
+#: ../charpick/charpick.c:758 ../charpick/charpick.c:772
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:456
 msgid "Character Palette"
 msgstr ""
 
-#: ../charpick/charpick.c:744
+#: ../charpick/charpick.c:758
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr ""
@@ -673,7 +674,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr ""
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:1018 ../cpufreq/src/cpufreq-applet.c:1073
+#: ../cpufreq/src/cpufreq-applet.c:1067 ../cpufreq/src/cpufreq-applet.c:1122
 msgid "CPU Frequency Scaling Monitor"
 msgstr ""
 
@@ -712,15 +713,15 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:648 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:675
+#: ../cpufreq/src/cpufreq-applet.c:706
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:1074
+#: ../cpufreq/src/cpufreq-applet.c:1123
 msgid "This utility shows the current CPU Frequency"
 msgstr ""
 
