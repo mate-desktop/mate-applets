@@ -1000,7 +1000,6 @@ drive_button_ensure_popup (DriveButton *self)
 	/*set menu and it's toplevel window to follow panel theme */
 	GtkStyleContext *context;
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-	gtk_style_context_remove_class (context,GTK_STYLE_CLASS_BACKGROUND);
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
 	gtk_style_context_add_class(context,"mate-panel-menu-bar");
 #endif
