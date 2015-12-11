@@ -1,0 +1,64 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.netspeed">
+    <key name="device" type="s">
+      <default>''</default>
+      <summary>Device to monitor</summary>
+      <description>The name of the device to monitor</description>
+    </key>
+    <key name="show-sum" type="b">
+      <default>false</default>
+      <summary>Show sum speed</summary>
+      <description>If true, show sum of inbound/outbound speed instead of separated ones.</description>
+    </key>
+    <key name="show-bits" type="b">
+      <default>false</default>
+      <summary>Show bits</summary>
+      <description>If true, show speed in bits instead of bytes.</description>
+    </key>
+    <key name="show-icon" type="b">
+      <default>true</default>
+      <summary>Show icon</summary>
+      <description>If true, show main icon.</description>
+    </key>
+    <key name="short-unit" type="b">
+      <default>false</default>
+      <summary>Short unit legend</summary>
+      <description>If true, shorten unit legend to one letter: lowercase for bits / uppercase for Bytes.</description>
+    </key>
+    <key name="change-icon" type="b">
+      <default>true</default>
+      <summary>Change icon</summary>
+      <description>If true, change the icon due to selected device.</description>
+    </key>
+    <key name="auto-change-device" type="b">
+      <default>true</default>
+      <summary>Auto change device</summary>
+      <description>If true, change automatically the selected device.</description>
+    </key>
+    <key name="in-color" type="s">
+      <default>'#df0028004700'</default>
+      <summary>In color</summary>
+      <description>The color of the graph of the inbound traffic</description>
+    </key>
+    <key name="out-color" type="s">
+      <default>'#37002800df00'</default>
+      <summary>Out color</summary>
+      <description>The color of the graph of the outbound traffic</description>
+    </key>
+    <key name="up-command" type="s">
+      <default>''</default>
+      <summary>Up command</summary>
+      <description>Command the execute to activate the device</description>
+    </key>
+    <key name="down-command" type="s">
+      <default>''</default>
+      <summary>Down command</summary>
+      <description>Command the execute to shut down the device</description>
+    </key>
+    <key name="show-quality-icon" type="b">
+      <default>true</default>
+      <summary>Show signal quality icon</summary>
+      <description>If true, show signal quality icon for wireless devices.</description>
+    </key>
+  </schema>
+</schemalist>

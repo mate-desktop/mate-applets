@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+"http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appletversion "1.10.1">
+  <!ENTITY manrevision "1.3">
+  <!ENTITY date "July 2015">
+  <!ENTITY applet "Netspeed Applet">
+]>
+
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Mar 12, 2002
+  
+-->
+
+<article id="index" lang="en">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>&applet; Manual V&manrevision;</title>
+	<abstract role="description">
+      <para>&applet; is shows how much traffic occurs on a specified network device.</para>
+    </abstract>
+	 <copyright>
+		<year>2015</year>
+		<holder>MATE Documentation Project</holder> </copyright>
+    <copyright> 
+      <year>2002</year>
+      <holder>Jörgen Scheibengruber</holder>
+    </copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+-->
+    <publisher role="maintainer">
+      <publishername> MATE Documentation Project </publishername>
+    </publisher>
+    <publisher> 
+      <publishername>GNOME Documentation Project</publishername> 
+    </publisher>
+
+	&legal;
+    
+    <authorgroup>
+	  <author role="maintainer">
+	  <firstname>MATE Documentation Project</firstname>
+	  <surname></surname>
+	  <affiliation>
+		 <orgname>MATE Desktop</orgname>
+	  </affiliation>
+	  </author>
+      <author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+	<affiliation> 
+	  <orgname>GNOME Project</orgname>
+	</affiliation>
+	<email>mfcn@gmx.de</email>
+      </author>
+      
+       <author>
+	<firstname>Pedro</firstname>
+	<surname>Villavicencio Garrido</surname>
+	<affiliation>
+	  <orgname>GNOME Project</orgname>
+	</affiliation>
+	<email>pvillavi@gnome.org</email>
+      </author>
+<!--  This is appropriate place for other contributors: translators,
+      maintainers,  etc. Commented out by default.
+      <othercredit role="translator">
+	<firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+	  <orgname>Latin Translation Team</orgname>
+	  <address> <email>translator@gnome.org</email> </address>
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    
+    <revhistory>
+
+	<revision>
+	<revnumber>1.3</revnumber>
+	<date>July 2015</date>
+	<author>
+	<firstname>MATE Documentation Project</firstname>
+	<surname></surname>
+    </author>
+    </revision>
+
+	<revision>
+	<revnumber>1.2</revnumber>
+	<date>2006</date>
+	<author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+    <email>mfcn@gmx.de</email>
+    </author>
+    </revision>
+
+	<revision> 
+	<revnumber>1.1</revnumber> 
+	<date>2005</date>
+	<author>
+	<firstname>Pedro</firstname>
+	<surname>Villavicencio Garrido</surname>
+    <email>pvillavi@gnome.org</email>
+    </author>
+	</revision>
+    
+	<revision>
+	<revnumber>1.0</revnumber>
+	<date>2002</date>
+	<author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+    <email>mfcn@gmx.de</email>
+    </author>
+    </revision>
+    
+	</revhistory>
+    
+	<releaseinfo> This manual describes version &appletversion; of &applet;.
+    </releaseinfo>
+    <legalnotice>
+      <title>Feedback</title>
+      <para>
+        To report a bug or make a suggestion regarding the &applet; application or this manual, follow the directions in the <ulink url="help:mate-user-guide/feedback" type="help">MATE Feedback Page</ulink>.
+      </para>
+
+<!-- Translators may also add here feedback address for translations -->
+
+    </legalnotice>
+  </articleinfo>
+  <indexterm>
+    <primary>&applet;</primary>
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<sect1 id="netspeed_applet-about"> 
+<title>About &applet;</title>
+    <figure id="netspeed_applet-fig">
+      <title>Netspeed</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/netspeed_applet.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Netspeed.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <figure id="netspeed_applet-fig2">
+      <title>Netspeed showing the sum in a 48px panel.</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/eth_sum_48.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Netspeed showing the sum in a 48px panel.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>
+      <application>&applet;</application> displays the network traffic on a specified device
+      like eth0, ppp0, plip0, etc. More over it provides information about the configuration
+of the network device.
+    </para>
+    <sect2 id="netspeed-introduction-icons">	
+      <title>Netspeed Icons on Panel</title>
+      <informaltable frame="all">
+	<tgroup cols="2" colsep="1" rowsep="1">
+	  <colspec colname="COLSPEC0" colwidth="50*"/>
+	  <colspec colname="COLSPEC1" colwidth="50*"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="COLSPEC0"><para>Icon</para></entry>
+	      <entry colname="COLSPEC1"><para>Description</para></entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/loopback.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Loopback</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>
+		  The Loopback interface.
+		</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/ethernet.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Ethernet</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>
+		  Ethernet connection.
+		</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/ppp.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>PPP</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>
+		  Point to Point Protocol connection.
+		</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/wavelan.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Wireless</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>
+		  Wireless connection.
+		</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/plip.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>PLIP</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>
+		  Parallel Line Internet Protocol connection.
+		</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+    </sect2>
+    <sect2>
+      <title>To Add Netspeed to a Panel</title>
+      <para>To add <application>&applet;</application> to a panel, right-click on the panel, then choose  <menuchoice>
+	  <guimenu>Add to Panel</guimenu>
+	  <guisubmenu>Network</guisubmenu>
+	  <guimenuitem>&applet;</guimenuitem>
+	</menuchoice>.</para>
+    </sect2>
+  </sect1>
+  <sect1 id="netspeed_applet-settings"> 
+    <title>Settings</title>
+    <figure id="netspeed_applet_settings-fig">
+      <title>&applet; Settings</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/settings.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>&applet; Settings.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>
+      In this dialog you can change the settings of &applet;:
+    </para>
+    <itemizedlist mark="bullet">
+      <listitem><para>
+	<guilabel>Network device:</guilabel> Choose the network device that the applet should monitor from the
+	popdown list of the combobox. Usually all available devices are listed, however you can enter one yourself, too.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Update interval:</guilabel> Enter the time between two updates of the applet.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Label font size:</guilabel> Enter the size of the text displayed in the applet.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Show sum instead of in and out:</guilabel> If you check this box then the applet will show
+	the sum of the in and out rate. The applet will take only half of the space in the panel in this case.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Show bits/s (b/s) instead of bytes/s (B/s):</guilabel> Check this if you want the applet to
+	display bits per second instead of bytes/s.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Change icon according to the selected device:</guilabel> Usually the applet will show an icon
+	representing the type of network device you monitor. So it will show a phone for Point to Point connections
+	(ppp - modems, etc.), a network card for ethernet (eth), etc.
+	When this is unchecked, the applet will always show the network card icon, no matter which device you monitor.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Always monitor a connected device, if possible:</guilabel> When your connection is down, &applet; look for a running one for monitoring.
+      </para></listitem>
+    </itemizedlist> 
+  </sect1>
+  <sect1 id="netspeed_applet-details"> 
+    <title>The details dialog</title>
+    <figure id="netspeed_applet_details-fig">
+      <title>The details dialog</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/details.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>The details dialog</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>
+      This dialog shows you some useful information on the configuration of
+      your network device.
+    </para>
+    <itemizedlist mark="bullet">
+      <listitem><para>
+	<guilabel>Internet Address:</guilabel> The IP (Internet Protocol) address of the network device.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Netmask:</guilabel> The netmask which depends on the size of your LAN (Local Area Network).
+	A usual value is 255.255.255.0 (a class C network).
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Hardware Address:</guilabel> Often also referred to as the physical or MAC (Media Access Control)
+	address. A worldwide unique identifier for your network card.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>P-t-P Address:</guilabel> The internet address of the "other side" of your 
+	PPP (Point to Point Protocol) connection.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Bytes in:</guilabel> The amount of bytes that the network device has received since
+	it has been connected to the network.
+      </para></listitem>
+      <listitem><para>
+	<guilabel>Bytes out:</guilabel> The amout of bytes that the network device has sent since
+	it has been connected to the network.
+      </para></listitem>
+    </itemizedlist> 
+  </sect1>  
+</article> 

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appletversion "0.12">
+<!ENTITY manrevision "1.1">
+<!ENTITY date "April 2005">
+<!ENTITY applet "Netspeed Applet">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Mar 12, 2002
+  
+-->
+<article id="index" lang="el">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Εγχειρίδιο μικροεφαρμογής Ταχύτητα δικτύου V1.1</title>
+	<abstract role="description">
+      <para>Η μικροεφαρμογή Ταχύτητα δικτύου εμφανίζει το ποσό της κυκλοφορίας που υπάρχει σε μια καθορισμένη συσκευή δικτύου.</para>
+    </abstract>
+    <copyright> 
+      <year>2002</year>
+      <holder>Jörgen Scheibengruber</holder>
+    </copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+-->
+    <publisher> 
+      <publishername>Έργο τεκμηρίωσης του GNOME</publishername> 
+    </publisher>
+
+	  <legalnotice id="legalnotice">
+	<para>
+	  Permission is granted to copy, distribute and/or modify this
+	  document under the terms of the GNU Free Documentation
+	  License (GFDL), Version 1.1 or any later version published
+	  by the Free Software Foundation with no Invariant Sections,
+	  no Front-Cover Texts, and no Back-Cover Texts.  You can find
+	  a copy of the GFDL at this <ulink type="help" url="help:fdl">link</ulink> or in the file COPYING-DOCS
+	  distributed with this manual.
+         </para>
+         <para> This manual is part of a collection of GNOME manuals
+          distributed under the GFDL.  If you want to distribute this
+          manual separately from the collection, you can do so by
+          adding a copy of the license to the manual, as described in
+          section 6 of the license.
+	</para>
+
+	<para>
+	  Many of the names used by companies to distinguish their
+	  products and services are claimed as trademarks. Where those
+	  names appear in any GNOME documentation, and the members of
+	  the GNOME Documentation Project are made aware of those
+	  trademarks, then the names are in capital letters or initial
+	  capital letters.
+	</para>
+
+	<para>
+	  DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED
+	  UNDER  THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE
+	  WITH THE FURTHER UNDERSTANDING THAT:
+
+	  <orderedlist>
+		<listitem>
+		  <para>DOCUMENT IS PROVIDED ON AN "AS IS" BASIS,
+                    WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+                    IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES
+                    THAT THE DOCUMENT OR MODIFIED VERSION OF THE
+                    DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR
+                    A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE
+                    RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE
+                    OF THE DOCUMENT OR MODIFIED VERSION OF THE
+                    DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR
+                    MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT,
+                    YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY
+                    CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY
+                    SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER
+                    OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS
+                    LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED
+                    VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER
+                    EXCEPT UNDER THIS DISCLAIMER; AND
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL
+                       THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE),
+                       CONTRACT, OR OTHERWISE, SHALL THE AUTHOR,
+                       INITIAL WRITER, ANY CONTRIBUTOR, OR ANY
+                       DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION
+                       OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH
+                       PARTIES, BE LIABLE TO ANY PERSON FOR ANY
+                       DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR
+                       CONSEQUENTIAL DAMAGES OF ANY CHARACTER
+                       INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS
+                       OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR
+                       MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR
+                       LOSSES ARISING OUT OF OR RELATING TO USE OF THE
+                       DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT,
+                       EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF
+                       THE POSSIBILITY OF SUCH DAMAGES.
+		  </para>
+		</listitem>
+	  </orderedlist>
+	</para>
+  </legalnotice>
+
+
+    
+    <authorgroup>
+      <author role="maintainer"> 
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+	<affiliation> 
+	  <orgname>Έργο Gnome</orgname>
+	</affiliation>
+	<email>mfcn@gmx.de</email>
+      </author>
+      
+       <author>
+	<firstname>Pedro</firstname>
+	<surname>Villavicencio Garrido</surname>
+	<affiliation>
+	  <orgname>Έργο Gnome</orgname>
+	</affiliation>
+	<email>pvillavi@gnome.org</email>
+      </author>
+<!--  This is appropriate place for other contributors: translators,
+      maintainers,  etc. Commented out by default.
+      <othercredit role="translator">
+	<firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+	  <orgname>Latin Translation Team</orgname>
+	  <address> <email>translator@gnome.org</email> </address>
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    
+    <revhistory>
+    
+	<revision>
+	<revnumber>1.2</revnumber>
+	<date>2006</date>
+	<author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+    <email>mfcn@gmx.de</email>
+    </author>
+    </revision>
+
+	<revision> 
+	<revnumber>1.1</revnumber> 
+	<date>2005</date>
+	<author>
+	<firstname>Pedro</firstname>
+	<surname>Villavicencio Garrido</surname>
+    <email>pvillavi@gnome.org</email>
+    </author>
+	</revision>
+    
+	<revision>
+	<revnumber>1.0</revnumber>
+	<date>2002</date>
+	<author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+    <email>mfcn@gmx.de</email>
+    </author>
+    </revision>
+    
+	</revhistory>
+    
+	<releaseinfo>Αυτό το εγχειρίδιο περιγράφει την έκδοση 0.12 της μικροεφαρμογής Ταχύτητα δικτύου.</releaseinfo>
+    <legalnotice>
+      <title>Ανάδραση</title>
+      <para>Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με τη μικροεφαρμογή Ταχύτητα δικτύου (netspeed) ή αυτό το εγχειρίδιο, στείλτε ένα ηλ. γράμμα στο σύνδεσμο <ulink url="mailto:mfcn@gmx.de" type="mail">Jörgen Scheibengruber</ulink>.</para>
+    </legalnotice>
+  </articleinfo>
+  <indexterm>
+    <primary>Μικροεφαρμογή Ταχύτητα δικτύου</primary>
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<sect1 id="netspeed_applet-about"> 
+<title>Περί της μικροεφαρμογής Ταχύτητα δικτύου</title>
+    <figure id="netspeed_applet-fig">
+      <title>Ταχύτητα δικτύου</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/netspeed_applet.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Ταχύτητα δικτύου.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <figure id="netspeed_applet-fig2">
+      <title>Η Ταχύτητα δικτύου εμφανίζει τη συνολική κυκλοφορία σε έναν πίνακα εφαρμογών των 48 εικονοστοιχείων.</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/eth_sum_48.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Η Ταχύτητα δικτύου εμφανίζει τη συνολική κυκλοφορία σε έναν πίνακα εφαρμογών των 48 εικονοστοιχείων.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>Η <application>Μικροεφαρμογή Ταχύτητα δικτύου</application> εμφανίζει την κυκλοφορία του δικτύου σε μια καθορισμένη συσκευή όπως οι eth0, ppp0, plip0, κλπ. Επιπλέον, παρέχει πληροφορίες σχετικά με τις ρυθμίσεις της συσκευής δικτύου.</para>
+    <sect2 id="netspeed-introduction-icons">	
+      <title>Εικονίδια της Ταχύτητας δικτύου στον πίνακα εφαρμογών</title>
+      <informaltable frame="all">
+	<tgroup cols="2" colsep="1" rowsep="1">
+	  <colspec colname="COLSPEC0" colwidth="50*"/>
+	  <colspec colname="COLSPEC1" colwidth="50*"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="COLSPEC0"><para>Εικονίδιο</para></entry>
+	      <entry colname="COLSPEC1"><para>Περιγραφή</para></entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/loopback.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Loopback</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Η διεπαφή Loopback.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/ethernet.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Ethernet</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Σύνδεση ethernet.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/ppp.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>PPP</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Σύνδεση με πρωτόκολλο Point to Point.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/wavelan.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Ασύρματη</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Ασύρματη σύνδεση.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/plip.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>PLIP</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Σύνδεση στο δίκτυο με πρωτόκολλο παράλληλης γραμμής.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+    </sect2>
+    <sect2>
+      <title>Για να προσθέσετε την Ταχύτητα δικτύου σε ένα πίνακα εφαρμογών</title>
+      <para>Για να προσθέσετε τη <application>Μικροεφαρμογή Ταχύτητα δικτύου</application> σε έναν πίνακα εφαρμογών, κάντε δεξί κλικ με το ποντίκι σας στον πίνακα εφαρμογών, ύστερα επιλέξτε <menuchoice><guimenu>Προσθήκη στον πίνακα εφαρμογών</guimenu><guisubmenu>Διαδίκτυο</guisubmenu><guimenuitem>Μικροεφαρμογή netspeed</guimenuitem></menuchoice>.</para>
+    </sect2>
+  </sect1>
+  <sect1 id="netspeed_applet-settings"> 
+    <title>Ρυθμίσεις</title>
+    <figure id="netspeed_applet_settings-fig">
+      <title>Ρυθμίσεις της μικροεφαρμογής Ταχύτητα δικτύου</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/settings.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Ρυθμίσεις της μικροεφαρμογής Ταχύτητα δικτύου</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>Σε αυτόν το διάλογο μπορείτε να αλλάξετε τις ρυθμίσεις της μικροεφαρμογής Ταχύτητα δικτύου:</para>
+    <itemizedlist mark="bullet">
+      <listitem><para><guilabel>Συσκευή δικτύου:</guilabel> Επιλέξτε τη συσκευή δικτύου που η εφαρμογή θα παρακολουθεί από τη λίστα του κουτιού πολλαπλών επιλογών. Συνήθως όλες οι διαθέσιμες συσκευές είναι στη λίστα, παρόλα αυτά μπορείτε να προσθέσετε μια δική σας επίσης.</para></listitem>
+      <listitem><para><guilabel>Ενημέρωση διαστήματος:</guilabel> Εισάγετε το χρόνο μεταξύ δύο ενημερώσεων της μικροεφαρμογής.</para></listitem>
+      <listitem><para><guilabel>Μέγεθος γραμματοσειράς ετικετών:</guilabel> Εισάγετε το μέγεθος του κειμένου που θα εμφανίζεται στη μικροεφαρμογή.</para></listitem>
+      <listitem><para><guilabel>Προβολή του συνόλου αντί για τα εισερχόμενα και τα εξερχόμενα:</guilabel> Αν κάνετε τικ σε αυτό το κουτί η μικροεφαρμογή θα εμφανίζει τη συνολική ταχύτητα των εισερχομένων και των εξερχομένων. Σε αυτήν την περίπτωση, η μικροεφαρμογή καταλαμβάνει μόνο το μισό του διαστήματος στον πίνακα εφαρμογών.</para></listitem>
+      <listitem><para><guilabel>Εμφάνιση με bit/s (b/s) αντί για byte/s (B/s):</guilabel> Διαλέξτε αυτήν την επιλογή αν θέλετε η μικροεφαρμογή να εμφανίζει bit ανά δευτερόλεπτο αντί για byte ανά δευτερόλεπτο.</para></listitem>
+      <listitem><para><guilabel>Αλλαγή εικονιδίου σύμφωνα με την επιλεγμένη συσκευή:</guilabel> Συνήθως η εφαρμογή θα εμφανίσει ένα εικονίδιο που θα αναπαριστά τον τύπο της συσκευής δικτύου που παρακολουθείτε. Με αυτόν τον τρόπο θα εμφανίσει ένα τηλέφωνο για συνδέσεις Point to Point (ppp - modems, κλπ.), μία κάρτα δικτύου για ethernet (eth), κλπ. Όταν δεν διαλέγετε την επιλογή, η μικροεφαρμογή θα εμφανίζει πάντα το εικονίδιο της κάρτας δικτύου, άσχετα ποια συσκευή παρακολουθείτε.</para></listitem>
+      <listitem><para><guilabel>Να παρακολουθείται πάντα η συνδεδεμένη συσκευή, αν είναι δυνατόν:</guilabel> Όταν η σύνδεσή σας είναι κάτω, η μικροεφαρμογή Ταχύτητα δικτύου ψάχνει για μια συσκευή που λειτουργεί.</para></listitem>
+    </itemizedlist> 
+  </sect1>
+  <sect1 id="netspeed_applet-details"> 
+    <title>Ο διάλογος των λεπτομερειών</title>
+    <figure id="netspeed_applet_details-fig">
+      <title>Ο διάλογος των λεπτομερειών</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/details.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Ο διάλογος των λεπτομερειών</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>Ο διάλογος σάς παρέχει μερικές πληροφορίες σχετικά με τις ρυθμίζει της συσκευής δικτύου σας.</para>
+    <itemizedlist mark="bullet">
+      <listitem><para><guilabel>Διεύθυνση δικτύου:</guilabel> Η διεύθυνση IP (Internet Protocol) της συσκευής δικτύου.</para></listitem>
+      <listitem><para><guilabel>Μάσκα δικτύου:</guilabel> Η μάσκα δικτύου (netmask) εξαρτάται από το μέγεθος του τοπικού σας δικτύου LAN (Local Area Network). Μία συνηθισμένη τιμή της είναι η 255.255.255.0 (μια κλάση C του δικτύου).</para></listitem>
+      <listitem><para><guilabel>Διεύθυνση υλικού:</guilabel> Συχνά αναφέρεται ως η φυσική ή MAC (Media Access Control) διεύθυνση. Ένας μοναδικός στον κόσμο προσδιοριστής για την κάρτα δικτύου σας.</para></listitem>
+      <listitem><para><guilabel>Διεύθυνση P-t-P:</guilabel> Η διεύθυνση δικτύου της "άλλης πλευράς" της σύνδεσής σας PPP (Point to Point Protocol).</para></listitem>
+      <listitem><para><guilabel>Εισερχόμενα byte:</guilabel> Ο αριθμός των byte που η συσκευή δικτύου έχει λάβει από τη στιγμή που συνδέθηκε με το δίκτυο.</para></listitem>
+      <listitem><para><guilabel>Εξερχόμενα byte:</guilabel> Το ποσό των byte που η συσκευή δικτύου έχει στείλει από τη στιγμή που συνδέθηκε με το δίκτυο.</para></listitem>
+    </itemizedlist> 
+  </sect1>  
+</article>
