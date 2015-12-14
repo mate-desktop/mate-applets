@@ -619,7 +619,11 @@ stickynote_set_color (StickyNote  *note,
 void
 stickynote_set_font (StickyNote *note, const gchar *font_str, gboolean save)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	PangoFontDescription *font_desc;
+#else
 	GtkRcStyle *rc_style = gtk_widget_get_modifier_style(note->w_window);
+#endif
 	gchar *font_str_actual;
 
 	if (save) {
@@ -643,17 +647,30 @@ stickynote_set_font (StickyNote *note, const gchar *font_str, gboolean save)
 		font_str_actual = g_strdup (font_str);
 
 	/* Do not use custom fonts if "use_system_font" is enabled */
+#if GTK_CHECK_VERSION (3, 0, 0)
+	font_desc = font_str_actual ?
+#else
 	pango_font_description_free (rc_style->font_desc);
 	rc_style->font_desc = font_str_actual ?
+#endif
 		pango_font_description_from_string (font_str_actual): NULL;
 
-	g_object_ref (G_OBJECT (rc_style));
 	/* Apply the style to the widgets */
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_override_font (note->w_window, font_desc);
+	gtk_widget_override_font (note->w_body, font_desc);
+#else
+	g_object_ref (G_OBJECT (rc_style));
 	gtk_widget_modify_style(note->w_window, rc_style);
 	gtk_widget_modify_style(note->w_body, rc_style);
+#endif
 
 	g_free (font_str_actual);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	pango_font_description_free (font_desc);
+#else
 	g_object_unref (G_OBJECT(rc_style));
+#endif
 }
 
 /* Lock/Unlock a sticky note from editing */
