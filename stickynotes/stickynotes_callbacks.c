@@ -146,8 +146,8 @@ void properties_apply_color_cb(StickyNote *note)
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA color, font_color;
 
-		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_color), &color);
-		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+		gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (note->w_color), &color);
+		gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (note->w_font_color), &font_color);
 
 		color_str = gdk_rgba_to_string (&color);
 		font_color_str = gdk_rgba_to_string (&font_color);

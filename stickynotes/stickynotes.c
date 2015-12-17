@@ -40,6 +40,9 @@
 
 /* Stop gcc complaining about xmlChar's signedness */
 #define XML_CHAR(str) ((xmlChar *) (str))
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define STICKYNOTES_ICON_SIZE 8
+#endif
 
 static gboolean save_scheduled = FALSE;
 
@@ -104,7 +107,9 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 {
 	StickyNote *note;
 	GtkBuilder *builder;
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GtkIconSize size;
+#endif
 
 	note = g_new (StickyNote, 1);
 
@@ -197,6 +202,16 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 				note->y);
 
 	/* Set the button images */
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_image_set_from_icon_name (note->img_close, STICKYNOTES_STOCK_CLOSE, GTK_ICON_SIZE_MENU);
+	gtk_image_set_pixel_size (note->img_close, STICKYNOTES_ICON_SIZE);
+
+	gtk_image_set_from_stock (note->img_resize_se, STICKYNOTES_STOCK_RESIZE_SE, GTK_ICON_SIZE_MENU);
+	gtk_image_set_pixel_size (note->img_resize_se, STICKYNOTES_ICON_SIZE);
+
+	gtk_image_set_from_stock (note->img_resize_sw, STICKYNOTES_STOCK_RESIZE_SW, GTK_ICON_SIZE_MENU);
+	gtk_image_set_pixel_size (note->img_resize_sw, STICKYNOTES_ICON_SIZE);
+#else
 	size = gtk_icon_size_from_name ("stickynotes_icon_size");
 	gtk_image_set_from_stock (note->img_close,
 			STICKYNOTES_STOCK_CLOSE, size);
@@ -204,6 +219,7 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 			STICKYNOTES_STOCK_RESIZE_SE, size);
 	gtk_image_set_from_stock (note->img_resize_sw,
 			STICKYNOTES_STOCK_RESIZE_SW, size);
+#endif
 	gtk_widget_show(note->w_lock);
 	gtk_widget_show(note->w_close);
 	gtk_widget_show(GTK_WIDGET (gtk_builder_get_object (builder, "resize_bar")));
@@ -344,7 +360,7 @@ void stickynote_change_properties (StickyNote *note)
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA color;
 		gdk_rgba_parse (&color, color_str);
-		gtk_color_button_set_rgba (GTK_COLOR_BUTTON (note->w_color), &color);
+		gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (note->w_color), &color);
 #else
 		GdkColor color;
 		gdk_color_parse (color_str, &color);
@@ -365,7 +381,7 @@ void stickynote_change_properties (StickyNote *note)
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA font_color;
 		gdk_rgba_parse (&font_color, color_str);
-		gtk_color_button_set_rgba (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+		gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (note->w_font_color), &font_color);
 #else
 		GdkColor font_color;
 		gdk_color_parse (color_str, &font_color);
@@ -676,25 +692,40 @@ stickynote_set_font (StickyNote *note, const gchar *font_str, gboolean save)
 /* Lock/Unlock a sticky note from editing */
 void stickynote_set_locked(StickyNote *note, gboolean locked)
 {
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GtkIconSize size;
+#endif
 	note->locked = locked;
 
 	/* Set cursor visibility and editability */
 	gtk_text_view_set_editable(GTK_TEXT_VIEW(note->w_body), !locked);
 	gtk_text_view_set_cursor_visible(GTK_TEXT_VIEW(note->w_body), !locked);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	size = gtk_icon_size_from_name ("stickynotes_icon_size");
+#endif
 
 	/* Show appropriate icon and tooltip */
 	if (locked) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gtk_image_set_from_icon_name (note->img_lock, STICKYNOTES_STOCK_LOCKED, GTK_ICON_SIZE_MENU);
+		gtk_widget_set_tooltip_text(note->w_lock, _("This note is locked."));
+	}
+	else {
+		gtk_image_set_from_icon_name (note->img_lock, STICKYNOTES_STOCK_UNLOCKED, GTK_ICON_SIZE_MENU);
+#else
 		gtk_image_set_from_stock(note->img_lock, STICKYNOTES_STOCK_LOCKED, size);
 		gtk_widget_set_tooltip_text(note->w_lock, _("This note is locked."));
 	}
 	else {
 		gtk_image_set_from_stock(note->img_lock, STICKYNOTES_STOCK_UNLOCKED, size);
+#endif
 		gtk_widget_set_tooltip_text(note->w_lock, _("This note is unlocked."));
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_image_set_pixel_size (note->img_lock, STICKYNOTES_ICON_SIZE);
+#endif
 	gtk_toggle_action_set_active(note->ta_lock_toggle_item, locked);
 
 	stickynotes_applet_update_menus();
