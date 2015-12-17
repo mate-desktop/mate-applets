@@ -59,7 +59,7 @@ typedef struct
     GtkLabel          *label;
     GtkImage          *image;
     GtkImage          *pause_image;
-    GtkHBox           *hbox;
+    GtkBox            *box;
 
     GtkSpinButton     *hours;
     GtkSpinButton     *minutes;
@@ -402,24 +402,24 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     applet->active = FALSE;
     applet->pause = FALSE;
 
-    applet->hbox = GTK_HBOX (gtk_hbox_new (FALSE, 0));
+    applet->box = GTK_BOX (gtk_hbox_new (FALSE, 0));
     applet->image = GTK_IMAGE (gtk_image_new_from_icon_name (APPLET_ICON, GTK_ICON_SIZE_BUTTON));
     applet->pause_image = GTK_IMAGE (gtk_image_new_from_icon_name (GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_BUTTON));
     applet->label = GTK_LABEL (gtk_label_new (""));
 
     /* we add the Gtk label into the applet */
-    gtk_box_pack_start (GTK_BOX (applet->hbox),
+    gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->image),
                         TRUE, TRUE, 0);
-    gtk_box_pack_start (GTK_BOX (applet->hbox),
+    gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->pause_image),
                         TRUE, TRUE, 0);
-    gtk_box_pack_start (GTK_BOX (applet->hbox),
+    gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->label),
                         TRUE, TRUE, 3);
 
     gtk_container_add (GTK_CONTAINER (applet_widget),
-                       GTK_WIDGET (applet->hbox));
+                       GTK_WIDGET (applet->box));
 
     gtk_widget_show_all (GTK_WIDGET (applet->applet));
     gtk_widget_hide (GTK_WIDGET (applet->pause_image));
