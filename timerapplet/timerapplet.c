@@ -295,7 +295,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
                                                      GTK_STOCK_CLOSE,
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
-    table = gtk_table_new (6, 2, FALSE);
+    table = GTK_TABLE (gtk_table_new (6, 2, FALSE));
     gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
 
