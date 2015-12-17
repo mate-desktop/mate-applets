@@ -60,7 +60,7 @@ typedef struct
 
     GtkLabel          *label;
     GtkImage          *image;
-    GtkHBox           *hbox;
+    GtkBox            *box;
 
     gchar             *command;
     gint               interval;
@@ -135,7 +135,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                                                      GTK_STOCK_CLOSE,
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
-    table = gtk_table_new (4, 2, FALSE);
+    table = GTK_TABLE (gtk_table_new (4, 2, FALSE));
     gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
 
@@ -180,7 +180,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
 
-    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), table, TRUE, TRUE, 0);
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (table), TRUE, TRUE, 0);
 
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
@@ -339,21 +339,21 @@ command_applet_fill (MatePanelApplet* applet)
     command_applet->command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
     command_applet->width = g_settings_get_int (command_applet->settings, WIDTH_KEY);
 
-    command_applet->hbox = gtk_hbox_new (FALSE, 0);
-    command_applet->image = gtk_image_new_from_icon_name (APPLET_ICON, 24);
-    command_applet->label = gtk_label_new (ERROR_OUTPUT);
+    command_applet->box = GTK_BOX (gtk_hbox_new (FALSE, 0));
+    command_applet->image = GTK_IMAGE (gtk_image_new_from_icon_name (APPLET_ICON, 24));
+    command_applet->label = GTK_LABEL (gtk_label_new (ERROR_OUTPUT));
     command_applet->timeout_id = 0;
 
     /* we add the Gtk label into the applet */
-    gtk_box_pack_start (GTK_BOX (command_applet->hbox),
+    gtk_box_pack_start (command_applet->box,
                         GTK_WIDGET (command_applet->image),
                         TRUE, TRUE, 0);
-    gtk_box_pack_start (GTK_BOX (command_applet->hbox),
+    gtk_box_pack_start (command_applet->box,
                         GTK_WIDGET (command_applet->label),
                         TRUE, TRUE, 0);
 
     gtk_container_add (GTK_CONTAINER (applet),
-                       GTK_WIDGET (command_applet->hbox));
+                       GTK_WIDGET (command_applet->box));
 
     gtk_widget_show_all (GTK_WIDGET (command_applet->applet));
 
