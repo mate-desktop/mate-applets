@@ -575,7 +575,11 @@ static GtkWidget* create_hig_catagory(GtkWidget* main_box, gchar* title)
 
 	tmp = g_strdup_printf ("<b>%s</b>", title);
 	label = gtk_label_new (NULL);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+#endif
 	gtk_label_set_markup (GTK_LABEL (label), tmp);
 	g_free (tmp);
 	gtk_box_pack_start (GTK_BOX (vbox), label, TRUE, FALSE, 0);
@@ -867,7 +871,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	temp_label = gtk_label_new_with_mnemonic (_("_Temperature unit:"));
 	gtk_label_set_use_markup (GTK_LABEL (temp_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (temp_label), GTK_JUSTIFY_LEFT);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (temp_label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (temp_label), 0, 0.5);
+#endif
 	gtk_widget_show (temp_label);
 
 	temp_combo = gtk_combo_box_text_new ();
@@ -889,7 +897,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	speed_label = gtk_label_new_with_mnemonic (_("_Wind speed unit:"));
 	gtk_label_set_use_markup (GTK_LABEL (speed_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (speed_label), GTK_JUSTIFY_LEFT);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (speed_label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (speed_label), 0, 0.5);
+#endif
 	gtk_widget_show (speed_label);
 
 	speed_combo = gtk_combo_box_text_new ();
@@ -916,7 +928,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	pres_label = gtk_label_new_with_mnemonic (_("_Pressure unit:"));
 	gtk_label_set_use_markup (GTK_LABEL (pres_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (pres_label), GTK_JUSTIFY_LEFT);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (pres_label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (pres_label), 0, 0.5);
+#endif
 	gtk_widget_show (pres_label);
 
 	pres_combo = gtk_combo_box_text_new ();
@@ -946,7 +962,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	dist_label = gtk_label_new_with_mnemonic (_("_Visibility unit:"));
 	gtk_label_set_use_markup (GTK_LABEL (dist_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (dist_label), GTK_JUSTIFY_LEFT);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (dist_label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (dist_label), 0, 0.5);
+#endif
 	gtk_widget_show (dist_label);
 
 	dist_combo = gtk_combo_box_text_new ();
@@ -1115,7 +1135,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_container_add (GTK_CONTAINER (pref_notebook), pref_loc_hbox);
 
 	tree_label = gtk_label_new_with_mnemonic (_("_Select a location:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (tree_label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (tree_label), 0.0, 0.5);
+#endif
 	gtk_box_pack_start (GTK_BOX (pref_loc_hbox), tree_label, FALSE, FALSE, 0);
 
 	scrolled_window = gtk_scrolled_window_new (NULL, NULL);

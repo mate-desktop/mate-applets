@@ -152,7 +152,11 @@ static void place_widgets (MateWeatherApplet *gw_applet)
     gw_applet->image = gtk_image_new_from_icon_name(icon_name, GTK_ICON_SIZE_BUTTON); 
 
     if (icon_name != NULL) {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        gtk_widget_get_preferred_size (gw_applet->image, &req, NULL);
+#else
         gtk_widget_size_request(gw_applet->image, &req);
+#endif
         if (horizontal)
             total_size += req.height;
         else
@@ -168,7 +172,11 @@ static void place_widgets (MateWeatherApplet *gw_applet)
         gtk_label_set_text(GTK_LABEL(gw_applet->label), temp);
 
     /* Check the label size to determine box layout */
+#if GTK_CHECK_VERSION(3, 0, 0)
+    gtk_widget_get_preferred_size (gw_applet->label, &req, NULL);
+#else
     gtk_widget_size_request(gw_applet->label, &req);
+#endif
     if (horizontal)
         total_size += req.height;
     else
