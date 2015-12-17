@@ -420,7 +420,11 @@ create_hig_catagory (GtkWidget *main_box, gchar *title)
 
 	tmp = g_strdup_printf ("<b>%s</b>", title);
 	label = gtk_label_new (NULL);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+#endif
 	gtk_label_set_markup (GTK_LABEL (label), tmp);
 	g_free (tmp);
 	gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
@@ -460,7 +464,11 @@ static void default_chars_frame_create(charpick_data *curr_data)
   
   label = gtk_label_new_with_mnemonic(_("_Palettes:"));
   gtk_box_pack_start(GTK_BOX(vbox3), label, FALSE, FALSE, 0);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+#else
   gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+#endif
   gtk_widget_show(label);
 	  
   hbox = gtk_hbox_new (FALSE, 12);
