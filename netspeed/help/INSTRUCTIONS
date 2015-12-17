@@ -1,0 +1,22 @@
+To update the translations to gnome-doc-utils:
+* first update the docbook DTD in your translation
+(for example de/netspeed_applet.xml) from 4.1.2 to 4.4
+
+* then check if the old translated xml-file is valid:
+"xmllint -valid de/netspeed_applet.xml 1>/dev/null"
+
+* fix the errors if any (compare C/netspeed_applet.xml for reference)
+
+* fix the structure of the .xml file, so that it has the same structure
+as C/netspeed_applet.xml; you can verify this with 
+"xml2po -r de/netspeed_applet.xml C/netspeed_applet.xml | less"
+the translations should match...
+
+* create the .po file:
+"xml2po -r de/netspeed_applet.xml C/netspeed_applet.xml > de/de.po"
+
+* fix the .po file: it's probably totally messed up; fix the translations
+most of them should be there, but in the wrong place probably. translate
+the rest
+
+* for more info: http://live.gnome.org/GnomeDocUtilsTranslationMigration

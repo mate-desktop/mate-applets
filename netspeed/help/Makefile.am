@@ -17,4 +17,4 @@ HELP_LINGUAS = de el fr pt_BR sv
 # Migration needed (see INSTRUCTIONS http://live.gnome.org/GnomeDocUtilsTranslationMigration)
 # HELP_LINGUAS = cs ru es
 #
- EXTRA_DIST = INSTRUCTIONS
+EXTRA_DIST = INSTRUCTIONS
