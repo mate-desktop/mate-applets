@@ -703,9 +703,9 @@ get_chartable (charpick_data *curr_data)
 {
 	MatePanelApplet *applet = MATE_PANEL_APPLET (curr_data->applet);
 	gint i, n;
-	GSList *value = NULL;
+	GList *value = NULL;
 	
-	value = mate_panel_applet_settings_get_gslist (curr_data->settings, "chartable");
+	value = mate_panel_applet_settings_get_glist (curr_data->settings, "chartable");
 	if (value) {
 		curr_data->chartable = value;
 	}
