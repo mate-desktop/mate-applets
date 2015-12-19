@@ -39,7 +39,11 @@ typedef struct _DriveListClass DriveListClass;
 
 struct _DriveList
 {
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GtkGrid parent;
+#else
     GtkTable parent;
+#endif
 
     GHashTable *volumes;
     GHashTable *mounts;
@@ -52,7 +56,11 @@ struct _DriveList
 
 struct _DriveListClass
 {
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GtkGridClass parent_class;
+#else
     GtkTableClass parent_class;
+#endif
 };
 
 GType      drive_list_get_type (void);
