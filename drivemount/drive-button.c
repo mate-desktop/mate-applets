@@ -202,7 +202,11 @@ position_menu (GtkMenu *menu, gint *x, gint *y,
 
     direction = gtk_widget_get_direction (widget);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_widget_get_preferred_size (GTK_WIDGET (menu), &requisition, NULL);
+#else
     gtk_widget_get_requisition (GTK_WIDGET (menu), &requisition);
+#endif
     twidth = requisition.width;
     theight = requisition.height;
 
