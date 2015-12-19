@@ -303,7 +303,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Name:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 0, 1,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -315,7 +320,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_settings_bind (applet->settings, NAME_KEY, widget, "text", G_SETTINGS_BIND_DEFAULT);
 
     widget = gtk_label_new (_("Hours:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 1, 2,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -329,7 +339,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Minutes:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 2, 3,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -343,7 +358,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Seconds:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 3, 4,
                       GTK_FILL, GTK_FILL,
                       0, 0);
