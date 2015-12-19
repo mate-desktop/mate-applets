@@ -322,7 +322,7 @@ populate_menu (charpick_data *curr_data)
 	
 #if GTK_CHECK_VERSION (3, 0, 0)
 	/*Set up custom theme and transparency support*/
-	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
+	GtkWidget *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (menu));
 	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
 	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
