@@ -423,8 +423,8 @@ preferences_color_cb (GtkWidget *button, gpointer data)
 #if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA color, font_color;
 
-	gtk_color_button_get_rgba (GTK_COLOR_BUTTON (stickynotes->w_prefs_color), &color);
-	gtk_color_button_get_rgba (GTK_COLOR_BUTTON (stickynotes->w_prefs_font_color), &font_color);
+	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_color), &color);
+	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_font_color), &font_color);
 
 	color_str = gdk_rgba_to_string (&color);
 	font_color_str = gdk_rgba_to_string (&font_color);

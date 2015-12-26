@@ -20,7 +20,7 @@ AM_CPPFLAGS =					\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
 	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
 
-libexec_PROGRAMS = stickynotes_applet
+libexec_PROGRAMS = stickynotes-applet
 
 stickynotes_applet_SOURCES = \
 	util.h \

@@ -319,6 +319,20 @@ populate_menu (charpick_data *curr_data)
 		list = g_list_next (list);
 	}
 	build_table(curr_data);
+	
+#if GTK_CHECK_VERSION (3, 0, 0)
+	/*Set up custom theme and transparency support*/
+	GtkWidget *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (menu));
+	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	/* Set menu and it's toplevel window to follow panel theme */
+	GtkStyleContext *context;
+	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif
 }
 
 static void
@@ -457,6 +471,18 @@ build_table(charpick_data *p_curr_data)
   
     switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (p_curr_data->applet))) {
        	case MATE_PANEL_APPLET_ORIENT_DOWN:
+#if GTK_CHECK_VERSION (3, 0, 0)
+          	arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_MENU);
+       		break;
+       	case MATE_PANEL_APPLET_ORIENT_UP:
+          	arrow = gtk_image_new_from_icon_name ("pan-up-symbolic", GTK_ICON_SIZE_MENU);
+       		break;
+       	case MATE_PANEL_APPLET_ORIENT_LEFT:
+       		arrow = gtk_image_new_from_icon_name ("pan-start-symbolic", GTK_ICON_SIZE_MENU);
+  		break;
+       	case MATE_PANEL_APPLET_ORIENT_RIGHT:
+       		arrow = gtk_image_new_from_icon_name ("pan-end-symbolic", GTK_ICON_SIZE_MENU);
+#else
           	arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_OUT);
        		break;
        	case MATE_PANEL_APPLET_ORIENT_UP:
@@ -466,7 +492,8 @@ build_table(charpick_data *p_curr_data)
        		arrow = gtk_arrow_new (GTK_ARROW_LEFT, GTK_SHADOW_OUT);  
   		break;
        	case MATE_PANEL_APPLET_ORIENT_RIGHT:
-       		arrow = gtk_arrow_new (GTK_ARROW_RIGHT, GTK_SHADOW_OUT);  
+       		arrow = gtk_arrow_new (GTK_ARROW_RIGHT, GTK_SHADOW_OUT);
+#endif
   		break;
     default:
   	  g_assert_not_reached ();
@@ -689,9 +716,9 @@ get_chartable (charpick_data *curr_data)
 {
 	MatePanelApplet *applet = MATE_PANEL_APPLET (curr_data->applet);
 	gint i, n;
-	GSList *value = NULL;
+	GList *value = NULL;
 	
-	value = mate_panel_applet_settings_get_gslist (curr_data->settings, "chartable");
+	value = mate_panel_applet_settings_get_glist (curr_data->settings, "chartable");
 	if (value) {
 		curr_data->chartable = value;
 	}

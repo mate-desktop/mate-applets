@@ -68,15 +68,6 @@ gboolean stickynote_move_cb(GtkWidget *widget, GdkEventButton *event, StickyNote
 	return TRUE;
 }
 
-/* Sticky Window Callback : Skip taskbar and pager when exposing the widow */
-gboolean stickynote_expose_cb(GtkWidget *widget, GdkEventExpose *event, StickyNote *note)
-{
-	gtk_window_set_skip_taskbar_hint(GTK_WINDOW(note->w_window), TRUE);
-	gtk_window_set_skip_pager_hint(GTK_WINDOW(note->w_window), TRUE);
-	
-	return FALSE;
-}
-
 /* Sticky Window Callback : Store settings when resizing/moving the window */
 gboolean stickynote_configure_cb(GtkWidget *widget, GdkEventConfigure *event, StickyNote *note)
 {
@@ -155,8 +146,8 @@ void properties_apply_color_cb(StickyNote *note)
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA color, font_color;
 
-		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_color), &color);
-		gtk_color_button_get_rgba (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+		gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (note->w_color), &color);
+		gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (note->w_font_color), &font_color);
 
 		color_str = gdk_rgba_to_string (&color);
 		font_color_str = gdk_rgba_to_string (&font_color);

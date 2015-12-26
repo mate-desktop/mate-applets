@@ -473,7 +473,12 @@ confirm_delete_immediately (GtkWidget *parent_view,
 
   image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_QUESTION,
                                     GTK_ICON_SIZE_DIALOG);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (image, GTK_ALIGN_START);
+#else
   gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
+#endif
   gtk_widget_show (image);
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
 
@@ -498,7 +503,11 @@ confirm_delete_immediately (GtkWidget *parent_view,
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+#else
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+#endif
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
   g_free (str);
@@ -506,7 +515,11 @@ confirm_delete_immediately (GtkWidget *parent_view,
   label = gtk_label_new (detail);
   gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+#else
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+#endif
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
   g_free (detail);

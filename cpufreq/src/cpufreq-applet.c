@@ -433,16 +433,30 @@ cpufreq_applet_size_request (GtkWidget *widget, GtkRequisition *requisition)
 	    applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
 		return;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	/*Specify numerical values so labels in gtk3 don't get zero width  */
 	if (applet->show_freq) {
-		labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
+		labels_width += 50;
 	}
 
 	if (applet->show_perc) {
-		labels_width += cpufreq_applet_get_max_perc_width (applet);
+		labels_width += 50;
 	}
 
 	if (applet->show_unit) {
+		labels_width += 20;
+#else
+ 	if (applet->show_freq) {
+		labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
+ 	}
+ 
+ 	if (applet->show_perc) {
+		labels_width += cpufreq_applet_get_max_perc_width (applet);
+ 	}
+ 
+ 	if (applet->show_unit) {
 		labels_width += cpufreq_applet_get_max_unit_width (applet);
+#endif
 	}
 
 	if (applet->show_icon) {
@@ -521,7 +535,11 @@ cpufreq_applet_popup_position_menu (GtkMenu  *menu,
 
         *x = menu_xpos;
         *y = menu_ypos;
+#if GTK_CHECK_VERSION (3, 0, 0)
+        if (push_in) *push_in = FALSE;  /*fix botttom panel menu rendering in gtk3*/
+#else
         *push_in = TRUE;
+#endif
 }
 
 static void
@@ -543,7 +561,20 @@ cpufreq_applet_menu_popup (CPUFreqApplet *applet,
 
         if (!menu)
                 return;
-
+                
+#if GTK_CHECK_VERSION (3, 0, 0)
+        /*Set up theme and transparency support*/
+        GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
+        /* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+        GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+        GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+        gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+        /* Set menu and it's toplevel window to follow panel theme */
+        GtkStyleContext *context;
+        context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+        gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+        gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif
         gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
                         cpufreq_applet_popup_position_menu,
                         (gpointer) applet,
@@ -953,6 +984,23 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
         }
 
 	if (horizontal) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		applet->labels_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+		if ((label_size + pixmap_size) <= panel_size)
+			applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+		else
+			applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+	} else {
+                if (total_size <= panel_size) {
+                        applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+                        applet->labels_box  = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+                } else if ((label_size + unit_label_size) <= (panel_size - size_step)) {
+                        applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+                        applet->labels_box  = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+                } else {
+                        applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+                        applet->labels_box  = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+#else
 		applet->labels_box = gtk_hbox_new (FALSE, 2);
 		if ((label_size + pixmap_size) <= panel_size)
 			applet->box = gtk_vbox_new (FALSE, 2);
@@ -968,6 +1016,7 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
                 } else {
                         applet->box = gtk_vbox_new (FALSE, 2);
                         applet->labels_box  = gtk_vbox_new (FALSE, 2);
+#endif
                 }
 	}
 

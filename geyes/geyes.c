@@ -32,6 +32,24 @@
 #define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
 #endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+static gfloat
+gtk_align_to_gfloat (GtkAlign align)
+{
+	switch (align) {
+		case GTK_ALIGN_START:
+			return 0.0;
+		case GTK_ALIGN_END:
+			return 1.0;
+		case GTK_ALIGN_CENTER:
+		case GTK_ALIGN_FILL:
+			return 0.5;
+		default:
+			return 0.0;
+	}
+}
+#endif
+
 /* TODO - Optimize this a bit */
 static void 
 calculate_pupil_xy (EyesApplet *eyes_applet,
@@ -51,7 +69,13 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
 	 gtk_widget_get_allocation (GTK_WIDGET(widget), &allocation);
 	 width = allocation.width;
 	 height = allocation.height;
+#if GTK_CHECK_VERSION (3, 0, 0)
+
+	 xalign = gtk_align_to_gfloat (gtk_widget_get_halign (widget));
+	 yalign = gtk_align_to_gfloat (gtk_widget_get_valign (widget));
+#else
 	 gtk_misc_get_alignment(GTK_MISC(widget),  &xalign, &yalign);
+#endif
 
 	 nx = x - MAX(width - eyes_applet->eye_width, 0) * xalign - eyes_applet->eye_width / 2;
 	 ny = y - MAX(height- eyes_applet->eye_height, 0) * yalign - eyes_applet->eye_height / 2;
@@ -226,13 +250,26 @@ setup_eyes (EyesApplet *eyes_applet)
                                     0);
                 
 		if ((eyes_applet->num_eyes != 1) && (i == 0)) {
-                	gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 1.0, 0.5);
+#if GTK_CHECK_VERSION (3, 0, 0)
+			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_END);
+			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
+		}
+		else if ((eyes_applet->num_eyes != 1) && (i == eyes_applet->num_eyes - 1)) {
+			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_START);
+			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
+		}
+		else {
+			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
+			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
+#else
+			gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 1.0, 0.5);
 		}
 		else if ((eyes_applet->num_eyes != 1) && (i == eyes_applet->num_eyes - 1)) {
 			gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 0.0, 0.5);
 		}
 		else {
 			gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 0.5, 0.5);
+#endif
 		}
 		
                 gtk_widget_realize (eyes_applet->eyes[i]);

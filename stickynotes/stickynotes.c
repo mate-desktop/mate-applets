@@ -40,6 +40,9 @@
 
 /* Stop gcc complaining about xmlChar's signedness */
 #define XML_CHAR(str) ((xmlChar *) (str))
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define STICKYNOTES_ICON_SIZE 8
+#endif
 
 static gboolean save_scheduled = FALSE;
 
@@ -104,7 +107,9 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 {
 	StickyNote *note;
 	GtkBuilder *builder;
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GtkIconSize size;
+#endif
 
 	note = g_new (StickyNote, 1);
 
@@ -197,6 +202,16 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 				note->y);
 
 	/* Set the button images */
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_image_set_from_icon_name (note->img_close, STICKYNOTES_STOCK_CLOSE, GTK_ICON_SIZE_MENU);
+	gtk_image_set_pixel_size (note->img_close, STICKYNOTES_ICON_SIZE);
+
+	gtk_image_set_from_stock (note->img_resize_se, STICKYNOTES_STOCK_RESIZE_SE, GTK_ICON_SIZE_MENU);
+	gtk_image_set_pixel_size (note->img_resize_se, STICKYNOTES_ICON_SIZE);
+
+	gtk_image_set_from_stock (note->img_resize_sw, STICKYNOTES_STOCK_RESIZE_SW, GTK_ICON_SIZE_MENU);
+	gtk_image_set_pixel_size (note->img_resize_sw, STICKYNOTES_ICON_SIZE);
+#else
 	size = gtk_icon_size_from_name ("stickynotes_icon_size");
 	gtk_image_set_from_stock (note->img_close,
 			STICKYNOTES_STOCK_CLOSE, size);
@@ -204,6 +219,7 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 			STICKYNOTES_STOCK_RESIZE_SE, size);
 	gtk_image_set_from_stock (note->img_resize_sw,
 			STICKYNOTES_STOCK_RESIZE_SW, size);
+#endif
 	gtk_widget_show(note->w_lock);
 	gtk_widget_show(note->w_close);
 	gtk_widget_show(GTK_WIDGET (gtk_builder_get_object (builder, "resize_bar")));
@@ -257,8 +273,6 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 
 	g_signal_connect (G_OBJECT (note->w_window), "button-press-event",
 			G_CALLBACK (stickynote_move_cb), note);
-	g_signal_connect (G_OBJECT (note->w_window), "expose-event",
-			G_CALLBACK (stickynote_expose_cb), note);
 	g_signal_connect (G_OBJECT (note->w_window), "configure-event",
 			G_CALLBACK (stickynote_configure_cb), note);
 	g_signal_connect (G_OBJECT (note->w_window), "delete-event",
@@ -346,7 +360,7 @@ void stickynote_change_properties (StickyNote *note)
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA color;
 		gdk_rgba_parse (&color, color_str);
-		gtk_color_button_set_rgba (GTK_COLOR_BUTTON (note->w_color), &color);
+		gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (note->w_color), &color);
 #else
 		GdkColor color;
 		gdk_color_parse (color_str, &color);
@@ -367,7 +381,7 @@ void stickynote_change_properties (StickyNote *note)
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA font_color;
 		gdk_rgba_parse (&font_color, color_str);
-		gtk_color_button_set_rgba (GTK_COLOR_BUTTON (note->w_font_color), &font_color);
+		gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (note->w_font_color), &font_color);
 #else
 		GdkColor font_color;
 		gdk_color_parse (color_str, &font_color);
@@ -439,7 +453,6 @@ stickynote_set_color (StickyNote  *note,
 {
 	char *color_str_actual, *font_color_str_actual;
 	gboolean force_default, use_system_color;
-	GtkRcStyle *rc_style;
 
 	if (save) {
 		if (note->color)
@@ -487,43 +500,50 @@ stickynote_set_color (StickyNote  *note,
 	else
 		font_color_str_actual = g_strdup (font_color_str);
 
-	rc_style = gtk_widget_get_modifier_style (note->w_window);
+#if !GTK_CHECK_VERSION (3, 0, 0)
+	GtkRcStyle *rc_style = gtk_widget_get_modifier_style (note->w_window);
+#endif
 
 	/* Do not use custom colors if "use_system_color" is enabled */
 	if (color_str_actual) {
 #if GTK_CHECK_VERSION (3, 0, 0)
-		GdkRGBA color;
-		gdk_rgba_parse (&color, color_str_actual);
-#endif
-		/* Make 4 shades of the color, getting darker from the
-		 * original, plus black and white */
+		GdkRGBA colors[4];
+#else
 		GdkColor colors[6];
+#endif
 		gint i;
 
 		for (i = 0; i <= 3; i++)
 		{
-			gdk_color_parse (color_str_actual, &colors[i]);
 #if GTK_CHECK_VERSION (3, 0, 0)
-			colors[i].red = (color.red * (10 - i)) / 10;
-			colors[i].green = (color.green * (10 - i)) / 10;
-			colors[i].blue = (color.blue * (10 - i)) / 10;
+			gdk_rgba_parse (&colors[i], color_str_actual);
 #else
+			gdk_color_parse (color_str_actual, &colors[i]);
+#endif
 			colors[i].red = (colors[i].red * (10 - i)) / 10;
 			colors[i].green = (colors[i].green * (10 - i)) / 10;
 			colors[i].blue = (colors[i].blue * (10 - i)) / 10;
-#endif
 		}
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gdk_color_parse ("black", &colors[4]);
 		gdk_color_parse ("white", &colors[5]);
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
 		gboolean success[6];
 
 		/* Allocate these colors */
 		gdk_colormap_alloc_colors (gtk_widget_get_colormap (note->w_window),
 		                           colors, 6, FALSE, TRUE, success);
 #endif
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gtk_widget_override_background_color (note->w_window, GTK_STATE_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_body, GTK_STATE_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_lock, GTK_STATE_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_close, GTK_STATE_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_resize_se, GTK_STATE_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_resize_sw, GTK_STATE_NORMAL, &colors[0]);
+#else
 		/* Apply colors to style */
 		rc_style->base[GTK_STATE_NORMAL] = colors[0];
 		rc_style->bg[GTK_STATE_PRELIGHT] = colors[1];
@@ -534,19 +554,27 @@ stickynote_set_color (StickyNote  *note,
 		rc_style->color_flags[GTK_STATE_NORMAL] =
 			GTK_RC_BG | GTK_RC_BASE;
 		rc_style->color_flags[GTK_STATE_ACTIVE] = GTK_RC_BG;
-	}
-	else {
+#endif
+	} else {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gtk_widget_override_background_color (note->w_window, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_body, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_lock, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_close, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_resize_se, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_resize_sw, GTK_STATE_NORMAL, NULL);
+#else
 		rc_style->color_flags[GTK_STATE_PRELIGHT] = 0;
 		rc_style->color_flags[GTK_STATE_NORMAL] = 0;
 		rc_style->color_flags[GTK_STATE_ACTIVE] = 0;
+#endif
 	}
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	g_object_ref (G_OBJECT (rc_style));
 
 	/* Apply the style to the widgets */
 	gtk_widget_modify_style (note->w_window, rc_style);
-	/* We shouldn't change the title font
-	 * gtk_widget_modify_style(note->w_title, rc_style); */
 	gtk_widget_modify_style (note->w_body, rc_style);
 	gtk_widget_modify_style (note->w_lock, rc_style);
 	gtk_widget_modify_style (note->w_close, rc_style);
@@ -554,21 +582,21 @@ stickynote_set_color (StickyNote  *note,
 	gtk_widget_modify_style (note->w_resize_sw, rc_style);
 
 	g_object_unref (G_OBJECT (rc_style));
+#endif
 
 	if (font_color_str_actual)
 	{
-		GdkColor font_color;
-
 #if GTK_CHECK_VERSION (3, 0, 0)
 		GdkRGBA color;
 
 		gdk_rgba_parse (&color, font_color_str_actual);
-		font_color.red = color.red;
-		font_color.green = color.green;
-		font_color.blue = color.blue;
+
+		gtk_widget_override_color (note->w_window, GTK_STATE_NORMAL, &color);
+		gtk_widget_override_color (note->w_body, GTK_STATE_NORMAL, &color);
 #else
+		GdkColor font_color;
+
 		gdk_color_parse (font_color_str_actual, &font_color);
-#endif
 
 		gtk_widget_modify_text (note->w_window,
 				GTK_STATE_NORMAL, &font_color);
@@ -578,9 +606,14 @@ stickynote_set_color (StickyNote  *note,
 				GTK_STATE_NORMAL, &font_color);
 		gtk_widget_modify_text (note->w_body,
 				GTK_STATE_PRELIGHT, &font_color);
+#endif
 	}
 	else
 	{
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gtk_widget_override_color (note->w_window, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_color (note->w_body, GTK_STATE_NORMAL, NULL);
+#else
 		gtk_widget_modify_text (note->w_window,
 				GTK_STATE_NORMAL, NULL);
 		gtk_widget_modify_text (note->w_window,
@@ -589,6 +622,7 @@ stickynote_set_color (StickyNote  *note,
 				GTK_STATE_NORMAL, NULL);
 		gtk_widget_modify_text (note->w_body,
 				GTK_STATE_PRELIGHT, NULL);
+#endif
 	}
 
 	if (color_str_actual)
@@ -601,7 +635,11 @@ stickynote_set_color (StickyNote  *note,
 void
 stickynote_set_font (StickyNote *note, const gchar *font_str, gboolean save)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	PangoFontDescription *font_desc;
+#else
 	GtkRcStyle *rc_style = gtk_widget_get_modifier_style(note->w_window);
+#endif
 	gchar *font_str_actual;
 
 	if (save) {
@@ -625,41 +663,69 @@ stickynote_set_font (StickyNote *note, const gchar *font_str, gboolean save)
 		font_str_actual = g_strdup (font_str);
 
 	/* Do not use custom fonts if "use_system_font" is enabled */
+#if GTK_CHECK_VERSION (3, 0, 0)
+	font_desc = font_str_actual ?
+#else
 	pango_font_description_free (rc_style->font_desc);
 	rc_style->font_desc = font_str_actual ?
+#endif
 		pango_font_description_from_string (font_str_actual): NULL;
 
-	g_object_ref (G_OBJECT (rc_style));
 	/* Apply the style to the widgets */
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_override_font (note->w_window, font_desc);
+	gtk_widget_override_font (note->w_body, font_desc);
+#else
+	g_object_ref (G_OBJECT (rc_style));
 	gtk_widget_modify_style(note->w_window, rc_style);
 	gtk_widget_modify_style(note->w_body, rc_style);
+#endif
 
 	g_free (font_str_actual);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	pango_font_description_free (font_desc);
+#else
 	g_object_unref (G_OBJECT(rc_style));
+#endif
 }
 
 /* Lock/Unlock a sticky note from editing */
 void stickynote_set_locked(StickyNote *note, gboolean locked)
 {
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GtkIconSize size;
+#endif
 	note->locked = locked;
 
 	/* Set cursor visibility and editability */
 	gtk_text_view_set_editable(GTK_TEXT_VIEW(note->w_body), !locked);
 	gtk_text_view_set_cursor_visible(GTK_TEXT_VIEW(note->w_body), !locked);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	size = gtk_icon_size_from_name ("stickynotes_icon_size");
+#endif
 
 	/* Show appropriate icon and tooltip */
 	if (locked) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gtk_image_set_from_icon_name (note->img_lock, STICKYNOTES_STOCK_LOCKED, GTK_ICON_SIZE_MENU);
+		gtk_widget_set_tooltip_text(note->w_lock, _("This note is locked."));
+	}
+	else {
+		gtk_image_set_from_icon_name (note->img_lock, STICKYNOTES_STOCK_UNLOCKED, GTK_ICON_SIZE_MENU);
+#else
 		gtk_image_set_from_stock(note->img_lock, STICKYNOTES_STOCK_LOCKED, size);
 		gtk_widget_set_tooltip_text(note->w_lock, _("This note is locked."));
 	}
 	else {
 		gtk_image_set_from_stock(note->img_lock, STICKYNOTES_STOCK_UNLOCKED, size);
+#endif
 		gtk_widget_set_tooltip_text(note->w_lock, _("This note is unlocked."));
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_image_set_pixel_size (note->img_lock, STICKYNOTES_ICON_SIZE);
+#endif
 	gtk_toggle_action_set_active(note->ta_lock_toggle_item, locked);
 
 	stickynotes_applet_update_menus();

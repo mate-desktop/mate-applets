@@ -1,7 +1,7 @@
 dnl ***************************************************************************
 dnl *** configure.in for MATE-APPLETS                                      ***
 dnl ***************************************************************************
-AC_INIT(mate-applets, 1.11.0)
+AC_INIT(mate-applets, 1.13.0)
 AC_PREREQ(2.59)
 
 AC_CONFIG_HEADERS(config.h)
@@ -442,6 +442,26 @@ dnl ***************************************************************************
 AM_CONDITIONAL(BUILD_INVEST_APPLET, test "x$HAVE_PYGOBJECT" = "xyes")
 
 dnl ***************************************************************************
+dnl *** iwlib support for netspeed applet                                   ***
+dnl ***************************************************************************
+have_iwevgenie=no
+AC_MSG_CHECKING([for libiw >= 28pre9])
+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
+                #include <iwlib.h>
+                #ifndef IWEVGENIE
+                #error "not found"
+                #endif])],
+               [have_iwevgenie=yes],
+    AC_MSG_WARN([iwlib.h not found. It's provided by libiw or wireless-tools (depends on the distro)])
+)
+AC_MSG_RESULT([$have_iwevgenie])
+if test "$have_iwevgenie" = yes; then
+    AC_DEFINE(HAVE_IW, 1, [Defined if you have libiw/wireless-tools (depends on the distro)])
+    IWLIB=-liw
+    AC_SUBST(IWLIB)
+fi
+
+dnl ***************************************************************************
 dnl *** Check if IPv6 is available                                          ***
 dnl ***************************************************************************
 AC_MSG_CHECKING([whether to enable ipv6])
@@ -600,6 +620,26 @@ timerapplet/org.mate.panel.applet.timer.gschema.xml
 command/Makefile
 command/org.mate.panel.applet.command.gschema.xml
 null_applet/Makefile
+netspeed/Makefile
+netspeed/data/Makefile
+netspeed/data/org.mate.panel.applet.netspeed.gschema.xml
+netspeed/icons/Makefile
+netspeed/icons/16x16/Makefile
+netspeed/icons/16x16/apps/Makefile
+netspeed/icons/16x16/devices/Makefile
+netspeed/icons/22x22/Makefile
+netspeed/icons/22x22/apps/Makefile
+netspeed/icons/24x24/Makefile
+netspeed/icons/24x24/apps/Makefile
+netspeed/icons/24x24/status/Makefile
+netspeed/icons/32x32/Makefile
+netspeed/icons/32x32/apps/Makefile
+netspeed/icons/48x48/Makefile
+netspeed/icons/48x48/apps/Makefile
+netspeed/icons/scalable/Makefile
+netspeed/icons/scalable/apps/Makefile
+netspeed/src/Makefile
+netspeed/help/Makefile
 ])
 
 dnl ***************************************************************************
@@ -628,6 +668,8 @@ mate-applets-$VERSION configure summary:
         - mateweather              $build_libmateweather_applets
         - invest-applet            $HAVE_PYGOBJECT
         - multiload                $build_gtop_applets
+        - netspeed                 $build_gtop_applets
+            - iwlib support        $have_iwevgenie
         - stickynotes              $enable_stickynotes
         - timerapplet              $HAVE_LIBNOTIFY
         - trashapplet              always

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appletversion "0.12">
+<!ENTITY manrevision "1.1">
+<!ENTITY date "April 2005">
+<!ENTITY applet "Netspeed Applet">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Mar 12, 2002
+  
+-->
+<article id="index" lang="fr">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manuel de l'applet Netspeed v1.1</title>
+	<abstract role="description">
+      <para>L'applet Netspeed permet d'afficher le volume du trafic sur un périphérique réseau donné.</para>
+    </abstract>
+    <copyright> 
+      <year>2002</year>
+      <holder>Jörgen Scheibengruber</holder>
+    </copyright><copyright><year>2008</year><holder>Franck Charpentier (blackmajor@free.fr)</holder></copyright><copyright><year>2008</year><holder>Frédéric Péters (fpeters@0d.be)</holder></copyright><copyright><year>2008</year><holder>Claude Paroz (claude@2xlibre.net)</holder></copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+-->
+    <publisher> 
+      <publishername>Projet de documentation de GNOME</publishername> 
+    </publisher>
+
+	  <legalnotice id="legalnotice">
+	<para>Permission vous est donnée de copier, distribuer et/ou modifier ce document selon les termes de la Licence GNU Free Documentation License, Version 1.1 ou ultérieure publiée par la Free Software Foundation sans section inaltérable, sans texte de première page de couverture ni texte de dernière page de couverture. Vous trouverez un exemplaire de cette licence en suivant ce <ulink type="help" url="help:fdl">lien</ulink> ou dans le fichier COPYING-DOCS fourni avec le présent manuel.</para>
+         <para>Ce manuel fait partie de la collection de manuels GNOME distribués selon les termes de la licence de documentation libre GNU. Si vous souhaitez distribuer ce manuel indépendamment de la collection, vous devez joindre un exemplaire de la licence au document, comme indiqué dans la section 6 de celle-ci.</para>
+
+	<para>La plupart des noms utilisés par les entreprises pour distinguer leurs produits et services sont des marques déposées. Lorsque ces noms apparaissent dans la documentation GNOME et que les membres du projet de Documentation GNOME sont informés de l'existence de ces marques déposées, soit ces noms entiers, soit leur première lettre est en majuscule.</para>
+
+	<para>LE PRÉSENT DOCUMENT ET SES VERSIONS MODIFIÉES SONT FOURNIS SELON LES TERMES DE LA LICENCE DE DOCUMENTATION LIBRE GNU SACHANT QUE : <orderedlist>
+		<listitem>
+		  <para>LE PRÉSENT DOCUMENT EST FOURNI « TEL QUEL », SANS AUCUNE GARANTIE, EXPRESSE OU IMPLICITE, Y COMPRIS, ET SANS LIMITATION, LES GARANTIES DE MARCHANDABILITÉ, D'ADÉQUATION À UN OBJECTIF PARTICULIER OU DE NON INFRACTION DU DOCUMENT OU DE SA VERSION MODIFIÉE. L'UTILISATEUR ASSUME TOUT RISQUE RELATIF À LA QUALITÉ, À LA PERTINENCE ET À LA PERFORMANCE DU DOCUMENT OU DE SA VERSION DE MISE À JOUR. SI LE DOCUMENT OU SA VERSION MODIFIÉE S'AVÉRAIT DÉFECTUEUSE, L'UTILISATEUR (ET NON LE RÉDACTEUR INITIAL, L'AUTEUR, NI TOUT AUTRE PARTICIPANT) ENDOSSERA LES COÛTS DE TOUTE INTERVENTION, RÉPARATION OU CORRECTION NÉCESSAIRE. CETTE DÉNÉGATION DE RESPONSABILITÉ CONSTITUE UNE PARTIE ESSENTIELLE DE CETTE LICENCE. AUCUNE UTILISATION DE CE DOCUMENT OU DE SA VERSION MODIFIÉE N'EST AUTORISÉE AUX TERMES DU PRÉSENT ACCORD, EXCEPTÉ SOUS CETTE DÉNÉGATION DE RESPONSABILITÉ ; </para>
+		</listitem>
+		<listitem>
+		  <para>EN AUCUNE CIRCONSTANCE ET SOUS AUCUNE INTERPRÉTATION DE LA LOI, QU'IL S'AGISSE D'UN DÉLIT CIVIL (Y COMPRIS LA NÉGLIGENCE), CONTRACTUEL OU AUTRE, L'AUTEUR, LE RÉDACTEUR INITIAL, TOUT PARTICIPANT OU TOUT DISTRIBUTEUR DE CE DOCUMENT OU DE SA VERSION MODIFIÉE, OU TOUT FOURNISSEUR DE L'UNE DE CES PARTIES NE POURRA ÊTRE TENU RESPONSABLE À L'ÉGARD DE QUICONQUE POUR TOUT DOMMAGE DIRECT, INDIRECT, PARTICULIER, OU ACCIDENTEL DE TOUT TYPE Y COMPRIS, SANS LIMITATION, LES DOMMAGES LIÉS À LA PERTE DE CLIENTÈLE, À UN ARRÊT DE TRAVAIL, À UNE DÉFAILLANCE OU UN MAUVAIS FONCTIONNEMENT INFORMATIQUE, OU À TOUT AUTRE DOMMAGE OU PERTE LIÉE À L'UTILISATION DU DOCUMENT ET DE SES VERSIONS MODIFIÉES, MÊME SI LADITE PARTIE A ÉTÉ INFORMÉE DE L'ÉVENTUALITÉ DE TELS DOMMAGES.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+    
+    <authorgroup>
+      <author role="maintainer"> 
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+	<affiliation> 
+	  <orgname>Projet GNOME</orgname>
+	</affiliation>
+	<email>mfcn@gmx.de</email>
+      </author>
+      
+       <author>
+	<firstname>Pedro</firstname>
+	<surname>Villavicencio Garrido</surname>
+	<affiliation>
+	  <orgname>Projet GNOME</orgname>
+	</affiliation>
+	<email>pvillavi@gnome.org</email>
+      </author>
+<!--  This is appropriate place for other contributors: translators,
+      maintainers,  etc. Commented out by default.
+      <othercredit role="translator">
+	<firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+	  <orgname>Latin Translation Team</orgname>
+	  <address> <email>translator@gnome.org</email> </address>
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    
+    <revhistory>
+    
+	<revision>
+	<revnumber>1.2</revnumber>
+	<date>2006</date>
+	<author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+    <email>mfcn@gmx.de</email>
+    </author>
+    </revision>
+
+	<revision> 
+	<revnumber>1.1</revnumber> 
+	<date>2005</date>
+	<author>
+	<firstname>Pedro</firstname>
+	<surname>Villavicencio Garrido</surname>
+    <email>pvillavi@gnome.org</email>
+    </author>
+	</revision>
+    
+	<revision>
+	<revnumber>1.0</revnumber>
+	<date>2002</date>
+	<author>
+	<firstname>Jörgen</firstname> 
+	<surname>Scheibengruber</surname>
+    <email>mfcn@gmx.de</email>
+    </author>
+    </revision>
+    
+	</revhistory>
+    
+	<releaseinfo>Ce manuel documente la version 0.12 de l'applet Netspeed.</releaseinfo>
+    <legalnotice>
+      <title>Votre avis</title>
+      <para>Pour signaler une anomalie ou faire une suggestion concernant l'applet <application>Netspeed</application> ou le présent manuel, envoyez un courriel à <ulink url="mailto:mfcn@gmx.de" type="mail">Jörgen Scheibengruber</ulink>.</para>
+    </legalnotice>
+  </articleinfo>
+  <indexterm>
+    <primary>Applet Netspeed</primary>
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<sect1 id="netspeed_applet-about"> 
+<title>À propos de l'applet Netspeed</title>
+    <figure id="netspeed_applet-fig">
+      <title>Netspeed</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/netspeed_applet.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Netspeed.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <figure id="netspeed_applet-fig2">
+      <title>Netspeed affichant la somme dans un tableau de bord de 48 px.</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/eth_sum_48.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Netspeed affichant la somme dans un tableau de bord de 48 px.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para><application>Netspeed Applet</application> affiche le trafic réseau sur un périphérique donné comme eth0, ppp0, plip0, etc. Il peut également donner davantage d'informations à propos de la configuration du périphérique réseau.</para>
+    <sect2 id="netspeed-introduction-icons">	
+      <title>Icônes de Netspeed sur le tableau de bord</title>
+      <informaltable frame="all">
+	<tgroup cols="2" colsep="1" rowsep="1">
+	  <colspec colname="COLSPEC0" colwidth="50*"/>
+	  <colspec colname="COLSPEC1" colwidth="50*"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="COLSPEC0"><para>Icône</para></entry>
+	      <entry colname="COLSPEC1"><para>Description</para></entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/loopback.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Loopback</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>L'interface Loopback.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/ethernet.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Ethernet</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Connexion Ethernet.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/ppp.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>PPP</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Connexion PPP (protocole point à point).</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/wavelan.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>Sans fil</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Connexion sans fil.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>
+		  <inlinemediaobject><imageobject>
+		      <imagedata fileref="figures/plip.png" format="PNG"/>
+		</imageobject><textobject>
+		    <phrase>PLIP</phrase>
+		  </textobject></inlinemediaobject>
+		</para></entry>
+	      <entry><para>Connexion PLIP (Parallel Line Internet Protocol).</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+    </sect2>
+    <sect2>
+      <title>Ajout de Netspeed à un tableau de bord</title>
+      <para>Pour ajouter <application>Netspeed</application> à un tableau de bord, cliquez avec le bouton droit sur celui-ci, puis choisissez <menuchoice><guimenu>Ajouter au tableau de bord</guimenu><guisubmenu>Système et matériel</guisubmenu><guimenuitem>Moniteur réseau</guimenuitem></menuchoice>.</para>
+    </sect2>
+  </sect1>
+  <sect1 id="netspeed_applet-settings"> 
+    <title>Paramètres</title>
+    <figure id="netspeed_applet_settings-fig">
+      <title>Paramètres de l'applet Netspeed</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/settings.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Paramètres de l'applet Netspeed.</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>Cette boîte de dialogue vous permet de modifier les paramètres de Netspeed :</para>
+    <itemizedlist mark="bullet">
+      <listitem><para><guilabel>Périphérique réseau</guilabel> : choisissez le périphérique réseau que l'applet doit surveiller dans la liste déroulante. Habituellement, tous les périphériques disponibles sont listés, cependant vous pouvez aussi en ajouter un.</para></listitem>
+      <listitem><para><guilabel>Intervalle de mise à jour</guilabel> : saisissez la durée entre deux mises à jour de l'applet.</para></listitem>
+      <listitem><para><guilabel>Taille de la police pour le texte</guilabel> : saisissez la taille du texte affiché dans l'applet.</para></listitem>
+      <listitem><para><guilabel>Afficher la somme à la place de rentrants &amp; sortants</guilabel> : si vous cochez cette case, l'applet affiche la somme des taux de réception et d'émission. L'applet prend alors une place deux fois moins importante dans le tableau de bord.</para></listitem>
+      <listitem><para><guilabel>Afficher des bits au lieu d'octets</guilabel> : cochez cette case si vous souhaitez que l'applet affiche des bits par seconde à la place des octets/s.</para></listitem>
+      <listitem><para><guilabel>Changer l'icône selon le périphérique choisi</guilabel> : habituellement, l'applet affiche une icône correspondant au type de réseau que vous surveillez ; un téléphone pour une connexion point à point (modems PPP...), une carte réseau pour la connexion ethernet (eth), etc. Quand cette case n'est pas cochée, l'applet affiche toujours une icône représentant une carte réseau, quel que soit le périphérique surveillé.</para></listitem>
+      <listitem><para><guilabel>Toujours surveiller les périphériques connectés, si possible</guilabel> : quand votre connexion est inactive, Netspeed cherche une connexion active à surveiller.</para></listitem>
+    </itemizedlist> 
+  </sect1>
+  <sect1 id="netspeed_applet-details"> 
+    <title>La boîte de dialogue des détails</title>
+    <figure id="netspeed_applet_details-fig">
+      <title>La boîte de dialogue des détails</title>
+      <screenshot>
+	<mediaobject>
+	  <imageobject><imagedata fileref="figures/details.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>La boîte de dialogue des détails</phrase>
+	  </textobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <para>Cette boîte de dialogue affiche quelques informations utiles sur la configuration du périphérique réseau.</para>
+    <itemizedlist mark="bullet">
+      <listitem><para><guilabel>Adresse IP</guilabel> : l'adresse IP (protocole Internet) du périphérique réseau.</para></listitem>
+      <listitem><para><guilabel>Masque</guilabel> : le masque réseau dépend de la taille de votre LAN (réseau local). Une valeur courante est 255.255.255.0 (pour un réseau de classe C).</para></listitem>
+      <listitem><para><guilabel>Adresse MAC</guilabel> : aussi définie comme l'adresse physique. Un identifiant mondial unique pour votre carte réseau.</para></listitem>
+      <listitem><para><guilabel>Adresse P-t-P</guilabel> : l'adresse Internet de « l'autre côté » de votre connexion PPP (protocole point à point).</para></listitem>
+      <listitem><para><guilabel>Octets rentrants</guilabel> : la quantité d'octets que votre périphérique a reçu depuis qu'il est connecté au réseau.</para></listitem>
+      <listitem><para><guilabel>Octets sortants</guilabel> : la quantité d'octets que votre périphérique a envoyé depuis qu'il est connecté au réseau.</para></listitem>
+    </itemizedlist> 
+  </sect1>  
+</article>

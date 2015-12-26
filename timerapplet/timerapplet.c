@@ -59,7 +59,7 @@ typedef struct
     GtkLabel          *label;
     GtkImage          *image;
     GtkImage          *pause_image;
-    GtkHBox           *hbox;
+    GtkBox            *box;
 
     GtkSpinButton     *hours;
     GtkSpinButton     *minutes;
@@ -295,7 +295,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
                                                      GTK_STOCK_CLOSE,
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
-    table = gtk_table_new (6, 2, FALSE);
+    table = GTK_TABLE (gtk_table_new (6, 2, FALSE));
     gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
 
@@ -303,7 +303,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Name:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 0, 1,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -315,7 +320,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_settings_bind (applet->settings, NAME_KEY, widget, "text", G_SETTINGS_BIND_DEFAULT);
 
     widget = gtk_label_new (_("Hours:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 1, 2,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -329,7 +339,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Minutes:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 2, 3,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -343,7 +358,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Seconds:"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_halign (widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
+#endif
     gtk_table_attach (table, widget, 1, 2, 3, 4,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -402,24 +422,24 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     applet->active = FALSE;
     applet->pause = FALSE;
 
-    applet->hbox = GTK_HBOX (gtk_hbox_new (FALSE, 0));
+    applet->box = GTK_BOX (gtk_hbox_new (FALSE, 0));
     applet->image = GTK_IMAGE (gtk_image_new_from_icon_name (APPLET_ICON, GTK_ICON_SIZE_BUTTON));
     applet->pause_image = GTK_IMAGE (gtk_image_new_from_icon_name (GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_BUTTON));
     applet->label = GTK_LABEL (gtk_label_new (""));
 
     /* we add the Gtk label into the applet */
-    gtk_box_pack_start (GTK_BOX (applet->hbox),
+    gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->image),
                         TRUE, TRUE, 0);
-    gtk_box_pack_start (GTK_BOX (applet->hbox),
+    gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->pause_image),
                         TRUE, TRUE, 0);
-    gtk_box_pack_start (GTK_BOX (applet->hbox),
+    gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->label),
                         TRUE, TRUE, 3);
 
     gtk_container_add (GTK_CONTAINER (applet_widget),
-                       GTK_WIDGET (applet->hbox));
+                       GTK_WIDGET (applet->box));
 
     gtk_widget_show_all (GTK_WIDGET (applet->applet));
     gtk_widget_hide (GTK_WIDGET (applet->pause_image));

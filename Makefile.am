@@ -1,5 +1,5 @@
 
-gtop_applets = multiload
+gtop_applets = multiload netspeed
 
 if BUILD_GTOP_APPLETS
 gtop_SUBDIRS = $(gtop_applets)
@@ -69,6 +69,7 @@ DIST_SUBDIRS = \
 	cpufreq \
 	invest-applet \
 	command \
+	netspeed \
 	null_applet
 
 EXTRA_DIST = \

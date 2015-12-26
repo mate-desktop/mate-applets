@@ -144,8 +144,10 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 
 	g_set_application_name (_("Sticky Notes"));
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	/* Register size for icons */
 	gtk_icon_size_register ("stickynotes_icon_size", 8,8);
+#endif
 
 	gtk_window_set_default_icon_name ("mate-sticky-notes-applet");
 
@@ -514,8 +516,8 @@ stickynotes_applet_update_prefs (void)
 			desktop_hide);
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_color_button_set_rgba (GTK_COLOR_BUTTON (stickynotes->w_prefs_color), &color);
-	gtk_color_button_set_rgba (GTK_COLOR_BUTTON (stickynotes->w_prefs_font_color), &font_color);
+	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_color), &color);
+	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_font_color), &font_color);
 #else
 	gtk_color_button_set_color (GTK_COLOR_BUTTON (stickynotes->w_prefs_color), &color);
 	gtk_color_button_set_color (GTK_COLOR_BUTTON (stickynotes->w_prefs_font_color), &font_color);
