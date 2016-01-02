@@ -39,7 +39,6 @@ always_built_SUBDIRS = \
 	stickynotes \
 	trashapplet \
 	command
-#	null_applet
 
 SUBDIRS = \
 	po \
@@ -69,8 +68,7 @@ DIST_SUBDIRS = \
 	cpufreq \
 	invest-applet \
 	command \
-	netspeed \
-	null_applet
+	netspeed
 
 EXTRA_DIST = \
 	m4/ac-define-dir.m4 \
