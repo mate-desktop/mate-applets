@@ -30,7 +30,6 @@
 
 #define STICKYNOTES_SCHEMA	"org.mate.stickynotes"
 #define BUILDER_PATH	GTK_BUILDERDIR "/stickynotes.ui"
-#define ICON_PATH	STICKYNOTES_ICONDIR
 
 #define STICKYNOTES_STOCK_LOCKED	"stickynotes-stock-locked"
 #define STICKYNOTES_STOCK_UNLOCKED	"stickynotes-stock-unlocked"
@@ -69,14 +68,6 @@ typedef struct
     gboolean visible;       /* Toggle show/hide notes */
 } StickyNotes;
 
-/* Sticky Notes Icons */
-typedef struct
-{
-	gchar *stock_id;
-	gchar *filename;
-
-} StickyNotesStockIcon;
-
 /* Sticky Notes Applet */
 typedef struct
 {
@@ -106,7 +97,6 @@ typedef enum
 extern StickyNotes *stickynotes;
 
 void stickynotes_applet_init(MatePanelApplet *mate_panel_applet);
-void stickynotes_applet_init_icons(void);
 void stickynotes_applet_init_prefs(void);
 
 StickyNotesApplet * stickynotes_applet_new(MatePanelApplet *mate_panel_applet);

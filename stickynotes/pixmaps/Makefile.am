@@ -1,12 +1,11 @@
 ## Process this file with automake to produce Makefile.in
 
-stickynotes_applet_pixmapsdir = $(datadir)/pixmaps/mate-stickynotes
-stickynotes_applet_pixmaps_DATA = \
-	locked.png \
-	unlocked.png \
-	close.png \
-	resize_se.png \
-	resize_sw.png
+app_icons = \
+	stickynotes-stock-locked.png \
+	stickynotes-stock-unlocked.png \
+	stickynotes-stock-close.png \
+	stickynotes-stock-resize-se.png \
+	stickynotes-stock-resize-sw.png
 
 icons = \
 	mate-sticky-notes-applet.16.png \
@@ -16,7 +15,7 @@ icons = \
 	mate-sticky-notes-applet.svg
 
 EXTRA_DIST = \
-	$(stickynotes_applet_pixmaps_DATA) \
+	$(app_icons) \
 	$(icons)
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
@@ -32,6 +31,9 @@ uninstall-local:
 			SIZE="$${SIZE}x$${SIZE}"; \
 		fi; \
 		rm -f $(DESTDIR)$(iconsdir)/hicolor/$$SIZE/apps/$$FILE; \
+	done
+	for icon in $(app_icons); do \
+		rm -f $(DESTDIR)$(pkgdatadir)/icons/hicolor/48x48/apps/$$icon; \
 	done
 	@-if test -z "$(DESTDIR)"; then \
 		echo "Updating Gtk icon cache."; \
@@ -53,6 +55,10 @@ install-data-local:
 		fi; \
 		mkdir -p $(DESTDIR)$(iconsdir)/hicolor/$$SIZE/apps/; \
 		$(INSTALL_DATA) $(srcdir)/$$icon $(DESTDIR)$(iconsdir)/hicolor/$$SIZE/apps/$$FILE; \
+	done
+	for icon in $(app_icons); do \
+		mkdir -p $(DESTDIR)$(pkgdatadir)/icons/hicolor/48x48/apps/; \
+		$(INSTALL_DATA) $(srcdir)/$$icon $(DESTDIR)$(pkgdatadir)/icons/hicolor/48x48/apps/$$icon; \
 	done
 	@-if test -z "$(DESTDIR)"; then \
 		echo "Updating Gtk icon cache."; \

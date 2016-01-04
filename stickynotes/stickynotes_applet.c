@@ -57,15 +57,6 @@ static const GtkToggleActionEntry stickynotes_applet_menu_toggle_actions[] =
 	  G_CALLBACK (menu_toggle_lock_cb), FALSE }
 };
 
-/* Sticky Notes Icons */
-static const StickyNotesStockIcon stickynotes_icons[] = {
-	{STICKYNOTES_STOCK_LOCKED, STICKYNOTES_ICONDIR "/locked.png"},
-	{STICKYNOTES_STOCK_UNLOCKED, STICKYNOTES_ICONDIR "/unlocked.png"},
-	{STICKYNOTES_STOCK_CLOSE, STICKYNOTES_ICONDIR "/close.png"},
-	{STICKYNOTES_STOCK_RESIZE_SE, STICKYNOTES_ICONDIR "/resize_se.png"},
-	{STICKYNOTES_STOCK_RESIZE_SW, STICKYNOTES_ICONDIR "/resize_sw.png"}
-};
-
 /* Sticky Notes applet factory */
 static gboolean stickynotes_applet_factory(MatePanelApplet *mate_panel_applet, const gchar *iid, gpointer data)
 {
@@ -131,6 +122,33 @@ stickynotes_make_prelight_icon (GdkPixbuf *dest, GdkPixbuf *src, int shift)
 	}
 }
 
+static void
+icon_theme_changed (GtkIconTheme *icon_theme,
+                    gpointer      user_data)
+{
+	gtk_icon_theme_append_search_path (icon_theme,
+	                                   PKG_DATA_DIR G_DIR_SEPARATOR_S "icons");
+}
+
+static void
+stickynotes_applet_init_icons (void)
+{
+	GtkIconTheme *icon_theme;
+
+	icon_theme = gtk_icon_theme_get_default ();
+	icon_theme_changed (icon_theme, NULL);
+
+	g_signal_connect (gtk_icon_theme_get_default (), "changed",
+	                  G_CALLBACK (icon_theme_changed), NULL);
+}
+
+static void
+stickynotes_destroy (GtkWidget *widget,
+                     gpointer   user_dta)
+{
+	g_signal_handlers_disconnect_by_func (gtk_icon_theme_get_default (),
+	                                      icon_theme_changed, NULL);
+}
 
 /* Create and initalize global sticky notes instance */
 void
@@ -143,11 +161,6 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 	stickynotes->last_timeout_data = 0;
 
 	g_set_application_name (_("Sticky Notes"));
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	/* Register size for icons */
-	gtk_icon_size_register ("stickynotes_icon_size", 8,8);
-#endif
 
 	gtk_window_set_default_icon_name ("mate-sticky-notes-applet");
 
@@ -182,30 +195,6 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 	stickynotes_load (gtk_widget_get_screen (GTK_WIDGET (mate_panel_applet)));
 
 	install_check_click_on_desktop ();
-}
-
-/* Initialize Sticky Notes Icons */
-void stickynotes_applet_init_icons(void)
-{
-	GtkIconFactory *icon_factory = gtk_icon_factory_new();
-
-	gint i;
-	for (i = 0; i < G_N_ELEMENTS(stickynotes_icons); i++) {
-		StickyNotesStockIcon icon = stickynotes_icons[i];
-		GtkIconSource *icon_source = gtk_icon_source_new();
-		GtkIconSet *icon_set = gtk_icon_set_new();
-
-		gtk_icon_source_set_filename(icon_source, icon.filename);
-		gtk_icon_set_add_source(icon_set, icon_source);
-		gtk_icon_factory_add(icon_factory, icon.stock_id, icon_set);
-
-		gtk_icon_source_free(icon_source);
-		gtk_icon_set_unref(icon_set);
-	}
-
-	gtk_icon_factory_add_default(icon_factory);
-
-	g_object_unref(G_OBJECT(icon_factory));
 }
 
 void stickynotes_applet_init_prefs(void)
@@ -339,7 +328,8 @@ void stickynotes_applet_init_prefs(void)
 }
 
 /* Create a Sticky Notes applet */
-StickyNotesApplet * stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
+StickyNotesApplet *
+stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 {
 	AtkObject *atk_obj;
 	gchar *ui_path;
@@ -406,6 +396,8 @@ StickyNotesApplet * stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 			G_CALLBACK(applet_change_orient_cb), applet);
 	g_signal_connect(G_OBJECT(applet->w_applet), "destroy",
 			G_CALLBACK(applet_destroy_cb), applet);
+	g_signal_connect(G_OBJECT(applet->w_applet), "destroy",
+			G_CALLBACK(stickynotes_destroy), NULL);
 
 	mate_panel_applet_set_background_widget (mate_panel_applet, applet->w_applet);
 

@@ -17,8 +17,7 @@ AM_CPPFLAGS =					\
 	$(MATEDESKTOP_CFLAGS)		\
 	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
-	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
-	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
+	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"
 
 libexec_PROGRAMS = stickynotes-applet
 
