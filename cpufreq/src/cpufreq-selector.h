@@ -39,12 +39,10 @@ GType            cpufreq_selector_get_type            (void) G_GNUC_CONST;
 CPUFreqSelector *cpufreq_selector_get_default         (void);
 void             cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 						       guint            cpu,
-						       guint            frequency,
-						       guint32          parent);
+						       guint            frequency);
 void             cpufreq_selector_set_governor_async  (CPUFreqSelector *selector,
 						       guint            cpu,
-						       const gchar     *governor,
-						       guint32          parent);
+						       const gchar     *governor);
 	
 G_END_DECLS
 
