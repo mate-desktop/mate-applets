@@ -224,7 +224,7 @@ cpufreq_popup_governors_menu_activate (GtkAction    *action,
 	name = gtk_action_get_name (action);
 	governor = name + strlen ("Governor");
 	
-	cpufreq_selector_set_governor_async (selector, cpu, governor, parent);
+	cpufreq_selector_set_governor_async (selector, cpu, governor);
 }
 
 static void
