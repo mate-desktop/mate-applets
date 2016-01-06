@@ -171,8 +171,7 @@ selector_set_frequency_async (SelectorAsyncData *data)
 void
 cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 				      guint            cpu,
-				      guint            frequency,
-				      guint32          parent)
+				      guint            frequency)
 {
 	SelectorAsyncData *data;
 
@@ -182,7 +181,6 @@ cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 	data->call = FREQUENCY;
 	data->cpu = cpu;
 	data->frequency = frequency;
-	data->parent_xid = parent;
 
 	selector_set_frequency_async (data);
 }
@@ -220,8 +218,7 @@ selector_set_governor_async (SelectorAsyncData *data)
 void
 cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
 				     guint            cpu,
-				     const gchar     *governor,
-				     guint32          parent)
+				     const gchar     *governor)
 {
 	SelectorAsyncData *data;
 
@@ -231,7 +228,6 @@ cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
 	data->call = GOVERNOR;
 	data->cpu = cpu;
 	data->governor = g_strdup (governor);
-	data->parent_xid = parent;
 
 	selector_set_governor_async (data);
 }
@@ -264,8 +260,7 @@ cpufreq_selector_run_command (CPUFreqSelector *selector,
 void
 cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 				      guint            cpu,
-				      guint            frequency,
-				      guint32          parent)
+				      guint            frequency)
 {
 	gchar *args;
 
@@ -277,8 +272,7 @@ cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 void
 cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
 				     guint            cpu,
-				     const gchar     *governor,
-				     guint32          parent)
+				     const gchar     *governor)
 {
 	gchar *args;
 
