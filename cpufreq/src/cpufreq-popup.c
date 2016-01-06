@@ -203,7 +203,7 @@ cpufreq_popup_frequencies_menu_activate (GtkAction    *action,
 	parent = GDK_WINDOW_XID (gtk_widget_get_window (popup->priv->parent));
 #endif
 
-	cpufreq_selector_set_frequency_async (selector, cpu, freq, parent);
+	cpufreq_selector_set_frequency_async (selector, cpu, freq);
 }
 
 static void
