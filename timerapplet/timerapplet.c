@@ -303,9 +303,9 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Name:"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_set_halign (widget, GTK_ALIGN_END);
-	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
@@ -320,9 +320,9 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_settings_bind (applet->settings, NAME_KEY, widget, "text", G_SETTINGS_BIND_DEFAULT);
 
     widget = gtk_label_new (_("Hours:"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_set_halign (widget, GTK_ALIGN_END);
-	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
@@ -339,9 +339,9 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Minutes:"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_set_halign (widget, GTK_ALIGN_END);
-	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
@@ -358,9 +358,9 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Seconds:"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_set_halign (widget, GTK_ALIGN_END);
-	gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif

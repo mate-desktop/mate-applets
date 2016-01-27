@@ -320,10 +320,10 @@ properties_cb (GtkAction  *action,
 	label = gtk_label_new (_(title));
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_set_halign (label, GTK_ALIGN_START);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 #else
-	gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 #endif
 	gtk_box_pack_start (GTK_BOX (category_vbox), label, FALSE, FALSE, 0);
 	g_free (title);
@@ -342,10 +342,10 @@ properties_cb (GtkAction  *action,
 	gtk_widget_show (control_vbox);
 
 	label = gtk_label_new_with_mnemonic (_("_Select a theme:"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_set_halign (label, GTK_ALIGN_START);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 #else
-	gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 #endif
 	gtk_box_pack_start (GTK_BOX (control_vbox), label, FALSE, FALSE, 0);
 

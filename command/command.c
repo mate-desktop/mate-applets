@@ -143,9 +143,9 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Command:"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-    gtk_widget_set_halign (widget, GTK_ALIGN_END);
-    gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
@@ -159,9 +159,9 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       0, 0);
 
     widget = gtk_label_new (_("Interval (seconds):"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-    gtk_widget_set_halign (widget, GTK_ALIGN_END);
-    gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
@@ -175,9 +175,9 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                       0, 0);
 
     widget = gtk_label_new (_("Maximum width (chars):"));
-#if GTK_CHECK_VERSION (3, 0, 0)
-    gtk_widget_set_halign (widget, GTK_ALIGN_END);
-    gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+#if GTK_CHECK_VERSION (3, 16, 0)
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
