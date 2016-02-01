@@ -43,7 +43,6 @@
 #endif
 
 struct _MateWeatherPrefPrivate {
-	GtkWidget* basic_detailed_btn;
 	GtkWidget* basic_temp_combo;
 	GtkWidget* basic_speed_combo;
 	GtkWidget* basic_dist_combo;
@@ -188,10 +187,6 @@ static gboolean update_dialog(MateWeatherPref* pref)
 
     gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), gw_applet->mateweather_pref.distance_unit - 2);
 
-	#if 0
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_detailed_btn), gw_applet->mateweather_pref.detailed);
-	#endif
-
 	#ifdef RADARMAP
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_radar_btn), gw_applet->mateweather_pref.radar_enabled);
 
@@ -281,7 +276,7 @@ static void load_locations(MateWeatherPref* pref)
 	GtkCellRenderer* cell_renderer;
 	WeatherLocation* current_location;
 
-	/* Add a colum for the locations */
+	/* Add a column for the locations */
 	cell_renderer = gtk_cell_renderer_text_new();
 	column = gtk_tree_view_column_new_with_attributes("not used", cell_renderer, "text", MATEWEATHER_XML_COL_LOC, NULL);
 	gtk_tree_view_append_column(tree, column);
@@ -354,18 +349,6 @@ static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 		}
 	}
 }
-
-#if 0
-	static void detailed_toggled(GtkToggleButton* button, MateWeatherPref* pref)
-	{
-		MateWeatherApplet* gw_applet = pref->priv->applet;
-		gboolean toggled;
-
-		toggled = gtk_toggle_button_get_active(button);
-		gw_applet->mateweather_pref.detailed = toggled;
-		g_settings_set_boolean (gw_applet->settings, "enable-detailed-forecast", toggled);
-	}
-#endif
 
 static void temp_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 {
@@ -562,7 +545,7 @@ static gboolean free_data(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* i
 }
 
 
-static GtkWidget* create_hig_catagory(GtkWidget* main_box, gchar* title)
+static GtkWidget* create_hig_category(GtkWidget* main_box, gchar* title)
 {
 	GtkWidget* vbox;
 	GtkWidget* vbox2;
@@ -1063,7 +1046,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		g_signal_connect (G_OBJECT (pref->priv->basic_show_notifications_btn), "toggled", G_CALLBACK (show_notifications_toggled), pref);
     #endif
 
-	frame = create_hig_catagory (pref_basic_vbox, _("Update"));
+	frame = create_hig_category (pref_basic_vbox, _("Update"));
 
 	pref_basic_update_hbox = gtk_hbox_new (FALSE, 12);
 
@@ -1098,7 +1081,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	gtk_container_add (GTK_CONTAINER (frame), pref_basic_update_hbox);
 
-	frame = create_hig_catagory (pref_basic_vbox, _("Display"));
+	frame = create_hig_category (pref_basic_vbox, _("Display"));
 
 	vbox = gtk_vbox_new (FALSE, 6);
 
