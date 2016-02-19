@@ -6,16 +6,18 @@
 # Emilio Bologna <io@emilio.i5-my.name>, 2012
 # Francesco Marletta <francesco.marletta@tiscali.it>, 2003
 # talorno <giovanni.talorno@gmail.com>, 2012
+# Giuseppe Pignataro <rogepix@gmail.com>, 2015
 # Leandro Noferini <lnoferin@cybervalley.org>, 2002, 2003
 # Luca Ferretti <lferrett@gnome.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+# Marco Bartolucci <nap.84@live.it>, 2016
 # Stefano Karapetsas <stefano@karapetsas.com>, 2012,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 15:28+0300\n"
-"PO-Revision-Date: 2015-09-06 19:57+0000\n"
-"Last-Translator: infirit <inactive+infirit@transifex.com>\n"
+"POT-Creation-Date: 2016-01-04 19:20+0300\n"
+"PO-Revision-Date: 2016-01-24 20:50+0000\n"
+"Last-Translator: Marco Bartolucci <nap.84@live.it>\n"
 "Language-Team: Italian (http://www.transifex.com/mate/MATE/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +25,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../accessx-status/applet.c:147
+#: ../accessx-status/applet.c:144
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Mostra lo stato delle caratteristiche di AccessX come modificatori a due stati"
 
@@ -32,85 +34,86 @@ msgstr "Mostra lo stato delle caratteristiche di AccessX come modificatori a due
 #. about.set_artists([])
 #. about.set_documenters([])
 #. translators: These appear in the About dialog, usual format applies.
-#: ../accessx-status/applet.c:151 ../battstat/battstat_applet.c:1214
-#: ../charpick/charpick.c:651 ../command/command.c:115
+#: ../accessx-status/applet.c:148 ../battstat/battstat_applet.c:1214
+#: ../charpick/charpick.c:664 ../command/command.c:115
 #: ../cpufreq/src/cpufreq-applet.c:711 ../drivemount/drivemount.c:122
-#: ../geyes/geyes.c:173 ../mateweather/mateweather-about.c:54
-#: ../invest-applet/invest/about.py:34 ../multiload/main.c:70
+#: ../geyes/geyes.c:197 ../mateweather/mateweather-about.c:54
+#: ../invest-applet/invest/about.py:34 ../multiload/main.c:67
+#: ../netspeed/src/netspeed.c:812
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
 msgstr "Luca Ferretti <elle.uca@libero.it>\n\nCon la partecipazione di:\n  * Christopher R. Gabriel\n  * Francesco Marletta\n  * Leandro Noferini\n  * tutti i revisori del TP"
 
-#: ../accessx-status/applet.c:167
+#: ../accessx-status/applet.c:164
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Si è verificato un errore nel lanciare il visualizzatore d'aiuto: %s"
 
-#: ../accessx-status/applet.c:195
+#: ../accessx-status/applet.c:192
 msgid "Open the keyboard preferences dialog"
-msgstr ""
+msgstr "Apri la finestra di preferenze della tastiera"
 
-#: ../accessx-status/applet.c:209
+#: ../accessx-status/applet.c:211
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Si è verificato un errore nel lanciare il dialogo di preferenze della tastiera: %s"
 
-#: ../accessx-status/applet.c:224
+#: ../accessx-status/applet.c:226
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Preferen_ze accessibilità tastiera"
 
-#: ../accessx-status/applet.c:225 ../battstat/battstat_applet.c:71
-#: ../charpick/charpick.c:732 ../cpufreq/src/cpufreq-applet.c:138
-#: ../drivemount/drivemount.c:160 ../geyes/geyes.c:343
-#: ../mateweather/mateweather-applet.c:122 ../multiload/main.c:464
+#: ../accessx-status/applet.c:227 ../battstat/battstat_applet.c:71
+#: ../charpick/charpick.c:745 ../cpufreq/src/cpufreq-applet.c:138
+#: ../drivemount/drivemount.c:160 ../geyes/geyes.c:380
+#: ../mateweather/mateweather-applet.c:122 ../multiload/main.c:461
 #: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:80
 msgid "_Help"
 msgstr "A_iuto"
 
-#: ../accessx-status/applet.c:226 ../battstat/battstat_applet.c:74
-#: ../charpick/charpick.c:735 ../command/command.c:78
+#: ../accessx-status/applet.c:228 ../battstat/battstat_applet.c:74
+#: ../charpick/charpick.c:748 ../command/command.c:78
 #: ../cpufreq/src/cpufreq-applet.c:141 ../drivemount/drivemount.c:163
-#: ../geyes/geyes.c:346 ../mateweather/mateweather-applet.c:125
-#: ../multiload/main.c:467 ../stickynotes/stickynotes_applet.c:48
+#: ../geyes/geyes.c:383 ../mateweather/mateweather-applet.c:125
+#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:48
 #: ../timerapplet/timerapplet.c:86 ../trashapplet/src/trashapplet.c:83
 msgid "_About"
 msgstr "I_nformazioni"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
-#: ../accessx-status/applet.c:503 ../accessx-status/applet.c:537
+#: ../accessx-status/applet.c:505 ../accessx-status/applet.c:543
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1020 ../accessx-status/applet.c:1086
-#: ../accessx-status/applet.c:1159 ../accessx-status/applet.c:1333
+#: ../accessx-status/applet.c:1054 ../accessx-status/applet.c:1120
+#: ../accessx-status/applet.c:1193 ../accessx-status/applet.c:1367
 msgid "AccessX Status"
 msgstr "Stato AccessX"
 
-#: ../accessx-status/applet.c:1021 ../accessx-status/applet.c:1160
+#: ../accessx-status/applet.c:1055 ../accessx-status/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Mostra lo stato della tastiera quando sono usate le funzioni di accesso universale."
 
-#: ../accessx-status/applet.c:1056
+#: ../accessx-status/applet.c:1090
 msgid "XKB Extension is not enabled"
 msgstr "L'estensione XKB non è abilitata"
 
-#: ../accessx-status/applet.c:1061
+#: ../accessx-status/applet.c:1095
 msgid "Unknown error"
 msgstr "Errore sconosciuto"
 
-#: ../accessx-status/applet.c:1065
+#: ../accessx-status/applet.c:1099
 #, c-format
 msgid "Error: %s"
 msgstr "Errore: %s"
 
-#: ../accessx-status/applet.c:1330
+#: ../accessx-status/applet.c:1364
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Stato accessibilità tastiera"
 
-#: ../accessx-status/applet.c:1334
+#: ../accessx-status/applet.c:1368
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Mostra lo stato attuale delle funzioni di accesso universale della tastiera"
 
@@ -126,10 +129,10 @@ msgstr "Fabbrica applet Stato accessibilità tastiera"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Mostra lo stato delle funzionalità di accesso facilitato della tastiera"
 
-#: ../battstat/battstat_applet.c:68 ../charpick/charpick.c:729
+#: ../battstat/battstat_applet.c:68 ../charpick/charpick.c:742
 #: ../command/command.c:77 ../cpufreq/src/cpufreq-applet.c:135
-#: ../geyes/geyes.c:340 ../mateweather/mateweather-applet.c:119
-#: ../multiload/main.c:458 ../stickynotes/stickynotes_applet.c:42
+#: ../geyes/geyes.c:377 ../mateweather/mateweather-applet.c:119
+#: ../multiload/main.c:455 ../stickynotes/stickynotes_applet.c:42
 #: ../timerapplet/timerapplet.c:85
 msgid "_Preferences"
 msgstr "Preferen_ze"
@@ -276,9 +279,9 @@ msgid "N/A"
 msgstr "N/D"
 
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
-#: ../geyes/geyes.c:328 ../geyes/themes.c:227
+#: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:763
+#: ../mateweather/mateweather-pref.c:767
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -298,7 +301,7 @@ msgstr "backend upower abilitato."
 #. false
 #: ../battstat/battstat_applet.c:1204
 msgid "Legacy backend enabled."
-msgstr ""
+msgstr "backend legacy abilitato."
 
 #: ../battstat/battstat_applet.c:1578 ../battstat/battstat_applet.c:1630
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
@@ -372,7 +375,7 @@ msgstr "Valore del livello rosso"
 msgid ""
 "The battery level below which the battery is displayed as red. Also the "
 "value at which the low battery warning is displayed."
-msgstr "Il livello della batteria al di sotto del quale questa viene mostrata in rosso.Rappresenta anche il valore che attiva la visualizzazione dell'avviso di batteria quasi scarica."
+msgstr "Il livello della batteria al di sotto del quale questa viene mostrata in rosso. Rappresenta anche il valore che attiva la visualizzazione dell'avviso di batteria quasi scarica."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:3
 msgid "Warn on low time rather than low percentage"
@@ -475,33 +478,33 @@ msgstr "Tavolozze disponibili"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:517
+#: ../charpick/charpick.c:530
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Inserisce «%s»"
 
-#: ../charpick/charpick.c:520
+#: ../charpick/charpick.c:533
 msgid "Insert special character"
 msgstr "Inserisce il carattere speciale"
 
-#: ../charpick/charpick.c:524
+#: ../charpick/charpick.c:537
 #, c-format
 msgid "insert special character %s"
 msgstr "inserisce il carattere speciale %s"
 
-#: ../charpick/charpick.c:646
+#: ../charpick/charpick.c:659
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "Applet del pannello di MATE per selezionare caratteri strani che non si trovano sulla tastiera. Rilasciata sotto la GNU General Public Licence."
 
-#: ../charpick/charpick.c:758 ../charpick/charpick.c:772
+#: ../charpick/charpick.c:771 ../charpick/charpick.c:785
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
-#: ../charpick/properties.c:456
+#: ../charpick/properties.c:460
 msgid "Character Palette"
 msgstr "Tavolozza caratteri"
 
-#: ../charpick/charpick.c:758
+#: ../charpick/charpick.c:771
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Per inserire caratteri"
@@ -557,39 +560,40 @@ msgstr "Modifica tavolozza"
 msgid "Palettes list"
 msgstr "Lista delle tavolozze"
 
-#: ../charpick/properties.c:461
+#: ../charpick/properties.c:465
 msgid "_Palettes:"
 msgstr "_Tavolozze:"
 
-#: ../charpick/properties.c:477
+#: ../charpick/properties.c:485
 msgid "Add button"
 msgstr "Pulsante per aggiungere"
 
-#: ../charpick/properties.c:478
+#: ../charpick/properties.c:486
 msgid "Click to add a new palette"
 msgstr "Fare clic per aggiungere una nuova tavolozza"
 
-#: ../charpick/properties.c:485
+#: ../charpick/properties.c:493
 msgid "Edit button"
 msgstr "Pulsante per modificare"
 
-#: ../charpick/properties.c:486
+#: ../charpick/properties.c:494
 msgid "Click to edit the selected palette"
 msgstr "Fare clic per modificare la tavolozza selezionata"
 
-#: ../charpick/properties.c:493
+#: ../charpick/properties.c:501
 msgid "Delete button"
 msgstr "Pulsante per eliminare"
 
-#: ../charpick/properties.c:494
+#: ../charpick/properties.c:502
 msgid "Click to delete the selected palette"
 msgstr "Fare clic per eliminare la tavolozza selezionata"
 
-#: ../charpick/properties.c:545
+#: ../charpick/properties.c:553
 msgid "Character Palette Preferences"
 msgstr "Preferenze di Tavolozza caratteri"
 
 #: ../command/command.c:114
+#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
 msgstr "Mostra l'output di un comando"
 
@@ -601,22 +605,31 @@ msgstr "Preferenze di Applet Comando"
 msgid "Command:"
 msgstr "Comando:"
 
-#: ../command/command.c:156
+#: ../command/command.c:161
 msgid "Interval (seconds):"
 msgstr "Intervallo (secondi):"
 
-#: ../command/command.c:167
+#: ../command/command.c:177
 msgid "Maximum width (chars):"
-msgstr ""
+msgstr "Larghezza massima (caratteri):"
 
-#: ../command/command.c:178
+#: ../command/command.c:193
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
 msgid "Show icon"
 msgstr "Mostra icona"
 
-#: ../command/command.c:328
+#: ../command/command.c:343
 msgid "Command Applet"
 msgstr "Applet Comando"
+
+#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
+msgid "Command Factory"
+msgstr "Fabbrica di Comando"
+
+#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
+msgid "Command"
+msgstr "Comando"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:1
 msgid "Command to execute"
@@ -636,11 +649,11 @@ msgstr "Intervallo per l'esecuzione del comando (in secondi)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
 msgid "Width of output"
-msgstr ""
+msgstr "Larghezza dell'output"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
 msgid "Number of characters to display"
-msgstr ""
+msgstr "Numero di caratteri da visualizzare"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
@@ -689,34 +702,34 @@ msgstr "Monitorizza la variazione della frequenza della CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:1
 msgid "CPU to Monitor"
-msgstr ""
+msgstr "CPU da monitorare"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:2
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
-msgstr ""
+msgstr "Imposta la CPU da monitorare. In un sistema a processore singolo non è necessario cambiare questo valore."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
 msgid "Mode to show cpu usage"
-msgstr ""
+msgstr "Modalità visualizzazione utilizzo CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
-msgstr ""
+msgstr "Un valore pari a 0 indica di mostrare l'applet nella modalità grafica (solo pixmap), a 1 nella modalità testuale (non mostra la pixmap), a 2 nella modalità grafica e testuale."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:5
 msgid "The type of text to display (if the text is enabled)."
-msgstr ""
+msgstr "Il tipo di testo da mostrare (se il testo è abilitato)."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
 "A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr ""
+msgstr "Un valore pari a 0 indica di mostrare la frequenza della CPU, a 1 la frequenza e le unità, a 2 la percentuale invece della frequenza."
 
 #: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -768,47 +781,47 @@ msgstr "Cambia la variazione della frequenza della CPU"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Sono richiesti privilegi per cambiare la variazione della frequenza della CPU"
 
-#: ../drivemount/drive-button.c:360 ../drivemount/drive-button.c:373
+#: ../drivemount/drive-button.c:364 ../drivemount/drive-button.c:377
 msgid "(mounted)"
 msgstr "(montato)"
 
-#: ../drivemount/drive-button.c:362
+#: ../drivemount/drive-button.c:366
 msgid "(not mounted)"
 msgstr "(non montato)"
 
-#: ../drivemount/drive-button.c:630
+#: ../drivemount/drive-button.c:634
 msgid "Cannot execute Caja"
 msgstr "Impossibile eseguire Caja"
 
-#: ../drivemount/drive-button.c:632
+#: ../drivemount/drive-button.c:636
 #, c-format
 msgid "Cannot execute '%s'"
 msgstr "Impossibile eseguire «%s»"
 
-#: ../drivemount/drive-button.c:957
+#: ../drivemount/drive-button.c:961
 msgid "_Play DVD"
 msgstr "_Riproduci DVD"
 
-#: ../drivemount/drive-button.c:961
+#: ../drivemount/drive-button.c:965
 msgid "_Play CD"
 msgstr "_Riproduci CD"
 
-#: ../drivemount/drive-button.c:964
+#: ../drivemount/drive-button.c:968
 #, c-format
 msgid "_Open %s"
 msgstr "_Apri «%s»"
 
-#: ../drivemount/drive-button.c:972
+#: ../drivemount/drive-button.c:976
 #, c-format
 msgid "Un_mount %s"
 msgstr "S_monta «%s»"
 
-#: ../drivemount/drive-button.c:978
+#: ../drivemount/drive-button.c:982
 #, c-format
 msgid "_Mount %s"
 msgstr "_Monta «%s»"
 
-#: ../drivemount/drive-button.c:986
+#: ../drivemount/drive-button.c:990
 #, c-format
 msgid "_Eject %s"
 msgstr "_Espelli «%s»"
@@ -834,16 +847,16 @@ msgstr "Fabbrica dell'applet per montaggio dischi"
 msgid "Mount local disks and devices"
 msgstr "Monta dischi e dispositivi locali"
 
-#: ../geyes/geyes.c:168
+#: ../geyes/geyes.c:192
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Un buffo gruppo di occhi per il pannello di MATE che seguono il mouse."
 
-#: ../geyes/geyes.c:373 ../geyes/geyes.c:403 ../geyes/geyes.c:405
+#: ../geyes/geyes.c:410 ../geyes/geyes.c:440 ../geyes/geyes.c:442
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
 msgid "Eyes"
 msgstr "Occhi"
 
-#: ../geyes/geyes.c:406
+#: ../geyes/geyes.c:443
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Gli occhi fissano in direzione del puntatore del mouse"
 
@@ -875,7 +888,7 @@ msgstr "Preferenze di Geyes"
 msgid "Themes"
 msgstr "Temi"
 
-#: ../geyes/themes.c:340
+#: ../geyes/themes.c:344
 msgid "_Select a theme:"
 msgstr "_Selezionare un tema:"
 
@@ -896,21 +909,21 @@ msgstr "_Dettagli"
 msgid "_Update"
 msgstr "A_ggiorna"
 
-#: ../mateweather/mateweather-applet.c:342
+#: ../mateweather/mateweather-applet.c:350
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
 msgid "Weather Report"
 msgstr "Condizioni meteo"
 
-#: ../mateweather/mateweather-applet.c:360
-#: ../mateweather/mateweather-applet.c:364
+#: ../mateweather/mateweather-applet.c:368
+#: ../mateweather/mateweather-applet.c:372
 msgid "MATE Weather"
 msgstr "Condizioni meteo di MATE"
 
-#: ../mateweather/mateweather-applet.c:463
+#: ../mateweather/mateweather-applet.c:471
 msgid "Weather Forecast"
 msgstr "Previsioni meteo"
 
-#: ../mateweather/mateweather-applet.c:475
+#: ../mateweather/mateweather-applet.c:483
 #, c-format
 msgid ""
 "City: %s\n"
@@ -918,7 +931,7 @@ msgid ""
 "Temperature: %s"
 msgstr "Città: %s\nCielo: %s\nTemperatura: %s"
 
-#: ../mateweather/mateweather-applet.c:524
+#: ../mateweather/mateweather-applet.c:532
 msgid "Updating..."
 msgstr "Aggiornamento in corso..."
 
@@ -930,87 +943,87 @@ msgstr "Dettagli"
 msgid "City:"
 msgstr "Città:"
 
-#: ../mateweather/mateweather-dialog.c:239
+#: ../mateweather/mateweather-dialog.c:243
 msgid "Last update:"
 msgstr "Ultimo aggiornamento:"
 
-#: ../mateweather/mateweather-dialog.c:247
+#: ../mateweather/mateweather-dialog.c:255
 msgid "Conditions:"
 msgstr "Condizioni:"
 
-#: ../mateweather/mateweather-dialog.c:255
+#: ../mateweather/mateweather-dialog.c:267
 msgid "Sky:"
 msgstr "Cielo:"
 
-#: ../mateweather/mateweather-dialog.c:263
+#: ../mateweather/mateweather-dialog.c:279
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: ../mateweather/mateweather-dialog.c:271
+#: ../mateweather/mateweather-dialog.c:291
 msgid "Feels like:"
 msgstr "Percepita:"
 
-#: ../mateweather/mateweather-dialog.c:279
+#: ../mateweather/mateweather-dialog.c:303
 msgid "Dew point:"
 msgstr "Punto di rugiada:"
 
-#: ../mateweather/mateweather-dialog.c:287
+#: ../mateweather/mateweather-dialog.c:315
 msgid "Relative humidity:"
 msgstr "Umidità relativa:"
 
-#: ../mateweather/mateweather-dialog.c:295
+#: ../mateweather/mateweather-dialog.c:327
 msgid "Wind:"
 msgstr "Vento:"
 
-#: ../mateweather/mateweather-dialog.c:303
+#: ../mateweather/mateweather-dialog.c:339
 msgid "Pressure:"
 msgstr "Pressione:"
 
-#: ../mateweather/mateweather-dialog.c:311
+#: ../mateweather/mateweather-dialog.c:351
 msgid "Visibility:"
 msgstr "Visibilità:"
 
-#: ../mateweather/mateweather-dialog.c:319
+#: ../mateweather/mateweather-dialog.c:363
 msgid "Sunrise:"
 msgstr "Alba:"
 
-#: ../mateweather/mateweather-dialog.c:327
+#: ../mateweather/mateweather-dialog.c:375
 msgid "Sunset:"
 msgstr "Tramonto:"
 
-#: ../mateweather/mateweather-dialog.c:461
+#: ../mateweather/mateweather-dialog.c:565
 msgid "Current Conditions"
 msgstr "Condizioni attuali"
 
-#: ../mateweather/mateweather-dialog.c:478
+#: ../mateweather/mateweather-dialog.c:582
 msgid "Forecast Report"
 msgstr "Rapporto delle previsioni"
 
-#: ../mateweather/mateweather-dialog.c:478
+#: ../mateweather/mateweather-dialog.c:582
 msgid "See the ForeCast Details"
 msgstr "Leggi i dettagli della previsione"
 
-#: ../mateweather/mateweather-dialog.c:488
+#: ../mateweather/mateweather-dialog.c:592
 msgid "Forecast"
 msgstr "Previsione"
 
-#: ../mateweather/mateweather-dialog.c:496
+#: ../mateweather/mateweather-dialog.c:600
 msgid "Radar Map"
 msgstr "Mappa radar"
 
-#: ../mateweather/mateweather-dialog.c:527
+#: ../mateweather/mateweather-dialog.c:631
 msgid "_Visit Weather.com"
 msgstr "_Visita Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:528
+#: ../mateweather/mateweather-dialog.c:632
 msgid "Visit Weather.com"
 msgstr "Visita Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:528
+#: ../mateweather/mateweather-dialog.c:632
 msgid "Click to Enter Weather.com"
 msgstr "Fare clic per visitare Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:613
+#: ../mateweather/mateweather-dialog.c:717
 msgid "Forecast not currently available for this location."
 msgstr "Previsione attualmente non disponibile per questa località."
 
@@ -1044,168 +1057,168 @@ msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Caricamento del database XML delle località non riuscito. Notificare questo evento come bug."
 
-#: ../mateweather/mateweather-pref.c:825
+#: ../mateweather/mateweather-pref.c:829
 msgid "Weather Preferences"
 msgstr "Preferenze di Condizioni meteo"
 
-#: ../mateweather/mateweather-pref.c:852
-#: ../mateweather/mateweather-pref.c:1050
+#: ../mateweather/mateweather-pref.c:856
+#: ../mateweather/mateweather-pref.c:1070
 msgid "_Automatically update every:"
 msgstr "_Aggiornare automaticamente ogni:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:871
 msgid "_Temperature unit:"
 msgstr "Unità di _temperatura:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:877
+#: ../mateweather/mateweather-pref.c:885
 msgid "Kelvin"
 msgstr "Kelvin"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:879
+#: ../mateweather/mateweather-pref.c:887
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../mateweather/mateweather-pref.c:880
+#: ../mateweather/mateweather-pref.c:888
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:897
 msgid "_Wind speed unit:"
 msgstr "Unità di velocità del _vento:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:900
+#: ../mateweather/mateweather-pref.c:912
 msgid "m/s"
 msgstr "metri al secondo"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:902
+#: ../mateweather/mateweather-pref.c:914
 msgid "km/h"
 msgstr "chilometri all'ora"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:904
+#: ../mateweather/mateweather-pref.c:916
 msgid "mph"
 msgstr "miglia all'ora"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:906
+#: ../mateweather/mateweather-pref.c:918
 msgid "knots"
 msgstr "nodi"
 
-#: ../mateweather/mateweather-pref.c:907
+#: ../mateweather/mateweather-pref.c:919
 msgid "Beaufort scale"
 msgstr "Scala Beaufort"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:928
 msgid "_Pressure unit:"
 msgstr "Unità di _pressione:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:927
+#: ../mateweather/mateweather-pref.c:943
 msgid "kPa"
 msgstr "kiloPascal"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:929
+#: ../mateweather/mateweather-pref.c:945
 msgid "hPa"
 msgstr "ettoPascal"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:931
+#: ../mateweather/mateweather-pref.c:947
 msgid "mb"
 msgstr "millibar"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:949
 msgid "mmHg"
 msgstr "millimetri di mercurio"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:935
+#: ../mateweather/mateweather-pref.c:951
 msgid "inHg"
 msgstr "pollici di mercurio"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:937
+#: ../mateweather/mateweather-pref.c:953
 msgid "atm"
 msgstr "atmosfere"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:962
 msgid "_Visibility unit:"
 msgstr "Unità di visi_bilità:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:957
+#: ../mateweather/mateweather-pref.c:977
 msgid "meters"
 msgstr "metri"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:959
+#: ../mateweather/mateweather-pref.c:979
 msgid "km"
 msgstr "chilometri"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:961
+#: ../mateweather/mateweather-pref.c:981
 msgid "miles"
 msgstr "miglia"
 
-#: ../mateweather/mateweather-pref.c:987
+#: ../mateweather/mateweather-pref.c:1007
 msgid "Enable _radar map"
 msgstr "Abilitare le _mappe radar"
 
-#: ../mateweather/mateweather-pref.c:1003
+#: ../mateweather/mateweather-pref.c:1023
 msgid "Use _custom address for radar map"
 msgstr "_Usare un indirizzo personalizzato per le mappe radar"
 
-#: ../mateweather/mateweather-pref.c:1021
+#: ../mateweather/mateweather-pref.c:1041
 msgid "A_ddress:"
 msgstr "In_dirizzo:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1036
+#: ../mateweather/mateweather-pref.c:1056
 msgid "Show _notifications"
 msgstr "Mostra _notifiche"
 
-#: ../mateweather/mateweather-pref.c:1046
+#: ../mateweather/mateweather-pref.c:1066
 msgid "Update"
 msgstr "Aggiorna"
 
-#: ../mateweather/mateweather-pref.c:1069
+#: ../mateweather/mateweather-pref.c:1089
 msgid "minutes"
 msgstr "minuti"
 
-#: ../mateweather/mateweather-pref.c:1087
+#: ../mateweather/mateweather-pref.c:1107
 msgid "Display"
 msgstr "Visualizzazione"
 
-#: ../mateweather/mateweather-pref.c:1106
+#: ../mateweather/mateweather-pref.c:1126
 msgid "General"
 msgstr "Generali"
 
-#: ../mateweather/mateweather-pref.c:1117
+#: ../mateweather/mateweather-pref.c:1137
 msgid "_Select a location:"
 msgstr "_Selezionare una località:"
 
-#: ../mateweather/mateweather-pref.c:1139
+#: ../mateweather/mateweather-pref.c:1163
 msgid "_Find:"
 msgstr "Tr_ova:"
 
-#: ../mateweather/mateweather-pref.c:1145
+#: ../mateweather/mateweather-pref.c:1169
 msgid "Find _Next"
 msgstr "Trova s_uccessiva"
 
-#: ../mateweather/mateweather-pref.c:1166
+#: ../mateweather/mateweather-pref.c:1190
 msgid "Location"
 msgstr "Località"
 
@@ -1398,27 +1411,27 @@ msgstr "MACD"
 
 #: ../invest-applet/data/financialchart.ui.h:53
 msgid "Line"
-msgstr ""
+msgstr "Riga"
 
 #: ../invest-applet/data/financialchart.ui.h:54
 msgid "Bar"
-msgstr ""
+msgstr "Barra"
 
 #: ../invest-applet/data/financialchart.ui.h:55
 msgid "Candle"
-msgstr ""
+msgstr "Candela"
 
 #: ../invest-applet/data/financialchart.ui.h:56
 msgid "Scale: "
-msgstr ""
+msgstr "Scala:"
 
 #: ../invest-applet/data/financialchart.ui.h:57
 msgid "Linear"
-msgstr ""
+msgstr "Lineare"
 
 #: ../invest-applet/data/financialchart.ui.h:58
 msgid "Logarithmic"
-msgstr ""
+msgstr "Logaritmico"
 
 #: ../invest-applet/data/financialchart.ui.h:59
 msgid "_Options"
@@ -1463,7 +1476,7 @@ msgstr "Tiene traccia dei propri investimenti monetari."
 msgid "About"
 msgstr "Informazioni"
 
-#: ../invest-applet/invest/applet.py:29
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
 msgid "Help"
 msgstr "Aiuto"
 
@@ -1592,48 +1605,48 @@ msgstr "Guadagno"
 msgid "Gain %"
 msgstr "Guadagno %"
 
-#: ../multiload/main.c:65
+#: ../multiload/main.c:62
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
 msgstr "Un monitor del carico di sistema, capace di visualizzare grafici per la CPU, la RAM e l'uso dello spazio di swap, oltre che del traffico di rete."
 
-#: ../multiload/main.c:128
+#: ../multiload/main.c:125
 msgid "Start system-monitor"
-msgstr ""
+msgstr "Avvia monitor di sistema"
 
-#: ../multiload/main.c:149
+#: ../multiload/main.c:146
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Si è verificato un errore nell'eseguire «%s»: %s"
 
-#: ../multiload/main.c:277 ../multiload/properties.c:576
+#: ../multiload/main.c:274 ../multiload/properties.c:604
 msgid "Processor"
 msgstr "Processore"
 
-#: ../multiload/main.c:279 ../multiload/properties.c:584
+#: ../multiload/main.c:276 ../multiload/properties.c:612
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../multiload/main.c:281 ../multiload/properties.c:592
+#: ../multiload/main.c:278 ../multiload/properties.c:620
 msgid "Network"
 msgstr "Rete"
 
-#: ../multiload/main.c:283 ../multiload/properties.c:599
+#: ../multiload/main.c:280 ../multiload/properties.c:627
 msgid "Swap Space"
 msgstr "Spazio di swap"
 
-#: ../multiload/main.c:285 ../multiload/main.c:364
+#: ../multiload/main.c:282 ../multiload/main.c:361
 msgid "Load Average"
 msgstr "Carico medio"
 
-#: ../multiload/main.c:287
+#: ../multiload/main.c:284
 msgid "Disk"
 msgstr "Disco"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#: ../multiload/main.c:303
+#: ../multiload/main.c:300
 #, c-format
 msgid ""
 "%s:\n"
@@ -1641,13 +1654,13 @@ msgid ""
 "%u%% in use as cache"
 msgstr "%s:\n%u%% in uso dal programma\n%u%% in uso come cache"
 
-#: ../multiload/main.c:311
+#: ../multiload/main.c:308
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Il carico medio del sistema è %0.02f"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:319
+#: ../multiload/main.c:316
 #, c-format
 msgid ""
 "%s:\n"
@@ -1655,7 +1668,7 @@ msgid ""
 "Sending %s"
 msgstr "%s:\nRicezione %s\nInvio %s"
 
-#: ../multiload/main.c:335
+#: ../multiload/main.c:332
 #, c-format
 msgid ""
 "%s:\n"
@@ -1666,31 +1679,31 @@ msgid_plural ""
 msgstr[0] "%s:\n%u%% in uso"
 msgstr[1] "%s:\n%u%% in uso"
 
-#: ../multiload/main.c:360
+#: ../multiload/main.c:357
 msgid "CPU Load"
 msgstr "Carico CPU"
 
-#: ../multiload/main.c:361
+#: ../multiload/main.c:358
 msgid "Memory Load"
 msgstr "Carico della memoria"
 
-#: ../multiload/main.c:362
+#: ../multiload/main.c:359
 msgid "Net Load"
 msgstr "Carico di rete"
 
-#: ../multiload/main.c:363
+#: ../multiload/main.c:360
 msgid "Swap Load"
 msgstr "Carico dello swap"
 
-#: ../multiload/main.c:365
+#: ../multiload/main.c:362
 msgid "Disk Load"
 msgstr "Carico del disco"
 
-#: ../multiload/main.c:461
+#: ../multiload/main.c:458
 msgid "_Open System Monitor"
 msgstr "_Apri «Monitor di sistema»"
 
-#: ../multiload/main.c:489
+#: ../multiload/main.c:486
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
 msgstr "Monitor di sistema"
@@ -1706,352 +1719,638 @@ msgstr "Un indicatore del carico del sistema"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:1
 msgid "Enable CPU load graph"
-msgstr ""
+msgstr "Abilita grafico carico processore"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:2
 msgid "Enable memory load graph"
-msgstr ""
+msgstr "Abilita grafico carico memoria"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:3
 msgid "Enable network load graph"
-msgstr ""
+msgstr "Abilita grafico carico rete"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:4
 msgid "Enable swap load graph"
-msgstr ""
+msgstr "Abilita grafico carico swap"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:5
 msgid "Enable load average graph"
-msgstr ""
+msgstr "Abilita grafico carico medio"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:6
 msgid "Enable disk load graph"
-msgstr ""
+msgstr "Abilita grafico carico disco"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:7
 msgid "Applet refresh rate in milliseconds"
-msgstr ""
+msgstr "Aggiornamento dell'applet in millisecondi"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:8
 msgid "Graph size"
-msgstr ""
+msgstr "Dimensione grafico"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:9
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr ""
+msgstr "La larghezza in pixel dei grafici, per pannelli orizzontali. Per quelli verticali, è l'altezza dei grafici."
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:10
 msgid "Graph color for user-related CPU activity"
-msgstr ""
+msgstr "Colore grafico attività CPU legate agli utenti"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:11
 msgid "Graph color for system-related CPU activity"
-msgstr ""
+msgstr "Colore grafico attività CPU legate al sistema"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:12
 msgid "Graph color for nice-related CPU activity"
-msgstr ""
+msgstr "Colore grafico attività CPU legate al nice"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:13
 msgid "Graph color for iowait related CPU activity"
-msgstr ""
+msgstr "Colore grafico attività CPU legate ad iowait"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:14
 msgid "CPU graph background color"
-msgstr ""
+msgstr "Colore di sfondo del grafico del processore"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:15
 msgid "Graph color for user-related memory usage"
-msgstr ""
+msgstr "Colore grafico uso memoria legato agli utenti"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:16
 msgid "Graph color for shared memory"
-msgstr ""
+msgstr "Colore grafico memoria condivisa"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:17
 msgid "Graph color for buffer memory"
-msgstr ""
+msgstr "Colore grafico memoria buffer"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:18
 msgid "Graph color for cached memory"
-msgstr ""
+msgstr "Colore grafico memoria in cache"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:19
 msgid "Memory graph background color"
-msgstr ""
+msgstr "Colore di sfondo grafico memoria"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:20
 msgid "Graph color for input network activity"
-msgstr ""
+msgstr "Colore grafico attività di rete in ingresso"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:21
 msgid "Graph color for output network activity"
-msgstr ""
+msgstr "Colore grafico attività di rete in uscita"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:22
 msgid "Graph color for loopback network usage"
-msgstr ""
+msgstr "Colore grafico utilizzo rete lookback"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:23
 msgid "Network graph background color"
-msgstr ""
+msgstr "Colore di sfondo grafico rete"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:24
 msgid "Graph color for user-related swap usage"
-msgstr ""
+msgstr "Colore grafico uso swap legato agli utenti"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Swap graph background color"
-msgstr ""
+msgstr "Colore di sfondo del grafico dello swap"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Graph color for load average"
-msgstr ""
+msgstr "Colore grafico uso medio memoria"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Load graph background color"
-msgstr ""
+msgstr "Colore di sfondo grafico carico"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Graph color for disk read"
-msgstr ""
+msgstr "Colore grafico lettura da disco"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for disk write"
-msgstr ""
+msgstr "Colore grafico scrittura su disco"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:30
 msgid "Background color for disk load graph"
-msgstr ""
+msgstr "Colore di sfondo per il grafico del carico del disco"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:31
 msgid "The desktop description file to execute as the system monitor"
-msgstr ""
+msgstr "Il file descrizione desktop da eseguire come monitor di sistema"
 
 #: ../multiload/properties.c:338
 msgid "Monitored Resources"
 msgstr "Risorse monitorate"
 
-#: ../multiload/properties.c:363
+#: ../multiload/properties.c:367
 msgid "_Processor"
 msgstr "_Processore"
 
-#: ../multiload/properties.c:376
+#: ../multiload/properties.c:380
 msgid "_Memory"
 msgstr "_Memoria"
 
-#: ../multiload/properties.c:389
+#: ../multiload/properties.c:393
 msgid "_Network"
 msgstr "_Rete"
 
-#: ../multiload/properties.c:402
+#: ../multiload/properties.c:406
 msgid "S_wap Space"
 msgstr "Spazio di s_wap"
 
-#: ../multiload/properties.c:415
+#: ../multiload/properties.c:419
 msgid "_Load"
 msgstr "C_arico"
 
-#: ../multiload/properties.c:428
+#: ../multiload/properties.c:432
 msgid "_Harddisk"
 msgstr "_Hard disk"
 
-#: ../multiload/properties.c:443
+#: ../multiload/properties.c:447
 msgid "Options"
 msgstr "Opzioni"
 
-#: ../multiload/properties.c:473
+#: ../multiload/properties.c:481
 msgid "System m_onitor width: "
 msgstr "_Larghezza monitor di sistema: "
 
-#: ../multiload/properties.c:475
+#: ../multiload/properties.c:483
 msgid "System m_onitor height: "
 msgstr "_Altezza monitor di sistema: "
 
-#: ../multiload/properties.c:506
+#: ../multiload/properties.c:518
 msgid "pixels"
 msgstr "pixel"
 
-#: ../multiload/properties.c:514
+#: ../multiload/properties.c:530
 msgid "Sys_tem monitor update interval: "
 msgstr "Intervallo di aggiornamen_to monitor di sistema: "
 
-#: ../multiload/properties.c:540
+#: ../multiload/properties.c:560
 msgid "milliseconds"
 msgstr "millisecondi"
 
-#: ../multiload/properties.c:551
+#: ../multiload/properties.c:575
 msgid "Colors"
 msgstr "Colori"
 
-#: ../multiload/properties.c:578 ../multiload/properties.c:586
+#: ../multiload/properties.c:606 ../multiload/properties.c:614
 msgid "_User"
 msgstr "_Utente"
 
-#: ../multiload/properties.c:579
+#: ../multiload/properties.c:607
 msgid "S_ystem"
 msgstr "_Sistema"
 
-#: ../multiload/properties.c:580
+#: ../multiload/properties.c:608
 msgid "N_ice"
 msgstr "Nic_e"
 
-#: ../multiload/properties.c:581
+#: ../multiload/properties.c:609
 msgid "I_OWait"
 msgstr "I_OWait"
 
-#: ../multiload/properties.c:582
+#: ../multiload/properties.c:610
 msgid "I_dle"
 msgstr "I_nattività"
 
-#: ../multiload/properties.c:587
+#: ../multiload/properties.c:615
 msgid "Sh_ared"
 msgstr "Condivis_a"
 
-#: ../multiload/properties.c:588
+#: ../multiload/properties.c:616
 msgid "_Buffers"
 msgstr "_Buffer"
 
-#: ../multiload/properties.c:589
+#: ../multiload/properties.c:617
 msgid "Cach_ed"
 msgstr "In cach_e"
 
-#: ../multiload/properties.c:590
+#: ../multiload/properties.c:618
 msgid "F_ree"
 msgstr "Libe_ra"
 
-#: ../multiload/properties.c:594
+#: ../multiload/properties.c:622
 msgid "_In"
 msgstr "I_ngresso"
 
-#: ../multiload/properties.c:595
+#: ../multiload/properties.c:623
 msgid "_Out"
 msgstr "_Uscita"
 
-#: ../multiload/properties.c:596
+#: ../multiload/properties.c:624
 msgid "_Local"
 msgstr "L_ocale"
 
-#: ../multiload/properties.c:597 ../multiload/properties.c:607
-#: ../multiload/properties.c:613
+#: ../multiload/properties.c:625 ../multiload/properties.c:635
+#: ../multiload/properties.c:641
 msgid "_Background"
 msgstr "_Sfondo"
 
-#: ../multiload/properties.c:601
+#: ../multiload/properties.c:629
 msgid "_Used"
 msgstr "_Usata"
 
-#: ../multiload/properties.c:602
+#: ../multiload/properties.c:630
 msgid "_Free"
 msgstr "Li_bera"
 
-#: ../multiload/properties.c:604
+#: ../multiload/properties.c:632
 msgid "Load"
 msgstr "Carico"
 
-#: ../multiload/properties.c:606
+#: ../multiload/properties.c:634
 msgid "_Average"
 msgstr "Medi_a"
 
-#: ../multiload/properties.c:609
+#: ../multiload/properties.c:637
 msgid "Harddisk"
 msgstr "Hard disk"
 
-#: ../multiload/properties.c:611
+#: ../multiload/properties.c:639
 msgid "_Read"
 msgstr "_Lettura"
 
-#: ../multiload/properties.c:612
+#: ../multiload/properties.c:640
 msgid "_Write"
 msgstr "_Scrittura"
 
-#: ../multiload/properties.c:637
+#: ../multiload/properties.c:665
 msgid "System Monitor Preferences"
 msgstr "Preferenze di Monitor di sistema"
 
-#: ../null_applet/MATE_CDPlayerApplet.server.in.h:1
-msgid "CD Player (Deprecated)"
-msgstr "Lettore CD (deprecato)"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
+msgid "Device to monitor"
+msgstr "Dispositivo da monitorare"
 
-#: ../null_applet/MATE_CDPlayerApplet.server.in.h:2
-msgid "Panel applet for playing audio CDs"
-msgstr "Applet del pannello per riprodurre CD audio"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
+msgid "The name of the device to monitor"
+msgstr "Il nome del dispositivo da monitorare"
 
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
-msgid "Inbox Monitor (Deprecated)"
-msgstr "Controllo posta (deprecata)"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
+msgid "Show sum speed"
+msgstr "Mostra la velocità di somma"
 
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
-msgid "Alert you when new mail arrives"
-msgstr "Avvisa quando arrivano nuovi messaggi email"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:4
+msgid "If true, show sum of inbound/outbound speed instead of separated ones."
+msgstr "Se impostato a vero, mostra la somma della velocità di entrata/uscita invece di valori separati."
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
-msgid "Null Applet Factory"
-msgstr "Fabbrica applet nulla"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:5
+msgid "Show bits"
+msgstr "Mostra bit"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
-msgid "Factory for deprecating applets"
-msgstr "Fabbrica per le applet deprecate"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:6
+msgid "If true, show speed in bits instead of bytes."
+msgstr "Se impostato a vero, mostra la velocità in bit invece che in bytes."
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
-msgid "Wireless Link Monitor"
-msgstr "Monitor collegamento wireless"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:8
+msgid "If true, show main icon."
+msgstr "Se vero, mostra l'icona principale."
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
-msgid "Monitor the quality of a wireless network link"
-msgstr "Controlla la qualità di un collegamento wireless"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
+msgid "Short unit legend"
+msgstr "Legenda unità abbreviata"
 
-#: ../null_applet/MATE_KeyboardApplet.server.in.h:1
-msgid "Keyboard Indicator (Deprecated)"
-msgstr "Indicatore tastiera (%s) (deprecato)"
-
-#: ../null_applet/MATE_KeyboardApplet.server.in.h:2
-msgid "Keyboard layout indicator"
-msgstr "Indicatore disposizione tastiera"
-
-#: ../null_applet/null_applet.c:40
-msgid "Inbox Monitor"
-msgstr "Controllo posta"
-
-#: ../null_applet/null_applet.c:42
-msgid "CD Player"
-msgstr "Lettore CD"
-
-#: ../null_applet/null_applet.c:44 ../null_applet/null_applet.c:46
-msgid "Volume Control"
-msgstr "Volume"
-
-#: ../null_applet/null_applet.c:48
-msgid "Keyboard Indicator"
-msgstr "Indicatore tastiera"
-
-#: ../null_applet/null_applet.c:151
-msgid "Some panel items are no longer available"
-msgstr "Alcuni oggetti di pannello non sono più disponibili"
-
-#: ../null_applet/null_applet.c:152
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:10
 msgid ""
-"One or more panel items (also referred to as applets) are no longer "
-"available in the MATE desktop."
-msgstr "Uno o più oggetti di pannello (definiti anche come applet) non sono più disponibili nello MATE Desktop."
+"If true, shorten unit legend to one letter: lowercase for bits / uppercase "
+"for Bytes."
+msgstr "Se impostato su vero, abbrevia la legenda unità ad una lettera: minuscola per i bits / maiuscola per i Bytes."
 
-#: ../null_applet/null_applet.c:154
-msgid "These items will now be removed from your configuration:"
-msgstr "Questi oggetti verranno ora rimossi dalla configurazione:"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:11
+msgid "Change icon"
+msgstr "Cambia icona"
 
-#: ../null_applet/null_applet.c:157
-msgid "You will not receive this message again."
-msgstr "Questo messaggio non sarà più mostrato in futuro."
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
+msgid "If true, change the icon due to selected device."
+msgstr "Se impostato su vero, cambia l'icona secondo il dispositivo selezionato."
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
+msgid "Auto change device"
+msgstr "Cambia dispositivo automaticamente"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
+msgid "If true, change automatically the selected device."
+msgstr "Se impostato su vero, cambia automaticamente il device selezionato."
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
+msgid "In color"
+msgstr "Colore entrata"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:16
+msgid "The color of the graph of the inbound traffic"
+msgstr "Colore del grafico per il traffico in entrata"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:17
+msgid "Out color"
+msgstr "Colore uscita"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:18
+msgid "The color of the graph of the outbound traffic"
+msgstr "Colore del grafico per il traffico in uscita"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:19
+msgid "Up command"
+msgstr "Comando su"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
+msgid "Command the execute to activate the device"
+msgstr "Comando da eseguire per attivare il dispositivo"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
+msgid "Down command"
+msgstr "Comando giù"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
+msgid "Command the execute to shut down the device"
+msgstr "Comando da eseguire per spegnere il dispositivo"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
+msgid "Show signal quality icon"
+msgstr "Mostra l'icona di qualità del segnale"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
+msgid "If true, show signal quality icon for wireless devices."
+msgstr "Se impostato su vero, mostra l'icona di qualità del segnale per dispositivi wireless"
+
+#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
+msgid "Netspeed Applet Factory"
+msgstr "Fabbrica Applet Netspeed"
+
+#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
+msgid "Netspeed Applet"
+msgstr "Applet Netspeed"
+
+#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
+msgid "Network Monitor"
+msgstr "Monitor di rete"
+
+#. translators: bits (short)
+#: ../netspeed/src/netspeed.c:395
+msgid "b"
+msgstr "b"
+
+#. translators: Bytes (short)
+#: ../netspeed/src/netspeed.c:395
+msgid "B"
+msgstr "B"
+
+#: ../netspeed/src/netspeed.c:397
+msgid "b/s"
+msgstr "b/s"
+
+#: ../netspeed/src/netspeed.c:397
+msgid "B/s"
+msgstr "B/s"
+
+#: ../netspeed/src/netspeed.c:400
+msgid "bits"
+msgstr "bits"
+
+#: ../netspeed/src/netspeed.c:400
+msgid "bytes"
+msgstr "Bytes"
+
+#. translators: kilobits (short)
+#: ../netspeed/src/netspeed.c:408
+msgid "k"
+msgstr "k"
+
+#. translators: Kilobytes (short)
+#: ../netspeed/src/netspeed.c:408
+msgid "K"
+msgstr "K"
+
+#: ../netspeed/src/netspeed.c:410
+msgid "kb/s"
+msgstr "kb/s"
+
+#: ../netspeed/src/netspeed.c:410
+msgid "KiB/s"
+msgstr "KiB/s"
+
+#: ../netspeed/src/netspeed.c:413
+msgid "kb"
+msgstr "kb"
+
+#: ../netspeed/src/netspeed.c:413
+msgid "KiB"
+msgstr "KiB"
+
+#. translators: megabits (short)
+#: ../netspeed/src/netspeed.c:423
+msgid "m"
+msgstr "m"
+
+#. translators: Megabytes (short)
+#: ../netspeed/src/netspeed.c:423
+msgid "M"
+msgstr "M"
+
+#: ../netspeed/src/netspeed.c:425
+msgid "Mb/s"
+msgstr "Mb/s"
+
+#: ../netspeed/src/netspeed.c:425
+msgid "MiB/s"
+msgstr "MiB/s"
+
+#: ../netspeed/src/netspeed.c:428
+msgid "Mb"
+msgstr "Mb"
+
+#: ../netspeed/src/netspeed.c:428
+msgid "MiB"
+msgstr "MiB"
+
+#: ../netspeed/src/netspeed.c:770
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr "Si è verificato un errore nel mostrare l'aiuto.\n%s"
+
+#: ../netspeed/src/netspeed.c:809
+msgid ""
+"A little applet that displays some information on the traffic on the "
+"specified network device"
+msgstr "Una piccola applet che mostra informazioni relative al traffico di rete per l'interfaccia selezionata."
+
+#: ../netspeed/src/netspeed.c:970
+msgid "Mate Netspeed Preferences"
+msgstr "Preferenze di Netspeed di Mate"
+
+#: ../netspeed/src/netspeed.c:992
+msgid "General Settings"
+msgstr "Impostazioni Generali"
+
+#: ../netspeed/src/netspeed.c:1018
+msgid "Network _device:"
+msgstr "Interfaccia _di rete:"
+
+#. Default means device with default route set
+#: ../netspeed/src/netspeed.c:1034
+msgid "Default"
+msgstr "Predefinita"
+
+#: ../netspeed/src/netspeed.c:1047
+msgid "Show _sum instead of in & out"
+msgstr "Visualizzare _solo la velocità totale"
+
+#: ../netspeed/src/netspeed.c:1051
+msgid "Show _bits instead of bytes"
+msgstr "Mostra _bit invece di byte"
+
+#: ../netspeed/src/netspeed.c:1055
+msgid "Shorten _unit legend"
+msgstr "Abbrevia _unità"
+
+#: ../netspeed/src/netspeed.c:1059
+msgid "_Change icon according to the selected device"
+msgstr "Cambiare l'ico_na secondo il tipo di interfaccia"
+
+#: ../netspeed/src/netspeed.c:1063
+msgid "Show _icon"
+msgstr "Mostra _icona"
+
+#: ../netspeed/src/netspeed.c:1067
+msgid "Show signal _quality icon for wireless devices"
+msgstr "Mostra l'icona di _qualità del segnale per i dispositivi wireless"
+
+#: ../netspeed/src/netspeed.c:1198
+#, c-format
+msgid "Device Details for %s"
+msgstr "Dettagli dell'interfaccia %s"
+
+#: ../netspeed/src/netspeed.c:1223
+msgid "_In graph color"
+msgstr "Colore grafico _ricezione"
+
+#: ../netspeed/src/netspeed.c:1224
+msgid "_Out graph color"
+msgstr "Colore grafico _trasmissione"
+
+#: ../netspeed/src/netspeed.c:1240
+msgid "Internet Address:"
+msgstr "Indirizzo internet:"
+
+#: ../netspeed/src/netspeed.c:1241
+msgid "Netmask:"
+msgstr "Maschera di rete:"
+
+#: ../netspeed/src/netspeed.c:1242
+msgid "Hardware Address:"
+msgstr "Indirizzo hardware:"
+
+#: ../netspeed/src/netspeed.c:1243
+msgid "P-t-P Address:"
+msgstr "Indirizzo P-t-P"
+
+#: ../netspeed/src/netspeed.c:1244
+msgid "Bytes in:"
+msgstr "Byte ricevuti:"
+
+#: ../netspeed/src/netspeed.c:1245
+msgid "Bytes out:"
+msgstr "Byte trasmessi:"
+
+#: ../netspeed/src/netspeed.c:1247 ../netspeed/src/netspeed.c:1248
+#: ../netspeed/src/netspeed.c:1249 ../netspeed/src/netspeed.c:1250
+msgid "none"
+msgstr "nessuna"
+
+#: ../netspeed/src/netspeed.c:1318
+msgid "IPV6 Address:"
+msgstr "Indirizzo IPV6:"
+
+#: ../netspeed/src/netspeed.c:1357
+msgid "Signal Strength:"
+msgstr "Potenza segnale:"
+
+#: ../netspeed/src/netspeed.c:1358
+msgid "ESSID:"
+msgstr "ESSID:"
+
+#: ../netspeed/src/netspeed.c:1412
+msgid "Device _Details"
+msgstr "_Dettagli dell'interfaccia"
+
+#: ../netspeed/src/netspeed.c:1414
+msgid "Preferences..."
+msgstr "Preferenze..."
+
+#: ../netspeed/src/netspeed.c:1418
+msgid "About..."
+msgstr "Informazioni"
+
+#: ../netspeed/src/netspeed.c:1459
+#, c-format
+msgid "Do you want to disconnect %s now?"
+msgstr "Vuoi disconnettere %s adesso?"
+
+#: ../netspeed/src/netspeed.c:1463
+#, c-format
+msgid "Do you want to connect %s now?"
+msgstr "Vuoi connettere %s adesso?"
+
+#: ../netspeed/src/netspeed.c:1490
+#, c-format
+msgid ""
+"<b>Running command %s failed</b>\n"
+"%s"
+msgstr "<b>Esecuzione comando %s fallita</b>\n%s"
+
+#: ../netspeed/src/netspeed.c:1549
+#, c-format
+msgid "%s is down"
+msgstr "%s non è attiva"
+
+#: ../netspeed/src/netspeed.c:1554
+#, c-format
+msgid ""
+"%s: %s\n"
+"in: %s out: %s"
+msgstr "%s: %s\ningresso: %s uscita: %s"
+
+#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+msgid "has no ip"
+msgstr "senza ip"
+
+#: ../netspeed/src/netspeed.c:1563
+#, c-format
+msgid ""
+"%s: %s\n"
+"sum: %s"
+msgstr "%s: %s\nTotale: %s"
+
+#: ../netspeed/src/netspeed.c:1572
+#, c-format
+msgid ""
+"\n"
+"ESSID: %s\n"
+"Strength: %d %%"
+msgstr "\nESSID: %s\nPotenza: %d %%"
+
+#: ../netspeed/src/netspeed.c:1573
+msgid "unknown"
+msgstr "Sconosciuta"
+
+#: ../netspeed/src/netspeed.c:1624
+msgid "Mate Netspeed"
+msgstr "Mate Netspeed"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
 msgstr "Fabbrica applet Note adesive"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:145
-#: ../stickynotes/stickynotes_applet.c:411
+#: ../stickynotes/stickynotes_applet.c:163
+#: ../stickynotes/stickynotes_applet.c:405
 msgid "Sticky Notes"
 msgstr "Note adesive"
 
@@ -2059,11 +2358,11 @@ msgstr "Note adesive"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Crea, visualizza e gestisce le note adesive sulla scrivania"
 
-#: ../stickynotes/stickynotes.c:656
+#: ../stickynotes/stickynotes.c:690
 msgid "This note is locked."
 msgstr "Questa nota è bloccata."
 
-#: ../stickynotes/stickynotes.c:660
+#: ../stickynotes/stickynotes.c:694
 msgid "This note is unlocked."
 msgstr "Questa nota non è bloccata."
 
@@ -2197,7 +2496,7 @@ msgstr "Bloccare/Sbloccare la nota"
 
 #: ../stickynotes/stickynotes.ui.h:33
 msgid "Delete note"
-msgstr ""
+msgstr "Elimina note"
 
 #: ../stickynotes/stickynotes.ui.h:34
 msgid "Resize note"
@@ -2386,20 +2685,33 @@ msgstr "Eli_mina note"
 msgid "_Lock Notes"
 msgstr "B_locca note"
 
-#: ../stickynotes/stickynotes_applet.c:601
+#: ../stickynotes/stickynotes_applet.c:595
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d nota"
 msgstr[1] "%d note"
 
-#: ../stickynotes/stickynotes_applet.c:602
+#: ../stickynotes/stickynotes_applet.c:596
 msgid "Show sticky notes"
 msgstr "Mostra le note adesive"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:375
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Note adesive per l'ambiente desktop MATE"
+
+#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:1
+msgid "Timer Factory"
+msgstr "Fabbrica Timer"
+
+#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:2
+msgid "Timer"
+msgstr "Timer"
+
+#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
+#: ../timerapplet/timerapplet.c:259
+msgid "Start a timer and receive a notification when it is finished"
+msgstr "Avvia un timer e ricevi una notifica quando scade il tempo"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:1
 msgid "Name of timer"
@@ -2437,10 +2749,6 @@ msgstr "Finito"
 msgid "Timer finished!"
 msgstr "Timer completato!"
 
-#: ../timerapplet/timerapplet.c:259
-msgid "Start a timer and receive a notification when it is finished"
-msgstr "Avvia un timer e ricevi una notifica quando scade il tempo"
-
 #: ../timerapplet/timerapplet.c:292
 msgid "Timer Applet Preferences"
 msgstr "Preferenze applet timer"
@@ -2449,27 +2757,27 @@ msgstr "Preferenze applet timer"
 msgid "Name:"
 msgstr "Nome:"
 
-#: ../timerapplet/timerapplet.c:317
+#: ../timerapplet/timerapplet.c:322
 msgid "Hours:"
 msgstr "Ore:"
 
-#: ../timerapplet/timerapplet.c:331
+#: ../timerapplet/timerapplet.c:341
 msgid "Minutes:"
 msgstr "Minuti:"
 
-#: ../timerapplet/timerapplet.c:345
+#: ../timerapplet/timerapplet.c:360
 msgid "Seconds:"
 msgstr "Secondi:"
 
-#: ../timerapplet/timerapplet.c:359
+#: ../timerapplet/timerapplet.c:379
 msgid "Show notification popup"
 msgstr "Mostra notifica a comparsa"
 
-#: ../timerapplet/timerapplet.c:365
+#: ../timerapplet/timerapplet.c:385
 msgid "Show dialog"
 msgstr "Mostra finestra di avviso"
 
-#: ../timerapplet/timerapplet.c:389
+#: ../timerapplet/timerapplet.c:409
 msgid "Timer Applet"
 msgstr "Applet Timer"
 
@@ -2517,16 +2825,16 @@ msgstr "Un cestino per MATE che risiede sul pannello. È possibile usarlo per vi
 msgid "Delete Immediately?"
 msgstr "Eliminare immediatamente?"
 
-#: ../trashapplet/src/trashapplet.c:486
+#: ../trashapplet/src/trashapplet.c:491
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "Impossibile spostare gli oggetti nel cestino: eliminarli immediatamente?"
 
-#: ../trashapplet/src/trashapplet.c:491
+#: ../trashapplet/src/trashapplet.c:496
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "Non è possibile spostare alcuni oggetti nel cestino: eliminarli immediatamente?"
 
-#: ../trashapplet/src/trashapplet.c:621
+#: ../trashapplet/src/trashapplet.c:634
 msgid "Trash Applet"
 msgstr "Applet cestino"
 

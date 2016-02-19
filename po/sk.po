@@ -3,7 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2015
+# Dušan Kazik <prescott66@gmail.com>, 2015-2016
+# Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2016
 # Juraj Oravec <sgd.orava@gmail.com>, 2013
 # Marcel Telka <marcel@telka.sk>, 2005
 # Michal Slovák <michalslovak2@hotmail.com>, 2013
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 15:28+0300\n"
-"PO-Revision-Date: 2015-11-03 14:21+0000\n"
-"Last-Translator: infirit <inactive+infirit@transifex.com>\n"
+"POT-Creation-Date: 2016-01-04 19:20+0300\n"
+"PO-Revision-Date: 2016-02-13 18:06+0000\n"
+"Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/mate/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../accessx-status/applet.c:147
+#: ../accessx-status/applet.c:144
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Zobrazuje stav funkcií AccessX, ako sú prepínacie modifikátory"
 
@@ -34,85 +35,86 @@ msgstr "Zobrazuje stav funkcií AccessX, ako sú prepínacie modifikátory"
 #. about.set_artists([])
 #. about.set_documenters([])
 #. translators: These appear in the About dialog, usual format applies.
-#: ../accessx-status/applet.c:151 ../battstat/battstat_applet.c:1214
-#: ../charpick/charpick.c:651 ../command/command.c:115
+#: ../accessx-status/applet.c:148 ../battstat/battstat_applet.c:1214
+#: ../charpick/charpick.c:664 ../command/command.c:115
 #: ../cpufreq/src/cpufreq-applet.c:711 ../drivemount/drivemount.c:122
-#: ../geyes/geyes.c:173 ../mateweather/mateweather-about.c:54
-#: ../invest-applet/invest/about.py:34 ../multiload/main.c:70
+#: ../geyes/geyes.c:197 ../mateweather/mateweather-about.c:54
+#: ../invest-applet/invest/about.py:34 ../multiload/main.c:67
+#: ../netspeed/src/netspeed.c:812
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
-msgstr "Stanislav Višňovský\nMarcel Telka <marcel@telka.sk>\nPeter Tuhársky <tuharsky@misbb.sk>\nJán Ďanovský <dagsoftware@yahoo.com>\nTibor Kaputa <tibbbi2@gmail.com>"
+msgstr "Stanislav Višňovský\nMarcel Telka <marcel@telka.sk>\nPeter Tuhársky <tuharsky@misbb.sk>\nJán Ďanovský <dagsoftware@yahoo.com>\nTibor Kaputa <tibbbi2@gmail.com>\nDušan Kazik <prescott66@gmail.com>"
 
-#: ../accessx-status/applet.c:167
+#: ../accessx-status/applet.c:164
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Pri spúšťaní prehliadača pomocníka nastala chyba: %s"
 
-#: ../accessx-status/applet.c:195
+#: ../accessx-status/applet.c:192
 msgid "Open the keyboard preferences dialog"
-msgstr ""
+msgstr "Otvorí dialógové okno s nastaveniami klávesnice"
 
-#: ../accessx-status/applet.c:209
+#: ../accessx-status/applet.c:211
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Vyskytla sa chyba pri spúšťaní dialógového okna nastavení klávesnice: %s"
 
-#: ../accessx-status/applet.c:224
+#: ../accessx-status/applet.c:226
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Nastavenia prístupnosti _klávesnice"
 
-#: ../accessx-status/applet.c:225 ../battstat/battstat_applet.c:71
-#: ../charpick/charpick.c:732 ../cpufreq/src/cpufreq-applet.c:138
-#: ../drivemount/drivemount.c:160 ../geyes/geyes.c:343
-#: ../mateweather/mateweather-applet.c:122 ../multiload/main.c:464
+#: ../accessx-status/applet.c:227 ../battstat/battstat_applet.c:71
+#: ../charpick/charpick.c:745 ../cpufreq/src/cpufreq-applet.c:138
+#: ../drivemount/drivemount.c:160 ../geyes/geyes.c:380
+#: ../mateweather/mateweather-applet.c:122 ../multiload/main.c:461
 #: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:80
 msgid "_Help"
 msgstr "_Pomocník"
 
-#: ../accessx-status/applet.c:226 ../battstat/battstat_applet.c:74
-#: ../charpick/charpick.c:735 ../command/command.c:78
+#: ../accessx-status/applet.c:228 ../battstat/battstat_applet.c:74
+#: ../charpick/charpick.c:748 ../command/command.c:78
 #: ../cpufreq/src/cpufreq-applet.c:141 ../drivemount/drivemount.c:163
-#: ../geyes/geyes.c:346 ../mateweather/mateweather-applet.c:125
-#: ../multiload/main.c:467 ../stickynotes/stickynotes_applet.c:48
+#: ../geyes/geyes.c:383 ../mateweather/mateweather-applet.c:125
+#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:48
 #: ../timerapplet/timerapplet.c:86 ../trashapplet/src/trashapplet.c:83
 msgid "_About"
 msgstr "_O programe"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
-#: ../accessx-status/applet.c:503 ../accessx-status/applet.c:537
+#: ../accessx-status/applet.c:505 ../accessx-status/applet.c:543
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1020 ../accessx-status/applet.c:1086
-#: ../accessx-status/applet.c:1159 ../accessx-status/applet.c:1333
+#: ../accessx-status/applet.c:1054 ../accessx-status/applet.c:1120
+#: ../accessx-status/applet.c:1193 ../accessx-status/applet.c:1367
 msgid "AccessX Status"
 msgstr "Stav AccessX"
 
-#: ../accessx-status/applet.c:1021 ../accessx-status/applet.c:1160
+#: ../accessx-status/applet.c:1055 ../accessx-status/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Zobrazí stav klávesnice, keď sú zapnuté funkcie sprístupnenia."
 
-#: ../accessx-status/applet.c:1056
+#: ../accessx-status/applet.c:1090
 msgid "XKB Extension is not enabled"
 msgstr "Rozšírenie XKB nie je zapnuté"
 
-#: ../accessx-status/applet.c:1061
+#: ../accessx-status/applet.c:1095
 msgid "Unknown error"
 msgstr "Neznáma chyba"
 
-#: ../accessx-status/applet.c:1065
+#: ../accessx-status/applet.c:1099
 #, c-format
 msgid "Error: %s"
 msgstr "Chyba: %s"
 
-#: ../accessx-status/applet.c:1330
+#: ../accessx-status/applet.c:1364
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Stav prístupnosti klávesnice"
 
-#: ../accessx-status/applet.c:1334
+#: ../accessx-status/applet.c:1368
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Zobrazuje aktuálny stav funkcií pre sprístupnenie klávesnice"
 
@@ -128,10 +130,10 @@ msgstr "Vytváracie rozhranie pre aplet stavu prístupnosti klávesnice"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Zobrazí stav funkcií pre sprístupnenie klávesnice"
 
-#: ../battstat/battstat_applet.c:68 ../charpick/charpick.c:729
+#: ../battstat/battstat_applet.c:68 ../charpick/charpick.c:742
 #: ../command/command.c:77 ../cpufreq/src/cpufreq-applet.c:135
-#: ../geyes/geyes.c:340 ../mateweather/mateweather-applet.c:119
-#: ../multiload/main.c:458 ../stickynotes/stickynotes_applet.c:42
+#: ../geyes/geyes.c:377 ../mateweather/mateweather-applet.c:119
+#: ../multiload/main.c:455 ../stickynotes/stickynotes_applet.c:42
 #: ../timerapplet/timerapplet.c:85
 msgid "_Preferences"
 msgstr "_Nastavenia"
@@ -285,9 +287,9 @@ msgid "N/A"
 msgstr "N/A"
 
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
-#: ../geyes/geyes.c:328 ../geyes/themes.c:227
+#: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:763
+#: ../mateweather/mateweather-pref.c:767
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -307,7 +309,7 @@ msgstr "upower backend povolený."
 #. false
 #: ../battstat/battstat_applet.c:1204
 msgid "Legacy backend enabled."
-msgstr ""
+msgstr "Legacy(záložný) backend povolený."
 
 #: ../battstat/battstat_applet.c:1578 ../battstat/battstat_applet.c:1630
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
@@ -371,7 +373,7 @@ msgstr "_Oznámiť, keď je batéria plne nabitá"
 
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
 msgid "Battstat Factory"
-msgstr "Vytváracie rozhranie pre Battstat"
+msgstr "Vytváracie rozhranie pre aplet Battstat"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:1
 msgid "Red value level"
@@ -449,7 +451,7 @@ msgstr "Zobraziť popisok s časom/percentami"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:18
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
-msgstr "0 znamená bez označenia, 1 znamená percento a 2 znamená zostávajúci čas"
+msgstr "0 znamená bez popisku, 1 znamená percento a 2 znamená zostávajúci čas"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
@@ -484,33 +486,33 @@ msgstr "Dostupné palety"
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:517
+#: ../charpick/charpick.c:530
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Vložiť „%s“"
 
-#: ../charpick/charpick.c:520
+#: ../charpick/charpick.c:533
 msgid "Insert special character"
 msgstr "Vložiť špeciálny znak"
 
-#: ../charpick/charpick.c:524
+#: ../charpick/charpick.c:537
 #, c-format
 msgid "insert special character %s"
 msgstr "vložiť špeciálny znak %s"
 
-#: ../charpick/charpick.c:646
+#: ../charpick/charpick.c:659
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "Aplet panelu pre výber špeciálnych znakov, ktoré nie sú na vašej klávesnici. Vydané pod licenciou GNU General Public Licence."
 
-#: ../charpick/charpick.c:758 ../charpick/charpick.c:772
+#: ../charpick/charpick.c:771 ../charpick/charpick.c:785
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
-#: ../charpick/properties.c:456
+#: ../charpick/properties.c:460
 msgid "Character Palette"
 msgstr "Paleta znakov"
 
-#: ../charpick/charpick.c:758
+#: ../charpick/charpick.c:771
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Vkladanie znakov"
@@ -566,39 +568,40 @@ msgstr "Upraviť paletu"
 msgid "Palettes list"
 msgstr "Zoznam paliet"
 
-#: ../charpick/properties.c:461
+#: ../charpick/properties.c:465
 msgid "_Palettes:"
 msgstr "_Palety:"
 
-#: ../charpick/properties.c:477
+#: ../charpick/properties.c:485
 msgid "Add button"
 msgstr "Tlačidlo Pridať"
 
-#: ../charpick/properties.c:478
+#: ../charpick/properties.c:486
 msgid "Click to add a new palette"
 msgstr "Kliknutím pridáte novú paletu"
 
-#: ../charpick/properties.c:485
+#: ../charpick/properties.c:493
 msgid "Edit button"
 msgstr "Tlačidlo Upraviť"
 
-#: ../charpick/properties.c:486
+#: ../charpick/properties.c:494
 msgid "Click to edit the selected palette"
 msgstr "Kliknutím upravíte vybranú paletu"
 
-#: ../charpick/properties.c:493
+#: ../charpick/properties.c:501
 msgid "Delete button"
 msgstr "Tlačidlo Odstrániť"
 
-#: ../charpick/properties.c:494
+#: ../charpick/properties.c:502
 msgid "Click to delete the selected palette"
 msgstr "Kliknutím odstránite vybranú paletu"
 
-#: ../charpick/properties.c:545
+#: ../charpick/properties.c:553
 msgid "Character Palette Preferences"
 msgstr "Nastavenie Palety znakov"
 
 #: ../command/command.c:114
+#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
 msgstr "Zobrazí výstup príkazu"
 
@@ -610,22 +613,31 @@ msgstr "Nastavenia príkazového apletu"
 msgid "Command:"
 msgstr "Príkaz:"
 
-#: ../command/command.c:156
+#: ../command/command.c:161
 msgid "Interval (seconds):"
 msgstr "Interval (v sekundách):"
 
-#: ../command/command.c:167
+#: ../command/command.c:177
 msgid "Maximum width (chars):"
-msgstr ""
+msgstr "Maximálna šírka (v znakoch):"
 
-#: ../command/command.c:178
+#: ../command/command.c:193
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
 msgid "Show icon"
 msgstr "Zobraziť ikonu"
 
-#: ../command/command.c:328
+#: ../command/command.c:343
 msgid "Command Applet"
 msgstr "Príkazový aplet"
+
+#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
+msgid "Command Factory"
+msgstr "Vytváracie rozhranie pre aplet Príkaz"
+
+#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
+msgid "Command"
+msgstr "Príkaz"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:1
 msgid "Command to execute"
@@ -645,11 +657,11 @@ msgstr "Interval pre vykonávanie príkazu (v sekundách)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
 msgid "Width of output"
-msgstr ""
+msgstr "Šírka výstupu"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
 msgid "Number of characters to display"
-msgstr ""
+msgstr "Počet znakov na zobrazenie"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
@@ -698,34 +710,34 @@ msgstr "Sledovať škálovanie frekvencie procesora"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:1
 msgid "CPU to Monitor"
-msgstr ""
+msgstr "Procesor, ktorý sa má sledovať"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:2
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
-msgstr ""
+msgstr "Nastavte procesor na sledovanie. Hodnotu nemusíte meniť v prípade, že máte iba jeden procesor."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
 msgid "Mode to show cpu usage"
-msgstr ""
+msgstr "Režim na zobrazenie využitia procesora"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
-msgstr ""
+msgstr "Hodnota 0 znamená zobrazenie apletu v grafickom režime (iba pixmap), 1 znamená zobrazenie apletu v textovom režime (nezobrazí pixmap) a 2 znamená zobrazenie apletu v grafickom aj textovom režime."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:5
 msgid "The type of text to display (if the text is enabled)."
-msgstr ""
+msgstr "Typ textu na zobrazenie (ak je text povolený)."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
 "A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr ""
+msgstr "Hodnota 0 znamená zobrazenie frekvencie procesora, 1 znamená zobrazenie frekvencie a jednotiek a 2 znamená zobrazenie percent namiesto frekvencie."
 
 #: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -777,47 +789,47 @@ msgstr "Zmeniť škálovanie frekvencie procesora"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Na zmenu škálovania frekvencie procesora sú potrebné oprávnenia."
 
-#: ../drivemount/drive-button.c:360 ../drivemount/drive-button.c:373
+#: ../drivemount/drive-button.c:364 ../drivemount/drive-button.c:377
 msgid "(mounted)"
 msgstr "(pripojené)"
 
-#: ../drivemount/drive-button.c:362
+#: ../drivemount/drive-button.c:366
 msgid "(not mounted)"
 msgstr "(nepripojené)"
 
-#: ../drivemount/drive-button.c:630
+#: ../drivemount/drive-button.c:634
 msgid "Cannot execute Caja"
 msgstr "Nedá sa spustiť Caja"
 
-#: ../drivemount/drive-button.c:632
+#: ../drivemount/drive-button.c:636
 #, c-format
 msgid "Cannot execute '%s'"
-msgstr "Nedá sa spustiť '%s'"
+msgstr "Nedá sa spustiť „%s“"
 
-#: ../drivemount/drive-button.c:957
+#: ../drivemount/drive-button.c:961
 msgid "_Play DVD"
 msgstr "_Prehrať DVD"
 
-#: ../drivemount/drive-button.c:961
+#: ../drivemount/drive-button.c:965
 msgid "_Play CD"
 msgstr "_Prehrať CD"
 
-#: ../drivemount/drive-button.c:964
+#: ../drivemount/drive-button.c:968
 #, c-format
 msgid "_Open %s"
 msgstr "_Otvoriť %s"
 
-#: ../drivemount/drive-button.c:972
+#: ../drivemount/drive-button.c:976
 #, c-format
 msgid "Un_mount %s"
 msgstr "_Odpojiť %s"
 
-#: ../drivemount/drive-button.c:978
+#: ../drivemount/drive-button.c:982
 #, c-format
 msgid "_Mount %s"
 msgstr "_Pripojiť %s"
 
-#: ../drivemount/drive-button.c:986
+#: ../drivemount/drive-button.c:990
 #, c-format
 msgid "_Eject %s"
 msgstr "_Vysunúť %s"
@@ -843,16 +855,16 @@ msgstr "Vytváracie rozhranie pre aplet Pripojenie diskov"
 msgid "Mount local disks and devices"
 msgstr "Pripojenie lokálnych diskov a zariadení"
 
-#: ../geyes/geyes.c:168
+#: ../geyes/geyes.c:192
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Klon slávnych X očí pre MATE panel. Sledujú vašu myš."
 
-#: ../geyes/geyes.c:373 ../geyes/geyes.c:403 ../geyes/geyes.c:405
+#: ../geyes/geyes.c:410 ../geyes/geyes.c:440 ../geyes/geyes.c:442
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
 msgid "Eyes"
 msgstr "Oči"
 
-#: ../geyes/geyes.c:406
+#: ../geyes/geyes.c:443
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Oči sledujú kurzor myši"
 
@@ -884,7 +896,7 @@ msgstr "Nastavenie Očí"
 msgid "Themes"
 msgstr "Témy"
 
-#: ../geyes/themes.c:340
+#: ../geyes/themes.c:344
 msgid "_Select a theme:"
 msgstr "_Vybrať tému:"
 
@@ -905,21 +917,21 @@ msgstr "_Podrobnosti"
 msgid "_Update"
 msgstr "_Aktualizovať"
 
-#: ../mateweather/mateweather-applet.c:342
+#: ../mateweather/mateweather-applet.c:350
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
 msgid "Weather Report"
 msgstr "Správa o počasí"
 
-#: ../mateweather/mateweather-applet.c:360
-#: ../mateweather/mateweather-applet.c:364
+#: ../mateweather/mateweather-applet.c:368
+#: ../mateweather/mateweather-applet.c:372
 msgid "MATE Weather"
 msgstr "MATE Počasie"
 
-#: ../mateweather/mateweather-applet.c:463
+#: ../mateweather/mateweather-applet.c:471
 msgid "Weather Forecast"
 msgstr "Predpoveď počasia"
 
-#: ../mateweather/mateweather-applet.c:475
+#: ../mateweather/mateweather-applet.c:483
 #, c-format
 msgid ""
 "City: %s\n"
@@ -927,7 +939,7 @@ msgid ""
 "Temperature: %s"
 msgstr "Mesto: %s\nObloha: %s\nTeplota: %s"
 
-#: ../mateweather/mateweather-applet.c:524
+#: ../mateweather/mateweather-applet.c:532
 msgid "Updating..."
 msgstr "Aktualizuje sa..."
 
@@ -939,87 +951,87 @@ msgstr "Podrobnosti"
 msgid "City:"
 msgstr "Mesto:"
 
-#: ../mateweather/mateweather-dialog.c:239
+#: ../mateweather/mateweather-dialog.c:243
 msgid "Last update:"
 msgstr "Posledná aktualizácia:"
 
-#: ../mateweather/mateweather-dialog.c:247
+#: ../mateweather/mateweather-dialog.c:255
 msgid "Conditions:"
 msgstr "Podmienky:"
 
-#: ../mateweather/mateweather-dialog.c:255
+#: ../mateweather/mateweather-dialog.c:267
 msgid "Sky:"
 msgstr "Obloha:"
 
-#: ../mateweather/mateweather-dialog.c:263
+#: ../mateweather/mateweather-dialog.c:279
 msgid "Temperature:"
 msgstr "Teplota:"
 
-#: ../mateweather/mateweather-dialog.c:271
+#: ../mateweather/mateweather-dialog.c:291
 msgid "Feels like:"
 msgstr "Vyzerá ako:"
 
-#: ../mateweather/mateweather-dialog.c:279
+#: ../mateweather/mateweather-dialog.c:303
 msgid "Dew point:"
 msgstr "Rosný bod:"
 
-#: ../mateweather/mateweather-dialog.c:287
+#: ../mateweather/mateweather-dialog.c:315
 msgid "Relative humidity:"
 msgstr "Relatívna vlkosť:"
 
-#: ../mateweather/mateweather-dialog.c:295
+#: ../mateweather/mateweather-dialog.c:327
 msgid "Wind:"
 msgstr "Vietor:"
 
-#: ../mateweather/mateweather-dialog.c:303
+#: ../mateweather/mateweather-dialog.c:339
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: ../mateweather/mateweather-dialog.c:311
+#: ../mateweather/mateweather-dialog.c:351
 msgid "Visibility:"
 msgstr "Viditeľnosť:"
 
-#: ../mateweather/mateweather-dialog.c:319
+#: ../mateweather/mateweather-dialog.c:363
 msgid "Sunrise:"
 msgstr "Východ slnka:"
 
-#: ../mateweather/mateweather-dialog.c:327
+#: ../mateweather/mateweather-dialog.c:375
 msgid "Sunset:"
 msgstr "Západ slnka:"
 
-#: ../mateweather/mateweather-dialog.c:461
+#: ../mateweather/mateweather-dialog.c:565
 msgid "Current Conditions"
 msgstr "Aktuálne podmienky"
 
-#: ../mateweather/mateweather-dialog.c:478
+#: ../mateweather/mateweather-dialog.c:582
 msgid "Forecast Report"
 msgstr "Predpoveď počasia"
 
-#: ../mateweather/mateweather-dialog.c:478
+#: ../mateweather/mateweather-dialog.c:582
 msgid "See the ForeCast Details"
 msgstr "Zobraziť podrobnosti predpovede"
 
-#: ../mateweather/mateweather-dialog.c:488
+#: ../mateweather/mateweather-dialog.c:592
 msgid "Forecast"
 msgstr "Predpoveď"
 
-#: ../mateweather/mateweather-dialog.c:496
+#: ../mateweather/mateweather-dialog.c:600
 msgid "Radar Map"
 msgstr "Radarová mapa"
 
-#: ../mateweather/mateweather-dialog.c:527
+#: ../mateweather/mateweather-dialog.c:631
 msgid "_Visit Weather.com"
 msgstr "Na_vštíviť Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:528
+#: ../mateweather/mateweather-dialog.c:632
 msgid "Visit Weather.com"
 msgstr "Navštíviť Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:528
+#: ../mateweather/mateweather-dialog.c:632
 msgid "Click to Enter Weather.com"
 msgstr "Kliknutím navštívite Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:613
+#: ../mateweather/mateweather-dialog.c:717
 msgid "Forecast not currently available for this location."
 msgstr "Predpoveď momentálne nie je pre toto miesto dostupná."
 
@@ -1053,174 +1065,174 @@ msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Zlyhalo načítanie XML databázy umiestnení. Prosím, oznámte toto ako chybu."
 
-#: ../mateweather/mateweather-pref.c:825
+#: ../mateweather/mateweather-pref.c:829
 msgid "Weather Preferences"
 msgstr "Nastavenia počasia"
 
-#: ../mateweather/mateweather-pref.c:852
-#: ../mateweather/mateweather-pref.c:1050
+#: ../mateweather/mateweather-pref.c:856
+#: ../mateweather/mateweather-pref.c:1070
 msgid "_Automatically update every:"
 msgstr "_Automaticky aktualizovať každých:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:871
 msgid "_Temperature unit:"
 msgstr "Jednotka _teploty:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:877
+#: ../mateweather/mateweather-pref.c:885
 msgid "Kelvin"
 msgstr "Kelvinov"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:879
+#: ../mateweather/mateweather-pref.c:887
 msgid "Celsius"
 msgstr "Celzia"
 
-#: ../mateweather/mateweather-pref.c:880
+#: ../mateweather/mateweather-pref.c:888
 msgid "Fahrenheit"
 msgstr "Fahrenheita"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:897
 msgid "_Wind speed unit:"
 msgstr "Jednotka rýchlosti _vetra:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:900
+#: ../mateweather/mateweather-pref.c:912
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:902
+#: ../mateweather/mateweather-pref.c:914
 msgid "km/h"
 msgstr "km/h"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:904
+#: ../mateweather/mateweather-pref.c:916
 msgid "mph"
 msgstr "míľ za hodinu"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:906
+#: ../mateweather/mateweather-pref.c:918
 msgid "knots"
 msgstr "uzlov"
 
-#: ../mateweather/mateweather-pref.c:907
+#: ../mateweather/mateweather-pref.c:919
 msgid "Beaufort scale"
 msgstr "Beaufortova stupnica"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:928
 msgid "_Pressure unit:"
 msgstr "Jednotka _tlaku:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:927
+#: ../mateweather/mateweather-pref.c:943
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:929
+#: ../mateweather/mateweather-pref.c:945
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:931
+#: ../mateweather/mateweather-pref.c:947
 msgid "mb"
 msgstr "milibarov"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:949
 msgid "mmHg"
 msgstr "milibarov ortute"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:935
+#: ../mateweather/mateweather-pref.c:951
 msgid "inHg"
 msgstr "palcov ortute"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:937
+#: ../mateweather/mateweather-pref.c:953
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:962
 msgid "_Visibility unit:"
 msgstr "Jednotka _viditeľnosti:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:957
+#: ../mateweather/mateweather-pref.c:977
 msgid "meters"
 msgstr "metre"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:959
+#: ../mateweather/mateweather-pref.c:979
 msgid "km"
 msgstr "km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:961
+#: ../mateweather/mateweather-pref.c:981
 msgid "miles"
 msgstr "míle"
 
-#: ../mateweather/mateweather-pref.c:987
+#: ../mateweather/mateweather-pref.c:1007
 msgid "Enable _radar map"
 msgstr "Povoliť _radarové mapy"
 
-#: ../mateweather/mateweather-pref.c:1003
+#: ../mateweather/mateweather-pref.c:1023
 msgid "Use _custom address for radar map"
 msgstr "Použiť _vlastnú adresu pre radarovú mapu"
 
-#: ../mateweather/mateweather-pref.c:1021
+#: ../mateweather/mateweather-pref.c:1041
 msgid "A_ddress:"
 msgstr "_Adresa:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1036
+#: ../mateweather/mateweather-pref.c:1056
 msgid "Show _notifications"
 msgstr "Zobraziť oz_námenia"
 
-#: ../mateweather/mateweather-pref.c:1046
+#: ../mateweather/mateweather-pref.c:1066
 msgid "Update"
 msgstr "Aktualizovať"
 
-#: ../mateweather/mateweather-pref.c:1069
+#: ../mateweather/mateweather-pref.c:1089
 msgid "minutes"
 msgstr "minút"
 
-#: ../mateweather/mateweather-pref.c:1087
+#: ../mateweather/mateweather-pref.c:1107
 msgid "Display"
 msgstr "Zobrazenie"
 
-#: ../mateweather/mateweather-pref.c:1106
+#: ../mateweather/mateweather-pref.c:1126
 msgid "General"
 msgstr "Všeobecné"
 
-#: ../mateweather/mateweather-pref.c:1117
+#: ../mateweather/mateweather-pref.c:1137
 msgid "_Select a location:"
 msgstr "_Vyberte miesto:"
 
-#: ../mateweather/mateweather-pref.c:1139
+#: ../mateweather/mateweather-pref.c:1163
 msgid "_Find:"
 msgstr "_Nájsť:"
 
-#: ../mateweather/mateweather-pref.c:1145
+#: ../mateweather/mateweather-pref.c:1169
 msgid "Find _Next"
 msgstr "Nájsť ďa_lšie"
 
-#: ../mateweather/mateweather-pref.c:1166
+#: ../mateweather/mateweather-pref.c:1190
 msgid "Location"
 msgstr "Umiestnenie"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr "Vytváracie rozhranie pre applet Počasie"
+msgstr "Vytváracie rozhranie pre aplet počasia Mateweather"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
@@ -1407,27 +1419,27 @@ msgstr "MACD"
 
 #: ../invest-applet/data/financialchart.ui.h:53
 msgid "Line"
-msgstr ""
+msgstr "Čiarový"
 
 #: ../invest-applet/data/financialchart.ui.h:54
 msgid "Bar"
-msgstr ""
+msgstr "Stĺpcový"
 
 #: ../invest-applet/data/financialchart.ui.h:55
 msgid "Candle"
-msgstr ""
+msgstr "Burzový"
 
 #: ../invest-applet/data/financialchart.ui.h:56
 msgid "Scale: "
-msgstr ""
+msgstr "Mierka:"
 
 #: ../invest-applet/data/financialchart.ui.h:57
 msgid "Linear"
-msgstr ""
+msgstr "Lineárna"
 
 #: ../invest-applet/data/financialchart.ui.h:58
 msgid "Logarithmic"
-msgstr ""
+msgstr "Logaritmická"
 
 #: ../invest-applet/data/financialchart.ui.h:59
 msgid "_Options"
@@ -1443,7 +1455,7 @@ msgstr "Nastavenia Invest"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:2
 msgid "label"
-msgstr "označenie"
+msgstr "popisok"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:3
 msgid "Stocks"
@@ -1472,7 +1484,7 @@ msgstr "Stopa do ktorej ste investovali peniaze."
 msgid "About"
 msgstr "O programe"
 
-#: ../invest-applet/invest/applet.py:29
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
 msgid "Help"
 msgstr "Pomocník"
 
@@ -1601,48 +1613,48 @@ msgstr "Zisk"
 msgid "Gain %"
 msgstr "Zisk %"
 
-#: ../multiload/main.c:65
+#: ../multiload/main.c:62
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
 msgstr "Monitor zaťaženia systému, ktorý zobrazuje grafy pre procesor, pamäť, odkladací priestor a sieťový prenos."
 
-#: ../multiload/main.c:128
+#: ../multiload/main.c:125
 msgid "Start system-monitor"
-msgstr ""
+msgstr "Spustiť monitor systému"
 
-#: ../multiload/main.c:149
+#: ../multiload/main.c:146
 #, c-format
 msgid "There was an error executing '%s': %s"
-msgstr "Pri pokuse o spustenie '%s' nastala chyba: %s"
+msgstr "Pri pokuse o spustenie „%s“ nastala chyba: %s"
 
-#: ../multiload/main.c:277 ../multiload/properties.c:576
+#: ../multiload/main.c:274 ../multiload/properties.c:604
 msgid "Processor"
 msgstr "Procesor"
 
-#: ../multiload/main.c:279 ../multiload/properties.c:584
+#: ../multiload/main.c:276 ../multiload/properties.c:612
 msgid "Memory"
 msgstr "Pamäť"
 
-#: ../multiload/main.c:281 ../multiload/properties.c:592
+#: ../multiload/main.c:278 ../multiload/properties.c:620
 msgid "Network"
 msgstr "Sieť"
 
-#: ../multiload/main.c:283 ../multiload/properties.c:599
+#: ../multiload/main.c:280 ../multiload/properties.c:627
 msgid "Swap Space"
 msgstr "Odkladací súbor"
 
-#: ../multiload/main.c:285 ../multiload/main.c:364
+#: ../multiload/main.c:282 ../multiload/main.c:361
 msgid "Load Average"
 msgstr "Priemerné zaťaženie"
 
-#: ../multiload/main.c:287
+#: ../multiload/main.c:284
 msgid "Disk"
 msgstr "Disk"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#: ../multiload/main.c:303
+#: ../multiload/main.c:300
 #, c-format
 msgid ""
 "%s:\n"
@@ -1650,13 +1662,13 @@ msgid ""
 "%u%% in use as cache"
 msgstr "%s:\n%u%% použitých programom\n%u%% je použitých ako vyrovnávacia pamäť"
 
-#: ../multiload/main.c:311
+#: ../multiload/main.c:308
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Priemerná záťaž systému je  %0.02f"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:319
+#: ../multiload/main.c:316
 #, c-format
 msgid ""
 "%s:\n"
@@ -1664,7 +1676,7 @@ msgid ""
 "Sending %s"
 msgstr "%s: \nPrijíma sa %s \nOdosiela sa %s"
 
-#: ../multiload/main.c:335
+#: ../multiload/main.c:332
 #, c-format
 msgid ""
 "%s:\n"
@@ -1676,31 +1688,31 @@ msgstr[0] "%s:\n%u%% sa používa"
 msgstr[1] "%s:\n%u%% sa používa"
 msgstr[2] "%s:\n%u%% sa používa"
 
-#: ../multiload/main.c:360
+#: ../multiload/main.c:357
 msgid "CPU Load"
 msgstr "Zaťaženie procesora"
 
-#: ../multiload/main.c:361
+#: ../multiload/main.c:358
 msgid "Memory Load"
 msgstr "Zaťaženie pamäte"
 
-#: ../multiload/main.c:362
+#: ../multiload/main.c:359
 msgid "Net Load"
 msgstr "Sieťové zaťaženie"
 
-#: ../multiload/main.c:363
+#: ../multiload/main.c:360
 msgid "Swap Load"
 msgstr "Zaťaženie odkladacieho súboru"
 
-#: ../multiload/main.c:365
+#: ../multiload/main.c:362
 msgid "Disk Load"
 msgstr "Zaťaženie disku"
 
-#: ../multiload/main.c:461
+#: ../multiload/main.c:458
 msgid "_Open System Monitor"
 msgstr "_Otvoriť sledovanie systému"
 
-#: ../multiload/main.c:489
+#: ../multiload/main.c:486
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
 msgstr "Sledovanie systému"
@@ -1716,352 +1728,638 @@ msgstr "Indikátor zaťaženie systému"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:1
 msgid "Enable CPU load graph"
-msgstr ""
+msgstr "Povoliť graf zaťaženia procesoru"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:2
 msgid "Enable memory load graph"
-msgstr ""
+msgstr "Povoliť graf zaťaženia pamäte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:3
 msgid "Enable network load graph"
-msgstr ""
+msgstr "Povoliť graf zaťaženia siete"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:4
 msgid "Enable swap load graph"
-msgstr ""
+msgstr "Povoliť graf zaťaženia odkladacieho priestoru"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:5
 msgid "Enable load average graph"
-msgstr ""
+msgstr "Povoliť graf priemerného zaťaženia"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:6
 msgid "Enable disk load graph"
-msgstr ""
+msgstr "Povoliť graf zaťaženia disku"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:7
 msgid "Applet refresh rate in milliseconds"
-msgstr ""
+msgstr "Obnovovacia frekvencia apletu v milisekundách"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:8
 msgid "Graph size"
-msgstr ""
+msgstr "Veľkosť grafu"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:9
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr ""
+msgstr "Pre vodorovné panely je toto šírka grafu v pixeloch. Pre zvislé panely je toto výška grafu."
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:10
 msgid "Graph color for user-related CPU activity"
-msgstr ""
+msgstr "Farba grafu používateľskej aktivity procesora"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:11
 msgid "Graph color for system-related CPU activity"
-msgstr ""
+msgstr "Farba grafu systémovej aktivity procesora"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:12
 msgid "Graph color for nice-related CPU activity"
-msgstr ""
+msgstr "Farba grafu aktivity procesora zapríčinenej službou nice"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:13
 msgid "Graph color for iowait related CPU activity"
-msgstr ""
+msgstr "Farba grafu aktivity procesora zapríčinenej službou iowait"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:14
 msgid "CPU graph background color"
-msgstr ""
+msgstr "Farba pozadia grafu zaťaženia procesora"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:15
 msgid "Graph color for user-related memory usage"
-msgstr ""
+msgstr "Farba grafu využitia pamäte používateľom"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:16
 msgid "Graph color for shared memory"
-msgstr ""
+msgstr "Farba grafu zdieľanej pamäte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:17
 msgid "Graph color for buffer memory"
-msgstr ""
+msgstr "Farba grafu pamäte zásobníka"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:18
 msgid "Graph color for cached memory"
-msgstr ""
+msgstr "Farba grafu vyrovnávacej pamäte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:19
 msgid "Memory graph background color"
-msgstr ""
+msgstr "Farba pozadia grafu využitia pamäte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:20
 msgid "Graph color for input network activity"
-msgstr ""
+msgstr "Farba pozadia grafu vstupnej aktivity siete"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:21
 msgid "Graph color for output network activity"
-msgstr ""
+msgstr "Farba pozadia grafu výstupnej aktivity siete"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:22
 msgid "Graph color for loopback network usage"
-msgstr ""
+msgstr "Farba grafu využitia sieťového okruhu"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:23
 msgid "Network graph background color"
-msgstr ""
+msgstr "Farba pozadia grafu využitia siete"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:24
 msgid "Graph color for user-related swap usage"
-msgstr ""
+msgstr "Farba grafu využitia odkladacieho priestoru používateľom"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Swap graph background color"
-msgstr ""
+msgstr "Farba pozadia grafu zaťaženia odkladacieho priestoru"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Graph color for load average"
-msgstr ""
+msgstr "Farba grafu priemerného zaťaženia"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Load graph background color"
-msgstr ""
+msgstr "Farba pozadia grafu zaťaženia"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Graph color for disk read"
-msgstr ""
+msgstr "Farba grafu čítania z disku"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for disk write"
-msgstr ""
+msgstr "Farba grafu zápisu na disk"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:30
 msgid "Background color for disk load graph"
-msgstr ""
+msgstr "Farba pozadia grafu zaťaženia disku"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:31
 msgid "The desktop description file to execute as the system monitor"
-msgstr ""
+msgstr "Súbor popisu desktop na spustenie za monitor systému"
 
 #: ../multiload/properties.c:338
 msgid "Monitored Resources"
 msgstr "Sledované zdroje"
 
-#: ../multiload/properties.c:363
+#: ../multiload/properties.c:367
 msgid "_Processor"
 msgstr "_Procesor"
 
-#: ../multiload/properties.c:376
+#: ../multiload/properties.c:380
 msgid "_Memory"
 msgstr "Pa_mäť"
 
-#: ../multiload/properties.c:389
+#: ../multiload/properties.c:393
 msgid "_Network"
 msgstr "_Sieť"
 
-#: ../multiload/properties.c:402
+#: ../multiload/properties.c:406
 msgid "S_wap Space"
 msgstr "_Odkladací priestor"
 
-#: ../multiload/properties.c:415
+#: ../multiload/properties.c:419
 msgid "_Load"
 msgstr "_Zaťaženie"
 
-#: ../multiload/properties.c:428
+#: ../multiload/properties.c:432
 msgid "_Harddisk"
 msgstr "_Pevný disk"
 
-#: ../multiload/properties.c:443
+#: ../multiload/properties.c:447
 msgid "Options"
 msgstr "Možnosti"
 
-#: ../multiload/properties.c:473
+#: ../multiload/properties.c:481
 msgid "System m_onitor width: "
 msgstr "Ší_rka m_onitora systému: "
 
-#: ../multiload/properties.c:475
+#: ../multiload/properties.c:483
 msgid "System m_onitor height: "
 msgstr "_Výška monitora systému: "
 
-#: ../multiload/properties.c:506
+#: ../multiload/properties.c:518
 msgid "pixels"
 msgstr "pixlov"
 
-#: ../multiload/properties.c:514
+#: ../multiload/properties.c:530
 msgid "Sys_tem monitor update interval: "
 msgstr "In_terval obnovy monitora systému: "
 
-#: ../multiload/properties.c:540
+#: ../multiload/properties.c:560
 msgid "milliseconds"
 msgstr "millisekúnd"
 
-#: ../multiload/properties.c:551
+#: ../multiload/properties.c:575
 msgid "Colors"
 msgstr "Farby"
 
-#: ../multiload/properties.c:578 ../multiload/properties.c:586
+#: ../multiload/properties.c:606 ../multiload/properties.c:614
 msgid "_User"
 msgstr "Po_užívateľ"
 
-#: ../multiload/properties.c:579
+#: ../multiload/properties.c:607
 msgid "S_ystem"
 msgstr "_Systém"
 
-#: ../multiload/properties.c:580
+#: ../multiload/properties.c:608
 msgid "N_ice"
 msgstr "_Nice"
 
-#: ../multiload/properties.c:581
+#: ../multiload/properties.c:609
 msgid "I_OWait"
 msgstr "Čakanie na I_O"
 
-#: ../multiload/properties.c:582
+#: ../multiload/properties.c:610
 msgid "I_dle"
 msgstr "N_ečinný"
 
-#: ../multiload/properties.c:587
+#: ../multiload/properties.c:615
 msgid "Sh_ared"
 msgstr "_Zdieľaná"
 
-#: ../multiload/properties.c:588
+#: ../multiload/properties.c:616
 msgid "_Buffers"
 msgstr "_Buffery"
 
-#: ../multiload/properties.c:589
+#: ../multiload/properties.c:617
 msgid "Cach_ed"
 msgstr "_Vo vyrovnávacej pamäti"
 
-#: ../multiload/properties.c:590
+#: ../multiload/properties.c:618
 msgid "F_ree"
 msgstr "V_oľná"
 
-#: ../multiload/properties.c:594
+#: ../multiload/properties.c:622
 msgid "_In"
 msgstr "Vst_up"
 
-#: ../multiload/properties.c:595
+#: ../multiload/properties.c:623
 msgid "_Out"
 msgstr "Výs_tup"
 
-#: ../multiload/properties.c:596
+#: ../multiload/properties.c:624
 msgid "_Local"
 msgstr "_Lokálne"
 
-#: ../multiload/properties.c:597 ../multiload/properties.c:607
-#: ../multiload/properties.c:613
+#: ../multiload/properties.c:625 ../multiload/properties.c:635
+#: ../multiload/properties.c:641
 msgid "_Background"
 msgstr "Po_zadie"
 
-#: ../multiload/properties.c:601
+#: ../multiload/properties.c:629
 msgid "_Used"
 msgstr "_Použitá"
 
-#: ../multiload/properties.c:602
+#: ../multiload/properties.c:630
 msgid "_Free"
 msgstr "_Voľná"
 
-#: ../multiload/properties.c:604
+#: ../multiload/properties.c:632
 msgid "Load"
 msgstr "Zaťaženie"
 
-#: ../multiload/properties.c:606
+#: ../multiload/properties.c:634
 msgid "_Average"
 msgstr "_Priemer"
 
-#: ../multiload/properties.c:609
+#: ../multiload/properties.c:637
 msgid "Harddisk"
 msgstr "Pevný disk"
 
-#: ../multiload/properties.c:611
+#: ../multiload/properties.c:639
 msgid "_Read"
 msgstr "Čí_tanie"
 
-#: ../multiload/properties.c:612
+#: ../multiload/properties.c:640
 msgid "_Write"
 msgstr "_Zápis"
 
-#: ../multiload/properties.c:637
+#: ../multiload/properties.c:665
 msgid "System Monitor Preferences"
 msgstr "Nastavenia sledovania systému"
 
-#: ../null_applet/MATE_CDPlayerApplet.server.in.h:1
-msgid "CD Player (Deprecated)"
-msgstr "Prehrávač CD (Zastaralé)"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
+msgid "Device to monitor"
+msgstr "Zariadenie, ktoré sa má sledovať"
 
-#: ../null_applet/MATE_CDPlayerApplet.server.in.h:2
-msgid "Panel applet for playing audio CDs"
-msgstr "Aplet panelu na prehrávanie zvukových CD"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
+msgid "The name of the device to monitor"
+msgstr "Názov zariadenie, ktoré sa má sledovať"
 
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:1
-msgid "Inbox Monitor (Deprecated)"
-msgstr "Sledovanie doručenej pošty (Zastaralé)"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
+msgid "Show sum speed"
+msgstr "Zobraziť súčet rýchlostí"
 
-#: ../null_applet/MATE_MailcheckApplet_Factory.server.in.h:2
-msgid "Alert you when new mail arrives"
-msgstr "Upozorniť, keď príde nová pošta"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:4
+msgid "If true, show sum of inbound/outbound speed instead of separated ones."
+msgstr "Ak je táto možnosť vybraná, zobrazí sa súčet prichádzajúcej/odchádzajúcej rýchlosti namiesto zobrazenia zvlášť."
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:1
-msgid "Null Applet Factory"
-msgstr "Rozhranie pre prázdne aplety"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:5
+msgid "Show bits"
+msgstr "Zobraziť bity"
 
-#: ../null_applet/MATE_NullApplet_Factory.server.in.in.h:2
-msgid "Factory for deprecating applets"
-msgstr "Rozhranie pre zavrhnuté aplety"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:6
+msgid "If true, show speed in bits instead of bytes."
+msgstr "Ak je táto možnosť vybraná, zobrazia sa bity namiesto bajtov."
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:1
-msgid "Wireless Link Monitor"
-msgstr "Sledovanie bezdrôtového spojenia"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:8
+msgid "If true, show main icon."
+msgstr "Ak je táto možnosť vybraná, zobrazí sa hlavná ikona."
 
-#: ../null_applet/MATE_Panel_WirelessApplet.server.in.h:2
-msgid "Monitor the quality of a wireless network link"
-msgstr "Sledovať kvalitu bezdrôtového sieťového spojenia"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
+msgid "Short unit legend"
+msgstr "Skrátený popis jednotky rýchlosti"
 
-#: ../null_applet/MATE_KeyboardApplet.server.in.h:1
-msgid "Keyboard Indicator (Deprecated)"
-msgstr "Indikátor klávesnice (zastaralý)"
-
-#: ../null_applet/MATE_KeyboardApplet.server.in.h:2
-msgid "Keyboard layout indicator"
-msgstr "Indikátor rozloženia klávesnice"
-
-#: ../null_applet/null_applet.c:40
-msgid "Inbox Monitor"
-msgstr "Sledovanie doručenej pošty"
-
-#: ../null_applet/null_applet.c:42
-msgid "CD Player"
-msgstr "Prehrávač CD"
-
-#: ../null_applet/null_applet.c:44 ../null_applet/null_applet.c:46
-msgid "Volume Control"
-msgstr "Ovládanie hlasitosti"
-
-#: ../null_applet/null_applet.c:48
-msgid "Keyboard Indicator"
-msgstr "Indikátor klávesnice"
-
-#: ../null_applet/null_applet.c:151
-msgid "Some panel items are no longer available"
-msgstr "Niektoré položky panela už nie sú dostupné"
-
-#: ../null_applet/null_applet.c:152
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:10
 msgid ""
-"One or more panel items (also referred to as applets) are no longer "
-"available in the MATE desktop."
-msgstr "Jedna alebo viac položiek panela (tiež nazývané aplety) už nie sú dostupné v pracovnom prostredí MATE."
+"If true, shorten unit legend to one letter: lowercase for bits / uppercase "
+"for Bytes."
+msgstr "Ak je táto možnosť vybraná, bude popis jednotky skrátený na jedno písmeno: malým písmom pre bity / veľkým písmom pre Bajty."
 
-#: ../null_applet/null_applet.c:154
-msgid "These items will now be removed from your configuration:"
-msgstr "Tieto položky budú teraz z vašej konfigurácie odstránené:"
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:11
+msgid "Change icon"
+msgstr "Zmeniť ikonu"
 
-#: ../null_applet/null_applet.c:157
-msgid "You will not receive this message again."
-msgstr "Túto správu už nedostanete."
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
+msgid "If true, change the icon due to selected device."
+msgstr "Ak je táto možnosť vybraná, bude ikona zmenená podľa vybratého zariadenia."
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
+msgid "Auto change device"
+msgstr "Automaticky zmeniť zariadenie"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
+msgid "If true, change automatically the selected device."
+msgstr "Ak je táto možnosť vybraná, bude vybraté zariadenie zmenené automaticky."
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
+msgid "In color"
+msgstr "Farba prichádzajúcej prevádzky"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:16
+msgid "The color of the graph of the inbound traffic"
+msgstr "Farba grafu prichádzajúcej prevádzky"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:17
+msgid "Out color"
+msgstr "Farba odchádzajúcej prevádzky"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:18
+msgid "The color of the graph of the outbound traffic"
+msgstr "Farba grafu odchádzajúcej prevádzky"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:19
+msgid "Up command"
+msgstr "Príkaz na spustenie"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
+msgid "Command the execute to activate the device"
+msgstr "Príkaz, ktorý sa spustí pre aktivovanie zariadenia"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
+msgid "Down command"
+msgstr "Príkaz na vypnutie"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
+msgid "Command the execute to shut down the device"
+msgstr "Príkaz, ktorý sa spustí pre vypnutie zariadenia"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
+msgid "Show signal quality icon"
+msgstr "Zobraziť ikonu kvality signálu"
+
+#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
+msgid "If true, show signal quality icon for wireless devices."
+msgstr "Ak je táto možnosť vybraná, bude zobrazená ikona kvality signálu bezdrôtových zariadení."
+
+#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
+msgid "Netspeed Applet Factory"
+msgstr "Vytváracie rozhranie pre aplet Netspeed"
+
+#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
+msgid "Netspeed Applet"
+msgstr "Aplet Netspeed"
+
+#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
+msgid "Network Monitor"
+msgstr "Sledovanie siete"
+
+#. translators: bits (short)
+#: ../netspeed/src/netspeed.c:395
+msgid "b"
+msgstr "b"
+
+#. translators: Bytes (short)
+#: ../netspeed/src/netspeed.c:395
+msgid "B"
+msgstr "B"
+
+#: ../netspeed/src/netspeed.c:397
+msgid "b/s"
+msgstr "b/s"
+
+#: ../netspeed/src/netspeed.c:397
+msgid "B/s"
+msgstr "B/s"
+
+#: ../netspeed/src/netspeed.c:400
+msgid "bits"
+msgstr "bitov"
+
+#: ../netspeed/src/netspeed.c:400
+msgid "bytes"
+msgstr "bajtov"
+
+#. translators: kilobits (short)
+#: ../netspeed/src/netspeed.c:408
+msgid "k"
+msgstr "k"
+
+#. translators: Kilobytes (short)
+#: ../netspeed/src/netspeed.c:408
+msgid "K"
+msgstr "K"
+
+#: ../netspeed/src/netspeed.c:410
+msgid "kb/s"
+msgstr "kb/s"
+
+#: ../netspeed/src/netspeed.c:410
+msgid "KiB/s"
+msgstr "KiB/s"
+
+#: ../netspeed/src/netspeed.c:413
+msgid "kb"
+msgstr "kb"
+
+#: ../netspeed/src/netspeed.c:413
+msgid "KiB"
+msgstr "KiB"
+
+#. translators: megabits (short)
+#: ../netspeed/src/netspeed.c:423
+msgid "m"
+msgstr "m"
+
+#. translators: Megabytes (short)
+#: ../netspeed/src/netspeed.c:423
+msgid "M"
+msgstr "M"
+
+#: ../netspeed/src/netspeed.c:425
+msgid "Mb/s"
+msgstr "Mb/s"
+
+#: ../netspeed/src/netspeed.c:425
+msgid "MiB/s"
+msgstr "MiB/s"
+
+#: ../netspeed/src/netspeed.c:428
+msgid "Mb"
+msgstr "Mb"
+
+#: ../netspeed/src/netspeed.c:428
+msgid "MiB"
+msgstr "MiB"
+
+#: ../netspeed/src/netspeed.c:770
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr "Pri zobrazovaní Pomocníka nastala chyba:\n%s"
+
+#: ../netspeed/src/netspeed.c:809
+msgid ""
+"A little applet that displays some information on the traffic on the "
+"specified network device"
+msgstr "Malý applet zobrazujúci vybrané informácie o prevádzke na vybranom sieťovom zariadení"
+
+#: ../netspeed/src/netspeed.c:970
+msgid "Mate Netspeed Preferences"
+msgstr "Nastavenia Mate Netspeed"
+
+#: ../netspeed/src/netspeed.c:992
+msgid "General Settings"
+msgstr "Všeobecné nastavenia"
+
+#: ../netspeed/src/netspeed.c:1018
+msgid "Network _device:"
+msgstr "Sieťové _zariadenie:"
+
+#. Default means device with default route set
+#: ../netspeed/src/netspeed.c:1034
+msgid "Default"
+msgstr "Predvolené"
+
+#: ../netspeed/src/netspeed.c:1047
+msgid "Show _sum instead of in & out"
+msgstr "Zobraziť celkový _súhrn miesto údajov „Dnu a von“"
+
+#: ../netspeed/src/netspeed.c:1051
+msgid "Show _bits instead of bytes"
+msgstr "Zobraziť _bity miesto bajtov"
+
+#: ../netspeed/src/netspeed.c:1055
+msgid "Shorten _unit legend"
+msgstr "Skrátiť popis _jednotky"
+
+#: ../netspeed/src/netspeed.c:1059
+msgid "_Change icon according to the selected device"
+msgstr "Zmeniť _ikonu podľa vybraného zariadenia"
+
+#: ../netspeed/src/netspeed.c:1063
+msgid "Show _icon"
+msgstr "Zobraziť _ikonu"
+
+#: ../netspeed/src/netspeed.c:1067
+msgid "Show signal _quality icon for wireless devices"
+msgstr "Zobraziť ikonu _kvality signálu bezdrôtových zariadení"
+
+#: ../netspeed/src/netspeed.c:1198
+#, c-format
+msgid "Device Details for %s"
+msgstr "Podrobnosti o zariadení %s"
+
+#: ../netspeed/src/netspeed.c:1223
+msgid "_In graph color"
+msgstr "Farba grafu _prichádzajúcej prevádzky"
+
+#: ../netspeed/src/netspeed.c:1224
+msgid "_Out graph color"
+msgstr "Farba grafu _odchádzajúcej prevádzky"
+
+#: ../netspeed/src/netspeed.c:1240
+msgid "Internet Address:"
+msgstr "Internetová adresa:"
+
+#: ../netspeed/src/netspeed.c:1241
+msgid "Netmask:"
+msgstr "Sieťová maska:"
+
+#: ../netspeed/src/netspeed.c:1242
+msgid "Hardware Address:"
+msgstr "Hardvérová adresa:"
+
+#: ../netspeed/src/netspeed.c:1243
+msgid "P-t-P Address:"
+msgstr "Adresa P-t-P:"
+
+#: ../netspeed/src/netspeed.c:1244
+msgid "Bytes in:"
+msgstr "Prichádzajúce Bajty:"
+
+#: ../netspeed/src/netspeed.c:1245
+msgid "Bytes out:"
+msgstr "Pdchádzajúce Bajty:"
+
+#: ../netspeed/src/netspeed.c:1247 ../netspeed/src/netspeed.c:1248
+#: ../netspeed/src/netspeed.c:1249 ../netspeed/src/netspeed.c:1250
+msgid "none"
+msgstr "žiadne"
+
+#: ../netspeed/src/netspeed.c:1318
+msgid "IPV6 Address:"
+msgstr "Adresa IPV6:"
+
+#: ../netspeed/src/netspeed.c:1357
+msgid "Signal Strength:"
+msgstr "Sila signálu:"
+
+#: ../netspeed/src/netspeed.c:1358
+msgid "ESSID:"
+msgstr "ESSID:"
+
+#: ../netspeed/src/netspeed.c:1412
+msgid "Device _Details"
+msgstr "Podrobnosti o _zariadení"
+
+#: ../netspeed/src/netspeed.c:1414
+msgid "Preferences..."
+msgstr "Nastavenia..."
+
+#: ../netspeed/src/netspeed.c:1418
+msgid "About..."
+msgstr "O programe..."
+
+#: ../netspeed/src/netspeed.c:1459
+#, c-format
+msgid "Do you want to disconnect %s now?"
+msgstr "Chcete odpojiť %s teraz?"
+
+#: ../netspeed/src/netspeed.c:1463
+#, c-format
+msgid "Do you want to connect %s now?"
+msgstr "Chcete pripojiť %s teraz?"
+
+#: ../netspeed/src/netspeed.c:1490
+#, c-format
+msgid ""
+"<b>Running command %s failed</b>\n"
+"%s"
+msgstr "<b>Spustenie príkazu %s zlyhalo</b>\n%s"
+
+#: ../netspeed/src/netspeed.c:1549
+#, c-format
+msgid "%s is down"
+msgstr "%s je vypnuté"
+
+#: ../netspeed/src/netspeed.c:1554
+#, c-format
+msgid ""
+"%s: %s\n"
+"in: %s out: %s"
+msgstr "%s: %s\nprijímanie: %s odosielanie: %s"
+
+#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+msgid "has no ip"
+msgstr "nemá IP adresu"
+
+#: ../netspeed/src/netspeed.c:1563
+#, c-format
+msgid ""
+"%s: %s\n"
+"sum: %s"
+msgstr "%s: %s\ncelkom: %s"
+
+#: ../netspeed/src/netspeed.c:1572
+#, c-format
+msgid ""
+"\n"
+"ESSID: %s\n"
+"Strength: %d %%"
+msgstr "\nESSID: %s\nSila: %d %%"
+
+#: ../netspeed/src/netspeed.c:1573
+msgid "unknown"
+msgstr "neznámy"
+
+#: ../netspeed/src/netspeed.c:1624
+msgid "Mate Netspeed"
+msgstr "Mate Netspeed"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
 msgstr "Vytváracie rozhranie pre aplet Poznámky"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:145
-#: ../stickynotes/stickynotes_applet.c:411
+#: ../stickynotes/stickynotes_applet.c:163
+#: ../stickynotes/stickynotes_applet.c:405
 msgid "Sticky Notes"
 msgstr "Poznámky"
 
@@ -2069,11 +2367,11 @@ msgstr "Poznámky"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Tvorba a správa poznámkových papierikov na pracovnej ploche"
 
-#: ../stickynotes/stickynotes.c:656
+#: ../stickynotes/stickynotes.c:690
 msgid "This note is locked."
 msgstr "Táto poznámka je uzamknutá."
 
-#: ../stickynotes/stickynotes.c:660
+#: ../stickynotes/stickynotes.c:694
 msgid "This note is unlocked."
 msgstr "Táto poznámka je odomknutá."
 
@@ -2207,7 +2505,7 @@ msgstr "Zamknúť/odomknúť poznámku"
 
 #: ../stickynotes/stickynotes.ui.h:33
 msgid "Delete note"
-msgstr ""
+msgstr "Odstrániť poznámku"
 
 #: ../stickynotes/stickynotes.ui.h:34
 msgid "Resize note"
@@ -2334,7 +2632,7 @@ msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr "Poznámky štandardne obsahujú v titulku dátum vytvorenia. Ako formát sa dá použiť text, ktorý dokáže spracovať funkcia strftime()."
+msgstr "Poznámky predvolene obsahujú v titulku dátum vytvorenia. Ako formát sa dá použiť text, ktorý dokáže spracovať funkcia strftime()."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:17
 msgid "Whether to use the default system color"
@@ -2368,7 +2666,7 @@ msgstr "Ak je toto zapnuté, farby a písma jednotlivých poznámok budú ignoro
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:23
 msgid "Whether to hide all notes when the desktop is selected"
-msgstr "Či sa pri výbere pracovnej plochy majú skrývať všetky poznámky"
+msgstr "Určuje, či sa pri výbere pracovnej plochy majú skrývať všetky poznámky"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:24
 msgid ""
@@ -2396,7 +2694,7 @@ msgstr "_Odstrániť poznámky"
 msgid "_Lock Notes"
 msgstr "U_zamknúť poznámky"
 
-#: ../stickynotes/stickynotes_applet.c:601
+#: ../stickynotes/stickynotes_applet.c:595
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
@@ -2404,13 +2702,26 @@ msgstr[0] "%d poznámka"
 msgstr[1] "%d poznámky"
 msgstr[2] "%d poznámok"
 
-#: ../stickynotes/stickynotes_applet.c:602
+#: ../stickynotes/stickynotes_applet.c:596
 msgid "Show sticky notes"
 msgstr "Zobraziť poznámkové papieriky"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:375
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Poznámkové papieriky pre pracovné prostredie MATE"
+
+#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:1
+msgid "Timer Factory"
+msgstr "Vytváracie rozhranie pre aplet Časovač"
+
+#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:2
+msgid "Timer"
+msgstr "Časovač"
+
+#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
+#: ../timerapplet/timerapplet.c:259
+msgid "Start a timer and receive a notification when it is finished"
+msgstr "Spustiť časovač a zobraziť upozornenie, keď skončí"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:1
 msgid "Name of timer"
@@ -2448,10 +2759,6 @@ msgstr "Dokončené"
 msgid "Timer finished!"
 msgstr "Časovač skončil"
 
-#: ../timerapplet/timerapplet.c:259
-msgid "Start a timer and receive a notification when it is finished"
-msgstr "Spustiť časovač a zobraziť upozornenie, keď skončí"
-
 #: ../timerapplet/timerapplet.c:292
 msgid "Timer Applet Preferences"
 msgstr "Nastavenia apletu Časovač"
@@ -2460,27 +2767,27 @@ msgstr "Nastavenia apletu Časovač"
 msgid "Name:"
 msgstr "Názov:"
 
-#: ../timerapplet/timerapplet.c:317
+#: ../timerapplet/timerapplet.c:322
 msgid "Hours:"
 msgstr "Hodiny:"
 
-#: ../timerapplet/timerapplet.c:331
+#: ../timerapplet/timerapplet.c:341
 msgid "Minutes:"
 msgstr "Minúty:"
 
-#: ../timerapplet/timerapplet.c:345
+#: ../timerapplet/timerapplet.c:360
 msgid "Seconds:"
 msgstr "Sekundy:"
 
-#: ../timerapplet/timerapplet.c:359
+#: ../timerapplet/timerapplet.c:379
 msgid "Show notification popup"
 msgstr "Zobraziť oznámenie"
 
-#: ../timerapplet/timerapplet.c:365
+#: ../timerapplet/timerapplet.c:385
 msgid "Show dialog"
 msgstr "Zobraziť dialóg"
 
-#: ../timerapplet/timerapplet.c:389
+#: ../timerapplet/timerapplet.c:409
 msgid "Timer Applet"
 msgstr "Aplet Časovač"
 
@@ -2529,16 +2836,16 @@ msgstr "Odpadkový kôš MATE, ktorý sa nachádza na paneli. Môžete sa cezeň
 msgid "Delete Immediately?"
 msgstr "Odstrániť okamžite?"
 
-#: ../trashapplet/src/trashapplet.c:486
+#: ../trashapplet/src/trashapplet.c:491
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "Nepodarilo sa presunúť položky do koša. Chcete ich okamžite odstrániť?"
 
-#: ../trashapplet/src/trashapplet.c:491
+#: ../trashapplet/src/trashapplet.c:496
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "Nepodarilo sa presunúť niektoré položky do koša. Chcete ich okamžite odstrániť?"
 
-#: ../trashapplet/src/trashapplet.c:621
+#: ../trashapplet/src/trashapplet.c:634
 msgid "Trash Applet"
 msgstr "Aplet Odpadkový kôš"
 
