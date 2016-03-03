@@ -88,7 +88,7 @@ command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_a
 
     if (command_applet->timeout_id != 0)
     {
-        g_source_remove(command_applet->timeout_id);
+        g_source_remove (command_applet->timeout_id);
         command_applet->timeout_id = 0;
     }
 
@@ -235,7 +235,7 @@ settings_width_changed (GSettings *settings, gchar *key, CommandApplet *command_
     command_applet->width = width;
 
     /* execute command to start new timer */
-    command_execute(command_applet);
+    command_execute (command_applet);
 }
 
 static void
@@ -254,7 +254,7 @@ settings_interval_changed (GSettings *settings, gchar *key, CommandApplet *comma
     /* stop current timer */
     if (command_applet->timeout_id != 0)
     {
-        g_source_remove(command_applet->timeout_id);
+        g_source_remove (command_applet->timeout_id);
         command_applet->timeout_id = 0;
     }
 
