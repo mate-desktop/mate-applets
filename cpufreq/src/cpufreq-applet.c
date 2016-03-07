@@ -16,7 +16,7 @@
  *  License along with this library; if not, write to the Free
  *  Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * Authors : Carlos García Campos <carlosgc@gnome.org>
+ * Authors : Carlos GarcÃ­a Campos <carlosgc@gnome.org>
  */
 
 #ifdef HAVE_CONFIG_H
@@ -333,9 +333,15 @@ cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 		freq_text = cpufreq_utils_get_frequency_label (freq);
 		label = gtk_label_new (freq_text);
 #if GTK_CHECK_VERSION (3, 0, 0)
-		gtk_widget_get_preferred_width (label, &label_width, NULL);
-		width = MAX (width, label_width);
+		gtk_widget_get_preferred_width (applet->label, &label_width, NULL);
+
+#if GTK_CHECK_VERSION (3, 19, 0)
+		width = MAX (width, label_width)-2;
 #else
+		width = MAX (width, label_width);
+#endif
+#endif
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gtk_widget_size_request (label, &req);
 		width = MAX (width, req.width);
 #endif
@@ -366,8 +372,8 @@ cpufreq_applet_get_max_perc_width (CPUFreqApplet *applet)
 
 	label = gtk_label_new ("100%");
 #if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_get_preferred_width (label, &width, NULL);
-	applet->max_perc_width = width;
+	gtk_widget_get_preferred_width (applet->label, &width,&width);
+	applet->max_perc_width = width +20; /*for some reason width always comes up 2 characters*/
 #else
 	gtk_widget_size_request (label, &req);
 	applet->max_perc_width = req.width;
@@ -391,7 +397,7 @@ cpufreq_applet_get_max_unit_width (CPUFreqApplet *applet)
 
 	label = gtk_label_new ("GHz");
 #if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_get_preferred_width (label, &w1, NULL);
+	gtk_widget_get_preferred_width (applet->label, &w1, NULL);
 #else
 	gtk_widget_size_request (label, &req);
 	w1 = req.width;
@@ -399,16 +405,18 @@ cpufreq_applet_get_max_unit_width (CPUFreqApplet *applet)
 
 	gtk_label_set_text (GTK_LABEL (label), "MHz");
 #if GTK_CHECK_VERSION (3, 0, 0)
-	gtk_widget_get_preferred_width (label, &w2, NULL);
+	gtk_widget_get_preferred_width (applet->label, &w2, NULL);
 #else
 	gtk_widget_size_request (label, &req);
 	w2 = req.width;
 #endif
 
 	gtk_widget_destroy (label);
-
+#if GTK_CHECK_VERSION (3, 0, 0)
+	applet->max_unit_width = MAX (w1, w2)-1;
+#else
 	applet->max_unit_width = MAX (w1, w2);
-
+#endif
 	return applet->max_unit_width;
 }
 
@@ -433,19 +441,7 @@ cpufreq_applet_size_request (GtkWidget *widget, GtkRequisition *requisition)
 	    applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
 		return;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-	/*Specify numerical values so labels in gtk3 don't get zero width  */
-	if (applet->show_freq) {
-		labels_width += 50;
-	}
 
-	if (applet->show_perc) {
-		labels_width += 50;
-	}
-
-	if (applet->show_unit) {
-		labels_width += 20;
-#else
  	if (applet->show_freq) {
 		labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
  	}
@@ -456,7 +452,6 @@ cpufreq_applet_size_request (GtkWidget *widget, GtkRequisition *requisition)
  
  	if (applet->show_unit) {
 		labels_width += cpufreq_applet_get_max_unit_width (applet);
-#endif
 	}
 
 	if (applet->show_icon) {
