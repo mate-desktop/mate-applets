@@ -334,12 +334,7 @@ cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 		label = gtk_label_new (freq_text);
 #if GTK_CHECK_VERSION (3, 0, 0)
 		gtk_widget_get_preferred_width (applet->label, &label_width, NULL);
-
-#if GTK_CHECK_VERSION (3, 19, 0)
-		width = MAX (width, label_width)-2;
-#else
-		width = MAX (width, label_width);
-#endif
+		width = MAX (width, label_width); 
 #endif
 #if !GTK_CHECK_VERSION (3, 0, 0)
 		gtk_widget_size_request (label, &req);
