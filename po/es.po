@@ -9,6 +9,7 @@
 # Angel Mireles <lamborghinilph710@gmail.com>, 2016
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2015
 # Emiliano Fascetti, 2014-2015
+# Ivan Nieto <ivan.nieto.sousa@gmail.com>, 2016
 # Jorge González <jorgegonz@svn.mate.org>, 2007, 2009, 2010
 # Lluís Tusquellas <lutusq@gmail.com>, 2014
 # Lluís Tusquellas <lutusq@gmail.com>, 2012
@@ -18,9 +19,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 19:20+0300\n"
-"PO-Revision-Date: 2016-02-12 18:01+0000\n"
-"Last-Translator: Andres Sanchez <blackatze93@gmail.com>\n"
+"POT-Creation-Date: 2016-03-22 11:52+0300\n"
+"PO-Revision-Date: 2016-03-28 23:08+0000\n"
+"Last-Translator: Ivan Nieto <ivan.nieto.sousa@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/mate/MATE/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -284,7 +285,7 @@ msgstr "N/D"
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
 #: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:767
+#: ../mateweather/mateweather-pref.c:750
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -714,8 +715,8 @@ msgid ""
 msgstr "Establece la CPU que monitorizar. En un sistema monoprocesador, no tiene que cambiarlo."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
-msgid "Mode to show cpu usage"
-msgstr "Modo para mostrar el uso de la CPU"
+msgid "Mode to show CPU usage"
+msgstr "Modo para mostrar el uso de CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
@@ -730,9 +731,9 @@ msgstr "El tipo de texto a mostrar (si el texto está activado)."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr "Un valor 0 significa mostrar la frecuencia de la CPU, 1 mostrar la frecuencia y las unidades y 2 mostrar un porcentaje en vez de la frecuencia."
+msgstr "Un valor 0 para indicar la frecuencia de la CPU, 1 para mostrar la frecuencia y unidades, y 2 para mostrar porcentaje en lugar de frecuencia."
 
 #: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -1031,197 +1032,197 @@ msgid "Forecast not currently available for this location."
 msgstr "Pronóstico no disponible actualmente para este lugar."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Location view"
 msgstr "Vista de la zona"
 
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Select Location from the list"
 msgstr "Seleccione una zona de la lista"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Update spin button"
 msgstr "Botón de intervalo de actualización"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Spinbutton for updating"
 msgstr "Botón para la actualizar"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Address Entry"
 msgstr "Dirección"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Enter the URL"
 msgstr "Introduzca el URL"
 
-#: ../mateweather/mateweather-pref.c:295
+#: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Falló al cargar la base de datos XML de zonas. Informe de esto como un fallo."
 
-#: ../mateweather/mateweather-pref.c:829
+#: ../mateweather/mateweather-pref.c:812
 msgid "Weather Preferences"
 msgstr "Preferencias de meteorología"
 
-#: ../mateweather/mateweather-pref.c:856
-#: ../mateweather/mateweather-pref.c:1070
+#: ../mateweather/mateweather-pref.c:839
+#: ../mateweather/mateweather-pref.c:1053
 msgid "_Automatically update every:"
 msgstr "_Actualizar automáticamente cada:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:871
+#: ../mateweather/mateweather-pref.c:854
 msgid "_Temperature unit:"
 msgstr "Unidad de _temperatura:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:868
 msgid "Kelvin"
 msgstr "Kelvin"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:870
 msgid "Celsius"
 msgstr "Centígrados"
 
-#: ../mateweather/mateweather-pref.c:888
+#: ../mateweather/mateweather-pref.c:871
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:897
+#: ../mateweather/mateweather-pref.c:880
 msgid "_Wind speed unit:"
 msgstr "Unidad de velocidad del _viento:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:912
+#: ../mateweather/mateweather-pref.c:895
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:897
 msgid "km/h"
 msgstr "Km/h"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:899
 msgid "mph"
 msgstr "mph"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:901
 msgid "knots"
 msgstr "nudos"
 
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:902
 msgid "Beaufort scale"
 msgstr "Escala Beaufort"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:928
+#: ../mateweather/mateweather-pref.c:911
 msgid "_Pressure unit:"
 msgstr "Unidad de _presión atmosférica:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:943
+#: ../mateweather/mateweather-pref.c:926
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:945
+#: ../mateweather/mateweather-pref.c:928
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:947
+#: ../mateweather/mateweather-pref.c:930
 msgid "mb"
 msgstr "mb"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:949
+#: ../mateweather/mateweather-pref.c:932
 msgid "mmHg"
 msgstr "mmHg"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:951
+#: ../mateweather/mateweather-pref.c:934
 msgid "inHg"
 msgstr "inHg"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:953
+#: ../mateweather/mateweather-pref.c:936
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:962
+#: ../mateweather/mateweather-pref.c:945
 msgid "_Visibility unit:"
 msgstr "Unidad de _visibilidad:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:977
+#: ../mateweather/mateweather-pref.c:960
 msgid "meters"
 msgstr "metros"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:962
 msgid "km"
 msgstr "Km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:981
+#: ../mateweather/mateweather-pref.c:964
 msgid "miles"
 msgstr "millas"
 
-#: ../mateweather/mateweather-pref.c:1007
+#: ../mateweather/mateweather-pref.c:990
 msgid "Enable _radar map"
 msgstr "Activar el mapa de _radar"
 
-#: ../mateweather/mateweather-pref.c:1023
+#: ../mateweather/mateweather-pref.c:1006
 msgid "Use _custom address for radar map"
 msgstr "Usar dirección _personalizada para el mapa de radar"
 
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:1024
 msgid "A_ddress:"
 msgstr "Di_recciones:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1056
+#: ../mateweather/mateweather-pref.c:1039
 msgid "Show _notifications"
 msgstr "Mostrar _notificaciones"
 
-#: ../mateweather/mateweather-pref.c:1066
+#: ../mateweather/mateweather-pref.c:1049
 msgid "Update"
 msgstr "Actualizar"
 
-#: ../mateweather/mateweather-pref.c:1089
+#: ../mateweather/mateweather-pref.c:1066
 msgid "minutes"
 msgstr "minutos"
 
-#: ../mateweather/mateweather-pref.c:1107
+#: ../mateweather/mateweather-pref.c:1084
 msgid "Display"
 msgstr "Visor"
 
-#: ../mateweather/mateweather-pref.c:1126
+#: ../mateweather/mateweather-pref.c:1103
 msgid "General"
 msgstr "General"
 
-#: ../mateweather/mateweather-pref.c:1137
+#: ../mateweather/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr "_Seleccione una zona:"
 
-#: ../mateweather/mateweather-pref.c:1163
+#: ../mateweather/mateweather-pref.c:1140
 msgid "_Find:"
 msgstr "_Buscar:"
 
-#: ../mateweather/mateweather-pref.c:1169
+#: ../mateweather/mateweather-pref.c:1146
 msgid "Find _Next"
 msgstr "Buscar _siguiente"
 
-#: ../mateweather/mateweather-pref.c:1190
+#: ../mateweather/mateweather-pref.c:1167
 msgid "Location"
 msgstr "Zona"
 
@@ -1479,7 +1480,7 @@ msgstr "Seguimiento de inversiones."
 msgid "About"
 msgstr "Acerca de"
 
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1414
 msgid "Help"
 msgstr "Ayuda"
 
@@ -2176,7 +2177,7 @@ msgstr "MiB"
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr ""
+msgstr "Ha habido un error mostrando la ayuda:\n%s"
 
 #: ../netspeed/src/netspeed.c:809
 msgid ""
@@ -2215,7 +2216,7 @@ msgstr "Acortar _unidades"
 
 #: ../netspeed/src/netspeed.c:1059
 msgid "_Change icon according to the selected device"
-msgstr ""
+msgstr "_Cambia el icono acorde al servicio seleccionado"
 
 #: ../netspeed/src/netspeed.c:1063
 msgid "Show _icon"
@@ -2223,20 +2224,20 @@ msgstr "Mostrar ícono"
 
 #: ../netspeed/src/netspeed.c:1067
 msgid "Show signal _quality icon for wireless devices"
-msgstr ""
+msgstr "Muestra el icono de _calidad de señal para dispositivos wireless"
 
 #: ../netspeed/src/netspeed.c:1198
 #, c-format
 msgid "Device Details for %s"
-msgstr ""
+msgstr "Detalles de Dispositivo para %s"
 
 #: ../netspeed/src/netspeed.c:1223
 msgid "_In graph color"
-msgstr ""
+msgstr "Gráfico de color _In"
 
 #: ../netspeed/src/netspeed.c:1224
 msgid "_Out graph color"
-msgstr ""
+msgstr "Gráfico de color _Out"
 
 #: ../netspeed/src/netspeed.c:1240
 msgid "Internet Address:"
@@ -2267,71 +2268,71 @@ msgstr "Bytes de subida:"
 msgid "none"
 msgstr "ninguno"
 
-#: ../netspeed/src/netspeed.c:1318
+#: ../netspeed/src/netspeed.c:1316
 msgid "IPV6 Address:"
 msgstr "Dirección IPv6:"
 
-#: ../netspeed/src/netspeed.c:1357
+#: ../netspeed/src/netspeed.c:1355
 msgid "Signal Strength:"
 msgstr "Potencia de la señal:"
 
-#: ../netspeed/src/netspeed.c:1358
+#: ../netspeed/src/netspeed.c:1356
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1412
+#: ../netspeed/src/netspeed.c:1410
 msgid "Device _Details"
 msgstr "_Detalles del dispositivo"
 
-#: ../netspeed/src/netspeed.c:1414
+#: ../netspeed/src/netspeed.c:1412
 msgid "Preferences..."
 msgstr "Preferencias..."
 
-#: ../netspeed/src/netspeed.c:1418
+#: ../netspeed/src/netspeed.c:1416
 msgid "About..."
 msgstr "Acerca de..."
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "¿Quiere desconectar %s ahora?"
 
-#: ../netspeed/src/netspeed.c:1463
+#: ../netspeed/src/netspeed.c:1461
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "¿Quiere conectar %s ahora?"
 
-#: ../netspeed/src/netspeed.c:1490
+#: ../netspeed/src/netspeed.c:1488
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr "<b>Falló la ejecución de la orden %s</b>\n%s"
 
-#: ../netspeed/src/netspeed.c:1549
+#: ../netspeed/src/netspeed.c:1547
 #, c-format
 msgid "%s is down"
 msgstr "%s está desconfigurado"
 
-#: ../netspeed/src/netspeed.c:1554
+#: ../netspeed/src/netspeed.c:1552
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
 msgstr "%s :%s\nbajada: %s subida: %s"
 
-#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+#: ../netspeed/src/netspeed.c:1554 ../netspeed/src/netspeed.c:1563
 msgid "has no ip"
 msgstr "no tiene IP"
 
-#: ../netspeed/src/netspeed.c:1563
+#: ../netspeed/src/netspeed.c:1561
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
 msgstr "%s: %s\ntotal: %s"
 
-#: ../netspeed/src/netspeed.c:1572
+#: ../netspeed/src/netspeed.c:1570
 #, c-format
 msgid ""
 "\n"
@@ -2339,11 +2340,11 @@ msgid ""
 "Strength: %d %%"
 msgstr "\nESSID: %s\nPotencia: %d %%"
 
-#: ../netspeed/src/netspeed.c:1573
+#: ../netspeed/src/netspeed.c:1571
 msgid "unknown"
 msgstr "desconocido"
 
-#: ../netspeed/src/netspeed.c:1624
+#: ../netspeed/src/netspeed.c:1622
 msgid "Mate Netspeed"
 msgstr "MATE Netspeed "
 

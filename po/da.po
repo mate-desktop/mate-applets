@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Allan Nordhøy <epost@anotheragency.no>, 2016
 # Birger Langkjer <birger.langkjer@image.dk>, 2000
 # David Nielsen <mateuser@gmail.com>, 2006
 # Joe Hansen <joedalton2@yahoo.dk>, 2012,2014-2016
@@ -12,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 19:20+0300\n"
-"PO-Revision-Date: 2016-02-13 10:16+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"POT-Creation-Date: 2016-03-22 11:52+0300\n"
+"PO-Revision-Date: 2016-03-25 17:12+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Danish (http://www.transifex.com/mate/MATE/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -278,7 +279,7 @@ msgstr " - "
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
 #: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:767
+#: ../mateweather/mateweather-pref.c:750
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -708,8 +709,8 @@ msgid ""
 msgstr "Sæt CPU for overvågning. I et system med en enkelt processor, behøver du ikke at ændre noget."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
-msgid "Mode to show cpu usage"
-msgstr "Den viste tilstand for CPU-brug"
+msgid "Mode to show CPU usage"
+msgstr "Tilstand til at vise CPU-forbrug"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
@@ -724,9 +725,9 @@ msgstr "Typen af tekst der skal vises (hvis teksten er slået til)."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr "En værdi på 0 betyder vis CPU-frekvens, 1 betyder vis frekvens og enheder, og 2 betyder vis procent istedet for frekvens."
+msgstr "En værdi på 0 betyder vis CPU-frekvens, 1 betyder vis frekvens og enheder og 2 betyder vis procent i stedet for frekvens."
 
 #: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -930,7 +931,7 @@ msgstr "By: %s\nHimmel: %s\nTemperatur: %s"
 
 #: ../mateweather/mateweather-applet.c:532
 msgid "Updating..."
-msgstr "Opdaterer..."
+msgstr "Opdaterer …"
 
 #: ../mateweather/mateweather-dialog.c:189
 msgid "Details"
@@ -1025,197 +1026,197 @@ msgid "Forecast not currently available for this location."
 msgstr "Vejrudsigt er ikke tilgængelig for denne lokalitet."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Location view"
 msgstr "Placeringsvisning"
 
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Select Location from the list"
 msgstr "Vælg en placering fra listen"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Update spin button"
 msgstr "Opdateringsknap"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Spinbutton for updating"
 msgstr "Talindtastning for opdateringsinterval"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Address Entry"
 msgstr "Adresseindtastning"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Enter the URL"
 msgstr "Indtast URL'en"
 
-#: ../mateweather/mateweather-pref.c:295
+#: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Kunne ikke indlæse XML-databasen over lokationer. Rapporter venligst dette som en fejl."
 
-#: ../mateweather/mateweather-pref.c:829
+#: ../mateweather/mateweather-pref.c:812
 msgid "Weather Preferences"
 msgstr "Indstillinger for vejret"
 
-#: ../mateweather/mateweather-pref.c:856
-#: ../mateweather/mateweather-pref.c:1070
+#: ../mateweather/mateweather-pref.c:839
+#: ../mateweather/mateweather-pref.c:1053
 msgid "_Automatically update every:"
 msgstr "_Opdater automatisk hvert:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:871
+#: ../mateweather/mateweather-pref.c:854
 msgid "_Temperature unit:"
 msgstr "_Temperaturenhed:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:868
 msgid "Kelvin"
 msgstr "Kelvin"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:870
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../mateweather/mateweather-pref.c:888
+#: ../mateweather/mateweather-pref.c:871
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:897
+#: ../mateweather/mateweather-pref.c:880
 msgid "_Wind speed unit:"
 msgstr "_Vindstyrkeenhed:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:912
+#: ../mateweather/mateweather-pref.c:895
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:897
 msgid "km/h"
 msgstr "km/t"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:899
 msgid "mph"
 msgstr "mpt"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:901
 msgid "knots"
 msgstr "knob"
 
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:902
 msgid "Beaufort scale"
 msgstr "Beaufort-skala"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:928
+#: ../mateweather/mateweather-pref.c:911
 msgid "_Pressure unit:"
 msgstr "_Trykenhed:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:943
+#: ../mateweather/mateweather-pref.c:926
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:945
+#: ../mateweather/mateweather-pref.c:928
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:947
+#: ../mateweather/mateweather-pref.c:930
 msgid "mb"
 msgstr "mb"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:949
+#: ../mateweather/mateweather-pref.c:932
 msgid "mmHg"
 msgstr "mmHg"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:951
+#: ../mateweather/mateweather-pref.c:934
 msgid "inHg"
 msgstr "tmHG"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:953
+#: ../mateweather/mateweather-pref.c:936
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:962
+#: ../mateweather/mateweather-pref.c:945
 msgid "_Visibility unit:"
 msgstr "_Sigtbarhedsenhed:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:977
+#: ../mateweather/mateweather-pref.c:960
 msgid "meters"
 msgstr "meter"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:962
 msgid "km"
 msgstr "km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:981
+#: ../mateweather/mateweather-pref.c:964
 msgid "miles"
 msgstr "mil"
 
-#: ../mateweather/mateweather-pref.c:1007
+#: ../mateweather/mateweather-pref.c:990
 msgid "Enable _radar map"
 msgstr "Aktiver _radarkort"
 
-#: ../mateweather/mateweather-pref.c:1023
+#: ../mateweather/mateweather-pref.c:1006
 msgid "Use _custom address for radar map"
 msgstr "Benyt s_elvvalgt adresse til radarkortet"
 
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:1024
 msgid "A_ddress:"
 msgstr "A_dresse:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1056
+#: ../mateweather/mateweather-pref.c:1039
 msgid "Show _notifications"
 msgstr "Vis _påmindelser"
 
-#: ../mateweather/mateweather-pref.c:1066
+#: ../mateweather/mateweather-pref.c:1049
 msgid "Update"
 msgstr "Opdater"
 
-#: ../mateweather/mateweather-pref.c:1089
+#: ../mateweather/mateweather-pref.c:1066
 msgid "minutes"
 msgstr "minut"
 
-#: ../mateweather/mateweather-pref.c:1107
+#: ../mateweather/mateweather-pref.c:1084
 msgid "Display"
 msgstr "Vis"
 
-#: ../mateweather/mateweather-pref.c:1126
+#: ../mateweather/mateweather-pref.c:1103
 msgid "General"
 msgstr "Generelt"
 
-#: ../mateweather/mateweather-pref.c:1137
+#: ../mateweather/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr "_Vælg en placering:"
 
-#: ../mateweather/mateweather-pref.c:1163
+#: ../mateweather/mateweather-pref.c:1140
 msgid "_Find:"
 msgstr "_Find:"
 
-#: ../mateweather/mateweather-pref.c:1169
+#: ../mateweather/mateweather-pref.c:1146
 msgid "Find _Next"
 msgstr "Find _næste"
 
-#: ../mateweather/mateweather-pref.c:1190
+#: ../mateweather/mateweather-pref.c:1167
 msgid "Location"
 msgstr "Placering"
 
@@ -1473,7 +1474,7 @@ msgstr "Følg din investeringer."
 msgid "About"
 msgstr "Om"
 
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1414
 msgid "Help"
 msgstr "Hjælp"
 
@@ -1615,7 +1616,7 @@ msgstr "Start systemovervågning"
 #: ../multiload/main.c:146
 #, c-format
 msgid "There was an error executing '%s': %s"
-msgstr "Der opstod en fejl ved kørsel af \"%s\": %s"
+msgstr "Der opstod en fejl ved kørsel af »%s«: %s"
 
 #: ../multiload/main.c:274 ../multiload/properties.c:604
 msgid "Processor"
@@ -2261,71 +2262,71 @@ msgstr "Byte ud:"
 msgid "none"
 msgstr "intet"
 
-#: ../netspeed/src/netspeed.c:1318
+#: ../netspeed/src/netspeed.c:1316
 msgid "IPV6 Address:"
 msgstr "IPV6-adresse:"
 
-#: ../netspeed/src/netspeed.c:1357
+#: ../netspeed/src/netspeed.c:1355
 msgid "Signal Strength:"
 msgstr "Signalstyrke:"
 
-#: ../netspeed/src/netspeed.c:1358
+#: ../netspeed/src/netspeed.c:1356
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1412
+#: ../netspeed/src/netspeed.c:1410
 msgid "Device _Details"
 msgstr "Enheds_detaljer"
 
-#: ../netspeed/src/netspeed.c:1414
+#: ../netspeed/src/netspeed.c:1412
 msgid "Preferences..."
-msgstr "Indstillinger ..."
+msgstr "Indstillinger …"
 
-#: ../netspeed/src/netspeed.c:1418
+#: ../netspeed/src/netspeed.c:1416
 msgid "About..."
-msgstr "Om ..."
+msgstr "Om …"
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Vil du afbryde %s nu?"
 
-#: ../netspeed/src/netspeed.c:1463
+#: ../netspeed/src/netspeed.c:1461
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Vil du forbinde %s nu?"
 
-#: ../netspeed/src/netspeed.c:1490
+#: ../netspeed/src/netspeed.c:1488
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr "<b>Kørsel af kommando %s fejlede</b>\n%s"
 
-#: ../netspeed/src/netspeed.c:1549
+#: ../netspeed/src/netspeed.c:1547
 #, c-format
 msgid "%s is down"
 msgstr "%s er nede"
 
-#: ../netspeed/src/netspeed.c:1554
+#: ../netspeed/src/netspeed.c:1552
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
 msgstr "%s: %s\nned: %s op: %s"
 
-#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+#: ../netspeed/src/netspeed.c:1554 ../netspeed/src/netspeed.c:1563
 msgid "has no ip"
 msgstr "har ingen ip"
 
-#: ../netspeed/src/netspeed.c:1563
+#: ../netspeed/src/netspeed.c:1561
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
 msgstr "%s: %s\nsum: %s"
 
-#: ../netspeed/src/netspeed.c:1572
+#: ../netspeed/src/netspeed.c:1570
 #, c-format
 msgid ""
 "\n"
@@ -2333,11 +2334,11 @@ msgid ""
 "Strength: %d %%"
 msgstr "\nESSID: %s\nStyrke: %d %%"
 
-#: ../netspeed/src/netspeed.c:1573
+#: ../netspeed/src/netspeed.c:1571
 msgid "unknown"
 msgstr "Ukendt"
 
-#: ../netspeed/src/netspeed.c:1624
+#: ../netspeed/src/netspeed.c:1622
 msgid "Mate Netspeed"
 msgstr "Mate-netværkshastighed"
 
@@ -2369,7 +2370,7 @@ msgstr "_Ny note"
 
 #: ../stickynotes/stickynotes.ui.h:2
 msgid "_Delete Note..."
-msgstr "_Slet note..."
+msgstr "_Slet note …"
 
 #: ../stickynotes/stickynotes.ui.h:3
 msgid "_Lock Note"
@@ -2571,7 +2572,7 @@ msgstr "Forvalgt farve for nye noter"
 msgid ""
 "Default color for new sticky notes. This should be in html hex "
 "specification, for example \"#30FF50\"."
-msgstr "Forvalgt farve for nye notessedler. Værdien skal være en hexadecimal HTML-specifikation, f.eks. \"#30FF50\"."
+msgstr "Forvalgt farve for nye notessedler. Værdien skal være en hexadecimal HTML-specifikation, f.eks. »#30FF50«."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:7
 msgid "Default color for font"
@@ -2581,7 +2582,7 @@ msgstr "Forvalgt farve for skrifttype"
 msgid ""
 "Default font color for new sticky notes. This should be in html hex "
 "specification, for example \"#000000\"."
-msgstr "Forvalgt skrifttypefarve for nye notessedler. Værdien skal være en hexadecimal HTML-specifikation, f.eks. \"#000000\"."
+msgstr "Forvalgt skrifttypefarve for nye notessedler. Værdien skal være en hexadecimal HTML-specifikation, f.eks. »#000000«."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:9
 msgid "Default font for new notes"
@@ -2591,7 +2592,7 @@ msgstr "Forvalgt skrifttype for nye noter"
 msgid ""
 "Default font for new sticky notes. This should be a Pango Font Name, for "
 "example \"Sans Italic 10\"."
-msgstr "Forvalgt skrifttypenavn for nye notessedler. Dette skal være et Pango-skrifttypenavn, f.eks. \"Sans Italic 10\"."
+msgstr "Forvalgt skrifttypenavn for nye notessedler. Dette skal være et Pango-skrifttypenavn, f.eks. »Sans Italic 10«."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:11
 msgid "Sticky notes' workspace stickyness"

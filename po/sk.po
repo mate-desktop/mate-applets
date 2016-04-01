@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 19:20+0300\n"
-"PO-Revision-Date: 2016-02-13 18:06+0000\n"
+"POT-Creation-Date: 2016-03-22 11:52+0300\n"
+"PO-Revision-Date: 2016-03-27 14:17+0000\n"
 "Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/mate/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -289,7 +289,7 @@ msgstr "N/A"
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
 #: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:767
+#: ../mateweather/mateweather-pref.c:750
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -719,8 +719,8 @@ msgid ""
 msgstr "Nastavte procesor na sledovanie. Hodnotu nemusíte meniť v prípade, že máte iba jeden procesor."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
-msgid "Mode to show cpu usage"
-msgstr "Režim na zobrazenie využitia procesora"
+msgid "Mode to show CPU usage"
+msgstr "Režim zobrazovania využitia procesora"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
@@ -735,9 +735,9 @@ msgstr "Typ textu na zobrazenie (ak je text povolený)."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr "Hodnota 0 znamená zobrazenie frekvencie procesora, 1 znamená zobrazenie frekvencie a jednotiek a 2 znamená zobrazenie percent namiesto frekvencie."
+msgstr "Hodnota 0 znamená zobrazovanie frekvencie procesora, 1 zobrazovanie frekvencie a jednotiek a 2 zobrazovanie percent namiesto frekvencie."
 
 #: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -1036,197 +1036,197 @@ msgid "Forecast not currently available for this location."
 msgstr "Predpoveď momentálne nie je pre toto miesto dostupná."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Location view"
 msgstr "Umiestnenie"
 
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Select Location from the list"
 msgstr "Vybrať miesto zo zoznamu"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Update spin button"
 msgstr "Tlačidlo hodnôt pre frekvenciu aktualizácie"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Spinbutton for updating"
 msgstr "Tlačidlo hodnôt pre aktualizáciu"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Address Entry"
 msgstr "Položka adresy"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Enter the URL"
 msgstr "Zadajte URL adresu"
 
-#: ../mateweather/mateweather-pref.c:295
+#: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Zlyhalo načítanie XML databázy umiestnení. Prosím, oznámte toto ako chybu."
 
-#: ../mateweather/mateweather-pref.c:829
+#: ../mateweather/mateweather-pref.c:812
 msgid "Weather Preferences"
 msgstr "Nastavenia počasia"
 
-#: ../mateweather/mateweather-pref.c:856
-#: ../mateweather/mateweather-pref.c:1070
+#: ../mateweather/mateweather-pref.c:839
+#: ../mateweather/mateweather-pref.c:1053
 msgid "_Automatically update every:"
 msgstr "_Automaticky aktualizovať každých:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:871
+#: ../mateweather/mateweather-pref.c:854
 msgid "_Temperature unit:"
 msgstr "Jednotka _teploty:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:868
 msgid "Kelvin"
 msgstr "Kelvinov"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:870
 msgid "Celsius"
 msgstr "Celzia"
 
-#: ../mateweather/mateweather-pref.c:888
+#: ../mateweather/mateweather-pref.c:871
 msgid "Fahrenheit"
 msgstr "Fahrenheita"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:897
+#: ../mateweather/mateweather-pref.c:880
 msgid "_Wind speed unit:"
 msgstr "Jednotka rýchlosti _vetra:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:912
+#: ../mateweather/mateweather-pref.c:895
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:897
 msgid "km/h"
 msgstr "km/h"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:899
 msgid "mph"
 msgstr "míľ za hodinu"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:901
 msgid "knots"
 msgstr "uzlov"
 
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:902
 msgid "Beaufort scale"
 msgstr "Beaufortova stupnica"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:928
+#: ../mateweather/mateweather-pref.c:911
 msgid "_Pressure unit:"
 msgstr "Jednotka _tlaku:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:943
+#: ../mateweather/mateweather-pref.c:926
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:945
+#: ../mateweather/mateweather-pref.c:928
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:947
+#: ../mateweather/mateweather-pref.c:930
 msgid "mb"
 msgstr "milibarov"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:949
+#: ../mateweather/mateweather-pref.c:932
 msgid "mmHg"
 msgstr "milibarov ortute"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:951
+#: ../mateweather/mateweather-pref.c:934
 msgid "inHg"
 msgstr "palcov ortute"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:953
+#: ../mateweather/mateweather-pref.c:936
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:962
+#: ../mateweather/mateweather-pref.c:945
 msgid "_Visibility unit:"
 msgstr "Jednotka _viditeľnosti:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:977
+#: ../mateweather/mateweather-pref.c:960
 msgid "meters"
 msgstr "metre"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:962
 msgid "km"
 msgstr "km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:981
+#: ../mateweather/mateweather-pref.c:964
 msgid "miles"
 msgstr "míle"
 
-#: ../mateweather/mateweather-pref.c:1007
+#: ../mateweather/mateweather-pref.c:990
 msgid "Enable _radar map"
 msgstr "Povoliť _radarové mapy"
 
-#: ../mateweather/mateweather-pref.c:1023
+#: ../mateweather/mateweather-pref.c:1006
 msgid "Use _custom address for radar map"
 msgstr "Použiť _vlastnú adresu pre radarovú mapu"
 
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:1024
 msgid "A_ddress:"
 msgstr "_Adresa:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1056
+#: ../mateweather/mateweather-pref.c:1039
 msgid "Show _notifications"
 msgstr "Zobraziť oz_námenia"
 
-#: ../mateweather/mateweather-pref.c:1066
+#: ../mateweather/mateweather-pref.c:1049
 msgid "Update"
 msgstr "Aktualizovať"
 
-#: ../mateweather/mateweather-pref.c:1089
+#: ../mateweather/mateweather-pref.c:1066
 msgid "minutes"
 msgstr "minút"
 
-#: ../mateweather/mateweather-pref.c:1107
+#: ../mateweather/mateweather-pref.c:1084
 msgid "Display"
 msgstr "Zobrazenie"
 
-#: ../mateweather/mateweather-pref.c:1126
+#: ../mateweather/mateweather-pref.c:1103
 msgid "General"
 msgstr "Všeobecné"
 
-#: ../mateweather/mateweather-pref.c:1137
+#: ../mateweather/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr "_Vyberte miesto:"
 
-#: ../mateweather/mateweather-pref.c:1163
+#: ../mateweather/mateweather-pref.c:1140
 msgid "_Find:"
 msgstr "_Nájsť:"
 
-#: ../mateweather/mateweather-pref.c:1169
+#: ../mateweather/mateweather-pref.c:1146
 msgid "Find _Next"
 msgstr "Nájsť ďa_lšie"
 
-#: ../mateweather/mateweather-pref.c:1190
+#: ../mateweather/mateweather-pref.c:1167
 msgid "Location"
 msgstr "Umiestnenie"
 
@@ -1484,7 +1484,7 @@ msgstr "Stopa do ktorej ste investovali peniaze."
 msgid "About"
 msgstr "O programe"
 
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1414
 msgid "Help"
 msgstr "Pomocník"
 
@@ -1918,7 +1918,7 @@ msgstr "_Systém"
 
 #: ../multiload/properties.c:608
 msgid "N_ice"
-msgstr "_Nice"
+msgstr "Pr_iorita"
 
 #: ../multiload/properties.c:609
 msgid "I_OWait"
@@ -2273,71 +2273,71 @@ msgstr "Pdchádzajúce Bajty:"
 msgid "none"
 msgstr "žiadne"
 
-#: ../netspeed/src/netspeed.c:1318
+#: ../netspeed/src/netspeed.c:1316
 msgid "IPV6 Address:"
 msgstr "Adresa IPV6:"
 
-#: ../netspeed/src/netspeed.c:1357
+#: ../netspeed/src/netspeed.c:1355
 msgid "Signal Strength:"
 msgstr "Sila signálu:"
 
-#: ../netspeed/src/netspeed.c:1358
+#: ../netspeed/src/netspeed.c:1356
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1412
+#: ../netspeed/src/netspeed.c:1410
 msgid "Device _Details"
 msgstr "Podrobnosti o _zariadení"
 
-#: ../netspeed/src/netspeed.c:1414
+#: ../netspeed/src/netspeed.c:1412
 msgid "Preferences..."
 msgstr "Nastavenia..."
 
-#: ../netspeed/src/netspeed.c:1418
+#: ../netspeed/src/netspeed.c:1416
 msgid "About..."
 msgstr "O programe..."
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Chcete odpojiť %s teraz?"
 
-#: ../netspeed/src/netspeed.c:1463
+#: ../netspeed/src/netspeed.c:1461
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Chcete pripojiť %s teraz?"
 
-#: ../netspeed/src/netspeed.c:1490
+#: ../netspeed/src/netspeed.c:1488
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr "<b>Spustenie príkazu %s zlyhalo</b>\n%s"
 
-#: ../netspeed/src/netspeed.c:1549
+#: ../netspeed/src/netspeed.c:1547
 #, c-format
 msgid "%s is down"
 msgstr "%s je vypnuté"
 
-#: ../netspeed/src/netspeed.c:1554
+#: ../netspeed/src/netspeed.c:1552
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
 msgstr "%s: %s\nprijímanie: %s odosielanie: %s"
 
-#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+#: ../netspeed/src/netspeed.c:1554 ../netspeed/src/netspeed.c:1563
 msgid "has no ip"
 msgstr "nemá IP adresu"
 
-#: ../netspeed/src/netspeed.c:1563
+#: ../netspeed/src/netspeed.c:1561
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
 msgstr "%s: %s\ncelkom: %s"
 
-#: ../netspeed/src/netspeed.c:1572
+#: ../netspeed/src/netspeed.c:1570
 #, c-format
 msgid ""
 "\n"
@@ -2345,11 +2345,11 @@ msgid ""
 "Strength: %d %%"
 msgstr "\nESSID: %s\nSila: %d %%"
 
-#: ../netspeed/src/netspeed.c:1573
+#: ../netspeed/src/netspeed.c:1571
 msgid "unknown"
 msgstr "neznámy"
 
-#: ../netspeed/src/netspeed.c:1624
+#: ../netspeed/src/netspeed.c:1622
 msgid "Mate Netspeed"
 msgstr "Mate Netspeed"
 

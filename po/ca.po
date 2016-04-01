@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 19:20+0300\n"
-"PO-Revision-Date: 2016-01-28 07:57+0000\n"
+"POT-Creation-Date: 2016-03-22 11:52+0300\n"
+"PO-Revision-Date: 2016-03-24 09:45+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -280,7 +280,7 @@ msgstr "N/D"
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
 #: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:767
+#: ../mateweather/mateweather-pref.c:750
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -710,7 +710,7 @@ msgid ""
 msgstr "Estableix la CPU a monitorar. En un sistema amb un sol processador no heu de canviar-ho."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
-msgid "Mode to show cpu usage"
+msgid "Mode to show CPU usage"
 msgstr "Mode per mostrar l'ús de la CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
@@ -726,7 +726,7 @@ msgstr "El tipus de text a visualitzar (si el text està habilitat)."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
 msgstr "El valor 0 significa que es mostra la freqüència de la CPU, 1 mostra la freqüència i les unitats, i 2 mostra el percentatge en lloc de la freqüència."
 
@@ -795,7 +795,7 @@ msgstr "No es pot executar Caja"
 #: ../drivemount/drive-button.c:636
 #, c-format
 msgid "Cannot execute '%s'"
-msgstr "No es pot executar '%s'"
+msgstr "No es pot executar «%s»"
 
 #: ../drivemount/drive-button.c:961
 msgid "_Play DVD"
@@ -1027,197 +1027,197 @@ msgid "Forecast not currently available for this location."
 msgstr "En aquests moments el pronòstic per a aquesta ubicació no està disponible."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Location view"
 msgstr "Visualització de la ubicació"
 
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Select Location from the list"
 msgstr "Seleccioneu la ubicació de la llista"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Update spin button"
 msgstr "Actualitza el botó giratori"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Spinbutton for updating"
 msgstr "Botó giratori per actualitzar"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Address Entry"
 msgstr "Entrada de l'adreça"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Enter the URL"
 msgstr "Introduïu l'URL"
 
-#: ../mateweather/mateweather-pref.c:295
+#: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "No s'ha pogut carregar la base de dades XML de les ubicacions. Informeu-ne com a error."
 
-#: ../mateweather/mateweather-pref.c:829
+#: ../mateweather/mateweather-pref.c:812
 msgid "Weather Preferences"
 msgstr "Preferències del butlletí meteorològic"
 
-#: ../mateweather/mateweather-pref.c:856
-#: ../mateweather/mateweather-pref.c:1070
+#: ../mateweather/mateweather-pref.c:839
+#: ../mateweather/mateweather-pref.c:1053
 msgid "_Automatically update every:"
 msgstr "Actualitza _automàticament cada:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:871
+#: ../mateweather/mateweather-pref.c:854
 msgid "_Temperature unit:"
 msgstr "Unitat de _temperatura:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:868
 msgid "Kelvin"
 msgstr "Kelvin"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:870
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../mateweather/mateweather-pref.c:888
+#: ../mateweather/mateweather-pref.c:871
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:897
+#: ../mateweather/mateweather-pref.c:880
 msgid "_Wind speed unit:"
 msgstr "Unitat de velocitat del _vent:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:912
+#: ../mateweather/mateweather-pref.c:895
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:897
 msgid "km/h"
 msgstr "km/h"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:899
 msgid "mph"
 msgstr "mph"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:901
 msgid "knots"
 msgstr "nusos"
 
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:902
 msgid "Beaufort scale"
 msgstr "Escala de Beaufort"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:928
+#: ../mateweather/mateweather-pref.c:911
 msgid "_Pressure unit:"
 msgstr "Unitat de _pressió:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:943
+#: ../mateweather/mateweather-pref.c:926
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:945
+#: ../mateweather/mateweather-pref.c:928
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:947
+#: ../mateweather/mateweather-pref.c:930
 msgid "mb"
 msgstr "mb"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:949
+#: ../mateweather/mateweather-pref.c:932
 msgid "mmHg"
 msgstr "mmHg"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:951
+#: ../mateweather/mateweather-pref.c:934
 msgid "inHg"
 msgstr "poHg"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:953
+#: ../mateweather/mateweather-pref.c:936
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:962
+#: ../mateweather/mateweather-pref.c:945
 msgid "_Visibility unit:"
 msgstr "Unitat de _visibilitat:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:977
+#: ../mateweather/mateweather-pref.c:960
 msgid "meters"
 msgstr "metres"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:962
 msgid "km"
 msgstr "km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:981
+#: ../mateweather/mateweather-pref.c:964
 msgid "miles"
 msgstr "milles"
 
-#: ../mateweather/mateweather-pref.c:1007
+#: ../mateweather/mateweather-pref.c:990
 msgid "Enable _radar map"
 msgstr "Habilita el mapa del _radar"
 
-#: ../mateweather/mateweather-pref.c:1023
+#: ../mateweather/mateweather-pref.c:1006
 msgid "Use _custom address for radar map"
 msgstr "Utilitza una adreça _personalitzada per al mapa del radar"
 
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:1024
 msgid "A_ddress:"
 msgstr "A_dreça:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1056
+#: ../mateweather/mateweather-pref.c:1039
 msgid "Show _notifications"
 msgstr "Mostra les _notificacions"
 
-#: ../mateweather/mateweather-pref.c:1066
+#: ../mateweather/mateweather-pref.c:1049
 msgid "Update"
 msgstr "Actualitza"
 
-#: ../mateweather/mateweather-pref.c:1089
+#: ../mateweather/mateweather-pref.c:1066
 msgid "minutes"
 msgstr "minuts"
 
-#: ../mateweather/mateweather-pref.c:1107
+#: ../mateweather/mateweather-pref.c:1084
 msgid "Display"
 msgstr "Mostra"
 
-#: ../mateweather/mateweather-pref.c:1126
+#: ../mateweather/mateweather-pref.c:1103
 msgid "General"
 msgstr "General"
 
-#: ../mateweather/mateweather-pref.c:1137
+#: ../mateweather/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr "_Seleccioneu una ubicació:"
 
-#: ../mateweather/mateweather-pref.c:1163
+#: ../mateweather/mateweather-pref.c:1140
 msgid "_Find:"
 msgstr "_Cerca:"
 
-#: ../mateweather/mateweather-pref.c:1169
+#: ../mateweather/mateweather-pref.c:1146
 msgid "Find _Next"
 msgstr "Cerca el següe_nt"
 
-#: ../mateweather/mateweather-pref.c:1190
+#: ../mateweather/mateweather-pref.c:1167
 msgid "Location"
 msgstr "Ubicació"
 
@@ -1475,7 +1475,7 @@ msgstr "Monitoreu les vostres inversions monetàries."
 msgid "About"
 msgstr "Quant a"
 
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1414
 msgid "Help"
 msgstr "Ajuda"
 
@@ -2263,71 +2263,71 @@ msgstr "Bytes sortints:"
 msgid "none"
 msgstr "cap"
 
-#: ../netspeed/src/netspeed.c:1318
+#: ../netspeed/src/netspeed.c:1316
 msgid "IPV6 Address:"
 msgstr "Adreça IPV6:"
 
-#: ../netspeed/src/netspeed.c:1357
+#: ../netspeed/src/netspeed.c:1355
 msgid "Signal Strength:"
 msgstr "Fortalesa del senyal:"
 
-#: ../netspeed/src/netspeed.c:1358
+#: ../netspeed/src/netspeed.c:1356
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1412
+#: ../netspeed/src/netspeed.c:1410
 msgid "Device _Details"
 msgstr "_Detalls del dispositiu"
 
-#: ../netspeed/src/netspeed.c:1414
+#: ../netspeed/src/netspeed.c:1412
 msgid "Preferences..."
 msgstr "Preferències..."
 
-#: ../netspeed/src/netspeed.c:1418
+#: ../netspeed/src/netspeed.c:1416
 msgid "About..."
 msgstr "Quant a..."
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Voleu desconnectar %s ara?"
 
-#: ../netspeed/src/netspeed.c:1463
+#: ../netspeed/src/netspeed.c:1461
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Voleu connectar %s ara?"
 
-#: ../netspeed/src/netspeed.c:1490
+#: ../netspeed/src/netspeed.c:1488
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr "<b>Ha fallat l'execució de l'ordre %s</b>\n%s"
 
-#: ../netspeed/src/netspeed.c:1549
+#: ../netspeed/src/netspeed.c:1547
 #, c-format
 msgid "%s is down"
 msgstr "%s està caigut"
 
-#: ../netspeed/src/netspeed.c:1554
+#: ../netspeed/src/netspeed.c:1552
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
 msgstr "%s: %s\nentrada: %s sortida: %s"
 
-#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+#: ../netspeed/src/netspeed.c:1554 ../netspeed/src/netspeed.c:1563
 msgid "has no ip"
 msgstr "no té ip"
 
-#: ../netspeed/src/netspeed.c:1563
+#: ../netspeed/src/netspeed.c:1561
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
 msgstr "%s: %s\nsuma: %s"
 
-#: ../netspeed/src/netspeed.c:1572
+#: ../netspeed/src/netspeed.c:1570
 #, c-format
 msgid ""
 "\n"
@@ -2335,11 +2335,11 @@ msgid ""
 "Strength: %d %%"
 msgstr "\nESSID: %s\nFortalesa: %d %%"
 
-#: ../netspeed/src/netspeed.c:1573
+#: ../netspeed/src/netspeed.c:1571
 msgid "unknown"
 msgstr "desconegut"
 
-#: ../netspeed/src/netspeed.c:1624
+#: ../netspeed/src/netspeed.c:1622
 msgid "Mate Netspeed"
 msgstr "Mate Netspeed"
 
@@ -2857,7 +2857,7 @@ msgstr "Voleu buidar tots els elements de la paperera?"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Si trieu de buidar la paperera, se'n perdran tots els elements per sempre. Tingueu en compte que també podeu seleccionar elements separadament."
+msgstr "Si buideu la paperera, se'n perdran tots els elements per sempre. Tingueu en compte que també podeu eliminar-los per separat."
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"

@@ -8,14 +8,14 @@
 # Mihail Varantsou <meequz@gmail.com>, 2014
 # Mihail Varantsou <meequz@gmail.com>, 2014
 # Vital Khilko <dojlid@mova.org>, 2002-2003,2014
-# Vital Khilko <dojlid@mova.org>, 2002-2003,2014, 2015
+# Vital Khilko <dojlid@mova.org>, 2002-2003,2014, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 19:20+0300\n"
-"PO-Revision-Date: 2016-02-12 10:16+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-03-22 11:52+0300\n"
+"PO-Revision-Date: 2016-03-22 13:16+0000\n"
+"Last-Translator: Mihail Varantsou <meequz@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/mate/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +41,7 @@ msgstr "Паказвае стан здольнасцяў AccessX"
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
-msgstr "Суполка перакладчыкаў GNU/Linux\nСтаронка: http://i18n.linux.by/\nПерадапошні перакладчык: \tІгар Грачышка <boox.svaboda2006@gmail.com>\nАпошні перакладчык: \tМіхаіл Варанцоў <meequz@gmail.com>"
+msgstr "Суполка перакладчыкаў GNU/Linux\nСтаронка: http://i18n.linux.by/\nПерадапошні перакладчык: \tІгар Грачышка <boox.svaboda2006@gmail.com>\nАпошні перакладчык: \tМіхаіл Варанцоў <meequz@gmail.com>, 2014-2016"
 
 #: ../accessx-status/applet.c:164
 #, c-format
@@ -226,7 +226,7 @@ msgstr "Да поўнага насілкоўвання засталося %d %s 
 
 #: ../battstat/battstat_applet.c:399
 msgid "Battery Monitor"
-msgstr "Манітор насілкоўвання батарэі"
+msgstr "Назіральнік насілкоўвання батарэі"
 
 #: ../battstat/battstat_applet.c:409 ../battstat/battstat_applet.c:468
 msgid "Your battery is now fully recharged"
@@ -293,7 +293,7 @@ msgstr "Недаступны"
 #: ../battstat/battstat_applet.c:1161 ../drivemount/drivemount.c:148
 #: ../geyes/geyes.c:365 ../geyes/themes.c:227
 #: ../mateweather/mateweather-applet.c:68
-#: ../mateweather/mateweather-pref.c:767
+#: ../mateweather/mateweather-pref.c:750
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:546
 #: ../trashapplet/src/trashapplet.c:404
@@ -723,7 +723,7 @@ msgid ""
 msgstr "Задаць ядро, за якім назіраць. Калі ў сістэме адно ядро, нічога мяняць не трэба."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
-msgid "Mode to show cpu usage"
+msgid "Mode to show CPU usage"
 msgstr "Рэжым паказу выкарыстання CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
@@ -731,7 +731,7 @@ msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
-msgstr ""
+msgstr "0 - паказваць аплет у графічным рэжыме (толькі выявы), 1 - паказваць аплет у тэкставым рэжыме (без выяваў), 2 - паказваць і выявы, і тэкст."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:5
 msgid "The type of text to display (if the text is enabled)."
@@ -739,9 +739,9 @@ msgstr "Які тып тэксту паказваць (калі тэкст ук�
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
 msgid ""
-"A 0 value means to show cpu frequency, 1 to show frequency and units, and 2 "
+"A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr ""
+msgstr "0 - паказваць чашчыню CPU, 1 - паказваць чашчыню і адзінкі вымярэння, 2 - адсоткі замест чашчыні."
 
 #: ../cpufreq/src/cpufreq-applet.c:679 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -1040,197 +1040,197 @@ msgid "Forecast not currently available for this location."
 msgstr "Прагноз для гэтай мясцовасці адсутнічае."
 
 #. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Location view"
 msgstr "Прагляд мясцовасці"
 
-#: ../mateweather/mateweather-pref.c:166
+#: ../mateweather/mateweather-pref.c:165
 msgid "Select Location from the list"
 msgstr "Вылучыце мясцовасць са спісу"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Update spin button"
 msgstr "Кнопка абнаўлення"
 
-#: ../mateweather/mateweather-pref.c:167
+#: ../mateweather/mateweather-pref.c:166
 msgid "Spinbutton for updating"
 msgstr "Кнопка для абнаўлення"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Address Entry"
 msgstr "Поле адраса"
 
-#: ../mateweather/mateweather-pref.c:168
+#: ../mateweather/mateweather-pref.c:167
 msgid "Enter the URL"
 msgstr "Увядзіце URL"
 
-#: ../mateweather/mateweather-pref.c:295
+#: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Немагчыма загрузіць базу звестак пра мясцовасці ў фармаце XML. Калі ласка, паведаміце распрацоўнікам пра памылку."
 
-#: ../mateweather/mateweather-pref.c:829
+#: ../mateweather/mateweather-pref.c:812
 msgid "Weather Preferences"
 msgstr "Настáўленні надвор'я"
 
-#: ../mateweather/mateweather-pref.c:856
-#: ../mateweather/mateweather-pref.c:1070
+#: ../mateweather/mateweather-pref.c:839
+#: ../mateweather/mateweather-pref.c:1053
 msgid "_Automatically update every:"
 msgstr "_Аўтаматычна абнаўляць кожныя:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:871
+#: ../mateweather/mateweather-pref.c:854
 msgid "_Temperature unit:"
 msgstr "Адзінка тэмпературы:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:885
+#: ../mateweather/mateweather-pref.c:868
 msgid "Kelvin"
 msgstr "Кельвін"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:870
 msgid "Celsius"
 msgstr "Цэльсій"
 
-#: ../mateweather/mateweather-pref.c:888
+#: ../mateweather/mateweather-pref.c:871
 msgid "Fahrenheit"
 msgstr "Фарынгейт"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:897
+#: ../mateweather/mateweather-pref.c:880
 msgid "_Wind speed unit:"
 msgstr "Адзінка хуткасці _ветру:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:912
+#: ../mateweather/mateweather-pref.c:895
 msgid "m/s"
 msgstr "метраў за секунду"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:897
 msgid "km/h"
 msgstr "кіламетры за гадзіну"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:899
 msgid "mph"
 msgstr "мілі за гадзіну"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:901
 msgid "knots"
 msgstr "вузлы"
 
-#: ../mateweather/mateweather-pref.c:919
+#: ../mateweather/mateweather-pref.c:902
 msgid "Beaufort scale"
 msgstr "Шкала Бафорта"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:928
+#: ../mateweather/mateweather-pref.c:911
 msgid "_Pressure unit:"
 msgstr "Адзінка _ціску:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:943
+#: ../mateweather/mateweather-pref.c:926
 msgid "kPa"
 msgstr "кілапаскалі"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:945
+#: ../mateweather/mateweather-pref.c:928
 msgid "hPa"
 msgstr "гектапаскалі"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:947
+#: ../mateweather/mateweather-pref.c:930
 msgid "mb"
 msgstr "мілібары"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:949
+#: ../mateweather/mateweather-pref.c:932
 msgid "mmHg"
 msgstr "мілібары мэркура"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:951
+#: ../mateweather/mateweather-pref.c:934
 msgid "inHg"
 msgstr "цалі мэркура"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:953
+#: ../mateweather/mateweather-pref.c:936
 msgid "atm"
 msgstr "атмасферы"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:962
+#: ../mateweather/mateweather-pref.c:945
 msgid "_Visibility unit:"
 msgstr "Адзінка _бачнасці:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:977
+#: ../mateweather/mateweather-pref.c:960
 msgid "meters"
 msgstr "метры"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:979
+#: ../mateweather/mateweather-pref.c:962
 msgid "km"
 msgstr "кіламетры"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:981
+#: ../mateweather/mateweather-pref.c:964
 msgid "miles"
 msgstr "мілі"
 
-#: ../mateweather/mateweather-pref.c:1007
+#: ../mateweather/mateweather-pref.c:990
 msgid "Enable _radar map"
 msgstr "Уключыць радарную мапу"
 
-#: ../mateweather/mateweather-pref.c:1023
+#: ../mateweather/mateweather-pref.c:1006
 msgid "Use _custom address for radar map"
 msgstr "Выкарыстоўваць адмысловы адрас для радарнай мапы"
 
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:1024
 msgid "A_ddress:"
 msgstr "A_драс:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1056
+#: ../mateweather/mateweather-pref.c:1039
 msgid "Show _notifications"
 msgstr "Паказваць _абвяшчэнні"
 
-#: ../mateweather/mateweather-pref.c:1066
+#: ../mateweather/mateweather-pref.c:1049
 msgid "Update"
 msgstr "Абнаўленне"
 
-#: ../mateweather/mateweather-pref.c:1089
+#: ../mateweather/mateweather-pref.c:1066
 msgid "minutes"
 msgstr "хвіліны"
 
-#: ../mateweather/mateweather-pref.c:1107
+#: ../mateweather/mateweather-pref.c:1084
 msgid "Display"
 msgstr "Выгляд"
 
-#: ../mateweather/mateweather-pref.c:1126
+#: ../mateweather/mateweather-pref.c:1103
 msgid "General"
 msgstr "Галоўнае"
 
-#: ../mateweather/mateweather-pref.c:1137
+#: ../mateweather/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr "_Вылучыце мясцовасць:"
 
-#: ../mateweather/mateweather-pref.c:1163
+#: ../mateweather/mateweather-pref.c:1140
 msgid "_Find:"
 msgstr "_Пошук:"
 
-#: ../mateweather/mateweather-pref.c:1169
+#: ../mateweather/mateweather-pref.c:1146
 msgid "Find _Next"
 msgstr "Знайсці _далей"
 
-#: ../mateweather/mateweather-pref.c:1190
+#: ../mateweather/mateweather-pref.c:1167
 msgid "Location"
 msgstr "Мясцовасць"
 
@@ -1488,7 +1488,7 @@ msgstr "Назіраць за станам інвеставаных Вамі г�
 msgid "About"
 msgstr "Пра"
 
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1416
+#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1414
 msgid "Help"
 msgstr "Даведка"
 
@@ -2000,7 +2000,7 @@ msgstr "Настáўленні сістэмнага назіральніка"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
 msgid "Device to monitor"
-msgstr ""
+msgstr "Прылада назірання"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
 msgid "The name of the device to monitor"
@@ -2008,7 +2008,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
 msgid "Show sum speed"
-msgstr ""
+msgstr "Паказваць сумарную хуткасць"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:4
 msgid "If true, show sum of inbound/outbound speed instead of separated ones."
@@ -2016,7 +2016,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:5
 msgid "Show bits"
-msgstr ""
+msgstr "Паказваць біты"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:6
 msgid "If true, show speed in bits instead of bytes."
@@ -2028,7 +2028,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
 msgid "Short unit legend"
-msgstr ""
+msgstr "Сціслая легенда"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:10
 msgid ""
@@ -2038,7 +2038,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:11
 msgid "Change icon"
-msgstr ""
+msgstr "Змяніць значок"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
 msgid "If true, change the icon due to selected device."
@@ -2046,7 +2046,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
 msgid "Auto change device"
-msgstr ""
+msgstr "Аўтаматычна замяняць прыладу"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
 msgid "If true, change automatically the selected device."
@@ -2054,7 +2054,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
 msgid "In color"
-msgstr ""
+msgstr "Колер уваходнага трафіку"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:16
 msgid "The color of the graph of the inbound traffic"
@@ -2062,7 +2062,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:17
 msgid "Out color"
-msgstr ""
+msgstr "Колер выходнага трафіку"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:18
 msgid "The color of the graph of the outbound traffic"
@@ -2070,7 +2070,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:19
 msgid "Up command"
-msgstr ""
+msgstr "Загад уключэння"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
 msgid "Command the execute to activate the device"
@@ -2078,7 +2078,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
 msgid "Down command"
-msgstr ""
+msgstr "Загад адключэння"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
 msgid "Command the execute to shut down the device"
@@ -2086,7 +2086,7 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
 msgid "Show signal quality icon"
-msgstr ""
+msgstr "Паказваць значок якасці сігналу"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
 msgid "If true, show signal quality icon for wireless devices."
@@ -2094,269 +2094,269 @@ msgstr ""
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
 msgid "Netspeed Applet Factory"
-msgstr ""
+msgstr "Фабрыка аплета хуткасці сеткі"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
 msgid "Netspeed Applet"
-msgstr ""
+msgstr "Аплет хуткасці сеткі"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
 msgid "Network Monitor"
-msgstr ""
+msgstr "Сеткавы назіральнік"
 
 #. translators: bits (short)
 #: ../netspeed/src/netspeed.c:395
 msgid "b"
-msgstr ""
+msgstr "б"
 
 #. translators: Bytes (short)
 #: ../netspeed/src/netspeed.c:395
 msgid "B"
-msgstr ""
+msgstr "Б"
 
 #: ../netspeed/src/netspeed.c:397
 msgid "b/s"
-msgstr ""
+msgstr "б/с"
 
 #: ../netspeed/src/netspeed.c:397
 msgid "B/s"
-msgstr ""
+msgstr "Б/с"
 
 #: ../netspeed/src/netspeed.c:400
 msgid "bits"
-msgstr ""
+msgstr "бітаў"
 
 #: ../netspeed/src/netspeed.c:400
 msgid "bytes"
-msgstr ""
+msgstr "байтаў"
 
 #. translators: kilobits (short)
 #: ../netspeed/src/netspeed.c:408
 msgid "k"
-msgstr ""
+msgstr "к"
 
 #. translators: Kilobytes (short)
 #: ../netspeed/src/netspeed.c:408
 msgid "K"
-msgstr ""
+msgstr "К"
 
 #: ../netspeed/src/netspeed.c:410
 msgid "kb/s"
-msgstr ""
+msgstr "кб/с"
 
 #: ../netspeed/src/netspeed.c:410
 msgid "KiB/s"
-msgstr ""
+msgstr "КіБ/с"
 
 #: ../netspeed/src/netspeed.c:413
 msgid "kb"
-msgstr ""
+msgstr "кб"
 
 #: ../netspeed/src/netspeed.c:413
 msgid "KiB"
-msgstr ""
+msgstr "КіБ"
 
 #. translators: megabits (short)
 #: ../netspeed/src/netspeed.c:423
 msgid "m"
-msgstr ""
+msgstr "м"
 
 #. translators: Megabytes (short)
 #: ../netspeed/src/netspeed.c:423
 msgid "M"
-msgstr ""
+msgstr "М"
 
 #: ../netspeed/src/netspeed.c:425
 msgid "Mb/s"
-msgstr ""
+msgstr "Мб/с"
 
 #: ../netspeed/src/netspeed.c:425
 msgid "MiB/s"
-msgstr ""
+msgstr "МіБ/с"
 
 #: ../netspeed/src/netspeed.c:428
 msgid "Mb"
-msgstr ""
+msgstr "Мб"
 
 #: ../netspeed/src/netspeed.c:428
 msgid "MiB"
-msgstr ""
+msgstr "МіБ"
 
 #: ../netspeed/src/netspeed.c:770
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr ""
+msgstr "Памылка паказу даведкі:\n%s"
 
 #: ../netspeed/src/netspeed.c:809
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
-msgstr ""
+msgstr "Невялікі аплет, што паказвае трафік пэўнай сеткавай прылады"
 
 #: ../netspeed/src/netspeed.c:970
 msgid "Mate Netspeed Preferences"
-msgstr ""
+msgstr "Настáўленні аплета Mate Netspeed"
 
 #: ../netspeed/src/netspeed.c:992
 msgid "General Settings"
-msgstr ""
+msgstr "Асноўныя настáўленні"
 
 #: ../netspeed/src/netspeed.c:1018
 msgid "Network _device:"
-msgstr ""
+msgstr "Сеткавая _прылада:"
 
 #. Default means device with default route set
 #: ../netspeed/src/netspeed.c:1034
 msgid "Default"
-msgstr ""
+msgstr "Стандартная"
 
 #: ../netspeed/src/netspeed.c:1047
 msgid "Show _sum instead of in & out"
-msgstr ""
+msgstr "Паказваць суму замест уваходных і выходных"
 
 #: ../netspeed/src/netspeed.c:1051
 msgid "Show _bits instead of bytes"
-msgstr ""
+msgstr "Паказваць _біты замест байтаў"
 
 #: ../netspeed/src/netspeed.c:1055
 msgid "Shorten _unit legend"
-msgstr ""
+msgstr "Скарочаныя адзінкі вымярэння"
 
 #: ../netspeed/src/netspeed.c:1059
 msgid "_Change icon according to the selected device"
-msgstr ""
+msgstr "_Змяняць значок паводле выбранай прылады"
 
 #: ../netspeed/src/netspeed.c:1063
 msgid "Show _icon"
-msgstr ""
+msgstr "Паказваць _значок"
 
 #: ../netspeed/src/netspeed.c:1067
 msgid "Show signal _quality icon for wireless devices"
-msgstr ""
+msgstr "Паказваць значок _якасці сігналу для бяздротавых прыладаў"
 
 #: ../netspeed/src/netspeed.c:1198
 #, c-format
 msgid "Device Details for %s"
-msgstr ""
+msgstr "Звесткі пра прыладу %s"
 
 #: ../netspeed/src/netspeed.c:1223
 msgid "_In graph color"
-msgstr ""
+msgstr "_Колер графіка ўваходных даных"
 
 #: ../netspeed/src/netspeed.c:1224
 msgid "_Out graph color"
-msgstr ""
+msgstr "_Колер графіка выходных даных"
 
 #: ../netspeed/src/netspeed.c:1240
 msgid "Internet Address:"
-msgstr ""
+msgstr "Інтэрнэт-адрас:"
 
 #: ../netspeed/src/netspeed.c:1241
 msgid "Netmask:"
-msgstr ""
+msgstr "Маска падсеткі:"
 
 #: ../netspeed/src/netspeed.c:1242
 msgid "Hardware Address:"
-msgstr ""
+msgstr "Апаратны адрас:"
 
 #: ../netspeed/src/netspeed.c:1243
 msgid "P-t-P Address:"
-msgstr ""
+msgstr "Адрас P-t-P:"
 
 #: ../netspeed/src/netspeed.c:1244
 msgid "Bytes in:"
-msgstr ""
+msgstr "Байтаў увайшло:"
 
 #: ../netspeed/src/netspeed.c:1245
 msgid "Bytes out:"
-msgstr ""
+msgstr "Байтаў выйшла:"
 
 #: ../netspeed/src/netspeed.c:1247 ../netspeed/src/netspeed.c:1248
 #: ../netspeed/src/netspeed.c:1249 ../netspeed/src/netspeed.c:1250
 msgid "none"
-msgstr ""
+msgstr "няма"
 
-#: ../netspeed/src/netspeed.c:1318
+#: ../netspeed/src/netspeed.c:1316
 msgid "IPV6 Address:"
-msgstr ""
+msgstr "IPV6-адрас:"
 
-#: ../netspeed/src/netspeed.c:1357
+#: ../netspeed/src/netspeed.c:1355
 msgid "Signal Strength:"
-msgstr ""
+msgstr "Моц сігналу:"
 
-#: ../netspeed/src/netspeed.c:1358
+#: ../netspeed/src/netspeed.c:1356
 msgid "ESSID:"
-msgstr ""
+msgstr "ESSID:"
+
+#: ../netspeed/src/netspeed.c:1410
+msgid "Device _Details"
+msgstr "Звесткі пра _прыладу"
 
 #: ../netspeed/src/netspeed.c:1412
-msgid "Device _Details"
-msgstr ""
-
-#: ../netspeed/src/netspeed.c:1414
 msgid "Preferences..."
-msgstr ""
+msgstr "Настáўленні..."
 
-#: ../netspeed/src/netspeed.c:1418
+#: ../netspeed/src/netspeed.c:1416
 msgid "About..."
-msgstr ""
+msgstr "Пра аплет..."
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid "Do you want to disconnect %s now?"
-msgstr ""
+msgstr "Жадаеце разлучыцца з %s зараз?"
 
-#: ../netspeed/src/netspeed.c:1463
+#: ../netspeed/src/netspeed.c:1461
 #, c-format
 msgid "Do you want to connect %s now?"
-msgstr ""
+msgstr "Жадаеце злучыцца з %s зараз?"
 
-#: ../netspeed/src/netspeed.c:1490
+#: ../netspeed/src/netspeed.c:1488
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>Памылка выканання загаду %s</b>\n%s"
 
-#: ../netspeed/src/netspeed.c:1549
+#: ../netspeed/src/netspeed.c:1547
 #, c-format
 msgid "%s is down"
-msgstr ""
+msgstr "%s адключаны"
 
-#: ../netspeed/src/netspeed.c:1554
+#: ../netspeed/src/netspeed.c:1552
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
-msgstr ""
+msgstr "%s: %s\nуваходны: %s выходны: %s"
 
-#: ../netspeed/src/netspeed.c:1556 ../netspeed/src/netspeed.c:1565
+#: ../netspeed/src/netspeed.c:1554 ../netspeed/src/netspeed.c:1563
 msgid "has no ip"
-msgstr ""
+msgstr "няма IP-адраса"
 
-#: ../netspeed/src/netspeed.c:1563
+#: ../netspeed/src/netspeed.c:1561
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
-msgstr ""
+msgstr "%s: %s\nсумарная хуткасць: %s"
 
-#: ../netspeed/src/netspeed.c:1572
+#: ../netspeed/src/netspeed.c:1570
 #, c-format
 msgid ""
 "\n"
 "ESSID: %s\n"
 "Strength: %d %%"
-msgstr ""
+msgstr "\nESSID: %s\nМоц: %d %%"
 
-#: ../netspeed/src/netspeed.c:1573
+#: ../netspeed/src/netspeed.c:1571
 msgid "unknown"
-msgstr ""
+msgstr "невядома"
 
-#: ../netspeed/src/netspeed.c:1624
+#: ../netspeed/src/netspeed.c:1622
 msgid "Mate Netspeed"
-msgstr ""
+msgstr "Mate Netspeed"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
