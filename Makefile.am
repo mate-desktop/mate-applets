@@ -80,15 +80,14 @@ EXTRA_DIST = \
 	omf.make \
 	autogen.sh
 
-# We build the ChangeLog from the git log
+# Build ChangeLog from GIT  history
 ChangeLog:
-	@if test -f $(top_srcdir)/.git/HEAD; then \
-		git log --stat --no-color --since=2009-05-23 > $@; \
+	$(AM_V_GEN) if test -d $(top_srcdir)/.git; then \
+		GIT_DIR="$(top_srcdir)/.git" git log --stat > $@; \
 	fi
 
 dist: ChangeLog
 
-# Make sure the ChangeLog is updated every time
 .PHONY: ChangeLog
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
