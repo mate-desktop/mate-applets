@@ -109,7 +109,7 @@ get_default_route(void)
 
 		if (retval != 11) continue;
 
-		if (gw == 0 && !is_dummy_device(device)) {
+		if (ip == 0 && !is_dummy_device(device)) {
 			fclose(fp);
 			return device;
 		}
