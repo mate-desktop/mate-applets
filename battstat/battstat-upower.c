@@ -109,12 +109,12 @@ battstat_upower_initialise (void (*callback) (void))
   }
 #endif
 
-  g_signal_connect_after( upc, "device-added", device_cb, NULL );
+  g_signal_connect_after( upc, "device-added", G_CALLBACK (device_cb), NULL );
 #if UP_CHECK_VERSION(0, 99, 0)
-  g_signal_connect_after( upc, "device-removed", device_removed_cb, NULL );
+  g_signal_connect_after( upc, "device-removed", G_CALLBACK (device_removed_cb), NULL );
 #else
-  g_signal_connect_after( upc, "device-changed", device_cb, NULL );
-  g_signal_connect_after( upc, "device-removed", device_cb, NULL );
+  g_signal_connect_after( upc, "device-changed", G_CALLBACK (device_cb), NULL );
+  g_signal_connect_after( upc, "device-removed", G_CALLBACK (device_cb), NULL );
 #endif
 
   return NULL;
