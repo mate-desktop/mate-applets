@@ -23,6 +23,7 @@
 #include <glib/gi18n.h>
 
 #include <stdlib.h>
+#include <linux/version.h>
 #include <cpufreq.h>
 
 #include "cpufreq-monitor-libcpufreq.h"
@@ -111,7 +112,11 @@ cpufreq_monitor_libcpufreq_run (CPUFreqMonitor *monitor)
 		/* Check whether it failed because
 		 * cpu is not online.
 		 */
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 7, 0)
 		if (!cpufreq_cpu_exists (cpu)) {
+#else
+		if (cpupower_is_cpu_online (cpu)) {
+#endif
 			g_object_set (G_OBJECT (monitor), "online", FALSE, NULL);
 			return TRUE;
 		}
