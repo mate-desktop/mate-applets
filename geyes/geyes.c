@@ -225,8 +225,8 @@ setup_eyes (EyesApplet *eyes_applet)
 {
 	int i;
 
-        eyes_applet->hbox = gtk_hbox_new (FALSE, 0);
-        gtk_box_pack_start (GTK_BOX (eyes_applet->vbox), eyes_applet->hbox, TRUE, TRUE, 0);
+		eyes_applet->ibox = (eyes_applet->orient == GTK_ORIENTATION_HORIZONTAL ? gtk_hbox_new (FALSE, 0) : gtk_vbox_new (FALSE, 0));
+        gtk_box_pack_start (GTK_BOX (eyes_applet->obox), eyes_applet->ibox, TRUE, TRUE, 0);
 
 	eyes_applet->eyes = g_new0 (GtkWidget *, eyes_applet->num_eyes);
 	eyes_applet->pointer_last_x = g_new0 (gint, eyes_applet->num_eyes);
@@ -243,7 +243,7 @@ setup_eyes (EyesApplet *eyes_applet)
  
                 gtk_widget_show (eyes_applet->eyes[i]);
                 
-		gtk_box_pack_start (GTK_BOX (eyes_applet->hbox), 
+		gtk_box_pack_start (GTK_BOX (eyes_applet->ibox),
                                     eyes_applet->eyes [i],
                                     TRUE,
                                     TRUE,
@@ -282,14 +282,14 @@ setup_eyes (EyesApplet *eyes_applet)
                           eyes_applet->eye_height / 2);
                 
         }
-        gtk_widget_show (eyes_applet->hbox);
+        gtk_widget_show (eyes_applet->ibox);
 }
 
 void
 destroy_eyes (EyesApplet *eyes_applet)
 {
-	gtk_widget_destroy (eyes_applet->hbox);
-	eyes_applet->hbox = NULL;
+	gtk_widget_destroy (eyes_applet->ibox);
+	eyes_applet->ibox = NULL;
 
 	g_free (eyes_applet->eyes);
 	g_free (eyes_applet->pointer_last_x);
@@ -302,11 +302,11 @@ create_eyes (MatePanelApplet *applet)
 	EyesApplet *eyes_applet = g_new0 (EyesApplet, 1);
 
         eyes_applet->applet = applet;
-        eyes_applet->vbox = gtk_vbox_new (FALSE, 0);
+        eyes_applet->obox = gtk_vbox_new (FALSE, 0);
 	eyes_applet->settings = 
 		mate_panel_applet_settings_new (applet, "org.mate.panel.applet.geyes");
 
-	gtk_container_add (GTK_CONTAINER (applet), eyes_applet->vbox);
+	gtk_container_add (GTK_CONTAINER (applet), eyes_applet->obox);
 
 	return eyes_applet;
 }
@@ -317,7 +317,7 @@ dispose_cb (GObject *object, EyesApplet *eyes_applet)
 	g_return_if_fail (eyes_applet);
 
 	g_source_remove (eyes_applet->timeout_id);
-	if (eyes_applet->hbox)
+	if (eyes_applet->ibox)
 		destroy_eyes (eyes_applet);
 	eyes_applet->timeout_id = 0;
 	if (eyes_applet->eye_image)
@@ -370,6 +370,33 @@ help_cb (GtkAction  *action,
 		g_error_free (error);
 		error = NULL;
 	}
+}
+
+static void
+orient_cb(MatePanelApplet* applet, MatePanelAppletOrient orient, EyesApplet* eyes_applet)
+{
+	GtkOrientation new_orient;
+
+	switch (orient)
+	{
+		case MATE_PANEL_APPLET_ORIENT_LEFT:
+		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+			new_orient = GTK_ORIENTATION_VERTICAL;
+			break;
+		case MATE_PANEL_APPLET_ORIENT_UP:
+		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		default:
+			new_orient = GTK_ORIENTATION_HORIZONTAL;
+			break;
+	}
+
+	if (new_orient == eyes_applet->orient)
+		return;
+
+	eyes_applet->orient = new_orient;
+
+	destroy_eyes(eyes_applet);
+	setup_eyes(eyes_applet);
 }
 
 
@@ -442,11 +469,11 @@ geyes_applet_fill (MatePanelApplet *applet)
 	set_atk_name_description (GTK_WIDGET (eyes_applet->applet), _("Eyes"), 
 			_("The eyes look in the direction of the mouse pointer"));
 
-	g_signal_connect (eyes_applet->vbox,
+	g_signal_connect (eyes_applet->obox,
 			  "dispose",
 			  G_CALLBACK (dispose_cb),
 			  eyes_applet);
-
+	g_signal_connect(G_OBJECT(eyes_applet->applet), "change_orient", G_CALLBACK(orient_cb), eyes_applet);
 	gtk_widget_show_all (GTK_WIDGET (eyes_applet->applet));
 
 	/* setup here and not in create eyes so the destroy signal is set so 
