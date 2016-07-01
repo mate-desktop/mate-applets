@@ -39,9 +39,10 @@ typedef struct
 {
 	/* Applet */
 	MatePanelApplet *applet;
-	GtkWidget   *vbox;
-	GtkWidget   *hbox;
+	GtkWidget   *ibox;
+	GtkWidget   *obox;
 	GtkWidget   **eyes;
+	GtkOrientation orient;
 	guint        timeout_id;
 	gint 	    *pointer_last_x;
 	gint 	    *pointer_last_y;
