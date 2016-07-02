@@ -225,8 +225,8 @@ setup_eyes (EyesApplet *eyes_applet)
 {
 	int i;
 
-		eyes_applet->ibox = (eyes_applet->orient == GTK_ORIENTATION_HORIZONTAL ? gtk_hbox_new (FALSE, 0) : gtk_vbox_new (FALSE, 0));
-        gtk_box_pack_start (GTK_BOX (eyes_applet->obox), eyes_applet->ibox, TRUE, TRUE, 0);
+	eyes_applet->ibox = (eyes_applet->orient == GTK_ORIENTATION_HORIZONTAL ? gtk_hbox_new (FALSE, 0) : gtk_vbox_new (FALSE, 0));
+	gtk_box_pack_start (GTK_BOX (eyes_applet->obox), eyes_applet->ibox, TRUE, TRUE, 0);
 
 	eyes_applet->eyes = g_new0 (GtkWidget *, eyes_applet->num_eyes);
 	eyes_applet->pointer_last_x = g_new0 (gint, eyes_applet->num_eyes);
@@ -285,6 +285,27 @@ setup_eyes (EyesApplet *eyes_applet)
         gtk_widget_show (eyes_applet->ibox);
 }
 
+static GtkOrientation
+determine_orient(MatePanelAppletOrient orient)
+{
+	GtkOrientation gtk_orient;
+
+	switch(orient)
+	{
+		case MATE_PANEL_APPLET_ORIENT_LEFT:
+		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+			gtk_orient = GTK_ORIENTATION_VERTICAL;
+			break;
+		case MATE_PANEL_APPLET_ORIENT_UP:
+		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		default:
+			gtk_orient = GTK_ORIENTATION_HORIZONTAL;
+			break;
+	}
+
+	return gtk_orient;
+}
+
 void
 destroy_eyes (EyesApplet *eyes_applet)
 {
@@ -303,6 +324,7 @@ create_eyes (MatePanelApplet *applet)
 
         eyes_applet->applet = applet;
         eyes_applet->obox = gtk_vbox_new (FALSE, 0);
+        eyes_applet->orient = determine_orient(mate_panel_applet_get_orient(applet));
 	eyes_applet->settings = 
 		mate_panel_applet_settings_new (applet, "org.mate.panel.applet.geyes");
 
@@ -375,20 +397,7 @@ help_cb (GtkAction  *action,
 static void
 orient_cb(MatePanelApplet* applet, MatePanelAppletOrient orient, EyesApplet* eyes_applet)
 {
-	GtkOrientation new_orient;
-
-	switch (orient)
-	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
-			new_orient = GTK_ORIENTATION_VERTICAL;
-			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
-		default:
-			new_orient = GTK_ORIENTATION_HORIZONTAL;
-			break;
-	}
+	GtkOrientation new_orient = determine_orient(orient);
 
 	if (new_orient == eyes_applet->orient)
 		return;
