@@ -44,8 +44,6 @@
 #include <libnotify/notify.h>
 #endif
 
-#include <libmate-desktop/mate-aboutdialog.h>
-
 #include "battstat.h"
 #include "pixmaps.h"
 
@@ -1190,6 +1188,11 @@ about_cb( GtkAction *action, ProgressData *battstat )
     NULL
    };
 
+  char copyright[] = \
+    "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+    "Copyright \xc2\xa9 2002-2005 Free Software Foundation and others\n"
+    "Copyright \xc2\xa9 2000 The Gnulix Society";
+
   const gchar *documenters[] = {
     "J\xC3\xB6rgen Pehrson <jp@spektr.eu.org>",
     "Trevor Curtis <tcurtis@somaradio.ca>",
@@ -1203,11 +1206,9 @@ about_cb( GtkAction *action, ProgressData *battstat )
 		    /* true */ _("upower backend enabled.") :
 			/* false */ _("Legacy backend enabled."));
 
-  mate_show_about_dialog( NULL,
+  gtk_show_about_dialog( NULL,
     "version",             VERSION,
-    "copyright",           "\xC2\xA9 2000 The Gnulix Society, "
-                           "\xC2\xA9 2002-2005 Free Software Foundation and "
-                           "others",
+    "copyright",           copyright,
     "comments",            comments,
     "authors",             authors,
     "documenters",         documenters,
