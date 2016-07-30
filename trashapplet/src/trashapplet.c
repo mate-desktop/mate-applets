@@ -31,7 +31,6 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 #include <gio/gio.h>
-#include <libmate-desktop/mate-aboutdialog.h>
 #include <mate-panel-applet.h>
 
 #include "trash-empty.h"
@@ -420,15 +419,20 @@ trash_applet_show_about (GtkAction   *action,
     "Ryan Lortie <desrt@desrt.ca>",
     NULL
   };
+
+  char copyright[] = \
+    "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+    "Copyright \xc2\xa9 2008 Ryan Lortie\n"
+    "Copyright \xc2\xa9 2004 Michiel Sikkes";
+
   static const char *documenters[] = {
     "Michiel Sikkes <michiel@eyesopened.nl>",
     NULL
   };
 
-  mate_show_about_dialog (NULL,
+  gtk_show_about_dialog (NULL,
                          "version", VERSION,
-                         "copyright", "Copyright \xC2\xA9 2004 Michiel Sikkes,"
-                                      "\xC2\xA9 2008 Ryan Lortie",
+                         "copyright", copyright,
                          "comments", _("A MATE trash bin that lives in your panel. "
                                        "You can use it to view the trash or drag "
                                        "and drop items into the trash."),
