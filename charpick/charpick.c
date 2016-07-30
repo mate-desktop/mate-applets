@@ -9,7 +9,6 @@
 #ifdef HAVE_GUCHARMAP
 #include <gucharmap/gucharmap.h>
 #endif
-#include <libmate-desktop/mate-aboutdialog.h>
 #include "charpick.h"
 
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -646,16 +645,19 @@ about (GtkAction     *action,
 	  NULL
   };
 
+  char copyright[] = \
+    "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+    "Copyright \xc2\xa9 1998, 2004-2005 GNOME Applets Maintainers and others";
+
   static const gchar * const documenters[] = {
           "Dan Mueth <d-mueth@uchicago.edu>",
           "Sun GNOME Documentation Team <gdocteam@sun.com>",
 	  NULL
   };
 
-  mate_show_about_dialog (NULL,
+  gtk_show_about_dialog (NULL,
 	"version",	VERSION,
-	"copyright",	"\xC2\xA9 1998, 2004-2005 GNOME Applets Maintainers "
-			"and others",
+	"copyright",	copyright,
 	"comments",	_("Mate Panel applet for selecting strange "
 			  "characters that are not on my keyboard. "
 			  "Released under GNU General Public Licence."),
