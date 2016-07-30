@@ -24,7 +24,6 @@
 #include <gdk/gdkkeysyms.h>
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
-#include <libmate-desktop/mate-aboutdialog.h>
 
 static gboolean get_desktop_window (Window *window)
 {
@@ -362,16 +361,20 @@ menu_about_cb (GtkAction *action,
 		NULL
 	};
 
+	char copyright[] = \
+		"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+		"Copyright \xc2\xa9 2005 Davyd Madeley\n"
+		"Copyright \xc2\xa9 2002-2003 Loban A Rahman";
+
 	static const gchar *documenters[] = {
 		"Loban A Rahman <loban@earthling.net>",
 		"Sun GNOME Documentation Team <gdocteam@sun.com>",
 		NULL
 	};
 
-	mate_show_about_dialog (NULL,
+	gtk_show_about_dialog (NULL,
 		"version",	VERSION,
-		"copyright",	"\xC2\xA9 2002-2003 Loban A Rahman, "
-				"\xC2\xA9 2005 Davyd Madeley",
+		"copyright",	copyright,
 		"comments",	_("Sticky Notes for the "
 				  "MATE Desktop Environment"),
 		"authors",	authors,
