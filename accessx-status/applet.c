@@ -38,7 +38,6 @@
 #include <X11/keysymdef.h>
 #include "applet.h"
 
-#include <libmate-desktop/mate-aboutdialog.h>
 #if GTK_CHECK_VERSION (3, 0, 0)
 #define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
 #define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
@@ -139,10 +138,14 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		NULL
 	};
 
-	mate_show_about_dialog(NULL,
+	char copyright[] = \
+		"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+		"Copyright \xc2\xa9 2003 Sun Microsystems";
+
+	gtk_show_about_dialog(NULL,
 		"version", VERSION,
 		"comments", _("Shows the state of AccessX features such as latched modifiers"),
-		"copyright", "\xC2\xA9 2003 Sun Microsystems",
+		"copyright", copyright,
 		"authors", authors,
 		"documenters", documenters,
 		"translator-credits", _("translator-credits"),
