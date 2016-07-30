@@ -27,7 +27,6 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 
-#include <libmate-desktop/mate-aboutdialog.h>
 #if GTK_CHECK_VERSION (3, 0, 0)
 #define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
 #define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
@@ -48,6 +47,10 @@ about_cb (GtkAction       *action,
 		NULL
     };
 
+    char copyright[] = \
+		"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+		"Copyright \xc2\xa9 1999-2005 Free Software Foundation and others";
+
     const gchar * const documenters[] =
     {
 		"Chee Bin HOH <cbhoh@gnome.org>",
@@ -55,10 +58,9 @@ about_cb (GtkAction       *action,
 		NULL
     };
 
-    mate_show_about_dialog (NULL,
+    gtk_show_about_dialog (NULL,
 	"version",	VERSION,
-	"copyright",	"\xC2\xA9 1999-2005 Free Software Foundation "
-			"and others",
+	"copyright",	copyright,
 	"comments",	_("A system load monitor capable of displaying graphs "
 			"for CPU, ram, and swap space use, plus network "
 			"traffic."),
