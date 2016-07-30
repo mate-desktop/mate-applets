@@ -28,7 +28,6 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <libmate-desktop/mate-aboutdialog.h>
 #include <mate-panel-applet.h>
 
 #include "drive-list.h"
@@ -107,15 +106,19 @@ display_about_dialog (GtkAction *action,
 	"James Henstridge <jamesh@canonical.com>",
 	NULL
     };
+    char copyright[] = \
+	"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+	"Copyright \xC2\xA9 2004 Canonical Ltd";
+
     const gchar *documenters[] = {
 	"Dan Mueth <muet@alumni.uchicago.edu>",
 	"John Fleck <jfleck@inkstain.net>",
 	NULL
     };
 
-    mate_show_about_dialog (NULL,
+    gtk_show_about_dialog (NULL,
 	"version",     VERSION,
-	"copyright",   "Copyright \xC2\xA9 2004 Canonical Ltd",
+	"copyright",   copyright,
 	"comments",    _("Applet for mounting and unmounting block volumes."),
 	"authors",     authors,
 	"documenters", documenters,
