@@ -30,7 +30,6 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <libmate-desktop/mate-aboutdialog.h>
 #include <libmate-desktop/mate-colorbutton.h>
 
 #include "backend.h"
@@ -803,9 +802,14 @@ about_cb(GtkAction *action, gpointer data)
 		NULL
 	};
 
-	mate_show_about_dialog (NULL,
+	char copyright[] = \
+		"Copyright \xc2\xa9 2015-2016 MATE developers\n"
+		"Copyright \xc2\xa9 2011-2014 Stefano Karapetsas\n"
+		"Copyright \xc2\xa9 2002-2003 Jörgen Scheibengruber";
+
+	gtk_show_about_dialog (NULL,
 			       "version", VERSION,
-			       "copyright", "Copyright 2002 - 2003 Jörgen Scheibengruber\nCopyright 2011-2014 Stefano Karapetsas",
+			       "copyright", copyright,
 			       "comments", _("A little applet that displays some information on the traffic on the specified network device"),
 			       "authors", authors,
 			       "documenters", NULL,
