@@ -29,7 +29,6 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 #include <glib/gi18n.h>
-#include <libmate-desktop/mate-aboutdialog.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -676,6 +675,10 @@ static void
 cpufreq_applet_about_cb (GtkAction     *action,
                          CPUFreqApplet *applet)
 {
+        char copyright[] = \
+                "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+                "Copyright \xC2\xA9 2004 Carlos Garcia Campos";
+
         static const gchar *const authors[] = {
                 "Carlos Garcia Campos <carlosgc@gnome.org>",
                 NULL
@@ -690,9 +693,9 @@ cpufreq_applet_about_cb (GtkAction     *action,
                 NULL
         };
 
-        mate_show_about_dialog (NULL,
+        gtk_show_about_dialog (NULL,
                                "version",       VERSION,
-                               "copyright",     "\xC2\xA9 2004 Carlos Garcia Campos",
+                               "copyright",     copyright,
                                "comments",      _("This utility shows the current CPU "
                                                   "Frequency Scaling."),
                                "authors",       authors,
