@@ -15,7 +15,6 @@ GLIB_REQUIRED=2.36.0
 GIO_REQUIRED=2.15.3
 LIBPANEL4_REQUIRED=1.7.0
 LIBGTOP_REQUIRED=2.11.92
-LIBMATE_DESKTOP_REQUIRED=1.9.0
 LIBNOTIFY_REQUIRED=0.7.0
 UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
@@ -135,11 +134,6 @@ dnl -- check for libmatepanelapplet4 (required) --------------------------------
 PKG_CHECK_MODULES(MATE_APPLETS4, libmatepanelapplet-4.0 >= $LIBPANEL4_REQUIRED)
 AC_SUBST(MATE_APPLETS4_CFLAGS)
 AC_SUBST(MATE_APPLETS4_LIBS)
-
-dnl -- check for mate-desktop (required) -------------------------------------
-PKG_CHECK_MODULES(MATEDESKTOP, mate-desktop-2.0 >= $LIBMATE_DESKTOP_REQUIRED)
-AC_SUBST(MATEDESKTOP_CFLAGS)
-AC_SUBST(MATEDESKTOP_LIBS)
 
 dnl -- check for libgtop (optional) -------------------------------------------
 build_gtop_applets=false
