@@ -18,8 +18,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include <libmate-desktop/mate-aboutdialog.h>
-
 #define MATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
 
 #include "mateweather.h"
@@ -37,6 +35,10 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 		NULL
 	};
 
+	char copyright[] = \
+		"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+		"Copyright \xC2\xA9 1999-2005 by S. Papadimitriou and others";
+
 	const gchar* documenters[] = {
 		"Dan Mueth <d-mueth@uchicago.edu>",
 		"Spiros Papadimitriou <spapadim+@cs.cmu.edu>",
@@ -45,9 +47,9 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 		NULL
 	};
 
-	mate_show_about_dialog(NULL,
+	gtk_show_about_dialog(NULL,
 		"version", VERSION,
-		"copyright", _("\xC2\xA9 1999-2005 by S. Papadimitriou and others"),
+		"copyright",   copyright,
 		"comments", _("A panel application for monitoring local weather conditions."),
 		"authors", authors,
 		"documenters", documenters,
