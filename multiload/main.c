@@ -101,6 +101,9 @@ start_procman (MultiloadApplet *ma)
 	GDesktopAppInfo *appinfo;
 	gchar *monitor;
 	GdkAppLaunchContext *launch_context;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkDisplay *display;
+#endif
 	GAppInfo *app_info;
 	GdkScreen *screen;
 
@@ -116,7 +119,12 @@ start_procman (MultiloadApplet *ma)
 		GdkScreen *screen;
 		GdkAppLaunchContext *context;
 		screen = gtk_widget_get_screen (GTK_WIDGET (ma->applet));
+#if GTK_CHECK_VERSION (3, 0, 0)
+		display = gdk_screen_get_display (screen);
+		context = gdk_display_get_app_launch_context (display);
+#else
 		context = gdk_app_launch_context_new ();
+#endif
 		gdk_app_launch_context_set_screen (context, screen);
 		g_app_info_launch (G_APP_INFO (appinfo), NULL, G_APP_LAUNCH_CONTEXT (context), &error);
 		g_object_unref (context);
@@ -129,7 +137,12 @@ start_procman (MultiloadApplet *ma)
 							      &error);
 
 		if (!error) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+			display = gdk_screen_get_display (screen);
+			launch_context = gdk_display_get_app_launch_context (display);
+#else
 			launch_context = gdk_app_launch_context_new ();
+#endif
 			gdk_app_launch_context_set_screen (launch_context, screen);
 			g_app_info_launch (app_info, NULL, G_APP_LAUNCH_CONTEXT (launch_context), &error);
 
