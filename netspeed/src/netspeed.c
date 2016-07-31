@@ -96,7 +96,11 @@ typedef struct
 	gboolean change_icon, auto_change_device;
 	gboolean show_icon, short_unit;
 	gboolean show_quality_icon;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA in_color, out_color;
+#else
 	GdkColor in_color, out_color;
+#endif
 	int width;
 
 	GtkWidget *inbytes_text, *outbytes_text;
@@ -498,6 +502,15 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
 	cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_cairo_set_source_rgba (cr, &applet->in_color);
+	for (i = offset; i < GRAPH_VALUES; i++) {
+		cairo_line_to (cr, in_points[i].x, in_points[i].y);
+	}
+	cairo_stroke (cr);
+
+	gdk_cairo_set_source_rgba (cr, &applet->out_color);
+#else
 	gdk_cairo_set_source_color (cr, &applet->in_color);
 	for (i = offset; i < GRAPH_VALUES; i++) {
 		cairo_line_to (cr, in_points[i].x, in_points[i].y);
@@ -505,6 +518,7 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	cairo_stroke (cr);
 
 	gdk_cairo_set_source_color (cr, &applet->out_color);
+#endif
 	for (i = offset; i < GRAPH_VALUES; i++) {
 		cairo_line_to (cr, out_points[i].x, out_points[i].y);
 	}
@@ -1124,6 +1138,15 @@ da_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data)
 }
 
 static void
+#if GTK_CHECK_VERSION (3, 0, 0)
+incolor_changed_cb (GtkColorChooser *cb, gpointer data)
+{
+	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
+	gchar *color;
+	GdkRGBA clr;
+
+	gtk_color_chooser_get_rgba (cb, &clr);
+#else
 incolor_changed_cb (GtkColorButton *cb, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
@@ -1131,6 +1154,7 @@ incolor_changed_cb (GtkColorButton *cb, gpointer data)
 	GdkColor clr;
 
 	gtk_color_button_get_color (cb, &clr);
+#endif
 	applet->in_color = clr;
 
 	color = g_strdup_printf ("#%04x%04x%04x", clr.red, clr.green, clr.blue);
@@ -1139,6 +1163,15 @@ incolor_changed_cb (GtkColorButton *cb, gpointer data)
 }
 
 static void
+#if GTK_CHECK_VERSION (3, 0, 0)
+outcolor_changed_cb (GtkColorChooser *cb, gpointer data)
+{
+	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
+	gchar *color;
+	GdkRGBA clr;
+
+	gtk_color_chooser_get_rgba (cb, &clr);
+#else
 outcolor_changed_cb (GtkColorButton *cb, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
@@ -1146,6 +1179,7 @@ outcolor_changed_cb (GtkColorButton *cb, gpointer data)
 	GdkColor clr;
 
 	gtk_color_button_get_color (cb, &clr);
+#endif
 	applet->out_color = clr;
 
 	color = g_strdup_printf ("#%04x%04x%04x", clr.red, clr.green, clr.blue);
@@ -1229,8 +1263,13 @@ showinfo_cb(GtkAction *action, gpointer data)
 	incolor_sel = gtk_color_button_new ();
 	outcolor_sel = gtk_color_button_new ();
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (incolor_sel),  &applet->in_color);
+	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (outcolor_sel),  &applet->out_color);
+#else
 	gtk_color_button_set_color (GTK_COLOR_BUTTON (incolor_sel),  &applet->in_color);
 	gtk_color_button_set_color (GTK_COLOR_BUTTON (outcolor_sel),  &applet->out_color);
+#endif
 
 	gtk_label_set_mnemonic_widget(GTK_LABEL(incolor_label), incolor_sel);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(outcolor_label), outcolor_sel);
@@ -1692,13 +1731,21 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	tmp = g_settings_get_string (applet->gsettings, "in-color");
 	if (tmp)
 	{
-		gdk_color_parse(tmp, &applet->in_color);
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gdk_rgba_parse (&applet->in_color, tmp);
+#else
+		gdk_color_parse (tmp, &applet->in_color);
+#endif
 		g_free(tmp);
 	}
 	tmp = g_settings_get_string (applet->gsettings, "out-color");
 	if (tmp)
 	{
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gdk_rgba_parse (&applet->out_color, tmp);
+#else
 		gdk_color_parse(tmp, &applet->out_color);
+#endif
 		g_free(tmp);
 	}
 
