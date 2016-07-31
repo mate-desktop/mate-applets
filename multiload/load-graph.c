@@ -73,7 +73,11 @@ load_graph_draw (LoadGraph *g)
 
     for (j = 0; j < g->n; j++)
     {
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
+#else
 		gdk_cairo_set_source_color (cr, &(g->colors [j]));
+#endif
 
 		for (i = 0; i < g->draw_width; i++) {
 			if (g->data [i][j] != 0) {
@@ -260,21 +264,39 @@ load_graph_leave_cb(GtkWidget *widget, GdkEventCrossing *event, gpointer data)
 static void
 load_graph_load_config (LoadGraph *g)
 {
-	
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gchar *name, *temp;
+#else
     gchar name [BUFSIZ], *temp;
+#endif
     guint i;
 
 	if (!g->colors)
+#if GTK_CHECK_VERSION (3, 0, 0)
+		g->colors = g_new0(GdkRGBA, g->n);
+#else
 		g->colors = g_new0(GdkColor, g->n);
+#endif
 		
 	for (i = 0; i < g->n; i++)
 	{
+#if GTK_CHECK_VERSION (3, 0, 0)
+		name = g_strdup_printf ("%s-color%u", g->name, i);
+#else
 		g_snprintf(name, sizeof(name), "%s-color%u", g->name, i);
+#endif
 		temp = g_settings_get_string(g->multiload->settings, name);
 		if (!temp)
 			temp = g_strdup ("#000000");
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gdk_rgba_parse(&(g->colors[i]), temp);
+#else
 		gdk_color_parse(temp, &(g->colors[i]));
+#endif
 		g_free(temp);
+#if GTK_CHECK_VERSION (3, 0, 0)
+		g_free(name);
+#endif
 	}
 }
 
