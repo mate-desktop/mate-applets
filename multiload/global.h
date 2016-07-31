@@ -30,7 +30,11 @@ struct _LoadGraph {
 
     guint allocated;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    GdkRGBA *colors;
+#else
     GdkColor *colors;
+#endif
     gint **data;
     guint data_size;
     guint *pos;
