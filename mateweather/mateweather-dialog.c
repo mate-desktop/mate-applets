@@ -617,7 +617,11 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
       ebox = gtk_event_box_new ();
       gtk_widget_show (ebox);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+      gtk_container_add (GTK_CONTAINER (imagescroll_window),ebox);
+#else
       gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(imagescroll_window),ebox);
+#endif
       gtk_box_pack_start (GTK_BOX (radar_vbox), imagescroll_window, TRUE, TRUE, 0);
       gtk_widget_show (priv->radar_image);
       gtk_widget_show (imagescroll_window);
