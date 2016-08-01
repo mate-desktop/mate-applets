@@ -707,7 +707,11 @@ void mateweather_dialog_update(MateWeatherDialog* dialog)
     if (gw_applet->mateweather_pref.location->zone_valid) {
 	font_desc = get_system_monospace_font ();
 	if (font_desc) {
+#if GTK_CHECK_VERSION(3,0,0)
+            gtk_widget_override_font (priv->forecast_text, font_desc);
+#else
             gtk_widget_modify_font (priv->forecast_text, font_desc);
+#endif
             pango_font_description_free (font_desc);
 	}
 
