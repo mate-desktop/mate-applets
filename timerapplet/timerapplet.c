@@ -284,7 +284,11 @@ static void
 timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 {
     GtkDialog *dialog;
+#if GTK_CHECK_VERSION (3, 0, 0)
+    GtkGrid *grid;
+#else
     GtkTable *table;
+#endif
     GtkWidget *widget;
     gint duration, hours, minutes, seconds;
 
@@ -299,9 +303,15 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
                                                      GTK_STOCK_CLOSE,
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
+#if GTK_CHECK_VERSION (3, 0, 0)
+    grid = GTK_GRID (gtk_grid_new ());
+    gtk_grid_set_row_spacing (grid, 12);
+    gtk_grid_set_column_spacing (grid, 12);
+#else
     table = GTK_TABLE (gtk_table_new (6, 2, FALSE));
     gtk_table_set_row_spacings (table, 12);
     gtk_table_set_col_spacings (table, 12);
+#endif
 
     gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
@@ -313,6 +323,12 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_grid_attach (grid, widget, 1, 0, 1, 1);
+
+    widget = gtk_entry_new ();
+    gtk_grid_attach (grid, widget, 2, 0, 1, 1);
+#else
     gtk_table_attach (table, widget, 1, 2, 0, 1,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -321,6 +337,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_table_attach (table, widget, 2, 3, 0, 1,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
+#endif
     g_settings_bind (applet->settings, NAME_KEY, widget, "text", G_SETTINGS_BIND_DEFAULT);
 
     widget = gtk_label_new (_("Hours:"));
@@ -330,6 +347,13 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_grid_attach (grid, widget, 1, 1, 1, 1);
+
+    widget = gtk_spin_button_new_with_range (0.0, 100.0, 1.0);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), hours);
+    gtk_grid_attach (grid, widget, 2, 1, 1, 1);
+#else
     gtk_table_attach (table, widget, 1, 2, 1, 2,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -339,6 +363,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_table_attach (table, widget, 2, 3, 1, 2,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
+#endif
     applet->hours = GTK_SPIN_BUTTON (widget);
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
@@ -349,6 +374,13 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_grid_attach (grid, widget, 1, 2, 1, 1);
+
+    widget = gtk_spin_button_new_with_range (0.0, 59.0, 1.0);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), minutes);
+    gtk_grid_attach (grid, widget, 2, 2, 1, 1);;
+#else
     gtk_table_attach (table, widget, 1, 2, 2, 3,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -358,6 +390,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_table_attach (table, widget, 2, 3, 2, 3,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
+#endif
     applet->minutes = GTK_SPIN_BUTTON (widget);
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
@@ -368,6 +401,13 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 #else
     gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
 #endif
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_grid_attach (grid, widget, 1, 3, 1, 1);
+
+    widget = gtk_spin_button_new_with_range (0.0, 59.0, 1.0);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), seconds);
+    gtk_grid_attach (grid, widget, 2, 3, 1, 1);
+#else
     gtk_table_attach (table, widget, 1, 2, 3, 4,
                       GTK_FILL, GTK_FILL,
                       0, 0);
@@ -377,10 +417,21 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_table_attach (table, widget, 2, 3, 3, 4,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
+#endif
     applet->seconds = GTK_SPIN_BUTTON (widget);
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_check_button_new_with_label (_("Show notification popup"));
+#if GTK_CHECK_VERSION (3, 0, 0)
+    gtk_grid_attach (grid, widget, 2, 4, 1, 1);
+    g_settings_bind (applet->settings, SHOW_NOTIFICATION_KEY, widget, "active", G_SETTINGS_BIND_DEFAULT);
+
+    widget = gtk_check_button_new_with_label (_("Show dialog"));
+    gtk_grid_attach (grid, widget, 2, 5, 1, 1);
+    g_settings_bind (applet->settings, SHOW_DIALOG_KEY, widget, "active", G_SETTINGS_BIND_DEFAULT);
+
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (grid), TRUE, TRUE, 0);
+#else
     gtk_table_attach (table, widget, 2, 3, 4, 5,
                       GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_FILL,
                       0, 0);
@@ -393,6 +444,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_settings_bind (applet->settings, SHOW_DIALOG_KEY, widget, "active", G_SETTINGS_BIND_DEFAULT);
 
     gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (table), TRUE, TRUE, 0);
+#endif
 
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
