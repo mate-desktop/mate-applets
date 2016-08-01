@@ -97,7 +97,8 @@ typedef struct
 	gboolean show_icon, short_unit;
 	gboolean show_quality_icon;
 #if GTK_CHECK_VERSION (3, 0, 0)
-	GdkRGBA in_color, out_color;
+	GdkRGBA         in_color;
+	GdkRGBA         out_color;
 #else
 	GdkColor in_color, out_color;
 #endif
@@ -1137,16 +1138,23 @@ da_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data)
 	return FALSE;
 }
 
-static void
 #if GTK_CHECK_VERSION (3, 0, 0)
-incolor_changed_cb (GtkColorChooser *cb, gpointer data)
+static void
+incolor_changed_cb (GtkColorChooser *button, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
-	gchar *color;
-	GdkRGBA clr;
+	GdkRGBA color;
+	gchar *string;
 
-	gtk_color_chooser_get_rgba (cb, &clr);
+	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (button), &color);
+	applet->in_color = color;
+
+	string = gdk_rgba_to_string (&color);
+	g_settings_set_string (applet->gsettings, "in-color", string);
+	g_free (string);
+}
 #else
+static void
 incolor_changed_cb (GtkColorButton *cb, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
@@ -1154,24 +1162,31 @@ incolor_changed_cb (GtkColorButton *cb, gpointer data)
 	GdkColor clr;
 
 	gtk_color_button_get_color (cb, &clr);
-#endif
 	applet->in_color = clr;
 
 	color = g_strdup_printf ("#%04x%04x%04x", clr.red, clr.green, clr.blue);
 	g_settings_set_string (applet->gsettings, "in-color", color);
 	g_free (color);
 }
+#endif
 
-static void
 #if GTK_CHECK_VERSION (3, 0, 0)
-outcolor_changed_cb (GtkColorChooser *cb, gpointer data)
+static void
+outcolor_changed_cb (GtkColorChooser *button, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
-	gchar *color;
-	GdkRGBA clr;
+	GdkRGBA color;
+	gchar *string;
 
-	gtk_color_chooser_get_rgba (cb, &clr);
+	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (button), &color);
+	applet->out_color = color;
+
+	string = gdk_rgba_to_string (&color);
+	g_settings_set_string (applet->gsettings, "out-color", string);
+	g_free (string);
+}
 #else
+static void
 outcolor_changed_cb (GtkColorButton *cb, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
@@ -1179,13 +1194,13 @@ outcolor_changed_cb (GtkColorButton *cb, gpointer data)
 	GdkColor clr;
 
 	gtk_color_button_get_color (cb, &clr);
-#endif
 	applet->out_color = clr;
 
 	color = g_strdup_printf ("#%04x%04x%04x", clr.red, clr.green, clr.blue);
 	g_settings_set_string (applet->gsettings, "out-color", color);
 	g_free (color);
 }
+#endif
 
 /* Handle info dialog response event
  */
