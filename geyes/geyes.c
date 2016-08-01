@@ -137,8 +137,12 @@ timer_cb (EyesApplet *eyes_applet)
 {
 #if GTK_CHECK_VERSION (3, 0, 0)
         GdkDisplay *display;
+#if GTK_CHECK_VERSION (3, 20, 0)
+        GdkSeat *seat;
+#else
         GdkDeviceManager *device_manager;
         GdkDevice *device;
+#endif
 #endif
         gint x, y;
         gint pupil_x, pupil_y;
@@ -146,14 +150,24 @@ timer_cb (EyesApplet *eyes_applet)
 
 #if GTK_CHECK_VERSION (3, 0, 0)
         display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
+#if GTK_CHECK_VERSION (3, 20, 0)
+        seat = gdk_display_get_default_seat (display);
+#else
         device_manager = gdk_display_get_device_manager (display);
         device = gdk_device_manager_get_client_pointer (device_manager);
+#endif
 #endif
 
         for (i = 0; i < eyes_applet->num_eyes; i++) {
 		if (gtk_widget_get_realized (eyes_applet->eyes[i])) {
 #if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION (3, 20, 0)
+            gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]),
+                                            gdk_seat_get_pointer (seat),
+                                            &x, &y, NULL);
+#else
 			gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]), device, &x, &y, NULL);
+#endif
 #else
 			gtk_widget_get_pointer (eyes_applet->eyes[i], &x, &y);
 #endif
