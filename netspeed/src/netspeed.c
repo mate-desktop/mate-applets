@@ -1229,7 +1229,11 @@ showinfo_cb(GtkAction *action, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
 	GtkWidget *box, *hbox;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GtkWidget *grid, *da_frame;
+#else
 	GtkWidget *table, *da_frame;
+#endif
 	GtkWidget *ip_label, *netmask_label;
 	GtkWidget *hwaddr_label, *ptpip_label;
 	GtkWidget *ip_text, *netmask_text;
@@ -1261,9 +1265,15 @@ showinfo_cb(GtkAction *action, gpointer data)
 	box = gtk_vbox_new(FALSE, 10);
 	gtk_container_set_border_width(GTK_CONTAINER(box), 12);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	grid = gtk_grid_new ();
+	gtk_grid_set_row_spacing (GTK_GRID(grid), 10);
+	gtk_grid_set_column_spacing (GTK_GRID(grid), 15);
+#else
 	table = gtk_table_new(4, 4, FALSE);
 	gtk_table_set_row_spacings(GTK_TABLE(table), 10);
 	gtk_table_set_col_spacings(GTK_TABLE(table), 15);
+#endif
 
 	da_frame = gtk_frame_new(NULL);
 	gtk_frame_set_shadow_type(GTK_FRAME(da_frame), GTK_SHADOW_NONE);
@@ -1353,6 +1363,20 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_misc_set_alignment(GTK_MISC(applet->outbytes_text), 0.0f, 0.5f);
 #endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_grid_attach(GTK_GRID(grid), ip_label, 0, 0, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), ip_text, 1, 0, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), netmask_label, 2, 0, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), netmask_text, 3, 0, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), hwaddr_label, 0, 1, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), hwaddr_text, 1, 1, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), ptpip_label, 2, 1, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), ptpip_text, 3, 1, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), inbytes_label, 0, 2, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), applet->inbytes_text, 1, 2, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), outbytes_label, 2, 2, 1, 1);
+	gtk_grid_attach(GTK_GRID(grid), applet->outbytes_text, 3, 2, 1, 1);
+#else
 	gtk_table_attach_defaults(GTK_TABLE(table), ip_label, 0, 1, 0, 1);
 	gtk_table_attach_defaults(GTK_TABLE(table), ip_text, 1, 2, 0, 1);
 	gtk_table_attach_defaults(GTK_TABLE(table), netmask_label, 2, 3, 0, 1);
@@ -1365,6 +1389,7 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_table_attach_defaults(GTK_TABLE(table), applet->inbytes_text, 1, 2, 2, 3);
 	gtk_table_attach_defaults(GTK_TABLE(table), outbytes_label, 2, 3, 2, 3);
 	gtk_table_attach_defaults(GTK_TABLE(table), applet->outbytes_text, 3, 4, 2, 3);
+#endif
 
 	/* check if we got an ipv6 address */
 	if (applet->devinfo.ipv6 && (strlen (applet->devinfo.ipv6) > 2)) {
@@ -1384,9 +1409,15 @@ showinfo_cb(GtkAction *action, gpointer data)
 		gtk_misc_set_alignment (GTK_MISC (ipv6_label), 0.0f, 0.5f);
 		gtk_misc_set_alignment (GTK_MISC (ipv6_text), 0.0f, 0.5f);
 #endif
+#if GTK_CHECK_VERSION (3, 0, 0)
+
+		gtk_grid_attach (GTK_GRID (grid), ipv6_label, 0, 3, 1, 1);
+		gtk_grid_attach (GTK_GRID (grid), ipv6_text, 1, 3, 1, 1);
+#else
 
 		gtk_table_attach_defaults (GTK_TABLE (table), ipv6_label, 0, 1, 3, 4);
 		gtk_table_attach_defaults (GTK_TABLE (table), ipv6_text, 1, 2, 3, 4);
+#endif
 	}
 
 	if (applet->devinfo.type == DEV_WIRELESS) {
@@ -1428,10 +1459,17 @@ showinfo_cb(GtkAction *action, gpointer data)
 
 		gtk_label_set_selectable (GTK_LABEL (essid_text), TRUE);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gtk_grid_attach (GTK_GRID (grid), signal_label, 2, 4, 1, 1);
+		gtk_grid_attach (GTK_GRID (grid), GTK_WIDGET (applet->signalbar), 3, 4, 1, 1);
+		gtk_grid_attach (GTK_GRID (grid), essid_label, 0, 4, 3, 1);
+		gtk_grid_attach (GTK_GRID (grid), essid_text, 1, 4, 3, 1);
+#else
 		gtk_table_attach_defaults (GTK_TABLE (table), signal_label, 2, 3, 4, 5);
 		gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (applet->signalbar), 3, 4, 4, 5);
 		gtk_table_attach_defaults (GTK_TABLE (table), essid_label, 0, 3, 4, 5);
 		gtk_table_attach_defaults (GTK_TABLE (table), essid_text, 1, 4, 4, 5);
+#endif
 	}
 
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -1457,7 +1495,11 @@ showinfo_cb(GtkAction *action, gpointer data)
 
 	gtk_box_pack_start(GTK_BOX(box), da_frame, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(box), hbox, FALSE, FALSE, 0);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_box_pack_start(GTK_BOX(box), grid, FALSE, FALSE, 0);
+#else
 	gtk_box_pack_start(GTK_BOX(box), table, FALSE, FALSE, 0);
+#endif
 
 	gtk_container_add(GTK_CONTAINER(gtk_dialog_get_content_area (applet->details)), box);
 	gtk_widget_show_all(GTK_WIDGET(applet->details));
