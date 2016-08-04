@@ -802,7 +802,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	GtkWidget* pres_combo;
 	GtkWidget* dist_label;
 	GtkWidget* dist_combo;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GtkWidget* unit_grid;
+#else
 	GtkWidget* unit_table;
+#endif
 	GtkWidget* pref_find_label;
 	GtkWidget* pref_find_hbox;
 	GtkWidget* image;
@@ -967,6 +971,24 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	if ( ! g_settings_is_writable (pref->priv->applet->settings, "distance-unit"))
 		hard_set_sensitive (pref->priv->basic_dist_combo, FALSE);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	unit_grid = gtk_grid_new ();
+	gtk_grid_set_row_spacing(GTK_GRID(unit_grid), 6);
+	gtk_grid_set_column_spacing(GTK_GRID(unit_grid), 12);
+	gtk_widget_set_halign (temp_label, GTK_ALIGN_START);
+	gtk_grid_attach(GTK_GRID(unit_grid), temp_label, 0, 0, 1, 1);
+	gtk_grid_attach(GTK_GRID(unit_grid), temp_combo,  1, 0, 1, 1);
+	gtk_widget_set_halign (speed_label, GTK_ALIGN_START);
+	gtk_grid_attach(GTK_GRID(unit_grid), speed_label, 0, 1, 1, 1);
+	gtk_grid_attach(GTK_GRID(unit_grid), speed_combo, 1, 1, 1, 1);
+	gtk_widget_set_halign (pres_label, GTK_ALIGN_START);
+	gtk_grid_attach(GTK_GRID(unit_grid), pres_label, 0, 2, 1, 1);
+	gtk_grid_attach(GTK_GRID(unit_grid), pres_combo,  1, 2, 1, 1);
+	gtk_widget_set_halign (dist_label, GTK_ALIGN_START);
+	gtk_grid_attach(GTK_GRID(unit_grid), dist_label, 0, 3, 1, 1);
+	gtk_grid_attach(GTK_GRID(unit_grid), dist_combo,  1, 3, 1, 1);
+	gtk_widget_show(unit_grid);
+#else
 	unit_table = gtk_table_new(5, 2, FALSE);
 	gtk_table_set_row_spacings(GTK_TABLE(unit_table), 6);
 	gtk_table_set_col_spacings(GTK_TABLE(unit_table), 12);
@@ -979,6 +1001,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_table_attach(GTK_TABLE(unit_table), dist_label, 0, 1, 3, 4, (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
 	gtk_table_attach_defaults(GTK_TABLE(unit_table), dist_combo,  1, 2, 3, 4);
 	gtk_widget_show(unit_table);
+#endif
 
 	g_signal_connect (temp_combo, "changed", G_CALLBACK (temp_combo_changed_cb), pref);
 	g_signal_connect (speed_combo, "changed", G_CALLBACK (speed_combo_changed_cb), pref);
@@ -1085,7 +1108,11 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	vbox = gtk_vbox_new (FALSE, 6);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_box_pack_start (GTK_BOX (vbox), unit_grid, TRUE, TRUE, 0);
+#else
 	gtk_box_pack_start (GTK_BOX (vbox), unit_table, TRUE, TRUE, 0);
+#endif
 
 	#ifdef RADARMAP
 		gtk_box_pack_start (GTK_BOX (vbox), pref->priv->basic_radar_btn, TRUE, TRUE, 0);
