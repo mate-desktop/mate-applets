@@ -1317,6 +1317,49 @@ load_preferences(ProgressData *battstat)
   battstat->showtext = g_settings_get_int (settings, "show-text");
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+/* Convenience function to attach a child widget to a GtkGrid in the
+   position indicated by 'loc'.  This is very special-purpose for 3x3
+   gridss and only supports positions that are used in this applet.
+ */
+static void
+grid_layout_attach (GtkGrid *grid, LayoutLocation loc, GtkWidget *child)
+{
+  switch( loc )
+  {
+    case LAYOUT_LONG:
+      gtk_grid_attach (grid, child, 1, 0, 1, 2);
+      break;
+
+    case LAYOUT_TOPLEFT:
+      gtk_grid_attach (grid, child, 0, 0, 1, 1);
+      break;
+
+    case LAYOUT_TOP:
+      gtk_grid_attach (grid, child, 1, 0, 1, 1);
+      break;
+
+    case LAYOUT_LEFT:
+      gtk_grid_attach (grid, child, 0, 1, 1, 1);
+      break;
+
+    case LAYOUT_CENTRE:
+      gtk_grid_attach (grid, child, 1, 1, 1, 1);
+      break;
+
+    case LAYOUT_RIGHT:
+      gtk_grid_attach (grid, child, 2, 1, 1, 1);
+      break;
+
+    case LAYOUT_BOTTOM:
+      gtk_grid_attach (grid, child, 1, 2, 1, 1);
+      break;
+
+    default:
+      break;
+  }
+}
+#else
 /* Convenience function to attach a child widget to a GtkTable in the
    position indicated by 'loc'.  This is very special-purpose for 3x3
    tables and only supports positions that are used in this applet.
@@ -1362,6 +1405,7 @@ table_layout_attach( GtkTable *table, LayoutLocation loc, GtkWidget *child )
       break;
   }
 }
+#endif
 
 /* The layout has (maybe) changed.  Calculate what layout we ought to be
    using and update some things if anything has changed.  This is called
@@ -1461,6 +1505,26 @@ reconfigure_layout( ProgressData *battstat )
   {
     /* Something in the layout has changed.  Rebuild. */
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    /* Start by removing any elements in the grid from the grid. */
+    if( battstat->layout.text )
+      gtk_container_remove( GTK_CONTAINER( battstat->grid ),
+                            battstat->percent );
+    if( battstat->layout.status )
+      gtk_container_remove( GTK_CONTAINER( battstat->grid ),
+                            battstat->status );
+    if( battstat->layout.battery )
+      gtk_container_remove( GTK_CONTAINER( battstat->grid ),
+                            battstat->battery );
+
+    /* Attach the elements to their new locations. */
+    grid_layout_attach( GTK_GRID(battstat->grid),
+                         c.battery, battstat->battery );
+    grid_layout_attach( GTK_GRID(battstat->grid),
+                         c.status, battstat->status );
+    grid_layout_attach( GTK_GRID(battstat->grid),
+                         c.text, battstat->percent );
+#else
     /* Start by removing any elements in the table from the table. */
     if( battstat->layout.text )
       gtk_container_remove( GTK_CONTAINER( battstat->table ),
@@ -1479,6 +1543,7 @@ reconfigure_layout( ProgressData *battstat )
                          c.status, battstat->status );
     table_layout_attach( GTK_TABLE(battstat->table),
                          c.text, battstat->percent );
+#endif
 
     gtk_widget_show_all( battstat->applet );
   }
@@ -1515,7 +1580,11 @@ create_layout(ProgressData *battstat)
                                       GTK_WIDGET( battstat->applet ) );
 
   /* Allocate the four widgets that we need. */
+#if GTK_CHECK_VERSION (3, 0, 0)
+  battstat->grid = gtk_grid_new ();
+#else
   battstat->table = gtk_table_new( 3, 3, FALSE );
+#endif
   battstat->percent = gtk_label_new( "" );
   battstat->status = gtk_image_new();
   battstat->battery = gtk_image_new();
@@ -1535,13 +1604,24 @@ create_layout(ProgressData *battstat)
   g_object_ref_sink( G_OBJECT( battstat->percent ) );
   g_object_ref_sink( G_OBJECT( battstat->battery ) );
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  /* Let reconfigure_layout know that the grid is currently empty. */
+#else
   /* Let reconfigure_layout know that the table is currently empty. */
+#endif
   battstat->layout.status = LAYOUT_NONE;
   battstat->layout.text = LAYOUT_NONE;
   battstat->layout.battery = LAYOUT_NONE;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  /* Put the grid directly inside the applet and show everything. */
+  gtk_widget_set_halign (battstat->grid, GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (battstat->grid, GTK_ALIGN_CENTER);
+  gtk_container_add (GTK_CONTAINER (battstat->applet), battstat->grid);
+#else
   /* Put the table directly inside the applet and show everything. */
   gtk_container_add (GTK_CONTAINER (battstat->applet), battstat->table);
+#endif
   gtk_widget_show_all (battstat->applet);
 
   /* Attach all sorts of signals to the applet. */
