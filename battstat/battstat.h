@@ -114,8 +114,13 @@ typedef struct _ProgressData {
   /* label changed type (% <-> h:mm) and must be refreshed */
   gboolean refresh_label;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  /* the main grid that contains the visual elements */
+  GtkWidget *grid;
+#else
   /* the main table that contains the visual elements */
   GtkWidget *table;
+#endif
 
   /* the visual elements */
   GtkWidget *battery;
@@ -138,7 +143,11 @@ typedef struct _ProgressData {
   /* on a vertical or horizontal panel? (up/down/left/right) */
   MatePanelAppletOrient orienttype;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  /* the current layout of the visual elements inside the grid */
+#else
   /* the current layout of the visual elements inside the table */
+#endif
   LayoutConfiguration layout;
 
   /* g_timeout source identifier */
