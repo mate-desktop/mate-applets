@@ -20,7 +20,7 @@ UPOWER_REQUIRED=0.9.4
 DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
 LIBXML_REQUIRED=2.5.0
-POLKIT_REQUIRED=0.92
+POLKIT_REQUIRED=0.97
 dnl ***************************************************************************
 
 AM_MAINTAINER_MODE
