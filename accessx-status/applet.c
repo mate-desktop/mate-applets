@@ -698,7 +698,7 @@ static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxSt
 		g_object_unref(pixbuf);
 	}
 
-	if (notify_type & ACCESSX_STATUS_MOUSEKEYS)
+	if ((notify_type & ACCESSX_STATUS_MOUSEKEYS) && (event != NULL))
 	{
 		GdkPixbuf* pixbuf = accessx_status_applet_mousekeys_image(sapplet, &event->state);
 		gtk_image_set_from_pixbuf(GTK_IMAGE(sapplet->mousefoo),  pixbuf);
