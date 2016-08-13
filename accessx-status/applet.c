@@ -1163,7 +1163,6 @@ static AccessxStatusApplet* create_applet(MatePanelApplet* applet)
 	gtk_widget_hide(sapplet->mousefoo);
 
 	sapplet->shift_indicator = gtk_image_new_from_stock(SHIFT_KEY_ICON, icon_size_spec);
-	gtk_widget_hide(sapplet->mousefoo);
 	sapplet->ctrl_indicator = gtk_image_new_from_stock(CONTROL_KEY_ICON, icon_size_spec);
 	sapplet->alt_indicator = gtk_image_new_from_stock(ALT_KEY_ICON, icon_size_spec);
 	sapplet->meta_indicator = gtk_image_new_from_stock(META_KEY_ICON, icon_size_spec);
