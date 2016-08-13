@@ -1,4 +1,4 @@
-/* -*- Mode: C++; c-basic-offset: 8 -*-
+/* -*- Mode: C; c-basic-offset: 4 -*-
  * geyes.c - A cheap xeyes ripoff.
  * Copyright (C) 1999 Dave Camp
  *
