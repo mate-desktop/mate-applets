@@ -391,11 +391,11 @@ AC_ARG_ENABLE(frequency-selector,
 dnl --enable-suid=(yes/no)
 AC_ARG_ENABLE(suid,
 	      [  --enable-suid[@<:@=yes/no@:>@]  suid root the frequency selector executable
-                          [@<:@default: yes@:>@]], ,
-	      suid=yes)
+                          [@<:@default: yes@:>@]],,
+	      enable_suid=yes)
 
 if test "x$HAVE_POLKIT" = "xyes"; then
-   suid=no
+   enable_suid=no
 fi
 
 AC_ARG_WITH([cpufreq-lib],
@@ -427,7 +427,7 @@ fi
 
 AM_CONDITIONAL(BUILD_CPUFREQ_APPLET, test x$build_cpufreq_applet = xyes)
 AM_CONDITIONAL(BUILD_CPUFREQ_SELECTOR, test x$enable_selector = xyes)
-AM_CONDITIONAL(CPUFREQ_SELECTOR_SUID, test x$suid = xyes)
+AM_CONDITIONAL(CPUFREQ_SELECTOR_SUID, test x$enable_suid = xyes)
 
 dnl ***************************************************************************
 dnl *** timerapplet specific checks                                       ***
@@ -662,7 +662,7 @@ mate-applets-$VERSION configure summary:
         - cpufreq                  $build_cpufreq_applet
             - building selector    $enable_selector
             - using PolicyKit      $HAVE_POLKIT
-            - enabling suid bit    $suid
+            - enabling suid bit    $enable_suid
         - drivemount               always
         - geyes                    always
         - mateweather              $build_libmateweather_applets
