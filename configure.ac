@@ -379,7 +379,7 @@ AC_ARG_ENABLE(cpufreq,
 dnl --enable-frequency-selector=(yes/no)
 AC_ARG_ENABLE(frequency-selector,
 	      [  --enable-frequency-selector[@<:@=yes/no@:>@]
-	                  build frequency selector [@<:@default: yes@:>@]], ,
+	                  build frequency selector [@<:@default: yes@:>@]], enable_selector=$enableval,
 	      enable_selector=yes)
 
 dnl --enable-suid=(yes/no)
