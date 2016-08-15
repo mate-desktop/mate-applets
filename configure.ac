@@ -209,7 +209,7 @@ AC_SUBST(POLKIT_LIBS)
 dnl -- check for libupower-glib (optional) ------------------------------------
 UPOWER_CFLAGS=
 UPOWER_LIBS=
-AC_ARG_WITH(upower, [   --without-upower           build without upower support])
+AC_ARG_WITH(upower, [  --without-upower        build without upower support])
 
 if test "x$with_upower" != xno; then
    PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED,
@@ -390,9 +390,9 @@ AC_ARG_ENABLE(frequency-selector,
 
 dnl --enable-suid=(yes/no)
 AC_ARG_ENABLE(suid,
-       [  --enable-suid[@:<@=yes/no@:>@]  suid root the frequency selector executable
-                   [@<:@default: yes@:>@]], ,
-       suid=yes)
+	      [  --enable-suid[@<:@=yes/no@:>@]  suid root the frequency selector executable
+                          [@<:@default: yes@:>@]], ,
+	      suid=yes)
 
 if test "x$HAVE_POLKIT" = "xyes"; then
    suid=no
