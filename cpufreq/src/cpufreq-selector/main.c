@@ -28,6 +28,8 @@
 
 #ifdef HAVE_POLKIT
 #include "cpufreq-selector-service.h"
+#else
+#include <unistd.h>
 #endif
 #include "cpufreq-selector-factory.h"
 
