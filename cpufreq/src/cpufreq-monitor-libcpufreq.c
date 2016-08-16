@@ -25,9 +25,6 @@
 #include <stdlib.h>
 #include <linux/version.h>
 #include <cpufreq.h>
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 7, 0)
-#include <cpuidle.h>
-#endif
 #include "cpufreq-monitor-libcpufreq.h"
 #include "cpufreq-utils.h"
 
