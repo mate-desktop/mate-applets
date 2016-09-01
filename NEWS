@@ -1,6 +1,29 @@
 Changes in MATE-Applets 1.15.2
 ==============================
 
+    sync with transiflex
+    cpu-freq: avoid deprecated polkit_authority_get
+    GTK+-3 battstat: port GtkTable to GtkGrid
+    GTK+-3 weather-dialog: port to GtkGrid
+    GTK+-3 mateweather port to GtkGrid
+    GTK+-3 netspeed: port GtkTable to GtkGrid
+    GTK+-3.20 geyes: port to GtkSeat
+    GTK+-3 timerapplet: port to GtkGrid
+    GTK+-3 command: port to GtkGrid
+    GTK+-3 multiload: port to GtkColorChooser and GdkRGBA
+    sticky-notes: drop duplicate code
+    cpufreq: remove useless #include
+    cpufreq: fix build warning when polkit is disabled
+    build: make --enable-suid option really work
+    build: make --enable-frequency-selector option actually work
+    configure.ac: fix help text for --enable-suid and fix some indent
+    geyes: fix modeline
+    invest-applet: update copyright
+    accessx-status: remove duplicated code
+    accessx-status: fix possible crash when updating layout
+    GTK+-3 multiload: avoid deprecated gdk_app_launch_context_new ()
+    GTK+-3 weather-dialog: avoid deprecated gtk_widget_modify_font ()
+    GTK+-3.0 weather-dialog: avoid deprecated gtk_scrolled_window_add_with_viewport ()
 
 Changes in MATE-Applets 1.15.1
 ==============================
