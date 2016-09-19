@@ -1,60 +1,25 @@
-Changes in MATE-Applets 1.15.2
+Changes in MATE-Applets 1.16.0
 ==============================
 
-    sync with transiflex
-    cpu-freq: avoid deprecated polkit_authority_get
-    GTK+-3 battstat: port GtkTable to GtkGrid
-    GTK+-3 weather-dialog: port to GtkGrid
-    GTK+-3 mateweather port to GtkGrid
-    GTK+-3 netspeed: port GtkTable to GtkGrid
-    GTK+-3.20 geyes: port to GtkSeat
-    GTK+-3 timerapplet: port to GtkGrid
-    GTK+-3 command: port to GtkGrid
-    GTK+-3 multiload: port to GtkColorChooser and GdkRGBA
-    sticky-notes: drop duplicate code
-    cpufreq: remove useless #include
-    cpufreq: fix build warning when polkit is disabled
-    build: make --enable-suid option really work
-    build: make --enable-frequency-selector option actually work
-    configure.ac: fix help text for --enable-suid and fix some indent
-    geyes: fix modeline
-    invest-applet: update copyright
-    accessx-status: remove duplicated code
-    accessx-status: fix possible crash when updating layout
-    GTK+-3 multiload: avoid deprecated gdk_app_launch_context_new ()
-    GTK+-3 weather-dialog: avoid deprecated gtk_widget_modify_font ()
-    GTK+-3.0 weather-dialog: avoid deprecated gtk_scrolled_window_add_with_viewport ()
-
-Changes in MATE-Applets 1.15.1
-==============================
-
+  - Build: require polkit 0.97
+  - Use GtkAboutDialog instead of MateAboutDialog
+  - Netspeed: use GtkColorButton/GtkColorChooser
+  - Drop dependency on libmate-desktop
+  - GTK+3: fix various deprecations
+  - Some code cleanups
   - Translations update
-  - drop dependency to libmate-desktop
-  - GTK+-3 netspeed: write valid rgb color values to gsettings
-  - GTK+-3 netspeed: port to GtkColorChooser and GdkRGBA
-  - netspeed: use GtkColorButton instead of MateColorButton
-  - mateweather: use GtkAbout and update copyright
-  - trash-applet: use GtkAbout and update copyright
-  - timerapplet: use GtkAbout and update copyright
-  - stickynotes: use GtkAbout and update copyright
-  - netspeed: use GtkAbout and update copyright
-  - multiload: use GtkAbout and update copyright
-  - geyes: use GtkAbout and update copyright
-  - drivemount: use GTkAbout and update copyright
-  - command: drop MateAbout and update copyright
-  - charpick: drop MateAbout and update copyright
-  - battstat: drop MateAbout usage and update copyright
-  - accessx-status: use GtkAbout and update copyright
-  - distcheck: explicitly use currently selected GTK+ version
-  - fix build with kernel-4.7
 
-Changes in MATE-Applets 1.15.0
+Changes in MATE-Applets 1.14.1
 ==============================
 
+  - Accessx-status: fix possible crash when updating layout
+  - Cpufreq: fix build with kernel 4.7
+  - Cpufreq: make build options --enable-frequency-selector
+    and --enable-suid actually work
+  - Netspeed: fix default route
+  - Some more fixes and cleanups
   - Translations update
-  - fix some minor build warnings
-  - remove some old gnome files
-  - netspeed: use default route
+  - Make distcheck use currently selected GTK+ version
 
 Changes in MATE-Applets 1.14.0
 ==============================
