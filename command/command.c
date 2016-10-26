@@ -302,6 +302,65 @@ settings_interval_changed (GSettings *settings, gchar *key, CommandApplet *comma
     command_execute (command_applet);
 }
 
+static void
+process_command_output (CommandApplet *command_applet, gchar *output)
+{
+    gtk_widget_set_tooltip_text (GTK_WIDGET (command_applet->label), command_applet->command);
+
+    if ((output == NULL) || (output[0] == 0))
+    {
+        gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
+        return;
+    }
+
+    /* check if output is a custom GKeyFile */
+    if (g_str_has_prefix (output, "[Command]"))
+    {
+        GKeyFile *file = g_key_file_new ();
+        if (g_key_file_load_from_data (file, output, -1, G_KEY_FILE_NONE, NULL))
+        {
+            gchar *goutput = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_OUTPUT, NULL);
+            gchar *icon = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_ICON, NULL);
+
+            if (goutput)
+            {
+                gtk_label_set_use_markup (command_applet->label, TRUE);
+                gtk_label_set_markup (command_applet->label, goutput);
+            }
+
+            if (icon)
+                gtk_image_set_from_icon_name (command_applet->image, icon, 24);
+
+            g_free (goutput);
+            g_free (icon);
+        }
+        else
+            gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
+
+        g_key_file_free (file);
+    }
+    else
+    {
+        /* check output length */
+        if (strlen(output) > command_applet->width)
+        {
+            GString *strip_output;
+            strip_output = g_string_new_len (output, command_applet->width);
+            g_free (output);
+            output = strip_output->str;
+            g_string_free (strip_output, FALSE);
+        }
+
+        /* remove last char if it is '\n' to avoid alignment problems */
+        if (g_str_has_suffix (output, "\n"))
+        {
+            output[strlen(output) - 1] = 0;
+        }
+
+        gtk_label_set_text (command_applet->label, output);
+    }
+}
+
 static gboolean
 command_execute (CommandApplet *command_applet)
 {
@@ -311,56 +370,7 @@ command_execute (CommandApplet *command_applet)
 
     if (g_spawn_command_line_sync (command_applet->command, &output, NULL, &ret, &error))
     {
-        gtk_widget_set_tooltip_text (GTK_WIDGET (command_applet->label), command_applet->command);
-
-        if ((output != NULL) && (output[0] != 0))
-        {
-            /* check if output is a custom GKeyFile */
-            if (g_str_has_prefix (output, "[Command]"))
-            {
-                GKeyFile *file = g_key_file_new ();
-                if (g_key_file_load_from_data (file, output, -1, G_KEY_FILE_NONE, NULL))
-                {
-                    gchar *goutput = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_OUTPUT, NULL);
-                    gchar *icon = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_ICON, NULL);
-
-                    if (goutput)
-                    {
-                        gtk_label_set_use_markup (command_applet->label, TRUE);
-                        gtk_label_set_markup (command_applet->label, goutput);
-                    }
-                    if (icon)
-                        gtk_image_set_from_icon_name (command_applet->image, icon, 24);
-
-                    g_free (goutput);
-                    g_free (icon);
-                }
-                else
-                    gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
-                g_key_file_free (file);
-            }
-            else
-            {
-                /* check output length */
-                if (strlen(output) > command_applet->width)
-                {
-                    GString *strip_output;
-                    strip_output = g_string_new_len (output, command_applet->width);
-                    g_free (output);
-                    output = strip_output->str;
-                    g_string_free (strip_output, FALSE);
-                }
-                /* remove last char if it is '\n' to avoid aligment problems */
-                if (g_str_has_suffix (output, "\n"))
-                {
-                    output[strlen(output) - 1] = 0;
-                }
-
-                gtk_label_set_text (command_applet->label, output);
-            }
-        }
-        else
-            gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
+        process_command_output (command_applet, output);
     }
     else
         gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
