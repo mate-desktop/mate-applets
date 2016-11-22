@@ -1012,8 +1012,8 @@ settings_cb(GtkAction *action, gpointer data)
 	gtk_label_set_use_markup(GTK_LABEL(category_header_label), TRUE);
 	gtk_label_set_justify(GTK_LABEL(category_header_label), GTK_JUSTIFY_LEFT);
 #if GTK_CHECK_VERSION (3, 16, 0)
-    gtk_label_set_xalign (GTK_LABEL (category_header_label), 0.0);
-    gtk_label_set_yalign (GTK_LABEL (category_header_label), 0.5);
+	gtk_label_set_xalign (GTK_LABEL (category_header_label), 0.0);
+	gtk_label_set_yalign (GTK_LABEL (category_header_label), 0.5);
 #else
 	gtk_misc_set_alignment(GTK_MISC (category_header_label), 0.0, 0.5);
 #endif
@@ -1036,8 +1036,8 @@ settings_cb(GtkAction *action, gpointer data)
 	network_device_label = gtk_label_new_with_mnemonic(_("Network _device:"));
 	gtk_label_set_justify(GTK_LABEL(network_device_label), GTK_JUSTIFY_LEFT);
 #if GTK_CHECK_VERSION (3, 16, 0)
-    gtk_label_set_xalign (GTK_LABEL (network_device_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (network_device_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (network_device_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (network_device_label), 0.5f);
 #else
 	gtk_misc_set_alignment(GTK_MISC(network_device_label), 0.0f, 0.5f);
 #endif
@@ -1324,30 +1324,30 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_label_set_selectable(GTK_LABEL(ptpip_text), TRUE);
 
 #if GTK_CHECK_VERSION (3, 16, 0)
-    gtk_label_set_xalign (GTK_LABEL (ip_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (ip_label), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (ip_text), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (ip_text), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (netmask_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (netmask_label), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (netmask_text), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (netmask_text), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (hwaddr_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (hwaddr_label), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (hwaddr_text), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (hwaddr_text), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (ptpip_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (ptpip_label), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (ptpip_text), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (ptpip_text), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (inbytes_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (inbytes_label), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (applet->inbytes_text), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (applet->inbytes_text), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (outbytes_label), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (outbytes_label), 0.5f);
-    gtk_label_set_xalign (GTK_LABEL (applet->outbytes_text), 0.0f);
-    gtk_label_set_yalign (GTK_LABEL (applet->outbytes_text), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (ip_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (ip_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (ip_text), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (ip_text), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (netmask_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (netmask_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (netmask_text), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (netmask_text), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (hwaddr_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (hwaddr_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (hwaddr_text), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (hwaddr_text), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (ptpip_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (ptpip_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (ptpip_text), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (ptpip_text), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (inbytes_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (inbytes_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (applet->inbytes_text), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (applet->inbytes_text), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (outbytes_label), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (outbytes_label), 0.5f);
+	gtk_label_set_xalign (GTK_LABEL (applet->outbytes_text), 0.0f);
+	gtk_label_set_yalign (GTK_LABEL (applet->outbytes_text), 0.5f);
 #else
 	gtk_misc_set_alignment(GTK_MISC(ip_label), 0.0f, 0.5f);
 	gtk_misc_set_alignment(GTK_MISC(ip_text), 0.0f, 0.5f);

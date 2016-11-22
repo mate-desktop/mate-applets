@@ -525,7 +525,7 @@ cpufreq_applet_popup_position_menu (GtkMenu  *menu,
         *x = menu_xpos;
         *y = menu_ypos;
 #if GTK_CHECK_VERSION (3, 0, 0)
-        if (push_in) *push_in = FALSE;  /*fix botttom panel menu rendering in gtk3*/
+        if (push_in) *push_in = FALSE;  /*fix bottom panel menu rendering in gtk3*/
 #else
         *push_in = TRUE;
 #endif
