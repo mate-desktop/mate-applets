@@ -30,18 +30,11 @@ struct _LoadGraph {
 
     guint allocated;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     GdkRGBA *colors;
-#else
-    GdkColor *colors;
-#endif
     gint **data;
     guint data_size;
     guint *pos;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-    gint colors_allocated;
-#endif
     GtkWidget *main_widget;
     GtkWidget *frame, *box, *disp;
     cairo_surface_t *surface;

@@ -15,11 +15,6 @@
 
 #define CHARPICK_STOCK_EDIT "charpick-stock-edit"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 void
 register_stock_for_edit (void)
 {
@@ -111,11 +106,11 @@ add_edit_dialog_create (charpick_data *curr_data, gchar *string, gchar *title)
 
 	dbox = gtk_dialog_get_content_area(GTK_DIALOG (dialog));
 	
-	vbox = gtk_vbox_new (FALSE, 12);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	gtk_box_pack_start (GTK_BOX (dbox), vbox, TRUE, TRUE, 0);
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
 	
-	hbox = gtk_hbox_new (FALSE, 12);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 	
 	label = gtk_label_new_with_mnemonic (_("_Palette:"));
@@ -415,7 +410,7 @@ create_hig_catagory (GtkWidget *main_box, gchar *title)
 	GtkWidget *label;
 	gchar *tmp;
 		
-	vbox = gtk_vbox_new (FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (main_box), vbox, TRUE, TRUE, 0);
 
 	tmp = g_strdup_printf ("<b>%s</b>", title);
@@ -429,13 +424,13 @@ create_hig_catagory (GtkWidget *main_box, gchar *title)
 	g_free (tmp);
 	gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
 
-	hbox = gtk_hbox_new (FALSE, 0);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 	
 	label = gtk_label_new ("    ");
 	gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
 	
-	vbox2 = gtk_vbox_new (FALSE, 6);
+	vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (hbox), vbox2, TRUE, TRUE, 0);
 
 	return vbox2;
@@ -453,13 +448,13 @@ static void default_chars_frame_create(charpick_data *curr_data)
 
   dbox = gtk_dialog_get_content_area(GTK_DIALOG (dialog));
 
-  vbox = gtk_vbox_new (FALSE, 18);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
   gtk_box_pack_start (GTK_BOX (dbox), vbox, TRUE, TRUE, 0);
 
   vbox1 = create_hig_catagory (vbox, _("Character Palette")); 
   
-  vbox3 = gtk_vbox_new (FALSE, 6);
+  vbox3 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (vbox1), vbox3, TRUE, TRUE, 0);
   
   label = gtk_label_new_with_mnemonic(_("_Palettes:"));
@@ -471,12 +466,12 @@ static void default_chars_frame_create(charpick_data *curr_data)
 #endif
   gtk_widget_show(label);
 	  
-  hbox = gtk_hbox_new (FALSE, 12);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_box_pack_start (GTK_BOX (vbox3), hbox, TRUE, TRUE, 0); 
   scrolled = create_palettes_tree (curr_data, label);
   gtk_box_pack_start (GTK_BOX (hbox), scrolled, TRUE, TRUE, 0);
   
-  vbox2 = gtk_vbox_new (FALSE, 6);
+  vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (hbox), vbox2, FALSE, FALSE, 0);
   button = gtk_button_new_from_stock (GTK_STOCK_ADD);
   gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);

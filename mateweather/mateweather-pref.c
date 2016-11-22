@@ -37,11 +37,6 @@
 
 #define NEVER_SENSITIVE "never_sensitive"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 struct _MateWeatherPrefPrivate {
 	GtkWidget* basic_temp_combo;
 	GtkWidget* basic_speed_combo;
@@ -553,7 +548,7 @@ static GtkWidget* create_hig_category(GtkWidget* main_box, gchar* title)
 	GtkWidget*label;
 	gchar* tmp;
 
-	vbox = gtk_vbox_new (FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (main_box), vbox, FALSE, FALSE, 0);
 
 	tmp = g_strdup_printf ("<b>%s</b>", title);
@@ -567,13 +562,13 @@ static GtkWidget* create_hig_category(GtkWidget* main_box, gchar* title)
 	g_free (tmp);
 	gtk_box_pack_start (GTK_BOX (vbox), label, TRUE, FALSE, 0);
 
-	hbox = gtk_hbox_new (FALSE, 0);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
 	label = gtk_label_new ("    ");
 	gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
 
-	vbox2 = gtk_vbox_new (FALSE, 6);
+	vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (hbox), vbox2, TRUE, TRUE, 0);
 
 	return vbox2;
@@ -802,11 +797,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	GtkWidget* pres_combo;
 	GtkWidget* dist_label;
 	GtkWidget* dist_combo;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkWidget* unit_grid;
-#else
-	GtkWidget* unit_table;
-#endif
 	GtkWidget* pref_find_label;
 	GtkWidget* pref_find_hbox;
 	GtkWidget* image;
@@ -833,7 +824,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
    * General settings page.
    */
 
-	pref_basic_vbox = gtk_vbox_new (FALSE, 18);
+	pref_basic_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
 	gtk_container_set_border_width (GTK_CONTAINER (pref_basic_vbox), 12);
 	gtk_container_add (GTK_CONTAINER (pref_notebook), pref_basic_vbox);
 
@@ -971,7 +962,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	if ( ! g_settings_is_writable (pref->priv->applet->settings, "distance-unit"))
 		hard_set_sensitive (pref->priv->basic_dist_combo, FALSE);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	unit_grid = gtk_grid_new ();
 	gtk_grid_set_row_spacing(GTK_GRID(unit_grid), 6);
 	gtk_grid_set_column_spacing(GTK_GRID(unit_grid), 12);
@@ -988,20 +978,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_grid_attach(GTK_GRID(unit_grid), dist_label, 0, 3, 1, 1);
 	gtk_grid_attach(GTK_GRID(unit_grid), dist_combo,  1, 3, 1, 1);
 	gtk_widget_show(unit_grid);
-#else
-	unit_table = gtk_table_new(5, 2, FALSE);
-	gtk_table_set_row_spacings(GTK_TABLE(unit_table), 6);
-	gtk_table_set_col_spacings(GTK_TABLE(unit_table), 12);
-	gtk_table_attach(GTK_TABLE(unit_table), temp_label, 0, 1, 0, 1, (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
-	gtk_table_attach_defaults(GTK_TABLE(unit_table), temp_combo,  1, 2, 0, 1);
-	gtk_table_attach(GTK_TABLE(unit_table), speed_label, 0, 1, 1, 2, (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
-	gtk_table_attach_defaults(GTK_TABLE(unit_table), speed_combo, 1, 2, 1, 2);
-	gtk_table_attach(GTK_TABLE(unit_table), pres_label, 0, 1, 2, 3, (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
-	gtk_table_attach_defaults(GTK_TABLE(unit_table), pres_combo,  1, 2, 2, 3);
-	gtk_table_attach(GTK_TABLE(unit_table), dist_label, 0, 1, 3, 4, (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
-	gtk_table_attach_defaults(GTK_TABLE(unit_table), dist_combo,  1, 2, 3, 4);
-	gtk_widget_show(unit_table);
-#endif
 
 	g_signal_connect (temp_combo, "changed", G_CALLBACK (temp_combo_changed_cb), pref);
 	g_signal_connect (speed_combo, "changed", G_CALLBACK (speed_combo_changed_cb), pref);
@@ -1019,7 +995,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 			hard_set_sensitive(pref->priv->basic_radar_btn, FALSE);
 		}
 
-		radar_toggle_hbox = gtk_hbox_new(FALSE, 12);
+		radar_toggle_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 		gtk_widget_show(radar_toggle_hbox);
 
 		label = gtk_label_new ("    ");
@@ -1037,7 +1013,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 			hard_set_sensitive (pref->priv->basic_radar_url_btn, FALSE);
 		}
 
-		pref->priv->basic_radar_url_hbox = gtk_hbox_new (FALSE, 12);
+		pref->priv->basic_radar_url_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 		gtk_widget_show (pref->priv->basic_radar_url_hbox);
 
 		label = gtk_label_new ("    ");
@@ -1071,7 +1047,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	frame = create_hig_category (pref_basic_vbox, _("Update"));
 
-	pref_basic_update_hbox = gtk_hbox_new (FALSE, 12);
+	pref_basic_update_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 
 	pref_basic_update_lbl = gtk_label_new_with_mnemonic (_("_Automatically update every:"));
 	gtk_widget_show (pref_basic_update_lbl);
@@ -1095,7 +1071,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		hard_set_sensitive (pref_basic_update_sec_lbl, FALSE);
 	}
 
-	value_hbox = gtk_hbox_new (FALSE, 6);
+	value_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 
 	gtk_box_pack_start (GTK_BOX (pref_basic_update_hbox), pref_basic_update_alignment, FALSE, TRUE, 0);
 	gtk_box_pack_start (GTK_BOX (pref_basic_update_hbox), value_hbox, FALSE, FALSE, 0);
@@ -1106,13 +1082,9 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	frame = create_hig_category (pref_basic_vbox, _("Display"));
 
-	vbox = gtk_vbox_new (FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_box_pack_start (GTK_BOX (vbox), unit_grid, TRUE, TRUE, 0);
-#else
-	gtk_box_pack_start (GTK_BOX (vbox), unit_table, TRUE, TRUE, 0);
-#endif
 
 	#ifdef RADARMAP
 		gtk_box_pack_start (GTK_BOX (vbox), pref->priv->basic_radar_btn, TRUE, TRUE, 0);
@@ -1134,7 +1106,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
   /*
    * Location page.
    */
-	pref_loc_hbox = gtk_vbox_new (FALSE, 6);
+	pref_loc_hbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (pref_loc_hbox), 12);
 	gtk_container_add (GTK_CONTAINER (pref_notebook), pref_loc_hbox);
 
@@ -1163,7 +1135,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_box_pack_start (GTK_BOX (pref_loc_hbox), scrolled_window, TRUE, TRUE, 0);
 	load_locations(pref);
 
-	pref_find_hbox = gtk_hbox_new (FALSE, 6);
+	pref_find_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	pref_find_label = gtk_label_new (_("_Find:"));
 	gtk_label_set_use_underline (GTK_LABEL (pref_find_label), TRUE);
 

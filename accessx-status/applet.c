@@ -38,11 +38,6 @@
 #include <X11/keysymdef.h>
 #include "applet.h"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 static int xkb_base_event_type = 0;
 
 static GtkIconSize icon_size_spec;
@@ -197,12 +192,8 @@ static void dialog_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 						      &error);
 
 	if (!error) {
-#if GTK_CHECK_VERSION (3, 0, 0)
 		launch_context = gdk_display_get_app_launch_context (
 			               gtk_widget_get_display (GTK_WIDGET (screen)));
-#else
-		launch_context = gdk_app_launch_context_new ();
-#endif
 		gdk_app_launch_context_set_screen (launch_context, screen);
 		g_app_info_launch (appinfo, NULL, G_APP_LAUNCH_CONTEXT (launch_context), &error);
 
@@ -404,12 +395,7 @@ static gboolean timer_reset_bouncekeys_image(gpointer user_data)
 static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sapplet, GtkWidget* widget, GdkPixbuf* base, GdkColor* fg, GdkColor* bg, gchar* glyphstring)
 {
 	GdkPixbuf* glyph_pixbuf;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	cairo_surface_t *surface;
-#else
-	GdkPixbuf *alpha_pixbuf;
-	GdkPixmap* pixmap;
-#endif
 	PangoLayout* layout;
 	PangoRectangle ink, logic;
 	PangoContext* pango_context;
@@ -417,21 +403,13 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 	gint h = gdk_pixbuf_get_height(base);
 	cairo_t *cr;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	surface = gdk_window_create_similar_surface (gdk_get_default_root_window (), CAIRO_CONTENT_COLOR_ALPHA, w, h);
-#else
-	pixmap = gdk_pixmap_new(gdk_get_default_root_window (),w, h, -1);
-#endif
 	pango_context = gtk_widget_get_pango_context(widget);
 	layout = pango_layout_new(pango_context);
 	pango_layout_set_alignment(layout, PANGO_ALIGN_CENTER);
 	pango_layout_set_text(layout, glyphstring, -1);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	cr = cairo_create (surface);
-#else
-	cr = gdk_cairo_create (pixmap);
-#endif
 	gdk_cairo_set_source_color (cr, bg);
 	cairo_paint (cr);
 	gdk_cairo_set_source_color (cr, fg);
@@ -443,19 +421,10 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 	cairo_destroy (cr);
 
 	g_object_unref(layout);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	glyph_pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0, w, h);
 	cairo_surface_destroy (surface);
 
 	return glyph_pixbuf;
-#else
-	glyph_pixbuf = gdk_pixbuf_get_from_drawable(NULL, pixmap, NULL, 0, 0, 0, 0, w, h);
-	g_object_unref(pixmap);
-	alpha_pixbuf = gdk_pixbuf_add_alpha(glyph_pixbuf, TRUE, bg->red >> 8, bg->green >> 8, bg->blue >> 8);
-	g_object_unref(G_OBJECT(glyph_pixbuf));
-
-	return alpha_pixbuf;
-#endif
 }
 
 static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapplet, XkbAccessXNotifyEvent* event)
@@ -523,11 +492,7 @@ static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapp
 			}
 		}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 		fg = style->fg[gtk_widget_get_state_flags (GTK_WIDGET (sapplet->applet))];
-#else
-		fg = style->fg[gtk_widget_get_state(GTK_WIDGET(sapplet->applet))];
-#endif
 		glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(sapplet, GTK_WIDGET(sapplet->applet), ret_pixbuf, &fg, &bg, glyphstring);
 		gdk_pixbuf_composite(glyph_pixbuf, ret_pixbuf, 0, 0, gdk_pixbuf_get_width(glyph_pixbuf), gdk_pixbuf_get_height(glyph_pixbuf), 0., 0., 1.0, 1.0, GDK_INTERP_NEAREST, 255);
 		g_object_unref(glyph_pixbuf);
@@ -548,11 +513,7 @@ static GdkPixbuf* accessx_status_applet_bouncekeys_image(AccessxStatusApplet* sa
 
 	g_assert(sapplet->applet);
 	style = gtk_widget_get_style(GTK_WIDGET(sapplet->applet));
-#if GTK_CHECK_VERSION (3, 0, 0)
 	fg = style->text[gtk_widget_get_state_flags (GTK_WIDGET (sapplet->applet))];
-#else
-	fg = style->text[gtk_widget_get_state(GTK_WIDGET(sapplet->applet))];
-#endif
 	bg = style->base[GTK_STATE_NORMAL];
 
 	if (event != NULL)
@@ -661,20 +622,12 @@ static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxSt
 				if (locked_mods & modifiers[i].mask)
 				{
 					gtk_widget_set_sensitive(modifiers[i].indicator, TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 					gtk_widget_set_state_flags (modifiers[i].indicator, GTK_STATE_FLAG_SELECTED, TRUE);
-#else
-					gtk_widget_set_state(modifiers[i].indicator, GTK_STATE_SELECTED);
-#endif
 				}
 				else if (latched_mods & modifiers[i].mask)
 				{
 					gtk_widget_set_sensitive(modifiers[i].indicator, TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 					gtk_widget_set_state_flags (modifiers[i].indicator, GTK_STATE_FLAG_NORMAL, TRUE);
-#else
-					gtk_widget_set_state(modifiers[i].indicator, GTK_STATE_NORMAL);
-#endif
 				}
 				else
 				{
@@ -809,11 +762,7 @@ static void accessx_status_applet_notify_xkb_device(AccessxStatusApplet* sapplet
 		if (event->led_state &= ALT_GRAPH_LED_MASK)
 		{
 			gtk_widget_set_sensitive(sapplet->alt_graph_indicator, TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 			gtk_widget_set_state_flags (sapplet->alt_graph_indicator, GTK_STATE_FLAG_NORMAL, TRUE);
-#else
-			gtk_widget_set_state(sapplet->alt_graph_indicator, GTK_STATE_NORMAL);
-#endif
 		}
 		else
 		{
@@ -906,11 +855,7 @@ static GtkIconSet* accessx_status_applet_altgraph_icon_set(AccessxStatusApplet* 
 			case GTK_STATE_NORMAL:
 				alpha = 255;
 				gtk_widget_set_sensitive(widget, TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 				gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
-#else
-				gtk_widget_set_state(widget, GTK_STATE_NORMAL);
-#endif
 				break;
 			case GTK_STATE_SELECTED:
 				/* FIXME: should use text/base here, for selected ? */
@@ -918,11 +863,7 @@ static GtkIconSet* accessx_status_applet_altgraph_icon_set(AccessxStatusApplet* 
 				bg = &style->black;
 				alpha = 255;
 				gtk_widget_set_sensitive(widget, TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 				gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_SELECTED, TRUE);
-#else
-				gtk_widget_set_state(widget, GTK_STATE_SELECTED);
-#endif
 				break;
 			case GTK_STATE_INSENSITIVE:
 			default:
@@ -954,11 +895,7 @@ static GtkIconSet* accessx_status_applet_altgraph_icon_set(AccessxStatusApplet* 
 		gtk_icon_source_free(source);
 	}
 	/* we mucked about with the box's state to create the icons; restore it to normal */
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
-#else
-	gtk_widget_set_state(widget, GTK_STATE_NORMAL);
-#endif
 	gtk_widget_set_sensitive(widget, TRUE);
 
 	return icon_set;
@@ -1133,18 +1070,16 @@ static AccessxStatusApplet* create_applet(MatePanelApplet* applet)
 
 	if (sapplet->orient == MATE_PANEL_APPLET_ORIENT_LEFT || sapplet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
 	{
-		box = gtk_vbox_new(FALSE, 0);
-		stickyfoo = gtk_vbox_new(TRUE, 0);
+		box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+		stickyfoo = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	}
 	else
 	{
-		box = gtk_hbox_new(FALSE, 0);
-		stickyfoo = gtk_hbox_new(TRUE, 0);
+		box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+		stickyfoo = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_box_set_homogeneous (GTK_BOX (stickyfoo), TRUE);
-#endif
 	large_toolbar_pixels = 24; /* FIXME */
 
 	if (mate_panel_applet_get_size(sapplet->applet) >= large_toolbar_pixels)
@@ -1225,17 +1160,15 @@ static void accessx_status_applet_reorient(GtkWidget* widget, MatePanelAppletOri
 
 	if (o == MATE_PANEL_APPLET_ORIENT_LEFT || o == MATE_PANEL_APPLET_ORIENT_RIGHT)
 	{
-		box = gtk_vbox_new(FALSE, 0);
-		stickyfoo = gtk_vbox_new(TRUE, 0);
+		box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+		stickyfoo = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	}
 	else
 	{
-		box = gtk_hbox_new(FALSE, 0);
-		stickyfoo = gtk_hbox_new(TRUE, 0);
+		box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+		stickyfoo = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	}
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_box_set_homogeneous (GTK_BOX (stickyfoo), TRUE);
-#endif
 	accessx_status_applet_layout_box(sapplet, box, stickyfoo);
 }
 

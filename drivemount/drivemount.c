@@ -79,11 +79,7 @@ static void
 change_background (MatePanelApplet               *applet,
 		   MatePanelAppletBackgroundType  type,
 		   GdkColor                  *colour,
-#if GTK_CHECK_VERSION (3, 0, 0)
 		   cairo_pattern_t           *pattern,
-#else
-		   GdkPixmap                 *pixmap,
-#endif
 		   DriveList                 *drivelist)
 {
     switch (type) {

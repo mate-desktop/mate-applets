@@ -15,10 +15,6 @@
 
 #include "global.h"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 /*
   Shifts data right
 
@@ -73,11 +69,7 @@ load_graph_draw (LoadGraph *g)
 
     for (j = 0; j < g->n; j++)
     {
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
-#else
-		gdk_cairo_set_source_color (cr, &(g->colors [j]));
-#endif
 
 		for (i = 0; i < g->draw_width; i++) {
 			if (g->data [i][j] != 0) {
@@ -192,28 +184,13 @@ load_graph_configure (GtkWidget *widget, GdkEventConfigure *event,
 
 static gint
 load_graph_expose (GtkWidget *widget,
-#if GTK_CHECK_VERSION (3, 0, 0)
 		   cairo_t *cr,
-#else
-		   GdkEventExpose *event,
-#endif
 		   gpointer data_ptr)
 {
     LoadGraph *g = (LoadGraph *) data_ptr;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-    cairo_t *cr;
-    cr = gdk_cairo_create (event->window);
-    gdk_cairo_region (cr, event->region);
-    cairo_clip (cr);
-#endif
-
     cairo_set_source_surface (cr, g->surface, 0, 0);
     cairo_paint (cr);
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-    cairo_destroy (cr);
-#endif
 
     return FALSE;
 }
@@ -264,39 +241,21 @@ load_graph_leave_cb(GtkWidget *widget, GdkEventCrossing *event, gpointer data)
 static void
 load_graph_load_config (LoadGraph *g)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
     gchar *name, *temp;
-#else
-    gchar name [BUFSIZ], *temp;
-#endif
     guint i;
 
 	if (!g->colors)
-#if GTK_CHECK_VERSION (3, 0, 0)
 		g->colors = g_new0(GdkRGBA, g->n);
-#else
-		g->colors = g_new0(GdkColor, g->n);
-#endif
 		
 	for (i = 0; i < g->n; i++)
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		name = g_strdup_printf ("%s-color%u", g->name, i);
-#else
-		g_snprintf(name, sizeof(name), "%s-color%u", g->name, i);
-#endif
 		temp = g_settings_get_string(g->multiload->settings, name);
 		if (!temp)
 			temp = g_strdup ("#000000");
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gdk_rgba_parse(&(g->colors[i]), temp);
-#else
-		gdk_color_parse(temp, &(g->colors[i]));
-#endif
 		g_free(temp);
-#if GTK_CHECK_VERSION (3, 0, 0)
 		g_free(name);
-#endif
 	}
 }
 
@@ -322,9 +281,9 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     g->show_frame = TRUE;
     g->multiload = ma;
 		
-    g->main_widget = gtk_vbox_new (FALSE, 0);
+    g->main_widget = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
-    g->box = gtk_vbox_new (FALSE, 0);
+    g->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
     
     orient = mate_panel_applet_get_orient (g->multiload->applet);
     switch (orient)
@@ -375,11 +334,7 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     				    GDK_LEAVE_NOTIFY_MASK |
 				    GDK_BUTTON_PRESS_MASK);
 	
-#if GTK_CHECK_VERSION (3, 0, 0)
     g_signal_connect (G_OBJECT (g->disp), "draw",
-#else
-    g_signal_connect (G_OBJECT (g->disp), "expose_event",
-#endif
 			G_CALLBACK (load_graph_expose), g);
     g_signal_connect (G_OBJECT(g->disp), "configure_event",
 			G_CALLBACK (load_graph_configure), g);

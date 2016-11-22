@@ -3,7 +3,7 @@ from os.path import *
 import mate_invest.defs
 
 import gi
-gi.require_version("Gtk", mate_invest.defs.GTK_API_VERSION)
+gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -135,18 +135,10 @@ class InvestmentsListWindow(Gtk.Window):
 		#(wx, wy) = self.get_origin()
 
 		window = self.applet.get_window()
-                if GTK_API_VERSION == '3.0':
-		    screen = window.get_screen()
-                    monitor = screen.get_monitor_geometry (screen.get_monitor_at_window (window))
-                    (ret, ax, ay) = window.get_origin()
-                    (ignored, ignored, aw, ah) = window.get_geometry()
-                else:
-                    screen = self.applet.get_screen()
-                    monitor = Gdk.Rectangle(0, 0, 0, 0)
-                    ax = ay = 0
-                    self.applet.window.get_origin(ax, ay)
-                    (aw, ah) = self.applet.window.get_size ()
-                    screen.get_monitor_geometry (screen.get_monitor_at_window (self.applet.window), monitor)
+		screen = window.get_screen()
+                monitor = screen.get_monitor_geometry (screen.get_monitor_at_window (window))
+                (ret, ax, ay) = window.get_origin()
+                (ignored, ignored, aw, ah) = window.get_geometry()
 
 		(ww, wh) = self.get_size()
 

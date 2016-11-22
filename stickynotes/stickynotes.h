@@ -24,12 +24,7 @@
 #include <libwnck/libwnck.h>
 #include <stickynotes_applet.h>
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include <gtksourceview/gtksource.h>
-#else
-#include <gtksourceview/gtksourceview.h>
-#include <gtksourceview/gtksourcebuffer.h>
-#endif
 
 typedef struct
 {

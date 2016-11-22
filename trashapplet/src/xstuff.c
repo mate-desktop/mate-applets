@@ -177,14 +177,6 @@ xstuff_is_compliant_wm (void)
 	return TRUE;
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-gboolean
-xstuff_net_wm_supports (const char *hint)
-{
-	return gdk_net_wm_supports (gdk_atom_intern (hint, FALSE));
-}
-#endif
-
 void
 xstuff_set_no_group (GdkWindow *win)
 {
@@ -250,12 +242,7 @@ xstuff_set_pos_size (GdkWindow *window, int x, int y, int w, int h)
 
 	gdk_window_move_resize (window, x, y, w, h);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gdk_error_trap_pop_ignored ();
-#else
-	gdk_flush ();
-	gdk_error_trap_pop ();
-#endif
 
 	g_object_set_data (G_OBJECT (window), "xstuff-cached-x", GINT_TO_POINTER (x));
 	g_object_set_data (G_OBJECT (window), "xstuff-cached-y", GINT_TO_POINTER (y));
@@ -343,17 +330,9 @@ draw_zoom_animation (GdkScreen *gscreen,
 	dpy = gdk_x11_display_get_xdisplay (gdk_screen_get_display (gscreen));
 	root_win = GDK_WINDOW_XID (gdk_screen_get_root_window (gscreen));
 	screen = gdk_screen_get_number (gscreen);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	depth = DefaultDepth(dpy,screen);
-#else
-	depth = gdk_drawable_get_depth (gdk_screen_get_root_window (gscreen));
-#endif
 
 	/* frame GC */
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	gdk_colormap_alloc_color (
-		gdk_screen_get_system_colormap (gscreen), &color, FALSE, TRUE);
-#endif
 	gcv.function = GXxor;
 	/* this will raise the probability of the XORed color being different
 	 * of the original color in PseudoColor when not all color cells are
@@ -444,10 +423,6 @@ draw_zoom_animation (GdkScreen *gscreen,
     
 	XUngrabServer(dpy);
 	XFreeGC (dpy, frame_gc);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	gdk_colormap_free_colors (gdk_screen_get_system_colormap (gscreen),
-				  &color, 1);
-#endif
 }
 #undef FRAMES
 
@@ -529,11 +504,7 @@ xstuff_grab_key_on_all_screens (int      keycode,
 	int         i;
 
 	display   = gdk_display_get_default ();
-#if GTK_CHECK_VERSION(3, 0, 0)
 	n_screens = 1; /* gdk-3.10, The number of screens is always 1 */
-#else
-	n_screens = gdk_display_get_n_screens (display);
-#endif
 
 	for (i = 0; i < n_screens; i++) {
 		GdkWindow *root;

@@ -30,11 +30,7 @@
 #include "drive-button.h"
 #include <glib/gi18n.h>
 
-#if GTK_CHECK_VERSION(3, 0, 0)
 G_DEFINE_TYPE (DriveList, drive_list, GTK_TYPE_GRID);
-#else
-G_DEFINE_TYPE (DriveList, drive_list, GTK_TYPE_TABLE);
-#endif
 
 static GVolumeMonitor *volume_monitor = NULL;
 
@@ -84,12 +80,8 @@ drive_list_init (DriveList *self)
 {
     GList *volumes, *mounts, *tmp;
 
-#if GTK_CHECK_VERSION(3, 0, 0)
     gtk_grid_set_column_homogeneous (GTK_GRID (self), TRUE);
     gtk_grid_set_row_homogeneous (GTK_GRID (self), TRUE);
-#else
-    gtk_table_set_homogeneous (GTK_TABLE (self), TRUE);
-#endif
 
     self->volumes = g_hash_table_new (NULL, NULL);
     self->mounts = g_hash_table_new (NULL, NULL);
@@ -248,36 +240,16 @@ relayout_buttons (gpointer data)
     
 	if (self->orientation == GTK_ORIENTATION_HORIZONTAL) {
 	    gtk_container_child_set (GTK_CONTAINER (self), button,
-#if GTK_CHECK_VERSION(3, 0, 0)
 				     "left-attach", i + 1, "top-attach", 0,
 				     "width", 1, "height", 1,
 				     NULL);
-#else
-				     "left_attach", i, "right_attach", i+1,
-				     "top_attach", 0, "bottom_attach", 1,
-				     "x_options", GTK_FILL,
-				     "y_options", GTK_FILL,
-				     NULL);
-#endif
 	} else {
 	    gtk_container_child_set (GTK_CONTAINER (self), button,
-#if GTK_CHECK_VERSION(3, 0, 0)
 				     "left-attach", 0, "top-attach", i + 1,
 				     "width", 1, "height", 1,
 				     NULL);
-#else
-				     "left_attach", 0, "right_attach", 1,
-				     "top_attach", i, "bottom_attach", i+1,
-				     "x_options", GTK_FILL,
-				     "y_options", GTK_FILL,
-				     NULL);
-#endif
 	}
     }
-#if !GTK_CHECK_VERSION(3, 0, 0)
-    /* shrink wrap the table */
-    gtk_table_resize (GTK_TABLE (self), 1, 1);
-#endif
 
     return FALSE;
 }

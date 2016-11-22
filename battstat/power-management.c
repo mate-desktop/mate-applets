@@ -61,10 +61,6 @@
                            "the ACPI subsystem.  Check to make sure the "   \
                            "ACPI subsystem is properly loaded.")
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 static const char *apm_readinfo (BatteryStatus *status);
 static int pm_initialised;
 #ifdef HAVE_UPOWER
@@ -121,7 +117,7 @@ initialise_test( void )
   test_status.on_ac_power = FALSE;
   test_status.charging = FALSE;
 
-  box = GTK_BOX( gtk_vbox_new( 5, FALSE ) );
+  box = GTK_BOX( gtk_box_new (GTK_ORIENTATION_VERTICAL, 5 ) );
 
   gtk_box_pack_start( box, gtk_label_new( "percent" ), TRUE, TRUE, 0);
   w = gtk_spin_button_new_with_range( -1.0, 100.0, 1 );

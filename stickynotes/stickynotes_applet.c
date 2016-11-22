@@ -444,11 +444,7 @@ stickynotes_applet_update_prefs (void)
 	gboolean sys_color, sys_font, sticky, force_default, desktop_hide;
 	char *font_str;
 	char *color_str, *font_color_str;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA color, font_color;
-#else
-	GdkColor color, font_color;
-#endif
 
 	width = g_settings_get_int (stickynotes->settings, "default-width");
 	width = MAX (width, 1);
@@ -478,13 +474,8 @@ stickynotes_applet_update_prefs (void)
 		font_color_str = g_strdup ("#000000");
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gdk_rgba_parse (&color, color_str);
 	gdk_rgba_parse (&font_color, font_color_str);
-#else
-	gdk_color_parse (color_str, &color);
-	gdk_color_parse (font_color_str, &font_color);
-#endif
 
 	g_free (color_str);
 	g_free (font_color_str);
@@ -507,13 +498,8 @@ stickynotes_applet_update_prefs (void)
 			GTK_TOGGLE_BUTTON (stickynotes->w_prefs_desktop),
 			desktop_hide);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_color), &color);
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_font_color), &font_color);
-#else
-	gtk_color_button_set_color (GTK_COLOR_BUTTON (stickynotes->w_prefs_color), &color);
-	gtk_color_button_set_color (GTK_COLOR_BUTTON (stickynotes->w_prefs_font_color), &font_color);
-#endif
 
 	gtk_font_button_set_font_name (GTK_FONT_BUTTON (stickynotes->w_prefs_font), font_str);
 	g_free (font_str);
@@ -622,11 +608,7 @@ stickynotes_applet_panel_icon_get_geometry (int *x, int *y, int *width, int *hei
 
 	widget = GTK_WIDGET (applet->w_image);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_get_preferred_size (widget, NULL, &requisition);
-#else
-	gtk_widget_size_request (widget, &requisition);
-#endif
 
 	gdk_window_get_origin (gtk_widget_get_window (widget), x, y);
 

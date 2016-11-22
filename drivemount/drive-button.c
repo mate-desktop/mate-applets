@@ -29,9 +29,7 @@
 #include "drive-button.h"
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include <gio/gdesktopappinfo.h>
-#endif
 
 #include <string.h>
 
@@ -70,7 +68,6 @@ drive_button_class_init (DriveButtonClass *class)
     GTK_WIDGET_CLASS(class)->button_press_event = drive_button_button_press;
     GTK_WIDGET_CLASS(class)->key_press_event = drive_button_key_press;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     GtkCssProvider *provider;
 
     provider = gtk_css_provider_new ();
@@ -85,22 +82,6 @@ drive_button_class_init (DriveButtonClass *class)
                                     GTK_STYLE_PROVIDER (provider),
                                     GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     g_object_unref (provider);
-
-#else
-    gtk_rc_parse_string ("\n"
-			 "   style \"drive-button-style\"\n"
-			 "   {\n"
-			 "      GtkWidget::focus-line-width=0\n"
-			 "      GtkWidget::focus-padding=0\n"
-			 "      bg_pixmap[NORMAL] = \"<parent>\"\n"
-			 "      bg_pixmap[ACTIVE] = \"<parent>\"\n"
-			 "      bg_pixmap[PRELIGHT] = \"<parent>\"\n"
-			 "      bg_pixmap[INSENSITIVE] = \"<parent>\"\n"
-			 "   }\n"
-			 "\n"
-			 "    class \"DriveButton\" style \"drive-button-style\"\n"
-			 "\n");
-#endif
 }
 
 static void
@@ -202,11 +183,7 @@ position_menu (GtkMenu *menu, gint *x, gint *y,
 
     direction = gtk_widget_get_direction (widget);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     gtk_widget_get_preferred_size (GTK_WIDGET (menu), &requisition, NULL);
-#else
-    gtk_widget_get_requisition (GTK_WIDGET (menu), &requisition);
-#endif
     twidth = requisition.width;
     theight = requisition.height;
 
@@ -383,13 +360,8 @@ drive_button_update (gpointer user_data)
     g_free (display_name);
 
     /* base the icon size on the desired button size */
-#if GTK_CHECK_VERSION (3, 0, 0)
     gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
     gtk_widget_get_preferred_size (gtk_bin_get_child (GTK_BIN (self)), NULL, &image_req);
-#else
-    gtk_widget_size_request (GTK_WIDGET (self), &button_req);
-    gtk_widget_size_request (gtk_bin_get_child (GTK_BIN (self)), &image_req);
-#endif
     width = self->icon_size - (button_req.width - image_req.width);
     height = self->icon_size - (button_req.height - image_req.height);
 
@@ -401,11 +373,7 @@ drive_button_update (gpointer user_data)
     if (icon_info)
     {
 	pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	g_object_unref (icon_info);
-#else
-	gtk_icon_info_free (icon_info);
-#endif
     }
 
     g_object_unref (icon);
@@ -422,11 +390,7 @@ drive_button_update (gpointer user_data)
     gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
     g_object_unref (pixbuf);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
-#else
-    gtk_widget_size_request (GTK_WIDGET (self), &button_req);
-#endif
 
     return FALSE;
 }
@@ -554,60 +518,31 @@ open_drive (DriveButton *self, GtkWidget *item)
     GdkScreen *screen;
     GtkWidget *dialog;
     GError *error = NULL;
-#if GTK_CHECK_VERSION (3, 0, 0)
     GFile *file = NULL;
     GList *files = NULL;
     GdkAppLaunchContext *launch_context;
     GAppInfo *app_info;
-#else
-    char *argv[3] = { "caja", NULL, NULL };
-
-    screen = gtk_widget_get_screen (GTK_WIDGET (self));
-#endif
 
     if (self->volume) {
 	GMount *mount;
 
 	mount = g_volume_get_mount (self->volume);
 	if (mount) {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	    GFile *file;
-#endif
-
 	    file = g_mount_get_root (mount);
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	    argv[1] = g_file_get_uri (file);
-	    g_object_unref(file);
-#endif
-
 	    g_object_unref(mount);
 	}
     } else if (self->mount) {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GFile *file;
-#endif
-
 	file = g_mount_get_root (self->mount);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	argv[1] = g_file_get_uri (file);
-	g_object_unref(file);
-#endif
     } else
 	g_return_if_reached();
 
-#if GTK_CHECK_VERSION (3, 0, 0)
     app_info = g_app_info_get_default_for_type("inode/directory", FALSE);
     if (!app_info)
       app_info = G_APP_INFO (g_desktop_app_info_new ("caja.desktop"));
 
     if (app_info) {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkDisplay *display = gtk_widget_get_display (item);
 	launch_context = gdk_display_get_app_launch_context (display);
-#else
-	launch_context = gdk_app_launch_context_new ();
-#endif
 	screen = gtk_widget_get_screen (GTK_WIDGET (self));
 	gdk_app_launch_context_set_screen (launch_context, screen);
 	files = g_list_prepend (files, file);
@@ -621,21 +556,11 @@ open_drive (DriveButton *self, GtkWidget *item)
     }
 
     if (!app_info || error) {
-#else
-    if (!gdk_spawn_on_screen (screen, NULL, argv, NULL,
-			      G_SPAWN_SEARCH_PATH,
-			      NULL, NULL, NULL, &error)) {
-#endif
 	dialog = gtk_message_dialog_new (GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (self))),
 						     GTK_DIALOG_DESTROY_WITH_PARENT,
 						     GTK_MESSAGE_ERROR,
 						     GTK_BUTTONS_OK,
-#if GTK_CHECK_VERSION (3, 0, 0)
 						     _("Cannot execute Caja"));
-#else
-						     _("Cannot execute '%s'"),
-						     argv[0]);
-#endif
 	if (error)
 	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), error->message, NULL);
 	else
@@ -645,11 +570,8 @@ open_drive (DriveButton *self, GtkWidget *item)
 	gtk_widget_show (dialog);
 	g_error_free (error);
     }
-#if GTK_CHECK_VERSION (3, 0, 0)
+
     g_object_unref(file);
-#else
-    g_free (argv[1]);
-#endif
 }
 
 /* copied from mate-volume-manager/src/manager.c maybe there is a better way than
@@ -994,7 +916,6 @@ drive_button_ensure_popup (DriveButton *self)
 	gtk_container_add (GTK_CONTAINER (self->popup_menu), item);
     }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	/*Set up custom theme and transparency support */
 	GtkWidget *toplevel = gtk_widget_get_toplevel (self->popup_menu);
 	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
@@ -1006,5 +927,4 @@ drive_button_ensure_popup (DriveButton *self)
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
 	gtk_style_context_add_class(context,"mate-panel-menu-bar");
-#endif
 }

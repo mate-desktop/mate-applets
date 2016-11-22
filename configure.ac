@@ -1,7 +1,7 @@
 dnl ***************************************************************************
 dnl *** configure.in for MATE-APPLETS                                      ***
 dnl ***************************************************************************
-AC_INIT(mate-applets, 1.16.0)
+AC_INIT(mate-applets, 1.17.0)
 AC_PREREQ(2.59)
 
 AC_CONFIG_HEADERS(config.h)
@@ -13,7 +13,8 @@ dnl *** Minimum library versions for MATE-APPLETS                          ***
 dnl ***************************************************************************
 GLIB_REQUIRED=2.36.0
 GIO_REQUIRED=2.15.3
-LIBPANEL4_REQUIRED=1.7.0
+GTK_REQUIRED=3.14.0
+LIBPANEL4_REQUIRED=1.17.0
 LIBGTOP_REQUIRED=2.12.0
 LIBNOTIFY_REQUIRED=0.7.0
 UPOWER_REQUIRED=0.9.4
@@ -21,6 +22,8 @@ DBUS_REQUIRED=1.1.2
 DBUS_GLIB_REQUIRED=0.74
 LIBXML_REQUIRED=2.5.0
 POLKIT_REQUIRED=0.97
+LIBWNCK_REQUIRED=3.0.0
+GUCHARMAP_REQUIRED=3.0.0
 dnl ***************************************************************************
 
 AM_MAINTAINER_MODE
@@ -83,40 +86,6 @@ fi
 dnl ***************************************************************************
 
 dnl ***************************************************************************
-dnl *** Check for GTK+ version to use                                       ***
-dnl ***************************************************************************
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
-  [case "$with_gtk" in
-     2.0|3.0) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-   esac],
-  [with_gtk=2.0])
-AC_MSG_RESULT([$with_gtk])
-
-case "$with_gtk" in
-  2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED=2.24.0
-       LIBWNCK_API_VERSION=1.0
-       LIBWNCK_REQUIRED=2.30.0
-       GUCHARMAP_API_VERSION=2
-       GUCHARMAP_REQUIRED=2.32.1
-       ;;
-  3.0) GTK_API_VERSION=3.0
-       GTK_REQUIRED=3.0.0
-       LIBWNCK_API_VERSION=3.0
-       LIBWNCK_REQUIRED=3.0.0
-       GUCHARMAP_API_VERSION=2.90
-       GUCHARMAP_REQUIRED=3.0.0
-       ;;
-esac
-AC_SUBST(GTK_API_VERSION)
-
-dnl ***************************************************************************
-
-
-dnl ***************************************************************************
 dnl *** Use pkg-config to check for dependencies                            ***
 dnl ***************************************************************************
 
@@ -126,7 +95,7 @@ AC_SUBST(GIO_CFLAGS)
 AC_SUBST(GIO_LIBS)
 
 dnl -- Check for GTK+ 2.0 (required) ------------------------------------------
-PKG_CHECK_MODULES(GTK, gtk+-$GTK_API_VERSION >= $GTK_REQUIRED)
+PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQUIRED)
 AC_SUBST(GTK_FLAGS)
 AC_SUBST(GTK_LIBS)
 
@@ -146,7 +115,7 @@ AC_SUBST(GTOP_APPLETS_LIBS)
 AM_CONDITIONAL(BUILD_GTOP_APPLETS, $build_gtop_applets)
 
 dnl -- check for libwnck (required) -------------------------------------------
-PKG_CHECK_MODULES(LIBWNCK, libwnck-$LIBWNCK_API_VERSION >= $LIBWNCK_REQUIRED,,
+PKG_CHECK_MODULES(LIBWNCK, libwnck-3.0 >= $LIBWNCK_REQUIRED,,
 	AC_MSG_ERROR([libwnck is required to build mate-applets.], 1))
 
 AC_SUBST(LIBWNCK_CFLAGS)
@@ -223,10 +192,10 @@ AC_SUBST(UPOWER_LIBS)
 
 dnl -- check for gucharmap (optional) -----------------------------------------
 
-PKG_CHECK_EXISTS([gucharmap-$GUCHARMAP_API_VERSION >= $GUCHARMAP_REQUIRED],
+PKG_CHECK_EXISTS([gucharmap-2.90 >= $GUCHARMAP_REQUIRED],
                  [have_gucharmap=yes], [have_gucharmap=no])
 if test "$have_gucharmap" = "yes"; then
-	PKG_CHECK_MODULES([GUCHARMAP], [gucharmap-$GUCHARMAP_API_VERSION >= $GUCHARMAP_REQUIRED])
+	PKG_CHECK_MODULES([GUCHARMAP], [gucharmap-2.90 >= $GUCHARMAP_REQUIRED])
 	AC_DEFINE([HAVE_GUCHARMAP], [1] ,[Gucharmap Available])
 else
   AC_MSG_WARN([*** 'charpick' applet will be built without gucharmap support ***])
@@ -341,7 +310,7 @@ AC_ARG_ENABLE([stickynotes],
     enable_stickynotes=$enableval,
     enable_stickynotes=yes)
 if test "x$enable_stickynotes" = "xyes"; then
-    PKG_CHECK_MODULES(STICKYNOTES, gtksourceview-$GTK_API_VERSION,
+    PKG_CHECK_MODULES(STICKYNOTES, gtksourceview-3.0,
                       have_gtksourceview=yes, have_gtksourceview=no)
 
     if test "x$enable_stickynotes" = "xyes" -a "x$have_gtksourceview" = "xno"; then
@@ -645,8 +614,6 @@ mate-applets-$VERSION configure summary:
     Prefix:                        ${prefix}
     Source code location:          ${srcdir}
     Compiler:                      ${CC}
-
-    GTK+ version:                  ${GTK_API_VERSION}
 
     Building:
         - accessx-status           $HAVE_XKB

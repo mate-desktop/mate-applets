@@ -41,11 +41,6 @@
 
 #define MAX_CONSECUTIVE_FAULTS (3)
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 static void about_cb (GtkAction      *action,
 		      MateWeatherApplet *gw_applet)
 {
@@ -152,12 +147,8 @@ static void place_widgets (MateWeatherApplet *gw_applet)
     gw_applet->image = gtk_image_new_from_icon_name(icon_name, GTK_ICON_SIZE_BUTTON); 
 
     if (icon_name != NULL) {
-#if GTK_CHECK_VERSION(3, 0, 0)
         gtk_widget_show (gw_applet->image);
         gtk_widget_get_preferred_size (gw_applet->image, &req, NULL);
-#else
-        gtk_widget_size_request(gw_applet->image, &req);
-#endif
         if (horizontal)
             total_size += req.height;
         else
@@ -173,12 +164,8 @@ static void place_widgets (MateWeatherApplet *gw_applet)
         gtk_label_set_text(GTK_LABEL(gw_applet->label), temp);
 
     /* Check the label size to determine box layout */
-#if GTK_CHECK_VERSION(3, 0, 0)
     gtk_widget_show (gw_applet->label);
     gtk_widget_get_preferred_size (gw_applet->label, &req, NULL);
-#else
-    gtk_widget_size_request(gw_applet->label, &req);
-#endif
     if (horizontal)
         total_size += req.height;
     else
@@ -189,13 +176,13 @@ static void place_widgets (MateWeatherApplet *gw_applet)
         gtk_widget_destroy (gw_applet->box);
     
     if (horizontal && (total_size <= panel_size))
-        gw_applet->box = gtk_vbox_new(FALSE, 0);
+        gw_applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
     else if (horizontal && (total_size > panel_size))
-        gw_applet->box = gtk_hbox_new(FALSE, 2);
+        gw_applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
     else if (!horizontal && (total_size <= panel_size))
-        gw_applet->box = gtk_hbox_new(FALSE, 2);
+        gw_applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
     else 
-        gw_applet->box = gtk_vbox_new(FALSE, 0);
+        gw_applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
     /* Rebuild the applet it's visual area */
     gtk_container_add (GTK_CONTAINER (gw_applet->container), gw_applet->box);

@@ -1,8 +1,7 @@
 from os.path import join, getmtime
-from mate_invest.defs import GTK_API_VERSION
 
 import gi
-gi.require_version("Gtk", GTK_API_VERSION)
+gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
@@ -474,5 +473,3 @@ class QuoteUpdater(Gtk.ListStore):
 					break
 		return res
 
-#if Gtk.pygtk_version < (2,8,0):
-#	GObject.type_register(QuoteUpdater)

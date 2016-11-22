@@ -26,12 +26,6 @@
 
 #define UPDATE_TIMEOUT 100
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
-#if GTK_CHECK_VERSION (3, 0, 0)
 static gfloat
 gtk_align_to_gfloat (GtkAlign align)
 {
@@ -47,7 +41,6 @@ gtk_align_to_gfloat (GtkAlign align)
 			return 0.0;
 	}
 }
-#endif
 
 /* TODO - Optimize this a bit */
 static void 
@@ -68,13 +61,8 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
 	 gtk_widget_get_allocation (GTK_WIDGET(widget), &allocation);
 	 width = allocation.width;
 	 height = allocation.height;
-#if GTK_CHECK_VERSION (3, 0, 0)
-
 	 xalign = gtk_align_to_gfloat (gtk_widget_get_halign (widget));
 	 yalign = gtk_align_to_gfloat (gtk_widget_get_valign (widget));
-#else
-	 gtk_misc_get_alignment(GTK_MISC(widget),  &xalign, &yalign);
-#endif
 
 	 nx = x - MAX(width - eyes_applet->eye_width, 0) * xalign - eyes_applet->eye_width / 2;
 	 ny = y - MAX(height- eyes_applet->eye_height, 0) * yalign - eyes_applet->eye_height / 2;
@@ -135,7 +123,6 @@ draw_eye (EyesApplet *eyes_applet,
 static gint 
 timer_cb (EyesApplet *eyes_applet)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
         GdkDisplay *display;
 #if GTK_CHECK_VERSION (3, 20, 0)
         GdkSeat *seat;
@@ -143,12 +130,10 @@ timer_cb (EyesApplet *eyes_applet)
         GdkDeviceManager *device_manager;
         GdkDevice *device;
 #endif
-#endif
         gint x, y;
         gint pupil_x, pupil_y;
         gint i;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
 #if GTK_CHECK_VERSION (3, 20, 0)
         seat = gdk_display_get_default_seat (display);
@@ -156,20 +141,15 @@ timer_cb (EyesApplet *eyes_applet)
         device_manager = gdk_display_get_device_manager (display);
         device = gdk_device_manager_get_client_pointer (device_manager);
 #endif
-#endif
 
         for (i = 0; i < eyes_applet->num_eyes; i++) {
 		if (gtk_widget_get_realized (eyes_applet->eyes[i])) {
-#if GTK_CHECK_VERSION (3, 0, 0)
 #if GTK_CHECK_VERSION (3, 20, 0)
             gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]),
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);
 #else
 			gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]), device, &x, &y, NULL);
-#endif
-#else
-			gtk_widget_get_pointer (eyes_applet->eyes[i], &x, &y);
 #endif
 			if ((x != eyes_applet->pointer_last_x[i]) || (y != eyes_applet->pointer_last_y[i])) { 
 
@@ -242,7 +222,7 @@ setup_eyes (EyesApplet *eyes_applet)
 {
 	int i;
 
-        eyes_applet->hbox = gtk_hbox_new (FALSE, 0);
+        eyes_applet->hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
         gtk_box_pack_start (GTK_BOX (eyes_applet->vbox), eyes_applet->hbox, TRUE, TRUE, 0);
 
 	eyes_applet->eyes = g_new0 (GtkWidget *, eyes_applet->num_eyes);
@@ -267,7 +247,6 @@ setup_eyes (EyesApplet *eyes_applet)
                                     0);
                 
 		if ((eyes_applet->num_eyes != 1) && (i == 0)) {
-#if GTK_CHECK_VERSION (3, 0, 0)
 			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_END);
 			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
 		}
@@ -278,15 +257,6 @@ setup_eyes (EyesApplet *eyes_applet)
 		else {
 			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
 			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
-#else
-			gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 1.0, 0.5);
-		}
-		else if ((eyes_applet->num_eyes != 1) && (i == eyes_applet->num_eyes - 1)) {
-			gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 0.0, 0.5);
-		}
-		else {
-			gtk_misc_set_alignment (GTK_MISC (eyes_applet->eyes[i]), 0.5, 0.5);
-#endif
 		}
 		
                 gtk_widget_realize (eyes_applet->eyes[i]);
@@ -319,7 +289,7 @@ create_eyes (MatePanelApplet *applet)
 	EyesApplet *eyes_applet = g_new0 (EyesApplet, 1);
 
         eyes_applet->applet = applet;
-        eyes_applet->vbox = gtk_vbox_new (FALSE, 0);
+        eyes_applet->vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	eyes_applet->settings = 
 		mate_panel_applet_settings_new (applet, "org.mate.panel.applet.geyes");
 

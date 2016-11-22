@@ -33,11 +33,6 @@
 
 #include "backend.h"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
  /* Icons for the interfaces */
 static const char* const dev_type_icon[DEV_UNKNOWN + 1] = {
 	"mate-netspeed-loopback",    /* DEV_LO */
@@ -96,12 +91,8 @@ typedef struct
 	gboolean change_icon, auto_change_device;
 	gboolean show_icon, short_unit;
 	gboolean show_quality_icon;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA         in_color;
 	GdkRGBA         out_color;
-#else
-	GdkColor in_color, out_color;
-#endif
 	int width;
 
 	GtkWidget *inbytes_text, *outbytes_text;
@@ -189,27 +180,27 @@ applet_change_size_or_orient(MatePanelApplet *applet_widget, int arg1, MateNetsp
 	}
 
 	if (orient == MATE_PANEL_APPLET_ORIENT_LEFT || orient == MATE_PANEL_APPLET_ORIENT_RIGHT) {
-		applet->box = gtk_vbox_new(FALSE, 0);
+		applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 		if (size > 64) {
-			applet->sum_box = gtk_hbox_new(FALSE, 2);
-			applet->in_box = gtk_hbox_new(FALSE, 1);
-			applet->out_box = gtk_hbox_new(FALSE, 1);
+			applet->sum_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+			applet->in_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+			applet->out_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
 		} else {
-			applet->sum_box = gtk_vbox_new(FALSE, 0);
-			applet->in_box = gtk_vbox_new(FALSE, 0);
-			applet->out_box = gtk_vbox_new(FALSE, 0);
+			applet->sum_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+			applet->in_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+			applet->out_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 		}
 		applet->labels_dont_shrink = FALSE;
 	} else {
-		applet->in_box = gtk_hbox_new(FALSE, 1);
-		applet->out_box = gtk_hbox_new(FALSE, 1);
+		applet->in_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+		applet->out_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
 		if (size < 48) {
-			applet->sum_box = gtk_hbox_new(FALSE, 2);
-			applet->box = gtk_hbox_new(FALSE, 1);
+			applet->sum_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+			applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
 			applet->labels_dont_shrink = TRUE;
 		} else {
-			applet->sum_box = gtk_vbox_new(FALSE, 0);
-			applet->box = gtk_vbox_new(FALSE, 0);
+			applet->sum_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+			applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 			applet->labels_dont_shrink = !applet->show_sum;
 		}
 	}
@@ -442,11 +433,7 @@ static void
 redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 {
 	GtkWidget *da = GTK_WIDGET(applet->drawingarea);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkStyleContext *stylecontext = gtk_widget_get_style_context (da);
-#else
-	GtkStyle *style = gtk_widget_get_style (da);
-#endif
 	GdkWindow *real_window = gtk_widget_get_window (da);
 	GdkRectangle ra;
 	GtkStateType state;
@@ -503,7 +490,6 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
 	cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gdk_cairo_set_source_rgba (cr, &applet->in_color);
 	for (i = offset; i < GRAPH_VALUES; i++) {
 		cairo_line_to (cr, in_points[i].x, in_points[i].y);
@@ -511,15 +497,6 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	cairo_stroke (cr);
 
 	gdk_cairo_set_source_rgba (cr, &applet->out_color);
-#else
-	gdk_cairo_set_source_color (cr, &applet->in_color);
-	for (i = offset; i < GRAPH_VALUES; i++) {
-		cairo_line_to (cr, in_points[i].x, in_points[i].y);
-	}
-	cairo_stroke (cr);
-
-	gdk_cairo_set_source_color (cr, &applet->out_color);
-#endif
 	for (i = offset; i < GRAPH_VALUES; i++) {
 		cairo_line_to (cr, out_points[i].x, out_points[i].y);
 	}
@@ -535,11 +512,7 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	layout = gtk_widget_create_pango_layout (da, NULL);
 	pango_layout_set_markup(layout, text, -1);
 	g_free (text);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_render_layout(stylecontext, cr, 3, 2, layout);
-#else
-	gtk_paint_layout(style, real_window, state, FALSE, &ra, da, "max_graph", 3, 2, layout);
-#endif
 	g_object_unref(G_OBJECT(layout));
 
 	text = bytes_to_string(0.0, TRUE, applet->show_bits, applet->short_unit);
@@ -548,11 +521,7 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	pango_layout_set_markup(layout, text, -1);
 	pango_layout_get_pixel_extents (layout, NULL, &logical_rect);
 	g_free (text);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_render_layout(stylecontext, cr, 3, h - 4 - logical_rect.height, layout);
-#else
-	gtk_paint_layout(style, real_window, state, FALSE, &ra, da, "max_graph", 3, h - 4 - logical_rect.height, layout);
-#endif
 	g_object_unref(G_OBJECT(layout));
 }
 
@@ -998,13 +967,13 @@ settings_cb(GtkAction *action, gpointer data)
 
 	gtk_dialog_set_default_response(GTK_DIALOG(applet->settings), GTK_RESPONSE_CLOSE);
 
-	vbox = gtk_vbox_new(FALSE, 0);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 12);
 
-	categories_vbox = gtk_vbox_new(FALSE, 18);
+	categories_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
 	gtk_box_pack_start(GTK_BOX (vbox), categories_vbox, TRUE, TRUE, 0);
 
-	category_vbox = gtk_vbox_new(FALSE, 6);
+	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start(GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
 
 	header_str = g_strconcat("<span weight=\"bold\">", _("General Settings"), "</span>", NULL);
@@ -1020,17 +989,17 @@ settings_cb(GtkAction *action, gpointer data)
 	gtk_box_pack_start(GTK_BOX (category_vbox), category_header_label, FALSE, FALSE, 0);
 	g_free(header_str);
 
-	hbox = gtk_hbox_new(FALSE, 0);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start(GTK_BOX (category_vbox), hbox, TRUE, TRUE, 0);
 
 	indent_label = gtk_label_new("    ");
 	gtk_label_set_justify(GTK_LABEL (indent_label), GTK_JUSTIFY_LEFT);
 	gtk_box_pack_start(GTK_BOX (hbox), indent_label, FALSE, FALSE, 0);
 
-	controls_vbox = gtk_vbox_new(FALSE, 10);
+	controls_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
 	gtk_box_pack_start(GTK_BOX(hbox), controls_vbox, TRUE, TRUE, 0);
 
-	network_device_hbox = gtk_hbox_new(FALSE, 6);
+	network_device_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	gtk_box_pack_start(GTK_BOX(controls_vbox), network_device_hbox, TRUE, TRUE, 0);
 
 	network_device_label = gtk_label_new_with_mnemonic(_("Network _device:"));
@@ -1116,29 +1085,15 @@ settings_cb(GtkAction *action, gpointer data)
 }
 
 static gboolean
-#if GTK_CHECK_VERSION (3, 0, 0)
 da_draw(GtkWidget *widget, cairo_t *cr, gpointer data)
-#else
-da_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data)
-#endif
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	cairo_t *cr;
-	cr = gdk_cairo_create (event->window);
-	gdk_cairo_region (cr, event->region);
-	cairo_clip (cr);
-#endif
 	redraw_graph(applet, cr);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	cairo_destroy (cr);
-#endif
 
 	return FALSE;
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 incolor_changed_cb (GtkColorChooser *button, gpointer data)
 {
@@ -1153,24 +1108,7 @@ incolor_changed_cb (GtkColorChooser *button, gpointer data)
 	g_settings_set_string (applet->gsettings, "in-color", string);
 	g_free (string);
 }
-#else
-static void
-incolor_changed_cb (GtkColorButton *cb, gpointer data)
-{
-	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
-	gchar *color;
-	GdkColor clr;
 
-	gtk_color_button_get_color (cb, &clr);
-	applet->in_color = clr;
-
-	color = g_strdup_printf ("#%04x%04x%04x", clr.red, clr.green, clr.blue);
-	g_settings_set_string (applet->gsettings, "in-color", color);
-	g_free (color);
-}
-#endif
-
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 outcolor_changed_cb (GtkColorChooser *button, gpointer data)
 {
@@ -1185,22 +1123,6 @@ outcolor_changed_cb (GtkColorChooser *button, gpointer data)
 	g_settings_set_string (applet->gsettings, "out-color", string);
 	g_free (string);
 }
-#else
-static void
-outcolor_changed_cb (GtkColorButton *cb, gpointer data)
-{
-	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
-	gchar *color;
-	GdkColor clr;
-
-	gtk_color_button_get_color (cb, &clr);
-	applet->out_color = clr;
-
-	color = g_strdup_printf ("#%04x%04x%04x", clr.red, clr.green, clr.blue);
-	g_settings_set_string (applet->gsettings, "out-color", color);
-	g_free (color);
-}
-#endif
 
 /* Handle info dialog response event
  */
@@ -1229,11 +1151,7 @@ showinfo_cb(GtkAction *action, gpointer data)
 {
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
 	GtkWidget *box, *hbox;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkWidget *grid, *da_frame;
-#else
-	GtkWidget *table, *da_frame;
-#endif
 	GtkWidget *ip_label, *netmask_label;
 	GtkWidget *hwaddr_label, *ptpip_label;
 	GtkWidget *ip_text, *netmask_text;
@@ -1262,18 +1180,12 @@ showinfo_cb(GtkAction *action, gpointer data)
 
 	gtk_dialog_set_default_response(GTK_DIALOG(applet->details), GTK_RESPONSE_CLOSE);
 
-	box = gtk_vbox_new(FALSE, 10);
+	box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
 	gtk_container_set_border_width(GTK_CONTAINER(box), 12);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	grid = gtk_grid_new ();
 	gtk_grid_set_row_spacing (GTK_GRID(grid), 10);
 	gtk_grid_set_column_spacing (GTK_GRID(grid), 15);
-#else
-	table = gtk_table_new(4, 4, FALSE);
-	gtk_table_set_row_spacings(GTK_TABLE(table), 10);
-	gtk_table_set_col_spacings(GTK_TABLE(table), 15);
-#endif
 
 	da_frame = gtk_frame_new(NULL);
 	gtk_frame_set_shadow_type(GTK_FRAME(da_frame), GTK_SHADOW_NONE);
@@ -1281,20 +1193,15 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_widget_set_size_request(GTK_WIDGET(applet->drawingarea), -1, 180);
 	gtk_container_add(GTK_CONTAINER(da_frame), GTK_WIDGET(applet->drawingarea));
 
-	hbox = gtk_hbox_new(FALSE, 5);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	incolor_label = gtk_label_new_with_mnemonic(_("_In graph color"));
 	outcolor_label = gtk_label_new_with_mnemonic(_("_Out graph color"));
 
 	incolor_sel = gtk_color_button_new ();
 	outcolor_sel = gtk_color_button_new ();
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (incolor_sel),  &applet->in_color);
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (outcolor_sel),  &applet->out_color);
-#else
-	gtk_color_button_set_color (GTK_COLOR_BUTTON (incolor_sel),  &applet->in_color);
-	gtk_color_button_set_color (GTK_COLOR_BUTTON (outcolor_sel),  &applet->out_color);
-#endif
 
 	gtk_label_set_mnemonic_widget(GTK_LABEL(incolor_label), incolor_sel);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(outcolor_label), outcolor_sel);
@@ -1363,7 +1270,6 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_misc_set_alignment(GTK_MISC(applet->outbytes_text), 0.0f, 0.5f);
 #endif
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_grid_attach(GTK_GRID(grid), ip_label, 0, 0, 1, 1);
 	gtk_grid_attach(GTK_GRID(grid), ip_text, 1, 0, 1, 1);
 	gtk_grid_attach(GTK_GRID(grid), netmask_label, 2, 0, 1, 1);
@@ -1376,20 +1282,6 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_grid_attach(GTK_GRID(grid), applet->inbytes_text, 1, 2, 1, 1);
 	gtk_grid_attach(GTK_GRID(grid), outbytes_label, 2, 2, 1, 1);
 	gtk_grid_attach(GTK_GRID(grid), applet->outbytes_text, 3, 2, 1, 1);
-#else
-	gtk_table_attach_defaults(GTK_TABLE(table), ip_label, 0, 1, 0, 1);
-	gtk_table_attach_defaults(GTK_TABLE(table), ip_text, 1, 2, 0, 1);
-	gtk_table_attach_defaults(GTK_TABLE(table), netmask_label, 2, 3, 0, 1);
-	gtk_table_attach_defaults(GTK_TABLE(table), netmask_text, 3, 4, 0, 1);
-	gtk_table_attach_defaults(GTK_TABLE(table), hwaddr_label, 0, 1, 1, 2);
-	gtk_table_attach_defaults(GTK_TABLE(table), hwaddr_text, 1, 2, 1, 2);
-	gtk_table_attach_defaults(GTK_TABLE(table), ptpip_label, 2, 3, 1, 2);
-	gtk_table_attach_defaults(GTK_TABLE(table), ptpip_text, 3, 4, 1, 2);
-	gtk_table_attach_defaults(GTK_TABLE(table), inbytes_label, 0, 1, 2, 3);
-	gtk_table_attach_defaults(GTK_TABLE(table), applet->inbytes_text, 1, 2, 2, 3);
-	gtk_table_attach_defaults(GTK_TABLE(table), outbytes_label, 2, 3, 2, 3);
-	gtk_table_attach_defaults(GTK_TABLE(table), applet->outbytes_text, 3, 4, 2, 3);
-#endif
 
 	/* check if we got an ipv6 address */
 	if (applet->devinfo.ipv6 && (strlen (applet->devinfo.ipv6) > 2)) {
@@ -1409,15 +1301,8 @@ showinfo_cb(GtkAction *action, gpointer data)
 		gtk_misc_set_alignment (GTK_MISC (ipv6_label), 0.0f, 0.5f);
 		gtk_misc_set_alignment (GTK_MISC (ipv6_text), 0.0f, 0.5f);
 #endif
-#if GTK_CHECK_VERSION (3, 0, 0)
-
 		gtk_grid_attach (GTK_GRID (grid), ipv6_label, 0, 3, 1, 1);
 		gtk_grid_attach (GTK_GRID (grid), ipv6_text, 1, 3, 1, 1);
-#else
-
-		gtk_table_attach_defaults (GTK_TABLE (table), ipv6_label, 0, 1, 3, 4);
-		gtk_table_attach_defaults (GTK_TABLE (table), ipv6_text, 1, 2, 3, 4);
-#endif
 	}
 
 	if (applet->devinfo.type == DEV_WIRELESS) {
@@ -1456,31 +1341,17 @@ showinfo_cb(GtkAction *action, gpointer data)
 		gtk_misc_set_alignment (GTK_MISC (essid_label), 0.0f, 0.5f);
 		gtk_misc_set_alignment (GTK_MISC (essid_text), 0.0f, 0.5f);
 #endif
-
 		gtk_label_set_selectable (GTK_LABEL (essid_text), TRUE);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gtk_grid_attach (GTK_GRID (grid), signal_label, 2, 4, 1, 1);
 		gtk_grid_attach (GTK_GRID (grid), GTK_WIDGET (applet->signalbar), 3, 4, 1, 1);
 		gtk_grid_attach (GTK_GRID (grid), essid_label, 0, 4, 3, 1);
 		gtk_grid_attach (GTK_GRID (grid), essid_text, 1, 4, 3, 1);
-#else
-		gtk_table_attach_defaults (GTK_TABLE (table), signal_label, 2, 3, 4, 5);
-		gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (applet->signalbar), 3, 4, 4, 5);
-		gtk_table_attach_defaults (GTK_TABLE (table), essid_label, 0, 3, 4, 5);
-		gtk_table_attach_defaults (GTK_TABLE (table), essid_text, 1, 4, 4, 5);
-#endif
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	g_signal_connect(G_OBJECT(applet->drawingarea), "draw",
 			 G_CALLBACK(da_draw),
 			 (gpointer)applet);
-#else
-	g_signal_connect(G_OBJECT(applet->drawingarea), "expose_event",
-			 G_CALLBACK(da_expose_event),
-			 (gpointer)applet);
-#endif
 
 	g_signal_connect(G_OBJECT(incolor_sel), "color_set",
 			 G_CALLBACK(incolor_changed_cb),
@@ -1495,11 +1366,7 @@ showinfo_cb(GtkAction *action, gpointer data)
 
 	gtk_box_pack_start(GTK_BOX(box), da_frame, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(box), hbox, FALSE, FALSE, 0);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_box_pack_start(GTK_BOX(box), grid, FALSE, FALSE, 0);
-#else
-	gtk_box_pack_start(GTK_BOX(box), table, FALSE, FALSE, 0);
-#endif
 
 	gtk_container_add(GTK_CONTAINER(gtk_dialog_get_content_area (applet->details)), box);
 	gtk_widget_show_all(GTK_WIDGET(applet->details));
@@ -1788,21 +1655,13 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	tmp = g_settings_get_string (applet->gsettings, "in-color");
 	if (tmp)
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gdk_rgba_parse (&applet->in_color, tmp);
-#else
-		gdk_color_parse (tmp, &applet->in_color);
-#endif
 		g_free(tmp);
 	}
 	tmp = g_settings_get_string (applet->gsettings, "out-color");
 	if (tmp)
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gdk_rgba_parse (&applet->out_color, tmp);
-#else
-		gdk_color_parse(tmp, &applet->out_color);
-#endif
 		g_free(tmp);
 	}
 
@@ -1831,13 +1690,13 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	applet->dev_pix = gtk_image_new();
 	applet->qual_pix = gtk_image_new();
 
-	applet->pix_box = gtk_hbox_new(FALSE, 0);
+	applet->pix_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	spacer = gtk_label_new("");
 	gtk_box_pack_start(GTK_BOX(applet->pix_box), spacer, TRUE, TRUE, 0);
 	spacer = gtk_label_new("");
 	gtk_box_pack_end(GTK_BOX(applet->pix_box), spacer, TRUE, TRUE, 0);
 
-	spacer_box = gtk_hbox_new(FALSE, 2);
+	spacer_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
 	gtk_box_pack_start(GTK_BOX(applet->pix_box), spacer_box, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(spacer_box), applet->qual_pix, FALSE, FALSE, 0);
 	gtk_box_pack_start(GTK_BOX(spacer_box), applet->dev_pix, FALSE, FALSE, 0);
