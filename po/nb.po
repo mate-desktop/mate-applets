@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-01 10:25+0300\n"
-"PO-Revision-Date: 2016-08-01 07:27+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-11-19 14:35+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -652,7 +652,7 @@ msgstr "Antall viste tegn"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
-msgstr "Om panelprogrammets miniatyrbilde vises eller ei"
+msgstr "Hvorvidt panelprogrammets ikon vises eller ei"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
@@ -766,7 +766,7 @@ msgstr "Skalering av CPU-frekvens er ikke støttet"
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr "Du vil ikke kunne endre frekvensen for din maskin. Maskinen kan enten være feilkonfigurert eller mangle støtte for skalering av CPU-frekvens."
+msgstr "Du vil ikke kunne endre frekvensen for din maskin. Maskinen kan enten være feiloppsatt eller mangle støtte for skalering av CPU-frekvens."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
@@ -865,7 +865,7 @@ msgstr "Et sett øyne for ditt panel"
 
 #: ../geyes/org.mate.panel.applet.geyes.gschema.xml.in.h:1
 msgid "Directory in which the theme is located"
-msgstr "Katalog hvor tema er lokalisert"
+msgstr "Mappen drakten finnes i"
 
 #: ../geyes/themes.c:131
 msgid "Can not launch the eyes applet."
@@ -873,7 +873,7 @@ msgstr "Kan ikke starte panelprogrammet geyes."
 
 #: ../geyes/themes.c:132
 msgid "There was a fatal error while trying to load the theme."
-msgstr "Det oppsto en kritisk feil under lasting av tema."
+msgstr "Det oppsto en kritisk feil under påføring av drakt."
 
 #: ../geyes/themes.c:286
 msgid "Geyes Preferences"
@@ -881,11 +881,11 @@ msgstr "Brukervalg for Geyes"
 
 #: ../geyes/themes.c:319
 msgid "Themes"
-msgstr "Tema"
+msgstr "Drakter"
 
 #: ../geyes/themes.c:344
 msgid "_Select a theme:"
-msgstr "_Velg et tema:"
+msgstr "_Velg en drakt:"
 
 #: ../mateweather/mateweather-about.c:53
 msgid "A panel application for monitoring local weather conditions."
@@ -1016,16 +1016,16 @@ msgstr "Klikk for å gå til Weather.com"
 
 #: ../mateweather/mateweather-dialog.c:717
 msgid "Forecast not currently available for this location."
-msgstr "Værmelding er ikke tilgjengelig for denne lokasjonen."
+msgstr "Værmelding er ikke tilgjengelig for denne plassen."
 
 #. Accessible Name and Description for the components in Preference Dialog
 #: ../mateweather/mateweather-pref.c:165
 msgid "Location view"
-msgstr "Vis lokasjon"
+msgstr "Vis plassering"
 
 #: ../mateweather/mateweather-pref.c:165
 msgid "Select Location from the list"
-msgstr "Velg lokasjon fra listen"
+msgstr "Velg plass fra listen"
 
 #: ../mateweather/mateweather-pref.c:166
 msgid "Update spin button"
@@ -1046,7 +1046,7 @@ msgstr "Skriv inn URL"
 #: ../mateweather/mateweather-pref.c:290
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
-msgstr "Kunne ikke laste XML-database over lokasjoner. Vennligst rapporter dette som en feil."
+msgstr "Kunne ikke laste XML-database over plasser. Innrapporter dette som en feil."
 
 #: ../mateweather/mateweather-pref.c:812
 msgid "Weather Preferences"
@@ -1199,7 +1199,7 @@ msgstr "Generelt"
 
 #: ../mateweather/mateweather-pref.c:1114
 msgid "_Select a location:"
-msgstr "_Velg en lokasjon:"
+msgstr "_Velg en plassering:"
 
 #: ../mateweather/mateweather-pref.c:1140
 msgid "_Find:"
@@ -2001,7 +2001,7 @@ msgstr "Hvis sann, vis hastighet i bit i steden for Byte."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:8
 msgid "If true, show main icon."
-msgstr "Hvis sann, vis hovedminiatyrbilde."
+msgstr "Hvis sann, vis hovedikon."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
 msgid "Short unit legend"
@@ -2019,7 +2019,7 @@ msgstr "Endre ikon"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
 msgid "If true, change the icon due to selected device."
-msgstr "Hvis sann, endre miniatyrbildet i henhold til valgt enhet."
+msgstr "Hvis sann, endre ikonet i henhold til valgt enhet."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
 msgid "Auto change device"
@@ -2063,11 +2063,11 @@ msgstr "Kommando som kjøres når enheten skrus av"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
 msgid "Show signal quality icon"
-msgstr "Vis miniatyrbilde for signalkvalitet"
+msgstr "Vis ikon for signalkvalitet"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
 msgid "If true, show signal quality icon for wireless devices."
-msgstr "Hvis sann, vis miniatyrbilde for signalkvaliteten til trådløsenheter."
+msgstr "Hvis sann, vis signal_kvalitets-ikon for trådløse enheter."
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
 msgid "Netspeed Applet Factory"
@@ -2203,7 +2203,7 @@ msgstr "Forkort _enhetsbeskrivelse"
 
 #: ../netspeed/src/netspeed.c:1063
 msgid "_Change icon according to the selected device"
-msgstr "Endre _miniatyrbilde avhenging av valgt enhet"
+msgstr "Endre _ikon avhenging av valgt enhet"
 
 #: ../netspeed/src/netspeed.c:1067
 msgid "Show _icon"
@@ -2211,7 +2211,7 @@ msgstr "Vis _miniatyrbilde"
 
 #: ../netspeed/src/netspeed.c:1071
 msgid "Show signal _quality icon for wireless devices"
-msgstr "Vis miniatyrbilde for signal_kvalitet for trådløse enheter"
+msgstr "Vis ikon for signalkvaliteten til trådløsenheter"
 
 #: ../netspeed/src/netspeed.c:1202
 #, c-format
@@ -2395,7 +2395,7 @@ msgstr "Skri_ft:"
 
 #: ../stickynotes/stickynotes.ui.h:10
 msgid "Use fo_nt from the system theme"
-msgstr "Bruk skri_ft fra systemets tema"
+msgstr "Bruk skri_ft fra systemets drakt"
 
 #: ../stickynotes/stickynotes.ui.h:11
 msgid "Note C_olor:"
@@ -2415,7 +2415,7 @@ msgstr "Velg en forvalgt farge for notater"
 
 #: ../stickynotes/stickynotes.ui.h:15
 msgid "Use co_lor from the system theme"
-msgstr "Bruk _farger fra systemets tema"
+msgstr "Bruk _farger fra systemets drakt"
 
 #: ../stickynotes/stickynotes.ui.h:16
 msgid "Specify the default height (in pixels) of new notes"
