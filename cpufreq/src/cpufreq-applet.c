@@ -394,9 +394,7 @@ cpufreq_applet_get_preferred_width (GtkWidget *widget, gint *minimum_width, gint
 		gint icon_width;
 
 		gtk_widget_get_preferred_width (applet->icon, &icon_width, NULL);
-		width = gtk_orientable_get_orientation (GTK_ORIENTABLE (applet->box)) == GTK_ORIENTATION_HORIZONTAL ?
-			labels_width + icon_width + 2 :
-			MAX (labels_width, icon_width + 2);
+		width = (labels_width + icon_width + 2);
 	} else {
 		width = labels_width;
 	}
