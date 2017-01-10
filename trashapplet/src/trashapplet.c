@@ -171,6 +171,9 @@ trash_applet_size_allocate (GtkWidget    *widget,
 {
   TrashApplet *applet = TRASH_APPLET (widget);
 
+  GTK_WIDGET_CLASS (trash_applet_parent_class)
+    ->size_allocate (widget, allocation);
+
   switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet)))
   {
     case MATE_PANEL_APPLET_ORIENT_LEFT:
@@ -184,8 +187,6 @@ trash_applet_size_allocate (GtkWidget    *widget,
       break;
   }
 
-  GTK_WIDGET_CLASS (trash_applet_parent_class)
-    ->size_allocate (widget, allocation);
 }
 
 static void
