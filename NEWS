@@ -1,114 +1,99 @@
-Changes in MATE-Applets 1.17.0
-==============================
+### mate-applets 1.17.0
 
-  - Translations update
-  - move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
-  - mateweather: fix temperature label placement with GTK+3
-  - build: require libmateweather 1.16.0
-  - build: check for stable release of libgtop
-  - command: move command output processing into separate function
+  * Translations update
+  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
+  * mateweather: fix temperature label placement with GTK+3
+  * build: require libmateweather 1.16.0
+  * build: check for stable release of libgtop
+  * command: move command output processing into separate function
 
-Changes in MATE-Applets 1.16.0
-==============================
+### mate-applets 1.16.0
 
-  - Build: require polkit 0.97
-  - Use GtkAboutDialog instead of MateAboutDialog
-  - Netspeed: use GtkColorButton/GtkColorChooser
-  - Drop dependency on libmate-desktop
-  - GTK+3: fix various deprecations
-  - Some code cleanups
-  - Translations update
+  * Build: require polkit 0.97
+  * Use GtkAboutDialog instead of MateAboutDialog
+  * Netspeed: use GtkColorButton/GtkColorChooser
+  * Drop dependency on libmate-desktop
+  * GTK+3: fix various deprecations
+  * Some code cleanups
+  * Translations update
 
-Changes in MATE-Applets 1.14.1
-==============================
+### mate-applets 1.14.1
 
-  - Accessx-status: fix possible crash when updating layout
-  - Cpufreq: fix build with kernel 4.7
-  - Cpufreq: make build options --enable-frequency-selector
+  * Accessx-status: fix possible crash when updating layout
+  * Cpufreq: fix build with kernel 4.7
+  * Cpufreq: make build options --enable-frequency-selector
     and --enable-suid actually work
-  - Netspeed: fix default route
-  - Some more fixes and cleanups
-  - Translations update
-  - Make distcheck use currently selected GTK+ version
+  * Netspeed: fix default route
+  * Some more fixes and cleanups
+  * Translations update
+  * Make distcheck use currently selected GTK+ version
 
-Changes in MATE-Applets 1.14.0
-==============================
+### mate-applets 1.14.0
 
-  - Drop MateConf migration scripts
-  - Drop null_applet which isn't even buildable these days
-  - Re-license command and timer applets under GPL-2+
-  - Merge netspeed applet from mate-netspeed project (and discontinue
+  * Drop MateConf migration scripts
+  * Drop null_applet which isn't even buildable these days
+  * Re-license command and timer applets under GPL-2+
+  * Merge netspeed applet from mate-netspeed project (and discontinue
     that project)
-  - GTK+3: fix cpufreq applet rendering
-  - GTK+3: fix setting fg/bg colors and font type in stickynotes applet
-  - GTK+3: fix several deprecations
-  - Some more fixes and cleanups
-  - Translations update
-  - Fix Changelog generation
+  * GTK+3: fix cpufreq applet rendering
+  * GTK+3: fix setting fg/bg colors and font type in stickynotes applet
+  * GTK+3: fix several deprecations
+  * Some more fixes and cleanups
+  * Translations update
+  * Fix Changelog generation
 
-Changes in MATE-Applets 1.12.1
-==============================
+### mate-applets 1.12.1
 
-  - Drivemount: fix invisible text with some GTK+3 themes
-  - Translations update
+  * Drivemount: fix invisible text with some GTK+3 themes
+  * Translations update
 
-Changes in MATE-Applets 1.12.0
-==============================
+### mate-applets 1.12.0
 
-  - Accessx-status, geyes: have applet background automatically painted
-  - Cpufreq: make cpupower the default library
-  - Retrieve strings directly from gschema (requires intltool 0.50.1)
-  - Drop useless dependency on mate-icon-theme
-  - GTK+3: fix missing icons with custom icon theme
-  - GTK+3: make cpufreq, charpick and drivemount support custom panel
-    themes
-  - Some more GTK+3 fixes
-  - Several small fixes and cleanups
+  * Accessx-status, geyes: have applet background automatically painted
+  * Cpufreq: make cpupower the default library
+  * Retrieve strings directly from gschema (requires intltool 0.50.1)
+  * Drop useless dependency on mate-icon-theme
+  * GTK+3: fix missing icons with custom icon theme
+  * GTK+3: make cpufreq, charpick and drivemount support custom panel themes
+  * Some more GTK+3 fixes
+  * Several small fixes and cleanups
 
-Changes in MATE-Applets 1.10.3
-==============================
+### mate-applets 1.10.3
 
-  - Several small help fixes
-  - Rename sticky-notes help directory
+  * Several small help fixes
+  * Rename sticky-notes help directory
 
-Changes in MATE-Applets 1.10.2
-==============================
+### mate-applets 1.10.2
 
-  - Charpick, geyes: restore missing button icons in dialogs
-  - Actually install manpages on make install
-  - Multiple help fixes in several applets
+  * Charpick, geyes: restore missing button icons in dialogs
+  * Actually install manpages on make install
+  * Multiple help fixes in several applets
 
-Changes in MATE-Applets 1.10.1
-==============================
+### mate-applets 1.10.1
 
-  - Battstat applet: fix NetBSD APM support
-  - Invest applet: display proper icon in About dialog
-  - Multiple help fixes in several applets
-  - GTK+3 fixes
+  * Battstat applet: fix NetBSD APM support
+  * Invest applet: display proper icon in About dialog
+  * Multiple help fixes in several applets
+  * GTK+3 fixes
 
-Changes in MATE-Applets 1.10.0
-==============================
+### mate-applets 1.10.0
 
-  - Use MateAboutDialog from libmate-desktop.
+  * Use MateAboutDialog from libmate-desktop.
 
-Changes in MATE-Applets 1.8.0
-=============================
+### mate-applets 1.8.0
 
-General:
-  - Move from mate-doc-utils to yelp-tools.
-  - Replace libmatewnck with gnome's libwnck.
-  - Replace mucharmap in with gucharmap.
-  - Add Gtk+3 support.
-  - New command applet that displays output from a command.
-  - Replace broken timer applet with new applet written in C.
-  - Serveal enhancement to invest-applet.
-  - Remove broken modem-light applet.
+  * Move from mate-doc-utils to yelp-tools.
+  * Replace libmatewnck with gnome's libwnck.
+  * Replace mucharmap in with gucharmap.
+  * Add Gtk+3 support.
+  * New command applet that displays output from a command.
+  * Replace broken timer applet with new applet written in C.
+  * Serveal enhancement to invest-applet.
+  * Remove broken modem-light applet.
 
-Changes in MATE-Applets 1.5.0
-=============================
+### mate-applets 1.5.0
 
-General:
-  - Migration to GSettings
-  - Update to latest libmatepanelapplet-4.0
-  - Mixer applet moved to mate-media
-  - Timer applet is not migrated yet
+  * Migration to GSettings
+  * Update to latest libmatepanelapplet-4.0
+  * Mixer applet moved to mate-media
+  * Timer applet is not migrated yet
