@@ -393,6 +393,30 @@ chooser_button_clicked (GtkButton *button, charpick_data *curr_data)
    indication be drawn on the label itself when space is tight. Taken from the clock applet.
    FIXME : This is an Evil Hack and should be fixed when the focus padding can be overridden at the gtk+ level */
 
+#if GTK_CHECK_VERSION (3, 20, 0)
+static inline void force_no_button_padding (GtkWidget *widget)
+{
+	GtkCssProvider *provider;
+
+	provider = gtk_css_provider_new ();
+
+	gtk_css_provider_load_from_data (provider,
+	                                 "#charpick-applet-button {\n"
+	                                 "border-width: 0px;\n"
+	                                 "padding: 0px;\n"
+	                                 "margin: 0px;\n"
+	                                 "}",
+	                                 -1,
+	                                 NULL);
+	gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
+	                                GTK_STYLE_PROVIDER (provider),
+	                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+	g_object_unref (provider);
+
+	gtk_widget_set_name (widget, "charpick-applet-button");
+}
+#else
 static inline void force_no_focus_padding (GtkWidget *widget)
 {
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -436,6 +460,7 @@ static inline void force_no_focus_padding (GtkWidget *widget)
 
   gtk_widget_set_name (widget, "charpick-applet-button");
 }
+#endif
 
 /* creates table of buttons, sets up their callbacks, and packs the table in
    the event box */
@@ -500,7 +525,11 @@ build_table(charpick_data *p_curr_data)
     gtk_container_add (GTK_CONTAINER (button), arrow);
     gtk_button_set_relief(GTK_BUTTON(button), GTK_RELIEF_NONE);
     /* FIXME : evil hack (see force_no_focus_padding) */
+#if GTK_CHECK_VERSION (3, 20, 0)
+    force_no_button_padding (button);
+#else
     force_no_focus_padding (button);
+#endif
     gtk_box_pack_start (GTK_BOX (box), button, TRUE, TRUE, 0);
     g_signal_connect (G_OBJECT (button), "clicked",
                               G_CALLBACK (chooser_button_clicked),
@@ -539,7 +568,11 @@ build_table(charpick_data *p_curr_data)
     gtk_widget_show (toggle_button[i]);
     gtk_button_set_relief(GTK_BUTTON(toggle_button[i]), GTK_RELIEF_NONE);
     /* FIXME : evil hack (see force_no_focus_padding) */
+#if GTK_CHECK_VERSION (3, 20, 0)
+    force_no_button_padding (toggle_button[i]);
+#else
     force_no_focus_padding (toggle_button[i]);
+#endif
     gtk_widget_set_tooltip_text (toggle_button[i], name);
     g_free (name);
 
