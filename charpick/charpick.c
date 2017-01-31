@@ -396,7 +396,7 @@ chooser_button_clicked (GtkButton *button, charpick_data *curr_data)
 static inline void force_no_focus_padding (GtkWidget *widget)
 {
 #if GTK_CHECK_VERSION (3, 0, 0)
-	gboolean        first_time = TRUE;
+	static gboolean first_time = TRUE;
 	GtkCssProvider *provider;
 
 	if (first_time) {
@@ -418,7 +418,7 @@ static inline void force_no_focus_padding (GtkWidget *widget)
 		first_time = FALSE;
 	}
 #else
-  gboolean first_time=TRUE;
+  static gboolean first_time = TRUE;
 
   if (first_time) {
     gtk_rc_parse_string ("\n"
