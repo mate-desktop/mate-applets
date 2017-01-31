@@ -381,7 +381,7 @@ chooser_button_clicked (GtkButton *button, charpick_data *curr_data)
 
 static inline void force_no_focus_padding (GtkWidget *widget)
 {
-	gboolean        first_time = TRUE;
+	static gboolean first_time = TRUE;
 	GtkCssProvider *provider;
 
 	if (first_time) {
