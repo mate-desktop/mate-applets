@@ -776,7 +776,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	GtkWidget* pref_basic_update_alignment;
 	GtkWidget* pref_basic_update_lbl;
 	GtkWidget* pref_basic_update_hbox;
-	GObject* pref_basic_update_spin_adj;
+	GtkAdjustment* pref_basic_update_spin_adj;
 	GtkWidget* pref_basic_update_sec_lbl;
 	GtkWidget* pref_basic_note_lbl;
 	GtkWidget* pref_loc_hbox;
@@ -1055,7 +1055,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_widget_show (pref_basic_update_hbox);
 
 	pref_basic_update_spin_adj = gtk_adjustment_new (30, 1, 3600, 5, 25, 1);
-	pref->priv->basic_update_spin = gtk_spin_button_new (GTK_ADJUSTMENT (pref_basic_update_spin_adj), 1, 0);
+	pref->priv->basic_update_spin = gtk_spin_button_new (pref_basic_update_spin_adj, 1, 0);
 	gtk_widget_show (pref->priv->basic_update_spin);
 
 	gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (pref->priv->basic_update_spin), TRUE);
