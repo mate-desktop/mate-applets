@@ -38,6 +38,8 @@
 #define NEVER_SENSITIVE "never_sensitive"
 
 struct _MateWeatherPrefPrivate {
+	GtkWidget* notebook;
+
 	GtkWidget* basic_temp_combo;
 	GtkWidget* basic_speed_combo;
 	GtkWidget* basic_dist_combo;
@@ -734,11 +736,16 @@ static void find_entry_changed(GtkEditable* entry, MateWeatherPref* pref)
 }
 
 
-static void help_cb(GtkDialog* dialog)
+static void help_cb(GtkDialog* dialog, MateWeatherPref* pref)
 {
+	gint current_page;
+	gchar *uri;
 	GError* error = NULL;
 
-	gtk_show_uri(gtk_widget_get_screen(GTK_WIDGET(dialog)), "help:mateweather/mateweather-prefs", gtk_get_current_event_time(), &error);
+	current_page = gtk_notebook_get_current_page (GTK_NOTEBOOK (pref->priv->notebook));
+	uri = g_strdup_printf ("help:mateweather/mateweather-prefs#mateweather-%s", (current_page == 0) ? "metric" : "change-location");
+	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)), uri, gtk_get_current_event_time (), &error);
+	g_free (uri);
 
 	if (error)
 	{
@@ -757,7 +764,7 @@ static void response_cb(GtkDialog* dialog, gint id, MateWeatherPref* pref)
 {
 	if (id == GTK_RESPONSE_HELP)
 	{
-		help_cb(dialog);
+		help_cb(dialog, pref);
 	}
 	else
 	{
@@ -769,7 +776,6 @@ static void response_cb(GtkDialog* dialog, gint id, MateWeatherPref* pref)
 static void mateweather_pref_create(MateWeatherPref* pref)
 {
 	GtkWidget* pref_vbox;
-	GtkWidget* pref_notebook;
 	#ifdef RADARMAP
 		GtkWidget* radar_toggle_hbox;
 	#endif /* RADARMAP */
@@ -815,10 +821,10 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_box_set_spacing (GTK_BOX (pref_vbox), 2);
 	gtk_widget_show (pref_vbox);
 
-	pref_notebook = gtk_notebook_new ();
-	gtk_container_set_border_width (GTK_CONTAINER (pref_notebook), 5);
-	gtk_widget_show (pref_notebook);
-	gtk_box_pack_start (GTK_BOX (pref_vbox), pref_notebook, TRUE, TRUE, 0);
+	pref->priv->notebook = gtk_notebook_new ();
+	gtk_container_set_border_width (GTK_CONTAINER (pref->priv->notebook), 5);
+	gtk_widget_show (pref->priv->notebook);
+	gtk_box_pack_start (GTK_BOX (pref_vbox), pref->priv->notebook, TRUE, TRUE, 0);
 
   /*
    * General settings page.
@@ -826,7 +832,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	pref_basic_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
 	gtk_container_set_border_width (GTK_CONTAINER (pref_basic_vbox), 12);
-	gtk_container_add (GTK_CONTAINER (pref_notebook), pref_basic_vbox);
+	gtk_container_add (GTK_CONTAINER (pref->priv->notebook), pref_basic_vbox);
 
 	pref_basic_update_alignment = gtk_alignment_new (0, 0.5, 0, 1);
 	gtk_widget_show (pref_basic_update_alignment);
@@ -1101,14 +1107,14 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	pref_basic_note_lbl = gtk_label_new (_("General"));
 	gtk_widget_show (pref_basic_note_lbl);
-	gtk_notebook_set_tab_label (GTK_NOTEBOOK (pref_notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (pref_notebook), 0), pref_basic_note_lbl);
+	gtk_notebook_set_tab_label (GTK_NOTEBOOK (pref->priv->notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (pref->priv->notebook), 0), pref_basic_note_lbl);
 
   /*
    * Location page.
    */
 	pref_loc_hbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (pref_loc_hbox), 12);
-	gtk_container_add (GTK_CONTAINER (pref_notebook), pref_loc_hbox);
+	gtk_container_add (GTK_CONTAINER (pref->priv->notebook), pref_loc_hbox);
 
 	tree_label = gtk_label_new_with_mnemonic (_("_Select a location:"));
 #if GTK_CHECK_VERSION (3, 16, 0)
@@ -1165,7 +1171,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	pref_loc_note_lbl = gtk_label_new (_("Location"));
 	gtk_widget_show (pref_loc_note_lbl);
-	gtk_notebook_set_tab_label (GTK_NOTEBOOK (pref_notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (pref_notebook), 1), pref_loc_note_lbl);
+	gtk_notebook_set_tab_label (GTK_NOTEBOOK (pref->priv->notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (pref->priv->notebook), 1), pref_loc_note_lbl);
 
 
 	g_signal_connect (G_OBJECT (pref), "response", G_CALLBACK (response_cb), pref);
