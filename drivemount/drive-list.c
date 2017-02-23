@@ -88,7 +88,6 @@ drive_list_init (DriveList *self)
     self->orientation = GTK_ORIENTATION_HORIZONTAL;
     self->layout_tag = 0;
     self->icon_size = 24;
-    self->relief = GTK_RELIEF_NORMAL;
 
     /* listen for drive connects/disconnects, and add
      * currently connected drives. */
@@ -339,7 +338,6 @@ add_volume (DriveList *self, GVolume *volume)
 	return;
 
     button = drive_button_new (volume);
-    gtk_button_set_relief (GTK_BUTTON (button), self->relief);
     drive_button_set_size (DRIVE_BUTTON (button), self->icon_size);
     gtk_container_add (GTK_CONTAINER (self), button);
     gtk_widget_show (button);
@@ -382,7 +380,6 @@ add_mount (DriveList *self, GMount *mount)
 	return;
 
     button = drive_button_new_from_mount (mount);
-    gtk_button_set_relief (GTK_BUTTON (button), self->relief);
     drive_button_set_size (DRIVE_BUTTON (button), self->icon_size);
     gtk_container_add (GTK_CONTAINER (self), button);
     gtk_widget_show (button);
@@ -434,28 +431,4 @@ drive_list_set_panel_size (DriveList *self, int panel_size)
 	g_hash_table_foreach (self->volumes, set_icon_size, self);
 	g_hash_table_foreach (self->mounts, set_icon_size, self);
     }
-}
-
-static void
-set_button_relief (gpointer key, gpointer value, gpointer user_data)
-{
-    GtkButton *button = value;
-    DriveList *self = user_data;
-
-    gtk_button_set_relief (button, self->relief);
-}
-
-void
-drive_list_set_transparent (DriveList *self, gboolean transparent)
-{
-    GtkReliefStyle relief;
-   
-    relief  = transparent ? GTK_RELIEF_NONE : GTK_RELIEF_NORMAL;
-
-    if (relief == self->relief)
-        return;
-
-    self->relief = relief;
-    g_hash_table_foreach (self->volumes, set_button_relief, self);
-    g_hash_table_foreach (self->mounts, set_button_relief, self);
 }
