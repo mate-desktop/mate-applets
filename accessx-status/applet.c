@@ -374,7 +374,7 @@ static guint _bk_timeout = 0;
 
 static gboolean timer_reset_slowkeys_image(gpointer user_data)
 {
-	GdkPixbuf* pixbuf = gtk_widget_render_icon(GTK_WIDGET(user_data), SLOWKEYS_IDLE_ICON, icon_size_spec, NULL);
+	GdkPixbuf* pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(user_data), SLOWKEYS_IDLE_ICON, icon_size_spec);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(user_data), pixbuf);
 	g_object_unref(pixbuf);
@@ -384,7 +384,7 @@ static gboolean timer_reset_slowkeys_image(gpointer user_data)
 
 static gboolean timer_reset_bouncekeys_image(gpointer user_data)
 {
-	GdkPixbuf* pixbuf = gtk_widget_render_icon(GTK_WIDGET(user_data), BOUNCEKEYS_ICON, icon_size_spec, NULL);
+	GdkPixbuf* pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(user_data), BOUNCEKEYS_ICON, icon_size_spec);
 
 	gtk_image_set_from_pixbuf(GTK_IMAGE(user_data), pixbuf);
 	g_object_unref(pixbuf);
@@ -467,7 +467,7 @@ static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapp
 		}
 	}
 
-	ret_pixbuf = gtk_widget_render_icon(GTK_WIDGET(sapplet->applet), stock_id, icon_size_spec, NULL);
+	ret_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), stock_id, icon_size_spec);
 
 	if (!is_idle)
 	{
@@ -529,7 +529,7 @@ static GdkPixbuf* accessx_status_applet_bouncekeys_image(AccessxStatusApplet* sa
 				break;
 		}
 	}
-	tmp_pixbuf = gtk_widget_render_icon(GTK_WIDGET(sapplet->applet), stock_id, icon_size_spec, NULL);
+	tmp_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), stock_id, icon_size_spec);
 
 	if (tmp_pixbuf)
 	{
@@ -549,7 +549,7 @@ static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sap
 {
 	GdkPixbuf* mouse_pixbuf = NULL, *button_pixbuf, *dot_pixbuf, *tmp_pixbuf;
 	gchar* which_dot = MOUSEKEYS_DOT_LEFT;
-	tmp_pixbuf = gtk_widget_render_icon(GTK_WIDGET(sapplet->applet), MOUSEKEYS_BASE_ICON, icon_size_spec, NULL);
+	tmp_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), MOUSEKEYS_BASE_ICON, icon_size_spec);
 	mouse_pixbuf = gdk_pixbuf_copy(tmp_pixbuf);
 	g_object_unref(tmp_pixbuf);
 	/* composite in the buttons */
@@ -561,7 +561,7 @@ static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sap
 		{
 			if (event->ptr_buttons & button_icons[i].mask)
 			{
-				button_pixbuf = gtk_widget_render_icon(GTK_WIDGET(sapplet->applet), button_icons[i].stock_id, icon_size_spec, NULL);
+				button_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), button_icons[i].stock_id, icon_size_spec);
 				gdk_pixbuf_composite(button_pixbuf, mouse_pixbuf, 0, 0, gdk_pixbuf_get_width(button_pixbuf), gdk_pixbuf_get_height(button_pixbuf), 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
 			}
 		}
@@ -583,7 +583,7 @@ static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sap
 				break;
 		}
 	}
-	dot_pixbuf = gtk_widget_render_icon(GTK_WIDGET(sapplet->applet), which_dot, icon_size_spec, NULL);
+	dot_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), which_dot, icon_size_spec);
 
 	gdk_pixbuf_composite(dot_pixbuf, mouse_pixbuf, 0, 0, gdk_pixbuf_get_width(dot_pixbuf), gdk_pixbuf_get_height(dot_pixbuf), 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
 
@@ -873,7 +873,7 @@ static GtkIconSet* accessx_status_applet_altgraph_icon_set(AccessxStatusApplet* 
 				break;
 		}
 
-		icon_base = gtk_widget_render_icon(widget, ACCESSX_BASE_ICON, icon_size_spec, NULL);
+		icon_base = gtk_widget_render_icon_pixbuf(widget, ACCESSX_BASE_ICON, icon_size_spec);
 		pixbuf = gdk_pixbuf_copy(icon_base);
 		g_object_unref(icon_base);
 		/*
