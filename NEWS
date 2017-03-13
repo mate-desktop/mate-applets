@@ -1,11 +1,15 @@
-### mate-applets 1.17.0
+### mate-applets 1.18.0
 
+  * NEWS: use consistent, project wide, markdown-like formatting
+    to make generating release announcements easier
+  * Build: require libmateweather and mate-panel >= 1.17
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
+    --with-gtk build option
+  * Weather: fix temperature label placement
+  * Weather: show proper help section for each tab of prefs dialog
+  * Fix some GTK+ deprecations and runtime warnings
+  * Some code cleanups
   * Translations update
-  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
-  * mateweather: fix temperature label placement with GTK+3
-  * build: require libmateweather 1.16.0
-  * build: check for stable release of libgtop
-  * command: move command output processing into separate function
 
 ### mate-applets 1.16.0
 
