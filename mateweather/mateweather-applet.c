@@ -502,14 +502,6 @@ update_finish (WeatherInfo *info, gpointer data)
     }
 }
 
-gint suncalc_timeout_cb (gpointer data)
-{
-    WeatherInfo *info = ((MateWeatherApplet *)data)->mateweather_info;
-    update_finish(info, data);
-    return 0;  /* Do not repeat timeout (will be reset by update_finish) */
-}
-
-
 void mateweather_update (MateWeatherApplet *gw_applet)
 {
     WeatherPrefs prefs;
