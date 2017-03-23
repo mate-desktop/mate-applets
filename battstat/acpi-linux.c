@@ -350,6 +350,11 @@ gboolean acpi_process_event(struct acpi_info * acpiinfo)
     buffer=g_string_new(NULL);
     g_io_channel_read_line_string   ( acpiinfo->channel,buffer,&i,&gerror);
 
+    if (gerror != NULL) {
+      g_warning ("%s", gerror->message);
+      g_error_free (gerror);
+    }
+
     gboolean result;
 
     evt = parse_acpi_event(buffer);
