@@ -23,6 +23,7 @@
  */
 
 #include <config.h>
+#include <string.h>
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -253,7 +254,7 @@ process_command_output (CommandApplet *command_applet, gchar *output)
 {
     gtk_widget_set_tooltip_text (GTK_WIDGET (command_applet->label), command_applet->command);
 
-    if ((output == NULL) || (output[0] == 0))
+    if ((output == NULL) || (output[0] == '\0'))
     {
         gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
         return;
@@ -287,20 +288,13 @@ process_command_output (CommandApplet *command_applet, gchar *output)
     }
     else
     {
-        /* check output length */
-        if (strlen(output) > command_applet->width)
-        {
-            GString *strip_output;
-            strip_output = g_string_new_len (output, command_applet->width);
-            g_free (output);
-            output = strip_output->str;
-            g_string_free (strip_output, FALSE);
-        }
+        /* Remove leading and trailing whitespace */
+        g_strstrip (output);
 
-        /* remove last char if it is '\n' to avoid alignment problems */
-        if (g_str_has_suffix (output, "\n"))
+        /* check output length */
+        if (strlen (output) > command_applet->width)
         {
-            output[strlen(output) - 1] = 0;
+            output[command_applet->width] = '\0';
         }
 
         gtk_label_set_text (command_applet->label, output);
