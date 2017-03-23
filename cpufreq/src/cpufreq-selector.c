@@ -18,6 +18,7 @@
  */
 
 #include <config.h>
+#include <sys/sysinfo.h>
 
 #ifdef HAVE_POLKIT
 #include <dbus/dbus-glib.h>
@@ -173,16 +174,20 @@ cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 				      guint            cpu,
 				      guint            frequency)
 {
-	SelectorAsyncData *data;
+    guint            cores;
+    cores = get_nprocs() ;
+	for (cpu = 0; cpu < cores; cpu = cpu+1){ 
+	    SelectorAsyncData *data;
 
-	data = g_new0 (SelectorAsyncData, 1);
+	    data = g_new0 (SelectorAsyncData, 1);
 
-	data->selector = selector;
-	data->call = FREQUENCY;
-	data->cpu = cpu;
-	data->frequency = frequency;
+	    data->selector = selector;
+	    data->call = FREQUENCY;
+	    data->cpu = cpu;
+	    data->frequency = frequency;
 
-	selector_set_frequency_async (data);
+	    selector_set_frequency_async (data);
+        }
 }
 
 static void
@@ -220,16 +225,20 @@ cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
 				     guint            cpu,
 				     const gchar     *governor)
 {
-	SelectorAsyncData *data;
+    guint            cores;
+    cores = get_nprocs() ;
+    for (cpu = 0; cpu < cores; cpu = cpu+1){
+	    SelectorAsyncData *data;
 
-	data = g_new0 (SelectorAsyncData, 1);
+	    data = g_new0 (SelectorAsyncData, 1);
 
-	data->selector = selector;
-	data->call = GOVERNOR;
-	data->cpu = cpu;
-	data->governor = g_strdup (governor);
+	    data->selector = selector;
+	    data->call = GOVERNOR;
+	    data->cpu = cpu;
+	    data->governor = g_strdup (governor);
 
-	selector_set_governor_async (data);
+	    selector_set_governor_async (data);
+   }
 }
 #else /* !HAVE_POLKIT */
 static void
@@ -262,11 +271,16 @@ cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
 				      guint            cpu,
 				      guint            frequency)
 {
-	gchar *args;
+    guint            cores;
+    cores = get_nprocs() ;
 
-	args = g_strdup_printf ("-c %u -f %u", cpu, frequency);
-	cpufreq_selector_run_command (selector, args);
-	g_free (args);
+    for (cpu = 0; cpu < cores; cpu = cpu+1){
+	    gchar *args;
+
+	    args = g_strdup_printf ("-c %u -f %u", cpu, frequency);
+	    cpufreq_selector_run_command (selector, args);
+	    g_free (args);
+    }
 }
 
 void
@@ -274,10 +288,14 @@ cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
 				     guint            cpu,
 				     const gchar     *governor)
 {
-	gchar *args;
+    guint            cores;
+    cores = get_nprocs() ;
+    for (cpu = 0; cpu < cores; cpu = cpu+1){
+	    gchar *args;
 
-	args = g_strdup_printf ("-c %u -g %s", cpu, governor);
-	cpufreq_selector_run_command (selector, args);
-	g_free (args);
+	    args = g_strdup_printf ("-c %u -g %s", cpu, governor);
+	    cpufreq_selector_run_command (selector, args);
+	    g_free (args);
+    }
 }
 #endif /* HAVE_POLKIT */
