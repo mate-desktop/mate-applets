@@ -451,7 +451,8 @@ update_finish (WeatherInfo *info, gpointer data)
 	    place_widgets(gw_applet);
 
 #ifdef HAVE_LIBNOTIFY
-        if (gw_applet->mateweather_pref.show_notifications)
+        if (gw_applet->mateweather_pref.show_notifications &&
+            !weather_info_equal(gw_applet->mateweather_previnfo, gw_applet->mateweather_info))
         {
 		    NotifyNotification *n;
 	            
@@ -491,6 +492,9 @@ update_finish (WeatherInfo *info, gpointer data)
 		   	 g_free (detail);
 		    }
         }
+
+        weather_info_free (gw_applet->mateweather_previnfo);
+        gw_applet->mateweather_previnfo = weather_info_clone (gw_applet->mateweather_info);
 #endif
     }
     else
@@ -547,4 +551,5 @@ void mateweather_update (MateWeatherApplet *gw_applet)
 						    &prefs,
 						    update_finish, gw_applet);
     }
+
 }

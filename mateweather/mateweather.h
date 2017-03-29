@@ -27,6 +27,9 @@ G_BEGIN_DECLS
 typedef struct _MateWeatherApplet {
 	MatePanelApplet* applet;
 	WeatherInfo* mateweather_info;
+#ifdef HAVE_LIBNOTIFY
+	WeatherInfo* mateweather_previnfo;
+#endif
 
 	GSettings* settings;
 
