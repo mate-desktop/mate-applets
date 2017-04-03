@@ -546,6 +546,7 @@ void mateweather_update (MateWeatherApplet *gw_applet)
 	weather_info_update(gw_applet->mateweather_info, &prefs,
 			    update_finish, gw_applet);
     } else {
+        weather_info_abort (gw_applet->mateweather_info);
         weather_info_free(gw_applet->mateweather_info);
         gw_applet->mateweather_info = weather_info_new(gw_applet->mateweather_pref.location,
 						    &prefs,
