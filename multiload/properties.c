@@ -30,6 +30,8 @@
 
 #define PROP_SPEED		6
 #define PROP_SIZE		7
+#define PROP_LOADAVGMAX         8
+#define PROP_LOADAVGOLD         9
 #define HIG_IDENTATION		"    "
 #define NEVER_SENSITIVE		"never_sensitive"
 
@@ -183,6 +185,9 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
 			}
 			
 			break;
+		}
+                case PROP_LOADAVGMAX:
+		{
 		}
 		default:
 			g_assert_not_reached();
@@ -551,9 +556,67 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	g_free(label_text);
 	
 	
+/*
 	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
 	gtk_widget_show (category_vbox);
+*/
+	control_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
+	gtk_widget_show (control_hbox);
+
+	label = gtk_label_new_with_mnemonic(_("Load Avg Maxx: "));
+#if GTK_CHECK_VERSION (3, 16, 0)
+	gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+#else
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
+#endif
+	gtk_size_group_add_widget (label_size, label);
+	gtk_box_pack_start (GTK_BOX (control_hbox), label, FALSE, FALSE, 0);
+
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+	gtk_box_pack_start (GTK_BOX (control_hbox), hbox, TRUE, TRUE, 0);
+	gtk_widget_show (hbox);
+
+	spin_button = gtk_spin_button_new_with_range(1, 10, 1);
+	gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
+	g_object_set_data(G_OBJECT(spin_button), "MultiloadApplet", ma);
+	g_object_set_data(G_OBJECT(spin_button), "prop_type",
+				GINT_TO_POINTER(PROP_LOADAVGMAX));
+	/*gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_button),
+				(gdouble)g_settings_get_int (ma->settings, "loadavgmax"));*/
+	gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_button), 2);
+	g_signal_connect(G_OBJECT(spin_button), "value_changed",
+				G_CALLBACK(spin_button_changed_cb), "loadavgmax");
+	gtk_size_group_add_widget (spin_size, spin_button);
+	gtk_box_pack_start (GTK_BOX (hbox), spin_button, FALSE, FALSE, 0);
+
+	if ( ! g_settings_is_writable (ma->settings, "loadavgmax")) {
+		hard_set_sensitive (label, FALSE);
+		hard_set_sensitive (hbox, FALSE);
+	}
+
+	control_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
+	gtk_widget_show (control_hbox);
+
+	label = gtk_label_new_with_mnemonic(("Load Avg Max1: "));
+#if GTK_CHECK_VERSION (3, 16, 0)
+	gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+#else
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
+#endif
+	gtk_size_group_add_widget (label_size, label);
+	gtk_box_pack_start (GTK_BOX (control_hbox), label, FALSE, FALSE, 0);
+
+	gtk_widget_show (hbox);
+
+
+    check_box = gtk_check_button_new();
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box), FALSE);
+
+	gtk_box_pack_start(GTK_BOX(control_hbox), check_box, FALSE, FALSE, 0);
+
 
 	title = g_strconcat ("<span weight=\"bold\">", _("Colors"), "</span>", NULL);
 	label = gtk_label_new (title);
