@@ -24,6 +24,9 @@ struct _LoadGraph {
 
     guint n, id;
     guint speed, size;
+    guint maxload;
+    gboolean show_multiproc;
+
     guint orient, pixel_size;
     guint draw_width, draw_height;
     LoadGraphDataFunc get_data;
@@ -58,20 +61,20 @@ struct _LoadGraph {
 struct _MultiloadApplet
 {
 	MatePanelApplet *applet;
-	
+
 	GSettings *settings;
-	
+
 	LoadGraph *graphs[NGRAPHS];
-	
+
 	GtkWidget *box;
-	
+
 	gboolean view_cpuload;
 	gboolean view_memload;
 	gboolean view_netload;
 	gboolean view_swapload;
 	gboolean view_loadavg;
 	gboolean view_diskload;
-	
+
 	GtkWidget *about_dialog;
 	GtkWidget *check_boxes[NGRAPHS];
 	GtkWidget *prop_dialog;
