@@ -29,6 +29,8 @@
 
 #include "global.h"
 
+#define PROP_AVG 4
+
 static void
 about_cb (GtkAction       *action,
 	  MultiloadApplet *ma)
@@ -72,7 +74,7 @@ help_cb (GtkAction       *action,
 {
 
  	GError *error = NULL;
-                                                                                
+
 	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (ma->applet)),
 			"help:mate-multiload",
 			gtk_get_current_event_time (),
@@ -160,7 +162,7 @@ start_procman (MultiloadApplet *ma)
 		g_error_free (error);
 	}
 }
-              
+
 static void
 start_procman_cb (GtkAction       *action,
 		  MultiloadApplet *ma)
@@ -172,9 +174,9 @@ static void
 multiload_change_size_cb(MatePanelApplet *applet, gint size, gpointer data)
 {
 	MultiloadApplet *ma = (MultiloadApplet *)data;
-	
+
 	multiload_applet_refresh(ma);
-	
+
 	return;
 }
 
@@ -183,7 +185,7 @@ multiload_change_orient_cb(MatePanelApplet *applet, gint arg1, gpointer data)
 {
 	MultiloadApplet *ma = data;
 	multiload_applet_refresh((MultiloadApplet *)data);
-	gtk_widget_show (GTK_WIDGET (ma->applet));		
+	gtk_widget_show (GTK_WIDGET (ma->applet));
 	return;
 }
 
@@ -202,14 +204,14 @@ multiload_destroy_cb(GtkWidget *widget, gpointer data)
 			ma->graphs[i]->colors = NULL;
 		}
 		gtk_widget_destroy(ma->graphs[i]->main_widget);
-	
+
 		load_graph_unalloc(ma->graphs[i]);
 		g_free(ma->graphs[i]);
 	}
-	
+
 	if (ma->about_dialog)
 		gtk_widget_destroy (ma->about_dialog);
-	
+
 	if (ma->prop_dialog)
 		gtk_widget_destroy (ma->prop_dialog);
 
@@ -284,7 +286,7 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		name = g_strdup(_("Disk"));
 	else
 		g_assert_not_reached();
-	
+
 	if (!strncmp(g->name, "memload", strlen("memload"))) {
 		guint mem_user, mem_cache, user_percent, cache_percent;
 		mem_user  = g->data[0][0];
@@ -341,7 +343,7 @@ multiload_applet_tooltip_update(LoadGraph *g)
 	}
 
 	gtk_widget_set_tooltip_text(g->disp, tooltip_text);
-		
+
 	g_free(tooltip_text);
 	g_free(name);
 }
@@ -364,6 +366,8 @@ multiload_create_graphs(MultiloadApplet *ma)
 
 	gint speed, size;
 	gint i;
+	gint maxload;
+	gboolean show_multiproc;
 
 	speed = g_settings_get_int (ma->settings, "speed");
 	size = g_settings_get_int (ma->settings, "size");
@@ -396,6 +400,12 @@ multiload_create_graphs(MultiloadApplet *ma)
 						graph_types[i].name,
 						graph_types[i].callback);
 	}
+	maxload = g_settings_get_int (ma->settings, "loadavgmax");
+	show_multiproc = g_settings_get_boolean (ma->settings, "show-multiproc");
+	maxload = MAX (maxload, 10);
+  ma->graphs[PROP_AVG]->maxload = maxload;
+	ma->graphs[PROP_AVG]->show_multiproc = show_multiproc;
+
 }
 
 /* remove the old graphs and rebuild them */
@@ -410,36 +420,36 @@ multiload_applet_refresh(MultiloadApplet *ma)
 	{
 		if (!ma->graphs[i])
 			continue;
-			
+
 		load_graph_stop(ma->graphs[i]);
 		gtk_widget_destroy(ma->graphs[i]->main_widget);
-		
+
 		load_graph_unalloc(ma->graphs[i]);
 		g_free(ma->graphs[i]);
 	}
 
 	if (ma->box)
 		gtk_widget_destroy(ma->box);
-	
+
 	orientation = mate_panel_applet_get_orient(ma->applet);
-	
-	if ( (orientation == MATE_PANEL_APPLET_ORIENT_UP) || 
+
+	if ( (orientation == MATE_PANEL_APPLET_ORIENT_UP) ||
 	     (orientation == MATE_PANEL_APPLET_ORIENT_DOWN) ) {
 		ma->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	}
 	else
 		ma->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	
+
 	gtk_container_add(GTK_CONTAINER(ma->applet), ma->box);
-			
+
 	/* create the NGRAPHS graphs, passing in their user-configurable properties with gsettings. */
 	multiload_create_graphs (ma);
 
 	/* only start and display the graphs the user has turned on */
 
 	for (i = 0; i < NGRAPHS; i++) {
-	    gtk_box_pack_start(GTK_BOX(ma->box), 
-			       ma->graphs[i]->main_widget, 
+	    gtk_box_pack_start(GTK_BOX(ma->box),
+			       ma->graphs[i]->main_widget,
 			       TRUE, TRUE, 1);
 	    if (ma->graphs[i]->visible) {
 	    	gtk_widget_show_all (ma->graphs[i]->main_widget);
@@ -447,7 +457,7 @@ multiload_applet_refresh(MultiloadApplet *ma)
 	    }
 	}
 	gtk_widget_show (ma->box);
-			
+
 	return;
 }
 
@@ -464,7 +474,7 @@ static const GtkActionEntry multiload_menu_actions [] = {
 	{ "MultiLoadAbout", GTK_STOCK_ABOUT, N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (about_cb) }
-};		
+};
 
 /* create a box and stuff the load graphs inside of it */
 static gboolean
@@ -474,11 +484,11 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 	GSettings *lockdown_settings;
 	GtkActionGroup *action_group;
 	gchar *ui_path;
-	
+
 	ma = g_new0(MultiloadApplet, 1);
-	
+
 	ma->applet = applet;
-	
+
 	ma->about_dialog = NULL;
 	ma->prop_dialog = NULL;
         ma->last_clicked = 0;
@@ -487,7 +497,7 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 
 	gtk_window_set_default_icon_name ("utilities-system-monitor");
 	mate_panel_applet_set_background_widget (applet, GTK_WIDGET(applet));
-	
+
 	ma->settings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.multiload");
 	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
@@ -533,11 +543,11 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 				G_CALLBACK(multiload_button_press_event_cb), ma);
 	g_signal_connect(G_OBJECT(applet), "key_press_event",
 				G_CALLBACK(multiload_key_press_event_cb), ma);
-	
+
 	multiload_applet_refresh (ma);
-		
+
 	gtk_widget_show(GTK_WIDGET(applet));
-			
+
 	return TRUE;
 }
 
@@ -547,11 +557,11 @@ multiload_factory (MatePanelApplet *applet,
 				gpointer data)
 {
 	gboolean retval = FALSE;
-	
+
 	glibtop_init();
 
 	retval = multiload_applet_new(applet, iid, data);
-	
+
 	return retval;
 }
 

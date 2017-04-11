@@ -28,10 +28,10 @@
 #define PROP_AVG		4
 #define PROP_DISK		5
 
-#define PROP_SPEED		6
+#define PROP_SPEED	6
 #define PROP_SIZE		7
 #define PROP_LOADAVGMAX         8
-#define PROP_LOADAVGOLD         9
+#define PROP_LOADAVGMULTI       9
 #define HIG_IDENTATION		"    "
 #define NEVER_SENSITIVE		"never_sensitive"
 
@@ -119,21 +119,28 @@ property_toggled_cb(GtkWidget *widget, gpointer name)
 	g_settings_set_boolean (ma->settings, (gchar *)name, active);
 	g_settings_set_boolean (ma->settings, (gchar *)name, active);
 
-	if (active)
-	{
-		for (i = 0; i < NGRAPHS; i++)
-			soft_set_sensitive(ma->check_boxes[i], TRUE);
-		gtk_widget_show_all (ma->graphs[prop_type]->main_widget);
-		ma->graphs[prop_type]->visible = TRUE;
-		load_graph_start(ma->graphs[prop_type]);
+  if (prop_type == PROP_LOADAVGMULTI ) {
+		if (active)
+			ma->graphs[PROP_AVG]->show_multiproc = TRUE;
+		else
+			ma->graphs[PROP_AVG]->show_multiproc = FALSE;
 	}
-	else
-	{
-		load_graph_stop(ma->graphs[prop_type]);
-		gtk_widget_hide (ma->graphs[prop_type]->main_widget);
-		ma->graphs[prop_type]->visible = FALSE;
-		properties_set_insensitive(ma);
-	}
+  else
+		if (active)
+		{
+			for (i = 0; i < NGRAPHS; i++)
+				soft_set_sensitive(ma->check_boxes[i], TRUE);
+			gtk_widget_show_all (ma->graphs[prop_type]->main_widget);
+			ma->graphs[prop_type]->visible = TRUE;
+			load_graph_start(ma->graphs[prop_type]);
+		}
+		else
+		{
+			load_graph_stop(ma->graphs[prop_type]);
+			gtk_widget_hide (ma->graphs[prop_type]->main_widget);
+			ma->graphs[prop_type]->visible = FALSE;
+			properties_set_insensitive(ma);
+		}
 
 	return;
 }
@@ -188,10 +195,11 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
 		}
     case PROP_LOADAVGMAX:
 		{
-			break;
-		}
-		case PROP_LOADAVGOLD:
-		{
+			load_graph_stop(ma->graphs[PROP_AVG]);
+			ma->graphs[PROP_AVG]->maxload = value;
+			if (ma->graphs[PROP_AVG]->visible)
+				load_graph_start(ma->graphs[PROP_AVG]);
+
 			break;
 		}
 
@@ -571,7 +579,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_hbox);
 
-	label = gtk_label_new_with_mnemonic(_("Load Avg Max: "));
+	label = gtk_label_new_with_mnemonic(_("Maximum loadavg per CPU: "));
 #if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
 #else
@@ -591,9 +599,6 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 				GINT_TO_POINTER(PROP_LOADAVGMAX));
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_button),
 				(gdouble)g_settings_get_int (ma->settings, "loadavgmax"));
-	gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_button),
-				(gdouble)g_settings_get_int (ma->settings, "loadavgmax"));
-	/*gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_button), 2);*/
 	g_signal_connect(G_OBJECT(spin_button), "value_changed",
 				G_CALLBACK(spin_button_changed_cb), "loadavgmax");
 	gtk_size_group_add_widget (spin_size, spin_button);
@@ -608,7 +613,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (control_vbox), control_hbox, TRUE, TRUE, 0);
 	gtk_widget_show (control_hbox);
 
-	label = gtk_label_new_with_mnemonic(("Load Avg Max1: "));
+	label = gtk_label_new_with_mnemonic(("MultiCPU calculation for load average: "));
 #if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
 #else
@@ -623,10 +628,12 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	check_box = gtk_check_button_new();
 	g_object_set_data(G_OBJECT(check_box), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(check_box), "prop_type",
-				GINT_TO_POINTER(PROP_LOADAVGOLD));
-	/*gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box), FALSE);*/
+				GINT_TO_POINTER(PROP_LOADAVGMULTI));
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box),
 				g_settings_get_boolean (ma->settings, "show-multiproc"));
+  g_signal_connect(G_OBJECT(check_box), "toggled",
+							G_CALLBACK(property_toggled_cb), "show-multiproc");
+
 
 	gtk_box_pack_start(GTK_BOX(control_hbox), check_box, FALSE, FALSE, 0);
 
