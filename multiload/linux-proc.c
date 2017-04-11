@@ -248,46 +248,28 @@ void
 GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
 {
 
-const float per_cpu_max_loadavg = g->maxload;
-float max_loadavg;
-float loadavg1;
-float used;
+	const float per_cpu_max_loadavg = g->maxload;
+	float max_loadavg;
+	float loadavg1;
+	float used;
 
-glibtop_loadavg loadavg;
-glibtop_get_loadavg (&loadavg);
+	glibtop_loadavg loadavg;
+	glibtop_get_loadavg (&loadavg);
 
-g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
+	g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
 
-if (g->show_multiproc == TRUE )
-  max_loadavg = per_cpu_max_loadavg * (1 + glibtop_global_server->ncpu);
-else
-  max_loadavg = per_cpu_max_loadavg;
+	if (g->show_multiproc == TRUE )
+	  max_loadavg = per_cpu_max_loadavg * (1 + glibtop_global_server->ncpu);
+	else
+	  max_loadavg = per_cpu_max_loadavg;
 
-g->loadavg1 = loadavg.loadavg[0];
-loadavg1 = MIN(loadavg.loadavg[0], max_loadavg);
+	g->loadavg1 = loadavg.loadavg[0];
+	loadavg1 = MIN(loadavg.loadavg[0], max_loadavg);
 
-used    = loadavg1 / max_loadavg;
+	used    = loadavg1 / max_loadavg;
 
-data [0] = rint ((float) Maximum * used);
-data [1] = Maximum - data[0];
-/*
-    float max_loadavg = 2.0f;
-    float loadavg1;
-    float used;
-
-    glibtop_loadavg loadavg;
-    glibtop_get_loadavg (&loadavg);
-
-    g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
-
-    g->loadavg1 = loadavg.loadavg[0];
-    loadavg1 = MIN(loadavg.loadavg[0], max_loadavg);
-
-    used    = loadavg1 / max_loadavg;
-
-    data [0] = rint ((float) Maximum * used);
-    data [1] = Maximum - data[0];
-    */
+	data [0] = rint ((float) Maximum * used);
+	data [1] = Maximum - data[0];
 }
 
 /*

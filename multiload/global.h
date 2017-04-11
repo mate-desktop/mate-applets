@@ -61,20 +61,20 @@ struct _LoadGraph {
 struct _MultiloadApplet
 {
 	MatePanelApplet *applet;
-
+	
 	GSettings *settings;
-
+	
 	LoadGraph *graphs[NGRAPHS];
-
+	
 	GtkWidget *box;
-
+	
 	gboolean view_cpuload;
 	gboolean view_memload;
 	gboolean view_netload;
 	gboolean view_swapload;
 	gboolean view_loadavg;
 	gboolean view_diskload;
-
+	
 	GtkWidget *about_dialog;
 	GtkWidget *check_boxes[NGRAPHS];
 	GtkWidget *prop_dialog;
