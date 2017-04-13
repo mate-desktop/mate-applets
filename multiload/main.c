@@ -374,6 +374,10 @@ multiload_create_graphs(MultiloadApplet *ma)
 	speed = MAX (speed, 50);
 	size = CLAMP (size, 10, 400);
 
+	maxload = g_settings_get_int (ma->settings, "loadavgmax");
+	show_multiproc = g_settings_get_boolean (ma->settings, "show-multiproc");
+	maxload = MIN (maxload, 10);
+
 	for (i = 0; i < G_N_ELEMENTS (graph_types); i++)
 	{
 		gboolean visible;
@@ -399,13 +403,11 @@ multiload_create_graphs(MultiloadApplet *ma)
 						visible,
 						graph_types[i].name,
 						graph_types[i].callback);
+		if (i == PROP_AVG) {
+			ma->graphs[PROP_AVG]->maxload = maxload;
+			ma->graphs[PROP_AVG]->show_multiproc = show_multiproc;
+		}
 	}
-	maxload = g_settings_get_int (ma->settings, "loadavgmax");
-	show_multiproc = g_settings_get_boolean (ma->settings, "show-multiproc");
-	maxload = MAX (maxload, 10);
-  ma->graphs[PROP_AVG]->maxload = maxload;
-	ma->graphs[PROP_AVG]->show_multiproc = show_multiproc;
-
 }
 
 /* remove the old graphs and rebuild them */
