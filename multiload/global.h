@@ -24,6 +24,9 @@ struct _LoadGraph {
 
     guint n, id;
     guint speed, size;
+    guint maxload;
+    gboolean show_multiproc;
+
     guint orient, pixel_size;
     guint draw_width, draw_height;
     LoadGraphDataFunc get_data;

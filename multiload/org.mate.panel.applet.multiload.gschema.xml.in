@@ -33,6 +33,14 @@
       <summary>Graph size</summary>
       <description>For horizontal panels, the width of the graphs in pixels.  For vertical panels, this is the height of the graphs.</description>
     </key>
+    <key name="loadavgmax" type="i">
+      <default>5</default>
+      <summary>Maximum average load per CPU (graph scaling)</summary>
+    </key>
+    <key name="show-multiproc" type="b">
+      <default>true</default>
+      <summary>Take number of processors into account in showing load average</summary>
+    </key>
     <key name="cpuload-color0" type="s">
       <default>'#0072b3'</default>
       <summary>Graph color for user-related CPU activity</summary>
