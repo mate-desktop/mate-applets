@@ -53,9 +53,9 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
     int total;
 
     glibtop_cpu cpu;
-	
+
     glibtop_get_cpu (&cpu);
-	
+
     g_return_if_fail ((cpu.flags & needed_cpu_flags) == needed_cpu_flags);
 
     g->cpu_time [0] = cpu.user;
@@ -162,9 +162,9 @@ GetPage (int Maximum, int data [3], LoadGraph *g)
     int in, out, idle;
 
     glibtop_swap swap;
-	
+
     glibtop_get_swap (&swap);
-	
+
     assert ((swap.flags & needed_page_flags) == needed_page_flags);
 
     if ((lastin > 0) && (lastin < swap.pagein)) {
@@ -204,18 +204,18 @@ void
 GetMemory (int Maximum, int data [5], LoadGraph *g)
 {
     int user, shared, buffer, cached;
-    
+
     glibtop_mem mem;
-	
+
     glibtop_get_mem (&mem);
-	
+
     g_return_if_fail ((mem.flags & needed_mem_flags) == needed_mem_flags);
 
     user    = rint (Maximum * (float)mem.user / (float)mem.total);
     shared  = rint (Maximum * (float)mem.shared / (float)mem.total);
     buffer  = rint (Maximum * (float)mem.buffer / (float)mem.total);
     cached = rint (Maximum * (float)mem.cached / (float)mem.total);
-    
+
     data [0] = user;
     data [1] = shared;
     data [2] = buffer;
@@ -247,9 +247,6 @@ GetSwap (int Maximum, int data [2], LoadGraph *g)
 void
 GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
 {
-    const float per_cpu_max_loadavg = 5.0f;
-    float max_loadavg;
-    float loadavg1;
     float used;
 
     glibtop_loadavg loadavg;
@@ -257,14 +254,10 @@ GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
 
     g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
 
-    max_loadavg = per_cpu_max_loadavg * (1 + glibtop_global_server->ncpu);
-
+    /* g->loadavg1 represents %used */
     g->loadavg1 = loadavg.loadavg[0];
-    loadavg1 = MIN(loadavg.loadavg[0], max_loadavg);
 
-    used    = loadavg1 / max_loadavg;
-
-    data [0] = rint ((float) Maximum * used);
+    data [0] = rint ((float) Maximum * g->loadavg1);
     data [1] = Maximum - data[0];
 }
 
@@ -405,6 +398,3 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
 
     memcpy(past, present, sizeof past);
 }
-
-
-
