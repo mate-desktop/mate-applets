@@ -76,25 +76,6 @@ size_allocate (MatePanelApplet  *applet,
 }
 
 static void
-change_background (MatePanelApplet               *applet,
-		   MatePanelAppletBackgroundType  type,
-		   GdkColor                  *colour,
-		   cairo_pattern_t           *pattern,
-		   DriveList                 *drivelist)
-{
-    switch (type) {
-    case PANEL_NO_BACKGROUND:
-	drive_list_set_transparent (drivelist, FALSE);
-	break;
-
-    case PANEL_COLOR_BACKGROUND:
-    case PANEL_PIXMAP_BACKGROUND:
-	drive_list_set_transparent (drivelist, TRUE);
-	break;
-    }
-}
-
-static void
 display_about_dialog (GtkAction *action,
 		      DriveList *drive_list)
 {
@@ -190,8 +171,6 @@ applet_factory (MatePanelApplet *applet,
 				 G_CALLBACK (change_orient), drive_list, 0);
 	g_signal_connect_object (applet, "size_allocate",
 				 G_CALLBACK (size_allocate), drive_list, 0);
-	g_signal_connect (applet, "change_background",
-			  G_CALLBACK (change_background), drive_list);
 
 	/* set initial state */
 	change_orient (applet,
