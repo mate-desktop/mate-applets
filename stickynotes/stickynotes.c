@@ -25,6 +25,7 @@
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE 1
 #include <libwnck/libwnck.h>
 #include <string.h>
+#include <sys/stat.h>
 
 #include <gtksourceview/gtksource.h>
 
@@ -778,7 +779,8 @@ stickynotes_save_now (void)
 
 	/* The XML file is $HOME/.config/mate/stickynotes-applet, most probably */
 	{
-			gchar* file = g_build_filename(g_get_user_config_dir(), "mate", "stickynotes-applet.xml", NULL);
+		gchar* file = g_build_filename(g_get_user_config_dir(), "mate", "stickynotes-applet.xml", NULL);
+		g_mkdir_with_parents(g_path_get_dirname(file), S_IRWXU);
 
 		xmlSaveFormatFile(file, doc, 1);
 
