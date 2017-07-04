@@ -46,6 +46,8 @@ struct _DriveList
     GtkOrientation orientation;
     guint layout_tag;
     GtkReliefStyle relief;
+    GtkWidget *dummy;
+    gint count;
 
     int icon_size;
 };
