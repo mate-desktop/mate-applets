@@ -121,11 +121,12 @@ drive_button_new (GVolume *volume)
     DriveButton *self;
 
     self = g_object_new (DRIVE_TYPE_BUTTON, NULL);
-    drive_button_set_volume (self, volume);
-    
-    g_signal_connect (gtk_icon_theme_get_default (),
-        "changed", G_CALLBACK (drive_button_theme_change),
-        self);  
+    if (volume != NULL) {
+      drive_button_set_volume (self, volume);
+      g_signal_connect (gtk_icon_theme_get_default (),
+          "changed", G_CALLBACK (drive_button_theme_change),
+          self);
+    }
 
     return (GtkWidget *)self;
 }
@@ -137,10 +138,10 @@ drive_button_new_from_mount (GMount *mount)
 
     self = g_object_new (DRIVE_TYPE_BUTTON, NULL);
     drive_button_set_mount (self, mount);
-    
+
     g_signal_connect (gtk_icon_theme_get_default (),
         "changed", G_CALLBACK (drive_button_theme_change),
-        self);      
+        self);
 
     return (GtkWidget *)self;
 }
@@ -336,48 +337,68 @@ drive_button_update (gpointer user_data)
     self = DRIVE_BUTTON (user_data);
     self->update_tag = 0;
 
+    /* base the icon size on the desired button size */
     drive_button_reset_popup (self);
+    gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
+    gtk_widget_get_preferred_size (gtk_bin_get_child (GTK_BIN (self)), NULL, &image_req);
+    width = self->icon_size - (button_req.width - image_req.width);
+    height = self->icon_size - (button_req.height - image_req.height);
 
-    /* if no volume or mount, unset image */
-    if (!self->volume && !self->mount) {
-	if (gtk_bin_get_child (GTK_BIN (self)) != NULL)
-	    gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), NULL);
-	return FALSE;
+    /* if no volume or mount, display general image */
+    if (!self->volume && !self->mount)
+    {
+        gtk_widget_set_tooltip_text (GTK_WIDGET (self), "nothing to mount");
+        screen = gtk_widget_get_screen (GTK_WIDGET (self));
+        icon_theme = gtk_icon_theme_get_for_screen (screen); //m
+        // note - other good icon would be emblem-unreadable
+        icon_info = gtk_icon_theme_lookup_icon (icon_theme, "media-floppy",
+                                                MIN (width, height),
+                                                GTK_ICON_LOOKUP_USE_BUILTIN);
+        if (icon_info) {
+            pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
+            g_object_unref (icon_info);
+        }
+
+        if (!pixbuf)
+            return FALSE;
+        scaled = gdk_pixbuf_scale_simple (pixbuf, width, height, GDK_INTERP_BILINEAR);
+        if (scaled) {
+            g_object_unref (pixbuf);
+            pixbuf = scaled;
+        }
+	    if (gtk_bin_get_child (GTK_BIN (self)) != NULL)
+	        gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
+	    return FALSE;
     }
 
     if (self->volume) {
-	GMount *mount;
+    	GMount *mount;
 
-	display_name = g_volume_get_name (self->volume);
-	mount = g_volume_get_mount (self->volume);
+    	display_name = g_volume_get_name (self->volume);
+    	mount = g_volume_get_mount (self->volume);
 
-	if (mount)
-	    tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
-	else
-	    tip = g_strdup_printf ("%s\n%s", display_name, _("(not mounted)"));
+    	if (mount)
+    	    tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
+    	else
+    	    tip = g_strdup_printf ("%s\n%s", display_name, _("(not mounted)"));
 
-	if (mount)
-	    icon = g_mount_get_icon (mount);
-	else
-	    icon = g_volume_get_icon (self->volume);
+    	if (mount)
+    	    icon = g_mount_get_icon (mount);
+    	else
+    	    icon = g_volume_get_icon (self->volume);
 
-	if (mount)
-	    g_object_unref (mount);
+    	if (mount)
+    	    g_object_unref (mount);
     } else {
-	display_name = g_mount_get_name (self->mount);
-	tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
-	icon = g_mount_get_icon (self->mount);
+    	display_name = g_mount_get_name (self->mount);
+    	tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
+    	icon = g_mount_get_icon (self->mount);
     }
 
     gtk_widget_set_tooltip_text (GTK_WIDGET (self), tip);
     g_free (tip);
     g_free (display_name);
 
-    /* base the icon size on the desired button size */
-    gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
-    gtk_widget_get_preferred_size (gtk_bin_get_child (GTK_BIN (self)), NULL, &image_req);
-    width = self->icon_size - (button_req.width - image_req.width);
-    height = self->icon_size - (button_req.height - image_req.height);
 
     screen = gtk_widget_get_screen (GTK_WIDGET (self));
     icon_theme = gtk_icon_theme_get_for_screen (screen);
@@ -386,19 +407,19 @@ drive_button_update (gpointer user_data)
     						GTK_ICON_LOOKUP_USE_BUILTIN);
     if (icon_info)
     {
-	pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
-	g_object_unref (icon_info);
+	     pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
+	      g_object_unref (icon_info);
     }
 
     g_object_unref (icon);
 
     if (!pixbuf)
-	return FALSE;
+	   return FALSE;
 
     scaled = gdk_pixbuf_scale_simple (pixbuf, width, height, GDK_INTERP_BILINEAR);
     if (scaled) {
-	g_object_unref (pixbuf);
-	pixbuf = scaled;
+	    g_object_unref (pixbuf);
+	    pixbuf = scaled;
     }
 
     gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
@@ -657,11 +678,11 @@ gvm_check_dvd_only (const char *udi, const char *device, const char *mount_point
 {
 	char *path;
 	gboolean retval;
-	
+
 	path = g_build_path (G_DIR_SEPARATOR_S, mount_point, "video_ts", NULL);
 	retval = g_file_test (path, G_FILE_TEST_IS_DIR);
 	g_free (path);
-	
+
 	/* try the other name, if needed */
 	if (retval == FALSE) {
 		path = g_build_path (G_DIR_SEPARATOR_S, mount_point,
@@ -669,7 +690,7 @@ gvm_check_dvd_only (const char *udi, const char *device, const char *mount_point
 		retval = g_file_test (path, G_FILE_TEST_IS_DIR);
 		g_free (path);
 	}
-	
+
 	return retval;
 }
 /* END copied from mate-volume-manager/src/manager.c */
@@ -691,7 +712,7 @@ check_dvd_video (DriveButton *self)
 
 	file = g_mount_get_root (mount);
 	g_object_unref (mount);
-	
+
 	if (!file)
 		return FALSE;
 
@@ -880,6 +901,8 @@ drive_button_ensure_popup (DriveButton *self)
 	    g_object_unref (mount);
 	}
     } else {
+      if (!G_IS_MOUNT(self->volume))
+        return;
 	display_name = g_mount_get_name (self->mount);
 	ejectable = g_mount_can_eject (self->mount);
 	mounted = TRUE;
