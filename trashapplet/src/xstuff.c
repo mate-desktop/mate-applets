@@ -29,10 +29,10 @@
 /* the delay per draw */
 #define MINIATURIZE_ANIMATION_DELAY_Z    10
 
-static void 
+static void
 draw_zoom_animation (GdkScreen *gscreen,
 		     int x, int y, int w, int h,
-		     int fx, int fy, int fw, int fh, 
+		     int fx, int fy, int fw, int fh,
 		     int steps)
 {
 #define FRAMES (MINIATURIZE_ANIMATION_FRAMES_Z)
@@ -50,7 +50,7 @@ draw_zoom_animation (GdkScreen *gscreen,
 
 	dpy = gdk_x11_display_get_xdisplay (gdk_screen_get_display (gscreen));
 	root_win = GDK_WINDOW_XID (gdk_screen_get_root_window (gscreen));
-	screen = gdk_screen_get_number (gscreen);
+	screen = gdk_x11_screen_get_screen_number (gscreen);
 	depth = DefaultDepth(dpy,screen);
 
 	/* frame GC */
@@ -77,7 +77,7 @@ draw_zoom_animation (GdkScreen *gscreen,
 	ystep = (float)(fy-y)/steps;
 	wstep = (float)(fw-w)/steps;
 	hstep = (float)(fh-h)/steps;
-    
+
 	for (j=0; j<FRAMES; j++) {
 		cx[j] = (float)x;
 		cy[j] = (float)y;
@@ -100,19 +100,19 @@ draw_zoom_animation (GdkScreen *gscreen,
 		usleep(10);
 #endif
 		for (j=0; j<FRAMES; j++) {
-			XDrawRectangle(dpy, root_win, frame_gc, 
+			XDrawRectangle(dpy, root_win, frame_gc,
 				       cxi[j], cyi[j], cwi[j], chi[j]);
 			if (j<FRAMES-1) {
 				cx[j]=cx[j+1];
 				cy[j]=cy[j+1];
 				cw[j]=cw[j+1];
 				ch[j]=ch[j+1];
-				
+
 				cxi[j]=cxi[j+1];
 				cyi[j]=cyi[j+1];
 				cwi[j]=cwi[j+1];
 				chi[j]=chi[j+1];
-				
+
 			} else {
 				cx[j]+=xstep;
 				cy[j]+=ystep;
@@ -128,7 +128,7 @@ draw_zoom_animation (GdkScreen *gscreen,
 	}
 
 	for (j=0; j<FRAMES; j++) {
-		XDrawRectangle(dpy, root_win, frame_gc, 
+		XDrawRectangle(dpy, root_win, frame_gc,
 				       cxi[j], cyi[j], cwi[j], chi[j]);
 	}
 	XFlush(dpy);
@@ -138,10 +138,10 @@ draw_zoom_animation (GdkScreen *gscreen,
 	usleep(10);
 #endif
 	for (j=0; j<FRAMES; j++) {
-		XDrawRectangle(dpy, root_win, frame_gc, 
+		XDrawRectangle(dpy, root_win, frame_gc,
 				       cxi[j], cyi[j], cwi[j], chi[j]);
 	}
-    
+
 	XUngrabServer(dpy);
 	XFreeGC (dpy, frame_gc);
 }
