@@ -1,5 +1,23 @@
 ### mate-applets 1.19.0
 
+  * drivemount: fix a build warning
+  * Translations update
+  * cpufreq-prefs: don't use deprecated gtk_show_uri
+  * bump libmateweather requirement to 1.19.1
+  * weather: If location changes, abort any outstanding weather updates
+  * weather: Added logic to not send notification if weather update is equal
+    (as decided by weather_info_equal ()) to the previous update
+  * avoid deprecated gdk_screen_get_number
+  * drivemount: If the list is empty, it will show media-floppy icon
+  * stickynotes: reword previous commit a bit and don't leak dir name
+  * stickynotes: create parent dir for "stickynotes-applet.xml" if it does not exist.
+  * Restore Polish translation credits from GNOME
+  * Load graph scales automatically according to average load
+  * trashapplet: remove unused code
+  * cpufreq: set frequency on all cores
+  * Fix GError memory leak
+  * Fix for crasher in Command applet.
+
 ### mate-applets 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting
