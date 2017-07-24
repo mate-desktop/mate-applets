@@ -134,7 +134,7 @@ drive_list_init (DriveList *self)
 	{
 		gtk_container_add (GTK_CONTAINER (self), self->dummy);
 		queue_relayout (self);
-		drive_button_queue_update (self->dummy);
+		drive_button_queue_update (DRIVE_BUTTON (self->dummy));
 	}
     g_list_free (mounts);
 }
