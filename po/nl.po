@@ -7,6 +7,7 @@
 # infirit <inactive+infirit@transifex.com>, 2014-2015
 # Kees Lijkendijk <clkndk@gmail.com>, 2016
 # Michael Steenbeek <m.o.steenbeek@gmail.com>, 2012,2014
+# Pjotr <pjotrvertaalt@gmail.com>, 2017
 # Robbie Deighton <deightonrobbie@gmail.com>, 2016
 # Vincent van Adrighem <V.vanAdrighem@dirck.mine.nu>, 2003
 # Volluta <volluta@tutanota.com>, 2015
@@ -15,8 +16,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 00:21+0300\n"
-"PO-Revision-Date: 2016-12-12 01:07+0000\n"
-"Last-Translator: dragnadh <dragnadh@gmail.com>\n"
+"PO-Revision-Date: 2017-07-02 18:16+0000\n"
+"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/mate/MATE/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,21 +43,21 @@ msgstr "Toont de status van de AccessX-mogelijkheden"
 #: ../stickynotes/stickynotes_applet_callbacks.c:382
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:436
 msgid "translator-credits"
-msgstr "Tino Meinen\nWouter Bolsterlee\nVincent van Adrighem\nMichiel Sikkes\nDirk-Jan Binnema\nDennis Smit\nHuib Kleinhout\nRonald Hummelink\n\nKijk voor meer informatie op http://nl.mate.org/"
+msgstr "Tino Meinen\nWouter Bolsterlee\nVincent van Adrighem\nMichiel Sikkes\nDirk-Jan Binnema\nDennis Smit\nHuib Kleinhout\nRonald Hummelink\nPjotr\n\nKijk voor meer informatie op http://nl.mate.org/"
 
 #: ../accessx-status/applet.c:162
 #, c-format
 msgid "There was an error launching the help viewer: %s"
-msgstr "Er is een fout opgetreden bij het weergeven van de hulpweergave: %s"
+msgstr "Er is een fout opgetreden bij het starten van de hulpweergave: %s"
 
 #: ../accessx-status/applet.c:190
 msgid "Open the keyboard preferences dialog"
-msgstr "Toetsenbordvoorkeuren openen"
+msgstr "Dialoogvenster voor toetsenbordvoorkeuren openen"
 
 #: ../accessx-status/applet.c:205
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
-msgstr "Er is een fout opgetreden bij het weergeven van de toetsenbordvoorkeuren: %s"
+msgstr "Er is een fout opgetreden bij het starten van het dialoogvenster voor de toetsenbordvoorkeuren: %s"
 
 #: ../accessx-status/applet.c:220
 msgid "_Keyboard Accessibility Preferences"
@@ -92,7 +93,7 @@ msgstr "AccessX status"
 
 #: ../accessx-status/applet.c:995 ../accessx-status/applet.c:1131
 msgid "Shows keyboard status when accessibility features are used."
-msgstr "Toont de status van het toetsenbord wanneer toegankelijkheidsmogelijkheden worden gebruikt."
+msgstr "Toont de status van het toetsenbord wanneer er toegankelijkheidsmogelijkheden worden gebruikt."
 
 #: ../accessx-status/applet.c:1030
 msgid "XKB Extension is not enabled"
@@ -114,7 +115,7 @@ msgstr "Toetsenbord toegankelijkheidsstatus"
 
 #: ../accessx-status/applet.c:1303
 msgid "Displays current state of keyboard accessibility features"
-msgstr "Toont de huidige status van de toegankelijkheidsmogelijkheden"
+msgstr "Toont de huidige status van de toegankelijkheidsfuncties voor het toetsenbord"
 
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:1
 msgid "AccessX Status Applet Factory"
@@ -126,7 +127,7 @@ msgstr "Toetsenbord toegankelijkheidsstatus appletfabriek"
 
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:4
 msgid "Shows the status of keyboard accessibility features"
-msgstr "Toont de status van de toegankelijkheidsmogelijkheden"
+msgstr "Toont de status van de toegankelijkheidsfuncties voor het toetsenbord"
 
 #: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:695
 #: ../command/command.c:73 ../cpufreq/src/cpufreq-applet.c:124
@@ -138,7 +139,7 @@ msgstr "_Voorkeuren"
 
 #: ../battstat/battstat_applet.c:72
 msgid "System is running on AC power"
-msgstr "Het systeem werkt op netvoeding"
+msgstr "Het systeem werkt op netstroom"
 
 #: ../battstat/battstat_applet.c:73
 msgid "System is running on battery power"
@@ -215,7 +216,7 @@ msgstr "Opgeladen over %d %s en %d %s (%d%%)"
 
 #: ../battstat/battstat_applet.c:392
 msgid "Battery Monitor"
-msgstr "Accumeter"
+msgstr "Accubewaking"
 
 #: ../battstat/battstat_applet.c:402 ../battstat/battstat_applet.c:461
 msgid "Your battery is now fully recharged"
@@ -238,7 +239,7 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] "U heeft %d minuut batterijspanning over (%d%% van de totale capaciteit)."
-msgstr[1] "U heeft %d minuten batterijspanning over (%d%% van de totale capaciteit)."
+msgstr[1] "U heeft %d minuten accuspanning over (%d%% van de totale capaciteit)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -248,7 +249,7 @@ msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr "Om geen werk te verliezen:\n • sluit de laptop op de netvoeding aan, of\n • sla geopende documenten op en zet de laptop uit."
+msgstr "Om geen werk te verliezen:\n • sluit de laptop op de netstroom aan, of\n • sla geopende documenten op en zet de laptop uit."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -259,7 +260,7 @@ msgid ""
 " • suspend your laptop to save power,\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
-msgstr "Om geen werk te verliezen:\n • zet de laptop op stand-by om energie te besparen,\n • sluit de laptop op de netvoeding aan, of\n • sla geopende documenten op en zet de laptop uit."
+msgstr "Om geen werk te verliezen:\n • zet de laptop op pauzestand om energie te besparen,\n • sluit de laptop op de netstroom aan, of\n • sla geopende documenten op en zet de laptop uit."
 
 #: ../battstat/battstat_applet.c:572
 msgid "Your battery is running low"
@@ -286,35 +287,35 @@ msgstr "N/B"
 #: ../trashapplet/src/trashapplet.c:398
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Er is een fout opgetreden bij de hulpweergave: %s"
+msgstr "Er is een fout opgetreden bij de hulptekstweergave: %s"
 
 #: ../battstat/battstat_applet.c:1195
 msgid "This utility shows the status of your laptop battery."
-msgstr "Dit programma laat de status van de laptop-accu zien."
+msgstr "Dit hulpmiddel laat de status van uw laptop-accu zien."
 
 #. true
 #: ../battstat/battstat_applet.c:1197
 msgid "upower backend enabled."
-msgstr "upower-backend ingeschakeld"
+msgstr "upower-backend ingeschakeld."
 
 #. false
 #: ../battstat/battstat_applet.c:1198
 msgid "Legacy backend enabled."
-msgstr "Nalatenschap backend ingeschakeld."
+msgstr "Verouderde backend ingeschakeld."
 
 #: ../battstat/battstat_applet.c:1568 ../battstat/battstat_applet.c:1620
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
-msgstr "Accumeter"
+msgstr "Acculadingbewaking"
 
 #: ../battstat/battstat_applet.c:1621
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
-msgstr "De toestand van de laptopaccu in de gaten houden"
+msgstr "Bewaak de resterende lading een laptopaccu"
 
 #: ../battstat/battstat_applet.ui.h:1
 msgid "Battery Charge Monitor Preferences"
-msgstr "Voorkeuren accumeter"
+msgstr "Voorkeuren Acculadingbewaking"
 
 #: ../battstat/battstat_applet.ui.h:2
 msgid "Appearance"
@@ -326,7 +327,7 @@ msgstr "_Compacte weergave"
 
 #: ../battstat/battstat_applet.ui.h:4
 msgid "(shows single image for status and charge)"
-msgstr "(toont één afbeelding voor zowel status als spanning)"
+msgstr "(toont één afbeelding voor zowel status als lading)"
 
 #: ../battstat/battstat_applet.ui.h:5
 msgid "_Expanded view"
@@ -334,7 +335,7 @@ msgstr "Uit_gebreide weergave"
 
 #: ../battstat/battstat_applet.ui.h:6
 msgid "(two images: one for status, one for charge)"
-msgstr "(twee afbeeldingen: een voor status, een voor spanning)"
+msgstr "(twee afbeeldingen: een voor status, een voor lading)"
 
 #: ../battstat/battstat_applet.ui.h:7
 msgid "_Show time/percentage:"
@@ -350,12 +351,12 @@ msgstr "Toon overgebleven _percentage"
 
 #: ../battstat/battstat_applet.ui.h:10
 msgid "Notifications"
-msgstr "Mededelingen"
+msgstr "Meldingen"
 
 #. TRANSLATOR: This is the beginning of the sentence
 #: ../battstat/battstat_applet.ui.h:12
 msgid "_Warn when battery charge drops to:"
-msgstr "_Waarschuwen wanneer het accupercentage minder is dan:"
+msgstr "_Waarschuwen wanneer het acculadingspercentage minder is dan:"
 
 #: ../battstat/battstat_applet.ui.h:13
 msgid "_Notify when battery is fully recharged"
@@ -367,27 +368,27 @@ msgstr "Battstat fabriek"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:1
 msgid "Red value level"
-msgstr "Rode waarde niveau"
+msgstr "Rode-waarde-niveau"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:2
 msgid ""
 "The battery level below which the battery is displayed as red. Also the "
 "value at which the low battery warning is displayed."
-msgstr "Het niveau waaronder de accu rood getoond wordt. Dit is tevens de de waarde waarbij de waarschuwing voor een lege accu wordt tonen."
+msgstr "Het niveau waaronder de accu rood getoond wordt. Dit is tevens de de waarde waarbij de waarschuwing voor een bijna lege accu wordt getoond."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:3
 msgid "Warn on low time rather than low percentage"
-msgstr "Bij weinig tijd (in plaats van een laag percentage) waarschuwen"
+msgstr "Waarschuwen bij weinig restanttijd (in plaats van bij een laag restpercentage)"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:4
 msgid ""
 "Use the value defined in red_value as a time remaining to show the warning "
 "dialog rather than a percentage."
-msgstr "Gebruik de waarde gedefiniëerd in ‘red_value’ als resterende tijd om te tonen in het waarschuwingsdialoog in plaats van een percentage."
+msgstr "Gebruik de waarde gedefinieerd in ‘red_value’ als resterende tijd om te tonen in het waarschuwingsdialoogvenster in plaats van een percentage."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:5
 msgid "Low Battery Notification"
-msgstr "Melding bij lege accu"
+msgstr "Melding bij bijna lege accu"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:6
 msgid "Notify user when the battery is low."
@@ -407,7 +408,7 @@ msgstr "Piepen bij waarschuwingen"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:10
 msgid "Beep when displaying a warning."
-msgstr "Piepen bij weergave van een waarschuwing"
+msgstr "Piepen bij weergave van een waarschuwing."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:11
 msgid "Drain from top"
@@ -425,7 +426,7 @@ msgstr "Verticale (kleine) accu"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:14
 msgid "Show the upright, smaller battery on the panel."
-msgstr "De verticale, kleinere accu op het paneel tonen"
+msgstr "De verticale, kleinere accu op het paneel tonen."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:15
 msgid "Show the horizontal battery"
@@ -437,29 +438,29 @@ msgstr "De traditionele, horizontale accu op het paneel tonen."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:17
 msgid "Show the time/percent label"
-msgstr "Label met tijd/percentage tonen"
+msgstr "Etiket met tijd/percentage tonen"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:18
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
-msgstr "0 voor geen label, 1 voor percentage en 2 voor overgebleven tijd"
+msgstr "0 voor geen etiket, 1 voor percentage en 2 voor overgebleven tijd."
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
 #: ../battstat/properties.c:287
 msgid "Percent"
-msgstr "procent"
+msgstr "Procent"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
 #: ../battstat/properties.c:293
 msgid "Minutes Remaining"
-msgstr "minuten resterend"
+msgstr "Minuten resterend"
 
 #: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:1
 msgid "Battery Status Utility"
-msgstr "Accumeter"
+msgstr "Accubewakingshulpmiddel"
 
 #: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:2
 msgid "Battery power low"
@@ -479,7 +480,7 @@ msgstr "Beschikbare paletten"
 #: ../charpick/charpick.c:485
 #, c-format
 msgid "Insert \"%s\""
-msgstr "\"%s\" invoegen"
+msgstr "'%s' invoegen"
 
 #: ../charpick/charpick.c:488
 msgid "Insert special character"
@@ -494,7 +495,7 @@ msgstr "Speciaal teken %s invoegen"
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
-msgstr "Applet voor het kiezen van bijzondere tekens en symbolen die niet op het toetsenbord zitten. Uitgegeven onder de GNU General Public Licence."
+msgstr "Applet voor het kiezen van bijzondere tekens en symbolen die niet op het toetsenbord zitten. Uitgegeven onder de GNU General Public License."
 
 #: ../charpick/charpick.c:724 ../charpick/charpick.c:738
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
@@ -513,7 +514,7 @@ msgstr "Tekens-kiezer appletfabriek"
 
 #: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:1
 msgid "Characters shown on applet startup"
-msgstr "Weer te geven tekens bij starten"
+msgstr "Weer te geven tekens bij starten van applet"
 
 #: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:2
 msgid ""
@@ -528,7 +529,7 @@ msgstr "Lijst met beschikbare paletten"
 
 #: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:4
 msgid "List of strings containing the available palettes."
-msgstr "Lijst van karakters op de beschikbare paletten"
+msgstr "Lijst van reeksen met de beschikbare paletten."
 
 #: ../charpick/properties.c:28
 msgid "_Edit"
@@ -576,7 +577,7 @@ msgstr "Knop bewerken"
 
 #: ../charpick/properties.c:489
 msgid "Click to edit the selected palette"
-msgstr "Klik om het palet te bewerken"
+msgstr "Klik om het gekozen palet te bewerken"
 
 #: ../charpick/properties.c:496
 msgid "Delete button"
@@ -584,11 +585,11 @@ msgstr "Knop verwijderen"
 
 #: ../charpick/properties.c:497
 msgid "Click to delete the selected palette"
-msgstr "Klik om het palet te verwijderen"
+msgstr "Klik om het gekozen palet te verwijderen"
 
 #: ../charpick/properties.c:548
 msgid "Character Palette Preferences"
-msgstr "Voorkeuren letterpalet"
+msgstr "Voorkeuren tekenpalet"
 
 #: ../command/command.c:114
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
@@ -601,15 +602,15 @@ msgstr "Opdrachtregel Applet Voorkeuren"
 
 #: ../command/command.c:145
 msgid "Command:"
-msgstr "Opdracht"
+msgstr "Opdracht:"
 
 #: ../command/command.c:157
 msgid "Interval (seconds):"
-msgstr "Interval (seconde)"
+msgstr "Tussenpoze (seconden):"
 
 #: ../command/command.c:169
 msgid "Maximum width (chars):"
-msgstr "Maximale breedte (karakters):"
+msgstr "Maximale breedte (tekens):"
 
 #: ../command/command.c:181
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
@@ -623,11 +624,11 @@ msgstr "Opdracht Applet"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
 msgid "Command Factory"
-msgstr "Command Factory"
+msgstr "Opdracht Fabriek"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
 msgid "Command"
-msgstr "Commando"
+msgstr "Opdracht"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:1
 msgid "Command to execute"
@@ -639,19 +640,19 @@ msgstr "Uit te voeren opdracht of script (voor de uitvoer)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:3
 msgid "Interval for the command"
-msgstr "Opdrachtinterval"
+msgstr "Opdracht-tussenpoze"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:4
 msgid "Interval to execute the command (in seconds)"
-msgstr "Interval voor de uit te voeren opdracht (in seconden)"
+msgstr "Tussenpoze voor de uit te voeren opdracht (in seconden)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
 msgid "Width of output"
-msgstr "Breedte van output"
+msgstr "Breedte van uitvoer"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
 msgid "Number of characters to display"
-msgstr "Aantal karakters tonen"
+msgstr "Aantal te tonen tekens"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
@@ -659,15 +660,15 @@ msgstr "Of het appletpictogram moet worden getoond"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
-msgstr "Processorsnelheid-instellingen"
+msgstr "Instellingen van CPU-snelheidsbewaking"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
 msgid "Monitor Settings"
-msgstr "Monitorinstellingen"
+msgstr "Bewakingsinstellingen"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "_Monitored CPU:"
-msgstr "_Beheerde processor:"
+msgstr "_Bewaakte CPU:"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:4
 msgid "Display Settings"
@@ -679,38 +680,38 @@ msgstr "_Uiterlijk:"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:6
 msgid "Show CPU frequency as _frequency"
-msgstr "Processorsnelheid tonen als _frequentie"
+msgstr "Toon CPU-frequentie als _frequentie"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:7
 msgid "Show frequency _units"
-msgstr "Bekijk frequentie-_eenheden"
+msgstr "Toon frequentie-_eenheden"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:8
 msgid "Show CPU frequency as _percentage"
-msgstr "Processorsnelheid tonen als _percentage"
+msgstr "Toon CPU-frequentie als _percentage"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
 #: ../cpufreq/src/cpufreq-applet.c:958 ../cpufreq/src/cpufreq-applet.c:1013
 msgid "CPU Frequency Scaling Monitor"
-msgstr "Processorsnelheid"
+msgstr "CPU-snelheidsbewaker"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:2
 msgid "Monitor the CPU Frequency Scaling"
-msgstr "Processorsnelheid weergeven en wijzigen"
+msgstr "Processorsnelheid bewaken"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:1
 msgid "CPU to Monitor"
-msgstr "De te beheren processor"
+msgstr "De te bewaken CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:2
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
-msgstr "Stel de te beheren processor in. In een systeem met een enkele processorhoeft dit niet veranderd te worden.\t"
+msgstr "Stel de te bewaken CPU in. In een systeem met een enkele processor hoeft dit niet veranderd te worden.\t"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
 msgid "Mode to show CPU usage"
-msgstr "Modus om CPU gebruik te tonen"
+msgstr "Modus om CPU-gebruik te tonen"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
@@ -727,19 +728,19 @@ msgstr "Het type tekst om weer te geven (indien tekst ingeschakeld is)"
 msgid ""
 "A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr "Een waarde van 0 toont CPU frequentie, 1 toont frequentie en eenheden, en 2 toont een percentage ipv frequentie"
+msgstr "Een waarde van 0 toont CPU-frequentie, 1 toont frequentie en eenheden, en 2 toont een percentage in plaats van frequentie."
 
 #: ../cpufreq/src/cpufreq-applet.c:588 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
-msgstr "Kan helpdocument niet openen."
+msgstr "Kon hulpdocument niet openen"
 
 #: ../cpufreq/src/cpufreq-applet.c:619
 msgid "This utility shows the current CPU Frequency Scaling."
-msgstr "Dit programma toont de huidige processorsnelheid."
+msgstr "Dit hulpmiddel toont de huidige CPU-snelheid."
 
 #: ../cpufreq/src/cpufreq-applet.c:1014
 msgid "This utility shows the current CPU Frequency"
-msgstr "Dit programma toont de huidige processorfrequentie"
+msgstr "Dit programma toont de huidige CPU-frequentie"
 
 #: ../cpufreq/src/cpufreq-prefs.c:500
 msgid "Graphic"
@@ -769,15 +770,15 @@ msgstr "Aanpassen van processorsnelheid niet ondersteund"
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
-msgstr "Het is niet mogelijk om de processorsnelheid uw computer te veranderen. Het kan zijn dat uw computer niet juist is geconfigureerd of dat de hardware aanpassingen van de processorsnelheid niet ondersteunt."
+msgstr "Het is niet mogelijk om de processorsnelheid van uw computer te veranderen. Het kan zijn dat uw computer niet juist is ingesteld of dat de apparatuur aanpassingen van de processorsnelheid niet ondersteunt."
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
 msgid "Change CPU Frequency scaling"
-msgstr "Processorsnelheid aanpassen"
+msgstr "CPU-snelheid wijzigen"
 
 #: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:2
 msgid "Privileges are required to change the CPU Frequency scaling."
-msgstr "U heeft toegangsrechten nodig om de processorsnelheid aan te passen."
+msgstr "U heeft rechten nodig om de processorsnelheid te wijzigen."
 
 #: ../drivemount/drive-button.c:341 ../drivemount/drive-button.c:354
 msgid "(mounted)"
@@ -821,7 +822,7 @@ msgstr "Werp %s _uit"
 
 #: ../drivemount/drivemount.c:118
 msgid "Applet for mounting and unmounting block volumes."
-msgstr "Applet om blok-volumina te koppelen en te ontkoppelen"
+msgstr "Applet om blok-volumina te koppelen en te ontkoppelen."
 
 #: ../drivemount/drivemount.c:179 ../drivemount/drivemount.c:213
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
@@ -851,7 +852,7 @@ msgstr "Ogen"
 
 #: ../geyes/geyes.c:430
 msgid "The eyes look in the direction of the mouse pointer"
-msgstr "De ogen kijken in de richting van de muis"
+msgstr "De ogen kijken in de richting van de muisaanwijzer"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Geyes Applet Factory"
@@ -863,11 +864,11 @@ msgstr "Twee ogen voor op het paneel"
 
 #: ../geyes/org.mate.panel.applet.geyes.gschema.xml.in.h:1
 msgid "Directory in which the theme is located"
-msgstr "Map waar het thema zich bevindt"
+msgstr "Map waarin het thema zich bevindt"
 
 #: ../geyes/themes.c:126
 msgid "Can not launch the eyes applet."
-msgstr "Kan het eyes-applet niet opstarten."
+msgstr "Kan het ogen-applet niet opstarten."
 
 #: ../geyes/themes.c:127
 msgid "There was a fatal error while trying to load the theme."
@@ -887,7 +888,7 @@ msgstr "_Kies een thema:"
 
 #: ../mateweather/mateweather-about.c:53
 msgid "A panel application for monitoring local weather conditions."
-msgstr "Een paneeltoepassing om het lokale weer te volgen."
+msgstr "Een paneeltoepassing om de lokale weersomstandigheden te volgen."
 
 #: ../mateweather/mateweather-applet.c:108
 msgid "_Details"
@@ -896,7 +897,7 @@ msgstr "_Details"
 #: ../mateweather/mateweather-applet.c:111
 #: ../mateweather/mateweather-dialog.c:186
 msgid "_Update"
-msgstr "V_erversen"
+msgstr "_Bijwerken"
 
 #: ../mateweather/mateweather-applet.c:339
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
@@ -906,7 +907,7 @@ msgstr "Weerbericht"
 #: ../mateweather/mateweather-applet.c:357
 #: ../mateweather/mateweather-applet.c:361
 msgid "MATE Weather"
-msgstr "Mate-weerbericht"
+msgstr "MATE-Weerbericht"
 
 #: ../mateweather/mateweather-applet.c:460
 msgid "Weather Forecast"
@@ -922,7 +923,7 @@ msgstr "Stad: %s\nLucht: %s\nTemperatuur: %s"
 
 #: ../mateweather/mateweather-applet.c:521
 msgid "Updating..."
-msgstr "Bezig met verversen..."
+msgstr "Bijwerken..."
 
 #: ../mateweather/mateweather-dialog.c:184
 msgid "Details"
@@ -934,7 +935,7 @@ msgstr "Stad:"
 
 #: ../mateweather/mateweather-dialog.c:236
 msgid "Last update:"
-msgstr "Laatste update:"
+msgstr "Laatste bijwerking:"
 
 #: ../mateweather/mateweather-dialog.c:246
 msgid "Conditions:"
@@ -1023,15 +1024,15 @@ msgstr "Locatieweergave"
 
 #: ../mateweather/mateweather-pref.c:160
 msgid "Select Location from the list"
-msgstr "Selecteer locatie uit de lijst"
+msgstr "Selecteer locatie in de lijst"
 
 #: ../mateweather/mateweather-pref.c:161
 msgid "Update spin button"
-msgstr "Update spin button"
+msgstr "Ronddraaiende knop voor bijwerken"
 
 #: ../mateweather/mateweather-pref.c:161
 msgid "Spinbutton for updating"
-msgstr "Draaiknop voor verversen"
+msgstr "Ronddraaiknop voor bijwerken"
 
 #: ../mateweather/mateweather-pref.c:162
 msgid "Address Entry"
@@ -1039,12 +1040,12 @@ msgstr "Adresinvoer"
 
 #: ../mateweather/mateweather-pref.c:162
 msgid "Enter the URL"
-msgstr "Geef de URL"
+msgstr "Geef de URL in"
 
 #: ../mateweather/mateweather-pref.c:285
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
-msgstr "Kan locatie XML database niet laden. Rapporteert u dit alstublieft als een bug."
+msgstr "Kon de XML-gegevensbank voor locaties niet laden. Rapporteert u dit alstublieft als een fout."
 
 #: ../mateweather/mateweather-pref.c:807
 msgid "Weather Preferences"
@@ -1053,13 +1054,13 @@ msgstr "Voorkeuren Weerbericht"
 #: ../mateweather/mateweather-pref.c:834
 #: ../mateweather/mateweather-pref.c:1052
 msgid "_Automatically update every:"
-msgstr "_Automatisch verversen na iedere:"
+msgstr "_Automatisch bijwerken na iedere:"
 
 #. * Units settings page.
 #. Temperature Unit
 #: ../mateweather/mateweather-pref.c:849
 msgid "_Temperature unit:"
-msgstr "_Temperatuur eenheid:"
+msgstr "_Temperatuureenheid:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
 #: ../mateweather/mateweather-pref.c:863
@@ -1078,7 +1079,7 @@ msgstr "Fahrenheit"
 #. Speed Unit
 #: ../mateweather/mateweather-pref.c:875
 msgid "_Wind speed unit:"
-msgstr "_Windsnelheid eenheid:"
+msgstr "_Windsnelheid-eenheid:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
@@ -1103,12 +1104,12 @@ msgstr "knopen"
 
 #: ../mateweather/mateweather-pref.c:897
 msgid "Beaufort scale"
-msgstr "Beaufort schaal"
+msgstr "Beaufort-schaal"
 
 #. Pressure Unit
 #: ../mateweather/mateweather-pref.c:906
 msgid "_Pressure unit:"
-msgstr "_Luchtdruk eenheid:"
+msgstr "_Luchtdrukeenheid:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
@@ -1144,7 +1145,7 @@ msgstr "atm"
 #. Distance Unit
 #: ../mateweather/mateweather-pref.c:940
 msgid "_Visibility unit:"
-msgstr "_Zicht eenheid:"
+msgstr "_Zicht-eenheid:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
@@ -1181,7 +1182,7 @@ msgstr "Meldi_ngen tonen"
 
 #: ../mateweather/mateweather-pref.c:1048
 msgid "Update"
-msgstr "Verversen"
+msgstr "Bijwerken"
 
 #: ../mateweather/mateweather-pref.c:1065
 msgid "minutes"
@@ -1213,15 +1214,15 @@ msgstr "Locatie"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr "Mateweather Applet Factory"
+msgstr "Mate Weerbericht Applet Fabriek"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
-msgstr "Fabriek om het mate weer-applet te maken"
+msgstr "Fabriek om het weerbericht-applet te maken."
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
-msgstr "Bekijk het huidige weer, en vooruitzichten"
+msgstr "Bekijk het huidige weer, en de vooruitzichten"
 
 #: ../invest-applet/data/financialchart.ui.h:1
 #: ../invest-applet/invest/chart.py:117
@@ -1428,7 +1429,7 @@ msgstr "_Opties"
 
 #: ../invest-applet/data/financialchart.ui.h:60
 msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "Grafiek downloaden van <b>Yahoo!</b>"
+msgstr "Grafiek binnenhalen van <b>Yahoo!</b>"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:1
 msgid "Invest Preferences"
@@ -1436,7 +1437,7 @@ msgstr "Invest-voorkeuren"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:2
 msgid "label"
-msgstr "label"
+msgstr "etiket"
 
 #: ../invest-applet/data/prefs-dialog.ui.h:3
 msgid "Stocks"
@@ -1490,7 +1491,7 @@ msgstr "<b>Er is momenteel geen aandeleninformatie beschikbaar</b>"
 msgid ""
 "The server could not be contacted. The computer is either offline or the "
 "servers are down. Try again later."
-msgstr "Er kon geen verbinding gemaakt worden met de server. Uw computer is offline of de server is onbereikbaar. Probeer het later nogmaals."
+msgstr "Er kon geen verbinding gemaakt worden met de server. Uw computer is niet verbonden met het internet of de server is onbereikbaar. Probeer het later nogmaals."
 
 #: ../invest-applet/invest/chart.py:166
 #, python-format
@@ -1503,11 +1504,11 @@ msgstr "Grafiek openen"
 
 #: ../invest-applet/invest/chart.py:248
 msgid "Chart downloaded"
-msgstr "Grafiek gedownload"
+msgstr "Grafiek opgehaald"
 
 #: ../invest-applet/invest/chart.py:250
 msgid "Chart could not be downloaded"
-msgstr "Kon grafiek niet downloaden"
+msgstr "Kon grafiek niet binnenhalen"
 
 #: ../invest-applet/invest/invest-applet.py:44
 msgid "Invest Applet"
@@ -1519,7 +1520,7 @@ msgstr "Symbool"
 
 #: ../invest-applet/invest/preferences.py:35
 msgid "Label"
-msgstr "Label"
+msgstr "Etiket"
 
 #: ../invest-applet/invest/preferences.py:35
 msgid "Amount"
@@ -1558,12 +1559,12 @@ msgstr "Gemiddelde wijziging: %s"
 #: ../invest-applet/invest/quotes.py:221
 #, python-format
 msgid "Positions balance: %s %s (%s)"
-msgstr "Positie-balans: %s %s (%s)"
+msgstr "Positiebalans: %s %s (%s)"
 
 #: ../invest-applet/invest/quotes.py:223
 #, python-format
 msgid "Updated at %s"
-msgstr "Ververst op %s"
+msgstr "Bijgewerkt op %s"
 
 #. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
 #. VARIATION_PCT, PB
@@ -1598,11 +1599,11 @@ msgstr "Winst %"
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
-msgstr "Een systeembelastingmonitor met grafieken om CPU-, geheugen- swap- en netwerkgebruik te volgen."
+msgstr "Een systeembelastingbewaker met grafieken om CPU-, geheugen- wisselgeheugen- en netwerkgebruik te tonen."
 
 #: ../multiload/main.c:124
 msgid "Start system-monitor"
-msgstr "Systeemmonitor starten"
+msgstr "Systeembewaking starten"
 
 #: ../multiload/main.c:146
 #, c-format
@@ -1641,7 +1642,7 @@ msgid ""
 "%s:\n"
 "%u%% in use by programs\n"
 "%u%% in use as cache"
-msgstr "%s:\n%u%% in gebruik bij programma's\n%u%% in gebruik als cache"
+msgstr "%s:\n%u%% in gebruik bij programma's\n%u%% in gebruik als tijdelijke opslag"
 
 #: ../multiload/main.c:308
 #, c-format
@@ -1682,7 +1683,7 @@ msgstr "Netwerkgebruik"
 
 #: ../multiload/main.c:360
 msgid "Swap Load"
-msgstr "Swap-gebruik"
+msgstr "Wisselgeheugen-gebruik"
 
 #: ../multiload/main.c:362
 msgid "Disk Load"
@@ -1690,12 +1691,12 @@ msgstr "Schijfgebruik"
 
 #: ../multiload/main.c:458
 msgid "_Open System Monitor"
-msgstr "Procesbeheer _openen"
+msgstr "Systeembewaking _openen"
 
 #: ../multiload/main.c:486
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
-msgstr "Systeembelasting-meter"
+msgstr "Systeembewaking"
 
 #: ../multiload/netspeed.c:40
 #, c-format
@@ -1708,27 +1709,27 @@ msgstr "Een systeembelasting-meter"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:1
 msgid "Enable CPU load graph"
-msgstr "CPU-belastingsgrafiek tonen"
+msgstr "CPU-belastinggrafiek tonen"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:2
 msgid "Enable memory load graph"
-msgstr "Geheugengebruik tonen"
+msgstr "Geheugengebruikgrafiek tonen"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:3
 msgid "Enable network load graph"
-msgstr "Netwerkgebruik tonen"
+msgstr "Netwerkgebruikgrafiek tonen"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:4
 msgid "Enable swap load graph"
-msgstr "Wisselbestand-gebruik tonen"
+msgstr "Wisselbestand-gebruikgrafiek tonen"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:5
 msgid "Enable load average graph"
-msgstr "Belastingsgemiddelde tonen"
+msgstr "Belastinggemiddelde-grafiek tonen"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:6
 msgid "Enable disk load graph"
-msgstr "Activeer schijfgebruik grafiek"
+msgstr "Activeer schijfgebruikgrafiek"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:7
 msgid "Applet refresh rate in milliseconds"
@@ -1742,23 +1743,23 @@ msgstr "Grafiekgrootte"
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr "Voor horizontale panelen is dit de breedte, voor verticale is dit de hoogte, van de grafieken."
+msgstr "Voor horizontale panelen is dit de breedte van de grafieken in beeldpunten, voor verticale is dit de hoogte van de grafieken."
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:10
 msgid "Graph color for user-related CPU activity"
-msgstr "Kleur van grafiek voor normale processen"
+msgstr "Kleur van grafiek voor gebruiker-gerelateerde CPU-activiteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:11
 msgid "Graph color for system-related CPU activity"
-msgstr "Kleur van grafiek voor systeemprocessen"
+msgstr "Kleur van grafiek voor systeemgerelateerde CPU-activiteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:12
 msgid "Graph color for nice-related CPU activity"
-msgstr "Kleur van grafiek voor aardige-gerelateerde CPU activiteit"
+msgstr "Kleur van grafiek voor nice-gerelateerde CPU-activiteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:13
 msgid "Graph color for iowait related CPU activity"
-msgstr "Grafiekkleur voor iowait-gerelateerde CPU activiteit"
+msgstr "Grafiekkleur voor iowait-gerelateerde CPU-activiteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:14
 msgid "CPU graph background color"
@@ -1766,7 +1767,7 @@ msgstr "CPU-grafiek achtergrondkleur"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:15
 msgid "Graph color for user-related memory usage"
-msgstr "Kleur van de grafiek voor gebruikersgerelateerd geheugengebruik"
+msgstr "Kleur van de grafiek voor gebruikergerelateerd geheugengebruik"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:16
 msgid "Graph color for shared memory"
@@ -1786,7 +1787,7 @@ msgstr "Geheugengrafiek achtergrondkleur"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:20
 msgid "Graph color for input network activity"
-msgstr "Kleur van de grafiek voor inkomende netwerkactiviteit"
+msgstr "Kleur van de grafiek voor binnenkomende netwerkactiviteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:21
 msgid "Graph color for output network activity"
@@ -1798,11 +1799,11 @@ msgstr "Kleur van de grafiek voor loopback-netwerkactiviteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:23
 msgid "Network graph background color"
-msgstr "Netwerkgebruik achtergrondkleur"
+msgstr "Netwerkgrafiek achtergrondkleur"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:24
 msgid "Graph color for user-related swap usage"
-msgstr "Kleur van de grafiek voor gebruikersgerelateerd wisselbestandgebruik"
+msgstr "Kleur van de grafiek voor gebruikergerelateerd wisselbestandgebruik"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Swap graph background color"
@@ -1810,11 +1811,11 @@ msgstr "Wisselbestand-grafiek achtergrondkleur"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Graph color for load average"
-msgstr "Kleur van de grafiek voor het belastingsgemiddelde"
+msgstr "Kleur van de grafiek voor het belastinggemiddelde"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Load graph background color"
-msgstr "Belastingsgrafiek achtergrondkleur"
+msgstr "Laad de achtergrondkleur voor de grafiek"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Graph color for disk read"
@@ -1826,15 +1827,15 @@ msgstr "Grafiekkleur voor schijfschrijf-activiteit"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:30
 msgid "Background color for disk load graph"
-msgstr "Achtergrondkleur voor schijfgebruik grafiek"
+msgstr "Achtergrondkleur voor schijfgebruikgrafiek"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:31
 msgid "The desktop description file to execute as the system monitor"
-msgstr "Het desktop-bestand dat uitgevoerd dient te worden voor de systeemmonitor"
+msgstr "Het desktop-beschrijvingsbestand dat uitgevoerd dient te worden als de systeembewaking"
 
 #: ../multiload/properties.c:321
 msgid "Monitored Resources"
-msgstr "Gemeten bronnen"
+msgstr "Bewaakte bronnen"
 
 #: ../multiload/properties.c:350
 msgid "_Processor"
@@ -1866,11 +1867,11 @@ msgstr "Opties"
 
 #: ../multiload/properties.c:464
 msgid "System m_onitor width: "
-msgstr "Systeembelasting _breedte:"
+msgstr "Systeembewaking _breedte:"
 
 #: ../multiload/properties.c:466
 msgid "System m_onitor height: "
-msgstr "Systeembelasting h_oogte:"
+msgstr "Systeembewaking h_oogte:"
 
 #: ../multiload/properties.c:501
 msgid "pixels"
@@ -1878,7 +1879,7 @@ msgstr "beeldpunten"
 
 #: ../multiload/properties.c:513
 msgid "Sys_tem monitor update interval: "
-msgstr "Sys_teembelasting verversingsinterval"
+msgstr "Sys_teembewaking tussenpoze voor bijwerken:"
 
 #: ../multiload/properties.c:543
 msgid "milliseconds"
@@ -1898,7 +1899,7 @@ msgstr "S_ysteem"
 
 #: ../multiload/properties.c:591
 msgid "N_ice"
-msgstr "_Achtergrond"
+msgstr "Nice"
 
 #: ../multiload/properties.c:592
 msgid "I_OWait"
@@ -1971,15 +1972,15 @@ msgstr "_Schrijven"
 
 #: ../multiload/properties.c:648
 msgid "System Monitor Preferences"
-msgstr "Voorkeuren systeembelasting"
+msgstr "Voorkeuren Systeembewaking"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
 msgid "Device to monitor"
-msgstr "Apparaat om te monitoren"
+msgstr "Apparaat om te bewaken"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
 msgid "The name of the device to monitor"
-msgstr "De naam van het apparaat om te monitoren"
+msgstr "De naam van het te bewaken apparaat"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
 msgid "Show sum speed"
@@ -1999,17 +2000,17 @@ msgstr "Indien waar, toon de snelheid in bits ipv. in bytes"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:8
 msgid "If true, show main icon."
-msgstr "Indien waar, toon het hoofdicoon"
+msgstr "Indien waar, toon het hoofdpictogram."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
 msgid "Short unit legend"
-msgstr "Korte eenheden legenda"
+msgstr "Korte-eenheden-legenda"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:10
 msgid ""
 "If true, shorten unit legend to one letter: lowercase for bits / uppercase "
 "for Bytes."
-msgstr "Indien waar, verkort de eenheid legenda tot één letter: kleine letter voor bits / hoofdletter voor Bytes."
+msgstr "Indien waar, verkort de eenheid-legenda tot één letter: kleine letter voor bits / hoofdletter voor Bytes."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:11
 msgid "Change icon"
@@ -2017,7 +2018,7 @@ msgstr "Verander pictogram"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
 msgid "If true, change the icon due to selected device."
-msgstr "Indien waar, pas icoon aan vanwege geselecteerd apparaat"
+msgstr "Indien waar, pas pictogram aan naar gelang het geselecteerde apparaat."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
 msgid "Auto change device"
@@ -2025,19 +2026,19 @@ msgstr "Apparaat automatisch veranderen"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
 msgid "If true, change automatically the selected device."
-msgstr "Indien waar, verander het geselecteerde apparaat automatisch"
+msgstr "Indien waar, verander het geselecteerde apparaat automatisch."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
 msgid "In color"
-msgstr "In kleur"
+msgstr "In-kleur"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:16
 msgid "The color of the graph of the inbound traffic"
-msgstr "De kleur van de grafiek met inkomend verkeer"
+msgstr "De kleur van de grafiek inzake binnenkomend verkeer"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:17
 msgid "Out color"
-msgstr "Uit kleur"
+msgstr "Uit-kleur"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:18
 msgid "The color of the graph of the outbound traffic"
@@ -2045,7 +2046,7 @@ msgstr "De kleur van de grafiek van uitgaand verkeer"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:19
 msgid "Up command"
-msgstr "Omhoog commando"
+msgstr "Aan-opdracht"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
 msgid "Command to execute to activate the device"
@@ -2053,7 +2054,7 @@ msgstr "Uit te voeren opdracht om het apparaat te activeren"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
 msgid "Down command"
-msgstr "Omlaag commando"
+msgstr "Uit-opdracht"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
 msgid "Command to execute to shut down the device"
@@ -2065,19 +2066,19 @@ msgstr "Toon pictogram voor signaalsterkte"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
 msgid "If true, show signal quality icon for wireless devices."
-msgstr "Indien waar, toon pictogram voor signaalkwaliteit voor draadloze apparaten"
+msgstr "Indien waar, toon pictogram voor signaalkwaliteit voor draadloze apparaten."
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
 msgid "Netspeed Applet Factory"
-msgstr "Netspeed-appletfabriek"
+msgstr "Netsnelheid-appletfabriek"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
 msgid "Netspeed Applet"
-msgstr "Netspeed-applet"
+msgstr "Netsnelheid-applet"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
 msgid "Network Monitor"
-msgstr "Netwerkmonitor"
+msgstr "Netwerkbewaking"
 
 #. translators: bits (short)
 #: ../netspeed/src/netspeed.c:389
@@ -2162,17 +2163,17 @@ msgstr "MiB"
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr "Er was een probleem bij het tonen van de hulp:\n%s"
+msgstr "Er was een probleem bij het tonen van de hulptekst:\n%s"
 
 #: ../netspeed/src/netspeed.c:796
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
-msgstr "Een kleine applet die informatie weergeeft over de gegevensstroom door een netwerkapparaat."
+msgstr "Een kleine applet die informatie weergeeft over de gegevensstroom door een bepaald netwerkapparaat."
 
 #: ../netspeed/src/netspeed.c:957
 msgid "Mate Netspeed Preferences"
-msgstr "Mate Netspeed voorkeuren"
+msgstr "Mate-Netsnelheid voorkeuren"
 
 #: ../netspeed/src/netspeed.c:979
 msgid "General Settings"
@@ -2180,7 +2181,7 @@ msgstr "Algemene instellingen"
 
 #: ../netspeed/src/netspeed.c:1005
 msgid "Network _device:"
-msgstr "Netwerk _device:"
+msgstr "Netwerkapparaat:"
 
 #. Default means device with default route set
 #: ../netspeed/src/netspeed.c:1021
@@ -2197,7 +2198,7 @@ msgstr "Toon _bits in plaats van bytes"
 
 #: ../netspeed/src/netspeed.c:1042
 msgid "Shorten _unit legend"
-msgstr "Verkort _unit legenda"
+msgstr "Verkort legenda-eenheid"
 
 #: ../netspeed/src/netspeed.c:1046
 msgid "_Change icon according to the selected device"
@@ -2205,11 +2206,11 @@ msgstr "Pi_ctogram aanpassen aan het geselecteerde apparaat"
 
 #: ../netspeed/src/netspeed.c:1050
 msgid "Show _icon"
-msgstr "Toon _icon"
+msgstr "Toon pictogram"
 
 #: ../netspeed/src/netspeed.c:1054
 msgid "Show signal _quality icon for wireless devices"
-msgstr "Toon signaal _quality pictogram voor draadloze apparaten"
+msgstr "Toon signaalkwaliteitspictogram voor draadloze apparaten"
 
 #: ../netspeed/src/netspeed.c:1172
 #, c-format
@@ -2218,7 +2219,7 @@ msgstr "Apparaatgegevens voor %s"
 
 #: ../netspeed/src/netspeed.c:1197
 msgid "_In graph color"
-msgstr "Kleur _inkomende grafiek"
+msgstr "Kleur binnenkomende grafiek"
 
 #: ../netspeed/src/netspeed.c:1198
 msgid "_Out graph color"
@@ -2234,7 +2235,7 @@ msgstr "Netmask:"
 
 #: ../netspeed/src/netspeed.c:1216
 msgid "Hardware Address:"
-msgstr "Hardware-adres:"
+msgstr "Apparatuuradres:"
 
 #: ../netspeed/src/netspeed.c:1217
 msgid "P-t-P Address:"
@@ -2267,7 +2268,7 @@ msgstr "ESSID:"
 
 #: ../netspeed/src/netspeed.c:1376
 msgid "Device _Details"
-msgstr "Apparaat _Details"
+msgstr "Apparaatdetails"
 
 #: ../netspeed/src/netspeed.c:1378
 msgid "Preferences..."
@@ -2280,19 +2281,19 @@ msgstr "Over..."
 #: ../netspeed/src/netspeed.c:1423
 #, c-format
 msgid "Do you want to disconnect %s now?"
-msgstr "Wilt u de verbinding %s verbreken?"
+msgstr "Wilt u de verbinding met %s nu verbreken?"
 
 #: ../netspeed/src/netspeed.c:1427
 #, c-format
 msgid "Do you want to connect %s now?"
-msgstr "Wilt u met %s verbinden?"
+msgstr "Wilt u %s nu verbinden?"
 
 #: ../netspeed/src/netspeed.c:1454
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
-msgstr "<b>Uitvoeren van commando %s is gefaald</b>\n%s"
+msgstr "<b>Uitvoeren van opdracht %s is mislukt</b>\n%s"
 
 #: ../netspeed/src/netspeed.c:1513
 #, c-format
@@ -2331,7 +2332,7 @@ msgstr "onbekend"
 
 #: ../netspeed/src/netspeed.c:1588
 msgid "Mate Netspeed"
-msgstr "Mate Netspeed"
+msgstr "Mate Netsnelheid"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
@@ -2353,7 +2354,7 @@ msgstr "Deze memo is vergrendeld."
 
 #: ../stickynotes/stickynotes.c:576
 msgid "This note is unlocked."
-msgstr "Deze memo is niet op slot."
+msgstr "Deze memo is ontgrendeld."
 
 #: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
 msgid "_New Note"
@@ -2437,15 +2438,15 @@ msgstr "Gedrag"
 
 #: ../stickynotes/stickynotes.ui.h:21
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr "Memo's verbergen als op het bureaublad geklikt wordt"
+msgstr "Memo's verbergen als er op het bureaublad geklikt wordt"
 
 #: ../stickynotes/stickynotes.ui.h:22
 msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr "Geeft aan of alle memo's verborgen worden als op het het bureaublad geslecteerd wordt."
+msgstr "Geeft aan of alle memo's verborgen worden als er op het bureaublad geselecteerd wordt"
 
 #: ../stickynotes/stickynotes.ui.h:23
 msgid "Force _default color and font on notes"
-msgstr "_Standaardkleur en lettertype gebruiken voor alle memo's"
+msgstr "_Standaardkleur en -lettertype gebruiken voor alle memo's"
 
 #: ../stickynotes/stickynotes.ui.h:24
 msgid "Choose if the default style is forced on all notes"
@@ -2473,7 +2474,7 @@ msgstr "Alle memo's verwijderen?"
 
 #: ../stickynotes/stickynotes.ui.h:30
 msgid "_Delete All"
-msgstr "Alles _verwijderen"
+msgstr "Allemaal _verwijderen"
 
 #: ../stickynotes/stickynotes.ui.h:31
 msgid "Sticky Note"
@@ -2489,11 +2490,11 @@ msgstr "Memo verwijderen"
 
 #: ../stickynotes/stickynotes.ui.h:34
 msgid "Resize note"
-msgstr "Afmetingen wijzigen"
+msgstr "Afmetingen memo wijzigen"
 
 #: ../stickynotes/stickynotes.ui.h:35
 msgid "Sticky Note Properties"
-msgstr "Eigenschappen memo"
+msgstr "Eigenschappen Memo"
 
 #: ../stickynotes/stickynotes.ui.h:36
 msgid "Properties"
@@ -2533,7 +2534,7 @@ msgstr "_Gebruik standaardkleur"
 
 #: ../stickynotes/stickynotes.ui.h:45
 msgid "Specify a title for the note"
-msgstr "Geef een naam aan de memo"
+msgstr "Geef een titel aan de memo"
 
 #: ../stickynotes/stickynotes.ui.h:46
 msgid "_Title:"
@@ -2597,26 +2598,26 @@ msgstr "Bepaalt of de memo's zichtbaar zijn op alle werkbladen van het bureaubla
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:13
 msgid "Sticky notes' locked state"
-msgstr "Memo's vastgezet of niet"
+msgstr "Memo's vergrendeld of niet"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:14
 msgid "Specifies whether the sticky notes are locked (non-editable) or not."
-msgstr "Bepaalt of de memo's vastgezet zijn of niet (aanpasbaar)."
+msgstr "Bepaalt of de memo's vergrendeld zijn of niet (bewerkbaar)."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:15
 msgid "Date format of note's title"
-msgstr "Datumnotitie van memotitel"
+msgstr "Datumopmaak van memotitel"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:16
 msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr "Nieuwe memo's krijgen standaard de huidige datum als titel. Dit formaat wordt daarvoor gebruikt. Alles wat door strftime() begrepen wordt, is geldig."
+msgstr "Nieuwe memo's krijgen standaard de huidige datum als titel. Deze opmaak wordt daarvoor gebruikt; alles wat door strftime() begrepen wordt, is geldig."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:17
 msgid "Whether to use the default system color"
-msgstr "Standaard themakleuren gebruiken"
+msgstr "Standaard-themakleuren gebruiken"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:18
 msgid ""
@@ -2672,7 +2673,7 @@ msgstr "Memo's _verwijderen"
 
 #: ../stickynotes/stickynotes_applet.c:55
 msgid "_Lock Notes"
-msgstr "Memo's vast_zetten"
+msgstr "Memo's ver_grendelen"
 
 #: ../stickynotes/stickynotes_applet.c:581
 #, c-format
@@ -2687,48 +2688,48 @@ msgstr "Memo's tonen"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:378
 msgid "Sticky Notes for the MATE Desktop Environment"
-msgstr "Memo's voor de Mate-desktop"
+msgstr "Memo's voor de Mate-werkomgeving"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:1
 msgid "Timer Factory"
-msgstr "Timer Factory"
+msgstr "Aftelklok Factory"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:2
 msgid "Timer"
-msgstr "Timer"
+msgstr "Aftelklok"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
 #: ../timerapplet/timerapplet.c:259
 msgid "Start a timer and receive a notification when it is finished"
-msgstr "Een timer starten en een melding ontvangen wanneer deze is voltooid"
+msgstr "Een aftelklok starten en een melding ontvangen wanneer deze uitgeteld is"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:1
 msgid "Name of timer"
-msgstr "Timer naam"
+msgstr "Aftelklok naam"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:2
 msgid "Duration of timer in seconds"
-msgstr "Time looptijd in seconde"
+msgstr "Looptijd in seconden van aftelklok"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:3
 msgid "Show notification popup when timer finish"
-msgstr "Geef popup melding bij einde timer"
+msgstr "Geef opduikmelding bij einde aftelklok"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:4
 msgid "Show dialog window when timer finish"
-msgstr "Dialoog venster tonen bij einde timer"
+msgstr "Dialoogvenster tonen bij einde aftelklok"
 
 #: ../timerapplet/timerapplet.c:78
 msgid "_Start timer"
-msgstr "_Start timer"
+msgstr "_Start aftelklok"
 
 #: ../timerapplet/timerapplet.c:79
 msgid "P_ause timer"
-msgstr "_Pauzeer timer"
+msgstr "_Pauzeer aftelklok"
 
 #: ../timerapplet/timerapplet.c:80
 msgid "S_top timer"
-msgstr "S_top timer"
+msgstr "S_top aftelklok"
 
 #: ../timerapplet/timerapplet.c:140
 msgid "Finished"
@@ -2736,11 +2737,11 @@ msgstr "Voltooid"
 
 #: ../timerapplet/timerapplet.c:147 ../timerapplet/timerapplet.c:159
 msgid "Timer finished!"
-msgstr "Timer klaar!"
+msgstr "Aftelklok klaar!"
 
 #: ../timerapplet/timerapplet.c:292
 msgid "Timer Applet Preferences"
-msgstr "Voorkeuren voor Timer Apllet"
+msgstr "Voorkeuren voor Aftelklok-applet"
 
 #: ../timerapplet/timerapplet.c:305
 msgid "Name:"
@@ -2760,15 +2761,15 @@ msgstr "Seconden:"
 
 #: ../timerapplet/timerapplet.c:363
 msgid "Show notification popup"
-msgstr "Popup melding weergeven"
+msgstr "Opduikmelding weergeven"
 
 #: ../timerapplet/timerapplet.c:367
 msgid "Show dialog"
-msgstr "Dialoog venster tonen"
+msgstr "Dialoogvenster tonen"
 
 #: ../timerapplet/timerapplet.c:389
 msgid "Timer Applet"
-msgstr "Timerapplet"
+msgstr "Aftelklok-applet"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"
@@ -2780,7 +2781,7 @@ msgstr "Ga naar de prullenbak"
 
 #: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:353
 msgid "_Empty Trash"
-msgstr "_Prullenbak legen"
+msgstr "_Prullenbak ledigen"
 
 #: ../trashapplet/src/trashapplet.c:71
 msgid "_Open Trash"
@@ -2791,7 +2792,7 @@ msgstr "Prullenbak _openen"
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
 msgstr[0] "%d prop in de prullenbak"
-msgstr[1] "%d propjes in de prullenbak"
+msgstr[1] "%d elementen in de prullenbak"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
@@ -2802,13 +2803,13 @@ msgstr "De prullenbak is leeg"
 msgid ""
 "Error while spawning caja:\n"
 "%s"
-msgstr "Fout bij het starten van caja:\n%s"
+msgstr "Fout bij het starten van Caja:\n%s"
 
 #: ../trashapplet/src/trashapplet.c:431
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
-msgstr "Een Mate-prullenbak voor op uw paneel. Hiermee kunt u in de prullenbak kijken of er objecten naar toeslepen."
+msgstr "Een Mate-prullenbak voor op uw paneel. Hiermee kunt u in de prullenbak kijken of er objecten naar toe slepen."
 
 #: ../trashapplet/src/trashapplet.c:456
 msgid "Delete Immediately?"
@@ -2825,13 +2826,13 @@ msgstr "Kan sommige objecten niet naar de prullenbak verplaatsen, wilt u ze voor
 
 #: ../trashapplet/src/trashapplet.c:629
 msgid "Trash Applet"
-msgstr "Prullenbak applet"
+msgstr "Prullenbak-applet"
 
 #. Translators: the %s in this string should be read as %d.
 #: ../trashapplet/src/trash-empty.c:80
 #, c-format
 msgid "Removing item %s of %s"
-msgstr "Item %s van %s wordt verwijderd"
+msgstr "Element %s van %s wordt verwijderd"
 
 #. Translators: %s is a file name
 #: ../trashapplet/src/trash-empty.c:106
@@ -2851,7 +2852,7 @@ msgstr "Als u ervoor kiest de prullenbak te legen, zullen alle objecten voorgoed
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:1
 msgid "Emptying the Trash"
-msgstr "Bezig met legen prullenbak"
+msgstr "Bezig met ledigen prullenbak"
 
 #: ../trashapplet/trashapplet-empty-progress.ui.h:2
 msgid "From:"
