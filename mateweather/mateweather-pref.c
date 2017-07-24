@@ -318,7 +318,6 @@ static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	gboolean toggled;
-	gint nxtSunEvent;
 
 	toggled = gtk_toggle_button_get_active(button);
 	gw_applet->mateweather_pref.update_enabled = toggled;
@@ -330,20 +329,9 @@ static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 		g_source_remove(gw_applet->timeout_tag);
 	}
 
-	if (gw_applet->suncalc_timeout_tag > 0)
-	{
-		g_source_remove(gw_applet->suncalc_timeout_tag);
-	}
-
 	if (gw_applet->mateweather_pref.update_enabled)
 	{
 		gw_applet->timeout_tag = g_timeout_add_seconds(gw_applet->mateweather_pref.update_interval, timeout_cb, gw_applet);
-		nxtSunEvent = weather_info_next_sun_event(gw_applet->mateweather_info);
-
-		if (nxtSunEvent >= 0)
-		{
-			gw_applet->suncalc_timeout_tag = g_timeout_add_seconds(nxtSunEvent, suncalc_timeout_cb, gw_applet);
-		}
 	}
 }
 
