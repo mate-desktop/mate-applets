@@ -507,10 +507,17 @@ phelp_cb (GtkDialog *dialog, gint tab, gpointer data)
 {
   GError *error = NULL;
 
+#if GTK_CHECK_VERSION (3, 22, 0)
+  gtk_show_uri_on_window (GTK_WINDOW (dialog),
+                          "help:mate-char-palette/charpick-prefs",
+                          gtk_get_current_event_time (),
+                          &error);
+#else
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
                 "help:mate-char-palette/charpick-prefs",
                 gtk_get_current_event_time (),
                 &error);
+#endif
 
   if (error) { /* FIXME: the user needs to see this */
     g_warning ("help error: %s\n", error->message);
