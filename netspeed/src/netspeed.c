@@ -730,7 +730,9 @@ timeout_function(MateNetspeedApplet *applet)
 static void
 display_help (GtkWidget *dialog, const gchar *section)
 {
+#if !GTK_CHECK_VERSION (3, 22, 0)
 	GdkScreen *screen;
+#endif
 	GError *error = NULL;
 	gboolean ret;
 	char *uri;
@@ -740,8 +742,15 @@ display_help (GtkWidget *dialog, const gchar *section)
 	else
 		uri = g_strdup ("help:mate-netspeed-applet");
 
+#if GTK_CHECK_VERSION (3, 22, 0)
+	ret = gtk_show_uri_on_window (NULL,
+	                              uri,
+	                              gtk_get_current_event_time (),
+	                              &error);
+#else
 	screen = gtk_widget_get_screen (dialog);
 	ret = gtk_show_uri (screen, uri, gtk_get_current_event_time (), &error);
+#endif
 	g_free (uri);
 
 	if (ret == FALSE) {
