@@ -368,10 +368,17 @@ trash_applet_open_folder (GtkAction   *action,
 {
   GError *err = NULL;
 
+#if GTK_CHECK_VERSION (3, 22, 0)
+  gtk_show_uri_on_window (NULL,
+                          "trash:",
+                          gtk_get_current_event_time (),
+                          &err);
+#else
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
                 "trash:",
                 gtk_get_current_event_time (),
                 &err);
+#endif
 
   if (err)
     {
@@ -388,10 +395,17 @@ trash_applet_show_help (GtkAction   *action,
   GError *err = NULL;
 
   /* FIXME - Actually, we need a user guide */
+#if GTK_CHECK_VERSION (3, 22, 0)
+  gtk_show_uri_on_window (NULL,
+                          "help:mate-trashapplet",
+                          gtk_get_current_event_time (),
+                          &err);
+#else
   gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
                 "help:mate-trashapplet",
                 gtk_get_current_event_time (),
                 &err);
+#endif
 
   if (err)
     {
