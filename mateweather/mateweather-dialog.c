@@ -109,10 +109,17 @@ static void response_cb(MateWeatherDialog* dialog, gint id, gpointer data)
 
 static void link_cb(GtkButton* button, gpointer data)
 {
+#if GTK_CHECK_VERSION (3, 22, 0)
+    gtk_show_uri_on_window (NULL,
+                            "http://www.weather.com/",
+                            gtk_get_current_event_time (),
+                            NULL);
+#else
     gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (button)),
-		    "http://www.weather.com/",
-		    gtk_get_current_event_time (),
-		    NULL);
+                  "http://www.weather.com/",
+                  gtk_get_current_event_time (),
+                  NULL);
+#endif
 }
 
 static gchar* replace_multiple_new_lines(gchar* s)
