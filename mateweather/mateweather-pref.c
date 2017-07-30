@@ -743,7 +743,7 @@ static void help_cb(GtkDialog* dialog, MateWeatherPref* pref)
 	GError* error = NULL;
 
 	current_page = gtk_notebook_get_current_page (GTK_NOTEBOOK (pref->priv->notebook));
-	uri = g_strdup_printf ("help:mateweather/mateweather-prefs#mateweather-%s", (current_page == 0) ? "metric" : "change-location");
+	uri = g_strdup_printf ("help:mateweather/mateweather-prefs", (current_page == 0) ? "metric" : "change-location");
 #if GTK_CHECK_VERSION (3, 22, 0)
 	gtk_show_uri_on_window (GTK_WINDOW (dialog),
 	                        uri,
