@@ -212,10 +212,17 @@ phelp_cb (GtkDialog *dialog)
 {
 	GError *error = NULL;
 
+#if GTK_CHECK_VERSION (3, 22, 0)
+	gtk_show_uri_on_window (GTK_WINDOW (dialog),
+	                        "help:mate-geyes/geyes-settings",
+	                        gtk_get_current_event_time (),
+	                        &error);
+#else
 	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-		"help:mate-geyes/geyes-settings",
-		gtk_get_current_event_time (),
-		&error);
+	              "help:mate-geyes/geyes-settings",
+	              gtk_get_current_event_time (),
+	              &error);
+#endif
 
 	if (error) {
 		GtkWidget *error_dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
