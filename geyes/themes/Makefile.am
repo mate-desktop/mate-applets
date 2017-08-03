@@ -30,6 +30,11 @@ Horrid_DATA = Horrid/config \
 	Horrid/horrid_eye.png \
 	Horrid/horrid_pupil.png
 
+Digitaldir = $(pkgdatadir)/geyes/Digital
+Digital_DATA = Digital/config \
+	Digital/Digital_eye.png \
+	Digital/Digital_pupil.png
+	
 EXTRA_DIST = \
 	$(Default_DATA) \
 	$(Default_tiny_DATA) \
