@@ -30,12 +30,18 @@ Horrid_DATA = Horrid/config \
 	Horrid/horrid_eye.png \
 	Horrid/horrid_pupil.png
 
+Digitaldir = $(pkgdatadir)/geyes/Digital
+Digital_DATA = Digital/config \
+	Digital/Digital-eye.png \
+	Digital/Digital-pupil.png
+
 EXTRA_DIST = \
 	$(Default_DATA) \
 	$(Default_tiny_DATA) \
 	$(Bizarre_DATA) \
 	$(Bloodshot_DATA) \
 	$(Horrid_DATA) \
+	$(Digital_DATA) \
 	$(Tango_DATA)
 
 -include $(top_srcdir)/git.mk
