@@ -414,6 +414,8 @@ cpufreq_applet_popup_position_menu (GtkMenu  *menu,
         GtkAllocation   allocation;
         gint            menu_xpos;
         gint            menu_ypos;
+        gint            sc_width;
+        gint            sc_height;
 
         widget = GTK_WIDGET (gdata);
 
@@ -421,7 +423,10 @@ cpufreq_applet_popup_position_menu (GtkMenu  *menu,
 
         gdk_window_get_origin (gtk_widget_get_window (widget), &menu_xpos, &menu_ypos);
 
-	gtk_widget_get_allocation (widget, &allocation);
+        gtk_widget_get_allocation (widget, &allocation);
+
+        gdk_window_get_geometry (gdk_screen_get_root_window (gtk_widget_get_screen (widget)), NULL, NULL,
+                                 &sc_width, &sc_height);
 
         menu_xpos += allocation.x;
         menu_ypos += allocation.y;
@@ -429,14 +434,14 @@ cpufreq_applet_popup_position_menu (GtkMenu  *menu,
         switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (widget))) {
         case MATE_PANEL_APPLET_ORIENT_DOWN:
         case MATE_PANEL_APPLET_ORIENT_UP:
-                if (menu_ypos > gdk_screen_get_height (gtk_widget_get_screen (widget)) / 2)
+                if (menu_ypos > sc_height / 2)
                         menu_ypos -= requisition.height;
                 else
                         menu_ypos += allocation.height;
                 break;
         case MATE_PANEL_APPLET_ORIENT_RIGHT:
         case MATE_PANEL_APPLET_ORIENT_LEFT:
-                if (menu_xpos > gdk_screen_get_width (gtk_widget_get_screen (widget)) / 2)
+                if (menu_xpos > sc_width / 2)
                         menu_xpos -= requisition.width;
                 else
                         menu_xpos += allocation.width;

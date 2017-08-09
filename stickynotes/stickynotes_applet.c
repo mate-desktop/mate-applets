@@ -154,6 +154,8 @@ stickynotes_destroy (GtkWidget *widget,
 void
 stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 {
+	gint sc_height;
+
 	stickynotes = g_new(StickyNotes, 1);
 
 	stickynotes->notes = NULL;
@@ -189,7 +191,10 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 	                  G_CALLBACK (preferences_apply_cb), NULL);
 
 	/* Max height for large notes*/
-	stickynotes->max_height = 0.8*gdk_screen_get_height( gdk_screen_get_default() );
+	gdk_window_get_geometry (gdk_screen_get_root_window (gdk_screen_get_default()), NULL, NULL,
+				 NULL, &sc_height);
+
+	stickynotes->max_height = 0.8 * sc_height;
 
 	/* Load sticky notes */
 	stickynotes_load (gtk_widget_get_screen (GTK_WIDGET (mate_panel_applet)));
