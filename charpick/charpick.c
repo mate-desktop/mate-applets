@@ -335,30 +335,32 @@ get_menu_pos (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer data)
 	gint tempx, tempy, width, height;
 	gint screen_width, screen_height;
 
-        gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &reqmenu);
+	gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &reqmenu);
 	gdk_window_get_origin (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), &tempx, &tempy);
 	gdk_window_get_geometry (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), NULL, NULL,
 				 &width, &height
 				 );
      			      
-     	switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (curr_data->applet))) {
-     	case MATE_PANEL_APPLET_ORIENT_DOWN:
-        	tempy += height;
-     		break;
-     	case MATE_PANEL_APPLET_ORIENT_UP:
-        	tempy -= reqmenu.height;
-     		break;
-     	case MATE_PANEL_APPLET_ORIENT_LEFT:
-     		tempx -= reqmenu.width;
+	switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (curr_data->applet))) {
+	case MATE_PANEL_APPLET_ORIENT_DOWN:
+		tempy += height;
 		break;
-     	case MATE_PANEL_APPLET_ORIENT_RIGHT:
-     		tempx += width;
+	case MATE_PANEL_APPLET_ORIENT_UP:
+		tempy -= reqmenu.height;
 		break;
-     	}
-	screen_width = gdk_screen_width ();
-     	screen_height = gdk_screen_height ();
-     	*x = CLAMP (tempx, 0, MAX (0, screen_width - reqmenu.width));
-     	*y = CLAMP (tempy, 0, MAX (0, screen_height - reqmenu.height));
+	case MATE_PANEL_APPLET_ORIENT_LEFT:
+		tempx -= reqmenu.width;
+		break;
+	case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		tempx += width;
+		break;
+	}
+
+	gdk_window_get_geometry (gdk_screen_get_root_window (gdk_screen_get_default()),
+				 NULL, NULL, &screen_width, &screen_height);
+
+	*x = CLAMP (tempx, 0, MAX (0, screen_width - reqmenu.width));
+	*y = CLAMP (tempy, 0, MAX (0, screen_height - reqmenu.height));
 }
 
 static void
