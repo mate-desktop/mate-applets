@@ -890,22 +890,24 @@ drive_button_ensure_popup (DriveButton *self)
     mounted = FALSE;
 
     if (self->volume) {
-	GMount *mount = NULL;
+		GMount *mount = NULL;
 
-	display_name = g_volume_get_name (self->volume);
-	ejectable = g_volume_can_eject (self->volume);
+		display_name = g_volume_get_name (self->volume);
+		ejectable = g_volume_can_eject (self->volume);
 
-	mount = g_volume_get_mount (self->volume);
-	if (mount) {
-	    mounted = TRUE;
-	    g_object_unref (mount);
-	}
+		mount = g_volume_get_mount (self->volume);
+		if (mount) {
+		    mounted = TRUE;
+		    g_object_unref (mount);
+		}
     } else {
-      if (!G_IS_MOUNT(self->volume))
-        return;
-	display_name = g_mount_get_name (self->mount);
-	ejectable = g_mount_can_eject (self->mount);
-	mounted = TRUE;
+    	if (!G_IS_MOUNT(self->volume))
+    		return;
+		else {
+			display_name = g_mount_get_name (self->mount);
+			ejectable = g_mount_can_eject (self->mount);
+			mounted = TRUE;
+		}
     }
 
     self->popup_menu = gtk_menu_new ();

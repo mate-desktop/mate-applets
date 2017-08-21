@@ -240,7 +240,7 @@ relayout_buttons (gpointer data)
 {
 	DriveList *self = DRIVE_LIST (data);
 	GList *sorted_buttons = NULL, *tmp;
-	int i;
+	int i = 0;
 
 
 	self->layout_tag = 0;
