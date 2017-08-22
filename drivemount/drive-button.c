@@ -330,6 +330,7 @@ drive_button_update (gpointer user_data)
     GIcon *icon;
     int width, height;
     GdkPixbuf *pixbuf = NULL, *scaled;
+    GdkPixbuf *tmp_pixbuf = NULL;
     GtkRequisition button_req, image_req;
     char *display_name, *tip;
 
@@ -366,64 +367,110 @@ drive_button_update (gpointer user_data)
             g_object_unref (pixbuf);
             pixbuf = scaled;
         }
-	    if (gtk_bin_get_child (GTK_BIN (self)) != NULL)
-	        gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
-	    return FALSE;
+        if (gtk_bin_get_child (GTK_BIN (self)) != NULL)
+            gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
+        return FALSE;
     }
 
-    if (self->volume) {
-    	GMount *mount;
+    gboolean is_mounted = FALSE;
 
-    	display_name = g_volume_get_name (self->volume);
-    	mount = g_volume_get_mount (self->volume);
+    if (self->volume)
+    {
+        GMount *mount;
 
-    	if (mount)
-    	    tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
-    	else
-    	    tip = g_strdup_printf ("%s\n%s", display_name, _("(not mounted)"));
+        display_name = g_volume_get_name (self->volume);
+        mount = g_volume_get_mount (self->volume);
 
-    	if (mount)
-    	    icon = g_mount_get_icon (mount);
-    	else
-    	    icon = g_volume_get_icon (self->volume);
+        if (mount)
+        {
+            is_mounted = TRUE;
+            tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
+        }
+        else
+        {
+            is_mounted = FALSE;
+            tip = g_strdup_printf ("%s\n%s", display_name, _("(not mounted)"));
+        }
+        if (mount)
+            icon = g_mount_get_icon (mount);
+        else
+            icon = g_volume_get_icon (self->volume);
 
-    	if (mount)
-    	    g_object_unref (mount);
-    } else {
-    	display_name = g_mount_get_name (self->mount);
-    	tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
-    	icon = g_mount_get_icon (self->mount);
+        if (mount)
+            g_object_unref (mount);
+    } else
+    {
+        is_mounted = TRUE;
+        display_name = g_mount_get_name (self->mount);
+        tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
+        icon = g_mount_get_icon (self->mount);
     }
 
     gtk_widget_set_tooltip_text (GTK_WIDGET (self), tip);
     g_free (tip);
     g_free (display_name);
 
-
     screen = gtk_widget_get_screen (GTK_WIDGET (self));
     icon_theme = gtk_icon_theme_get_for_screen (screen);
     icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme, icon,
-    						MIN (width, height),
-    						GTK_ICON_LOOKUP_USE_BUILTIN);
+                                               MIN (width, height),
+                                               GTK_ICON_LOOKUP_USE_BUILTIN);
     if (icon_info)
     {
-	     pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
-	      g_object_unref (icon_info);
+        pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
+        g_object_unref (icon_info);
     }
 
     g_object_unref (icon);
 
     if (!pixbuf)
-	   return FALSE;
+        return FALSE;
 
-    scaled = gdk_pixbuf_scale_simple (pixbuf, width, height, GDK_INTERP_BILINEAR);
-    if (scaled) {
-	    g_object_unref (pixbuf);
-	    pixbuf = scaled;
+    // make a copy of pixbuf becasue icon image can be shared by system
+    tmp_pixbuf = gdk_pixbuf_copy (pixbuf);
+    g_object_unref (pixbuf);
+    g_assert (tmp_pixbuf != NULL);
+
+    // if mounted, change icon
+    if (is_mounted)
+    {
+        int icon_width, icon_height, rowstride, n_channels, x, y;
+        guchar *pixels, *p;
+
+        n_channels = gdk_pixbuf_get_n_channels (tmp_pixbuf);
+        g_assert (gdk_pixbuf_get_colorspace (tmp_pixbuf) == GDK_COLORSPACE_RGB);
+        g_assert (gdk_pixbuf_get_bits_per_sample (tmp_pixbuf) == 8);
+        g_assert (gdk_pixbuf_get_has_alpha (tmp_pixbuf));
+        g_assert (n_channels == 4);
+        icon_width = gdk_pixbuf_get_width (tmp_pixbuf);
+        icon_height = gdk_pixbuf_get_height (tmp_pixbuf);
+
+        rowstride = gdk_pixbuf_get_rowstride (tmp_pixbuf);
+        pixels = gdk_pixbuf_get_pixels (tmp_pixbuf);
+
+        const gdouble ratio = 0.65;
+        gdouble y_start = icon_height * ratio;
+        gdouble x_start = icon_height * (1 + ratio);
+
+        for (y = y_start; y < icon_height; y++)
+            for (x = x_start - y; x < icon_width; x++)
+            {
+                p = pixels + y * rowstride + x * n_channels;
+                p[0] = 0;
+                p[1] = 230;
+                p[2] = 0;
+                p[3] = 255;
+            }
     }
 
-    gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
-    g_object_unref (pixbuf);
+    scaled = gdk_pixbuf_scale_simple (tmp_pixbuf, width, height, GDK_INTERP_BILINEAR);
+    if (scaled) {
+        g_object_unref (tmp_pixbuf);
+        tmp_pixbuf = scaled;
+    }
+
+    gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), tmp_pixbuf);
+    g_object_unref (tmp_pixbuf);
 
     gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
 
