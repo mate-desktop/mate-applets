@@ -180,8 +180,8 @@ cpufreq_applet_init (CPUFreqApplet *applet)
         applet->popup = NULL;
         applet->monitor = NULL;
 
-        applet->label = gtk_label_new (NULL);
-        applet->unit_label = gtk_label_new (NULL);
+        applet->label = gtk_label_new ("---");
+        applet->unit_label = gtk_label_new ("--");
         applet->icon = gtk_image_new ();
         applet->box = NULL;
 
@@ -292,6 +292,7 @@ static gint
 cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 {
 	GList *available_freqs;
+	const gchar *saved_text;
 
 	if (applet->max_label_width > 0)
 		return applet->max_label_width;
@@ -299,8 +300,17 @@ cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 	if (!CPUFREQ_IS_MONITOR (applet->monitor))
 		return 0;
 
+	saved_text = strdup (gtk_label_get_text (GTK_LABEL (applet->label)));
 	available_freqs = cpufreq_monitor_get_available_frequencies (applet->monitor);
-	while (available_freqs) {
+
+	if (available_freqs == NULL) {
+		/* This only happens when the monitor is not yet ready during
+		 * applet instantiation. In this case the initial label string
+		 * is "---", so just use the width of that.
+		 */
+		gtk_widget_get_preferred_width (applet->label, &applet->max_label_width, NULL);
+
+	} else while (available_freqs) {
 		gint           label_width;
 		const gchar   *text;
 		gchar         *freq_text;
@@ -319,17 +329,25 @@ cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 		available_freqs = g_list_next (available_freqs);
 	}
 
+	gtk_label_set_text (GTK_LABEL (applet->label), saved_text);
+	free (saved_text);
+
 	return applet->max_label_width;
 }
 
 static gint
 cpufreq_applet_get_max_perc_width (CPUFreqApplet *applet)
 {
+	const gchar *saved_text;
+
 	if (applet->max_perc_width > 0)
 		return applet->max_perc_width;
 
+	saved_text = strdup (gtk_label_get_text (GTK_LABEL (applet->label)));
 	gtk_label_set_text (GTK_LABEL (applet->label), "100%");
 	gtk_widget_get_preferred_width (applet->label, &applet->max_perc_width, NULL);
+	gtk_label_set_text (GTK_LABEL (applet->label), saved_text);
+	free (saved_text);
 
 	return applet->max_perc_width;
 }
@@ -338,15 +356,19 @@ static gint
 cpufreq_applet_get_max_unit_width (CPUFreqApplet *applet)
 {
 	gint           mwidth;
+	const gchar   *saved_text;
 
 	if (applet->max_unit_width > 0)
 		return applet->max_unit_width;
 
+	saved_text = strdup (gtk_label_get_text (GTK_LABEL (applet->unit_label)));
 	gtk_label_set_text (GTK_LABEL (applet->unit_label), "GHz");
 	gtk_widget_get_preferred_width (applet->unit_label, &applet->max_unit_width, NULL);
 
 	gtk_label_set_text (GTK_LABEL (applet->unit_label), "MHz");
 	gtk_widget_get_preferred_width (applet->unit_label, &mwidth, NULL);
+	gtk_label_set_text (GTK_LABEL (applet->unit_label), saved_text);
+	free (saved_text);
 
 	applet->max_unit_width = MAX (applet->max_unit_width, mwidth);
 
@@ -358,37 +380,36 @@ cpufreq_applet_get_preferred_width (GtkWidget *widget, gint *minimum_width, gint
 {
 	CPUFreqApplet *applet;
 	gint           labels_width = 0;
-	gint           width;
+	gint           width = 0;
 
 	applet = CPUFREQ_APPLET (widget);
 
-	if (applet->orient == MATE_PANEL_APPLET_ORIENT_LEFT ||
-	    applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
-		return;
+	if (applet->orient != MATE_PANEL_APPLET_ORIENT_LEFT &&
+	    applet->orient != MATE_PANEL_APPLET_ORIENT_RIGHT) {
+	 	if (applet->show_freq) {
+			labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
+		}
 
+		if (applet->show_perc) {
+			labels_width += cpufreq_applet_get_max_perc_width (applet);
+		}
 
- 	if (applet->show_freq) {
-		labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
- 	}
- 
- 	if (applet->show_perc) {
-		labels_width += cpufreq_applet_get_max_perc_width (applet);
- 	}
- 
- 	if (applet->show_unit) {
-		labels_width += cpufreq_applet_get_max_unit_width (applet);
+		if (applet->show_unit) {
+			labels_width += cpufreq_applet_get_max_unit_width (applet);
+		}
+
+		if (applet->show_icon) {
+			gint icon_width;
+
+			gtk_widget_get_preferred_width (applet->icon, &icon_width, NULL);
+			width = (labels_width + icon_width + 2);
+		} else {
+			width = labels_width;
+		}
 	}
 
-	if (applet->show_icon) {
-		gint icon_width;
-
-		gtk_widget_get_preferred_width (applet->icon, &icon_width, NULL);
-		width = (labels_width + icon_width + 2);
-	} else {
-		width = labels_width;
-	}
-
-	*minimum_width = *natural_width = width;
+	if (minimum_width) *minimum_width = width;
+	if (natural_width) *natural_width = width;
 }
 
 static void
@@ -744,8 +765,12 @@ cpufreq_applet_update_visibility (CPUFreqApplet *applet)
         if (changed)
 		g_idle_add ((GSourceFunc)refresh_cb, applet);
 
-        if (need_update)
-                cpufreq_applet_update (applet, applet->monitor);
+	if (applet->need_refresh && applet->show_icon == TRUE)
+		// First rendering w/ icon? Force visibility.
+		cpufreq_applet_pixmap_set_image (applet, 0);
+
+	else if (need_update)
+		cpufreq_applet_update (applet, applet->monitor);
 }
 
 static void
@@ -757,20 +782,6 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
         gint         perc;
         guint        cpu;
         const gchar *governor;
-
-        /* Call refresh only the first time.
-         *
-         * Because the label width determinations now modify the actual labels
-         * in *applet to size the max label width in pixels, do this first
-         * before setting the label text below.
-         */
-        if (applet->need_refresh) {
-                gint w;
-
-                cpufreq_applet_get_preferred_width(applet, &w, &w);
-                cpufreq_applet_refresh (applet);
-                applet->need_refresh = FALSE;
-        }
 
         cpu = cpufreq_monitor_get_cpu (monitor);
         freq = cpufreq_monitor_get_frequency (monitor);
@@ -825,6 +836,12 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
 		gtk_widget_set_tooltip_text (GTK_WIDGET (applet), text_tip);
 		g_free (text_tip);
 	}
+
+	/* Call refresh only the first time */
+	if (applet->need_refresh) {
+		cpufreq_applet_refresh (applet);
+		applet->need_refresh = FALSE;
+	}
 }
 
 static gint
@@ -869,6 +886,14 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
 
 	horizontal = (applet->orient == MATE_PANEL_APPLET_ORIENT_UP ||
 		      applet->orient == MATE_PANEL_APPLET_ORIENT_DOWN);
+
+	/* We might be here for any number of reasons, including a font change,
+	 * so the label widths need to be redetermined.
+	 */
+	applet->max_label_width = 0;
+	applet->max_perc_width  = 0;
+	applet->max_unit_width  = 0;
+	cpufreq_applet_get_preferred_width (applet, NULL, NULL);
 
         /* We want a fixed label size, the biggest */
 	if (horizontal)
