@@ -269,8 +269,6 @@ cpufreq_applet_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
 
         applet = CPUFREQ_APPLET (widget);
 
-	GTK_WIDGET_CLASS (cpufreq_applet_parent_class)->size_allocate (widget, allocation);
-
         switch (applet->orient) {
         case MATE_PANEL_APPLET_ORIENT_LEFT:
         case MATE_PANEL_APPLET_ORIENT_RIGHT:
@@ -286,6 +284,8 @@ cpufreq_applet_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
                 applet->size = size;
                 cpufreq_applet_refresh (applet);
         }
+
+        GTK_WIDGET_CLASS (cpufreq_applet_parent_class)->size_allocate (widget, allocation);
 }
 
 static gint
