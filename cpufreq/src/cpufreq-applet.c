@@ -292,7 +292,7 @@ static gint
 cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 {
 	GList *available_freqs;
-	const gchar *saved_text;
+	gchar *saved_text;
 
 	if (applet->max_label_width > 0)
 		return applet->max_label_width;
@@ -338,7 +338,7 @@ cpufreq_applet_get_max_label_width (CPUFreqApplet *applet)
 static gint
 cpufreq_applet_get_max_perc_width (CPUFreqApplet *applet)
 {
-	const gchar *saved_text;
+	gchar *saved_text;
 
 	if (applet->max_perc_width > 0)
 		return applet->max_perc_width;
@@ -356,7 +356,7 @@ static gint
 cpufreq_applet_get_max_unit_width (CPUFreqApplet *applet)
 {
 	gint           mwidth;
-	const gchar   *saved_text;
+	gchar   *saved_text;
 
 	if (applet->max_unit_width > 0)
 		return applet->max_unit_width;
@@ -893,7 +893,7 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
 	applet->max_label_width = 0;
 	applet->max_perc_width  = 0;
 	applet->max_unit_width  = 0;
-	cpufreq_applet_get_preferred_width (applet, NULL, NULL);
+	cpufreq_applet_get_preferred_width (GTK_WIDGET (applet), NULL, NULL);
 
         /* We want a fixed label size, the biggest */
 	if (horizontal)
