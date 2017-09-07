@@ -65,5 +65,6 @@ void       drive_list_set_panel_size  (DriveList *list,
 				       int panel_size);
 void       drive_list_set_transparent (DriveList *self,
 				       gboolean transparent);
+GSettings *settings;
 
 #endif /* DRIVE_LIST_H */

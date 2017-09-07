@@ -485,6 +485,17 @@ drive_button_update (gpointer user_data)
         rowstride = gdk_pixbuf_get_rowstride (tmp_pixbuf);
         pixels = gdk_pixbuf_get_pixels (tmp_pixbuf);
 
+        GdkRGBA color;
+        gchar *color_string = g_settings_get_string (settings, "drivemount-checkmark-color");
+        if (!color_string)
+                color_string = g_strdup ("#00ff00");
+        gdk_rgba_parse (&color, color_string);
+        g_free (color_string);
+
+        guchar red = color.red*255;
+        guchar green = color.green*255;
+        guchar blue = color.blue*255;
+
         const gdouble ratio = 0.65;
         gdouble y_start = icon_height * ratio;
         gdouble x_start = icon_height * (1 + ratio);
@@ -493,9 +504,9 @@ drive_button_update (gpointer user_data)
             for (x = x_start - y; x < icon_width; x++)
             {
                 p = pixels + y * rowstride + x * n_channels;
-                p[0] = 0;
-                p[1] = 230;
-                p[2] = 0;
+                p[0] = red;
+                p[1] = green;
+                p[2] = blue;
                 p[3] = 255;
             }
     }

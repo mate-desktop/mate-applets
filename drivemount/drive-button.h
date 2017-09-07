@@ -63,6 +63,7 @@ void       drive_button_set_size        (DriveButton *button,
 
 int        drive_button_compare         (DriveButton *button,
 					 DriveButton *other_button);
+GSettings  *settings;
 
 G_END_DECLS
 

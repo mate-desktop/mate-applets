@@ -542,6 +542,7 @@ accessx-status/docs/Makefile
 accessx-status/pixmaps/Makefile
 drivemount/Makefile
 drivemount/help/Makefile
+drivemount/org.mate.drivemount.gschema.xml
 multiload/Makefile
 multiload/org.mate.panel.applet.multiload.gschema.xml
 multiload/docs/Makefile

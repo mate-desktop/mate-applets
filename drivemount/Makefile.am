@@ -20,6 +20,20 @@ mate_drivemount_applet_LDADD =	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MATEDESKTOP_LIBS)
 
+uidir           = $(datadir)/mate/ui
+ui_DATA         = drivemount-applet-menu.xml
+
+@INTLTOOL_XML_NOMERGE_RULE@
+drivemount_gschema_in_files = org.mate.drivemount.gschema.xml.in
+gsettings_SCHEMAS = $(drivemount_gschema_in_files:.xml.in=.xml)
+@GSETTINGS_RULES@
+
+EXTRA_DIST =                                                    \
+        org.mate.applets.DriveMountApplet.mate-panel-applet.in.in        \
+        $(service_in_files)                                     \
+        $(drivemount_gschema_in_files)                           \
+        $(ui_DATA)
+
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.DriveMountApplet.mate-panel-applet.in
@@ -42,14 +56,6 @@ org.mate.panel.applet.DriveMountAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir = $(datadir)/mate/ui
-ui_DATA = drivemount-applet-menu.xml
-
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA)
-
-EXTRA_DIST = \
- org.mate.applets.DriveMountApplet.mate-panel-applet.in.in	\
- $(service_in_files)					\
- $(ui_DATA)
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 -include $(top_srcdir)/git.mk
