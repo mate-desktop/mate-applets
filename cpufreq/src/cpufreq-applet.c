@@ -107,6 +107,7 @@ static void     cpufreq_applet_get_preferred_width   (GtkWidget *widget,
                                                       gint *natural_width);
 static void     cpufreq_applet_change_orient     (MatePanelApplet        *pa,
                                                   MatePanelAppletOrient   orient);
+static void     cpufreq_applet_style_updated     (GtkWidget *widget);
 static gboolean cpufreq_applet_factory           (CPUFreqApplet      *applet,
                                                   const gchar        *iid,
                                                   gpointer            gdata);
@@ -221,6 +222,7 @@ cpufreq_applet_class_init (CPUFreqAppletClass *klass)
         gobject_class->dispose = cpufreq_applet_dispose;
 
         widget_class->size_allocate = cpufreq_applet_size_allocate;
+        widget_class->style_updated = cpufreq_applet_style_updated;
 	widget_class->get_preferred_width = cpufreq_applet_get_preferred_width;
         widget_class->button_press_event = cpufreq_applet_button_press;
         widget_class->key_press_event = cpufreq_applet_key_press;
@@ -566,6 +568,20 @@ cpufreq_applet_change_orient (MatePanelApplet *pa, MatePanelAppletOrient orient)
                 applet->size = size;
                 cpufreq_applet_refresh (applet);
         }
+}
+
+static void
+cpufreq_applet_style_updated (GtkWidget *widget)
+{
+        CPUFreqApplet *applet;
+
+        applet = CPUFREQ_APPLET (widget);
+
+        applet->max_label_width = 0;
+        applet->max_unit_width = 0;
+        applet->max_perc_width = 0;
+
+        cpufreq_applet_refresh (applet);
 }
 
 static void
