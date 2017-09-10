@@ -486,6 +486,20 @@ drive_list_set_panel_size (DriveList *self, int panel_size)
     }
 }
 
+void
+drive_list_redraw (DriveList *self)
+{
+    g_hash_table_foreach (self->volumes, drive_button_redraw, self);
+    g_hash_table_foreach (self->mounts, drive_button_redraw, self);
+}
+
+void
+settings_color_changed (GSettings *settings, gchar *key, DriveList *drive_list)
+{
+    g_return_if_fail (DRIVE_IS_LIST (drive_list));
+    drive_list_redraw (drive_list);
+}
+
 static void
 set_button_relief (gpointer key, gpointer value, gpointer user_data)
 {

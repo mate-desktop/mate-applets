@@ -64,6 +64,7 @@ void       drive_button_set_size        (DriveButton *button,
 int        drive_button_compare         (DriveButton *button,
 					 DriveButton *other_button);
 GSettings  *settings;
+void       drive_button_redraw (gpointer key, gpointer value, gpointer user_data);
 
 G_END_DECLS
 

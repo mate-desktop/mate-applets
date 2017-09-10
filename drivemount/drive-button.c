@@ -544,6 +544,13 @@ drive_button_set_size (DriveButton *self, int icon_size)
     }
 }
 
+void
+drive_button_redraw (gpointer key, gpointer value, gpointer user_data)
+{
+    DriveButton *button = value;
+    drive_button_queue_update (button);
+}
+
 int
 drive_button_compare (DriveButton *button, DriveButton *other_button)
 {
