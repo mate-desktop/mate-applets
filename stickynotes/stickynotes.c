@@ -292,6 +292,9 @@ stickynote_new_aux (GdkScreen *screen, gint x, gint y, gint w, gint h)
 
 	g_object_unref(builder);
 
+	g_signal_connect_after (note->w_body, "button-press-event",
+	                        G_CALLBACK (gtk_true), note);
+
 	g_signal_connect (gtk_text_view_get_buffer(GTK_TEXT_VIEW(note->w_body)),
 			  "changed",
 			  G_CALLBACK (buffer_changed), note);
