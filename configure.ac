@@ -374,6 +374,8 @@ fi
 AM_CONDITIONAL(HAVE_LIBCPUFREQ, test x$have_libcpufreq = xyes)
 AC_SUBST(LIBCPUFREQ_LIBS)
 
+AC_CHECK_HEADERS([cpupower.h])
+
 build_cpufreq_applet=no
 
 if test x$disable_cpufreq = xno; then
