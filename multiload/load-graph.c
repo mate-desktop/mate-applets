@@ -125,11 +125,15 @@ load_graph_draw (LoadGraph *g)
 
     /* draw grid lines in Load graph if needed */
     gdk_cairo_set_source_rgba (cr, &(g->colors [2]));
+
+    double spacing = 0;
     for (k = 0; k < load - 1; k++)
     {
-      cairo_move_to (cr, 0.5, (g->draw_height/load)*(k+1));
-      cairo_line_to (cr, g->draw_width-0.5, (g->draw_height/load)*(k+1));
-    }
+      spacing = ((double) g->draw_height/load) * (k+1);
+      cairo_move_to (cr, 0.5, spacing);
+      cairo_line_to (cr, g->draw_width-0.5, spacing);
+		}
+
     cairo_stroke (cr);
   }
   gtk_widget_queue_draw (g->disp);
