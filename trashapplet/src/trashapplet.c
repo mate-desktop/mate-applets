@@ -431,7 +431,7 @@ trash_applet_show_about (GtkAction   *action,
   };
 
   char copyright[] = \
-    "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+    "Copyright \xc2\xa9 2012-2017 MATE developers\n"
     "Copyright \xc2\xa9 2008 Ryan Lortie\n"
     "Copyright \xc2\xa9 2004 Michiel Sikkes";
 

@@ -23,7 +23,7 @@ def show_about():
 		"logo" : invest_logo,
 		"version" : VERSION,
 		"comments" : _("Track your invested money."),
-		"copyright" : "Copyright © 2004-2005 Raphael Slinckx\nCopyright © 2009-2010 Enrico Minack\nCopyright © 2012-2016 MATE developers"
+		"copyright" : "Copyright © 2004-2005 Raphael Slinckx\nCopyright © 2009-2010 Enrico Minack\nCopyright © 2012-2017 MATE developers"
 	}
 
 #	about.set_authors("Raphael Slinckx <raphael@slinckx.net>\nEnrico Minack <enrico-minack@gmx.de>")
