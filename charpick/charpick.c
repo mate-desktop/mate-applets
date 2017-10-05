@@ -630,7 +630,7 @@ about (GtkAction     *action,
   };
 
   char copyright[] = \
-    "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+    "Copyright \xc2\xa9 2012-2017 MATE developers\n"
     "Copyright \xc2\xa9 1998, 2004-2005 GNOME Applets Maintainers and others";
 
   static const gchar * const documenters[] = {

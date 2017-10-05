@@ -103,7 +103,7 @@ display_about_dialog (GtkAction *action,
 	NULL
     };
     char copyright[] = \
-	"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+	"Copyright \xc2\xa9 2012-2017 MATE developers\n"
 	"Copyright \xC2\xA9 2004 Canonical Ltd";
 
     const gchar *documenters[] = {

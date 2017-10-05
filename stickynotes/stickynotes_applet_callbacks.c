@@ -362,7 +362,7 @@ menu_about_cb (GtkAction *action,
 	};
 
 	char copyright[] = \
-		"Copyright \xc2\xa9 2012-2016 MATE developers\n"
+		"Copyright \xc2\xa9 2012-2017 MATE developers\n"
 		"Copyright \xc2\xa9 2005 Davyd Madeley\n"
 		"Copyright \xc2\xa9 2002-2003 Loban A Rahman";
 
