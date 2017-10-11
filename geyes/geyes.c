@@ -174,7 +174,7 @@ about_cb (GtkAction   *action,
 	};
 
     char copyright[] = \
-                "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+                "Copyright \xc2\xa9 2012-2017 MATE developers\n"
                 "Copyright \xC2\xA9 1999 Dave Camp";
 
 	const gchar *documenters[] = {

@@ -1184,7 +1184,7 @@ about_cb( GtkAction *action, ProgressData *battstat )
    };
 
   char copyright[] = \
-    "Copyright \xc2\xa9 2012-2016 MATE developers\n"
+    "Copyright \xc2\xa9 2012-2017 MATE developers\n"
     "Copyright \xc2\xa9 2002-2005 Free Software Foundation and others\n"
     "Copyright \xc2\xa9 2000 The Gnulix Society";
 

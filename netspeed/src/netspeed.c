@@ -795,7 +795,7 @@ about_cb(GtkAction *action, gpointer data)
 	};
 
 	char copyright[] = \
-		"Copyright \xc2\xa9 2015-2016 MATE developers\n"
+		"Copyright \xc2\xa9 2015-2017 MATE developers\n"
 		"Copyright \xc2\xa9 2011-2014 Stefano Karapetsas\n"
 		"Copyright \xc2\xa9 2002-2003 Jörgen Scheibengruber";
 
