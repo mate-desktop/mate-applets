@@ -770,6 +770,7 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
         gint         freq;
         gint         perc;
         guint        cpu;
+        GtkRequisition  req;
         const gchar *governor;
 
         cpu = cpufreq_monitor_get_cpu (monitor);
@@ -782,6 +783,9 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
 
         if (applet->show_freq) {
                 gtk_label_set_text (GTK_LABEL (applet->label), freq_label);
+                /*Hold the largest size set by any jumping text */
+                gtk_widget_get_preferred_size (GTK_WIDGET (applet->label),&req, NULL);
+                gtk_widget_set_size_request (GTK_WIDGET (applet->label),req.width, NULL);
         }
 
         if (applet->show_perc) {
@@ -864,29 +868,34 @@ cpufreq_applet_get_widget_size (CPUFreqApplet *applet,
 static void
 cpufreq_applet_refresh (CPUFreqApplet *applet)
 {
-        gint      total_size = 0;
-        gint      panel_size, label_size;
-        gint      unit_label_size, pixmap_size;
-        gint      size_step = 12;
-	gboolean  horizontal;
-        gboolean  do_unref = FALSE;
+    gint      total_size = 0;
+    gint      panel_size, label_size;
+    gint      unit_label_size, pixmap_size;
+    gint      size_step = 12;
+    gboolean  horizontal;
+    gboolean  do_unref = FALSE;
+    GtkRequisition  req;
 
-        panel_size = applet->size - 1; /* 1 pixel margin */
+    panel_size = applet->size - 1; /* 1 pixel margin */
 
-	horizontal = (applet->orient == MATE_PANEL_APPLET_ORIENT_UP ||
-		      applet->orient == MATE_PANEL_APPLET_ORIENT_DOWN);
+    horizontal = (applet->orient == MATE_PANEL_APPLET_ORIENT_UP ||
+             applet->orient == MATE_PANEL_APPLET_ORIENT_DOWN);
 
-        /* We want a fixed label size, the biggest */
-	if (horizontal)
-		label_size = cpufreq_applet_get_widget_size (applet, applet->label);
-	else
-		label_size = cpufreq_applet_get_max_label_width (applet);
+        /* Zero out and reset the size of the label in case the theme is getting smaller */
+    gtk_widget_set_size_request (GTK_WIDGET (applet->label), 0, 0);
+    gtk_widget_get_preferred_size (GTK_WIDGET (applet->label),&req, NULL);
+    gtk_widget_set_size_request (GTK_WIDGET (applet->label),req.width, req.height);
+       /* We want a fixed label size, the biggest */
+    if (horizontal)
+        label_size = cpufreq_applet_get_widget_size (applet, applet->label);
+    else
+        label_size = cpufreq_applet_get_max_label_width (applet);
         total_size += label_size;
 
-	if (horizontal)
-		unit_label_size = cpufreq_applet_get_widget_size (applet, applet->unit_label);
-	else
-		unit_label_size = cpufreq_applet_get_max_unit_width (applet);
+    if (horizontal)
+        unit_label_size = cpufreq_applet_get_widget_size (applet, applet->unit_label);
+    else
+        unit_label_size = cpufreq_applet_get_max_unit_width (applet);
         total_size += unit_label_size;
 
         pixmap_size = cpufreq_applet_get_widget_size (applet, applet->icon);
@@ -896,7 +905,7 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
                 do_unref = TRUE;
                 g_object_ref (applet->icon);
                 gtk_container_remove (GTK_CONTAINER (applet->box), applet->icon);
-		if (applet->labels_box) {
+        if (applet->labels_box) {
                         g_object_ref (applet->label);
                         gtk_container_remove (GTK_CONTAINER (applet->labels_box), applet->label);
                         g_object_ref (applet->unit_label);
@@ -905,13 +914,13 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
                 gtk_widget_destroy (applet->box);
         }
 
-	if (horizontal) {
-		applet->labels_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
-		if ((label_size + pixmap_size) <= panel_size)
-			applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
-		else
-			applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
-	} else {
+    if (horizontal) {
+        applet->labels_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+        if ((label_size + pixmap_size) <= panel_size)
+            applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+        else
+            applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+    } else {
                 if (total_size <= panel_size) {
                         applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
                         applet->labels_box  = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
