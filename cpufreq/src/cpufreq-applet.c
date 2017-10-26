@@ -785,7 +785,7 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
                 gtk_label_set_text (GTK_LABEL (applet->label), freq_label);
                 /*Hold the largest size set by any jumping text */
                 gtk_widget_get_preferred_size (GTK_WIDGET (applet->label),&req, NULL);
-                gtk_widget_set_size_request (GTK_WIDGET (applet->label),req.width, NULL);
+                gtk_widget_set_size_request (GTK_WIDGET (applet->label),req.width, req.height);
         }
 
         if (applet->show_perc) {
