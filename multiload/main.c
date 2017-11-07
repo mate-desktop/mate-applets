@@ -294,8 +294,8 @@ multiload_applet_tooltip_update(LoadGraph *g)
 
 	if (!strncmp(g->name, "memload", strlen("memload"))) {
 		guint mem_user, mem_cache, user_percent, cache_percent;
-		mem_user  = g->data[0][0];
-		mem_cache = g->data[0][1] + g->data[0][2] + g->data[0][3];
+		mem_user  = g->data[1][0];
+		mem_cache = g->data[1][1] + g->data[1][2] + g->data[1][3];
 		user_percent = 100.0f * mem_user / g->draw_height;
 		cache_percent = 100.0f * mem_cache / g->draw_height;
 		user_percent = MIN(user_percent, 100);
@@ -331,7 +331,7 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		guint i, total_used, percent;
 
 		for (i = 0, total_used = 0; i < (g->n - 1); i++)
-			total_used += g->data[0][i];
+			total_used += g->data[1][i];
 
 		percent = 100.0f * total_used / g->draw_height;
 		percent = MIN(percent, 100);
