@@ -314,7 +314,7 @@ if test "x$enable_stickynotes" = "xyes"; then
                       have_gtksourceview=yes, have_gtksourceview=no)
 
     if test "x$enable_stickynotes" = "xyes" -a "x$have_gtksourceview" = "xno"; then
-        AC_MSG_ERROR([Stickynotes explicitely requested but dependency not found])
+        AC_MSG_ERROR([Stickynotes explicitly requested but gtksourceview not found])
     fi
 fi
 AM_CONDITIONAL(BUILD_STICKYNOTES_APPLET, test "x$have_gtksourceview" = "xyes")
