@@ -24,6 +24,7 @@
 #include "stickynotes.h"
 
 #include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 
 StickyNotes *stickynotes = NULL;
 
@@ -154,8 +155,6 @@ stickynotes_destroy (GtkWidget *widget,
 void
 stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 {
-	gint sc_height;
-
 	stickynotes = g_new(StickyNotes, 1);
 
 	stickynotes->notes = NULL;
@@ -191,10 +190,7 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 	                  G_CALLBACK (preferences_apply_cb), NULL);
 
 	/* Max height for large notes*/
-	gdk_window_get_geometry (gdk_screen_get_root_window (gdk_screen_get_default()), NULL, NULL,
-				 NULL, &sc_height);
-
-	stickynotes->max_height = 0.8 * sc_height;
+	stickynotes->max_height = 0.8 * HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
 
 	/* Load sticky notes */
 	stickynotes_load (gtk_widget_get_screen (GTK_WIDGET (mate_panel_applet)));

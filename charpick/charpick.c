@@ -2,6 +2,7 @@
  * accented (and other) characters to be pasted into other apps.
  */
 
+#include <gdk/gdkx.h>
 #include <config.h>
 #include <string.h>
 #include <mate-panel-applet.h>
@@ -355,10 +356,8 @@ get_menu_pos (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer data)
 		tempx += width;
 		break;
 	}
-
-	gdk_window_get_geometry (gdk_screen_get_root_window (gdk_screen_get_default()),
-				 NULL, NULL, &screen_width, &screen_height);
-
+	screen_width = WidthOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
+	screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
 	*x = CLAMP (tempx, 0, MAX (0, screen_width - reqmenu.width));
 	*y = CLAMP (tempy, 0, MAX (0, screen_height - reqmenu.height));
 }
