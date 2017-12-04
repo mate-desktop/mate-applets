@@ -164,7 +164,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
 #endif
     gtk_grid_attach (grid, widget, 1, 1, 1, 1);
 
-    interval = gtk_spin_button_new_with_range (1.0, 600.0, 1.0);
+    interval = gtk_spin_button_new_with_range (1.0, 86400.0, 1.0);
     gtk_grid_attach (grid, interval, 2, 1, 1, 1);
 
     widget = gtk_label_new (_("Maximum width (chars):"));
