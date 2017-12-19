@@ -416,3 +416,4 @@ MATE_PANEL_APPLET_OUT_PROCESS_FACTORY("CommandAppletFactory",
                                       "Command applet",
                                       command_factory,
                                       NULL)
+    
