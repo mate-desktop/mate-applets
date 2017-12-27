@@ -1,7 +1,7 @@
 dnl ***************************************************************************
 dnl *** configure.in for MATE-APPLETS                                      ***
 dnl ***************************************************************************
-AC_INIT(mate-applets, 1.19.2)
+AC_INIT(mate-applets, 1.19.3)
 AC_PREREQ(2.59)
 
 AC_CONFIG_HEADERS(config.h)
