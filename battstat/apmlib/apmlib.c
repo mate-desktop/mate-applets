@@ -59,7 +59,10 @@ int apm_read(apm_info * i)
 
     if (!(str = fopen(APM_PROC, "r")))
 	return 1;
-    fgets(buffer, sizeof(buffer) - 1, str);
+
+    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+	printf("fgets error\n");
+
     buffer[sizeof(buffer) - 1] = '\0';
 
     /* Should check for other driver versions; driver 1.9 (and some
@@ -95,12 +98,19 @@ int apm_read(apm_info * i)
 
 	sscanf(buffer, "BIOS version: %d.%d",
 	       &i->apm_version_major, &i->apm_version_minor);
-	fgets(buffer, sizeof(buffer) - 1, str);
+
+	if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+	    printf("fgets error\n");
+
 	sscanf(buffer, "Flags: 0x%02x", &i->apm_flags);
 	if (i->apm_flags & APM_32_BIT_SUPPORT)
 	{
-	    fgets(buffer, sizeof(buffer) - 1, str);
-	    fgets(buffer, sizeof(buffer) - 1, str);
+	    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+		printf("fgets error\n");
+
+	    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+		printf("fgets error\n");
+
 	    if (buffer[0] != 'P')
 	    {
 		if (!strncmp(buffer + 4, "off line", 8))
@@ -110,7 +120,9 @@ int apm_read(apm_info * i)
 		else if (!strncmp(buffer + 4, "on back", 7))
 		    i->ac_line_status = 2;
 
-		fgets(buffer, sizeof(buffer) - 1, str);
+		if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+		    printf("fgets error\n");
+
 		if (!strncmp(buffer + 16, "high", 4))
 		    i->battery_status = 0;
 		else if (!strncmp(buffer + 16, "low", 3))
@@ -120,15 +132,21 @@ int apm_read(apm_info * i)
 		else if (!strncmp(buffer + 16, "charg", 5))
 		    i->battery_status = 3;
 
-		fgets(buffer, sizeof(buffer) - 1, str);
+		if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+		    printf("fgets error\n");
+
 		if (strncmp(buffer + 14, "unknown", 7))
 		    i->battery_percentage = atoi(buffer + 14);
 		if (i->apm_version_major >= 1 && i->apm_version_minor >= 1)
 		{
-		    fgets(buffer, sizeof(buffer) - 1, str);
+		    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+			printf("fgets error\n");
+
 		    sscanf(buffer, "Battery flag: 0x%02x", &i->battery_flags);
 
-		    fgets(buffer, sizeof(buffer) - 1, str);
+		    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
+			printf("fgets error\n");
+
 		    if (strncmp(buffer + 14, "unknown", 7))
 			i->battery_time = atoi(buffer + 14);
 		}

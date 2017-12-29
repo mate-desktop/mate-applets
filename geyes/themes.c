@@ -56,7 +56,10 @@ parse_theme_file (EyesApplet *eyes_applet, FILE *theme_file)
 {
         gchar line_buf [512]; /* prolly overkill */
         gchar *token;
-        fgets (line_buf, 512, theme_file);
+
+        if (fgets (line_buf, 512, theme_file) == NULL)
+               printf("fgets error\n");
+
         while (!feof (theme_file)) {
                 token = strtok (line_buf, "=");
                 if (strncmp (token, "wall-thickness",
@@ -92,7 +95,8 @@ parse_theme_file (EyesApplet *eyes_applet, FILE *theme_file)
                                        eyes_applet->theme_dir,
                                        token);
                 }
-                fgets (line_buf, 512, theme_file);
+                if (fgets (line_buf, 512, theme_file) == NULL)
+                        printf("fgets error\n");
         }
 }
 
