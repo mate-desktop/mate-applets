@@ -613,6 +613,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	add_color_selector(page, _("_Out"), "netload2-color1", ma);
 	add_color_selector (page, _("_Local"), "netload2-color2", ma);
 	add_color_selector(page, _("_Background"), "netload2-color3", ma);
+	add_color_selector(page, _("_Gridline"), "netload2-color4", ma);
 
 	page = add_page(ma->notebook,  _("Swap Space"));
 	gtk_container_set_border_width (GTK_CONTAINER (page), 12);

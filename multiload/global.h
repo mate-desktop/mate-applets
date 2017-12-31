@@ -49,6 +49,7 @@ struct _LoadGraph {
     double loadavg1;
     NetSpeed *netspeed_in;
     NetSpeed *netspeed_out;
+    guint net_granularity;
 
     gboolean visible;
     gboolean tooltip_update;
@@ -58,20 +59,20 @@ struct _LoadGraph {
 struct _MultiloadApplet
 {
 	MatePanelApplet *applet;
-	
+
 	GSettings *settings;
-	
+
 	LoadGraph *graphs[NGRAPHS];
-	
+
 	GtkWidget *box;
-	
+
 	gboolean view_cpuload;
 	gboolean view_memload;
 	gboolean view_netload;
 	gboolean view_swapload;
 	gboolean view_loadavg;
 	gboolean view_diskload;
-	
+
 	GtkWidget *about_dialog;
 	GtkWidget *check_boxes[NGRAPHS];
 	GtkWidget *prop_dialog;

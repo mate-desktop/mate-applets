@@ -66,8 +66,8 @@ load_graph_draw (LoadGraph *g)
   cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
   cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
 
-  /* all graphs except Load go this path */
-  if (g->id != 4)
+  /* all graphs except Load and Net go this path */
+  if (g->id != 4 && g->id != 2)
   {
     for (i = 0; i < g->draw_width; i++)
       g->pos [i] = g->draw_height - 1;
@@ -87,7 +87,61 @@ load_graph_draw (LoadGraph *g)
       }
       cairo_stroke (cr);
     }
+  }
+  /* This is for network graph */
+  else if (g->id == 2)
+  {
+    guint maxnet =	1;
+    gint segments = 1;
+    gint combined = 0;
+    for (i = 0; i < g->draw_width; i++)
+    {
+      g->pos [i] = g->draw_height - 1;
+      combined = 0;
+      for (j = 0; j < g->n; j++)
+        combined += g->data[i][j];
+      if (combined > maxnet)
+        maxnet = combined;
+    }
+    maxnet = maxnet/g->net_granularity;
+    segments = MAX (maxnet+1,1);
+    float ratio = (float)g->draw_height/g->net_granularity/segments;
 
+    for (j = 0; j < g->n-1; j++)
+    {
+      gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
+
+      for (i = 0; i < g->draw_width; i++)
+      {
+        cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
+        cairo_line_to (cr, g->draw_width - i - 0.5, g->pos[i] - 0.5 - ((g->data [i][j] * ratio)));
+        g->pos [i] -= ((g->data [i][j] * ratio));
+      }
+      cairo_stroke (cr);
+    }
+
+    for (j = g->n-1; j < g->n; j++)
+    {
+      gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
+      for (i = 0; i < g->draw_width; i++)
+      {
+          cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
+          cairo_line_to (cr, g->draw_width - i - 0.5, 0.5);
+      }
+      cairo_stroke (cr);
+    }
+
+    /* draw grid lines if needed */
+    gdk_cairo_set_source_rgba (cr, &(g->colors [4]));
+
+    double spacing = 0;
+    for (k = 0; k < segments -1; k++)
+    {
+      spacing = ((double) g->draw_height/segments) * (k+1);
+      cairo_move_to (cr, 0.5, spacing);
+      cairo_line_to (cr, g->draw_width-0.5, spacing);
+    }
+    cairo_stroke (cr);
   }
   /* this is Load graph */
   else
