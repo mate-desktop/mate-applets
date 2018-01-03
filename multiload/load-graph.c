@@ -200,12 +200,12 @@ static gboolean
 load_graph_update (LoadGraph *g)
 {
     if (g->data == NULL)
-	return TRUE;
+      return TRUE;
 
     shift_right(g);
 
     if (g->tooltip_update)
-	multiload_applet_tooltip_update(g);
+      multiload_applet_tooltip_update(g);
 
     g->get_data (g->draw_height, g->data [0], g);
 
@@ -399,30 +399,30 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     case MATE_PANEL_APPLET_ORIENT_UP:
     case MATE_PANEL_APPLET_ORIENT_DOWN:
     {
-	g->orient = FALSE;
-	break;
+      g->orient = FALSE;
+      break;
     }
     case MATE_PANEL_APPLET_ORIENT_LEFT:
     case MATE_PANEL_APPLET_ORIENT_RIGHT:
     {
-	g->orient = TRUE;
-	break;
+      g->orient = TRUE;
+      break;
     }
     default:
-	g_assert_not_reached ();
+      g_assert_not_reached ();
     }
 
     if (g->show_frame)
     {
-	g->frame = gtk_frame_new (NULL);
-	gtk_frame_set_shadow_type (GTK_FRAME (g->frame), GTK_SHADOW_IN);
-	gtk_container_add (GTK_CONTAINER (g->frame), g->box);
-	gtk_box_pack_start (GTK_BOX (g->main_widget), g->frame, TRUE, TRUE, 0);
+      g->frame = gtk_frame_new (NULL);
+      gtk_frame_set_shadow_type (GTK_FRAME (g->frame), GTK_SHADOW_IN);
+      gtk_container_add (GTK_CONTAINER (g->frame), g->box);
+      gtk_box_pack_start (GTK_BOX (g->main_widget), g->frame, TRUE, TRUE, 0);
     }
     else
     {
-	g->frame = NULL;
-	gtk_box_pack_start (GTK_BOX (g->main_widget), g->box, TRUE, TRUE, 0);
+      g->frame = NULL;
+      gtk_box_pack_start (GTK_BOX (g->main_widget), g->box, TRUE, TRUE, 0);
     }
 
     load_graph_load_config (g);
