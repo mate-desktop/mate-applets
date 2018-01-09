@@ -91,21 +91,43 @@ load_graph_draw (LoadGraph *g)
   /* This is for network graph */
   else if (g->id == 2)
   {
-    guint maxnet =	1;
+    guint maxnet = 1;
     gint segments = 1;
     gint combined = 0;
     for (i = 0; i < g->draw_width; i++)
     {
       g->pos [i] = g->draw_height - 1;
       combined = 0;
-      for (j = 0; j < g->n; j++)
-        combined += g->data[i][j];
+      combined += g->data[i][0];
+      combined += g->data[i][1];
+      combined += g->data[i][2];
       if (combined > maxnet)
         maxnet = combined;
     }
-    maxnet = maxnet/g->net_granularity;
+    //printf("max = %d ", maxnet);
+    guint level = 0;
+    GdkRGBA grid_color;
+    if (maxnet > g->net_threshold3) {
+      g->net_threshold = g->net_threshold3;
+      level = 3;
+    }
+    else
+      if (maxnet > g->net_threshold2) {
+        g->net_threshold = g->net_threshold2;
+        level = 2;
+      }
+      else {
+        g->net_threshold = g->net_threshold1;
+        level = 1;
+        if (maxnet < g->net_threshold1)
+          level = 0;
+      }
+
+    //printf("level %d maxnet = %d ", level, maxnet);
+    maxnet = maxnet/g->net_threshold;
     segments = MAX (maxnet+1,1);
-    float ratio = (float)g->draw_height/g->net_granularity/segments;
+    float ratio = (float)g->draw_height/g->net_threshold/segments;
+    //printf("segments %d ratio = %f t1=%ld t2=%ld t3=%ld t=%ld\n", segments, ratio, g->net_threshold1, g->net_threshold2, g->net_threshold3, g->net_threshold);
 
     for (j = 0; j < g->n-1; j++)
     {
@@ -133,13 +155,21 @@ load_graph_draw (LoadGraph *g)
 
     /* draw grid lines if needed */
     gdk_cairo_set_source_rgba (cr, &(g->colors [4]));
-
     double spacing = 0;
     for (k = 0; k < segments -1; k++)
     {
       spacing = ((double) g->draw_height/segments) * (k+1);
       cairo_move_to (cr, 0.5, spacing);
       cairo_line_to (cr, g->draw_width-0.5, spacing);
+    }
+    cairo_stroke (cr);
+    /* draw indicator if needed */
+    if (level > 0)
+    {
+      gdk_cairo_set_source_rgba (cr, &(g->colors [5]));
+      for (k = 0; k< level; k++ )
+        cairo_rectangle(cr, 0.5, (k*2) * g->draw_height/5, 5, g->draw_height/5);
+      cairo_fill(cr);
     }
     cairo_stroke (cr);
   }

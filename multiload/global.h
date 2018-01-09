@@ -49,7 +49,10 @@ struct _LoadGraph {
     double loadavg1;
     NetSpeed *netspeed_in;
     NetSpeed *netspeed_out;
-    guint net_granularity;
+    guint net_threshold;
+    guint net_threshold1;
+    guint net_threshold2;
+    guint net_threshold3;
 
     gboolean visible;
     gboolean tooltip_update;

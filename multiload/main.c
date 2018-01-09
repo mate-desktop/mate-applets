@@ -363,21 +363,31 @@ multiload_create_graphs(MultiloadApplet *ma)
 	       } graph_types[] = {
 			{ _("CPU Load"),     "cpuload",  5, GetLoad },
 			{ _("Memory Load"),  "memload",  5, GetMemory },
-			{ _("Net Load"),     "netload2",  5, GetNet },
+			{ _("Net Load"),     "netload2",  6, GetNet },
 			{ _("Swap Load"),    "swapload", 2, GetSwap },
 			{ _("Load Average"), "loadavg",  3, GetLoadAvg },
 			{ _("Disk Load"),    "diskload", 3, GetDiskLoad }
 		};
 
 	gint speed, size;
-	guint net_granularity;
+	guint net_threshold1;
+  guint net_threshold2;
+  guint net_threshold3;
 	gint i;
 
 	speed = g_settings_get_int (ma->settings, "speed");
 	size = g_settings_get_int (ma->settings, "size");
-	net_granularity = g_settings_get_uint (ma->settings, "netgranularity");
-	if (net_granularity == 0)
-		net_granularity = 100000;
+	net_threshold1  = g_settings_get_uint (ma->settings, "netthreshold1");
+  net_threshold2  = g_settings_get_uint (ma->settings, "netthreshold2");
+  net_threshold3  = g_settings_get_uint (ma->settings, "netthreshold3");
+  if (net_threshold1 >= net_threshold2)
+  {
+	   net_threshold1 = net_threshold2 - 1;
+	}
+  if (net_threshold2 >= net_threshold3)
+  {
+     net_threshold3 = net_threshold2 + 1;
+  }
 	speed = MAX (speed, 50);
 	size = CLAMP (size, 10, 400);
 
@@ -408,8 +418,11 @@ multiload_create_graphs(MultiloadApplet *ma)
 						graph_types[i].callback);
 	}
 	/* for Network graph, colors[4] is grid line color, it should not be used in loop in load-graph.c */
+  /* for Network graph, colors[5] is indicator color, it should not be used in loop in load-graph.c */
 	ma->graphs[2]->n = 4;
-	ma->graphs[2]->net_granularity = net_granularity;
+	ma->graphs[2]->net_threshold1 = net_threshold1;
+  ma->graphs[2]->net_threshold2 = net_threshold2;
+  ma->graphs[2]->net_threshold3 = net_threshold3;
 	/* for Load graph, colors[2] is grid line color, it should not be used in loop in load-graph.c */
 	ma->graphs[4]->n = 2;
 }
