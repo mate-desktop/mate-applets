@@ -617,7 +617,7 @@ cpufreq_applet_about_cb (GtkAction     *action,
                          CPUFreqApplet *applet)
 {
         char copyright[] = \
-                "Copyright \xc2\xa9 2012-2017 MATE developers\n"
+                "Copyright \xc2\xa9 2012-2018 MATE developers\n"
                 "Copyright \xC2\xA9 2004 Carlos Garcia Campos";
 
         static const gchar *const authors[] = {
