@@ -35,8 +35,6 @@ AC_PROG_CC
 AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_PATH_XTRA
-AM_PATH_PYTHON(2.4)
-AM_CHECK_PYTHON_HEADERS(HAVE_PYHDRS="yes", HAVE_PYHDRS="no")
 
 X_LIBS="$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
 AC_SUBST(X_LIBS)
@@ -202,9 +200,6 @@ else
 fi
 AC_SUBST(GUCHARMAP_CFLAGS)
 AC_SUBST(GUCHARMAP_LIBS)
-
-dnl -- check for Python modules (optional) ------------------------------
-PKG_CHECK_MODULES(PYGOBJECT, pygobject-3.0, HAVE_PYGOBJECT="yes", HAVE_PYGOBJECT="no")
 
 dnl -- check for libxml2 (required) ------------------------------------------
 PKG_CHECK_MODULES(XML2, libxml-2.0 >= $LIBXML_REQUIRED)
@@ -399,12 +394,6 @@ dnl ***************************************************************************
 AM_CONDITIONAL(BUILD_TIMERAPPLET, test "x$HAVE_LIBNOTIFY" = "xyes")
 
 dnl ***************************************************************************
-dnl *** invest-applet specific checks                                       ***
-dnl ***************************************************************************
-
-AM_CONDITIONAL(BUILD_INVEST_APPLET, test "x$HAVE_PYGOBJECT" = "xyes")
-
-dnl ***************************************************************************
 dnl *** iwlib support for netspeed applet                                   ***
 dnl ***************************************************************************
 have_iwevgenie=no
@@ -520,14 +509,12 @@ AC_DEFINE_DIR(LIBDIR, "${libdir}", [libdir])
 AC_DEFINE_DIR(PREFIX, "$prefix", [install prefix])
 
 AS_AC_EXPAND(DATADIR, "${datadir}")
-AS_AC_EXPAND(PYTHONDIR, $pythondir)
 AS_AC_EXPAND(BUILDERDIR, $builderdir)
 
 AC_SUBST(VERSION)
 AC_SUBST(PACKAGE)
 AC_SUBST(DATADIR)
 AC_SUBST(LIBDIR)
-AC_SUBST(PYTHONDIR)
 AC_SUBST(PKGDATADIR)
 AC_SUBST(BUILDERDIR)
 
@@ -549,12 +536,6 @@ multiload/docs/Makefile
 charpick/Makefile
 charpick/org.mate.panel.applet.charpick.gschema.xml
 charpick/help/Makefile
-invest-applet/Makefile
-invest-applet/docs/Makefile
-invest-applet/invest/Makefile
-invest-applet/invest/defs.py
-invest-applet/data/Makefile
-invest-applet/data/art/Makefile
 mateweather/Makefile
 mateweather/docs/Makefile
 geyes/Makefile
@@ -628,7 +609,6 @@ mate-applets-$VERSION configure summary:
         - drivemount               always
         - geyes                    always
         - mateweather              $build_libmateweather_applets
-        - invest-applet            $HAVE_PYGOBJECT
         - multiload                $build_gtop_applets
         - netspeed                 $build_gtop_applets
             - iwlib support        $have_iwevgenie
