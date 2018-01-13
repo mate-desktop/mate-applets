@@ -24,10 +24,6 @@ if BUILD_CPUFREQ_APPLET
 cpufreq_SUBDIR = cpufreq
 endif
 
-if BUILD_INVEST_APPLET
-invest_applet_SUBDIR = invest-applet
-endif
-
 if BUILD_TIMERAPPLET
 timerapplet_SUBDIR = timerapplet
 endif
@@ -48,7 +44,6 @@ SUBDIRS = \
 	man	\
 	$(battstat_SUBDIR) \
 	$(accessx_status_SUBDIR) \
-	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
 	$(timerapplet_SUBDIR)
 
@@ -66,7 +61,6 @@ DIST_SUBDIRS = \
 	timerapplet \
 	trashapplet \
 	cpufreq \
-	invest-applet \
 	command \
 	netspeed
 
