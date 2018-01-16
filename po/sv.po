@@ -12,14 +12,15 @@
 # Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2016
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000, 2001
 # Martin Wahlen <mva@sbbs.se>, 1998
+# Tobias Lekare <lekare@linux.com>, 2017
 # Urban Berggren <pudberggren@icloud.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 11:20+0100\n"
-"PO-Revision-Date: 2017-11-06 10:20+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
+"POT-Creation-Date: 2018-01-15 12:30+0300\n"
+"PO-Revision-Date: 2018-01-15 10:14+0000\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,17 +32,11 @@ msgstr ""
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Visar tillståndet för AccessX-funktioner som till exempel hakade modifierare"
 
-#. about.set_authors("Raphael Slinckx <raphael@slinckx.net>\nEnrico Minack
-#. <enrico-minack@gmx.de>")
-#. about.set_artists([])
-#. about.set_documenters([])
-#. translators: These appear in the About dialog, usual format applies.
 #: ../accessx-status/applet.c:146 ../battstat/battstat_applet.c:1210
-#: ../charpick/charpick.c:652 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:649 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:651 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:645 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:194 ../mateweather/mateweather-about.c:56
-#: ../invest-applet/invest/about.py:34 ../multiload/main.c:64
-#: ../netspeed/src/netspeed.c:808
+#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:808
 #: ../stickynotes/stickynotes_applet_callbacks.c:389
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:451
 msgid "translator-credits"
@@ -66,18 +61,18 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Inställningar för _tangentbordstillgänglighet"
 
 #: ../accessx-status/applet.c:228 ../battstat/battstat_applet.c:64
-#: ../charpick/charpick.c:740 ../cpufreq/src/cpufreq-applet.c:128
+#: ../charpick/charpick.c:739 ../cpufreq/src/cpufreq-applet.c:129
 #: ../drivemount/drivemount.c:166 ../geyes/geyes.c:374
 #: ../mateweather/mateweather-applet.c:124 ../multiload/main.c:470
-#: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:74
+#: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_Hjälp"
 
 #: ../accessx-status/applet.c:229 ../battstat/battstat_applet.c:67
-#: ../charpick/charpick.c:743 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:131 ../drivemount/drivemount.c:169
+#: ../charpick/charpick.c:742 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:169
 #: ../geyes/geyes.c:377 ../mateweather/mateweather-applet.c:127
-#: ../multiload/main.c:473 ../stickynotes/stickynotes_applet.c:48
+#: ../multiload/main.c:473 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Om"
@@ -131,10 +126,10 @@ msgstr "Fabrik för tillverkning av statuspanelprogram för tangentbordstillgän
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Visar statusen för funktionerna för tangentbordstillgänglighet"
 
-#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:737
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:125
+#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:736
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
 #: ../geyes/geyes.c:371 ../mateweather/mateweather-applet.c:121
-#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:42
+#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:81
 msgid "_Preferences"
 msgstr "_Inställningar"
@@ -281,7 +276,7 @@ msgid "N/A"
 msgstr "--"
 
 #: ../battstat/battstat_applet.c:1154 ../drivemount/drivemount.c:154
-#: ../geyes/geyes.c:359 ../geyes/themes.c:229
+#: ../geyes/geyes.c:359 ../geyes/themes.c:233
 #: ../mateweather/mateweather-applet.c:70
 #: ../mateweather/mateweather-pref.c:759
 #: ../stickynotes/stickynotes_applet_callbacks.c:351
@@ -298,12 +293,12 @@ msgstr "Detta verktyg visar statusen för batteriet i din bärbara dator."
 #. true
 #: ../battstat/battstat_applet.c:1201
 msgid "upower backend enabled."
-msgstr ""
+msgstr "uppåtriktad backend aktiverad."
 
 #. false
 #: ../battstat/battstat_applet.c:1202
 msgid "Legacy backend enabled."
-msgstr ""
+msgstr "Ursprunglig backend aktiverad."
 
 #: ../battstat/battstat_applet.c:1572 ../battstat/battstat_applet.c:1624
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
@@ -472,40 +467,40 @@ msgstr "Låg batteriladdning"
 msgid "Battery fully re-charged"
 msgstr "Batteriet helt uppladdat"
 
-#: ../charpick/charpick.c:465
+#: ../charpick/charpick.c:464
 msgid "Available palettes"
 msgstr "Tillgängliga paletter"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:516
+#: ../charpick/charpick.c:515
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Infoga \"%s\""
 
-#: ../charpick/charpick.c:519
+#: ../charpick/charpick.c:518
 msgid "Insert special character"
 msgstr "Infoga specialtecken"
 
-#: ../charpick/charpick.c:523
+#: ../charpick/charpick.c:522
 #, c-format
 msgid "insert special character %s"
 msgstr "infoga specialtecknet %s"
 
-#: ../charpick/charpick.c:647
+#: ../charpick/charpick.c:646
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "Mate-panelprogram för att välja underliga tecken som inte finns på mitt tangentbord. Släppt under GNU General Public License."
 
-#: ../charpick/charpick.c:766 ../charpick/charpick.c:780
+#: ../charpick/charpick.c:765 ../charpick/charpick.c:779
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:455
 msgid "Character Palette"
 msgstr "Teckenpalett"
 
-#: ../charpick/charpick.c:766
+#: ../charpick/charpick.c:765
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Infoga tecken"
@@ -596,11 +591,11 @@ msgstr "Inställningar för teckenpalett"
 #: ../command/command.c:115
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
-msgstr ""
+msgstr "Visar utmatningen av ett kommando"
 
 #: ../command/command.c:133
 msgid "Command Applet Preferences"
-msgstr ""
+msgstr "Inställningar för panelprogrammet Kommando"
 
 #: ../command/command.c:146
 msgid "Command:"
@@ -622,11 +617,11 @@ msgstr "Visa ikon"
 
 #: ../command/command.c:333
 msgid "Command Applet"
-msgstr ""
+msgstr "Panelprogrammet Kommando"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
 msgid "Command Factory"
-msgstr ""
+msgstr "Fabriken Kommando"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
 msgid "Command"
@@ -638,7 +633,7 @@ msgstr "Kommando att köra"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:2
 msgid "Command/script to execute to get the output"
-msgstr ""
+msgstr "Kommando/skript att utföra för att få utmatningen"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:3
 msgid "Interval for the command"
@@ -650,7 +645,7 @@ msgstr "Intervall att köra kommandot i (sekunder)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
 msgid "Width of output"
-msgstr ""
+msgstr "Bredd för utmatning"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
 msgid "Number of characters to display"
@@ -658,7 +653,7 @@ msgstr "Antal tecken som ska visas"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
-msgstr ""
+msgstr "Om appletikonen visas eller inte"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:1
 msgid "CPU Frequency Monitor Preferences"
@@ -693,7 +688,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Visa processorfrekvens som _procentandel"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:983 ../cpufreq/src/cpufreq-applet.c:1038
+#: ../cpufreq/src/cpufreq-applet.c:988 ../cpufreq/src/cpufreq-applet.c:1043
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Övervakare av processorfrekvensskalning"
 
@@ -720,7 +715,7 @@ msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
-msgstr ""
+msgstr "Värdet 0 betyder att panelprogrammet ska visas i grafiskt läge (endast bild), 1 att panelprogrammet ska visas i textläge (bilden ska inte visas), och 2 att panelprogrammet ska visas i grafiskt läge och textläge."
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:5
 msgid "The type of text to display (if the text is enabled)."
@@ -730,17 +725,17 @@ msgstr "Typ av text som ska visas (om text är aktiverad)."
 msgid ""
 "A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
-msgstr ""
+msgstr "Värdet 0 betyder att processorfrekvensen ska visas, 1 att frekvensen och enhet ska visas, och 2 att procentandel ska visas istället för frekvensen."
 
-#: ../cpufreq/src/cpufreq-applet.c:613 ../cpufreq/src/cpufreq-prefs.c:372
+#: ../cpufreq/src/cpufreq-applet.c:609 ../cpufreq/src/cpufreq-prefs.c:372
 msgid "Could not open help document"
 msgstr "Kunde inte öppna hjälpdokument"
 
-#: ../cpufreq/src/cpufreq-applet.c:644
+#: ../cpufreq/src/cpufreq-applet.c:640
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Detta verktyg visar den aktuella skalningen utav processorfrekvensen."
 
-#: ../cpufreq/src/cpufreq-applet.c:1039
+#: ../cpufreq/src/cpufreq-applet.c:1044
 msgid "This utility shows the current CPU Frequency"
 msgstr "Detta verktyg visar den aktuella processorfrekvensen"
 
@@ -868,23 +863,23 @@ msgstr "Ett par ögon till din panel"
 msgid "Directory in which the theme is located"
 msgstr "Katalog där temat finns"
 
-#: ../geyes/themes.c:126
+#: ../geyes/themes.c:130
 msgid "Can not launch the eyes applet."
 msgstr "Kan inte starta ögonpanelprogrammet."
 
-#: ../geyes/themes.c:127
+#: ../geyes/themes.c:131
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Ett ödesdigert fel inträffade vid försök att läsa in temat."
 
-#: ../geyes/themes.c:288
+#: ../geyes/themes.c:292
 msgid "Geyes Preferences"
 msgstr "Inställningar för Geyes"
 
-#: ../geyes/themes.c:321
+#: ../geyes/themes.c:325
 msgid "Themes"
 msgstr "Teman"
 
-#: ../geyes/themes.c:346
+#: ../geyes/themes.c:350
 msgid "_Select a theme:"
 msgstr "_Välj ett tema:"
 
@@ -1216,7 +1211,7 @@ msgstr "Plats"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr ""
+msgstr "Fabrik för panelprogrammet Mateweather"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
@@ -1225,377 +1220,6 @@ msgstr "Fabrik för skapande av väderpanelprogrammet."
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Övervaka aktuella väderförhållanden och väderprognoser"
-
-#: ../invest-applet/data/financialchart.ui.h:1
-#: ../invest-applet/invest/chart.py:117
-msgid "Financial Chart"
-msgstr "Finansiellt diagram"
-
-#: ../invest-applet/data/financialchart.ui.h:2
-msgid "_Ticker symbol: "
-msgstr "A_ktiesymbol: "
-
-#: ../invest-applet/data/financialchart.ui.h:3
-msgid "Auto _refresh"
-msgstr "Uppdatera aut_omatiskt"
-
-#: ../invest-applet/data/financialchart.ui.h:4
-msgid "Today"
-msgstr "Idag"
-
-#: ../invest-applet/data/financialchart.ui.h:5
-msgid "5 Days"
-msgstr "5 dagar"
-
-#: ../invest-applet/data/financialchart.ui.h:6
-msgid "3 Months"
-msgstr "3 månader"
-
-#: ../invest-applet/data/financialchart.ui.h:7
-msgid "6 Months"
-msgstr "6 månader"
-
-#: ../invest-applet/data/financialchart.ui.h:8
-msgid "1 Year"
-msgstr "1 år"
-
-#: ../invest-applet/data/financialchart.ui.h:9
-msgid "5 Years"
-msgstr "5 år"
-
-#: ../invest-applet/data/financialchart.ui.h:10
-msgid "Maximum"
-msgstr "Maximalt"
-
-#: ../invest-applet/data/financialchart.ui.h:11
-msgid "_Graph style: "
-msgstr "_Diagramstil:"
-
-#. see http://biz.yahoo.com/charts/guide11.html and
-#. http://en.wikipedia.org/wiki/Moving_average
-#: ../invest-applet/data/financialchart.ui.h:13
-msgid "Moving average: "
-msgstr "Glidande medelvärde: "
-
-#. see http://biz.yahoo.com/charts/guide12.html and
-#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
-#: ../invest-applet/data/financialchart.ui.h:15
-msgid "Exponential moving average: "
-msgstr "Exponentiellt glidande medelvärde: "
-
-#: ../invest-applet/data/financialchart.ui.h:16
-msgid "5"
-msgstr "5"
-
-#: ../invest-applet/data/financialchart.ui.h:17
-msgid "10"
-msgstr "10"
-
-#: ../invest-applet/data/financialchart.ui.h:18
-msgid "20"
-msgstr "20"
-
-#: ../invest-applet/data/financialchart.ui.h:19
-msgid "50"
-msgstr "50"
-
-#: ../invest-applet/data/financialchart.ui.h:20
-msgid "100"
-msgstr "100"
-
-#: ../invest-applet/data/financialchart.ui.h:21
-msgid "200"
-msgstr "200"
-
-#. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
-#: ../invest-applet/data/financialchart.ui.h:23
-msgid "Overlays: "
-msgstr "Overlays: "
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide13.html and
-#. http://en.wikipedia.org/wiki/Bollinger_bands
-#: ../invest-applet/data/financialchart.ui.h:25
-msgid "Bollinger"
-msgstr "Bollinger"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide16.html and
-#. http://en.wikipedia.org/wiki/Parabolic_SAR
-#: ../invest-applet/data/financialchart.ui.h:27
-msgid "SAR"
-msgstr "SAR"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide6.html and
-#. http://en.wikipedia.org/wiki/Stock_split
-#: ../invest-applet/data/financialchart.ui.h:29
-msgid "Splits"
-msgstr "Delningar"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide20.html and
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:31
-msgid "Volumes"
-msgstr "Volymer"
-
-#. see http://biz.yahoo.com/charts/guide10.html and
-#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
-#: ../invest-applet/data/financialchart.ui.h:33
-msgid "Indicators: "
-msgstr "Indikatorer: "
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Relative_Strength_Index
-#: ../invest-applet/data/financialchart.ui.h:35
-msgid "RSI"
-msgstr "RSI"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:37
-msgid "Vol"
-msgstr "Vol"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Money_flow_index
-#: ../invest-applet/data/financialchart.ui.h:39
-msgid "MFI"
-msgstr "MFI"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:41
-msgid "Slow stoch"
-msgstr "Slow stoch"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:43
-msgid "Vol+MA"
-msgstr "Vol+MA"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
-#: ../invest-applet/data/financialchart.ui.h:45
-msgid "ROC"
-msgstr "ROC"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:47
-msgid "Fast stoch"
-msgstr "Fast stoch"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Williams_%25R
-#: ../invest-applet/data/financialchart.ui.h:50
-#, no-c-format
-msgid "W%R"
-msgstr "W%R"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/MACD
-#: ../invest-applet/data/financialchart.ui.h:52
-msgid "MACD"
-msgstr "MACD"
-
-#: ../invest-applet/data/financialchart.ui.h:53
-msgid "Line"
-msgstr "Rad"
-
-#: ../invest-applet/data/financialchart.ui.h:54
-msgid "Bar"
-msgstr ""
-
-#: ../invest-applet/data/financialchart.ui.h:55
-msgid "Candle"
-msgstr "Ljus"
-
-#: ../invest-applet/data/financialchart.ui.h:56
-msgid "Scale: "
-msgstr "Skala:"
-
-#: ../invest-applet/data/financialchart.ui.h:57
-msgid "Linear"
-msgstr "Linjär"
-
-#: ../invest-applet/data/financialchart.ui.h:58
-msgid "Logarithmic"
-msgstr "Logaritmisk"
-
-#: ../invest-applet/data/financialchart.ui.h:59
-msgid "_Options"
-msgstr "Alt_ernativ"
-
-#: ../invest-applet/data/financialchart.ui.h:60
-msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "Hämtar diagram från <b>Yahoo!</b>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:1
-msgid "Invest Preferences"
-msgstr "Inställningar för Investera"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:2
-msgid "label"
-msgstr "etikett"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:3
-msgid "Stocks"
-msgstr "Aktier"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:4
-msgid ""
-"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
-"<b>Source: </b> Yahoo!</small></i>"
-msgstr "<i><small><b>Observera:</b> Informationen är fördröjd med minst 15 minuter.\n<b>Källa: </b> Yahoo!</small></i>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:6
-msgid "Currency"
-msgstr "Valuta"
-
-#: ../invest-applet/invest/about.py:22
-msgid "Invest"
-msgstr "Investera"
-
-#: ../invest-applet/invest/about.py:25
-msgid "Track your invested money."
-msgstr "Bevaka dina investerade pengar."
-
-#. name, stock_id, label, accellerator, tooltip, callback
-#: ../invest-applet/invest/applet.py:28
-msgid "About"
-msgstr "Om"
-
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1389
-msgid "Help"
-msgstr "Hjälp"
-
-#: ../invest-applet/invest/applet.py:30
-msgid "Preferences"
-msgstr "Inställningar"
-
-#: ../invest-applet/invest/applet.py:31
-msgid "Refresh"
-msgstr "Uppdatera"
-
-#. a) We aren't configured yet
-#: ../invest-applet/invest/applet.py:63
-msgid "<b>You have not entered any stock information yet</b>"
-msgstr "<b>Du har inte angivit någon aktieinformation än</b>"
-
-#: ../invest-applet/invest/applet.py:68
-msgid "<b>No stock quotes are currently available</b>"
-msgstr "<b>Inga aktiekurser finns tillgängliga för närvarande</b>"
-
-#: ../invest-applet/invest/applet.py:69
-msgid ""
-"The server could not be contacted. The computer is either offline or the "
-"servers are down. Try again later."
-msgstr "Servern kunde inte kontaktas. Datorn är antingen frånkopplad eller att servrarna är nere. Försök igen senare."
-
-#: ../invest-applet/invest/chart.py:166
-#, python-format
-msgid "Financial Chart - %s"
-msgstr "Finansiellt diagram - %s"
-
-#: ../invest-applet/invest/chart.py:233
-msgid "Opening Chart"
-msgstr "Öppnar diagram"
-
-#: ../invest-applet/invest/chart.py:248
-msgid "Chart downloaded"
-msgstr "Diagram hämtat"
-
-#: ../invest-applet/invest/chart.py:250
-msgid "Chart could not be downloaded"
-msgstr "Diagram kunde inte hämtas"
-
-#: ../invest-applet/invest/invest-applet.py:44
-msgid "Invest Applet"
-msgstr "Panelprogrammet Investera"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Symbol"
-msgstr "Symbol"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Label"
-msgstr "Etikett"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Amount"
-msgstr "Mängd"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Price"
-msgstr "Kurs"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Commission"
-msgstr "Courtage"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Currency Rate"
-msgstr "Valutakurs"
-
-#: ../invest-applet/invest/quotes.py:170
-msgid "Invest could not connect to Yahoo! Finance"
-msgstr "Investera kunde inte ansluta till Yahoo! Finance"
-
-#. Translators: This is share-market jargon. It is the average percentage
-#. change of all stock prices. The %s gets replaced with the string value of
-#. the change (localized), including the percent sign.
-#: ../invest-applet/invest/quotes.py:212
-#, python-format
-msgid "Average change: %s"
-msgstr "Genomsnittlig förändring: %s"
-
-#. Translators: This is share-market jargon. It refers to the total difference
-#. between the current price and purchase price for all the shares put
-#. together for a particular currency. i.e. How much money would be earned if
-#. they were sold right now. The first string is the change value, the second
-#. the currency, and the third value is the percentage of the change,
-#. formatted using user's locale.
-#: ../invest-applet/invest/quotes.py:221
-#, python-format
-msgid "Positions balance: %s %s (%s)"
-msgstr "Positionssaldo: %s %s (%s)"
-
-#: ../invest-applet/invest/quotes.py:223
-#, python-format
-msgid "Updated at %s"
-msgstr "Uppdaterad %s"
-
-#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
-#. VARIATION_PCT, PB
-#. Translators: these words all refer to a stock. Last is short
-#. for "last price". Gain is referring to the gain since the
-#. stock was purchased.
-#: ../invest-applet/invest/widgets.py:58
-msgid "Ticker"
-msgstr "Aktier"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Last"
-msgstr "Senast"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Change %"
-msgstr "Ändring %"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Chart"
-msgstr "Diagram"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Gain"
-msgstr "Ökning"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Gain %"
-msgstr "Ökning %"
 
 #: ../multiload/main.c:59
 msgid ""
@@ -1745,7 +1369,7 @@ msgstr "Grafstorlek"
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr ""
+msgstr "För horisontella paneler är detta bredden på diagramen i bildpunkter. För vertikala paneler är detta höjden på diagramen."
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:10
 msgid "Graph color for user-related CPU activity"
@@ -1821,7 +1445,7 @@ msgstr "Bakgrundsfärg för belastningsdiagram"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Grid line color"
-msgstr ""
+msgstr "Rutnätslinjefärg"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for disk read"
@@ -1837,7 +1461,7 @@ msgstr "Bakgrundsfärg för diskanvändningsdiagram"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:32
 msgid "The desktop description file to execute as the system monitor"
-msgstr ""
+msgstr "Skrivbordsbeskrivningsfilen att köra som systemövervakaren"
 
 #: ../multiload/properties.c:328
 msgid "Monitored Resources"
@@ -1966,7 +1590,7 @@ msgstr "_Medel"
 
 #: ../multiload/properties.c:626
 msgid "_Gridline"
-msgstr ""
+msgstr "_Rutnätslinje"
 
 #: ../multiload/properties.c:628
 msgid "Harddisk"
@@ -2028,7 +1652,7 @@ msgstr "Ändra ikon"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
 msgid "If true, change the icon due to selected device."
-msgstr ""
+msgstr "Om det är sant, ändra ikon till den valda enheten."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
 msgid "Auto change device"
@@ -2036,7 +1660,7 @@ msgstr "Ändra enheten automatiskt"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
 msgid "If true, change automatically the selected device."
-msgstr ""
+msgstr "Om sann, ändra automatiskt den valda enheten."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
 msgid "In color"
@@ -2060,7 +1684,7 @@ msgstr "Upp-kommando"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
 msgid "Command to execute to activate the device"
-msgstr ""
+msgstr "Kommando att använda för att aktivera enheten"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
 msgid "Down command"
@@ -2068,7 +1692,7 @@ msgstr "Ner-kommando"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
 msgid "Command to execute to shut down the device"
-msgstr ""
+msgstr "Kommando att använda för att stänga av enheten"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
 msgid "Show signal quality icon"
@@ -2076,15 +1700,15 @@ msgstr "Visa ikonen för signalkvalité"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
 msgid "If true, show signal quality icon for wireless devices."
-msgstr ""
+msgstr "Visar ikonen för signalkvalitet för trådlösa enheter."
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
 msgid "Netspeed Applet Factory"
-msgstr ""
+msgstr "Panelprogramsfabrik för Näthastighet"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
 msgid "Netspeed Applet"
-msgstr ""
+msgstr "Panelprogrammet Näthastighet"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
 msgid "Network Monitor"
@@ -2173,17 +1797,17 @@ msgstr "MiB"
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr ""
+msgstr "Det inträffade ett fel vid visning av hjälp:\n%s"
 
 #: ../netspeed/src/netspeed.c:805
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
-msgstr ""
+msgstr "Ett litet panelprogram som visar trafikinformation på en angiven nätverksenhet"
 
 #: ../netspeed/src/netspeed.c:966
 msgid "Mate Netspeed Preferences"
-msgstr ""
+msgstr "Inställningar för Mate Netspeed"
 
 #: ../netspeed/src/netspeed.c:988
 msgid "General Settings"
@@ -2208,7 +1832,7 @@ msgstr "Visa _bitar istället för bytes"
 
 #: ../netspeed/src/netspeed.c:1051
 msgid "Shorten _unit legend"
-msgstr ""
+msgstr "Förkorta _enhetförklaringen"
 
 #: ../netspeed/src/netspeed.c:1055
 msgid "_Change icon according to the selected device"
@@ -2229,11 +1853,11 @@ msgstr "Enhetsdetaljer för %s"
 
 #: ../netspeed/src/netspeed.c:1206
 msgid "_In graph color"
-msgstr ""
+msgstr "_Indiagramfärg"
 
 #: ../netspeed/src/netspeed.c:1207
 msgid "_Out graph color"
-msgstr ""
+msgstr "_Utdiagramfärg"
 
 #: ../netspeed/src/netspeed.c:1223
 msgid "Internet Address:"
@@ -2249,7 +1873,7 @@ msgstr "Hårdvaruadress:"
 
 #: ../netspeed/src/netspeed.c:1226
 msgid "P-t-P Address:"
-msgstr ""
+msgstr "P-t-P-adress:"
 
 #: ../netspeed/src/netspeed.c:1227
 msgid "Bytes in:"
@@ -2284,6 +1908,10 @@ msgstr "Enhets_detaljer"
 msgid "Preferences..."
 msgstr "Inställningar..."
 
+#: ../netspeed/src/netspeed.c:1389
+msgid "Help"
+msgstr "Hjälp"
+
 #: ../netspeed/src/netspeed.c:1391
 msgid "About..."
 msgstr "Om..."
@@ -2303,7 +1931,7 @@ msgstr "Vill du ansluta %s nu?"
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>Körning av kommandot %s misslyckades</b>\n%s"
 
 #: ../netspeed/src/netspeed.c:1522
 #, c-format
@@ -2342,15 +1970,15 @@ msgstr "okänt"
 
 #: ../netspeed/src/netspeed.c:1597
 msgid "Mate Netspeed"
-msgstr ""
+msgstr "Mate Netspeed"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
 msgstr "Panelprogramsfabrik för klisterlappar"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:165
-#: ../stickynotes/stickynotes_applet.c:410
+#: ../stickynotes/stickynotes_applet.c:164
+#: ../stickynotes/stickynotes_applet.c:406
 msgid "Sticky Notes"
 msgstr "Klisterlappar"
 
@@ -2366,7 +1994,7 @@ msgstr "Denna klisterlapp är låst."
 msgid "This note is unlocked."
 msgstr "Denna klisterlapp är olåst."
 
-#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
+#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:34
 msgid "_New Note"
 msgstr "_Ny lapp"
 
@@ -2673,26 +2301,26 @@ msgstr "Huruvida det ska frågas efter bekräftelse vid borttagning av en lapp"
 msgid "Empty notes are always deleted without confirmation."
 msgstr "Tomma lappar tas alltid bort utan bekräftelse."
 
-#: ../stickynotes/stickynotes_applet.c:36
+#: ../stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "Döl_j lappar"
 
-#: ../stickynotes/stickynotes_applet.c:39
+#: ../stickynotes/stickynotes_applet.c:40
 msgid "_Delete Notes"
 msgstr "_Ta bort lappar"
 
-#: ../stickynotes/stickynotes_applet.c:55
+#: ../stickynotes/stickynotes_applet.c:56
 msgid "_Lock Notes"
 msgstr "_Lås lappar"
 
-#: ../stickynotes/stickynotes_applet.c:586
+#: ../stickynotes/stickynotes_applet.c:582
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d lapp"
 msgstr[1] "%d lappar"
 
-#: ../stickynotes/stickynotes_applet.c:587
+#: ../stickynotes/stickynotes_applet.c:583
 msgid "Show sticky notes"
 msgstr "Visa klisterlappar"
 
@@ -2702,7 +2330,7 @@ msgstr "Klisterlappar för skrivbordsmiljön MATE"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:1
 msgid "Timer Factory"
-msgstr ""
+msgstr "Timer-fabrik"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:2
 msgid "Timer"
@@ -2711,7 +2339,7 @@ msgstr "Tidtagarur"
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
 #: ../timerapplet/timerapplet.c:259
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
+msgstr "Starta en timer och få ett meddelande när den är klar"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:1
 msgid "Name of timer"
@@ -2719,15 +2347,15 @@ msgstr "Namn på timer"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:2
 msgid "Duration of timer in seconds"
-msgstr ""
+msgstr "Varaktighet av timer i sekunder"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:3
 msgid "Show notification popup when timer finish"
-msgstr ""
+msgstr "Visa aviserings-popup när timern är klar"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:4
 msgid "Show dialog window when timer finish"
-msgstr ""
+msgstr "Visa dialogfönster när timern är klar"
 
 #: ../timerapplet/timerapplet.c:78
 msgid "_Start timer"
@@ -2751,7 +2379,7 @@ msgstr "Timer klar!"
 
 #: ../timerapplet/timerapplet.c:292
 msgid "Timer Applet Preferences"
-msgstr ""
+msgstr "Inställningar för timerpanelprogrammet"
 
 #: ../timerapplet/timerapplet.c:305
 msgid "Name:"
@@ -2779,7 +2407,7 @@ msgstr "Visa dialogruta"
 
 #: ../timerapplet/timerapplet.c:389
 msgid "Timer Applet"
-msgstr ""
+msgstr "Panelprogrammet Timer"
 
 #: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
 msgid "Trash"

@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 11:20+0100\n"
-"PO-Revision-Date: 2017-11-06 10:20+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
+"POT-Creation-Date: 2018-01-15 12:30+0300\n"
+"PO-Revision-Date: 2018-01-15 10:14+0000\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Serbian (http://www.transifex.com/mate/MATE/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,17 +25,11 @@ msgstr ""
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Приказује стање функција Приступачности Икса као што су задржани измењивачи"
 
-#. about.set_authors("Raphael Slinckx <raphael@slinckx.net>\nEnrico Minack
-#. <enrico-minack@gmx.de>")
-#. about.set_artists([])
-#. about.set_documenters([])
-#. translators: These appear in the About dialog, usual format applies.
 #: ../accessx-status/applet.c:146 ../battstat/battstat_applet.c:1210
-#: ../charpick/charpick.c:652 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:649 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:651 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:645 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:194 ../mateweather/mateweather-about.c:56
-#: ../invest-applet/invest/about.py:34 ../multiload/main.c:64
-#: ../netspeed/src/netspeed.c:808
+#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:808
 #: ../stickynotes/stickynotes_applet_callbacks.c:389
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:451
 msgid "translator-credits"
@@ -60,18 +54,18 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Поставке приступачности _тастатуре"
 
 #: ../accessx-status/applet.c:228 ../battstat/battstat_applet.c:64
-#: ../charpick/charpick.c:740 ../cpufreq/src/cpufreq-applet.c:128
+#: ../charpick/charpick.c:739 ../cpufreq/src/cpufreq-applet.c:129
 #: ../drivemount/drivemount.c:166 ../geyes/geyes.c:374
 #: ../mateweather/mateweather-applet.c:124 ../multiload/main.c:470
-#: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:74
+#: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "По_моћ"
 
 #: ../accessx-status/applet.c:229 ../battstat/battstat_applet.c:67
-#: ../charpick/charpick.c:743 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:131 ../drivemount/drivemount.c:169
+#: ../charpick/charpick.c:742 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:169
 #: ../geyes/geyes.c:377 ../mateweather/mateweather-applet.c:127
-#: ../multiload/main.c:473 ../stickynotes/stickynotes_applet.c:48
+#: ../multiload/main.c:473 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_О програму"
@@ -125,10 +119,10 @@ msgstr "Погон програмчета стања приступачност�
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Приказује стање функција приступачности тастатуре"
 
-#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:737
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:125
+#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:736
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
 #: ../geyes/geyes.c:371 ../mateweather/mateweather-applet.c:121
-#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:42
+#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:81
 msgid "_Preferences"
 msgstr "_Поставке"
@@ -282,7 +276,7 @@ msgid "N/A"
 msgstr "Недоступно"
 
 #: ../battstat/battstat_applet.c:1154 ../drivemount/drivemount.c:154
-#: ../geyes/geyes.c:359 ../geyes/themes.c:229
+#: ../geyes/geyes.c:359 ../geyes/themes.c:233
 #: ../mateweather/mateweather-applet.c:70
 #: ../mateweather/mateweather-pref.c:759
 #: ../stickynotes/stickynotes_applet_callbacks.c:351
@@ -473,40 +467,40 @@ msgstr "Батерија је слаба"
 msgid "Battery fully re-charged"
 msgstr "Батерија је потпуно напуњена"
 
-#: ../charpick/charpick.c:465
+#: ../charpick/charpick.c:464
 msgid "Available palettes"
 msgstr "Доступне палете"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:516
+#: ../charpick/charpick.c:515
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Уметни „%s“"
 
-#: ../charpick/charpick.c:519
+#: ../charpick/charpick.c:518
 msgid "Insert special character"
 msgstr "Уметни нарочити знак"
 
-#: ../charpick/charpick.c:523
+#: ../charpick/charpick.c:522
 #, c-format
 msgid "insert special character %s"
 msgstr "умеће нарочити знак %s"
 
-#: ../charpick/charpick.c:647
+#: ../charpick/charpick.c:646
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "Програмче Мејтовог панела за избор чудних знакова који се не налазе на тастатури. Објављено је под Гнуовом општом јавном лиценцом."
 
-#: ../charpick/charpick.c:766 ../charpick/charpick.c:780
+#: ../charpick/charpick.c:765 ../charpick/charpick.c:779
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:455
 msgid "Character Palette"
 msgstr "Палета знакова"
 
-#: ../charpick/charpick.c:766
+#: ../charpick/charpick.c:765
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Унесите знакове"
@@ -694,7 +688,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Прикажи фреквенцију процесора у _процентима"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:983 ../cpufreq/src/cpufreq-applet.c:1038
+#: ../cpufreq/src/cpufreq-applet.c:988 ../cpufreq/src/cpufreq-applet.c:1043
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Праћење промене фреквенције процесора"
 
@@ -733,15 +727,15 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr "0 значи да ће бити приказана фреквенција процесора, 1 значи да ће бити приказана фреквенција и јединице, а 2 значи да ће бити приказани проценти оптерећења уместо фреквенције."
 
-#: ../cpufreq/src/cpufreq-applet.c:613 ../cpufreq/src/cpufreq-prefs.c:372
+#: ../cpufreq/src/cpufreq-applet.c:609 ../cpufreq/src/cpufreq-prefs.c:372
 msgid "Could not open help document"
 msgstr "Не могу да отворим документ помоћи"
 
-#: ../cpufreq/src/cpufreq-applet.c:644
+#: ../cpufreq/src/cpufreq-applet.c:640
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ова алатка приказује текуће стање фреквенције процесора."
 
-#: ../cpufreq/src/cpufreq-applet.c:1039
+#: ../cpufreq/src/cpufreq-applet.c:1044
 msgid "This utility shows the current CPU Frequency"
 msgstr "Ова алатка приказује текућу фреквенцију процесора"
 
@@ -869,23 +863,23 @@ msgstr "Пар очију за ваш панел"
 msgid "Directory in which the theme is located"
 msgstr "Директоријум у ком се налази тема"
 
-#: ../geyes/themes.c:126
+#: ../geyes/themes.c:130
 msgid "Can not launch the eyes applet."
 msgstr "Не могу да покренем програмче с очима."
 
-#: ../geyes/themes.c:127
+#: ../geyes/themes.c:131
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Дошло је до кобне грешке при покушају учитавања теме."
 
-#: ../geyes/themes.c:288
+#: ../geyes/themes.c:292
 msgid "Geyes Preferences"
 msgstr "Поставке ГОчију"
 
-#: ../geyes/themes.c:321
+#: ../geyes/themes.c:325
 msgid "Themes"
 msgstr "Теме"
 
-#: ../geyes/themes.c:346
+#: ../geyes/themes.c:350
 msgid "_Select a theme:"
 msgstr "_Изаберите тему:"
 
@@ -1226,377 +1220,6 @@ msgstr "Погон за прављење програмчета за време.
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Праћење тренутних временских прилика и временске прогнозе"
-
-#: ../invest-applet/data/financialchart.ui.h:1
-#: ../invest-applet/invest/chart.py:117
-msgid "Financial Chart"
-msgstr "Финансијски графикон"
-
-#: ../invest-applet/data/financialchart.ui.h:2
-msgid "_Ticker symbol: "
-msgstr "_Знак тикера: "
-
-#: ../invest-applet/data/financialchart.ui.h:3
-msgid "Auto _refresh"
-msgstr "_Самоосвежавање"
-
-#: ../invest-applet/data/financialchart.ui.h:4
-msgid "Today"
-msgstr "Данас"
-
-#: ../invest-applet/data/financialchart.ui.h:5
-msgid "5 Days"
-msgstr "5 дана"
-
-#: ../invest-applet/data/financialchart.ui.h:6
-msgid "3 Months"
-msgstr "3 месеца"
-
-#: ../invest-applet/data/financialchart.ui.h:7
-msgid "6 Months"
-msgstr "6 месеци"
-
-#: ../invest-applet/data/financialchart.ui.h:8
-msgid "1 Year"
-msgstr "1 година"
-
-#: ../invest-applet/data/financialchart.ui.h:9
-msgid "5 Years"
-msgstr "5 година"
-
-#: ../invest-applet/data/financialchart.ui.h:10
-msgid "Maximum"
-msgstr "Највише"
-
-#: ../invest-applet/data/financialchart.ui.h:11
-msgid "_Graph style: "
-msgstr "_Врста графика: "
-
-#. see http://biz.yahoo.com/charts/guide11.html and
-#. http://en.wikipedia.org/wiki/Moving_average
-#: ../invest-applet/data/financialchart.ui.h:13
-msgid "Moving average: "
-msgstr "Помена просека: "
-
-#. see http://biz.yahoo.com/charts/guide12.html and
-#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
-#: ../invest-applet/data/financialchart.ui.h:15
-msgid "Exponential moving average: "
-msgstr "Просек експоненцијалное промене: "
-
-#: ../invest-applet/data/financialchart.ui.h:16
-msgid "5"
-msgstr "5"
-
-#: ../invest-applet/data/financialchart.ui.h:17
-msgid "10"
-msgstr "10"
-
-#: ../invest-applet/data/financialchart.ui.h:18
-msgid "20"
-msgstr "20"
-
-#: ../invest-applet/data/financialchart.ui.h:19
-msgid "50"
-msgstr "50"
-
-#: ../invest-applet/data/financialchart.ui.h:20
-msgid "100"
-msgstr "100"
-
-#: ../invest-applet/data/financialchart.ui.h:21
-msgid "200"
-msgstr "200"
-
-#. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
-#: ../invest-applet/data/financialchart.ui.h:23
-msgid "Overlays: "
-msgstr "Суме: "
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide13.html and
-#. http://en.wikipedia.org/wiki/Bollinger_bands
-#: ../invest-applet/data/financialchart.ui.h:25
-msgid "Bollinger"
-msgstr "Булинџер"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide16.html and
-#. http://en.wikipedia.org/wiki/Parabolic_SAR
-#: ../invest-applet/data/financialchart.ui.h:27
-msgid "SAR"
-msgstr "САР"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide6.html and
-#. http://en.wikipedia.org/wiki/Stock_split
-#: ../invest-applet/data/financialchart.ui.h:29
-msgid "Splits"
-msgstr "Поделе"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide20.html and
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:31
-msgid "Volumes"
-msgstr "Волумени"
-
-#. see http://biz.yahoo.com/charts/guide10.html and
-#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
-#: ../invest-applet/data/financialchart.ui.h:33
-msgid "Indicators: "
-msgstr "Показивачи: "
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Relative_Strength_Index
-#: ../invest-applet/data/financialchart.ui.h:35
-msgid "RSI"
-msgstr "РСИ"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:37
-msgid "Vol"
-msgstr "Вол"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Money_flow_index
-#: ../invest-applet/data/financialchart.ui.h:39
-msgid "MFI"
-msgstr "МФИ"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:41
-msgid "Slow stoch"
-msgstr "Спора берза"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:43
-msgid "Vol+MA"
-msgstr "Вол+МА"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
-#: ../invest-applet/data/financialchart.ui.h:45
-msgid "ROC"
-msgstr "РОЦ"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:47
-msgid "Fast stoch"
-msgstr "Брза берза"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Williams_%25R
-#: ../invest-applet/data/financialchart.ui.h:50
-#, no-c-format
-msgid "W%R"
-msgstr "W%R"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/MACD
-#: ../invest-applet/data/financialchart.ui.h:52
-msgid "MACD"
-msgstr "МАЦД"
-
-#: ../invest-applet/data/financialchart.ui.h:53
-msgid "Line"
-msgstr "Линија"
-
-#: ../invest-applet/data/financialchart.ui.h:54
-msgid "Bar"
-msgstr "Трака"
-
-#: ../invest-applet/data/financialchart.ui.h:55
-msgid "Candle"
-msgstr "Свећа"
-
-#: ../invest-applet/data/financialchart.ui.h:56
-msgid "Scale: "
-msgstr "Размера: "
-
-#: ../invest-applet/data/financialchart.ui.h:57
-msgid "Linear"
-msgstr "Линеарно"
-
-#: ../invest-applet/data/financialchart.ui.h:58
-msgid "Logarithmic"
-msgstr "Логаритамски"
-
-#: ../invest-applet/data/financialchart.ui.h:59
-msgid "_Options"
-msgstr "_Опције"
-
-#: ../invest-applet/data/financialchart.ui.h:60
-msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "Преузимам графикон са <b>Јахуа!</b>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:1
-msgid "Invest Preferences"
-msgstr "Поставке за улагања"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:2
-msgid "label"
-msgstr "натпис"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:3
-msgid "Stocks"
-msgstr "Берзе"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:4
-msgid ""
-"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
-"<b>Source: </b> Yahoo!</small></i>"
-msgstr "<i><small><b>Примедба:</b> Стања касне најмање 15 минута.\n<b>Извор: </b> Yahoo!</small></i>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:6
-msgid "Currency"
-msgstr "Промет"
-
-#: ../invest-applet/invest/about.py:22
-msgid "Invest"
-msgstr "Улагања"
-
-#: ../invest-applet/invest/about.py:25
-msgid "Track your invested money."
-msgstr "Пратите ваш уложен новац."
-
-#. name, stock_id, label, accellerator, tooltip, callback
-#: ../invest-applet/invest/applet.py:28
-msgid "About"
-msgstr "О програму"
-
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1389
-msgid "Help"
-msgstr "Помоћ"
-
-#: ../invest-applet/invest/applet.py:30
-msgid "Preferences"
-msgstr "Поставке"
-
-#: ../invest-applet/invest/applet.py:31
-msgid "Refresh"
-msgstr "Освежи"
-
-#. a) We aren't configured yet
-#: ../invest-applet/invest/applet.py:63
-msgid "<b>You have not entered any stock information yet</b>"
-msgstr "<b>Још увек нисте унели податке о берзи</b>"
-
-#: ../invest-applet/invest/applet.py:68
-msgid "<b>No stock quotes are currently available</b>"
-msgstr "<b>Тренутно нису доступна стања на берзи</b>"
-
-#: ../invest-applet/invest/applet.py:69
-msgid ""
-"The server could not be contacted. The computer is either offline or the "
-"servers are down. Try again later."
-msgstr "Не могу да се повежем на овај сервер. Или рачунар ради ван мреже или су сервери угашени. Пробајте поново касније."
-
-#: ../invest-applet/invest/chart.py:166
-#, python-format
-msgid "Financial Chart - %s"
-msgstr "Финансијски графикон — %s"
-
-#: ../invest-applet/invest/chart.py:233
-msgid "Opening Chart"
-msgstr "Отвара графикон"
-
-#: ../invest-applet/invest/chart.py:248
-msgid "Chart downloaded"
-msgstr "Графикон је преузет"
-
-#: ../invest-applet/invest/chart.py:250
-msgid "Chart could not be downloaded"
-msgstr "Не могу да преузмен графикон"
-
-#: ../invest-applet/invest/invest-applet.py:44
-msgid "Invest Applet"
-msgstr "Програмче улагања"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Symbol"
-msgstr "Симбол"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Label"
-msgstr "Назив"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Amount"
-msgstr "Износ"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Price"
-msgstr "Цена"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Commission"
-msgstr "Провизија"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Currency Rate"
-msgstr "Прометна стопа"
-
-#: ../invest-applet/invest/quotes.py:170
-msgid "Invest could not connect to Yahoo! Finance"
-msgstr "Не могу да се повежем на Јахуове финансије"
-
-#. Translators: This is share-market jargon. It is the average percentage
-#. change of all stock prices. The %s gets replaced with the string value of
-#. the change (localized), including the percent sign.
-#: ../invest-applet/invest/quotes.py:212
-#, python-format
-msgid "Average change: %s"
-msgstr "Средња промена: %s"
-
-#. Translators: This is share-market jargon. It refers to the total difference
-#. between the current price and purchase price for all the shares put
-#. together for a particular currency. i.e. How much money would be earned if
-#. they were sold right now. The first string is the change value, the second
-#. the currency, and the third value is the percentage of the change,
-#. formatted using user's locale.
-#: ../invest-applet/invest/quotes.py:221
-#, python-format
-msgid "Positions balance: %s %s (%s)"
-msgstr "Баланс позиције: %s %s (%s)"
-
-#: ../invest-applet/invest/quotes.py:223
-#, python-format
-msgid "Updated at %s"
-msgstr "Ажурирано %s"
-
-#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
-#. VARIATION_PCT, PB
-#. Translators: these words all refer to a stock. Last is short
-#. for "last price". Gain is referring to the gain since the
-#. stock was purchased.
-#: ../invest-applet/invest/widgets.py:58
-msgid "Ticker"
-msgstr "Тикер"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Last"
-msgstr "Задња"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Change %"
-msgstr "Промена %"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Chart"
-msgstr "Графикон"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Gain"
-msgstr "Добит"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Gain %"
-msgstr "Добит %"
 
 #: ../multiload/main.c:59
 msgid ""
@@ -2286,6 +1909,10 @@ msgstr "Појединости _уређаја"
 msgid "Preferences..."
 msgstr "Поставке..."
 
+#: ../netspeed/src/netspeed.c:1389
+msgid "Help"
+msgstr "Помоћ"
+
 #: ../netspeed/src/netspeed.c:1391
 msgid "About..."
 msgstr "О програму..."
@@ -2351,8 +1978,8 @@ msgid "Sticky Notes Applet Factory"
 msgstr "Погон програмчета за белешке"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:165
-#: ../stickynotes/stickynotes_applet.c:410
+#: ../stickynotes/stickynotes_applet.c:164
+#: ../stickynotes/stickynotes_applet.c:406
 msgid "Sticky Notes"
 msgstr "Белешке"
 
@@ -2368,7 +1995,7 @@ msgstr "Ова белешка је закључана."
 msgid "This note is unlocked."
 msgstr "Ова белешка је откључана."
 
-#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
+#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:34
 msgid "_New Note"
 msgstr "_Нова белешка"
 
@@ -2675,19 +2302,19 @@ msgstr "Да ли се тражи одобрење при брисању бел�
 msgid "Empty notes are always deleted without confirmation."
 msgstr "Празне белешке се увек бришу без потврде."
 
-#: ../stickynotes/stickynotes_applet.c:36
+#: ../stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "Сак_риј белешке"
 
-#: ../stickynotes/stickynotes_applet.c:39
+#: ../stickynotes/stickynotes_applet.c:40
 msgid "_Delete Notes"
 msgstr "У_клони белешке"
 
-#: ../stickynotes/stickynotes_applet.c:55
+#: ../stickynotes/stickynotes_applet.c:56
 msgid "_Lock Notes"
 msgstr "_Закључај белешке"
 
-#: ../stickynotes/stickynotes_applet.c:586
+#: ../stickynotes/stickynotes_applet.c:582
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
@@ -2695,7 +2322,7 @@ msgstr[0] "%d белешка"
 msgstr[1] "%d белешке"
 msgstr[2] "%d белешки"
 
-#: ../stickynotes/stickynotes_applet.c:587
+#: ../stickynotes/stickynotes_applet.c:583
 msgid "Show sticky notes"
 msgstr "Прикажи белешке"
 
