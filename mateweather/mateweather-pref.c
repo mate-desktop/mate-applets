@@ -863,7 +863,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_label_set_use_markup (GTK_LABEL (temp_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (temp_label), GTK_JUSTIFY_LEFT);
 #if GTK_CHECK_VERSION (3, 16, 0)
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+	gtk_label_set_xalign (GTK_LABEL (temp_label), 0.0);
 #else
 	gtk_misc_set_alignment (GTK_MISC (temp_label), 0.0, 0.5);
 #endif
@@ -889,7 +889,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_label_set_use_markup (GTK_LABEL (speed_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (speed_label), GTK_JUSTIFY_LEFT);
 #if GTK_CHECK_VERSION (3, 16, 0)
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+	gtk_label_set_xalign (GTK_LABEL (speed_label), 0.0);
 #else
 	gtk_misc_set_alignment (GTK_MISC (speed_label), 0.0, 0.5);
 #endif
@@ -920,7 +920,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_label_set_use_markup (GTK_LABEL (pres_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (pres_label), GTK_JUSTIFY_LEFT);
 #if GTK_CHECK_VERSION (3, 16, 0)
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+	gtk_label_set_xalign (GTK_LABEL (pres_label), 0.0);
 #else
 	gtk_misc_set_alignment (GTK_MISC (pres_label), 0.0, 0.5);
 #endif
@@ -954,7 +954,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_label_set_use_markup (GTK_LABEL (dist_label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (dist_label), GTK_JUSTIFY_LEFT);
 #if GTK_CHECK_VERSION (3, 16, 0)
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+	gtk_label_set_xalign (GTK_LABEL (dist_label), 0.0);
 #else
 	gtk_misc_set_alignment (GTK_MISC (dist_label), 0, 0.5);
 #endif
