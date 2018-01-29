@@ -73,17 +73,10 @@ help_cb (GtkAction       *action,
 
  	GError *error = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gtk_show_uri_on_window (NULL,
 	                        "help:mate-multiload",
 	                        gtk_get_current_event_time (),
 	                        &error);
-#else
-	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (ma->applet)),
-	              "help:mate-multiload",
-	              gtk_get_current_event_time (),
-	              &error);
-#endif
 
     	if (error) { /* FIXME: the user needs to see this */
         	g_warning ("help error: %s\n", error->message);
