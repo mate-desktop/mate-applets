@@ -94,7 +94,7 @@ PKG_CHECK_MODULES(GIO, gio-2.0 >= $GIO_REQUIRED gio-unix-2.0)
 AC_SUBST(GIO_CFLAGS)
 AC_SUBST(GIO_LIBS)
 
-dnl -- Check for GTK+ 2.0 (required) ------------------------------------------
+dnl -- Check for GTK+ 3.0 (required) ------------------------------------------
 PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQUIRED)
 AC_SUBST(GTK_FLAGS)
 AC_SUBST(GTK_LIBS)
