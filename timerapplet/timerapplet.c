@@ -303,12 +303,8 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Name:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 0, 1, 1);
 
     widget = gtk_entry_new ();
@@ -316,12 +312,8 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_settings_bind (applet->settings, NAME_KEY, widget, "text", G_SETTINGS_BIND_DEFAULT);
 
     widget = gtk_label_new (_("Hours:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 1, 1, 1);
 
     widget = gtk_spin_button_new_with_range (0.0, 100.0, 1.0);
@@ -331,12 +323,8 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Minutes:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 2, 1, 1);
 
     widget = gtk_spin_button_new_with_range (0.0, 59.0, 1.0);
@@ -346,12 +334,8 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
 
     widget = gtk_label_new (_("Seconds:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 3, 1, 1);
 
     widget = gtk_spin_button_new_with_range (0.0, 59.0, 1.0);

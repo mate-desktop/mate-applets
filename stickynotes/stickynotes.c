@@ -378,17 +378,10 @@ static void
 response_cb (GtkWidget *dialog, gint id, gpointer data)
 {
         if (id == GTK_RESPONSE_HELP)
-#if GTK_CHECK_VERSION (3, 22, 0)
 		gtk_show_uri_on_window (GTK_WINDOW (dialog),
 		                        "help:mate-stickynotes-applet/stickynotes-settings-individual",
 		                        gtk_get_current_event_time (),
 		                        NULL);
-#else
-		gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-		              "help:mate-stickynotes-applet/stickynotes-settings-individual",
-		              gtk_get_current_event_time (),
-		              NULL);
-#endif
         else if (id == GTK_RESPONSE_CLOSE)
                 gtk_widget_hide (dialog);
 }

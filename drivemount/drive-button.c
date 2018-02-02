@@ -72,7 +72,6 @@ drive_button_class_init (DriveButtonClass *class)
 
     provider = gtk_css_provider_new ();
 
-#if GTK_CHECK_VERSION (3, 20, 0)
     gtk_css_provider_load_from_data (provider,
                                      "#drive-button {\n"
                                      " border-width: 0px;\n"
@@ -80,15 +79,6 @@ drive_button_class_init (DriveButtonClass *class)
                                      " margin: 0px;\n"
                                      "}",
                                      -1, NULL);
-#else
-    gtk_css_provider_load_from_data (provider,
-                                     "#drive-button {\n"
-                                     " border-width: 0px;\n"
-                                     " -GtkWidget-focus-line-width: 0px;\n"
-                                     " -GtkWidget-focus-padding: 0px;\n"
-                                     "}",
-                                     -1, NULL);
-#endif
 
     gtk_style_context_add_provider_for_screen (gdk_screen_get_default(),
                                     GTK_STYLE_PROVIDER (provider),
@@ -176,7 +166,6 @@ drive_button_unrealize (GtkWidget *widget)
 }
 #endif /* 0 */
 
-#if GTK_CHECK_VERSION(3, 22, 0)
 static int
 _gtk_get_monitor_num (GdkMonitor *monitor)
 {
@@ -193,7 +182,6 @@ _gtk_get_monitor_num (GdkMonitor *monitor)
 
     return -1;
 }
-#endif
 
 /* the following function is adapted from gtkmenuitem.c */
 static void
@@ -207,12 +195,8 @@ position_menu (GtkMenu *menu, gint *x, gint *y,
     GtkRequisition requisition;
     GtkTextDirection direction;
     GdkRectangle monitor;
-#if GTK_CHECK_VERSION (3, 22, 0)
     GdkMonitor *monitor_num;
     GdkDisplay *display;
-#else
-    gint monitor_num;
-#endif
 
     g_return_if_fail (menu != NULL);
     g_return_if_fail (x != NULL);
@@ -227,17 +211,11 @@ position_menu (GtkMenu *menu, gint *x, gint *y,
     theight = requisition.height;
 
     screen = gtk_widget_get_screen (GTK_WIDGET (menu));
-#if GTK_CHECK_VERSION (3, 22, 0)
     display =gdk_screen_get_display (screen);
     monitor_num = gdk_display_get_monitor_at_window (display, gtk_widget_get_window (widget));
     if (monitor_num == NULL)
         monitor_num = gdk_display_get_monitor (display, 0);
     gdk_monitor_get_geometry (monitor_num, &monitor);
-#else
-    monitor_num = gdk_screen_get_monitor_at_window (screen, gtk_widget_get_window (widget));
-    if (monitor_num < 0) monitor_num = 0;
-    gdk_screen_get_monitor_geometry (screen, monitor_num, &monitor);
-#endif
 
     if (!gdk_window_get_origin (gtk_widget_get_window (widget), &tx, &ty)) {
 	g_warning ("Menu not on screen");
@@ -263,11 +241,7 @@ position_menu (GtkMenu *menu, gint *x, gint *y,
     *x = CLAMP (tx, monitor.x, MAX (monitor.x, monitor.x + monitor.width - twidth));
     *y = ty;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
     gtk_menu_set_monitor (menu, _gtk_get_monitor_num (monitor_num));
-#else
-    gtk_menu_set_monitor (menu, monitor_num);
-#endif
 }
 
 static gboolean

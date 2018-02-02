@@ -144,36 +144,24 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Command:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 0, 1, 1);
 
     command = gtk_entry_new ();
     gtk_grid_attach (grid, command, 2, 0, 1, 1);
 
     widget = gtk_label_new (_("Interval (seconds):"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 1, 1, 1);
 
     interval = gtk_spin_button_new_with_range (1.0, 86400.0, 1.0);
     gtk_grid_attach (grid, interval, 2, 1, 1, 1);
 
     widget = gtk_label_new (_("Maximum width (chars):"));
-#if GTK_CHECK_VERSION (3, 16, 0)
     gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
     gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-#else
-    gtk_misc_set_alignment (GTK_MISC (widget), 1.0, 0.5);
-#endif
     gtk_grid_attach (grid, widget, 1, 2, 1, 1);
 
     width = gtk_spin_button_new_with_range(1.0, 100.0, 1.0);

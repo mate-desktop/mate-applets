@@ -730,9 +730,6 @@ timeout_function(MateNetspeedApplet *applet)
 static void
 display_help (GtkWidget *dialog, const gchar *section)
 {
-#if !GTK_CHECK_VERSION (3, 22, 0)
-	GdkScreen *screen;
-#endif
 	GError *error = NULL;
 	gboolean ret;
 	char *uri;
@@ -742,15 +739,10 @@ display_help (GtkWidget *dialog, const gchar *section)
 	else
 		uri = g_strdup ("help:mate-netspeed-applet");
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	ret = gtk_show_uri_on_window (NULL,
 	                              uri,
 	                              gtk_get_current_event_time (),
 	                              &error);
-#else
-	screen = gtk_widget_get_screen (dialog);
-	ret = gtk_show_uri (screen, uri, gtk_get_current_event_time (), &error);
-#endif
 	g_free (uri);
 
 	if (ret == FALSE) {
@@ -989,12 +981,8 @@ settings_cb(GtkAction *action, gpointer data)
 	category_header_label = gtk_label_new(header_str);
 	gtk_label_set_use_markup(GTK_LABEL(category_header_label), TRUE);
 	gtk_label_set_justify(GTK_LABEL(category_header_label), GTK_JUSTIFY_LEFT);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (category_header_label), 0.0);
 	gtk_label_set_yalign (GTK_LABEL (category_header_label), 0.5);
-#else
-	gtk_misc_set_alignment(GTK_MISC (category_header_label), 0.0, 0.5);
-#endif
 	gtk_box_pack_start(GTK_BOX (category_vbox), category_header_label, FALSE, FALSE, 0);
 	g_free(header_str);
 
@@ -1013,12 +1001,8 @@ settings_cb(GtkAction *action, gpointer data)
 
 	network_device_label = gtk_label_new_with_mnemonic(_("Network _device:"));
 	gtk_label_set_justify(GTK_LABEL(network_device_label), GTK_JUSTIFY_LEFT);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (network_device_label), 0.0f);
 	gtk_label_set_yalign (GTK_LABEL (network_device_label), 0.5f);
-#else
-	gtk_misc_set_alignment(GTK_MISC(network_device_label), 0.0f, 0.5f);
-#endif
 	gtk_size_group_add_widget(category_label_size_group, network_device_label);
 	gtk_box_pack_start(GTK_BOX (network_device_hbox), network_device_label, FALSE, FALSE, 0);
 
@@ -1239,7 +1223,6 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_label_set_selectable(GTK_LABEL(hwaddr_text), TRUE);
 	gtk_label_set_selectable(GTK_LABEL(ptpip_text), TRUE);
 
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (ip_label), 0.0f);
 	gtk_label_set_yalign (GTK_LABEL (ip_label), 0.5f);
 	gtk_label_set_xalign (GTK_LABEL (ip_text), 0.0f);
@@ -1264,20 +1247,6 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_label_set_yalign (GTK_LABEL (outbytes_label), 0.5f);
 	gtk_label_set_xalign (GTK_LABEL (applet->outbytes_text), 0.0f);
 	gtk_label_set_yalign (GTK_LABEL (applet->outbytes_text), 0.5f);
-#else
-	gtk_misc_set_alignment(GTK_MISC(ip_label), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(ip_text), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(netmask_label), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(netmask_text), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(hwaddr_label), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(hwaddr_text), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(ptpip_label), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(ptpip_text), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(inbytes_label), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(applet->inbytes_text), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(outbytes_label), 0.0f, 0.5f);
-	gtk_misc_set_alignment(GTK_MISC(applet->outbytes_text), 0.0f, 0.5f);
-#endif
 
 	gtk_grid_attach(GTK_GRID(grid), ip_label, 0, 0, 1, 1);
 	gtk_grid_attach(GTK_GRID(grid), ip_text, 1, 0, 1, 1);
@@ -1301,15 +1270,10 @@ showinfo_cb(GtkAction *action, gpointer data)
 
 		gtk_label_set_selectable (GTK_LABEL (ipv6_text), TRUE);
 
-#if GTK_CHECK_VERSION (3, 16, 0)
 		gtk_label_set_xalign (GTK_LABEL (ipv6_label), 0.0f);
 		gtk_label_set_yalign (GTK_LABEL (ipv6_label), 0.5f);
 		gtk_label_set_xalign (GTK_LABEL (ipv6_text), 0.0f);
 		gtk_label_set_yalign (GTK_LABEL (ipv6_text), 0.5f);
-#else
-		gtk_misc_set_alignment (GTK_MISC (ipv6_label), 0.0f, 0.5f);
-		gtk_misc_set_alignment (GTK_MISC (ipv6_text), 0.0f, 0.5f);
-#endif
 		gtk_grid_attach (GTK_GRID (grid), ipv6_label, 0, 3, 1, 1);
 		gtk_grid_attach (GTK_GRID (grid), ipv6_text, 1, 3, 1, 1);
 	}
@@ -1338,18 +1302,12 @@ showinfo_cb(GtkAction *action, gpointer data)
 		essid_label = gtk_label_new (_("ESSID:"));
 		essid_text = gtk_label_new (applet->devinfo.essid);
 
-#if GTK_CHECK_VERSION (3, 16, 0)
 		gtk_label_set_xalign (GTK_LABEL (signal_label), 0.0f);
 		gtk_label_set_yalign (GTK_LABEL (signal_label), 0.5f);
 		gtk_label_set_xalign (GTK_LABEL (essid_label), 0.0f);
 		gtk_label_set_yalign (GTK_LABEL (essid_label), 0.5f);;
 		gtk_label_set_xalign (GTK_LABEL (essid_text), 0.0f);
 		gtk_label_set_yalign (GTK_LABEL (essid_text), 0.5f);
-#else
-		gtk_misc_set_alignment (GTK_MISC (signal_label), 0.0f, 0.5f);
-		gtk_misc_set_alignment (GTK_MISC (essid_label), 0.0f, 0.5f);
-		gtk_misc_set_alignment (GTK_MISC (essid_text), 0.0f, 0.5f);
-#endif
 		gtk_label_set_selectable (GTK_LABEL (essid_text), TRUE);
 
 		gtk_grid_attach (GTK_GRID (grid), signal_label, 2, 4, 1, 1);

@@ -593,17 +593,10 @@ cpufreq_applet_help_cb (GtkAction     *action,
 {
         GError *error = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gtk_show_uri_on_window (NULL,
 	                        "help:mate-cpufreq-applet",
 	                        gtk_get_current_event_time (),
 	                        &error);
-#else
-	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
-	              "help:mate-cpufreq-applet",
-	              gtk_get_current_event_time (),
-	              &error);
-#endif
 
         if (error) {
                 cpufreq_utils_display_error (_("Could not open help document"),

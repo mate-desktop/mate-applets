@@ -124,33 +124,20 @@ static gint
 timer_cb (EyesApplet *eyes_applet)
 {
         GdkDisplay *display;
-#if GTK_CHECK_VERSION (3, 20, 0)
         GdkSeat *seat;
-#else
-        GdkDeviceManager *device_manager;
-        GdkDevice *device;
-#endif
         gint x, y;
         gint pupil_x, pupil_y;
         gint i;
 
         display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
-#if GTK_CHECK_VERSION (3, 20, 0)
         seat = gdk_display_get_default_seat (display);
-#else
-        device_manager = gdk_display_get_device_manager (display);
-        device = gdk_device_manager_get_client_pointer (device_manager);
-#endif
 
         for (i = 0; i < eyes_applet->num_eyes; i++) {
 		if (gtk_widget_get_realized (eyes_applet->eyes[i])) {
-#if GTK_CHECK_VERSION (3, 20, 0)
             gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]),
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);
-#else
-			gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]), device, &x, &y, NULL);
-#endif
+
 			if ((x != eyes_applet->pointer_last_x[i]) || (y != eyes_applet->pointer_last_y[i])) { 
 
 				calculate_pupil_xy (eyes_applet, x, y, &pupil_x, &pupil_y, eyes_applet->eyes[i]);
@@ -342,17 +329,10 @@ help_cb (GtkAction  *action,
 {
 	GError *error = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gtk_show_uri_on_window (NULL,
 	                        "help:mate-geyes",
 	                        gtk_get_current_event_time (),
 	                        &error);
-#else
-	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (eyes_applet->applet)),
-	              "help:mate-geyes",
-	              gtk_get_current_event_time (),
-	              &error);
-#endif
 
 	if (error) {
 		GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, 

@@ -53,17 +53,10 @@ static void help_cb (GtkAction      *action,
 {
     GError *error = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
     gtk_show_uri_on_window (NULL,
                             "help:mateweather",
                             gtk_get_current_event_time (),
                             &error);
-#else
-    gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (gw_applet->applet)),
-                  "help:mateweather",
-                  gtk_get_current_event_time (),
-                  &error);
-#endif
 
     if (error) { 
 	GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,

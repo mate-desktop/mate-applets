@@ -153,14 +153,10 @@ static void help_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 	GError* error = NULL;
 	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(sapplet->applet));
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gtk_show_uri_on_window(NULL,
 	                       "help:mate-accessx-status",
 	                       gtk_get_current_event_time(),
 	                       &error);
-#else
-	gtk_show_uri(screen, "help:mate-accessx-status", gtk_get_current_event_time(), &error);
-#endif
 
 	if (error)
 	{

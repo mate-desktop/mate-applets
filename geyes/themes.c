@@ -216,17 +216,10 @@ phelp_cb (GtkDialog *dialog)
 {
 	GError *error = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gtk_show_uri_on_window (GTK_WINDOW (dialog),
 	                        "help:mate-geyes/geyes-settings",
 	                        gtk_get_current_event_time (),
 	                        &error);
-#else
-	gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-	              "help:mate-geyes/geyes-settings",
-	              gtk_get_current_event_time (),
-	              &error);
-#endif
 
 	if (error) {
 		GtkWidget *error_dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
@@ -326,11 +319,7 @@ properties_cb (GtkAction  *action,
 	label = gtk_label_new (_(title));
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 	gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
 	gtk_box_pack_start (GTK_BOX (category_vbox), label, FALSE, FALSE, 0);
 	g_free (title);
 
@@ -348,11 +337,7 @@ properties_cb (GtkAction  *action,
 	gtk_widget_show (control_vbox);
 
 	label = gtk_label_new_with_mnemonic (_("_Select a theme:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
 	gtk_box_pack_start (GTK_BOX (control_vbox), label, FALSE, FALSE, 0);
 
 	scrolled = gtk_scrolled_window_new (NULL, NULL);

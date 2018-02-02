@@ -368,17 +368,10 @@ trash_applet_open_folder (GtkAction   *action,
 {
   GError *err = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
   gtk_show_uri_on_window (NULL,
                           "trash:",
                           gtk_get_current_event_time (),
                           &err);
-#else
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
-                "trash:",
-                gtk_get_current_event_time (),
-                &err);
-#endif
 
   if (err)
     {
@@ -395,17 +388,10 @@ trash_applet_show_help (GtkAction   *action,
   GError *err = NULL;
 
   /* FIXME - Actually, we need a user guide */
-#if GTK_CHECK_VERSION (3, 22, 0)
   gtk_show_uri_on_window (NULL,
                           "help:mate-trashapplet",
                           gtk_get_current_event_time (),
                           &err);
-#else
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (applet)),
-                "help:mate-trashapplet",
-                gtk_get_current_event_time (),
-                &err);
-#endif
 
   if (err)
     {
@@ -513,11 +499,7 @@ confirm_delete_immediately (GtkWidget *parent_view,
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
   gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-#else
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
   g_free (str);
@@ -525,11 +507,7 @@ confirm_delete_immediately (GtkWidget *parent_view,
   label = gtk_label_new (detail);
   gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
   gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-#else
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
   g_free (detail);

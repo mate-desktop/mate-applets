@@ -415,11 +415,7 @@ create_hig_catagory (GtkWidget *main_box, gchar *title)
 
 	tmp = g_strdup_printf ("<b>%s</b>", title);
 	label = gtk_label_new (NULL);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
 	gtk_label_set_markup (GTK_LABEL (label), tmp);
 	g_free (tmp);
 	gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
@@ -459,11 +455,7 @@ static void default_chars_frame_create(charpick_data *curr_data)
   
   label = gtk_label_new_with_mnemonic(_("_Palettes:"));
   gtk_box_pack_start(GTK_BOX(vbox3), label, FALSE, FALSE, 0);
-#if GTK_CHECK_VERSION (3, 16, 0)
   gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-#else
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
   gtk_widget_show(label);
 	  
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
@@ -507,17 +499,10 @@ phelp_cb (GtkDialog *dialog, gint tab, gpointer data)
 {
   GError *error = NULL;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
   gtk_show_uri_on_window (GTK_WINDOW (dialog),
                           "help:mate-char-palette/charpick-prefs",
                           gtk_get_current_event_time (),
                           &error);
-#else
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (dialog)),
-                "help:mate-char-palette/charpick-prefs",
-                gtk_get_current_event_time (),
-                &error);
-#endif
 
   if (error) { /* FIXME: the user needs to see this */
     g_warning ("help error: %s\n", error->message);

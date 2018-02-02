@@ -1136,11 +1136,7 @@ battstat_show_help( ProgressData *battstat, const char *section )
   else
     uri = g_strdup ("help:mate-battstat");
 
-#if GTK_CHECK_VERSION (3, 22, 0)
   gtk_show_uri_on_window (NULL,
-#else
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (battstat->applet)),
-#endif
                 uri,
                 gtk_get_current_event_time (),
                 &error);

@@ -132,17 +132,10 @@ display_help (GtkAction *action,
 
     screen = gtk_widget_get_screen (GTK_WIDGET (drive_list));
 
-#if GTK_CHECK_VERSION (3, 22, 0)
     gtk_show_uri_on_window (NULL,
                            "help:mate-drivemount",
                             gtk_get_current_event_time (),
                             &error);
-#else
-    gtk_show_uri (screen,
-                  "help:mate-drivemount",
-                  gtk_get_current_event_time (),
-                  &error);
-#endif
 
     if (error) {
 	GtkWidget *dialog;
