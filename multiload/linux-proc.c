@@ -65,8 +65,8 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
     g->cpu_time [4] = cpu.idle;
 
     if (!g->cpu_initialized) {
-	memcpy (g->cpu_last, g->cpu_time, sizeof (g->cpu_last));
-	g->cpu_initialized = 1;
+        memcpy (g->cpu_last, g->cpu_time, sizeof (g->cpu_last));
+        g->cpu_initialized = 1;
     }
 
     usr  = g->cpu_time [0] - g->cpu_last [0];
@@ -95,61 +95,61 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
 void
 GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
 {
-	static gboolean first_call = TRUE;
-	static guint64 lastread = 0, lastwrite = 0;
-	static AutoScaler scaler;
+    static gboolean first_call = TRUE;
+    static guint64 lastread = 0, lastwrite = 0;
+    static AutoScaler scaler;
 
-	glibtop_mountlist mountlist;
-	glibtop_mountentry *mountentries;
-	guint i;
-	int max;
+    glibtop_mountlist mountlist;
+    glibtop_mountentry *mountentries;
+    guint i;
+    int max;
 
-	guint64 read, write;
-	guint64 readdiff, writediff;
+    guint64 read, write;
+    guint64 readdiff, writediff;
 
 
-	if(first_call)
-	{
-	    autoscaler_init(&scaler, 60, 500);
-	}
+    if(first_call)
+    {
+        autoscaler_init(&scaler, 60, 500);
+    }
 
-	read = write = 0;
+    read = write = 0;
 
-	mountentries = glibtop_get_mountlist (&mountlist, FALSE);
+    mountentries = glibtop_get_mountlist (&mountlist, FALSE);
 
-	for (i = 0; i < mountlist.number; i++)
-	{
-		glibtop_fsusage fsusage;
+    for (i = 0; i < mountlist.number; i++)
+    {
+        glibtop_fsusage fsusage;
 
-		if (strcmp(mountentries[i].type, "smbfs") == 0
-		    || strcmp(mountentries[i].type, "nfs") == 0
-		    || strcmp(mountentries[i].type, "cifs") == 0)
-			continue;
+        if (strcmp(mountentries[i].type, "smbfs") == 0
+            || strcmp(mountentries[i].type, "nfs") == 0
+            || strcmp(mountentries[i].type, "cifs") == 0)
+            continue;
 
-		glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
-		read += fsusage.read; write += fsusage.write;
-	}
+        glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
+        read += fsusage.read; write += fsusage.write;
+    }
 
-	g_free(mountentries);
+    g_free(mountentries);
 
-	readdiff  = read - lastread;
-	writediff = write - lastwrite;
+    readdiff  = read - lastread;
+    writediff = write - lastwrite;
 
-	lastread  = read;
-	lastwrite = write;
+    lastread  = read;
+    lastwrite = write;
 
-	if(first_call)
-	{
-		first_call = FALSE;
-		memset(data, 0, 3 * sizeof data[0]);
-		return;
-	}
+    if(first_call)
+    {
+        first_call = FALSE;
+        memset(data, 0, 3 * sizeof data[0]);
+        return;
+    }
 
-	max = autoscaler_get_max(&scaler, readdiff + writediff);
+    max = autoscaler_get_max(&scaler, readdiff + writediff);
 
-	data[0] = (float)Maximum *  readdiff / (float)max;
-	data[1] = (float)Maximum * writediff / (float)max;
-	data[2] = (float)Maximum - (data [0] + data[1]);
+    data[0] = (float)Maximum *  readdiff / (float)max;
+    data[1] = (float)Maximum * writediff / (float)max;
+    data[2] = (float)Maximum - (data [0] + data[1]);
 }
 
 #if 0
@@ -219,7 +219,7 @@ GetMemory (int Maximum, int data [5], LoadGraph *g)
     data [0] = user;
     data [1] = shared;
     data [2] = buffer;
-    data[3] = cached;
+    data [3] = cached;
     data [4] = Maximum-user-shared-buffer-cached;
 }
 
@@ -234,10 +234,10 @@ GetSwap (int Maximum, int data [2], LoadGraph *g)
     g_return_if_fail ((swap.flags & needed_swap_flags) == needed_swap_flags);
 
     if (swap.total == 0) {
-	used = 0;
+        used = 0;
     }
     else {
-	used    = rint (Maximum * (float)swap.used / swap.total);
+        used = rint (Maximum * (float)swap.used / swap.total);
     }
 
     data [0] = used;
@@ -306,11 +306,11 @@ void
 GetNet (int Maximum, int data [4], LoadGraph *g)
 {
     enum Types {
-	IN_COUNT = 0,
-	OUT_COUNT = 1,
-	LOCAL_COUNT = 2,
-	COUNT_TYPES = 3
-	};
+        IN_COUNT = 0,
+        OUT_COUNT = 1,
+        LOCAL_COUNT = 2,
+        COUNT_TYPES = 3
+    };
 
     static int ticks = 0;
     static gulong past[COUNT_TYPES] = {0};
@@ -322,42 +322,40 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
     gchar **devices;
     glibtop_netlist netlist;
 
-
     if(ticks == 0)
     {
-	autoscaler_init(&scaler, 60, 501);
+        autoscaler_init(&scaler, 60, 501);
     }
-
 
     devices = glibtop_get_netlist(&netlist);
 
     for(i = 0; i < netlist.number; ++i)
     {
-	int index;
-	glibtop_netload netload;
+        int index;
+        glibtop_netload netload;
 
-	glibtop_get_netload(&netload, devices[i]);
+        glibtop_get_netload(&netload, devices[i]);
 
-	g_return_if_fail((netload.flags & needed_netload_flags) == needed_netload_flags);
+        g_return_if_fail((netload.flags & needed_netload_flags) == needed_netload_flags);
 
-	if (!(netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP)))
-	    continue;
+        if (!(netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP)))
+            continue;
 
-	if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_LOOPBACK)) {
-	    /* for loopback in and out are identical, so only count in */
-	    present[LOCAL_COUNT] += netload.bytes_in;
-	    continue;
-	}
+        if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_LOOPBACK)) {
+            /* for loopback in and out are identical, so only count in */
+            present[LOCAL_COUNT] += netload.bytes_in;
+            continue;
+        }
 
-	/*
-	 * Do not include virtual devices (VPN, PPPOE...) to avoid
-	 * counting the same throughput several times.
-	 */
-	if (is_net_device_virtual(devices[i]))
-		continue;
+        /*
+         * Do not include virtual devices (VPN, PPPOE...) to avoid
+         * counting the same throughput several times.
+         */
+        if (is_net_device_virtual(devices[i]))
+            continue;
 
-	present[IN_COUNT] += netload.bytes_in;
-	present[OUT_COUNT] += netload.bytes_out;
+        present[IN_COUNT] += netload.bytes_in;
+        present[OUT_COUNT] += netload.bytes_out;
     }
 
     g_strfreev(devices);
@@ -366,35 +364,35 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
 
     if(ticks < 2) /* avoid initial spike */
     {
-	ticks++;
-	memset(data, 0, COUNT_TYPES * sizeof data[0]);
+        ticks++;
+        memset(data, 0, COUNT_TYPES * sizeof data[0]);
     }
     else
     {
-	int delta[COUNT_TYPES];
-	int max;
-	int total = 0;
+        int delta[COUNT_TYPES];
+        int max;
+        int total = 0;
 
-	for (i = 0; i < COUNT_TYPES; i++)
-	{
-	    /* protect against weirdness */
-	    if (present[i] >= past[i])
-		    delta[i] = (present[i] - past[i]);
-	    else
-		    delta[i] = 0;
-	    total += delta[i];
-	}
+    for (i = 0; i < COUNT_TYPES; i++)
+    {
+        /* protect against weirdness */
+        if (present[i] >= past[i])
+            delta[i] = (present[i] - past[i]);
+        else
+            delta[i] = 0;
+        total += delta[i];
+    }
 
-	max = autoscaler_get_max(&scaler, total);
+    max = autoscaler_get_max(&scaler, total);
 
-	for (i = 0; i < COUNT_TYPES; i++)
-	    data[i]   = rint (Maximum * (float)delta[i]  / max);
+    for (i = 0; i < COUNT_TYPES; i++)
+        data[i]   = rint (Maximum * (float)delta[i]  / max);
     }
 
     //data[4] = Maximum - data[3] - data[2] - data[1] - data[0];
     data[COUNT_TYPES] = Maximum;
     for (i = 0; i < COUNT_TYPES; i++)
-	data[COUNT_TYPES] -= data[i];
+        data[COUNT_TYPES] -= data[i];
 
     memcpy(past, present, sizeof past);
 }
