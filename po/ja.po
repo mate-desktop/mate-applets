@@ -24,9 +24,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 11:20+0100\n"
-"PO-Revision-Date: 2017-11-06 10:20+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
+"POT-Creation-Date: 2018-01-15 12:30+0300\n"
+"PO-Revision-Date: 2018-01-15 10:14+0000\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,17 +38,11 @@ msgstr ""
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "修飾キーなどの AccessX 機能のステータスを表示します"
 
-#. about.set_authors("Raphael Slinckx <raphael@slinckx.net>\nEnrico Minack
-#. <enrico-minack@gmx.de>")
-#. about.set_artists([])
-#. about.set_documenters([])
-#. translators: These appear in the About dialog, usual format applies.
 #: ../accessx-status/applet.c:146 ../battstat/battstat_applet.c:1210
-#: ../charpick/charpick.c:652 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:649 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:651 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:645 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:194 ../mateweather/mateweather-about.c:56
-#: ../invest-applet/invest/about.py:34 ../multiload/main.c:64
-#: ../netspeed/src/netspeed.c:808
+#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:808
 #: ../stickynotes/stickynotes_applet_callbacks.c:389
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:451
 msgid "translator-credits"
@@ -73,18 +67,18 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "キーボード操作性の設定(_K)"
 
 #: ../accessx-status/applet.c:228 ../battstat/battstat_applet.c:64
-#: ../charpick/charpick.c:740 ../cpufreq/src/cpufreq-applet.c:128
+#: ../charpick/charpick.c:739 ../cpufreq/src/cpufreq-applet.c:129
 #: ../drivemount/drivemount.c:166 ../geyes/geyes.c:374
 #: ../mateweather/mateweather-applet.c:124 ../multiload/main.c:470
-#: ../stickynotes/stickynotes_applet.c:45 ../trashapplet/src/trashapplet.c:74
+#: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
 #: ../accessx-status/applet.c:229 ../battstat/battstat_applet.c:67
-#: ../charpick/charpick.c:743 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:131 ../drivemount/drivemount.c:169
+#: ../charpick/charpick.c:742 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:169
 #: ../geyes/geyes.c:377 ../mateweather/mateweather-applet.c:127
-#: ../multiload/main.c:473 ../stickynotes/stickynotes_applet.c:48
+#: ../multiload/main.c:473 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "情報(_A)"
@@ -138,10 +132,10 @@ msgstr "キーボード操作性ステータス・アプレットのファクト
 msgid "Shows the status of keyboard accessibility features"
 msgstr "キーボード操作性の設定値を表示します"
 
-#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:737
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:125
+#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:736
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
 #: ../geyes/geyes.c:371 ../mateweather/mateweather-applet.c:121
-#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:42
+#: ../multiload/main.c:464 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:81
 msgid "_Preferences"
 msgstr "設定(_P)"
@@ -281,7 +275,7 @@ msgid "N/A"
 msgstr "無し"
 
 #: ../battstat/battstat_applet.c:1154 ../drivemount/drivemount.c:154
-#: ../geyes/geyes.c:359 ../geyes/themes.c:229
+#: ../geyes/geyes.c:359 ../geyes/themes.c:233
 #: ../mateweather/mateweather-applet.c:70
 #: ../mateweather/mateweather-pref.c:759
 #: ../stickynotes/stickynotes_applet_callbacks.c:351
@@ -472,40 +466,40 @@ msgstr "バッテリの残量が少くなっています"
 msgid "Battery fully re-charged"
 msgstr "充電が完了しました"
 
-#: ../charpick/charpick.c:465
+#: ../charpick/charpick.c:464
 msgid "Available palettes"
 msgstr "利用可能なパレットを表示します"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:516
+#: ../charpick/charpick.c:515
 #, c-format
 msgid "Insert \"%s\""
 msgstr "\"%s\" を挿入します"
 
-#: ../charpick/charpick.c:519
+#: ../charpick/charpick.c:518
 msgid "Insert special character"
 msgstr "特殊な文字を挿入します"
 
-#: ../charpick/charpick.c:523
+#: ../charpick/charpick.c:522
 #, c-format
 msgid "insert special character %s"
 msgstr "特殊な文字 %s を挿入します"
 
-#: ../charpick/charpick.c:647
+#: ../charpick/charpick.c:646
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "私のキーボードからは打てない変わった文字を入力するためのパネルアプレットです。GNU一般公有使用許諾書の下にリリースされています。"
 
-#: ../charpick/charpick.c:766 ../charpick/charpick.c:780
+#: ../charpick/charpick.c:765 ../charpick/charpick.c:779
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:455
 msgid "Character Palette"
 msgstr "キャラクタ・パレット"
 
-#: ../charpick/charpick.c:766
+#: ../charpick/charpick.c:765
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "いろいろな文字を挿入します"
@@ -693,7 +687,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "CPU 周波数を百分率で表示する(_P)"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:983 ../cpufreq/src/cpufreq-applet.c:1038
+#: ../cpufreq/src/cpufreq-applet.c:988 ../cpufreq/src/cpufreq-applet.c:1043
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU 周波数の計測モニタ"
 
@@ -732,15 +726,15 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr "0 はCPU 周波数の表示、1 は周波数と単位の表示、2 は周波数ではなく比率の表示を意味します"
 
-#: ../cpufreq/src/cpufreq-applet.c:613 ../cpufreq/src/cpufreq-prefs.c:372
+#: ../cpufreq/src/cpufreq-applet.c:609 ../cpufreq/src/cpufreq-prefs.c:372
 msgid "Could not open help document"
 msgstr "ヘルプを開けませんでした"
 
-#: ../cpufreq/src/cpufreq-applet.c:644
+#: ../cpufreq/src/cpufreq-applet.c:640
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "このユーティリティは CPU 周波数を計測して表示します。"
 
-#: ../cpufreq/src/cpufreq-applet.c:1039
+#: ../cpufreq/src/cpufreq-applet.c:1044
 msgid "This utility shows the current CPU Frequency"
 msgstr "このユーティリティは CPU 周波数を表示します"
 
@@ -868,23 +862,23 @@ msgstr "パネル用の目玉アプレットです"
 msgid "Directory in which the theme is located"
 msgstr "テーマを格納するフォルダです"
 
-#: ../geyes/themes.c:126
+#: ../geyes/themes.c:130
 msgid "Can not launch the eyes applet."
 msgstr "MATE 目玉アプレットを起動できません。"
 
-#: ../geyes/themes.c:127
+#: ../geyes/themes.c:131
 msgid "There was a fatal error while trying to load the theme."
 msgstr "テーマを読み込む際に致命的なエラーが発生しました。"
 
-#: ../geyes/themes.c:288
+#: ../geyes/themes.c:292
 msgid "Geyes Preferences"
 msgstr "MATE 目玉の設定"
 
-#: ../geyes/themes.c:321
+#: ../geyes/themes.c:325
 msgid "Themes"
 msgstr "テーマ"
 
-#: ../geyes/themes.c:346
+#: ../geyes/themes.c:350
 msgid "_Select a theme:"
 msgstr "テーマの選択(_S):"
 
@@ -1225,377 +1219,6 @@ msgstr "天気予報アプレットを生成するファクトリ"
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "現在の天気概況と予報をモニタします"
-
-#: ../invest-applet/data/financialchart.ui.h:1
-#: ../invest-applet/invest/chart.py:117
-msgid "Financial Chart"
-msgstr "フィナンシャル・チャート"
-
-#: ../invest-applet/data/financialchart.ui.h:2
-msgid "_Ticker symbol: "
-msgstr "ティッカーシンボル(_T):"
-
-#: ../invest-applet/data/financialchart.ui.h:3
-msgid "Auto _refresh"
-msgstr "自動更新(_R)"
-
-#: ../invest-applet/data/financialchart.ui.h:4
-msgid "Today"
-msgstr "今日"
-
-#: ../invest-applet/data/financialchart.ui.h:5
-msgid "5 Days"
-msgstr "5日"
-
-#: ../invest-applet/data/financialchart.ui.h:6
-msgid "3 Months"
-msgstr "3ヶ月"
-
-#: ../invest-applet/data/financialchart.ui.h:7
-msgid "6 Months"
-msgstr "6ヶ月"
-
-#: ../invest-applet/data/financialchart.ui.h:8
-msgid "1 Year"
-msgstr "1年"
-
-#: ../invest-applet/data/financialchart.ui.h:9
-msgid "5 Years"
-msgstr "5年"
-
-#: ../invest-applet/data/financialchart.ui.h:10
-msgid "Maximum"
-msgstr "最大値"
-
-#: ../invest-applet/data/financialchart.ui.h:11
-msgid "_Graph style: "
-msgstr "グラフのスタイル(_G): "
-
-#. see http://biz.yahoo.com/charts/guide11.html and
-#. http://en.wikipedia.org/wiki/Moving_average
-#: ../invest-applet/data/financialchart.ui.h:13
-msgid "Moving average: "
-msgstr "変動平均: "
-
-#. see http://biz.yahoo.com/charts/guide12.html and
-#. http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
-#: ../invest-applet/data/financialchart.ui.h:15
-msgid "Exponential moving average: "
-msgstr "変動平均 (エクスポーネンシャル):"
-
-#: ../invest-applet/data/financialchart.ui.h:16
-msgid "5"
-msgstr "5"
-
-#: ../invest-applet/data/financialchart.ui.h:17
-msgid "10"
-msgstr "10"
-
-#: ../invest-applet/data/financialchart.ui.h:18
-msgid "20"
-msgstr "20"
-
-#: ../invest-applet/data/financialchart.ui.h:19
-msgid "50"
-msgstr "50"
-
-#: ../invest-applet/data/financialchart.ui.h:20
-msgid "100"
-msgstr "100"
-
-#: ../invest-applet/data/financialchart.ui.h:21
-msgid "200"
-msgstr "200"
-
-#. see http://en.wikipedia.org/wiki/Technical_analysis#Overlays
-#: ../invest-applet/data/financialchart.ui.h:23
-msgid "Overlays: "
-msgstr "オーバレイ: "
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide13.html and
-#. http://en.wikipedia.org/wiki/Bollinger_bands
-#: ../invest-applet/data/financialchart.ui.h:25
-msgid "Bollinger"
-msgstr "ボーリンジャー"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide16.html and
-#. http://en.wikipedia.org/wiki/Parabolic_SAR
-#: ../invest-applet/data/financialchart.ui.h:27
-msgid "SAR"
-msgstr "SAR"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide6.html and
-#. http://en.wikipedia.org/wiki/Stock_split
-#: ../invest-applet/data/financialchart.ui.h:29
-msgid "Splits"
-msgstr "分割"
-
-#. Please keep this term short. For its meaning, see
-#. http://biz.yahoo.com/charts/guide20.html and
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:31
-msgid "Volumes"
-msgstr "出来高"
-
-#. see http://biz.yahoo.com/charts/guide10.html and
-#. http://en.wikipedia.org/wiki/Technical_indicator#Charting_terms_and_indicators
-#: ../invest-applet/data/financialchart.ui.h:33
-msgid "Indicators: "
-msgstr "指標:"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Relative_Strength_Index
-#: ../invest-applet/data/financialchart.ui.h:35
-msgid "RSI"
-msgstr "RSI"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:37
-msgid "Vol"
-msgstr "Vol"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Money_flow_index
-#: ../invest-applet/data/financialchart.ui.h:39
-msgid "MFI"
-msgstr "MFI"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:41
-msgid "Slow stoch"
-msgstr "スロー・ストキャスティクス"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Volume_%28finance%29
-#: ../invest-applet/data/financialchart.ui.h:43
-msgid "Vol+MA"
-msgstr "Vol+MA"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Rate_of_change_%28technical_analysis%29
-#: ../invest-applet/data/financialchart.ui.h:45
-msgid "ROC"
-msgstr "ROC"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Stochastic_oscillator
-#: ../invest-applet/data/financialchart.ui.h:47
-msgid "Fast stoch"
-msgstr "ファースト・ストキャスティクス"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/Williams_%25R
-#: ../invest-applet/data/financialchart.ui.h:50
-#, no-c-format
-msgid "W%R"
-msgstr "W%R"
-
-#. Please keep this term short. For its meaning, see
-#. http://en.wikipedia.org/wiki/MACD
-#: ../invest-applet/data/financialchart.ui.h:52
-msgid "MACD"
-msgstr "MACD"
-
-#: ../invest-applet/data/financialchart.ui.h:53
-msgid "Line"
-msgstr "線"
-
-#: ../invest-applet/data/financialchart.ui.h:54
-msgid "Bar"
-msgstr "バー"
-
-#: ../invest-applet/data/financialchart.ui.h:55
-msgid "Candle"
-msgstr "ローソク足"
-
-#: ../invest-applet/data/financialchart.ui.h:56
-msgid "Scale: "
-msgstr "比率:"
-
-#: ../invest-applet/data/financialchart.ui.h:57
-msgid "Linear"
-msgstr "線形"
-
-#: ../invest-applet/data/financialchart.ui.h:58
-msgid "Logarithmic"
-msgstr "対数"
-
-#: ../invest-applet/data/financialchart.ui.h:59
-msgid "_Options"
-msgstr "オプション(_O)"
-
-#: ../invest-applet/data/financialchart.ui.h:60
-msgid "Downloading chart from <b>Yahoo!</b>"
-msgstr "<b>Yahoo!</b> からチャートをダウンロードしています"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:1
-msgid "Invest Preferences"
-msgstr "投資アプレットの設定"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:2
-msgid "label"
-msgstr "銘柄"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:3
-msgid "Stocks"
-msgstr "株式"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:4
-msgid ""
-"<i><small><b>Note:</b> Quotes are delayed at least 15 minutes.\n"
-"<b>Source: </b> Yahoo!</small></i>"
-msgstr "<i><small><b>注記:</b> 最低でも株式の情報は実際よりも15分は遅れています\n<b>提供元: </b> Yahoo!</small></i>"
-
-#: ../invest-applet/data/prefs-dialog.ui.h:6
-msgid "Currency"
-msgstr "通貨"
-
-#: ../invest-applet/invest/about.py:22
-msgid "Invest"
-msgstr "投資"
-
-#: ../invest-applet/invest/about.py:25
-msgid "Track your invested money."
-msgstr "あなたの投資額を追跡します"
-
-#. name, stock_id, label, accellerator, tooltip, callback
-#: ../invest-applet/invest/applet.py:28
-msgid "About"
-msgstr "このアプレットについて"
-
-#: ../invest-applet/invest/applet.py:29 ../netspeed/src/netspeed.c:1389
-msgid "Help"
-msgstr "ヘルプ"
-
-#: ../invest-applet/invest/applet.py:30
-msgid "Preferences"
-msgstr "設定"
-
-#: ../invest-applet/invest/applet.py:31
-msgid "Refresh"
-msgstr "再読込"
-
-#. a) We aren't configured yet
-#: ../invest-applet/invest/applet.py:63
-msgid "<b>You have not entered any stock information yet</b>"
-msgstr "<b>まだ株情報を入力していません</b>"
-
-#: ../invest-applet/invest/applet.py:68
-msgid "<b>No stock quotes are currently available</b>"
-msgstr "<b>現在、すべての株価情報を利用できません</b>"
-
-#: ../invest-applet/invest/applet.py:69
-msgid ""
-"The server could not be contacted. The computer is either offline or the "
-"servers are down. Try again later."
-msgstr "サーバに接続できませんでした。お使いのコンピュータがオフラインになっているかまたはサーバがダウンしている可能性があります。あとでもう一度試してみてください。"
-
-#: ../invest-applet/invest/chart.py:166
-#, python-format
-msgid "Financial Chart - %s"
-msgstr "フィナンシャル・チャート - %s"
-
-#: ../invest-applet/invest/chart.py:233
-msgid "Opening Chart"
-msgstr "チャートのオープン中"
-
-#: ../invest-applet/invest/chart.py:248
-msgid "Chart downloaded"
-msgstr "チャートをダウンロードしました"
-
-#: ../invest-applet/invest/chart.py:250
-msgid "Chart could not be downloaded"
-msgstr "チャートをダウンロードできませんでした"
-
-#: ../invest-applet/invest/invest-applet.py:44
-msgid "Invest Applet"
-msgstr "投資アプレット"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Symbol"
-msgstr "シンボル"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Label"
-msgstr "銘柄"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Amount"
-msgstr "株数"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Price"
-msgstr "価格"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Commission"
-msgstr "手数料"
-
-#: ../invest-applet/invest/preferences.py:35
-msgid "Currency Rate"
-msgstr "為替レート"
-
-#: ../invest-applet/invest/quotes.py:170
-msgid "Invest could not connect to Yahoo! Finance"
-msgstr "Yahoo! Finance に接続できませんでした"
-
-#. Translators: This is share-market jargon. It is the average percentage
-#. change of all stock prices. The %s gets replaced with the string value of
-#. the change (localized), including the percent sign.
-#: ../invest-applet/invest/quotes.py:212
-#, python-format
-msgid "Average change: %s"
-msgstr "平均変動: %s"
-
-#. Translators: This is share-market jargon. It refers to the total difference
-#. between the current price and purchase price for all the shares put
-#. together for a particular currency. i.e. How much money would be earned if
-#. they were sold right now. The first string is the change value, the second
-#. the currency, and the third value is the percentage of the change,
-#. formatted using user's locale.
-#: ../invest-applet/invest/quotes.py:221
-#, python-format
-msgid "Positions balance: %s %s (%s)"
-msgstr "ポジション残高: %s %s (%s)"
-
-#: ../invest-applet/invest/quotes.py:223
-#, python-format
-msgid "Updated at %s"
-msgstr "%s に更新しました"
-
-#. model: SYMBOL, LABEL, TICKER_ONLY, BALANCE, BALANCE_PCT, VALUE,
-#. VARIATION_PCT, PB
-#. Translators: these words all refer to a stock. Last is short
-#. for "last price". Gain is referring to the gain since the
-#. stock was purchased.
-#: ../invest-applet/invest/widgets.py:58
-msgid "Ticker"
-msgstr "ティッカー"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Last"
-msgstr "終値"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Change %"
-msgstr "変化 %"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Chart"
-msgstr "チャート"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Gain"
-msgstr "利益"
-
-#: ../invest-applet/invest/widgets.py:58
-msgid "Gain %"
-msgstr "利益 %"
 
 #: ../multiload/main.c:59
 msgid ""
@@ -2283,6 +1906,10 @@ msgstr "デバイスの詳細(_D)"
 msgid "Preferences..."
 msgstr "設定"
 
+#: ../netspeed/src/netspeed.c:1389
+msgid "Help"
+msgstr "ヘルプ"
+
 #: ../netspeed/src/netspeed.c:1391
 msgid "About..."
 msgstr "このアプリについて"
@@ -2348,8 +1975,8 @@ msgid "Sticky Notes Applet Factory"
 msgstr "付箋紙アプレットのファクトリ"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:165
-#: ../stickynotes/stickynotes_applet.c:410
+#: ../stickynotes/stickynotes_applet.c:164
+#: ../stickynotes/stickynotes_applet.c:406
 msgid "Sticky Notes"
 msgstr "付箋紙"
 
@@ -2365,7 +1992,7 @@ msgstr "ロックしています"
 msgid "This note is unlocked."
 msgstr "ロックしていません"
 
-#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:33
+#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:34
 msgid "_New Note"
 msgstr "新しい付箋紙(_N)"
 
@@ -2672,25 +2299,25 @@ msgstr "付箋紙を削除する際に確認ダイアログを表示するかど
 msgid "Empty notes are always deleted without confirmation."
 msgstr "空の付箋紙を確認することなく削除してしまうかどうかです。"
 
-#: ../stickynotes/stickynotes_applet.c:36
+#: ../stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "付箋紙を隱す(_D)"
 
-#: ../stickynotes/stickynotes_applet.c:39
+#: ../stickynotes/stickynotes_applet.c:40
 msgid "_Delete Notes"
 msgstr "付箋紙の削除(_D)"
 
-#: ../stickynotes/stickynotes_applet.c:55
+#: ../stickynotes/stickynotes_applet.c:56
 msgid "_Lock Notes"
 msgstr "付箋紙のロック(_L)"
 
-#: ../stickynotes/stickynotes_applet.c:586
+#: ../stickynotes/stickynotes_applet.c:582
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "( %d個の付箋紙があります)"
 
-#: ../stickynotes/stickynotes_applet.c:587
+#: ../stickynotes/stickynotes_applet.c:583
 msgid "Show sticky notes"
 msgstr "クリックすると付箋紙を表示します"
 

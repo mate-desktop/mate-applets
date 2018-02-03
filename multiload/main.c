@@ -43,7 +43,7 @@ about_cb (GtkAction       *action,
     };
 
     char copyright[] = \
-		"Copyright \xc2\xa9 2012-2017 MATE developers\n"
+		"Copyright \xc2\xa9 2012-2018 MATE developers\n"
 		"Copyright \xc2\xa9 1999-2005 Free Software Foundation and others";
 
     const gchar * const documenters[] =

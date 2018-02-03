@@ -35,9 +35,6 @@ static gboolean mateweather_applet_new(MatePanelApplet* applet, const gchar* iid
 
 	gw_applet->applet = applet;
 	gw_applet->mateweather_info = NULL;
-#ifdef HAVE_LIBNOTIFY
-	gw_applet->mateweather_previnfo = NULL;
-#endif
 	gw_applet->settings = mate_panel_applet_settings_new (applet, "org.mate.weather");
 
 	mateweather_applet_create(gw_applet);

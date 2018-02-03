@@ -36,7 +36,7 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 	};
 
 	char copyright[] = \
-		"Copyright \xc2\xa9 2012-2017 MATE developers\n"
+		"Copyright \xc2\xa9 2012-2018 MATE developers\n"
 		"Copyright \xC2\xA9 1999-2005 by S. Papadimitriou and others";
 
 	const gchar* documenters[] = {

@@ -95,61 +95,61 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
 void
 GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
 {
-	static gboolean first_call = TRUE;
-	static guint64 lastread = 0, lastwrite = 0;
-	static AutoScaler scaler;
+    static gboolean first_call = TRUE;
+    static guint64 lastread = 0, lastwrite = 0;
+    static AutoScaler scaler;
 
-	glibtop_mountlist mountlist;
-	glibtop_mountentry *mountentries;
-	guint i;
-	int max;
+    glibtop_mountlist mountlist;
+    glibtop_mountentry *mountentries;
+    guint i;
+    int max;
 
-	guint64 read, write;
-	guint64 readdiff, writediff;
+    guint64 read, write;
+    guint64 readdiff, writediff;
 
 
-	if(first_call)
-	{
-	    autoscaler_init(&scaler, 60, 500);
-	}
+    if(first_call)
+    {
+        autoscaler_init(&scaler, 60, 500);
+    }
 
-	read = write = 0;
+    read = write = 0;
 
-	mountentries = glibtop_get_mountlist (&mountlist, FALSE);
+    mountentries = glibtop_get_mountlist (&mountlist, FALSE);
 
-	for (i = 0; i < mountlist.number; i++)
-	{
-		glibtop_fsusage fsusage;
+    for (i = 0; i < mountlist.number; i++)
+    {
+        glibtop_fsusage fsusage;
 
-		if (strcmp(mountentries[i].type, "smbfs") == 0
-		    || strcmp(mountentries[i].type, "nfs") == 0
-		    || strcmp(mountentries[i].type, "cifs") == 0)
-			continue;
+        if (strcmp(mountentries[i].type, "smbfs") == 0
+            || strcmp(mountentries[i].type, "nfs") == 0
+            || strcmp(mountentries[i].type, "cifs") == 0)
+            continue;
 
-		glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
-		read += fsusage.read; write += fsusage.write;
-	}
+        glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
+        read += fsusage.read; write += fsusage.write;
+    }
 
-	g_free(mountentries);
+    g_free(mountentries);
 
-	readdiff  = read - lastread;
-	writediff = write - lastwrite;
+    readdiff  = read - lastread;
+    writediff = write - lastwrite;
 
-	lastread  = read;
-	lastwrite = write;
+    lastread  = read;
+    lastwrite = write;
 
-	if(first_call)
-	{
-		first_call = FALSE;
-		memset(data, 0, 3 * sizeof data[0]);
-		return;
-	}
+    if(first_call)
+    {
+        first_call = FALSE;
+        memset(data, 0, 3 * sizeof data[0]);
+        return;
+    }
 
-	max = autoscaler_get_max(&scaler, readdiff + writediff);
+    max = autoscaler_get_max(&scaler, readdiff + writediff);
 
-	data[0] = (float)Maximum *  readdiff / (float)max;
-	data[1] = (float)Maximum * writediff / (float)max;
-	data[2] = (float)Maximum - (data [0] + data[1]);
+    data[0] = (float)Maximum *  readdiff / (float)max;
+    data[1] = (float)Maximum * writediff / (float)max;
+    data[2] = (float)Maximum - (data [0] + data[1]);
 }
 
 #if 0
@@ -219,7 +219,7 @@ GetMemory (int Maximum, int data [5], LoadGraph *g)
     data [0] = user;
     data [1] = shared;
     data [2] = buffer;
-    data[3] = cached;
+    data [3] = cached;
     data [4] = Maximum-user-shared-buffer-cached;
 }
 
@@ -234,10 +234,10 @@ GetSwap (int Maximum, int data [2], LoadGraph *g)
     g_return_if_fail ((swap.flags & needed_swap_flags) == needed_swap_flags);
 
     if (swap.total == 0) {
-	used = 0;
+        used = 0;
     }
     else {
-	used    = rint (Maximum * (float)swap.used / swap.total);
+        used = rint (Maximum * (float)swap.used / swap.total);
     }
 
     data [0] = used;
