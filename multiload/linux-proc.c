@@ -49,47 +49,47 @@ static const unsigned needed_netload_flags =
 void
 GetLoad (int Maximum, int data [5], LoadGraph *g)
 {
-    int usr, nice, sys, iowait, free;
-    int total;
+  int usr, nice, sys, iowait, free;
+  int total;
 
-    glibtop_cpu cpu;
+  glibtop_cpu cpu;
 
-    glibtop_get_cpu (&cpu);
+  glibtop_get_cpu (&cpu);
 
-    g_return_if_fail ((cpu.flags & needed_cpu_flags) == needed_cpu_flags);
+  g_return_if_fail ((cpu.flags & needed_cpu_flags) == needed_cpu_flags);
 
-    g->cpu_time [0] = cpu.user;
-    g->cpu_time [1] = cpu.nice;
-    g->cpu_time [2] = cpu.sys;
-    g->cpu_time [3] = cpu.iowait + cpu.irq + cpu.softirq;
-    g->cpu_time [4] = cpu.idle;
+  g->cpu_time [0] = cpu.user;
+  g->cpu_time [1] = cpu.nice;
+  g->cpu_time [2] = cpu.sys;
+  g->cpu_time [3] = cpu.iowait + cpu.irq + cpu.softirq;
+  g->cpu_time [4] = cpu.idle;
 
     if (!g->cpu_initialized) {
         memcpy (g->cpu_last, g->cpu_time, sizeof (g->cpu_last));
         g->cpu_initialized = 1;
     }
 
-    usr  = g->cpu_time [0] - g->cpu_last [0];
-    nice = g->cpu_time [1] - g->cpu_last [1];
-    sys  = g->cpu_time [2] - g->cpu_last [2];
-    iowait = g->cpu_time [3] - g->cpu_last [3];
-    free = g->cpu_time [4] - g->cpu_last [4];
+  usr  = g->cpu_time [0] - g->cpu_last [0];
+  nice = g->cpu_time [1] - g->cpu_last [1];
+  sys  = g->cpu_time [2] - g->cpu_last [2];
+  iowait = g->cpu_time [3] - g->cpu_last [3];
+  free = g->cpu_time [4] - g->cpu_last [4];
 
-    total = usr + nice + sys + free + iowait;
+  total = usr + nice + sys + free + iowait;
 
-    memcpy(g->cpu_last, g->cpu_time, sizeof g->cpu_last);
+  memcpy(g->cpu_last, g->cpu_time, sizeof g->cpu_last);
 
-    usr  = rint (Maximum * (float)(usr)  / total);
-    nice = rint (Maximum * (float)(nice) / total);
-    sys  = rint (Maximum * (float)(sys)  / total);
-    iowait = rint (Maximum * (float)(iowait) / total);
-    free = Maximum - usr - nice - sys - iowait;
+  usr  = rint (Maximum * (float)(usr)  / total);
+  nice = rint (Maximum * (float)(nice) / total);
+  sys  = rint (Maximum * (float)(sys)  / total);
+  iowait = rint (Maximum * (float)(iowait) / total);
+  free = Maximum - usr - nice - sys - iowait;
 
-    data [0] = usr;
-    data [1] = sys;
-    data [2] = nice;
-    data [3] = iowait;
-    data [4] = free;
+  data [0] = usr;
+  data [1] = sys;
+  data [2] = nice;
+  data [3] = iowait;
+  data [4] = free;
 }
 
 void
@@ -361,7 +361,6 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
     g_strfreev(devices);
     netspeed_add(g->netspeed_in, present[IN_COUNT]);
     netspeed_add(g->netspeed_out, present[OUT_COUNT]);
-
     if(ticks < 2) /* avoid initial spike */
     {
         ticks++;
@@ -383,16 +382,13 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
         total += delta[i];
     }
 
-    max = autoscaler_get_max(&scaler, total);
+    //max = autoscaler_get_max(&scaler, total);
 
-    for (i = 0; i < COUNT_TYPES; i++)
-        data[i]   = rint (Maximum * (float)delta[i]  / max);
+    for (i = 0; i < COUNT_TYPES; i++) {
+        //data[i]   = rint (delta[i]);
+        data[i]   = delta[i];
+        }
     }
-
-    //data[4] = Maximum - data[3] - data[2] - data[1] - data[0];
-    data[COUNT_TYPES] = Maximum;
-    for (i = 0; i < COUNT_TYPES; i++)
-        data[COUNT_TYPES] -= data[i];
 
     memcpy(past, present, sizeof past);
 }

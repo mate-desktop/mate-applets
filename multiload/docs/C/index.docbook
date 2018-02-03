@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
   <!ENTITY appletversion "1.10.2">
@@ -7,7 +7,7 @@
   <!ENTITY date "July 2015">
   <!ENTITY applet "System Monitor">
 ]>
-<!-- 
+<!--
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
   http://wiki.mate-desktop.org/dev-doc:doc-team-guide
@@ -19,10 +19,10 @@
 <article id="index" lang="en">
 <!-- please do not change the id; for translations, change lang to -->
 <!-- appropriate code -->
-  <articleinfo> 
-    <title>&applet; Manual</title> 
+  <articleinfo>
+    <title>&applet; Manual</title>
     <abstract role="description">
-      <para>&applet; displays system load information in graphical 
+      <para>&applet; displays system load information in graphical
         format in a panel.</para>
     </abstract>
     <copyright>
@@ -37,11 +37,11 @@
       <year>2004</year>
       <holder>Sun Microsystems</holder>
     </copyright>
-    <copyright> 
-      <year>2003</year> 
-      <year>2004</year> 
-      <holder>Chee Bin HOH</holder> 
-    </copyright> 
+    <copyright>
+      <year>2003</year>
+      <year>2004</year>
+      <holder>Chee Bin HOH</holder>
+    </copyright>
 
 <!-- translators: uncomment this:
     <copyright>
@@ -50,19 +50,19 @@
     </copyright>
 -->
 
-    <publisher role="maintainer"> 
-      <publishername> MATE Documentation Project </publishername> 
-    </publisher> 
+    <publisher role="maintainer">
+      <publishername> MATE Documentation Project </publishername>
+    </publisher>
     <publisher>
       <publishername> GNOME Documentation Project </publishername>
     </publisher>
 
     &legal;
-<!-- This file  contains link to license for the documentation (GNU FDL), and 
-     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+<!-- This file  contains link to license for the documentation (GNU FDL), and
+     other legal stuff such as "NO WARRANTY" statement. Please do not change
      any of this. -->
 
-    <authorgroup> 
+    <authorgroup>
 
       <author>
         <firstname>MATE Documentation Team</firstname>
@@ -80,13 +80,13 @@
 	</address></affiliation>
       </author>
 
-      <author> 
-	<firstname>Chee Bin</firstname> 
-	<surname>HOH</surname> 
-	<affiliation> 
+      <author>
+	<firstname>Chee Bin</firstname>
+	<surname>HOH</surname>
+	<affiliation>
 	  <orgname>GNOME Documentation Project</orgname>
 	  <address><email>cbhoh@mimos.my</email></address>
-	</affiliation> 
+	</affiliation>
       </author>
 
       <author>
@@ -100,17 +100,17 @@
       <!-- This is appropriate place for other contributors: translators,
            maintainers,  etc. Commented out by default.
       <othercredit role="translator">
-        <firstname>Latin</firstname> 
-        <surname>Translator 1</surname> 
-        <affiliation> 
-          <orgname>Latin Translation Team</orgname> 
-          <address> <email>translator@gnome.org</email> </address> 
+        <firstname>Latin</firstname>
+        <surname>Translator 1</surname>
+        <affiliation>
+          <orgname>Latin Translation Team</orgname>
+          <address> <email>translator@gnome.org</email> </address>
         </affiliation>
         <contrib>Latin translation</contrib>
       </othercredit>
 -->
     </authorgroup>
-	
+
 	<releaseinfo revision="1.10.2" role="review"/>
 
     <revhistory>
@@ -130,40 +130,40 @@
 	  <para role="author">Davyd Madeley</para>
 	</revdescription>
       </revision>
-    
+
       <revision>
-	<revnumber>Version 2.8</revnumber> 
-	<date>August 2004</date> 
-	<revdescription> 
+	<revnumber>Version 2.8</revnumber>
+	<date>August 2004</date>
+	<revdescription>
           <para role="author">Angela Boyle</para>
           <para role="publisher">GNOME Documentation Project</para>
-	</revdescription> 
-      </revision> 
+	</revdescription>
+      </revision>
 
-      <revision> 
-	<revnumber>System Monitor Applet Manual V2.1</revnumber> 
-	<date>February 2004</date> 
-	<revdescription> 
+      <revision>
+	<revnumber>System Monitor Applet Manual V2.1</revnumber>
+	<date>February 2004</date>
+	<revdescription>
           <para role="author">Sun GNOME Documentation Team</para>
           <para role="publisher">GNOME Documentation Project</para>
-	</revdescription> 
-      </revision> 
+	</revdescription>
+      </revision>
 
-      <revision> 
-	<revnumber>System Monitor Applet Manual V2.0</revnumber> 
-	<date>July 2003</date> 
-	<revdescription> 
+      <revision>
+	<revnumber>System Monitor Applet Manual V2.0</revnumber>
+	<date>July 2003</date>
+	<revdescription>
 	  <para role="author">Chee Bin HOH
 	    <email>cbhoh@mimos.my</email>
-          </para> 
+          </para>
 	  <para role="publisher">GNOME Documentation Project</para>
-	</revdescription> 
-      </revision> 
+	</revdescription>
+      </revision>
 
-    </revhistory> 
+    </revhistory>
 
     <releaseinfo> This manual describes version &appletversion; of &applet;.
-    </releaseinfo> 
+    </releaseinfo>
     <legalnotice>
       <title>Feedback</title>
       <para> To report a bug or make a suggestion regarding the &applet; applet or this
@@ -173,39 +173,39 @@
     </legalnotice>
   </articleinfo>
 
-  <indexterm zone="index"> 
-    <primary>&applet; Applet</primary> 
-  </indexterm> 
-  <indexterm zone="index"> 
-    <primary>&applet;</primary> 
+  <indexterm zone="index">
+    <primary>&applet; Applet</primary>
+  </indexterm>
+  <indexterm zone="index">
+    <primary>&applet;</primary>
   </indexterm>
 
 <!-- ============= Document Body ============================= -->
 <!-- ============= Introduction ============================== -->
-  <sect1 id="multiload-introduction"> 
-    <title>Introduction</title> 
+  <sect1 id="multiload-introduction">
+    <title>Introduction</title>
 
       <!-- ==== Figure ============================================= -->
-      <figure id="system-monitor-applet-fig"> 
-        <title>&applet;</title> 
-        <screenshot> 
-        <mediaobject> 
+      <figure id="system-monitor-applet-fig">
+        <title>&applet;</title>
+        <screenshot>
+        <mediaobject>
           <imageobject><imagedata fileref="figures/system-monitor-applet_window.png"
-			format="PNG"/> 
+			format="PNG"/>
           </imageobject>
- 	  <textobject> 
+ 	  <textobject>
  	    <phrase>Shows &applet;. Displays a graph for system CPU load.
-            </phrase> 
-          </textobject> 
-        </mediaobject> 
-	</screenshot> 
-      </figure> 
+            </phrase>
+          </textobject>
+        </mediaobject>
+	</screenshot>
+      </figure>
       <!-- ==== End of Figure ======================================= -->
 
       <para>
         The <application>&applet;</application> displays
         system load information in graphical format in a panel.
-        You can configure <application>&applet;</application> to display 
+        You can configure <application>&applet;</application> to display
         the following information for your system:
       </para>
       <itemizedlist>
@@ -221,45 +221,45 @@
         </listitem>
         <listitem>
           <para>
-            Network traffic 
+            Network traffic
           </para>
         </listitem>
         <listitem>
           <para>
-            Usage of swap space 
+            Usage of swap space
           </para>
         </listitem>
         <listitem>
           <para>
-            Average system load 
+            Average system load
           </para>
         </listitem>
 	<listitem><para>Disk load</para></listitem>
       </itemizedlist>
 
-      <sect2 id="multiload-introduction-add"> 
-        <title>To Add &applet; to a Panel</title> 
+      <sect2 id="multiload-introduction-add">
+        <title>To Add &applet; to a Panel</title>
 	<para>To add <application>&applet;</application> to a panel,
 	right-click on the panel, then choose <guimenuitem>Add to
 	Panel</guimenuitem>.  Select <application>&applet;</application>
 	in the <application>Add to the panel</application> dialog, then
 	click <guibutton>OK</guibutton>.</para>
         <para>
-          The layout of the <application>&applet;</application> varies 
+          The layout of the <application>&applet;</application> varies
           depending on the size and type of panel in which the applet resides.
-        </para>     
+        </para>
       </sect2>
 
   </sect1>
 
 <!-- ================ Usage ================================ -->
-<!-- Use this section to describe how to use the applet to perform the tasks for 
+<!-- Use this section to describe how to use the applet to perform the tasks for
      which the applet is designed. -->
-  <sect1 id="multiload-usage"> 
-    <title>Viewing Graphs</title> 
+  <sect1 id="multiload-usage">
+    <title>Viewing Graphs</title>
 	<!-- ================ displaying addistional graphics======================== -->
-    <sect2 id="multiload-usage-graphs"> 
-      <title>Displaying Additional Graphs</title> 
+    <sect2 id="multiload-usage-graphs">
+      <title>Displaying Additional Graphs</title>
       <para>To configure the <application>&applet;</application> applet, right-click on the applet, then choose <guimenuitem>Preferences</guimenuitem>. Under <guilabel>Monitored Resources</guilabel> you can choose which graphics you want to display:</para>
           <itemizedlist>
             <listitem>
@@ -311,26 +311,26 @@
           </itemizedlist>
     </sect2>
 	<!-- ================ displaying current usage of system resources================== -->
-    <sect2 id="multiload-usage-current"> 
-      <title>To Display the Current Usage of a System Resource</title> 
+    <sect2 id="multiload-usage-current">
+      <title>To Display the Current Usage of a System Resource</title>
       <para>
-        To display the current usage of a system resource, 
+        To display the current usage of a system resource,
         position the mouse pointer over the corresponding graph in the applet.
         A tooltip displays the current usage as a percentage.
       </para>
     </sect2>
 	<!-- ================ displaying additional info================== -->
-    <sect2 id="multiload-usage-extra"> 
+    <sect2 id="multiload-usage-extra">
       <title>To Display Additional System Monitor Information</title>
       <para>
-        To display additional system monitor information, right-click on the applet, 
+        To display additional system monitor information, right-click on the applet,
         then choose <guimenuitem>Open System Monitor</guimenuitem> to start the
-        <application>System Monitor</application> application. 
+        <application>System Monitor</application> application.
       </para>
       <para>
-        The <application>System Monitor</application> application 
+        The <application>System Monitor</application> application
         enables you to monitor system processes and usage of system resources.
-        You can use the <application>System Monitor</application> application 
+        You can use the <application>System Monitor</application> application
         to modify the behavior of your system.
       </para>
     </sect2>
@@ -339,21 +339,21 @@
 
 <!-- ============= Preferences =========================== -->
   <sect1 id="multiload-prefs">
-    <title>Customizing Appearance</title> 
-      <figure id="system-monitor-prefs-fig"> 
-        <title>Preferences Dialog</title> 
-        <screenshot> 
-        <mediaobject> 
+    <title>Customizing Appearance</title>
+      <figure id="system-monitor-prefs-fig">
+        <title>Preferences Dialog</title>
+        <screenshot>
+        <mediaobject>
           <imageobject><imagedata fileref="figures/multiload-preferences.png"
-			format="PNG"/> 
+			format="PNG"/>
           </imageobject>
- 	  <textobject> 
+ 	  <textobject>
  	    <phrase>Preferences Dialog
-            </phrase> 
-          </textobject> 
-        </mediaobject> 
-	</screenshot> 
-      </figure> 
+            </phrase>
+          </textobject>
+        </mediaobject>
+	</screenshot>
+      </figure>
     <sect2 id="multiload-size">
         <title>To Change the Width</title>
               <para>In the right-click menu, go to <guimenuitem>Preferences</guimenuitem>. Under <guilabel>Options</guilabel>, use the <guilabel>System monitor width</guilabel> spin box to specify the width of each <application>&applet;</application> graph in pixels.</para>
@@ -364,7 +364,7 @@
               </para>
     </sect2>
 	<!-- ================ changing graph colors======================== -->
-    <sect2 id="multiload-usage-colors"> 
+    <sect2 id="multiload-usage-colors">
       <title>Changing the Colors in a Graph</title>
       <para>
         To change the colors in a graph, perform the following steps:
@@ -515,25 +515,30 @@
                   </thead>
                   <tbody>
                     <row valign="top">
-                      <entry><para><guilabel>SLIP</guilabel></para></entry>
-                      <entry><para>Serial Line Internet Protocol network connection</para></entry>
+                      <entry><para><guilabel>In</guilabel></para></entry>
+                      <entry><para>Incoming traffic</para></entry>
                     </row>
                     <row valign="top">
-                      <entry><para><guilabel>PLIP</guilabel></para></entry>
-                      <entry><para>Parallel Line Internet Protocol network connection</para></entry>
+                      <entry><para><guilabel>Out</guilabel></para></entry>
+                      <entry><para>Outgoing traffic</para></entry>
                     </row>
                     <row valign="top">
-                      <entry><para><guilabel>Ethernet</guilabel></para></entry>
-                      <entry><para>Ethernet network connection</para></entry>
-                    </row>
-                    <row valign="top">
-                      <entry><para><guilabel>Other</guilabel></para></entry>
-                      <entry><para>Network connection other than SLIP, PLIP, or Ethernet</para></entry>
+                      <entry><para><guilabel>Local</guilabel></para></entry>
+                      <entry><para>Traffic over loopback</para></entry>
                     </row>
                     <row valign="top">
                       <entry><para><guilabel>Background</guilabel></para></entry>
-                      <entry><para>No network connection</para></entry>
+                      <entry><para>Graph background color</para></entry>
                     </row>
+                    <row valign="top">
+                      <entry><para><guilabel>Gridline</guilabel></para></entry>
+                      <entry><para>Color of horizontal gridline when scaling graph</para></entry>
+                    </row>
+                    <row valign="top">
+                      <entry><para><guilabel>Indicator</guilabel></para></entry>
+                      <entry><para>Color of indicator showing which threshold was reached</para></entry>
+                    </row>
+
                   </tbody>
                 </tgroup>
               </informaltable>
@@ -647,6 +652,21 @@
 	      </informaltable>
 	    </listitem>
           </itemizedlist>
+    </sect2>
+    <!-- ================ Explaining thresholds======================== -->
+    <sect2 id="network thresholds">
+        <title>Network speed thresholds</title>
+        <para>
+            Thresholds together with indicator allow network graph to scale and better represent actual workload.
+            If combined network traffic (in + out + loopback) is below threshold1, no indicator is shown, y-axis
+            on network graph go from 0 to threshold1. When trafic is more than threshold1, one indicator will be
+            shown and y-axis now go from 0 to threshold2. When threshold2 is reached, two indicator will be shown
+            and y-axis go from 0 to threshold3. When threshold3 is reached, three indicators are shown and y-axis
+            go form 0 to whatever is current maximum in graph.
+        </para>
+        <para>
+            Gridlines are hard to explain, just observe and they are obvious.
+        </para>
     </sect2>
   </sect1>
 </article>
