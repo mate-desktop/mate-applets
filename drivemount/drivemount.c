@@ -163,10 +163,10 @@ display_help (GtkAction *action,
 }
 
 static const GtkActionEntry applet_menu_actions[] = {
-    { "Help", GTK_STOCK_HELP, N_("_Help"),
+    { "Help", "help-browser", N_("_Help"),
       NULL, NULL,
       G_CALLBACK (display_help) },
-    { "About", GTK_STOCK_ABOUT, N_("_About"),
+    { "About", "help-about", N_("_About"),
       NULL, NULL,
       G_CALLBACK (display_about_dialog) }
 };

@@ -58,13 +58,13 @@ static void about_cb( GtkAction *, ProgressData * );
 static void help_cb( GtkAction *, ProgressData * );
 
 static const GtkActionEntry battstat_menu_actions [] = {
-	{ "BattstatProperties", GTK_STOCK_PROPERTIES, N_("_Preferences"),
+	{ "BattstatProperties", "document-properties", N_("_Preferences"),
 	  NULL, NULL,
 	  G_CALLBACK (prop_cb) },
-	{ "BattstatHelp", GTK_STOCK_HELP, N_("_Help"),
+	{ "BattstatHelp", "help-browser", N_("_Help"),
 	  NULL, NULL,
 	  G_CALLBACK (help_cb) },
-	{ "BattstatAbout", GTK_STOCK_ABOUT, N_("_About"),
+	{ "BattstatAbout", "help-about", N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (about_cb) }
 };
@@ -438,7 +438,7 @@ battery_full_dialog (GtkWidget *applet)
 		_("Battery Notice"),
 		NULL,
 		GTK_DIALOG_DESTROY_WITH_PARENT,
-		GTK_STOCK_OK,
+		"gtk-ok",
 		GTK_RESPONSE_ACCEPT,
 		NULL);
   g_signal_connect_swapped (G_OBJECT (dialog), "response",
@@ -593,7 +593,7 @@ battery_low_dialog( ProgressData *battery, BatteryStatus *info )
 		 _("Battery Notice"),
 		 NULL,
 		 GTK_DIALOG_DESTROY_WITH_PARENT,
-		 GTK_STOCK_OK,
+		 "gtk-ok",
 		 GTK_RESPONSE_ACCEPT,
 		 NULL);
   gtk_dialog_set_default_response( GTK_DIALOG (battery->battery_low_dialog),

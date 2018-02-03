@@ -224,9 +224,9 @@ static void dialog_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 }
 
 static const GtkActionEntry accessx_status_applet_menu_actions[] = {
-	{"Dialog", GTK_STOCK_PROPERTIES, N_("_Keyboard Accessibility Preferences"), NULL, NULL, G_CALLBACK(dialog_cb)},
-	{"Help", GTK_STOCK_HELP, N_("_Help"), NULL, NULL, G_CALLBACK(help_cb)},
-	{"About", GTK_STOCK_ABOUT, N_("_About"), NULL, NULL, G_CALLBACK(about_cb)}
+	{"Dialog", "document-properties", N_("_Keyboard Accessibility Preferences"), NULL, NULL, G_CALLBACK(dialog_cb)},
+	{"Help", "help-browser", N_("_Help"), NULL, NULL, G_CALLBACK(help_cb)},
+	{"About", "help-about", N_("_About"), NULL, NULL, G_CALLBACK(about_cb)}
 };
 
 static XkbDescPtr accessx_status_applet_get_xkb_desc(AccessxStatusApplet* sapplet)
@@ -932,7 +932,7 @@ static void accessx_applet_add_stock_icons(AccessxStatusApplet* sapplet, GtkWidg
 			}
 			else
 			{
-				GtkIconSet* default_set = gtk_icon_factory_lookup_default(GTK_STOCK_MISSING_IMAGE);
+				GtkIconSet* default_set = gtk_icon_factory_lookup_default("gtk-missing-image");
 				gtk_icon_source_set_pixbuf(source, gtk_icon_set_render_icon(default_set, gtk_widget_get_style(widget), GTK_TEXT_DIR_NONE, GTK_STATE_NORMAL, icon_size_spec, widget, NULL));
 			}
 			g_free(filename);

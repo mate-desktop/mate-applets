@@ -31,22 +31,22 @@ StickyNotes *stickynotes = NULL;
 /* Popup menu on the applet */
 static const GtkActionEntry stickynotes_applet_menu_actions[] =
 {
-	{ "new_note", GTK_STOCK_NEW, N_("_New Note"),
+	{ "new_note", "document-new", N_("_New Note"),
 	  NULL, NULL,
 	  G_CALLBACK (menu_new_note_cb) },
 	{ "hide_notes", NULL, N_("Hi_de Notes"),
 	  NULL, NULL,
 	  G_CALLBACK (menu_hide_notes_cb) },
-	{ "destroy_all", GTK_STOCK_DELETE, N_("_Delete Notes"),
+	{ "destroy_all", "edit-delete", N_("_Delete Notes"),
 	  NULL, NULL,
 	  G_CALLBACK (menu_destroy_all_cb) },
-	{ "preferences", GTK_STOCK_PROPERTIES, N_("_Preferences"),
+	{ "preferences", "document-properties", N_("_Preferences"),
 	  NULL, NULL,
 	  G_CALLBACK (menu_preferences_cb) },
-	{ "help", GTK_STOCK_HELP, N_("_Help"),
+	{ "help", "help-browser", N_("_Help"),
 	  NULL, NULL,
 	  G_CALLBACK (menu_help_cb) },
-	{ "about", GTK_STOCK_ABOUT, N_("_About"),
+	{ "about", "help-about", N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (menu_about_cb) }
 };

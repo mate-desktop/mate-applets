@@ -818,7 +818,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	g_object_set (pref, "destroy-with-parent", TRUE, NULL);
 	gtk_window_set_title (GTK_WINDOW (pref), _("Weather Preferences"));
-	gtk_dialog_add_buttons (GTK_DIALOG (pref), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, GTK_STOCK_HELP, GTK_RESPONSE_HELP, NULL);
+	gtk_dialog_add_buttons (GTK_DIALOG (pref), "gtk-close", GTK_RESPONSE_CLOSE, "gtk-help", GTK_RESPONSE_HELP, NULL);
 	gtk_dialog_set_default_response (GTK_DIALOG (pref), GTK_RESPONSE_CLOSE);
 	gtk_container_set_border_width (GTK_CONTAINER (pref), 5);
 	gtk_window_set_resizable (GTK_WINDOW (pref), TRUE);
@@ -1158,7 +1158,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	pref->priv->find_next_btn = gtk_button_new_with_mnemonic (_("Find _Next"));
 	gtk_widget_set_sensitive (pref->priv->find_next_btn, FALSE);
 
-	image = gtk_image_new_from_stock (GTK_STOCK_FIND, GTK_ICON_SIZE_BUTTON);
+	image = gtk_image_new_from_icon_name ("edit-find", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image (GTK_BUTTON (pref->priv->find_next_btn), image);
 
 	g_signal_connect (G_OBJECT (pref->priv->find_next_btn), "clicked", G_CALLBACK (find_next_clicked), pref);

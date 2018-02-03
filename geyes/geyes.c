@@ -368,13 +368,13 @@ help_cb (GtkAction  *action,
 
 
 static const GtkActionEntry geyes_applet_menu_actions [] = {
-	{ "Props", GTK_STOCK_PROPERTIES, N_("_Preferences"),
+	{ "Props", "document-properties", N_("_Preferences"),
 	  NULL, NULL,
 	  G_CALLBACK (properties_cb) },
-	{ "Help", GTK_STOCK_HELP, N_("_Help"),
+	{ "Help", "help-browser", N_("_Help"),
 	  NULL, NULL,
 	  G_CALLBACK (help_cb) },
-	{ "About", GTK_STOCK_ABOUT, N_("_About"),
+	{ "About", "help-about", N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (about_cb) }
 };

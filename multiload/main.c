@@ -461,16 +461,16 @@ multiload_applet_refresh(MultiloadApplet *ma)
 }
 
 static const GtkActionEntry multiload_menu_actions [] = {
-	{ "MultiLoadProperties", GTK_STOCK_PROPERTIES, N_("_Preferences"),
+	{ "MultiLoadProperties", "document-properties", N_("_Preferences"),
 	  NULL, NULL,
 	  G_CALLBACK (multiload_properties_cb) },
-	{ "MultiLoadRunProcman", GTK_STOCK_EXECUTE, N_("_Open System Monitor"),
+	{ "MultiLoadRunProcman", "system-run", N_("_Open System Monitor"),
 	  NULL, NULL,
 	  G_CALLBACK (start_procman_cb) },
-	{ "MultiLoadHelp", GTK_STOCK_HELP, N_("_Help"),
+	{ "MultiLoadHelp", "help-browser", N_("_Help"),
 	  NULL, NULL,
 	  G_CALLBACK (help_cb) },
-	{ "MultiLoadAbout", GTK_STOCK_ABOUT, N_("_About"),
+	{ "MultiLoadAbout", "help-about", N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (about_cb) }
 };
