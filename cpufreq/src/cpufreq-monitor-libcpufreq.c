@@ -19,6 +19,10 @@
  * Authors : Carlos García Campos <carlosgc@gnome.org>
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <glib.h>
 #include <glib/gi18n.h>
 
@@ -111,7 +115,7 @@ cpufreq_monitor_libcpufreq_run (CPUFreqMonitor *monitor)
 		/* Check whether it failed because
 		 * cpu is not online.
 		 */
-#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 7, 0)
+#ifdef HAVE_LIBCPUFREQ
 		if (!cpufreq_cpu_exists (cpu)) {
 #else
 		if (cpupower_is_cpu_online (cpu)) {
