@@ -64,11 +64,10 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
   g->cpu_time [3] = cpu.iowait + cpu.irq + cpu.softirq;
   g->cpu_time [4] = cpu.idle;
 
-  if (!g->cpu_initialized)
-  {
-    memcpy (g->cpu_last, g->cpu_time, sizeof (g->cpu_last));
-    g->cpu_initialized = 1;
-  }
+    if (!g->cpu_initialized) {
+        memcpy (g->cpu_last, g->cpu_time, sizeof (g->cpu_last));
+        g->cpu_initialized = 1;
+    }
 
   usr  = g->cpu_time [0] - g->cpu_last [0];
   nice = g->cpu_time [1] - g->cpu_last [1];
@@ -306,90 +305,90 @@ is_net_device_virtual(char *device)
 void
 GetNet (int Maximum, int data [4], LoadGraph *g)
 {
-  enum Types {
-    IN_COUNT = 0,
-    OUT_COUNT = 1,
-    LOCAL_COUNT = 2,
-    COUNT_TYPES = 3
-  };
+    enum Types {
+        IN_COUNT = 0,
+        OUT_COUNT = 1,
+        LOCAL_COUNT = 2,
+        COUNT_TYPES = 3
+    };
 
-  static int ticks = 0;
-  static gulong past[COUNT_TYPES] = {0};
-  static AutoScaler scaler;
+    static int ticks = 0;
+    static gulong past[COUNT_TYPES] = {0};
+    static AutoScaler scaler;
 
-  gulong present[COUNT_TYPES] = {0};
+    gulong present[COUNT_TYPES] = {0};
 
-  guint i;
-  gchar **devices;
-  glibtop_netlist netlist;
+    guint i;
+    gchar **devices;
+    glibtop_netlist netlist;
 
-  if(ticks == 0)
-  {
-    autoscaler_init(&scaler, 60, 501);
-  }
-
-  devices = glibtop_get_netlist(&netlist);
-
-  for(i = 0; i < netlist.number; ++i)
-  {
-    int index;
-    glibtop_netload netload;
-
-    glibtop_get_netload(&netload, devices[i]);
-
-    g_return_if_fail((netload.flags & needed_netload_flags) == needed_netload_flags);
-
-    if (!(netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP)))
-      continue;
-
-    if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_LOOPBACK)) {
-      /* for loopback in and out are identical, so only count in */
-      present[LOCAL_COUNT] += netload.bytes_in;
-      continue;
+    if(ticks == 0)
+    {
+        autoscaler_init(&scaler, 60, 501);
     }
 
-    /*
-     * Do not include virtual devices (VPN, PPPOE...) to avoid
-     * counting the same throughput several times.
-     */
-    if (is_net_device_virtual(devices[i]))
-    	continue;
+    devices = glibtop_get_netlist(&netlist);
 
-    present[IN_COUNT] += netload.bytes_in;
-    present[OUT_COUNT] += netload.bytes_out;
-  }
+    for(i = 0; i < netlist.number; ++i)
+    {
+        int index;
+        glibtop_netload netload;
 
-  g_strfreev(devices);
-  netspeed_add(g->netspeed_in, present[IN_COUNT]);
-  netspeed_add(g->netspeed_out, present[OUT_COUNT]);
-  if(ticks < 2) /* avoid initial spike */
-  {
-    ticks++;
-    memset(data, 0, COUNT_TYPES * sizeof data[0]);
-  }
-  else
-  {
-    int delta[COUNT_TYPES];
-    int max;
-    int total = 0;
+        glibtop_get_netload(&netload, devices[i]);
+
+        g_return_if_fail((netload.flags & needed_netload_flags) == needed_netload_flags);
+
+        if (!(netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP)))
+            continue;
+
+        if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_LOOPBACK)) {
+            /* for loopback in and out are identical, so only count in */
+            present[LOCAL_COUNT] += netload.bytes_in;
+            continue;
+        }
+
+        /*
+         * Do not include virtual devices (VPN, PPPOE...) to avoid
+         * counting the same throughput several times.
+         */
+        if (is_net_device_virtual(devices[i]))
+            continue;
+
+        present[IN_COUNT] += netload.bytes_in;
+        present[OUT_COUNT] += netload.bytes_out;
+    }
+
+    g_strfreev(devices);
+    netspeed_add(g->netspeed_in, present[IN_COUNT]);
+    netspeed_add(g->netspeed_out, present[OUT_COUNT]);
+    if(ticks < 2) /* avoid initial spike */
+    {
+        ticks++;
+        memset(data, 0, COUNT_TYPES * sizeof data[0]);
+    }
+    else
+    {
+        int delta[COUNT_TYPES];
+        int max;
+        int total = 0;
 
     for (i = 0; i < COUNT_TYPES; i++)
     {
-      /* protect against weirdness */
-      if (present[i] >= past[i])
-        delta[i] = (present[i] - past[i]);
-      else
-        delta[i] = 0;
-      total += delta[i];
+        /* protect against weirdness */
+        if (present[i] >= past[i])
+            delta[i] = (present[i] - past[i]);
+        else
+            delta[i] = 0;
+        total += delta[i];
     }
 
-    //max = autoscaler_get_max(&scaler, total);
+    max = autoscaler_get_max(&scaler, total);
 
     for (i = 0; i < COUNT_TYPES; i++) {
-      //data[i]   = rint (delta[i]);
-      data[i]   = delta[i];
+        //data[i]   = rint (delta[i]);
+        data[i]   = delta[i];
+        }
     }
-  }
 
-  memcpy(past, present, sizeof past);
+    memcpy(past, present, sizeof past);
 }
