@@ -75,11 +75,11 @@ static void timer_about_callback (GtkAction *action, TimerApplet *applet);
 static void timer_preferences_callback (GtkAction *action, TimerApplet *applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
-    { "Start", GTK_STOCK_MEDIA_PLAY, N_("_Start timer"), NULL, NULL, G_CALLBACK (timer_start_callback) },
-    { "Pause", GTK_STOCK_MEDIA_PAUSE, N_("P_ause timer"), NULL, NULL, G_CALLBACK (timer_pause_callback) },
-    { "Stop", GTK_STOCK_MEDIA_STOP, N_("S_top timer"), NULL, NULL, G_CALLBACK (timer_stop_callback) },
-    { "Preferences", GTK_STOCK_PROPERTIES, N_("_Preferences"), NULL, NULL, G_CALLBACK (timer_preferences_callback) },
-    { "About", GTK_STOCK_ABOUT, N_("_About"), NULL, NULL, G_CALLBACK (timer_about_callback) }
+    { "Start", "media-playback-start", N_("_Start timer"), NULL, NULL, G_CALLBACK (timer_start_callback) },
+    { "Pause", "media-playback-pause", N_("P_ause timer"), NULL, NULL, G_CALLBACK (timer_pause_callback) },
+    { "Stop", "media-playback-stop", N_("S_top timer"), NULL, NULL, G_CALLBACK (timer_stop_callback) },
+    { "Preferences", "document-properties", N_("_Preferences"), NULL, NULL, G_CALLBACK (timer_preferences_callback) },
+    { "About", "help-about", N_("_About"), NULL, NULL, G_CALLBACK (timer_about_callback) }
 };
 
 static char *ui = "<menuitem name='Item 1' action='Start' />"
@@ -292,7 +292,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     dialog = GTK_DIALOG (gtk_dialog_new_with_buttons(_("Timer Applet Preferences"),
                                                      NULL,
                                                      GTK_DIALOG_MODAL,
-                                                     GTK_STOCK_CLOSE,
+                                                     "gtk-close",
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
     grid = GTK_GRID (gtk_grid_new ());
@@ -388,7 +388,7 @@ timer_applet_fill (MatePanelApplet* applet_widget)
 
     applet->box = GTK_BOX (gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0));
     applet->image = GTK_IMAGE (gtk_image_new_from_icon_name (APPLET_ICON, GTK_ICON_SIZE_BUTTON));
-    applet->pause_image = GTK_IMAGE (gtk_image_new_from_icon_name (GTK_STOCK_MEDIA_PAUSE, GTK_ICON_SIZE_BUTTON));
+    applet->pause_image = GTK_IMAGE (gtk_image_new_from_icon_name ("media-playback-pause", GTK_ICON_SIZE_BUTTON));
     applet->label = GTK_LABEL (gtk_label_new (""));
 
     /* we add the Gtk label into the applet */

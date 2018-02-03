@@ -817,8 +817,8 @@ multiload_properties_cb (GtkAction       *action,
 
 	dialog = gtk_dialog_new_with_buttons (_("System Monitor Preferences"),
 					      NULL, 0,
-					   GTK_STOCK_HELP, GTK_RESPONSE_HELP,
-					   GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+					   "gtk-help", GTK_RESPONSE_HELP,
+					   "gtk-close", GTK_RESPONSE_CLOSE,
 					      NULL);
 	gtk_window_set_screen (GTK_WINDOW (dialog),
 			       gtk_widget_get_screen (GTK_WIDGET (ma->applet)));

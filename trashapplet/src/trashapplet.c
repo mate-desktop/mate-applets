@@ -65,16 +65,16 @@ static void trash_applet_show_help   (GtkAction   *action,
                                       TrashApplet *applet);
 
 static const GtkActionEntry trash_applet_menu_actions [] = {
-	{ "EmptyTrash", GTK_STOCK_CLEAR, N_("_Empty Trash"),
+	{ "EmptyTrash", "edit-clear", N_("_Empty Trash"),
 	  NULL, NULL,
 	  G_CALLBACK (trash_applet_do_empty) },
-	{ "OpenTrash", GTK_STOCK_OPEN, N_("_Open Trash"),
+	{ "OpenTrash", "document-open", N_("_Open Trash"),
 	  NULL, NULL,
 	  G_CALLBACK (trash_applet_open_folder) },
-	{ "HelpTrash", GTK_STOCK_HELP, N_("_Help"),
+	{ "HelpTrash", "help-browser", N_("_Help"),
 	  NULL, NULL,
 	  G_CALLBACK (trash_applet_show_help) },
-	{ "AboutTrash", GTK_STOCK_ABOUT, N_("_About"),
+	{ "AboutTrash", "help-about", N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (trash_applet_show_about) }
 };
@@ -471,8 +471,8 @@ confirm_delete_immediately (GtkWidget *parent_view,
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), hbox,
                       FALSE, FALSE, 0);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_QUESTION,
-                                    GTK_ICON_SIZE_DIALOG);
+  image = gtk_image_new_from_icon_name ("dialog-question",
+                                        GTK_ICON_SIZE_DIALOG);
   gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
   gtk_widget_set_valign (image, GTK_ALIGN_START);
   gtk_widget_show (image);
@@ -512,9 +512,9 @@ confirm_delete_immediately (GtkWidget *parent_view,
   gtk_widget_show (label);
   g_free (detail);
 
-  gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_CANCEL,
+  gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-cancel",
                          GTK_RESPONSE_CANCEL);
-  gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_DELETE,
+  gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-delete",
                          GTK_RESPONSE_YES);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog),
                                    GTK_RESPONSE_YES);

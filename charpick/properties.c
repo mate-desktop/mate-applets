@@ -27,7 +27,7 @@ register_stock_for_edit (void)
     static const GtkStockItem edit_item [] = {
            { CHARPICK_STOCK_EDIT, N_("_Edit"), 0, 0, GETTEXT_PACKAGE },
     };
-    icons = gtk_icon_factory_lookup_default (GTK_STOCK_PREFERENCES);
+    icons = gtk_icon_factory_lookup_default ("gtk-preferences");
     factory = gtk_icon_factory_new ();
     gtk_icon_factory_add (factory, CHARPICK_STOCK_EDIT, icons);
     gtk_icon_factory_add_default (factory);
@@ -93,8 +93,8 @@ add_edit_dialog_create (charpick_data *curr_data, gchar *string, gchar *title)
 
 	dialog = gtk_dialog_new_with_buttons (_(title), GTK_WINDOW (curr_data->propwindow),
 							    GTK_DIALOG_DESTROY_WITH_PARENT,
-							    GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-							    GTK_STOCK_OK, GTK_RESPONSE_OK,
+							    "gtk-cancel", GTK_RESPONSE_CANCEL,
+							    "gtk-ok", GTK_RESPONSE_OK,
 							    NULL);
 
 	gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (curr_data->propwindow));
@@ -465,14 +465,25 @@ static void default_chars_frame_create(charpick_data *curr_data)
   
   vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (hbox), vbox2, FALSE, FALSE, 0);
-  button = gtk_button_new_from_stock (GTK_STOCK_ADD);
+
+  button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
+  				     "label", "gtk-add",
+  				     "use-stock", TRUE,
+  				     "use-underline", TRUE,
+  				     NULL));
+
   gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);
   g_signal_connect (G_OBJECT (button), "clicked",
   			     G_CALLBACK (add_palette), curr_data);
   set_access_namedesc (button, _("Add button"),
 				         _("Click to add a new palette"));
  
-  button = gtk_button_new_from_stock (CHARPICK_STOCK_EDIT);
+  button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
+  				     "label", CHARPICK_STOCK_EDIT,
+  				     "use-stock", TRUE,
+  				     "use-underline", TRUE,
+  				     NULL));
+
   gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);
   g_signal_connect (G_OBJECT (button), "clicked",
   			     G_CALLBACK (edit_palette), curr_data);
@@ -480,7 +491,12 @@ static void default_chars_frame_create(charpick_data *curr_data)
   set_access_namedesc (button, _("Edit button"),
 				         _("Click to edit the selected palette"));
   
-  button = gtk_button_new_from_stock (GTK_STOCK_DELETE);
+  button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
+  				     "label", "gtk-delete",
+  				     "use-stock", TRUE,
+  				     "use-underline", TRUE,
+  				     NULL));
+
   gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);
   g_signal_connect (G_OBJECT (button), "clicked",
   			     G_CALLBACK (delete_palette), curr_data);
@@ -540,8 +556,8 @@ show_preferences_dialog (GtkAction     *action,
   curr_data->propwindow = gtk_dialog_new_with_buttons (_("Character Palette Preferences"), 
   					    NULL,
 					    GTK_DIALOG_DESTROY_WITH_PARENT,
-					    GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
-					    GTK_STOCK_HELP, GTK_RESPONSE_HELP,
+					    "gtk-close", GTK_RESPONSE_CLOSE,
+					    "gtk-help", GTK_RESPONSE_HELP,
 					    NULL);
   gtk_window_set_screen (GTK_WINDOW (curr_data->propwindow),
 			 gtk_widget_get_screen (curr_data->applet));

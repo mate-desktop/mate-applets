@@ -184,7 +184,7 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   gtk_window_set_title (GTK_WINDOW (dialog), _("Details"));
   gtk_dialog_add_buttons (GTK_DIALOG (dialog),
   			  _("_Update"), GTK_RESPONSE_OK,
-  			  GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+  			  "gtk-close", GTK_RESPONSE_CLOSE,
 			  NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);

@@ -71,8 +71,8 @@ static void command_settings_callback (GtkAction *action, CommandApplet *command
 static gboolean command_execute (CommandApplet *command_applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
-    { "Preferences", GTK_STOCK_PROPERTIES, N_("_Preferences"), NULL, NULL, G_CALLBACK (command_settings_callback) },
-    { "About", GTK_STOCK_ABOUT, N_("_About"), NULL, NULL, G_CALLBACK (command_about_callback) }
+    { "Preferences", "document-properties", N_("_Preferences"), NULL, NULL, G_CALLBACK (command_settings_callback) },
+    { "About", "help-about", N_("_About"), NULL, NULL, G_CALLBACK (command_about_callback) }
 };
 
 static char *ui = "<menuitem name='Item 1' action='Preferences' />"
@@ -133,7 +133,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     dialog = GTK_DIALOG (gtk_dialog_new_with_buttons(_("Command Applet Preferences"),
                                                      NULL,
                                                      GTK_DIALOG_MODAL,
-                                                     GTK_STOCK_CLOSE,
+                                                     "gtk-close",
                                                      GTK_RESPONSE_CLOSE,
                                                      NULL));
     grid = GTK_GRID (gtk_grid_new ());

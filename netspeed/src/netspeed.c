@@ -958,8 +958,8 @@ settings_cb(GtkAction *action, gpointer data)
 	applet->settings = GTK_DIALOG(gtk_dialog_new_with_buttons(_("Mate Netspeed Preferences"),
 								  NULL,
 								  GTK_DIALOG_DESTROY_WITH_PARENT,
-								  GTK_STOCK_HELP, GTK_RESPONSE_HELP,
-								  GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
+								  "gtk-help", GTK_RESPONSE_HELP,
+								  "gtk-close", GTK_RESPONSE_ACCEPT,
 								  NULL));
 
 	gtk_window_set_resizable(GTK_WINDOW(applet->settings), FALSE);
@@ -1166,8 +1166,8 @@ showinfo_cb(GtkAction *action, gpointer data)
 	applet->details = GTK_DIALOG(gtk_dialog_new_with_buttons(title,
 		NULL,
 		GTK_DIALOG_DESTROY_WITH_PARENT,
-		GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
-		GTK_STOCK_HELP, GTK_RESPONSE_HELP,
+		"gtk-close", GTK_RESPONSE_ACCEPT,
+		"gtk-help", GTK_RESPONSE_HELP,
 		NULL));
 	g_free(title);
 
@@ -1340,13 +1340,13 @@ showinfo_cb(GtkAction *action, gpointer data)
 }
 
 static const GtkActionEntry mate_netspeed_applet_menu_actions [] = {
-		{ "MateNetspeedAppletDetails", GTK_STOCK_INFO, N_("Device _Details"),
+		{ "MateNetspeedAppletDetails", "dialog-information", N_("Device _Details"),
 		  NULL, NULL, G_CALLBACK (showinfo_cb) },
-		{ "MateNetspeedAppletProperties", GTK_STOCK_PROPERTIES, N_("Preferences..."),
+		{ "MateNetspeedAppletProperties", "document-properties", N_("Preferences..."),
 		  NULL, NULL, G_CALLBACK (settings_cb) },
-		{ "MateNetspeedAppletHelp", GTK_STOCK_HELP, N_("Help"),
+		{ "MateNetspeedAppletHelp", "help-browser", N_("Help"),
 		  NULL, NULL, G_CALLBACK (help_cb) },
-		{ "MateNetspeedAppletAbout", GTK_STOCK_ABOUT, N_("About..."),
+		{ "MateNetspeedAppletAbout", "help-about", N_("About..."),
 		  NULL, NULL, G_CALLBACK (about_cb) }
 };
 

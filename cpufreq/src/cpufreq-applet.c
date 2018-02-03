@@ -123,13 +123,13 @@ static const gchar* const cpufreq_icons[] = {
 };
 
 static const GtkActionEntry cpufreq_applet_menu_actions[] = {
-	{ "CPUFreqAppletPreferences", GTK_STOCK_PROPERTIES, N_("_Preferences"),
+	{ "CPUFreqAppletPreferences", "document-properties", N_("_Preferences"),
 	  NULL, NULL,
 	  G_CALLBACK (cpufreq_applet_preferences_cb) },
-	{ "CPUFreqAppletHelp", GTK_STOCK_HELP, N_("_Help"),
+	{ "CPUFreqAppletHelp", "help-browser", N_("_Help"),
 	  NULL, NULL,
 	  G_CALLBACK (cpufreq_applet_help_cb) },
-	{ "CPUFreqAppletAbout", GTK_STOCK_ABOUT, N_("_About"),
+	{ "CPUFreqAppletAbout", "help-about", N_("_About"),
 	  NULL, NULL,
 	  G_CALLBACK (cpufreq_applet_about_cb) }
 };
