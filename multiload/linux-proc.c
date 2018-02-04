@@ -373,26 +373,22 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
         int max;
         int total = 0;
 
-    for (i = 0; i < COUNT_TYPES; i++)
-    {
-        /* protect against weirdness */
-        if (present[i] >= past[i])
-            delta[i] = (present[i] - past[i]);
-        else
-            delta[i] = 0;
-        total += delta[i];
+        for (i = 0; i < COUNT_TYPES; i++)
+        {
+            /* protect against weirdness */
+            if (present[i] >= past[i])
+                delta[i] = (present[i] - past[i]);
+            else
+                delta[i] = 0;
+            total += delta[i];
+        }
+
+        //max = autoscaler_get_max(&scaler, total);
+
+        for (i = 0; i < COUNT_TYPES; i++)
+            data[i]   = delta[i];
+
     }
-
-    max = autoscaler_get_max(&scaler, total);
-
-    for (i = 0; i < COUNT_TYPES; i++)
-        data[i]   = rint (Maximum * (float)delta[i]  / max);
-    }
-
-    //data[4] = Maximum - data[3] - data[2] - data[1] - data[0];
-    data[COUNT_TYPES] = Maximum;
-    for (i = 0; i < COUNT_TYPES; i++)
-        data[COUNT_TYPES] -= data[i];
 
     memcpy(past, present, sizeof past);
 }
