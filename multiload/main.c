@@ -492,10 +492,14 @@ static const GtkActionEntry multiload_menu_actions [] = {
 static gboolean
 multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 {
+	GtkStyleContext *context;
 	MultiloadApplet *ma;
 	GSettings *lockdown_settings;
 	GtkActionGroup *action_group;
 	gchar *ui_path;
+
+	context = gtk_widget_get_style_context (GTK_WIDGET (applet));
+	gtk_style_context_add_class (context, "multiload-applet");
 
 	ma = g_new0(MultiloadApplet, 1);
 
