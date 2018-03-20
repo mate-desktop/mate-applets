@@ -372,8 +372,10 @@ cpufreq_applet_get_preferred_width (GtkWidget *widget, gint *minimum_width, gint
 	CPUFreqApplet *applet;
 	gint           labels_width = 0;
 	gint           width;
+	gint           scale;
 
 	applet = CPUFREQ_APPLET (widget);
+	scale = gtk_widget_get_scale_factor (widget);
 
 	if (applet->orient == MATE_PANEL_APPLET_ORIENT_LEFT ||
 	    applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
@@ -401,7 +403,7 @@ cpufreq_applet_get_preferred_width (GtkWidget *widget, gint *minimum_width, gint
 		width = labels_width;
 	}
 
-	*minimum_width = *natural_width = width;
+	*minimum_width = *natural_width = width / scale;
 }
 
 static void
