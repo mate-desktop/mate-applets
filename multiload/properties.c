@@ -142,100 +142,91 @@ property_toggled_cb(GtkWidget *widget, gpointer name)
 static void
 spin_button_changed_cb(GtkWidget *widget, gpointer name)
 {
-	MultiloadApplet *ma;
-	gint value;
-	gint prop_type, i;
+  MultiloadApplet *ma;
+  gint value;
+  gint prop_type, i;
 
-	ma = g_object_get_data(G_OBJECT(widget), "MultiloadApplet");
-	prop_type = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(widget), "prop_type"));
-	value = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(widget));
+  ma = g_object_get_data(G_OBJECT(widget), "MultiloadApplet");
+  prop_type = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(widget), "prop_type"));
+  value = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(widget));
 
-	/* FIXME: the first toggle button to be checked/dechecked does not work, but after that everything is cool.  what gives? */
-	g_settings_set_uint (ma->settings, (gchar *)name, value);
-	g_settings_set_uint (ma->settings, (gchar *)name, value);
+  /* FIXME: the first toggle button to be checked/dechecked does not work, but after that everything is cool.  what gives? */
+  g_settings_set_uint (ma->settings, (gchar *)name, value);
+  g_settings_set_uint (ma->settings, (gchar *)name, value);
 
-	switch(prop_type)
-	{
-		case PROP_SPEED:
-		{
-			for (i = 0; i < NGRAPHS; i++)
-			{
-				load_graph_stop(ma->graphs[i]);
-				ma->graphs[i]->speed = value;
-				if (ma->graphs[i]->visible)
-					load_graph_start(ma->graphs[i]);
-			}
+  switch(prop_type)
+  {
+    case PROP_SPEED:
+      for (i = 0; i < NGRAPHS; i++)
+      {
+        load_graph_stop(ma->graphs[i]);
+        ma->graphs[i]->speed = value;
+        if (ma->graphs[i]->visible)
+          load_graph_start(ma->graphs[i]);
+      }
 
+      break;
+
+    case PROP_SIZE:
+      for (i = 0; i < NGRAPHS; i++)
+      {
+        ma->graphs[i]->size = value ;
+
+        if (ma->graphs[i]->orient)
+          gtk_widget_set_size_request (
+            ma->graphs[i]->main_widget,
+            ma->graphs[i]->pixel_size,
+            ma->graphs[i]->size);
+        else
+          gtk_widget_set_size_request (
+            ma->graphs[i]->main_widget,
+            ma->graphs[i]->size,
+            ma->graphs[i]->pixel_size);
+      }
 			break;
-		}
-		case PROP_SIZE:
-		{
-			for (i = 0; i < NGRAPHS; i++)
-			{
-				ma->graphs[i]->size = value ;
 
-				if (ma->graphs[i]->orient)
-					gtk_widget_set_size_request (
-						ma->graphs[i]->main_widget,
-						ma->graphs[i]->pixel_size,
-						ma->graphs[i]->size);
-			    else
-					gtk_widget_set_size_request (
-						ma->graphs[i]->main_widget,
-						ma->graphs[i]->size,
-						ma->graphs[i]->pixel_size);
-			}
+    case PROP_NET_THRESHOLD1:
+      if (value >= ma->graphs[2]->net_threshold2)
+      {
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
+            (gdouble)g_settings_get_uint (ma->settings, "netthreshold2") - 1);
+        ma->graphs[2]->net_threshold1 = g_settings_get_uint (ma->settings, "netthreshold2") - 1;
+      }
+      else
+        ma->graphs[2]->net_threshold1 = value;
+  		break;
 
-			break;
-      case PROP_NET_THRESHOLD1:
-  		{
-        if (value >= ma->graphs[2]->net_threshold2)
-        {
-          gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
-              (gdouble)g_settings_get_uint (ma->settings, "netthreshold2") - 1);
-          ma->graphs[2]->net_threshold1 = g_settings_get_uint (ma->settings, "netthreshold2") - 1;
-        }
-        else
-          ma->graphs[2]->net_threshold1 = value;
+    case PROP_NET_THRESHOLD2:
+      if (value >= ma->graphs[2]->net_threshold3)
+      {
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
+            (gdouble)g_settings_get_uint (ma->settings, "netthreshold3") - 1);
+        ma->graphs[2]->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold3") - 1;
+      }
+      else if (value <= ma->graphs[2]->net_threshold1)
+      {
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
+            (gdouble)g_settings_get_uint (ma->settings, "netthreshold1") + 1);
+        ma->graphs[2]->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold1") + 1;
+      }
+      else
+        ma->graphs[2]->net_threshold2 = value;
 
-  			break;
-  		}
-      case PROP_NET_THRESHOLD2:
-  		{
-        if (value >= ma->graphs[2]->net_threshold3)
-        {
-          gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
-              (gdouble)g_settings_get_uint (ma->settings, "netthreshold3") - 1);
-          ma->graphs[2]->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold3") - 1;
-        }
-        else if (value <= ma->graphs[2]->net_threshold1)
-        {
-          gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
-              (gdouble)g_settings_get_uint (ma->settings, "netthreshold1") + 1);
-          ma->graphs[2]->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold1") + 1;
-        }
-        else
-          ma->graphs[2]->net_threshold2 = value;
+  		break;
 
-  			break;
-  		}
-      case PROP_NET_THRESHOLD3:
-  		{
-        if (value <= ma->graphs[2]->net_threshold2)
-        {
-          gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
-              (gdouble)g_settings_get_uint (ma->settings, "netthreshold2") + 1);
-          ma->graphs[2]->net_threshold3 = g_settings_get_uint (ma->settings, "netthreshold2") + 1;
-        }
-        else
-          ma->graphs[2]->net_threshold3 = value;
-  			break;
-  		}
-
-		}
-		default:
-			g_assert_not_reached();
-	}
+    case PROP_NET_THRESHOLD3:
+      if (value <= ma->graphs[2]->net_threshold2)
+      {
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
+            (gdouble)g_settings_get_uint (ma->settings, "netthreshold2") + 1);
+        ma->graphs[2]->net_threshold3 = g_settings_get_uint (ma->settings, "netthreshold2") + 1;
+      }
+      else
+        ma->graphs[2]->net_threshold3 = value;
+      break;
+    default:
+      g_assert_not_reached();
+  }
 
 	return;
 }
