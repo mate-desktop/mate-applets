@@ -150,13 +150,10 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
   prop_type = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(widget), "prop_type"));
   value = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(widget));
 
-  /* FIXME: the first toggle button to be checked/dechecked does not work, but after that everything is cool.  what gives? */
-  g_settings_set_uint (ma->settings, (gchar *)name, value);
-  g_settings_set_uint (ma->settings, (gchar *)name, value);
-
   switch(prop_type)
   {
     case PROP_SPEED:
+      g_settings_set_int (ma->settings, (gchar *)name, value);
       for (i = 0; i < NGRAPHS; i++)
       {
         load_graph_stop(ma->graphs[i]);
@@ -170,6 +167,7 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
     case PROP_SIZE:
       for (i = 0; i < NGRAPHS; i++)
       {
+        g_settings_set_int (ma->settings, (gchar *)name, value);
         ma->graphs[i]->size = value ;
 
         if (ma->graphs[i]->orient)
@@ -186,6 +184,7 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
 			break;
 
     case PROP_NET_THRESHOLD1:
+      g_settings_set_uint (ma->settings, (gchar *)name, value);
       if (value >= ma->graphs[2]->net_threshold2)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
@@ -197,6 +196,7 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
   		break;
 
     case PROP_NET_THRESHOLD2:
+      g_settings_set_uint (ma->settings, (gchar *)name, value);
       if (value >= ma->graphs[2]->net_threshold3)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
@@ -215,6 +215,7 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
   		break;
 
     case PROP_NET_THRESHOLD3:
+      g_settings_set_uint (ma->settings, (gchar *)name, value);
       if (value <= ma->graphs[2]->net_threshold2)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
