@@ -83,9 +83,9 @@ static gboolean stickynotes_applet_factory(MatePanelApplet *mate_panel_applet, c
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY("StickyNotesAppletFactory", PANEL_TYPE_APPLET, "stickynotes_applet",
 				 stickynotes_applet_factory, NULL)
 
-/* colorshift a pixbuf */
+/* colorshift a surface */
 static void
-stickynotes_make_prelight_icon (GdkPixbuf *dest, GdkPixbuf *src, int shift)
+stickynotes_make_prelight_icon (cairo_surface_t *dest, cairo_surface_t *src, int shift)
 {
 	gint i, j;
 	gint width, height, has_alpha, srcrowstride, destrowstride;
@@ -96,13 +96,13 @@ stickynotes_make_prelight_icon (GdkPixbuf *dest, GdkPixbuf *src, int shift)
 	int val;
 	guchar r,g,b;
 
-	has_alpha = gdk_pixbuf_get_has_alpha (src);
-	width = gdk_pixbuf_get_width (src);
-	height = gdk_pixbuf_get_height (src);
-	srcrowstride = gdk_pixbuf_get_rowstride (src);
-	destrowstride = gdk_pixbuf_get_rowstride (dest);
-	target_pixels = gdk_pixbuf_get_pixels (dest);
-	original_pixels = gdk_pixbuf_get_pixels (src);
+	has_alpha = cairo_surface_get_content (src) != CAIRO_CONTENT_COLOR;
+	width = cairo_image_surface_get_width (src);
+	height = cairo_image_surface_get_height (src);
+	srcrowstride = cairo_image_surface_get_stride (src);
+	destrowstride = cairo_image_surface_get_stride (dest);
+	original_pixels = cairo_image_surface_get_data (src);
+	target_pixels = cairo_image_surface_get_data (dest);
 
 	for (i = 0; i < height; i++) {
 		pixdest = target_pixels + i*destrowstride;
@@ -155,30 +155,37 @@ stickynotes_destroy (GtkWidget *widget,
 void
 stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 {
+	cairo_t *cr;
+	gint size, scale;
+
 	stickynotes = g_new(StickyNotes, 1);
 
 	stickynotes->notes = NULL;
 	stickynotes->applets = NULL;
 	stickynotes->last_timeout_data = 0;
 
-	g_set_application_name (_("Sticky Notes"));
+	size = mate_panel_applet_get_size (mate_panel_applet);
+	scale = gtk_widget_get_scale_factor (GTK_WIDGET (mate_panel_applet));
 
+	g_set_application_name (_("Sticky Notes"));
 	gtk_window_set_default_icon_name ("mate-sticky-notes-applet");
 
-	stickynotes->icon_normal = gtk_icon_theme_load_icon (
+	stickynotes->icon_normal = gtk_icon_theme_load_surface (
 			gtk_icon_theme_get_default (),
 			"mate-sticky-notes-applet",
-			48, 0, NULL);
+			size, scale, NULL, 0, NULL);
 
-	stickynotes->icon_prelight = gdk_pixbuf_new (
-			gdk_pixbuf_get_colorspace (stickynotes->icon_normal),
-			gdk_pixbuf_get_has_alpha (stickynotes->icon_normal),
-			gdk_pixbuf_get_bits_per_sample (
-				stickynotes->icon_normal),
-			gdk_pixbuf_get_width (stickynotes->icon_normal),
-			gdk_pixbuf_get_height (stickynotes->icon_normal));
-	stickynotes_make_prelight_icon (stickynotes->icon_prelight,
-			stickynotes->icon_normal, 30);
+	stickynotes->icon_prelight = cairo_surface_create_similar (stickynotes->icon_normal,
+			cairo_surface_get_content (stickynotes->icon_normal),
+			cairo_image_surface_get_width (stickynotes->icon_normal),
+			cairo_image_surface_get_height (stickynotes->icon_normal));
+
+	stickynotes_make_prelight_icon (stickynotes->icon_prelight, stickynotes->icon_normal, 30);
+
+	cr = cairo_create (stickynotes->icon_prelight);
+	cairo_set_operator (cr, CAIRO_OPERATOR_DEST_IN);
+	cairo_mask_surface (cr, stickynotes->icon_normal, 0, 0);
+
 	stickynotes->settings = g_settings_new (STICKYNOTES_SCHEMA);
 	stickynotes->visible = TRUE;
 
@@ -343,7 +350,6 @@ stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 	applet->w_image = gtk_image_new();
 	applet->destroy_all_dialog = NULL;
 	applet->prelighted = FALSE;
-	applet->pressed = FALSE;
 
 	applet->menu_tip = NULL;
 
@@ -413,29 +419,32 @@ stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 
 void stickynotes_applet_update_icon(StickyNotesApplet *applet)
 {
-	GdkPixbuf *pixbuf1, *pixbuf2;
+	cairo_t *cr;
+	cairo_surface_t *surface;
 
 	gint size = applet->panel_size;
 
-        if (size > 3)
-           size = size -3;
+	if (size > 3)
+		size = size - 3;
 
 	/* Choose appropriate icon and size it */
 	if (applet->prelighted)
-	    	pixbuf1 = gdk_pixbuf_scale_simple(stickynotes->icon_prelight, size, size, GDK_INTERP_BILINEAR);
+		surface = cairo_surface_create_similar (stickynotes->icon_prelight,
+				cairo_surface_get_content (stickynotes->icon_prelight),
+				size, size);
 	else
-	    	pixbuf1 = gdk_pixbuf_scale_simple(stickynotes->icon_normal, size, size, GDK_INTERP_BILINEAR);
+		surface = cairo_surface_create_similar (stickynotes->icon_normal,
+				cairo_surface_get_content (stickynotes->icon_normal),
+				size, size);
 
-	/* Shift the icon if pressed */
-	pixbuf2 = gdk_pixbuf_copy(pixbuf1);
-	if (applet->pressed)
-		gdk_pixbuf_scale(pixbuf1, pixbuf2, 0, 0, size, size, 1, 1, 1, 1, GDK_INTERP_BILINEAR);
+	cr = cairo_create (surface);
+	cairo_set_source_surface (cr, applet->prelighted ? stickynotes->icon_prelight : stickynotes->icon_normal, 0, 0);
+	cairo_paint (cr);
 
-	/* Apply the finished pixbuf to the applet image */
-	gtk_image_set_from_pixbuf(GTK_IMAGE(applet->w_image), pixbuf2);
+	/* Apply the finished surface to the applet image */
+	gtk_image_set_from_surface(GTK_IMAGE(applet->w_image), surface);
 
-	g_object_unref(pixbuf1);
-	g_object_unref(pixbuf2);
+	cairo_surface_destroy(surface);
 }
 
 void

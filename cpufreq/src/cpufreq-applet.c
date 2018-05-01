@@ -62,7 +62,7 @@ struct _CPUFreqApplet {
         GtkWidget        *box;
 	GtkWidget        *labels_box;
         GtkWidget        *container;
-        GdkPixbuf        *pixbufs[5];
+        cairo_surface_t  *surfaces[5];
 
 	gint              max_label_width;
 	gint              max_perc_width;
@@ -245,9 +245,9 @@ cpufreq_applet_dispose (GObject *widget)
         }
 
         for (i = 0; i <= 3; i++) {
-                if (applet->pixbufs[i]) {
-                        g_object_unref (G_OBJECT (applet->pixbufs[i]));
-                        applet->pixbufs[i] = NULL;
+                if (applet->surfaces[i]) {
+                        cairo_surface_destroy (applet->surfaces[i]);
+                        applet->surfaces[i] = NULL;
                 }
         }
 
@@ -646,6 +646,8 @@ static void
 cpufreq_applet_pixmap_set_image (CPUFreqApplet *applet, gint perc)
 {
         gint image;
+        gint scale;
+        gint size = 24; /* FIXME */
 
         /* 0-29   -> 25%
          * 30-69  -> 50%
@@ -663,12 +665,18 @@ cpufreq_applet_pixmap_set_image (CPUFreqApplet *applet, gint perc)
         else
                 image = 4;
 
-        if (applet->pixbufs[image] == NULL) {
-                applet->pixbufs[image] = gdk_pixbuf_new_from_file_at_size (cpufreq_icons[image],
-                                                                           24, 24, NULL);
+        scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->icon));
+
+        if (applet->surfaces[image] == NULL) {
+                GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file_at_scale (cpufreq_icons[image],
+                                                                       size * scale,
+                                                                       size * scale,
+                                                                       TRUE,
+                                                                       NULL);
+                applet->surfaces[image] = gdk_cairo_surface_create_from_pixbuf (pixbuf, scale, NULL);
         }
 
-        gtk_image_set_from_pixbuf (GTK_IMAGE (applet->icon), applet->pixbufs[image]);
+        gtk_image_set_from_surface (GTK_IMAGE (applet->icon), applet->surfaces[image]);
 }
 
 static gboolean
