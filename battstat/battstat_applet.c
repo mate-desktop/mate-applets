@@ -214,6 +214,7 @@ static GdkColor darkred[] = {
    their XPM format (as stored in pixmaps.h).  This should only be done once
    since they are global variables.
 */
+/* FIXME: We should be using named icons here... */
 static void
 initialise_global_pixmaps( void )
 {

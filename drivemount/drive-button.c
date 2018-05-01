@@ -339,9 +339,10 @@ drive_button_update (gpointer user_data)
     GtkIconTheme *icon_theme;
     GtkIconInfo *icon_info;
     GIcon *icon;
-    int width, height;
-    GdkPixbuf *pixbuf = NULL, *scaled;
-    GdkPixbuf *tmp_pixbuf = NULL;
+    int width, height, scale;
+    cairo_t *cr;
+    cairo_surface_t *surface = NULL;
+    cairo_surface_t *tmp_surface = NULL;
     GtkRequisition button_req, image_req;
     char *display_name, *tip;
 
@@ -351,10 +352,11 @@ drive_button_update (gpointer user_data)
 
     /* base the icon size on the desired button size */
     drive_button_reset_popup (self);
+    scale = gtk_widget_get_scale_factor (GTK_WIDGET (self));
     gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
     gtk_widget_get_preferred_size (gtk_bin_get_child (GTK_BIN (self)), NULL, &image_req);
-    width = self->icon_size - (button_req.width - image_req.width);
-    height = self->icon_size - (button_req.height - image_req.height);
+    width = (self->icon_size - (button_req.width - image_req.width)) / scale;
+    height = (self->icon_size - (button_req.height - image_req.height)) / scale;
 
     /* if no volume or mount, display general image */
     if (!self->volume && !self->mount)
@@ -363,23 +365,20 @@ drive_button_update (gpointer user_data)
         screen = gtk_widget_get_screen (GTK_WIDGET (self));
         icon_theme = gtk_icon_theme_get_for_screen (screen); //m
         // note - other good icon would be emblem-unreadable
-        icon_info = gtk_icon_theme_lookup_icon (icon_theme, "media-floppy",
-                                                MIN (width, height),
-                                                GTK_ICON_LOOKUP_USE_BUILTIN);
+        icon_info = gtk_icon_theme_lookup_icon_for_scale (icon_theme, "media-floppy",
+                                                          MIN (width, height), scale,
+                                                          GTK_ICON_LOOKUP_USE_BUILTIN);
         if (icon_info) {
-            pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
+            surface = gtk_icon_info_load_surface (icon_info, NULL, NULL);
             g_object_unref (icon_info);
         }
 
-        if (!pixbuf)
+        if (!surface)
             return FALSE;
-        scaled = gdk_pixbuf_scale_simple (pixbuf, width, height, GDK_INTERP_BILINEAR);
-        if (scaled) {
-            g_object_unref (pixbuf);
-            pixbuf = scaled;
-        }
+
         if (gtk_bin_get_child (GTK_BIN (self)) != NULL)
-            gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), pixbuf);
+            gtk_image_set_from_surface (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), surface);
+
         return FALSE;
     }
 
@@ -396,19 +395,15 @@ drive_button_update (gpointer user_data)
         {
             is_mounted = TRUE;
             tip = g_strdup_printf ("%s\n%s", display_name, _("(mounted)"));
+            icon = g_mount_get_icon (mount);
+            g_object_unref (mount);
         }
         else
         {
             is_mounted = FALSE;
             tip = g_strdup_printf ("%s\n%s", display_name, _("(not mounted)"));
-        }
-        if (mount)
-            icon = g_mount_get_icon (mount);
-        else
             icon = g_volume_get_icon (self->volume);
-
-        if (mount)
-            g_object_unref (mount);
+        }
     } else
     {
         is_mounted = TRUE;
@@ -423,41 +418,43 @@ drive_button_update (gpointer user_data)
 
     screen = gtk_widget_get_screen (GTK_WIDGET (self));
     icon_theme = gtk_icon_theme_get_for_screen (screen);
-    icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme, icon,
-                                               MIN (width, height),
-                                               GTK_ICON_LOOKUP_USE_BUILTIN);
+    icon_info = gtk_icon_theme_lookup_by_gicon_for_scale (icon_theme, icon,
+                                                          MIN (width, height), scale,
+                                                          GTK_ICON_LOOKUP_USE_BUILTIN);
     if (icon_info)
     {
-        pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
+        surface = gtk_icon_info_load_surface (icon_info, NULL, NULL);
         g_object_unref (icon_info);
     }
 
     g_object_unref (icon);
 
-    if (!pixbuf)
+    if (!surface)
         return FALSE;
 
-    // make a copy of pixbuf becasue icon image can be shared by system
-    tmp_pixbuf = gdk_pixbuf_copy (pixbuf);
-    g_object_unref (pixbuf);
-    g_assert (tmp_pixbuf != NULL);
+    // create a new surface because icon image can be shared by system
+    tmp_surface = cairo_surface_create_similar (surface,
+                                                cairo_surface_get_content (surface),
+                                                cairo_image_surface_get_width (surface) / scale,
+                                                cairo_image_surface_get_height (surface) / scale);
 
     // if mounted, change icon
     if (is_mounted)
     {
         int icon_width, icon_height, rowstride, n_channels, x, y;
         guchar *pixels, *p;
+        gboolean has_alpha;
 
-        n_channels = gdk_pixbuf_get_n_channels (tmp_pixbuf);
-        g_assert (gdk_pixbuf_get_colorspace (tmp_pixbuf) == GDK_COLORSPACE_RGB);
-        g_assert (gdk_pixbuf_get_bits_per_sample (tmp_pixbuf) == 8);
-        g_assert (gdk_pixbuf_get_has_alpha (tmp_pixbuf));
-        g_assert (n_channels == 4);
-        icon_width = gdk_pixbuf_get_width (tmp_pixbuf);
-        icon_height = gdk_pixbuf_get_height (tmp_pixbuf);
+        has_alpha = cairo_surface_get_content (tmp_surface) != CAIRO_CONTENT_COLOR;
+        n_channels = 3;
+        if (has_alpha)
+            n_channels++;
 
-        rowstride = gdk_pixbuf_get_rowstride (tmp_pixbuf);
-        pixels = gdk_pixbuf_get_pixels (tmp_pixbuf);
+        icon_width = cairo_image_surface_get_width (tmp_surface);
+        icon_height = cairo_image_surface_get_height (tmp_surface);
+
+        rowstride = cairo_image_surface_get_stride (tmp_surface);
+        pixels = cairo_image_surface_get_data (tmp_surface);
 
         GdkRGBA color;
         gchar *color_string = g_settings_get_string (settings, "drivemount-checkmark-color");
@@ -481,18 +478,20 @@ drive_button_update (gpointer user_data)
                 p[0] = red;
                 p[1] = green;
                 p[2] = blue;
-                p[3] = 255;
+                if (has_alpha)
+                    p[3] = 255;
             }
     }
 
-    scaled = gdk_pixbuf_scale_simple (tmp_pixbuf, width, height, GDK_INTERP_BILINEAR);
-    if (scaled) {
-        g_object_unref (tmp_pixbuf);
-        tmp_pixbuf = scaled;
-    }
+    cr = cairo_create (tmp_surface);
+    cairo_set_operator (cr, CAIRO_OPERATOR_OVERLAY);
+    cairo_set_source_surface (cr, surface, 0, 0);
+    cairo_paint (cr);
 
-    gtk_image_set_from_pixbuf (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), tmp_pixbuf);
-    g_object_unref (tmp_pixbuf);
+    gtk_image_set_from_surface (GTK_IMAGE (gtk_bin_get_child (GTK_BIN (self))), tmp_surface);
+
+    cairo_surface_destroy (surface);
+    cairo_surface_destroy (tmp_surface);
 
     gtk_widget_get_preferred_size (GTK_WIDGET (self), NULL, &button_req);
 
