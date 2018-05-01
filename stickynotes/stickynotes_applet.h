@@ -22,7 +22,6 @@
 
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
@@ -57,8 +56,8 @@ typedef struct
 	GList *notes;			/* Linked-List of all the sticky notes */
 	GList *applets;			/* Linked-List of all the applets */
 	
-	GdkPixbuf *icon_normal;		/* Normal applet icon */
-	GdkPixbuf *icon_prelight;	/* Prelighted applet icon */
+	cairo_surface_t *icon_normal;	/* Normal applet icon */
+	cairo_surface_t *icon_prelight;	/* Prelighted applet icon */
 
 	GSettings *settings;		/* Shared GSettings */
 
@@ -77,7 +76,6 @@ typedef struct
 	GtkWidget *destroy_all_dialog;	/* The applet it's destroy all dialog */
 	
 	gboolean prelighted;		/* Whether applet is prelighted */
-	gboolean pressed;		/* Whether applet is pressed */
 
 	gint panel_size;
 	MatePanelAppletOrient panel_orient;
