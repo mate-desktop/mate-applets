@@ -1,5 +1,5 @@
 themedir = $(datadir)/icons/hicolor
-size = 16x16
+size = 22x22
 context = devices
 
 iconsdir = $(themedir)/$(size)/$(context)

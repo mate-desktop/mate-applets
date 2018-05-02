@@ -1,2 +1,2 @@
-SUBDIRS = apps
+SUBDIRS = apps devices
 

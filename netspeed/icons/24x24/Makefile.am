@@ -1,2 +1,2 @@
-SUBDIRS = apps status
+SUBDIRS = apps devices status
 
