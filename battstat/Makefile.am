@@ -39,7 +39,6 @@ libexec_PROGRAMS = battstat-applet
 
 battstat_applet_SOURCES = \
 	battstat.h \
-	pixmaps.h \
 	properties.c \
 	battstat_applet.c \
 	power-management.c \

@@ -88,8 +88,6 @@ typedef struct _ProgressData {
   GtkWidget *applet;
 
   /* these are used by properties.c */
-  GtkWidget *radio_ubuntu_battery;
-  GtkWidget *radio_traditional_battery;
   GtkWidget *radio_text_1;
   GtkWidget *radio_text_2;
   GtkWidget *check_text;
@@ -106,9 +104,6 @@ typedef struct _ProgressData {
   gboolean lowbattnotification;
   gboolean fullbattnot;
   gboolean beep;
-  gboolean draintop;
-  gboolean showstatus;
-  gboolean showbattery;
   AppletTextType showtext;
 
   /* label changed type (% <-> h:mm) and must be refreshed */

@@ -44,9 +44,6 @@
 
 #include <gio/gio.h>
 
-#include <mate-panel-applet.h>
-#include <mate-panel-applet-gsettings.h>
-
 #include "battstat.h"
 
 #ifndef gettext_noop
@@ -114,54 +111,9 @@ spin_ptr_cb (GtkWidget *spin_ptr, gpointer data)
 }
 
 static void
-radio_traditional_toggled (GtkToggleButton *button, gpointer data)
-{
-  ProgressData   *battstat = data;
-  MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
-  gboolean toggled;
-  
-  toggled = gtk_toggle_button_get_active (button);
- 
-  /* if (!( toggled || battstat->showtext || battstat->showstatus)) {
-    gtk_toggle_button_set_active (button, !toggled);
-    return;
-  } */
-
-  battstat->showbattery = toggled;
-  reconfigure_layout( battstat );
-
-  g_settings_set_boolean (battstat->settings, "show-battery", 
-  				 battstat->showbattery);
-  				 
-}
-
-static void
-radio_ubuntu_toggled (GtkToggleButton *button, gpointer data)
-{
-  ProgressData   *battstat = data;
-  MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
-  gboolean toggled;
-  
-  toggled = gtk_toggle_button_get_active (button);
-  
-  /* if (!( toggled || battstat->showtext || battstat->showbattery)) {
-    gtk_toggle_button_set_active (button, !toggled);
-    return;
-  } */
-  
-  battstat->showstatus = toggled;
-  reconfigure_layout( battstat );
-  
-  g_settings_set_boolean (battstat->settings, "show-status", 
-  				 battstat->showstatus);
-  				 
-}
-
-static void
 show_text_toggled (GtkToggleButton *button, gpointer data)
 {
   ProgressData   *battstat = data;
-  MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
   
   if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (battstat->radio_text_2))
    && gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (battstat->check_text)))
@@ -190,7 +142,6 @@ static void
 lowbatt_toggled (GtkToggleButton *button, gpointer data)
 {
   ProgressData   *battstat = data;
-  MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
   
   battstat->lowbattnotification = gtk_toggle_button_get_active (button);
   g_settings_set_boolean   (battstat->settings, "low-battery-notification", 
@@ -203,7 +154,6 @@ static void
 full_toggled (GtkToggleButton *button, gpointer data)
 {
   ProgressData   *battstat = data;
-  MatePanelApplet *applet = MATE_PANEL_APPLET (battstat->applet);
   
   battstat->fullbattnot = gtk_toggle_button_get_active (button);
   g_settings_set_boolean   (battstat->settings, "full-battery-notification", 
@@ -321,35 +271,6 @@ prop_cb (GtkAction    *action,
   {
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (battstat->lowbatt_toggle),
 		    TRUE);
-  }
-
-  battstat->radio_traditional_battery = GTK_WIDGET (gtk_builder_get_object (builder,
-		  "battery_view_2"));
-  g_signal_connect (G_OBJECT (battstat->radio_traditional_battery), "toggled",
-  		    G_CALLBACK (radio_traditional_toggled), battstat);
-
-  if (!g_settings_is_writable (battstat->settings, "show-battery"))
-	  hard_set_sensitive (battstat->radio_traditional_battery, FALSE);
-  
-  if (battstat->showbattery)
-  {
-    gtk_toggle_button_set_active (
-		    GTK_TOGGLE_BUTTON (battstat->radio_traditional_battery),
-		    TRUE);
-  }
-  
-  battstat->radio_ubuntu_battery = GTK_WIDGET (gtk_builder_get_object (builder,
-		  "battery_view"));
-  g_signal_connect (G_OBJECT (battstat->radio_ubuntu_battery), "toggled",
-  		    G_CALLBACK (radio_ubuntu_toggled), battstat);
-
-  if (!g_settings_is_writable (battstat->settings, "show-status"))
-	  hard_set_sensitive (battstat->radio_ubuntu_battery, FALSE);
-	
-  if (battstat->showstatus)
-  {
-    gtk_toggle_button_set_active (
-		    GTK_TOGGLE_BUTTON (battstat->radio_ubuntu_battery), TRUE);
   }
 
   battstat->radio_text_1 = GTK_WIDGET (gtk_builder_get_object (builder, "show_text_radio"));
