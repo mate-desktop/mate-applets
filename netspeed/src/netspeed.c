@@ -35,10 +35,11 @@
 
  /* Icons for the interfaces */
 static const char* const dev_type_icon[DEV_UNKNOWN + 1] = {
-	"mate-netspeed-loopback",    /* DEV_LO */
+	/* FIXME: Need an actual loopback icon... */
+	"reload",                    /* DEV_LO */
 	"network-wired",             /* DEV_ETHERNET */
 	"network-wireless",          /* DEV_WIRELESS */
-	"mate-netspeed-ppp",         /* DEV_PPP */
+	"modem",                     /* DEV_PPP */
 	"mate-netspeed-plip",        /* DEV_PLIP */
 	"mate-netspeed-plip",        /* DEV_SLIP */
 	"network-workgroup",         /* DEV_UNKNOWN */
@@ -71,7 +72,7 @@ static const char LOGO_ICON[] = "mate-netspeed-applet";
 typedef struct
 {
 	MatePanelApplet *applet;
-	GtkWidget *box, *pix_box,
+	GtkWidget *box, *pix_box, *speed_box,
 	*in_box, *in_label, *in_pix,
 	*out_box, *out_label, *out_pix,
 	*sum_box, *sum_label, *dev_pix, *qual_pix;
@@ -138,6 +139,93 @@ add_markup_fgcolor(char **string, const char *color)
 	g_free(tmp);
 }
 
+/* Change the icons according to the selected device
+ */
+static void
+change_icons(MateNetspeedApplet *applet)
+{
+	cairo_surface_t *dev, *down;
+	cairo_surface_t *in_arrow, *out_arrow;
+	GtkIconTheme *icon_theme;
+	gint icon_scale;
+
+	gint icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet->applet)) - 8;
+	/* FIXME: Not all network icons include a high enough resolution, so to make them all
+	 * consistent, we cap them at 48px.*/
+	icon_size = CLAMP (icon_size, 16, 48);
+
+	icon_theme = gtk_icon_theme_get_default();
+	icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
+
+	/* If the user wants a different icon than current, we load it */
+	if (applet->show_icon && applet->change_icon) {
+		dev = gtk_icon_theme_load_surface(icon_theme,
+			dev_type_icon[applet->devinfo.type],
+			icon_size, icon_scale, NULL, 0, NULL);
+	} else {
+			dev = gtk_icon_theme_load_surface(icon_theme,
+			dev_type_icon[DEV_UNKNOWN],
+			icon_size, icon_scale, NULL, 0, NULL);
+	}
+
+	/* We need a fallback */
+	if (dev == NULL)
+		dev = gtk_icon_theme_load_surface(icon_theme,
+			dev_type_icon[DEV_UNKNOWN],
+			icon_size, icon_scale, NULL, 0, NULL);
+
+	in_arrow = gtk_icon_theme_load_surface(icon_theme, IN_ICON, 16, icon_scale, NULL, 0, NULL);
+	out_arrow = gtk_icon_theme_load_surface(icon_theme, OUT_ICON, 16, icon_scale, NULL, 0, NULL);
+
+	/* Set the windowmanager icon for the applet */
+	gtk_window_set_default_icon_name(LOGO_ICON);
+
+	gtk_image_set_from_surface(GTK_IMAGE(applet->out_pix), out_arrow);
+	gtk_image_set_from_surface(GTK_IMAGE(applet->in_pix), in_arrow);
+	cairo_surface_destroy(in_arrow);
+	cairo_surface_destroy(out_arrow);
+
+	if (applet->devinfo.running) {
+		gtk_widget_show(applet->in_box);
+		gtk_widget_show(applet->out_box);
+	} else {
+		cairo_t *cr;
+		cairo_surface_t *copy;
+		gint down_coords;
+
+		gtk_widget_hide(applet->in_box);
+		gtk_widget_hide(applet->out_box);
+
+		/* We're not allowed to modify "dev" */
+		copy = cairo_surface_create_similar (dev,
+			                             cairo_surface_get_content (dev),
+			                             cairo_image_surface_get_width (dev) / icon_scale,
+			                             cairo_image_surface_get_height (dev) / icon_scale);
+		cr = cairo_create (copy);
+		cairo_set_source_surface (cr, dev, 0, 0);
+		cairo_paint (cr);
+
+		down = gtk_icon_theme_load_surface(icon_theme, ERROR_ICON, icon_size, icon_scale, NULL, 0, NULL);
+		down_coords = cairo_image_surface_get_width (copy) / icon_scale;
+		cairo_scale (cr, 0.5, 0.5);
+		cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+		cairo_set_source_surface (cr, down, down_coords, down_coords);
+		cairo_paint (cr);
+
+		cairo_surface_destroy(down);
+		cairo_surface_destroy(dev);
+		dev = copy;
+	}
+
+	if (applet->show_icon) {
+		gtk_widget_show(applet->dev_pix);
+		gtk_image_set_from_surface(GTK_IMAGE(applet->dev_pix), dev);
+	} else {
+		gtk_widget_hide(applet->dev_pix);
+	}
+	cairo_surface_destroy(dev);
+}
+
 /* Here some rearangement of the icons and the labels occurs
  * according to the panelsize and wether we show in and out
  * or just the sum
@@ -181,6 +269,7 @@ applet_change_size_or_orient(MatePanelApplet *applet_widget, int arg1, MateNetsp
 
 	if (orient == MATE_PANEL_APPLET_ORIENT_LEFT || orient == MATE_PANEL_APPLET_ORIENT_RIGHT) {
 		applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+		applet->speed_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 		if (size > 64) {
 			applet->sum_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
 			applet->in_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
@@ -194,13 +283,13 @@ applet_change_size_or_orient(MatePanelApplet *applet_widget, int arg1, MateNetsp
 	} else {
 		applet->in_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
 		applet->out_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+		applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+		applet->sum_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
 		if (size < 48) {
-			applet->sum_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
-			applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+			applet->speed_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
 			applet->labels_dont_shrink = TRUE;
 		} else {
-			applet->sum_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-			applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+			applet->speed_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 			applet->labels_dont_shrink = !applet->show_sum;
 		}
 	}
@@ -220,99 +309,20 @@ applet_change_size_or_orient(MatePanelApplet *applet_widget, int arg1, MateNetsp
 	g_object_unref(applet->sum_label);
 
 	if (applet->show_sum) {
-		gtk_box_pack_start(GTK_BOX(applet->box), applet->sum_box, TRUE, TRUE, 0);
+		gtk_box_pack_start(GTK_BOX(applet->speed_box), applet->sum_box, TRUE, TRUE, 0);
 	} else {
-		gtk_box_pack_start(GTK_BOX(applet->box), applet->in_box, TRUE, TRUE, 0);
-		gtk_box_pack_start(GTK_BOX(applet->box), applet->out_box, TRUE, TRUE, 0);
+		gtk_box_pack_start(GTK_BOX(applet->speed_box), applet->in_box, TRUE, TRUE, 0);
+		gtk_box_pack_start(GTK_BOX(applet->speed_box), applet->out_box, TRUE, TRUE, 0);
 	}
+	gtk_box_pack_start(GTK_BOX(applet->box), applet->speed_box, TRUE, TRUE, 0);
 
 	gtk_widget_show_all(applet->box);
 	if (!applet->show_icon) {
 		gtk_widget_hide(applet->dev_pix);
 	}
 	gtk_container_add(GTK_CONTAINER(applet->applet), applet->box);
-}
 
-/* Change the icons according to the selected device
- */
-static void
-change_icons(MateNetspeedApplet *applet)
-{
-	cairo_surface_t *dev, *down;
-	cairo_surface_t *in_arrow, *out_arrow;
-	GtkIconTheme *icon_theme;
-	gint icon_scale;
-
-	/* FIXME: Add larger icon files. */
-	gint icon_size = 16;
-
-	icon_theme = gtk_icon_theme_get_default();
-	icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
-
-	/* If the user wants a different icon than current, we load it */
-	if (applet->show_icon && applet->change_icon) {
-		dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[applet->devinfo.type],
-			icon_size, icon_scale, NULL, 0, NULL);
-	} else {
-			dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[DEV_UNKNOWN],
-			icon_size, icon_scale, NULL, 0, NULL);
-	}
-
-	/* We need a fallback */
-	if (dev == NULL)
-		dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[DEV_UNKNOWN],
-			icon_size, icon_scale, NULL, 0, NULL);
-
-	in_arrow = gtk_icon_theme_load_surface(icon_theme, IN_ICON, icon_size, icon_scale, NULL, 0, NULL);
-	out_arrow = gtk_icon_theme_load_surface(icon_theme, OUT_ICON, icon_size, icon_scale, NULL, 0, NULL);
-
-	/* Set the windowmanager icon for the applet */
-	gtk_window_set_default_icon_name(LOGO_ICON);
-
-	gtk_image_set_from_surface(GTK_IMAGE(applet->out_pix), out_arrow);
-	gtk_image_set_from_surface(GTK_IMAGE(applet->in_pix), in_arrow);
-	cairo_surface_destroy(in_arrow);
-	cairo_surface_destroy(out_arrow);
-
-	if (applet->devinfo.running) {
-		gtk_widget_show(applet->in_box);
-		gtk_widget_show(applet->out_box);
-	} else {
-		cairo_t *cr;
-		cairo_surface_t *copy;
-		gtk_widget_hide(applet->in_box);
-		gtk_widget_hide(applet->out_box);
-
-		/* We're not allowed to modify "dev" */
-		copy = cairo_surface_create_similar (dev,
-			                             cairo_surface_get_content (dev),
-			                             cairo_image_surface_get_width (dev) / icon_scale,
-			                             cairo_image_surface_get_height (dev) / icon_scale);
-		cr = cairo_create (copy);
-		cairo_set_source_surface (cr, dev, 0, 0);
-		cairo_paint (cr);
-
-		down = gtk_icon_theme_load_surface(icon_theme, ERROR_ICON, icon_size, icon_scale, NULL, 0, NULL);
-		cairo_scale (cr, 0.5, 0.5);
-		cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
-		cairo_set_source_surface (cr, down, 8 * icon_scale, 8 * icon_scale);
-		cairo_paint (cr);
-
-		cairo_surface_destroy(down);
-		cairo_surface_destroy(dev);
-		dev = copy;
-	}
-
-	if (applet->show_icon) {
-		gtk_widget_show(applet->dev_pix);
-		gtk_image_set_from_surface(GTK_IMAGE(applet->dev_pix), dev);
-	} else {
-		gtk_widget_hide(applet->dev_pix);
-	}
-	cairo_surface_destroy(dev);
+	change_icons (applet);
 }
 
 /* Change visibility of signal quality icon for wireless devices
@@ -1385,13 +1395,13 @@ static const GtkActionEntry mate_netspeed_applet_menu_actions [] = {
  * "jumping around" in the mate_panel which looks uggly
  */
 static void
-label_size_request_cb(GtkWidget *widget, GtkRequisition *requisition, MateNetspeedApplet *applet)
+label_size_allocate_cb(GtkWidget *widget, GtkAllocation *allocation, MateNetspeedApplet *applet)
 {
 	if (applet->labels_dont_shrink) {
-		if (requisition->width <= applet->width)
-			requisition->width = applet->width;
+		if (allocation->width <= applet->width)
+			allocation->width = applet->width;
 		else
-			applet->width = requisition->width;
+			applet->width = allocation->width;
 	}
 }
 
@@ -1720,16 +1730,16 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
                            G_CALLBACK(applet_change_size_or_orient),
                            (gpointer)applet);
 
-	g_signal_connect(G_OBJECT(applet->in_label), "size_request",
-                           G_CALLBACK(label_size_request_cb),
+	g_signal_connect(G_OBJECT(applet->in_label), "size_allocate",
+                           G_CALLBACK(label_size_allocate_cb),
                            (gpointer)applet);
 
-	g_signal_connect(G_OBJECT(applet->out_label), "size_request",
-                           G_CALLBACK(label_size_request_cb),
+	g_signal_connect(G_OBJECT(applet->out_label), "size_allocate",
+                           G_CALLBACK(label_size_allocate_cb),
                            (gpointer)applet);
 
-	g_signal_connect(G_OBJECT(applet->sum_label), "size_request",
-                           G_CALLBACK(label_size_request_cb),
+	g_signal_connect(G_OBJECT(applet->sum_label), "size_allocate",
+                           G_CALLBACK(label_size_allocate_cb),
                            (gpointer)applet);
 
 	g_signal_connect(G_OBJECT(applet_widget), "destroy",
