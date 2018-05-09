@@ -40,74 +40,28 @@
 
 static int xkb_base_event_type = 0;
 
-static GtkIconSize icon_size_spec;
-
 #define ALT_GRAPH_LED_MASK (0x10)
-
-typedef struct {
-	char* stock_id;
-	char* name;
-	GtkStateType state;
-	gboolean wildcarded;
-} AppletStockIcon;
-
-static AppletStockIcon stock_icons[] = {
-	{ACCESSX_APPLET, "mate-ax-applet.png", GTK_STATE_NORMAL, True},
-	{ACCESSX_BASE_ICON, "mate-ax-key-base.png", GTK_STATE_NORMAL, True},
-	{ACCESSX_BASE_ICON, "mate-ax-key-none.png", GTK_STATE_INSENSITIVE, False},
-	{ACCESSX_BASE_ICON, "mate-ax-key-inverse.png", GTK_STATE_SELECTED, False},
-	{ACCESSX_ACCEPT_BASE, "mate-ax-key-yes.png", GTK_STATE_NORMAL, True},
-	{ACCESSX_REJECT_BASE, "mate-ax-key-no.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_BASE_ICON, "mate-mousekeys-base.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_BUTTON_LEFT, "mate-mousekeys-pressed-left.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_BUTTON_MIDDLE, "mate-mousekeys-pressed-middle.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_BUTTON_RIGHT, "mate-mousekeys-pressed-right.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_DOT_LEFT, "mate-mousekeys-default-left.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_DOT_MIDDLE, "mate-mousekeys-default-middle.png", GTK_STATE_NORMAL, True},
-	{MOUSEKEYS_DOT_RIGHT, "mate-mousekeys-default-right.png", GTK_STATE_NORMAL, True},
-	{SHIFT_KEY_ICON, "mate-sticky-shift-latched.png", GTK_STATE_NORMAL, False},
-	{SHIFT_KEY_ICON, "mate-sticky-shift-locked.png", GTK_STATE_SELECTED, False},
-	{SHIFT_KEY_ICON, "mate-sticky-shift-none.png", GTK_STATE_INSENSITIVE, True},
-	{CONTROL_KEY_ICON, "mate-sticky-ctrl-latched.png", GTK_STATE_NORMAL, False},
-	{CONTROL_KEY_ICON, "mate-sticky-ctrl-locked.png", GTK_STATE_SELECTED, False},
-	{CONTROL_KEY_ICON, "mate-sticky-ctrl-none.png", GTK_STATE_INSENSITIVE, True},
-	{ALT_KEY_ICON, "mate-sticky-alt-latched.png", GTK_STATE_NORMAL, False},
-	{ALT_KEY_ICON, "mate-sticky-alt-locked.png", GTK_STATE_SELECTED, False},
-	{ALT_KEY_ICON, "mate-sticky-alt-none.png", GTK_STATE_INSENSITIVE, True},
-	{META_KEY_ICON, "mate-sticky-meta-latched.png", GTK_STATE_NORMAL, False},
-	{META_KEY_ICON, "mate-sticky-meta-locked.png", GTK_STATE_SELECTED, False},
-	{META_KEY_ICON, "mate-sticky-meta-none.png", GTK_STATE_INSENSITIVE, True},
-	{SUPER_KEY_ICON, "mate-sticky-super-latched.png", GTK_STATE_NORMAL, False},
-	{SUPER_KEY_ICON, "mate-sticky-super-locked.png", GTK_STATE_SELECTED, False},
-	{SUPER_KEY_ICON, "mate-sticky-super-none.png", GTK_STATE_INSENSITIVE, True},
-	{HYPER_KEY_ICON, "mate-sticky-hyper-latched.png", GTK_STATE_NORMAL, False},
-	{HYPER_KEY_ICON, "mate-sticky-hyper-locked.png", GTK_STATE_SELECTED, False},
-	{HYPER_KEY_ICON, "mate-sticky-hyper-none.png", GTK_STATE_INSENSITIVE, True},
-	{SLOWKEYS_IDLE_ICON, "mate-ax-slowkeys.png", GTK_STATE_NORMAL, True},
-	{SLOWKEYS_PENDING_ICON, "mate-ax-slowkeys-pending.png", GTK_STATE_NORMAL, True},
-	{SLOWKEYS_ACCEPT_ICON, "mate-ax-slowkeys-yes.png", GTK_STATE_NORMAL, True},
-	{SLOWKEYS_REJECT_ICON, "mate-ax-slowkeys-no.png", GTK_STATE_NORMAL, True},
-	{BOUNCEKEYS_ICON, "mate-ax-bouncekeys.png", GTK_STATE_NORMAL, True}
-};
+#define ICON_PADDING 4
 
 typedef struct {
 	unsigned int mask;
 	GtkWidget* indicator;
+	gchar *icon_name;
 } ModifierStruct;
 
 static ModifierStruct modifiers[] = {
-	{ShiftMask, NULL},
-	{ControlMask, NULL},
-	{Mod1Mask, NULL},
-	{Mod2Mask, NULL},
-	{Mod3Mask, NULL},
-	{Mod4Mask, NULL},
-	{Mod5Mask, NULL}
+	{ShiftMask, NULL, SHIFT_KEY_ICON},
+	{ControlMask, NULL, CONTROL_KEY_ICON},
+	{Mod1Mask, NULL, ALT_KEY_ICON},
+	{Mod2Mask, NULL, META_KEY_ICON},
+	{Mod3Mask, NULL, HYPER_KEY_ICON},
+	{Mod4Mask, NULL, SUPER_KEY_ICON},
+	{Mod5Mask, NULL, ALTGRAPH_KEY_ICON}
 };
 
 typedef struct {
 	unsigned int mask;
-	gchar* stock_id;
+	gchar* icon_name;
 } ButtonIconStruct;
 
 static ButtonIconStruct button_icons[] = {
@@ -144,7 +98,7 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		"authors", authors,
 		"documenters", documenters,
 		"translator-credits", _("translator-credits"),
-		"logo-icon-name", "mate-ax-applet",
+		"logo-icon-name", ACCESSX_APPLET,
 		NULL);
 }
 
@@ -196,7 +150,7 @@ static void dialog_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 
 	if (!error) {
 		launch_context = gdk_display_get_app_launch_context (
-			               gtk_widget_get_display (GTK_WIDGET (screen)));
+				             gtk_widget_get_display (GTK_WIDGET (sapplet->applet)));
 		gdk_app_launch_context_set_screen (launch_context, screen);
 		g_app_info_launch (appinfo, NULL, G_APP_LAUNCH_CONTEXT (launch_context), &error);
 
@@ -349,73 +303,85 @@ static void accessx_status_applet_init_modifiers(AccessxStatusApplet* sapplet)
 		{
 			modifiers[i].indicator = sapplet->ctrl_indicator;
 		}
-		else if (modifiers[i].mask == alt_mask)
+		else if (modifiers[i].mask == Mod1Mask)
 		{
 			modifiers[i].indicator = sapplet->alt_indicator;
 		}
-		else if (modifiers[i].mask == meta_mask)
+		else if (modifiers[i].mask == Mod2Mask)
 		{
 			modifiers[i].indicator = sapplet->meta_indicator;
 		}
-		else if (modifiers[i].mask == hyper_mask)
+		else if (modifiers[i].mask == Mod3Mask)
 		{
 			modifiers[i].indicator = sapplet->hyper_indicator;
 		}
-		else if (modifiers[i].mask == super_mask)
+		else if (modifiers[i].mask == Mod4Mask)
 		{
 			modifiers[i].indicator = sapplet->super_indicator;
 		}
-		else if (modifiers[i].mask == alt_gr_mask)
+		else if (modifiers[i].mask == Mod5Mask)
 		{
 			modifiers[i].indicator = sapplet->alt_graph_indicator;
 		}
 	}
 }
 
-static guint _sk_timeout = 0;
-static guint _bk_timeout = 0;
-
-static gboolean timer_reset_slowkeys_image(gpointer user_data)
+static gboolean timer_reset_slowkeys_image(AccessxStatusApplet* sapplet)
 {
-	GdkPixbuf* pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(user_data), SLOWKEYS_IDLE_ICON, icon_size_spec);
+	GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+	gint icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	gint icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
+	cairo_surface_t* surface = gtk_icon_theme_load_surface (icon_theme, SLOWKEYS_IDLE_ICON, icon_size, icon_scale, NULL, 0, NULL);
 
-	gtk_image_set_from_pixbuf(GTK_IMAGE(user_data), pixbuf);
-	g_object_unref(pixbuf);
+	gtk_image_set_from_surface(GTK_IMAGE(sapplet->slowfoo), surface);
+	cairo_surface_destroy(surface);
 
-	return FALSE;
+	return G_SOURCE_REMOVE;
 }
 
-static gboolean timer_reset_bouncekeys_image(gpointer user_data)
+static gboolean timer_reset_bouncekeys_image(AccessxStatusApplet* sapplet)
 {
-	GdkPixbuf* pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(user_data), BOUNCEKEYS_ICON, icon_size_spec);
+	GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+	gint icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	gint icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
+	cairo_surface_t* surface = gtk_icon_theme_load_surface (icon_theme, BOUNCEKEYS_ICON, icon_size, icon_scale, NULL, 0, NULL);
 
-	gtk_image_set_from_pixbuf(GTK_IMAGE(user_data), pixbuf);
-	g_object_unref(pixbuf);
+	gtk_image_set_from_surface(GTK_IMAGE(sapplet->bouncefoo), surface);
+	cairo_surface_destroy(surface);
 
-	return FALSE;
+	return G_SOURCE_REMOVE;
 }
 
-static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sapplet, GtkWidget* widget, GdkPixbuf* base, GdkColor* fg, GdkColor* bg, gchar* glyphstring)
+static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(GtkWidget* widget, GdkPixbuf* base, GdkRGBA* fg, gchar* glyphstring)
 {
 	GdkPixbuf* glyph_pixbuf;
 	cairo_surface_t *surface;
 	PangoLayout* layout;
 	PangoRectangle ink, logic;
 	PangoContext* pango_context;
+	PangoFontDescription* font_description;
+	static gint font_size = 0;
 	gint w = gdk_pixbuf_get_width(base);
 	gint h = gdk_pixbuf_get_height(base);
+	gint icon_scale = 2;
 	cairo_t *cr;
 
 	surface = gdk_window_create_similar_surface (gdk_get_default_root_window (), CAIRO_CONTENT_COLOR_ALPHA, w, h);
+
 	pango_context = gtk_widget_get_pango_context(widget);
+
+	font_description = pango_context_get_font_description(pango_context);
+	if (font_size == 0)
+		font_size = pango_font_description_get_size(font_description);
+	pango_font_description_set_size(font_description, font_size * icon_scale);
+
 	layout = pango_layout_new(pango_context);
 	pango_layout_set_alignment(layout, PANGO_ALIGN_CENTER);
 	pango_layout_set_text(layout, glyphstring, -1);
 
 	cr = cairo_create (surface);
-	gdk_cairo_set_source_color (cr, bg);
-	cairo_paint (cr);
-	gdk_cairo_set_source_color (cr, fg);
+	cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+	gdk_cairo_set_source_rgba (cr, fg);
 
 	pango_layout_get_pixel_extents(layout, &ink, &logic);
 
@@ -426,18 +392,78 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(AccessxStatusApplet* sa
 	g_object_unref(layout);
 	glyph_pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0, w, h);
 	cairo_surface_destroy (surface);
-
 	return glyph_pixbuf;
 }
 
-static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapplet, XkbAccessXNotifyEvent* event)
+static cairo_surface_t* accessx_status_applet_altgraph_image(AccessxStatusApplet *sapplet, GtkStateFlags state)
+{
+	GtkIconTheme *icon_theme;
+	cairo_t* cr;
+	GdkPixbuf* pixbuf;
+	GdkPixbuf* glyph_pixbuf;
+	GdkPixbuf* icon_base;
+	cairo_surface_t *surface;
+	GdkRGBA fg;
+	gchar* icon_name;
+	int alpha;
+	int icon_size, icon_scale;
+
+	icon_theme = gtk_icon_theme_get_default ();
+	icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
+
+	switch (state)
+	{
+		case GTK_STATE_FLAG_NORMAL:
+			icon_name = ACCESSX_BASE_ICON_BASE;
+			alpha = 255;
+			gdk_rgba_parse(&fg, "black");
+			break;
+		case GTK_STATE_FLAG_SELECTED:
+			icon_name = ACCESSX_BASE_ICON_INVERSE;
+			alpha = 255;
+			gdk_rgba_parse(&fg, "white");
+			break;
+		case GTK_STATE_FLAG_INSENSITIVE:
+		default:
+			icon_name = ACCESSX_BASE_ICON;
+			alpha = 63;
+			gdk_rgba_parse(&fg, "black");
+			break;
+	}
+
+	icon_base = gtk_icon_theme_load_icon_for_scale (icon_theme, icon_name, icon_size, icon_scale, 0, NULL);
+	pixbuf = gdk_pixbuf_copy(icon_base);
+	g_object_unref(icon_base);
+	/*
+	 * should be N_("ae"));
+	 * need en_ locale for this.
+	 */
+	/*
+	 * Translators: substitute an easily-recognized single glyph
+	 * from Level 2, i.e. an AltGraph character from a common keyboard
+	 * in your locale.
+	 */
+	glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(GTK_WIDGET(sapplet->applet), pixbuf, &fg, ("æ"));
+	gdk_pixbuf_composite(glyph_pixbuf, pixbuf, 0, 0, gdk_pixbuf_get_width(glyph_pixbuf), gdk_pixbuf_get_height(glyph_pixbuf), 0., 0., 1.0, 1.0, GDK_INTERP_NEAREST, alpha);
+	g_object_unref(glyph_pixbuf);
+
+	surface = gdk_cairo_surface_create_from_pixbuf (pixbuf, icon_scale, NULL);
+	g_object_unref(pixbuf);
+
+	return surface;
+}
+
+static cairo_surface_t* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapplet, XkbAccessXNotifyEvent* event)
 {
 	GdkPixbuf* ret_pixbuf;
+	cairo_surface_t *surface;
 	GdkWindow* window;
 	gboolean is_idle = TRUE;
-	gchar* stock_id = SLOWKEYS_IDLE_ICON;
-	GtkStyle* style = gtk_widget_get_style(GTK_WIDGET(sapplet->applet));
-	GdkColor bg = style->bg[GTK_STATE_NORMAL];
+	gchar* icon_name = SLOWKEYS_IDLE_ICON;
+	GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+	gint icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	gint icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
 
 	if (event != NULL)
 	{
@@ -446,38 +472,32 @@ static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapp
 		switch (event->detail)
 		{
 			case XkbAXN_SKPress:
-				stock_id = ACCESSX_BASE_ICON;
-				if (_sk_timeout)
-				{
-					g_source_remove(_sk_timeout);
-					_sk_timeout = 0;
-				}
+				icon_name = ACCESSX_BASE_ICON;
 				break;
 			case XkbAXN_SKAccept:
-				stock_id = ACCESSX_ACCEPT_BASE;
-				gdk_color_parse("#009900", &bg);
+				icon_name = ACCESSX_ACCEPT_BASE;
 				break;
 			case XkbAXN_SKReject:
-				stock_id = ACCESSX_REJECT_BASE;
-				gdk_color_parse("#990000", &bg);
-				_sk_timeout = g_timeout_add_full(G_PRIORITY_HIGH_IDLE, MAX(event->sk_delay, 150), timer_reset_slowkeys_image, sapplet->slowfoo, NULL);
+				icon_name = ACCESSX_REJECT_BASE;
+				g_timeout_add_full(G_PRIORITY_HIGH_IDLE, MAX(event->sk_delay, 150), (GSourceFunc)timer_reset_slowkeys_image, sapplet, NULL);
 				break;
 			case XkbAXN_SKRelease:
 			default:
-				stock_id = SLOWKEYS_IDLE_ICON;
+				icon_name = SLOWKEYS_IDLE_ICON;
 				is_idle = TRUE;
 				break;
 		}
 	}
 
-	ret_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), stock_id, icon_size_spec);
+	ret_pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, icon_name, icon_size, icon_scale, 0, NULL);
 
 	if (!is_idle)
 	{
 		GdkPixbuf* glyph_pixbuf;
 		GdkPixbuf* tmp_pixbuf;
-		GdkColor  fg;
+		GdkRGBA fg;
 		gchar* glyphstring = N_("a");
+		gint alpha;
 		tmp_pixbuf = ret_pixbuf;
 		ret_pixbuf = gdk_pixbuf_copy(tmp_pixbuf);
 		g_object_unref(tmp_pixbuf);
@@ -486,7 +506,7 @@ static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapp
 
 		if (event && window)
 		{
-			KeySym keysym = XKeycodeToKeysym(GDK_WINDOW_XDISPLAY(window), event->keycode, 0);
+			KeySym keysym = XkbKeycodeToKeysym(GDK_WINDOW_XDISPLAY(window), event->keycode, 0, 0);
 			glyphstring = XKeysymToString(keysym);
 
 			if ((!g_utf8_validate(glyphstring, -1, NULL)) || (g_utf8_strlen(glyphstring, -1) > 1))
@@ -495,64 +515,112 @@ static GdkPixbuf* accessx_status_applet_slowkeys_image(AccessxStatusApplet* sapp
 			}
 		}
 
-		fg = style->fg[gtk_widget_get_state_flags (GTK_WIDGET (sapplet->applet))];
-		glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(sapplet, GTK_WIDGET(sapplet->applet), ret_pixbuf, &fg, &bg, glyphstring);
-		gdk_pixbuf_composite(glyph_pixbuf, ret_pixbuf, 0, 0, gdk_pixbuf_get_width(glyph_pixbuf), gdk_pixbuf_get_height(glyph_pixbuf), 0., 0., 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+		switch (gtk_widget_get_state_flags (GTK_WIDGET (sapplet->applet)))
+		{
+			case GTK_STATE_FLAG_NORMAL:
+				alpha = 255;
+				gdk_rgba_parse(&fg, "black");
+				break;
+			case GTK_STATE_FLAG_SELECTED:
+				alpha = 255;
+				gdk_rgba_parse(&fg, "white");
+				break;
+			case GTK_STATE_FLAG_INSENSITIVE:
+			default:
+				alpha = 63;
+				gdk_rgba_parse(&fg, "black");
+				break;
+		}
+
+		glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(GTK_WIDGET(sapplet->applet), ret_pixbuf, &fg, glyphstring);
+		gdk_pixbuf_composite(glyph_pixbuf, ret_pixbuf, 0, 0, gdk_pixbuf_get_width(glyph_pixbuf), gdk_pixbuf_get_height(glyph_pixbuf), 0., 0., 1.0, 1.0, GDK_INTERP_NEAREST, alpha);
 		g_object_unref(glyph_pixbuf);
 	}
 
-	return ret_pixbuf;
+	surface = gdk_cairo_surface_create_from_pixbuf (ret_pixbuf, icon_scale, NULL);
+	g_object_unref(ret_pixbuf);
+
+	return surface;
 }
 
-static GdkPixbuf* accessx_status_applet_bouncekeys_image(AccessxStatusApplet* sapplet, XkbAccessXNotifyEvent* event)
+static cairo_surface_t* accessx_status_applet_bouncekeys_image(AccessxStatusApplet* sapplet, XkbAccessXNotifyEvent* event)
 {
-	GtkStyle* style;
-	GdkColor fg, bg;
+	GdkRGBA fg;
 	GdkPixbuf* icon_base = NULL;
 	GdkPixbuf* tmp_pixbuf;
+	cairo_surface_t *surface;
 	/* Note to translators: the first letter of the alphabet, not the indefinite article */
 	gchar* glyphstring = N_("a");
-	gchar* stock_id = ACCESSX_BASE_ICON;
+	gchar* icon_name = ACCESSX_BASE_ICON;
+	gint alpha;
+	GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+	gint icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	gint icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
 
 	g_assert(sapplet->applet);
-	style = gtk_widget_get_style(GTK_WIDGET(sapplet->applet));
-	fg = style->text[gtk_widget_get_state_flags (GTK_WIDGET (sapplet->applet))];
-	bg = style->base[GTK_STATE_NORMAL];
+
+	switch (gtk_widget_get_state_flags (GTK_WIDGET (sapplet->applet)))
+	{
+		case GTK_STATE_FLAG_NORMAL:
+			alpha = 255;
+			gdk_rgba_parse(&fg, "black");
+			break;
+		case GTK_STATE_FLAG_SELECTED:
+			alpha = 255;
+			gdk_rgba_parse(&fg, "white");
+			break;
+		case GTK_STATE_FLAG_INSENSITIVE:
+		default:
+			alpha = 63;
+			gdk_rgba_parse(&fg, "black");
+			break;
+	}
 
 	if (event != NULL)
 	{
 		switch (event->detail)
 		{
+			case XkbAXN_BKAccept:
+				icon_name = SLOWKEYS_ACCEPT_ICON;
+				break;
 			case XkbAXN_BKReject:
-				stock_id = SLOWKEYS_REJECT_ICON;
-				_bk_timeout = g_timeout_add_full(G_PRIORITY_HIGH_IDLE, MAX(event->debounce_delay, 150), timer_reset_bouncekeys_image, sapplet->bouncefoo, NULL);
+				icon_name = SLOWKEYS_REJECT_ICON;
+				g_timeout_add_full(G_PRIORITY_HIGH_IDLE, MAX(event->debounce_delay, 150), (GSourceFunc)timer_reset_bouncekeys_image, sapplet, NULL);
 				break;
 			default:
-				stock_id = ACCESSX_BASE_ICON;
+				icon_name = ACCESSX_BASE_ICON;
 				break;
 		}
 	}
-	tmp_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), stock_id, icon_size_spec);
+	tmp_pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, icon_name, icon_size, icon_scale, 0, NULL);
 
 	if (tmp_pixbuf)
 	{
 		GdkPixbuf* glyph_pixbuf;
 		icon_base = gdk_pixbuf_copy(tmp_pixbuf);
 		g_object_unref(tmp_pixbuf);
-		glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(sapplet, GTK_WIDGET(sapplet->applet), icon_base, &fg, &bg, glyphstring);
+		glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(GTK_WIDGET(sapplet->applet), icon_base, &fg, glyphstring);
 		gdk_pixbuf_composite(glyph_pixbuf, icon_base, 2, 2, gdk_pixbuf_get_width(glyph_pixbuf) - 2, gdk_pixbuf_get_height(glyph_pixbuf) - 2, -2., -2., 1.0, 1.0, GDK_INTERP_NEAREST, 96);
-		gdk_pixbuf_composite(glyph_pixbuf, icon_base, 1, 1, gdk_pixbuf_get_width(glyph_pixbuf) - 1, gdk_pixbuf_get_height(glyph_pixbuf) - 1, 1., 1., 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+		gdk_pixbuf_composite(glyph_pixbuf, icon_base, 1, 1, gdk_pixbuf_get_width(glyph_pixbuf) - 1, gdk_pixbuf_get_height(glyph_pixbuf) - 1, 1., 1., 1.0, 1.0, GDK_INTERP_NEAREST, alpha);
 
 		g_object_unref(glyph_pixbuf);
 	}
-	return icon_base;
+
+	surface = gdk_cairo_surface_create_from_pixbuf (icon_base, icon_scale, NULL);
+	g_object_unref(icon_base);
+
+	return surface;
 }
 
-static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sapplet, XkbStateNotifyEvent* event)
+static cairo_surface_t* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sapplet, XkbStateNotifyEvent* event)
 {
 	GdkPixbuf* mouse_pixbuf = NULL, *button_pixbuf, *dot_pixbuf, *tmp_pixbuf;
+	cairo_surface_t *surface;
 	gchar* which_dot = MOUSEKEYS_DOT_LEFT;
-	tmp_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), MOUSEKEYS_BASE_ICON, icon_size_spec);
+	GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+	gint icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	gint icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
+	tmp_pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, MOUSEKEYS_BASE_ICON, icon_size, icon_scale, 0, NULL);
 	mouse_pixbuf = gdk_pixbuf_copy(tmp_pixbuf);
 	g_object_unref(tmp_pixbuf);
 	/* composite in the buttons */
@@ -564,7 +632,7 @@ static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sap
 		{
 			if (event->ptr_buttons & button_icons[i].mask)
 			{
-				button_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), button_icons[i].stock_id, icon_size_spec);
+				button_pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, button_icons[i].icon_name, icon_size, icon_scale, 0, NULL);
 				gdk_pixbuf_composite(button_pixbuf, mouse_pixbuf, 0, 0, gdk_pixbuf_get_width(button_pixbuf), gdk_pixbuf_get_height(button_pixbuf), 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
 			}
 		}
@@ -586,13 +654,98 @@ static GdkPixbuf* accessx_status_applet_mousekeys_image(AccessxStatusApplet* sap
 				break;
 		}
 	}
-	dot_pixbuf = gtk_widget_render_icon_pixbuf(GTK_WIDGET(sapplet->applet), which_dot, icon_size_spec);
+	dot_pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, which_dot, icon_size, icon_scale, 0, NULL);
 
 	gdk_pixbuf_composite(dot_pixbuf, mouse_pixbuf, 0, 0, gdk_pixbuf_get_width(dot_pixbuf), gdk_pixbuf_get_height(dot_pixbuf), 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
 
-	return mouse_pixbuf;
+	surface = gdk_cairo_surface_create_from_pixbuf (mouse_pixbuf, icon_scale, NULL);
+	g_object_unref(mouse_pixbuf);
+
+	return surface;
 }
 
+static void accessx_status_applet_set_state_icon (AccessxStatusApplet* sapplet, ModifierStruct* modifier, GtkStateFlags state)
+{
+	cairo_surface_t* surface;
+	GtkIconTheme *icon_theme;
+	gint icon_size, icon_scale;
+	gchar *icon_name = NULL;
+
+	switch (modifier->mask)
+	{
+		case ShiftMask:
+			if (state == GTK_STATE_FLAG_SELECTED)
+				icon_name = SHIFT_KEY_ICON_LOCKED;
+			else if (state == GTK_STATE_FLAG_NORMAL)
+				icon_name = SHIFT_KEY_ICON_LATCHED;
+			else
+				icon_name = SHIFT_KEY_ICON;
+			break;
+
+		case ControlMask:
+			if (state == GTK_STATE_FLAG_SELECTED)
+				icon_name = CONTROL_KEY_ICON_LOCKED;
+			else if (state == GTK_STATE_FLAG_NORMAL)
+				icon_name = CONTROL_KEY_ICON_LATCHED;
+			else
+				icon_name = CONTROL_KEY_ICON;
+			break;
+
+		case Mod1Mask:
+			if (state == GTK_STATE_FLAG_SELECTED)
+				icon_name = ALT_KEY_ICON_LOCKED;
+			else if (state == GTK_STATE_FLAG_NORMAL)
+				icon_name = ALT_KEY_ICON_LATCHED;
+			else
+				icon_name = ALT_KEY_ICON;
+			break;
+
+		case Mod2Mask:
+			if (state == GTK_STATE_FLAG_SELECTED)
+				icon_name = META_KEY_ICON_LOCKED;
+			else if (state == GTK_STATE_FLAG_NORMAL)
+				icon_name = META_KEY_ICON_LATCHED;
+			else
+				icon_name = META_KEY_ICON;
+			break;
+
+		case Mod3Mask:
+			if (state == GTK_STATE_FLAG_SELECTED)
+				icon_name = HYPER_KEY_ICON_LOCKED;
+			else if (state == GTK_STATE_FLAG_NORMAL)
+				icon_name = HYPER_KEY_ICON_LATCHED;
+			else
+				icon_name = HYPER_KEY_ICON;
+			break;
+
+		case Mod4Mask:
+			if (state == GTK_STATE_FLAG_SELECTED)
+				icon_name = SUPER_KEY_ICON_LOCKED;
+			else if (state == GTK_STATE_FLAG_NORMAL)
+				icon_name = SUPER_KEY_ICON_LATCHED;
+			else
+				icon_name = SUPER_KEY_ICON;
+			break;
+
+		case Mod5Mask:
+			surface = accessx_status_applet_altgraph_image(sapplet, state);
+			break;
+	}
+
+	if (surface == NULL && icon_name != NULL)
+	{
+		icon_theme = gtk_icon_theme_get_default();
+		icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+		icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
+		surface = gtk_icon_theme_load_surface (icon_theme, icon_name, icon_size, icon_scale, NULL, 0, NULL);
+	}
+
+	if (surface != NULL)
+	{
+		gtk_image_set_from_surface(GTK_IMAGE(modifier->indicator), surface);
+		cairo_surface_destroy(surface);
+	}
+}
 
 static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxStatusNotifyType notify_type, XkbEvent* event)
 {
@@ -625,16 +778,17 @@ static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxSt
 				if (locked_mods & modifiers[i].mask)
 				{
 					gtk_widget_set_sensitive(modifiers[i].indicator, TRUE);
-					gtk_widget_set_state_flags (modifiers[i].indicator, GTK_STATE_FLAG_SELECTED, TRUE);
+					accessx_status_applet_set_state_icon (sapplet, &modifiers[i], GTK_STATE_FLAG_SELECTED);
 				}
 				else if (latched_mods & modifiers[i].mask)
 				{
 					gtk_widget_set_sensitive(modifiers[i].indicator, TRUE);
-					gtk_widget_set_state_flags (modifiers[i].indicator, GTK_STATE_FLAG_NORMAL, TRUE);
+					accessx_status_applet_set_state_icon (sapplet, &modifiers[i], GTK_STATE_FLAG_NORMAL);
 				}
 				else
 				{
 					gtk_widget_set_sensitive(modifiers[i].indicator, FALSE);
+					accessx_status_applet_set_state_icon (sapplet, &modifiers[i], GTK_STATE_FLAG_INSENSITIVE);
 				}
 			}
 		}
@@ -642,23 +796,23 @@ static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxSt
 
 	if ((notify_type & ACCESSX_STATUS_SLOWKEYS) && (event != NULL))
 	{
-		GdkPixbuf* pixbuf = accessx_status_applet_slowkeys_image(sapplet, &event->accessx);
-		gtk_image_set_from_pixbuf(GTK_IMAGE(sapplet->slowfoo), pixbuf);
-		g_object_unref(pixbuf);
+		cairo_surface_t* surface = accessx_status_applet_slowkeys_image(sapplet, &event->accessx);
+		gtk_image_set_from_surface(GTK_IMAGE(sapplet->slowfoo), surface);
+		cairo_surface_destroy(surface);
 	}
 
 	if ((notify_type & ACCESSX_STATUS_BOUNCEKEYS) && (event != NULL))
 	{
-		GdkPixbuf* pixbuf = accessx_status_applet_bouncekeys_image(sapplet, &event->accessx);
-		gtk_image_set_from_pixbuf(GTK_IMAGE(sapplet->bouncefoo), pixbuf);
-		g_object_unref(pixbuf);
+		cairo_surface_t* surface = accessx_status_applet_bouncekeys_image(sapplet, &event->accessx);
+		gtk_image_set_from_surface(GTK_IMAGE(sapplet->bouncefoo), surface);
+		cairo_surface_destroy(surface);
 	}
 
 	if ((notify_type & ACCESSX_STATUS_MOUSEKEYS) && (event != NULL))
 	{
-		GdkPixbuf* pixbuf = accessx_status_applet_mousekeys_image(sapplet, &event->state);
-		gtk_image_set_from_pixbuf(GTK_IMAGE(sapplet->mousefoo),  pixbuf);
-		g_object_unref(pixbuf);
+		cairo_surface_t* surface = accessx_status_applet_mousekeys_image(sapplet, &event->state);
+		gtk_image_set_from_surface(GTK_IMAGE(sapplet->mousefoo), surface);
+		cairo_surface_destroy(surface);
 	}
 
 	if (notify_type & ACCESSX_STATUS_ENABLED)
@@ -765,11 +919,12 @@ static void accessx_status_applet_notify_xkb_device(AccessxStatusApplet* sapplet
 		if (event->led_state &= ALT_GRAPH_LED_MASK)
 		{
 			gtk_widget_set_sensitive(sapplet->alt_graph_indicator, TRUE);
-			gtk_widget_set_state_flags (sapplet->alt_graph_indicator, GTK_STATE_FLAG_NORMAL, TRUE);
+			accessx_status_applet_set_state_icon (sapplet, &modifiers[Mod5Mask], GTK_STATE_FLAG_NORMAL);
 		}
 		else
 		{
 			gtk_widget_set_sensitive(sapplet->alt_graph_indicator, FALSE);
+			accessx_status_applet_set_state_icon (sapplet, &modifiers[Mod5Mask], GTK_STATE_FLAG_INSENSITIVE);
 		}
 	}
 }
@@ -830,122 +985,6 @@ static GdkFilterReturn accessx_status_xkb_filter(GdkXEvent* gdk_xevent, GdkEvent
 	}
 
 	return GDK_FILTER_CONTINUE;
-}
-
-static GtkIconSet* accessx_status_applet_altgraph_icon_set(AccessxStatusApplet* sapplet, GtkWidget* widget)
-{
-	GtkIconSet* icon_set = gtk_icon_set_new();
-	gint i;
-	GtkStateType states[3] = {GTK_STATE_NORMAL, GTK_STATE_INSENSITIVE, GTK_STATE_SELECTED};
-	GtkStyle* style = gtk_widget_get_style(widget);
-	GdkPixbuf* icon_base;
-
-	gtk_widget_set_sensitive(widget, TRUE);
-
-	for (i = 0; i < 3; ++i)
-	{
-		int alpha;
-		GdkColor* fg;
-		GdkColor* bg;
-		GtkIconSource* source = gtk_icon_source_new();
-		GdkPixbuf* pixbuf;
-		GdkPixbuf* glyph_pixbuf;
-		gboolean wildcarded = FALSE;
-		fg = &style->text[states[i]];
-		bg = &style->white;
-		switch (states[i])
-		{
-			case GTK_STATE_NORMAL:
-				alpha = 255;
-				gtk_widget_set_sensitive(widget, TRUE);
-				gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
-				break;
-			case GTK_STATE_SELECTED:
-				/* FIXME: should use text/base here, for selected ? */
-				fg = &style->white;
-				bg = &style->black;
-				alpha = 255;
-				gtk_widget_set_sensitive(widget, TRUE);
-				gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_SELECTED, TRUE);
-				break;
-			case GTK_STATE_INSENSITIVE:
-			default:
-				alpha = 63;
-				gtk_widget_set_sensitive(widget, FALSE);
-				wildcarded = TRUE;
-				break;
-		}
-
-		icon_base = gtk_widget_render_icon_pixbuf(widget, ACCESSX_BASE_ICON, icon_size_spec);
-		pixbuf = gdk_pixbuf_copy(icon_base);
-		g_object_unref(icon_base);
-		/*
-		* should be N_("ae"));
-		* need en_ locale for this.
-		*/
-		/*
-		* Translators: substitute an easily-recognized single glyph
-		* from Level 2, i.e. an AltGraph character from a common keyboard
-		* in your locale.
-		*/
-		glyph_pixbuf = accessx_status_applet_get_glyph_pixbuf(sapplet, widget, pixbuf, fg, bg, ("æ"));
-		gdk_pixbuf_composite(glyph_pixbuf, pixbuf, 0, 0, gdk_pixbuf_get_width(glyph_pixbuf), gdk_pixbuf_get_height(glyph_pixbuf), 0., 0., 1.0, 1.0, GDK_INTERP_NEAREST, alpha);
-		g_object_unref(glyph_pixbuf);
-		gtk_icon_source_set_pixbuf(source, pixbuf);
-		gtk_icon_source_set_state(source, states[i]);
-		gtk_icon_source_set_state_wildcarded(source, wildcarded);
-		gtk_icon_set_add_source(icon_set, source);
-		gtk_icon_source_free(source);
-	}
-	/* we mucked about with the box's state to create the icons; restore it to normal */
-	gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
-	gtk_widget_set_sensitive(widget, TRUE);
-
-	return icon_set;
-}
-
-static void accessx_applet_add_stock_icons(AccessxStatusApplet* sapplet, GtkWidget* widget)
-{
-	GtkIconFactory* factory = gtk_icon_factory_new();
-	gint i = 0;
-	GtkIconSet* icon_set;
-
-	gtk_icon_factory_add_default(factory);
-
-	while (i <  G_N_ELEMENTS(stock_icons))
-	{
-		gchar* set_name = stock_icons[i].stock_id;
-		icon_set = gtk_icon_set_new();
-
-		do {
-			char* filename;
-			GtkIconSource* source = gtk_icon_source_new();
-			filename = g_build_filename(ACCESSX_PIXMAPS_DIR, stock_icons[i].name, NULL);
-
-			if (g_file_test(filename, G_FILE_TEST_EXISTS) && g_file_test(filename, G_FILE_TEST_IS_REGULAR))
-			{
-				gtk_icon_source_set_filename(source, filename);
-			}
-			else
-			{
-				GtkIconSet* default_set = gtk_icon_factory_lookup_default(GTK_STOCK_MISSING_IMAGE);
-				gtk_icon_source_set_pixbuf(source, gtk_icon_set_render_icon(default_set, gtk_widget_get_style(widget), GTK_TEXT_DIR_NONE, GTK_STATE_NORMAL, icon_size_spec, widget, NULL));
-			}
-			g_free(filename);
-			gtk_icon_source_set_state(source, stock_icons[i].state);
-			gtk_icon_source_set_state_wildcarded(source, stock_icons[i].wildcarded);
-			gtk_icon_set_add_source(icon_set, source);
-			gtk_icon_source_free(source);
-			++i;
-		} while (set_name == stock_icons[i].stock_id);
-		gtk_icon_factory_add(factory, set_name, icon_set);
-		gtk_icon_set_unref(icon_set);
-	}
-	/* now create the stock icons for AltGr, which are internationalized */
-	icon_set = accessx_status_applet_altgraph_icon_set (sapplet, widget);
-	gtk_icon_factory_add(factory, ALTGRAPH_KEY_ICON, icon_set);
-	gtk_icon_set_unref(icon_set);
-	sapplet->icon_factory = factory;
 }
 
 static void accessx_status_applet_reparent_widget(GtkWidget* widget, GtkContainer* container)
@@ -1015,7 +1054,6 @@ static void disable_applet(AccessxStatusApplet* sapplet)
 	gtk_widget_hide(sapplet->shift_indicator);
 	gtk_widget_hide(sapplet->ctrl_indicator);
 	gtk_widget_hide(sapplet->alt_indicator);
-	gtk_widget_hide(sapplet->meta_indicator);
 	gtk_widget_hide(sapplet->mousefoo);
 	gtk_widget_hide(sapplet->stickyfoo);
 	gtk_widget_hide(sapplet->slowfoo);
@@ -1057,8 +1095,9 @@ static AccessxStatusApplet* create_applet(MatePanelApplet* applet)
 	GtkWidget* box;
 	GtkWidget* stickyfoo;
 	AtkObject* atko;
-	GdkPixbuf* pixbuf;
-	gint large_toolbar_pixels;
+	cairo_surface_t *surface;
+	GtkIconTheme *icon_theme;
+	gint icon_size, icon_scale;
 
 	g_set_application_name(_("AccessX Status"));
 
@@ -1083,50 +1122,65 @@ static AccessxStatusApplet* create_applet(MatePanelApplet* applet)
 	}
 
 	gtk_box_set_homogeneous (GTK_BOX (stickyfoo), TRUE);
-	large_toolbar_pixels = 24; /* FIXME */
 
-	if (mate_panel_applet_get_size(sapplet->applet) >= large_toolbar_pixels)
-	{
-		icon_size_spec = GTK_ICON_SIZE_LARGE_TOOLBAR;
-	}
-	else
-	{
-		icon_size_spec = GTK_ICON_SIZE_SMALL_TOOLBAR;
-	}
+	icon_theme = gtk_icon_theme_get_default();
+	icon_size = mate_panel_applet_get_size(sapplet->applet) - ICON_PADDING;
+	icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
 
-	accessx_applet_add_stock_icons(sapplet, box);
-	pixbuf = accessx_status_applet_mousekeys_image(sapplet, NULL);
-	sapplet->mousefoo = gtk_image_new_from_pixbuf(pixbuf);
-	g_object_unref(pixbuf);
+	surface = accessx_status_applet_mousekeys_image(sapplet, NULL);
+	sapplet->mousefoo = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_hide(sapplet->mousefoo);
 
-	sapplet->shift_indicator = gtk_image_new_from_stock(SHIFT_KEY_ICON, icon_size_spec);
-	sapplet->ctrl_indicator = gtk_image_new_from_stock(CONTROL_KEY_ICON, icon_size_spec);
-	sapplet->alt_indicator = gtk_image_new_from_stock(ALT_KEY_ICON, icon_size_spec);
-	sapplet->meta_indicator = gtk_image_new_from_stock(META_KEY_ICON, icon_size_spec);
+	surface = gtk_icon_theme_load_surface (icon_theme, SHIFT_KEY_ICON, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->shift_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
+
+	surface = gtk_icon_theme_load_surface (icon_theme, CONTROL_KEY_ICON, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->ctrl_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
+
+	surface = gtk_icon_theme_load_surface (icon_theme, ALT_KEY_ICON, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->alt_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
+
+	surface = gtk_icon_theme_load_surface (icon_theme, META_KEY_ICON, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->meta_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_set_sensitive(sapplet->meta_indicator, FALSE);
 	gtk_widget_hide(sapplet->meta_indicator);
-	sapplet->hyper_indicator = gtk_image_new_from_stock(HYPER_KEY_ICON, icon_size_spec);
+
+	surface = gtk_icon_theme_load_surface (icon_theme, HYPER_KEY_ICON, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->hyper_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_set_sensitive(sapplet->hyper_indicator, FALSE);
 	gtk_widget_hide(sapplet->hyper_indicator);
-	sapplet->super_indicator = gtk_image_new_from_stock(SUPER_KEY_ICON, icon_size_spec);
+
+	surface = gtk_icon_theme_load_surface (icon_theme, SUPER_KEY_ICON, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->super_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_set_sensitive(sapplet->super_indicator, FALSE);
 	gtk_widget_hide(sapplet->super_indicator);
-	sapplet->alt_graph_indicator = gtk_image_new_from_stock(ALTGRAPH_KEY_ICON, icon_size_spec);
+
+	surface = accessx_status_applet_altgraph_image(sapplet, GTK_STATE_FLAG_NORMAL);
+	sapplet->alt_graph_indicator = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_set_sensitive(sapplet->alt_graph_indicator, FALSE);
 
-	pixbuf = accessx_status_applet_slowkeys_image(sapplet, NULL);
-	sapplet->slowfoo = gtk_image_new_from_pixbuf(pixbuf);
-	g_object_unref(pixbuf);
+	surface = accessx_status_applet_slowkeys_image(sapplet, NULL);
+	sapplet->slowfoo = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_hide(sapplet->slowfoo);
 
-	pixbuf = accessx_status_applet_bouncekeys_image(sapplet, NULL);
-	sapplet->bouncefoo = gtk_image_new_from_pixbuf(pixbuf);
-	g_object_unref(pixbuf);
+	surface = accessx_status_applet_bouncekeys_image(sapplet, NULL);
+	sapplet->bouncefoo = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
 	gtk_widget_hide(sapplet->bouncefoo);
 
-	sapplet->idlefoo = gtk_image_new_from_stock(ACCESSX_APPLET, icon_size_spec);
-	gtk_widget_show(sapplet->slowfoo);
+	surface = gtk_icon_theme_load_surface (icon_theme, ACCESSX_APPLET, icon_size, icon_scale, NULL, 0, NULL);
+	sapplet->idlefoo = gtk_image_new_from_surface(surface);
+	cairo_surface_destroy(surface);
+	gtk_widget_show(sapplet->idlefoo);
 
 	accessx_status_applet_layout_box(sapplet, box, stickyfoo);
 	atko = gtk_widget_get_accessible(GTK_WIDGET(sapplet->applet));
@@ -1177,7 +1231,29 @@ static void accessx_status_applet_reorient(GtkWidget* widget, MatePanelAppletOri
 
 static void accessx_status_applet_resize(GtkWidget* widget, int size, gpointer user_data)
 {
-	/* TODO: either rescale icons to fit panel, or tile them when possible */
+	cairo_surface_t *surface;
+
+	AccessxStatusApplet* sapplet = user_data;
+	GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+	gint icon_scale = gtk_widget_get_scale_factor(GTK_WIDGET(sapplet->applet));
+
+	accessx_status_applet_update(sapplet, ACCESSX_STATUS_ALL, NULL);
+
+	surface = accessx_status_applet_slowkeys_image(sapplet, NULL);
+	gtk_image_set_from_surface(GTK_IMAGE(sapplet->slowfoo), surface);
+	cairo_surface_destroy(surface);
+
+	surface = accessx_status_applet_bouncekeys_image(sapplet, NULL);
+	gtk_image_set_from_surface(GTK_IMAGE(sapplet->bouncefoo), surface);
+	cairo_surface_destroy(surface);
+
+	surface = accessx_status_applet_mousekeys_image(sapplet, NULL);
+	gtk_image_set_from_surface(GTK_IMAGE(sapplet->mousefoo), surface);
+	cairo_surface_destroy(surface);
+
+	surface = gtk_icon_theme_load_surface (icon_theme, ACCESSX_APPLET, size - ICON_PADDING, icon_scale, NULL, 0, NULL);
+	gtk_image_set_from_surface(GTK_IMAGE(sapplet->idlefoo), surface);
+	cairo_surface_destroy(surface);
 }
 
 static gboolean button_press_cb(GtkWidget* widget, GdkEventButton* event, AccessxStatusApplet* sapplet)
