@@ -527,6 +527,10 @@ po/Makefile.in
 accessx-status/Makefile
 accessx-status/docs/Makefile
 accessx-status/pixmaps/Makefile
+accessx-status/pixmaps/16x16/Makefile
+accessx-status/pixmaps/24x24/Makefile
+accessx-status/pixmaps/32x32/Makefile
+accessx-status/pixmaps/48x48/Makefile
 drivemount/Makefile
 drivemount/help/Makefile
 drivemount/org.mate.drivemount.gschema.xml
