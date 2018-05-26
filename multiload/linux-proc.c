@@ -1,6 +1,7 @@
 /* From wmload.c, v0.9.2, licensed under the GPL. */
 #include <config.h>
 #include <sys/types.h>
+#include <sys/statvfs.h>
 #include <math.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -119,12 +120,20 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
 
     for (i = 0; i < mountlist.number; i++)
     {
+        struct statvfs statresult;
         glibtop_fsusage fsusage;
 
         if (strcmp(mountentries[i].type, "smbfs") == 0
             || strcmp(mountentries[i].type, "nfs") == 0
             || strcmp(mountentries[i].type, "cifs") == 0)
             continue;
+
+        if (statvfs (mountentries[i].mountdir, &statresult) < 0)
+        {
+            g_debug ("Failed to get statistics for mount entry: %s. Reason: %s. Skipping entry.",
+                     mountentries[i].mountdir, strerror(errno));
+            continue;
+        }
 
         glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
         read += fsusage.read; write += fsusage.write;
