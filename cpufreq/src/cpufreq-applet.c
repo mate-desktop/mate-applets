@@ -103,9 +103,6 @@ static gboolean cpufreq_applet_key_press         (GtkWidget          *widget,
                                                   GdkEventKey        *event);
 static void     cpufreq_applet_size_allocate     (GtkWidget          *widget,
                                                   GtkAllocation      *allocation);
-static void     cpufreq_applet_get_preferred_width   (GtkWidget *widget,
-                                                      gint *minimum_width,
-                                                      gint *natural_width);
 static void     cpufreq_applet_change_orient     (MatePanelApplet        *pa,
                                                   MatePanelAppletOrient   orient);
 static void     cpufreq_applet_style_updated     (GtkWidget *widget);
@@ -224,7 +221,6 @@ cpufreq_applet_class_init (CPUFreqAppletClass *klass)
 
         widget_class->size_allocate = cpufreq_applet_size_allocate;
         widget_class->style_updated = cpufreq_applet_style_updated;
-	widget_class->get_preferred_width = cpufreq_applet_get_preferred_width;
         widget_class->button_press_event = cpufreq_applet_button_press;
         widget_class->key_press_event = cpufreq_applet_key_press;
 
@@ -364,46 +360,6 @@ cpufreq_applet_get_max_unit_width (CPUFreqApplet *applet)
 	applet->max_unit_width = MAX (get_max_text_width (applet->unit_label, "GHz"),
 	                              get_max_text_width (applet->unit_label, "MHz"));
 	return applet->max_unit_width;
-}
-
-static void
-cpufreq_applet_get_preferred_width (GtkWidget *widget, gint *minimum_width, gint *natural_width)
-{
-	CPUFreqApplet *applet;
-	gint           labels_width = 0;
-	gint           width;
-	gint           scale;
-
-	applet = CPUFREQ_APPLET (widget);
-	scale = gtk_widget_get_scale_factor (widget);
-
-	if (applet->orient == MATE_PANEL_APPLET_ORIENT_LEFT ||
-	    applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
-		return;
-
-
- 	if (applet->show_freq) {
-		labels_width += cpufreq_applet_get_max_label_width (applet) + 2;
- 	}
- 
- 	if (applet->show_perc) {
-		labels_width += cpufreq_applet_get_max_perc_width (applet);
- 	}
- 
- 	if (applet->show_unit) {
-		labels_width += cpufreq_applet_get_max_unit_width (applet);
-	}
-
-	if (applet->show_icon) {
-		gint icon_width;
-
-		gtk_widget_get_preferred_width (applet->icon, &icon_width, NULL);
-		width = (labels_width + icon_width + 2);
-	} else {
-		width = labels_width;
-	}
-
-	*minimum_width = *natural_width = width / scale;
 }
 
 static void
@@ -579,6 +535,10 @@ cpufreq_applet_style_updated (GtkWidget *widget)
         applet->max_perc_width = 0;
 
         cpufreq_applet_refresh (applet);
+
+        /*Reset label sizes to zero that have been held to maximum reached width*/
+        gtk_widget_set_size_request (GTK_WIDGET (applet->label), 0, 0);
+        gtk_widget_set_size_request (GTK_WIDGET (applet->unit_label), 0, 0);
 }
 
 static void
@@ -809,6 +769,9 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
 
         if (applet->show_unit) {
                 gtk_label_set_text (GTK_LABEL (applet->unit_label), unit_label);
+                /*Hold the largest size set by MHZ or GHZ to prevent jumping */
+                gtk_widget_get_preferred_size (GTK_WIDGET (applet->unit_label),&req, NULL);
+                gtk_widget_set_size_request (GTK_WIDGET (applet->unit_label),req.width, req.height);
         }
 
         if (applet->show_icon) {
