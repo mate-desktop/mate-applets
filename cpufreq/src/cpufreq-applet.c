@@ -688,7 +688,13 @@ cpufreq_applet_update (CPUFreqApplet *applet, CPUFreqMonitor *monitor)
         unit_label = cpufreq_utils_get_frequency_unit (freq);
 
         if (applet->show_freq) {
-                gtk_label_set_text (GTK_LABEL (applet->label), freq_label);
+                /*Force the label to render if frequencies are not found right away*/
+                if (freq_label == NULL){
+                        gtk_label_set_text (GTK_LABEL (applet->label),"---");
+                }
+                else{
+                        gtk_label_set_text (GTK_LABEL (applet->label), freq_label);
+                }
                 /*Hold the largest size set by any jumping text */
                 gtk_widget_get_preferred_size (GTK_WIDGET (applet->label),&req, NULL);
                 gtk_widget_set_size_request (GTK_WIDGET (applet->label),req.width, req.height);
