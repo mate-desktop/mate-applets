@@ -95,10 +95,8 @@ stickynote_show_popup_menu (GtkWidget *widget, GdkEventButton *event, GtkWidget 
 {
 	if (event->type == GDK_BUTTON_PRESS && event->button == 3)
 	{
-		gtk_menu_popup (GTK_MENU (popup_menu),
-				NULL, NULL,
-				NULL, NULL,
-				event->button, event->time);
+		gtk_menu_popup_at_pointer (GTK_MENU (popup_menu),
+		                           (const GdkEvent*) event);
 	}
 
 	return FALSE;
