@@ -778,7 +778,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	#ifdef RADARMAP
 		GtkWidget* radar_toggle_hbox;
 	#endif /* RADARMAP */
-	GtkWidget* pref_basic_update_alignment;
 	GtkWidget* pref_basic_update_lbl;
 	GtkWidget* pref_basic_update_hbox;
 	GtkAdjustment* pref_basic_update_spin_adj;
@@ -833,12 +832,10 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_container_set_border_width (GTK_CONTAINER (pref_basic_vbox), 12);
 	gtk_container_add (GTK_CONTAINER (pref->priv->notebook), pref_basic_vbox);
 
-	pref_basic_update_alignment = gtk_alignment_new (0, 0.5, 0, 1);
-	gtk_widget_show (pref_basic_update_alignment);
-
 	pref->priv->basic_update_btn = gtk_check_button_new_with_mnemonic (_("_Automatically update every:"));
+	gtk_widget_set_halign (pref->priv->basic_update_btn, GTK_ALIGN_START);
+	gtk_widget_set_vexpand (pref->priv->basic_update_btn, TRUE);
 	gtk_widget_show (pref->priv->basic_update_btn);
-	gtk_container_add (GTK_CONTAINER (pref_basic_update_alignment), pref->priv->basic_update_btn);
 	g_signal_connect (G_OBJECT (pref->priv->basic_update_btn), "toggled", G_CALLBACK (auto_update_toggled), pref);
 
 	if (!g_settings_is_writable (pref->priv->applet->settings, "auto-update"))
@@ -1062,7 +1059,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	value_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 
-	gtk_box_pack_start (GTK_BOX (pref_basic_update_hbox), pref_basic_update_alignment, FALSE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (pref_basic_update_hbox), pref->priv->basic_update_btn, FALSE, TRUE, 0);
 	gtk_box_pack_start (GTK_BOX (pref_basic_update_hbox), value_hbox, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (value_hbox), pref->priv->basic_update_spin, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (value_hbox), pref_basic_update_sec_lbl, FALSE, FALSE, 0);
