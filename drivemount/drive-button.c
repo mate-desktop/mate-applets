@@ -183,67 +183,6 @@ _gtk_get_monitor_num (GdkMonitor *monitor)
     return -1;
 }
 
-/* the following function is adapted from gtkmenuitem.c */
-static void
-position_menu (GtkMenu *menu, gint *x, gint *y,
-	       gboolean *push_in, gpointer user_data)
-{
-    GtkWidget *widget = GTK_WIDGET (user_data);
-    GdkScreen *screen;
-    gint twidth, theight, tx, ty;
-    GtkAllocation allocation;
-    GtkRequisition requisition;
-    GtkTextDirection direction;
-    GdkRectangle monitor;
-    GdkMonitor *monitor_num;
-    GdkDisplay *display;
-
-    g_return_if_fail (menu != NULL);
-    g_return_if_fail (x != NULL);
-    g_return_if_fail (y != NULL);
-
-    if (push_in) *push_in = FALSE;
-
-    direction = gtk_widget_get_direction (widget);
-
-    gtk_widget_get_preferred_size (GTK_WIDGET (menu), &requisition, NULL);
-    twidth = requisition.width;
-    theight = requisition.height;
-
-    screen = gtk_widget_get_screen (GTK_WIDGET (menu));
-    display =gdk_screen_get_display (screen);
-    monitor_num = gdk_display_get_monitor_at_window (display, gtk_widget_get_window (widget));
-    if (monitor_num == NULL)
-        monitor_num = gdk_display_get_monitor (display, 0);
-    gdk_monitor_get_geometry (monitor_num, &monitor);
-
-    if (!gdk_window_get_origin (gtk_widget_get_window (widget), &tx, &ty)) {
-	g_warning ("Menu not on screen");
-	return;
-    }
-
-    gtk_widget_get_allocation (widget, &allocation);
-    tx += allocation.x;
-    ty += allocation.y;
-
-    if (direction == GTK_TEXT_DIR_RTL)
-	tx += allocation.width - twidth;
-
-    if ((ty + allocation.height + theight) <= monitor.y + monitor.height)
-	ty += allocation.height;
-    else if ((ty - theight) >= monitor.y)
-	ty -= theight;
-    else if (monitor.y + monitor.height - (ty + allocation.height) > ty)
-	ty += allocation.height;
-    else
-	ty -= theight;
-
-    *x = CLAMP (tx, monitor.x, MAX (monitor.x, monitor.x + monitor.width - twidth));
-    *y = ty;
-
-    gtk_menu_set_monitor (menu, _gtk_get_monitor_num (monitor_num));
-}
-
 static gboolean
 drive_button_button_press (GtkWidget      *widget,
 			   GdkEventButton *event)
@@ -254,9 +193,11 @@ drive_button_button_press (GtkWidget      *widget,
     if (event->button == 1) {
 	drive_button_ensure_popup (self);
 	if (self->popup_menu) {
-	    gtk_menu_popup (GTK_MENU (self->popup_menu), NULL, NULL,
-			    position_menu, self,
-			    event->button, event->time);
+		gtk_menu_popup_at_widget (GTK_MENU (self->popup_menu),
+		                          widget,
+		                          GDK_GRAVITY_SOUTH_WEST,
+		                          GDK_GRAVITY_NORTH_WEST,
+		                          (const GdkEvent*) event);
 	}
 	return TRUE;
     }
@@ -276,9 +217,11 @@ drive_button_key_press (GtkWidget      *widget,
     case GDK_KEY_Return:
 	drive_button_ensure_popup (self);
 	if (self->popup_menu) {
-	    gtk_menu_popup (GTK_MENU (self->popup_menu), NULL, NULL,
-			    position_menu, self,
-			    0, event->time);
+		gtk_menu_popup_at_widget (GTK_MENU (self->popup_menu),
+		                          widget,
+		                          GDK_GRAVITY_SOUTH_WEST,
+		                          GDK_GRAVITY_NORTH_WEST,
+		                          (const GdkEvent*) event);
 	}
 	return TRUE;
     }
