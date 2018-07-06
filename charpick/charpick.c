@@ -329,40 +329,6 @@ populate_menu (charpick_data *curr_data)
 }
 
 static void
-get_menu_pos (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer data)
-{
-	charpick_data *curr_data = data;
-	GtkRequisition  reqmenu;
-	gint tempx, tempy, width, height;
-	gint screen_width, screen_height;
-
-	gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &reqmenu);
-	gdk_window_get_origin (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), &tempx, &tempy);
-	gdk_window_get_geometry (GDK_WINDOW (gtk_widget_get_window(curr_data->applet)), NULL, NULL,
-				 &width, &height
-				 );
-     			      
-	switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (curr_data->applet))) {
-	case MATE_PANEL_APPLET_ORIENT_DOWN:
-		tempy += height;
-		break;
-	case MATE_PANEL_APPLET_ORIENT_UP:
-		tempy -= reqmenu.height;
-		break;
-	case MATE_PANEL_APPLET_ORIENT_LEFT:
-		tempx -= reqmenu.width;
-		break;
-	case MATE_PANEL_APPLET_ORIENT_RIGHT:
-		tempx += width;
-		break;
-	}
-	screen_width = WidthOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
-	screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
-	*x = CLAMP (tempx, 0, MAX (0, screen_width - reqmenu.width));
-	*y = CLAMP (tempy, 0, MAX (0, screen_height - reqmenu.height));
-}
-
-static void
 chooser_button_clicked (GtkButton *button, charpick_data *curr_data)
 {
 	if (gtk_widget_get_visible (curr_data->menu))
@@ -371,8 +337,11 @@ chooser_button_clicked (GtkButton *button, charpick_data *curr_data)
 		gtk_menu_set_screen (GTK_MENU (curr_data->menu),
 				gtk_widget_get_screen (GTK_WIDGET (curr_data->applet)));
 		
-		gtk_menu_popup (GTK_MENU (curr_data->menu), NULL, NULL, get_menu_pos, curr_data,
-				0, gtk_get_current_event_time());
+		gtk_menu_popup_at_widget (GTK_MENU (curr_data->menu),
+		                          GTK_WIDGET (button),
+		                          GDK_GRAVITY_SOUTH_WEST,
+		                          GDK_GRAVITY_NORTH_WEST,
+		                          NULL);
 	}				    
 }
 
