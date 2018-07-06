@@ -86,20 +86,22 @@ xstuff_get_current_workspace (GtkWindow *window)
 	int     format;
 	int     result;
 	int     retval;
-	Display *gdk_display;
+	GdkDisplay *gdk_display;
+	Display *xdisplay;
 
 	root_window = GDK_WINDOW_XID (gtk_widget_get_window (GTK_WIDGET (window)));
-	gdk_display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
+    gdk_display = gdk_display_get_default ();
+	xdisplay = GDK_DISPLAY_XDISPLAY (gdk_display);
 
-	gdk_error_trap_push ();
-	result = XGetWindowProperty (gdk_display,
+	gdk_x11_display_error_trap_push (gdk_display);
+	result = XGetWindowProperty (xdisplay,
 				     root_window,
 				     xstuff_atom_get ("_NET_CURRENT_DESKTOP"),
 				     0, G_MAXLONG,
 				     False, XA_CARDINAL,
 				     &type, &format, &nitems,
 				     &bytes_after, (gpointer) &num);
-	if (gdk_error_trap_pop () || result != Success)
+	if (gdk_x11_display_error_trap_pop (gdk_display) || result != Success)
 		return -1;
  
 	if (type != XA_CARDINAL) {
