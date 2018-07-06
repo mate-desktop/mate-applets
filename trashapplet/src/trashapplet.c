@@ -221,7 +221,7 @@ trash_applet_init (TrashApplet *applet)
                                       GTK_WIDGET (applet));
 
   /* setup the image */
-  applet->image = g_object_ref_sink (gtk_image_new ());
+  applet->image = g_object_ref_sink (GTK_IMAGE (gtk_image_new ()));
   gtk_container_add (GTK_CONTAINER (applet),
                      GTK_WIDGET (applet->image));
   gtk_widget_show (GTK_WIDGET (applet->image));
