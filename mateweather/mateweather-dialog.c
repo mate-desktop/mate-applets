@@ -165,13 +165,13 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   GtkWidget *cond_apparent_lbl;
   GtkWidget *cond_sunrise_lbl;
   GtkWidget *cond_sunset_lbl;
-  GtkWidget *cond_frame_alignment;
+  GtkWidget *cond_vbox;
   GtkWidget *current_note_lbl;
   GtkWidget *forecast_note_lbl;
   GtkWidget *radar_note_lbl;
   GtkWidget *radar_vbox;
   GtkWidget *radar_link_btn;
-  GtkWidget *radar_link_alignment;
+  GtkWidget *radar_link_box;
   GtkWidget *forecast_hbox;
   GtkWidget *ebox;
   GtkWidget *scrolled_window;
@@ -392,14 +392,16 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   gtk_label_set_justify (GTK_LABEL (priv->cond_sunset), GTK_JUSTIFY_LEFT);
   gtk_label_set_xalign (GTK_LABEL (priv->cond_sunset), 0.0);
 
-  cond_frame_alignment = gtk_alignment_new (0.5, 0, 1, 0);
-  gtk_widget_show (cond_frame_alignment);
-  gtk_box_pack_end (GTK_BOX (cond_hbox), cond_frame_alignment, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (cond_frame_alignment), 2);
+  cond_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+  gtk_widget_set_valign (cond_vbox, GTK_ALIGN_START);
+  gtk_widget_set_vexpand (cond_vbox, TRUE);
+  gtk_widget_show (cond_vbox);
+  gtk_box_pack_end (GTK_BOX (cond_hbox), cond_vbox, FALSE, FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (cond_vbox), 2);
 
   priv->cond_image = gtk_image_new_from_icon_name ("stock-unknown", GTK_ICON_SIZE_BUTTON);
   gtk_widget_show (priv->cond_image);
-  gtk_container_add (GTK_CONTAINER (cond_frame_alignment), priv->cond_image);
+  gtk_container_add (GTK_CONTAINER (cond_vbox), priv->cond_image);
 
   current_note_lbl = gtk_label_new (_("Current Conditions"));
   gtk_widget_show (current_note_lbl);
@@ -463,16 +465,18 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
 
       gtk_container_add (GTK_CONTAINER (ebox), priv->radar_image);
 
-      radar_link_alignment = gtk_alignment_new (0.5, 0.5, 0, 0);
-      gtk_widget_show (radar_link_alignment);
-      gtk_box_pack_start (GTK_BOX (radar_vbox), radar_link_alignment, FALSE, FALSE, 0);
+      radar_link_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+      gtk_widget_set_halign (radar_link_box, GTK_ALIGN_CENTER);
+      gtk_widget_set_hexpand (radar_link_box, TRUE);
+      gtk_widget_show (radar_link_box);
+      gtk_box_pack_start (GTK_BOX (radar_vbox), radar_link_box, FALSE, FALSE, 0);
 
       radar_link_btn = gtk_button_new_with_mnemonic (_("_Visit Weather.com"));
       set_access_namedesc (radar_link_btn, _("Visit Weather.com"), _("Click to Enter Weather.com"));
       gtk_widget_set_size_request (radar_link_btn, 450, -2);
       gtk_widget_show (radar_link_btn);
       if (!g_settings_get_boolean (gw_applet->settings, "use-custom-radar-url"))
-          gtk_container_add (GTK_CONTAINER (radar_link_alignment), radar_link_btn);
+          gtk_container_add (GTK_CONTAINER (radar_link_box), radar_link_btn);
 
       g_signal_connect (G_OBJECT (radar_link_btn), "clicked",
                         G_CALLBACK (link_cb), NULL);
