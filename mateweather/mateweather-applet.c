@@ -185,7 +185,7 @@ static void place_widgets (MateWeatherApplet *gw_applet)
         gw_applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
     /* Rebuild the applet it's visual area */
-    gtk_container_add (GTK_CONTAINER (gw_applet->container), gw_applet->box);
+    gtk_container_add (GTK_CONTAINER (gw_applet->applet), gw_applet->box);
     gtk_box_pack_start (GTK_BOX (gw_applet->box), gw_applet->image, TRUE, TRUE, 0);
     gtk_box_pack_start (GTK_BOX (gw_applet->box), gw_applet->label, TRUE, TRUE, 0);
 
@@ -339,9 +339,6 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
     g_set_application_name (_("Weather Report"));
 
     gtk_window_set_default_icon_name ("weather-storm");
-
-    gw_applet->container = gtk_alignment_new (0.5, 0.5, 0, 0);
-    gtk_container_add (GTK_CONTAINER (gw_applet->applet), gw_applet->container);
 
     g_signal_connect (G_OBJECT(gw_applet->applet), "change_orient",
                        G_CALLBACK(change_orient_cb), gw_applet);
