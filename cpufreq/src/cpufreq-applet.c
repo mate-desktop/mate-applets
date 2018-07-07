@@ -302,54 +302,6 @@ get_max_text_width (GtkWidget *widget,
 }
 
 static void
-cpufreq_applet_popup_position_menu (GtkMenu  *menu,
-                                    int      *x,
-                                    int      *y,
-                                    gboolean *push_in,
-                                    gpointer  gdata)
-{
-        GtkWidget      *widget;
-        GtkRequisition  requisition;
-        GtkAllocation   allocation;
-        gint            menu_xpos;
-        gint            menu_ypos;
-
-        widget = GTK_WIDGET (gdata);
-
-        gtk_widget_get_preferred_size (GTK_WIDGET (menu), &requisition, NULL);
-
-        gdk_window_get_origin (gtk_widget_get_window (widget), &menu_xpos, &menu_ypos);
-
-        gtk_widget_get_allocation (widget, &allocation);
-
-        menu_xpos += allocation.x;
-        menu_ypos += allocation.y;
-
-        switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (widget))) {
-        case MATE_PANEL_APPLET_ORIENT_DOWN:
-        case MATE_PANEL_APPLET_ORIENT_UP:
-                if (menu_ypos > HeightOfScreen (gdk_x11_screen_get_xscreen (gtk_widget_get_screen (widget))) / 2)
-                        menu_ypos -= requisition.height;
-                else
-                        menu_ypos += allocation.height;
-                break;
-        case MATE_PANEL_APPLET_ORIENT_RIGHT:
-        case MATE_PANEL_APPLET_ORIENT_LEFT:
-                if (menu_xpos > WidthOfScreen (gdk_x11_screen_get_xscreen (gtk_widget_get_screen (widget))) / 2)
-                        menu_xpos -= requisition.width;
-                else
-                        menu_xpos += allocation.width;
-                break;
-        default:
-                g_assert_not_reached ();
-        }
-
-        *x = menu_xpos;
-        *y = menu_ypos;
-        if (push_in) *push_in = FALSE;  /*fix bottom panel menu rendering in gtk3*/
-}
-
-static void
 cpufreq_applet_menu_popup (CPUFreqApplet *applet,
                            guint32        time)
 {
@@ -381,10 +333,11 @@ cpufreq_applet_menu_popup (CPUFreqApplet *applet,
         gtk_style_context_add_class(context,"gnome-panel-menu-bar");
         gtk_style_context_add_class(context,"mate-panel-menu-bar");
 
-        gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-                        cpufreq_applet_popup_position_menu,
-                        (gpointer) applet,
-                        1, time);
+        gtk_menu_popup_at_widget (GTK_MENU (menu),
+                                  GTK_WIDGET (applet),
+                                  GDK_GRAVITY_SOUTH_WEST,
+                                  GDK_GRAVITY_NORTH_WEST,
+                                  NULL);
 }
 
 static gboolean
