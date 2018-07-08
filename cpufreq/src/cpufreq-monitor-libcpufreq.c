@@ -98,6 +98,10 @@ cpufreq_monitor_libcpufreq_new (guint cpu)
         return CPUFREQ_MONITOR (monitor);
 }
 
+#if LINUX_VERSION_CODE > KERNEL_VERSION(4, 7, 0)
+extern int cpupower_is_cpu_online (unsigned int cpu);
+#endif
+
 static gboolean
 cpufreq_monitor_libcpufreq_run (CPUFreqMonitor *monitor)
 {
