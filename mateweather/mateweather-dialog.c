@@ -502,6 +502,50 @@ static PangoFontDescription* get_system_monospace_font(void)
     return desc;
 }
 
+static void
+override_widget_font (GtkWidget            *widget,
+                      PangoFontDescription *font)
+{
+    static GtkCssProvider *provider = NULL;
+    gchar       *css;
+    gchar       *family;
+    gchar       *weight;
+    const gchar *style;
+    gchar       *size;
+
+    family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
+
+    weight = g_strdup_printf ("font-weight: %d;", pango_font_description_get_weight (font));
+
+    if (pango_font_description_get_style (font) == PANGO_STYLE_NORMAL)
+        style = "font-style: normal;";
+    else if (pango_font_description_get_style (font) == PANGO_STYLE_ITALIC)
+        style = "font-style: italic;";
+    else
+        style = "font-style: oblique;";
+
+    size = g_strdup_printf ("font-size: %d%s;",
+                            pango_font_description_get_size (font) / PANGO_SCALE,
+                            pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
+
+    if (provider)
+        gtk_style_context_remove_provider (gtk_widget_get_style_context (widget),
+                                           GTK_STYLE_PROVIDER (provider));
+    else
+        provider = gtk_css_provider_new ();
+
+    css = g_strdup_printf ("* { %s %s %s %s }", family, weight, style, size);
+    gtk_css_provider_load_from_data (provider, css, -1, NULL);
+
+    gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
+                                    GTK_STYLE_PROVIDER (provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_free (css);
+    g_free (family);
+    g_free (weight);
+    g_free (size);
+}
+
 void mateweather_dialog_update(MateWeatherDialog* dialog)
 {
     MateWeatherDialogPrivate *priv;
@@ -542,7 +586,7 @@ void mateweather_dialog_update(MateWeatherDialog* dialog)
     if (gw_applet->mateweather_pref.location->zone_valid) {
 	font_desc = get_system_monospace_font ();
 	if (font_desc) {
-            gtk_widget_override_font (priv->forecast_text, font_desc);
+            override_widget_font (priv->forecast_text, font_desc);
             pango_font_description_free (font_desc);
 	}
 
