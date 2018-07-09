@@ -437,7 +437,16 @@ cpufreq_popup_menu_set_active_action (CPUFreqPopup   *popup,
 
 	g_snprintf (name, sizeof (name), "%s%s", prefix, item);
 	action = gtk_action_group_get_action (action_group, name);
-	
+
+	/* gtk_action_group_get_action can return NULL with frequencies (userspace governor)
+	 * when the CPU does not actually stay locked to that exact frequency but rather to a
+	 * frequency range. Since cpufreq_monitor_get_frequency gets the realtime frequency, this
+	 * may not match any named frequency and then returns NULL. Return when this happens to
+	 * avoid segfaults
+	 */
+	if (action == NULL)
+		return;
+
 	g_signal_handlers_block_by_func (action,
 					 cpufreq_popup_frequencies_menu_activate,
 					 popup);
