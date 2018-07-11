@@ -345,7 +345,6 @@ trash_empty_show_confirmation_dialog (GtkWidget *parent)
 
   gtk_window_set_screen (GTK_WINDOW (dialog), screen);
   atk_object_set_role (gtk_widget_get_accessible (dialog), ATK_ROLE_ALERT);
-  gtk_window_set_wmclass (GTK_WINDOW (dialog), "empty_trash", "Caja");
 
   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-cancel",
                          GTK_RESPONSE_CANCEL);
