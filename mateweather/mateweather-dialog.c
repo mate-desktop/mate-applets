@@ -44,6 +44,7 @@ struct _MateWeatherDialogPrivate {
 	GtkWidget* cond_image;
 	GtkWidget* forecast_text;
 	GtkWidget* radar_image;
+	GtkCssProvider *provider;
 
 	MateWeatherApplet* applet;
 };
@@ -503,15 +504,18 @@ static PangoFontDescription* get_system_monospace_font(void)
 }
 
 static void
-override_widget_font (GtkWidget            *widget,
+override_widget_font (MateWeatherDialog* dialog,
+                      GtkWidget            *widget,
                       PangoFontDescription *font)
 {
-    static GtkCssProvider *provider = NULL;
+    MateWeatherDialogPrivate *priv;
     gchar       *css;
     gchar       *family;
     gchar       *weight;
     const gchar *style;
     gchar       *size;
+
+    priv = dialog->priv;
 
     family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
 
@@ -528,17 +532,12 @@ override_widget_font (GtkWidget            *widget,
                             pango_font_description_get_size (font) / PANGO_SCALE,
                             pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
 
-    if (provider)
-        gtk_style_context_remove_provider (gtk_widget_get_style_context (widget),
-                                           GTK_STYLE_PROVIDER (provider));
-    else
-        provider = gtk_css_provider_new ();
 
     css = g_strdup_printf ("* { %s %s %s %s }", family, weight, style, size);
-    gtk_css_provider_load_from_data (provider, css, -1, NULL);
+    gtk_css_provider_load_from_data (priv->provider, css, -1, NULL);
 
     gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
-                                    GTK_STYLE_PROVIDER (provider),
+                                    GTK_STYLE_PROVIDER (priv->provider),
                                     GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     g_free (css);
     g_free (family);
@@ -586,7 +585,7 @@ void mateweather_dialog_update(MateWeatherDialog* dialog)
     if (gw_applet->mateweather_pref.location->zone_valid) {
 	font_desc = get_system_monospace_font ();
 	if (font_desc) {
-            override_widget_font (priv->forecast_text, font_desc);
+            override_widget_font (dialog, priv->forecast_text, font_desc);
             pango_font_description_free (font_desc);
 	}
 
@@ -637,6 +636,7 @@ static void mateweather_dialog_get_property(GObject* object, guint prop_id, GVal
 static void mateweather_dialog_init(MateWeatherDialog* self)
 {
     self->priv = MATEWEATHER_DIALOG_GET_PRIVATE (self);
+    self->priv->provider = gtk_css_provider_new ();
 }
 
 static GObject* mateweather_dialog_constructor(GType type, guint n_construct_params, GObjectConstructParam* construct_params)
