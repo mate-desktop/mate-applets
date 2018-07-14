@@ -481,10 +481,12 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   }
 
   g_signal_connect (G_OBJECT (dialog), "response", G_CALLBACK (response_cb), NULL);
-  priv->provider = gtk_css_provider_new ();
-  gtk_style_context_add_provider (gtk_widget_get_style_context(GTK_WIDGET(priv->forecast_text)),
+  if (priv->forecast_text!=NULL){
+      priv->provider = gtk_css_provider_new ();
+      gtk_style_context_add_provider (gtk_widget_get_style_context(GTK_WIDGET(priv->forecast_text)),
                                     GTK_STYLE_PROVIDER (priv->provider),
                                     GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  }
 
 }
 
