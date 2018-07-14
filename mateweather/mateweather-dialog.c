@@ -44,6 +44,7 @@ struct _MateWeatherDialogPrivate {
 	GtkWidget* cond_image;
 	GtkWidget* forecast_text;
 	GtkWidget* radar_image;
+	GtkCssProvider *provider;
 
 	MateWeatherApplet* applet;
 };
@@ -484,6 +485,12 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   }
 
   g_signal_connect (G_OBJECT (dialog), "response", G_CALLBACK (response_cb), NULL);
+  if (priv->forecast_text!=NULL){
+      priv->provider = gtk_css_provider_new ();
+      gtk_style_context_add_provider (gtk_widget_get_style_context(GTK_WIDGET(priv->forecast_text)),
+                                    GTK_STYLE_PROVIDER (priv->provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  }
 
 }
 
@@ -504,6 +511,44 @@ static PangoFontDescription* get_system_monospace_font(void)
     g_object_unref (settings);
 
     return desc;
+}
+
+static void
+override_widget_font (MateWeatherDialog* dialog,
+                      PangoFontDescription *font)
+{
+    MateWeatherDialogPrivate *priv;
+    gchar       *css;
+    gchar       *family;
+    gchar       *weight;
+    const gchar *style;
+    gchar       *size;
+
+    priv = dialog->priv;
+
+    family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
+
+    weight = g_strdup_printf ("font-weight: %d;", pango_font_description_get_weight (font));
+
+    if (pango_font_description_get_style (font) == PANGO_STYLE_NORMAL)
+        style = "font-style: normal;";
+    else if (pango_font_description_get_style (font) == PANGO_STYLE_ITALIC)
+        style = "font-style: italic;";
+    else
+        style = "font-style: oblique;";
+
+    size = g_strdup_printf ("font-size: %d%s;",
+                            pango_font_description_get_size (font) / PANGO_SCALE,
+                            pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
+
+
+    css = g_strdup_printf ("* { %s %s %s %s }", family, weight, style, size);
+    gtk_css_provider_load_from_data (priv->provider, css, -1, NULL);
+
+    g_free (css);
+    g_free (family);
+    g_free (weight);
+    g_free (size);
 }
 
 void mateweather_dialog_update(MateWeatherDialog* dialog)
@@ -546,7 +591,7 @@ void mateweather_dialog_update(MateWeatherDialog* dialog)
     if (gw_applet->mateweather_pref.location->zone_valid) {
 	font_desc = get_system_monospace_font ();
 	if (font_desc) {
-            gtk_widget_override_font (priv->forecast_text, font_desc);
+            override_widget_font (dialog, font_desc);
             pango_font_description_free (font_desc);
 	}
 
@@ -629,6 +674,17 @@ static void mateweather_dialog_unrealize(GtkWidget* widget)
 
     GTK_WIDGET_CLASS(mateweather_dialog_parent_class)->unrealize(widget);
 }
+static void
+mateweather_dialog_dispose (GObject *object)
+{
+    MateWeatherDialog *dialog;
+
+    dialog = MATEWEATHER_DIALOG (object);
+
+    g_clear_object (&dialog->priv->provider);
+
+    G_OBJECT_CLASS (mateweather_dialog_parent_class)->dispose (object);
+}
 
 static void mateweather_dialog_class_init(MateWeatherDialogClass* klass)
 {
@@ -641,6 +697,7 @@ static void mateweather_dialog_class_init(MateWeatherDialogClass* klass)
     object_class->get_property = mateweather_dialog_get_property;
     object_class->constructor = mateweather_dialog_constructor;
     widget_class->unrealize = mateweather_dialog_unrealize;
+    object_class->dispose = mateweather_dialog_dispose;
 
     /* This becomes an OBJECT property when MateWeatherApplet is redone */
     g_object_class_install_property(object_class, PROP_MATEWEATHER_APPLET, g_param_spec_pointer ("mateweather-applet", "MateWeather Applet", "The MateWeather Applet", G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
