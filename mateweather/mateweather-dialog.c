@@ -104,6 +104,7 @@ static void response_cb(MateWeatherDialog* dialog, gint id, gpointer data)
 
 	mateweather_dialog_update (dialog);
     } else {
+        g_object_unref(dialog->priv->provider);
         gtk_widget_destroy (GTK_WIDGET(dialog));
     }
 }
@@ -481,6 +482,10 @@ static void mateweather_dialog_create(MateWeatherDialog* dialog)
   }
 
   g_signal_connect (G_OBJECT (dialog), "response", G_CALLBACK (response_cb), NULL);
+  priv->provider = gtk_css_provider_new ();
+  gtk_style_context_add_provider (gtk_widget_get_style_context(GTK_WIDGET(priv->forecast_text)),
+                                    GTK_STYLE_PROVIDER (priv->provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
 }
 
@@ -505,7 +510,6 @@ static PangoFontDescription* get_system_monospace_font(void)
 
 static void
 override_widget_font (MateWeatherDialog* dialog,
-                      GtkWidget            *widget,
                       PangoFontDescription *font)
 {
     MateWeatherDialogPrivate *priv;
@@ -536,9 +540,6 @@ override_widget_font (MateWeatherDialog* dialog,
     css = g_strdup_printf ("* { %s %s %s %s }", family, weight, style, size);
     gtk_css_provider_load_from_data (priv->provider, css, -1, NULL);
 
-    gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
-                                    GTK_STYLE_PROVIDER (priv->provider),
-                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     g_free (css);
     g_free (family);
     g_free (weight);
@@ -585,7 +586,7 @@ void mateweather_dialog_update(MateWeatherDialog* dialog)
     if (gw_applet->mateweather_pref.location->zone_valid) {
 	font_desc = get_system_monospace_font ();
 	if (font_desc) {
-            override_widget_font (dialog, priv->forecast_text, font_desc);
+            override_widget_font (dialog, font_desc);
             pango_font_description_free (font_desc);
 	}
 
@@ -636,7 +637,6 @@ static void mateweather_dialog_get_property(GObject* object, guint prop_id, GVal
 static void mateweather_dialog_init(MateWeatherDialog* self)
 {
     self->priv = MATEWEATHER_DIALOG_GET_PRIVATE (self);
-    self->priv->provider = gtk_css_provider_new ();
 }
 
 static GObject* mateweather_dialog_constructor(GType type, guint n_construct_params, GObjectConstructParam* construct_params)
