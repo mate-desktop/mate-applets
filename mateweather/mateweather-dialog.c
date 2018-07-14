@@ -104,7 +104,6 @@ static void response_cb(MateWeatherDialog* dialog, gint id, gpointer data)
 
 	mateweather_dialog_update (dialog);
     } else {
-        g_object_unref(dialog->priv->provider);
         gtk_widget_destroy (GTK_WIDGET(dialog));
     }
 }
@@ -669,6 +668,17 @@ static void mateweather_dialog_unrealize(GtkWidget* widget)
 
     GTK_WIDGET_CLASS(mateweather_dialog_parent_class)->unrealize(widget);
 }
+static void
+mateweather_dialog_dispose (GObject *object)
+{
+    MateWeatherDialog *dialog;
+
+    dialog = MATEWEATHER_DIALOG (object);
+
+    g_clear_object (&dialog->priv->provider);
+
+    G_OBJECT_CLASS (mateweather_dialog_parent_class)->dispose (object);
+}
 
 static void mateweather_dialog_class_init(MateWeatherDialogClass* klass)
 {
@@ -681,6 +691,7 @@ static void mateweather_dialog_class_init(MateWeatherDialogClass* klass)
     object_class->get_property = mateweather_dialog_get_property;
     object_class->constructor = mateweather_dialog_constructor;
     widget_class->unrealize = mateweather_dialog_unrealize;
+    object_class->dispose = mateweather_dialog_dispose;
 
     /* This becomes an OBJECT property when MateWeatherApplet is redone */
     g_object_class_install_property(object_class, PROP_MATEWEATHER_APPLET, g_param_spec_pointer ("mateweather-applet", "MateWeather Applet", "The MateWeather Applet", G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
