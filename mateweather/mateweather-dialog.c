@@ -539,7 +539,7 @@ override_widget_font (GtkWidget            *widget,
     gtk_css_provider_load_from_data (provider, css, -1, NULL);
 
     if (!provider_added) {
-        gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
+        gtk_style_context_add_provider(gtk_widget_get_style_context(GTK_WIDGET(widget)),
                                                    GTK_STYLE_PROVIDER (provider),
                                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
         provider_added = TRUE;
