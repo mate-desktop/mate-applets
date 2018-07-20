@@ -535,11 +535,12 @@ override_widget_font (GtkWidget            *widget,
 
     provider = gtk_css_provider_get_default ();
 
-    css = g_strdup_printf ("textview { %s %s %s %s }", family, weight, style, size);
+    gtk_widget_set_name(GTK_WIDGET(widget), "MateWeatherAppletTextView");
+    css = g_strdup_printf ("#MateWeatherAppletTextView { %s %s %s %s }", family, weight, style, size);
     gtk_css_provider_load_from_data (provider, css, -1, NULL);
 
     if (!provider_added) {
-        gtk_style_context_add_provider(gtk_widget_get_style_context(GTK_WIDGET(widget)),
+        gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
                                                    GTK_STYLE_PROVIDER (provider),
                                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
         provider_added = TRUE;
