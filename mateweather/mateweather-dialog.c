@@ -511,7 +511,7 @@ override_widget_font (GtkWidget            *widget,
                       PangoFontDescription *font)
 {
     static gboolean provider_added = FALSE;
-    GtkCssProvider *provider;
+    static GtkCssProvider *provider;
     gchar          *css;
     gchar          *family;
     gchar          *weight;
@@ -532,8 +532,8 @@ override_widget_font (GtkWidget            *widget,
     size = g_strdup_printf ("font-size: %d%s;",
                             pango_font_description_get_size (font) / PANGO_SCALE,
                             pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
-
-    provider = gtk_css_provider_get_default ();
+    if (!provider_added)
+        provider = gtk_css_provider_new ();
 
     gtk_widget_set_name(GTK_WIDGET(widget), "MateWeatherAppletTextView");
     css = g_strdup_printf ("#MateWeatherAppletTextView { %s %s %s %s }", family, weight, style, size);
