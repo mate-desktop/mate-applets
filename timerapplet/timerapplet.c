@@ -72,12 +72,14 @@ static void timer_start_callback (GtkAction *action, TimerApplet *applet);
 static void timer_pause_callback (GtkAction *action, TimerApplet *applet);
 static void timer_stop_callback (GtkAction *action, TimerApplet *applet);
 static void timer_about_callback (GtkAction *action, TimerApplet *applet);
+static void timer_reset_callback (GtkAction *action, TimerApplet *applet);
 static void timer_preferences_callback (GtkAction *action, TimerApplet *applet);
 
 static const GtkActionEntry applet_menu_actions [] = {
     { "Start", "media-playback-start", N_("_Start timer"), NULL, NULL, G_CALLBACK (timer_start_callback) },
     { "Pause", "media-playback-pause", N_("P_ause timer"), NULL, NULL, G_CALLBACK (timer_pause_callback) },
     { "Stop", "media-playback-stop", N_("S_top timer"), NULL, NULL, G_CALLBACK (timer_stop_callback) },
+    { "Reset", "edit-undo", N_("R_eset"), NULL, NULL, G_CALLBACK (timer_reset_callback) },
     { "Preferences", "document-properties", N_("_Preferences"), NULL, NULL, G_CALLBACK (timer_preferences_callback) },
     { "About", "help-about", N_("_About"), NULL, NULL, G_CALLBACK (timer_about_callback) }
 };
@@ -85,8 +87,9 @@ static const GtkActionEntry applet_menu_actions [] = {
 static char *ui = "<menuitem name='Item 1' action='Start' />"
                   "<menuitem name='Item 2' action='Pause' />"
                   "<menuitem name='Item 3' action='Stop' />"
-                  "<menuitem name='Item 4' action='Preferences' />"
-                  "<menuitem name='Item 5' action='About' />";
+                  "<menuitem name='Item 4' action='Reset' />"
+                  "<menuitem name='Item 5' action='Preferences' />"
+                  "<menuitem name='Item 6' action='About' />";
 
 static void
 timer_applet_destroy (MatePanelApplet *applet_widget, TimerApplet *applet)
@@ -121,6 +124,9 @@ timer_callback (TimerApplet *applet)
 
     if (!applet->active)
     {
+        applet->pause = FALSE;
+        applet->elapsed = 0;
+
         gtk_label_set_text (applet->label, name);
         gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), "");
         gtk_widget_hide (GTK_WIDGET (applet->pause_image));
@@ -137,7 +143,10 @@ timer_callback (TimerApplet *applet)
         if (remaining <= 0)
         {
             applet->active = FALSE;
-            gtk_label_set_text (applet->label, _("Finished"));
+            applet->timeout_id = 0;
+
+            label = g_strdup_printf ("Finished %s", name);
+            gtk_label_set_text (applet->label, label);
             gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), name);
             gtk_widget_hide (GTK_WIDGET (applet->pause_image));
 
@@ -197,6 +206,7 @@ timer_callback (TimerApplet *applet)
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Start"), !applet->active || applet->pause);
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Pause"), applet->active && !applet->pause);
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Stop"), applet->active);
+    gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Reset"), !applet->active && !applet->pause && applet->elapsed);
     gtk_action_set_sensitive (gtk_action_group_get_action (applet->action_group, "Preferences"), !applet->active && !applet->pause);
 
     g_free (name);
@@ -239,6 +249,16 @@ timer_stop_callback (GtkAction *action, TimerApplet *applet)
         g_source_remove(applet->timeout_id);
         applet->timeout_id = 0;
     }
+    timer_callback (applet);
+}
+
+/* reset action */
+static void
+timer_reset_callback (GtkAction *action, TimerApplet *applet)
+{
+    applet->active = FALSE;
+    applet->pause = FALSE;
+    applet->elapsed = 0;
     timer_callback (applet);
 }
 
@@ -359,6 +379,18 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
 
+static gboolean
+timer_applet_click (TimerApplet *applet)
+{
+    if (!applet->active && !applet->pause && applet->elapsed)
+        timer_reset_callback (NULL, applet);
+    else if (applet->active && !applet->pause)
+        timer_pause_callback (NULL, applet);
+    else if (!applet->active || applet->pause)
+        timer_start_callback (NULL, applet);
+    return FALSE;
+}
+
 static void
 timer_settings_changed (GSettings *settings, gchar *key, TimerApplet *applet)
 {
@@ -411,6 +443,9 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     g_signal_connect(G_OBJECT (applet->applet), "destroy",
                      G_CALLBACK (timer_applet_destroy),
                      applet);
+
+    g_signal_connect_swapped(GTK_WIDGET (applet->applet), "button-release-event",
+                             G_CALLBACK (timer_applet_click), applet);
 
     /* set up context menu */
     applet->action_group = gtk_action_group_new ("Timer Applet Actions");
