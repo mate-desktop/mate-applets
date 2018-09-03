@@ -317,6 +317,7 @@ void stickynote_free(StickyNote *note)
 	gtk_widget_destroy(note->w_window);
 
 	g_free(note->color);
+	g_free(note->font_color);
 	g_free(note->font);
 
 	g_free(note);
