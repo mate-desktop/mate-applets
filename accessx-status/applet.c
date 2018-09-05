@@ -660,6 +660,7 @@ static cairo_surface_t* accessx_status_applet_mousekeys_image(AccessxStatusApple
 
 	surface = gdk_cairo_surface_create_from_pixbuf (mouse_pixbuf, icon_scale, NULL);
 	g_object_unref(mouse_pixbuf);
+	g_object_unref(dot_pixbuf);
 
 	return surface;
 }
