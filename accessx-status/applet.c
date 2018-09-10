@@ -634,6 +634,7 @@ static cairo_surface_t* accessx_status_applet_mousekeys_image(AccessxStatusApple
 			{
 				button_pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, button_icons[i].icon_name, icon_size, icon_scale, 0, NULL);
 				gdk_pixbuf_composite(button_pixbuf, mouse_pixbuf, 0, 0, gdk_pixbuf_get_width(button_pixbuf), gdk_pixbuf_get_height(button_pixbuf), 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+				g_object_unref(button_pixbuf);
 			}
 		}
 	}
