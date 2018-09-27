@@ -1,5 +1,62 @@
 #! /bin/sh
 
 PACKAGE=mate-applets;
+ACCESSX=mate-accessx-status;
+BATT=mate-battstat;
+CHAR=mate-char-palette;
+FREQ=mate-cpufreq-applet;
+DRIVE=mate-drivemount;
+GEYES=mate-geyes;
+WEATHER=mateweather;
+MULTI=mate-multiload;
+NET=mate-netspeed-applet;
+STICKY=mate-stickynotes-applet;
+TRASH=mate-trashapplet;
 
+# main translation
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .
+
+# accessx-status
+make -C accessx-status/docs $ACCESSX.pot \
+&& mv accessx-status/docs/$ACCESSX.pot .
+
+# battstat
+make -C battstat/docs $BATT.pot \
+&& mv battstat/docs/$BATT.pot .
+
+# charpick
+make -C charpick/help $CHAR.pot \
+&& mv charpick/help/$CHAR.pot .
+
+# cpufreq
+make -C cpufreq/help $FREQ.pot \
+&& mv cpufreq/help/$FREQ.pot .
+
+# drivemount
+make -C drivemount/help $DRIVE.pot \
+&& mv drivemount/help/$DRIVE.pot .
+
+# geyes
+make -C geyes/docs $GEYES.pot \
+&& mv geyes/docs/$GEYES.pot .
+
+# weather
+make -C mateweather/docs $WEATHER.pot \
+&& mv mateweather/docs/$WEATHER.pot .
+
+# multiload
+make -C multiload/docs $MULTI.pot \
+&& mv multiload/docs/$MULTI.pot .
+
+# netspeed
+make -C netspeed/help $NET.pot \
+&& mv netspeed/help/$NET.pot .
+
+# stickynotes
+make -C stickynotes/docs $STICKY.pot \
+&& mv stickynotes/docs/$STICKY.pot .
+
+# trashapplet
+make -C trashapplet/docs $TRASH.pot \
+&& mv trashapplet/docs/$TRASH.pot .
+
