@@ -663,7 +663,6 @@ static cairo_surface_t* accessx_status_applet_mousekeys_image(AccessxStatusApple
 	g_object_unref(mouse_pixbuf);
 	g_object_unref(dot_pixbuf);
 
-
 	return surface;
 }
 
