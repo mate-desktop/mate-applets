@@ -4,7 +4,6 @@ HELP_ID = mate-char-palette
 HELP_FILES = index.docbook legal.xml
 
 HELP_MEDIA = figures/charpalette_applet.png \
-		figures/charpalette_chargroup.png \
 		figures/charpick_characters.png \
 		figures/charpick-preferences.png
 
