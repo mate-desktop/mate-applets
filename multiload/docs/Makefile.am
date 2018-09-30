@@ -4,8 +4,7 @@ HELP_ID = mate-multiload
 HELP_FILES = index.docbook legal.xml
 
 HELP_MEDIA = figures/multiload-preferences.png \
-		figures/system-monitor-applet_window.png \
-		figures/system_monitor.png
+		figures/system-monitor-applet_window.png
 
 HELP_LINGUAS = ca cs de el en_GB es eu fi fr ko oc pa pt_BR ru sv uk zh_CN
 
