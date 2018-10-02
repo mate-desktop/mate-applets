@@ -282,7 +282,7 @@ properties_cb (GtkAction  *action,
 		return;
 	}
 
-        pbox = gtk_dialog_new_with_buttons (_("Geyes Preferences"), NULL,
+        pbox = gtk_dialog_new_with_buttons (_("Eyes Preferences"), NULL,
         				     GTK_DIALOG_DESTROY_WITH_PARENT,
 					     GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
 					     GTK_STOCK_HELP, GTK_RESPONSE_HELP,
