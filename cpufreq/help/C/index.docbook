@@ -161,13 +161,36 @@
 	 </figure> 
     <!-- ==== End of Figure ======================================= -->
     <para>The <application>&applet;</application> provides a convenient way to monitor the CPU Frequency Scaling for each CPU.
-		</para> 
-	 <para>To add <application>&applet;</application> to a panel, right-click on the panel to open the panel popup menu, then choose 
-		<menuchoice> 
-		  <guimenu>Add to Panel</guimenu> 
-		  <guimenuitem>CPU Frequency Scaling Monitor</guimenuitem> 
-		</menuchoice>.</para> 
-	
+		</para>
+
+      <para>
+        To add <application>&applet;</application> to a panel, perform the
+        following steps:
+      </para>
+      <orderedlist>
+        <listitem>
+          <para>
+            Right-click on the panel.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Choose <guimenuitem>Add to Panel</guimenuitem>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Scroll down the list of items in the <guilabel>Add to Panel</guilabel>
+            dialog, then select <guilabel>&applet;</guilabel>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Click <guibutton>Add</guibutton>.
+          </para>
+        </listitem>
+      </orderedlist>
+
     <note><para>
      Unfortunately, CPU frequency scaling can currently only be monitored on
      Linux machines that have support in the kernel. It can however, support the
