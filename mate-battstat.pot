@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"POT-Creation-Date: 2018-09-28 23:03+0200\n"
+"POT-Creation-Date: 2018-10-03 12:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -237,7 +237,7 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/index.docbook:216
-#: C/index.docbook:333
+#: C/index.docbook:356
 msgctxt "_"
 msgid "external ref='figures/battstat-applet.png' md5='0eb703dddd361e6f637c49c3b01cf860'"
 msgstr ""
@@ -259,61 +259,81 @@ msgstr ""
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:234
-msgid "To add <application>Battery Charge Monitor</application> to a panel, right-click on the panel, then choose <guimenuitem>Add to Panel</guimenuitem>. Select <application>Battery Charge Monitor</application> in the <application>Add to the panel</application> dialog, then click <guibutton>OK</guibutton>."
+msgid "To add <application>Battery Charge Monitor</application> to a panel, perform the following steps:"
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:240
+msgid "Right-click on the panel."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:245
+msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:250
+msgid "Scroll down the list of items in the <guilabel>Add to Panel</guilabel> dialog, then select <guilabel>Battery Charge Monitor</guilabel>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:256
+msgid "Click <guibutton>Add</guibutton>."
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:239
+#: C/index.docbook:261
 msgid "The layout of the <application>Battery Charge Monitor</application> applet varies depending on the size and type of panel in which the applet resides."
 msgstr ""
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:245
+#: C/index.docbook:268
 msgid "Power Management Backends"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:247
+#: C/index.docbook:270
 msgid "The battery monitor supports a number of power management backends. If it is available, the monitor will attempt to use the freedesktop.org <ulink url=\"http://upower.freedesktop.org/\">upower</ulink> interface. If it is unavailable or unsupported on your platform, it will fall back to the freedesktop.org <ulink url=\"http://freedesktop.org/Software/hal\">HAL (Hardware Abstraction Layer)</ulink>. If that is also not available, the battery monitor will attempt direct access to the power management system"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:257
+#: C/index.docbook:280
 msgid "Not all power management backends are available from all vendors, and some vendors add their own additional backends for specific platforms and hardware. If the battery monitor is misreporting information from your battery see <xref linkend=\"battstat-troubleshooting\"/>."
 msgstr ""
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:266
+#: C/index.docbook:289
 msgid "Getting Help"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:267
+#: C/index.docbook:290
 msgid "If the battery monitor doesn't work for you, see these additional resources:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:272
+#: C/index.docbook:295
 msgid "<xref linkend=\"battstat-troubleshooting\"/>;"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:275
+#: C/index.docbook:298
 msgid "<ulink url=\"http://ml.mate-desktop.org/listinfo/\">MATE mailing lists</ulink>"
 msgstr ""
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:287
+#: C/index.docbook:310
 msgid "Preferences"
 msgstr ""
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:288
+#: C/index.docbook:311
 msgid "To bring up the preferences for the monitor, right-click on the monitor in the panel and then choose <guimenuitem>Preferences</guimenuitem>"
 msgstr ""
 
 #. (itstool) path: figure/title
-#: C/index.docbook:292
+#: C/index.docbook:315
 msgid "Battery Charge Monitor context (right-click) menu"
 msgstr ""
 
@@ -322,18 +342,18 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:296
+#: C/index.docbook:319
 msgctxt "_"
 msgid "external ref='figures/context-menu.png' md5='5dc00e1ca58f0e8ef912fe5b546f27ff'"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:294
+#: C/index.docbook:317
 msgid "<imageobject><imagedata fileref=\"figures/context-menu.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Battery Charge Monitor context menu</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: figure/title
-#: C/index.docbook:305
+#: C/index.docbook:328
 msgid "Preferences Dialog"
 msgstr ""
 
@@ -342,53 +362,53 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:309
+#: C/index.docbook:332
 msgctxt "_"
 msgid "external ref='figures/battstat-preferences.png' md5='6ecace1ccf2f4c002e0fa42a460b2fe3'"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:307
+#: C/index.docbook:330
 msgid "<imageobject><imagedata fileref=\"figures/battstat-preferences.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Preferences Dialog</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:319
+#: C/index.docbook:342
 msgid "<guilabel>Appearance</guilabel>"
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:323
+#: C/index.docbook:346
 msgid "<guilabel>Compact view</guilabel>"
 msgstr ""
 
 #. (itstool) path: figure/title
-#: C/index.docbook:329
+#: C/index.docbook:352
 msgid "Compact view"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:331
+#: C/index.docbook:354
 msgid "<imageobject><imagedata fileref=\"figures/battstat-applet.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Compact View</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:324
+#: C/index.docbook:347
 msgid "This view shows only a single graphic in the panel, either an upright battery to indicate remaining capacity or a plug to indicate your laptop is connected to an external power source. <_:figure-1/>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:342
+#: C/index.docbook:365
 msgid "The compact view is the default view for the monitor as of MATE 2.12."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:348
+#: C/index.docbook:371
 msgid "<guilabel>Expanded view</guilabel>"
 msgstr ""
 
 #. (itstool) path: figure/title
-#: C/index.docbook:354
+#: C/index.docbook:377
 msgid "Expanded view"
 msgstr ""
 
@@ -397,78 +417,78 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:358
+#: C/index.docbook:381
 msgctxt "_"
 msgid "external ref='figures/battstat-applet-expanded.png' md5='0bc38721ad3f99d3391be02953ff9289'"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:356
+#: C/index.docbook:379
 msgid "<imageobject><imagedata fileref=\"figures/battstat-applet-expanded.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Expanded View</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:349
+#: C/index.docbook:372
 msgid "The expanded view is old look from previous versions of MATE. It has the larger graphic for the battery as well as a separate graphic to indicate what state the battery is in. <_:figure-1/>"
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:369
+#: C/index.docbook:392
 msgid "<guilabel>Show time/percentage</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:370
+#: C/index.docbook:393
 msgid "Selecting this option will display one of two pieces of information. <guilabel>Show time remaining</guilabel> will tell you how many hours and minutes until the battery is fully discharged or recharged. <guilabel>Show percentage remaining</guilabel> will tell you the percentage charge remaining in the battery."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:381
+#: C/index.docbook:404
 msgid "<guilabel>Notifications</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:384
+#: C/index.docbook:407
 msgid "<guilabel> Warn when battery charge drops to </guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:387
+#: C/index.docbook:410
 msgid "Selecting this option will cause a warning dialog to be displayed whenever your laptop battery reaches specified value, either as a percentage remaining or a number of minutes remaining. This indicates that the amount of charge remaining in your battery is critically low. charge. You can dismiss this warning dialog yourself, otherwise it will vanish automatically when you plug your laptop into mains power."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:399
+#: C/index.docbook:422
 msgid "<guilabel> Notify when the battery is fully recharged </guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:402
+#: C/index.docbook:425
 msgid "Selecting this option notifies when your battery is fully recharged. If you have compiled the Battery Charge Monitor with libnotify support a non-intrusive notification will popup from the monitor on the panel."
 msgstr ""
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:416
+#: C/index.docbook:439
 msgid "Troubleshooting"
 msgstr ""
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:418
+#: C/index.docbook:441
 msgid "Due to the complexities of power management and the vast differences between each of the different power management systems available, debugging errors in the battery monitor can be difficult. You will need to determine if the error exists in the battery monitor or is a bug in the information provided by your machine."
 msgstr ""
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:425
+#: C/index.docbook:448
 msgid "The following information may be useful for troubleshooting what is wrong with your battery monitor. It is by no means exhaustive. If you find a bug with the Battery Charge Monitor (that is not caused by bad information being reported by ACPI), please <ulink url=\"http://bugzilla.mate.org/\">report it</ulink>."
 msgstr ""
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:433
+#: C/index.docbook:456
 msgid "Determining the backend"
 msgstr ""
 
 #. (itstool) path: figure/title
-#: C/index.docbook:440
+#: C/index.docbook:463
 msgid "Check you're using the HAL backend"
 msgstr ""
 
@@ -477,43 +497,43 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:444
+#: C/index.docbook:467
 msgctxt "_"
 msgid "external ref='figures/battstat-credits-hal.png' md5='95af6b36f6442154f7216a5306b800b1'"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:442
+#: C/index.docbook:465
 msgid "<imageobject><imagedata fileref=\"figures/battstat-credits-hal.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Expanded View</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:434
+#: C/index.docbook:457
 msgid "If you are using the upower interface, or the Hardware Abstraction Layer (see <xref linkend=\"battstat-power-backends\"/>) then that will be indicated in the about dialog by placing a star next to the author of the HAL backend. <_:figure-1/>"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:454
+#: C/index.docbook:477
 msgid "Other backends do not currently give indication they are being used, so you will have to guess based on your hardware. Most modern PC laptops are using ACPI as the backend. This is also the backend with the largest number of inconsistencies."
 msgstr ""
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:463
+#: C/index.docbook:486
 msgid "Checking the ACPI information"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:464
+#: C/index.docbook:487
 msgid "If you are using the ACPI backend for the Battery Charge Monitor, it is important to check that ACPI is giving you the right information. If it isn't, then you will need to look into upgrading your DSDT or something else related to ACPI."
 msgstr ""
 
 #. (itstool) path: example/title
-#: C/index.docbook:470
+#: C/index.docbook:493
 msgid "Example ACPI output"
 msgstr ""
 
 #. (itstool) path: example/screen
-#: C/index.docbook:471
+#: C/index.docbook:494
 #, no-wrap
 msgid ""
 "\n"
@@ -542,27 +562,27 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:495
+#: C/index.docbook:518
 msgid "You can quickly calculate the percentage remaining using <guilabel>remaining capacity</guilabel> divided by <guilabel>last full capacity</guilabel>, you can calculate the time remaining by taking <guilabel>remaining capacity</guilabel> divided by <guilabel>present rate</guilabel>."
 msgstr ""
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:504
+#: C/index.docbook:527
 msgid "Hardware Abstraction Layer"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:505
+#: C/index.docbook:528
 msgid "You can check that your battery is detected by HAL using the command <command>hal-device-manager</command>. If your battery is not detected by HAL or the wrong information is being reported, you can attempt to disable the HAL backend by setting a GSettings key."
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:511
+#: C/index.docbook:534
 msgid "Select <guimenuitem>Configuration Editor</guimenuitem> from the <guimenu>Applications</guimenu> menu, under <guisubmenu>System Tools</guisubmenu>. Search for the key value <prompt>OAFIID:MATE_BattstatApplet</prompt> which should be located in the path <filename>/apps/panel/applets</filename>."
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:518
+#: C/index.docbook:541
 msgid "Assuming the path is <filename>/apps/panel/applets/applet_1</filename>. In <filename>/apps/panel/applets/applet_1/prefs</filename> add a <guimenuitem>New Key...</guimenuitem> called <guilabel>no_hal</guilabel> and set it to the boolean value of true. This will disable the usage of HAL (see <xref linkend=\"battstat-troubleshooting-backends\"/> to learn how to check this)."
 msgstr ""
 
