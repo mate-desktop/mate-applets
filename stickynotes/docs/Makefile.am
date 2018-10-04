@@ -9,6 +9,10 @@ HELP_MEDIA = figures/stickynote-right-menu-lock.png \
 		figures/stickynotes-note-prefs.png \
 		figures/stickynotes-prefs.png
 
-HELP_LINGUAS = ca cs de el en_GB es eu fi fr ko oc pa pt_BR ru sv uk zh_CN zh_HK zh_TW
+# Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr
+IGNORE_HELP_LINGUAS =
+HELP_LINGUAS = $(if $(IGNORE_HELP_LINGUAS), \
+	$(filter-out $(IGNORE_HELP_LINGUAS),$(subst /,,$(dir $(wildcard */*.po)))), \
+	$(subst /,,$(dir $(wildcard */*.po))) )
 
 -include $(top_srcdir)/git.mk
