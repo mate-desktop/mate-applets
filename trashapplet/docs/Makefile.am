@@ -5,6 +5,10 @@ HELP_FILES = index.docbook legal.xml
 
 HELP_MEDIA = figures/trash-applet.png
 
-HELP_LINGUAS = ca cs da de el en_GB es eu fi fr hu it nl oc pa pt_BR ru sv uk zh_CN zh_HK zh_TW
+# Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr
+IGNORE_HELP_LINGUAS =
+HELP_LINGUAS = $(if $(IGNORE_HELP_LINGUAS), \
+	$(filter-out $(IGNORE_HELP_LINGUAS),$(subst /,,$(dir $(wildcard */*.po)))), \
+	$(subst /,,$(dir $(wildcard */*.po))) )
 
 -include $(top_srcdir)/git.mk

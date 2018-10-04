@@ -7,6 +7,10 @@ HELP_MEDIA = figures/charpalette_applet.png \
 		figures/charpick_characters.png \
 		figures/charpick-preferences.png
 
-HELP_LINGUAS = bg ca cs de el en_GB es eu fi fr it ko nl oc pt_BR ru sv uk zh_CN
+# Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr
+IGNORE_HELP_LINGUAS =
+HELP_LINGUAS = $(if $(IGNORE_HELP_LINGUAS), \
+	$(filter-out $(IGNORE_HELP_LINGUAS),$(subst /,,$(dir $(wildcard */*.po)))), \
+	$(subst /,,$(dir $(wildcard */*.po))) )
 
 -include $(top_srcdir)/git.mk
