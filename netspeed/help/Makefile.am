@@ -2,6 +2,7 @@
 
 HELP_ID = mate-netspeed-applet
 HELP_FILES = index.docbook legal.xml
+
 HELP_MEDIA = \
 	figures/details.png \
 	figures/ethernet.png \
@@ -19,4 +20,4 @@ HELP_LINGUAS = $(if $(IGNORE_HELP_LINGUAS), \
 	$(filter-out $(IGNORE_HELP_LINGUAS),$(subst /,,$(dir $(wildcard */*.po)))), \
 	$(subst /,,$(dir $(wildcard */*.po))) )
 
-EXTRA_DIST = INSTRUCTIONS
+-include $(top_srcdir)/git.mk
