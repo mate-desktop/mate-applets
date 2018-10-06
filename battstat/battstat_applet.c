@@ -485,20 +485,17 @@ battery_low_dialog( ProgressData *battery, BatteryStatus *info )
 static void
 update_tooltip( ProgressData *battstat, BatteryStatus *info )
 {
-  gchar *powerstring;
   gchar *remaining;
   gchar *tiptext;
 
   if (info->present)
   {
-    if (info->on_ac_power)
-      powerstring = AC_POWER_STRING;
-    else
-      powerstring = DC_POWER_STRING;
-
     remaining = get_remaining (info);
-
-    tiptext = g_strdup_printf ("%s\n%s", powerstring, remaining);
+    if (info->on_ac_power)
+        tiptext = g_strdup_printf ("%s\n%s", AC_POWER_STRING, remaining);
+    else
+        tiptext = g_strdup_printf ("%s\n%s", DC_POWER_STRING, remaining);
+    
     g_free (remaining);
   }
   else
