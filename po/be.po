@@ -3,14 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Martin Wimpress <code@flexion.org>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Mihail Varantsou <meequz@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-10 08:45+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"PO-Revision-Date: 2018-03-11 16:20+0000\n"
+"Last-Translator: Mihail Varantsou <meequz@gmail.com>, 2018\n"
 "Language-Team: Belarusian (https://www.transifex.com/mate/teams/13566/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +28,12 @@ msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Паказвае стан здольнасцяў AccessX"
 
 #: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:618 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:640 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:587 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
 #: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
 #: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
+#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
 msgstr ""
 "Belarusian Language Linux Team <i18n@mova.org>\n"
@@ -53,7 +58,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Настáўленні даступнасці _клавіятуры"
 
 #: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:129
+#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
 #: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
@@ -61,11 +66,11 @@ msgid "_Help"
 msgstr "_Даведка"
 
 #: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:702 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:162
+#: ../charpick/charpick.c:671 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
 #: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
-#: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
+#: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Пра аплет"
 
@@ -75,35 +80,35 @@ msgstr "_Пра аплет"
 msgid "a"
 msgstr "а"
 
-#: ../accessx-status/applet.c:1036 ../accessx-status/applet.c:1102
-#: ../accessx-status/applet.c:1187 ../accessx-status/applet.c:1381
+#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
+#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
 msgid "AccessX Status"
 msgstr "Стан AccessX"
 
-#: ../accessx-status/applet.c:1037 ../accessx-status/applet.c:1188
+#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "Паказвае стан клавіятуры, калі выкарыстоўваюцца здольнасці даступнасці."
 
-#: ../accessx-status/applet.c:1071
+#: ../accessx-status/applet.c:1073
 msgid "XKB Extension is not enabled"
 msgstr "Пашырэнне XKB не ўключана"
 
-#: ../accessx-status/applet.c:1076
+#: ../accessx-status/applet.c:1078
 msgid "Unknown error"
 msgstr "Невядомая памылка"
 
-#: ../accessx-status/applet.c:1080
+#: ../accessx-status/applet.c:1082
 #, c-format
 msgid "Error: %s"
 msgstr "Памылка: %s"
 
-#: ../accessx-status/applet.c:1378
+#: ../accessx-status/applet.c:1380
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Стан даступнасці клавіятуры"
 
-#: ../accessx-status/applet.c:1382
+#: ../accessx-status/applet.c:1384
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Паказвае дзейны стан здольнасцяў даступнасці клавіятуры"
 
@@ -119,11 +124,11 @@ msgstr "Вытворчасць аплета стану даступнасці к
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Паказвае стан здольнасцяў даступнасці клавіятуры"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:696
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
-#: ../timerapplet/timerapplet.c:81
+#: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "_Настáўленні"
 
@@ -443,28 +448,28 @@ msgstr "Мала энергіі ў батарэі"
 msgid "Battery fully re-charged"
 msgstr "Батарэя цалкам перанасілкована"
 
-#: ../charpick/charpick.c:435
+#: ../charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "Даступныя палітры"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:484
+#: ../charpick/charpick.c:453
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Уставіць \"%s\""
 
-#: ../charpick/charpick.c:487
+#: ../charpick/charpick.c:456
 msgid "Insert special character"
 msgstr "Уставіць адмысловы знак"
 
-#: ../charpick/charpick.c:491
+#: ../charpick/charpick.c:460
 #, c-format
 msgid "insert special character %s"
 msgstr "Уставіць адмысловы знак %s"
 
-#: ../charpick/charpick.c:613
+#: ../charpick/charpick.c:582
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -472,13 +477,13 @@ msgstr ""
 "Аплет для выбару дзіўных знакаў, якіх няма на вашай клавіятуры. "
 "Распаўсюджваецца паводле GNU General Public Licence."
 
-#: ../charpick/charpick.c:725 ../charpick/charpick.c:739
+#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Палітра знакаў"
 
-#: ../charpick/charpick.c:725
+#: ../charpick/charpick.c:694
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Уставіць знакі"
@@ -668,7 +673,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Паказваць чашчыню працэсара ў _адсотках"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:991 ../cpufreq/src/cpufreq-applet.c:1046
+#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Назіральнік за чашчынёй працэсара"
 
@@ -713,15 +718,15 @@ msgstr ""
 "0 - паказваць чашчыню CPU, 1 - паказваць чашчыню і адзінкі вымярэння, 2 - "
 "адсоткі замест чашчыні."
 
-#: ../cpufreq/src/cpufreq-applet.c:604 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr "Немагчыма адкрыць дакумент даведкі"
 
-#: ../cpufreq/src/cpufreq-applet.c:635
+#: ../cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Гэтая ўтыліта паказвае дзейны стан чашчыні працэсара."
 
-#: ../cpufreq/src/cpufreq-applet.c:1047
+#: ../cpufreq/src/cpufreq-applet.c:867
 msgid "This utility shows the current CPU Frequency"
 msgstr "Гэтая ўтыліта паказвае дзейны стан чашчыні працэсара"
 
@@ -766,42 +771,42 @@ msgstr "Змяніць маштабаванне чашчыні працэсар�
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Патрэбуюцца прывілеі, каб змяніць маштабаванне чашчыні працэсара."
 
-#: ../drivemount/drive-button.c:397 ../drivemount/drive-button.c:411
+#: ../drivemount/drive-button.c:340 ../drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(прымантаваны)"
 
-#: ../drivemount/drive-button.c:404
+#: ../drivemount/drive-button.c:347
 msgid "(not mounted)"
 msgstr "(адмантаваны)"
 
-#: ../drivemount/drive-button.c:673
+#: ../drivemount/drive-button.c:616
 msgid "Cannot execute Caja"
 msgstr "Не выйшла запусціць Caja"
 
-#: ../drivemount/drive-button.c:997
+#: ../drivemount/drive-button.c:940
 msgid "_Play DVD"
 msgstr "_Прайграць DVD"
 
-#: ../drivemount/drive-button.c:1001
+#: ../drivemount/drive-button.c:944
 msgid "_Play CD"
 msgstr "_Прайграць CD"
 
-#: ../drivemount/drive-button.c:1004
+#: ../drivemount/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr "_Адкрыць %s"
 
-#: ../drivemount/drive-button.c:1012
+#: ../drivemount/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr "Ад_мантаваць %s"
 
-#: ../drivemount/drive-button.c:1018
+#: ../drivemount/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr "_Прымантаваць %s"
 
-#: ../drivemount/drive-button.c:1026
+#: ../drivemount/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr "_Вызваліць %s"
@@ -841,8 +846,8 @@ msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Вочкі, якія сочаць за курсорам мышы"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "Geyes Applet Factory"
-msgstr "Вытворчасць аплета Geyes"
+msgid "Eyes Applet Factory"
+msgstr ""
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -861,8 +866,8 @@ msgid "There was a fatal error while trying to load the theme."
 msgstr "Фатальная памылка падчас спробы загрузіць тэму."
 
 #: ../geyes/themes.c:285
-msgid "Geyes Preferences"
-msgstr "Настáўленні Geyes"
+msgid "Eyes Preferences"
+msgstr ""
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -890,16 +895,16 @@ msgstr "_Абнавіць"
 msgid "Weather Report"
 msgstr "Справаздача па надвор'і"
 
-#: ../mateweather/mateweather-applet.c:357
-#: ../mateweather/mateweather-applet.c:361
+#: ../mateweather/mateweather-applet.c:354
+#: ../mateweather/mateweather-applet.c:358
 msgid "MATE Weather"
 msgstr "Надвор'е MATE"
 
-#: ../mateweather/mateweather-applet.c:460
+#: ../mateweather/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Прагноз надвор'я"
 
-#: ../mateweather/mateweather-applet.c:472
+#: ../mateweather/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -910,7 +915,7 @@ msgstr ""
 "Неба: %s\n"
 "Тэмпература: %s"
 
-#: ../mateweather/mateweather-applet.c:521
+#: ../mateweather/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Абнаўленне..."
 
@@ -970,39 +975,39 @@ msgstr "Узыход сонца:"
 msgid "Sunset:"
 msgstr "Закат сонца:"
 
-#: ../mateweather/mateweather-dialog.c:404
+#: ../mateweather/mateweather-dialog.c:406
 msgid "Current Conditions"
 msgstr "Дзейныя ўмовы"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "Forecast Report"
 msgstr "Прагноз надвор'я"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "See the ForeCast Details"
 msgstr "Глядзіце падрабязны прагноз"
 
-#: ../mateweather/mateweather-dialog.c:431
+#: ../mateweather/mateweather-dialog.c:433
 msgid "Forecast"
 msgstr "Прагноз"
 
-#: ../mateweather/mateweather-dialog.c:439
+#: ../mateweather/mateweather-dialog.c:441
 msgid "Radar Map"
 msgstr "Радарная мапа"
 
-#: ../mateweather/mateweather-dialog.c:470
+#: ../mateweather/mateweather-dialog.c:474
 msgid "_Visit Weather.com"
 msgstr "_Наведаць Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Visit Weather.com"
 msgstr "Наведаць Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Click to Enter Weather.com"
 msgstr "Націсніце, каб наведаць Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:556
+#: ../mateweather/mateweather-dialog.c:606
 msgid "Forecast not currently available for this location."
 msgstr "Прагноз для гэтай мясцовасці адсутнічае."
 
@@ -1038,168 +1043,168 @@ msgstr ""
 "Немагчыма загрузіць базу звестак пра мясцовасці ў фармаце XML. Калі ласка, "
 "паведаміце распрацоўнікам пра памылку."
 
-#: ../mateweather/mateweather-pref.c:812
+#: ../mateweather/mateweather-pref.c:811
 msgid "Weather Preferences"
 msgstr "Настáўленні надвор'я"
 
-#: ../mateweather/mateweather-pref.c:839
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:835
+#: ../mateweather/mateweather-pref.c:1038
 msgid "_Automatically update every:"
 msgstr "_Аўтаматычна абнаўляць кожныя:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:854
+#: ../mateweather/mateweather-pref.c:851
 msgid "_Temperature unit:"
 msgstr "Адзінка тэмпературы:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:861
 msgid "Kelvin"
 msgstr "Паводле Кельвіна"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:866
+#: ../mateweather/mateweather-pref.c:863
 msgid "Celsius"
 msgstr "Паводле Цэльсія"
 
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:864
 msgid "Fahrenheit"
 msgstr "Паводле Фарэнгейта"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:876
+#: ../mateweather/mateweather-pref.c:873
 msgid "_Wind speed unit:"
 msgstr "Адзінка хуткасці _ветру:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:884
 msgid "m/s"
 msgstr "метраў за секунду"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:886
 msgid "km/h"
 msgstr "кіламетры за гадзіну"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:888
 msgid "mph"
 msgstr "мілі за гадзіну"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:893
+#: ../mateweather/mateweather-pref.c:890
 msgid "knots"
 msgstr "вузлы"
 
-#: ../mateweather/mateweather-pref.c:894
+#: ../mateweather/mateweather-pref.c:891
 msgid "Beaufort scale"
 msgstr "Шкала Бафорта"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:903
+#: ../mateweather/mateweather-pref.c:900
 msgid "_Pressure unit:"
 msgstr "Адзінка _ціску:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:911
 msgid "kPa"
 msgstr "кілапаскалі"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:913
 msgid "hPa"
 msgstr "гектапаскалі"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:915
 msgid "mb"
 msgstr "мб"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:920
+#: ../mateweather/mateweather-pref.c:917
 msgid "mmHg"
 msgstr "мілібары мэркура"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:922
+#: ../mateweather/mateweather-pref.c:919
 msgid "inHg"
 msgstr "цалі мэркура"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:924
+#: ../mateweather/mateweather-pref.c:921
 msgid "atm"
 msgstr "атмасферы"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:930
 msgid "_Visibility unit:"
 msgstr "Адзінка _бачнасці:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:944
+#: ../mateweather/mateweather-pref.c:941
 msgid "meters"
 msgstr "метры"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:943
 msgid "km"
 msgstr "кіламетры"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:948
+#: ../mateweather/mateweather-pref.c:945
 msgid "miles"
 msgstr "мілі"
 
-#: ../mateweather/mateweather-pref.c:978
+#: ../mateweather/mateweather-pref.c:975
 msgid "Enable _radar map"
 msgstr "Уключыць радарную мапу"
 
-#: ../mateweather/mateweather-pref.c:994
+#: ../mateweather/mateweather-pref.c:991
 msgid "Use _custom address for radar map"
 msgstr "Выкарыстоўваць адмысловы адрас для радарнай мапы"
 
-#: ../mateweather/mateweather-pref.c:1012
+#: ../mateweather/mateweather-pref.c:1009
 msgid "A_ddress:"
 msgstr "_Адрас:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1027
+#: ../mateweather/mateweather-pref.c:1024
 msgid "Show _notifications"
 msgstr "Паказваць _абвяшчэнні"
 
-#: ../mateweather/mateweather-pref.c:1037
+#: ../mateweather/mateweather-pref.c:1034
 msgid "Update"
 msgstr "Абнаўленне"
 
-#: ../mateweather/mateweather-pref.c:1054
+#: ../mateweather/mateweather-pref.c:1051
 msgid "minutes"
 msgstr "хвілін"
 
-#: ../mateweather/mateweather-pref.c:1072
+#: ../mateweather/mateweather-pref.c:1069
 msgid "Display"
 msgstr "Выгляд"
 
-#: ../mateweather/mateweather-pref.c:1091
+#: ../mateweather/mateweather-pref.c:1088
 msgid "General"
 msgstr "Асноўнае"
 
-#: ../mateweather/mateweather-pref.c:1102
+#: ../mateweather/mateweather-pref.c:1099
 msgid "_Select a location:"
 msgstr "_Вылучыце мясцовасць:"
 
-#: ../mateweather/mateweather-pref.c:1124
+#: ../mateweather/mateweather-pref.c:1121
 msgid "_Find:"
 msgstr "_Шукаць:"
 
-#: ../mateweather/mateweather-pref.c:1130
+#: ../mateweather/mateweather-pref.c:1127
 msgid "Find _Next"
 msgstr "Знайсці _далей"
 
-#: ../mateweather/mateweather-pref.c:1151
+#: ../mateweather/mateweather-pref.c:1148
 msgid "Location"
 msgstr "Размяшчэнне"
 
@@ -2040,11 +2045,11 @@ msgstr "Ліпучыя нататкі"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Стварае, паказвае і кіруе ліпучымі нататкамі для стала"
 
-#: ../stickynotes/stickynotes.c:576
+#: ../stickynotes/stickynotes.c:577
 msgid "This note is locked."
 msgstr "Гэтая нататка замкнёная."
 
-#: ../stickynotes/stickynotes.c:580
+#: ../stickynotes/stickynotes.c:581
 msgid "This note is unlocked."
 msgstr "Гэтая нататка разамкнёная."
 
@@ -2410,7 +2415,7 @@ msgid "Timer"
 msgstr "Таймер"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:259
+#: ../timerapplet/timerapplet.c:279
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Запуск таймера і атрыманне абвяшчэння, калі час выйдзе"
 
@@ -2430,55 +2435,55 @@ msgstr "Абвяшчаць, калі таймер скончыўся"
 msgid "Show dialog window when timer finish"
 msgstr "Паказваць акенца, калі таймер скончыўся"
 
-#: ../timerapplet/timerapplet.c:78
+#: ../timerapplet/timerapplet.c:79
 msgid "_Start timer"
 msgstr "_Запусціць таймер"
 
-#: ../timerapplet/timerapplet.c:79
+#: ../timerapplet/timerapplet.c:80
 msgid "P_ause timer"
 msgstr "Пр_ыпыніць таймер"
 
-#: ../timerapplet/timerapplet.c:80
+#: ../timerapplet/timerapplet.c:81
 msgid "S_top timer"
 msgstr "С_пыніць таймер"
 
-#: ../timerapplet/timerapplet.c:140
-msgid "Finished"
-msgstr "Скончыўся"
+#: ../timerapplet/timerapplet.c:82
+msgid "R_eset"
+msgstr ""
 
-#: ../timerapplet/timerapplet.c:147 ../timerapplet/timerapplet.c:159
+#: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
 msgstr "Таймер скончыўся!"
 
-#: ../timerapplet/timerapplet.c:292
+#: ../timerapplet/timerapplet.c:312
 msgid "Timer Applet Preferences"
 msgstr "Настáўленні аплета таймера"
 
-#: ../timerapplet/timerapplet.c:305
+#: ../timerapplet/timerapplet.c:325
 msgid "Name:"
 msgstr "Назва:"
 
-#: ../timerapplet/timerapplet.c:314
+#: ../timerapplet/timerapplet.c:334
 msgid "Hours:"
 msgstr "Гадзіны:"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:345
 msgid "Minutes:"
 msgstr "Хвіліны:"
 
-#: ../timerapplet/timerapplet.c:336
+#: ../timerapplet/timerapplet.c:356
 msgid "Seconds:"
 msgstr "Секунды:"
 
-#: ../timerapplet/timerapplet.c:347
+#: ../timerapplet/timerapplet.c:367
 msgid "Show notification popup"
 msgstr "Паказваць выплыўное абвяшчэнне"
 
-#: ../timerapplet/timerapplet.c:351
+#: ../timerapplet/timerapplet.c:371
 msgid "Show dialog"
 msgstr "Паказаць акенца"
 
-#: ../timerapplet/timerapplet.c:373
+#: ../timerapplet/timerapplet.c:405
 msgid "Timer Applet"
 msgstr "Аплет таймера"
 
@@ -2490,7 +2495,7 @@ msgstr "Сметніца"
 msgid "Go to Trash"
 msgstr "Перайсці да сметніцы"
 
-#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:353
+#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
 msgstr "_Ачысціць сметніцу"
 

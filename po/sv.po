@@ -3,14 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Martin Wimpress <code@flexion.org>, 2018
+# Jonatan Nyberg, 2018
+# Kristoffer Grundström <hamnisdude@gmail.com>, 2018
+# Erik, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Henrik Mattsson-Mårn <h@reglage.net>, 2018
+# Patrik Nilsson <asavartzeth@gmail.com>, 2018
+# Daniel Gullbransen <daniel@llama.nu>, 2018
+# Urban Berggren <pudberggren@icloud.com>, 2018
+# Tobias Lekare <lekare@linux.com>, 2018
+# Philip Andersen <renegadevi@codeofmagi.net>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-10 08:45+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Tobias Lekare <lekare@linux.com>, 2018\n"
+"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"PO-Revision-Date: 2018-03-11 16:20+0000\n"
+"Last-Translator: Philip Andersen <renegadevi@codeofmagi.net>, 2018\n"
 "Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,12 +37,12 @@ msgstr ""
 "Visar tillståndet för AccessX-funktioner som till exempel hakade modifierare"
 
 #: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:618 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:640 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:587 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
 #: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
 #: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
+#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
 msgstr "Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>"
 
@@ -52,7 +65,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Inställningar för _tangentbordstillgänglighet"
 
 #: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:129
+#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
 #: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
@@ -60,11 +73,11 @@ msgid "_Help"
 msgstr "_Hjälp"
 
 #: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:702 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:162
+#: ../charpick/charpick.c:671 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
 #: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
-#: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
+#: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Om"
 
@@ -74,35 +87,35 @@ msgstr "_Om"
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1036 ../accessx-status/applet.c:1102
-#: ../accessx-status/applet.c:1187 ../accessx-status/applet.c:1381
+#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
+#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
 msgid "AccessX Status"
 msgstr "AccessX-status"
 
-#: ../accessx-status/applet.c:1037 ../accessx-status/applet.c:1188
+#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "Visar statusen för tangentbordet när tillgänglighetsfunktionerna används."
 
-#: ../accessx-status/applet.c:1071
+#: ../accessx-status/applet.c:1073
 msgid "XKB Extension is not enabled"
 msgstr "XKB-tillägget är inte aktiverat"
 
-#: ../accessx-status/applet.c:1076
+#: ../accessx-status/applet.c:1078
 msgid "Unknown error"
 msgstr "Okänt fel"
 
-#: ../accessx-status/applet.c:1080
+#: ../accessx-status/applet.c:1082
 #, c-format
 msgid "Error: %s"
 msgstr "Fel: %s"
 
-#: ../accessx-status/applet.c:1378
+#: ../accessx-status/applet.c:1380
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Status för tangentbordstillgänglighet"
 
-#: ../accessx-status/applet.c:1382
+#: ../accessx-status/applet.c:1384
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Visar den aktuella statusen för tangentbordstillgänglighetsfunktioner"
 
@@ -119,11 +132,11 @@ msgstr ""
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Visar statusen för funktionerna för tangentbordstillgänglighet"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:696
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
-#: ../timerapplet/timerapplet.c:81
+#: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "_Inställningar"
 
@@ -154,29 +167,29 @@ msgstr "Okänd tid (%d%%) till uppladdad"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minut (%d%%) återstår"
+msgstr[1] "%d minuter (%d%%) återstår"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minut tills laddad (%d%%)"
+msgstr[1] "%d minuter tills laddad (%d%%)"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d timme (%d%%) återstår"
+msgstr[1] "%d timmar (%d%%) återstår"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d timme tills laddad (%d%%)"
+msgstr[1] "%d timmar tills laddad (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -188,14 +201,14 @@ msgstr "%d %s %d %s (%d%%) återstår"
 #: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "timme"
+msgstr[1] "timmar"
 
 #: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minut"
+msgstr[1] "minuter"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -229,7 +242,9 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"Din återstående batteritid är %d minut (%d%% av den totala kapaciteten)"
 msgstr[1] ""
+"Din återstående batteritid är %d minuter (%d%% av den totala kapaciteten)"
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -429,28 +444,28 @@ msgstr "Låg batteriladdning"
 msgid "Battery fully re-charged"
 msgstr "Batteriet helt uppladdat"
 
-#: ../charpick/charpick.c:435
+#: ../charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "Tillgängliga paletter"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:484
+#: ../charpick/charpick.c:453
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Infoga \"%s\""
 
-#: ../charpick/charpick.c:487
+#: ../charpick/charpick.c:456
 msgid "Insert special character"
 msgstr "Infoga specialtecken"
 
-#: ../charpick/charpick.c:491
+#: ../charpick/charpick.c:460
 #, c-format
 msgid "insert special character %s"
 msgstr "infoga specialtecknet %s"
 
-#: ../charpick/charpick.c:613
+#: ../charpick/charpick.c:582
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -458,13 +473,13 @@ msgstr ""
 "Mate-panelprogram för att välja underliga tecken som inte finns på mitt "
 "tangentbord. Släppt under GNU General Public License."
 
-#: ../charpick/charpick.c:725 ../charpick/charpick.c:739
+#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Teckenpalett"
 
-#: ../charpick/charpick.c:725
+#: ../charpick/charpick.c:694
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Infoga tecken"
@@ -654,7 +669,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Visa processorfrekvens som _procentandel"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:991 ../cpufreq/src/cpufreq-applet.c:1046
+#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Övervakare av processorfrekvensskalning"
 
@@ -700,15 +715,15 @@ msgstr ""
 "Värdet 0 betyder att processorfrekvensen ska visas, 1 att frekvensen och "
 "enhet ska visas, och 2 att procentandel ska visas istället för frekvensen."
 
-#: ../cpufreq/src/cpufreq-applet.c:604 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr "Kunde inte öppna hjälpdokument"
 
-#: ../cpufreq/src/cpufreq-applet.c:635
+#: ../cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Detta verktyg visar den aktuella skalningen utav processorfrekvensen."
 
-#: ../cpufreq/src/cpufreq-applet.c:1047
+#: ../cpufreq/src/cpufreq-applet.c:867
 msgid "This utility shows the current CPU Frequency"
 msgstr "Detta verktyg visar den aktuella processorfrekvensen"
 
@@ -753,42 +768,42 @@ msgstr "Ändra processorfrekvensskalning"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Behörighet krävs för att ändra processorfrekvensskalningen."
 
-#: ../drivemount/drive-button.c:397 ../drivemount/drive-button.c:411
+#: ../drivemount/drive-button.c:340 ../drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(monterad)"
 
-#: ../drivemount/drive-button.c:404
+#: ../drivemount/drive-button.c:347
 msgid "(not mounted)"
 msgstr "(inte monterad)"
 
-#: ../drivemount/drive-button.c:673
+#: ../drivemount/drive-button.c:616
 msgid "Cannot execute Caja"
 msgstr "Kan inte köra Caja"
 
-#: ../drivemount/drive-button.c:997
+#: ../drivemount/drive-button.c:940
 msgid "_Play DVD"
 msgstr "_Spela dvd"
 
-#: ../drivemount/drive-button.c:1001
+#: ../drivemount/drive-button.c:944
 msgid "_Play CD"
 msgstr "_Spela cd"
 
-#: ../drivemount/drive-button.c:1004
+#: ../drivemount/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr "_Öppna %s"
 
-#: ../drivemount/drive-button.c:1012
+#: ../drivemount/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr "A_vmontera %s"
 
-#: ../drivemount/drive-button.c:1018
+#: ../drivemount/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr "_Montera %s"
 
-#: ../drivemount/drive-button.c:1026
+#: ../drivemount/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr "_Mata ut %s"
@@ -828,8 +843,8 @@ msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Ögonen tittar i muspekarens riktning"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "Geyes Applet Factory"
-msgstr "Fabrik för panelprogrammet Geyes"
+msgid "Eyes Applet Factory"
+msgstr "Panelprogramsfabrik för Ögon"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -848,8 +863,8 @@ msgid "There was a fatal error while trying to load the theme."
 msgstr "Ett ödesdigert fel inträffade vid försök att läsa in temat."
 
 #: ../geyes/themes.c:285
-msgid "Geyes Preferences"
-msgstr "Inställningar för Geyes"
+msgid "Eyes Preferences"
+msgstr "Inställningar för Ögon"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -877,16 +892,16 @@ msgstr "_Uppdatera"
 msgid "Weather Report"
 msgstr "Väderrapport"
 
-#: ../mateweather/mateweather-applet.c:357
-#: ../mateweather/mateweather-applet.c:361
+#: ../mateweather/mateweather-applet.c:354
+#: ../mateweather/mateweather-applet.c:358
 msgid "MATE Weather"
 msgstr "MATE-väder"
 
-#: ../mateweather/mateweather-applet.c:460
+#: ../mateweather/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Väderrapport"
 
-#: ../mateweather/mateweather-applet.c:472
+#: ../mateweather/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -897,7 +912,7 @@ msgstr ""
 "Himmel: %s\n"
 "Temperatur: %s"
 
-#: ../mateweather/mateweather-applet.c:521
+#: ../mateweather/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Uppdaterar..."
 
@@ -957,39 +972,39 @@ msgstr "Soluppgång:"
 msgid "Sunset:"
 msgstr "Solnedgång:"
 
-#: ../mateweather/mateweather-dialog.c:404
+#: ../mateweather/mateweather-dialog.c:406
 msgid "Current Conditions"
 msgstr "Aktuella förhållanden"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "Forecast Report"
 msgstr "Väderrapport"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "See the ForeCast Details"
 msgstr "Se detaljerad väderrapport"
 
-#: ../mateweather/mateweather-dialog.c:431
+#: ../mateweather/mateweather-dialog.c:433
 msgid "Forecast"
 msgstr "Prognos"
 
-#: ../mateweather/mateweather-dialog.c:439
+#: ../mateweather/mateweather-dialog.c:441
 msgid "Radar Map"
 msgstr "Radarkarta"
 
-#: ../mateweather/mateweather-dialog.c:470
+#: ../mateweather/mateweather-dialog.c:474
 msgid "_Visit Weather.com"
 msgstr "_Besök Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Visit Weather.com"
 msgstr "Besök Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Click to Enter Weather.com"
 msgstr "Klicka för att besöka Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:556
+#: ../mateweather/mateweather-dialog.c:606
 msgid "Forecast not currently available for this location."
 msgstr "En prognos är för tillfället inte tillgänglig för denna plats."
 
@@ -1025,168 +1040,168 @@ msgstr ""
 "Missyckades med att läsa in XML-databasen Locations. Rapportera detta som "
 "ett fel."
 
-#: ../mateweather/mateweather-pref.c:812
+#: ../mateweather/mateweather-pref.c:811
 msgid "Weather Preferences"
 msgstr "Väderinställningar"
 
-#: ../mateweather/mateweather-pref.c:839
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:835
+#: ../mateweather/mateweather-pref.c:1038
 msgid "_Automatically update every:"
 msgstr "_Uppdatera automatiskt var:"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:854
+#: ../mateweather/mateweather-pref.c:851
 msgid "_Temperature unit:"
 msgstr "_Temperaturenhet:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:861
 msgid "Kelvin"
 msgstr "Kelvin"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:866
+#: ../mateweather/mateweather-pref.c:863
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:864
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:876
+#: ../mateweather/mateweather-pref.c:873
 msgid "_Wind speed unit:"
 msgstr "Enhet för _vindhastighet:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:884
 msgid "m/s"
 msgstr "m/s"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:886
 msgid "km/h"
 msgstr "km/h"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:888
 msgid "mph"
 msgstr "engelska mil/h"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:893
+#: ../mateweather/mateweather-pref.c:890
 msgid "knots"
 msgstr "knop"
 
-#: ../mateweather/mateweather-pref.c:894
+#: ../mateweather/mateweather-pref.c:891
 msgid "Beaufort scale"
 msgstr "Beauforts skala"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:903
+#: ../mateweather/mateweather-pref.c:900
 msgid "_Pressure unit:"
 msgstr "_Tryckenhet:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:911
 msgid "kPa"
 msgstr "kPa"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:913
 msgid "hPa"
 msgstr "hPa"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:915
 msgid "mb"
 msgstr "Mb"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:920
+#: ../mateweather/mateweather-pref.c:917
 msgid "mmHg"
 msgstr "mmHg"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:922
+#: ../mateweather/mateweather-pref.c:919
 msgid "inHg"
 msgstr "inHg"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:924
+#: ../mateweather/mateweather-pref.c:921
 msgid "atm"
 msgstr "atm"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:930
 msgid "_Visibility unit:"
 msgstr "_Siktenhet:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:944
+#: ../mateweather/mateweather-pref.c:941
 msgid "meters"
 msgstr "meter"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:943
 msgid "km"
 msgstr "km"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:948
+#: ../mateweather/mateweather-pref.c:945
 msgid "miles"
 msgstr "engelska mil"
 
-#: ../mateweather/mateweather-pref.c:978
+#: ../mateweather/mateweather-pref.c:975
 msgid "Enable _radar map"
 msgstr "Aktivera _radarkarta"
 
-#: ../mateweather/mateweather-pref.c:994
+#: ../mateweather/mateweather-pref.c:991
 msgid "Use _custom address for radar map"
 msgstr "Använd _anpassad adress för radarkartan"
 
-#: ../mateweather/mateweather-pref.c:1012
+#: ../mateweather/mateweather-pref.c:1009
 msgid "A_ddress:"
 msgstr "A_dress:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1027
+#: ../mateweather/mateweather-pref.c:1024
 msgid "Show _notifications"
 msgstr "Visa _aviseringar"
 
-#: ../mateweather/mateweather-pref.c:1037
+#: ../mateweather/mateweather-pref.c:1034
 msgid "Update"
 msgstr "Uppdatera"
 
-#: ../mateweather/mateweather-pref.c:1054
+#: ../mateweather/mateweather-pref.c:1051
 msgid "minutes"
 msgstr "minuter"
 
-#: ../mateweather/mateweather-pref.c:1072
+#: ../mateweather/mateweather-pref.c:1069
 msgid "Display"
 msgstr "Skärm"
 
-#: ../mateweather/mateweather-pref.c:1091
+#: ../mateweather/mateweather-pref.c:1088
 msgid "General"
 msgstr "Allmänt"
 
-#: ../mateweather/mateweather-pref.c:1102
+#: ../mateweather/mateweather-pref.c:1099
 msgid "_Select a location:"
 msgstr "_Välj en plats:"
 
-#: ../mateweather/mateweather-pref.c:1124
+#: ../mateweather/mateweather-pref.c:1121
 msgid "_Find:"
 msgstr "_Sök:"
 
-#: ../mateweather/mateweather-pref.c:1130
+#: ../mateweather/mateweather-pref.c:1127
 msgid "Find _Next"
 msgstr "Sök _nästa"
 
-#: ../mateweather/mateweather-pref.c:1151
+#: ../mateweather/mateweather-pref.c:1148
 msgid "Location"
 msgstr "Plats"
 
@@ -1282,7 +1297,11 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% används"
 msgstr[1] ""
+"%s:\n"
+"%u%% används"
 
 #: ../multiload/main.c:357
 msgid "CPU Load"
@@ -1424,19 +1443,19 @@ msgstr "Rutnätslinjefärg"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Indicator color"
-msgstr ""
+msgstr "Indikatorfärg"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Network threshold 1 in bytes"
-msgstr ""
+msgstr "Nätverksgränsen 1 i byte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Network threshold 2 in bytes"
-msgstr ""
+msgstr "Nätverksgränsen 2 i byte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Network threshold 3 in bytes"
-msgstr ""
+msgstr "Nätverksgräns 3 i byte"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for user-related swap usage"
@@ -1585,7 +1604,7 @@ msgstr "_Rutnätslinje"
 
 #: ../multiload/properties.c:623
 msgid "_Indicator"
-msgstr ""
+msgstr "Indikator"
 
 #: ../multiload/properties.c:627
 msgid "_Used"
@@ -1617,11 +1636,11 @@ msgstr "_Skriv"
 
 #: ../multiload/properties.c:642
 msgid "Network speed thresholds"
-msgstr ""
+msgstr "Hastighetsgränser för nätverk"
 
 #: ../multiload/properties.c:671
 msgid "Threshold 1: "
-msgstr ""
+msgstr "Gräns 1:"
 
 #: ../multiload/properties.c:702 ../multiload/properties.c:737
 #: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
@@ -1630,11 +1649,11 @@ msgstr "byte"
 
 #: ../multiload/properties.c:710
 msgid "Threshold 2: "
-msgstr ""
+msgstr "Gräns 2:"
 
 #: ../multiload/properties.c:745
 msgid "Threshold 3: "
-msgstr ""
+msgstr "Gräns 3:"
 
 #: ../multiload/properties.c:810
 msgid "System Monitor Preferences"
@@ -2031,11 +2050,11 @@ msgstr "Klisterlappar"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Skapa, visa och hantera klisterlappar på skrivbordet"
 
-#: ../stickynotes/stickynotes.c:576
+#: ../stickynotes/stickynotes.c:577
 msgid "This note is locked."
 msgstr "Denna klisterlapp är låst."
 
-#: ../stickynotes/stickynotes.c:580
+#: ../stickynotes/stickynotes.c:581
 msgid "This note is unlocked."
 msgstr "Denna klisterlapp är olåst."
 
@@ -2381,8 +2400,8 @@ msgstr "_Lås lappar"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d anteckning"
+msgstr[1] "%d anteckningar"
 
 #: ../stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2401,7 +2420,7 @@ msgid "Timer"
 msgstr "Tidtagarur"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:259
+#: ../timerapplet/timerapplet.c:279
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Starta en timer och få ett meddelande när den är klar"
 
@@ -2421,55 +2440,55 @@ msgstr "Visa aviserings-popup när timern är klar"
 msgid "Show dialog window when timer finish"
 msgstr "Visa dialogfönster när timern är klar"
 
-#: ../timerapplet/timerapplet.c:78
+#: ../timerapplet/timerapplet.c:79
 msgid "_Start timer"
 msgstr "_Starta timer"
 
-#: ../timerapplet/timerapplet.c:79
+#: ../timerapplet/timerapplet.c:80
 msgid "P_ause timer"
 msgstr "P_ausa timer"
 
-#: ../timerapplet/timerapplet.c:80
+#: ../timerapplet/timerapplet.c:81
 msgid "S_top timer"
 msgstr "S_toppa timer"
 
-#: ../timerapplet/timerapplet.c:140
-msgid "Finished"
-msgstr "Slutförd"
+#: ../timerapplet/timerapplet.c:82
+msgid "R_eset"
+msgstr ""
 
-#: ../timerapplet/timerapplet.c:147 ../timerapplet/timerapplet.c:159
+#: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
 msgstr "Timer klar!"
 
-#: ../timerapplet/timerapplet.c:292
+#: ../timerapplet/timerapplet.c:312
 msgid "Timer Applet Preferences"
 msgstr "Inställningar för timerpanelprogrammet"
 
-#: ../timerapplet/timerapplet.c:305
+#: ../timerapplet/timerapplet.c:325
 msgid "Name:"
 msgstr "Namn:"
 
-#: ../timerapplet/timerapplet.c:314
+#: ../timerapplet/timerapplet.c:334
 msgid "Hours:"
 msgstr "Timmar:"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:345
 msgid "Minutes:"
 msgstr "Minuter:"
 
-#: ../timerapplet/timerapplet.c:336
+#: ../timerapplet/timerapplet.c:356
 msgid "Seconds:"
 msgstr "Sekunder:"
 
-#: ../timerapplet/timerapplet.c:347
+#: ../timerapplet/timerapplet.c:367
 msgid "Show notification popup"
 msgstr "Visa popup-avisering"
 
-#: ../timerapplet/timerapplet.c:351
+#: ../timerapplet/timerapplet.c:371
 msgid "Show dialog"
 msgstr "Visa dialogruta"
 
-#: ../timerapplet/timerapplet.c:373
+#: ../timerapplet/timerapplet.c:405
 msgid "Timer Applet"
 msgstr "Panelprogrammet Timer"
 
@@ -2481,7 +2500,7 @@ msgstr "Papperskorg"
 msgid "Go to Trash"
 msgstr "Gå till papperskorgen"
 
-#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:353
+#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
 msgstr "Töm _papperskorgen"
 
@@ -2493,8 +2512,8 @@ msgstr "_Öppna papperskorgen"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d objekt i papperskorgen"
+msgstr[1] "%d objekt i papperskorgen"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

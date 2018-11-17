@@ -3,13 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Davit Mayilyan <davit.mayilyan@protonmail.ch>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Siranush <ss.m.95@mail.ru>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-10 08:45+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: Siranush <ss.m.95@mail.ru>, 2018\n"
 "Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +28,12 @@ msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Ցուցադրում է AccessX–ի հնարավորությունները որպես փակ մոդիֆիկատորներ"
 
 #: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:618 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:640 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:587 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
 #: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
 #: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
+#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
 msgstr "թարգմանչի կրեդիտներ"
 
@@ -51,7 +56,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "_Ստեղնաշարի մատչելիության նախընտրանքներ"
 
 #: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:129
+#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
 #: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
@@ -59,11 +64,11 @@ msgid "_Help"
 msgstr "_Օգնություն"
 
 #: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:702 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:162
+#: ../charpick/charpick.c:671 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
 #: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
-#: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
+#: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Մասին"
 
@@ -73,36 +78,36 @@ msgstr "_Մասին"
 msgid "a"
 msgstr "մի"
 
-#: ../accessx-status/applet.c:1036 ../accessx-status/applet.c:1102
-#: ../accessx-status/applet.c:1187 ../accessx-status/applet.c:1381
+#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
+#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
 msgid "AccessX Status"
 msgstr "AccessX կարգավիճակ"
 
-#: ../accessx-status/applet.c:1037 ../accessx-status/applet.c:1188
+#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "Ցուցադրում է ստեղնաշարի կարգավիճակը՝ մատչելիության հնարավորությունները "
 "կիրառելիս։"
 
-#: ../accessx-status/applet.c:1071
+#: ../accessx-status/applet.c:1073
 msgid "XKB Extension is not enabled"
 msgstr "XKB ընդարձակումը թույլատրված չէ"
 
-#: ../accessx-status/applet.c:1076
+#: ../accessx-status/applet.c:1078
 msgid "Unknown error"
 msgstr "Անհայտ սխալ"
 
-#: ../accessx-status/applet.c:1080
+#: ../accessx-status/applet.c:1082
 #, c-format
 msgid "Error: %s"
 msgstr "Սխալ. %s"
 
-#: ../accessx-status/applet.c:1378
+#: ../accessx-status/applet.c:1380
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Ստեղնաշարի մատչելիության կարգավիճակ"
 
-#: ../accessx-status/applet.c:1382
+#: ../accessx-status/applet.c:1384
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 "Ցուցադրում է ստեղնաշարի մատչելիության հնարավորությունների ներկա կարգավիճակը"
@@ -119,11 +124,11 @@ msgstr "Ստեղնաարի մատչելիության կարգավիճակի գ�
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Ցուցադրում է ստեղնաշարի մատչելիության հնարավորությունների կարգավիճակը"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:696
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
-#: ../timerapplet/timerapplet.c:81
+#: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "_Նախընտրանքներ"
 
@@ -431,28 +436,28 @@ msgstr "Մարտկոցը լիցքաթափված է "
 msgid "Battery fully re-charged"
 msgstr "Մարտկոցը ամբողջությամբ վերալիցքավորված է "
 
-#: ../charpick/charpick.c:435
+#: ../charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "Հասանելի ներկապնակներ"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:484
+#: ../charpick/charpick.c:453
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Մուտքագրել \"%s\" "
 
-#: ../charpick/charpick.c:487
+#: ../charpick/charpick.c:456
 msgid "Insert special character"
 msgstr "Մուտքագրել հատուկ նիշ "
 
-#: ../charpick/charpick.c:491
+#: ../charpick/charpick.c:460
 #, c-format
 msgid "insert special character %s"
 msgstr "մուտքագրել հատուկ նիշ %s "
 
-#: ../charpick/charpick.c:613
+#: ../charpick/charpick.c:582
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -460,13 +465,13 @@ msgstr ""
 "Գնոմ վահանակ ապլետ տարօրինակ նիշերի ընտրության համար, որոնք բացակայում են "
 "ստեղնաշարի վրա։  Թողարկված է GNU General Public  արտոնագրով։"
 
-#: ../charpick/charpick.c:725 ../charpick/charpick.c:739
+#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Նիշի ներկապնակ "
 
-#: ../charpick/charpick.c:725
+#: ../charpick/charpick.c:694
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Մուտքագրել նիշեր "
@@ -656,7 +661,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Ցուցադրել պրոցեսորի հաճախականությունը _տոկոսներով "
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:991 ../cpufreq/src/cpufreq-applet.c:1046
+#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Պրոցեսորի հաճախականության մասշտաբավորման ցուցիչ"
 
@@ -699,17 +704,17 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:604 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr "Չի հաջողվում օգնության փաստաթուղթը բացել "
 
-#: ../cpufreq/src/cpufreq-applet.c:635
+#: ../cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr ""
 "Այս ծառայությունը ցույց է տալիս պրոցեսորի ընթացիկ հաճախականության "
 "փոփոխությունը"
 
-#: ../cpufreq/src/cpufreq-applet.c:1047
+#: ../cpufreq/src/cpufreq-applet.c:867
 msgid "This utility shows the current CPU Frequency"
 msgstr "Այս ծառայությունը ցույց է տալիս պրոցեսորի ընթացիկ հաճախականությունը"
 
@@ -756,42 +761,42 @@ msgstr ""
 "Արտոնություններ են հարկավոր պրոցեսորի հաճախականության մասշտաբավորումը "
 "փոխելու համար։"
 
-#: ../drivemount/drive-button.c:397 ../drivemount/drive-button.c:411
+#: ../drivemount/drive-button.c:340 ../drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(միացված է) "
 
-#: ../drivemount/drive-button.c:404
+#: ../drivemount/drive-button.c:347
 msgid "(not mounted)"
 msgstr "(միացված չէ) "
 
-#: ../drivemount/drive-button.c:673
+#: ../drivemount/drive-button.c:616
 msgid "Cannot execute Caja"
 msgstr "Հնարավոր չէ կատարել Caja֊ն"
 
-#: ../drivemount/drive-button.c:997
+#: ../drivemount/drive-button.c:940
 msgid "_Play DVD"
 msgstr "_Միացնել DVD "
 
-#: ../drivemount/drive-button.c:1001
+#: ../drivemount/drive-button.c:944
 msgid "_Play CD"
 msgstr "_Միացնել CD  "
 
-#: ../drivemount/drive-button.c:1004
+#: ../drivemount/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr "_Բացել %s "
 
-#: ../drivemount/drive-button.c:1012
+#: ../drivemount/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr "Անջատել %s "
 
-#: ../drivemount/drive-button.c:1018
+#: ../drivemount/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr "_Միացնել %s "
 
-#: ../drivemount/drive-button.c:1026
+#: ../drivemount/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr "_Հանել %s "
@@ -831,8 +836,8 @@ msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Աչքերը նայում են մկնիկի սլաքի ուղղությամբ "
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "Geyes Applet Factory"
-msgstr "G աչքերի ապլետ ֆաբրիկա"
+msgid "Eyes Applet Factory"
+msgstr ""
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -851,8 +856,8 @@ msgid "There was a fatal error while trying to load the theme."
 msgstr "Թեմայի բեռնման ժամանակ լուրջ սխալ է տեղի ունեցել։"
 
 #: ../geyes/themes.c:285
-msgid "Geyes Preferences"
-msgstr "G աչքերի նախընտրանքներ"
+msgid "Eyes Preferences"
+msgstr ""
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -880,16 +885,16 @@ msgstr "_Նորացնել"
 msgid "Weather Report"
 msgstr "Եղանակի տեսություն"
 
-#: ../mateweather/mateweather-applet.c:357
-#: ../mateweather/mateweather-applet.c:361
+#: ../mateweather/mateweather-applet.c:354
+#: ../mateweather/mateweather-applet.c:358
 msgid "MATE Weather"
 msgstr "ԳՆՈՄ Եղանակ"
 
-#: ../mateweather/mateweather-applet.c:460
+#: ../mateweather/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Եղանակի Տեսություն"
 
-#: ../mateweather/mateweather-applet.c:472
+#: ../mateweather/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -900,7 +905,7 @@ msgstr ""
 "Երկինք՝ %s\n"
 "Ջերմաստիճան՝ %s"
 
-#: ../mateweather/mateweather-applet.c:521
+#: ../mateweather/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Նորացում․․․"
 
@@ -960,39 +965,39 @@ msgstr "Արևածագ՝"
 msgid "Sunset:"
 msgstr "Արևամուտ՝"
 
-#: ../mateweather/mateweather-dialog.c:404
+#: ../mateweather/mateweather-dialog.c:406
 msgid "Current Conditions"
 msgstr "Ընթացիկ պայմաններ"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "Forecast Report"
 msgstr "Եղանակի Տեսություն"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "See the ForeCast Details"
 msgstr "Տես եղանակի տեսութան Մանրամասները"
 
-#: ../mateweather/mateweather-dialog.c:431
+#: ../mateweather/mateweather-dialog.c:433
 msgid "Forecast"
 msgstr "Կանխատեսում"
 
-#: ../mateweather/mateweather-dialog.c:439
+#: ../mateweather/mateweather-dialog.c:441
 msgid "Radar Map"
 msgstr "Ռադարային քարտեզ"
 
-#: ../mateweather/mateweather-dialog.c:470
+#: ../mateweather/mateweather-dialog.c:474
 msgid "_Visit Weather.com"
 msgstr "_Այցելեք Weather.com կայք"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Visit Weather.com"
 msgstr "Այցելեք Weather.com կայք"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Click to Enter Weather.com"
 msgstr "Կտտացրեք՝ Weather.com կայքը այցելելու համար"
 
-#: ../mateweather/mateweather-dialog.c:556
+#: ../mateweather/mateweather-dialog.c:606
 msgid "Forecast not currently available for this location."
 msgstr "Ներկա պահին տվյալ վայրի վերաբերյալ եղանակի տեսությունը հասանելի չէ"
 
@@ -1027,168 +1032,168 @@ msgid ""
 msgstr ""
 "Չհաջողվեց բեռնել Տեղանքի XML բազան։ Խնդրում ենք հայտնել այս սխալի մասին։"
 
-#: ../mateweather/mateweather-pref.c:812
+#: ../mateweather/mateweather-pref.c:811
 msgid "Weather Preferences"
 msgstr "Եղանակի տեսություն ապլետի պարամետրեր"
 
-#: ../mateweather/mateweather-pref.c:839
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:835
+#: ../mateweather/mateweather-pref.c:1038
 msgid "_Automatically update every:"
 msgstr "_Ավտոմատ նորացնել յուրաքանչյուր՝"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:854
+#: ../mateweather/mateweather-pref.c:851
 msgid "_Temperature unit:"
 msgstr "_Ջերմաստիճանի միավոր"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:861
 msgid "Kelvin"
 msgstr "Կելվին"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:866
+#: ../mateweather/mateweather-pref.c:863
 msgid "Celsius"
 msgstr "Ցելսիուս"
 
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:864
 msgid "Fahrenheit"
 msgstr "Ֆարենհեյտ"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:876
+#: ../mateweather/mateweather-pref.c:873
 msgid "_Wind speed unit:"
 msgstr "_Քամու արագության միավոր"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:884
 msgid "m/s"
 msgstr "մ/վ"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:886
 msgid "km/h"
 msgstr "կմ/ժ"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:888
 msgid "mph"
 msgstr "մղոն/ժ"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:893
+#: ../mateweather/mateweather-pref.c:890
 msgid "knots"
 msgstr "հանգույց"
 
-#: ../mateweather/mateweather-pref.c:894
+#: ../mateweather/mateweather-pref.c:891
 msgid "Beaufort scale"
 msgstr "Բեոֆորտյան սանդղակ"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:903
+#: ../mateweather/mateweather-pref.c:900
 msgid "_Pressure unit:"
 msgstr "_Ճնշման միավոր"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:911
 msgid "kPa"
 msgstr "ԿիլոՊասկալ"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:913
 msgid "hPa"
 msgstr "ՀեկտոՊասկալ"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:915
 msgid "mb"
 msgstr "Միլիբար"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:920
+#: ../mateweather/mateweather-pref.c:917
 msgid "mmHg"
 msgstr "Մմ սնդկիկի սյուն"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:922
+#: ../mateweather/mateweather-pref.c:919
 msgid "inHg"
 msgstr "Դույմ սնդիկի սյուն"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:924
+#: ../mateweather/mateweather-pref.c:921
 msgid "atm"
 msgstr "ԱԳՄ"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:930
 msgid "_Visibility unit:"
 msgstr "_ՏԵսանելիության միավոր"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:944
+#: ../mateweather/mateweather-pref.c:941
 msgid "meters"
 msgstr "մետրեր"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:943
 msgid "km"
 msgstr "Կմ"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:948
+#: ../mateweather/mateweather-pref.c:945
 msgid "miles"
 msgstr "Մղոն"
 
-#: ../mateweather/mateweather-pref.c:978
+#: ../mateweather/mateweather-pref.c:975
 msgid "Enable _radar map"
 msgstr "Միացնել _ռադարային քարտեզը"
 
-#: ../mateweather/mateweather-pref.c:994
+#: ../mateweather/mateweather-pref.c:991
 msgid "Use _custom address for radar map"
 msgstr "Գործարկողի հասցեն օգտագործել ռադարային քարտեզի համար"
 
-#: ../mateweather/mateweather-pref.c:1012
+#: ../mateweather/mateweather-pref.c:1009
 msgid "A_ddress:"
 msgstr "Հասցե"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1027
+#: ../mateweather/mateweather-pref.c:1024
 msgid "Show _notifications"
 msgstr "Ցույց տալ _ծանուցումները"
 
-#: ../mateweather/mateweather-pref.c:1037
+#: ../mateweather/mateweather-pref.c:1034
 msgid "Update"
 msgstr "Նորացում"
 
-#: ../mateweather/mateweather-pref.c:1054
+#: ../mateweather/mateweather-pref.c:1051
 msgid "minutes"
 msgstr "րոպեներ"
 
-#: ../mateweather/mateweather-pref.c:1072
+#: ../mateweather/mateweather-pref.c:1069
 msgid "Display"
 msgstr "Ցուցադրել"
 
-#: ../mateweather/mateweather-pref.c:1091
+#: ../mateweather/mateweather-pref.c:1088
 msgid "General"
 msgstr "Ընդհանուր"
 
-#: ../mateweather/mateweather-pref.c:1102
+#: ../mateweather/mateweather-pref.c:1099
 msgid "_Select a location:"
 msgstr "_Ընտրեք հասցեն"
 
-#: ../mateweather/mateweather-pref.c:1124
+#: ../mateweather/mateweather-pref.c:1121
 msgid "_Find:"
 msgstr "_Գտնել։"
 
-#: ../mateweather/mateweather-pref.c:1130
+#: ../mateweather/mateweather-pref.c:1127
 msgid "Find _Next"
 msgstr "Գտնել _հաջորդը"
 
-#: ../mateweather/mateweather-pref.c:1151
+#: ../mateweather/mateweather-pref.c:1148
 msgid "Location"
 msgstr "Տեղակայություն"
 
@@ -2044,11 +2049,11 @@ msgstr "Կպչուն գրառումներ"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Էկրանի վրա կերտում, դիտում և կպչուն գրառումների կառավարում "
 
-#: ../stickynotes/stickynotes.c:576
+#: ../stickynotes/stickynotes.c:577
 msgid "This note is locked."
 msgstr "Այս գրառումը արգելափակված է"
 
-#: ../stickynotes/stickynotes.c:580
+#: ../stickynotes/stickynotes.c:581
 msgid "This note is unlocked."
 msgstr "Այս գրառումը վերաբացված է"
 
@@ -2418,7 +2423,7 @@ msgid "Timer"
 msgstr "Ժամանակաչափ"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:259
+#: ../timerapplet/timerapplet.c:279
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Սկսել ժամանակաչափը և ստանալ ծանուցում, թե երբ է այն ավարտվում"
 
@@ -2438,55 +2443,55 @@ msgstr "Ցույց տալ ծանուցումը թռուցիկ, երբ ժաման
 msgid "Show dialog window when timer finish"
 msgstr "Ցույց տալ երկխոսության պատուհանը, երբ ժամանակաչափը ավարտվի"
 
-#: ../timerapplet/timerapplet.c:78
+#: ../timerapplet/timerapplet.c:79
 msgid "_Start timer"
 msgstr "_Ժամանակաչափի սկիզբ"
 
-#: ../timerapplet/timerapplet.c:79
+#: ../timerapplet/timerapplet.c:80
 msgid "P_ause timer"
 msgstr "ժամանակաչափ Դադար"
 
-#: ../timerapplet/timerapplet.c:80
+#: ../timerapplet/timerapplet.c:81
 msgid "S_top timer"
 msgstr "Ժամանակաչափի կանգ"
 
-#: ../timerapplet/timerapplet.c:140
-msgid "Finished"
-msgstr "Ավարտված է"
+#: ../timerapplet/timerapplet.c:82
+msgid "R_eset"
+msgstr ""
 
-#: ../timerapplet/timerapplet.c:147 ../timerapplet/timerapplet.c:159
+#: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
 msgstr "Ժամանակաչափը ավարտել է."
 
-#: ../timerapplet/timerapplet.c:292
+#: ../timerapplet/timerapplet.c:312
 msgid "Timer Applet Preferences"
 msgstr "Ժամանակաչափ Ապլետի Նախընտրանքներ"
 
-#: ../timerapplet/timerapplet.c:305
+#: ../timerapplet/timerapplet.c:325
 msgid "Name:"
 msgstr "Անուն։"
 
-#: ../timerapplet/timerapplet.c:314
+#: ../timerapplet/timerapplet.c:334
 msgid "Hours:"
 msgstr "ժամեր։"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:345
 msgid "Minutes:"
 msgstr "Րոպեներ։"
 
-#: ../timerapplet/timerapplet.c:336
+#: ../timerapplet/timerapplet.c:356
 msgid "Seconds:"
 msgstr "Վայրկյաններ։"
 
-#: ../timerapplet/timerapplet.c:347
+#: ../timerapplet/timerapplet.c:367
 msgid "Show notification popup"
 msgstr "Ծանուցումը ցույց տալ թռուցիկ"
 
-#: ../timerapplet/timerapplet.c:351
+#: ../timerapplet/timerapplet.c:371
 msgid "Show dialog"
 msgstr "Ցույց տալ երկխոսությունը"
 
-#: ../timerapplet/timerapplet.c:373
+#: ../timerapplet/timerapplet.c:405
 msgid "Timer Applet"
 msgstr "Ժամանակաչափ Ապլետ"
 
@@ -2498,7 +2503,7 @@ msgstr "Թափոնի զամբյուղ"
 msgid "Go to Trash"
 msgstr "Ուղարկել թափոնի զամբյուղ"
 
-#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:353
+#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
 msgstr "_Դատարկ Աղբարկղ"
 

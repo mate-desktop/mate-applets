@@ -3,14 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Martin Wimpress <code@flexion.org>, 2018
+# Bohdan Kovalchuk <neostanniy@gmail.com>, 2018
+# Denis <prohibiti@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# zubr139, 2018
+# Oleh, 2018
+# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018
+# Микола Ткач <znadibnyk@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-10 08:45+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Denis <prohibiti@gmail.com>, 2018\n"
+"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"PO-Revision-Date: 2018-03-11 16:20+0000\n"
+"Last-Translator: Микола Ткач <znadibnyk@gmail.com>, 2018\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,12 +34,12 @@ msgstr ""
 "Показує стан особливостей AccessX, наприклад, увімкнутих модифікаторів"
 
 #: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:618 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:640 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:587 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
 #: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
 #: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
+#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
 msgstr ""
 "Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
@@ -43,19 +53,19 @@ msgstr "Помилка при запуску переглядача довідк
 
 #: ../accessx-status/applet.c:147
 msgid "Open the keyboard preferences dialog"
-msgstr "Відкрити діялоґ налаштування набірниці"
+msgstr "Відкрити діалог налаштування набірниці"
 
 #: ../accessx-status/applet.c:162
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
-msgstr "Помилка під час запуску діялоґу параметрів набірниці: %s"
+msgstr "Помилка під час запуску діалогу параметрів набірниці: %s"
 
 #: ../accessx-status/applet.c:177
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Параметри спеціяльних можливостей _набірниці"
 
 #: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:129
+#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
 #: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
@@ -63,13 +73,13 @@ msgid "_Help"
 msgstr "_Допомога"
 
 #: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:702 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:162
+#: ../charpick/charpick.c:671 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
 #: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
-#: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
+#: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
-msgstr "_Про проґраму"
+msgstr "_Про програму"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
@@ -77,34 +87,34 @@ msgstr "_Про проґраму"
 msgid "a"
 msgstr "а"
 
-#: ../accessx-status/applet.c:1036 ../accessx-status/applet.c:1102
-#: ../accessx-status/applet.c:1187 ../accessx-status/applet.c:1381
+#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
+#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
 msgid "AccessX Status"
 msgstr "Стан AccessX"
 
-#: ../accessx-status/applet.c:1037 ../accessx-status/applet.c:1188
+#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Показує стан набірниці при використанні спеціяльних можливостей"
 
-#: ../accessx-status/applet.c:1071
+#: ../accessx-status/applet.c:1073
 msgid "XKB Extension is not enabled"
 msgstr "XKB розширення не увімкнено"
 
-#: ../accessx-status/applet.c:1076
+#: ../accessx-status/applet.c:1078
 msgid "Unknown error"
 msgstr "Невідома помилка"
 
-#: ../accessx-status/applet.c:1080
+#: ../accessx-status/applet.c:1082
 #, c-format
 msgid "Error: %s"
 msgstr "Помилка: %s"
 
-#: ../accessx-status/applet.c:1378
+#: ../accessx-status/applet.c:1380
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Стан спеціяльних можливостей набірниці"
 
-#: ../accessx-status/applet.c:1382
+#: ../accessx-status/applet.c:1384
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Показує поточний стан спеціяльних можливостей набірниці"
 
@@ -120,11 +130,11 @@ msgstr "Фабрика стану спеціяльних можливостей 
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Показує стан спеціяльних можливостей набірниці"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:696
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
-#: ../timerapplet/timerapplet.c:81
+#: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "_Налаштування"
 
@@ -155,37 +165,37 @@ msgstr "Час до повного зарядження (%d%%) невідоми�
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "залишилася %d хвилина (%d%%)"
+msgstr[1] "залишилося %d хвилини (%d%%)"
+msgstr[2] "залишилося %d хвилин (%d%%)"
+msgstr[3] "залишилося %d хвилин (%d%%)"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d До цілковитого заряду залишилася (%d%%) хвилина"
+msgstr[1] "%dДо цілковитого заряду залишилося (%d%%) хвилини"
+msgstr[2] "%dДо цілковитого заряду залишилося (%d%%) хвилин"
+msgstr[3] "%dДо цілковитого заряду залишилося (%d%%) хвилин"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "залишилася %d година (%d%%)"
+msgstr[1] "залишилося %d години (%d%%)"
+msgstr[2] "залишилося %d годин (%d%%)"
+msgstr[3] "залишилося %d годин (%d%%)"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d година (%d%%) до цілковитого зарядження"
+msgstr[1] "%d години (%d%%) до цілковитого зарядження"
+msgstr[2] "%d годин (%d%%) до цілковитого зарядження"
+msgstr[3] "%d годин (%d%%) до цілковитого зарядження"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -197,18 +207,18 @@ msgstr "залишилося %d %s %d %s (%d%%)"
 #: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "година"
+msgstr[1] "години"
+msgstr[2] "годин"
+msgstr[3] "годин"
 
 #: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "хвилина"
+msgstr[1] "хвилини"
+msgstr[2] "хвилин"
+msgstr[3] "хвилин"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -242,9 +252,17 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"Час роботи від акумулятора, що лишився - %d хвилина (%d%% від загальної "
+"місткости)."
 msgstr[1] ""
+"Час роботи від акумулятора, що лишився - %d хвилини (%d%% від загальної "
+"місткости)."
 msgstr[2] ""
+"Час роботи від акумулятора, що лишився - %d хвилин (%d%% від загальної "
+"місткости)."
 msgstr[3] ""
+"Час роботи від акумулятора, що лишився - %d хвилин (%d%% від загальної "
+"місткости)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -444,28 +462,28 @@ msgstr "Акумулятор розряджений"
 msgid "Battery fully re-charged"
 msgstr "Акумулятор повністю заряджено"
 
-#: ../charpick/charpick.c:435
+#: ../charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "Наявні палітри"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:484
+#: ../charpick/charpick.c:453
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Вставити \"%s\""
 
-#: ../charpick/charpick.c:487
+#: ../charpick/charpick.c:456
 msgid "Insert special character"
 msgstr "Вставити спеціяльний символ"
 
-#: ../charpick/charpick.c:491
+#: ../charpick/charpick.c:460
 #, c-format
 msgid "insert special character %s"
 msgstr "вставити спеціяльний символ %s"
 
-#: ../charpick/charpick.c:613
+#: ../charpick/charpick.c:582
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -473,13 +491,13 @@ msgstr ""
 "Аплет для вибору спеціяльних знаків, яких немає на набірниці. Випущено під "
 "ліцензією GNU General Public Licence."
 
-#: ../charpick/charpick.c:725 ../charpick/charpick.c:739
+#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Палітра символів"
 
-#: ../charpick/charpick.c:725
+#: ../charpick/charpick.c:694
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Вставка символів"
@@ -669,7 +687,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Показувати частоту ЦПП у _відсотках"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:991 ../cpufreq/src/cpufreq-applet.c:1046
+#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Індикатор зміни частоти процесора"
 
@@ -715,15 +733,15 @@ msgstr ""
 "0 - показувати частоту ЦПП, 1 - частоту й одиниці, 2 - відсотки замість "
 "частоти."
 
-#: ../cpufreq/src/cpufreq-applet.c:604 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr "Не вдається відкрити документ довідки"
 
-#: ../cpufreq/src/cpufreq-applet.c:635
+#: ../cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Цей засіб показує поточну частоту процесора."
 
-#: ../cpufreq/src/cpufreq-applet.c:1047
+#: ../cpufreq/src/cpufreq-applet.c:867
 msgid "This utility shows the current CPU Frequency"
 msgstr "Цей засіб показує поточну частоту ЦПП"
 
@@ -768,42 +786,42 @@ msgstr "Змінити частоту процесора"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Для зміни частоти процесора потрібні привілеї адміністратора."
 
-#: ../drivemount/drive-button.c:397 ../drivemount/drive-button.c:411
+#: ../drivemount/drive-button.c:340 ../drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(змонтовано)"
 
-#: ../drivemount/drive-button.c:404
+#: ../drivemount/drive-button.c:347
 msgid "(not mounted)"
 msgstr " (не змонтовано)"
 
-#: ../drivemount/drive-button.c:673
+#: ../drivemount/drive-button.c:616
 msgid "Cannot execute Caja"
 msgstr "Неможливо виконати Caja"
 
-#: ../drivemount/drive-button.c:997
+#: ../drivemount/drive-button.c:940
 msgid "_Play DVD"
 msgstr "_Грати DVD"
 
-#: ../drivemount/drive-button.c:1001
+#: ../drivemount/drive-button.c:944
 msgid "_Play CD"
 msgstr "_Грати КД"
 
-#: ../drivemount/drive-button.c:1004
+#: ../drivemount/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr "_Відкрити %s"
 
-#: ../drivemount/drive-button.c:1012
+#: ../drivemount/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr "Де_монтувати %s"
 
-#: ../drivemount/drive-button.c:1018
+#: ../drivemount/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr "_Змонтувати %s"
 
-#: ../drivemount/drive-button.c:1026
+#: ../drivemount/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr "Ви_тягнути %s"
@@ -843,8 +861,8 @@ msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Очі, що дивляться у напрямку вказівника миші"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "Geyes Applet Factory"
-msgstr "Фабрика аплету \"Очі\""
+msgid "Eyes Applet Factory"
+msgstr "Фабрика аплету Очі"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -863,7 +881,7 @@ msgid "There was a fatal error while trying to load the theme."
 msgstr "Фатальна помилка при спробі завантажити тему."
 
 #: ../geyes/themes.c:285
-msgid "Geyes Preferences"
+msgid "Eyes Preferences"
 msgstr "Параметри аплету \"Очі\""
 
 #: ../geyes/themes.c:318
@@ -892,16 +910,16 @@ msgstr "_Оновити"
 msgid "Weather Report"
 msgstr "Зведення погоди"
 
-#: ../mateweather/mateweather-applet.c:357
-#: ../mateweather/mateweather-applet.c:361
+#: ../mateweather/mateweather-applet.c:354
+#: ../mateweather/mateweather-applet.c:358
 msgid "MATE Weather"
 msgstr "Аплет \"Зведення погоди\""
 
-#: ../mateweather/mateweather-applet.c:460
+#: ../mateweather/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Прогноз погоди"
 
-#: ../mateweather/mateweather-applet.c:472
+#: ../mateweather/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -912,7 +930,7 @@ msgstr ""
 "Небо: %s\n"
 "Температура: %s"
 
-#: ../mateweather/mateweather-applet.c:521
+#: ../mateweather/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Триває оновлення..."
 
@@ -972,39 +990,39 @@ msgstr "Схід сонця:"
 msgid "Sunset:"
 msgstr "Захід сонця:"
 
-#: ../mateweather/mateweather-dialog.c:404
+#: ../mateweather/mateweather-dialog.c:406
 msgid "Current Conditions"
 msgstr "Поточні погодні умови"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "Forecast Report"
 msgstr "Прогноз погоди"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "See the ForeCast Details"
 msgstr "Переглянути докладний прогноз"
 
-#: ../mateweather/mateweather-dialog.c:431
+#: ../mateweather/mateweather-dialog.c:433
 msgid "Forecast"
 msgstr "Прогноз"
 
-#: ../mateweather/mateweather-dialog.c:439
+#: ../mateweather/mateweather-dialog.c:441
 msgid "Radar Map"
 msgstr "Радарна мапа"
 
-#: ../mateweather/mateweather-dialog.c:470
+#: ../mateweather/mateweather-dialog.c:474
 msgid "_Visit Weather.com"
 msgstr "_Відвідати Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Visit Weather.com"
 msgstr "Відвідати Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Click to Enter Weather.com"
 msgstr "Клацніть, щоб відвідати Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:556
+#: ../mateweather/mateweather-dialog.c:606
 msgid "Forecast not currently available for this location."
 msgstr "Для цієї місцевости прогноз наразі недоступний."
 
@@ -1038,168 +1056,168 @@ msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Не вдається завантажити XML базу даних місць. Сповістіть про помилку."
 
-#: ../mateweather/mateweather-pref.c:812
+#: ../mateweather/mateweather-pref.c:811
 msgid "Weather Preferences"
 msgstr "Параметри аплету \"Зведення погоди\""
 
-#: ../mateweather/mateweather-pref.c:839
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:835
+#: ../mateweather/mateweather-pref.c:1038
 msgid "_Automatically update every:"
 msgstr "Автоматично оновлювати _кожні "
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:854
+#: ../mateweather/mateweather-pref.c:851
 msgid "_Temperature unit:"
 msgstr "_Температурні одиниці:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:861
 msgid "Kelvin"
 msgstr "Кельвін"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:866
+#: ../mateweather/mateweather-pref.c:863
 msgid "Celsius"
 msgstr "Цельсій"
 
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:864
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:876
+#: ../mateweather/mateweather-pref.c:873
 msgid "_Wind speed unit:"
 msgstr "Одиниці швидкости _вітру:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:884
 msgid "m/s"
 msgstr "м/с"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:886
 msgid "km/h"
 msgstr "км/год"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:888
 msgid "mph"
 msgstr "миль/год"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:893
+#: ../mateweather/mateweather-pref.c:890
 msgid "knots"
 msgstr "вузлів"
 
-#: ../mateweather/mateweather-pref.c:894
+#: ../mateweather/mateweather-pref.c:891
 msgid "Beaufort scale"
 msgstr "Шкала Бофорта"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:903
+#: ../mateweather/mateweather-pref.c:900
 msgid "_Pressure unit:"
 msgstr "Одиниці т_иску:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:911
 msgid "kPa"
 msgstr "кПа"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:913
 msgid "hPa"
 msgstr "ГПа"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:915
 msgid "mb"
 msgstr "мб"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:920
+#: ../mateweather/mateweather-pref.c:917
 msgid "mmHg"
 msgstr "мм рт.ст."
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:922
+#: ../mateweather/mateweather-pref.c:919
 msgid "inHg"
 msgstr "дюймів рт.ст."
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:924
+#: ../mateweather/mateweather-pref.c:921
 msgid "atm"
 msgstr "атм"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:930
 msgid "_Visibility unit:"
 msgstr "Одиниці види_мости:"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:944
+#: ../mateweather/mateweather-pref.c:941
 msgid "meters"
 msgstr "метрів"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:943
 msgid "km"
 msgstr "км"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:948
+#: ../mateweather/mateweather-pref.c:945
 msgid "miles"
 msgstr "миль"
 
-#: ../mateweather/mateweather-pref.c:978
+#: ../mateweather/mateweather-pref.c:975
 msgid "Enable _radar map"
 msgstr "Увімкнути _радарну мапу"
 
-#: ../mateweather/mateweather-pref.c:994
+#: ../mateweather/mateweather-pref.c:991
 msgid "Use _custom address for radar map"
 msgstr "В_ласна адреса радарної мапи"
 
-#: ../mateweather/mateweather-pref.c:1012
+#: ../mateweather/mateweather-pref.c:1009
 msgid "A_ddress:"
 msgstr "Ад_реса:"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1027
+#: ../mateweather/mateweather-pref.c:1024
 msgid "Show _notifications"
 msgstr "Показати _сповіщення"
 
-#: ../mateweather/mateweather-pref.c:1037
+#: ../mateweather/mateweather-pref.c:1034
 msgid "Update"
 msgstr "Замінити"
 
-#: ../mateweather/mateweather-pref.c:1054
+#: ../mateweather/mateweather-pref.c:1051
 msgid "minutes"
 msgstr "хвилин"
 
-#: ../mateweather/mateweather-pref.c:1072
+#: ../mateweather/mateweather-pref.c:1069
 msgid "Display"
 msgstr "Зовнішній вигляд"
 
-#: ../mateweather/mateweather-pref.c:1091
+#: ../mateweather/mateweather-pref.c:1088
 msgid "General"
 msgstr "Загальні"
 
-#: ../mateweather/mateweather-pref.c:1102
+#: ../mateweather/mateweather-pref.c:1099
 msgid "_Select a location:"
 msgstr "Вибрати _місцевість:"
 
-#: ../mateweather/mateweather-pref.c:1124
+#: ../mateweather/mateweather-pref.c:1121
 msgid "_Find:"
 msgstr "З_найти:"
 
-#: ../mateweather/mateweather-pref.c:1130
+#: ../mateweather/mateweather-pref.c:1127
 msgid "Find _Next"
 msgstr "Знайти _наступний"
 
-#: ../mateweather/mateweather-pref.c:1151
+#: ../mateweather/mateweather-pref.c:1148
 msgid "Location"
 msgstr "Розташування"
 
@@ -1295,9 +1313,17 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% використовується"
 msgstr[1] ""
+"%s:\n"
+"%u%% використовується"
 msgstr[2] ""
+"%s:\n"
+"%u%% використовується"
 msgstr[3] ""
+"%s:\n"
+"%u%% використовується"
 
 #: ../multiload/main.c:357
 msgid "CPU Load"
@@ -1439,19 +1465,19 @@ msgstr "Колір ґратки"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Indicator color"
-msgstr ""
+msgstr "Колір індикатора"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Network threshold 1 in bytes"
-msgstr ""
+msgstr "Межа мережі 1 в байтах"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Network threshold 2 in bytes"
-msgstr ""
+msgstr "Межа мережі 2 в байтах"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Network threshold 3 in bytes"
-msgstr ""
+msgstr "Межа мережі 3 в байтах"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for user-related swap usage"
@@ -1600,7 +1626,7 @@ msgstr "_Лінія ґратки"
 
 #: ../multiload/properties.c:623
 msgid "_Indicator"
-msgstr ""
+msgstr "_Індикатор"
 
 #: ../multiload/properties.c:627
 msgid "_Used"
@@ -1632,11 +1658,11 @@ msgstr "_Запис"
 
 #: ../multiload/properties.c:642
 msgid "Network speed thresholds"
-msgstr ""
+msgstr "Межі швидкости мережі"
 
 #: ../multiload/properties.c:671
 msgid "Threshold 1: "
-msgstr ""
+msgstr "Поріг 1: "
 
 #: ../multiload/properties.c:702 ../multiload/properties.c:737
 #: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
@@ -1645,11 +1671,11 @@ msgstr "байів"
 
 #: ../multiload/properties.c:710
 msgid "Threshold 2: "
-msgstr ""
+msgstr "Поріг 2: "
 
 #: ../multiload/properties.c:745
 msgid "Threshold 3: "
-msgstr ""
+msgstr "Поріг 3: "
 
 #: ../multiload/properties.c:810
 msgid "System Monitor Preferences"
@@ -2053,11 +2079,11 @@ msgstr "Липкі нотатки"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Створення, показ та керування нотатками на стільниці"
 
-#: ../stickynotes/stickynotes.c:576
+#: ../stickynotes/stickynotes.c:577
 msgid "This note is locked."
 msgstr "Ця нотатка заблокована."
 
-#: ../stickynotes/stickynotes.c:580
+#: ../stickynotes/stickynotes.c:581
 msgid "This note is unlocked."
 msgstr "Ця нотатка розблокована."
 
@@ -2400,10 +2426,10 @@ msgstr "_Блокувати нотатки"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d нотатка"
+msgstr[1] "%d нотатки"
+msgstr[2] "%d нотаток"
+msgstr[3] "%d нотаток"
 
 #: ../stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2422,7 +2448,7 @@ msgid "Timer"
 msgstr "Таймер"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:259
+#: ../timerapplet/timerapplet.c:279
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Виставити таймер та отримати сповіщення після закінчення"
 
@@ -2436,62 +2462,61 @@ msgstr "Тривалість таймера у секундах"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:3
 msgid "Show notification popup when timer finish"
-msgstr ""
-"Показати виринаюче повідомлення про сповіщення після завершення таймера"
+msgstr "Показати виринне повідомлення про сповіщення після завершення таймера"
 
 #: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:4
 msgid "Show dialog window when timer finish"
 msgstr "Показати діялоґ, коли час вийде"
 
-#: ../timerapplet/timerapplet.c:78
+#: ../timerapplet/timerapplet.c:79
 msgid "_Start timer"
 msgstr "_Запустити таймер"
 
-#: ../timerapplet/timerapplet.c:79
+#: ../timerapplet/timerapplet.c:80
 msgid "P_ause timer"
 msgstr "При_зупинити таймер"
 
-#: ../timerapplet/timerapplet.c:80
+#: ../timerapplet/timerapplet.c:81
 msgid "S_top timer"
 msgstr "Зу_пинити таймер"
 
-#: ../timerapplet/timerapplet.c:140
-msgid "Finished"
-msgstr "Закінчено"
+#: ../timerapplet/timerapplet.c:82
+msgid "R_eset"
+msgstr "Ск_инути"
 
-#: ../timerapplet/timerapplet.c:147 ../timerapplet/timerapplet.c:159
+#: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
 msgstr "Час вийшов!"
 
-#: ../timerapplet/timerapplet.c:292
+#: ../timerapplet/timerapplet.c:312
 msgid "Timer Applet Preferences"
 msgstr "Параметри аплету Таймера"
 
-#: ../timerapplet/timerapplet.c:305
+#: ../timerapplet/timerapplet.c:325
 msgid "Name:"
 msgstr "Назва:"
 
-#: ../timerapplet/timerapplet.c:314
+#: ../timerapplet/timerapplet.c:334
 msgid "Hours:"
 msgstr "Годин:"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:345
 msgid "Minutes:"
 msgstr "Хвилин:"
 
-#: ../timerapplet/timerapplet.c:336
+#: ../timerapplet/timerapplet.c:356
 msgid "Seconds:"
 msgstr "Секунд:"
 
-#: ../timerapplet/timerapplet.c:347
+#: ../timerapplet/timerapplet.c:367
 msgid "Show notification popup"
 msgstr "Показувати виринаюче вікно про сповіщення"
 
-#: ../timerapplet/timerapplet.c:351
+#: ../timerapplet/timerapplet.c:371
 msgid "Show dialog"
 msgstr "Показати діялоґ"
 
-#: ../timerapplet/timerapplet.c:373
+#: ../timerapplet/timerapplet.c:405
 msgid "Timer Applet"
 msgstr "Аплет таймера"
 
@@ -2503,7 +2528,7 @@ msgstr "Смітник"
 msgid "Go to Trash"
 msgstr "Перейти у смітник"
 
-#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:353
+#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
 msgstr "Спо_рожнити смітник"
 
@@ -2515,10 +2540,10 @@ msgstr "_Відкрити смітник"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d елемент у смітнику"
+msgstr[1] "%d елементи у смітнику"
+msgstr[2] "%d елементів у смітнику"
+msgstr[3] "%d елементів у смітнику"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

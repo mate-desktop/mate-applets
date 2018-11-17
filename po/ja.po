@@ -3,14 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Martin Wimpress <code@flexion.org>, 2018
+# ふうせん Fu-sen. | BALLOON a.k.a. Fu-sen., 2018
+# IWAI, Masaharu <iwaim.sub@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# ABE Tsunehiko, 2018
+# あわしろいくや <ikunya@gmail.com>, 2018
+# Mika Kobayashi, 2018
+# shinmili <rmsk.pl.ur.lpt@gmail.com>, 2018
+# Rockers <sumorock@hotmail.com>, 2018
+# Ikuru K <kanumaiku@gmail.com>, 2018
+# semicolon <mail@semicln.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-10 08:45+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: shinmili <rmsk.pl.ur.lpt@gmail.com>, 2018\n"
+"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"PO-Revision-Date: 2018-03-11 16:20+0000\n"
+"Last-Translator: semicolon <mail@semicln.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +36,12 @@ msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "修飾キーなどの AccessX 機能のステータスを表示します"
 
 #: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:618 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:640 ../drivemount/drivemount.c:121
+#: ../charpick/charpick.c:587 ../command/command.c:116
+#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
 #: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
 #: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
+#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -62,7 +75,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "キーボード操作性の設定(_K)"
 
 #: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:129
+#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
 #: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
@@ -70,11 +83,11 @@ msgid "_Help"
 msgstr "ヘルプ(_H)"
 
 #: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:702 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:162
+#: ../charpick/charpick.c:671 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
 #: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
-#: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
+#: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "情報(_A)"
 
@@ -84,34 +97,34 @@ msgstr "情報(_A)"
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1036 ../accessx-status/applet.c:1102
-#: ../accessx-status/applet.c:1187 ../accessx-status/applet.c:1381
+#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
+#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
 msgid "AccessX Status"
 msgstr "AccessX ステータス"
 
-#: ../accessx-status/applet.c:1037 ../accessx-status/applet.c:1188
+#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "アクセシビリティ機能が有効ならば、キーボードのステータスを表示します"
 
-#: ../accessx-status/applet.c:1071
+#: ../accessx-status/applet.c:1073
 msgid "XKB Extension is not enabled"
 msgstr "XKB 拡張は有効ではありません"
 
-#: ../accessx-status/applet.c:1076
+#: ../accessx-status/applet.c:1078
 msgid "Unknown error"
 msgstr "不明なエラー"
 
-#: ../accessx-status/applet.c:1080
+#: ../accessx-status/applet.c:1082
 #, c-format
 msgid "Error: %s"
 msgstr "エラー: %s"
 
-#: ../accessx-status/applet.c:1378
+#: ../accessx-status/applet.c:1380
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "キーボード操作性のステータス"
 
-#: ../accessx-status/applet.c:1382
+#: ../accessx-status/applet.c:1384
 msgid "Displays current state of keyboard accessibility features"
 msgstr "キーボード操作性に関連する機能の現在のステータスを表示します"
 
@@ -127,11 +140,11 @@ msgstr "キーボード操作性ステータス・アプレットのファクト
 msgid "Shows the status of keyboard accessibility features"
 msgstr "キーボード操作性の設定値を表示します"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:696
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
-#: ../timerapplet/timerapplet.c:81
+#: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "設定(_P)"
 
@@ -426,40 +439,40 @@ msgstr "バッテリの残量が少くなっています"
 msgid "Battery fully re-charged"
 msgstr "充電が完了しました"
 
-#: ../charpick/charpick.c:435
+#: ../charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "利用可能なパレットを表示します"
 
 #. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
 #. *             hopefully, the name of the unicode character has already
 #. *             been translated.
-#: ../charpick/charpick.c:484
+#: ../charpick/charpick.c:453
 #, c-format
 msgid "Insert \"%s\""
 msgstr "\"%s\" を挿入します"
 
-#: ../charpick/charpick.c:487
+#: ../charpick/charpick.c:456
 msgid "Insert special character"
 msgstr "特殊な文字を挿入します"
 
-#: ../charpick/charpick.c:491
+#: ../charpick/charpick.c:460
 #, c-format
 msgid "insert special character %s"
 msgstr "特殊な文字 %s を挿入します"
 
-#: ../charpick/charpick.c:613
+#: ../charpick/charpick.c:582
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "私のキーボードからは打てない変わった文字を入力するためのパネルアプレットです。GNU一般公有使用許諾書の下にリリースされています。"
 
-#: ../charpick/charpick.c:725 ../charpick/charpick.c:739
+#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "キャラクタ・パレット"
 
-#: ../charpick/charpick.c:725
+#: ../charpick/charpick.c:694
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "いろいろな文字を挿入します"
@@ -647,7 +660,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "CPU 周波数を百分率で表示する(_P)"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:991 ../cpufreq/src/cpufreq-applet.c:1046
+#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU 周波数の計測モニタ"
 
@@ -688,15 +701,15 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr "0 はCPU 周波数の表示、1 は周波数と単位の表示、2 は周波数ではなく比率の表示を意味します"
 
-#: ../cpufreq/src/cpufreq-applet.c:604 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr "ヘルプを開けませんでした"
 
-#: ../cpufreq/src/cpufreq-applet.c:635
+#: ../cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "このユーティリティは CPU 周波数を計測して表示します。"
 
-#: ../cpufreq/src/cpufreq-applet.c:1047
+#: ../cpufreq/src/cpufreq-applet.c:867
 msgid "This utility shows the current CPU Frequency"
 msgstr "このユーティリティは CPU 周波数を表示します"
 
@@ -740,42 +753,42 @@ msgstr "CPU 周波数の変更"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "CPU 周波数を変更する際に必要となる特権です"
 
-#: ../drivemount/drive-button.c:397 ../drivemount/drive-button.c:411
+#: ../drivemount/drive-button.c:340 ../drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(マウント済みです)"
 
-#: ../drivemount/drive-button.c:404
+#: ../drivemount/drive-button.c:347
 msgid "(not mounted)"
 msgstr "(マウントしていません)"
 
-#: ../drivemount/drive-button.c:673
+#: ../drivemount/drive-button.c:616
 msgid "Cannot execute Caja"
 msgstr "Cajaを実行できません"
 
-#: ../drivemount/drive-button.c:997
+#: ../drivemount/drive-button.c:940
 msgid "_Play DVD"
 msgstr "DVD の再生(_P)"
 
-#: ../drivemount/drive-button.c:1001
+#: ../drivemount/drive-button.c:944
 msgid "_Play CD"
 msgstr "CD の再生(_P)"
 
-#: ../drivemount/drive-button.c:1004
+#: ../drivemount/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr "%s を開く(_O)"
 
-#: ../drivemount/drive-button.c:1012
+#: ../drivemount/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr "%s をアンマウントする(_M)"
 
-#: ../drivemount/drive-button.c:1018
+#: ../drivemount/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr "%s をマウントする(_M)"
 
-#: ../drivemount/drive-button.c:1026
+#: ../drivemount/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr "%s を取り出す(_E)"
@@ -815,8 +828,8 @@ msgid "The eyes look in the direction of the mouse pointer"
 msgstr "目玉がマウスのポインタの方向を向きます"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "Geyes Applet Factory"
-msgstr "MATE 目玉アプレットのファクトリ"
+msgid "Eyes Applet Factory"
+msgstr ""
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -835,8 +848,8 @@ msgid "There was a fatal error while trying to load the theme."
 msgstr "テーマを読み込む際に致命的なエラーが発生しました。"
 
 #: ../geyes/themes.c:285
-msgid "Geyes Preferences"
-msgstr "MATE 目玉の設定"
+msgid "Eyes Preferences"
+msgstr ""
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -864,16 +877,16 @@ msgstr "更新する(_U)"
 msgid "Weather Report"
 msgstr "お天気 MATE"
 
-#: ../mateweather/mateweather-applet.c:357
-#: ../mateweather/mateweather-applet.c:361
+#: ../mateweather/mateweather-applet.c:354
+#: ../mateweather/mateweather-applet.c:358
 msgid "MATE Weather"
 msgstr "お天気 MATE"
 
-#: ../mateweather/mateweather-applet.c:460
+#: ../mateweather/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "天気予報"
 
-#: ../mateweather/mateweather-applet.c:472
+#: ../mateweather/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -884,7 +897,7 @@ msgstr ""
 "天候: %s\n"
 "気温: %s"
 
-#: ../mateweather/mateweather-applet.c:521
+#: ../mateweather/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "更新中..."
 
@@ -944,39 +957,39 @@ msgstr "日の出の時刻:"
 msgid "Sunset:"
 msgstr "日没の時刻:"
 
-#: ../mateweather/mateweather-dialog.c:404
+#: ../mateweather/mateweather-dialog.c:406
 msgid "Current Conditions"
 msgstr "現在の状態"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "Forecast Report"
 msgstr "予報の報告"
 
-#: ../mateweather/mateweather-dialog.c:421
+#: ../mateweather/mateweather-dialog.c:423
 msgid "See the ForeCast Details"
 msgstr "予報の詳細をみてください"
 
-#: ../mateweather/mateweather-dialog.c:431
+#: ../mateweather/mateweather-dialog.c:433
 msgid "Forecast"
 msgstr "予報"
 
-#: ../mateweather/mateweather-dialog.c:439
+#: ../mateweather/mateweather-dialog.c:441
 msgid "Radar Map"
 msgstr "レーダー・マップ"
 
-#: ../mateweather/mateweather-dialog.c:470
+#: ../mateweather/mateweather-dialog.c:474
 msgid "_Visit Weather.com"
 msgstr "Weather.com へジャンプ(_V)"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Visit Weather.com"
 msgstr "Weather.com へジャンプ"
 
-#: ../mateweather/mateweather-dialog.c:471
+#: ../mateweather/mateweather-dialog.c:475
 msgid "Click to Enter Weather.com"
 msgstr "クリックすると Weather.com をブラウザで開きます"
 
-#: ../mateweather/mateweather-dialog.c:556
+#: ../mateweather/mateweather-dialog.c:606
 msgid "Forecast not currently available for this location."
 msgstr "現在、この場所の予報は利用できません。"
 
@@ -1010,168 +1023,168 @@ msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "場所を定義した XML データベースの読み込みに失敗しました。これをバグとして報告してください。"
 
-#: ../mateweather/mateweather-pref.c:812
+#: ../mateweather/mateweather-pref.c:811
 msgid "Weather Preferences"
 msgstr "お天気 MATE のプロパティ"
 
-#: ../mateweather/mateweather-pref.c:839
-#: ../mateweather/mateweather-pref.c:1041
+#: ../mateweather/mateweather-pref.c:835
+#: ../mateweather/mateweather-pref.c:1038
 msgid "_Automatically update every:"
 msgstr "自動的に更新する間隔(_A):"
 
 #. * Units settings page.
 #. Temperature Unit
-#: ../mateweather/mateweather-pref.c:854
+#: ../mateweather/mateweather-pref.c:851
 msgid "_Temperature unit:"
 msgstr "気温の単位(_T):"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:864
+#: ../mateweather/mateweather-pref.c:861
 msgid "Kelvin"
 msgstr "ケルビン"
 
 #. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:866
+#: ../mateweather/mateweather-pref.c:863
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../mateweather/mateweather-pref.c:867
+#: ../mateweather/mateweather-pref.c:864
 msgid "Fahrenheit"
 msgstr "華氏 (°F)"
 
 #. Speed Unit
-#: ../mateweather/mateweather-pref.c:876
+#: ../mateweather/mateweather-pref.c:873
 msgid "_Wind speed unit:"
 msgstr "風速の単位(_W):"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
 #. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:887
+#: ../mateweather/mateweather-pref.c:884
 msgid "m/s"
 msgstr "メートル/秒"
 
 #. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:889
+#: ../mateweather/mateweather-pref.c:886
 msgid "km/h"
 msgstr "キロメートル/時"
 
 #. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:891
+#: ../mateweather/mateweather-pref.c:888
 msgid "mph"
 msgstr "マイル/時"
 
 #. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:893
+#: ../mateweather/mateweather-pref.c:890
 msgid "knots"
 msgstr "ノット"
 
-#: ../mateweather/mateweather-pref.c:894
+#: ../mateweather/mateweather-pref.c:891
 msgid "Beaufort scale"
 msgstr "ビューフォート（風力）階級"
 
 #. Pressure Unit
-#: ../mateweather/mateweather-pref.c:903
+#: ../mateweather/mateweather-pref.c:900
 msgid "_Pressure unit:"
 msgstr "気圧の単位(_P):"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
 #. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:914
+#: ../mateweather/mateweather-pref.c:911
 msgid "kPa"
 msgstr "キロパスカル"
 
 #. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:916
+#: ../mateweather/mateweather-pref.c:913
 msgid "hPa"
 msgstr "ヘクトパスカル"
 
 #. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:918
+#: ../mateweather/mateweather-pref.c:915
 msgid "mb"
 msgstr "mb"
 
 #. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:920
+#: ../mateweather/mateweather-pref.c:917
 msgid "mmHg"
 msgstr "mmHg (水銀柱ミリメートル)"
 
 #. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:922
+#: ../mateweather/mateweather-pref.c:919
 msgid "inHg"
 msgstr "inHg (水銀柱インチ)"
 
 #. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:924
+#: ../mateweather/mateweather-pref.c:921
 msgid "atm"
 msgstr "アトム"
 
 #. Distance Unit
-#: ../mateweather/mateweather-pref.c:933
+#: ../mateweather/mateweather-pref.c:930
 msgid "_Visibility unit:"
 msgstr "視界の単位(_V):"
 
 #. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
 #. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:944
+#: ../mateweather/mateweather-pref.c:941
 msgid "meters"
 msgstr "メートル"
 
 #. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:946
+#: ../mateweather/mateweather-pref.c:943
 msgid "km"
 msgstr "キロメートル"
 
 #. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:948
+#: ../mateweather/mateweather-pref.c:945
 msgid "miles"
 msgstr "マイル"
 
-#: ../mateweather/mateweather-pref.c:978
+#: ../mateweather/mateweather-pref.c:975
 msgid "Enable _radar map"
 msgstr "レーダー・マップを有効にする(_R)"
 
-#: ../mateweather/mateweather-pref.c:994
+#: ../mateweather/mateweather-pref.c:991
 msgid "Use _custom address for radar map"
 msgstr "レーダー・マップのアドレスをカスタマイズする(_C)"
 
-#: ../mateweather/mateweather-pref.c:1012
+#: ../mateweather/mateweather-pref.c:1009
 msgid "A_ddress:"
 msgstr "住所(_D):"
 
 #. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1027
+#: ../mateweather/mateweather-pref.c:1024
 msgid "Show _notifications"
 msgstr "通知を表示する(_N)"
 
-#: ../mateweather/mateweather-pref.c:1037
+#: ../mateweather/mateweather-pref.c:1034
 msgid "Update"
 msgstr "更新"
 
-#: ../mateweather/mateweather-pref.c:1054
+#: ../mateweather/mateweather-pref.c:1051
 msgid "minutes"
 msgstr "分"
 
-#: ../mateweather/mateweather-pref.c:1072
+#: ../mateweather/mateweather-pref.c:1069
 msgid "Display"
 msgstr "表示"
 
-#: ../mateweather/mateweather-pref.c:1091
+#: ../mateweather/mateweather-pref.c:1088
 msgid "General"
 msgstr "全般"
 
-#: ../mateweather/mateweather-pref.c:1102
+#: ../mateweather/mateweather-pref.c:1099
 msgid "_Select a location:"
 msgstr "場所の選択(_S):"
 
-#: ../mateweather/mateweather-pref.c:1124
+#: ../mateweather/mateweather-pref.c:1121
 msgid "_Find:"
 msgstr "検索(_F):"
 
-#: ../mateweather/mateweather-pref.c:1130
+#: ../mateweather/mateweather-pref.c:1127
 msgid "Find _Next"
 msgstr "次を検索(_N)"
 
-#: ../mateweather/mateweather-pref.c:1151
+#: ../mateweather/mateweather-pref.c:1148
 msgid "Location"
 msgstr "場所"
 
@@ -2005,11 +2018,11 @@ msgstr "付箋紙"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "デスクトップ上で付箋紙の生成/表示/管理を行います"
 
-#: ../stickynotes/stickynotes.c:576
+#: ../stickynotes/stickynotes.c:577
 msgid "This note is locked."
 msgstr "ロックしています"
 
-#: ../stickynotes/stickynotes.c:580
+#: ../stickynotes/stickynotes.c:581
 msgid "This note is unlocked."
 msgstr "ロックしていません"
 
@@ -2356,7 +2369,7 @@ msgid "Timer"
 msgstr "タイマー"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:259
+#: ../timerapplet/timerapplet.c:279
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "完了時にタイマーの開始と通知の表示をする"
 
@@ -2376,55 +2389,55 @@ msgstr "タイマー完了時に通知ポップアップを表示"
 msgid "Show dialog window when timer finish"
 msgstr "タイマー完了時にダイアログを表示"
 
-#: ../timerapplet/timerapplet.c:78
+#: ../timerapplet/timerapplet.c:79
 msgid "_Start timer"
 msgstr "タイマーを開始(_S)"
 
-#: ../timerapplet/timerapplet.c:79
+#: ../timerapplet/timerapplet.c:80
 msgid "P_ause timer"
 msgstr "タイマーを一時停止(_A)"
 
-#: ../timerapplet/timerapplet.c:80
+#: ../timerapplet/timerapplet.c:81
 msgid "S_top timer"
 msgstr "タイマーを停止(_T)"
 
-#: ../timerapplet/timerapplet.c:140
-msgid "Finished"
-msgstr "完了"
+#: ../timerapplet/timerapplet.c:82
+msgid "R_eset"
+msgstr ""
 
-#: ../timerapplet/timerapplet.c:147 ../timerapplet/timerapplet.c:159
+#: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
 msgstr "タイマーが完了しました！"
 
-#: ../timerapplet/timerapplet.c:292
+#: ../timerapplet/timerapplet.c:312
 msgid "Timer Applet Preferences"
 msgstr "タイマーアプレットの設定"
 
-#: ../timerapplet/timerapplet.c:305
+#: ../timerapplet/timerapplet.c:325
 msgid "Name:"
 msgstr "名前:"
 
-#: ../timerapplet/timerapplet.c:314
+#: ../timerapplet/timerapplet.c:334
 msgid "Hours:"
 msgstr "時間:"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:345
 msgid "Minutes:"
 msgstr "分:"
 
-#: ../timerapplet/timerapplet.c:336
+#: ../timerapplet/timerapplet.c:356
 msgid "Seconds:"
 msgstr "秒:"
 
-#: ../timerapplet/timerapplet.c:347
+#: ../timerapplet/timerapplet.c:367
 msgid "Show notification popup"
 msgstr "通知のポップアップを表示"
 
-#: ../timerapplet/timerapplet.c:351
+#: ../timerapplet/timerapplet.c:371
 msgid "Show dialog"
 msgstr "ダイアログを表示"
 
-#: ../timerapplet/timerapplet.c:373
+#: ../timerapplet/timerapplet.c:405
 msgid "Timer Applet"
 msgstr "タイマーアプレット"
 
@@ -2436,7 +2449,7 @@ msgstr "ゴミ箱"
 msgid "Go to Trash"
 msgstr "パネルにゴミ箱を配置します"
 
-#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:353
+#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
 msgstr "ゴミ箱を空にする(_E)"
 
