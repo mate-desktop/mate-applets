@@ -54,6 +54,8 @@ typedef struct
     MatePanelApplet   *applet;
 
     GSettings         *settings;
+    GPid               child_pid;
+    gchar             *buffer;
 
     GtkLabel          *label;
     GtkImage          *image;
@@ -93,6 +95,18 @@ command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_a
     {
         g_free (command_applet->command);
         command_applet->command = NULL;
+    }
+
+    if (command_applet->child_pid != 0)
+    {
+        g_spawn_close_pid (command_applet->child_pid);
+        command_applet->child_pid = 0;
+    }
+
+    if (command_applet->buffer != NULL)
+    {
+        g_free (command_applet->buffer);
+        command_applet->buffer = NULL;
     }
 
     g_object_unref (command_applet->settings);
@@ -288,26 +302,119 @@ process_command_output (CommandApplet *command_applet, gchar *output)
 }
 
 static gboolean
+stdout_io_func (GIOChannel *ioc, GIOCondition cond, gpointer data)
+{
+    CommandApplet *command_applet;
+
+    command_applet = data;
+    if (cond & (G_IO_IN | G_IO_PRI))
+    {
+        if (strlen (command_applet->buffer) == 0)
+        {
+            GError *error = NULL;
+            GIOStatus  ret;
+            gsize      len = 0;
+
+            ret = g_io_channel_read_chars (ioc, command_applet->buffer, command_applet->width, &len, &error);
+            if (len <= 0 || ret != G_IO_STATUS_NORMAL)
+            {
+                g_clear_error (&error);
+                return FALSE;
+            }
+            process_command_output (command_applet, command_applet->buffer);
+        }
+        return FALSE;
+    }
+
+    if (cond & (G_IO_ERR | G_IO_HUP | G_IO_NVAL))
+        return FALSE;
+
+    return TRUE;
+}
+
+static void
+on_child_exit (GPid child_pid, gint status, gpointer data)
+{
+    CommandApplet *command_applet;
+
+    command_applet = data;
+    g_spawn_close_pid (child_pid);
+    command_applet->child_pid = 0;
+}
+
+static void
+set_up_io_channel (gint fd, GIOCondition cond, GIOFunc func, gpointer data)
+{
+    GIOChannel *ioc;
+
+    ioc = g_io_channel_unix_new (fd);
+
+    g_io_channel_set_encoding (ioc, NULL, NULL);
+    g_io_channel_set_buffered (ioc, FALSE);
+
+    g_io_channel_set_close_on_unref (ioc, TRUE);
+
+    g_io_add_watch (ioc, cond, func, data);
+    g_io_channel_unref (ioc);
+}
+
+static gboolean
 command_execute (CommandApplet *command_applet)
 {
     GError *error = NULL;
-    gchar *output = NULL;
-    gint ret = 0;
+    gchar **argv;
+    gint stdout_fd;
 
-    if (g_spawn_command_line_sync (command_applet->command, &output, NULL, &ret, &error))
+    /* command is empty, wait for next timer execution */
+    if (strlen (command_applet->command) == 0)
     {
-        process_command_output (command_applet, output);
+        return TRUE;
     }
-    else
-        gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
 
-    g_free (output);
+    /* command running, wait for next timer execution */
+    if (command_applet->child_pid != 0)
+    {
+        return TRUE;
+    }
+
+    if (!g_shell_parse_argv (command_applet->command, NULL, &argv, &error))
+    {
+        gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
+        g_clear_error (&error);
+        return FALSE;
+    }
+
+    if (!g_spawn_async_with_pipes (NULL,
+                                   argv,
+                                   NULL,
+                                   G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
+                                   NULL,
+                                   NULL,
+                                   &command_applet->child_pid,
+                                   NULL,
+                                   &stdout_fd,
+                                   NULL,
+                                   &error))
+    {
+        g_clear_error (&error);
+        g_strfreev (argv);
+        return TRUE;
+    }
+
+    g_free(command_applet->buffer);
+    command_applet->buffer = g_new0(gchar, command_applet->width+1);
+
+    set_up_io_channel (stdout_fd, G_IO_IN|G_IO_PRI|G_IO_ERR|G_IO_HUP|G_IO_NVAL,
+                       stdout_io_func, command_applet);
+
+    if (command_applet->child_pid != (GPid) 0)
+        g_child_watch_add (command_applet->child_pid, on_child_exit, command_applet);
 
     /* start timer for next execution */
     command_applet->timeout_id = g_timeout_add_seconds (command_applet->interval,
                                                         (GSourceFunc) command_execute,
                                                         command_applet);
-
+    g_strfreev (argv);
     return FALSE;
 }
 
@@ -334,6 +441,8 @@ command_applet_fill (MatePanelApplet* applet)
     command_applet->image = GTK_IMAGE (gtk_image_new_from_icon_name (APPLET_ICON, 24));
     command_applet->label = GTK_LABEL (gtk_label_new (ERROR_OUTPUT));
     command_applet->timeout_id = 0;
+    command_applet->child_pid = 0;
+    command_applet->buffer = NULL;
 
     /* we add the Gtk label into the applet */
     gtk_box_pack_start (command_applet->box,
