@@ -42,3 +42,5 @@ EXTRA_DIST = \
 	$(command_gschema_in_files)
 
 CLEANFILES = $(applets_DATA) $(applets_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
+
+-include $(top_srcdir)/git.mk
