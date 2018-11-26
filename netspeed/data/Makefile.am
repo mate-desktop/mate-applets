@@ -39,3 +39,5 @@ CLEANFILES = \
 	$(applet_in_files) \
 	org.mate.applets.NetspeedApplet.mate-panel-applet
 
+
+-include $(top_srcdir)/git.mk

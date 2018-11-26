@@ -12,3 +12,5 @@ mate_netspeed_applet_LDADD = $(GIO_LIBS) $(GTOP_APPLETS_LIBS) \
        $(MATE_APPLETS4_LIBS) $(MATEDESKTOP_LIBS) \
        $(IWLIB) $(INTLLIBS) -lm
 
+
+-include $(top_srcdir)/git.mk

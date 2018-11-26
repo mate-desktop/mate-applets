@@ -39,3 +39,5 @@ accessx_status_icons_DATA =	\
 EXTRA_DIST = \
 	$(accessx_status_icons_DATA)
 
+
+-include $(top_srcdir)/git.mk
