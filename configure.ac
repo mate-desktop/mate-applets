@@ -6,6 +6,7 @@ AC_PREREQ(2.59)
 
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip check-news])
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_MACRO_DIR(m4)
 
 dnl ***************************************************************************
