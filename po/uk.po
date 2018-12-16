@@ -3,14 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Martin Wimpress <code@flexion.org>, 2018
+# Denis <prohibiti@gmail.com>, 2018
+# Bohdan Kovalchuk <neostanniy@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# zubr139, 2018
+# Oleh, 2018
+# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018
+# Микола Ткач <znadibnyk@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-16 14:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Denis <prohibiti@gmail.com>, 2018\n"
+"POT-Creation-Date: 2018-10-03 12:16+0200\n"
+"PO-Revision-Date: 2018-03-11 16:19+0000\n"
+"Last-Translator: Микола Ткач <znadibnyk@gmail.com>, 2018\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +28,16 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: ../accessx-status/applet.c:142
+#: ../accessx-status/applet.c:96
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr ""
 "Показує стан особливостей AccessX, наприклад, увімкнутих модифікаторів"
 
-#: ../accessx-status/applet.c:146 ../battstat/battstat_applet.c:1206
+#: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
 #: ../charpick/charpick.c:618 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:638 ../drivemount/drivemount.c:121
+#: ../cpufreq/src/cpufreq-applet.c:535 ../drivemount/drivemount.c:121
 #: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
-#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:800
+#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
 #: ../stickynotes/stickynotes_applet_callbacks.c:383
 #: ../timerapplet/timerapplet.c:260 ../trashapplet/src/trashapplet.c:437
 msgid "translator-credits"
@@ -36,75 +46,75 @@ msgstr ""
 "Микола Ткач <Stuartlittle1970@gmail.com>,\n"
 "Oleh Tsyupka <myr4yk@gmail.com>"
 
-#: ../accessx-status/applet.c:165
+#: ../accessx-status/applet.c:119
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Помилка при запуску переглядача довідки: %s"
 
-#: ../accessx-status/applet.c:193
+#: ../accessx-status/applet.c:147
 msgid "Open the keyboard preferences dialog"
-msgstr "Відкрити діялоґ налаштування набірниці"
+msgstr "Відкрити діалог налаштування набірниці"
 
-#: ../accessx-status/applet.c:208
+#: ../accessx-status/applet.c:162
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
-msgstr "Помилка під час запуску діялоґу параметрів набірниці: %s"
+msgstr "Помилка під час запуску діалогу параметрів набірниці: %s"
 
-#: ../accessx-status/applet.c:223
+#: ../accessx-status/applet.c:177
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Параметри спеціяльних можливостей _набірниці"
 
-#: ../accessx-status/applet.c:224 ../battstat/battstat_applet.c:64
-#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:129
+#: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
+#: ../charpick/charpick.c:699 ../cpufreq/src/cpufreq-applet.c:122
 #: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_Допомога"
 
-#: ../accessx-status/applet.c:225 ../battstat/battstat_applet.c:67
+#: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
 #: ../charpick/charpick.c:702 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:132 ../drivemount/drivemount.c:162
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
 #: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:82 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
-msgstr "_Про проґраму"
+msgstr "_Про програму"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
-#: ../accessx-status/applet.c:480 ../accessx-status/applet.c:514
+#: ../accessx-status/applet.c:499 ../accessx-status/applet.c:553
 msgid "a"
 msgstr "а"
 
-#: ../accessx-status/applet.c:997 ../accessx-status/applet.c:1063
-#: ../accessx-status/applet.c:1133 ../accessx-status/applet.c:1305
+#: ../accessx-status/applet.c:1036 ../accessx-status/applet.c:1102
+#: ../accessx-status/applet.c:1187 ../accessx-status/applet.c:1381
 msgid "AccessX Status"
 msgstr "Стан AccessX"
 
-#: ../accessx-status/applet.c:998 ../accessx-status/applet.c:1134
+#: ../accessx-status/applet.c:1037 ../accessx-status/applet.c:1188
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Показує стан набірниці при використанні спеціяльних можливостей"
 
-#: ../accessx-status/applet.c:1033
+#: ../accessx-status/applet.c:1071
 msgid "XKB Extension is not enabled"
 msgstr "XKB розширення не увімкнено"
 
-#: ../accessx-status/applet.c:1038
+#: ../accessx-status/applet.c:1076
 msgid "Unknown error"
 msgstr "Невідома помилка"
 
-#: ../accessx-status/applet.c:1042
+#: ../accessx-status/applet.c:1080
 #, c-format
 msgid "Error: %s"
 msgstr "Помилка: %s"
 
-#: ../accessx-status/applet.c:1302
+#: ../accessx-status/applet.c:1378
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Стан спеціяльних можливостей набірниці"
 
-#: ../accessx-status/applet.c:1306
+#: ../accessx-status/applet.c:1382
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Показує поточний стан спеціяльних можливостей набірниці"
 
@@ -120,136 +130,144 @@ msgstr "Фабрика стану спеціяльних можливостей 
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Показує стан спеціяльних можливостей набірниці"
 
-#: ../battstat/battstat_applet.c:61 ../charpick/charpick.c:696
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:126
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:696
+#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:81
 msgid "_Preferences"
 msgstr "_Налаштування"
 
-#: ../battstat/battstat_applet.c:72
+#: ../battstat/battstat_applet.c:71
 msgid "System is running on AC power"
 msgstr "Система працює від мережі змінного струму"
 
-#: ../battstat/battstat_applet.c:73
+#: ../battstat/battstat_applet.c:72
 msgid "System is running on battery power"
 msgstr "Система працює від акумулятора"
 
-#: ../battstat/battstat_applet.c:339
+#: ../battstat/battstat_applet.c:176
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Акумулятор повністю заряджений (%d%%)"
 
-#: ../battstat/battstat_applet.c:341
+#: ../battstat/battstat_applet.c:178
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Час завершення невідомий (%d%%)"
 
-#: ../battstat/battstat_applet.c:343
+#: ../battstat/battstat_applet.c:180
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Час до повного зарядження (%d%%) невідомий"
 
-#: ../battstat/battstat_applet.c:348
+#: ../battstat/battstat_applet.c:185
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "залишилася %d хвилина (%d%%)"
+msgstr[1] "залишилася %d хвилини (%d%%)"
+msgstr[2] "залишилося %d хвилин (%d%%)"
+msgstr[3] "залишилося %d хвилин (%d%%)"
 
-#: ../battstat/battstat_applet.c:353
+#: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d хвилина (%d%%) до повного зарядження"
+msgstr[1] "%d хвилини (%d%%) до повного зарядження"
+msgstr[2] "%d хвилин (%d%%) до повного зарядження"
+msgstr[3] "%d хвилин (%d%%) до повного зарядження"
 
-#: ../battstat/battstat_applet.c:359
+#: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "залишилося %d година (%d%%)"
+msgstr[1] "залишилося %d години (%d%%)"
+msgstr[2] "залишилося %d годин (%d%%)"
+msgstr[3] "залишилося %d годин (%d%%)"
 
-#: ../battstat/battstat_applet.c:364
+#: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d година (%d%%) до повного зарядження"
+msgstr[1] "%d години (%d%%) до повного зарядження"
+msgstr[2] "%d годин (%d%%) до повного зарядження"
+msgstr[3] "%d годин (%d%%) до повного зарядження"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:371
+#: ../battstat/battstat_applet.c:208
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "залишилося %d %s %d %s (%d%%)"
 
-#: ../battstat/battstat_applet.c:372 ../battstat/battstat_applet.c:379
+#: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "година"
+msgstr[1] "години"
+msgstr[2] "годин"
+msgstr[3] "годин"
 
-#: ../battstat/battstat_applet.c:373 ../battstat/battstat_applet.c:380
+#: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "хвилина"
+msgstr[1] "хвилини"
+msgstr[2] "хвилин"
+msgstr[3] "хвилин"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:378
+#: ../battstat/battstat_applet.c:215
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s до повного зарядження (%d%%)"
 
-#: ../battstat/battstat_applet.c:392
+#: ../battstat/battstat_applet.c:229
 msgid "Battery Monitor"
 msgstr "Індикатор заряду акумулятора"
 
-#: ../battstat/battstat_applet.c:402 ../battstat/battstat_applet.c:461
+#: ../battstat/battstat_applet.c:240 ../battstat/battstat_applet.c:300
 msgid "Your battery is now fully recharged"
 msgstr "Акумулятор повністю заряджено"
 
-#: ../battstat/battstat_applet.c:438 ../battstat/battstat_applet.c:593
+#: ../battstat/battstat_applet.c:275 ../battstat/battstat_applet.c:432
 msgid "Battery Notice"
 msgstr "Інформація про акумулятор"
 
 #. we don't know the remaining time
-#: ../battstat/battstat_applet.c:538
+#: ../battstat/battstat_applet.c:377
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "Залишилося %d%% місткости акумулятора."
 
-#: ../battstat/battstat_applet.c:544
+#: ../battstat/battstat_applet.c:383
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"Час роботи від акумулятора, що лишився - %d хвилина (%d%% від загальної "
+"місткости)."
 msgstr[1] ""
+"Час роботи від акумулятора, що лишився - %d хвилини (%d%% від загальної "
+"місткости)."
 msgstr[2] ""
+"Час роботи від акумулятора, що лишився - %d хвилин (%d%% від загальної "
+"місткости)."
 msgstr[3] ""
+"Час роботи від акумулятора, що лишився - %d хвилин (%d%% від загальної "
+"місткости)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
 #. * locale.  This is if the laptop does not support suspend.
-#: ../battstat/battstat_applet.c:556
+#: ../battstat/battstat_applet.c:395
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -262,7 +280,7 @@ msgstr ""
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
 #. * locale.  This is if the laptop supports suspend.
-#: ../battstat/battstat_applet.c:564
+#: ../battstat/battstat_applet.c:403
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -274,23 +292,23 @@ msgstr ""
 " • під’єднайте ноутбук до зовнішнього джерела живлення, або\n"
 " • збережіть відкриті документи та завершіть роботу комп'ютера."
 
-#: ../battstat/battstat_applet.c:572
+#: ../battstat/battstat_applet.c:411
 msgid "Your battery is running low"
 msgstr "Заряд акумулятора низький"
 
-#: ../battstat/battstat_applet.c:667
+#: ../battstat/battstat_applet.c:508
 msgid "No battery present"
 msgstr "Акумулятор відсутній"
 
-#: ../battstat/battstat_applet.c:670
+#: ../battstat/battstat_applet.c:511
 msgid "Battery status unknown"
 msgstr "Стан акумулятора невідомий"
 
-#: ../battstat/battstat_applet.c:850
+#: ../battstat/battstat_applet.c:540
 msgid "N/A"
 msgstr "Н/Д"
 
-#: ../battstat/battstat_applet.c:1150 ../drivemount/drivemount.c:147
+#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:147
 #: ../geyes/geyes.c:339 ../geyes/themes.c:226
 #: ../mateweather/mateweather-applet.c:63
 #: ../mateweather/mateweather-pref.c:751
@@ -301,26 +319,26 @@ msgstr "Н/Д"
 msgid "There was an error displaying help: %s"
 msgstr "Помилка показу довідки: %s"
 
-#: ../battstat/battstat_applet.c:1195
+#: ../battstat/battstat_applet.c:828
 msgid "This utility shows the status of your laptop battery."
 msgstr "Цей засіб показує стан акумулятора Вашого комп'ютера."
 
 #. true
-#: ../battstat/battstat_applet.c:1197
+#: ../battstat/battstat_applet.c:830
 msgid "upower backend enabled."
 msgstr "Бекенд upower увімкнено."
 
 #. false
-#: ../battstat/battstat_applet.c:1198
+#: ../battstat/battstat_applet.c:831
 msgid "Legacy backend enabled."
 msgstr "Увімкнено застарілий бекенд."
 
-#: ../battstat/battstat_applet.c:1568 ../battstat/battstat_applet.c:1620
+#: ../battstat/battstat_applet.c:1109 ../battstat/battstat_applet.c:1159
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
 msgstr "Індикатор зарядження акумулятора"
 
-#: ../battstat/battstat_applet.c:1621
+#: ../battstat/battstat_applet.c:1160
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
 msgstr "Стежить за зарядом акумулятора портативного комп'ютера"
@@ -334,43 +352,27 @@ msgid "Appearance"
 msgstr "Вигляд"
 
 #: ../battstat/battstat_applet.ui.h:3
-msgid "_Compact view"
-msgstr "_Компактний вигляд"
-
-#: ../battstat/battstat_applet.ui.h:4
-msgid "(shows single image for status and charge)"
-msgstr "(показує єдине зображення зміни статусу та заряду)"
-
-#: ../battstat/battstat_applet.ui.h:5
-msgid "_Expanded view"
-msgstr "_Розширений вигляд"
-
-#: ../battstat/battstat_applet.ui.h:6
-msgid "(two images: one for status, one for charge)"
-msgstr "(два зображення: одне для статусу, одне для заряду)"
-
-#: ../battstat/battstat_applet.ui.h:7
 msgid "_Show time/percentage:"
 msgstr "_Показувати час/відсотки:"
 
-#: ../battstat/battstat_applet.ui.h:8
+#: ../battstat/battstat_applet.ui.h:4
 msgid "Show _time remaining"
 msgstr "Показувати _час, що залишився"
 
-#: ../battstat/battstat_applet.ui.h:9
+#: ../battstat/battstat_applet.ui.h:5
 msgid "Show _percentage remaining"
 msgstr "Показувати _відсотки, що залишилися"
 
-#: ../battstat/battstat_applet.ui.h:10
+#: ../battstat/battstat_applet.ui.h:6
 msgid "Notifications"
 msgstr "Сповіщення"
 
 #. TRANSLATOR: This is the beginning of the sentence
-#: ../battstat/battstat_applet.ui.h:12
+#: ../battstat/battstat_applet.ui.h:8
 msgid "_Warn when battery charge drops to:"
 msgstr "_Попереджувати коли заряд спадає до:"
 
-#: ../battstat/battstat_applet.ui.h:13
+#: ../battstat/battstat_applet.ui.h:9
 msgid "_Notify when battery is fully recharged"
 msgstr "_Сповіщати про повний заряд акумулятора"
 
@@ -427,50 +429,24 @@ msgid "Beep when displaying a warning."
 msgstr "Супроводжувати вивід попереджень звуковим сигналом."
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:11
-msgid "Drain from top"
-msgstr "Зменшується згори"
-
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:12
-msgid ""
-"Show the battery meter draining from the top of the battery. Only "
-"implemented for traditional battery view."
-msgstr "При розряді акумулятора індикатор спускається згори"
-
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:13
-msgid "Upright (small) battery"
-msgstr "Вертикальний (маленький) акумулятор"
-
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:14
-msgid "Show the upright, smaller battery on the panel."
-msgstr "Вертикальний вигляд, менший акумулятор на панелі."
-
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:15
-msgid "Show the horizontal battery"
-msgstr "Показувати акумулятор горизонтально"
-
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:16
-msgid "Show the traditional, horizontal battery on the panel."
-msgstr "Традиційний вигляд, горизонтальний акумулятор на панелі."
-
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:17
 msgid "Show the time/percent label"
 msgstr "Показувати позначку часу/заряду"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:18
+#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:12
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
 msgstr "0 - без позначки, 1 - відсотки, та  2 - залишок часу"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] percent".
-#: ../battstat/properties.c:287
+#: ../battstat/properties.c:237
 msgid "Percent"
 msgstr "Відсоток"
 
 #. TRANSLATOR: this is a selectable item in a drop-down menu to end
 #. * this sentence:
 #. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#: ../battstat/properties.c:293
+#: ../battstat/properties.c:243
 msgid "Minutes Remaining"
 msgstr "Залишилося часу"
 
@@ -711,7 +687,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Показувати частоту ЦПП у _відсотках"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:981 ../cpufreq/src/cpufreq-applet.c:1036
+#: ../cpufreq/src/cpufreq-applet.c:858 ../cpufreq/src/cpufreq-applet.c:913
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Індикатор зміни частоти процесора"
 
@@ -757,15 +733,15 @@ msgstr ""
 "0 - показувати частоту ЦПП, 1 - частоту й одиниці, 2 - відсотки замість "
 "частоти."
 
-#: ../cpufreq/src/cpufreq-applet.c:602 ../cpufreq/src/cpufreq-prefs.c:365
+#: ../cpufreq/src/cpufreq-applet.c:499 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
 msgstr "Не вдається відкрити документ довідки"
 
-#: ../cpufreq/src/cpufreq-applet.c:633
+#: ../cpufreq/src/cpufreq-applet.c:530
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Цей засіб показує поточну частоту процесора."
 
-#: ../cpufreq/src/cpufreq-applet.c:1037
+#: ../cpufreq/src/cpufreq-applet.c:914
 msgid "This utility shows the current CPU Frequency"
 msgstr "Цей засіб показує поточну частоту ЦПП"
 
@@ -810,42 +786,42 @@ msgstr "Змінити частоту процесора"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Для зміни частоти процесора потрібні привілеї адміністратора."
 
-#: ../drivemount/drive-button.c:398 ../drivemount/drive-button.c:416
+#: ../drivemount/drive-button.c:397 ../drivemount/drive-button.c:411
 msgid "(mounted)"
 msgstr "(змонтовано)"
 
-#: ../drivemount/drive-button.c:403
+#: ../drivemount/drive-button.c:404
 msgid "(not mounted)"
 msgstr " (не змонтовано)"
 
-#: ../drivemount/drive-button.c:674
+#: ../drivemount/drive-button.c:673
 msgid "Cannot execute Caja"
 msgstr "Неможливо виконати Caja"
 
-#: ../drivemount/drive-button.c:998
+#: ../drivemount/drive-button.c:997
 msgid "_Play DVD"
 msgstr "_Грати DVD"
 
-#: ../drivemount/drive-button.c:1002
+#: ../drivemount/drive-button.c:1001
 msgid "_Play CD"
 msgstr "_Грати КД"
 
-#: ../drivemount/drive-button.c:1005
+#: ../drivemount/drive-button.c:1004
 #, c-format
 msgid "_Open %s"
 msgstr "_Відкрити %s"
 
-#: ../drivemount/drive-button.c:1013
+#: ../drivemount/drive-button.c:1012
 #, c-format
 msgid "Un_mount %s"
 msgstr "Де_монтувати %s"
 
-#: ../drivemount/drive-button.c:1019
+#: ../drivemount/drive-button.c:1018
 #, c-format
 msgid "_Mount %s"
 msgstr "_Змонтувати %s"
 
-#: ../drivemount/drive-button.c:1027
+#: ../drivemount/drive-button.c:1026
 #, c-format
 msgid "_Eject %s"
 msgstr "Ви_тягнути %s"
@@ -885,7 +861,7 @@ msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Очі, що дивляться у напрямку вказівника миші"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
-msgid "Geyes Applet Factory"
+msgid "Eyes Applet Factory"
 msgstr "Фабрика аплету \"Очі\""
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
@@ -905,7 +881,7 @@ msgid "There was a fatal error while trying to load the theme."
 msgstr "Фатальна помилка при спробі завантажити тему."
 
 #: ../geyes/themes.c:285
-msgid "Geyes Preferences"
+msgid "Eyes Preferences"
 msgstr "Параметри аплету \"Очі\""
 
 #: ../geyes/themes.c:318
@@ -1274,19 +1250,19 @@ msgstr "Запустити системний монітор"
 msgid "There was an error executing '%s': %s"
 msgstr "Помилка при виконанні \"%s\": %s"
 
-#: ../multiload/main.c:274 ../multiload/properties.c:608
+#: ../multiload/main.c:274 ../multiload/properties.c:600
 msgid "Processor"
 msgstr "Процесор"
 
-#: ../multiload/main.c:276 ../multiload/properties.c:616
+#: ../multiload/main.c:276 ../multiload/properties.c:608
 msgid "Memory"
 msgstr "Пам'ять"
 
-#: ../multiload/main.c:278 ../multiload/properties.c:624
+#: ../multiload/main.c:278 ../multiload/properties.c:616
 msgid "Network"
 msgstr "Мережа"
 
-#: ../multiload/main.c:280 ../multiload/properties.c:633
+#: ../multiload/main.c:280 ../multiload/properties.c:625
 msgid "Swap Space"
 msgstr "Підкачка"
 
@@ -1337,9 +1313,17 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% використовується"
 msgstr[1] ""
+"%s:\n"
+"%u%% використовується"
 msgstr[2] ""
+"%s:\n"
+"%u%% використовується"
 msgstr[3] ""
+"%s:\n"
+"%u%% використовується"
 
 #: ../multiload/main.c:357
 msgid "CPU Load"
@@ -1481,19 +1465,19 @@ msgstr "Колір ґратки"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Indicator color"
-msgstr ""
+msgstr "Колір індикатора"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Network threshold 1 in bytes"
-msgstr ""
+msgstr "Межа мережі 1 в байтах"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Network threshold 2 in bytes"
-msgstr ""
+msgstr "Межа мережі 2 в байтах"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Network threshold 3 in bytes"
-msgstr ""
+msgstr "Межа мережі 3 в байтах"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for user-related swap usage"
@@ -1527,173 +1511,173 @@ msgstr "Колір тла для графіку завантаження дис�
 msgid "The desktop description file to execute as the system monitor"
 msgstr "Файл опису для додатку що запускається як системний монітор"
 
-#: ../multiload/properties.c:370
+#: ../multiload/properties.c:362
 msgid "Monitored Resources"
 msgstr "Ресурси, що контролюються"
 
-#: ../multiload/properties.c:395
+#: ../multiload/properties.c:387
 msgid "_Processor"
 msgstr "П_роцесор"
 
-#: ../multiload/properties.c:408
+#: ../multiload/properties.c:400
 msgid "_Memory"
 msgstr "_Пам'ять"
 
-#: ../multiload/properties.c:421
+#: ../multiload/properties.c:413
 msgid "_Network"
 msgstr "_Мережа"
 
-#: ../multiload/properties.c:434
+#: ../multiload/properties.c:426
 msgid "S_wap Space"
 msgstr "Під_качка"
 
-#: ../multiload/properties.c:447
+#: ../multiload/properties.c:439
 msgid "_Load"
 msgstr "З_авантаження"
 
-#: ../multiload/properties.c:460
+#: ../multiload/properties.c:452
 msgid "_Harddisk"
 msgstr "_Жорсткий диск"
 
-#: ../multiload/properties.c:475
+#: ../multiload/properties.c:467
 msgid "Options"
 msgstr "Опції"
 
-#: ../multiload/properties.c:505
+#: ../multiload/properties.c:497
 msgid "System m_onitor width: "
 msgstr "_Ширина системного монітору:"
 
-#: ../multiload/properties.c:507
+#: ../multiload/properties.c:499
 msgid "System m_onitor height: "
 msgstr "_Висота системного монітору:"
 
-#: ../multiload/properties.c:538
+#: ../multiload/properties.c:530
 msgid "pixels"
 msgstr "пікселів"
 
-#: ../multiload/properties.c:546
+#: ../multiload/properties.c:538
 msgid "Sys_tem monitor update interval: "
 msgstr "Період _оновлення системного монітору:"
 
-#: ../multiload/properties.c:572
+#: ../multiload/properties.c:564
 msgid "milliseconds"
 msgstr "мс"
 
-#: ../multiload/properties.c:583
+#: ../multiload/properties.c:575
 msgid "Colors"
 msgstr "Кольори"
 
-#: ../multiload/properties.c:610 ../multiload/properties.c:618
+#: ../multiload/properties.c:602 ../multiload/properties.c:610
 msgid "_User"
 msgstr "_Користувач"
 
-#: ../multiload/properties.c:611
+#: ../multiload/properties.c:603
 msgid "S_ystem"
 msgstr "_Система"
 
-#: ../multiload/properties.c:612
+#: ../multiload/properties.c:604
 msgid "N_ice"
 msgstr "Пр_іоритет"
 
-#: ../multiload/properties.c:613
+#: ../multiload/properties.c:605
 msgid "I_OWait"
 msgstr "I_OWait"
 
-#: ../multiload/properties.c:614
+#: ../multiload/properties.c:606
 msgid "I_dle"
 msgstr "О_чікування"
 
-#: ../multiload/properties.c:619
+#: ../multiload/properties.c:611
 msgid "Sh_ared"
 msgstr "_Спільна"
 
-#: ../multiload/properties.c:620
+#: ../multiload/properties.c:612
 msgid "_Buffers"
 msgstr "_Буфери"
 
-#: ../multiload/properties.c:621
+#: ../multiload/properties.c:613
 msgid "Cach_ed"
 msgstr "Ке_ш"
 
-#: ../multiload/properties.c:622
+#: ../multiload/properties.c:614
 msgid "F_ree"
 msgstr "_Вільна"
 
-#: ../multiload/properties.c:626
+#: ../multiload/properties.c:618
 msgid "_In"
 msgstr "В_хідний"
 
-#: ../multiload/properties.c:627
+#: ../multiload/properties.c:619
 msgid "_Out"
 msgstr "В_ихідний"
 
-#: ../multiload/properties.c:628
+#: ../multiload/properties.c:620
 msgid "_Local"
 msgstr "_Локальний"
 
-#: ../multiload/properties.c:629 ../multiload/properties.c:641
-#: ../multiload/properties.c:648
+#: ../multiload/properties.c:621 ../multiload/properties.c:633
+#: ../multiload/properties.c:640
 msgid "_Background"
 msgstr "_Тло"
 
-#: ../multiload/properties.c:630 ../multiload/properties.c:642
+#: ../multiload/properties.c:622 ../multiload/properties.c:634
 msgid "_Gridline"
 msgstr "_Лінія ґратки"
 
-#: ../multiload/properties.c:631
+#: ../multiload/properties.c:623
 msgid "_Indicator"
-msgstr ""
+msgstr "_Індикатор"
 
-#: ../multiload/properties.c:635
+#: ../multiload/properties.c:627
 msgid "_Used"
 msgstr "В_икористано"
 
-#: ../multiload/properties.c:636
+#: ../multiload/properties.c:628
 msgid "_Free"
 msgstr "_Вільно"
 
-#: ../multiload/properties.c:638
+#: ../multiload/properties.c:630
 msgid "Load"
 msgstr "Завантаження"
 
-#: ../multiload/properties.c:640
+#: ../multiload/properties.c:632
 msgid "_Average"
 msgstr "_Середнє"
 
-#: ../multiload/properties.c:644
+#: ../multiload/properties.c:636
 msgid "Harddisk"
 msgstr "Жорсткий диск"
 
-#: ../multiload/properties.c:646
+#: ../multiload/properties.c:638
 msgid "_Read"
 msgstr "_Читання"
 
-#: ../multiload/properties.c:647
+#: ../multiload/properties.c:639
 msgid "_Write"
 msgstr "_Запис"
 
-#: ../multiload/properties.c:650
+#: ../multiload/properties.c:642
 msgid "Network speed thresholds"
-msgstr ""
+msgstr "Межі швидкости мережі"
 
-#: ../multiload/properties.c:679
+#: ../multiload/properties.c:671
 msgid "Threshold 1: "
-msgstr ""
+msgstr "Поріг 1: "
 
-#: ../multiload/properties.c:710 ../multiload/properties.c:745
-#: ../multiload/properties.c:780 ../netspeed/src/netspeed.c:394
+#: ../multiload/properties.c:702 ../multiload/properties.c:737
+#: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
 msgid "bytes"
 msgstr "байів"
 
-#: ../multiload/properties.c:718
+#: ../multiload/properties.c:710
 msgid "Threshold 2: "
-msgstr ""
+msgstr "Поріг 2: "
 
-#: ../multiload/properties.c:753
+#: ../multiload/properties.c:745
 msgid "Threshold 3: "
-msgstr ""
+msgstr "Поріг 3: "
 
-#: ../multiload/properties.c:818
+#: ../multiload/properties.c:810
 msgid "System Monitor Preferences"
 msgstr "Параметри системного монітора"
 
@@ -1815,80 +1799,80 @@ msgid "Network Monitor"
 msgstr "Мережевий монітор"
 
 #. translators: bits (short)
-#: ../netspeed/src/netspeed.c:389
+#: ../netspeed/src/netspeed.c:427
 msgid "b"
 msgstr "біт"
 
 #. translators: Bytes (short)
-#: ../netspeed/src/netspeed.c:389
+#: ../netspeed/src/netspeed.c:427
 msgid "B"
 msgstr "Б"
 
-#: ../netspeed/src/netspeed.c:391
+#: ../netspeed/src/netspeed.c:429
 msgid "b/s"
 msgstr "біт/с"
 
-#: ../netspeed/src/netspeed.c:391
+#: ../netspeed/src/netspeed.c:429
 msgid "B/s"
 msgstr "Б/с"
 
-#: ../netspeed/src/netspeed.c:394
+#: ../netspeed/src/netspeed.c:432
 msgid "bits"
 msgstr "бітів"
 
 #. translators: kilobits (short)
-#: ../netspeed/src/netspeed.c:402
+#: ../netspeed/src/netspeed.c:440
 msgid "k"
 msgstr "k"
 
 #. translators: Kilobytes (short)
-#: ../netspeed/src/netspeed.c:402
+#: ../netspeed/src/netspeed.c:440
 msgid "K"
 msgstr "K"
 
-#: ../netspeed/src/netspeed.c:404
+#: ../netspeed/src/netspeed.c:442
 msgid "kb/s"
 msgstr "кбіт/с"
 
-#: ../netspeed/src/netspeed.c:404
+#: ../netspeed/src/netspeed.c:442
 msgid "KiB/s"
 msgstr "КіБ/с"
 
-#: ../netspeed/src/netspeed.c:407
+#: ../netspeed/src/netspeed.c:445
 msgid "kb"
 msgstr "кбіт"
 
-#: ../netspeed/src/netspeed.c:407
+#: ../netspeed/src/netspeed.c:445
 msgid "KiB"
 msgstr "КіБ"
 
 #. translators: megabits (short)
-#: ../netspeed/src/netspeed.c:417
+#: ../netspeed/src/netspeed.c:455
 msgid "m"
 msgstr "м"
 
 #. translators: Megabytes (short)
-#: ../netspeed/src/netspeed.c:417
+#: ../netspeed/src/netspeed.c:455
 msgid "M"
 msgstr "M"
 
-#: ../netspeed/src/netspeed.c:419
+#: ../netspeed/src/netspeed.c:457
 msgid "Mb/s"
 msgstr "Мбіт/с"
 
-#: ../netspeed/src/netspeed.c:419
+#: ../netspeed/src/netspeed.c:457
 msgid "MiB/s"
 msgstr "МіБ/с"
 
-#: ../netspeed/src/netspeed.c:422
+#: ../netspeed/src/netspeed.c:460
 msgid "Mb"
 msgstr "Мбіт"
 
-#: ../netspeed/src/netspeed.c:422
+#: ../netspeed/src/netspeed.c:460
 msgid "MiB"
 msgstr "МіБ"
 
-#: ../netspeed/src/netspeed.c:753
+#: ../netspeed/src/netspeed.c:791
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1897,7 +1881,7 @@ msgstr ""
 "Сталася помилка під час перегляду за допомогою:\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:797
+#: ../netspeed/src/netspeed.c:835
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
@@ -1905,128 +1889,128 @@ msgstr ""
 "Індикатор швидкости повідомляє статистичні відомости про потік даних, що "
 "проходить через вибраний мережевий пристрій."
 
-#: ../netspeed/src/netspeed.c:958
+#: ../netspeed/src/netspeed.c:996
 msgid "Mate Netspeed Preferences"
 msgstr "Налаштування Mate Netspeed"
 
-#: ../netspeed/src/netspeed.c:980
+#: ../netspeed/src/netspeed.c:1018
 msgid "General Settings"
 msgstr "Загальні параметри"
 
-#: ../netspeed/src/netspeed.c:1002
+#: ../netspeed/src/netspeed.c:1040
 msgid "Network _device:"
 msgstr "Мережевий _пристрій:"
 
 #. Default means device with default route set
-#: ../netspeed/src/netspeed.c:1014
+#: ../netspeed/src/netspeed.c:1052
 msgid "Default"
 msgstr "Типово"
 
-#: ../netspeed/src/netspeed.c:1027
+#: ../netspeed/src/netspeed.c:1065
 msgid "Show _sum instead of in & out"
 msgstr "Показувати _сумарну швидкість вхідного та вихідного трафіку"
 
-#: ../netspeed/src/netspeed.c:1031
+#: ../netspeed/src/netspeed.c:1069
 msgid "Show _bits instead of bytes"
 msgstr "Показати _біти замість байтів"
 
-#: ../netspeed/src/netspeed.c:1035
+#: ../netspeed/src/netspeed.c:1073
 msgid "Shorten _unit legend"
 msgstr "Скорочена легенда _одиниць виміру"
 
-#: ../netspeed/src/netspeed.c:1039
+#: ../netspeed/src/netspeed.c:1077
 msgid "_Change icon according to the selected device"
 msgstr "_Змінити піктограму відповідно до вибраного пристрою  "
 
-#: ../netspeed/src/netspeed.c:1043
+#: ../netspeed/src/netspeed.c:1081
 msgid "Show _icon"
 msgstr "Показати _піктограму"
 
-#: ../netspeed/src/netspeed.c:1047
+#: ../netspeed/src/netspeed.c:1085
 msgid "Show signal _quality icon for wireless devices"
 msgstr "Показати піктограму  _якости сигналу для бездротових пристроїв"
 
-#: ../netspeed/src/netspeed.c:1165
+#: ../netspeed/src/netspeed.c:1203
 #, c-format
 msgid "Device Details for %s"
 msgstr "Інформація про пристрій %s"
 
-#: ../netspeed/src/netspeed.c:1190
+#: ../netspeed/src/netspeed.c:1228
 msgid "_In graph color"
 msgstr "Колір графіку _вхідних даних"
 
-#: ../netspeed/src/netspeed.c:1191
+#: ../netspeed/src/netspeed.c:1229
 msgid "_Out graph color"
 msgstr "Колір графіку _вихідних даних"
 
-#: ../netspeed/src/netspeed.c:1207
+#: ../netspeed/src/netspeed.c:1245
 msgid "Internet Address:"
 msgstr "Інтернет-адреса:"
 
-#: ../netspeed/src/netspeed.c:1208
+#: ../netspeed/src/netspeed.c:1246
 msgid "Netmask:"
 msgstr "Маска мережі:"
 
-#: ../netspeed/src/netspeed.c:1209
+#: ../netspeed/src/netspeed.c:1247
 msgid "Hardware Address:"
 msgstr "Адреса пристрою:"
 
-#: ../netspeed/src/netspeed.c:1210
+#: ../netspeed/src/netspeed.c:1248
 msgid "P-t-P Address:"
 msgstr "P-t-P Адреса:"
 
-#: ../netspeed/src/netspeed.c:1211
+#: ../netspeed/src/netspeed.c:1249
 msgid "Bytes in:"
 msgstr "Об’єм вхідного трафіку:"
 
-#: ../netspeed/src/netspeed.c:1212
+#: ../netspeed/src/netspeed.c:1250
 msgid "Bytes out:"
 msgstr "Об’єм вихідного трафіку:"
 
-#: ../netspeed/src/netspeed.c:1214 ../netspeed/src/netspeed.c:1215
-#: ../netspeed/src/netspeed.c:1216 ../netspeed/src/netspeed.c:1217
+#: ../netspeed/src/netspeed.c:1252 ../netspeed/src/netspeed.c:1253
+#: ../netspeed/src/netspeed.c:1254 ../netspeed/src/netspeed.c:1255
 msgid "none"
 msgstr "немає"
 
-#: ../netspeed/src/netspeed.c:1268
+#: ../netspeed/src/netspeed.c:1306
 msgid "IPV6 Address:"
 msgstr "Адреса IPV6:"
 
-#: ../netspeed/src/netspeed.c:1301
+#: ../netspeed/src/netspeed.c:1339
 msgid "Signal Strength:"
 msgstr "Сила сигналу"
 
-#: ../netspeed/src/netspeed.c:1302
+#: ../netspeed/src/netspeed.c:1340
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1343
+#: ../netspeed/src/netspeed.c:1381
 msgid "Device _Details"
 msgstr "_Докладніше про пристрій"
 
-#: ../netspeed/src/netspeed.c:1345
+#: ../netspeed/src/netspeed.c:1383
 msgid "Preferences..."
 msgstr "Налаштування..."
 
-#: ../netspeed/src/netspeed.c:1347
+#: ../netspeed/src/netspeed.c:1385
 msgid "Help"
 msgstr "Довідка"
 
-#: ../netspeed/src/netspeed.c:1349
+#: ../netspeed/src/netspeed.c:1387
 msgid "About..."
 msgstr "Про..."
 
-#: ../netspeed/src/netspeed.c:1390
+#: ../netspeed/src/netspeed.c:1428
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Від’єднати %s зараз?"
 
-#: ../netspeed/src/netspeed.c:1394
+#: ../netspeed/src/netspeed.c:1432
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Під’єднати %s зараз?"
 
-#: ../netspeed/src/netspeed.c:1421
+#: ../netspeed/src/netspeed.c:1459
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2035,12 +2019,12 @@ msgstr ""
 "<b>Запуск команди %s не вдався</b>\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:1480
+#: ../netspeed/src/netspeed.c:1518
 #, c-format
 msgid "%s is down"
 msgstr "%s відімкнений"
 
-#: ../netspeed/src/netspeed.c:1485
+#: ../netspeed/src/netspeed.c:1523
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2049,11 +2033,11 @@ msgstr ""
 "%s: %s\n"
 "вхідний: %s вихідний: %s"
 
-#: ../netspeed/src/netspeed.c:1487 ../netspeed/src/netspeed.c:1496
+#: ../netspeed/src/netspeed.c:1525 ../netspeed/src/netspeed.c:1534
 msgid "has no ip"
 msgstr "не має IP"
 
-#: ../netspeed/src/netspeed.c:1494
+#: ../netspeed/src/netspeed.c:1532
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2062,7 +2046,7 @@ msgstr ""
 "%s: %s\n"
 "сумарна швидкість: %s"
 
-#: ../netspeed/src/netspeed.c:1503
+#: ../netspeed/src/netspeed.c:1541
 #, c-format
 msgid ""
 "\n"
@@ -2073,11 +2057,11 @@ msgstr ""
 "ESSID: %s\n"
 "Сила сигналу: %d %%"
 
-#: ../netspeed/src/netspeed.c:1504
+#: ../netspeed/src/netspeed.c:1542
 msgid "unknown"
 msgstr "Невідомо"
 
-#: ../netspeed/src/netspeed.c:1555
+#: ../netspeed/src/netspeed.c:1593
 msgid "Mate Netspeed"
 msgstr "Mate Netspeed"
 
@@ -2086,8 +2070,8 @@ msgid "Sticky Notes Applet Factory"
 msgstr "Фабрика аплету липких нотаток"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:164
-#: ../stickynotes/stickynotes_applet.c:406
+#: ../stickynotes/stickynotes_applet.c:170
+#: ../stickynotes/stickynotes_applet.c:412
 msgid "Sticky Notes"
 msgstr "Липкі нотатки"
 
@@ -2438,16 +2422,16 @@ msgstr "Вилучити _нотатки"
 msgid "_Lock Notes"
 msgstr "_Блокувати нотатки"
 
-#: ../stickynotes/stickynotes_applet.c:582
+#: ../stickynotes/stickynotes_applet.c:591
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d нотатка"
+msgstr[1] "%d нотатки"
+msgstr[2] "%d нотаток"
+msgstr[3] "%d нотаток"
 
-#: ../stickynotes/stickynotes_applet.c:583
+#: ../stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
 msgstr "Показує липкі нотатки"
 
@@ -2557,10 +2541,10 @@ msgstr "_Відкрити смітник"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d елемент у смітнику"
+msgstr[1] "%d елементи у смітнику"
+msgstr[2] "%d елементів у смітнику"
+msgstr[3] "%d елементів у смітнику"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

@@ -1,351 +1,692 @@
-# Translation of netspeed.help.HEAD.po to Brazilian Portuguese
-# This file is distributed under the same license as the netspeed package.
-# Leonardo Gregianin <leogregianin@gmail.com>, 2008.
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Aldo Oliveira <america103@gmail.com>, 2018
+# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2018
+# Halan Germano Bacca <halangermano@hotmail.com.br>, 2018
+# Wolfgang Ulbrich <mate@raveit.de>, 2018
+# Italo Penaforte <italo.penaforte@gmail.com>, 2018
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-05-01 20:35-0300\n"
-"Last-Translator: Leonardo Gregianin <leogregianin@gmail.com>\n"
-"Language-Team: \n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"POT-Creation-Date: 2018-10-03 12:17+0200\n"
+"PO-Revision-Date: 2018-09-27 14:27+0000\n"
+"Last-Translator: Italo Penaforte <italo.penaforte@gmail.com>, 2018\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:132(None)
-msgid "@@image: 'figures/netspeed_applet.png'; md5=11ef0533a2be1a5d1a9de77c4cec7f93"
-msgstr "@@image: 'figures/netspeed_applet.png'; md5=11ef0533a2be1a5d1a9de77c4cec7f93"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:144(None)
-msgid "@@image: 'figures/eth_sum_48.png'; md5=5113ce28da9b7712dafc52b3c13ccf32"
-msgstr "@@image: 'figures/eth_sum_48.png'; md5=5113ce28da9b7712dafc52b3c13ccf32"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:173(None)
-msgid "@@image: 'figures/loopback.png'; md5=0636b7d65b0626ee5e92dc0d28be5871"
-msgstr "@@image: 'figures/loopback.png'; md5=0636b7d65b0626ee5e92dc0d28be5871"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:185(None)
-msgid "@@image: 'figures/ethernet.png'; md5=48562a8b38e8eca91a3a8ee4ba4e3077"
-msgstr "@@image: 'figures/ethernet.png'; md5=48562a8b38e8eca91a3a8ee4ba4e3077"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:197(None)
-msgid "@@image: 'figures/ppp.png'; md5=b88d98a9ccdd489d91b45c8cf2dcbad1"
-msgstr "@@image: 'figures/ppp.png'; md5=b88d98a9ccdd489d91b45c8cf2dcbad1"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:209(None)
-msgid "@@image: 'figures/wavelan.png'; md5=90f925a64abe393adc5834fceba515fe"
-msgstr "@@image: 'figures/wavelan.png'; md5=90f925a64abe393adc5834fceba515fe"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:221(None)
-msgid "@@image: 'figures/plip.png'; md5=0761a22dfa7b0b56e41e020cd701db68"
-msgstr "@@image: 'figures/plip.png'; md5=0761a22dfa7b0b56e41e020cd701db68"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:249(None)
-msgid "@@image: 'figures/settings.png'; md5=219a6bc0e89cb9634d49025f9d3c6604"
-msgstr "@@image: 'figures/settings.png'; md5=219a6bc0e89cb9634d49025f9d3c6604"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/netspeed_applet.xml:296(None)
-msgid "@@image: 'figures/details.png'; md5=60fedda8f88b634f16ab31090b5bdd67"
-msgstr "@@image: 'figures/details.png'; md5=60fedda8f88b634f16ab31090b5bdd67"
-
-#: C/netspeed_applet.xml:24(title)
-msgid "Netspeed Applet Manual V1.1"
-msgstr "Manual do Netspeed v1.1"
-
-#: C/netspeed_applet.xml:26(para)
-msgid "Netspeed Applet is shows how much traffic occurs on a specified network device."
-msgstr "O miniaplicativo Netspeed mostra a quantidade de tr·fego que transcorre por um determinado dispositivo de rede."
-
-#: C/netspeed_applet.xml:29(year)
-#: C/netspeed_applet.xml:102(date)
-msgid "2002"
-msgstr "2002"
-
-#: C/netspeed_applet.xml:30(holder)
-msgid "Jˆrgen Scheibengruber"
-msgstr "Jˆrgen Scheibengruber"
-
-#: C/netspeed_applet.xml:41(publishername)
-msgid "GNOME Documentation Project"
-msgstr "Projeto de DocumentaÁ„o GNOME"
-
-#: C/netspeed_applet.xml:2(para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
-msgstr "… dada a permiss„o para copiar, redistribuir e/ou modificar este documento sob os termos da LicenÁa de DocumentaÁ„o Livre GNU (GFDL)  Vers„o 1.1 ou qualquer vers„o superior publicada pela Free Software Foundation sem quaisquer SeÁıes Invariantes, Textos de Capa ou Pref·cios, e sem Textos Finais ou Posf·cios. VocÍ pode encontrar uma cÛpia da GFDL neste<ulink type=\"help\" url=\"help:fdl\">link</ulink> ou no arquivo COPYING-DOCS distribuÌdo com este manual."
-
-#: C/netspeed_applet.xml:12(para)
-msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
-msgstr "Este manual È parte da coleÁ„o de manuais do GNOME distribuÌdo sob os termos da licenÁa GFDL. Se vocÍ quer distribuir este manual separadamente da coleÁ„o, vocÍ pode fazer desde que inclua uma cÛpia da licenÁa do manual, como descrito na seÁ„o 6 da licenÁa."
-
-#: C/netspeed_applet.xml:19(para)
-msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
-msgstr "Muitos dos nomes usados por companhias para distinguir seus produtos e serviÁos s„o mencionados como marcas comerciais.  Onde estes nomes apareciam em qualquer documentaÁ„o do GNOME, e os membros do Projeto de DocumentaÁ„o GNOME est„o atentos a estas marcas registradas, ent„o os nomes est„o em letras mai˙sculas ou com as iniciais em mai˙sculas."
-
-#: C/netspeed_applet.xml:35(para)
-msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr "ESTE DOCUMENTO … DISPONIBILIZADO NUMA BASE \"TAL COMO EST¡\", SEM QUALQUER GARANTIA DE QUALQUER TIPO, NEM EXPRESSA NEM IMPLÕCITA, INCLUINDO, MAS SEM LIMITAR, GARANTIAS DE QUE O DOCUMENTO OU VERS√O ALTERADA DO DOCUMENTO SE ENCONTRA LIVRE DE DEFEITOS PARA COMERCIALIZA«√O, ADEQUADO A UM PROP”SITO ESPECÕFICO OU QUE N√O INFRINJA. A TOTALIDADE DO RISCO DE QUALIDADE, PORMENORIZA«√O, E DESEMPENHO DO DOCUMENTO OU VERS√O ALTERADA DO DOCUMENTO … SUA. CASO ALGUM DOCUMENTO OU VERS√O ALTERADA SE DEMONSTRE DEFICIENTE EM QUALQUER ASPECTO, O LEITOR (E N√O O AUTOR INICIAR, OU QUALQUER CONTRIBUINTE POSTERIOR) ASSUME O CUSTO DE TODO O SERVI«O DE REPARA«√O, ASSIST NCIA OU CORREC«√O QUE POSSE SER NECESS¡RIO. ESTA DESRESPONSABILIZA«√O DE GARANTIA CONSTITUI UMA PARTE ESSENCIAL DESTA LICEN«A. NENHUMA UTILIZA«√O DE QUALQUER DOCUMENTO OU VERS√O ALTERADO DO DOCUMENTO SE ENCONTRA AUTORIZADA EXCETO SE \"SUJEITA A ESTA DESRESPONSABILIZA«√O; E"
-
-#: C/netspeed_applet.xml:55(para)
-msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
-msgstr "SOB QUAISQUER CIRCUNST¬NCIAS E TEORIA LEGAL, QUER SEJA POR ERRO (INCLUINDO NEGLIG NCIA), CONTRATO, OU QUALQUER OUTRO MOTIVO, PODER¡ O AUTOR, ESCRITOR INICIAL, QUALQUER CONTRIBUINTE, OU QUALQUER DISTRIBUIDOR DO DOCUMENTO OU VERS√O ALTERADA DO DOCUMENTO, OU QUALQUER FORNECEDOR DE UMA DESSAS PARTES, SER RESPONS¡VEL PERANTE QUALQUER PESSOA POR QUAISQUER DANOS DIRETOS, \"INDIRETOS, ESPECIAIS, ACIDENTAIS OU CONSEQUENCIAIS DE QUALQUER TIPO INCLUINDO, SEM LIMITAR, DANOS POR PERCA DE BOM NOME (GOODWILL), PARAGENS DE TRABALHO, FALHA OU MAU FUNCIONAMENTO INFORM¡TICO, OU QUALQUER E TODOS OS OUTROS DANOS OU PERCAS DECORRENTES OU RELACIONADAS COM A UTILIZA«√O DO DOCUMENTO E VERS’ES ALTERADAS DO DOCUMENTO, MESMO QUE TAL PARTE TENHA SIDO INFORMADA DA POSSIBILIDADE DE OCORREREM TAIS DANOS."
-
-#: C/netspeed_applet.xml:28(para)
-msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
-msgstr "ESTE DOCUMENTO E AS VERS’ES MODIFICADAS DO MESMO S√O PROPORCIONADAS SEGUNDO AS CONDI«’ES ESTABELECIDAS NA LICEN«A DE DOCUMENTA«√O LIVRE GNU (GFDL) E TENDO EM CONTA QUE: <placeholder-1/>"
-
-#: C/netspeed_applet.xml:48(firstname)
-#: C/netspeed_applet.xml:84(firstname)
-#: C/netspeed_applet.xml:104(firstname)
-msgid "Jˆrgen"
-msgstr "Jˆrgen"
-
-#: C/netspeed_applet.xml:49(surname)
-#: C/netspeed_applet.xml:85(surname)
-#: C/netspeed_applet.xml:105(surname)
-msgid "Scheibengruber"
-msgstr "Scheibengruber"
-
-#: C/netspeed_applet.xml:51(orgname)
-#: C/netspeed_applet.xml:60(orgname)
-msgid "GNOME Project"
-msgstr "Projeto GNOME"
-
-#: C/netspeed_applet.xml:53(email)
-#: C/netspeed_applet.xml:86(email)
-#: C/netspeed_applet.xml:106(email)
-msgid "mfcn@gmx.de"
-msgstr "mfcn@gmx.de"
-
-#: C/netspeed_applet.xml:57(firstname)
-#: C/netspeed_applet.xml:94(firstname)
-msgid "Pedro"
-msgstr "Pedro"
-
-#: C/netspeed_applet.xml:58(surname)
-#: C/netspeed_applet.xml:95(surname)
-msgid "Villavicencio Garrido"
-msgstr "Villavicencio Garrido"
-
-#: C/netspeed_applet.xml:62(email)
-#: C/netspeed_applet.xml:96(email)
-msgid "pvillavi@gnome.org"
-msgstr "pvillavi@gnome.org"
-
-#: C/netspeed_applet.xml:81(revnumber)
-msgid "1.2"
-msgstr "1.2"
-
-#: C/netspeed_applet.xml:82(date)
-msgid "2006"
-msgstr "2006"
-
-#: C/netspeed_applet.xml:91(revnumber)
-msgid "1.1"
-msgstr "1.1"
-
-#: C/netspeed_applet.xml:92(date)
-msgid "2005"
-msgstr "2005"
-
-#: C/netspeed_applet.xml:101(revnumber)
-msgid "1.0"
-msgstr "1.0"
-
-#: C/netspeed_applet.xml:112(releaseinfo)
-msgid "This manual describes version 0.12 of Netspeed Applet."
-msgstr "Este manual descreve a vers„o 0.12 do miniaplicativo Netspeed."
-
-#: C/netspeed_applet.xml:115(title)
-msgid "Feedback"
-msgstr "Coment·rios"
-
-#: C/netspeed_applet.xml:116(para)
-msgid "To report a bug or make a suggestion regarding the Netspeed Applet applet or this manual, send a e-mail to <ulink url=\"mailto:mfcn@gmx.de\" type=\"mail\">Jˆrgen Scheibengruber</ulink>."
-msgstr "Para informar um erro ou fazer uma sugest„o a respeito do miniaplicativo Netspeed ou a este manual, envie um email para <ulink url=\"mailto:mfcn@gmx.de\" type=\"mail\">Jˆrgen Scheibengruber</ulink>."
-
-#: C/netspeed_applet.xml:122(primary)
-msgid "Netspeed Applet"
-msgstr "Miniaplicativo Netspeed"
-
-#: C/netspeed_applet.xml:127(title)
-msgid "About Netspeed Applet"
-msgstr "Sobre o miniaplicativo Netspeed"
-
-#: C/netspeed_applet.xml:129(title)
-msgid "Netspeed"
-msgstr "Netspeed"
-
-#: C/netspeed_applet.xml:135(phrase)
-msgid "Netspeed."
-msgstr "Netspeed."
-
-#: C/netspeed_applet.xml:141(title)
-#: C/netspeed_applet.xml:147(phrase)
-msgid "Netspeed showing the sum in a 48px panel."
-msgstr "Netspeed mostrando a soma em um painel de 48px."
-
-#: C/netspeed_applet.xml:152(para)
-msgid "<application>Netspeed Applet</application> displays the network traffic on a specified device like eth0, ppp0, plip0, etc. More over it provides information about the configuration of the network device."
-msgstr "O <application>miniaplicativo Netspeed</application> exibe o tr·fego de rede de um dispositivo de rede concreto como eth0, ppp0, plip0, etc. AlÈm disso, proporciona informaÁıes sobre a configuraÁ„o da interface de rede."
-
-#: C/netspeed_applet.xml:158(title)
-msgid "Netspeed Icons on Panel"
-msgstr "Õcones do Netspeed no Painel"
-
-#: C/netspeed_applet.xml:165(para)
-msgid "Icon"
-msgstr "Õcone"
-
-#: C/netspeed_applet.xml:166(para)
-msgid "Description"
-msgstr "DescriÁ„o"
-
-#: C/netspeed_applet.xml:175(phrase)
-msgid "Loopback"
-msgstr "Loopback"
-
-#: C/netspeed_applet.xml:178(para)
-msgid "The Loopback interface."
-msgstr "Interface de loopback."
-
-#: C/netspeed_applet.xml:187(phrase)
-msgid "Ethernet"
-msgstr "Ethernet"
-
-#: C/netspeed_applet.xml:190(para)
-msgid "Ethernet connection."
-msgstr "Conex„o ethernet."
-
-#: C/netspeed_applet.xml:199(phrase)
-msgid "PPP"
-msgstr "PPP"
-
-#: C/netspeed_applet.xml:202(para)
-msgid "Point to Point Protocol connection."
-msgstr "Protocolo de conex„o Ponto a Ponto."
-
-#: C/netspeed_applet.xml:211(phrase)
-msgid "Wireless"
-msgstr "Sem fio"
-
-#: C/netspeed_applet.xml:214(para)
-msgid "Wireless connection."
-msgstr "Conex„o sem fio."
-
-#: C/netspeed_applet.xml:223(phrase)
-msgid "PLIP"
-msgstr "PLIP"
-
-#: C/netspeed_applet.xml:226(para)
-msgid "Parallel Line Internet Protocol connection."
-msgstr "Conex„o do protocolo de linha paralela de Internet."
-
-#: C/netspeed_applet.xml:235(title)
-msgid "To Add Netspeed to a Panel"
-msgstr "Para adicionar o Netspeed a um Painel"
-
-#: C/netspeed_applet.xml:236(para)
-msgid "To add <application>Netspeed Applet</application> to a panel, right-click on the panel, then choose <menuchoice><guimenu>Add to Panel</guimenu><guisubmenu>Network</guisubmenu><guimenuitem>Netspeed Applet</guimenuitem></menuchoice>."
-msgstr "Para adicionar o <application>miniaplicativo Netspeed</application> a um painel, clique com o bot„o direito do mouse sobre o painel e selecione <menuchoice><guimenu>Adicionar ao painel</guimenu><guisubmenu>Rede</guisubmenu><guimenuitem>Netspeed Applet</guimenuitem></menuchoice>."
-
-#: C/netspeed_applet.xml:244(title)
-msgid "Settings"
-msgstr "ConfiguraÁ„o"
-
-#: C/netspeed_applet.xml:246(title)
-msgid "Netspeed Applet Settings"
-msgstr "ConfiguraÁ„o do miniaplicativo Netspeed"
-
-#: C/netspeed_applet.xml:252(phrase)
-msgid "Netspeed Applet Settings."
-msgstr "ConfiguraÁ„o do miniaplicativo Netspeed."
-
-#: C/netspeed_applet.xml:257(para)
-msgid "In this dialog you can change the settings of Netspeed Applet:"
-msgstr "Neste di·logo vocÍ pode alterar a configuraÁ„o do miniaplicativo Netspeed:"
-
-#: C/netspeed_applet.xml:261(para)
-msgid "<guilabel>Network device:</guilabel> Choose the network device that the applet should monitor from the popdown list of the combobox. Usually all available devices are listed, however you can enter one yourself, too."
-msgstr "<guilabel>Dispositivo de rede:</guilabel> Selecione o dispositivo de rede que o miniaplicativo deve monitorar na lista de dispositos. Habitualmente È listado todos os dispositivos disponÌveis, mas vocÍ tambÈm pode introduzir outros."
-
-#: C/netspeed_applet.xml:265(para)
-msgid "<guilabel>Update interval:</guilabel> Enter the time between two updates of the applet."
-msgstr "<guilabel>Intervalo de atualizaÁ„o:</guilabel> Introduza o intervalo de tempo entre as atualizaÁıes do miniaplicativo."
-
-#: C/netspeed_applet.xml:268(para)
-msgid "<guilabel>Label font size:</guilabel> Enter the size of the text displayed in the applet."
-msgstr "<guilabel>Tamanho da fonte:</guilabel> Introduza o tamanho do texto mostrado pelo miniaplicativo."
-
-#: C/netspeed_applet.xml:271(para)
-msgid "<guilabel>Show sum instead of in and out:</guilabel> If you check this box then the applet will show the sum of the in and out rate. The applet will take only half of the space in the panel in this case."
-msgstr "<guilabel>Mostra soma em vez de entrada e saÌda:</guilabel> Se vocÍ selecionar este bot„o o miniaplicativo mostrar· o total de dados de saÌda e entrada. O miniaplicativo, neste caso, somente ocupar· a metade do espaÁo no painel."
-
-#: C/netspeed_applet.xml:275(para)
-msgid "<guilabel>Show bits/s (b/s) instead of bytes/s (B/s):</guilabel> Check this if you want the applet to display bits per second instead of bytes/s."
-msgstr "<guilabel>Mostrar bits em vez de bytes/s:</guilabel> Selecione isto se vocÍ quer que o miniaplicativo exiba bits por segundo no lugar de bytes por segundo."
-
-#: C/netspeed_applet.xml:279(para)
-msgid "<guilabel>Change icon according to the selected device:</guilabel> Usually the applet will show an icon representing the type of network device you monitor. So it will show a phone for Point to Point connections (ppp - modems, etc.), a network card for ethernet (eth), etc. When this is unchecked, the applet will always show the network card icon, no matter which device you monitor."
-msgstr "<guilabel>Alterar o Ìcone de acordo com o dispositivo selecionado:</guilabel> Habitualmente o miniaplicativo mostra o Ìcone que representa o tipo de dispositivo que est· sendo monitorado. Ent„o, mostrar· um telefone para conexıes Ponto a Ponto (ppp - modems, etc), uma placa de rede para ethernet (eth), etc. Quando isto n„o est· selecionado, o miniaplicativo sempre mostrar· o Ìcone de rede, sem importar para que dispositivo est· sendo monitorado."
-
-#: C/netspeed_applet.xml:285(para)
-msgid "<guilabel>Always monitor a connected device, if possible:</guilabel> When your connection is down, Netspeed Applet look for a running one for monitoring."
-msgstr "<guilabel>Sempre monitorar um dispositivo conectado, se possÌvel: </guilabel> Quando uma conex„o estiver desconfigurada, o miniaplicativo Netspeed busca uma outra para monitor·-la."
-
-#: C/netspeed_applet.xml:291(title)
-#: C/netspeed_applet.xml:293(title)
-#: C/netspeed_applet.xml:299(phrase)
-msgid "The details dialog"
-msgstr "O di·logo detalhes"
-
-#: C/netspeed_applet.xml:304(para)
-msgid "This dialog shows you some useful information on the configuration of your network device."
-msgstr "Este di·logo mostra informaÁıes ˙teis sobre a configuraÁ„o de seu dispositivo de rede."
-
-#: C/netspeed_applet.xml:309(para)
-msgid "<guilabel>Internet Address:</guilabel> The IP (Internet Protocol) address of the network device."
-msgstr "<guilabel>EndereÁo de Internet:</guilabel> O endereÁo IP (Protocolo de Internet) do dispositivo de rede."
-
-#: C/netspeed_applet.xml:312(para)
-msgid "<guilabel>Netmask:</guilabel> The netmask which depends on the size of your LAN (Local Area Network). A usual value is 255.255.255.0 (a class C network)."
-msgstr "<guilabel>M·scara de rede:</guilabel> A m·scara de rede depende do tamanho de sua LAN (Rede Local). Um valor tÌpÌco È 255.255.255.0 (rede de classe C)."
-
-#: C/netspeed_applet.xml:316(para)
-msgid "<guilabel>Hardware Address:</guilabel> Often also referred to as the physical or MAC (Media Access Control) address. A worldwide unique identifier for your network card."
-msgstr "<guilabel>EndereÁo do Hardware:</guilabel> TambÈm conhecida como endereÁo fÌsico ou endereÁo MAC (Media Access Control). … um identificador ˙nico no mundo  para sua placa de rede."
-
-#: C/netspeed_applet.xml:320(para)
-msgid "<guilabel>P-t-P Address:</guilabel> The internet address of the \"other side\" of your PPP (Point to Point Protocol) connection."
-msgstr "<guilabel>EndereÁo Ponto a Ponto:</guilabel> O endereÁo da intenet da ´outra parteª da sua conex„o PPP (Protocolo Ponto a Ponto)."
-
-#: C/netspeed_applet.xml:324(para)
-msgid "<guilabel>Bytes in:</guilabel> The amount of bytes that the network device has received since it has been connected to the network."
-msgstr "<guilabel>Bytes de entrada:</guilabel> … o total de bytes que o dispositivo de rede recebeu desde que foi conectado a internet."
-
-#: C/netspeed_applet.xml:328(para)
-msgid "<guilabel>Bytes out:</guilabel> The amout of bytes that the network device has sent since it has been connected to the network."
-msgstr "<guilabel>Bytes de saÌda:</guilabel> … o total de bytes que o dispositivo de rede enviou desde que foi conectado a internet."
-
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: C/netspeed_applet.xml:0(None)
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
 msgid "translator-credits"
-msgstr "Leonardo Gregianin <leogregianin@gmail.com>, 2008."
+msgstr ""
+"Equipe de tradu√ß√£o no Transifex:\n"
+"Fabrizzio Alphonsus Soares https://www.transifex.com/accounts/profile/fabrizzio\n"
+"Alberto Federman Neto https://www.transifex.com/accounts/profile/albfneto\n"
+"Aldo Oliveira https://www.transifex.com/user/profile/AldoBR/\n"
+"Appes https://www.transifex.com/accounts/profile/apps\n"
+"arm332 https://www.transifex.com/accounts/profile/arm332\n"
+"augusteiner https://www.transifex.com/accounts/profile/augusteiner\n"
+"dreto https://www.transifex.com/accounts/profile/dreto\n"
+"Enrico Nicoletto https://www.transifex.com/accounts/profile/EnricoNicoletto\n"
+"everton_seib https://www.transifex.com/accounts/profile/everton_seib\n"
+"Felipe Rozelio https://www.transifex.com/accounts/profile/feliperozelio\n"
+"Jo√£o Paulo da Silva J√∫nior https://www.transifex.com/accounts/profile/jpsilvaj\n"
+"Juliana Paula Felix https://www.transifex.com/accounts/profile/jufelix\n"
+"Lucas Cenir Friederich https://www.transifex.com/user/profile/lucasalvarokedrines\n"
+"Marcelo Ghelman https://www.transifex.com/accounts/profile/marcelo.ghelman\n"
+"Marcio Andre Padula https://www.transifex.com/accounts/profile/Padula\n"
+"Marcus Vin√≠cius Marques https://www.transifex.com/accounts/profile/Pygmalion\n"
+"Matheus Macabu https://www.transifex.com/accounts/profile/mkbu95\n"
+"Matheus Martins https://www.transifex.com/accounts/profile/Matheus_Martins\n"
+"Michele dos Santos da Silva https://www.transifex.com/accounts/profile/mchelem\n"
+"Thiago Cangussu https://www.transifex.com/accounts/profile/cangussu.thg\n"
+"vitorgatti https://www.transifex.com/accounts/profile/vitorgatti"
 
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:24
+msgid "Netspeed Applet Manual V1.3"
+msgstr ""
+
+#. (itstool) path: abstract/para
+#: C/index.docbook:26
+msgid ""
+"Netspeed Applet is shows how much traffic occurs on a specified network "
+"device."
+msgstr ""
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:28
+msgid "<year>2015</year> <holder>MATE Documentation Project</holder>"
+msgstr "<year>2015</year> <holder>Documenta√ß√£o Projeto MATE</holder>"
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:31
+msgid "<year>2002</year> <holder>J√∂rgen Scheibengruber</holder>"
+msgstr ""
+
+#. (itstool) path: publisher/publishername
+#: C/index.docbook:44
+msgid "MATE Documentation Project"
+msgstr "Projeto de Documenta√ß√£o do MATE"
+
+#. (itstool) path: publisher/publishername
+#: C/index.docbook:47
+msgid "GNOME Documentation Project"
+msgstr "Projeto de Documenta√ß√£o do GNOME"
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Permiss√£o concedida para copiar, distribuir e/ou modificar este documento "
+"dentro dos termos da Licen√ßa de Documenta√ß√£o Livre GNU (GNU Free "
+"Documentation License), Vers√£o 1.1 ou qualquer vers√£o posterior publicada "
+"pela Free Software Foundation; sem nenhuma Se√ß√£o Imut√°vel, Texto de Capa ou "
+"de Contra-Capa. Uma c√≥pia da licen√ßa se encontra na se√ß√£o <ulink "
+"type=\"help\" url=\"help:fdl\">\"GNU Free Documentation License\"</ulink> ou"
+" no arquivo COPYING-DOCS distribu√≠do com esse manual."
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
+msgid ""
+"This manual is part of a collection of MATE manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in"
+" section 6 of the license."
+msgstr ""
+"Esse manual √© parte de uma cole√ß√£o de manuais do MATE distribu√≠da sob a "
+"GFDL. Se voc√™ quiser distribuir essa manual separado da cole√ß√£o, pode faz√™-"
+"lo adicionando uma c√≥pia da licen√ßa ao manual, como descrito na se√ß√£o 6 da "
+"licen√ßa."
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any MATE "
+"documentation, and the members of the MATE Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Muitos dos nomes usados por companhias para distinguir seus produtos e "
+"servi√ßos s√£o marcas registradas. Quando esses nomes ocorrem em alguma parte "
+"da documenta√ß√£o do MATE, e os membros do Projeto de documenta√ß√£o do MATE "
+"estiverem cientes de serem marcas registradas, esses nomes estar√£o "
+"mai√∫sculas ou com as iniciais em mai√∫sculas."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"O DOCUMENTO √â FORNECIDO COMO UMA BASE \"COMO EST√Å\", SEM GARANTIAS DE "
+"QUALQUER TIPO, TANTO EXPRESSA OU IMPL√çCITA, INCLUINDO, SEM LIMITA√á√ÉO, "
+"GARANTIAS DE QUE O DOCUMENTO OU VERS√ÉO MODIFICADA DO DOCUMENTO √â "
+"COMERCIALIZ√ÅVEL, LIVRE DE DEFEITOS, PR√ìPRIO PARA UM PROP√ìSITO ESPEC√çFICO OU "
+"SEM INFRA√á√ïES. TODO O RISCO A RESPEITO DA QUALIDADE, EXATID√ÉO, E DESEMPENHO "
+"DO DOCUMENTO OU VERS√ïES MODIFICADAS DO DOCUMENTO √â SEU. SE ALGUM DOCUMENTO "
+"OU VERS√ÉO MODIFICADA SE PROVAR DEFEITUOSO EM QUALQUER ASPECTO, VOC√ä (N√ÉO O "
+"ESCRITOR INICIAL, AUTOR OU QUALQUER CONTRIBUIDOR) ASSUME O CUSTO DE QUALQUER"
+" SERVI√áO NECESS√ÅRIO, REPARO OU CORRE√á√ÉO. ESTA REN√öNCIA DE GARANTIAS "
+"CONSTITUI UMA PARTE ESSENCIAL DESTA LICEN√áA. NENHUM USO DESTE DOCUMENTO OU "
+"VERS√ÉO MODIFICADA DESTE DOCUMENTO √â AUTORIZADO SE N√ÉO FOR SOB ESTA REN√öNCIA;"
+" E"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
+" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
+" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
+" POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"SOB NENHUM CIRCUNST√ÇNCIA E SOB NENHUMA TEORIA LEGAL, TANTO EM DADO "
+"(INCLUINDO NEGLIG√äNCIA), CONTRATO, OU OUTROS, DEVEM O AUTOR, ESCRITOR "
+"INICIAL, QUALQUER CONTRIBUIDOR, OU QUALQUER DISTRIBUIDOR DO DOCUMENTO OU "
+"VERS√ÉO MODIFICADA DO DOCUMENTO, OU QUALQUER FORNECEDOR DE ALGUMA DESSAS "
+"PARTES, SER CONSIDERADOS RESPONS√ÅVEIS A QUALQUER PESSOA POR QUALQUER DANO, "
+"SEJA DIRETO, INDIRETO, ESPECIAL, ACIDENTAL OU CONSEQ√úENCIAL DE QUALQUER "
+"INDIV√çDUO, INCLUINDO, SEM LIMITA√á√ÉO, DANOS POR PERDA DE BOA VONTADE, "
+"TRABALHO PARADO, FALHA NO COMPUTADOR OU MAL FUNCIONAMENTO, OU QUALQUER E "
+"TODOS OS OUTROS DANOS OU PERDAS RESULTANTES OU RELACIONADAS AO USO DO "
+"DOCUMENTO E VERS√ïES MODIFICADAS, MESMO QUE TAL PARTE TENHA SIDO INFORMADA DA"
+" POSSIBILIDADE DE TAIS DANOS."
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"O DOCUMENTO E AS VERS√ïES MODIFICADAS DO DOCUMENTO S√ÉO FORNECIDOS DE ACORDO "
+"COM OS TERMOS DA LICEN√áA DE DOCUMENTA√á√ÉO GRATUITA DA GNU COM O ENTENDIMENTO "
+"COMPREENDIDO DE QUE:<_:orderedlist-1/>"
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:53
+msgid ""
+"<firstname>MATE Documentation Project</firstname> <surname/> <affiliation> "
+"<orgname>MATE Desktop</orgname> </affiliation>"
+msgstr ""
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:60
+msgid ""
+"<firstname>J√∂rgen</firstname> <surname>Scheibengruber</surname> "
+"<affiliation> <orgname>GNOME Project</orgname> </affiliation> "
+"<email>mfcn@gmx.de</email>"
+msgstr ""
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:69
+msgid ""
+"<firstname>Pedro</firstname> <surname>Villavicencio Garrido</surname> "
+"<affiliation> <orgname>GNOME Project</orgname> </affiliation> "
+"<email>pvillavi@gnome.org</email>"
+msgstr ""
+
+#. (itstool) path: revision/author
+#: C/index.docbook:96
+msgid "<firstname>MATE Documentation Project</firstname> <surname/>"
+msgstr "<firstname>Projeto de Documenta√ß√£o MATE</firstname> <surname/>"
+
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:93
+msgid "<revnumber>1.3</revnumber> <date>July 2015</date> <_:author-1/>"
+msgstr ""
+
+#. (itstool) path: revision/author
+#: C/index.docbook:105 C/index.docbook:125
+msgid ""
+"<firstname>J√∂rgen</firstname> <surname>Scheibengruber</surname> "
+"<email>mfcn@gmx.de</email>"
+msgstr ""
+
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:102
+msgid "<revnumber>1.2</revnumber> <date>2006</date> <_:author-1/>"
+msgstr ""
+
+#. (itstool) path: revision/author
+#: C/index.docbook:115
+msgid ""
+"<firstname>Pedro</firstname> <surname>Villavicencio Garrido</surname> "
+"<email>pvillavi@gnome.org</email>"
+msgstr ""
+
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:112
+msgid "<revnumber>1.1</revnumber> <date>2005</date> <_:author-1/>"
+msgstr ""
+
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:122
+msgid "<revnumber>1.0</revnumber> <date>2002</date> <_:author-1/>"
+msgstr ""
+
+#. (itstool) path: articleinfo/releaseinfo
+#: C/index.docbook:134
+msgid "This manual describes version 1.10.1 of Netspeed Applet."
+msgstr ""
+
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:137
+msgid "Feedback"
+msgstr "Retorno"
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:138
+msgid ""
+"To report a bug or make a suggestion regarding the Netspeed Applet "
+"application or this manual, follow the directions in the <ulink url=\"help"
+":mate-user-guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
+msgstr ""
+
+#. (itstool) path: article/indexterm
+#: C/index.docbook:146
+msgid "<primary>Netspeed Applet</primary>"
+msgstr ""
+
+#. (itstool) path: sect1/title
+#: C/index.docbook:152
+msgid "About Netspeed Applet"
+msgstr ""
+
+#. (itstool) path: figure/title
+#: C/index.docbook:154
+msgid "Netspeed"
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:157
+msgctxt "_"
+msgid ""
+"external ref='figures/netspeed_applet.png' "
+"md5='11ef0533a2be1a5d1a9de77c4cec7f93'"
+msgstr ""
+
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:156
+msgid ""
+"<imageobject><imagedata fileref=\"figures/netspeed_applet.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Netspeed.</phrase> "
+"</textobject>"
+msgstr ""
+
+#. (itstool) path: figure/title
+#: C/index.docbook:166
+msgid "Netspeed showing the sum in a 48px panel."
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:169
+msgctxt "_"
+msgid ""
+"external ref='figures/eth_sum_48.png' md5='5113ce28da9b7712dafc52b3c13ccf32'"
+msgstr ""
+
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:168
+msgid ""
+"<imageobject><imagedata fileref=\"figures/eth_sum_48.png\" format=\"PNG\"/> "
+"</imageobject> <textobject> <phrase>Netspeed showing the sum in a 48px "
+"panel.</phrase> </textobject>"
+msgstr ""
+
+#. (itstool) path: sect1/para
+#: C/index.docbook:177
+msgid ""
+"<application>Netspeed Applet</application> displays the network traffic on a"
+" specified device like eth0, ppp0, plip0, etc. More over it provides "
+"information about the configuration of the network device."
+msgstr ""
+
+#. (itstool) path: sect2/title
+#: C/index.docbook:183
+msgid "Netspeed Icons on Panel"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:190
+msgid "Icon"
+msgstr "√çcone"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:191
+msgid "Description"
+msgstr "Descri√ß√£o"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:198
+msgctxt "_"
+msgid ""
+"external ref='figures/loopback.png' md5='0636b7d65b0626ee5e92dc0d28be5871'"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:196
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/loopback.png\""
+" format=\"PNG\"/> </imageobject><textobject> <phrase>Loopback</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:203
+msgid "The Loopback interface."
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:210
+msgctxt "_"
+msgid ""
+"external ref='figures/ethernet.png' md5='48562a8b38e8eca91a3a8ee4ba4e3077'"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:208
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/ethernet.png\""
+" format=\"PNG\"/> </imageobject><textobject> <phrase>Ethernet</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:215
+msgid "Ethernet connection."
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:222
+msgctxt "_"
+msgid "external ref='figures/ppp.png' md5='b88d98a9ccdd489d91b45c8cf2dcbad1'"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:220
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/ppp.png\" "
+"format=\"PNG\"/> </imageobject><textobject> <phrase>PPP</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:227
+msgid "Point to Point Protocol connection."
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:234
+msgctxt "_"
+msgid ""
+"external ref='figures/wavelan.png' md5='90f925a64abe393adc5834fceba515fe'"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:232
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/wavelan.png\" "
+"format=\"PNG\"/> </imageobject><textobject> <phrase>Wireless</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:239
+msgid "Wireless connection."
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:246
+msgctxt "_"
+msgid "external ref='figures/plip.png' md5='0761a22dfa7b0b56e41e020cd701db68'"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:244
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/plip.png\" "
+"format=\"PNG\"/> </imageobject><textobject> <phrase>PLIP</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:251
+msgid "Parallel Line Internet Protocol connection."
+msgstr ""
+
+#. (itstool) path: sect2/title
+#: C/index.docbook:260
+msgid "To Add Netspeed Applet to a Panel"
+msgstr ""
+
+#. (itstool) path: sect2/para
+#: C/index.docbook:261
+msgid ""
+"To add <application>Netspeed Applet</application> to a panel, perform the "
+"following steps:"
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:267
+msgid "Right-click on the panel."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:272
+msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:277
+msgid ""
+"Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
+"dialog, then select <guilabel>Netspeed Applet</guilabel>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:283
+msgid "Click <guibutton>Add</guibutton>."
+msgstr ""
+
+#. (itstool) path: sect1/title
+#: C/index.docbook:291
+msgid "Settings"
+msgstr ""
+
+#. (itstool) path: figure/title
+#: C/index.docbook:293
+msgid "Netspeed Applet Settings"
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:296
+msgctxt "_"
+msgid ""
+"external ref='figures/settings.png' md5='219a6bc0e89cb9634d49025f9d3c6604'"
+msgstr ""
+
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:295
+msgid ""
+"<imageobject><imagedata fileref=\"figures/settings.png\" format=\"PNG\"/> "
+"</imageobject> <textobject> <phrase>Netspeed Applet Settings.</phrase> "
+"</textobject>"
+msgstr ""
+
+#. (itstool) path: sect1/para
+#: C/index.docbook:304
+msgid "In this dialog you can change the settings of Netspeed Applet:"
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:308
+msgid ""
+"<guilabel>Network device:</guilabel> Choose the network device that the "
+"applet should monitor from the popdown list of the combobox. Usually all "
+"available devices are listed, however you can enter one yourself, too."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:312
+msgid ""
+"<guilabel>Update interval:</guilabel> Enter the time between two updates of "
+"the applet."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:315
+msgid ""
+"<guilabel>Label font size:</guilabel> Enter the size of the text displayed "
+"in the applet."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:318
+msgid ""
+"<guilabel>Show sum instead of in and out:</guilabel> If you check this box "
+"then the applet will show the sum of the in and out rate. The applet will "
+"take only half of the space in the panel in this case."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:322
+msgid ""
+"<guilabel>Show bits/s (b/s) instead of bytes/s (B/s):</guilabel> Check this "
+"if you want the applet to display bits per second instead of bytes/s."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:326
+msgid ""
+"<guilabel>Change icon according to the selected device:</guilabel> Usually "
+"the applet will show an icon representing the type of network device you "
+"monitor. So it will show a phone for Point to Point connections (ppp - "
+"modems, etc.), a network card for Ethernet (eth), etc. When this is "
+"unchecked, the applet will always show the network card icon, no matter "
+"which device you monitor."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:332
+msgid ""
+"<guilabel>Always monitor a connected device, if possible:</guilabel> When "
+"your connection is down, Netspeed Applet look for a running one for "
+"monitoring."
+msgstr ""
+
+#. (itstool) path: sect1/title
+#. (itstool) path: figure/title
+#: C/index.docbook:338 C/index.docbook:340
+msgid "The details dialog"
+msgstr ""
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:343
+msgctxt "_"
+msgid ""
+"external ref='figures/details.png' md5='60fedda8f88b634f16ab31090b5bdd67'"
+msgstr ""
+
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:342
+msgid ""
+"<imageobject><imagedata fileref=\"figures/details.png\" format=\"PNG\"/> "
+"</imageobject> <textobject> <phrase>The details dialog</phrase> "
+"</textobject>"
+msgstr ""
+
+#. (itstool) path: sect1/para
+#: C/index.docbook:351
+msgid ""
+"This dialog shows you some useful information on the configuration of your "
+"network device."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:356
+msgid ""
+"<guilabel>Internet Address:</guilabel> The IP (Internet Protocol) address of"
+" the network device."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:359
+msgid ""
+"<guilabel>Netmask:</guilabel> The netmask which depends on the size of your "
+"LAN (Local Area Network). A usual value is 255.255.255.0 (a class C "
+"network)."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:363
+msgid ""
+"<guilabel>Hardware Address:</guilabel> Often also referred to as the "
+"physical or MAC (Media Access Control) address. A worldwide unique "
+"identifier for your network card."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:367
+msgid ""
+"<guilabel>P-t-P Address:</guilabel> The internet address of the \"other "
+"side\" of your PPP (Point to Point Protocol) connection."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:371
+msgid ""
+"<guilabel>Bytes in:</guilabel> The amount of bytes that the network device "
+"has received since it has been connected to the network."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:375
+msgid ""
+"<guilabel>Bytes out:</guilabel> The amount of bytes that the network device "
+"has sent since it has been connected to the network."
+msgstr ""
+
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "link"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"√â concedida permiss√£o para copiar, distribuir e / ou modificar este "
+"documento sob os termos da Licen√ßa de Documenta√ß√£o Livre GNU (GFDL), Vers√£o "
+"1.1 ou qualquer vers√£o posterior publicada pela Free Software Foundation sem"
+" Se√ß√µes Invariantes, sem Textos de Capa Frontal e sem textos de contracapa. "
+"Voc√™ pode encontrar uma c√≥pia da GFDL neste ou no arquivo COPYING-DOCS "
+"distribu√≠do com este manual."

@@ -1,54 +1,125 @@
-# Brazilian Portuguese translation of CPU Frequency Scaling Monitor Manual
-# This is file is ditributed under the same license as mate-applets.
-# Copyright (C) 2000-2008 the CPU Frequency Scaling Monitor authors.
-# Amadeu Júnior <amadeu@gmail.com>, 2008.
-# Enrico Nicoletto <liverig@gmail.com>, 2008.
-# Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2008.
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Aldo Oliveira <america103@gmail.com>, 2018
+# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2018
+# Victor Gonçalves <hotcyv@gmail.com>, 2018
+# Wolfgang Ulbrich <mate@raveit.de>, 2018
+# Halan Germano Bacca <halangermano@hotmail.com.br>, 2018
+# b36c7cf4cf669a51ae00d04c19629819, 2018
+# Italo Penaforte <italo.penaforte@gmail.com>, 2018
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: cpufreq-applet help\n"
-"POT-Creation-Date: 2008-03-03 00:20-0300\n"
-"PO-Revision-Date: 2008-03-03 00:51-0300\n"
-"Last-Translator: Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <mate-l10n-br@listas.cipsga.org.br>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"POT-Creation-Date: 2018-10-03 12:16+0200\n"
+"PO-Revision-Date: 2018-09-27 14:24+0000\n"
+"Last-Translator: Italo Penaforte <italo.penaforte@gmail.com>, 2018\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: BRAZIL\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../C/legal.xml:2(para) ../C/cpufreq-applet.xml:2(para)
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Equipe de tradução no Transifex:\n"
+"Fabrizzio Alphonsus Soares https://www.transifex.com/accounts/profile/fabrizzio\n"
+"Alberto Federman Neto https://www.transifex.com/accounts/profile/albfneto\n"
+"Aldo Oliveira https://www.transifex.com/user/profile/AldoBR/\n"
+"Appes https://www.transifex.com/accounts/profile/apps\n"
+"arm332 https://www.transifex.com/accounts/profile/arm332\n"
+"augusteiner https://www.transifex.com/accounts/profile/augusteiner\n"
+"dreto https://www.transifex.com/accounts/profile/dreto\n"
+"Enrico Nicoletto https://www.transifex.com/accounts/profile/EnricoNicoletto\n"
+"everton_seib https://www.transifex.com/accounts/profile/everton_seib\n"
+"Felipe Rozelio https://www.transifex.com/accounts/profile/feliperozelio\n"
+"João Paulo da Silva Júnior https://www.transifex.com/accounts/profile/jpsilvaj\n"
+"Juliana Paula Felix https://www.transifex.com/accounts/profile/jufelix\n"
+"Lucas Cenir Friederich https://www.transifex.com/user/profile/lucasalvarokedrines\n"
+"Marcelo Ghelman https://www.transifex.com/accounts/profile/marcelo.ghelman\n"
+"Marcio Andre Padula https://www.transifex.com/accounts/profile/Padula\n"
+"Marcus Vinícius Marques https://www.transifex.com/accounts/profile/Pygmalion\n"
+"Matheus Macabu https://www.transifex.com/accounts/profile/mkbu95\n"
+"Matheus Martins https://www.transifex.com/accounts/profile/Matheus_Martins\n"
+"Michele dos Santos da Silva https://www.transifex.com/accounts/profile/mchelem\n"
+"Thiago Cangussu https://www.transifex.com/accounts/profile/cangussu.thg\n"
+"vitorgatti https://www.transifex.com/accounts/profile/vitorgatti"
+
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:20
+msgid "CPU Frequency Scaling Monitor Manual"
+msgstr ""
+
+#. (itstool) path: abstract/para
+#: C/index.docbook:22
+msgid ""
+"CPU Frequency Scaling Monitor shows the current clock speed of the CPU and "
+"provides an interface to change the clock speed if the CPU supports it."
+msgstr ""
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:25
+msgid "<year>2015</year> <holder>MATE Documentation Project</holder>"
+msgstr "<year>2015</year> <holder>Documentação Projeto MATE</holder>"
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:29
+msgid "<year>2005</year> <holder>Davyd Madeley</holder>"
+msgstr ""
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:33
+msgid "<year>2004</year> <holder>GNOME Foundation</holder>"
+msgstr ""
+
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:46 C/index.docbook:103
+msgid "MATE Documentation Project"
+msgstr "Projeto de Documentação do MATE"
+
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:49 C/index.docbook:125
+msgid "GNOME Documentation Project"
+msgstr "Projeto de Documentação do GNOME"
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
 "in the file COPYING-DOCS distributed with this manual."
 msgstr ""
-"É dada permissão para copiar, distribuir e/ou modificar este documento, sob "
-"os termos da Licença de Documentação Livre GNU (GFDL), Versão 1.1 ou "
-"qualquer outra versão posterior publicada pela Free Software Foundation sem "
-"seções invariantes, sem capa da frente e contracapa. Você poderá encontrar "
-"uma copia da GFDL neste <ulink type=\"help\" url=\"help:fdl\">endereço</"
-"ulink> ou no arquivo COPYING-DOCS distribuído com este manual."
+"Permissão concedida para copiar, distribuir e/ou modificar este documento "
+"dentro dos termos da Licença de Documentação Livre GNU (GNU Free "
+"Documentation License), Versão 1.1 ou qualquer versão posterior publicada "
+"pela Free Software Foundation; sem nenhuma Seção Imutável, Texto de Capa ou "
+"de Contra-Capa. Uma cópia da licença se encontra na seção <ulink "
+"type=\"help\" url=\"help:fdl\">\"GNU Free Documentation License\"</ulink> ou"
+" no arquivo COPYING-DOCS distribuído com esse manual."
 
-#: ../C/legal.xml:12(para) ../C/cpufreq-applet.xml:12(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
 msgid ""
 "This manual is part of a collection of MATE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
+"you can do so by adding a copy of the license to the manual, as described in"
+" section 6 of the license."
 msgstr ""
-"Este manual faz parte da coleção de manuais da MATE, distribuídos sob "
-"licença GFDL. Se você deseja distribuir este manual separadamente desta "
-"coleção, pode fazê-lo adicionando ao manual uma cópia da licença, como é "
-"descrito na seção 6 da licença."
+"Esse manual é parte de uma coleção de manuais do MATE distribuída sob a "
+"GFDL. Se você quiser distribuir essa manual separado da coleção, pode fazê-"
+"lo adicionando uma cópia da licença ao manual, como descrito na seção 6 da "
+"licença."
 
-#: ../C/legal.xml:19(para) ../C/cpufreq-applet.xml:19(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any MATE "
@@ -56,13 +127,14 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"Muitos dos nomes utilizados pelas empresas para distinguir seus produtos e "
-"serviços são marcas registradas. Quando estes nomes aparecem em qualquer "
-"documentação MATE, e os membros do Projeto de Documentação MATE estão "
-"cientes dessas marcas registradas, os nomes aparecem em letras maiúsculas ou "
-"com iniciais em maiúsculas."
+"Muitos dos nomes usados por companhias para distinguir seus produtos e "
+"serviços são marcas registradas. Quando esses nomes ocorrem em alguma parte "
+"da documentação do MATE, e os membros do Projeto de documentação do MATE "
+"estiverem cientes de serem marcas registradas, esses nomes estarão "
+"maiúsculas ou com as iniciais em maiúsculas."
 
-#: ../C/legal.xml:35(para) ../C/cpufreq-applet.xml:35(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -76,577 +148,611 @@ msgid ""
 "ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"O DOCUMENTO É FORNECIDO SOB UMA BASE \"TAL QUAL\", SEM GARANTIAS DE NENHUM "
-"TIPO, NEM EXPRESSAS NEM IMPLÍCITAS, INCLUINDO, SEM LIMITAÇÃO, QUALQUER "
-"GARANTIA DE QUE O DOCUMENTO OU UMA VERSÃO MODIFICADA DO MESMO ESTEJAM LIVRE "
-"DE DEFEITOS COMERCIAIS, SEJA DESTINADO PARA UM FIM PARTICULAR OU QUE NÃO "
-"INFRINJAM AS REGRAS. TODO O RISCO PELA QUALIDADE, PRECISÃO E UTILIDADE DO "
-"DOCUMENTO OU DE QUALQUER OUTRA VERSÃO MODIFICADA DO MESMO CORRESPONDE AOS "
-"SEUS ATOS. NO CASO DE QUALQUER DOCUMENTO OU VERSÃO MODIFICADA DO MESMO "
-"RESULTAR DEFEITO, SERÁ VOCÊ (E NÃO O REDATOR INICIAL, NEM O AUTOR, NEM "
-"QUALQUER OUTRA PESSOA QUE TENHA CONTRIBUÍDO) QUE ASSUMIRÁ O CUSTO DE "
-"QUALQUER SERVIÇO TÉCNICO, REPARAÇÃO OU CORREÇÃO NECESSÁRIOS. ESTA LIMITAÇÃO "
-"DAS GARANTIAS CONSTITUI UMA PARTE ESSENCIAL DESTA LICENÇA. NÃO É AUTORIZADO "
-"NENHUM USO DE QUALQUER DOCUMENTO OU VERSÃO MODIFICADA DO MESMO SE NÃO ESTÁ "
-"DE ACORDO A ESTA LIMITAÇÃO DAS GARANTIAS; E"
+"O DOCUMENTO É FORNECIDO COMO UMA BASE \"COMO ESTÁ\", SEM GARANTIAS DE "
+"QUALQUER TIPO, TANTO EXPRESSA OU IMPLÍCITA, INCLUINDO, SEM LIMITAÇÃO, "
+"GARANTIAS DE QUE O DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO É "
+"COMERCIALIZÁVEL, LIVRE DE DEFEITOS, PRÓPRIO PARA UM PROPÓSITO ESPECÍFICO OU "
+"SEM INFRAÇÕES. TODO O RISCO A RESPEITO DA QUALIDADE, EXATIDÃO, E DESEMPENHO "
+"DO DOCUMENTO OU VERSÕES MODIFICADAS DO DOCUMENTO É SEU. SE ALGUM DOCUMENTO "
+"OU VERSÃO MODIFICADA SE PROVAR DEFEITUOSO EM QUALQUER ASPECTO, VOCÊ (NÃO O "
+"ESCRITOR INICIAL, AUTOR OU QUALQUER CONTRIBUIDOR) ASSUME O CUSTO DE QUALQUER"
+" SERVIÇO NECESSÁRIO, REPARO OU CORREÇÃO. ESTA RENÚNCIA DE GARANTIAS "
+"CONSTITUI UMA PARTE ESSENCIAL DESTA LICENÇA. NENHUM USO DESTE DOCUMENTO OU "
+"VERSÃO MODIFICADA DESTE DOCUMENTO É AUTORIZADO SE NÃO FOR SOB ESTA RENÚNCIA;"
+" E"
 
-#: ../C/legal.xml:55(para) ../C/cpufreq-applet.xml:55(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
+" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
 "CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
 "DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
 "FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
 "ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
+" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
+" POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
-"EM NENHUMA CIRCUNSTÂNCIA OU SOB NENHUMA TEORIA LEGAL, SEJA POR MOTIVOS "
-"CRIMINAIS (INCLUINDO NEGLIGÊNCIA), CONTRATUAIS OU DE OUTRO TIPO, NEM O "
-"AUTOR, NEM O ESCRITOR INICIAL, NEM QUALQUER COLABORADOR, NEM QUALQUER "
-"DISTRIBUIDOR DO DOCUMENTO OU VERSÃO MODIFICADA DO MESMO, NEM QUALQUER "
-"FORNECEDOR DE QUALQUER DAS PARTES CITADAS, SERÃO RESPONSÁVEIS DIRETAMENTE, "
-"INDIRETAMENTE, ESPECIALMENTE, ACIDENTALMENTE, OU CONSEQÜENTES ERROS DE "
-"QUALQUER OUTRO CARÁTER INCLUINDO, SEM LIMITAÇÃO, DANOS POR FALTA DE "
-"GARANTIA, INTERRUPÇÃO DE TRABALHO, FALHA OU MAL FUNCIONAMENTO "
-"COMPUTADORIZADO, OU QUALQUER E TODOS OS OUTROS DANOS OU PERDAS DERIVADOS DO "
-"USO DO DOCUMENTO E AS VERSÕES MODIFICADAS DO MESMO, MESMO SE A PARTE "
-"DENEGRIDA FORA INFORMADA DA POSSIBILIDADE DE TAIS ERROS."
+"SOB NENHUM CIRCUNSTÂNCIA E SOB NENHUMA TEORIA LEGAL, TANTO EM DADO "
+"(INCLUINDO NEGLIGÊNCIA), CONTRATO, OU OUTROS, DEVEM O AUTOR, ESCRITOR "
+"INICIAL, QUALQUER CONTRIBUIDOR, OU QUALQUER DISTRIBUIDOR DO DOCUMENTO OU "
+"VERSÃO MODIFICADA DO DOCUMENTO, OU QUALQUER FORNECEDOR DE ALGUMA DESSAS "
+"PARTES, SER CONSIDERADOS RESPONSÁVEIS A QUALQUER PESSOA POR QUALQUER DANO, "
+"SEJA DIRETO, INDIRETO, ESPECIAL, ACIDENTAL OU CONSEQÜENCIAL DE QUALQUER "
+"INDIVÍDUO, INCLUINDO, SEM LIMITAÇÃO, DANOS POR PERDA DE BOA VONTADE, "
+"TRABALHO PARADO, FALHA NO COMPUTADOR OU MAL FUNCIONAMENTO, OU QUALQUER E "
+"TODOS OS OUTROS DANOS OU PERDAS RESULTANTES OU RELACIONADAS AO USO DO "
+"DOCUMENTO E VERSÕES MODIFICADAS, MESMO QUE TAL PARTE TENHA SIDO INFORMADA DA"
+" POSSIBILIDADE DE TAIS DANOS."
 
-#: ../C/legal.xml:28(para) ../C/cpufreq-applet.xml:28(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
-"O DOCUMENTO E SUAS RESPECTIVAS VERSÕES SÃO FORNECIDAS SOBRE OS TERMOS DA "
-"LICENÇA DE DOCUMENTAÇÃO GNU, DEIXANDO BEM CLARO, O CONHECIMENTO ADICIONAL DE "
-"QUE: <placeholder-1/>"
+"O DOCUMENTO E AS VERSÕES MODIFICADAS DO DOCUMENTO SÃO FORNECIDOS DE ACORDO "
+"COM OS TERMOS DA LICENÇA DE DOCUMENTAÇÃO GRATUITA DA GNU COM O ENTENDIMENTO "
+"COMPREENDIDO DE QUE:<_:orderedlist-1/>"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:133(None)
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:58
 msgid ""
-"@@image: 'figures/cpufreq-applet.png'; md5=9697917ccaea349dc6584bf8c42c2534"
+"<firstname>MATE Documentation Team</firstname> <surname/> <affiliation> "
+"<orgname>MATE Desktop</orgname> </affiliation>"
 msgstr ""
-"@@image: 'figures/cpufreq-applet.png'; md5=9697917ccaea349dc6584bf8c42c2534"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:184(None)
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:65
 msgid ""
-"@@image: 'figures/cpufreq-100.png'; md5=298d50a03bfcf5143bb9877703de9541"
+"<firstname>Carlos</firstname> <surname>Garcia Campos</surname> <affiliation>"
+" <orgname>GNOME Project</orgname> "
+"<address><email>carlosgc@gnome.org</email></address> </affiliation>"
 msgstr ""
-"@@image: 'figures/cpufreq-100.png'; md5=298d50a03bfcf5143bb9877703de9541"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:195(None)
-msgid "@@image: 'figures/cpufreq-75.png'; md5=5af5eba3f0627af1d14807d9e66aecd2"
-msgstr ""
-"@@image: 'figures/cpufreq-75.png'; md5=5af5eba3f0627af1d14807d9e66aecd2"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:206(None)
-msgid "@@image: 'figures/cpufreq-50.png'; md5=4852c52d4056355c4f7479ffb26a8fe2"
-msgstr ""
-"@@image: 'figures/cpufreq-50.png'; md5=4852c52d4056355c4f7479ffb26a8fe2"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:217(None)
-msgid "@@image: 'figures/cpufreq-25.png'; md5=4e282fbc1af212f68a939c44a9ef94a3"
-msgstr ""
-"@@image: 'figures/cpufreq-25.png'; md5=4e282fbc1af212f68a939c44a9ef94a3"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:252(None)
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:73
 msgid ""
-"@@image: 'figures/cpufreq-applet-selector.png'; "
-"md5=4f5f2e6e80e9fb629cdc9cea283ab6b5"
+"<firstname>Davyd</firstname> <surname>Madeley</surname> <affiliation> "
+"<orgname>GNOME Project</orgname> "
+"<address><email>davyd@madeley.id.au</email></address> </affiliation>"
 msgstr ""
-"@@image: 'figures/cpufreq-applet-selector.png'; "
-"md5=4f5f2e6e80e9fb629cdc9cea283ab6b5"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:263(None) ../C/cpufreq-applet.xml:356(None)
+#. (itstool) path: revdescription/para
+#: C/index.docbook:102
+msgid "MATE Documentation Team"
+msgstr "Equipe de Documentação do MATE"
+
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:98
 msgid ""
-"@@image: 'figures/cpufreq-applet-selector-both.png'; "
-"md5=dcee11390666adc6b497a691b7b77b2d"
+"<revnumber>CPU Frequency Scaling Monitor Applet Manual V0.6</revnumber> "
+"<date>July 2015</date> <_:revdescription-1/>"
 msgstr ""
-"@@image: 'figures/cpufreq-applet-selector-both.png'; "
-"md5=dcee11390666adc6b497a691b7b77b2d"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:281(None)
-msgid ""
-"@@image: 'figures/cpufreq-applet-preferences.png'; "
-"md5=e30ba42122a806febac11082c2083605"
-msgstr ""
-"@@image: 'figures/cpufreq-applet-preferences.png'; "
-"md5=e30ba42122a806febac11082c2083605"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/cpufreq-applet.xml:299(None)
-msgid ""
-"@@image: 'figures/cpufreq-applet-preferences-smp.png'; "
-"md5=8a33cf86190df20c295197f04eacfdbe"
-msgstr ""
-"@@image: 'figures/cpufreq-applet-preferences-smp.png'; "
-"md5=8a33cf86190df20c295197f04eacfdbe"
-
-#: ../C/cpufreq-applet.xml:20(title)
-msgid "CPU Frequency Scaling Monitor Manual"
-msgstr "Manual do Monitor de Graduação da Freqüência da CPU"
-
-#: ../C/cpufreq-applet.xml:22(para)
-msgid ""
-"CPU Frequency Scaling Monitor shows the current clock speed of the CPU and "
-"provides an interface to change the clock speed if the CPU supports it."
-msgstr ""
-"O Monitor de Graduação da Freqüência da CPU mostra a velocidade de "
-"freqüência de Clock e fornece uma interface para mudar a freqüência da "
-"velocidade do Clock se a CPU suportar."
-
-#: ../C/cpufreq-applet.xml:26(year)
-msgid "2005"
-msgstr "2005"
-
-#: ../C/cpufreq-applet.xml:27(holder) ../C/cpufreq-applet.xml:86(para)
-#: ../C/cpufreq-applet.xml:93(para)
+#. (itstool) path: revdescription/para
+#: C/index.docbook:110 C/index.docbook:117
 msgid "Davyd Madeley"
-msgstr "Davyd Madeley"
-
-#: ../C/cpufreq-applet.xml:30(year)
-msgid "2004"
-msgstr "2004"
-
-#: ../C/cpufreq-applet.xml:31(holder)
-msgid "MATE Foundation"
-msgstr "Fundação Mate"
-
-#: ../C/cpufreq-applet.xml:42(publishername) ../C/cpufreq-applet.xml:101(para)
-msgid "MATE Documentation Project"
-msgstr "Projeto de documentação Mate"
-
-#: ../C/cpufreq-applet.xml:52(firstname)
-msgid "Carlos"
-msgstr "Carlos"
-
-#: ../C/cpufreq-applet.xml:53(surname)
-msgid "Garcia Campos"
-msgstr "Garcia Campos"
-
-#: ../C/cpufreq-applet.xml:55(orgname) ../C/cpufreq-applet.xml:63(orgname)
-msgid "MATE Project"
-msgstr "MATE Project"
-
-#: ../C/cpufreq-applet.xml:56(email)
-msgid "carlosgc@gnome.org"
-msgstr "carlosgc@gnome.org"
-
-#: ../C/cpufreq-applet.xml:60(firstname)
-msgid "Davyd"
-msgstr "Davyd"
-
-#: ../C/cpufreq-applet.xml:61(surname)
-msgid "Madeley"
-msgstr "Madeley"
-
-#: ../C/cpufreq-applet.xml:64(email)
-msgid "davyd@madeley.id.au"
-msgstr "davyd@madeley.id.au"
-
-#: ../C/cpufreq-applet.xml:83(revnumber)
-msgid "MATE 2.12"
-msgstr "MATE 2.12"
-
-#: ../C/cpufreq-applet.xml:84(date)
-msgid "August 2005"
-msgstr "Agosto de 2005"
-
-#: ../C/cpufreq-applet.xml:90(revnumber)
-msgid "MATE 2.10"
-msgstr "MATE 2.10"
-
-#: ../C/cpufreq-applet.xml:91(date)
-msgid "March 2005"
-msgstr "Março de 2005"
-
-#: ../C/cpufreq-applet.xml:97(revnumber)
-msgid "CPU Frequency Scaling Monitor Applet Manual V0.3"
 msgstr ""
-"Manual do miniaplicativo Monitor de Graduação da Freqüência da CPU V0.3"
 
-#: ../C/cpufreq-applet.xml:98(date)
-msgid "October 2004"
-msgstr "Outubro de 2004"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:106
+msgid ""
+"<revnumber>CPU Frequency Scaling Monitor Applet Manual V0.5</revnumber> "
+"<date>August 2005</date> <_:revdescription-1/>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:100(para)
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:113
+msgid ""
+"<revnumber>CPU Frequency Scaling Monitor Applet Manual V0.4</revnumber> "
+"<date>March 2005</date> <_:revdescription-1/>"
+msgstr ""
+
+#. (itstool) path: revdescription/para
+#: C/index.docbook:124
 msgid "Carlos Garcia Campos"
-msgstr "Carlos Garcia Campos"
-
-#: ../C/cpufreq-applet.xml:106(releaseinfo)
-msgid "This manual describes version 2.12.0 of CPU Frequency Scaling Monitor."
 msgstr ""
-"Este manual descreve a versão 2.12.0 do Monitor de Graduação da Freqüência "
-"da CPU."
 
-#: ../C/cpufreq-applet.xml:110(title)
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:120
+msgid ""
+"<revnumber>CPU Frequency Scaling Monitor Applet Manual V0.3</revnumber> "
+"<date>October 2004</date> <_:revdescription-1/>"
+msgstr ""
+
+#. (itstool) path: articleinfo/releaseinfo
+#: C/index.docbook:130
+msgid "This manual describes version 1.10.2 of CPU Frequency Scaling Monitor."
+msgstr ""
+
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:134
 msgid "Feedback"
-msgstr "Comentários"
+msgstr "Retorno"
 
-#: ../C/cpufreq-applet.xml:111(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:135
 msgid ""
 "To report a bug or make a suggestion regarding the CPU Frequency Scaling "
-"Monitor applet or this manual, follow the directions in the <ulink url="
-"\"help:mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
+"Monitor applet or this manual, follow the directions in the <ulink "
+"url=\"help:mate-user-guide/feedback\" type=\"help\">MATE Feedback "
+"Page</ulink>."
 msgstr ""
-"Para reportar algum erro ou fazer uma sugestão sobre o miniaplicativo "
-"Monitor de Graduação da Freqüência da CPU ou sobre este manual, siga as "
-"instruções em <ulink url=\"help:mate-feedback\" type=\"help\">Página de "
-"Sugestões Mate</ulink>."
 
-#: ../C/cpufreq-applet.xml:121(primary) ../C/cpufreq-applet.xml:128(title)
-msgid "CPU Frequency Scaling Monitor"
-msgstr "Monitor de Graduação da Freqüência da CPU"
+#. (itstool) path: article/indexterm
+#: C/index.docbook:144
+msgid "<primary>CPU Frequency Scaling Monitor</primary>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:126(title)
+#. (itstool) path: sect1/title
+#: C/index.docbook:150
 msgid "Introduction"
 msgstr "Introdução"
 
-#. ==== End of Figure =======================================
-#: ../C/cpufreq-applet.xml:139(para)
+#. (itstool) path: figure/title
+#: C/index.docbook:152
+msgid "CPU Frequency Scaling Monitor"
+msgstr "Monitor de graduação da freqüência da CPU"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:157
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-applet.png' "
+"md5='9697917ccaea349dc6584bf8c42c2534'"
+msgstr ""
+
+#. (itstool) path: sect1/para
+#: C/index.docbook:163
 msgid ""
 "The <application>CPU Frequency Scaling Monitor</application> provides a "
 "convenient way to monitor the CPU Frequency Scaling for each CPU."
 msgstr ""
-"O <application>Monitor de Graduação da Freqüência da CPU</application> "
-"proporciona uma forma simplificada de monitorar a freqüência de clock para "
-"cada processador."
 
-#: ../C/cpufreq-applet.xml:141(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:166
 msgid ""
 "To add <application>CPU Frequency Scaling Monitor</application> to a panel, "
-"right-click on the panel to open the panel popup menu, then choose "
-"<menuchoice><guimenu>Add to Panel</guimenu><guimenuitem>CPU Frequency "
-"Scaling Monitor</guimenuitem></menuchoice>."
+"perform the following steps:"
 msgstr ""
-"Para adicionar o <application>Monitor de Graduação da Freqüência da CPU</"
-"application> a um painel, pressione com o botão direito do mouse sobre o "
-"painel para abrir o painel de menu de navegação, depois escolha a opção "
-"<menuchoice><guimenu>Adicionar ao painel</guimenu><guimenuitem>Monitor de "
-"Graduação da Freqüência da CPU</guimenuitem></menuchoice>."
 
-#: ../C/cpufreq-applet.xml:147(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:172
+msgid "Right-click on the panel."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:177
+msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:182
+msgid ""
+"Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
+"dialog, then select <guilabel>CPU Frequency Scaling Monitor</guilabel>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:188
+msgid "Click <guibutton>Add</guibutton>."
+msgstr ""
+
+#. (itstool) path: note/para
+#: C/index.docbook:194
 msgid ""
 "Unfortunately, CPU frequency scaling can currently only be monitored on "
 "Linux machines that have support in the kernel. It can however, support the "
 "several generations of frequency scaling interfaces in the kernel."
 msgstr ""
-"Infelizmente, a graduação de freqüência da CPU só pode ser monitorada "
-"atualmente em terminais Linux que possuam suporte no Kernel. Entretanto, a "
-"aplicação pode suportar diversas graduações de interfaces de freqüência no "
-"Kernel."
 
-#: ../C/cpufreq-applet.xml:153(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:200
 msgid ""
 "When there is no CPU frequency scaling support in the system, the CPU "
 "Frequency Scaling Monitor only displays the current CPU frequency."
 msgstr ""
-"Quando o sistema não permite variar a freqüência de graduação do CPU, o "
-"Monitor de Graduação da Freqüência da CPU visualiza unicamente a freqüência "
-"atual da CPU."
 
-#: ../C/cpufreq-applet.xml:154(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:201
 msgid ""
 "When CPU frequency scaling is supported in the system, the CPU Frequency "
 "Scaling Monitor displays the CPU icon with a progress bar. The state of the "
 "progress bar represents the current CPU frequency with respect to the "
 "maximum frequency."
 msgstr ""
-"Quando o sistema permite variar a freqüência da CPU, o Monitor de Graduação "
-"da Freqüência da CPU visualiza o ícone da CPU com uma barra de progresso. O "
-"estado da barra de progresso representa a freqüência atual da CPU com "
-"respeito a freqüência máxima."
 
-# <xref /> praticamente sempre é substituído por "Seção # - Nonono no Nono"
-#: ../C/cpufreq-applet.xml:155(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:202
 msgid ""
-"By default the CPU Frequency Scaling Monitor displays the current CPU "
+"By default, the CPU Frequency Scaling Monitor displays the current CPU "
 "frequency as a value in Hertz (the standard measure of frequency), but can "
 "be configured to display a percentage instead. For more information on how "
 "to configure CPU Frequency Scaling Monitor see <xref linkend=\"cpufreq-"
 "applet-prefs\"/>."
 msgstr ""
-"Por padrão o Monitor de Freqüência de Graduação da CPU mostra a freqüência "
-"atual da CPU com seu valor em Hertz (a medida de freqüência padrão), mas "
-"pode ser configurado para mostrar em porcentagem. Para maiores informações "
-"em como configurar o Monitor de Freqüência de Graduação da CPU veja a <xref "
-"linkend=\"cpufreq-applet-prefs\"/>."
 
-#: ../C/cpufreq-applet.xml:158(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:205
 msgid ""
-"Each instance of CPU Frequency Scaling Monitor can monitor only one CPU. You "
-"must start an instance of CPU Frequency Scaling Monitor for each CPU that "
+"Each instance of CPU Frequency Scaling Monitor can monitor only one CPU. You"
+" must start an instance of CPU Frequency Scaling Monitor for each CPU that "
 "you want to monitor if you are in a multiprocessor (SMP) system."
 msgstr ""
-"Cada instância do Monitor de Freqüência de Graduação da CPU só pode "
-"monitorar uma CPU. Você deve iniciar uma instância do Monitor de Freqüência "
-"de Graduação da CPU para cada CPU que você deseja monitorar se você possui "
-"um sistema multiprocessador (SMP)."
 
-#: ../C/cpufreq-applet.xml:163(title)
+#. (itstool) path: sect2/title
+#: C/index.docbook:210
 msgid "Understanding the Icons"
-msgstr "Conhecendo os ícones"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:164(para)
+#. (itstool) path: sect2/para
+#: C/index.docbook:211
 msgid ""
 "The CPU Frequency Scaling Monitor has a series of icons that graphically "
 "represent the current scaling level of the processor you are monitoring. "
 "They are:"
 msgstr ""
-"O Monitor de Graduação da Freqüência da CPU tem uma série de ícones que "
-"graficamente representam o nível atual de freqüência do processador que "
-"está monitorando. Estes são:"
 
-#: ../C/cpufreq-applet.xml:175(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:222
 msgid "Icon"
 msgstr "Ícone"
 
-#: ../C/cpufreq-applet.xml:177(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:224
 msgid "Description"
 msgstr "Descrição"
 
-#: ../C/cpufreq-applet.xml:186(phrase)
-msgid "100% Power"
-msgstr "Potência 100%"
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:231
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-100.png' "
+"md5='298d50a03bfcf5143bb9877703de9541'"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:188(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:229
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/cpufreq-100.png\" format=\"PNG\"/> "
+"</imageobject><textobject> <phrase>100% Power</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:235
 msgid "The CPU is running at, or close to, 100% throughput"
 msgstr ""
-"A CPU está trabalhando em, ou aproximadamente, 100% do seu rendimento total."
 
-#: ../C/cpufreq-applet.xml:197(phrase)
-msgid "75% Power"
-msgstr "Potência 75%"
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:242
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-75.png' md5='5af5eba3f0627af1d14807d9e66aecd2'"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:199(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:240
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/cpufreq-75.png\" format=\"PNG\"/> "
+"</imageobject><textobject> <phrase>75% Power</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:246
 msgid "The CPU is running at, or close to, 75% throughput"
 msgstr ""
-"A CPU está trabalhando em, ou aproximadamente, 75% do seu rendimento total."
 
-#: ../C/cpufreq-applet.xml:208(phrase)
-msgid "50% Power"
-msgstr "Potência 50%"
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:253
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-50.png' md5='4852c52d4056355c4f7479ffb26a8fe2'"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:210(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:251
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/cpufreq-50.png\" format=\"PNG\"/> "
+"</imageobject><textobject> <phrase>50% Power</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:257
 msgid "The CPU is running at, or close to, 50% throughput"
 msgstr ""
-"A CPU está trabalhando em, ou aproximadamente, 50% do seu rendimento total."
 
-#: ../C/cpufreq-applet.xml:219(phrase)
-msgid "25% Power"
-msgstr "Potência 25%"
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:264
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-25.png' md5='4e282fbc1af212f68a939c44a9ef94a3'"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:221(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:262
+msgid ""
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/cpufreq-25.png\" format=\"PNG\"/> "
+"</imageobject><textobject> <phrase>25% Power</phrase> "
+"</textobject></inlinemediaobject>"
+msgstr ""
+
+#. (itstool) path: entry/para
+#: C/index.docbook:268
 msgid "The CPU is running at, or close to, 25% throughput"
 msgstr ""
-"A CPU está trabalhando em, ou aproximadamente, 25% do seu rendimento total."
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-#: ../C/cpufreq-applet.xml:231(title)
+#. (itstool) path: sect2/title
+#: C/index.docbook:278
 msgid "Frequency and Governor Selector"
-msgstr "Seletor de Freqüência e Política"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:232(para)
+#. (itstool) path: warning/para
+#: C/index.docbook:279
 msgid ""
 "The Frequency Selector functionality may not be available on your MATE "
 "Desktop by default. Please consult your system administrator, vendor "
 "documentation, or the documentation that came with this software."
 msgstr ""
-"A funcionalidade do Seletor de Freqüência pode não encontrar-se disponível "
-"de forma predeterminada no seu ambiente Mate. Por favor consulte o seu "
-"administrador de sistema, a documentação do fabricante, ou a documentação "
-"que veio com este software."
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-#: ../C/cpufreq-applet.xml:236(para)
+#. (itstool) path: sect2/para
+#: C/index.docbook:283
 msgid ""
 "To set the CPU frequency, (left-)click on the monitor and a menu will be "
 "shown. This menu will offer you a list of available frequencies and/or "
 "frequency governors for your machine."
 msgstr ""
-"Para ajustar a freqüência da CPU, clique com o botão esquerdo do mouse em o "
-"monitor e um menu será mostrado. Este menu oferecerá a você uma lista de "
-"freqüência disponíveis e/ou políticas de freqüência para a sua máquina."
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-# <xref /> praticamente sempre é substituído por "Seção # - Nonono no Nono"
-#: ../C/cpufreq-applet.xml:241(para)
+#. (itstool) path: tip/para
+#: C/index.docbook:288
 msgid ""
 "You can choose whether you want to show available frequencies or governors "
 "in the <guilabel>Preferences</guilabel>. See <xref linkend=\"cpufreq-applet-"
 "prefs\"/> for more information."
 msgstr ""
-"Você pode escolher se quiser mostrar as freqüências disponíveis ou "
-"políticas em <guilabel>Preferências</guilabel>. Veja a <xref linkend="
-"\"cpufreq-applet-prefs\"/> para maiores informações."
 
-#: ../C/cpufreq-applet.xml:248(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:295
 msgid "Frequency selector showing just frequencies"
-msgstr "Seletor de freqüência mostrando apenas freqüências"
+msgstr ""
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-#: ../C/cpufreq-applet.xml:259(title)
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:299
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-applet-selector.png' "
+"md5='4f5f2e6e80e9fb629cdc9cea283ab6b5'"
+msgstr ""
+
+#. (itstool) path: figure/title
+#: C/index.docbook:306
 msgid "Frequency selector showing both frequencies and governors"
-msgstr "Seletor de freqüência mostrando freqüências e políticas"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:274(title)
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:310 C/index.docbook:403
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-applet-selector-both.png' "
+"md5='dcee11390666adc6b497a691b7b77b2d'"
+msgstr ""
+
+#. (itstool) path: sect1/title
+#: C/index.docbook:321
 msgid "Preferences"
 msgstr "Preferências"
 
-#: ../C/cpufreq-applet.xml:275(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:322
 msgid ""
 "To configure the <application>CPU Frequency Scaling Monitor</application>, "
-"right-click on the applet, then choose <guimenuitem>Preferences</"
-"guimenuitem> from the popup menu."
+"right-click on the applet, then choose "
+"<guimenuitem>Preferences</guimenuitem> from the popup menu."
 msgstr ""
-"Para configurar o <application>Monitor de Graduação de Freqüência da CPU</"
-"application>, clique o botão direito no miniaplicativo, e então escolha "
-"<guimenuitem>Preferências</guimenuitem> do menu de contexto."
 
-#: ../C/cpufreq-applet.xml:276(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:323
 msgid ""
 "The <guimenuitem>Preferences</guimenuitem> dialog contains the following "
 "components:"
 msgstr ""
-"O diálogo <guimenuitem>Preferências</guimenuitem> contém os seguintes "
-"componentes:"
 
-#: ../C/cpufreq-applet.xml:278(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:325
 msgid "CPU Frequency Scaling Monitor Preferences Dialog"
-msgstr "Diálogo Preferências do Monitor de Freqüência da CPU"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:284(phrase)
-msgid "CPU Frequency Scaling Monitor preferences dialog"
-msgstr "Diálogo de preferências do Monitor de Freqüência da CPU"
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:328
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-applet-preferences.png' "
+"md5='e30ba42122a806febac11082c2083605'"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:292(guilabel)
-msgid "Monitored CPU (only in multiprocessor systems)"
-msgstr "CPU monitorada (apenas em sistemas multiprocessador)"
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:327
+msgid ""
+"<imageobject><imagedata fileref=\"figures/cpufreq-applet-preferences.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>CPU Frequency Scaling "
+"Monitor preferences dialog</phrase> </textobject>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:294(para)
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:339
+msgid "<guilabel>Monitored CPU (only in multiprocessor systems)</guilabel>"
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:341
 msgid "Use this drop-down list to select the CPU that you want to monitor."
 msgstr ""
-"Use esta lista suspensa para selecionar a CPU que você deseja monitorar."
 
-#: ../C/cpufreq-applet.xml:296(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:343
 msgid "Selecting the CPU to monitor"
-msgstr "Selecionando a CPU para monitorar"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:302(phrase)
-msgid "CPU Frequency Scaling Monitor preferences dialog CPU selector"
-msgstr "Seletor de CPU do diálogo de preferências do Monitor de Graduação da Freqüência da CPU"
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:346
+msgctxt "_"
+msgid ""
+"external ref='figures/cpufreq-applet-preferences-smp.png' "
+"md5='8a33cf86190df20c295197f04eacfdbe'"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:307(para)
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:345
+msgid ""
+"<imageobject><imagedata fileref=\"figures/cpufreq-applet-preferences-"
+"smp.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>CPU Frequency"
+" Scaling Monitor preferences dialog CPU selector</phrase> </textobject>"
+msgstr ""
+
+#. (itstool) path: note/para
+#: C/index.docbook:354
 msgid ""
 "The <guilabel>Monitored CPU</guilabel> option will only appear on "
 "multiprocessor (SMP) systems."
 msgstr ""
-"A opção <guilabel>CPU monitorada</guilabel> só aparecerá em sistemas de "
-"múltiplos processadores (SMP)."
 
-#: ../C/cpufreq-applet.xml:315(guilabel)
-msgid "Show in Mode"
-msgstr "Mostrar em módulo"
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:362
+msgid "<guilabel>Show in Mode</guilabel>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:317(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:364
 msgid ""
 "Use this drop-down list to select the mode in which you want to display the "
 "applet. Available modes are: Graphic, Text and both (Graphic and Text)"
 msgstr ""
-"Use esta lista suspensa para selecionar o modo ao qual você deseja "
-"visualizar o miniaplicativo. Os modos disponíveis são: Gráfico, Texto e "
-"ambos (Gráfico e Texto)."
 
-#: ../C/cpufreq-applet.xml:323(guilabel)
-msgid "Show CPU frequency as frequency"
-msgstr "Mostrar a freqüência da CPU como freqüência"
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:370
+msgid "<guilabel>Show CPU frequency as frequency</guilabel>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:325(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:372
 msgid "Select this option to display the current CPU frequency."
-msgstr "Selecione esta opção para mostrar a freqüência atual da CPU."
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:329(guilabel)
-msgid "Show frequency units"
-msgstr "Mostrar unidades de freqüência"
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:376
+msgid "<guilabel>Show frequency units</guilabel>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:331(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:378
 msgid ""
 "Select this option to display or not the frequency units in the frequency "
 "mode."
 msgstr ""
-"Selecione esta opção para visualizar ou não as unidades de freqüência no "
-"modo de freqüência."
 
-#: ../C/cpufreq-applet.xml:336(guilabel)
-msgid "Show CPU frequency as percentage"
-msgstr "Mostrar freqüência da CPU em porcentagem (%)"
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:383
+msgid "<guilabel>Show CPU frequency as percentage</guilabel>"
+msgstr ""
 
-#: ../C/cpufreq-applet.xml:338(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:385
 msgid ""
 "Select this option to display the current CPU frequency as a percentage."
 msgstr ""
-"Selecione esta opção para visualizar a freqüência atual da CPU em "
-"porcentagem (%)."
 
-#: ../C/cpufreq-applet.xml:343(guilabel)
-msgid "Show menu"
-msgstr "Mostrar menu"
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:390
+msgid "<guilabel>Show menu</guilabel>"
+msgstr ""
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-#: ../C/cpufreq-applet.xml:353(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:400
 msgid "The selector configured to Frequencies and Governors"
-msgstr "O seletor foi configurado para Freqüências e Políticas"
+msgstr ""
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-#: ../C/cpufreq-applet.xml:359(phrase)
-msgid "CPU governors selector"
-msgstr "Seletor de política de CPU"
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:402
+msgid ""
+"<imageobject><imagedata fileref=\"figures/cpufreq-applet-selector-both.png\""
+" format=\"PNG\"/> </imageobject> <textobject> <phrase>CPU governors "
+"selector</phrase> </textobject>"
+msgstr ""
 
-# Governor=Política para compatibilidade com outros módulos (MATE e KDE)
-# <xref /> praticamente sempre é substituído por "Seção # - Nonono no Nono"
-#: ../C/cpufreq-applet.xml:345(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:392
 msgid ""
 "This option allows you to choose how much information is shown in the "
-"frequency selector dropdown (see <xref linkend=\"mate-cpufreq-selector\"/"
-">). You can select to display <guilabel>Frequencies</guilabel>, "
-"<guilabel>Governors</guilabel> or both <guilabel>Frequencies and Governors</"
-"guilabel>. <placeholder-1/>"
+"frequency selector dropdown (see <xref linkend=\"mate-cpufreq-selector\"/>)."
+" You can select to display <guilabel>Frequencies</guilabel>, "
+"<guilabel>Governors</guilabel> or both <guilabel>Frequencies and "
+"Governors</guilabel>. <_:figure-1/>"
 msgstr ""
-"Esta opção permite a você escolher quanto de informação é mostrado na lista "
-"suspensa do seletor de freqüência (veja a <xref linkend=\"mate-cpufreq-"
-"selector\"/>). Você pode selecionar para visualizar <guilabel>Freqüências</"
-"guilabel>,<guilabel>Políticas</guilabel> ou ambos <guilabel>Freqüências e "
-"Políticas</guilabel>. <placeholder-1/>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: ../C/cpufreq-applet.xml:0(None)
-msgid "translator-credits"
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "link"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
 msgstr ""
-"Amadeu Júnior <amadeu@gmail.com>, 2008\n"
-"Enrico Nicoletto <liverig@gmail.com>, 2008\n"
-"Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2008."
-
-
-#~ msgid "User manual for the CPU Frequency Scaling applet."
-#~ msgstr ""
-#~ "Manual do usuario da aplicação Monitor de Graduação de FReqüência da CPU."
+"É concedida permissão para copiar, distribuir e / ou modificar este "
+"documento sob os termos da Licença de Documentação Livre GNU (GFDL), Versão "
+"1.1 ou qualquer versão posterior publicada pela Free Software Foundation sem"
+" Seções Invariantes, sem Textos de Capa Frontal e sem textos de contracapa. "
+"Você pode encontrar uma cópia da GFDL neste ou no arquivo COPYING-DOCS "
+"distribuído com este manual."

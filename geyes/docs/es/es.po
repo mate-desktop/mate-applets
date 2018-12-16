@@ -1,107 +1,118 @@
-# translation of geyes.HEAD.po to Español
-# translation of es.po to
-# Traducción del manual de Geyes al español
-# Spanish translation of Geyes manual
-#
-# Jorge Gonzalez <jorge.gonzalez.gonzalez@hispalinux.es>, 2005.
-# Jorge González <jorgegonz@svn.mate.org>, 2008.
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Andres Sanchez <blackatze93@gmail.com>, 2018
+# elio <micta2003@hotmail.com>, 2018
+# Wolfgang Ulbrich <mate@raveit.de>, 2018
+# Isabel Ortuño <isabel.ortuno1@gmail.com>, 2018
+# Joel Barrios <darkshram@gmail.com>, 2018
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: geyes.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 03:48+0000\n"
-"PO-Revision-Date: 2008-03-05 11:33+0100\n"
-"Last-Translator: Jorge González <jorgegonz@svn.mate.org>\n"
-"Language-Team: Español <mate-es-list@gnome.org>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"POT-Creation-Date: 2018-10-03 12:17+0200\n"
+"PO-Revision-Date: 2018-09-27 14:25+0000\n"
+"Last-Translator: Joel Barrios <darkshram@gmail.com>, 2018\n"
+"Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/geyes.xml:195(None)
-msgid "@@image: 'figures/geyes_applet.png'; md5=97e7bcbcdc3bbc8fb3af2b4d22057e36"
-msgstr "@@image: 'figures/geyes_applet.png'; md5=97e7bcbcdc3bbc8fb3af2b4d22057e36"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2010\n"
+"Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003-2006\n"
+"Pablo Gonzalo del Campo <pablodc@bigfoot.com>, 2002-2003"
 
-#: C/geyes.xml:23(title)
-msgid "Geyes Manual"
-msgstr "Manual de Geyes"
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:23
+msgid "Eyes Manual"
+msgstr "Manual de Ojos"
 
-#: C/geyes.xml:25(para)
+#. (itstool) path: abstract/para
+#: C/index.docbook:25
 msgid ""
-"Geyes provides an entertaining way to track the mouse pointer around your "
+"Eyes provides an entertaining way to track the mouse pointer around your "
 "screen, through a pair of moving eyes."
 msgstr ""
-"Geyes proporciona una manera entretenida de seguir el puntero del ratón "
-"alrededor de su pantalla, a través de un par de ojos en movimiento."
+"Ojos proporciona una forma entretenida de rastrear el puntero del ratón "
+"alrededor de su pantalla, utilizando un par de ojos en movimiento."
 
-#: C/geyes.xml:29(year)
-msgid "2002"
-msgstr "2002"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:28
+msgid "<year>2015</year> <holder>MATE Documentation Project</holder>"
+msgstr "<year>2015</year> <holder>Proyecto de Documentación de MATE</holder>"
 
-#: C/geyes.xml:30(year)
-msgid "2003"
-msgstr "2003"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:32
+msgid ""
+"<year>2002</year> <year>2003</year> <year>2004</year> <holder>Sun "
+"Microsystems</holder>"
+msgstr ""
+"<year>2002</year> <year>2003</year> <year>2004</year> <holder>Sun "
+"Microsystems</holder>"
 
-#: C/geyes.xml:31(year)
-msgid "2004"
-msgstr "2004"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:38
+msgid "<year>2000</year> <holder>Telsa Gwynne</holder>"
+msgstr "<year>2000</year> <holder>Telsa Gwynne</holder>"
 
-#: C/geyes.xml:32(holder) C/geyes.xml:61(orgname)
-msgid "Sun Microsystems"
-msgstr "Sun Microsystems"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:42
+msgid "<year>2000</year> <holder>Arjan Scherpenisse</holder>"
+msgstr "<year>2000</year> <holder>Arjan Scherpenisse</holder>"
 
-#: C/geyes.xml:35(year) C/geyes.xml:39(year) C/geyes.xml:162(date)
-msgid "2000"
-msgstr "2000"
-
-#: C/geyes.xml:36(holder)
-msgid "Telsa Gwynne"
-msgstr "Telsa Gwynne"
-
-#: C/geyes.xml:40(holder)
-msgid "Arjan Scherpenisse"
-msgstr "Arjan Scherpenisse"
-
-#: C/geyes.xml:52(publishername) C/geyes.xml:69(orgname)
-#: C/geyes.xml:77(orgname) C/geyes.xml:101(para) C/geyes.xml:109(para)
-#: C/geyes.xml:117(para) C/geyes.xml:125(para) C/geyes.xml:133(para)
-#: C/geyes.xml:141(para) C/geyes.xml:149(para) C/geyes.xml:157(para)
-#: C/geyes.xml:168(para)
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:56 C/index.docbook:118
 msgid "MATE Documentation Project"
-msgstr "Proyecto de documentación de MATE"
+msgstr "Proyecto de Documentación de MATE"
 
-#: C/geyes.xml:2(para)
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:59 C/index.docbook:126 C/index.docbook:134
+#: C/index.docbook:142 C/index.docbook:150 C/index.docbook:158
+#: C/index.docbook:166 C/index.docbook:174 C/index.docbook:182
+#: C/index.docbook:193
+msgid "GNOME Documentation Project"
+msgstr "Proyecto de Documentación de GNOME"
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
 "in the file COPYING-DOCS distributed with this manual."
 msgstr ""
 "Se concede permiso para copiar, distribuir o modificar este documento según "
 "las condiciones de la GNU Free Documentation License (GFDL), Versión 1.1 o "
 "cualquier versión posterior publicada por la Free Software Foundation sin "
 "Secciones invariantes, Textos de portada y Textos de contraportada. "
-"Encontrará una copia de la GFDL en este <ulink type=\"help\" url=\"help:fdl"
-"\">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual."
+"Encontrará una copia de la GFDL en este <ulink type=\"help\" "
+"url=\"help:fdl\">enlace</ulink> o en el archivo COPYING-DOCS distribuido con"
+" este manual."
 
-#: C/geyes.xml:12(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
 msgid ""
 "This manual is part of a collection of MATE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
+"you can do so by adding a copy of the license to the manual, as described in"
+" section 6 of the license."
 msgstr ""
-"Este manual forma parte de una colección de documentos de MATE distribuidos "
-"según la GFDL. Si desea distribuir este manual de forma independiente de la "
-"colección, puede hacerlo agregando una copia de la licencia al documento, "
-"según se describe en la sección 6 de la misma."
+"Este manual es parte de la colección de manuales MATE distribuidos bajo el "
+"GFDL. Si quiere distribuir este manual separadamente de la colección, puede "
+"hacerlo añadiendo una copia de la licencia al manual, como está descrito en "
+"la sección 6 de la licencia."
 
-#: C/geyes.xml:19(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any MATE "
@@ -109,14 +120,14 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"Muchos de los nombres utilizados por las empresas para distinguir sus "
-"productos y servicios se consideran marcas comerciales. Cuando estos nombres "
-"aparezcan en la documentación de MATE, y siempre que se haya informado a "
-"los miembros del Proyecto de documentación de MATE de dichas marcas "
-"comerciales, los nombres aparecerán en mayúsculas o con las iniciales en "
-"mayúsculas."
+"Muchos de los nombres usados por empresas para distinguir sus productos y "
+"servicios se mencionan como marcas comerciales. Donde aparezcan dichos "
+"nombres en cualquier documentación MATE, y para que los miembros del "
+"proyecto de documentación reconozcan dichas marcas comerciales, dichos "
+"nombres se imprimen en mayúsculas o iniciales mayúsculas."
 
-#: C/geyes.xml:35(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -130,245 +141,370 @@ msgid ""
 "ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"EL DOCUMENTO SE ENTREGA \"TAL CUAL\", SIN GARANTÍA DE NINGÚN TIPO, NI "
+"EL DOCUMENTO SE PROPORCIONA \"TAL CUAL\", SIN GARANTÍA DE NINGÚN TIPO, NI "
 "EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL "
-"DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS EN EL MOMENTO DE "
-"SU VENTA, SEA ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO "
-"EL RIESGO RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU "
-"VERSIÓN MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN "
-"MODIFICADA DE AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO "
-"EL REDACTOR INICIAL, AUTOR O AUTOR DE APORTACIONES) ASUMIRÁ LOS COSTES DE "
-"TODA REPARACIÓN, MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA EXENCIÓN DE "
-"RESPONSABILIDAD SOBRE LA GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO "
-"SE AUTORIZA EL USO DE NINGÚN DOCUMENTO NI VERSIÓN MODIFICADA DE ÉSTE POR EL "
-"PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO DE LA EXENCIÓN DE RESPONSABILIDAD;Y"
+"DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, SEA "
+"ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL RIESGO "
+"RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN "
+"MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE "
+"AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR "
+"INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, "
+"MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA "
+"PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO "
+"NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO"
+" DE LA RENUNCIA;Y"
 
-#: C/geyes.xml:55(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
+" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
 "CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
 "DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
 "FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
 "ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
+" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
+" POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
-"EN NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR "
-"(INCLUYENDO NEGLIGENCIA) CONTRATO O DOCUMENTO DE OTRO TIPO, EL AUTOR, EL "
-"ESCRITOR INICIAL, EL AUTOR DE APORTACIONES NI NINGÚN DISTRIBUIDOR DEL "
-"DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, NI NINGÚN PROVEEDOR DE NINGUNA "
-"DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN DAÑO "
-"DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, "
-"INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE FONDO DE COMERCIO, PARO "
-"TÉCNICO, FALLO INFORMÁTICO O AVERÍA O CUALQUIER OTRO POSIBLE DAÑO O AVERÍA "
-"DERIVADO O RELACIONADO CON EL USO DEL DOCUMENTO O SUS VERSIONES MODIFICADAS, "
-"AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE SE "
-"PRODUJESEN ESOS DAÑOS."
+"BAJO NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR "
+"(INCLUYENDO NEGLIGENCIA), CONTRATO O DE ALGÚN OTRO MODO, EL AUTOR, EL "
+"ESCRITOR INICIAL, CUALQUIER CONTRIBUIDOR, O CUALQUIER DISTRIBUIDOR DEL "
+"DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, O CUALQUIER PROVEEDOR DE "
+"CUALQUIERA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN "
+"DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, "
+"INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE MERCANCÍAS, PARO TÉCNICO, "
+"FALLO INFORMÁTICO O MAL FUNCIONAMIENTO O CUALQUIER OTRO POSIBLE DAÑO O "
+"PÉRDIDAS DERIVADAS O RELACIONADAS CON EL USO DEL DOCUMENTO O SUS VERSIONES "
+"MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE"
+" SE PRODUJESEN DICHOS DAÑOS."
 
-#: C/geyes.xml:28(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
-"ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE OFRECEN SEGÚN LAS "
-"CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU (GFDL) "
-"Y TENIENDO EN CUENTA QUE: <placeholder-1/>"
+"EL DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL DOCUMENTO SE PROPORCIONAN BAJO "
+"LOS TÉRMINOS DE LA LICENCIA GRATUITA DE DOCUMENTACIÓN DE GNU CON EL ACUERDO "
+"ADICIONAL DE:<_:orderedlist-1/>"
 
-#: C/geyes.xml:58(firstname)
-msgid "Sun"
-msgstr "Sun"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:64
+msgid ""
+"<firstname>MATE Documentation Team</firstname> <surname/> <affiliation> "
+"<orgname>MATE Desktop</orgname> <_:address-1/> </affiliation>"
+msgstr ""
+"<firstname>Equipo de Documentación de MATE</firstname> <surname/> "
+"<affiliation> <orgname>MATE Desktop</orgname> <_:address-1/> </affiliation>"
 
-#: C/geyes.xml:59(surname) C/geyes.xml:100(para)
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:72
+msgid ""
+"<firstname>Sun</firstname> <surname>GNOME Documentation Team</surname> "
+"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> "
+"</affiliation>"
+msgstr ""
+"<firstname>Sun</firstname> <surname>GNOME Documentation Team</surname> "
+"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> "
+"</affiliation>"
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:80
+msgid ""
+"<firstname>Telsa</firstname> <surname>Gwynne</surname> <affiliation> "
+"<orgname>GNOME Documentation Project</orgname> <address> "
+"<email>hobbit@aloss.ukuu.org.uk</email> </address> </affiliation>"
+msgstr ""
+"<firstname>Telsa</firstname> <surname>Gwynne</surname> <affiliation> "
+"<orgname>Proyecto de Documentación de GNOME</orgname> <address> "
+"<email>hobbit@aloss.ukuu.org.uk</email> </address> </affiliation>"
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:88
+msgid ""
+"<firstname>Arjan</firstname> <surname>Scherpenisse</surname> <affiliation> "
+"<orgname>GNOME Documentation Project</orgname> <address> "
+"<email>acscherp@wins.uva.nl</email> </address> </affiliation>"
+msgstr ""
+"<firstname>Arjan</firstname> <surname>Scherpenisse</surname> <affiliation> "
+"<orgname>Proyecto de Documentación de GNOME</orgname> <address> "
+"<email>acscherp@wins.uva.nl</email> </address> </affiliation>"
+
+#. (itstool) path: revdescription/para
+#: C/index.docbook:117
 msgid "MATE Documentation Team"
-msgstr "Equipo de documentación de MATE"
+msgstr "Equipo de Documentación de MATE"
 
-#: C/geyes.xml:66(firstname)
-msgid "Telsa"
-msgstr "Telsa"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:113
+msgid ""
+"<revnumber>Eyes Applet Manual V2.8</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de miniaplicación Ojos V2.8</revnumber> <date>Julio "
+"2015</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:67(surname)
-msgid "Gwynne"
-msgstr "Gwynne"
+#. (itstool) path: revdescription/para
+#: C/index.docbook:125
+msgid "GNOME Documentation Team"
+msgstr "Equipo de Documentación de GNOME"
 
-#: C/geyes.xml:70(email)
-msgid "hobbit@aloss.ukuu.org.uk"
-msgstr "hobbit@aloss.ukuu.org.uk"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:121
+msgid ""
+"<revnumber>Eyes Applet Manual V2.7</revnumber> <date>September 2004</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de Miniaplicación Ojos V2.7</revnumber> <date>Septiembre "
+"2004</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:74(firstname)
-msgid "Arjan"
-msgstr "Arjan"
+#. (itstool) path: revdescription/para
+#: C/index.docbook:133 C/index.docbook:141 C/index.docbook:149
+#: C/index.docbook:157 C/index.docbook:165 C/index.docbook:173
+#: C/index.docbook:181
+msgid "Sun GNOME Documentation Team"
+msgstr "Equipo de Documentación de GNOME de Sun"
 
-#: C/geyes.xml:75(surname)
-msgid "Scherpenisse"
-msgstr "Scherpenisse"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:129
+msgid ""
+"<revnumber>Eyes Applet Manual V2.6</revnumber> <date>February 2004</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.6</revnumber> <date>Febrero "
+"2004</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:78(email)
-msgid "acscherp@wins.uva.nl"
-msgstr "acscherp@wins.uva.nl"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:137
+msgid ""
+"<revnumber>Geyes Applet Manual V2.5</revnumber> <date>September 2003</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.5</revnumber> <date>Spetiembre "
+"2003</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:97(revnumber)
-msgid "Version 2.8"
-msgstr "Versión 2.8"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:145
+msgid ""
+"<revnumber>Geyes Applet Manual V2.4</revnumber> <date>August 2003</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.4</revnumber> <date>Agosto "
+"2003</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:98(date)
-msgid "September 2004"
-msgstr "Septiembre de 2004"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:153
+msgid ""
+"<revnumber>Geyes Applet Manual V2.3</revnumber> <date>January 2003</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.3</revnumber> <date>Enero "
+"2003</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:105(revnumber)
-msgid "Geyes Applet Manual V2.6"
-msgstr "Manual de la miniaplicación Geyes V2.6"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:161
+msgid ""
+"<revnumber>Geyes Applet Manual V2.2</revnumber> <date>August 2002</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.2</revnumber> <date>Agosto "
+"2002</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:106(date)
-msgid "February 2004"
-msgstr "Febrero de 2004"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:169
+msgid ""
+"<revnumber>Geyes Applet Manual V2.1</revnumber> <date>June 2002</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.1</revnumber> <date>Junio "
+"2002</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:108(para) C/geyes.xml:116(para) C/geyes.xml:124(para)
-#: C/geyes.xml:132(para) C/geyes.xml:140(para) C/geyes.xml:148(para)
-#: C/geyes.xml:156(para)
-msgid "Sun MATE Documentation Team"
-msgstr "Equipo de documentación de MATE de Sun"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:177
+msgid ""
+"<revnumber>Geyes Applet Manual V2.0</revnumber> <date>March 2002</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Manual de minaplicación Geyes V2.0</revnumber> <date>Marzo "
+"2002</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:113(revnumber)
-msgid "Geyes Applet Manual V2.5"
-msgstr "Manual de la miniaplicación Geyes V2.5"
-
-#: C/geyes.xml:114(date)
-msgid "September 2003"
-msgstr "Septiembre de 2003"
-
-#: C/geyes.xml:121(revnumber)
-msgid "Geyes Applet Manual V2.4"
-msgstr "Manual de la miniaplicación Geyes V2.4"
-
-#: C/geyes.xml:122(date)
-msgid "August 2003"
-msgstr "Agosto de 2004"
-
-#: C/geyes.xml:129(revnumber)
-msgid "Geyes Applet Manual V2.3"
-msgstr "Manual de la miniaplicación Geyes V2.3"
-
-#: C/geyes.xml:130(date)
-msgid "January 2003"
-msgstr "Enero de 2003"
-
-#: C/geyes.xml:137(revnumber)
-msgid "Geyes Applet Manual V2.2"
-msgstr "Manual de la miniaplicación Geyes V2.2"
-
-#: C/geyes.xml:138(date)
-msgid "August 2002"
-msgstr "Agosto de 2002"
-
-#: C/geyes.xml:145(revnumber)
-msgid "Geyes Applet Manual V2.1"
-msgstr "Manual de la miniaplicación Geyes V2.1"
-
-#: C/geyes.xml:146(date)
-msgid "June 2002"
-msgstr "Junio de 2002"
-
-#: C/geyes.xml:153(revnumber)
-msgid "Geyes Applet Manual V2.0"
-msgstr "Manual de la miniaplicación Geyes V2.0"
-
-#: C/geyes.xml:154(date)
-msgid "March 2002"
-msgstr "Marzo de 2002"
-
-#: C/geyes.xml:161(revnumber)
-msgid "gEyes Applet"
-msgstr "Miniaplicación Geyes"
-
-#: C/geyes.xml:164(para)
+#. (itstool) path: revdescription/para
+#: C/index.docbook:189
 msgid "Telsa Gwynne <email>hobbit@aloss.ukuu.org.uk</email>"
 msgstr "Telsa Gwynne <email>hobbit@aloss.ukuu.org.uk</email>"
 
-#: C/geyes.xml:166(para)
+#. (itstool) path: revdescription/para
+#: C/index.docbook:191
 msgid "Arjan Scherpenisse <email>acscherp@wins.uva.nl</email>"
 msgstr "Arjan Scherpenisse <email>acscherp@wins.uva.nl</email>"
 
-#: C/geyes.xml:172(releaseinfo)
-msgid "This manual describes version 2.8 of Geyes."
-msgstr "Este manual describe la versión 2.8 de Geyes."
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:185
+msgid ""
+"<revnumber>gEyes Applet</revnumber> <date>2000</date> <_:revdescription-1/>"
+msgstr ""
+"<revnumber>gEyes Applet</revnumber> <date>2000</date> <_:revdescription-1/>"
 
-#: C/geyes.xml:175(title)
+#. (itstool) path: articleinfo/releaseinfo
+#: C/index.docbook:197
+msgid "This manual describes version 1.10.2 of Eyes."
+msgstr "Este manual describe la versión 1.10.2 de Ojos."
+
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:200
 msgid "Feedback"
 msgstr "Comentarios"
 
-#: C/geyes.xml:176(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:201
 msgid ""
-"To report a bug or make a suggestion regarding the Geyes applet or this "
-"manual, follow the directions in the <ulink url=\"help:mate-feedback\" "
-"type=\"help\">MATE Feedback Page</ulink>."
+"To report a bug or make a suggestion regarding the Eyes applet or this "
+"manual, follow the directions in the <ulink url=\"help:mate-user-"
+"guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
-"Para informar sobre un fallo o hacer sugerencias sobre la miniaplicación "
-"Geyes o sobre este manual, siga las indicaciones en la <ulink url=\"help:"
-"mate-feedback\" type=\"help\">Página de comentarios de MATE</ulink>."
+"Para reportar un error o hacer una sugerencia acerca de la miniaplicación "
+"Ojos o este manual, siga las instrucciones en la <ulink url=\"help:mate-"
+"user-guide/feedback\" type=\"help\">Página de Comenarios de MATE</ulink>."
 
-#: C/geyes.xml:183(primary)
-msgid "Geyes"
-msgstr "Geyes"
+#. (itstool) path: article/indexterm
+#: C/index.docbook:207
+msgid "<primary>Eyes</primary>"
+msgstr "<primary>Ojos</primary>"
 
-#: C/geyes.xml:189(title)
+#. (itstool) path: sect1/title
+#: C/index.docbook:214
 msgid "Introduction"
 msgstr "Introducción"
 
-#: C/geyes.xml:192(title)
-msgid "Geyes Applet"
-msgstr "Miniaplicación Geyes"
+#. (itstool) path: figure/title
+#: C/index.docbook:217
+msgid "Eyes Applet"
+msgstr "Miniaplicación Ojos"
 
-#: C/geyes.xml:198(phrase)
-msgid "Shows Geyes applet."
-msgstr "Muestra la miniaplicación Geyes."
-
-#. ==== End of Figure =======================================
-#: C/geyes.xml:204(para)
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:220
+msgctxt "_"
 msgid ""
-"The <application>Geyes</application> applet provides an entertaining way to "
-"track the movement of the mouse pointer around your screen. The applet is an "
-"image of one or more eyes that follow the mouse pointer around the screen."
+"external ref='figures/geyes_applet.png' "
+"md5='97e7bcbcdc3bbc8fb3af2b4d22057e36'"
 msgstr ""
-"La miniaplicación <application>Geyes</application> proporciona de una forma "
-"entretenida de seguir el movimiento del ratón por la pantalla. La "
-"miniaplicación es una imagen de uno o más ojos que siguen el ratón por la "
-"pantalla."
+"external ref='figures/geyes_applet.png' "
+"md5='97e7bcbcdc3bbc8fb3af2b4d22057e36'"
 
-#: C/geyes.xml:208(para)
+#. (itstool) path: screenshot/mediaobject
+#: C/index.docbook:219
 msgid ""
-"To add <application>Geyes</application> to a panel, right-click on the "
-"panel, then choose <guimenuitem>Add to Panel</guimenuitem>. Select "
-"<application>Geyes</application> in the <application>Add to the panel</"
-"application> dialog, then click <guibutton>OK</guibutton>."
+"<imageobject><imagedata fileref=\"figures/geyes_applet.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Eyes "
+"applet.</phrase> </textobject>"
 msgstr ""
-"Para añadir <application>Geyes</application> a un panel, pulse con el botón "
-"derecho en el panel, después elija <guimenuitem>Añadir al panel...</"
-"guimenuitem>. Seleccione <application>Geyes</application> en el diálogo "
-"<application>Añadir al panel</application>, después pulse "
-"<guibutton>Aceptar</guibutton>."
+"<imageobject><imagedata fileref=\"figures/geyes_applet.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Muestra Miniaplicación "
+"Ojos.</phrase> </textobject>"
 
-#: C/geyes.xml:216(title)
+#. (itstool) path: sect1/para
+#: C/index.docbook:229
+msgid ""
+"The <application>Eyes</application> applet provides an entertaining way to "
+"track the movement of the mouse pointer around your screen. The applet is an"
+" image of one or more eyes that follow the mouse pointer around the screen."
+msgstr ""
+"La miniaplicación <application>Ojos</application> proporciona una forma "
+"entretenida de rastrear el movimiento del puntero del ratón alrededor de la "
+"pantalla. La miniaplicación es una imagen con uno o más ojos que siguen el "
+"puntero del ratón alrededor de la pantalla."
+
+#. (itstool) path: sect2/title
+#: C/index.docbook:235
+msgid "To Add Eyes to a Panel"
+msgstr "Para Añadir Ojos a un Panel"
+
+#. (itstool) path: sect2/para
+#: C/index.docbook:236
+msgid ""
+"To add <application>Eyes</application> to a panel, perform the following "
+"steps:"
+msgstr ""
+"Para añadir <application>Ojos</application> al panel, realice los siguientes"
+" pasos:"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:242
+msgid "Right-click on the panel."
+msgstr "Haga clic derecho en el panel."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:247
+msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
+msgstr "Elegir <guimenuitem>Añadir al Panel</guimenuitem>."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:252
+msgid ""
+"Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
+"dialog, then select <guilabel>Eyes</guilabel>."
+msgstr ""
+"Desplácese hacia abajo en la lista de elementos en el diálogo "
+"<guilabel>Añadir al Panel</guilabel>, luego seleccione "
+"<guilabel>Ojos</guilabel>."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:258
+msgid "Click <guibutton>Add</guibutton>."
+msgstr "Clic <guibutton>Añadir</guibutton>."
+
+#. (itstool) path: sect2/para
+#: C/index.docbook:263
+msgid ""
+"The layout of the <application>Eyes</application> applet varies depending on"
+" the size and type of panel in which the applet resides."
+msgstr ""
+"El diseño de la miniaplicación <application>Ojos</application> varía "
+"dependiendo del tamaño y tipo de panel en el cual la miniaplicación reside."
+
+#. (itstool) path: sect1/title
+#: C/index.docbook:271
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: C/geyes.xml:217(para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:272
 msgid ""
-"To configure <application>Geyes</application>, right-click on the "
-"<application>Geyes</application> applet, then choose "
+"To configure <application>Eyes</application>, right-click on the "
+"<application>Eyes</application> applet, then choose "
 "<guimenuitem>Preferences</guimenuitem>. You can choose from a number of "
 "different themes. Each theme affects how the eyes look."
 msgstr ""
-"Para configurar el <application>Geyes</application>, pulse con el botón "
-"derecho del ratón en la miniaplicación y, a continuación, seleccione "
-"<guimenu>Preferencias</guimenu>. Puede seleccionar un tema de entre los "
-"disponibles. Cada uno de los temas afecta a la mirada de los ojos."
+"Para configurar <application>Ojos</application>, haga clic derecho sobre la "
+"miniaplicación <application>Ojos</application>, luego escoja "
+"<guimenuitem>Preferencias</guimenuitem>. Puede elegir entre varios temas "
+"diferentes. Cada tema afecta el aspecto en que se ven los ojos."
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: C/geyes.xml:0(None)
-msgid "translator-credits"
-msgstr "Jorge González <jorgegonz@svn.mate.org>, 2005, 2008."
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "enlace"
 
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"Se otorga permiso para copiar, distribuir y/o modificar este documento bajo "
+"los términos de la Licencia de Documentación Libre (GFDL) de GNU, la Versión"
+" 1.1 o cualquier versión posterior publicada por la Free Software Foundation"
+" sin variaciones en Secciones, sin Textos de Portada y sin textos de "
+"contraportada. Puede encontrar una copia de la GFDL en<_:ulink-1/> o en el "
+"archivo COPYING-DOCS distribuido con este manual."

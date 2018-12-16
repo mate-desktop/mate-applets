@@ -1,86 +1,104 @@
-# Ukrainian translation of mate-applets manual.
-# Copyright (C) 2000 Free Software Foundation, Inc.
-# Maxim Dziumanenko <mvd@mylinux.com.ua>, 2004-2005
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Wolfgang Ulbrich <mate@raveit.de>, 2018
+# Микола Ткач <znadibnyk@gmail.com>, 2018
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets manual\n"
-"POT-Creation-Date: 2005-08-20 10:27+0200\n"
-"PO-Revision-Date: 2005-08-26 00:52+0300\n"
-"Last-Translator: Maxim V. Dziumanenko <mvd@mylinux.ua>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"POT-Creation-Date: 2018-10-03 12:17+0200\n"
+"PO-Revision-Date: 2018-09-27 14:28+0000\n"
+"Last-Translator: Микола Ткач <znadibnyk@gmail.com>, 2018\n"
+"Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:132 (None)
-msgid ""
-"@@image: 'figures/trash-applet.png'; md5=f514805d0769a415b13e3d8894301774"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
 msgstr ""
-"@@image: 'figures/trash-applet.png'; md5=f514805d0769a415b13e3d8894301774"
+"Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
+"Микола Ткач <znadibnyk@gmail.com>,\n"
+"Oleh Tsyupka <myr4yk@gmail.com>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:15 (title)
-msgid "Panel Trash Manual v2.10"
-msgstr "Довідка з аплету Смітник версії 2.10"
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:15
+msgid "Panel Trash Manual"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:16 (para)
-msgid "User manual for the Trash applet."
-msgstr "Цей посібник описує аплет Годинник."
+#. (itstool) path: abstract/para
+#: C/index.docbook:17
+msgid "Panel Trash lets you manage your trash from the panel."
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:18 (year)
-msgid "2005"
-msgstr "2005"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:19
+msgid "<year>2015</year> <holder>MATE Documentation Project</holder>"
+msgstr "<year>2015</year> <holder>Проєкт документування MATE</holder>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:19 (holder)
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:79 (para)
-msgid "Davyd Madeley"
-msgstr "Davyd Madeley"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:23
+msgid "<year>2006</year> <holder>GNOME Documentation Project</holder>"
+msgstr "<year>2006</year> <holder>Проєкт документування GNOME</holder>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:22 (year)
-msgid "2004"
-msgstr "2004"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:27
+msgid "<year>2005</year> <holder>Davyd Madeley</holder>"
+msgstr "<year>2005</year> <holder>Давід Мейдлі</holder>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:23 (holder)
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:86 (para)
-msgid "Michiel Sikkes"
-msgstr "Michiel Sikkes"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:31
+msgid "<year>2004</year> <holder>Michiel Sikkes</holder>"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:37 (publishername)
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:50 (orgname)
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:87 (para)
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:47 C/index.docbook:103
 msgid "MATE Documentation Project"
-msgstr "Проект документування MATE"
+msgstr "Проєкт документування MATE"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:3 (para)
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:50 C/index.docbook:111 C/index.docbook:119
+msgid "GNOME Documentation Project"
+msgstr "Проєкт документування GNOME"
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free DocumentationLicense (GFDL), Version 1.1 or any "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink url=\"help:fdl\" type=\"help\">link</ulink> or "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
 "in the file COPYING-DOCS distributed with this manual."
 msgstr ""
-"Дозволяється копіювати, розповсюджувати та/або змінювати цей документ на "
+"Дозволяється копіювати, розповсюджувати і/або змінювати цей документ на "
 "умовах ліцензії GNU Free Documentation License (GFDL), версії 1.1 або будь-"
-"якої старшої версії, що опублікована Free Software Foundation без "
-"інваріантних розділів, тексту титульної сторінки, та тексту фінальної "
-"сторінки. Копію GFDL можна знайти <ulink type=\"help\" url=\"help:fdl\">за "
-"адресою</ulink> або у файлі COPYING-DOCS, що постачається з цією довідкою."
+"якої пізнішої версії, оголошеній Фундацією вільного програмного забезпечення"
+" (Free Software Foundation), без незмінюваних частин та без текстів на "
+"обкладинках. Ви можете знайти копію ліцензії GFDL за цим <ulink "
+"type=\"help\" url=\"help:fdl\">посиланням</ulink> або у файлі COPYING-DOCS, "
+"розповсюджуваним з цим документом."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:12 (para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
 msgid ""
-"This manual is part of a collection of MATE documents distributed under the "
+"This manual is part of a collection of MATE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the document, as described "
-"in section 6 of the license."
+"you can do so by adding a copy of the license to the manual, as described in"
+" section 6 of the license."
 msgstr ""
-"Ця довідка є частиною збірки документації MATE, що постачається на умовах "
-"ліцензії GFDL. Якщо ви бажаєте розповсюджувати її окремо від збірки, ви "
-"можете це робити, якщо додасте копію ліцензії до документу, як описано у "
-"розділі 6 цієї ліцензії."
+"Цей посібник є частиною збірки документації MATE, яка розповсюджується на "
+"умовах ліцензії GFDL. Якщо ви бажаєте розповсюджувати цей посібник окремо "
+"від збірки, можете це зробити додавши до нього копію ліцензії, як описано в "
+"пункті 6 ліцензії."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:18 (para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any MATE "
@@ -88,13 +106,14 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"Більшість назв, що використовуються компаніями для розповсюдження їх "
-"продуктів та послуг є торговими марками. Якщо такі назви зустрічаються у "
-"документації з MATE та учасникам проекту документування MATE відомо, що "
-"вони є торговими марками, тоді ці назви пишуться великими літерами або "
+"Деякі назви, які використовуються компаніями для розповсюдження своїх "
+"продуктів та послуг є торговими марками. Якщо такі назви зустрічаються в "
+"документації MATE і учасникам проєкту документування MATE відомо, що вони є "
+"торговими марками, тоді ці назви виділяться великими літерами або "
 "починаються з великої літери."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:29 (para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -108,30 +127,31 @@ msgid ""
 "ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"ДОКУМЕНТ НАДАЄТЬСЯ \"ЯК Є\", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЇ, ЯВНИХ ЧИ НЕЯВНИХ, "
+"ДОКУМЕНТ НАДАЄТЬСЯ \\\"ЯК Є\\\", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЇ, ЯВНИХ ЧИ НЕЯВНИХ, "
 "ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ, ГАРАНТІЙ ЩО ЦЕЙ ДОКУМЕНТ ЧИ ЗМІНЕНА ВЕРСІЯ "
-"ДОКУМЕНТА ВІЛЬНІ ВІД ДЕФЕКТІВ, ПРИДАТНІ ДО ПРОДАЖУ, ВІДПОВІДАЮТЬ ПЕВНІЙ МЕТІ "
-"АБО НЕ ПОРУШУЮТЬ ЧИЇСЬ ПРАВА. ВЕСЬ РИЗИК ЗА ЯКІСТЬ, ТОЧНІСТЬ, ТА ЧИННІСТЬ "
+"ДОКУМЕНТА ВІЛЬНІ ВІД ДЕФЕКТІВ, ПРИДАТНІ ДО ПРОДАЖУ, ВІДПОВІДАЮТЬ ПЕВНІЙ МЕТІ"
+" АБО НЕ ПОРУШУЮТЬ ЧИЇСЬ ПРАВА. ВЕСЬ РИЗИК ЗА ЯКІСТЬ, ТОЧНІСТЬ, ТА ЧИННІСТЬ "
 "ЦЬОГО ДОКУМЕНТУ АБО ЙОГО ЗМІНЕНИХ ВЕРСІЙ ЛЕЖИТЬ НА ВАС.  ЯКЩО БУДЬ-ЯКИЙ "
 "ДОКУМЕНТ ЧИ ЗМІНЕНА ВЕРСІЯ БУДУТЬ ВИЗНАНІ ДЕФЕКТНИМИ У БУДЬ-ЯКОМУ "
-"ВІДНОШЕННІ, ВИ (НЕ ПОЧАТКОВИЙ УКЛАДАЧ, АВТОР АБО БУДЬ-ЯКИЙ СПІВАВТОР) БЕРЕТЕ "
-"НА СЕБЕ ВИТРАТИ ЗА БУДЬ-ЯКЕ НЕОБХІДНЕ ОБСЛУГОВУВАННЯ, РЕМОНТ ЧИ ВИПРАВЛЕННЯ. "
-"ЦЯ ВІДМОВА ВІД ГАРАНТІЙ СКЛАДАЄ ВАЖЛИВУ ЧАСТИНУ ЦІЄЇ ЛІЦЕНЗІЇ. НЕ "
-"ДОПУСКАЄТЬСЯ ВИКОРИСТАННЯ ЦЬОГО ДОКУМЕНТУ АБО ЙОГО ЗМІНЕНОЇ ВЕРСІЇ БЕЗ "
+"ВІДНОШЕННІ, ВИ (НЕ ПОЧАТКОВИЙ УКЛАДАЧ, АВТОР АБО БУДЬ-ЯКИЙ СПІВАВТОР) БЕРЕТЕ"
+" НА СЕБЕ ВИТРАТИ ЗА БУДЬ-ЯКЕ НЕОБХІДНЕ ОБСЛУГОВУВАННЯ, РЕМОНТ ЧИ "
+"ВИПРАВЛЕННЯ. ЦЯ ВІДМОВА ВІД ГАРАНТІЙ СКЛАДАЄ ВАЖЛИВУ ЧАСТИНУ ЦІЄЇ ЛІЦЕНЗІЇ. "
+"НЕ ДОПУСКАЄТЬСЯ ВИКОРИСТАННЯ ЦЬОГО ДОКУМЕНТУ АБО ЙОГО ЗМІНЕНОЇ ВЕРСІЇ БЕЗ "
 "ПРИЙНЯТТЯ ЦІЄЇ ВІДМОВИ; ТА"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:45 (para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
+" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
 "CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
 "DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
 "FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
 "ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
+" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
+" POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
 "НІ ЗА ЯКИХ ОБСТАВИН ТА ЗА БУДЬ-ЯКОГО ЗАКОНОДАВСТВА, ЧИ ТО ГРОМАДЯНСЬКОЇ "
 "ВІДПОВІДАЛЬНОСТІ (ВКЛЮЧАЮЧИ ХАЛАТНІСТЬ), ДОГОВОРУ, ЧИ ЧОГОСЬ ІНШОГО, АВТОР, "
@@ -139,166 +159,249 @@ msgstr ""
 "ЗМІНЕНОЇ ВЕРСІЇ ДОКУМЕНТУ, АБО БУДЬ-ЯКИЙ ПОСТАЧАЛЬНИК БУДЬ-ЯКОЇ З ЦИХ "
 "СТОРІН, НЕ НЕСЕ ВІДПОВІДАЛЬНІСТЬ ПЕРЕД БУДЬ-ЯКОЮ ОСОБОЮ ЗА БУДЬ-ЯКІ ПРЯМІ, "
 "НЕПРЯМІ, ОСОБЛИВІ, ВИПАДКОВІ, АБО ІСТОТНІ ЗБИТКИ БУДЬ-ЯКОГО ХАРАКТЕРУ "
-"ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ, ЗБИТКАМИ ВІД ВТРАТИ ПРЕСТИЖУ, ЗУПИНКИ РОБОТИ, "
-"ЗБОЇВ АБО НЕСПРАВНОСТЕЙ КОМП'ЮТЕРА, АБО БУДЬ-ЯКІ ІНШІ ЗБИТКИ АБО ВТРАТИ ЩО "
+"ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ, ЗБИТКАМИ ВІД ВТРАТИ ПРЕСТИЖУ, ЗУПИНКИ РОБОТИ,"
+" ЗБОЇВ АБО НЕСПРАВНОСТЕЙ КОМП'ЮТЕРА, АБО БУДЬ-ЯКІ ІНШІ ЗБИТКИ АБО ВТРАТИ ЩО "
 "ВИНИКЛИ БЕЗВІДНОСНО АБО ВНАСЛІДОК ВИКОРИСТАННЯ ЦЬОГО ДОКУМЕНТУ ТА ЗМІНЕНИХ "
-"ВЕРСІЙ ЦЬОГО ДОКУМЕНТУ, НАВІТЬ ЯКЩО ЦІ СТОРОНИ, МОЖЛИВО, БУЛИ ПРОІНФОРМОВАНІ "
-"ПРО МОЖЛИВІСТЬ ТАКИХ ЗБИТКІВ."
+"ВЕРСІЙ ЦЬОГО ДОКУМЕНТУ, НАВІТЬ ЯКЩО ЦІ СТОРОНИ, МОЖЛИВО, БУЛИ ПРОІНФОРМОВАНІ"
+" ПРО МОЖЛИВІСТЬ ТАКИХ ЗБИТКІВ."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:25 (para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
-"ДОКУМЕНТ ТА ЗМІНЕНІ ВЕРСІЇ ЦЬОГО ДОКУМЕНТУ ПОСТАЧАЮТЬСЯ НА УМОВАХ ВІЛЬНОЇ "
-"ЛІЦЕНЗІЇ ДЛЯ ДОКУМЕНТАЦІЇ GNU З ПОДАЛЬШИМ РОЗУМІННЯМ ЩО: <placeholder-1/>"
+"ДОКУМЕНТ Й ЗМІНЕНІ ВЕРСІЇ ДОКУМЕНТУ НАДАЮТЬСЯ ЗА УМОВАМИ ЛІЦЕНЗІЇ "
+"БЕЗКОШТОВНОЇ ДОКУМЕНТАЦІЇ GNU З РОЗУМІННЯМ ЩО: <_:orderedlist-1/>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:47 (firstname)
-msgid "Michiel"
-msgstr "Michiel"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:59
+msgid ""
+"<firstname>MATE Documentation Team</firstname> <surname/> <affiliation> "
+"<orgname>MATE Desktop</orgname> </affiliation>"
+msgstr ""
+"<firstname>Команда документування MATE</firstname> <surname/> <affiliation> "
+"<orgname>Оточення стільниці MATE</orgname> </affiliation>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:48 (surname)
-msgid "Sikkes"
-msgstr "Sikkes"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:66
+msgid ""
+"<firstname>Michiel</firstname> <surname>Sikkes</surname> <affiliation> "
+"<orgname>GNOME Documentation Project</orgname> <address> "
+"<email>michiel@eyesopened.nl</email> </address> </affiliation>"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:51 (email)
-msgid "michiel@eyesopened.nl"
-msgstr "michiel@eyesopened.nl"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:74
+msgid ""
+"<firstname>Davyd</firstname><surname>Madeley</surname> <affiliation> "
+"<orgname>GNOME Project</orgname> "
+"<address><email>davyd@madeley.id.au</email></address> </affiliation>"
+msgstr ""
+"<firstname>Давід</firstname><surname>Мейдлі</surname> <affiliation> "
+"<orgname>Проєкт GNOME </orgname> "
+"<address><email>davyd@madeley.id.au</email></address> </affiliation>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:55 (firstname)
-msgid "Davyd"
-msgstr "Davyd"
+#. (itstool) path: revdescription/para
+#: C/index.docbook:102
+msgid "MATE Documentation Team"
+msgstr "Команда документування MATE"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:55 (surname)
-msgid "Madeley"
-msgstr "Madeley"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:98
+msgid ""
+"<revnumber>Panel Trash V2.12</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:57 (orgname)
-msgid "MATE Project"
-msgstr "Проект MATE"
+#. (itstool) path: revdescription/para
+#: C/index.docbook:110
+msgid "Davyd Madeley"
+msgstr "Давід Мейдлі"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:58 (email)
-msgid "davyd@madeley.id.au"
-msgstr "davyd@madeley.id.au"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:106
+msgid ""
+"<revnumber>Panel Trash 2.10</revnumber> <date>March 2005</date> "
+"<_:revdescription-1/>"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:76 (revnumber)
-msgid "Version 2.10"
-msgstr "Версія 2.10"
+#. (itstool) path: revdescription/para
+#: C/index.docbook:118
+msgid "Michiel Sikkes"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:77 (date)
-msgid "March 2005"
-msgstr "Березень 2005"
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:114
+msgid ""
+"<revnumber>Panel Trash V2.8</revnumber> <date>July 2004</date> "
+"<_:revdescription-1/>"
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:83 (revnumber)
-msgid "2.8 Applet Manual V2.10"
-msgstr "Довідка з аплету Смітник версії V2.10"
+#. (itstool) path: articleinfo/releaseinfo
+#: C/index.docbook:123
+msgid "This manual describes version 1.10.2 of the Panel Trash applet."
+msgstr ""
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:84 (date)
-msgid "July 2004"
-msgstr "Липень 2004"
-
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:91 (releaseinfo)
-msgid "This manual describes version 2.10 of the Panel Trash applet."
-msgstr "Ця довідка описує аплет Смітник погоди версії 2.10."
-
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:94 (title)
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:126
 msgid "Feedback"
 msgstr "Зворотній зв'язок"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:95 (para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:127
 msgid ""
 "To report a bug or make a suggestion regarding the Panel Trash applet or "
-"this manual, follow the directions in the <ulink url=\"help:mate-feedback"
-"\" type=\"help\">MATE Feedback Page</ulink>."
+"this manual, follow the directions in the <ulink url=\"help:mate-user-"
+"guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
-"Щоб сповістити про помилку або внести пропозицію відносно аплету Смітник або "
-"цієї довідки, дотримуйтесь інструкцій на сторінці <ulink url=\"help:mate-"
-"feedback\" type=\"help\">Зворотний зв'язок з MATE</ulink>."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:100 (primary)
-msgid "Trash"
-msgstr "Смітник"
+#. (itstool) path: article/indexterm
+#: C/index.docbook:131
+msgid "<primary>Trash</primary>"
+msgstr "<primary>Смітник</primary>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:104 (title)
+#. (itstool) path: sect1/title
+#: C/index.docbook:136
 msgid "Introduction"
 msgstr "Вступ"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:105 (para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:137
 msgid ""
-"The <application>Panel Trash</application> lets you manage your Trash from "
-"the panel."
+"The <application>Panel Trash</application> applet lets you manage your Trash"
+" from the panel."
 msgstr ""
-"Аплет <application>Смітник</application> дозволяє керувати смітником з "
-"панелі."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:108 (para)
+#. (itstool) path: sect1/para
+#: C/index.docbook:140
 msgid ""
 "The trash on your panel acts identically to the trash on your desktop, "
 "however it is useful because your panels are always visible."
 msgstr ""
-"Смітник на панелі поводиться ідентично до смітника на стільниці, проте він "
-"корисний тим що завжди видимий."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:113 (title)
-msgid "To Add Panel Trash to a Panel"
-msgstr "Додавання аплету Смітник до панелі"
-
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:114 (para)
-msgid ""
-"To add the <application>Panel Trash</application> applet to a panel, right-"
-"click on the panel, then choose <menuchoice><guimenu>Add to Panel</"
-"guimenu><guimenuitem>Trash</guimenuitem></menuchoice>."
+#. (itstool) path: sect2/title
+#: C/index.docbook:145
+msgid "Adding Panel Trash to a Panel"
 msgstr ""
-"Щоб додати аплет <application>Смітник</application> до панелі, натисніть "
-"правою кнопкою миші на панелі, потім виберіть <menuchoice><guimenu>Додати до "
-"панелі</guimenu><guimenuitem>Смітник</guimenuitem></menuchoice>."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:125 (title)
+#. (itstool) path: sect2/para
+#: C/index.docbook:146
+msgid ""
+"To add the <application>Panel Trash</application> applet to a panel, perform"
+" the following steps:"
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:149
+msgid "Right-click on the panel at the place you want to add the applet."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:154
+msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
+msgstr "Виберіть <guimenuitem>Додати до панелі</guimenuitem>."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:159
+msgid ""
+"Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
+"dialog, then select <guilabel>Trash</guilabel>."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:164
+msgid "Click <guibutton>Add</guibutton>."
+msgstr "Натисніть <guibutton>Додати</guibutton>."
+
+#. (itstool) path: sect2/para
+#: C/index.docbook:169
+msgid ""
+"For more information on working with the panel, see the <ulink type=\"help\""
+" url=\"help:mate-user-guide/panels\">Desktop User Guide</ulink>."
+msgstr ""
+
+#. (itstool) path: sect1/title
+#: C/index.docbook:175
 msgid "Usage"
 msgstr "Використання"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:127 (title)
+#. (itstool) path: figure/title
+#: C/index.docbook:177
 msgid "Panel Trash"
-msgstr "Смітник на панелі"
-
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:139 (title)
-msgid "Moving files to Trash"
-msgstr "Переміщення файлів у Смітник"
-
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:140 (para)
-msgid ""
-"Select one or more files or folders in the file manager and drag them onto "
-"the picture of the trashbin."
 msgstr ""
-"Виділіть у файловому менеджері один або більше файлів чи тек та перетягніть "
-"їх у значок смітника."
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:144 (title)
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:182
+msgctxt "_"
+msgid ""
+"external ref='figures/trash-applet.png' "
+"md5='f514805d0769a415b13e3d8894301774'"
+msgstr ""
+"external ref='figures/trash-applet.png' "
+"md5='f514805d0769a415b13e3d8894301774'"
+
+#. (itstool) path: sect2/title
+#: C/index.docbook:189
+msgid "Moving Items to Trash"
+msgstr "Переміщення елементів до смітника"
+
+#. (itstool) path: sect2/para
+#: C/index.docbook:190
+msgid ""
+"To move items to the Trash, drag them from the file manager to the "
+"<application>Panel Trash</application> applet."
+msgstr ""
+
+#. (itstool) path: sect2/title
+#: C/index.docbook:194
 msgid "Emptying Trash"
-msgstr "Очищення смітника"
+msgstr "Спорожнення смітника"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:145 (para)
+#. (itstool) path: sect2/para
+#: C/index.docbook:195
 msgid ""
-"To empty Trash, right-click on the applet, then choose "
-"<menuchoice><guimenuitem>Empty Trash</guimenuitem></menuchoice>"
+"To permanently delete all the items in the Trash, right-click on the applet,"
+" then choose <menuchoice> <guimenuitem>Empty Trash</guimenuitem> "
+"</menuchoice>."
 msgstr ""
-"Щоб очистити смітник, клацніть правою кнопкою миші на аплеті, потім виберіть "
-"<menuchoice><guimenuitem>Очистити смітник</guimenuitem></menuchoice>"
 
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:153 (title)
+#. (itstool) path: sect2/title
+#: C/index.docbook:203
 msgid "Opening Trash"
-msgstr "Відкривання смітника"
-
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:154 (para)
-msgid ""
-"To open Trash, right-clik on the applet, then choose "
-"<menuchoice><guimenuitem>Open Trash folder</guimenuitem></menuchoice>"
 msgstr ""
-"Щоб відкрити смітник, клацніть правою кнопкою миші на аплеті, потім виберіть "
-"<menuchoice><guimenuitem>Відкрити смітник</guimenuitem></menuchoice>."
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: /tmp/doc-l10n/cvs/applets-trash.HEAD/C/trashapplet.xml:0 (None)
-msgid "translator-credits"
-msgstr "Максим Дзюманенко <mvd@mylinux.com.ua>, 2004, 2005"
+#. (itstool) path: sect2/para
+#: C/index.docbook:204
+msgid ""
+"To open Trash, right-click on the applet, then choose <menuchoice> "
+"<guimenuitem>Open Trash</guimenuitem> </menuchoice>. The Trash window opens "
+"in <application>Caja</application> file manager."
+msgstr ""
+
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "посилання"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"Дозволяється копіювати, розповсюджувати і / або змінювати цей документ у "
+"відповідности з умовами ліцензії GNU Free Documentation License (GFDL), "
+"версії 1.1 або будь-якої пізнішої версії, оголошеній Фундацією вільного "
+"програмного забезпечення без будь-яких інваріянтних розділів, без додавання "
+"тексту на початку або в кінці. Ви можете знайти копію GFDL тут <_:ulink-1/> "
+"або у файлі COPYING-DOCS, розповсюджуваному разом з цим керівництвом."
