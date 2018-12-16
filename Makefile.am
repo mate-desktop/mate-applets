@@ -64,6 +64,9 @@ DIST_SUBDIRS = \
 	command \
 	netspeed
 
+DISTCHECK_CONFIGURE_FLAGS = \
+	CFLAGS='-Wno-deprecated-declarations'
+
 EXTRA_DIST = \
 	m4/ac-define-dir.m4 \
 	COPYING-DOCS \
