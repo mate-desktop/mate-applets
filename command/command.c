@@ -20,6 +20,7 @@
  *
  * Authors:
  *      Stefano Karapetsas <stefano@karapetsas.com>
+ *      Thorsten Ott <thorsten@thorsten-ott.de> 
  */
 
 #include <config.h>
@@ -40,6 +41,7 @@
 /* GSettings constants */
 #define COMMAND_SCHEMA "org.mate.panel.applet.command"
 #define COMMAND_KEY    "command"
+#define COMMAND_LAUNCHER_KEY    "command-launcher"
 #define INTERVAL_KEY   "interval"
 #define SHOW_ICON_KEY  "show-icon"
 #define WIDTH_KEY      "width"
@@ -60,6 +62,7 @@ typedef struct
     GtkBox            *box;
 
     gchar             *command;
+    gchar             *command_launcher;
     gint               interval;
     gint               width;
 
@@ -95,6 +98,12 @@ command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_a
         command_applet->command = NULL;
     }
 
+    if (command_applet->command_launcher != NULL)
+    {
+        g_free (command_applet->command_launcher);
+        command_applet->command_launcher = NULL;
+    }
+
     g_object_unref (command_applet->settings);
 }
 
@@ -112,7 +121,7 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
                           "version", VERSION,
                           "copyright", copyright,
                           "authors", authors,
-                          "comments", _("Shows the output of a command"),
+                          "comments", _("Shows the output of a command and allows executing a command on left click"),
                           "translator-credits", _("translator-credits"),
                           "logo-icon-name", APPLET_ICON,
     NULL );
@@ -126,6 +135,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     GtkGrid *grid;
     GtkWidget *widget;
     GtkWidget *command;
+    GtkWidget *command_launcher;
     GtkWidget *interval;
     GtkWidget *width;
     GtkWidget *showicon;
@@ -140,7 +150,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     gtk_grid_set_row_spacing (grid, 12);
     gtk_grid_set_column_spacing (grid, 12);
 
-    gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
+    gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 200);
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
 
     widget = gtk_label_new (_("Command:"));
@@ -170,6 +180,14 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     showicon = gtk_check_button_new_with_label (_("Show icon"));
     gtk_grid_attach (grid, showicon, 2, 3, 1, 1);
 
+    widget = gtk_label_new (_("Execute on click:"));
+    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
+    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
+    gtk_grid_attach (grid, widget, 1, 4, 1, 1);
+
+    command_launcher = gtk_entry_new ();
+    gtk_grid_attach (grid, command_launcher, 2, 4, 1, 1);
+
     gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (grid), TRUE, TRUE, 0);
 
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
@@ -179,6 +197,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     g_settings_bind (command_applet->settings, INTERVAL_KEY, interval, "value", G_SETTINGS_BIND_DEFAULT);
     g_settings_bind (command_applet->settings, WIDTH_KEY, width, "value", G_SETTINGS_BIND_DEFAULT);
     g_settings_bind (command_applet->settings, SHOW_ICON_KEY, showicon, "active", G_SETTINGS_BIND_DEFAULT);
+    g_settings_bind (command_applet->settings, COMMAND_LAUNCHER_KEY, command_launcher, "text", G_SETTINGS_BIND_DEFAULT);
 
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
@@ -198,6 +217,23 @@ settings_command_changed (GSettings *settings, gchar *key, CommandApplet *comman
         command_applet->command = command;
     else
         command_applet->command = g_strdup ("");
+}
+
+/* GSettings signal callbacks */
+static void
+settings_command_launcher_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
+{
+    gchar *command_launcher;
+
+    command_launcher = g_settings_get_string (command_applet->settings, COMMAND_LAUNCHER_KEY);
+
+    if (command_applet->command_launcher)
+        g_free (command_applet->command_launcher);
+
+    if (command_launcher != NULL && command_launcher[0] != 0)
+        command_applet->command_launcher = command_launcher;
+    else
+        command_applet->command_launcher = g_strdup ("");
 }
 
 static void
@@ -331,6 +367,7 @@ command_applet_fill (MatePanelApplet* applet)
     command_applet->interval = g_settings_get_int (command_applet->settings, INTERVAL_KEY);
     command_applet->command = g_settings_get_string (command_applet->settings, COMMAND_KEY);
     command_applet->width = g_settings_get_int (command_applet->settings, WIDTH_KEY);
+    command_applet->command_launcher = g_settings_get_string (command_applet->settings, COMMAND_LAUNCHER_KEY);
 
     command_applet->box = GTK_BOX (gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0));
     command_applet->image = GTK_IMAGE (gtk_image_new_from_icon_name (APPLET_ICON, 24));
@@ -366,6 +403,10 @@ command_applet_fill (MatePanelApplet* applet)
     g_signal_connect(command_applet->settings,
                      "changed::" WIDTH_KEY,
                      G_CALLBACK (settings_width_changed),
+                     command_applet);
+    g_signal_connect(command_applet->settings,
+                     "changed::" COMMAND_LAUNCHER_KEY,
+                     G_CALLBACK (settings_command_launcher_changed),
                      command_applet);
     g_settings_bind (command_applet->settings,
                      SHOW_ICON_KEY,
