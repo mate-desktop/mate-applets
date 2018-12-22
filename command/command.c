@@ -121,7 +121,7 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
                           "version", VERSION,
                           "copyright", copyright,
                           "authors", authors,
-                          "comments", _("Shows the output of a command and allows executing a command on left click"),
+                          "comments", _("Shows the output of a command and can launch an other"),
                           "translator-credits", _("translator-credits"),
                           "logo-icon-name", APPLET_ICON,
     NULL );
@@ -350,6 +350,30 @@ command_execute (CommandApplet *command_applet)
 }
 
 static gboolean
+command_launcher_execute (GtkWidget *widget, GdkEventButton *event, CommandApplet *command_applet)
+{
+    GError *error = NULL;
+    gchar *output = NULL;
+    gint ret = 0;
+    gchar *command_launcher;
+
+    /* Only react on left mouse click as we need right one for Preferences */
+    if (event->type == GDK_BUTTON_RELEASE && event->button == 1) {
+        command_launcher = g_settings_get_string (command_applet->settings, COMMAND_LAUNCHER_KEY);
+
+        /* ensure a command is set */
+        if (command_launcher != NULL && command_launcher[0] != 0) {
+            if (g_spawn_command_line_sync (command_applet->command_launcher, &output, NULL, &ret, &error))
+            {
+                return TRUE; 
+            } 
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+static gboolean
 command_applet_fill (MatePanelApplet* applet)
 {
     CommandApplet *command_applet;
@@ -408,6 +432,7 @@ command_applet_fill (MatePanelApplet* applet)
                      "changed::" COMMAND_LAUNCHER_KEY,
                      G_CALLBACK (settings_command_launcher_changed),
                      command_applet);
+    
     g_settings_bind (command_applet->settings,
                      SHOW_ICON_KEY,
                      command_applet->image,
@@ -421,6 +446,11 @@ command_applet_fill (MatePanelApplet* applet)
                                   G_N_ELEMENTS (applet_menu_actions), command_applet);
     mate_panel_applet_setup_menu (command_applet->applet, ui, action_group);
 
+    g_signal_connect(GTK_WIDGET (command_applet->applet), "button-release-event",
+                     G_CALLBACK (command_launcher_execute), 
+                     command_applet);
+    
+    
     /* first command execution */
     command_execute (command_applet);
 
