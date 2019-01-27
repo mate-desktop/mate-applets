@@ -162,25 +162,25 @@ msgstr "충전 완료까지 시간 알 수 없음 (%d%%)"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
+msgstr[0] "%d 분 (%d%%) 남음"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
+msgstr[0] "충전 완료까지 %d분 (%d%%)"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
+msgstr[0] "%d 시간 (%d%%) 남음"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
+msgstr[0] "충전 완료까지 %d시간 (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -192,12 +192,12 @@ msgstr "남은 시간: %d%s %d%s (%d%%)"
 #: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
+msgstr[0] "시간"
 
 #: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
+msgstr[0] "분"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -230,7 +230,7 @@ msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] ""
+msgstr[0] "배터리 전원이 %d 분 남았습니다(전체 용량의 %d%%)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -1263,6 +1263,8 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% 사용 중"
 
 #: ../multiload/main.c:357
 msgid "CPU Load"
@@ -2336,7 +2338,7 @@ msgstr "메모 잠그기(_L)"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
+msgstr[0] "메모 %d개"
 
 #: ../stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2389,7 +2391,7 @@ msgstr "타이머 멈춤(_T)"
 
 #: ../timerapplet/timerapplet.c:82
 msgid "R_eset"
-msgstr ""
+msgstr "초기화(_E)"
 
 #: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
@@ -2447,7 +2449,7 @@ msgstr "휴지통 열기(_O)"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
+msgstr[0] "휴지통에 항목 %d개"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

@@ -5,8 +5,8 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 12:26+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +48,7 @@ msgstr "Produciuse un erro ao executar o visor da axuda: %s"
 
 #: ../accessx-status/applet.c:147
 msgid "Open the keyboard preferences dialog"
-msgstr ""
+msgstr "Abre o diálogo de preferencias do teclado"
 
 #: ../accessx-status/applet.c:162
 #, c-format
@@ -110,7 +110,7 @@ msgstr "Erro: %s"
 #: ../accessx-status/applet.c:1380
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
-msgstr "Estado de accesibilidade do teclado"
+msgstr "Estado da accesibilidade do teclado"
 
 #: ../accessx-status/applet.c:1384
 msgid "Displays current state of keyboard accessibility features"
@@ -119,15 +119,15 @@ msgstr ""
 
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:1
 msgid "AccessX Status Applet Factory"
-msgstr "Fabrica do miniaplicativo de estado AccessX"
+msgstr "Factoría do miniaplicativo de estado AccessX"
 
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:2
 msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "Fabrica do miniaplicativo de estado de accesibilidade do teclado"
+msgstr "Factoría do miniaplicativo de estado de accesibilidade do teclado"
 
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:4
 msgid "Shows the status of keyboard accessibility features"
-msgstr "Amosa o estado das características de accesibilidade do teclado"
+msgstr "Amosa o estado das características da accesibilidade do teclado"
 
 #: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
 #: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
@@ -164,29 +164,29 @@ msgstr "Tempo descoñecido (%d%%) ata estar cargada"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "resta %d minuto (%d%%)"
+msgstr[1] "restan %d minutos (%d%%)"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minuto ata estar cargada (%d%%)"
+msgstr[1] "%d minutos ata estar cargada (%d%%)"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "resta %d hora (%d%%)"
+msgstr[1] "restan %d horas (%d%%)"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d hora ata estar cargada (%d%%)"
+msgstr[1] "%d horas ata estar cargada (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -198,14 +198,14 @@ msgstr "%d %s %d %s (%d%%) restantes"
 #: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "hora"
+msgstr[1] "horas"
 
 #: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minuto"
+msgstr[1] "minutos"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -224,7 +224,7 @@ msgstr "A batería xa está completamente recargada"
 
 #: ../battstat/battstat_applet.c:275 ../battstat/battstat_applet.c:432
 msgid "Battery Notice"
-msgstr "Aviso de batería"
+msgstr "Aviso da batería"
 
 #. we don't know the remaining time
 #: ../battstat/battstat_applet.c:377
@@ -238,8 +238,8 @@ msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Quédalle %d minuto de batería (%d%% da capacidade total)."
+msgstr[1] "Quédanlle %d minutos de batería (%d%% da capacidade total)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -251,8 +251,8 @@ msgid ""
 " • save open documents and shut your laptop down."
 msgstr ""
 "Para evitar perder o seu traballo:\n"
-" &bull; conecte o seu portátil a unha fonte de alimentación externa ou\n"
-" &bull; garde os documentos abertos e apague o portátil."
+"•  conecte o seu portátil a unha fonte de alimentación externa ou\n"
+"•  garde os documentos abertos e apague o portátil."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -308,7 +308,7 @@ msgstr "infraestrutura de «upower» activada."
 #. false
 #: ../battstat/battstat_applet.c:831
 msgid "Legacy backend enabled."
-msgstr ""
+msgstr "A infraestrutura legada está activada."
 
 #: ../battstat/battstat_applet.c:1109 ../battstat/battstat_applet.c:1159
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
@@ -355,7 +355,7 @@ msgstr "_Avisar cando a batería estea completamente recargada"
 
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
 msgid "Battstat Factory"
-msgstr "Fabrica do estado da batería"
+msgstr "Factoría do estado da batería"
 
 #: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:1
 msgid "Red value level"
@@ -483,7 +483,7 @@ msgstr "Inserir caracteres"
 
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:1
 msgid "Charpicker Applet Factory"
-msgstr "Fabrica do miniaplicativo do selector de caracteres"
+msgstr "Factoría do miniaplicativo do selector de caracteres"
 
 #: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:1
 msgid "Characters shown on applet startup"
@@ -585,7 +585,7 @@ msgstr "Intervalo (segundos):"
 
 #: ../command/command.c:162
 msgid "Maximum width (chars):"
-msgstr ""
+msgstr "Largo máximo (caracteres):"
 
 #: ../command/command.c:170
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
@@ -599,7 +599,7 @@ msgstr "Miniaplicativo de ordes"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
 msgid "Command Factory"
-msgstr ""
+msgstr "Factoría de ordes"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
 msgid "Command"
@@ -623,11 +623,11 @@ msgstr "Intervalo para executar a orde (en segundos)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
 msgid "Width of output"
-msgstr ""
+msgstr "Largura da saída"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
 msgid "Number of characters to display"
-msgstr ""
+msgstr "O número de caracteres para amosar"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
@@ -639,7 +639,7 @@ msgstr "Preferencias do monitor de frecuencia da CPU"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:2
 msgid "Monitor Settings"
-msgstr "Configuración do monitor"
+msgstr "Austes do monitor"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:3
 msgid "_Monitored CPU:"
@@ -647,7 +647,7 @@ msgstr "CPU _monitorizada:"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:4
 msgid "Display Settings"
-msgstr "Configuración do visor"
+msgstr "Axustes do visor"
 
 #: ../cpufreq/cpufreq-preferences.ui.h:5
 msgid "_Appearance:"
@@ -688,7 +688,7 @@ msgstr ""
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
 msgid "Mode to show CPU usage"
-msgstr ""
+msgstr "Modo no que amosar o uso da CPU"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
@@ -709,6 +709,8 @@ msgid ""
 "A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
 msgstr ""
+"Un valor 0 significa amosar a frecuencia da CPU; 1 amosar a frecuencia e as "
+"unidades e 2 amosar a porcentaxe no lugar da frecuencia."
 
 #: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -815,11 +817,11 @@ msgstr "Montador de disco"
 
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:1
 msgid "Drive Mount Applet Factory"
-msgstr "Fabrica do miniaplicativo montador de dispositivos"
+msgstr "Factoría do miniaplicativo montador de dispositivos"
 
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for drive mount applet"
-msgstr "Fabrica para o miniaplicativo de montaxe de dispositivos"
+msgstr "Factoría para o miniaplicativo de montaxe de dispositivos"
 
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:4
 msgid "Mount local disks and devices"
@@ -841,7 +843,7 @@ msgstr "Os ollos miran na dirección do punteiro do rato"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "Factoría do miniaplicativo Ollos"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -861,7 +863,7 @@ msgstr "Produciuse un erro moi grave ao tentar cargar o tema."
 
 #: ../geyes/themes.c:285
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Preferencias do Eyes"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -1205,7 +1207,7 @@ msgstr "Localización"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
 msgid "Mateweather Applet Factory"
-msgstr "Fábrica do miniaplicativo Gweather"
+msgstr "Factoría do miniaplicativo Gweather"
 
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
 msgid "Factory for creating the weather applet."
@@ -1225,7 +1227,7 @@ msgstr ""
 
 #: ../multiload/main.c:124
 msgid "Start system-monitor"
-msgstr ""
+msgstr "Iniciar o monitor do sistema"
 
 #: ../multiload/main.c:146
 #, c-format
@@ -1295,7 +1297,11 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% en uso"
 msgstr[1] ""
+"%s:\n"
+"%u%% en uso"
 
 #: ../multiload/main.c:357
 msgid "CPU Load"
@@ -1433,23 +1439,23 @@ msgstr "Cor de fondo da gráfica de rede"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:24
 msgid "Grid line color"
-msgstr ""
+msgstr "Cor da loña da grella"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Indicator color"
-msgstr ""
+msgstr "Cor do indicador"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Network threshold 1 in bytes"
-msgstr ""
+msgstr "Limiar da rede  1 en bytes"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Network threshold 2 in bytes"
-msgstr ""
+msgstr "Limiar da rede 2 en bytes"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Network threshold 3 in bytes"
-msgstr ""
+msgstr "Limiar da rede 3 en bytes"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for user-related swap usage"
@@ -1596,11 +1602,11 @@ msgstr "_Fondo"
 
 #: ../multiload/properties.c:622 ../multiload/properties.c:634
 msgid "_Gridline"
-msgstr ""
+msgstr "Liña da _grella"
 
 #: ../multiload/properties.c:623
 msgid "_Indicator"
-msgstr ""
+msgstr "_Indicador"
 
 #: ../multiload/properties.c:627
 msgid "_Used"
@@ -1632,11 +1638,11 @@ msgstr "_Escritura"
 
 #: ../multiload/properties.c:642
 msgid "Network speed thresholds"
-msgstr ""
+msgstr "Limiares da velocidade na rede"
 
 #: ../multiload/properties.c:671
 msgid "Threshold 1: "
-msgstr ""
+msgstr "Limiar 1:"
 
 #: ../multiload/properties.c:702 ../multiload/properties.c:737
 #: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
@@ -1645,11 +1651,11 @@ msgstr "bytes"
 
 #: ../multiload/properties.c:710
 msgid "Threshold 2: "
-msgstr ""
+msgstr "Limiar 2:"
 
 #: ../multiload/properties.c:745
 msgid "Threshold 3: "
-msgstr ""
+msgstr "Limiar 3:"
 
 #: ../multiload/properties.c:810
 msgid "System Monitor Preferences"
@@ -1657,109 +1663,115 @@ msgstr "Preferencias do monitor do sistema"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
 msgid "Device to monitor"
-msgstr ""
+msgstr "Dispositivo que monitorizar"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
 msgid "The name of the device to monitor"
-msgstr ""
+msgstr "O nome do dispositivo que monitorizar"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
 msgid "Show sum speed"
-msgstr ""
+msgstr "Amosar a suma de velocidades"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:4
 msgid "If true, show sum of inbound/outbound speed instead of separated ones."
 msgstr ""
+"Se é verdadeiro, amosa a suma das velocidades de de entrada e saída no canto"
+" de amosar cadansúa por separado."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:5
 msgid "Show bits"
-msgstr ""
+msgstr "Amosar os bits"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:6
 msgid "If true, show speed in bits instead of bytes."
-msgstr ""
+msgstr "Se é verdadeiro , amosa a velocidade en bits no canto de en bytes."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:8
 msgid "If true, show main icon."
-msgstr ""
+msgstr "Se é verdadeiro, amosa a icona principal."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
 msgid "Short unit legend"
-msgstr ""
+msgstr "Lenda curta da unidade"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:10
 msgid ""
 "If true, shorten unit legend to one letter: lowercase for bits / uppercase "
 "for Bytes."
 msgstr ""
+"Se é verdadeiro, acurta as unidades a unha letra: minúscula para bits / "
+"maiúscula para Bytes."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:11
 msgid "Change icon"
-msgstr ""
+msgstr "Cambiar a icona"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
 msgid "If true, change the icon due to selected device."
-msgstr ""
+msgstr "Se é verdadeiro, cambia a icona segundo o dispositivo seleccionado."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
 msgid "Auto change device"
-msgstr ""
+msgstr "Cambio automático de dispositivo"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
 msgid "If true, change automatically the selected device."
-msgstr ""
+msgstr "Se é verdadeiro, cambia o dispositivo seleccionado automaticamente."
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
 msgid "In color"
-msgstr ""
+msgstr "Cor da entrada"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:16
 msgid "The color of the graph of the inbound traffic"
-msgstr ""
+msgstr "A cor do gráfico para o tráfico entrante"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:17
 msgid "Out color"
-msgstr ""
+msgstr "Cor da saída"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:18
 msgid "The color of the graph of the outbound traffic"
-msgstr ""
+msgstr "A cor do gráfico para o tráfico saínte"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:19
 msgid "Up command"
-msgstr ""
+msgstr "Orde para erguer"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
 msgid "Command to execute to activate the device"
-msgstr ""
+msgstr "Orde que se executará para activar o dispositivo"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
 msgid "Down command"
-msgstr ""
+msgstr "Orde para botar abaixo"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
 msgid "Command to execute to shut down the device"
-msgstr ""
+msgstr "Orde que se executará para desactivar o dispositivo"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
 msgid "Show signal quality icon"
-msgstr ""
+msgstr "Amosar a icona de calidade do sinal"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
 msgid "If true, show signal quality icon for wireless devices."
 msgstr ""
+"Se é verdadeiro, amosa a icona de calidade do sinal para dispositivos sen "
+"fíos."
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
 msgid "Netspeed Applet Factory"
-msgstr ""
+msgstr "Factoría do miniaplicativo Netspeed"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
 msgid "Netspeed Applet"
-msgstr ""
+msgstr "Miniaplicativo Netspeed"
 
 #: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
 msgid "Network Monitor"
-msgstr ""
+msgstr "Monitor de rede"
 
 #. translators: bits (short)
 #: ../netspeed/src/netspeed.c:427
@@ -1883,7 +1895,7 @@ msgstr "Acurtar a lenda da _unidade"
 
 #: ../netspeed/src/netspeed.c:1077
 msgid "_Change icon according to the selected device"
-msgstr ""
+msgstr "_Cambiar a icona segundo o dispositivo seleccionado"
 
 #: ../netspeed/src/netspeed.c:1081
 msgid "Show _icon"
@@ -1891,7 +1903,7 @@ msgstr "Amosar a _icona"
 
 #: ../netspeed/src/netspeed.c:1085
 msgid "Show signal _quality icon for wireless devices"
-msgstr ""
+msgstr "Amosar a icona de calidade do _sinal para dispositivos sen fíos"
 
 #: ../netspeed/src/netspeed.c:1203
 #, c-format
@@ -2132,11 +2144,11 @@ msgstr "Comportamento"
 
 #: ../stickynotes/stickynotes.ui.h:21
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr "Agochar as notas cando o _escritorio está pulsado"
+msgstr "Agachar as notas cando o _escritorio está pulsado"
 
 #: ../stickynotes/stickynotes.ui.h:22
 msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr "Seleccione se agochar todas as notas ao seleccionar no escritorio"
+msgstr "Seleccione se agachar todas as notas ao seleccionar no escritorio"
 
 #: ../stickynotes/stickynotes.ui.h:23
 msgid "Force _default color and font on notes"
@@ -2180,7 +2192,7 @@ msgstr "Bloquear ou desbloquear a nota"
 
 #: ../stickynotes/stickynotes.ui.h:33
 msgid "Delete note"
-msgstr ""
+msgstr "Eliminar a nota"
 
 #: ../stickynotes/stickynotes.ui.h:34
 msgid "Resize note"
@@ -2361,7 +2373,7 @@ msgstr ""
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:23
 msgid "Whether to hide all notes when the desktop is selected"
-msgstr "Indica se agochar todas as notas cando o escritorio está seleccionado"
+msgstr "Indica se agachar todas as notas cando o escritorio está seleccionado"
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:24
 msgid ""
@@ -2369,7 +2381,7 @@ msgid ""
 "automatically hide all the open notes."
 msgstr ""
 "Se esta opción está activada,ao seleccionar o escritorio de calquera forma "
-"agocharanse automaticamente todas as notas abertas."
+"agacharanse automaticamente todas as notas abertas."
 
 #: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:25
 msgid "Whether to ask for confirmation when deleting a note"
@@ -2395,8 +2407,8 @@ msgstr "_Bloquear notas"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d nota"
+msgstr[1] "%d notas"
 
 #: ../stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2408,7 +2420,7 @@ msgstr "Notas adhesivas para o contorno de escritorio do MATE"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:1
 msgid "Timer Factory"
-msgstr ""
+msgstr "Factoría do temporizador"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:2
 msgid "Timer"
@@ -2449,7 +2461,7 @@ msgstr "_Deter o temporizador"
 
 #: ../timerapplet/timerapplet.c:82
 msgid "R_eset"
-msgstr ""
+msgstr "R_estabelecer"
 
 #: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
@@ -2507,8 +2519,8 @@ msgstr "_Abrir o lixo"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d elemento no lixo"
+msgstr[1] "%d elementos no lixo"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

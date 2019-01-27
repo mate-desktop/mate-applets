@@ -8,6 +8,7 @@
 # Egoitz Rodriguez Obieta <egoitzro@gmail.com>, 2018
 # Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Alexander Gabilondo <alexgabilondo@gmail.com>, 2018
 # 
 #, fuzzy
 msgid ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 12:26+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Last-Translator: Alexander Gabilondo <alexgabilondo@gmail.com>, 2018\n"
 "Language-Team: Basque (https://www.transifex.com/mate/teams/13566/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +50,7 @@ msgstr "Errorea gertatu da laguntza-ikustailea abiaraztean:  %s"
 
 #: ../accessx-status/applet.c:147
 msgid "Open the keyboard preferences dialog"
-msgstr ""
+msgstr "Ireki teklatuaren hobespenen elkarrizketa-koadroa"
 
 #: ../accessx-status/applet.c:162
 #, c-format
@@ -587,7 +588,7 @@ msgstr "Tartea (segundoak):"
 
 #: ../command/command.c:162
 msgid "Maximum width (chars):"
-msgstr ""
+msgstr "Gehienezko zabalera (karaktere)"
 
 #: ../command/command.c:170
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
@@ -601,7 +602,7 @@ msgstr "Komando applet-a"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
 msgid "Command Factory"
-msgstr ""
+msgstr "Komando fabrika"
 
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
 msgid "Command"
@@ -625,11 +626,11 @@ msgstr "Komandoa exekutatzeko bitartea (segundoak)"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
 msgid "Width of output"
-msgstr ""
+msgstr "Irteeraren zabalera"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
 msgid "Number of characters to display"
-msgstr ""
+msgstr "Bistaratuko behar den karaktere kopurua"
 
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
 msgid "If applet icon is shown or not"
@@ -690,7 +691,7 @@ msgstr ""
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
 msgid "Mode to show CPU usage"
-msgstr ""
+msgstr "Modua PUZen erabilpena erakusteko"
 
 #: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
 msgid ""
@@ -710,6 +711,8 @@ msgid ""
 "A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
 msgstr ""
+"Erabili 0 balioak PUZen maiztasuna erakusteko, 1 maiztasuna eta unitateak "
+"erakusteko, eta 2 ehunekotan erakusteko maiztasunean ordez."
 
 #: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
 msgid "Could not open help document"
@@ -859,7 +862,7 @@ msgstr "Errorea gertatu da gaia kargatzen saiatzean."
 
 #: ../geyes/themes.c:285
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Begiaren hobespenak"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -1221,7 +1224,7 @@ msgstr ""
 
 #: ../multiload/main.c:124
 msgid "Start system-monitor"
-msgstr ""
+msgstr "Abiarazi sistemako monitorea"
 
 #: ../multiload/main.c:146
 #, c-format
@@ -1429,23 +1432,23 @@ msgstr "Sarearen grafikoaren atzeko planoko kolorea"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:24
 msgid "Grid line color"
-msgstr ""
+msgstr "Saretaren lerroen kolorea"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
 msgid "Indicator color"
-msgstr ""
+msgstr "Adierazlearen kolorea"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
 msgid "Network threshold 1 in bytes"
-msgstr ""
+msgstr "Sarearen atalasea 1 bitetan"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
 msgid "Network threshold 2 in bytes"
-msgstr ""
+msgstr "Sarearen atalasea 2 bitetan"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
 msgid "Network threshold 3 in bytes"
-msgstr ""
+msgstr "Sarearen atalasea 3 bitetan"
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
 msgid "Graph color for user-related swap usage"
@@ -1627,11 +1630,11 @@ msgstr "_Idatzi"
 
 #: ../multiload/properties.c:642
 msgid "Network speed thresholds"
-msgstr ""
+msgstr "Sarearen abiadura atalaseak"
 
 #: ../multiload/properties.c:671
 msgid "Threshold 1: "
-msgstr ""
+msgstr "Atalase 1:"
 
 #: ../multiload/properties.c:702 ../multiload/properties.c:737
 #: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
@@ -1640,11 +1643,11 @@ msgstr "byte"
 
 #: ../multiload/properties.c:710
 msgid "Threshold 2: "
-msgstr ""
+msgstr "Atalase 2:"
 
 #: ../multiload/properties.c:745
 msgid "Threshold 3: "
-msgstr ""
+msgstr "Atalase 3:"
 
 #: ../multiload/properties.c:810
 msgid "System Monitor Preferences"
@@ -1652,15 +1655,15 @@ msgstr "Sistemako monitorearen hobespenak"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
 msgid "Device to monitor"
-msgstr ""
+msgstr "Monitorizatzeko gailua"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
 msgid "The name of the device to monitor"
-msgstr ""
+msgstr "Monitorizatzeko gailuaren izena"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
 msgid "Show sum speed"
-msgstr ""
+msgstr "Erakutsi baturaren abiadura"
 
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:4
 msgid "If true, show sum of inbound/outbound speed instead of separated ones."
