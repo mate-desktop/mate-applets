@@ -368,6 +368,8 @@ msgid ""
 "When there is no CPU frequency scaling support in the system, the CPU "
 "Frequency Scaling Monitor only displays the current CPU frequency."
 msgstr ""
+"Når der ikke er understøttelse af CPU-frekvensskalering i systemet viser "
+"CPU-frekvenskaleringen  kun den nuværende CPU-frekvens."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:201
@@ -377,6 +379,10 @@ msgid ""
 "progress bar represents the current CPU frequency with respect to the "
 "maximum frequency."
 msgstr ""
+"Når CPU-frekvensskalering er understøttet i systemet viser CPU-"
+"frekvensskaleringen CPU-ionet med en statusbjælke. Tilstanden for "
+"statusbjælken repræsenterer den nuværende CPU-frekvens med respekt for "
+"maksimal frekvens."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:202
@@ -387,6 +393,11 @@ msgid ""
 "to configure CPU Frequency Scaling Monitor see <xref linkend=\"cpufreq-"
 "applet-prefs\"/>."
 msgstr ""
+"Som standard viser CPU-frekvensskaleringen den nuværende CPU-frekvens som en"
+" værdi i hertz (standardmålingen for frekvens), men den kan konfigureres til"
+" at vise en procent i stedet for. For yderligere information om hvordan CPU-"
+"frekvensskaleringen konfigureres se <xref linkend=\"cpufreq-applet-"
+"prefs\"/>."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:205
@@ -558,6 +569,9 @@ msgid ""
 "Desktop by default. Please consult your system administrator, vendor "
 "documentation, or the documentation that came with this software."
 msgstr ""
+"Frekvensvælgerens funktionalitet er måske ikke tilgængelig på dit MATE-"
+"skrivebord som standard. Hør venligst din systemadministrator, "
+"leverandørdokumentationen eller dokumentationen der fulgt med dette program."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:283
@@ -584,7 +598,7 @@ msgstr ""
 #. (itstool) path: figure/title
 #: C/index.docbook:295
 msgid "Frequency selector showing just frequencies"
-msgstr ""
+msgstr "Frekvensvælger der kun viser frekvenser"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -631,6 +645,9 @@ msgid ""
 "right-click on the applet, then choose "
 "<guimenuitem>Preferences</guimenuitem> from the popup menu."
 msgstr ""
+"For at konfigurere <application>CPU-frekvensskalering</application>, "
+"højreklik på panelprogrammet , vælg så "
+"<guimenuitem>Præferencer</guimenuitem> fra pop op-menuen."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:323
@@ -638,11 +655,13 @@ msgid ""
 "The <guimenuitem>Preferences</guimenuitem> dialog contains the following "
 "components:"
 msgstr ""
+"Dialogen <guimenuitem>Præferencer</guimenuitem> viser de følgende "
+"komponenter:"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:325
 msgid "CPU Frequency Scaling Monitor Preferences Dialog"
-msgstr ""
+msgstr "CPU-frekvensskaleringens præferencedialog"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -665,16 +684,19 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>CPU Frequency Scaling "
 "Monitor preferences dialog</phrase> </textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/cpufreq-applet-preferences.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Præferencedialog for "
+"CPU-frekvensskalering</phrase> </textobject>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:339
 msgid "<guilabel>Monitored CPU (only in multiprocessor systems)</guilabel>"
-msgstr ""
+msgstr "<guilabel>Overvåget CPU (kun i multiprocessor-systemer)</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:341
 msgid "Use this drop-down list to select the CPU that you want to monitor."
-msgstr ""
+msgstr "Brug rullegardinet til at vælge CPU'en du ønsker at overvåge."
 
 #. (itstool) path: figure/title
 #: C/index.docbook:343
@@ -702,6 +724,10 @@ msgid ""
 "smp.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>CPU Frequency"
 " Scaling Monitor preferences dialog CPU selector</phrase> </textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/cpufreq-applet-preferences-"
+"smp.png\" format=\"PNG\"/> </imageobject> <textobject> "
+"<phrase>Præferencedialog for CPU-frekvensskaleringens CPU-vælger</phrase> "
+"</textobject>"
 
 #. (itstool) path: note/para
 #: C/index.docbook:354
@@ -709,11 +735,13 @@ msgid ""
 "The <guilabel>Monitored CPU</guilabel> option will only appear on "
 "multiprocessor (SMP) systems."
 msgstr ""
+"Indstillingen <guilabel>Overvåget cpu</guilabel> vil kun fremgå på systemer "
+"med flere processorer (SMP)."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:362
 msgid "<guilabel>Show in Mode</guilabel>"
-msgstr ""
+msgstr "<guilabel>Vis i tilstand</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:364
@@ -721,21 +749,24 @@ msgid ""
 "Use this drop-down list to select the mode in which you want to display the "
 "applet. Available modes are: Graphic, Text and both (Graphic and Text)"
 msgstr ""
+"Brug rullegardinet til at vælge tilstanden hvori du ønsker at vise "
+"panelprogrammet. Tilgængelige tilstande er: grafik, tekst og begge (grafik "
+"og tekst)"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:370
 msgid "<guilabel>Show CPU frequency as frequency</guilabel>"
-msgstr ""
+msgstr "<guilabel>Vis CPU-frekvens som frekvens</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:372
 msgid "Select this option to display the current CPU frequency."
-msgstr ""
+msgstr "Vælg denne indstilling for at vise den nuværende CPU-frekvens."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:376
 msgid "<guilabel>Show frequency units</guilabel>"
-msgstr ""
+msgstr "<guilabel>Vis frekvensenheder</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:378
@@ -743,17 +774,21 @@ msgid ""
 "Select this option to display or not the frequency units in the frequency "
 "mode."
 msgstr ""
+"Vælg denne indstilling for angive om frekvensenheder skal vises i "
+"frekvenstilstanden eller ej."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:383
 msgid "<guilabel>Show CPU frequency as percentage</guilabel>"
-msgstr ""
+msgstr "<guilabel>Vis CPU-frekvens som en procent</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:385
 msgid ""
 "Select this option to display the current CPU frequency as a percentage."
 msgstr ""
+"Vælg denne indstilling for at vise den nuværende CPU-frekvens som et "
+"procenttal."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:390

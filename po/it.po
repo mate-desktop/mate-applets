@@ -14,6 +14,7 @@
 # Mat V <enthusedquill6@gmail.com>, 2018
 # l3nn4rt, 2018
 # Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2018
+# Enrico B. <enricobe@hotmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -22,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 12:26+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2018\n"
+"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,29 +172,29 @@ msgstr "Tempo sconosciuto (%d%%) per completare la carica"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minuto (%d%%) rimanente"
+msgstr[1] "%d minuti (%d%%) rimanenti"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minuto alla carica completa (%d%%)"
+msgstr[1] "%d minuti alla carica completa (%d%%)"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ora (%d%%) rimanente"
+msgstr[1] "%d ore (%d%%) rimanenti"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ora alla carica completa (%d%%)"
+msgstr[1] "%d ore alla carica completa (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -246,7 +247,11 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"%d minuto di alimentazione da batteria rimanente (%d%% della capacità "
+"totale)."
 msgstr[1] ""
+"%d minuti di alimentazione da batteria rimanenti (%d%% della capacità "
+"totale)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -854,7 +859,7 @@ msgstr "Gli occhi fissano in direzione del puntatore del mouse"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "Fabbrica applet Occhi"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -875,7 +880,7 @@ msgstr ""
 
 #: ../geyes/themes.c:285
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Impostazioni di Occhi"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -1310,7 +1315,11 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% in uso"
 msgstr[1] ""
+"%s:\n"
+"%u%% in uso"
 
 #: ../multiload/main.c:357
 msgid "CPU Load"
@@ -2472,7 +2481,7 @@ msgstr "_Ferma timer"
 
 #: ../timerapplet/timerapplet.c:82
 msgid "R_eset"
-msgstr ""
+msgstr "R_eset"
 
 #: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
@@ -2530,8 +2539,8 @@ msgstr "_Apri cestino"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d oggetto nel cestino"
+msgstr[1] "%d oggetti nel cestino"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
