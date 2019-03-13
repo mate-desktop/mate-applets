@@ -268,14 +268,11 @@ timer_about_callback (GtkAction *action, TimerApplet *applet)
 {
     const char* authors[] = { "Stefano Karapetsas <stefano@karapetsas.com>", NULL };
 
-    char copyright[] = \
-        "Copyright \xc2\xa9 2015-2018 MATE developers\n"
-        "Copyright \xc2\xa9 2014 Stefano Karapetsas";
-
     gtk_show_about_dialog(NULL,
                           "title", _("About Timer Applet"),
                           "version", VERSION,
-                          "copyright", copyright,
+                          "copyright", _("Copyright \xc2\xa9 2014 Stefano Karapetsas\n"
+                                         "Copyright \xc2\xa9 2015-2019 MATE developers"),
                           "authors", authors,
                           "comments", _("Start a timer and receive a notification when it is finished"),
                           "translator-credits", _("translator-credits"),
