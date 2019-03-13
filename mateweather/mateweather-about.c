@@ -48,6 +48,7 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 	};
 
 	gtk_show_about_dialog(NULL,
+		"title", _("About Weather Report"),
 		"version", VERSION,
 		"copyright",   copyright,
 		"comments", _("A panel application for monitoring local weather conditions."),

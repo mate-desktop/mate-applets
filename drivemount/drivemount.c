@@ -113,6 +113,7 @@ display_about_dialog (GtkAction *action,
     };
 
     gtk_show_about_dialog (NULL,
+	"title",       _("About Disk Mounter"),
 	"version",     VERSION,
 	"copyright",   copyright,
 	"comments",    _("Applet for mounting and unmounting block volumes."),

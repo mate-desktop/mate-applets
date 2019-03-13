@@ -92,6 +92,7 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		"Copyright \xc2\xa9 2003 Sun Microsystems";
 
 	gtk_show_about_dialog(NULL,
+		"title", _("About AccessX Status"),
 		"version", VERSION,
 		"comments", _("Shows the state of AccessX features such as latched modifiers"),
 		"copyright", copyright,

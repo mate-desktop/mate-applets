@@ -577,6 +577,7 @@ about (GtkAction     *action,
   };
 
   gtk_show_about_dialog (NULL,
+	"title",        _("About Character Palette"),
 	"version",	VERSION,
 	"copyright",	copyright,
 	"comments",	_("Mate Panel applet for selecting strange "
