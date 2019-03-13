@@ -273,6 +273,7 @@ timer_about_callback (GtkAction *action, TimerApplet *applet)
         "Copyright \xc2\xa9 2014 Stefano Karapetsas";
 
     gtk_show_about_dialog(NULL,
+                          "title", _("About Timer Applet"),
                           "version", VERSION,
                           "copyright", copyright,
                           "authors", authors,

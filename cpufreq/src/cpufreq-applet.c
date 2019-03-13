@@ -478,6 +478,7 @@ cpufreq_applet_about_cb (GtkAction     *action,
         };
 
         gtk_show_about_dialog (NULL,
+                               "title",         _("About CPU Frequency Scaling Monitor"),
                                "version",       VERSION,
                                "copyright",     copyright,
                                "comments",      _("This utility shows the current CPU "

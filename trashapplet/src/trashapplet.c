@@ -427,6 +427,7 @@ trash_applet_show_about (GtkAction   *action,
   };
 
   gtk_show_about_dialog (NULL,
+                         "title", _("About Trash Applet"),
                          "version", VERSION,
                          "copyright", copyright,
                          "comments", _("A MATE trash bin that lives in your panel. "

@@ -109,6 +109,7 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
          "Copyright \xc2\xa9 2013-2014 Stefano Karapetsas";
 
     gtk_show_about_dialog(NULL,
+                          "title", _("About Command Applet"),
                           "version", VERSION,
                           "copyright", copyright,
                           "authors", authors,

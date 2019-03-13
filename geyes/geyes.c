@@ -172,6 +172,7 @@ about_cb (GtkAction   *action,
 	};
 
 	gtk_show_about_dialog (NULL,
+		"title",              _("About Eyes"),
 		"version",            VERSION,
 		"comments",           _("A goofy set of eyes for the MATE "
 		                      "panel. They follow your mouse."),
