@@ -831,6 +831,7 @@ about_cb( GtkAction *action, ProgressData *battstat )
 			/* false */ _("Legacy backend enabled."));
 
   gtk_show_about_dialog( NULL,
+    "title",               _("About Battery Charge Monitor"),
     "version",             VERSION,
     "copyright",           copyright,
     "comments",            comments,

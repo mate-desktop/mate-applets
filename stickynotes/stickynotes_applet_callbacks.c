@@ -374,6 +374,7 @@ menu_about_cb (GtkAction *action,
 	};
 
 	gtk_show_about_dialog (NULL,
+		"title",        _("About Sticky Notes"),
 		"version",	VERSION,
 		"copyright",	copyright,
 		"comments",	_("Sticky Notes for the "

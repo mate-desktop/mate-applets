@@ -16,7 +16,7 @@
  *
  *  Netspeed Applet was writen by Jörgen Scheibengruber <mfcn@gmx.de>
  *
- *  Mate Netspeed Applet migrated by Stefano Karapetsas <stefano@karapetsas.com>
+ *  MATE Netspeed Applet migrated by Stefano Karapetsas <stefano@karapetsas.com>
  */
 
 #ifdef HAVE_CONFIG_H
@@ -830,6 +830,7 @@ about_cb(GtkAction *action, gpointer data)
 		"Copyright \xc2\xa9 2002-2003 Jörgen Scheibengruber";
 
 	gtk_show_about_dialog (NULL,
+			       "title", _("About MATE Netspeed"),
 			       "version", VERSION,
 			       "copyright", copyright,
 			       "comments", _("A little applet that displays some information on the traffic on the specified network device"),
@@ -993,7 +994,7 @@ settings_cb(GtkAction *action, gpointer data)
 
 	category_label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
-	applet->settings = GTK_DIALOG(gtk_dialog_new_with_buttons(_("Mate Netspeed Preferences"),
+	applet->settings = GTK_DIALOG(gtk_dialog_new_with_buttons(_("MATE Netspeed Preferences"),
 								  NULL,
 								  GTK_DIALOG_DESTROY_WITH_PARENT,
 								  "gtk-help", GTK_RESPONSE_HELP,
@@ -1590,7 +1591,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 		return FALSE;
 
 	glibtop_init();
-	g_set_application_name (_("Mate Netspeed"));
+	g_set_application_name (_("MATE Netspeed"));
 
 	icon_theme = gtk_icon_theme_get_default();
 
