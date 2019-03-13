@@ -416,11 +416,6 @@ trash_applet_show_about (GtkAction   *action,
     NULL
   };
 
-  char copyright[] = \
-    "Copyright \xc2\xa9 2012-2018 MATE developers\n"
-    "Copyright \xc2\xa9 2008 Ryan Lortie\n"
-    "Copyright \xc2\xa9 2004 Michiel Sikkes";
-
   static const char *documenters[] = {
     "Michiel Sikkes <michiel@eyesopened.nl>",
     NULL
@@ -429,7 +424,9 @@ trash_applet_show_about (GtkAction   *action,
   gtk_show_about_dialog (NULL,
                          "title", _("About Trash Applet"),
                          "version", VERSION,
-                         "copyright", copyright,
+                         "copyright", _("Copyright \xc2\xa9 2004 Michiel Sikkes\n"
+                                        "Copyright \xc2\xa9 2008 Ryan Lortie\n"
+                                        "Copyright \xc2\xa9 2012-2019 MATE developers"),
                          "comments", _("A MATE trash bin that lives in your panel. "
                                        "You can use it to view the trash or drag "
                                        "and drop items into the trash."),

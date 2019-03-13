@@ -459,10 +459,6 @@ static void
 cpufreq_applet_about_cb (GtkAction     *action,
                          CPUFreqApplet *applet)
 {
-        char copyright[] = \
-                "Copyright \xc2\xa9 2012-2018 MATE developers\n"
-                "Copyright \xC2\xA9 2004 Carlos Garcia Campos";
-
         static const gchar *const authors[] = {
                 "Carlos Garcia Campos <carlosgc@gnome.org>",
                 NULL
@@ -480,7 +476,8 @@ cpufreq_applet_about_cb (GtkAction     *action,
         gtk_show_about_dialog (NULL,
                                "title",         _("About CPU Frequency Scaling Monitor"),
                                "version",       VERSION,
-                               "copyright",     copyright,
+                               "copyright",     _("Copyright \xC2\xA9 2004 Carlos Garcia Campos\n"
+                                                  "Copyright \xc2\xa9 2012-2019 MATE developers"),
                                "comments",      _("This utility shows the current CPU "
                                                   "Frequency Scaling."),
                                "authors",       authors,

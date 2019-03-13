@@ -35,10 +35,6 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 		NULL
 	};
 
-	char copyright[] = \
-		"Copyright \xc2\xa9 2012-2018 MATE developers\n"
-		"Copyright \xC2\xA9 1999-2005 by S. Papadimitriou and others";
-
 	const gchar* documenters[] = {
 		"Dan Mueth <d-mueth@uchicago.edu>",
 		"Spiros Papadimitriou <spapadim+@cs.cmu.edu>",
@@ -50,7 +46,8 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 	gtk_show_about_dialog(NULL,
 		"title", _("About Weather Report"),
 		"version", VERSION,
-		"copyright",   copyright,
+		"copyright", _("Copyright \xC2\xA9 1999-2005 by S. Papadimitriou and others\n"
+		               "Copyright \xc2\xa9 2012-2019 MATE developers"),
 		"comments", _("A panel application for monitoring local weather conditions."),
 		"authors", authors,
 		"documenters", documenters,

@@ -102,9 +102,6 @@ display_about_dialog (GtkAction *action,
 	"James Henstridge <jamesh@canonical.com>",
 	NULL
     };
-    char copyright[] = \
-	"Copyright \xc2\xa9 2012-2018 MATE developers\n"
-	"Copyright \xC2\xA9 2004 Canonical Ltd";
 
     const gchar *documenters[] = {
 	"Dan Mueth <muet@alumni.uchicago.edu>",
@@ -115,7 +112,8 @@ display_about_dialog (GtkAction *action,
     gtk_show_about_dialog (NULL,
 	"title",       _("About Disk Mounter"),
 	"version",     VERSION,
-	"copyright",   copyright,
+	"copyright",   _("Copyright \xC2\xA9 2004 Canonical Ltd\n"
+	                 "Copyright \xc2\xa9 2012-2019 MATE developers"),
 	"comments",    _("Applet for mounting and unmounting block volumes."),
 	"authors",     authors,
 	"documenters", documenters,
