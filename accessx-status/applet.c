@@ -83,9 +83,16 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 
 	const gchar* documenters[] = {
 		"Bill Haneman <bill.haneman@sun.com>",
-		"Sun GNOME Documentation Team <gdocteam@sun.com>",
+		N_("Sun GNOME Documentation Team <gdocteam@sun.com>"),
+		N_("MATE Documentation Team"),
 		NULL
 	};
+
+#ifdef ENABLE_NLS
+	const char **p;
+	for (p = documenters; *p; ++p)
+		*p = _(*p);
+#endif
 
 	gtk_show_about_dialog(NULL,
 		"title", _("About AccessX Status"),

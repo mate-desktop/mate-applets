@@ -38,10 +38,17 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 	const gchar* documenters[] = {
 		"Dan Mueth <d-mueth@uchicago.edu>",
 		"Spiros Papadimitriou <spapadim+@cs.cmu.edu>",
-		"Sun GNOME Documentation Team <gdocteam@sun.com>",
+		N_("Sun GNOME Documentation Team <gdocteam@sun.com>"),
 		"Davyd Madeley <davyd@madeley.id.au>",
+		N_("MATE Documentation Team"),
 		NULL
 	};
+
+#ifdef ENABLE_NLS
+	const char **p;
+	for (p = documenters; *p; ++p)
+		*p = _(*p);
+#endif
 
 	gtk_show_about_dialog(NULL,
 		"title", _("About Weather Report"),

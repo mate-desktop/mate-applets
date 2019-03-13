@@ -418,8 +418,15 @@ trash_applet_show_about (GtkAction   *action,
 
   static const char *documenters[] = {
     "Michiel Sikkes <michiel@eyesopened.nl>",
+    N_("MATE Documentation Team"),
     NULL
   };
+
+#ifdef ENABLE_NLS
+  const char **p;
+  for (p = documenters; *p; ++p)
+    *p = _(*p);
+#endif
 
   gtk_show_about_dialog (NULL,
                          "title", _("About Trash Applet"),
