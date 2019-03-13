@@ -106,8 +106,15 @@ display_about_dialog (GtkAction *action,
     const gchar *documenters[] = {
 	"Dan Mueth <muet@alumni.uchicago.edu>",
 	"John Fleck <jfleck@inkstain.net>",
+	N_("MATE Documentation Team"),
 	NULL
     };
+
+#ifdef ENABLE_NLS
+    const char **p;
+    for (p = documenters; *p; ++p)
+        *p = _(*p);
+#endif
 
     gtk_show_about_dialog (NULL,
 	"title",       _("About Disk Mounter"),
