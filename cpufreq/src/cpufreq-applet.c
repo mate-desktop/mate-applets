@@ -466,12 +466,19 @@ cpufreq_applet_about_cb (GtkAction     *action,
         static const gchar *const documenters[] = {
                 "Carlos Garcia Campos <carlosgc@gnome.org>",
                 "Davyd Madeley <davyd@madeley.id.au>",
+                N_("MATE Documentation Team"),
                 NULL
         };
         static const gchar *const artists[] = {
                 "Pablo Arroyo Loma <zzioma@yahoo.es>",
                 NULL
         };
+
+#ifdef ENABLE_NLS
+	const char **p;
+	for (p = documenters; *p; ++p)
+		*p = _(*p);
+#endif
 
         gtk_show_about_dialog (NULL,
                                "title",         _("About CPU Frequency Scaling Monitor"),

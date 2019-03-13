@@ -163,9 +163,16 @@ about_cb (GtkAction   *action,
 	const gchar *documenters[] = {
                 "Arjan Scherpenisse <acscherp@wins.uva.nl>",
                 "Telsa Gwynne <hobbit@aloss.ukuu.org.uk>",
-                "Sun GNOME Documentation Team <gdocteam@sun.com>",
+                N_("Sun GNOME Documentation Team <gdocteam@sun.com>"),
+                N_("MATE Documentation Team"),
 		NULL
 	};
+
+#ifdef ENABLE_NLS
+	const char **p;
+	for (p = documenters; *p; ++p)
+		*p = _(*p);
+#endif
 
 	gtk_show_about_dialog (NULL,
 		"title",              _("About Eyes"),

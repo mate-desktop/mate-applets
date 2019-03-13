@@ -816,6 +816,7 @@ about_cb( GtkAction *action, ProgressData *battstat )
     "J\xC3\xB6rgen Pehrson <jp@spektr.eu.org>",
     "Trevor Curtis <tcurtis@somaradio.ca>",
     "Davyd Madeley <davyd@madeley.id.au>",
+    N_("MATE Documentation Team"),
     NULL
   };
 
@@ -824,6 +825,12 @@ about_cb( GtkAction *action, ProgressData *battstat )
 		  power_management_using_upower () ?
 		    /* true */ _("upower backend enabled.") :
 			/* false */ _("Legacy backend enabled."));
+
+#ifdef ENABLE_NLS
+  const char **p;
+  for (p = documenters; *p; ++p)
+    *p = _(*p);
+#endif
 
   gtk_show_about_dialog( NULL,
     "title",               _("About Battery Charge Monitor"),
