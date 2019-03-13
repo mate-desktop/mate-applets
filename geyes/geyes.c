@@ -160,10 +160,6 @@ about_cb (GtkAction   *action,
                 NULL
 	};
 
-    char copyright[] = \
-                "Copyright \xc2\xa9 2012-2018 MATE developers\n"
-                "Copyright \xC2\xA9 1999 Dave Camp";
-
 	const gchar *documenters[] = {
                 "Arjan Scherpenisse <acscherp@wins.uva.nl>",
                 "Telsa Gwynne <hobbit@aloss.ukuu.org.uk>",
@@ -176,7 +172,8 @@ about_cb (GtkAction   *action,
 		"version",            VERSION,
 		"comments",           _("A goofy set of eyes for the MATE "
 		                      "panel. They follow your mouse."),
-		"copyright",          copyright,
+		"copyright",          _("Copyright \xC2\xA9 1999 Dave Camp\n"
+		                        "Copyright \xc2\xa9 2012-2019 MATE developers"),
 		"authors",            authors,
 		"documenters",        documenters,
 		"translator-credits", _("translator-credits"),

@@ -812,11 +812,6 @@ about_cb( GtkAction *action, ProgressData *battstat )
     NULL
    };
 
-  char copyright[] = \
-    "Copyright \xc2\xa9 2012-2018 MATE developers\n"
-    "Copyright \xc2\xa9 2002-2005 Free Software Foundation and others\n"
-    "Copyright \xc2\xa9 2000 The Gnulix Society";
-
   const gchar *documenters[] = {
     "J\xC3\xB6rgen Pehrson <jp@spektr.eu.org>",
     "Trevor Curtis <tcurtis@somaradio.ca>",
@@ -833,7 +828,9 @@ about_cb( GtkAction *action, ProgressData *battstat )
   gtk_show_about_dialog( NULL,
     "title",               _("About Battery Charge Monitor"),
     "version",             VERSION,
-    "copyright",           copyright,
+    "copyright",           _("Copyright \xc2\xa9 2000 The Gnulix Society\n"
+                             "Copyright \xc2\xa9 2002-2005 Free Software Foundation and others\n"
+                             "Copyright \xc2\xa9 2012-2019 MATE developers"),
     "comments",            comments,
     "authors",             authors,
     "documenters",         documenters,

@@ -87,15 +87,12 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		NULL
 	};
 
-	char copyright[] = \
-		"Copyright \xc2\xa9 2012-2018 MATE developers\n"
-		"Copyright \xc2\xa9 2003 Sun Microsystems";
-
 	gtk_show_about_dialog(NULL,
 		"title", _("About AccessX Status"),
 		"version", VERSION,
 		"comments", _("Shows the state of AccessX features such as latched modifiers"),
-		"copyright", copyright,
+		"copyright", _("Copyright \xc2\xa9 2003 Sun Microsystems\n"
+		               "Copyright \xc2\xa9 2012-2019 MATE developers"),
 		"authors", authors,
 		"documenters", documenters,
 		"translator-credits", _("translator-credits"),

@@ -566,10 +566,6 @@ about (GtkAction     *action,
 	  NULL
   };
 
-  char copyright[] = \
-    "Copyright \xc2\xa9 2012-2018 MATE developers\n"
-    "Copyright \xc2\xa9 1998, 2004-2005 GNOME Applets Maintainers and others";
-
   static const gchar * const documenters[] = {
           "Dan Mueth <d-mueth@uchicago.edu>",
           "Sun GNOME Documentation Team <gdocteam@sun.com>",
@@ -579,7 +575,8 @@ about (GtkAction     *action,
   gtk_show_about_dialog (NULL,
 	"title",        _("About Character Palette"),
 	"version",	VERSION,
-	"copyright",	copyright,
+	"copyright",	_("Copyright \xc2\xa9 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+	                  "Copyright \xc2\xa9 2012-2019 MATE developers"),
 	"comments",	_("Mate Panel applet for selecting strange "
 			  "characters that are not on my keyboard. "
 			  "Released under GNU General Public Licence."),

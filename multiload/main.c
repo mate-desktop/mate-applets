@@ -42,10 +42,6 @@ about_cb (GtkAction       *action,
 		NULL
     };
 
-    char copyright[] = \
-		"Copyright \xc2\xa9 2012-2018 MATE developers\n"
-		"Copyright \xc2\xa9 1999-2005 Free Software Foundation and others";
-
     const gchar * const documenters[] =
     {
 		"Chee Bin HOH <cbhoh@gnome.org>",
@@ -56,7 +52,8 @@ about_cb (GtkAction       *action,
     gtk_show_about_dialog (NULL,
 	"title",        _("About System Monitor"),
 	"version",	VERSION,
-	"copyright",	copyright,
+	"copyright",	_("Copyright \xc2\xa9 1999-2005 Free Software Foundation and others\n"
+	                  "Copyright \xc2\xa9 2012-2019 MATE developers"),
 	"comments",	_("A system load monitor capable of displaying graphs "
 			"for CPU, ram, and swap space use, plus network "
 			"traffic."),

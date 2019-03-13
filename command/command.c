@@ -104,14 +104,11 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
 {
     const char* authors[] = { "Stefano Karapetsas <stefano@karapetsas.com>", NULL };
 
-    char copyright[] = \
-         "Copyright \xc2\xa9 2015-2018 MATE developers\n"
-         "Copyright \xc2\xa9 2013-2014 Stefano Karapetsas";
-
     gtk_show_about_dialog(NULL,
                           "title", _("About Command Applet"),
                           "version", VERSION,
-                          "copyright", copyright,
+                          "copyright", _("Copyright \xc2\xa9 2013-2014 Stefano Karapetsas\n"
+                                         "Copyright \xc2\xa9 2015-2019 MATE developers"),
                           "authors", authors,
                           "comments", _("Shows the output of a command"),
                           "translator-credits", _("translator-credits"),
