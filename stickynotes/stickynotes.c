@@ -668,10 +668,12 @@ void stickynotes_remove(StickyNote *note)
 	if (stickynote_get_empty(note)
 	    || !g_settings_get_boolean (stickynotes->settings, "confirm-deletion")
 	    || gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_OK) {
-		stickynote_free(note);
 
 		/* Remove the note from the linked-list of all notes */
-		stickynotes->notes = g_list_remove(stickynotes->notes, note);
+		stickynotes->notes = g_list_remove_all (stickynotes->notes, note);
+
+		/* Destroy the note */
+		stickynote_free (note);
 
 		/* Update tooltips */
 		stickynotes_applet_update_tooltips();
