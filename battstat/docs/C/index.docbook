@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
-  <!ENTITY legal SYSTEM "legal.xml">
   <!ENTITY appletversion "1.10.2">
   <!ENTITY applet "Battery Charge Monitor">
 ]>
@@ -66,10 +65,7 @@
       <publishername> GNOME Documentation Project </publishername>
     </publisher>
   
-    &legal;
-<!-- This file  contains link to license for the documentation (GNU FDL), and 
-     other legal stuff such as "NO WARRANTY" statement. Please do not change 
-     any of this. -->
+    <xi:include href="legal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
     <authorgroup>
       <author>
