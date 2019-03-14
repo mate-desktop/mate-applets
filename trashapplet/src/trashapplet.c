@@ -588,10 +588,8 @@ trash_applet_drag_data_received (GtkWidget        *widget,
         }
     }
 
-  g_list_foreach (untrashable, (GFunc)g_object_unref, NULL);
-  g_list_free (untrashable);
-  g_list_foreach (trashed, (GFunc)g_object_unref, NULL);
-  g_list_free (trashed);
+  g_list_free_full (untrashable, g_object_unref);
+  g_list_free_full (trashed, g_object_unref);
 
   g_strfreev (list);
 
