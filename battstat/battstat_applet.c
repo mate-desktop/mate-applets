@@ -750,9 +750,9 @@ destroy_applet( GtkWidget *widget, ProgressData *battstat )
   g_object_unref( G_OBJECT(battstat->status) );
   g_object_unref( G_OBJECT(battstat->percent) );
 
-  g_free( battstat );
-
   static_global_teardown (battstat);
+
+  g_free (battstat);
 }
 
 /* Common function invoked by the 'Help' context menu item and the 'Help'
