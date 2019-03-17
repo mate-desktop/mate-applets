@@ -13,7 +13,9 @@
 # Marco Bartolucci <nap.84@live.it>, 2018
 # Mat V <enthusedquill6@gmail.com>, 2018
 # l3nn4rt, 2018
-# Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2018
+# Giuseppe Pignataro <rogepix@gmail.com>, 2018
+# Enrico B. <enricobe@hotmail.com>, 2019
+# andrea pittaro <transifex@andreapittaro.it>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -22,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 12:16+0200\n"
 "PO-Revision-Date: 2018-03-11 16:19+0000\n"
-"Last-Translator: Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2018\n"
+"Last-Translator: andrea pittaro <transifex@andreapittaro.it>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -185,15 +187,15 @@ msgstr[1] "%d minuti fino alla carica (%d%%)"
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ora (%d h %%m ) rimanente"
+msgstr[1] "%d ore (%d%%) rimanenti"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ora alla ricarica completa (%d %%)"
+msgstr[1] "%d ore alla ricarica completa (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -246,7 +248,9 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"Hai %d minuto di batteria rimanente ( %d su una capacità totale di %%)"
 msgstr[1] ""
+"Hai %d minuti di batteria rimanenti (%d su una capacità totale di %%)"
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -854,7 +858,7 @@ msgstr "Gli occhi fissano in direzione del puntatore del mouse"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "Fabbrica applet Occhi"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -875,7 +879,7 @@ msgstr ""
 
 #: ../geyes/themes.c:285
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Impostazioni di Occhi"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -2534,8 +2538,8 @@ msgstr "_Apri cestino"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d elemento nel cestino"
+msgstr[1] "%d elementi nel cestino"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
