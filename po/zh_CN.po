@@ -4,14 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 玉堂白鹤 <yjwork@qq.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Wylmer Wang, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Mingcong Bai <jeffbai@aosc.xyz>, 2018
-# Mingye Wang <arthur200126@gmail.com>, 2018
-# zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2018
-# liushuyu011 <liushuyu011@gmail.com>, 2018
+# 玉堂白鹤 <yjwork@qq.com>, 2019
+# Martin Wimpress <code@flexion.org>, 2019
+# CNAmira <forucial@icloud.com>, 2019
+# Wylmer Wang, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# liushuyu011 <liushuyu011@gmail.com>, 2019
+# Mingye Wang <arthur200126@gmail.com>, 2019
+# zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2019
+# Mingcong Bai <jeffbai@aosc.xyz>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -19,8 +20,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 12:26+0200\n"
-"PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: liushuyu011 <liushuyu011@gmail.com>, 2018\n"
+"PO-Revision-Date: 2019-03-13 08:55+0000\n"
+"Last-Translator: Mingcong Bai <jeffbai@aosc.xyz>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +51,9 @@ msgstr ""
 "玉堂白鹤 <yjwork@qq.com>, 2015\n"
 "Mingye Wang <arthur200126@gmail.com>, 2015-2016\n"
 "白铭骢 <jeffbai@aosc.xyz>, 2015-2016\n"
-"刘子兴 <liushuyu@aosc.xyz>, 2015-2016"
+"刘子兴 <liushuyu@aosc.xyz>, 2015-2016\n"
+"比丘<shenshuaiwen@gmail.com>,2018-2019\n"
+"李克卿<auroracloud4096@gmail.com>,2018"
 
 #: ../accessx-status/applet.c:119
 #, c-format
@@ -76,7 +79,7 @@ msgstr "键盘辅助功能首选项(_K)"
 #: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
-msgstr "帮助（_H）"
+msgstr "帮助(_H)"
 
 #: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
 #: ../charpick/charpick.c:671 ../command/command.c:75
@@ -171,25 +174,25 @@ msgstr "剩余充电时间未知 (%d%%)"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] "还剩 %d 分钟 (%d%%)"
+msgstr[0] "还剩 %d 分钟（%d%%）"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] "离充满还剩 %d 分钟 (%d%%)"
+msgstr[0] "距充满还剩 %d 分钟（%d%%）"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] "还剩 %d 小时 (%d%%)"
+msgstr[0] "还剩 %d 小时（%d%%）"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] "离充满还剩 %d 小时 (%d%%)"
+msgstr[0] "距充满还剩 %d 小时（%d%%）"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -201,12 +204,12 @@ msgstr "还剩 %d %s %d %s (%d%%)"
 #: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "小时"
+msgstr[0] "时"
 
 #: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] "分钟"
+msgstr[0] "分"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -239,7 +242,7 @@ msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] "电池还剩 %d 分钟(总容量的 %d%%)。"
+msgstr[0] "剩余可用电量 %d 分钟（总容量的 %d%%）"
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -498,7 +501,7 @@ msgstr "包含可用字符板的字符串列表"
 
 #: ../charpick/properties.c:28
 msgid "_Edit"
-msgstr "编辑（_E）"
+msgstr "编辑(_E)"
 
 #: ../charpick/properties.c:116
 msgid "_Palette:"
@@ -821,7 +824,7 @@ msgstr "一双凝视着鼠标指针方向的眼睛"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "眼睛小程序工厂"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -841,7 +844,7 @@ msgstr "试图装入主题时发生了严重错误。"
 
 #: ../geyes/themes.c:285
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "眼睛小程序首选项"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -1213,7 +1216,7 @@ msgstr "处理器"
 
 #: ../multiload/main.c:276 ../multiload/properties.c:608
 msgid "Memory"
-msgstr "记忆"
+msgstr "内存"
 
 #: ../multiload/main.c:278 ../multiload/properties.c:616
 msgid "Network"
@@ -2396,7 +2399,7 @@ msgstr "停止计时(_S)"
 
 #: ../timerapplet/timerapplet.c:82
 msgid "R_eset"
-msgstr ""
+msgstr "重置(_E)"
 
 #: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
