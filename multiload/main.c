@@ -42,7 +42,7 @@ about_cb (GtkAction       *action,
 		NULL
     };
 
-    const gchar * const documenters[] =
+    const gchar* documenters[] =
     {
 		"Chee Bin HOH <cbhoh@gnome.org>",
 		N_("Sun GNOME Documentation Team <gdocteam@sun.com>"),

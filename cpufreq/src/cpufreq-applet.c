@@ -463,7 +463,7 @@ cpufreq_applet_about_cb (GtkAction     *action,
                 "Carlos Garcia Campos <carlosgc@gnome.org>",
                 NULL
         };
-        static const gchar *const documenters[] = {
+        static const gchar* documenters[] = {
                 "Carlos Garcia Campos <carlosgc@gnome.org>",
                 "Davyd Madeley <davyd@madeley.id.au>",
                 N_("MATE Documentation Team"),
