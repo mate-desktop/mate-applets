@@ -566,7 +566,7 @@ about (GtkAction     *action,
 	  NULL
   };
 
-  static const gchar * const documenters[] = {
+  static const gchar* documenters[] = {
           "Dan Mueth <d-mueth@uchicago.edu>",
           N_("Sun GNOME Documentation Team <gdocteam@sun.com>"),
           N_("MATE Documentation Team"),
