@@ -123,9 +123,10 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
         struct statvfs statresult;
         glibtop_fsusage fsusage;
 
-        if (strcmp(mountentries[i].type, "smbfs") == 0
-            || strcmp(mountentries[i].type, "nfs") == 0
-            || strcmp(mountentries[i].type, "cifs") == 0)
+        if (strstr (mountentries[i].devname, "/dev/") == NULL)
+            continue;
+
+        if (strstr (mountentries[i].mountdir, "/media/") != NULL)
             continue;
 
         if (statvfs (mountentries[i].mountdir, &statresult) < 0)
