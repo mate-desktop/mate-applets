@@ -184,6 +184,12 @@ static void place_widgets (MateWeatherApplet *gw_applet)
     else 
         gw_applet->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
+    /* better for vertical panels */
+    if (horizontal)
+        gtk_widget_set_valign (gw_applet->box, GTK_ALIGN_CENTER);
+    else
+        gtk_widget_set_halign (gw_applet->box, GTK_ALIGN_CENTER);
+
     /* Rebuild the applet it's visual area */
     gtk_container_add (GTK_CONTAINER (gw_applet->applet), gw_applet->box);
     gtk_box_pack_start (GTK_BOX (gw_applet->box), gw_applet->image, TRUE, TRUE, 0);
