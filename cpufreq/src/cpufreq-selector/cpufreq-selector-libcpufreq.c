@@ -23,6 +23,7 @@
 #include <glib/gstdio.h>
 #include <cpufreq.h>
 #include <stdlib.h>
+#include <linux/version.h>
 
 #include "cpufreq-selector-libcpufreq.h"
 
@@ -38,8 +39,15 @@ static gboolean cpufreq_selector_libcpufreq_set_governor  (CPUFreqSelector      
 
 G_DEFINE_TYPE (CPUFreqSelectorLibcpufreq, cpufreq_selector_libcpufreq, CPUFREQ_TYPE_SELECTOR)
 
-typedef struct cpufreq_policy                CPUFreqPolicy;
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 1, 0)
 typedef struct cpufreq_available_frequencies CPUFreqFrequencyList;
+#else
+typedef struct cpufreq_frequencies CPUFreqFrequencyList;
+#define cpufreq_get_available_frequencies(cpu) cpufreq_get_frequencies ("available", cpu)
+#define cpufreq_put_available_frequencies(first) cpufreq_put_frequencies (first)
+#endif
+
+typedef struct cpufreq_policy                CPUFreqPolicy;
 typedef struct cpufreq_available_governors   CPUFreqGovernorList;
 
 static void
