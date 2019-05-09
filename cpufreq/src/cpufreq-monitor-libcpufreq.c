@@ -36,8 +36,15 @@ static GList   *cpufreq_monitor_libcpufreq_get_available_governors   (CPUFreqMon
 
 G_DEFINE_TYPE (CPUFreqMonitorLibcpufreq, cpufreq_monitor_libcpufreq, CPUFREQ_TYPE_MONITOR)
 
-typedef struct cpufreq_policy                CPUFreqPolicy;
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 1, 0)
 typedef struct cpufreq_available_frequencies CPUFreqFrequencyList;
+#else
+typedef struct cpufreq_frequencies CPUFreqFrequencyList;
+#define cpufreq_get_available_frequencies(cpu) cpufreq_get_frequencies ("available", cpu)
+#define cpufreq_put_available_frequencies(first) cpufreq_put_frequencies (first)
+#endif
+
+typedef struct cpufreq_policy                CPUFreqPolicy;
 typedef struct cpufreq_available_governors   CPUFreqGovernorList;
 
 static void
