@@ -53,10 +53,7 @@ enum {
 	PROP_MATEWEATHER_APPLET,
 };
 
-G_DEFINE_TYPE(MateWeatherDialog, mateweather_dialog, GTK_TYPE_DIALOG);
-
-#define MATEWEATHER_DIALOG_GET_PRIVATE(obj) \
-	(G_TYPE_INSTANCE_GET_PRIVATE((obj), MATEWEATHER_TYPE_DIALOG, MateWeatherDialogPrivate))
+G_DEFINE_TYPE_WITH_PRIVATE (MateWeatherDialog, mateweather_dialog, GTK_TYPE_DIALOG);
 
 #define MONOSPACE_FONT_SCHEMA  "org.mate.interface"
 #define MONOSPACE_FONT_KEY     "monospace-font-name"
@@ -642,7 +639,7 @@ static void mateweather_dialog_get_property(GObject* object, guint prop_id, GVal
 
 static void mateweather_dialog_init(MateWeatherDialog* self)
 {
-    self->priv = MATEWEATHER_DIALOG_GET_PRIVATE (self);
+    self->priv = mateweather_dialog_get_instance_private (self);
 }
 
 static GObject* mateweather_dialog_constructor(GType type, guint n_construct_params, GObjectConstructParam* construct_params)
@@ -690,6 +687,4 @@ static void mateweather_dialog_class_init(MateWeatherDialogClass* klass)
 
     /* This becomes an OBJECT property when MateWeatherApplet is redone */
     g_object_class_install_property(object_class, PROP_MATEWEATHER_APPLET, g_param_spec_pointer ("mateweather-applet", "MateWeather Applet", "The MateWeather Applet", G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
-
-    g_type_class_add_private(klass, sizeof(MateWeatherDialogPrivate));
 }
