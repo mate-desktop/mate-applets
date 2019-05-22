@@ -21,9 +21,6 @@
 
 #include "cpufreq-monitor.h"
 
-#define CPUFREQ_MONITOR_GET_PRIVATE(obj) \
-        (G_TYPE_INSTANCE_GET_PRIVATE((obj), CPUFREQ_TYPE_MONITOR, CPUFreqMonitorPrivate))
-
 #define CPUFREQ_MONITOR_INTERVAL 1
 
 /* Properties */
@@ -70,12 +67,12 @@ static void   cpufreq_monitor_get_property (GObject             *object,
 
 static guint signals[N_SIGNALS] = { 0 };
 
-G_DEFINE_ABSTRACT_TYPE (CPUFreqMonitor, cpufreq_monitor, G_TYPE_OBJECT)
+G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (CPUFreqMonitor, cpufreq_monitor, G_TYPE_OBJECT)
 
 static void
 cpufreq_monitor_init (CPUFreqMonitor *monitor)
 {
-        monitor->priv = CPUFREQ_MONITOR_GET_PRIVATE (monitor);
+        monitor->priv = cpufreq_monitor_get_instance_private (monitor);
 
         monitor->priv->governor = NULL;
         monitor->priv->available_freqs = NULL;
@@ -98,8 +95,6 @@ cpufreq_monitor_class_init (CPUFreqMonitorClass *klass)
         klass->get_available_frequencies = NULL;
         klass->get_available_governors = NULL;
 
-        g_type_class_add_private (klass, sizeof (CPUFreqMonitorPrivate));
-        
         /* Porperties */
         g_object_class_install_property (object_class,
                                          PROP_CPU,
