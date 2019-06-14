@@ -23,9 +23,9 @@
  */
 
 #include <config.h>
-#include <string.h>
 
 #include <glib.h>
+#include <gmodule.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
@@ -278,9 +278,9 @@ process_command_output (CommandApplet *command_applet, gchar *output)
         g_strstrip (output);
 
         /* check output length */
-        if (strlen (output) > command_applet->width)
+        if (g_utf8_strlen (output, strlen(output)) > command_applet->width)
         {
-            output[command_applet->width] = '\0';
+            *g_utf8_offset_to_pointer(output, command_applet->width) = '\0';
         }
 
         gtk_label_set_text (command_applet->label, output);
