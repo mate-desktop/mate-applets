@@ -6,16 +6,16 @@
 # Translators:
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2018
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"POT-Creation-Date: 2019-03-13 18:34+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2018\n"
+"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019\n"
 "Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,17 +23,44 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../accessx-status/applet.c:96
+#: ../accessx-status/applet.c:86 ../charpick/charpick.c:571
+#: ../geyes/geyes.c:166 ../mateweather/mateweather-about.c:41
+#: ../multiload/main.c:48 ../stickynotes/stickynotes_applet_callbacks.c:367
+msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
+msgstr "Sun GNOME 문서 팀 <gdocteam@sun.com>"
+
+#: ../accessx-status/applet.c:87 ../battstat/battstat_applet.c:819
+#: ../charpick/charpick.c:572 ../cpufreq/src/cpufreq-applet.c:469
+#: ../drivemount/drivemount.c:109 ../geyes/geyes.c:167
+#: ../mateweather/mateweather-about.c:43 ../multiload/main.c:49
+#: ../stickynotes/stickynotes_applet_callbacks.c:368
+#: ../trashapplet/src/trashapplet.c:421
+msgid "MATE Documentation Team"
+msgstr "MATE 문서 팀"
+
+#: ../accessx-status/applet.c:98
+msgid "About AccessX Status"
+msgstr "AccessX Status 소개"
+
+#: ../accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "AccessX 기능의 상태를 보여줍니다(예를 들어 변경 키 고정(latched modifiers))"
 
-#: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:587 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
-#: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
-#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
-#: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
+#: ../accessx-status/applet.c:101
+msgid ""
+"Copyright © 2003 Sun Microsystems\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 2003 Sun Microsystems\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../accessx-status/applet.c:105 ../battstat/battstat_applet.c:844
+#: ../charpick/charpick.c:592 ../command/command.c:114
+#: ../cpufreq/src/cpufreq-applet.c:493 ../drivemount/drivemount.c:127
+#: ../geyes/geyes.c:186 ../mateweather/mateweather-about.c:61
+#: ../multiload/main.c:69 ../netspeed/src/netspeed.c:836
+#: ../stickynotes/stickynotes_applet_callbacks.c:388
+#: ../timerapplet/timerapplet.c:278 ../trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
 "Elex https://launchpad.net/~mysticzizone\n"
@@ -43,75 +70,75 @@ msgstr ""
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "MATE Desktop Environment Team <https://www.transifex.com/mate/teams/13566/ko/>"
 
-#: ../accessx-status/applet.c:119
+#: ../accessx-status/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "도움말 보기 프로그램을 실행하는 데 오류가 발생했습니다: %s"
 
-#: ../accessx-status/applet.c:147
+#: ../accessx-status/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr "키보드 설정 대화창 열기"
 
-#: ../accessx-status/applet.c:162
+#: ../accessx-status/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "키보드 기본 설정 대화 상자를 실행하는 데 오류가 발생했습니다: %s"
 
-#: ../accessx-status/applet.c:177
+#: ../accessx-status/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "키보드 접근성 기본 설정(_K)"
 
-#: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
-#: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
-#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
+#: ../accessx-status/applet.c:183 ../battstat/battstat_applet.c:63
+#: ../charpick/charpick.c:673 ../cpufreq/src/cpufreq-applet.c:122
+#: ../drivemount/drivemount.c:165 ../geyes/geyes.c:359
+#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:488
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:671 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
-#: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
-#: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
+#: ../accessx-status/applet.c:184 ../battstat/battstat_applet.c:66
+#: ../charpick/charpick.c:676 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:168
+#: ../geyes/geyes.c:362 ../mateweather/mateweather-applet.c:120
+#: ../multiload/main.c:491 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "정보(_A)"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
-#: ../accessx-status/applet.c:499 ../accessx-status/applet.c:553
+#: ../accessx-status/applet.c:504 ../accessx-status/applet.c:558
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
-#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
+#: ../accessx-status/applet.c:1043 ../accessx-status/applet.c:1109
+#: ../accessx-status/applet.c:1194 ../accessx-status/applet.c:1388
 msgid "AccessX Status"
 msgstr "AccessX 상태"
 
-#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
+#: ../accessx-status/applet.c:1044 ../accessx-status/applet.c:1195
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "접근성 기능을 사용할 때 키보드 상태를 보여줍니다."
 
-#: ../accessx-status/applet.c:1073
+#: ../accessx-status/applet.c:1078
 msgid "XKB Extension is not enabled"
 msgstr "XKB 확장 기능을 켜지 않았습니다"
 
-#: ../accessx-status/applet.c:1078
+#: ../accessx-status/applet.c:1083
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
 
-#: ../accessx-status/applet.c:1082
+#: ../accessx-status/applet.c:1087
 #, c-format
 msgid "Error: %s"
 msgstr "오류: %s"
 
-#: ../accessx-status/applet.c:1380
+#: ../accessx-status/applet.c:1385
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "키보드 접근성 상태"
 
-#: ../accessx-status/applet.c:1384
+#: ../accessx-status/applet.c:1389
 msgid "Displays current state of keyboard accessibility features"
 msgstr "키보드 접근성 기능의 현재 상태를 보여줍니다"
 
@@ -127,10 +154,10 @@ msgstr "키보드 접근성 상태 애플릿 팩토리"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "키보드 접근성 기능의 상태를 보여줍니다"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:670
 #: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
-#: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
-#: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
+#: ../geyes/geyes.c:356 ../mateweather/mateweather-applet.c:114
+#: ../multiload/main.c:482 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
@@ -276,37 +303,51 @@ msgstr "배터리 상태 알 수 없음"
 msgid "N/A"
 msgstr "없음"
 
-#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:147
-#: ../geyes/geyes.c:339 ../geyes/themes.c:226
+#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:153
+#: ../geyes/geyes.c:344 ../geyes/themes.c:226
 #: ../mateweather/mateweather-applet.c:63
 #: ../mateweather/mateweather-pref.c:751
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
-#: ../stickynotes/stickynotes_applet_callbacks.c:535
+#: ../stickynotes/stickynotes_applet_callbacks.c:540
 #: ../trashapplet/src/trashapplet.c:399
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "도움말을 보여주는 데 오류가 발생했습니다: %s"
 
-#: ../battstat/battstat_applet.c:828
+#: ../battstat/battstat_applet.c:824
 msgid "This utility shows the status of your laptop battery."
 msgstr "이 유틸리티는 랩탑 배터리의 상태를 보여 줍니다."
 
 #. true
-#: ../battstat/battstat_applet.c:830
+#: ../battstat/battstat_applet.c:826
 msgid "upower backend enabled."
 msgstr "upower 백엔드를 활성화했습니다."
 
 #. false
-#: ../battstat/battstat_applet.c:831
+#: ../battstat/battstat_applet.c:827
 msgid "Legacy backend enabled."
 msgstr "레거시 백엔드 사용."
 
-#: ../battstat/battstat_applet.c:1109 ../battstat/battstat_applet.c:1159
+#: ../battstat/battstat_applet.c:836
+msgid "About Battery Charge Monitor"
+msgstr "배터리 충전 정보 소개"
+
+#: ../battstat/battstat_applet.c:838
+msgid ""
+"Copyright © 2000 The Gnulix Society\n"
+"Copyright © 2002-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 2000 The Gnulix Society\n"
+"Copyright © 2002-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../battstat/battstat_applet.c:1114 ../battstat/battstat_applet.c:1164
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
 msgstr "배터리 충전 정보"
 
-#: ../battstat/battstat_applet.c:1160
+#: ../battstat/battstat_applet.c:1165
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
 msgstr "랩탑의 남은 전력량을 봅니다"
@@ -447,19 +488,31 @@ msgstr "특수 문자 입력"
 msgid "insert special character %s"
 msgstr "특수 문자 %s 입력"
 
-#: ../charpick/charpick.c:582
+#: ../charpick/charpick.c:583
+msgid "About Character Palette"
+msgstr "문자 팔레트 소개"
+
+#: ../charpick/charpick.c:585
+msgid ""
+"Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../charpick/charpick.c:587
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
 msgstr "내 키보드에 없는 이상한 글자를 선택하는 마테 패널 애플릿.  GNU 일반 공중 라이선스로 배포함."
 
-#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
+#: ../charpick/charpick.c:699 ../charpick/charpick.c:713
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "문자 팔레트"
 
-#: ../charpick/charpick.c:694
+#: ../charpick/charpick.c:699
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "문자 입력"
@@ -547,34 +600,46 @@ msgstr "선택한 팔레트를 삭제하려면 클릭하십시오"
 msgid "Character Palette Preferences"
 msgstr "문자 팔레트 기본 설정"
 
-#: ../command/command.c:115
+#: ../command/command.c:108
+msgid "About Command Applet"
+msgstr "명령 애플릿 소개"
+
+#: ../command/command.c:110
+msgid ""
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+
+#: ../command/command.c:113
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
 msgstr "명령 출력을 표시합니다"
 
-#: ../command/command.c:133
+#: ../command/command.c:131
 msgid "Command Applet Preferences"
 msgstr "명령 애플릿 기본 설정"
 
-#: ../command/command.c:146
+#: ../command/command.c:144
 msgid "Command:"
 msgstr "명령:"
 
-#: ../command/command.c:154
+#: ../command/command.c:152
 msgid "Interval (seconds):"
 msgstr "주기(초):"
 
-#: ../command/command.c:162
+#: ../command/command.c:160
 msgid "Maximum width (chars):"
 msgstr "최대 폭 (문자):"
 
-#: ../command/command.c:170
+#: ../command/command.c:168
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
 msgid "Show icon"
 msgstr "아이콘 표시"
 
-#: ../command/command.c:321
+#: ../command/command.c:319
 msgid "Command Applet"
 msgstr "명령 애플릿"
 
@@ -647,7 +712,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "CPU 주파수을 퍼센트로 표시(_P)"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
+#: ../cpufreq/src/cpufreq-applet.c:816 ../cpufreq/src/cpufreq-applet.c:871
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU 주파수 스케일링 정보"
 
@@ -692,11 +757,23 @@ msgstr "값이 0이면 CPU 주파수를 표시하고, 1이면 주파수와 단�
 msgid "Could not open help document"
 msgstr "도움말 문서를 열 수 없습니다"
 
-#: ../cpufreq/src/cpufreq-applet.c:483
+#: ../cpufreq/src/cpufreq-applet.c:484
+msgid "About CPU Frequency Scaling Monitor"
+msgstr "CPU 주파수 스케일링 정보 소개"
+
+#: ../cpufreq/src/cpufreq-applet.c:486
+msgid ""
+"Copyright © 2004 Carlos Garcia Campos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 2004 Carlos Garcia Campos\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../cpufreq/src/cpufreq-applet.c:488
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "이 유틸리티는 CPU 주파수 스케일링을 표시합니다."
 
-#: ../cpufreq/src/cpufreq-applet.c:867
+#: ../cpufreq/src/cpufreq-applet.c:872
 msgid "This utility shows the current CPU Frequency"
 msgstr "이 유틸리티는 현재 CPU 주파수을 표시합니다."
 
@@ -778,11 +855,23 @@ msgstr "%s 마운트(_M)"
 msgid "_Eject %s"
 msgstr "%s 꺼내기(_E)"
 
-#: ../drivemount/drivemount.c:118
+#: ../drivemount/drivemount.c:120
+msgid "About Disk Mounter"
+msgstr "디스크 마운터 소개"
+
+#: ../drivemount/drivemount.c:122
+msgid ""
+"Copyright © 2004 Canonical Ltd\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 2004 Canonical Ltd\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "블록 볼륨을 마운트하고 마운트 해제하는 데 쓰이는 애플릿."
 
-#: ../drivemount/drivemount.c:179 ../drivemount/drivemount.c:219
+#: ../drivemount/drivemount.c:185 ../drivemount/drivemount.c:225
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
 msgid "Disk Mounter"
 msgstr "디스크 마운트"
@@ -799,16 +888,28 @@ msgstr "드라이브 마운트 애플릿을 위한 팩토리"
 msgid "Mount local disks and devices"
 msgstr "로컬 디스크와 장치를 마운트합니다"
 
-#: ../geyes/geyes.c:176
+#: ../geyes/geyes.c:178
+msgid "About Eyes"
+msgstr "눈동자 소개"
+
+#: ../geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "마테 패널용 단순한 눈동자 두 개. 마우스를 따라 다닙니다."
 
-#: ../geyes/geyes.c:384 ../geyes/geyes.c:414 ../geyes/geyes.c:416
+#: ../geyes/geyes.c:182
+msgid ""
+"Copyright © 1999 Dave Camp\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 1999 Dave Camp\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../geyes/geyes.c:389 ../geyes/geyes.c:419 ../geyes/geyes.c:421
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
 msgid "Eyes"
 msgstr "눈동자"
 
-#: ../geyes/geyes.c:417
+#: ../geyes/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "마우스 포인터가 있는 방향을 바라보는 눈동자"
 
@@ -844,7 +945,19 @@ msgstr "테마"
 msgid "_Select a theme:"
 msgstr "테마 선택(_S):"
 
-#: ../mateweather/mateweather-about.c:53
+#: ../mateweather/mateweather-about.c:54
+msgid "About Weather Report"
+msgstr "날씨 알림 소개"
+
+#: ../mateweather/mateweather-about.c:56
+msgid ""
+"Copyright © 1999-2005 by S. Papadimitriou and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 1999-2005 by S. Papadimitriou and others\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "지역의 날씨 상태를 표시하는 패널 애플릿."
 
@@ -1185,48 +1298,60 @@ msgstr "날씨 애플릿을 만드는 팩토리."
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "현재 날씨 상태를 표시하고, 예보합니다"
 
-#: ../multiload/main.c:59
+#: ../multiload/main.c:60
+msgid "About System Monitor"
+msgstr "시스템 정보 소개"
+
+#: ../multiload/main.c:62
+msgid ""
+"Copyright © 1999-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 1999-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../multiload/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
 msgstr "시스템 사용량 모니터는 CPU, 램, 스왑 공간 사용량 및 네트워크 사용량을 그래프로 보여줍니다."
 
-#: ../multiload/main.c:124
+#: ../multiload/main.c:129
 msgid "Start system-monitor"
 msgstr "시스템 모니터 시작하기"
 
-#: ../multiload/main.c:146
+#: ../multiload/main.c:151
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "'%s'(을)를 실행하는 중 오류가 발생했습니다: %s"
 
-#: ../multiload/main.c:274 ../multiload/properties.c:600
+#: ../multiload/main.c:279 ../multiload/properties.c:600
 msgid "Processor"
 msgstr "프로세서"
 
-#: ../multiload/main.c:276 ../multiload/properties.c:608
+#: ../multiload/main.c:281 ../multiload/properties.c:608
 msgid "Memory"
 msgstr "메모리"
 
-#: ../multiload/main.c:278 ../multiload/properties.c:616
+#: ../multiload/main.c:283 ../multiload/properties.c:616
 msgid "Network"
 msgstr "네트워크"
 
-#: ../multiload/main.c:280 ../multiload/properties.c:625
+#: ../multiload/main.c:285 ../multiload/properties.c:625
 msgid "Swap Space"
 msgstr "스왑 공간"
 
-#: ../multiload/main.c:282 ../multiload/main.c:361
+#: ../multiload/main.c:287 ../multiload/main.c:366
 msgid "Load Average"
 msgstr "평균 사용량"
 
-#: ../multiload/main.c:284
+#: ../multiload/main.c:289
 msgid "Disk"
 msgstr "디스크"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#: ../multiload/main.c:300
+#: ../multiload/main.c:305
 #, c-format
 msgid ""
 "%s:\n"
@@ -1237,13 +1362,13 @@ msgstr ""
 "%u%% 사용중, 그 중에서\n"
 "%u%%는 캐시"
 
-#: ../multiload/main.c:308
+#: ../multiload/main.c:313
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "시스템 사용량 평균은 %0.02f입니다"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:316
+#: ../multiload/main.c:321
 #, c-format
 msgid ""
 "%s:\n"
@@ -1254,7 +1379,7 @@ msgstr ""
 "%s 받음\n"
 "%s 보냄"
 
-#: ../multiload/main.c:332
+#: ../multiload/main.c:337
 #, c-format
 msgid ""
 "%s:\n"
@@ -1266,31 +1391,31 @@ msgstr[0] ""
 "%s:\n"
 "%u%% 사용 중"
 
-#: ../multiload/main.c:357
+#: ../multiload/main.c:362
 msgid "CPU Load"
 msgstr "CPU 사용량"
 
-#: ../multiload/main.c:358
+#: ../multiload/main.c:363
 msgid "Memory Load"
 msgstr "메모리 사용량"
 
-#: ../multiload/main.c:359
+#: ../multiload/main.c:364
 msgid "Net Load"
 msgstr "네트웍 사용량"
 
-#: ../multiload/main.c:360
+#: ../multiload/main.c:365
 msgid "Swap Load"
 msgstr "스왑 사용량"
 
-#: ../multiload/main.c:362
+#: ../multiload/main.c:367
 msgid "Disk Load"
 msgstr "디스크 사용량"
 
-#: ../multiload/main.c:480
+#: ../multiload/main.c:485
 msgid "_Open System Monitor"
 msgstr "시스템 정보 열기(_O)"
 
-#: ../multiload/main.c:512
+#: ../multiload/main.c:517
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
 msgstr "시스템 정보"
@@ -1809,134 +1934,148 @@ msgstr ""
 "도움말을 표시하는데 오류가 있습니다:\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:835
+#: ../netspeed/src/netspeed.c:828
+msgid "About MATE Netspeed"
+msgstr "마테 넷스피드 소개"
+
+#: ../netspeed/src/netspeed.c:830
+msgid ""
+"Copyright © 2002-2003 Jörgen Scheibengruber\n"
+"Copyright © 2011-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+"Copyright © 2002-2003 Jörgen Scheibengruber\n"
+"Copyright © 2011-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+
+#: ../netspeed/src/netspeed.c:833
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr "지정 네트워크 장치의 트래픽 정보를 보여주는 작은 애플릿입니다"
 
-#: ../netspeed/src/netspeed.c:996
-msgid "Mate Netspeed Preferences"
+#: ../netspeed/src/netspeed.c:994
+msgid "MATE Netspeed Preferences"
 msgstr "마테 넷스피드 기본 설정"
 
-#: ../netspeed/src/netspeed.c:1018
+#: ../netspeed/src/netspeed.c:1016
 msgid "General Settings"
 msgstr "일반 설정"
 
-#: ../netspeed/src/netspeed.c:1040
+#: ../netspeed/src/netspeed.c:1038
 msgid "Network _device:"
 msgstr "네트워크 장치(_D):"
 
 #. Default means device with default route set
-#: ../netspeed/src/netspeed.c:1052
+#: ../netspeed/src/netspeed.c:1050
 msgid "Default"
 msgstr "기본값"
 
-#: ../netspeed/src/netspeed.c:1065
+#: ../netspeed/src/netspeed.c:1063
 msgid "Show _sum instead of in & out"
 msgstr "송수신 대신 합계 표시(_S)"
 
-#: ../netspeed/src/netspeed.c:1069
+#: ../netspeed/src/netspeed.c:1067
 msgid "Show _bits instead of bytes"
 msgstr "바이트 단위 대신 비트 단위 표시(_B)"
 
-#: ../netspeed/src/netspeed.c:1073
+#: ../netspeed/src/netspeed.c:1071
 msgid "Shorten _unit legend"
 msgstr "단위 범례 단순화(_U)"
 
-#: ../netspeed/src/netspeed.c:1077
+#: ../netspeed/src/netspeed.c:1075
 msgid "_Change icon according to the selected device"
 msgstr "선택한 장치에 따라 아이콘 바꾸기(_C)"
 
-#: ../netspeed/src/netspeed.c:1081
+#: ../netspeed/src/netspeed.c:1079
 msgid "Show _icon"
 msgstr "아이콘 표시(_I)"
 
-#: ../netspeed/src/netspeed.c:1085
+#: ../netspeed/src/netspeed.c:1083
 msgid "Show signal _quality icon for wireless devices"
 msgstr "무선 장비를 위한 신호 감도 아이콘 표시(_Q)"
 
-#: ../netspeed/src/netspeed.c:1203
+#: ../netspeed/src/netspeed.c:1201
 #, c-format
 msgid "Device Details for %s"
 msgstr "%s 장치 세부 사항"
 
-#: ../netspeed/src/netspeed.c:1228
+#: ../netspeed/src/netspeed.c:1226
 msgid "_In graph color"
 msgstr "수신 그래프 색상(_I)"
 
-#: ../netspeed/src/netspeed.c:1229
+#: ../netspeed/src/netspeed.c:1227
 msgid "_Out graph color"
 msgstr "송신 그래프 색상(_O)"
 
-#: ../netspeed/src/netspeed.c:1245
+#: ../netspeed/src/netspeed.c:1243
 msgid "Internet Address:"
 msgstr "인터넷 주소:"
 
-#: ../netspeed/src/netspeed.c:1246
+#: ../netspeed/src/netspeed.c:1244
 msgid "Netmask:"
 msgstr "넷마스크:"
 
-#: ../netspeed/src/netspeed.c:1247
+#: ../netspeed/src/netspeed.c:1245
 msgid "Hardware Address:"
 msgstr "하드웨어 주소:"
 
-#: ../netspeed/src/netspeed.c:1248
+#: ../netspeed/src/netspeed.c:1246
 msgid "P-t-P Address:"
 msgstr "P-t-P 주소:"
 
-#: ../netspeed/src/netspeed.c:1249
+#: ../netspeed/src/netspeed.c:1247
 msgid "Bytes in:"
 msgstr "수신 바이트 수:"
 
-#: ../netspeed/src/netspeed.c:1250
+#: ../netspeed/src/netspeed.c:1248
 msgid "Bytes out:"
 msgstr "송신 바이트 수:"
 
+#: ../netspeed/src/netspeed.c:1250 ../netspeed/src/netspeed.c:1251
 #: ../netspeed/src/netspeed.c:1252 ../netspeed/src/netspeed.c:1253
-#: ../netspeed/src/netspeed.c:1254 ../netspeed/src/netspeed.c:1255
 msgid "none"
 msgstr "없음"
 
-#: ../netspeed/src/netspeed.c:1306
+#: ../netspeed/src/netspeed.c:1304
 msgid "IPV6 Address:"
 msgstr "IPv6 주소:"
 
-#: ../netspeed/src/netspeed.c:1339
+#: ../netspeed/src/netspeed.c:1337
 msgid "Signal Strength:"
 msgstr "신호 세기:"
 
-#: ../netspeed/src/netspeed.c:1340
+#: ../netspeed/src/netspeed.c:1338
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1381
+#: ../netspeed/src/netspeed.c:1379
 msgid "Device _Details"
 msgstr "장치 세부 사항(_D)"
 
-#: ../netspeed/src/netspeed.c:1383
+#: ../netspeed/src/netspeed.c:1381
 msgid "Preferences..."
 msgstr "기본 설정..."
 
-#: ../netspeed/src/netspeed.c:1385
+#: ../netspeed/src/netspeed.c:1383
 msgid "Help"
 msgstr "도움말"
 
-#: ../netspeed/src/netspeed.c:1387
+#: ../netspeed/src/netspeed.c:1385
 msgid "About..."
 msgstr "정보..."
 
-#: ../netspeed/src/netspeed.c:1428
+#: ../netspeed/src/netspeed.c:1426
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "%s의 연결을 끊으시겠습니까?"
 
-#: ../netspeed/src/netspeed.c:1432
+#: ../netspeed/src/netspeed.c:1430
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "%s을(를) 연결하시겠습니까?"
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -1945,12 +2084,12 @@ msgstr ""
 "<b>명령문 %s 실행 실패</b>\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:1518
+#: ../netspeed/src/netspeed.c:1516
 #, c-format
 msgid "%s is down"
 msgstr "%s 장치를 껐습니다"
 
-#: ../netspeed/src/netspeed.c:1523
+#: ../netspeed/src/netspeed.c:1521
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -1959,11 +2098,11 @@ msgstr ""
 "%s: %s\n"
 "수신: %s 송신: %s"
 
-#: ../netspeed/src/netspeed.c:1525 ../netspeed/src/netspeed.c:1534
+#: ../netspeed/src/netspeed.c:1523 ../netspeed/src/netspeed.c:1532
 msgid "has no ip"
 msgstr "IP 없음"
 
-#: ../netspeed/src/netspeed.c:1532
+#: ../netspeed/src/netspeed.c:1530
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -1972,7 +2111,7 @@ msgstr ""
 "%s: %s\n"
 "s합계: %s"
 
-#: ../netspeed/src/netspeed.c:1541
+#: ../netspeed/src/netspeed.c:1539
 #, c-format
 msgid ""
 "\n"
@@ -1983,12 +2122,12 @@ msgstr ""
 "ESSID: %s\n"
 "세기: %d %%"
 
-#: ../netspeed/src/netspeed.c:1542
+#: ../netspeed/src/netspeed.c:1540
 msgid "unknown"
 msgstr "알 수 없음"
 
-#: ../netspeed/src/netspeed.c:1593
-msgid "Mate Netspeed"
+#: ../netspeed/src/netspeed.c:1591
+msgid "MATE Netspeed"
 msgstr "마테 넷스피드"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
@@ -2345,6 +2484,20 @@ msgid "Show sticky notes"
 msgstr "메모지 보기"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
+msgid "About Sticky Notes"
+msgstr "스티키 노트 소개"
+
+#: ../stickynotes/stickynotes_applet_callbacks.c:381
+msgid ""
+"Copyright © 2002-2003 Loban A Rahman\n"
+"Copyright © 2005 Davyd Madeley\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 2002-2003 Loban A Rahman\n"
+"Copyright © 2005 Davyd Madeley\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "마테 데스크톱 환경을 위한 메모지"
 
@@ -2357,7 +2510,7 @@ msgid "Timer"
 msgstr "타이머"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:279
+#: ../timerapplet/timerapplet.c:277
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "타이머를 시작하고 끝나면 알림을 받습니다"
 
@@ -2397,35 +2550,47 @@ msgstr "초기화(_E)"
 msgid "Timer finished!"
 msgstr "타이머 동작이 끝났습니다!"
 
-#: ../timerapplet/timerapplet.c:312
+#: ../timerapplet/timerapplet.c:272
+msgid "About Timer Applet"
+msgstr "타이머 애플릿 소개"
+
+#: ../timerapplet/timerapplet.c:274
+msgid ""
+"Copyright © 2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+"Copyright © 2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+
+#: ../timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
 msgstr "타이머 애플릿 기본 설정"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:323
 msgid "Name:"
 msgstr "이름:"
 
-#: ../timerapplet/timerapplet.c:334
+#: ../timerapplet/timerapplet.c:332
 msgid "Hours:"
 msgstr "시:"
 
-#: ../timerapplet/timerapplet.c:345
+#: ../timerapplet/timerapplet.c:343
 msgid "Minutes:"
 msgstr "분:"
 
-#: ../timerapplet/timerapplet.c:356
+#: ../timerapplet/timerapplet.c:354
 msgid "Seconds:"
 msgstr "초:"
 
-#: ../timerapplet/timerapplet.c:367
+#: ../timerapplet/timerapplet.c:365
 msgid "Show notification popup"
 msgstr "풍선 알림 표시"
 
-#: ../timerapplet/timerapplet.c:371
+#: ../timerapplet/timerapplet.c:369
 msgid "Show dialog"
 msgstr "대화 상자 표시"
 
-#: ../timerapplet/timerapplet.c:405
+#: ../timerapplet/timerapplet.c:403
 msgid "Timer Applet"
 msgstr "타이머 애플릿"
 
@@ -2465,25 +2630,39 @@ msgstr ""
 "%s"
 
 #: ../trashapplet/src/trashapplet.c:432
+msgid "About Trash Applet"
+msgstr "휴지통 애플릿 소개"
+
+#: ../trashapplet/src/trashapplet.c:434
+msgid ""
+"Copyright © 2004 Michiel Sikkes\n"
+"Copyright © 2008 Ryan Lortie\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Copyright © 2004 Michiel Sikkes\n"
+"Copyright © 2008 Ryan Lortie\n"
+"Copyright © 2012-2019 MATE developers"
+
+#: ../trashapplet/src/trashapplet.c:437
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
 msgstr "패널에 붙어 있는 마테 휴지통. 휴지통을 볼 때 쓸 수도 있고, 휴지통에 끌어 놓는 데도 쓸 수 있습니다."
 
-#: ../trashapplet/src/trashapplet.c:457
+#: ../trashapplet/src/trashapplet.c:462
 msgid "Delete Immediately?"
 msgstr "지금 삭제하시겠습니까?"
 
-#: ../trashapplet/src/trashapplet.c:487
+#: ../trashapplet/src/trashapplet.c:492
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "휴지통으로 옮길 수 없습니다. 지금 삭제하시겠습니까?"
 
-#: ../trashapplet/src/trashapplet.c:492
+#: ../trashapplet/src/trashapplet.c:497
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "일부를 휴지통으로 옮길 수 없습니다. 지금 삭제하시겠습니까?"
 
-#: ../trashapplet/src/trashapplet.c:622
+#: ../trashapplet/src/trashapplet.c:627
 msgid "Trash Applet"
 msgstr "휴지통 애플릿"
 
