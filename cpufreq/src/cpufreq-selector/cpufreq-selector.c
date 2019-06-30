@@ -22,9 +22,6 @@
 #include <glib.h>
 #include "cpufreq-selector.h"
 
-#define CPUFREQ_SELECTOR_GET_PRIVATE(obj) \
-        (G_TYPE_INSTANCE_GET_PRIVATE((obj), CPUFREQ_TYPE_SELECTOR, CPUFreqSelectorPrivate))
-
 enum {
 	PROP_0,
 	PROP_CPU
@@ -46,7 +43,7 @@ static void cpufreq_selector_get_property (GObject              *object,
 					   GValue               *value,
 					   GParamSpec           *spec);
 
-G_DEFINE_ABSTRACT_TYPE (CPUFreqSelector, cpufreq_selector, G_TYPE_OBJECT)
+G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (CPUFreqSelector, cpufreq_selector, G_TYPE_OBJECT)
 
 GQuark
 cpufreq_selector_error_quark (void)
@@ -64,7 +61,7 @@ static void
 cpufreq_selector_init (CPUFreqSelector *selector)
 {
 
-	selector->priv = CPUFREQ_SELECTOR_GET_PRIVATE (selector);
+	selector->priv = cpufreq_selector_get_instance_private (selector);
 
         selector->priv->cpu = 0;
 }
@@ -73,8 +70,6 @@ static void
 cpufreq_selector_class_init (CPUFreqSelectorClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-        g_type_class_add_private (klass, sizeof (CPUFreqSelectorPrivate));
 
         object_class->set_property = cpufreq_selector_set_property;
         object_class->get_property = cpufreq_selector_get_property;

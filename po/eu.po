@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Egoitz Rodriguez Obieta <egoitzro@gmail.com>, 2018
+# Egoitz Rodriguez <egoitzro@gmail.com>, 2018
 # Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Alexander Gabilondo <alexgabilondo@gmail.com>, 2018
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"POT-Creation-Date: 2019-03-13 18:34+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: Alexander Gabilondo <alexgabilondo@gmail.com>, 2018\n"
 "Language-Team: Basque (https://www.transifex.com/mate/teams/13566/eu/)\n"
@@ -25,97 +25,122 @@ msgstr ""
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../accessx-status/applet.c:96
+#: ../accessx-status/applet.c:86 ../charpick/charpick.c:571
+#: ../geyes/geyes.c:166 ../mateweather/mateweather-about.c:41
+#: ../multiload/main.c:48 ../stickynotes/stickynotes_applet_callbacks.c:367
+msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
+msgstr ""
+
+#: ../accessx-status/applet.c:87 ../battstat/battstat_applet.c:819
+#: ../charpick/charpick.c:572 ../cpufreq/src/cpufreq-applet.c:469
+#: ../drivemount/drivemount.c:109 ../geyes/geyes.c:167
+#: ../mateweather/mateweather-about.c:43 ../multiload/main.c:49
+#: ../stickynotes/stickynotes_applet_callbacks.c:368
+#: ../trashapplet/src/trashapplet.c:421
+msgid "MATE Documentation Team"
+msgstr ""
+
+#: ../accessx-status/applet.c:98
+msgid "About AccessX Status"
+msgstr ""
+
+#: ../accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr ""
 "AccessXren funtzionalitateen egoera erakusten du, hala nola, likatutako "
 "aldatzaileena"
 
-#: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:587 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
-#: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
-#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
-#: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
+#: ../accessx-status/applet.c:101
+msgid ""
+"Copyright © 2003 Sun Microsystems\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../accessx-status/applet.c:105 ../battstat/battstat_applet.c:844
+#: ../charpick/charpick.c:592 ../command/command.c:114
+#: ../cpufreq/src/cpufreq-applet.c:493 ../drivemount/drivemount.c:127
+#: ../geyes/geyes.c:186 ../mateweather/mateweather-about.c:61
+#: ../multiload/main.c:69 ../netspeed/src/netspeed.c:836
+#: ../stickynotes/stickynotes_applet_callbacks.c:388
+#: ../timerapplet/timerapplet.c:278 ../trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
 "Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
 "Aritz Jorge Sánchez"
 
-#: ../accessx-status/applet.c:119
+#: ../accessx-status/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Errorea gertatu da laguntza-ikustailea abiaraztean:  %s"
 
-#: ../accessx-status/applet.c:147
+#: ../accessx-status/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr "Ireki teklatuaren hobespenen elkarrizketa-koadroa"
 
-#: ../accessx-status/applet.c:162
+#: ../accessx-status/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr ""
 "Errorea gertatu da teklatuaren hobespenen elkarrizketa-koadroa abiaraztean: "
 "%s"
 
-#: ../accessx-status/applet.c:177
+#: ../accessx-status/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "_Teklatuaren erabilerraztasunaren hobespenak"
 
-#: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
-#: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
-#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
+#: ../accessx-status/applet.c:183 ../battstat/battstat_applet.c:63
+#: ../charpick/charpick.c:673 ../cpufreq/src/cpufreq-applet.c:122
+#: ../drivemount/drivemount.c:165 ../geyes/geyes.c:359
+#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:488
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_Laguntza"
 
-#: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:671 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
-#: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
-#: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
+#: ../accessx-status/applet.c:184 ../battstat/battstat_applet.c:66
+#: ../charpick/charpick.c:676 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:168
+#: ../geyes/geyes.c:362 ../mateweather/mateweather-applet.c:120
+#: ../multiload/main.c:491 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "Honi _buruz"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
-#: ../accessx-status/applet.c:499 ../accessx-status/applet.c:553
+#: ../accessx-status/applet.c:504 ../accessx-status/applet.c:558
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
-#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
+#: ../accessx-status/applet.c:1043 ../accessx-status/applet.c:1109
+#: ../accessx-status/applet.c:1194 ../accessx-status/applet.c:1388
 msgid "AccessX Status"
 msgstr "AccessXren egoera"
 
-#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
+#: ../accessx-status/applet.c:1044 ../accessx-status/applet.c:1195
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "Teklatuaren egoera erakusten du erabilerraztasunaren funtzionalitateak "
 "erabiltzean"
 
-#: ../accessx-status/applet.c:1073
+#: ../accessx-status/applet.c:1078
 msgid "XKB Extension is not enabled"
 msgstr "XKB-ren hedapena ez dago gaituta"
 
-#: ../accessx-status/applet.c:1078
+#: ../accessx-status/applet.c:1083
 msgid "Unknown error"
 msgstr "Errore ezezaguna"
 
-#: ../accessx-status/applet.c:1082
+#: ../accessx-status/applet.c:1087
 #, c-format
 msgid "Error: %s"
 msgstr "Errorea: %s"
 
-#: ../accessx-status/applet.c:1380
+#: ../accessx-status/applet.c:1385
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Teklatuaren erabilerraztasunaren egoera"
 
-#: ../accessx-status/applet.c:1384
+#: ../accessx-status/applet.c:1389
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 "Teklatuaren erabilerraztasunaren funtzionalitateen uneko egoera erakusten du"
@@ -133,10 +158,10 @@ msgid "Shows the status of keyboard accessibility features"
 msgstr ""
 "Teklatuaren erabilerraztasunaren funtzionalitateen egoera erakusten du"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:670
 #: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
-#: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
-#: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
+#: ../geyes/geyes.c:356 ../mateweather/mateweather-applet.c:114
+#: ../multiload/main.c:482 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "_Hobespenak"
@@ -289,38 +314,49 @@ msgstr "Bateriaren egoera ezezaguna"
 msgid "N/A"
 msgstr "E/E"
 
-#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:147
-#: ../geyes/geyes.c:339 ../geyes/themes.c:226
+#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:153
+#: ../geyes/geyes.c:344 ../geyes/themes.c:226
 #: ../mateweather/mateweather-applet.c:63
 #: ../mateweather/mateweather-pref.c:751
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
-#: ../stickynotes/stickynotes_applet_callbacks.c:535
+#: ../stickynotes/stickynotes_applet_callbacks.c:540
 #: ../trashapplet/src/trashapplet.c:399
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Errorea gertatu da laguntza bistaratzean: %s"
 
-#: ../battstat/battstat_applet.c:828
+#: ../battstat/battstat_applet.c:824
 msgid "This utility shows the status of your laptop battery."
 msgstr ""
 "Ordenagailu eramangarriko bateriaren egoera erakusten du utilitate honek."
 
 #. true
-#: ../battstat/battstat_applet.c:830
+#: ../battstat/battstat_applet.c:826
 msgid "upower backend enabled."
 msgstr "upower motorra gaituta."
 
 #. false
-#: ../battstat/battstat_applet.c:831
+#: ../battstat/battstat_applet.c:827
 msgid "Legacy backend enabled."
 msgstr ""
 
-#: ../battstat/battstat_applet.c:1109 ../battstat/battstat_applet.c:1159
+#: ../battstat/battstat_applet.c:836
+msgid "About Battery Charge Monitor"
+msgstr ""
+
+#: ../battstat/battstat_applet.c:838
+msgid ""
+"Copyright © 2000 The Gnulix Society\n"
+"Copyright © 2002-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../battstat/battstat_applet.c:1114 ../battstat/battstat_applet.c:1164
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
 msgstr "Bateria-kargaren monitorea"
 
-#: ../battstat/battstat_applet.c:1160
+#: ../battstat/battstat_applet.c:1165
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
 msgstr "Ordenagailu eramangarriko bateriaren karga kontrolatzen du"
@@ -465,7 +501,17 @@ msgstr "Txertatu karaktere berezia"
 msgid "insert special character %s"
 msgstr "txertatu %s karaktere berezia"
 
-#: ../charpick/charpick.c:582
+#: ../charpick/charpick.c:583
+msgid "About Character Palette"
+msgstr ""
+
+#: ../charpick/charpick.c:585
+msgid ""
+"Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../charpick/charpick.c:587
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -473,13 +519,13 @@ msgstr ""
 "Teklatuan ez dauden karaktere arrotzak hautatzeko Mate Paneleko "
 "miniaplikazioa. GNU Lizentzia Publiko Orokorraren pean argitaratua."
 
-#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
+#: ../charpick/charpick.c:699 ../charpick/charpick.c:713
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Karaktere-paleta"
 
-#: ../charpick/charpick.c:694
+#: ../charpick/charpick.c:699
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Txertatu karaktereak"
@@ -569,34 +615,44 @@ msgstr "Egin klik hautatutako paleta ezabatzeko"
 msgid "Character Palette Preferences"
 msgstr "Karaktere-paletaren hobespenak"
 
-#: ../command/command.c:115
+#: ../command/command.c:108
+msgid "About Command Applet"
+msgstr ""
+
+#: ../command/command.c:110
+msgid ""
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+
+#: ../command/command.c:113
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
 msgstr "Komando baten irteera erakusten du"
 
-#: ../command/command.c:133
+#: ../command/command.c:131
 msgid "Command Applet Preferences"
 msgstr "Komando applet-aren hobespenak"
 
-#: ../command/command.c:146
+#: ../command/command.c:144
 msgid "Command:"
 msgstr "Komandoa:"
 
-#: ../command/command.c:154
+#: ../command/command.c:152
 msgid "Interval (seconds):"
 msgstr "Tartea (segundoak):"
 
-#: ../command/command.c:162
+#: ../command/command.c:160
 msgid "Maximum width (chars):"
 msgstr "Gehienezko zabalera (karaktere)"
 
-#: ../command/command.c:170
+#: ../command/command.c:168
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
 msgid "Show icon"
 msgstr "Erakutsi ikonoa"
 
-#: ../command/command.c:321
+#: ../command/command.c:319
 msgid "Command Applet"
 msgstr "Komando applet-a"
 
@@ -669,7 +725,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Erakutsi PUZ-maiztasuna _ehunekotan"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
+#: ../cpufreq/src/cpufreq-applet.c:816 ../cpufreq/src/cpufreq-applet.c:871
 msgid "CPU Frequency Scaling Monitor"
 msgstr "PUZ maiztasuna eskalatzeko monitorea"
 
@@ -718,11 +774,21 @@ msgstr ""
 msgid "Could not open help document"
 msgstr "Ezin izan da laguntzako dokumentua ireki"
 
-#: ../cpufreq/src/cpufreq-applet.c:483
+#: ../cpufreq/src/cpufreq-applet.c:484
+msgid "About CPU Frequency Scaling Monitor"
+msgstr ""
+
+#: ../cpufreq/src/cpufreq-applet.c:486
+msgid ""
+"Copyright © 2004 Carlos Garcia Campos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../cpufreq/src/cpufreq-applet.c:488
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Tresna honek uneko PUZaren maiztasuna eskalatzea erakusten du."
 
-#: ../cpufreq/src/cpufreq-applet.c:867
+#: ../cpufreq/src/cpufreq-applet.c:872
 msgid "This utility shows the current CPU Frequency"
 msgstr "Tresna honek uneko PUZaren maiztasuna erakusten du."
 
@@ -806,11 +872,21 @@ msgstr "_Muntatu %s"
 msgid "_Eject %s"
 msgstr "_Egotzi %s"
 
-#: ../drivemount/drivemount.c:118
+#: ../drivemount/drivemount.c:120
+msgid "About Disk Mounter"
+msgstr ""
+
+#: ../drivemount/drivemount.c:122
+msgid ""
+"Copyright © 2004 Canonical Ltd\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Bloke-bolumenak muntatzeko eta desmuntatzeko miniaplikazioa."
 
-#: ../drivemount/drivemount.c:179 ../drivemount/drivemount.c:219
+#: ../drivemount/drivemount.c:185 ../drivemount/drivemount.c:225
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
 msgid "Disk Mounter"
 msgstr "Disko-muntatzailea"
@@ -827,16 +903,26 @@ msgstr "Unitate-muntatzailearen miniaplikazioaren fabrika"
 msgid "Mount local disks and devices"
 msgstr "Disko eta gailu lokalak muntatu"
 
-#: ../geyes/geyes.c:176
+#: ../geyes/geyes.c:178
+msgid "About Eyes"
+msgstr ""
+
+#: ../geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Begien joko bat MATEren panelerako. Begiek saguari jarraitzen diote."
 
-#: ../geyes/geyes.c:384 ../geyes/geyes.c:414 ../geyes/geyes.c:416
+#: ../geyes/geyes.c:182
+msgid ""
+"Copyright © 1999 Dave Camp\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../geyes/geyes.c:389 ../geyes/geyes.c:419 ../geyes/geyes.c:421
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
 msgid "Eyes"
 msgstr "Begiak"
 
-#: ../geyes/geyes.c:417
+#: ../geyes/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Saguaren erakuslearen norabidean begiratzen dute begiek"
 
@@ -872,7 +958,17 @@ msgstr "Gaiak"
 msgid "_Select a theme:"
 msgstr "_Hautatu gai bat:"
 
-#: ../mateweather/mateweather-about.c:53
+#: ../mateweather/mateweather-about.c:54
+msgid "About Weather Report"
+msgstr ""
+
+#: ../mateweather/mateweather-about.c:56
+msgid ""
+"Copyright © 1999-2005 by S. Papadimitriou and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "Eguraldi lokalaren berri emateko miniaplikazioa."
 
@@ -1214,7 +1310,17 @@ msgstr "Eguraldiaren miniaplikazioa sortzeko fabrika."
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Uneko eguraldia eta iragarpenak kontrolatzen ditu"
 
-#: ../multiload/main.c:59
+#: ../multiload/main.c:60
+msgid "About System Monitor"
+msgstr ""
+
+#: ../multiload/main.c:62
+msgid ""
+"Copyright © 1999-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../multiload/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
@@ -1222,42 +1328,42 @@ msgstr ""
 "PUZaren, ram memoriaren, swap lekuaren erabileraren eta sare-trafikoaren "
 "grafikoak bistaratzeko gai den sistema-kargaren monitorea."
 
-#: ../multiload/main.c:124
+#: ../multiload/main.c:129
 msgid "Start system-monitor"
 msgstr "Abiarazi sistemako monitorea"
 
-#: ../multiload/main.c:146
+#: ../multiload/main.c:151
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Errorea '%s' exekutatzean: %s"
 
-#: ../multiload/main.c:274 ../multiload/properties.c:600
+#: ../multiload/main.c:279 ../multiload/properties.c:600
 msgid "Processor"
 msgstr "Prozesadorea"
 
-#: ../multiload/main.c:276 ../multiload/properties.c:608
+#: ../multiload/main.c:281 ../multiload/properties.c:608
 msgid "Memory"
 msgstr "Memoria"
 
-#: ../multiload/main.c:278 ../multiload/properties.c:616
+#: ../multiload/main.c:283 ../multiload/properties.c:616
 msgid "Network"
 msgstr "Sarea"
 
-#: ../multiload/main.c:280 ../multiload/properties.c:625
+#: ../multiload/main.c:285 ../multiload/properties.c:625
 msgid "Swap Space"
 msgstr "Swap lekua"
 
-#: ../multiload/main.c:282 ../multiload/main.c:361
+#: ../multiload/main.c:287 ../multiload/main.c:366
 msgid "Load Average"
 msgstr "Batez besteko karga"
 
-#: ../multiload/main.c:284
+#: ../multiload/main.c:289
 msgid "Disk"
 msgstr "Diskoa"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#: ../multiload/main.c:300
+#: ../multiload/main.c:305
 #, c-format
 msgid ""
 "%s:\n"
@@ -1268,13 +1374,13 @@ msgstr ""
 "%%%u programetan\n"
 "%%%u cache-an"
 
-#: ../multiload/main.c:308
+#: ../multiload/main.c:313
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Sistemaren batez besteko karga: %0.02f"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:316
+#: ../multiload/main.c:321
 #, c-format
 msgid ""
 "%s:\n"
@@ -1285,7 +1391,7 @@ msgstr ""
 "%s jasotzen\n"
 "%s bidaltzen"
 
-#: ../multiload/main.c:332
+#: ../multiload/main.c:337
 #, c-format
 msgid ""
 "%s:\n"
@@ -1296,31 +1402,31 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../multiload/main.c:357
+#: ../multiload/main.c:362
 msgid "CPU Load"
 msgstr "PUZaren karga"
 
-#: ../multiload/main.c:358
+#: ../multiload/main.c:363
 msgid "Memory Load"
 msgstr "Memoria-karga"
 
-#: ../multiload/main.c:359
+#: ../multiload/main.c:364
 msgid "Net Load"
 msgstr "Sare-karga"
 
-#: ../multiload/main.c:360
+#: ../multiload/main.c:365
 msgid "Swap Load"
 msgstr "Swap-karga"
 
-#: ../multiload/main.c:362
+#: ../multiload/main.c:367
 msgid "Disk Load"
 msgstr "Diskoaren karga"
 
-#: ../multiload/main.c:480
+#: ../multiload/main.c:485
 msgid "_Open System Monitor"
 msgstr "_Ireki sistema-monitorea"
 
-#: ../multiload/main.c:512
+#: ../multiload/main.c:517
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
 msgstr "Sistemako monitorea"
@@ -1842,7 +1948,18 @@ msgstr ""
 "Errorea gertatu da laguntza bistaratzean:\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:835
+#: ../netspeed/src/netspeed.c:828
+msgid "About MATE Netspeed"
+msgstr ""
+
+#: ../netspeed/src/netspeed.c:830
+msgid ""
+"Copyright © 2002-2003 Jörgen Scheibengruber\n"
+"Copyright © 2011-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+
+#: ../netspeed/src/netspeed.c:833
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
@@ -1850,128 +1967,128 @@ msgstr ""
 "Applet txiki bat zehaztutako sareko gailu bateko trafikoaren informazioa "
 "bistaratzeko"
 
-#: ../netspeed/src/netspeed.c:996
-msgid "Mate Netspeed Preferences"
-msgstr "Mate Netspeed Hobespenak"
+#: ../netspeed/src/netspeed.c:994
+msgid "MATE Netspeed Preferences"
+msgstr ""
 
-#: ../netspeed/src/netspeed.c:1018
+#: ../netspeed/src/netspeed.c:1016
 msgid "General Settings"
 msgstr "Ezarpen orokorrak"
 
-#: ../netspeed/src/netspeed.c:1040
+#: ../netspeed/src/netspeed.c:1038
 msgid "Network _device:"
 msgstr "Sareko _gailua:"
 
 #. Default means device with default route set
-#: ../netspeed/src/netspeed.c:1052
+#: ../netspeed/src/netspeed.c:1050
 msgid "Default"
 msgstr "Lehenetsia"
 
-#: ../netspeed/src/netspeed.c:1065
+#: ../netspeed/src/netspeed.c:1063
 msgid "Show _sum instead of in & out"
 msgstr "Erakutsi _batura (sarrera eta irteeraren ordez)"
 
-#: ../netspeed/src/netspeed.c:1069
+#: ../netspeed/src/netspeed.c:1067
 msgid "Show _bits instead of bytes"
 msgstr "Erakutsi _bit-ak (byte-en ordez)"
 
-#: ../netspeed/src/netspeed.c:1073
+#: ../netspeed/src/netspeed.c:1071
 msgid "Shorten _unit legend"
 msgstr "Laburtu _unitatearen legenda"
 
-#: ../netspeed/src/netspeed.c:1077
+#: ../netspeed/src/netspeed.c:1075
 msgid "_Change icon according to the selected device"
 msgstr ""
 
-#: ../netspeed/src/netspeed.c:1081
+#: ../netspeed/src/netspeed.c:1079
 msgid "Show _icon"
 msgstr "Erakutsi _ikonoa"
 
-#: ../netspeed/src/netspeed.c:1085
+#: ../netspeed/src/netspeed.c:1083
 msgid "Show signal _quality icon for wireless devices"
 msgstr ""
 
-#: ../netspeed/src/netspeed.c:1203
+#: ../netspeed/src/netspeed.c:1201
 #, c-format
 msgid "Device Details for %s"
 msgstr "%s gailuaren xehetasunak"
 
-#: ../netspeed/src/netspeed.c:1228
+#: ../netspeed/src/netspeed.c:1226
 msgid "_In graph color"
 msgstr "_Sarrerako grafikoaren kolorea"
 
-#: ../netspeed/src/netspeed.c:1229
+#: ../netspeed/src/netspeed.c:1227
 msgid "_Out graph color"
 msgstr "_Irteerako grafikoaren kolorea"
 
-#: ../netspeed/src/netspeed.c:1245
+#: ../netspeed/src/netspeed.c:1243
 msgid "Internet Address:"
 msgstr "Interneteko helbidea:"
 
-#: ../netspeed/src/netspeed.c:1246
+#: ../netspeed/src/netspeed.c:1244
 msgid "Netmask:"
 msgstr "Sare-maskara:"
 
-#: ../netspeed/src/netspeed.c:1247
+#: ../netspeed/src/netspeed.c:1245
 msgid "Hardware Address:"
 msgstr "Hardwarearen helbidea:"
 
-#: ../netspeed/src/netspeed.c:1248
+#: ../netspeed/src/netspeed.c:1246
 msgid "P-t-P Address:"
 msgstr "Puntuz puntuko helbidea:"
 
-#: ../netspeed/src/netspeed.c:1249
+#: ../netspeed/src/netspeed.c:1247
 msgid "Bytes in:"
 msgstr "Jasotako byteak:"
 
-#: ../netspeed/src/netspeed.c:1250
+#: ../netspeed/src/netspeed.c:1248
 msgid "Bytes out:"
 msgstr "Bidalitako byteak:"
 
+#: ../netspeed/src/netspeed.c:1250 ../netspeed/src/netspeed.c:1251
 #: ../netspeed/src/netspeed.c:1252 ../netspeed/src/netspeed.c:1253
-#: ../netspeed/src/netspeed.c:1254 ../netspeed/src/netspeed.c:1255
 msgid "none"
 msgstr "bat ere ez"
 
-#: ../netspeed/src/netspeed.c:1306
+#: ../netspeed/src/netspeed.c:1304
 msgid "IPV6 Address:"
 msgstr "IPV6 helbidea:"
 
-#: ../netspeed/src/netspeed.c:1339
+#: ../netspeed/src/netspeed.c:1337
 msgid "Signal Strength:"
 msgstr "Seinalearen indarra:"
 
-#: ../netspeed/src/netspeed.c:1340
+#: ../netspeed/src/netspeed.c:1338
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1381
+#: ../netspeed/src/netspeed.c:1379
 msgid "Device _Details"
 msgstr "Gailuaren _xehetasunak"
 
-#: ../netspeed/src/netspeed.c:1383
+#: ../netspeed/src/netspeed.c:1381
 msgid "Preferences..."
 msgstr "Hobespenak..."
 
-#: ../netspeed/src/netspeed.c:1385
+#: ../netspeed/src/netspeed.c:1383
 msgid "Help"
 msgstr "Laguntza"
 
-#: ../netspeed/src/netspeed.c:1387
+#: ../netspeed/src/netspeed.c:1385
 msgid "About..."
 msgstr "Honi buruz..."
 
-#: ../netspeed/src/netspeed.c:1428
+#: ../netspeed/src/netspeed.c:1426
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Nahi duzu %s orain deskonektatzea?"
 
-#: ../netspeed/src/netspeed.c:1432
+#: ../netspeed/src/netspeed.c:1430
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Nahi duzu %s orain konektatzea?"
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -1980,12 +2097,12 @@ msgstr ""
 "<b>%s komandoa exekutatzeak huts egin du</b>\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:1518
+#: ../netspeed/src/netspeed.c:1516
 #, c-format
 msgid "%s is down"
 msgstr "%s erorita dago"
 
-#: ../netspeed/src/netspeed.c:1523
+#: ../netspeed/src/netspeed.c:1521
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -1994,11 +2111,11 @@ msgstr ""
 "%s: %s\n"
 "sarrera: %s irteera: %s"
 
-#: ../netspeed/src/netspeed.c:1525 ../netspeed/src/netspeed.c:1534
+#: ../netspeed/src/netspeed.c:1523 ../netspeed/src/netspeed.c:1532
 msgid "has no ip"
 msgstr "ez du IPrik"
 
-#: ../netspeed/src/netspeed.c:1532
+#: ../netspeed/src/netspeed.c:1530
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2007,7 +2124,7 @@ msgstr ""
 "%s: %s\n"
 "batura: %s"
 
-#: ../netspeed/src/netspeed.c:1541
+#: ../netspeed/src/netspeed.c:1539
 #, c-format
 msgid ""
 "\n"
@@ -2018,13 +2135,13 @@ msgstr ""
 "ESSID: %s\n"
 "Indarra: %% %d"
 
-#: ../netspeed/src/netspeed.c:1542
+#: ../netspeed/src/netspeed.c:1540
 msgid "unknown"
 msgstr "ezezaguna"
 
-#: ../netspeed/src/netspeed.c:1593
-msgid "Mate Netspeed"
-msgstr "Mate Netspeed"
+#: ../netspeed/src/netspeed.c:1591
+msgid "MATE Netspeed"
+msgstr ""
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
@@ -2401,6 +2518,17 @@ msgid "Show sticky notes"
 msgstr "Erakutsi ohar itsaskorrak"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
+msgid "About Sticky Notes"
+msgstr ""
+
+#: ../stickynotes/stickynotes_applet_callbacks.c:381
+msgid ""
+"Copyright © 2002-2003 Loban A Rahman\n"
+"Copyright © 2005 Davyd Madeley\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "MATE mahaigaineko ingurunerako ohar itsaskorrak"
 
@@ -2413,7 +2541,7 @@ msgid "Timer"
 msgstr ""
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:279
+#: ../timerapplet/timerapplet.c:277
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Abiarazi tenporizadore bat eta jaso jakinarazpen bat amaitzean"
 
@@ -2453,35 +2581,45 @@ msgstr ""
 msgid "Timer finished!"
 msgstr "Tenporizadoreak amaitu du!"
 
-#: ../timerapplet/timerapplet.c:312
+#: ../timerapplet/timerapplet.c:272
+msgid "About Timer Applet"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:274
+msgid ""
+"Copyright © 2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
 msgstr "Tenporizadore applet-aren hobespenak"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:323
 msgid "Name:"
 msgstr "Izena:"
 
-#: ../timerapplet/timerapplet.c:334
+#: ../timerapplet/timerapplet.c:332
 msgid "Hours:"
 msgstr "Orduak:"
 
-#: ../timerapplet/timerapplet.c:345
+#: ../timerapplet/timerapplet.c:343
 msgid "Minutes:"
 msgstr "Minutuak:"
 
-#: ../timerapplet/timerapplet.c:356
+#: ../timerapplet/timerapplet.c:354
 msgid "Seconds:"
 msgstr "Segundoak:"
 
-#: ../timerapplet/timerapplet.c:367
+#: ../timerapplet/timerapplet.c:365
 msgid "Show notification popup"
 msgstr "Erakutsi jakinarazpen laster-leihoa"
 
-#: ../timerapplet/timerapplet.c:371
+#: ../timerapplet/timerapplet.c:369
 msgid "Show dialog"
 msgstr "Erakutsi elkarrizketa-koadroa"
 
-#: ../timerapplet/timerapplet.c:405
+#: ../timerapplet/timerapplet.c:403
 msgid "Timer Applet"
 msgstr "Tenporizadore applet-a"
 
@@ -2522,6 +2660,17 @@ msgstr ""
 "%s"
 
 #: ../trashapplet/src/trashapplet.c:432
+msgid "About Trash Applet"
+msgstr ""
+
+#: ../trashapplet/src/trashapplet.c:434
+msgid ""
+"Copyright © 2004 Michiel Sikkes\n"
+"Copyright © 2008 Ryan Lortie\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../trashapplet/src/trashapplet.c:437
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
@@ -2529,22 +2678,22 @@ msgstr ""
 "MATEren panelean bizi den zakarrontzia. Zakarrontzia ikusteko edo "
 "zakarrontzira elementuak botatzeko (arrastatu eta jaregin) erabil dezakezu."
 
-#: ../trashapplet/src/trashapplet.c:457
+#: ../trashapplet/src/trashapplet.c:462
 msgid "Delete Immediately?"
 msgstr "Ezabatu berehala?"
 
-#: ../trashapplet/src/trashapplet.c:487
+#: ../trashapplet/src/trashapplet.c:492
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr ""
 "Ezin dira elementuak zakarrontzira bota, berehala ezabatzea nahi duzu?"
 
-#: ../trashapplet/src/trashapplet.c:492
+#: ../trashapplet/src/trashapplet.c:497
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr ""
 "Zenbait elementu ezin dira zakarrontzira bota, berehala ezabatzea nahi duzu?"
 
-#: ../trashapplet/src/trashapplet.c:622
+#: ../trashapplet/src/trashapplet.c:627
 msgid "Trash Applet"
 msgstr "Zakarrontziaren miniaplikazioa"
 

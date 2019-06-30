@@ -26,9 +26,6 @@
 
 #include "cpufreq-selector-sysfs.h"
 
-#define CPUFREQ_SELECTOR_SYSFS_GET_PRIVATE(obj) \
-        (G_TYPE_INSTANCE_GET_PRIVATE((obj), CPUFREQ_TYPE_SELECTOR_SYSFS, CPUFreqSelectorSysfsPrivate))
-
 struct _CPUFreqSelectorSysfsPrivate {
 	GList *available_freqs;
 	GList *available_govs;
@@ -47,12 +44,12 @@ static gboolean cpufreq_selector_sysfs_set_governor  (CPUFreqSelector           
 
 #define CPUFREQ_SYSFS_BASE_PATH "/sys/devices/system/cpu/cpu%u/cpufreq/%s"
 
-G_DEFINE_TYPE (CPUFreqSelectorSysfs, cpufreq_selector_sysfs, CPUFREQ_TYPE_SELECTOR)
+G_DEFINE_TYPE_WITH_PRIVATE (CPUFreqSelectorSysfs, cpufreq_selector_sysfs, CPUFREQ_TYPE_SELECTOR)
 
 static void
 cpufreq_selector_sysfs_init (CPUFreqSelectorSysfs *selector)
 {
-	selector->priv = CPUFREQ_SELECTOR_SYSFS_GET_PRIVATE (selector);
+	selector->priv = cpufreq_selector_sysfs_get_instance_private (selector);
 
 	selector->priv->available_freqs = NULL;
 	selector->priv->available_govs = NULL;
@@ -63,8 +60,6 @@ cpufreq_selector_sysfs_class_init (CPUFreqSelectorSysfsClass *klass)
 {
         GObjectClass         *object_class = G_OBJECT_CLASS (klass);
         CPUFreqSelectorClass *selector_class = CPUFREQ_SELECTOR_CLASS (klass);
-
-        g_type_class_add_private (klass, sizeof (CPUFreqSelectorSysfsPrivate));
 
 	selector_class->set_frequency = cpufreq_selector_sysfs_set_frequency;
         selector_class->set_governor = cpufreq_selector_sysfs_set_governor;

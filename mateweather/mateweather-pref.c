@@ -72,11 +72,7 @@ enum {
 	PROP_MATEWEATHER_APPLET,
 };
 
-G_DEFINE_TYPE(MateWeatherPref, mateweather_pref, GTK_TYPE_DIALOG);
-
-#define MATEWEATHER_PREF_GET_PRIVATE(obj) \
-	(G_TYPE_INSTANCE_GET_PRIVATE((obj), MATEWEATHER_TYPE_PREF, MateWeatherPrefPrivate))
-
+G_DEFINE_TYPE_WITH_PRIVATE (MateWeatherPref, mateweather_pref, GTK_TYPE_DIALOG);
 
 static gboolean
 dialog_page_scroll_event_cb (GtkWidget *widget, GdkEventScroll *event, GtkWindow *window)
@@ -1262,7 +1258,7 @@ static void mateweather_pref_get_property(GObject* object, guint prop_id, GValue
 
 static void mateweather_pref_init(MateWeatherPref* self)
 {
-	self->priv = MATEWEATHER_PREF_GET_PRIVATE(self);
+	self->priv = mateweather_pref_get_instance_private(self);
 }
 
 
@@ -1311,8 +1307,6 @@ static void mateweather_pref_class_init(MateWeatherPrefClass* klass)
 
     /* This becomes an OBJECT property when MateWeatherApplet is redone */
     g_object_class_install_property(object_class, PROP_MATEWEATHER_APPLET, g_param_spec_pointer("mateweather-applet", "MateWeather Applet", "The MateWeather Applet", G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
-
-    g_type_class_add_private(klass, sizeof(MateWeatherPrefPrivate));
 }
 
 

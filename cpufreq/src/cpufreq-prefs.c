@@ -39,7 +39,7 @@ enum {
 
 struct _CPUFreqPrefsPrivate {
 	GSettings          *settings;
-	
+
 	guint               cpu;
 	CPUFreqShowMode     show_mode;
 	CPUFreqShowTextMode show_text_mode;
@@ -53,9 +53,6 @@ struct _CPUFreqPrefsPrivate {
 	GtkWidget *monitor_settings_box;
 	GtkWidget *show_mode_combo;
 };
-
-#define CPUFREQ_PREFS_GET_PRIVATE(object) \
-        (G_TYPE_INSTANCE_GET_PRIVATE ((object), CPUFREQ_TYPE_PREFS, CPUFreqPrefsPrivate))
 
 static void cpufreq_prefs_init                      (CPUFreqPrefs      *prefs);
 static void cpufreq_prefs_class_init                (CPUFreqPrefsClass *klass);
@@ -73,12 +70,12 @@ static void cpufreq_prefs_get_property              (GObject           *object,
 static void cpufreq_prefs_dialog_update_sensitivity (CPUFreqPrefs      *prefs);
 
 
-G_DEFINE_TYPE (CPUFreqPrefs, cpufreq_prefs, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CPUFreqPrefs, cpufreq_prefs, G_TYPE_OBJECT)
 
 static void
 cpufreq_prefs_init (CPUFreqPrefs *prefs)
 {
-	prefs->priv = CPUFREQ_PREFS_GET_PRIVATE (prefs);
+	prefs->priv = cpufreq_prefs_get_instance_private (prefs);
 
 	prefs->priv->settings = NULL;
 
@@ -92,8 +89,6 @@ cpufreq_prefs_class_init (CPUFreqPrefsClass *klass)
 
 	g_object_class->set_property = cpufreq_prefs_set_property;
 	g_object_class->get_property = cpufreq_prefs_get_property;
-	
-	g_type_class_add_private (g_object_class, sizeof (CPUFreqPrefsPrivate));
 
 	/* Properties */
 	g_object_class_install_property (g_object_class,

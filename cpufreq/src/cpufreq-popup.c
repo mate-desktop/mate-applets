@@ -33,10 +33,10 @@
 struct _CPUFreqPopupPrivate {
 	GtkUIManager        *ui_manager;
 	GSList              *radio_group;
-	
+
 	GtkActionGroup      *freqs_group;
 	GSList              *freqs_actions;
-	
+
 	GtkActionGroup      *govs_group;
 	GSList              *govs_actions;
 
@@ -48,14 +48,11 @@ struct _CPUFreqPopupPrivate {
 	GtkWidget           *parent;
 };
 
-#define CPUFREQ_POPUP_GET_PRIVATE(object) \
-        (G_TYPE_INSTANCE_GET_PRIVATE ((object), CPUFREQ_TYPE_POPUP, CPUFreqPopupPrivate))
-
 static void cpufreq_popup_init       (CPUFreqPopup      *popup);
 static void cpufreq_popup_class_init (CPUFreqPopupClass *klass);
 static void cpufreq_popup_finalize   (GObject           *object);
 
-G_DEFINE_TYPE (CPUFreqPopup, cpufreq_popup, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CPUFreqPopup, cpufreq_popup, G_TYPE_OBJECT)
 
 static const gchar *ui_popup =
 "<ui>"
@@ -74,7 +71,7 @@ static const gchar *ui_popup =
 static void
 cpufreq_popup_init (CPUFreqPopup *popup)
 {
-	popup->priv = CPUFREQ_POPUP_GET_PRIVATE (popup);
+	popup->priv = cpufreq_popup_get_instance_private (popup);
 
 	popup->priv->ui_manager = gtk_ui_manager_new ();
 	popup->priv->radio_group = NULL;
@@ -91,7 +88,7 @@ cpufreq_popup_init (CPUFreqPopup *popup)
 
 	gtk_ui_manager_add_ui_from_string (popup->priv->ui_manager,
 					   ui_popup, -1, NULL);
-	
+
 	popup->priv->monitor = NULL;
 }
 
@@ -99,8 +96,6 @@ static void
 cpufreq_popup_class_init (CPUFreqPopupClass *klass)
 {
 	GObjectClass *g_object_class = G_OBJECT_CLASS (klass);
-
-	g_type_class_add_private (g_object_class, sizeof (CPUFreqPopupPrivate));
 
 	g_object_class->finalize = cpufreq_popup_finalize;
 }

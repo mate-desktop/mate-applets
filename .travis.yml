@@ -55,8 +55,8 @@ after_success:
 env:
   - DISTRO="archlinux/base"
   - DISTRO="debian:sid"
-  - DISTRO="fedora:29"
-  - DISTRO="ubuntu:18.10"
+  - DISTRO="fedora:30"
+  - DISTRO="ubuntu:19.10"
 
 ##########################################################
 # THE FOLLOWING LINES IS USED BY docker-build
@@ -117,6 +117,7 @@ requires:
     # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-applets.git
     - clang
     - clang-analyzer
+    - cppcheck-htmlreport
     - gcc
     - git
     - gtksourceview3-devel
@@ -209,7 +210,9 @@ build_scripts:
 
 after_scripts:
   - if [ ${DISTRO_NAME} == "fedora" ];then
-  -   ./gen-index -i https://github.com/${OWNER_NAME}/mate-applets/raw/master/cpufreq/pixmaps/cpufreq-100.png
+  -   cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude .
+  -   cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=cppcheck-htmlreport
+  -   ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/mate-applets/raw/master/cpufreq/pixmaps/cpufreq-100.png
   - fi
   - make distcheck
 

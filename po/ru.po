@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Christopher Schramm <realshaka@googlemail.com>, 2018
+# Christopher Schramm <transifex@cschramm.eu>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Dmitry Mandryk <dmandryk@gmail.com>, 2018
 # Aleksandr <pc01.alex@yandex.ru>, 2018
@@ -19,16 +19,16 @@
 # Oldboy Boyold <boyoldboyold@gmail.com>, 2018
 # Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
 # Alex Putz, 2018
-# Aleksey Kabanov <ak099@mail.ru>, 2018
+# Aleksey Kabanov <ak099@mail.ru>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-03 12:26+0200\n"
+"POT-Creation-Date: 2019-03-13 18:34+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Aleksey Kabanov <ak099@mail.ru>, 2018\n"
+"Last-Translator: Aleksey Kabanov <ak099@mail.ru>, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,17 +36,42 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../accessx-status/applet.c:96
+#: ../accessx-status/applet.c:86 ../charpick/charpick.c:571
+#: ../geyes/geyes.c:166 ../mateweather/mateweather-about.c:41
+#: ../multiload/main.c:48 ../stickynotes/stickynotes_applet_callbacks.c:367
+msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
+msgstr ""
+
+#: ../accessx-status/applet.c:87 ../battstat/battstat_applet.c:819
+#: ../charpick/charpick.c:572 ../cpufreq/src/cpufreq-applet.c:469
+#: ../drivemount/drivemount.c:109 ../geyes/geyes.c:167
+#: ../mateweather/mateweather-about.c:43 ../multiload/main.c:49
+#: ../stickynotes/stickynotes_applet_callbacks.c:368
+#: ../trashapplet/src/trashapplet.c:421
+msgid "MATE Documentation Team"
+msgstr "Команда документирования MATE"
+
+#: ../accessx-status/applet.c:98
+msgid "About AccessX Status"
+msgstr ""
+
+#: ../accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Показывает состояние возможностей AccessX"
 
-#: ../accessx-status/applet.c:100 ../battstat/battstat_applet.c:839
-#: ../charpick/charpick.c:587 ../command/command.c:116
-#: ../cpufreq/src/cpufreq-applet.c:488 ../drivemount/drivemount.c:121
-#: ../geyes/geyes.c:181 ../mateweather/mateweather-about.c:56
-#: ../multiload/main.c:64 ../netspeed/src/netspeed.c:838
-#: ../stickynotes/stickynotes_applet_callbacks.c:383
-#: ../timerapplet/timerapplet.c:280 ../trashapplet/src/trashapplet.c:437
+#: ../accessx-status/applet.c:101
+msgid ""
+"Copyright © 2003 Sun Microsystems\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../accessx-status/applet.c:105 ../battstat/battstat_applet.c:844
+#: ../charpick/charpick.c:592 ../command/command.c:114
+#: ../cpufreq/src/cpufreq-applet.c:493 ../drivemount/drivemount.c:127
+#: ../geyes/geyes.c:186 ../mateweather/mateweather-about.c:61
+#: ../multiload/main.c:69 ../netspeed/src/netspeed.c:836
+#: ../stickynotes/stickynotes_applet_callbacks.c:388
+#: ../timerapplet/timerapplet.c:278 ../trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
 "Александр Сапрыкин <xelfium@gmail.com>\n"
@@ -81,76 +106,76 @@ msgstr ""
 "Юрий Козлов <yuray@komyakino.ru>\n"
 "Evolve32 <evolve32@ya.ru>"
 
-#: ../accessx-status/applet.c:119
+#: ../accessx-status/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Произошла ошибка при запуске программы просмотра справки: %s"
 
-#: ../accessx-status/applet.c:147
+#: ../accessx-status/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr "Открыть диалог настройки клавиатуры"
 
-#: ../accessx-status/applet.c:162
+#: ../accessx-status/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Произошла ошибка при запуске диалога настройки клавиатуры: %s"
 
-#: ../accessx-status/applet.c:177
+#: ../accessx-status/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "_Параметры специальных возможностей клавиатуры"
 
-#: ../accessx-status/applet.c:178 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:668 ../cpufreq/src/cpufreq-applet.c:122
-#: ../drivemount/drivemount.c:159 ../geyes/geyes.c:354
-#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:483
+#: ../accessx-status/applet.c:183 ../battstat/battstat_applet.c:63
+#: ../charpick/charpick.c:673 ../cpufreq/src/cpufreq-applet.c:122
+#: ../drivemount/drivemount.c:165 ../geyes/geyes.c:359
+#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:488
 #: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_Помощь"
 
-#: ../accessx-status/applet.c:179 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:671 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:162
-#: ../geyes/geyes.c:357 ../mateweather/mateweather-applet.c:120
-#: ../multiload/main.c:486 ../stickynotes/stickynotes_applet.c:49
+#: ../accessx-status/applet.c:184 ../battstat/battstat_applet.c:66
+#: ../charpick/charpick.c:676 ../command/command.c:75
+#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:168
+#: ../geyes/geyes.c:362 ../mateweather/mateweather-applet.c:120
+#: ../multiload/main.c:491 ../stickynotes/stickynotes_applet.c:49
 #: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Об апплете"
 
 #. Note to translators: the first letter of the alphabet, not the indefinite
 #. article
-#: ../accessx-status/applet.c:499 ../accessx-status/applet.c:553
+#: ../accessx-status/applet.c:504 ../accessx-status/applet.c:558
 msgid "a"
 msgstr "a"
 
-#: ../accessx-status/applet.c:1038 ../accessx-status/applet.c:1104
-#: ../accessx-status/applet.c:1189 ../accessx-status/applet.c:1383
+#: ../accessx-status/applet.c:1043 ../accessx-status/applet.c:1109
+#: ../accessx-status/applet.c:1194 ../accessx-status/applet.c:1388
 msgid "AccessX Status"
 msgstr "Состояние AccessX"
 
-#: ../accessx-status/applet.c:1039 ../accessx-status/applet.c:1190
+#: ../accessx-status/applet.c:1044 ../accessx-status/applet.c:1195
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "Показывает состояние клавиатуры, когда используются специальные возможности."
 
-#: ../accessx-status/applet.c:1073
+#: ../accessx-status/applet.c:1078
 msgid "XKB Extension is not enabled"
 msgstr "Расширение XKB не включено"
 
-#: ../accessx-status/applet.c:1078
+#: ../accessx-status/applet.c:1083
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
 
-#: ../accessx-status/applet.c:1082
+#: ../accessx-status/applet.c:1087
 #, c-format
 msgid "Error: %s"
 msgstr "Ошибка: %s"
 
-#: ../accessx-status/applet.c:1380
+#: ../accessx-status/applet.c:1385
 #: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
 msgid "Keyboard Accessibility Status"
 msgstr "Кнопка специальных возможностей клавиатуры"
 
-#: ../accessx-status/applet.c:1384
+#: ../accessx-status/applet.c:1389
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Кнопка вызова настроек специальных возможностей клавиатуры"
 
@@ -166,10 +191,10 @@ msgstr "Фабрика состояния специальных возможн�
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Показывает состояние специальных возможностей клавиатуры"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:665
+#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:670
 #: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
-#: ../geyes/geyes.c:351 ../mateweather/mateweather-applet.c:114
-#: ../multiload/main.c:477 ../stickynotes/stickynotes_applet.c:43
+#: ../geyes/geyes.c:356 ../mateweather/mateweather-applet.c:114
+#: ../multiload/main.c:482 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "Н_астройка"
@@ -340,37 +365,48 @@ msgstr "Состояния батареи неизвестно"
 msgid "N/A"
 msgstr "Н/Д"
 
-#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:147
-#: ../geyes/geyes.c:339 ../geyes/themes.c:226
+#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:153
+#: ../geyes/geyes.c:344 ../geyes/themes.c:226
 #: ../mateweather/mateweather-applet.c:63
 #: ../mateweather/mateweather-pref.c:751
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
-#: ../stickynotes/stickynotes_applet_callbacks.c:535
+#: ../stickynotes/stickynotes_applet_callbacks.c:540
 #: ../trashapplet/src/trashapplet.c:399
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Произошла ошибка при отображении справки: %s"
 
-#: ../battstat/battstat_applet.c:828
+#: ../battstat/battstat_applet.c:824
 msgid "This utility shows the status of your laptop battery."
 msgstr "Эта утилита показывает состояние батареи вашего ноутбука."
 
 #. true
-#: ../battstat/battstat_applet.c:830
+#: ../battstat/battstat_applet.c:826
 msgid "upower backend enabled."
 msgstr "Бэкэнд upower включён."
 
 #. false
-#: ../battstat/battstat_applet.c:831
+#: ../battstat/battstat_applet.c:827
 msgid "Legacy backend enabled."
 msgstr "Включён устаревший драйвер."
 
-#: ../battstat/battstat_applet.c:1109 ../battstat/battstat_applet.c:1159
+#: ../battstat/battstat_applet.c:836
+msgid "About Battery Charge Monitor"
+msgstr ""
+
+#: ../battstat/battstat_applet.c:838
+msgid ""
+"Copyright © 2000 The Gnulix Society\n"
+"Copyright © 2002-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../battstat/battstat_applet.c:1114 ../battstat/battstat_applet.c:1164
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
 msgid "Battery Charge Monitor"
 msgstr "Индикатор состояния батареи"
 
-#: ../battstat/battstat_applet.c:1160
+#: ../battstat/battstat_applet.c:1165
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
 msgid "Monitor a laptop's remaining power"
 msgstr "Отслеживает уровень заряда батареи ноутбука"
@@ -516,7 +552,17 @@ msgstr "Вставить специальный символ"
 msgid "insert special character %s"
 msgstr "вставить специальный символ %s"
 
-#: ../charpick/charpick.c:582
+#: ../charpick/charpick.c:583
+msgid "About Character Palette"
+msgstr ""
+
+#: ../charpick/charpick.c:585
+msgid ""
+"Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../charpick/charpick.c:587
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -524,13 +570,13 @@ msgstr ""
 "Апплет для набора специальных символов, которых нет на клавиатуре. Выпущен "
 "под  лицензией GNU General Public Licence."
 
-#: ../charpick/charpick.c:694 ../charpick/charpick.c:708
+#: ../charpick/charpick.c:699 ../charpick/charpick.c:713
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
 #: ../charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Касса символов"
 
-#: ../charpick/charpick.c:694
+#: ../charpick/charpick.c:699
 #: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
 msgid "Insert characters"
 msgstr "Апплет даёт возможность вставить специальные символы"
@@ -620,34 +666,44 @@ msgstr "Нажмите кнопку для удаления выбранного
 msgid "Character Palette Preferences"
 msgstr "Параметры кассы символов"
 
-#: ../command/command.c:115
+#: ../command/command.c:108
+msgid "About Command Applet"
+msgstr ""
+
+#: ../command/command.c:110
+msgid ""
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+
+#: ../command/command.c:113
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
 msgstr "Показывает вывод команды"
 
-#: ../command/command.c:133
+#: ../command/command.c:131
 msgid "Command Applet Preferences"
 msgstr "Параметры командного апплета"
 
-#: ../command/command.c:146
+#: ../command/command.c:144
 msgid "Command:"
 msgstr "Команда:"
 
-#: ../command/command.c:154
+#: ../command/command.c:152
 msgid "Interval (seconds):"
 msgstr "Интервал (секунды):"
 
-#: ../command/command.c:162
+#: ../command/command.c:160
 msgid "Maximum width (chars):"
 msgstr "Максимальная ширина (символов):"
 
-#: ../command/command.c:170
+#: ../command/command.c:168
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
 msgid "Show icon"
 msgstr "Показывать значок"
 
-#: ../command/command.c:321
+#: ../command/command.c:319
 msgid "Command Applet"
 msgstr "Командный апплет"
 
@@ -720,7 +776,7 @@ msgid "Show CPU frequency as _percentage"
 msgstr "Показывать частоту процессора в _процентах"
 
 #: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:811 ../cpufreq/src/cpufreq-applet.c:866
+#: ../cpufreq/src/cpufreq-applet.c:816 ../cpufreq/src/cpufreq-applet.c:871
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Монитор изменения частоты процессора"
 
@@ -770,11 +826,21 @@ msgstr ""
 msgid "Could not open help document"
 msgstr "Не удается открыть документ справки"
 
-#: ../cpufreq/src/cpufreq-applet.c:483
+#: ../cpufreq/src/cpufreq-applet.c:484
+msgid "About CPU Frequency Scaling Monitor"
+msgstr ""
+
+#: ../cpufreq/src/cpufreq-applet.c:486
+msgid ""
+"Copyright © 2004 Carlos Garcia Campos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../cpufreq/src/cpufreq-applet.c:488
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Эта утилита показывает текущую частоту процессора."
 
-#: ../cpufreq/src/cpufreq-applet.c:867
+#: ../cpufreq/src/cpufreq-applet.c:872
 msgid "This utility shows the current CPU Frequency"
 msgstr "Эта утилита показывает текущую частоту ЦП"
 
@@ -860,11 +926,21 @@ msgstr "_Подключить %s"
 msgid "_Eject %s"
 msgstr "_Извлечь %s"
 
-#: ../drivemount/drivemount.c:118
+#: ../drivemount/drivemount.c:120
+msgid "About Disk Mounter"
+msgstr ""
+
+#: ../drivemount/drivemount.c:122
+msgid ""
+"Copyright © 2004 Canonical Ltd\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Апплет для подключения и отключения блочных томов."
 
-#: ../drivemount/drivemount.c:179 ../drivemount/drivemount.c:219
+#: ../drivemount/drivemount.c:185 ../drivemount/drivemount.c:225
 #: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
 msgid "Disk Mounter"
 msgstr "Подключение диска"
@@ -881,16 +957,26 @@ msgstr "Фабрика для апплета подключения диска"
 msgid "Mount local disks and devices"
 msgstr "Подключает локальные диски и устройства"
 
-#: ../geyes/geyes.c:176
+#: ../geyes/geyes.c:178
+msgid "About Eyes"
+msgstr ""
+
+#: ../geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Глаза для панели MATE, следящие за курсором мыши."
 
-#: ../geyes/geyes.c:384 ../geyes/geyes.c:414 ../geyes/geyes.c:416
+#: ../geyes/geyes.c:182
+msgid ""
+"Copyright © 1999 Dave Camp\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../geyes/geyes.c:389 ../geyes/geyes.c:419 ../geyes/geyes.c:421
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
 msgid "Eyes"
 msgstr "Глазки"
 
-#: ../geyes/geyes.c:417
+#: ../geyes/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Глазки смотрят в направлении указателя мыши"
 
@@ -926,7 +1012,17 @@ msgstr "Темы"
 msgid "_Select a theme:"
 msgstr "_Выберите тему:"
 
-#: ../mateweather/mateweather-about.c:53
+#: ../mateweather/mateweather-about.c:54
+msgid "About Weather Report"
+msgstr ""
+
+#: ../mateweather/mateweather-about.c:56
+msgid ""
+"Copyright © 1999-2005 by S. Papadimitriou and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "Апплет для отображения местных погодных условий."
 
@@ -1269,7 +1365,17 @@ msgstr "Фабрика для создания апплета «Сводка п�
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Апплет отображает текущую сводку погоды и прогнозы"
 
-#: ../multiload/main.c:59
+#: ../multiload/main.c:60
+msgid "About System Monitor"
+msgstr ""
+
+#: ../multiload/main.c:62
+msgid ""
+"Copyright © 1999-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../multiload/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
@@ -1277,42 +1383,42 @@ msgstr ""
 "Системный монитор способен отображать графики загрузки процессора, памяти, "
 "файла подкачки и сетевого трафика."
 
-#: ../multiload/main.c:124
+#: ../multiload/main.c:129
 msgid "Start system-monitor"
 msgstr "Запустить системный монитор"
 
-#: ../multiload/main.c:146
+#: ../multiload/main.c:151
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Произошла ошибка при выполнении команды '%s': %s"
 
-#: ../multiload/main.c:274 ../multiload/properties.c:600
+#: ../multiload/main.c:279 ../multiload/properties.c:600
 msgid "Processor"
 msgstr "Процессор"
 
-#: ../multiload/main.c:276 ../multiload/properties.c:608
+#: ../multiload/main.c:281 ../multiload/properties.c:608
 msgid "Memory"
 msgstr "Память"
 
-#: ../multiload/main.c:278 ../multiload/properties.c:616
+#: ../multiload/main.c:283 ../multiload/properties.c:616
 msgid "Network"
 msgstr "Сеть"
 
-#: ../multiload/main.c:280 ../multiload/properties.c:625
+#: ../multiload/main.c:285 ../multiload/properties.c:625
 msgid "Swap Space"
 msgstr "Подкачка"
 
-#: ../multiload/main.c:282 ../multiload/main.c:361
+#: ../multiload/main.c:287 ../multiload/main.c:366
 msgid "Load Average"
 msgstr "Средняя загрузка"
 
-#: ../multiload/main.c:284
+#: ../multiload/main.c:289
 msgid "Disk"
 msgstr "Диск"
 
 #. xgettext: use and cache are > 1 most of the time,
 #. please assume that they always are.
-#: ../multiload/main.c:300
+#: ../multiload/main.c:305
 #, c-format
 msgid ""
 "%s:\n"
@@ -1323,13 +1429,13 @@ msgstr ""
 "%u%% используется программами\n"
 "%u%% используется как кэш"
 
-#: ../multiload/main.c:308
+#: ../multiload/main.c:313
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Средняя загрузка системы %0.02f"
 
 #. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:316
+#: ../multiload/main.c:321
 #, c-format
 msgid ""
 "%s:\n"
@@ -1340,7 +1446,7 @@ msgstr ""
 "Получение %s\n"
 "Отправка %s"
 
-#: ../multiload/main.c:332
+#: ../multiload/main.c:337
 #, c-format
 msgid ""
 "%s:\n"
@@ -1361,31 +1467,31 @@ msgstr[3] ""
 "%s:\n"
 "%u%% используется"
 
-#: ../multiload/main.c:357
+#: ../multiload/main.c:362
 msgid "CPU Load"
 msgstr "Загрузка процессора"
 
-#: ../multiload/main.c:358
+#: ../multiload/main.c:363
 msgid "Memory Load"
 msgstr "Загрузка памяти"
 
-#: ../multiload/main.c:359
+#: ../multiload/main.c:364
 msgid "Net Load"
 msgstr "Загрузка сети"
 
-#: ../multiload/main.c:360
+#: ../multiload/main.c:365
 msgid "Swap Load"
 msgstr "Загрузка подкачки"
 
-#: ../multiload/main.c:362
+#: ../multiload/main.c:367
 msgid "Disk Load"
 msgstr "Загрузка диска"
 
-#: ../multiload/main.c:480
+#: ../multiload/main.c:485
 msgid "_Open System Monitor"
 msgstr "О_ткрыть системный монитор"
 
-#: ../multiload/main.c:512
+#: ../multiload/main.c:517
 #: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
 msgid "System Monitor"
 msgstr "Системный монитор"
@@ -1913,7 +2019,18 @@ msgstr ""
 "Ошибка при показе справки:\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:835
+#: ../netspeed/src/netspeed.c:828
+msgid "About MATE Netspeed"
+msgstr ""
+
+#: ../netspeed/src/netspeed.c:830
+msgid ""
+"Copyright © 2002-2003 Jörgen Scheibengruber\n"
+"Copyright © 2011-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+
+#: ../netspeed/src/netspeed.c:833
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
@@ -1921,128 +2038,128 @@ msgstr ""
 "Индикатор скорости сообщает статистические сведения о проходящем через "
 "выбранное сетевое устройство потоке данных."
 
-#: ../netspeed/src/netspeed.c:996
-msgid "Mate Netspeed Preferences"
-msgstr "Настройки Mate Netspeed"
+#: ../netspeed/src/netspeed.c:994
+msgid "MATE Netspeed Preferences"
+msgstr ""
 
-#: ../netspeed/src/netspeed.c:1018
+#: ../netspeed/src/netspeed.c:1016
 msgid "General Settings"
 msgstr "Общие"
 
-#: ../netspeed/src/netspeed.c:1040
+#: ../netspeed/src/netspeed.c:1038
 msgid "Network _device:"
 msgstr "Сетевое устройство:"
 
 #. Default means device with default route set
-#: ../netspeed/src/netspeed.c:1052
+#: ../netspeed/src/netspeed.c:1050
 msgid "Default"
 msgstr "По умолчанию"
 
-#: ../netspeed/src/netspeed.c:1065
+#: ../netspeed/src/netspeed.c:1063
 msgid "Show _sum instead of in & out"
 msgstr "Показывать суммарную скорость входящего и исходящего трафика"
 
-#: ../netspeed/src/netspeed.c:1069
+#: ../netspeed/src/netspeed.c:1067
 msgid "Show _bits instead of bytes"
 msgstr "Показывать _биты вместо байт"
 
-#: ../netspeed/src/netspeed.c:1073
+#: ../netspeed/src/netspeed.c:1071
 msgid "Shorten _unit legend"
 msgstr "Сокращенная легенда _единиц измерения"
 
-#: ../netspeed/src/netspeed.c:1077
+#: ../netspeed/src/netspeed.c:1075
 msgid "_Change icon according to the selected device"
 msgstr "Менять _пиктограмму в соответствии с типом устройства"
 
-#: ../netspeed/src/netspeed.c:1081
+#: ../netspeed/src/netspeed.c:1079
 msgid "Show _icon"
 msgstr "Показать _значок"
 
-#: ../netspeed/src/netspeed.c:1085
+#: ../netspeed/src/netspeed.c:1083
 msgid "Show signal _quality icon for wireless devices"
 msgstr "Показывать значок _качества сигнала для беспроводных устройств"
 
-#: ../netspeed/src/netspeed.c:1203
+#: ../netspeed/src/netspeed.c:1201
 #, c-format
 msgid "Device Details for %s"
 msgstr "Информация об устройстве %s"
 
-#: ../netspeed/src/netspeed.c:1228
+#: ../netspeed/src/netspeed.c:1226
 msgid "_In graph color"
 msgstr "Цвет графика _входящих данных"
 
-#: ../netspeed/src/netspeed.c:1229
+#: ../netspeed/src/netspeed.c:1227
 msgid "_Out graph color"
 msgstr "Цвет графика _исходящих данных"
 
-#: ../netspeed/src/netspeed.c:1245
+#: ../netspeed/src/netspeed.c:1243
 msgid "Internet Address:"
 msgstr "IP адрес:"
 
-#: ../netspeed/src/netspeed.c:1246
+#: ../netspeed/src/netspeed.c:1244
 msgid "Netmask:"
 msgstr "Маска подсети:"
 
-#: ../netspeed/src/netspeed.c:1247
+#: ../netspeed/src/netspeed.c:1245
 msgid "Hardware Address:"
 msgstr "Аппаратный адрес:"
 
-#: ../netspeed/src/netspeed.c:1248
+#: ../netspeed/src/netspeed.c:1246
 msgid "P-t-P Address:"
 msgstr "Адрес точка-точка:"
 
-#: ../netspeed/src/netspeed.c:1249
+#: ../netspeed/src/netspeed.c:1247
 msgid "Bytes in:"
 msgstr "Объём входящего трафика:"
 
-#: ../netspeed/src/netspeed.c:1250
+#: ../netspeed/src/netspeed.c:1248
 msgid "Bytes out:"
 msgstr "Объём исходящего трафика:"
 
+#: ../netspeed/src/netspeed.c:1250 ../netspeed/src/netspeed.c:1251
 #: ../netspeed/src/netspeed.c:1252 ../netspeed/src/netspeed.c:1253
-#: ../netspeed/src/netspeed.c:1254 ../netspeed/src/netspeed.c:1255
 msgid "none"
 msgstr "нет"
 
-#: ../netspeed/src/netspeed.c:1306
+#: ../netspeed/src/netspeed.c:1304
 msgid "IPV6 Address:"
 msgstr "Адрес IPV6:"
 
-#: ../netspeed/src/netspeed.c:1339
+#: ../netspeed/src/netspeed.c:1337
 msgid "Signal Strength:"
 msgstr "Сила сигнала:"
 
-#: ../netspeed/src/netspeed.c:1340
+#: ../netspeed/src/netspeed.c:1338
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1381
+#: ../netspeed/src/netspeed.c:1379
 msgid "Device _Details"
 msgstr "_Подробнее об устройстве"
 
-#: ../netspeed/src/netspeed.c:1383
+#: ../netspeed/src/netspeed.c:1381
 msgid "Preferences..."
 msgstr "Параметры..."
 
-#: ../netspeed/src/netspeed.c:1385
+#: ../netspeed/src/netspeed.c:1383
 msgid "Help"
 msgstr "Справка"
 
-#: ../netspeed/src/netspeed.c:1387
+#: ../netspeed/src/netspeed.c:1385
 msgid "About..."
 msgstr "О программе..."
 
-#: ../netspeed/src/netspeed.c:1428
+#: ../netspeed/src/netspeed.c:1426
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Отключить %s сейчас?"
 
-#: ../netspeed/src/netspeed.c:1432
+#: ../netspeed/src/netspeed.c:1430
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Подключить %s сейчас?"
 
-#: ../netspeed/src/netspeed.c:1459
+#: ../netspeed/src/netspeed.c:1457
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2051,12 +2168,12 @@ msgstr ""
 "<b>Ошибка выполнения команды %s</b>\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:1518
+#: ../netspeed/src/netspeed.c:1516
 #, c-format
 msgid "%s is down"
 msgstr "%s отключен"
 
-#: ../netspeed/src/netspeed.c:1523
+#: ../netspeed/src/netspeed.c:1521
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2065,11 +2182,11 @@ msgstr ""
 "%s :%s\n"
 "входящий: %s исходящий: %s"
 
-#: ../netspeed/src/netspeed.c:1525 ../netspeed/src/netspeed.c:1534
+#: ../netspeed/src/netspeed.c:1523 ../netspeed/src/netspeed.c:1532
 msgid "has no ip"
 msgstr "нет IP адреса"
 
-#: ../netspeed/src/netspeed.c:1532
+#: ../netspeed/src/netspeed.c:1530
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2078,7 +2195,7 @@ msgstr ""
 "%s :%s\n"
 "суммарная скорость: %s"
 
-#: ../netspeed/src/netspeed.c:1541
+#: ../netspeed/src/netspeed.c:1539
 #, c-format
 msgid ""
 "\n"
@@ -2089,13 +2206,13 @@ msgstr ""
 "ESSID: %s\n"
 "Сила: %d %%"
 
-#: ../netspeed/src/netspeed.c:1542
+#: ../netspeed/src/netspeed.c:1540
 msgid "unknown"
 msgstr "неизвестно"
 
-#: ../netspeed/src/netspeed.c:1593
-msgid "Mate Netspeed"
-msgstr "Mate Netspeed"
+#: ../netspeed/src/netspeed.c:1591
+msgid "MATE Netspeed"
+msgstr ""
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
@@ -2470,6 +2587,17 @@ msgid "Show sticky notes"
 msgstr "Отображать липкие записки"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
+msgid "About Sticky Notes"
+msgstr ""
+
+#: ../stickynotes/stickynotes_applet_callbacks.c:381
+msgid ""
+"Copyright © 2002-2003 Loban A Rahman\n"
+"Copyright © 2005 Davyd Madeley\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Липкие записки для среды MATE"
 
@@ -2482,7 +2610,7 @@ msgid "Timer"
 msgstr "Таймер"
 
 #: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:279
+#: ../timerapplet/timerapplet.c:277
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Таймер обратного отсчёта с уведомлением после окончания"
 
@@ -2522,35 +2650,45 @@ msgstr "С_брос"
 msgid "Timer finished!"
 msgstr "Таймер завершён!"
 
-#: ../timerapplet/timerapplet.c:312
+#: ../timerapplet/timerapplet.c:272
+msgid "About Timer Applet"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:274
+msgid ""
+"Copyright © 2014 Stefano Karapetsas\n"
+"Copyright © 2015-2019 MATE developers"
+msgstr ""
+
+#: ../timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
 msgstr "Настройки апплета таймера"
 
-#: ../timerapplet/timerapplet.c:325
+#: ../timerapplet/timerapplet.c:323
 msgid "Name:"
 msgstr "Название:"
 
-#: ../timerapplet/timerapplet.c:334
+#: ../timerapplet/timerapplet.c:332
 msgid "Hours:"
 msgstr "Часы:"
 
-#: ../timerapplet/timerapplet.c:345
+#: ../timerapplet/timerapplet.c:343
 msgid "Minutes:"
 msgstr "Минуты:"
 
-#: ../timerapplet/timerapplet.c:356
+#: ../timerapplet/timerapplet.c:354
 msgid "Seconds:"
 msgstr "Секунды:"
 
-#: ../timerapplet/timerapplet.c:367
+#: ../timerapplet/timerapplet.c:365
 msgid "Show notification popup"
 msgstr "Показать всплывающее уведомление"
 
-#: ../timerapplet/timerapplet.c:371
+#: ../timerapplet/timerapplet.c:369
 msgid "Show dialog"
 msgstr "Отобразить диалог"
 
-#: ../timerapplet/timerapplet.c:405
+#: ../timerapplet/timerapplet.c:403
 msgid "Timer Applet"
 msgstr "Апплет таймера"
 
@@ -2593,6 +2731,17 @@ msgstr ""
 "%s"
 
 #: ../trashapplet/src/trashapplet.c:432
+msgid "About Trash Applet"
+msgstr ""
+
+#: ../trashapplet/src/trashapplet.c:434
+msgid ""
+"Copyright © 2004 Michiel Sikkes\n"
+"Copyright © 2008 Ryan Lortie\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../trashapplet/src/trashapplet.c:437
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
@@ -2600,20 +2749,20 @@ msgstr ""
 "Корзина среды MATE, которая живет в вашей панели. Вы можете использовать ее "
 "для просмотра корзины или перетаскивания в нее элементов."
 
-#: ../trashapplet/src/trashapplet.c:457
+#: ../trashapplet/src/trashapplet.c:462
 msgid "Delete Immediately?"
 msgstr "Удалить окончательно?"
 
-#: ../trashapplet/src/trashapplet.c:487
+#: ../trashapplet/src/trashapplet.c:492
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "Не удается переместить элементы в корзину, удалить их окончательно?"
 
-#: ../trashapplet/src/trashapplet.c:492
+#: ../trashapplet/src/trashapplet.c:497
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "Не удается переместить элементы в корзину, удалить их окончательно?"
 
-#: ../trashapplet/src/trashapplet.c:622
+#: ../trashapplet/src/trashapplet.c:627
 msgid "Trash Applet"
 msgstr "Апплет корзины"
 
