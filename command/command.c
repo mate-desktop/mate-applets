@@ -97,7 +97,7 @@ command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_a
         command_applet->command = NULL;
     }
 
-    if (command_applet->child_pid != 0)
+    if (command_applet->child_pid != (GPid) 0)
     {
         g_spawn_close_pid (command_applet->child_pid);
         command_applet->child_pid = 0;
@@ -219,7 +219,8 @@ settings_width_changed (GSettings *settings, gchar *key, CommandApplet *command_
 
     width = g_settings_get_int (command_applet->settings, WIDTH_KEY);
 
-    command_applet->width = width;
+    if (command_applet->width != width)
+        command_applet->width = width;
 
     /* execute command to start new timer */
     command_execute (command_applet);
@@ -342,7 +343,7 @@ on_child_exit (GPid child_pid, gint status, gpointer data)
     command_applet->child_pid = 0;
 }
 
-static void
+static GIOChannel *
 set_up_io_channel (gint fd, GIOCondition cond, GIOFunc func, gpointer data)
 {
     GIOChannel *ioc;
@@ -356,12 +357,15 @@ set_up_io_channel (gint fd, GIOCondition cond, GIOFunc func, gpointer data)
 
     g_io_add_watch (ioc, cond, func, data);
     g_io_channel_unref (ioc);
+
+    return ioc;
 }
 
 static gboolean
 command_execute (CommandApplet *command_applet)
 {
     GError *error = NULL;
+    gint argc;
     gchar **argv;
     gint stdout_fd;
 
@@ -371,23 +375,24 @@ command_execute (CommandApplet *command_applet)
         return TRUE;
     }
 
-    /* command running, wait for next timer execution */
-    if (command_applet->child_pid != 0)
-    {
-        return TRUE;
-    }
-
-    if (!g_shell_parse_argv (command_applet->command, NULL, &argv, &error))
+    if (!g_shell_parse_argv (command_applet->command, &argc, &argv, &error))
     {
         gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
         g_clear_error (&error);
         return FALSE;
     }
 
+    /* command running, wait for next timer execution */
+    if (command_applet->child_pid != (GPid) 0)
+    {
+        g_strfreev (argv);
+        return TRUE;
+    }
+
     if (!g_spawn_async_with_pipes (NULL,
                                    argv,
                                    NULL,
-                                   G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
+                                   (GSpawnFlags) G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
                                    NULL,
                                    NULL,
                                    &command_applet->child_pid,
@@ -401,7 +406,9 @@ command_execute (CommandApplet *command_applet)
         return TRUE;
     }
 
-    g_free(command_applet->buffer);
+    if (command_applet->buffer != NULL) {
+        g_free(command_applet->buffer);
+    }
     command_applet->buffer = g_new0(gchar, command_applet->width+1);
 
     set_up_io_channel (stdout_fd, G_IO_IN|G_IO_PRI|G_IO_ERR|G_IO_HUP|G_IO_NVAL,
