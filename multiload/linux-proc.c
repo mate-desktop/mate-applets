@@ -100,14 +100,14 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
     static guint64 lastread = 0, lastwrite = 0;
     static AutoScaler scaler;
 
-    glibtop_mountlist mountlist;
-    glibtop_mountentry *mountentries;
     guint i;
     int max;
+    gboolean nvme_diskstats;
 
     guint64 read, write;
     guint64 readdiff, writediff;
 
+    nvme_diskstats = g_settings_get_boolean (g->multiload->settings, "diskload-nvme-diskstats");
 
     if(first_call)
     {
@@ -116,31 +116,70 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
 
     read = write = 0;
 
-    mountentries = glibtop_get_mountlist (&mountlist, FALSE);
-
-    for (i = 0; i < mountlist.number; i++)
+    if (nvme_diskstats)
     {
-        struct statvfs statresult;
-        glibtop_fsusage fsusage;
+        FILE *fdr;
+        char line[255];
+        guint64 s_read, s_write;
 
-        if (strstr (mountentries[i].devname, "/dev/") == NULL)
-            continue;
-
-        if (strstr (mountentries[i].mountdir, "/media/") != NULL)
-            continue;
-
-        if (statvfs (mountentries[i].mountdir, &statresult) < 0)
+        fdr = fopen("/proc/diskstats", "r");
+        if (!fdr)
         {
-            g_debug ("Failed to get statistics for mount entry: %s. Reason: %s. Skipping entry.",
-                     mountentries[i].mountdir, strerror(errno));
-            continue;
+            g_settings_set_boolean (g->multiload->settings, "diskload-nvme-diskstats", FALSE);
+            return;
         }
 
-        glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
-        read += fsusage.read; write += fsusage.write;
-    }
+        while (fgets(line, 255, fdr))
+        {
+            /* Match main device, rather than individual partitions (e.g. nvme0n1) */
+            if (!g_regex_match_simple("\\snvme\\d+\\w+\\d+\\s", line, 0, 0))
+            {
+                continue;
+            }
 
-    g_free(mountentries);
+            /*
+               6 - sectors read
+               10 - sectors written
+               */
+            if (sscanf(line, "%*d %*d %*s %*d %*d %ld %*d %*d %*d %ld", &s_read, &s_write) == 2)
+            {
+                read += 512 * s_read;
+                write += 512 * s_write;
+            }
+        }
+        fclose(fdr);
+    }
+    else
+    {
+        glibtop_mountlist mountlist;
+        glibtop_mountentry *mountentries;
+
+        mountentries = glibtop_get_mountlist (&mountlist, FALSE);
+
+        for (i = 0; i < mountlist.number; i++)
+        {
+            struct statvfs statresult;
+            glibtop_fsusage fsusage;
+
+            if (strstr (mountentries[i].devname, "/dev/") == NULL)
+                continue;
+
+            if (strstr (mountentries[i].mountdir, "/media/") != NULL)
+                continue;
+
+            if (statvfs (mountentries[i].mountdir, &statresult) < 0)
+            {
+                g_debug ("Failed to get statistics for mount entry: %s. Reason: %s. Skipping entry.",
+                         mountentries[i].mountdir, strerror(errno));
+                continue;
+            }
+
+            glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
+            read += fsusage.read; write += fsusage.write;
+        }
+
+        g_free(mountentries);
+    }
 
     readdiff  = read - lastread;
     writediff = write - lastwrite;

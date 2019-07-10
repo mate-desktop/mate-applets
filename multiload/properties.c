@@ -324,6 +324,49 @@ add_color_selector(GtkWidget *page, gchar *name, gchar *key, MultiloadApplet *ma
 	return;
 }
 
+/* save the checkbox option to gsettings and apply it on the applet */
+static void
+checkbox_toggled_cb(GtkCheckButton *checkbox, gchar *key)
+{
+	MultiloadApplet *ma;
+	gboolean option;
+
+	ma = g_object_get_data (G_OBJECT (checkbox), "MultiloadApplet");
+
+	option = g_settings_get_boolean(ma->settings, key);
+	g_settings_set_boolean(ma->settings, key, !option);
+
+	return;
+}
+
+/* adds checkbox option */
+static void
+add_checkbox(GtkWidget *page, gchar *name, gchar *key, MultiloadApplet *ma)
+{
+	GtkWidget *vbox;
+	GtkWidget *checkbox;
+	gboolean option;
+
+	option = g_settings_get_boolean (ma->settings, key);
+
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	checkbox = gtk_check_button_new_with_mnemonic (name);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbox), option);
+
+	gtk_box_pack_start(GTK_BOX(vbox), checkbox, FALSE, FALSE, 0);
+
+	gtk_box_pack_start(GTK_BOX(page), vbox, FALSE, FALSE, 0);
+
+	g_object_set_data (G_OBJECT (checkbox), "MultiloadApplet", ma);
+
+	g_signal_connect(G_OBJECT(checkbox), "toggled", G_CALLBACK(checkbox_toggled_cb), key);
+
+	if ( ! g_settings_is_writable (ma->settings, key))
+		hard_set_sensitive (vbox, FALSE);
+
+	return;
+}
+
 /* creates the properties dialog using up-to-the-minute info from gsettings */
 static void
 fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
@@ -638,6 +681,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	add_color_selector (page, _("_Read"), "diskload-color0", ma);
 	add_color_selector (page, _("_Write"), "diskload-color1", ma);
 	add_color_selector (page, _("_Background"), "diskload-color2", ma);
+	add_checkbox(page, _("Use diskstats for NVMe"), "diskload-nvme-diskstats", ma);
 
 	title = g_strconcat ("<span weight=\"bold\">", _("Network speed thresholds"), "</span>", NULL);
 	label = gtk_label_new (title);
@@ -667,7 +711,6 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 
 	label_size = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
-	orient = mate_panel_applet_get_orient(ma->applet);
 	label_text = g_strdup(_("Threshold 1: "));
 	label = gtk_label_new_with_mnemonic(label_text);
 	gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
