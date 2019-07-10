@@ -141,6 +141,10 @@
       <default>'#000000'</default>
       <summary>Background color for disk load graph</summary>
     </key>
+    <key name="diskload-nvme-diskstats" type="b">
+      <default>false</default>
+      <summary>Uses /proc/diskstats to determine NVMe disk load</summary>
+    </key>
     <key name="system-monitor" type="s">
       <default>'mate-system-monitor.desktop'</default>
       <summary>The desktop description file to execute as the system monitor</summary>
