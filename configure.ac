@@ -357,33 +357,51 @@ if test "x$HAVE_POLKIT" = "xyes"; then
    enable_suid=no
 fi
 
-AC_ARG_WITH([cpufreq-lib],
-	AS_HELP_STRING([--with-cpufreq-lib=lib], [library to use for cpufreq applet @<:@default=cpufreq@:>@]),
-	[with_cpufreq_lib=$withval], [with_cpufreq_lib="cpupower"])
+build_cpufreq_applet=yes
+AS_IF([test "x$disable_cpufreq" = "xno"], [
+  case "${host}" in
+    *linux*)
+      AC_CHECK_HEADER([cpufreq.h], [
+        AC_CHECK_LIB([cpupower], [cpupower_is_cpu_online], [
+          AC_DEFINE([HAVE_IS_CPU_ONLINE], 1,
+                    [Define to 1 if cpupower_is_cpu_online() is available])
+          cpufreq_lib="cpupower"
 
-AC_CHECK_HEADER(cpufreq.h, have_libcpufreq=yes, have_libcpufreq=no)
-LIBCPUFREQ_LIBS=
-if test "x$have_libcpufreq" = "xyes"; then
-   AC_DEFINE([HAVE_LIBCPUFREQ], [1], [Have libcpufreq.])
-   LIBCPUFREQ_LIBS="-l$with_cpufreq_lib"
-fi
-AM_CONDITIONAL(HAVE_LIBCPUFREQ, test x$have_libcpufreq = xyes)
-AC_SUBST(LIBCPUFREQ_LIBS)
+          AC_CHECK_LIB([cpupower], [cpufreq_get_frequencies], [
+            AC_DEFINE([HAVE_GET_FREQUENCIES], 1,
+                      [Define to 1 if cpufreq_get_frequencies() is available])
+          ])
+        ], [
+          AC_CHECK_LIB([cpupower], [cpufreq_cpu_exists], [
+            cpufreq_lib="cpupower"
+          ], [
+            AC_CHECK_LIB([cpufreq], [cpufreq_cpu_exists], [
+              cpufreq_lib="cpufreq"
+            ], [cpufreq_lib=])
+          ])
+        ])
 
-build_cpufreq_applet=no
+        AS_IF([test "x$cpufreq_lib" != "x"], [
+          LIBCPUFREQ_LIBS="-l$cpufreq_lib"
+          AC_DEFINE([HAVE_LIBCPUFREQ], [1], [Have libcpufreq.])
+          AC_SUBST([LIBCPUFREQ_LIBS])
+        ], [
+          AC_MSG_WARN([*** cpufreq applet will not be built ***])
+          build_cpufreq_applet=no
+        ])
+      ], [
+        AC_MSG_WARN([*** can't find cpufreq.h, cpufreq applet will not be built ***])
+        build_cpufreq_applet=no
+      ])
+      ;;
+    *)
+      AC_MSG_WARN([${host} is not supported by cpufreq applet, not building])
+      build_cpufreq_applet=no
+      ;;
+  esac
+], [build_cpufreq_applet=no])
 
-if test x$disable_cpufreq = xno; then
-   case "${host}" in
-      *linux*)
-         build_cpufreq_applet=yes
-	 ;;
-      *)
-         AC_MSG_WARN([${host} is not supported by cpufreq applet, not building])
-	 build_cpufreq_applet=no
-	 ;;
-   esac
-fi
-
+AM_CONDITIONAL(HAVE_LIBCPUFREQ, test x$cpufreq_lib != x)
 AM_CONDITIONAL(BUILD_CPUFREQ_APPLET, test x$build_cpufreq_applet = xyes)
 AM_CONDITIONAL(BUILD_CPUFREQ_SELECTOR, test x$enable_selector = xyes)
 AM_CONDITIONAL(CPUFREQ_SELECTOR_SUID, test x$enable_suid = xyes)
