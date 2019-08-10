@@ -19,11 +19,14 @@
  * Authors : Carlos García Campos <carlosgc@gnome.org>
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <glib.h>
 #include <glib/gi18n.h>
 
 #include <stdlib.h>
-#include <linux/version.h>
 #include <cpufreq.h>
 #include "cpufreq-monitor-libcpufreq.h"
 #include "cpufreq-utils.h"
@@ -36,12 +39,12 @@ static GList   *cpufreq_monitor_libcpufreq_get_available_governors   (CPUFreqMon
 
 G_DEFINE_TYPE (CPUFreqMonitorLibcpufreq, cpufreq_monitor_libcpufreq, CPUFREQ_TYPE_MONITOR)
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 1, 0)
-typedef struct cpufreq_available_frequencies CPUFreqFrequencyList;
-#else
+#ifdef HAVE_GET_FREQUENCIES
 typedef struct cpufreq_frequencies CPUFreqFrequencyList;
 #define cpufreq_get_available_frequencies(cpu) cpufreq_get_frequencies ("available", cpu)
 #define cpufreq_put_available_frequencies(first) cpufreq_put_frequencies (first)
+#else
+typedef struct cpufreq_available_frequencies CPUFreqFrequencyList;
 #endif
 
 typedef struct cpufreq_policy                CPUFreqPolicy;
@@ -105,7 +108,7 @@ cpufreq_monitor_libcpufreq_new (guint cpu)
         return CPUFREQ_MONITOR (monitor);
 }
 
-#if LINUX_VERSION_CODE > KERNEL_VERSION(4, 7, 0)
+#ifdef HAVE_IS_CPU_ONLINE
 extern int cpupower_is_cpu_online (unsigned int cpu);
 #endif
 
@@ -122,7 +125,7 @@ cpufreq_monitor_libcpufreq_run (CPUFreqMonitor *monitor)
 		/* Check whether it failed because
 		 * cpu is not online.
 		 */
-#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 7, 0)
+#ifndef HAVE_IS_CPU_ONLINE
 		if (!cpufreq_cpu_exists (cpu)) {
 #else
 		if (cpupower_is_cpu_online (cpu)) {
