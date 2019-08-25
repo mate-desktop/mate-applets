@@ -133,7 +133,7 @@ timer_callback (TimerApplet *applet)
     }
     else
     {
-        if (applet->active && !applet->pause)
+        if (!applet->pause)
             applet->elapsed += STEP;
 
         duration = g_settings_get_int (applet->settings, DURATION_KEY);
