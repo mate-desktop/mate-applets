@@ -132,7 +132,6 @@ requires:
     - mate-common
     - x11proto-kb-dev
     - yelp-tools
-    - linux-tools-generic
 
 variables:
   - CFLAGS="-Wall -Werror=format-security"
@@ -141,9 +140,6 @@ before_scripts:
   - if [ ${DISTRO_NAME} == "debian" ];then
   -     curl -Ls -o debian.sh https://github.com/mate-desktop/mate-dev-scripts/raw/master/travis/debian.sh
   -     bash ./debian.sh
-  - fi
-  - if [ ${DISTRO_NAME} == "ubuntu" ];then
-  -     ln -sf `ls /usr/lib/libcpupower.so.*|head -1` /usr/lib/libcpupower.so
   - fi
 
 after_scripts:
