@@ -184,7 +184,7 @@ cpufreq_selector_procfs_set_frequency (CPUFreqSelector *selector,
 	}
 
 	if (frequency != sc_max && frequency != sc_min) {
-		if (abs (sc_max - frequency) < abs (frequency - sc_min))
+		if (abs ((int)sc_max - (int)frequency) < abs ((int)frequency - (int)sc_min))
 			freq = sc_max;
 		else
 			freq = sc_min;
