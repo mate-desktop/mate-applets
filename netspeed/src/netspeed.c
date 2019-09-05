@@ -473,8 +473,6 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	GtkWidget *da = GTK_WIDGET(applet->drawingarea);
 	GtkStyleContext *stylecontext = gtk_widget_get_style_context (da);
 	GdkWindow *real_window = gtk_widget_get_window (da);
-	GdkRectangle ra;
-	GtkStateType state;
 	GdkPoint in_points[GRAPH_VALUES], out_points[GRAPH_VALUES];
 	PangoLayout *layout;
 	PangoRectangle logical_rect;
@@ -539,11 +537,6 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 		cairo_line_to (cr, out_points[i].x, out_points[i].y);
 	}
 	cairo_stroke (cr);
-
-	/* draw the 2 labels */
-	state = GTK_STATE_NORMAL;
-	ra.x = 0; ra.y = 0;
-	ra.width = w; ra.height = h;
 
 	text = bytes_to_string(max_val, TRUE, applet->show_bits, applet->short_unit);
 	add_markup_fgcolor(&text, "black");
