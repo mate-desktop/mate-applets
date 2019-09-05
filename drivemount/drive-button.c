@@ -615,7 +615,7 @@ open_drive (DriveButton *self, GtkWidget *item)
 						     GTK_BUTTONS_OK,
 						     _("Cannot execute Caja"));
 	if (error)
-	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), error->message, NULL);
+	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
 	else
 	    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "Could not find Caja");
 	g_signal_connect (dialog, "response",
