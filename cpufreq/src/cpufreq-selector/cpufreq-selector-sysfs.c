@@ -241,7 +241,7 @@ cpufreq_selector_sysfs_get_valid_frequency (CPUFreqSelectorSysfs *selector,
 		if (f == frequency)
 			return freq;
 
-		current_dist = abs (frequency - f);
+		current_dist = abs ((int)frequency - (int)f);
 		if (current_dist < dist) {
 			dist = current_dist;
 			retval = freq;
