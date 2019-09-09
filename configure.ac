@@ -58,10 +58,11 @@ if test "$GCC" = "yes" -a "$set_more_warnings" != "no"; then
     AC_MSG_RESULT(yes)
     CFLAGS="\
     -Wall \
+    -Wextra \
     -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes \
     -Wnested-externs -Wpointer-arith \
-    -Wcast-align -Wsign-compare \
-    -std=gnu89 \
+    -Wcast-align -Wunused-but-set-variable \
+    -Wformat-nonliteral -Wabsolute-value -Werror=format-security \
     $CFLAGS"
 
     for option in -Wno-strict-aliasing -Wno-sign-compare; do
