@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 16:02+0100\n"
+"POT-Creation-Date: 2019-09-19 13:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 
 #: ../accessx-status/applet.c:105 ../battstat/battstat_applet.c:844
-#: ../charpick/charpick.c:592 ../command/command.c:114
+#: ../charpick/charpick.c:592 ../command/command.c:128
 #: ../cpufreq/src/cpufreq-applet.c:493 ../drivemount/drivemount.c:127
 #: ../geyes/geyes.c:186 ../mateweather/mateweather-about.c:61
 #: ../multiload/main.c:69 ../netspeed/src/netspeed.c:836
@@ -84,7 +84,7 @@ msgid "_Help"
 msgstr ""
 
 #: ../accessx-status/applet.c:184 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:676 ../command/command.c:75
+#: ../charpick/charpick.c:676 ../command/command.c:84
 #: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:168
 #: ../geyes/geyes.c:362 ../mateweather/mateweather-applet.c:120
 #: ../multiload/main.c:491 ../stickynotes/stickynotes_applet.c:49
@@ -141,7 +141,7 @@ msgid "Shows the status of keyboard accessibility features"
 msgstr ""
 
 #: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:670
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
+#: ../command/command.c:83 ../cpufreq/src/cpufreq-applet.c:119
 #: ../geyes/geyes.c:356 ../mateweather/mateweather-applet.c:114
 #: ../multiload/main.c:482 ../stickynotes/stickynotes_applet.c:43
 #: ../timerapplet/timerapplet.c:83
@@ -290,7 +290,7 @@ msgid "N/A"
 msgstr ""
 
 #: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:153
-#: ../geyes/geyes.c:344 ../geyes/themes.c:226
+#: ../geyes/geyes.c:344 ../geyes/themes.c:223
 #: ../mateweather/mateweather-applet.c:63 ../mateweather/mateweather-pref.c:751
 #: ../stickynotes/stickynotes_applet_callbacks.c:345
 #: ../stickynotes/stickynotes_applet_callbacks.c:540
@@ -583,44 +583,44 @@ msgstr ""
 msgid "Character Palette Preferences"
 msgstr ""
 
-#: ../command/command.c:108
+#: ../command/command.c:122
 msgid "About Command Applet"
 msgstr ""
 
-#: ../command/command.c:110
+#: ../command/command.c:124
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2019 MATE developers"
 msgstr ""
 
-#: ../command/command.c:113
+#: ../command/command.c:127
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
 msgid "Shows the output of a command"
 msgstr ""
 
-#: ../command/command.c:131
+#: ../command/command.c:194
 msgid "Command Applet Preferences"
 msgstr ""
 
-#: ../command/command.c:144
+#: ../command/command.c:207
 msgid "Command:"
 msgstr ""
 
-#: ../command/command.c:152
+#: ../command/command.c:215
 msgid "Interval (seconds):"
 msgstr ""
 
-#: ../command/command.c:160
+#: ../command/command.c:223
 msgid "Maximum width (chars):"
 msgstr ""
 
-#: ../command/command.c:168
+#: ../command/command.c:231
 #: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
 #: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
 msgid "Show icon"
 msgstr ""
 
-#: ../command/command.c:319
+#: ../command/command.c:443
 msgid "Command Applet"
 msgstr ""
 
@@ -898,23 +898,23 @@ msgstr ""
 msgid "Directory in which the theme is located"
 msgstr ""
 
-#: ../geyes/themes.c:130
+#: ../geyes/themes.c:129
 msgid "Can not launch the eyes applet."
 msgstr ""
 
-#: ../geyes/themes.c:131
+#: ../geyes/themes.c:130
 msgid "There was a fatal error while trying to load the theme."
 msgstr ""
 
-#: ../geyes/themes.c:285
+#: ../geyes/themes.c:282
 msgid "Eyes Preferences"
 msgstr ""
 
-#: ../geyes/themes.c:318
+#: ../geyes/themes.c:315
 msgid "Themes"
 msgstr ""
 
-#: ../geyes/themes.c:339
+#: ../geyes/themes.c:336
 msgid "_Select a theme:"
 msgstr ""
 
@@ -941,21 +941,21 @@ msgstr ""
 msgid "_Update"
 msgstr ""
 
-#: ../mateweather/mateweather-applet.c:339
+#: ../mateweather/mateweather-applet.c:345
 #: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
 msgid "Weather Report"
 msgstr ""
 
-#: ../mateweather/mateweather-applet.c:354
-#: ../mateweather/mateweather-applet.c:358
+#: ../mateweather/mateweather-applet.c:360
+#: ../mateweather/mateweather-applet.c:364
 msgid "MATE Weather"
 msgstr ""
 
-#: ../mateweather/mateweather-applet.c:457
+#: ../mateweather/mateweather-applet.c:463
 msgid "Weather Forecast"
 msgstr ""
 
-#: ../mateweather/mateweather-applet.c:469
+#: ../mateweather/mateweather-applet.c:475
 #, c-format
 msgid ""
 "City: %s\n"
@@ -963,7 +963,7 @@ msgid ""
 "Temperature: %s"
 msgstr ""
 
-#: ../mateweather/mateweather-applet.c:518
+#: ../mateweather/mateweather-applet.c:524
 msgid "Updating..."
 msgstr ""
 
@@ -1292,19 +1292,19 @@ msgstr ""
 msgid "There was an error executing '%s': %s"
 msgstr ""
 
-#: ../multiload/main.c:279 ../multiload/properties.c:600
+#: ../multiload/main.c:279 ../multiload/properties.c:643
 msgid "Processor"
 msgstr ""
 
-#: ../multiload/main.c:281 ../multiload/properties.c:608
+#: ../multiload/main.c:281 ../multiload/properties.c:651
 msgid "Memory"
 msgstr ""
 
-#: ../multiload/main.c:283 ../multiload/properties.c:616
+#: ../multiload/main.c:283 ../multiload/properties.c:659
 msgid "Network"
 msgstr ""
 
-#: ../multiload/main.c:285 ../multiload/properties.c:625
+#: ../multiload/main.c:285 ../multiload/properties.c:668
 msgid "Swap Space"
 msgstr ""
 
@@ -1533,176 +1533,184 @@ msgid "Background color for disk load graph"
 msgstr ""
 
 #: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:36
+msgid "Uses /proc/diskstats to determine NVMe disk load"
+msgstr ""
+
+#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:37
 msgid "The desktop description file to execute as the system monitor"
 msgstr ""
 
-#: ../multiload/properties.c:362
+#: ../multiload/properties.c:405
 msgid "Monitored Resources"
 msgstr ""
 
-#: ../multiload/properties.c:387
+#: ../multiload/properties.c:430
 msgid "_Processor"
 msgstr ""
 
-#: ../multiload/properties.c:400
+#: ../multiload/properties.c:443
 msgid "_Memory"
 msgstr ""
 
-#: ../multiload/properties.c:413
+#: ../multiload/properties.c:456
 msgid "_Network"
 msgstr ""
 
-#: ../multiload/properties.c:426
+#: ../multiload/properties.c:469
 msgid "S_wap Space"
 msgstr ""
 
-#: ../multiload/properties.c:439
+#: ../multiload/properties.c:482
 msgid "_Load"
 msgstr ""
 
-#: ../multiload/properties.c:452
+#: ../multiload/properties.c:495
 msgid "_Harddisk"
 msgstr ""
 
-#: ../multiload/properties.c:467
+#: ../multiload/properties.c:510
 msgid "Options"
 msgstr ""
 
-#: ../multiload/properties.c:497
+#: ../multiload/properties.c:540
 msgid "System m_onitor width: "
 msgstr ""
 
-#: ../multiload/properties.c:499
+#: ../multiload/properties.c:542
 msgid "System m_onitor height: "
 msgstr ""
 
-#: ../multiload/properties.c:530
+#: ../multiload/properties.c:573
 msgid "pixels"
 msgstr ""
 
-#: ../multiload/properties.c:538
+#: ../multiload/properties.c:581
 msgid "Sys_tem monitor update interval: "
 msgstr ""
 
-#: ../multiload/properties.c:564
+#: ../multiload/properties.c:607
 msgid "milliseconds"
 msgstr ""
 
-#: ../multiload/properties.c:575
+#: ../multiload/properties.c:618
 msgid "Colors"
 msgstr ""
 
-#: ../multiload/properties.c:602 ../multiload/properties.c:610
+#: ../multiload/properties.c:645 ../multiload/properties.c:653
 msgid "_User"
 msgstr ""
 
-#: ../multiload/properties.c:603
+#: ../multiload/properties.c:646
 msgid "S_ystem"
 msgstr ""
 
-#: ../multiload/properties.c:604
+#: ../multiload/properties.c:647
 msgid "N_ice"
 msgstr ""
 
-#: ../multiload/properties.c:605
+#: ../multiload/properties.c:648
 msgid "I_OWait"
 msgstr ""
 
-#: ../multiload/properties.c:606
+#: ../multiload/properties.c:649
 msgid "I_dle"
 msgstr ""
 
-#: ../multiload/properties.c:611
+#: ../multiload/properties.c:654
 msgid "Sh_ared"
 msgstr ""
 
-#: ../multiload/properties.c:612
+#: ../multiload/properties.c:655
 msgid "_Buffers"
 msgstr ""
 
-#: ../multiload/properties.c:613
+#: ../multiload/properties.c:656
 msgid "Cach_ed"
 msgstr ""
 
-#: ../multiload/properties.c:614
+#: ../multiload/properties.c:657
 msgid "F_ree"
 msgstr ""
 
-#: ../multiload/properties.c:618
+#: ../multiload/properties.c:661
 msgid "_In"
 msgstr ""
 
-#: ../multiload/properties.c:619
+#: ../multiload/properties.c:662
 msgid "_Out"
 msgstr ""
 
-#: ../multiload/properties.c:620
+#: ../multiload/properties.c:663
 msgid "_Local"
 msgstr ""
 
-#: ../multiload/properties.c:621 ../multiload/properties.c:633
-#: ../multiload/properties.c:640
+#: ../multiload/properties.c:664 ../multiload/properties.c:676
+#: ../multiload/properties.c:683
 msgid "_Background"
 msgstr ""
 
-#: ../multiload/properties.c:622 ../multiload/properties.c:634
+#: ../multiload/properties.c:665 ../multiload/properties.c:677
 msgid "_Gridline"
 msgstr ""
 
-#: ../multiload/properties.c:623
+#: ../multiload/properties.c:666
 msgid "_Indicator"
 msgstr ""
 
-#: ../multiload/properties.c:627
+#: ../multiload/properties.c:670
 msgid "_Used"
 msgstr ""
 
-#: ../multiload/properties.c:628
+#: ../multiload/properties.c:671
 msgid "_Free"
 msgstr ""
 
-#: ../multiload/properties.c:630
+#: ../multiload/properties.c:673
 msgid "Load"
 msgstr ""
 
-#: ../multiload/properties.c:632
+#: ../multiload/properties.c:675
 msgid "_Average"
 msgstr ""
 
-#: ../multiload/properties.c:636
+#: ../multiload/properties.c:679
 msgid "Harddisk"
 msgstr ""
 
-#: ../multiload/properties.c:638
+#: ../multiload/properties.c:681
 msgid "_Read"
 msgstr ""
 
-#: ../multiload/properties.c:639
+#: ../multiload/properties.c:682
 msgid "_Write"
 msgstr ""
 
-#: ../multiload/properties.c:642
+#: ../multiload/properties.c:684
+msgid "Use diskstats for NVMe"
+msgstr ""
+
+#: ../multiload/properties.c:686
 msgid "Network speed thresholds"
 msgstr ""
 
-#: ../multiload/properties.c:671
+#: ../multiload/properties.c:714
 msgid "Threshold 1: "
 msgstr ""
 
-#: ../multiload/properties.c:702 ../multiload/properties.c:737
-#: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
+#: ../multiload/properties.c:745 ../multiload/properties.c:780
+#: ../multiload/properties.c:815 ../netspeed/src/netspeed.c:432
 msgid "bytes"
 msgstr ""
 
-#: ../multiload/properties.c:710
+#: ../multiload/properties.c:753
 msgid "Threshold 2: "
 msgstr ""
 
-#: ../multiload/properties.c:745
+#: ../multiload/properties.c:788
 msgid "Threshold 3: "
 msgstr ""
 
-#: ../multiload/properties.c:810
+#: ../multiload/properties.c:853
 msgid "System Monitor Preferences"
 msgstr ""
 
@@ -2599,7 +2607,7 @@ msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr ""
 
-#: ../trashapplet/src/trashapplet.c:627
+#: ../trashapplet/src/trashapplet.c:625
 msgid "Trash Applet"
 msgstr ""
 
