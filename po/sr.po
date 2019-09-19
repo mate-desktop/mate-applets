@@ -5,8 +5,8 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2019
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-20 16:02+0100\n"
 "PO-Revision-Date: 2019-03-13 08:55+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr ""
 #: ../geyes/geyes.c:166 ../mateweather/mateweather-about.c:41
 #: ../multiload/main.c:48 ../stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
-msgstr ""
+msgstr "Тим документације Гнома „Sun“ <gdocteam@sun.com>"
 
 #: ../accessx-status/applet.c:87 ../battstat/battstat_applet.c:819
 #: ../charpick/charpick.c:572 ../cpufreq/src/cpufreq-applet.c:469
@@ -36,11 +36,11 @@ msgstr ""
 #: ../stickynotes/stickynotes_applet_callbacks.c:368
 #: ../trashapplet/src/trashapplet.c:421
 msgid "MATE Documentation Team"
-msgstr ""
+msgstr "Тим документације Гнома"
 
 #: ../accessx-status/applet.c:98
 msgid "About AccessX Status"
-msgstr ""
+msgstr "О стању приступачности Икса"
 
 #: ../accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -52,6 +52,8 @@ msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2003 Sun Microsystems\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../accessx-status/applet.c:105 ../battstat/battstat_applet.c:844
 #: ../charpick/charpick.c:592 ../command/command.c:114
@@ -182,33 +184,33 @@ msgstr "Није познато преостало време пуњења (%d%%
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Преостаје %d минут (%d%%)"
+msgstr[1] "Преостају %d минута (%d%%)"
+msgstr[2] "Преостаје %d минута (%d%%)"
 
 #: ../battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d минут до пуне батерије (%d%%)"
+msgstr[1] "%d минута до пуне батерије (%d%%)"
+msgstr[2] "%d минута до пуне батерије (%d%%)"
 
 #: ../battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Преостаје %d сат (%d%%)"
+msgstr[1] "Преостају %d сата (%d%%)"
+msgstr[2] "Преостаје %d сати (%d%%)"
 
 #: ../battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d сат до пуне батерије (%d%%)"
+msgstr[1] "%d сата до пуне батерије (%d%%)"
+msgstr[2] "%d сати до пуне батерије (%d%%)"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -220,16 +222,16 @@ msgstr "Преостаје %d %s и %d %s (%d%%)"
 #: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "сат"
+msgstr[1] "сата"
+msgstr[2] "сати"
 
 #: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "минут"
+msgstr[1] "минута"
+msgstr[2] "минута"
 
 #. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
 #. * Swap order with "%2$s %2$d %1$s %1$d if needed
@@ -263,8 +265,11 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"Преостаје вам још %d минут батеријског напајања (%d%% укупног капацитета)."
 msgstr[1] ""
+"Преостају вам још %d минута батеријског напајања (%d%% укупног капацитета)."
 msgstr[2] ""
+"Преостаје вам још %d минута батеријског напајања (%d%% укупног капацитета)."
 
 #. TRANSLATORS: this is a list, it is left as a single string
 #. * to allow you to make it appear like a list would in your
@@ -337,7 +342,7 @@ msgstr "Укључен је стари позадинац."
 
 #: ../battstat/battstat_applet.c:836
 msgid "About Battery Charge Monitor"
-msgstr ""
+msgstr "О праћењу стања батерије"
 
 #: ../battstat/battstat_applet.c:838
 msgid ""
@@ -345,6 +350,9 @@ msgid ""
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2000 Друштво Њуликс\n"
+"Ауторска права © 2002-2005 Фондација слободног софтвера и остали\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../battstat/battstat_applet.c:1114 ../battstat/battstat_applet.c:1164
 #: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
@@ -498,13 +506,15 @@ msgstr "умеће нарочити знак %s"
 
 #: ../charpick/charpick.c:583
 msgid "About Character Palette"
-msgstr ""
+msgstr "О палети знакова"
 
 #: ../charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 1998, 2004-2005 Одржаваоци Гномових програмчића и остали\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../charpick/charpick.c:587
 msgid ""
@@ -612,13 +622,15 @@ msgstr "Поставке палете знакова"
 
 #: ../command/command.c:108
 msgid "About Command Applet"
-msgstr ""
+msgstr "О програмчету наредби"
 
 #: ../command/command.c:110
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2013-2014 Стефано Карапетас\n"
+"Ауторска права © 2015-2019 Програмери Мејта"
 
 #: ../command/command.c:113
 #: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
@@ -774,13 +786,15 @@ msgstr "Не могу да отворим документ помоћи"
 
 #: ../cpufreq/src/cpufreq-applet.c:484
 msgid "About CPU Frequency Scaling Monitor"
-msgstr ""
+msgstr "О праћењу промене фреквенције процесора"
 
 #: ../cpufreq/src/cpufreq-applet.c:486
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2004 Карлос Гарсија Кампос\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../cpufreq/src/cpufreq-applet.c:488
 msgid "This utility shows the current CPU Frequency Scaling."
@@ -872,13 +886,15 @@ msgstr "_Избаци %s"
 
 #: ../drivemount/drivemount.c:120
 msgid "About Disk Mounter"
-msgstr ""
+msgstr "О прикачињавачу дискова"
 
 #: ../drivemount/drivemount.c:122
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2003 Каноникал Лтд\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
@@ -903,7 +919,7 @@ msgstr "Прикључите локалне дискове и уређаје"
 
 #: ../geyes/geyes.c:178
 msgid "About Eyes"
-msgstr ""
+msgstr "О очима"
 
 #: ../geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
@@ -914,6 +930,8 @@ msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 1999 Дејв Камп\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../geyes/geyes.c:389 ../geyes/geyes.c:419 ../geyes/geyes.c:421
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
@@ -926,7 +944,7 @@ msgstr "Погледом очи верно прате кретњу миша"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "Фабрика програмчета Очи"
 
 #: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
 msgid "A set of eyeballs for your panel"
@@ -946,7 +964,7 @@ msgstr "Дошло је до кобне грешке при покушају у�
 
 #: ../geyes/themes.c:285
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Поставке Очију"
 
 #: ../geyes/themes.c:318
 msgid "Themes"
@@ -958,13 +976,15 @@ msgstr "_Изаберите тему:"
 
 #: ../mateweather/mateweather-about.c:54
 msgid "About Weather Report"
-msgstr ""
+msgstr "О временском извештају"
 
 #: ../mateweather/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 1999-2005 С. Пападимитрију и остали\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
@@ -1310,13 +1330,15 @@ msgstr "Праћење тренутних временских прилика и
 
 #: ../multiload/main.c:60
 msgid "About System Monitor"
-msgstr ""
+msgstr "О праћењу система"
 
 #: ../multiload/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 1999-2005 Фондација слободног софтвера и остали\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../multiload/main.c:64
 msgid ""
@@ -1398,8 +1420,14 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% у употреби"
 msgstr[1] ""
+"%s:\n"
+"%u%% у употреби"
 msgstr[2] ""
+"%s:\n"
+"%u%% у употреби"
 
 #: ../multiload/main.c:362
 msgid "CPU Load"
@@ -1952,7 +1980,7 @@ msgstr ""
 
 #: ../netspeed/src/netspeed.c:828
 msgid "About MATE Netspeed"
-msgstr ""
+msgstr "О Мејтовој мрежној брзини"
 
 #: ../netspeed/src/netspeed.c:830
 msgid ""
@@ -1960,6 +1988,9 @@ msgid ""
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2002-2003 Јерген Шајбенгрубер\n"
+"Ауторска права © 2011-2014 Стефано Карапетас\n"
+"Ауторска права © 2015-2019 Програмери Мејта"
 
 #: ../netspeed/src/netspeed.c:833
 msgid ""
@@ -1971,7 +2002,7 @@ msgstr ""
 
 #: ../netspeed/src/netspeed.c:994
 msgid "MATE Netspeed Preferences"
-msgstr ""
+msgstr "Поставке Мејтове Мрежне брзине"
 
 #: ../netspeed/src/netspeed.c:1016
 msgid "General Settings"
@@ -2143,7 +2174,7 @@ msgstr "непознато"
 
 #: ../netspeed/src/netspeed.c:1591
 msgid "MATE Netspeed"
-msgstr ""
+msgstr "Мејтова Мрежна брзина"
 
 #: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
 msgid "Sticky Notes Applet Factory"
@@ -2506,9 +2537,9 @@ msgstr "_Закључај белешке"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d белешка"
+msgstr[1] "%d белешке"
+msgstr[2] "%d белешки"
 
 #: ../stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2516,7 +2547,7 @@ msgstr "Прикажи белешке"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:379
 msgid "About Sticky Notes"
-msgstr ""
+msgstr "О Белешкама"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:381
 msgid ""
@@ -2524,6 +2555,9 @@ msgid ""
 "Copyright © 2005 Davyd Madeley\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2002-2003 Лобан А Раман\n"
+"Ауторска права © 2005 Дејвид Мадли\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
@@ -2572,7 +2606,7 @@ msgstr "_Заустави одбројавач"
 
 #: ../timerapplet/timerapplet.c:82
 msgid "R_eset"
-msgstr ""
+msgstr "По_врати"
 
 #: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
 msgid "Timer finished!"
@@ -2580,13 +2614,15 @@ msgstr "Одбројавач је завршио!"
 
 #: ../timerapplet/timerapplet.c:272
 msgid "About Timer Applet"
-msgstr ""
+msgstr "О програмчету одбројавача"
 
 #: ../timerapplet/timerapplet.c:274
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2014 Стефано Карапетас\n"
+"Ауторска права © 2015-2019 Програмери Мејта"
 
 #: ../timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
@@ -2640,9 +2676,9 @@ msgstr "_Отвори смеће"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d ставка у смећу"
+msgstr[1] "%d ставке у смећу"
+msgstr[2] "%d ставки у смећу"
 
 #: ../trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
@@ -2659,7 +2695,7 @@ msgstr ""
 
 #: ../trashapplet/src/trashapplet.c:432
 msgid "About Trash Applet"
-msgstr ""
+msgstr "О програмчету смећа"
 
 #: ../trashapplet/src/trashapplet.c:434
 msgid ""
@@ -2667,6 +2703,9 @@ msgid ""
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Ауторска права © 2004 Микјел Сајкс\n"
+"Ауторска права © 2008 Рајан Лорти\n"
+"Ауторска права © 2012-2019 Програмери Мејта"
 
 #: ../trashapplet/src/trashapplet.c:437
 msgid ""
