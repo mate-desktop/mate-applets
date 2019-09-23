@@ -390,9 +390,6 @@ AS_IF([test "x$disable_cpufreq" = "xno"], [
           AC_MSG_WARN([*** cpufreq applet will not be built ***])
           build_cpufreq_applet=no
         ])
-      ], [
-        AC_MSG_WARN([*** can't find cpufreq.h, cpufreq applet will not be built ***])
-        build_cpufreq_applet=no
       ])
       ;;
     *)
