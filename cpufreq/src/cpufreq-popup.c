@@ -48,8 +48,6 @@ struct _CPUFreqPopupPrivate {
 	GtkWidget           *parent;
 };
 
-static void cpufreq_popup_init       (CPUFreqPopup      *popup);
-static void cpufreq_popup_class_init (CPUFreqPopupClass *klass);
 static void cpufreq_popup_finalize   (GObject           *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (CPUFreqPopup, cpufreq_popup, G_TYPE_OBJECT)

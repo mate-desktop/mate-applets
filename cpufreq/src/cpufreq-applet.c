@@ -74,9 +74,6 @@ struct _CPUFreqAppletClass {
         MatePanelAppletClass parent_class;
 };
 
-static void     cpufreq_applet_init              (CPUFreqApplet      *applet);
-static void     cpufreq_applet_class_init        (CPUFreqAppletClass *klass);
-
 static void     cpufreq_applet_preferences_cb    (GtkAction          *action,
                                                   CPUFreqApplet      *applet);
 static void     cpufreq_applet_help_cb           (GtkAction          *action,

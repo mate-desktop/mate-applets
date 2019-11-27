@@ -54,8 +54,6 @@ struct _CPUFreqPrefsPrivate {
 	GtkWidget *show_mode_combo;
 };
 
-static void cpufreq_prefs_init                      (CPUFreqPrefs      *prefs);
-static void cpufreq_prefs_class_init                (CPUFreqPrefsClass *klass);
 static void cpufreq_prefs_finalize                  (GObject           *object);
 
 static void cpufreq_prefs_set_property              (GObject           *object,

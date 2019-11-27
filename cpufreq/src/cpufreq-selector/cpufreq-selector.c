@@ -31,9 +31,6 @@ struct _CPUFreqSelectorPrivate {
 	guint  cpu;
 };
 
-static void cpufreq_selector_init         (CPUFreqSelector      *selector);
-static void cpufreq_selector_class_init   (CPUFreqSelectorClass *klass);
-
 static void cpufreq_selector_set_property (GObject              *object,
 					   guint                 prop_id,
 					   const GValue         *value,

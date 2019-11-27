@@ -52,8 +52,6 @@ struct _CPUFreqMonitorPrivate {
         gboolean changed;
 };
 
-static void   cpufreq_monitor_init         (CPUFreqMonitor      *monitor);
-static void   cpufreq_monitor_class_init   (CPUFreqMonitorClass *klass);
 static void   cpufreq_monitor_finalize     (GObject             *object);
 
 static void   cpufreq_monitor_set_property (GObject             *object,

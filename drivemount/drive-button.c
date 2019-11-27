@@ -400,11 +400,14 @@ drive_button_update (gpointer user_data)
         pixels = cairo_image_surface_get_data (tmp_surface);
 
         GdkRGBA color;
+        GSettings *settings;
+        settings = g_settings_new ("org.mate.drivemount");
         gchar *color_string = g_settings_get_string (settings, "drivemount-checkmark-color");
         if (!color_string)
                 color_string = g_strdup ("#00ff00");
         gdk_rgba_parse (&color, color_string);
         g_free (color_string);
+        g_object_unref (settings);
 
         guchar red = color.red*255;
         guchar green = color.green*255;

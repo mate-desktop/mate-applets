@@ -32,8 +32,6 @@
 #include "cpufreq-monitor-cpuinfo.h"
 #include "cpufreq-utils.h"
 
-static void     cpufreq_monitor_cpuinfo_class_init (CPUFreqMonitorCPUInfoClass *klass);
-
 static gboolean cpufreq_monitor_cpuinfo_run        (CPUFreqMonitor *monitor);
 
 G_DEFINE_TYPE (CPUFreqMonitorCPUInfo, cpufreq_monitor_cpuinfo, CPUFREQ_TYPE_MONITOR)
