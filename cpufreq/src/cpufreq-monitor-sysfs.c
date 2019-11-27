@@ -38,8 +38,6 @@ enum {
         N_FILES
 };
 
-static void     cpufreq_monitor_sysfs_class_init                (CPUFreqMonitorSysfsClass *klass);
-
 static gboolean cpufreq_monitor_sysfs_run                       (CPUFreqMonitor *monitor);
 static GList   *cpufreq_monitor_sysfs_get_available_frequencies (CPUFreqMonitor *monitor);
 static GList   *cpufreq_monitor_sysfs_get_available_governors   (CPUFreqMonitor *monitor);

@@ -29,8 +29,6 @@
 #include "cpufreq-monitor-procfs.h"
 #include "cpufreq-utils.h"
 
-static void     cpufreq_monitor_procfs_class_init                (CPUFreqMonitorProcfsClass *klass);
-
 static gboolean cpufreq_monitor_procfs_run                       (CPUFreqMonitor       *monitor);
 static GList   *cpufreq_monitor_procfs_get_available_frequencies (CPUFreqMonitor       *monitor);
 

@@ -31,9 +31,6 @@
 
 #include "cpufreq-selector-libcpufreq.h"
 
-static void     cpufreq_selector_libcpufreq_init          (CPUFreqSelectorLibcpufreq      *selector);
-static void     cpufreq_selector_libcpufreq_class_init    (CPUFreqSelectorLibcpufreqClass *klass);
-
 static gboolean cpufreq_selector_libcpufreq_set_frequency (CPUFreqSelector           *selector,
 							   guint                      frequency,
 							   GError                   **error);

@@ -31,8 +31,6 @@ struct _CPUFreqSelectorSysfsPrivate {
 	GList *available_govs;
 };
 
-static void     cpufreq_selector_sysfs_init          (CPUFreqSelectorSysfs      *selector);
-static void     cpufreq_selector_sysfs_class_init    (CPUFreqSelectorSysfsClass *klass);
 static void     cpufreq_selector_sysfs_finalize      (GObject                   *object);
 
 static gboolean cpufreq_selector_sysfs_set_frequency (CPUFreqSelector           *selector,

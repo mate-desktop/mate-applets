@@ -27,9 +27,6 @@
 
 #include "cpufreq-selector-procfs.h"
 
-static void     cpufreq_selector_procfs_init          (CPUFreqSelectorProcfs      *selector);
-static void     cpufreq_selector_procfs_class_init    (CPUFreqSelectorProcfsClass *klass);
-
 static gboolean cpufreq_selector_procfs_set_frequency (CPUFreqSelector            *selector,
 						       guint                       frequency,
 						       GError                    **error);

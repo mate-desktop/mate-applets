@@ -31,8 +31,6 @@
 #include "cpufreq-monitor-libcpufreq.h"
 #include "cpufreq-utils.h"
 
-static void     cpufreq_monitor_libcpufreq_class_init                (CPUFreqMonitorLibcpufreqClass *klass);
-
 static gboolean cpufreq_monitor_libcpufreq_run                       (CPUFreqMonitor *monitor);
 static GList   *cpufreq_monitor_libcpufreq_get_available_frequencies (CPUFreqMonitor *monitor);
 static GList   *cpufreq_monitor_libcpufreq_get_available_governors   (CPUFreqMonitor *monitor);
