@@ -50,7 +50,7 @@ dbus_services_in_files = org.mate.CPUFreqSelector.service.in
 polkit_in_files = org.mate.cpufreqselector.policy.in
 
 dbus_servicesdir = $(datadir)/dbus-1/system-services
-dbus_confdir = $(sysconfdir)/dbus-1/system.d
+dbus_confdir = $(DBUS_SYS_DIR)
 polkitdir = $(datadir)/polkit-1/actions
 
 if HAVE_POLKIT
