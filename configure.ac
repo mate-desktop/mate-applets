@@ -133,6 +133,17 @@ fi
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
 
+dnl -- Check for D-Bus -----------------------------------------
+AC_ARG_WITH(dbus-sys,
+        [AC_HELP_STRING([--with-dbus-sys=<dir>],
+        [where D-BUS system.d directory is])])
+if ! test -z "$with_dbus_sys" ; then
+        DBUS_SYS_DIR="$with_dbus_sys"
+else
+        DBUS_SYS_DIR='${sysconfdir}/dbus-1/system.d'
+fi
+AC_SUBST(DBUS_SYS_DIR)
+
 dnl -- check for glib/gobject (required) --------------------------------------
 PKG_CHECK_MODULES(CPUFREQ_SELECTOR, glib-2.0 >= $GLIB_REQUIRED gobject-2.0 >= $GLIB_REQUIRED)
 AC_SUBST(CPUFREQ_SELECTOR_CFLAGS)
