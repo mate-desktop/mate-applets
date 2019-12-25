@@ -35,6 +35,4 @@ mate_cpufreq_applet_LDADD =  \
 	$(LIBCPUFREQ_LIBS)		\
 	$(DBUS_LIBS)
 
-	
-
 -include $(top_srcdir)/git.mk

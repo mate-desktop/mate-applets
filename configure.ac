@@ -29,7 +29,6 @@ dnl ***************************************************************************
 
 AM_MAINTAINER_MODE
 
-IT_PROG_INTLTOOL([0.50.1])
 PKG_PROG_PKG_CONFIG([0.19])
 
 AC_PROG_CC
@@ -226,11 +225,13 @@ dnl ***************************************************************************
 dnl *** Set up gettext                                                      ***
 dnl ***************************************************************************
 
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
+
 GETTEXT_PACKAGE=mate-applets
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext Package])
 AC_DEFINE_DIR(MATELOCALEDIR, "${datadir}/locale", [locale directory])
-AM_GLIB_GNU_GETTEXT
 
 # this is the directory where the *.{mo,gmo} files are installed
 matelocaledir='${prefix}/${DATADIRNAME}/locale'

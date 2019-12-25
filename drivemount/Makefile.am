@@ -23,21 +23,20 @@ mate_drivemount_applet_LDADD =	\
 uidir           = $(datadir)/mate/ui
 ui_DATA         = drivemount-applet-menu.xml
 
-@INTLTOOL_XML_NOMERGE_RULE@
 drivemount_gschema_in_files = org.mate.drivemount.gschema.xml.in
 gsettings_SCHEMAS = $(drivemount_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
 EXTRA_DIST =                                                    \
-        org.mate.applets.DriveMountApplet.mate-panel-applet.in.in        \
+        $(applet_in_files).in                                   \
         $(service_in_files)                                     \
-        $(drivemount_gschema_in_files)                           \
+        $(drivemount_gschema_in_files)                          \
         $(ui_DATA)
 
 
 appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.applets.DriveMountApplet.mate-panel-applet.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
+applet_in_files = org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
@@ -45,7 +44,8 @@ $(applet_in_files): $(applet_in_files).in Makefile
             -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
             $< > $@
 
-%.mate-panel-applet: %.mate-panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
+$(applet_DATA): $(applet_in_files) Makefile
+	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
 servicedir       = $(datadir)/dbus-1/services
 service_in_files = org.mate.panel.applet.DriveMountAppletFactory.service.in
@@ -56,6 +56,6 @@ org.mate.panel.applet.DriveMountAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 -include $(top_srcdir)/git.mk

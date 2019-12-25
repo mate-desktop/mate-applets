@@ -70,9 +70,6 @@ DISTCHECK_CONFIGURE_FLAGS = \
 EXTRA_DIST = \
 	m4/ac-define-dir.m4 \
 	COPYING-DOCS \
-	intltool-update.in \
-	intltool-extract.in \
-	intltool-merge.in \
 	xmldocs.make \
 	omf.make \
 	autogen.sh
@@ -89,9 +86,7 @@ dist: ChangeLog
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-DISTCLEANFILES = intltool-extract \
-	intltool-merge \
-	intltool-update
+DISTCLEANFILES =
 
 -include $(top_srcdir)/git.mk
 
