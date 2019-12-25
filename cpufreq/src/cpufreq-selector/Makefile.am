@@ -66,9 +66,9 @@ $(dbus_services_DATA): $(dbus_services_in_files)
 	sed -e "s|\@BINDIR\@|$(DESTDIR)$(bindir)|" $< > $@
 dbus_conf_DATA = org.mate.CPUFreqSelector.conf
 
-@INTLTOOL_POLICY_RULE@
 polkit_DATA = $(polkit_in_files:.policy.in=.policy)
-
+$(polkit_DATA): $(polkit_in_files)
+	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 else
 dbus_services_DATA=
 dbus_conf_DATA=

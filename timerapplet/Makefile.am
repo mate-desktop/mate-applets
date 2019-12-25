@@ -14,14 +14,15 @@ timer_applet_LDADD = $(MATE_APPLETS4_LIBS) $(MATEDESKTOP_LIBS) $(LIBNOTIFY_LIBS)
 timer_applet_CFLAGS = $(WARN_CFLAGS)
 
 appletsdir       = $(datadir)/mate-panel/applets
-applets_in_files = org.mate.applets.TimerApplet.mate-panel-applet.in
-applets_DATA     = $(applets_in_files:.mate-panel-applet.in=.mate-panel-applet)
+applets_in_files = org.mate.applets.TimerApplet.mate-panel-applet.desktop.in
+applets_DATA     = $(applets_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
 
 $(applets_in_files): $(applets_in_files).in Makefile
 	$(AM_V_GEN)sed \
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
-%.mate-panel-applet: %.mate-panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
+$(applets_DATA): $(applets_in_files) Makefile
+	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
 servicedir       = $(datadir)/dbus-1/services
 service_in_files = org.mate.panel.applet.TimerAppletFactory.service.in
@@ -32,7 +33,6 @@ org.mate.panel.applet.TimerAppletFactory.service: $(service_in_files)
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
 
-@INTLTOOL_XML_NOMERGE_RULE@
 timer_gschema_in_files = org.mate.panel.applet.timer.gschema.xml.in
 gsettings_SCHEMAS = $(timer_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
@@ -42,6 +42,6 @@ EXTRA_DIST = \
 	$(service_in_files) \
 	$(timer_gschema_in_files)
 
-CLEANFILES = $(applets_DATA) $(applets_DATA).in $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = $(applets_DATA) $(applets_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
 
 -include $(top_srcdir)/git.mk
