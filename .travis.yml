@@ -70,7 +70,6 @@ requires:
     - git
     - gucharmap
     - gtksourceview3
-    - intltool
     - itstool
     - libgtop
     - libnotify
@@ -86,12 +85,12 @@ requires:
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/mate-applets
+    - autopoint
     - clang
     - clang-tools
     - cppcheck
     - gcc
     - git
-    - intltool
     - libcpupower-dev
     - libdbus-1-dev
     - libdbus-glib-1-dev
@@ -143,10 +142,10 @@ requires:
     - wireless-tools-devel
 
   ubuntu:
+    - autopoint
     - clang
     - clang-tools
     - git
-    - intltool
     - libcpufreq-dev
     - libdbus-1-dev
     - libdbus-glib-1-dev
