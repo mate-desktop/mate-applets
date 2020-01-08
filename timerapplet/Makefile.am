@@ -3,7 +3,6 @@ AM_CPPFLAGS = \
 	$(MATEDESKTOP_CFLAGS) \
 	$(LIBNOTIFY_CFLAGS) \
 	-I$(srcdir) \
-	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 APPLET_LOCATION = $(libexecdir)/timer-applet
