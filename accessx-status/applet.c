@@ -673,7 +673,7 @@ static cairo_surface_t* accessx_status_applet_mousekeys_image(AccessxStatusApple
 
 static void accessx_status_applet_set_state_icon (AccessxStatusApplet* sapplet, ModifierStruct* modifier, GtkStateFlags state)
 {
-	cairo_surface_t* surface;
+	cairo_surface_t* surface = NULL;
 	GtkIconTheme *icon_theme;
 	gint icon_size, icon_scale;
 	gchar *icon_name = NULL;
