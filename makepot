@@ -15,6 +15,7 @@ TRASH=mate-trashapplet;
 
 # main translation
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .
+sed -i "/#, fuzzy/d" $PACKAGE.pot
 
 # accessx-status
 make -C accessx-status/docs $ACCESSX.pot \
