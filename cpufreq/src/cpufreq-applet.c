@@ -481,7 +481,7 @@ cpufreq_applet_about_cb (GtkAction     *action,
                                "title",         _("About CPU Frequency Scaling Monitor"),
                                "version",       VERSION,
                                "copyright",     _("Copyright \xC2\xA9 2004 Carlos Garcia Campos\n"
-                                                  "Copyright \xc2\xa9 2012-2019 MATE developers"),
+                                                  "Copyright \xc2\xa9 2012-2020 MATE developers"),
                                "comments",      _("This utility shows the current CPU "
                                                   "Frequency Scaling."),
                                "authors",       authors,

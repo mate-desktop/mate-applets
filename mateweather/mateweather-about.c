@@ -54,7 +54,7 @@ void mateweather_about_run(MateWeatherApplet* gw_applet)
 		"title", _("About Weather Report"),
 		"version", VERSION,
 		"copyright", _("Copyright \xC2\xA9 1999-2005 by S. Papadimitriou and others\n"
-		               "Copyright \xc2\xa9 2012-2019 MATE developers"),
+		               "Copyright \xc2\xa9 2012-2020 MATE developers"),
 		"comments", _("A panel application for monitoring local weather conditions."),
 		"authors", authors,
 		"documenters", documenters,

@@ -583,7 +583,7 @@ about (GtkAction     *action,
 	"title",        _("About Character Palette"),
 	"version",	VERSION,
 	"copyright",	_("Copyright \xc2\xa9 1998, 2004-2005 GNOME Applets Maintainers and others\n"
-	                  "Copyright \xc2\xa9 2012-2019 MATE developers"),
+	                  "Copyright \xc2\xa9 2012-2020 MATE developers"),
 	"comments",	_("Mate Panel applet for selecting strange "
 			  "characters that are not on my keyboard. "
 			  "Released under GNU General Public Licence."),

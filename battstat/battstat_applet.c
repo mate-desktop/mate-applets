@@ -837,7 +837,7 @@ about_cb( GtkAction *action, ProgressData *battstat )
     "version",             VERSION,
     "copyright",           _("Copyright \xc2\xa9 2000 The Gnulix Society\n"
                              "Copyright \xc2\xa9 2002-2005 Free Software Foundation and others\n"
-                             "Copyright \xc2\xa9 2012-2019 MATE developers"),
+                             "Copyright \xc2\xa9 2012-2020 MATE developers"),
     "comments",            comments,
     "authors",             authors,
     "documenters",         documenters,

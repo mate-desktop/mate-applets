@@ -120,7 +120,7 @@ display_about_dialog (GtkAction *action,
 	"title",       _("About Disk Mounter"),
 	"version",     VERSION,
 	"copyright",   _("Copyright \xC2\xA9 2004 Canonical Ltd\n"
-	                 "Copyright \xc2\xa9 2012-2019 MATE developers"),
+	                 "Copyright \xc2\xa9 2012-2020 MATE developers"),
 	"comments",    _("Applet for mounting and unmounting block volumes."),
 	"authors",     authors,
 	"documenters", documenters,

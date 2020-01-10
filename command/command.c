@@ -122,7 +122,7 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
                           "title", _("About Command Applet"),
                           "version", VERSION,
                           "copyright", _("Copyright \xc2\xa9 2013-2014 Stefano Karapetsas\n"
-                                         "Copyright \xc2\xa9 2015-2019 MATE developers"),
+                                         "Copyright \xc2\xa9 2015-2020 MATE developers"),
                           "authors", authors,
                           "comments", _("Shows the output of a command"),
                           "translator-credits", _("translator-credits"),

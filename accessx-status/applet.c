@@ -99,7 +99,7 @@ static void about_cb(GtkAction* action, AccessxStatusApplet* sapplet)
 		"version", VERSION,
 		"comments", _("Shows the state of AccessX features such as latched modifiers"),
 		"copyright", _("Copyright \xc2\xa9 2003 Sun Microsystems\n"
-		               "Copyright \xc2\xa9 2012-2019 MATE developers"),
+		               "Copyright \xc2\xa9 2012-2020 MATE developers"),
 		"authors", authors,
 		"documenters", documenters,
 		"translator-credits", _("translator-credits"),
