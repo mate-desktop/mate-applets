@@ -19,7 +19,7 @@ LIBPANEL4_REQUIRED=1.17.0
 LIBGTOP_REQUIRED=2.12.0
 LIBNOTIFY_REQUIRED=0.7.0
 UPOWER_REQUIRED=0.9.4
-DBUS_REQUIRED=1.1.2
+DBUS_REQUIRED=1.10.0
 DBUS_GLIB_REQUIRED=0.74
 LIBXML_REQUIRED=2.5.0
 POLKIT_REQUIRED=0.97
@@ -140,7 +140,7 @@ AC_ARG_WITH(dbus-sys,
 if ! test -z "$with_dbus_sys" ; then
         DBUS_SYS_DIR="$with_dbus_sys"
 else
-        DBUS_SYS_DIR='${sysconfdir}/dbus-1/system.d'
+        DBUS_SYS_DIR='${datadir}/dbus-1/system.d'
 fi
 AC_SUBST(DBUS_SYS_DIR)
 
