@@ -6,13 +6,14 @@
 # Giuseppe Pignataro <rogepix@gmail.com>, 2018
 # andrea pittaro <transifex@andreapittaro.it>, 2019
 # Enrico B. <enricobe@hotmail.com>, 2019
+# Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
-"POT-Creation-Date: 2019-03-20 16:10+0100\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-01-10 17:58+0100\n"
 "PO-Revision-Date: 2018-09-27 15:11+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +24,12 @@ msgstr ""
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Riconoscimenti-tradutore"
+msgstr "Enrico Bella, 2019"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:20
 msgid "Weather Report Manual"
-msgstr "Manuale dei report meteo"
+msgstr "Manuale di Condizioni meteo"
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:22
@@ -41,15 +42,16 @@ msgid ""
 msgstr ""
 "L'applet dei report meteo scarica da internet le informazioni meteo per una "
 "data località; mostra nel pannello la temperatura e un simbolo "
-"rappresentativo della situazione meteo attuale. Quando ci si clicca sopra, "
-"verranno mostrate più informazioni quali le previsioni, alba e tramonto, "
-"direzione del vento, pressione atmosferica. Tutte le unità di misura sono "
-"personalizzabili."
+"rappresentativo della situazione meteo attuale. Cliccando vengono mostrate "
+"ulteriori informazioni come le previsioni, l'ora di alba e tramonto, la "
+"direzione del vento e la pressione atmosferica. Tutte le unità di misura "
+"sono personalizzabili."
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:29
-msgid "<year>2015</year> <holder>MATE Documentation Project</holder>"
-msgstr "<year>2015</year> <holder>MATE Documentation Project</holder>"
+msgid "<year>2015-2020</year> <holder>MATE Documentation Project</holder>"
+msgstr ""
+"<year>2015-2020</year> <holder>Progetto Documentazione di MATE</holder>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:33
@@ -86,7 +88,7 @@ msgstr "<year>1999</year> <year>2000</year> <holder>Dan Mueth</holder>"
 #. (itstool) path: revdescription/para
 #: C/index.docbook:70 C/index.docbook:144
 msgid "MATE Documentation Project"
-msgstr "Documentazione del progetto MATE"
+msgstr "Progetto Documentazione di MATE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
@@ -94,7 +96,7 @@ msgstr "Documentazione del progetto MATE"
 #: C/index.docbook:182 C/index.docbook:190 C/index.docbook:198
 #: C/index.docbook:206 C/index.docbook:221
 msgid "GNOME Documentation Project"
-msgstr "Progetto della Documentazione di GNOME"
+msgstr "Progetto Documentazione di GNOME"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:79
@@ -278,6 +280,7 @@ msgstr ""
 #: C/index.docbook:228
 msgid "This manual describes version 1.10.2 of Weather Report."
 msgstr ""
+"Questo manuale descrive la versione 1.10.2 della applet Condizioni meteo"
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:233
@@ -291,11 +294,14 @@ msgid ""
 "this manual, follow the directions in the <ulink url=\"help:mate-user-"
 "guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
+"Per segnalare un malfunzionamento o un suggerimento su Condizioni meteo o su"
+" questo manuale, segui le istruzioni nella <ulink url=\"help:mate-user-"
+"guide/feedback\" type=\"help\">pagina di feedback di MATE</ulink>."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:241
 msgid "<primary>Weather Report</primary>"
-msgstr ""
+msgstr "<primary>Condizioni meteo</primary>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:247
@@ -328,6 +334,10 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Weather Report. "
 "Contains a weather icon and current temperature</phrase> </textobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"figures/mateweather_applet.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Mostra Condizioni "
+"meteo. Contiene un'icona del meteo e la temperatura attuale</phrase> "
+"</textobject>"
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:265
@@ -338,6 +348,11 @@ msgid ""
 "You can use <application>Weather Report</application> to display current "
 "weather information and weather forecasts on your computer."
 msgstr ""
+"<application>Condizioni meteo</application> scarica le informazioni "
+"meteorologiche dai server del Servizio Meteorologico Nazionale degli Stati "
+"Uniti (NWS), compresa la Interactive Weather Information Network (IWIN) e "
+"altri servizi meteorologici.  Puoi usare <application>Condizioni "
+"meteo</application> per visualizzare le informazioni e le previsioni meteo."
 
 #. (itstool) path: note/para
 #: C/index.docbook:269
@@ -347,6 +362,9 @@ msgid ""
 "server, use your preference tools to specify the network proxy server for "
 "Internet connections."
 msgstr ""
+"Se il computer è protetto da un firewall, è necessario utilizzare un server "
+"proxy per accedere ai server meteo. Utilizza le preferenze per configurare "
+"MATE ad utilizzare un server proxy di rete per le connessioni Internet."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:273
@@ -354,6 +372,8 @@ msgid ""
 "<application>Weather Report</application> displays the following information"
 " for the default location, or a location that you specify:"
 msgstr ""
+"<application>Condizioni meteo</application> mostra le seguenti informazioni "
+"per la posizione predefinita o una posizione specificata:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:278
@@ -361,6 +381,8 @@ msgid ""
 "A weather icon that represents the general weather conditions. See <xref "
 "linkend=\"mateweather-introduction-icons\"/>."
 msgstr ""
+"Un'icona che rappresenta le condizioni meteo generali. Vedi <xref linkend"
+"=\"mateweather-introduction-icons\"/>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:284
@@ -420,11 +442,17 @@ msgid ""
 "night-clear.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Stock "
 "Night</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"sunny.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Soleggiato "
+"</textobject></inlinemediaobject> <inlinemediaobject><imageobject> "
+"<imagedata fileref=\"figures/stock_weather-night-clear.png\" "
+"format=\"PNG\"/> </imageobject><textobject> <phrase>Notte serena</phrase> "
+"</textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:316
 msgid "It is clear and fine."
-msgstr ""
+msgstr "Cielo sereno"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -464,6 +492,13 @@ msgid ""
 "night-few-clouds.png\" format=\"PNG\"/> </imageobject><textobject> "
 "<phrase>Stock Night Few Clouds</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"few-clouds.png\" format=\"PNG\"/> </imageobject><textobject> "
+"<phrase>Parzialmente nuvoloso</phrase> </textobject></inlinemediaobject> "
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"night-few-clouds.png\" format=\"PNG\"/> </imageobject><textobject> "
+"<phrase>Notte parzialmente nuvolosa</phrase> "
+"</textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:333
@@ -491,6 +526,9 @@ msgid ""
 "cloudy.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Stock "
 "Cloudy</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"cloudy.png\" format=\"PNG\"/> </imageobject><textobject> "
+"<phrase>Nuvoloso</phrase> </textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:344
@@ -518,6 +556,9 @@ msgid ""
 "fog.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Stock "
 "Fog</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"fog.png\" format=\"PNG\"/> </imageobject><textobject> "
+"<phrase>Nebbia</phrase> </textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:355
@@ -545,6 +586,9 @@ msgid ""
 "showers.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Stock "
 "Rain</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"showers.png\" format=\"PNG\"/> </imageobject><textobject> "
+"<phrase>Pioggia</phrase> </textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:366
@@ -572,6 +616,9 @@ msgid ""
 "snow.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Stock "
 "Snow</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"snow.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Neve</phrase>"
+" </textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:377
@@ -599,6 +646,9 @@ msgid ""
 "storm.png\" format=\"PNG\"/> </imageobject><textobject> <phrase>Stock "
 "Storm</phrase> </textobject></inlinemediaobject>"
 msgstr ""
+"<inlinemediaobject><imageobject> <imagedata fileref=\"figures/stock_weather-"
+"storm.png\" format=\"PNG\"/> </imageobject><textobject> "
+"<phrase>Temporale</phrase> </textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:388
@@ -608,7 +658,7 @@ msgstr "Temporale."
 #. (itstool) path: sect2/title
 #: C/index.docbook:398
 msgid "To Add Weather Report to a Panel"
-msgstr ""
+msgstr "Aggiungere Condizioni meteo ad un pannello"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:399
@@ -616,6 +666,8 @@ msgid ""
 "To add <application>Weather Report</application> to a panel, perform the "
 "following steps:"
 msgstr ""
+"Per aggiungere la <application>Condizioni meteo</application> ad un "
+"pannello, segui questi passaggi:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:405
@@ -633,6 +685,8 @@ msgid ""
 "Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
 "dialog, then select <guilabel>Weather Report</guilabel>."
 msgstr ""
+"Scrolla in basso gli elementi nella finestra <guilabel>Aggiungi al "
+"pannello</guilabel>, poi seleziona <guilabel>Condizioni meteo</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:421
@@ -680,16 +734,18 @@ msgid ""
 "The preferences dialog is accessed by right-clicking on the Weather Report "
 "in the panel. <_:figure-1/>"
 msgstr ""
+"Le preferenze sono accessibili facendo clic con il tasto destro del mouse "
+"sulla applet Condizioni meteo nel pannello. <_:figure-1/>"
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:451
 msgid "Changing to Particular Location"
-msgstr ""
+msgstr "Modificare una località"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:453
 msgid "Location Preferences"
-msgstr ""
+msgstr "Preferenze della località"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -712,6 +768,9 @@ msgid ""
 " format=\"PNG\"/> </imageobject> <textobject> <phrase>Location "
 "Preferences</phrase> </textobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"figures/mateweather-prefs-locations.png\""
+" format=\"PNG\"/> </imageobject> <textobject> <phrase>Preferenze della "
+"località</phrase> </textobject>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:465
@@ -721,11 +780,15 @@ msgid ""
 "Pennsylvania by default. To display the weather for a different location, "
 "perform the following steps:"
 msgstr ""
+"Quando aggiungi <application>Condizioni meteo</application> ad un pannello "
+"per la prima volta, l'applicazione visualizza per impostazione predefinita "
+"le previsioni di Pittsburgh, Pennsylvania. Per visualizzare il meteo per una"
+" località diversa, segui questi passaggi: "
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:471
 msgid "Right-click on the application."
-msgstr ""
+msgstr "Fai clic destro sull'applicazione."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:476
@@ -734,6 +797,9 @@ msgid ""
 "menu. The application displays the <guilabel>Weather Preferences</guilabel> "
 "dialog."
 msgstr ""
+"Seleziona <guimenuitem>Preferenze</guimenuitem> dal menu che appare. "
+"L'applicazione mostra la finestra delle preferenze di <guilabel>Condizioni "
+"meteo</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:482
@@ -742,12 +808,17 @@ msgid ""
 "<guilabel>Location</guilabel> tabbed section contains a list of geographical"
 " regions, subregions, and specific locations."
 msgstr ""
+"Seleziona la scheda <guilabel>Località</guilabel>. La scheda "
+"<guilabel>Località</guilabel> contiene un elenco di regioni geografiche, "
+"sottoregioni e località."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:487
 msgid ""
 "Click on the arrow next to a region to display the subregions in the region."
 msgstr ""
+"Clicca sulla freccia accanto ad un'area geografica per visualizzare le "
+"sottoregioni."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:492
@@ -755,6 +826,8 @@ msgid ""
 "Click on the arrow next to a subregion to display the locations in the "
 "subregion."
 msgstr ""
+"Clicca sulla freccia accanto ad una sottoregione per visualizzare le altre "
+"località."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:497
@@ -763,6 +836,9 @@ msgid ""
 " for the new location, the tooltip \"Updating\" is displayed when you point "
 "to the icon."
 msgstr ""
+"Fai clic su una località. Mentre l'applicazione recupera le informazioni "
+"meteo per la località scelta, viene visualizzato il suggerimento "
+"\"Aggiornamento\" nell'icona."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:504 C/index.docbook:528
@@ -770,6 +846,8 @@ msgid ""
 "Click <guibutton>Close</guibutton> to close the <guilabel>Weather "
 "Preferences</guilabel> dialog."
 msgstr ""
+"Clicca <guibutton>Chiudi</guibutton> per chiudere le preferenze di "
+"<guilabel>Condizioni meteo</guilabel>."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:509
@@ -779,11 +857,14 @@ msgid ""
 " for cities with no airport you may have to pick a nearby city in the "
 "region."
 msgstr ""
+"Puoi effettuare una ricerca inserendo il nome della tua località nel campo "
+"<guilabel>Trova</guilabel>. Per le città vicine o per le città senza "
+"aeroporto potresti dover scegliere una città vicina della regione."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:517
 msgid "Updating Weather Information"
-msgstr ""
+msgstr "Aggiornare le informazioni sul meteo"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:518
@@ -792,6 +873,9 @@ msgid ""
 "panel, right-click on the icon, then choose "
 "<guimenuitem>Update</guimenuitem>."
 msgstr ""
+"Per aggiornare le informazioni meteo visualizzate nel pannello, fai clic con"
+" il tasto destro del mouse sull'icona, quindi premi "
+"<guimenuitem>Aggiorna</guimenuitem>."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:522
@@ -799,6 +883,8 @@ msgid ""
 "To automatically update the weather information at regular intervals, "
 "perform the following steps:"
 msgstr ""
+"Per aggiornare automaticamente le informazioni meteorologiche a intervalli "
+"regolari, segui questi passaggi:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:524
@@ -806,6 +892,8 @@ msgid ""
 "Go to the right-click menu and select "
 "<guimenuitem>Preferences</guimenuitem>."
 msgstr ""
+"Apri il menu con il tasto destro del mouse e seleziona "
+"<guimenuitem>Preferenze</guimenuitem>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:525
@@ -814,6 +902,9 @@ msgid ""
 "<guilabel>General</guilabel> tab, select the <guilabel>Automatically update "
 "every ... minutes</guilabel> option."
 msgstr ""
+"Nella finestra <guilabel>Preferenze di condizioni meteo</guilabel>, alla "
+"scheda <guilabel>Generale</guilabel> seleziona l'opzione "
+"<guilabel>Aggiornare automaticamente ogni ... minuti</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:526
@@ -822,16 +913,19 @@ msgid ""
 "retrieves updated information from the weather server. The default is to "
 "check every thirty minutes."
 msgstr ""
+"Utilizza la casella di selezione per specificare l'intervallo con cui il "
+"Condizioni meteo recupera dal server meteo le informazioni aggiornate. "
+"L'impostazione predefinita prevede un aggiornamento ogni trenta minuti."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:532
 msgid "Changing Units"
-msgstr ""
+msgstr "Modificare le unità di misura"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:534
 msgid "General Preferences"
-msgstr ""
+msgstr "Preferenze generali"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -854,6 +948,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>General "
 "Preferences</phrase> </textobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"figures/mateweather-prefs-general.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Preferenze "
+"generali</phrase> </textobject>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:546
@@ -863,6 +960,10 @@ msgid ""
 "Preferences</guilabel> dialog under the <guilabel>General</guilabel> tab, "
 "select the units of measurement you want to use."
 msgstr ""
+"Fai clic con il tasto destro e seleziona "
+"<guimenuitem>Preferenze</guimenuitem>. Nelle <guilabel>Preferenze di "
+"condizioni meteo</guilabel>, seleziona la scheda "
+"<guilabel>Generale</guilabel> e seleziona le unità di misura da utilizzare."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:553
@@ -871,6 +972,10 @@ msgid ""
 "imperial, SI and others. The choice <guilabel>Default</guilabel> will use "
 "what we think is the default for your region, based off your chosen locale."
 msgstr ""
+"Sono disponibili diverse unità di misura, comprese quelle metriche, "
+"imperiali, del sistema internazionale e altre. La scelta "
+"<guilabel>Predefinita</guilabel> utilizzerà quello che è ritenuto il valore "
+"predefinito per la regione in base alla località scelta."
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:565
@@ -885,21 +990,26 @@ msgid ""
 "the <guilabel>Details</guilabel> dialog. The <guilabel>Details</guilabel> "
 "dialog contains the following default tabbed sections:"
 msgstr ""
+"Per visualizzare le informazioni meteo dettagliate, fai clic con il tasto "
+"destro del mouse su Condizioni meteo e premi "
+"<guimenuitem>Dettagli</guimenuitem>. Condizioni meteo mostrerà la finestra "
+"<guilabel>Dettagli</guilabel>. La finestra <guilabel>Dettagli</guilabel> "
+"mostra le seguenti sezioni divise in schede:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:573
 msgid "<guilabel>Current Conditions</guilabel>"
-msgstr ""
+msgstr "<guilabel>Condizioni attuali</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:578
 msgid "<guilabel>Forecast</guilabel>"
-msgstr ""
+msgstr "<guilabel>Previsioni</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:583
 msgid "<guilabel>Radar Map (optional)</guilabel>"
-msgstr ""
+msgstr "<guilabel>Mappa Radar (opzionale)</guilabel>"
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:589
@@ -909,7 +1019,7 @@ msgstr "Condizioni attuali"
 #. (itstool) path: figure/title
 #: C/index.docbook:591
 msgid "Weather Report Details"
-msgstr ""
+msgstr "Dettagli di Condizioni meteo"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -932,6 +1042,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Weather Report "
 "details</phrase> </textobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"figures/mateweather-details.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Dettagli di Condizioni "
+"meteo</phrase> </textobject>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:603
@@ -939,21 +1052,23 @@ msgid ""
 "The <guilabel>Current Conditions</guilabel> tabbed section displays the "
 "following information:"
 msgstr ""
+"La scheda <guilabel>Condizioni attuali</guilabel> mostra le seguenti "
+"informazioni:"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:613
 msgid "City"
-msgstr ""
+msgstr "Città"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:618
 msgid "Location to which the current weather conditions apply."
-msgstr ""
+msgstr "Località su cui si basano le condizioni meteo attuali."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:625
 msgid "Last update"
-msgstr ""
+msgstr "Ultimo aggiornamento"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:630
@@ -961,16 +1076,18 @@ msgid ""
 "Time at which the weather conditions were last updated on the weather "
 "server."
 msgstr ""
+"Orario in cui è avvenuto l'ultimo aggiornamento delle condizioni meteo con "
+"il server."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:637
 msgid "Conditions"
-msgstr ""
+msgstr "Condizioni"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:642
 msgid "General weather conditions."
-msgstr ""
+msgstr "Condizioni meteo generali"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:649
@@ -980,7 +1097,7 @@ msgstr "Cielo"
 #. (itstool) path: entry/para
 #: C/index.docbook:654
 msgid "General sky conditions."
-msgstr ""
+msgstr "Condizioni del cielo"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:661
@@ -990,77 +1107,78 @@ msgstr "Temperatura"
 #. (itstool) path: entry/para
 #: C/index.docbook:666
 msgid "Current temperature."
-msgstr ""
+msgstr "Temperatura attuale"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:673
 msgid "Dew point"
-msgstr ""
+msgstr "Punto di rugiada"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:678
 msgid "Temperature at which dew forms."
-msgstr ""
+msgstr "Temperatura a cui si forma la rugiada."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:685
 msgid "Humidity"
-msgstr ""
+msgstr "Umidità"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:690
 msgid "Percentage of moisture in the atmosphere."
-msgstr ""
+msgstr "Percentuale di umidità nell'atmosfera."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:697
 msgid "Wind"
-msgstr ""
+msgstr "Vento"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:702
 msgid "Direction and speed of the wind."
-msgstr ""
+msgstr "Direzione e velocità del vento."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:709
 msgid "Pressure"
-msgstr ""
+msgstr "Pressione"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:714
 msgid "Atmospheric pressure."
-msgstr ""
+msgstr "Pressione atmosferica."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:721
 msgid "Visibility"
-msgstr ""
+msgstr "Visibilità"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:726
 msgid "Range of vision as determined by the light and atmosphere conditions."
 msgstr ""
+"Campo visivo determinato in base alla luce e alle condizioni atmosferiche."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:733
 msgid "Sunrise"
-msgstr ""
+msgstr "Alba"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:736
 msgid "The calculated sunrise time for your location"
-msgstr ""
+msgstr "Orario dell'alba calcolato in base alla località corrente"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:741
 msgid "Sunset"
-msgstr ""
+msgstr "Tramonto"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:744
 msgid "The calculated sunset time for your location"
-msgstr ""
+msgstr "Orario del tramonto calcolato in base alla località corrente"
 
 #. (itstool) path: note/para
 #: C/index.docbook:751
@@ -1070,6 +1188,11 @@ msgid ""
 "light through the air, are hard to model. Resultantly, the calculated values"
 " for sunrise and sunset may be off by up to 10 minutes."
 msgstr ""
+"Gli orari di alba e tramonto sono calcolati localmente in base alle "
+"informazioni di latitudine e longitudine del computer. Alcuni valori, come "
+"la rifrazione della luce attraverso l'aria, sono difficili da elaborare. Di "
+"conseguenza i valori calcolati per l'alba e il tramonto possono essere "
+"errati di circa 10 minuti."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:760
@@ -1082,6 +1205,8 @@ msgid ""
 "The <guilabel>Forecast</guilabel> tabbed section displays a forecast for the"
 " location for the immediate future, usually the next five days."
 msgstr ""
+"La scheda <guilabel>Previsioni</guilabel> visualizza le previsioni per i "
+"prossimi giorni, di solito cinque."
 
 #. (itstool) path: note/para
 #: C/index.docbook:765
@@ -1089,6 +1214,8 @@ msgid ""
 "Forecasts are only available for some locations in the U.S., Australia and "
 "the United Kingdom."
 msgstr ""
+"Le previsioni sono disponibili solo per alcune località negli Stati Uniti, "
+"in Australia e nel Regno Unito."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:772
@@ -1105,6 +1232,11 @@ msgid ""
 "question mark. To go to the www.weather.com web site, click on the "
 "<guibutton>Visit Weather.com</guibutton> button."
 msgstr ""
+"La scheda <guilabel>Mappa radar</guilabel> di solito non viene mostrata "
+"nella finestra <guilabel>Previsioni</guilabel>. <application>Condizioni "
+"meteo</application> scarica la mappa radar da www.weather.com e, se non è "
+"disponibile, mostra un punto interrogativo. Per andare su www.weather.com "
+"clicca il tasto <guibutton>Visita Weather.com</guibutton>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:782
@@ -1112,6 +1244,9 @@ msgid ""
 "Go to the <guilabel>Weather Preferences</guilabel> dialog by selecting "
 "<guilabel>Preferences</guilabel> in the right-click menu."
 msgstr ""
+"Vai nella finestra <guilabel>Preferenze di condizioni meteo</guilabel> "
+"selezionando <guilabel>Preferenze</guilabel> dal menu che appare facendo "
+"clic con il tasto destro."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:783
@@ -1119,6 +1254,8 @@ msgid ""
 "In the <guilabel>General</guilabel> tab, select the <guilabel>Enable radar "
 "map</guilabel> option."
 msgstr ""
+"Nella scheda <guilabel>Generale</guilabel>, seleziona l'opzione "
+"<guilabel>Abilitare le mappe radar</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:784
@@ -1129,12 +1266,18 @@ msgid ""
 "address. You must type the address in the <guilabel>Address</guilabel> text "
 "box."
 msgstr ""
+"Per impostazione predefinita, <application>Condizioni meteo</application> "
+"scarica la mappa da www.weather.com. Seleziona <guilabel>Usare un indirizzo "
+"personalizzato per le mappe radar</guilabel> per mostrare le mappe da un "
+"indirizzo diverso. Devi inserire l'indirizzo nella casella "
+"<guilabel>Indirizzo</guilabel>."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:780
 msgid ""
 "To enable the radar map, perform the following steps: <_:orderedlist-1/>"
 msgstr ""
+"Per abilitare la mappa radar, segui questi passaggi: <_:orderedlist-1/>"
 
 #. (itstool) path: note/para
 #: C/index.docbook:787
@@ -1143,6 +1286,9 @@ msgid ""
 "U.S. Many locations will require you to specify a custom URL, if you wish to"
 " have a radar map."
 msgstr ""
+"La maggior parte delle località non ha una mappa radar predefinita, "
+"specialmente al di fuori degli Stati Uniti. Molte località richiedono di "
+"specificare un URL personalizzato se si desidera avere una mappa radar."
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9

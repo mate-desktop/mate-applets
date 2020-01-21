@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-applets package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -13,12 +13,11 @@
 # مهدي السطيفي <chinoune.mehdi@gmail.com>, 2018
 # MUHAAB SHAAM <muhaab.org@gmail.com>, 2018
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 18:34+0100\n"
+"Project-Id-Version: mate-applets 1.23.0\n"
+"Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
+"POT-Creation-Date: 2020-01-10 17:58+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: MUHAAB SHAAM <muhaab.org@gmail.com>, 2018\n"
 "Language-Team: Arabic (https://www.transifex.com/mate/teams/13566/ar/)\n"
@@ -28,163 +27,165 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: ../accessx-status/applet.c:86 ../charpick/charpick.c:571
-#: ../geyes/geyes.c:166 ../mateweather/mateweather-about.c:41
-#: ../multiload/main.c:48 ../stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: mateweather/mateweather-about.c:41 multiload/main.c:48
+#: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
-#: ../accessx-status/applet.c:87 ../battstat/battstat_applet.c:819
-#: ../charpick/charpick.c:572 ../cpufreq/src/cpufreq-applet.c:469
-#: ../drivemount/drivemount.c:109 ../geyes/geyes.c:167
-#: ../mateweather/mateweather-about.c:43 ../multiload/main.c:49
-#: ../stickynotes/stickynotes_applet_callbacks.c:368
-#: ../trashapplet/src/trashapplet.c:421
+#: accessx-status/applet.c:87 battstat/battstat_applet.c:819
+#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: drivemount/drivemount.c:109 geyes/geyes.c:167
+#: mateweather/mateweather-about.c:43 multiload/main.c:49
+#: stickynotes/stickynotes_applet_callbacks.c:368
+#: trashapplet/src/trashapplet.c:421
 msgid "MATE Documentation Team"
 msgstr ""
 
-#: ../accessx-status/applet.c:98
+#: accessx-status/applet.c:98
 msgid "About AccessX Status"
 msgstr ""
 
-#: ../accessx-status/applet.c:100
+#: accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "يعرض حالة ميزات AccessX مثل المغيرات المثبتة"
 
-#: ../accessx-status/applet.c:101
+#: accessx-status/applet.c:101
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../accessx-status/applet.c:105 ../battstat/battstat_applet.c:844
-#: ../charpick/charpick.c:592 ../command/command.c:114
-#: ../cpufreq/src/cpufreq-applet.c:493 ../drivemount/drivemount.c:127
-#: ../geyes/geyes.c:186 ../mateweather/mateweather-about.c:61
-#: ../multiload/main.c:69 ../netspeed/src/netspeed.c:836
-#: ../stickynotes/stickynotes_applet_callbacks.c:388
-#: ../timerapplet/timerapplet.c:278 ../trashapplet/src/trashapplet.c:442
+#: accessx-status/applet.c:105 battstat/battstat_applet.c:844
+#: charpick/charpick.c:592 command/command.c:128
+#: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
+#: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
+#: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
+#: timerapplet/timerapplet.c:278 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
 "فريق عيون العرب للترجمة http://www.arabeyes.org :\n"
 "مصعب الزعبي\t<moceap@hotmail.com>"
 
-#: ../accessx-status/applet.c:124
+#: accessx-status/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "حصل خطأ أثناء تشغيل عارض المساعدة: %s"
 
-#: ../accessx-status/applet.c:152
+#: accessx-status/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr ""
 
-#: ../accessx-status/applet.c:167
+#: accessx-status/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "حصل خطأ أثناء تشغيل حوار تفضيلات لوحة المفاتيح: %s"
 
-#: ../accessx-status/applet.c:182
+#: accessx-status/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "تفضيلات إعانة _لوحة المفاتيح"
 
-#: ../accessx-status/applet.c:183 ../battstat/battstat_applet.c:63
-#: ../charpick/charpick.c:673 ../cpufreq/src/cpufreq-applet.c:122
-#: ../drivemount/drivemount.c:165 ../geyes/geyes.c:359
-#: ../mateweather/mateweather-applet.c:117 ../multiload/main.c:488
-#: ../stickynotes/stickynotes_applet.c:46 ../trashapplet/src/trashapplet.c:74
+#: accessx-status/applet.c:183 battstat/battstat_applet.c:63
+#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: drivemount/drivemount.c:165 geyes/geyes.c:359
+#: mateweather/mateweather-applet.c:117 multiload/main.c:488
+#: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_مساعدة"
 
-#: ../accessx-status/applet.c:184 ../battstat/battstat_applet.c:66
-#: ../charpick/charpick.c:676 ../command/command.c:75
-#: ../cpufreq/src/cpufreq-applet.c:125 ../drivemount/drivemount.c:168
-#: ../geyes/geyes.c:362 ../mateweather/mateweather-applet.c:120
-#: ../multiload/main.c:491 ../stickynotes/stickynotes_applet.c:49
-#: ../timerapplet/timerapplet.c:84 ../trashapplet/src/trashapplet.c:77
+#: accessx-status/applet.c:184 battstat/battstat_applet.c:66
+#: charpick/charpick.c:676 command/command.c:84
+#: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
+#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
+#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
+#: trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_عنْ"
 
-#. Note to translators: the first letter of the alphabet, not the indefinite
-#. article
-#: ../accessx-status/applet.c:504 ../accessx-status/applet.c:558
+#: accessx-status/applet.c:504 accessx-status/applet.c:558
 msgid "a"
 msgstr "أ"
 
-#: ../accessx-status/applet.c:1043 ../accessx-status/applet.c:1109
-#: ../accessx-status/applet.c:1194 ../accessx-status/applet.c:1388
+#: accessx-status/applet.c:1043 accessx-status/applet.c:1109
+#: accessx-status/applet.c:1194 accessx-status/applet.c:1388
 msgid "AccessX Status"
 msgstr "حالة AccessX"
 
-#: ../accessx-status/applet.c:1044 ../accessx-status/applet.c:1195
+#: accessx-status/applet.c:1044 accessx-status/applet.c:1195
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "يعرض حالة لوحة المفاتيح عند استخدام ميزات الإعانة."
 
-#: ../accessx-status/applet.c:1078
+#: accessx-status/applet.c:1078
 msgid "XKB Extension is not enabled"
 msgstr "امتداد XKB غير مفعّل"
 
-#: ../accessx-status/applet.c:1083
+#: accessx-status/applet.c:1083
 msgid "Unknown error"
 msgstr "خطأ مجهول"
 
-#: ../accessx-status/applet.c:1087
+#: accessx-status/applet.c:1087
 #, c-format
 msgid "Error: %s"
 msgstr "خطأ: %s"
 
-#: ../accessx-status/applet.c:1385
-#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:3
+#: accessx-status/applet.c:1385
+#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
 msgid "Keyboard Accessibility Status"
 msgstr "حالة الإعانة للوحة المفاتيح"
 
-#: ../accessx-status/applet.c:1389
+#: accessx-status/applet.c:1389
 msgid "Displays current state of keyboard accessibility features"
 msgstr "يعرض الحالة الحالية لميزات الإعانة للوحة المفاتيح"
 
-#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:1
+#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
 msgid "AccessX Status Applet Factory"
 msgstr "مصنع بريمج حالة AccessX"
 
-#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:2
+#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
 msgid "Keyboard Accessibility Status Applet Factory"
 msgstr "مصنع بريمج حالة الإعانة للوحة المفاتيح"
 
-#: ../accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.in.in.h:4
+#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the status of keyboard accessibility features"
 msgstr "يعرض حالة ميزات الإعانة للوحة المفاتيح"
 
-#: ../battstat/battstat_applet.c:60 ../charpick/charpick.c:670
-#: ../command/command.c:74 ../cpufreq/src/cpufreq-applet.c:119
-#: ../geyes/geyes.c:356 ../mateweather/mateweather-applet.c:114
-#: ../multiload/main.c:482 ../stickynotes/stickynotes_applet.c:43
-#: ../timerapplet/timerapplet.c:83
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
+msgid "preferences-desktop-accessibility"
+msgstr ""
+
+#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
+#: mateweather/mateweather-applet.c:114 multiload/main.c:482
+#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
 msgid "_Preferences"
 msgstr "ال_تّفضيلات"
 
-#: ../battstat/battstat_applet.c:71
+#: battstat/battstat_applet.c:71
 msgid "System is running on AC power"
 msgstr "النظام يعمل على طاقة التيار المتناوب"
 
-#: ../battstat/battstat_applet.c:72
+#: battstat/battstat_applet.c:72
 msgid "System is running on battery power"
 msgstr "النظام يعمل على طاقة البطارية"
 
-#: ../battstat/battstat_applet.c:176
+#: battstat/battstat_applet.c:176
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "شُحِنت البطارية (%d%%)"
 
-#: ../battstat/battstat_applet.c:178
+#: battstat/battstat_applet.c:178
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "بقي وقت غير معروف (%d%%)"
 
-#: ../battstat/battstat_applet.c:180
+#: battstat/battstat_applet.c:180
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "بقي وقت غير معروف (%d%%) حتى تُشحن"
 
-#: ../battstat/battstat_applet.c:185
+#: battstat/battstat_applet.c:185
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
@@ -195,7 +196,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../battstat/battstat_applet.c:190
+#: battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
@@ -206,7 +207,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../battstat/battstat_applet.c:196
+#: battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
@@ -217,7 +218,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../battstat/battstat_applet.c:201
+#: battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -228,14 +229,12 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
-#. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:208
+#: battstat/battstat_applet.c:208
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "بقيت %d %s %d %s (%d%%)"
 
-#: ../battstat/battstat_applet.c:209 ../battstat/battstat_applet.c:216
+#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
@@ -245,7 +244,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../battstat/battstat_applet.c:210 ../battstat/battstat_applet.c:217
+#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
@@ -255,32 +254,29 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#. TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
-#. * Swap order with "%2$s %2$d %1$s %1$d if needed
-#: ../battstat/battstat_applet.c:215
+#: battstat/battstat_applet.c:215
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s حتى تُشحن (%d%%)"
 
-#: ../battstat/battstat_applet.c:229
+#: battstat/battstat_applet.c:229
 msgid "Battery Monitor"
 msgstr "مراقب البطارية"
 
-#: ../battstat/battstat_applet.c:240 ../battstat/battstat_applet.c:300
+#: battstat/battstat_applet.c:240 battstat/battstat_applet.c:300
 msgid "Your battery is now fully recharged"
 msgstr "امتلأت البطارية"
 
-#: ../battstat/battstat_applet.c:275 ../battstat/battstat_applet.c:432
+#: battstat/battstat_applet.c:275 battstat/battstat_applet.c:432
 msgid "Battery Notice"
 msgstr "ملاحظة البطارية"
 
-#. we don't know the remaining time
-#: ../battstat/battstat_applet.c:377
+#: battstat/battstat_applet.c:377
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "بقي %d%% من سعة البطارية الكلية."
 
-#: ../battstat/battstat_applet.c:383
+#: battstat/battstat_applet.c:383
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -293,10 +289,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#. TRANSLATORS: this is a list, it is left as a single string
-#. * to allow you to make it appear like a list would in your
-#. * locale.  This is if the laptop does not support suspend.
-#: ../battstat/battstat_applet.c:395
+#: battstat/battstat_applet.c:395
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -306,10 +299,7 @@ msgstr ""
 " • صل الحاسوب المحمول بالطاقة، أو \n"
 " • احفظ المستندات المفتوحة ثم أطفئ حاسوبك المحمول."
 
-#. TRANSLATORS: this is a list, it is left as a single string
-#. * to allow you to make it appear like a list would in your
-#. * locale.  This is if the laptop supports suspend.
-#: ../battstat/battstat_applet.c:403
+#: battstat/battstat_applet.c:403
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -321,110 +311,115 @@ msgstr ""
 " • صل الحاسوب المحمول بالطاقة، أو \n"
 " • احفظ المستندات المفتوحة ثم أطفئ حاسوبك المحمول."
 
-#: ../battstat/battstat_applet.c:411
+#: battstat/battstat_applet.c:411
 msgid "Your battery is running low"
 msgstr "بطاريتك منخفضة"
 
-#: ../battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:508
 msgid "No battery present"
 msgstr "لا توجد بطّارية"
 
-#: ../battstat/battstat_applet.c:511
+#: battstat/battstat_applet.c:511
 msgid "Battery status unknown"
 msgstr "حالة البطارية مجهولة"
 
-#: ../battstat/battstat_applet.c:540
+#: battstat/battstat_applet.c:540
 msgid "N/A"
 msgstr "غير متوفر"
 
-#: ../battstat/battstat_applet.c:783 ../drivemount/drivemount.c:153
-#: ../geyes/geyes.c:344 ../geyes/themes.c:226
-#: ../mateweather/mateweather-applet.c:63
-#: ../mateweather/mateweather-pref.c:751
-#: ../stickynotes/stickynotes_applet_callbacks.c:345
-#: ../stickynotes/stickynotes_applet_callbacks.c:540
-#: ../trashapplet/src/trashapplet.c:399
+#: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
+#: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
+#: mateweather/mateweather-pref.c:747
+#: stickynotes/stickynotes_applet_callbacks.c:345
+#: stickynotes/stickynotes_applet_callbacks.c:540
+#: trashapplet/src/trashapplet.c:399
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "حصل خطأ عند عرض المساعدة: %s"
 
-#: ../battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:824
 msgid "This utility shows the status of your laptop battery."
 msgstr "هذه الأداة تظهر حالة بطارية حاسوبك المحمول."
 
-#. true
-#: ../battstat/battstat_applet.c:826
+#: battstat/battstat_applet.c:826
 msgid "upower backend enabled."
 msgstr "تم تمكين upower في الخلفية"
 
-#. false
-#: ../battstat/battstat_applet.c:827
+#: battstat/battstat_applet.c:827
 msgid "Legacy backend enabled."
 msgstr ""
 
-#: ../battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:836
 msgid "About Battery Charge Monitor"
 msgstr ""
 
-#: ../battstat/battstat_applet.c:838
+#: battstat/battstat_applet.c:838
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../battstat/battstat_applet.c:1114 ../battstat/battstat_applet.c:1164
-#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:2
+#: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
+#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "مراقب شحن البطارية"
 
-#: ../battstat/battstat_applet.c:1165
-#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:3
+#: battstat/battstat_applet.c:1165
+#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "مراقبة طاقة البطارية المتبقية"
 
-#: ../battstat/battstat_applet.ui.h:1
+#: battstat/battstat_applet.ui:14
 msgid "Battery Charge Monitor Preferences"
 msgstr "تفضيلات مراقب شحن البطارية"
 
-#: ../battstat/battstat_applet.ui.h:2
+#: battstat/battstat_applet.ui:33
 msgid "Appearance"
 msgstr "المظهر"
 
-#: ../battstat/battstat_applet.ui.h:3
+#: battstat/battstat_applet.ui:68
 msgid "_Show time/percentage:"
 msgstr "ا_عرض الوقت\\النسبة:"
 
-#: ../battstat/battstat_applet.ui.h:4
+#: battstat/battstat_applet.ui:102
 msgid "Show _time remaining"
 msgstr "اعرض الو_قت المتبقي"
 
-#: ../battstat/battstat_applet.ui.h:5
+#: battstat/battstat_applet.ui:117
 msgid "Show _percentage remaining"
 msgstr "اعرض ال_نسبة المتبقية"
 
-#: ../battstat/battstat_applet.ui.h:6
+#: battstat/battstat_applet.ui:175
 msgid "Notifications"
 msgstr "الإشعارات"
 
-#. TRANSLATOR: This is the beginning of the sentence
-#: ../battstat/battstat_applet.ui.h:8
+#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
+#. drops to: [XX] percent/minutes remaining'
+#: battstat/battstat_applet.ui:206
 msgid "_Warn when battery charge drops to:"
 msgstr "_حذّر عندما يقل شحن البطارية عن:"
 
-#: ../battstat/battstat_applet.ui.h:9
+#: battstat/battstat_applet.ui:262
 msgid "_Notify when battery is fully recharged"
 msgstr "نبّه عندما تمتلئ البطارية"
 
-#: ../battstat/org.mate.applets.BattstatApplet.mate-panel-applet.in.in.h:1
+#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:5
+#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:6
 msgid "Battstat Factory"
 msgstr "مصنع حالة البطارية"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
+msgid "battery"
+msgstr ""
+
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
 msgstr "مستوى القيمة الحمراء"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:2
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:6
 msgid ""
 "The battery level below which the battery is displayed as red. Also the "
 "value at which the low battery warning is displayed."
@@ -432,11 +427,11 @@ msgstr ""
 "مستوى البطارية الذي تحته تُعرض البطارية بلون أحمر. أيضا القيمة التي يتم "
 "عندها عرض تنبيه."
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:3
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:10
 msgid "Warn on low time rather than low percentage"
 msgstr "تحذير عند انخفاض الوقت المتبقي بدلا من انخفاض النسبة المئوية"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:4
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:11
 msgid ""
 "Use the value defined in red_value as a time remaining to show the warning "
 "dialog rather than a percentage."
@@ -444,96 +439,79 @@ msgstr ""
 "استخدم القيمة المعرّفة في red_value كوقت متبقٍ بدلًا من النسبة المئوية لعرض "
 "حوار التحذير."
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:5
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:15
 msgid "Low Battery Notification"
 msgstr "تنبيه انخفاض البطارية"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:6
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:16
 msgid "Notify user when the battery is low."
 msgstr "تنبيه المستخدم عندما تكون البطارية منخفضة."
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:7
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:20
 msgid "Full Battery Notification"
 msgstr "تنبيه امتلاء البطارية"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:8
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:21
 msgid "Notify user when the battery is full."
 msgstr "تنبيه المستخدم عندما تكون البطارية ممتلئة."
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:9
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:25
 msgid "Beep for warnings"
 msgstr "صفّر للتنبيه"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:10
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:26
 msgid "Beep when displaying a warning."
 msgstr "صفّر عند عرض تنبيه."
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:11
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:30
 msgid "Show the time/percent label"
 msgstr "اعرض الوقت\\النسبة"
 
-#: ../battstat/org.mate.panel.applet.battstat.gschema.xml.in.h:12
+#: battstat/org.mate.panel.applet.battstat.gschema.xml.in:31
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
 msgstr "0 لغير معنون، 1 للنسبة المئوية و 2 للوقت المتبقي."
 
-#. TRANSLATOR: this is a selectable item in a drop-down menu to end
-#. * this sentence:
-#. *   "Warn when battery charge drops to: [XX] percent".
-#: ../battstat/properties.c:237
+#: battstat/properties.c:237
 msgid "Percent"
 msgstr "بالمائة"
 
-#. TRANSLATOR: this is a selectable item in a drop-down menu to end
-#. * this sentence:
-#. *   "Warn when battery charge drops to: [XX] minutes remaining"
-#: ../battstat/properties.c:243
+#: battstat/properties.c:243
 msgid "Minutes Remaining"
 msgstr "دقيقة\\دقائق متبقية"
 
-#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:1
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:3
 msgid "Battery Status Utility"
 msgstr "أداة حالة البطارية"
 
-#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:2
-msgid "Battery power low"
-msgstr "طاقة البطارية منخفضة"
-
-#: ../battstat/sounds/mate-battstat_applet.soundlist.in.h:3
-msgid "Battery fully re-charged"
-msgstr "أُعيد شحن البطارية بالكامل"
-
-#: ../charpick/charpick.c:404
+#: charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "اللوحات المتوفرة"
 
-#. TRANSLATOR: This sentance reads something like 'Insert "PILCROW SIGN"'
-#. *             hopefully, the name of the unicode character has already
-#. *             been translated.
-#: ../charpick/charpick.c:453
+#: charpick/charpick.c:453
 #, c-format
 msgid "Insert \"%s\""
 msgstr "أدرج  \"%s\""
 
-#: ../charpick/charpick.c:456
+#: charpick/charpick.c:456
 msgid "Insert special character"
 msgstr "أدرِج محرفًا خاصًا"
 
-#: ../charpick/charpick.c:460
+#: charpick/charpick.c:460
 #, c-format
 msgid "insert special character %s"
 msgstr "أدرِج محرفًا خاصًا %s"
 
-#: ../charpick/charpick.c:583
+#: charpick/charpick.c:583
 msgid "About Character Palette"
 msgstr ""
 
-#: ../charpick/charpick.c:585
+#: charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../charpick/charpick.c:587
+#: charpick/charpick.c:587
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -541,26 +519,33 @@ msgstr ""
 "بريمج لوحة متّة لاختيار المحارِف الغريبة التي لا توجد على لوحة مفاتيحي. "
 "منشور تحت ترخيص غنّو العام."
 
-#: ../charpick/charpick.c:699 ../charpick/charpick.c:713
-#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:2
-#: ../charpick/properties.c:451
+#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
+#: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "لوحة المحارِف"
 
-#: ../charpick/charpick.c:699
-#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:3
+#: charpick/charpick.c:699
+#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "أدرِج محارِفا"
 
-#: ../charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.in.in.h:1
+#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:5
+#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
 msgstr "مصنع بريمج منتقي المحارِف"
 
-#: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
+msgid "accessories-character-map"
+msgstr ""
+
+#: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
 msgstr "المحارف التي ستعرض عند بدء البريمج"
 
-#: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:2
+#: charpick/org.mate.panel.applet.charpick.gschema.xml.in:6
 msgid ""
 "The string that the user had selected when the applet was last used. This "
 "string will be displayed when the user starts the applet."
@@ -568,208 +553,223 @@ msgstr ""
 "السلسلة التي اختارها المستخدم آخر مرة استخدم فيها البريمج. ستعرض هذه السلسلة"
 " عند بدء المستخدم للبريمج"
 
-#: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:3
-#: ../charpick/properties.c:378
+#: charpick/org.mate.panel.applet.charpick.gschema.xml.in:10
+#: charpick/properties.c:378
 msgid "List of available palettes"
 msgstr "قائمة اللوحات المتوفرة"
 
-#: ../charpick/org.mate.panel.applet.charpick.gschema.xml.in.h:4
+#: charpick/org.mate.panel.applet.charpick.gschema.xml.in:11
 msgid "List of strings containing the available palettes."
 msgstr "قائمة السلاسل المحتوية على اللوحات المتوفرة."
 
-#: ../charpick/properties.c:28
+#: charpick/properties.c:28
 msgid "_Edit"
 msgstr "_تحرير"
 
-#: ../charpick/properties.c:116
+#: charpick/properties.c:116
 msgid "_Palette:"
 msgstr "ال_لوحة:"
 
-#: ../charpick/properties.c:124
+#: charpick/properties.c:124
 msgid "Palette entry"
 msgstr "خانة اللوحة"
 
-#: ../charpick/properties.c:125
+#: charpick/properties.c:125
 msgid "Modify a palette by adding or removing characters"
 msgstr "غيّر لوحة بإضافة أو حذف محارِف منها"
 
-#: ../charpick/properties.c:239
+#: charpick/properties.c:239
 msgid "Add Palette"
 msgstr "أضِف لوحة"
 
-#: ../charpick/properties.c:276
+#: charpick/properties.c:276
 msgid "Edit Palette"
 msgstr "حرّر اللوحة"
 
-#: ../charpick/properties.c:377
+#: charpick/properties.c:377
 msgid "Palettes list"
 msgstr "قائمة اللوحات"
 
-#: ../charpick/properties.c:456
+#: charpick/properties.c:456
 msgid "_Palettes:"
 msgstr "ال_لوحات:"
 
-#: ../charpick/properties.c:478
+#: charpick/properties.c:478
 msgid "Add button"
 msgstr "أضِف زرًا"
 
-#: ../charpick/properties.c:479
+#: charpick/properties.c:479
 msgid "Click to add a new palette"
 msgstr "انقر لإضافة لوحة جديدة"
 
-#: ../charpick/properties.c:491
+#: charpick/properties.c:491
 msgid "Edit button"
 msgstr "حرّر الزر"
 
-#: ../charpick/properties.c:492
+#: charpick/properties.c:492
 msgid "Click to edit the selected palette"
 msgstr "انقر لتحرير اللوحة المختارة"
 
-#: ../charpick/properties.c:504
+#: charpick/properties.c:504
 msgid "Delete button"
 msgstr "احذف الزر"
 
-#: ../charpick/properties.c:505
+#: charpick/properties.c:505
 msgid "Click to delete the selected palette"
 msgstr "انقر لحذف اللوحة المختارة"
 
-#: ../charpick/properties.c:556
+#: charpick/properties.c:556
 msgid "Character Palette Preferences"
 msgstr "تفضيلات لوحة المحارِف"
 
-#: ../command/command.c:108
+#: command/command.c:122
 msgid "About Command Applet"
 msgstr ""
 
-#: ../command/command.c:110
+#: command/command.c:124
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
-"Copyright © 2015-2019 MATE developers"
+"Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: ../command/command.c:113
-#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:3
+#: command/command.c:127
+#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the output of a command"
 msgstr "يعرض مُخرج أمر"
 
-#: ../command/command.c:131
+#: command/command.c:194
 msgid "Command Applet Preferences"
 msgstr "اعدادات تطبيق الأوامر"
 
-#: ../command/command.c:144
+#: command/command.c:207
 msgid "Command:"
 msgstr "الاوامر:"
 
-#: ../command/command.c:152
+#: command/command.c:215
 msgid "Interval (seconds):"
 msgstr "المجال الزمني (ثواني):"
 
-#: ../command/command.c:160
+#: command/command.c:223
 msgid "Maximum width (chars):"
 msgstr ""
 
-#: ../command/command.c:168
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:7
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:7
+#: command/command.c:231
+#: command/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
 msgid "Show icon"
 msgstr "إظهار الرمز"
 
-#: ../command/command.c:319
+#: command/command.c:443
 msgid "Command Applet"
 msgstr "تطبيق الأوامر"
 
-#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:1
+#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
+#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
 msgid "Command Factory"
 msgstr ""
 
-#: ../command/org.mate.applets.CommandApplet.mate-panel-applet.in.in.h:2
+#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
 msgid "Command"
 msgstr "الأمر"
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
+msgid "utilities-terminal"
+msgstr ""
+
+#: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
 msgstr "الأمر الذي سينفّذ"
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:2
+#: command/org.mate.panel.applet.command.gschema.xml.in:6
 msgid "Command/script to execute to get the output"
 msgstr "الأمر\\السكربت الذي ينفّذ للحصول على المُخرج"
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:3
+#: command/org.mate.panel.applet.command.gschema.xml.in:10
 msgid "Interval for the command"
 msgstr "المجال الزمني للأمر"
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:4
+#: command/org.mate.panel.applet.command.gschema.xml.in:11
 msgid "Interval to execute the command (in seconds)"
 msgstr "المجال الزمني لتنفيذ الأمر (بالثواني)"
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:5
+#: command/org.mate.panel.applet.command.gschema.xml.in:15
 msgid "Width of output"
 msgstr ""
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:6
+#: command/org.mate.panel.applet.command.gschema.xml.in:16
 msgid "Number of characters to display"
 msgstr ""
 
-#: ../command/org.mate.panel.applet.command.gschema.xml.in.h:8
+#: command/org.mate.panel.applet.command.gschema.xml.in:21
 msgid "If applet icon is shown or not"
 msgstr "اذا كانت أيقونات التطبيق ظاهرة أو لا"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:1
+#: cpufreq/cpufreq-preferences.ui:7
 msgid "CPU Frequency Monitor Preferences"
 msgstr "تفضيلات مراقب تردد المعالج"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:2
+#: cpufreq/cpufreq-preferences.ui:28
 msgid "Monitor Settings"
 msgstr "إعدادات المُراقب"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:3
+#: cpufreq/cpufreq-preferences.ui:60
 msgid "_Monitored CPU:"
 msgstr "ال_معالج المُراقب:"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:4
+#: cpufreq/cpufreq-preferences.ui:102
 msgid "Display Settings"
 msgstr "إعدادات العرض"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:5
+#: cpufreq/cpufreq-preferences.ui:138
 msgid "_Appearance:"
 msgstr "ال_مظهر:"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:6
+#: cpufreq/cpufreq-preferences.ui:163
 msgid "Show CPU frequency as _frequency"
 msgstr "اعرض تردد المعالج ك_تردد"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:7
+#: cpufreq/cpufreq-preferences.ui:181
 msgid "Show frequency _units"
 msgstr "أظهر و_حدات التردد"
 
-#: ../cpufreq/cpufreq-preferences.ui.h:8
+#: cpufreq/cpufreq-preferences.ui:197
 msgid "Show CPU frequency as _percentage"
 msgstr "اعرض تردد المعالج ك_نسبة"
 
-#: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:1
-#: ../cpufreq/src/cpufreq-applet.c:816 ../cpufreq/src/cpufreq-applet.c:871
+#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
+#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
+#: cpufreq/src/cpufreq-applet.c:813 cpufreq/src/cpufreq-applet.c:868
 msgid "CPU Frequency Scaling Monitor"
 msgstr "مراقب تمديد تردد المعالج"
 
-#: ../cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.in.in.h:2
+#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:6
+#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "ارصد زيادة سرعة المعالج"
 
-#: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
+msgid "mate-cpu-frequency-applet"
+msgstr ""
+
+#: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
 msgstr "المعالج المُراقب"
 
-#: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:2
+#: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:7
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
 msgstr "حدد المعالج المراقب. في النظام أحادي المعالج ليست بحاجة إلى تغييره."
 
-#: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:3
+#: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:11
 msgid "Mode to show CPU usage"
 msgstr ""
 
-#: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:4
+#: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:12
 msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
@@ -778,63 +778,59 @@ msgstr ""
 "القيمة 0 تعني اعرض البريمج في النمط الرسومي، 1 لعرضه في النمط النصّي (لا "
 "تظهر بكسماب الصورة) و 2 لإظهار البريمج في النمط النصي والرسومي."
 
-#: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:5
+#: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:16
 msgid "The type of text to display (if the text is enabled)."
 msgstr "نوع النص الذي سيعرض (إذا فعّل النص)."
 
-#: ../cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in.h:6
+#: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:17
 msgid ""
 "A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:452 ../cpufreq/src/cpufreq-prefs.c:365
+#: cpufreq/src/cpufreq-applet.c:449 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "لا يمكن فتح مستند المساعدة"
 
-#: ../cpufreq/src/cpufreq-applet.c:484
+#: cpufreq/src/cpufreq-applet.c:481
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:486
+#: cpufreq/src/cpufreq-applet.c:483
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../cpufreq/src/cpufreq-applet.c:488
+#: cpufreq/src/cpufreq-applet.c:485
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "هذه الأداة تُظهر تردد المعالج الحالي."
 
-#: ../cpufreq/src/cpufreq-applet.c:872
+#: cpufreq/src/cpufreq-applet.c:869
 msgid "This utility shows the current CPU Frequency"
 msgstr "تظهر هذه الأداة تردد المعالج الحالي."
 
-#: ../cpufreq/src/cpufreq-prefs.c:500
+#: cpufreq/src/cpufreq-prefs.c:493
 msgid "Graphic"
 msgstr "رسومي"
 
-#: ../cpufreq/src/cpufreq-prefs.c:505
+#: cpufreq/src/cpufreq-prefs.c:498
 msgid "Text"
 msgstr "نصّي"
 
-#: ../cpufreq/src/cpufreq-prefs.c:510
+#: cpufreq/src/cpufreq-prefs.c:503
 msgid "Graphic and Text"
 msgstr "نصّي و رسومي"
 
-#: ../cpufreq/src/cpufreq-monitor-cpuinfo.c:121
+#: cpufreq/src/cpufreq-monitor-cpuinfo.c:119
 msgid "Frequency Scaling Unsupported"
 msgstr "تغيير التردد غير مدعوم"
 
-#. If there is no cpufreq support it shows only the cpu frequency,
-#. * I think is better than do nothing. I have to notify it to the user,
-#. because
-#. * he could think that cpufreq is supported but it doesn't work succesfully
-#: ../cpufreq/src/cpufreq-monitor-factory.c:59
+#: cpufreq/src/cpufreq-monitor-factory.c:59
 msgid "CPU frequency scaling unsupported"
 msgstr "تغيير تردد المعالج غير مدعوم"
 
-#: ../cpufreq/src/cpufreq-monitor-factory.c:60
+#: cpufreq/src/cpufreq-monitor-factory.c:60
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -842,178 +838,190 @@ msgstr ""
 "لن تكون قادرا على تغيير تردد جهازك. ربما لا يكون جهازك معدًا بشكل صحيح أو لا"
 " يدعم معالجك تغيير السرعة."
 
-#: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:1
+#: cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in:14
 msgid "Change CPU Frequency scaling"
 msgstr "غيّر قياس تردد المعالج"
 
-#: ../cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in.h:2
+#: cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in:15
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "الصلاحيات مطلوبة لتغيير قياس تردد المعالج"
 
-#: ../drivemount/drive-button.c:340 ../drivemount/drive-button.c:354
+#: drivemount/drive-button.c:340 drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(موصول)"
 
-#: ../drivemount/drive-button.c:347
+#: drivemount/drive-button.c:347
 msgid "(not mounted)"
 msgstr "(غير موصول)"
 
-#: ../drivemount/drive-button.c:616
+#: drivemount/drive-button.c:619
 msgid "Cannot execute Caja"
 msgstr "لا يمكن تنفيذ كاجا"
 
-#: ../drivemount/drive-button.c:940
+#: drivemount/drive-button.c:943
 msgid "_Play DVD"
 msgstr "_شغّل DVD"
 
-#: ../drivemount/drive-button.c:944
+#: drivemount/drive-button.c:947
 msgid "_Play CD"
 msgstr "_شغّل اسطوانة"
 
-#: ../drivemount/drive-button.c:947
+#: drivemount/drive-button.c:950
 #, c-format
 msgid "_Open %s"
 msgstr "ا_فتح %s"
 
-#: ../drivemount/drive-button.c:955
+#: drivemount/drive-button.c:958
 #, c-format
 msgid "Un_mount %s"
 msgstr "ا_فصِل %s"
 
-#: ../drivemount/drive-button.c:961
+#: drivemount/drive-button.c:964
 #, c-format
 msgid "_Mount %s"
 msgstr "_صِل %s"
 
-#: ../drivemount/drive-button.c:969
+#: drivemount/drive-button.c:972
 #, c-format
 msgid "_Eject %s"
 msgstr "أ_خرج %s"
 
-#: ../drivemount/drivemount.c:120
+#: drivemount/drivemount.c:120
 msgid "About Disk Mounter"
 msgstr ""
 
-#: ../drivemount/drivemount.c:122
+#: drivemount/drivemount.c:122
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../drivemount/drivemount.c:124
+#: drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "بريمج لوصل وفصْل الأقراص."
 
-#: ../drivemount/drivemount.c:185 ../drivemount/drivemount.c:225
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:3
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "مُوصِل الأقراص"
 
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:1
+#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
 msgid "Drive Mount Applet Factory"
 msgstr "مصنع بريمج موصل الأقراص"
 
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:2
+#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
 msgid "Factory for drive mount applet"
 msgstr "مصنع لبريمج وصْل الأقراص"
 
-#: ../drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.in.in.h:4
+#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
 msgstr "وصّل الأقراص و الأجهزة المحلية"
 
-#: ../geyes/geyes.c:178
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
+msgid "media-floppy"
+msgstr ""
+
+#: geyes/geyes.c:178
 msgid "About Eyes"
 msgstr ""
 
-#: ../geyes/geyes.c:180
+#: geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "برنامج يقدم عيونا تتبع الفأرة."
 
-#: ../geyes/geyes.c:182
+#: geyes/geyes.c:182
 msgid ""
 "Copyright © 1999 Dave Camp\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../geyes/geyes.c:389 ../geyes/geyes.c:419 ../geyes/geyes.c:421
-#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:2
+#: geyes/geyes.c:389 geyes/geyes.c:419 geyes/geyes.c:421
+#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
 msgid "Eyes"
 msgstr "عيون"
 
-#: ../geyes/geyes.c:422
+#: geyes/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "العيون تنظر في اتجاه مؤشر الفأرة"
 
-#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:1
+#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
+#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
 msgid "Eyes Applet Factory"
 msgstr ""
 
-#: ../geyes/org.mate.applets.GeyesApplet.mate-panel-applet.in.in.h:3
+#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
 msgstr "مجموعة عيون لشريطك"
 
-#: ../geyes/org.mate.panel.applet.geyes.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
+msgid "mate-eyes-applet"
+msgstr ""
+
+#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
+#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
 msgid "Directory in which the theme is located"
 msgstr "الدليل الذي بِه السِمة"
 
-#: ../geyes/themes.c:130
+#: geyes/themes.c:129
 msgid "Can not launch the eyes applet."
 msgstr "لا يمكن تشغيل بريمج العيون."
 
-#: ../geyes/themes.c:131
+#: geyes/themes.c:130
 msgid "There was a fatal error while trying to load the theme."
 msgstr "حصل خطأ فادح عند محاولة تحميل السِمة."
 
-#: ../geyes/themes.c:285
+#: geyes/themes.c:282
 msgid "Eyes Preferences"
 msgstr ""
 
-#: ../geyes/themes.c:318
+#: geyes/themes.c:315
 msgid "Themes"
 msgstr "السِمات"
 
-#: ../geyes/themes.c:339
+#: geyes/themes.c:336
 msgid "_Select a theme:"
 msgstr "ا_ختر سِمة:"
 
-#: ../mateweather/mateweather-about.c:54
+#: mateweather/mateweather-about.c:54
 msgid "About Weather Report"
 msgstr ""
 
-#: ../mateweather/mateweather-about.c:56
+#: mateweather/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../mateweather/mateweather-about.c:58
+#: mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "تطبيق لوحي لمراقبة حالات الطقس المحلية."
 
-#: ../mateweather/mateweather-applet.c:108
+#: mateweather/mateweather-applet.c:108
 msgid "_Details"
 msgstr "ال_تفاصيل"
 
-#: ../mateweather/mateweather-applet.c:111
-#: ../mateweather/mateweather-dialog.c:186
+#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.c:183
 msgid "_Update"
 msgstr "_حدّث"
 
-#: ../mateweather/mateweather-applet.c:339
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:3
+#: mateweather/mateweather-applet.c:345
+#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
 msgid "Weather Report"
 msgstr "تقرير حالة الطقس"
 
-#: ../mateweather/mateweather-applet.c:354
-#: ../mateweather/mateweather-applet.c:358
+#: mateweather/mateweather-applet.c:360 mateweather/mateweather-applet.c:364
 msgid "MATE Weather"
 msgstr "طقس متّة"
 
-#: ../mateweather/mateweather-applet.c:457
+#: mateweather/mateweather-applet.c:463
 msgid "Weather Forecast"
 msgstr "تقرير الطقس"
 
-#: ../mateweather/mateweather-applet.c:469
+#: mateweather/mateweather-applet.c:475
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1024,320 +1032,300 @@ msgstr ""
 "السماء: %s\n"
 "درجة الحرارة: %s"
 
-#: ../mateweather/mateweather-applet.c:518
+#: mateweather/mateweather-applet.c:524
 msgid "Updating..."
 msgstr "يُحدِّث..."
 
-#: ../mateweather/mateweather-dialog.c:184
+#: mateweather/mateweather-dialog.c:181
 msgid "Details"
 msgstr "التّفاصيل"
 
-#: ../mateweather/mateweather-dialog.c:226
+#: mateweather/mateweather-dialog.c:223
 msgid "City:"
 msgstr "المدينة:"
 
-#: ../mateweather/mateweather-dialog.c:232
+#: mateweather/mateweather-dialog.c:229
 msgid "Last update:"
 msgstr "آخر تحديث:"
 
-#: ../mateweather/mateweather-dialog.c:238
+#: mateweather/mateweather-dialog.c:235
 msgid "Conditions:"
 msgstr "الحالة:"
 
-#: ../mateweather/mateweather-dialog.c:244
+#: mateweather/mateweather-dialog.c:241
 msgid "Sky:"
 msgstr "السماء:"
 
-#: ../mateweather/mateweather-dialog.c:250
+#: mateweather/mateweather-dialog.c:247
 msgid "Temperature:"
 msgstr "درجة الحرارة:"
 
-#: ../mateweather/mateweather-dialog.c:256
+#: mateweather/mateweather-dialog.c:253
 msgid "Feels like:"
 msgstr "تبدو كـ:"
 
-#: ../mateweather/mateweather-dialog.c:262
+#: mateweather/mateweather-dialog.c:259
 msgid "Dew point:"
 msgstr "نقطة الندى:"
 
-#: ../mateweather/mateweather-dialog.c:268
+#: mateweather/mateweather-dialog.c:265
 msgid "Relative humidity:"
 msgstr "الرّطوبة النّسبيّة:"
 
-#: ../mateweather/mateweather-dialog.c:274
+#: mateweather/mateweather-dialog.c:271
 msgid "Wind:"
 msgstr "الرياح:"
 
-#: ../mateweather/mateweather-dialog.c:280
+#: mateweather/mateweather-dialog.c:277
 msgid "Pressure:"
 msgstr "الضغط:"
 
-#: ../mateweather/mateweather-dialog.c:286
+#: mateweather/mateweather-dialog.c:283
 msgid "Visibility:"
 msgstr "مدى الرؤية:"
 
-#: ../mateweather/mateweather-dialog.c:292
+#: mateweather/mateweather-dialog.c:289
 msgid "Sunrise:"
 msgstr "الشروق:"
 
-#: ../mateweather/mateweather-dialog.c:298
+#: mateweather/mateweather-dialog.c:295
 msgid "Sunset:"
 msgstr "الغروب:"
 
-#: ../mateweather/mateweather-dialog.c:406
+#: mateweather/mateweather-dialog.c:403
 msgid "Current Conditions"
 msgstr "الحالة الحالية"
 
-#: ../mateweather/mateweather-dialog.c:423
+#: mateweather/mateweather-dialog.c:420
 msgid "Forecast Report"
 msgstr "تقرير النشرة الجوّية"
 
-#: ../mateweather/mateweather-dialog.c:423
+#: mateweather/mateweather-dialog.c:420
 msgid "See the ForeCast Details"
 msgstr "راجع تفاصيل النشرة الجوية"
 
-#: ../mateweather/mateweather-dialog.c:433
+#: mateweather/mateweather-dialog.c:430
 msgid "Forecast"
 msgstr "النشرة الجوية"
 
-#: ../mateweather/mateweather-dialog.c:441
+#: mateweather/mateweather-dialog.c:438
 msgid "Radar Map"
 msgstr "خريطة الرادار"
 
-#: ../mateweather/mateweather-dialog.c:474
+#: mateweather/mateweather-dialog.c:471
 msgid "_Visit Weather.com"
 msgstr "_زُرْ Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:475
+#: mateweather/mateweather-dialog.c:472
 msgid "Visit Weather.com"
 msgstr "زُرْ Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:475
+#: mateweather/mateweather-dialog.c:472
 msgid "Click to Enter Weather.com"
 msgstr "انقر لدخول Weather.com"
 
-#: ../mateweather/mateweather-dialog.c:606
+#: mateweather/mateweather-dialog.c:603
 msgid "Forecast not currently available for this location."
 msgstr "النّشرة الجّويّة غير متوفّرة حاليًّا لهذا المكان."
 
-#. Accessible Name and Description for the components in Preference Dialog
-#: ../mateweather/mateweather-pref.c:162
+#: mateweather/mateweather-pref.c:158
 msgid "Location view"
 msgstr "مشهد المكان"
 
-#: ../mateweather/mateweather-pref.c:162
+#: mateweather/mateweather-pref.c:158
 msgid "Select Location from the list"
 msgstr "اختر مكانًا من القائمة"
 
-#: ../mateweather/mateweather-pref.c:163
+#: mateweather/mateweather-pref.c:159
 msgid "Update spin button"
 msgstr "حدّث الزر اللولبي"
 
-#: ../mateweather/mateweather-pref.c:163
+#: mateweather/mateweather-pref.c:159
 msgid "Spinbutton for updating"
 msgstr "الزر اللولبي للتحديث"
 
-#: ../mateweather/mateweather-pref.c:164
+#: mateweather/mateweather-pref.c:160
 msgid "Address Entry"
 msgstr "خانة العنوان"
 
-#: ../mateweather/mateweather-pref.c:164
+#: mateweather/mateweather-pref.c:160
 msgid "Enter the URL"
 msgstr "أدخل الرّابط"
 
-#: ../mateweather/mateweather-pref.c:287
+#: mateweather/mateweather-pref.c:283
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "فشل تحميل قاعدة بيانات XML المواقع. من فضلك أرسل تقريرًا بهذه العلّة."
 
-#: ../mateweather/mateweather-pref.c:811
+#: mateweather/mateweather-pref.c:807
 msgid "Weather Preferences"
 msgstr "تفضيلات حالة الطقس"
 
-#: ../mateweather/mateweather-pref.c:835
-#: ../mateweather/mateweather-pref.c:1038
+#: mateweather/mateweather-pref.c:831 mateweather/mateweather-pref.c:1034
 msgid "_Automatically update every:"
 msgstr "_حدّث آليًا كل:"
 
-#. * Units settings page.
-#. Temperature Unit
-#: ../mateweather/mateweather-pref.c:851
+#: mateweather/mateweather-pref.c:847
 msgid "_Temperature unit:"
 msgstr "وحدة ال_حرارة:"
 
-#. gtk_combo_box_append_text (GTK_COMBO_BOX (temp_combo), _("Default"));
-#: ../mateweather/mateweather-pref.c:861
+#: mateweather/mateweather-pref.c:857
 msgid "Kelvin"
 msgstr "كلفن"
 
-#. TRANSLATORS: Celsius is sometimes referred Centigrade
-#: ../mateweather/mateweather-pref.c:863
+#: mateweather/mateweather-pref.c:859
 msgid "Celsius"
 msgstr "مئوية"
 
-#: ../mateweather/mateweather-pref.c:864
+#: mateweather/mateweather-pref.c:860
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#. Speed Unit
-#: ../mateweather/mateweather-pref.c:873
+#: mateweather/mateweather-pref.c:869
 msgid "_Wind speed unit:"
 msgstr "وحدة سرعة ال_رياح:"
 
-#. gtk_combo_box_append_text (GTK_COMBO_BOX (speed_combo), _("Default"));
-#. TRANSLATOR: The wind speed unit "meters per second"
-#: ../mateweather/mateweather-pref.c:884
+#: mateweather/mateweather-pref.c:880
 msgid "m/s"
 msgstr "م\\ثا"
 
-#. TRANSLATOR: The wind speed unit "kilometers per hour"
-#: ../mateweather/mateweather-pref.c:886
+#: mateweather/mateweather-pref.c:882
 msgid "km/h"
 msgstr "كم\\سا"
 
-#. TRANSLATOR: The wind speed unit "miles per hour"
-#: ../mateweather/mateweather-pref.c:888
+#: mateweather/mateweather-pref.c:884
 msgid "mph"
 msgstr "ميل\\سا"
 
-#. TRANSLATOR: The wind speed unit "knots"
-#: ../mateweather/mateweather-pref.c:890
+#: mateweather/mateweather-pref.c:886
 msgid "knots"
 msgstr "عُقد"
 
-#: ../mateweather/mateweather-pref.c:891
+#: mateweather/mateweather-pref.c:887
 msgid "Beaufort scale"
 msgstr "مقياس بيوفور"
 
-#. Pressure Unit
-#: ../mateweather/mateweather-pref.c:900
+#: mateweather/mateweather-pref.c:896
 msgid "_Pressure unit:"
 msgstr "وحدة ال_ضغط:"
 
-#. gtk_combo_box_append_text (GTK_COMBO_BOX (pres_combo), _("Default"));
-#. TRANSLATOR: The pressure unit "kiloPascals"
-#: ../mateweather/mateweather-pref.c:911
+#: mateweather/mateweather-pref.c:907
 msgid "kPa"
 msgstr "ك.باسكال"
 
-#. TRANSLATOR: The pressure unit "hectoPascals"
-#: ../mateweather/mateweather-pref.c:913
+#: mateweather/mateweather-pref.c:909
 msgid "hPa"
 msgstr "ه‍.باسكال"
 
-#. TRANSLATOR: The pressure unit "millibars"
-#: ../mateweather/mateweather-pref.c:915
+#: mateweather/mateweather-pref.c:911
 msgid "mb"
 msgstr "م.بت"
 
-#. TRANSLATOR: The pressure unit "millibars of mercury"
-#: ../mateweather/mateweather-pref.c:917
+#: mateweather/mateweather-pref.c:913
 msgid "mmHg"
 msgstr "مم زئبقي"
 
-#. TRANSLATOR: The pressure unit "inches of mercury"
-#: ../mateweather/mateweather-pref.c:919
+#: mateweather/mateweather-pref.c:915
 msgid "inHg"
 msgstr "بوصة زئبقية"
 
-#. TRANSLATOR: The pressure unit "atmospheres"
-#: ../mateweather/mateweather-pref.c:921
+#: mateweather/mateweather-pref.c:917
 msgid "atm"
 msgstr "جو"
 
-#. Distance Unit
-#: ../mateweather/mateweather-pref.c:930
+#: mateweather/mateweather-pref.c:926
 msgid "_Visibility unit:"
 msgstr "وحدة ال_رؤية:"
 
-#. gtk_combo_box_append_text (GTK_COMBO_BOX (dist_combo), _("Default"));
-#. TRANSLATOR: The distance unit "meters"
-#: ../mateweather/mateweather-pref.c:941
+#: mateweather/mateweather-pref.c:937
 msgid "meters"
 msgstr "م"
 
-#. TRANSLATOR: The distance unit "kilometers"
-#: ../mateweather/mateweather-pref.c:943
+#: mateweather/mateweather-pref.c:939
 msgid "km"
 msgstr "كم"
 
-#. TRANSLATOR: The distance unit "miles"
-#: ../mateweather/mateweather-pref.c:945
+#: mateweather/mateweather-pref.c:941
 msgid "miles"
 msgstr "ميل"
 
-#: ../mateweather/mateweather-pref.c:975
+#: mateweather/mateweather-pref.c:971
 msgid "Enable _radar map"
 msgstr "فعّل خريطة ال_رادار"
 
-#: ../mateweather/mateweather-pref.c:991
+#: mateweather/mateweather-pref.c:987
 msgid "Use _custom address for radar map"
 msgstr "استخدم عنوانًا _خاصًا لخريطة الرادار"
 
-#: ../mateweather/mateweather-pref.c:1009
+#: mateweather/mateweather-pref.c:1005
 msgid "A_ddress:"
 msgstr "ال_عنوان:"
 
-#. setup show-notifications button
-#: ../mateweather/mateweather-pref.c:1024
+#: mateweather/mateweather-pref.c:1020
 msgid "Show _notifications"
 msgstr "اعرض التنبيهات"
 
-#: ../mateweather/mateweather-pref.c:1034
+#: mateweather/mateweather-pref.c:1030
 msgid "Update"
 msgstr "تحديث"
 
-#: ../mateweather/mateweather-pref.c:1051
+#: mateweather/mateweather-pref.c:1047
 msgid "minutes"
 msgstr "دقائق"
 
-#: ../mateweather/mateweather-pref.c:1069
+#: mateweather/mateweather-pref.c:1065
 msgid "Display"
 msgstr "الشاشة"
 
-#: ../mateweather/mateweather-pref.c:1088
+#: mateweather/mateweather-pref.c:1084
 msgid "General"
 msgstr "عام"
 
-#: ../mateweather/mateweather-pref.c:1099
+#: mateweather/mateweather-pref.c:1095
 msgid "_Select a location:"
 msgstr "ا_ختر موقعًا:"
 
-#: ../mateweather/mateweather-pref.c:1121
+#: mateweather/mateweather-pref.c:1117
 msgid "_Find:"
 msgstr "اب_حث:"
 
-#: ../mateweather/mateweather-pref.c:1127
+#: mateweather/mateweather-pref.c:1123
 msgid "Find _Next"
 msgstr "ابحث عن ال_تالي"
 
-#: ../mateweather/mateweather-pref.c:1148
+#: mateweather/mateweather-pref.c:1144
 msgid "Location"
 msgstr "المكان"
 
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:1
+#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
 msgid "Mateweather Applet Factory"
 msgstr "مصنع بريمج طقس متّة"
 
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:2
+#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
 msgid "Factory for creating the weather applet."
 msgstr "مصنع لإنشاء بريمج حالة الطقس."
 
-#: ../mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.in.in.h:4
+#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "راقب أحوال و توقعات الطقس الحالي"
 
-#: ../multiload/main.c:60
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
+msgid "weather-storm"
+msgstr ""
+
+#: multiload/main.c:60
 msgid "About System Monitor"
 msgstr ""
 
-#: ../multiload/main.c:62
+#: multiload/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../multiload/main.c:64
+#: multiload/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
@@ -1345,42 +1333,40 @@ msgstr ""
 "مراقب لحالة النظام يستطيع عرض رسوم بيانية للمعالج و الذاكرة و مستوى استخدام "
 "ملف التبديل بالإضافة إلى حالة الشبكة."
 
-#: ../multiload/main.c:129
+#: multiload/main.c:129
 msgid "Start system-monitor"
 msgstr ""
 
-#: ../multiload/main.c:151
+#: multiload/main.c:151
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "حدث خطأ عند تنفيذ '%s' : %s"
 
-#: ../multiload/main.c:279 ../multiload/properties.c:600
+#: multiload/main.c:279 multiload/properties.c:643
 msgid "Processor"
 msgstr "المعالج"
 
-#: ../multiload/main.c:281 ../multiload/properties.c:608
+#: multiload/main.c:281 multiload/properties.c:651
 msgid "Memory"
 msgstr "الذاكرة"
 
-#: ../multiload/main.c:283 ../multiload/properties.c:616
+#: multiload/main.c:283 multiload/properties.c:659
 msgid "Network"
 msgstr "الشبكة"
 
-#: ../multiload/main.c:285 ../multiload/properties.c:625
+#: multiload/main.c:285 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "مساحة التبديل"
 
-#: ../multiload/main.c:287 ../multiload/main.c:366
+#: multiload/main.c:287 multiload/main.c:366
 msgid "Load Average"
 msgstr "متوسط الحِمْل"
 
-#: ../multiload/main.c:289
+#: multiload/main.c:289
 msgid "Disk"
 msgstr "قرص"
 
-#. xgettext: use and cache are > 1 most of the time,
-#. please assume that they always are.
-#: ../multiload/main.c:305
+#: multiload/main.c:305
 #, c-format
 msgid ""
 "%s:\n"
@@ -1391,13 +1377,12 @@ msgstr ""
 "%u%% مستخدَمة من طرف برامج\n"
 "%u%% مستعملة كذاكرة مؤقّتة"
 
-#: ../multiload/main.c:313
+#: multiload/main.c:313
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "متوسّط حِمْل النظام  %0.02f"
 
-#. xgettext: same as in graphic tab of g-s-m
-#: ../multiload/main.c:321
+#: multiload/main.c:321
 #, c-format
 msgid ""
 "%s:\n"
@@ -1408,7 +1393,7 @@ msgstr ""
 "التلقي %s\n"
 "الإرسال %s"
 
-#: ../multiload/main.c:337
+#: multiload/main.c:337
 #, c-format
 msgid ""
 "%s:\n"
@@ -1423,77 +1408,91 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../multiload/main.c:362
+#: multiload/main.c:362
 msgid "CPU Load"
 msgstr "حِمْل المعالج"
 
-#: ../multiload/main.c:363
+#: multiload/main.c:363
 msgid "Memory Load"
 msgstr "حمل الذاكرة"
 
-#: ../multiload/main.c:364
+#: multiload/main.c:364
 msgid "Net Load"
 msgstr "حمل الشبكة"
 
-#: ../multiload/main.c:365
+#: multiload/main.c:365
 msgid "Swap Load"
 msgstr "حِمْل التبديل"
 
-#: ../multiload/main.c:367
+#: multiload/main.c:367
 msgid "Disk Load"
 msgstr "حِمْل القرص"
 
-#: ../multiload/main.c:485
+#: multiload/main.c:485
 msgid "_Open System Monitor"
 msgstr "ا_فتح مراقب النظام"
 
-#: ../multiload/main.c:517
-#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:1
+#: multiload/main.c:517
+#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "مراقب النظام"
 
-#: ../multiload/netspeed.c:40
+#: multiload/netspeed.c:40
 #, c-format
 msgid "%s/s"
 msgstr "%s\\ثا"
 
-#: ../multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.in.in.h:2
+#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
+msgid "MultiLoad Applet Factory"
+msgstr ""
+
+#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the load applet."
+msgstr ""
+
+#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "موضّح حِمْل النظام"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
+msgid "utilities-system-monitor"
+msgstr ""
+
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
 msgstr "فعّل رسم حِمْل المعالج"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:2
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:9
 msgid "Enable memory load graph"
 msgstr "فعّل رسم حِمْل الذاكرة"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:3
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:13
 msgid "Enable network load graph"
 msgstr "فعّل رسم حِمْل الشبكة"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:4
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:17
 msgid "Enable swap load graph"
 msgstr "فعّل رسم حِمْل ذاكرة التبديل"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:5
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:21
 msgid "Enable load average graph"
 msgstr "فعّل رسم متوسط الحِمْل"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:6
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:25
 msgid "Enable disk load graph"
 msgstr "فعّل الرسم البياني لحمل القرص"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:7
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:29
 msgid "Applet refresh rate in milliseconds"
 msgstr "تردد تحديث البريمج بالملي ثانية"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:8
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:33
 msgid "Graph size"
 msgstr "مقاس الرسم البياني"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:9
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:34
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
@@ -1501,465 +1500,475 @@ msgstr ""
 "هذا عرض الرسوم البيانية بالبكسلات للشرائط الأفقية، للشرائط العمودية يمثل هذا"
 " ارتفاع الرسوم البيانية."
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:10
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:38
 msgid "Graph color for user-related CPU activity"
 msgstr "لون الرسم البياني لنشاط المعالج المرتبط بالمستخدم"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:11
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:42
 msgid "Graph color for system-related CPU activity"
 msgstr "لون الرسم البياني لنشاط المعالج المرتبط بكامل النظام"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:12
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:46
 msgid "Graph color for nice-related CPU activity"
 msgstr "لون الرسم البياني لنشاط المعالج المرتبط بقيمة nice"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:13
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:50
 msgid "Graph color for iowait related CPU activity"
 msgstr "لون الرسم البياني لـ iowait المتعلق بنشاط المعالج"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:14
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:54
 msgid "CPU graph background color"
 msgstr "لون خلفية الرسم البياني للمعالج"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:15
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:58
 msgid "Graph color for user-related memory usage"
 msgstr "لون الرسم البياني استخدام الذاكرة المرتبط بالمستخدم"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:16
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:62
 msgid "Graph color for shared memory"
 msgstr "لون الرسم البياني للذاكرة المشتركة"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:17
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:66
 msgid "Graph color for buffer memory"
 msgstr "لون الرسم البياني للذاكرة الوسيطة"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:18
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:70
 msgid "Graph color for cached memory"
 msgstr "لون الرسم البياني لذاكرة الاختزان"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:19
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:74
 msgid "Memory graph background color"
 msgstr "لون خلفية رسم الذاكرة البياني"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:20
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:78
 msgid "Graph color for input network activity"
 msgstr "لون الرسم البياني لنشاط شبكة الإدخال"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:21
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:82
 msgid "Graph color for output network activity"
 msgstr "لون الرسم البياني لنشاط شبكة الإخراج"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:22
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:86
 msgid "Graph color for loopback network usage"
 msgstr "لون الرسم البياني لشبكة loopback"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:23
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:90
 msgid "Network graph background color"
 msgstr "لون خلفية رسم الشبكة البياني"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:24
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:130
 msgid "Grid line color"
 msgstr ""
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:25
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:98
 msgid "Indicator color"
 msgstr ""
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:26
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:102
 msgid "Network threshold 1 in bytes"
 msgstr ""
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:27
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:106
 msgid "Network threshold 2 in bytes"
 msgstr ""
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:28
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:110
 msgid "Network threshold 3 in bytes"
 msgstr ""
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:29
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:114
 msgid "Graph color for user-related swap usage"
 msgstr "لون الرسم البياني لاستخدام الذاكرة البديلة المرتبط بالمستخدم"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:30
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:118
 msgid "Swap graph background color"
 msgstr "لون خلفية مساحة التّبديل"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:31
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:122
 msgid "Graph color for load average"
 msgstr "لون الرسم البياني لمتوسط الحِمْل"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:32
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:126
 msgid "Load graph background color"
 msgstr "لون خلفية رسم الحِمْل"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:33
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:134
 msgid "Graph color for disk read"
 msgstr "لون الرسم البياني لقراءة القرص"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:34
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:138
 msgid "Graph color for disk write"
 msgstr "لون الرسم البياني لكتابة القرص"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:35
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:142
 msgid "Background color for disk load graph"
 msgstr "لون الخلفية للرسم البياني لحمل القرص"
 
-#: ../multiload/org.mate.panel.applet.multiload.gschema.xml.in.h:36
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:146
+msgid "Uses /proc/diskstats to determine NVMe disk load"
+msgstr ""
+
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:150
 msgid "The desktop description file to execute as the system monitor"
 msgstr "ملف وصف سطح المكتب الذي سيتم تنفيذه كمراقب النظام"
 
-#: ../multiload/properties.c:362
+#: multiload/properties.c:405
 msgid "Monitored Resources"
 msgstr "الموارد المراقَبة"
 
-#: ../multiload/properties.c:387
+#: multiload/properties.c:430
 msgid "_Processor"
 msgstr "الم_عالج"
 
-#: ../multiload/properties.c:400
+#: multiload/properties.c:443
 msgid "_Memory"
 msgstr "ال_ذاكرة"
 
-#: ../multiload/properties.c:413
+#: multiload/properties.c:456
 msgid "_Network"
 msgstr "ال_شبكة"
 
-#: ../multiload/properties.c:426
+#: multiload/properties.c:469
 msgid "S_wap Space"
 msgstr "مساحة الت_بديل"
 
-#: ../multiload/properties.c:439
+#: multiload/properties.c:482
 msgid "_Load"
 msgstr "ال_حِمْل"
 
-#: ../multiload/properties.c:452
+#: multiload/properties.c:495
 msgid "_Harddisk"
 msgstr "القرص ال_صلب"
 
-#: ../multiload/properties.c:467
+#: multiload/properties.c:510
 msgid "Options"
 msgstr "خيارات"
 
-#: ../multiload/properties.c:497
+#: multiload/properties.c:540
 msgid "System m_onitor width: "
 msgstr "عُرض مر_قاب النظام: "
 
-#: ../multiload/properties.c:499
+#: multiload/properties.c:542
 msgid "System m_onitor height: "
 msgstr "ارتفاع مرق_اب النظام: "
 
-#: ../multiload/properties.c:530
+#: multiload/properties.c:573
 msgid "pixels"
 msgstr "بكسل"
 
-#: ../multiload/properties.c:538
+#: multiload/properties.c:581
 msgid "Sys_tem monitor update interval: "
 msgstr "المجال الزمني لتحديث مرقاب ال_نظام: "
 
-#: ../multiload/properties.c:564
+#: multiload/properties.c:607
 msgid "milliseconds"
 msgstr "ملي ثانية"
 
-#: ../multiload/properties.c:575
+#: multiload/properties.c:618
 msgid "Colors"
 msgstr "الألوان"
 
-#: ../multiload/properties.c:602 ../multiload/properties.c:610
+#: multiload/properties.c:645 multiload/properties.c:653
 msgid "_User"
 msgstr "الم_ستخدِم"
 
-#: ../multiload/properties.c:603
+#: multiload/properties.c:646
 msgid "S_ystem"
 msgstr "الن_ظام"
 
-#: ../multiload/properties.c:604
+#: multiload/properties.c:647
 msgid "N_ice"
 msgstr "_تحسين"
 
-#: ../multiload/properties.c:605
+#: multiload/properties.c:648
 msgid "I_OWait"
 msgstr "I_OWait"
 
-#: ../multiload/properties.c:606
+#: multiload/properties.c:649
 msgid "I_dle"
 msgstr "_خامل"
 
-#: ../multiload/properties.c:611
+#: multiload/properties.c:654
 msgid "Sh_ared"
 msgstr "مش_ترك"
 
-#: ../multiload/properties.c:612
+#: multiload/properties.c:655
 msgid "_Buffers"
 msgstr "الذاكرة ال_وسيطة"
 
-#: ../multiload/properties.c:613
+#: multiload/properties.c:656
 msgid "Cach_ed"
 msgstr "_مختزن"
 
-#: ../multiload/properties.c:614
+#: multiload/properties.c:657
 msgid "F_ree"
 msgstr "_خالي"
 
-#: ../multiload/properties.c:618
+#: multiload/properties.c:661
 msgid "_In"
 msgstr "_داخل"
 
-#: ../multiload/properties.c:619
+#: multiload/properties.c:662
 msgid "_Out"
 msgstr "_خارج"
 
-#: ../multiload/properties.c:620
+#: multiload/properties.c:663
 msgid "_Local"
 msgstr "_محلي"
 
-#: ../multiload/properties.c:621 ../multiload/properties.c:633
-#: ../multiload/properties.c:640
+#: multiload/properties.c:664 multiload/properties.c:676
+#: multiload/properties.c:683
 msgid "_Background"
 msgstr "ال_خلفية"
 
-#: ../multiload/properties.c:622 ../multiload/properties.c:634
+#: multiload/properties.c:665 multiload/properties.c:677
 msgid "_Gridline"
 msgstr ""
 
-#: ../multiload/properties.c:623
+#: multiload/properties.c:666
 msgid "_Indicator"
 msgstr ""
 
-#: ../multiload/properties.c:627
+#: multiload/properties.c:670
 msgid "_Used"
 msgstr "مُ_ستخدَم"
 
-#: ../multiload/properties.c:628
+#: multiload/properties.c:671
 msgid "_Free"
 msgstr "_خالي"
 
-#: ../multiload/properties.c:630
+#: multiload/properties.c:673
 msgid "Load"
 msgstr "الحِمْل"
 
-#: ../multiload/properties.c:632
+#: multiload/properties.c:675
 msgid "_Average"
 msgstr "ال_متوسط"
 
-#: ../multiload/properties.c:636
+#: multiload/properties.c:679
 msgid "Harddisk"
 msgstr "القرص الصلب"
 
-#: ../multiload/properties.c:638
+#: multiload/properties.c:681
 msgid "_Read"
 msgstr "_قراءة"
 
-#: ../multiload/properties.c:639
+#: multiload/properties.c:682
 msgid "_Write"
 msgstr "_كتابة"
 
-#: ../multiload/properties.c:642
+#: multiload/properties.c:684
+msgid "Use diskstats for NVMe"
+msgstr ""
+
+#: multiload/properties.c:686
 msgid "Network speed thresholds"
 msgstr ""
 
-#: ../multiload/properties.c:671
+#: multiload/properties.c:714
 msgid "Threshold 1: "
 msgstr ""
 
-#: ../multiload/properties.c:702 ../multiload/properties.c:737
-#: ../multiload/properties.c:772 ../netspeed/src/netspeed.c:432
+#: multiload/properties.c:745 multiload/properties.c:780
+#: multiload/properties.c:815 netspeed/src/netspeed.c:432
 msgid "bytes"
 msgstr "بايت"
 
-#: ../multiload/properties.c:710
+#: multiload/properties.c:753
 msgid "Threshold 2: "
 msgstr ""
 
-#: ../multiload/properties.c:745
+#: multiload/properties.c:788
 msgid "Threshold 3: "
 msgstr ""
 
-#: ../multiload/properties.c:810
+#: multiload/properties.c:853
 msgid "System Monitor Preferences"
 msgstr "تفضيلات مراقب النظام"
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:1
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:5
 msgid "Device to monitor"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:2
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:6
 msgid "The name of the device to monitor"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:3
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:10
 msgid "Show sum speed"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:4
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:11
 msgid "If true, show sum of inbound/outbound speed instead of separated ones."
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:5
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:15
 msgid "Show bits"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:6
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:16
 msgid "If true, show speed in bits instead of bytes."
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:8
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:21
 msgid "If true, show main icon."
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:9
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:25
 msgid "Short unit legend"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:10
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
 msgid ""
 "If true, shorten unit legend to one letter: lowercase for bits / uppercase "
 "for Bytes."
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:11
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Change icon"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:12
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
 msgid "If true, change the icon due to selected device."
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:13
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
 msgid "Auto change device"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:14
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
 msgid "If true, change automatically the selected device."
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:15
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
 msgid "In color"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:16
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
 msgid "The color of the graph of the inbound traffic"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:17
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
 msgid "Out color"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:18
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
 msgid "The color of the graph of the outbound traffic"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:19
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
 msgid "Up command"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
 msgid "Command to execute to activate the device"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:21
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
 msgid "Down command"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:22
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
 msgid "Command to execute to shut down the device"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:23
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:60
 msgid "Show signal quality icon"
 msgstr ""
 
-#: ../netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in.h:24
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:61
 msgid "If true, show signal quality icon for wireless devices."
 msgstr ""
 
-#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:1
+#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:5
 msgid "Netspeed Applet Factory"
 msgstr "مصنع بريمج تسريع الانترنت"
 
-#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:2
+#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:6
+#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:10
 msgid "Netspeed Applet"
 msgstr "بريمج تسريع الانترنت"
 
-#: ../netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.in.in.h:3
+#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:9
 msgid "Network Monitor"
 msgstr "مراقب الشبكة"
 
-#. translators: bits (short)
-#: ../netspeed/src/netspeed.c:427
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
+msgid "mate-netspeed-applet"
+msgstr ""
+
+#: netspeed/src/netspeed.c:427
 msgid "b"
 msgstr "بت"
 
-#. translators: Bytes (short)
-#: ../netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:427
 msgid "B"
 msgstr "بايت"
 
-#: ../netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:429
 msgid "b/s"
 msgstr "بت\\ثا"
 
-#: ../netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:429
 msgid "B/s"
 msgstr "بايت\\ثا"
 
-#: ../netspeed/src/netspeed.c:432
+#: netspeed/src/netspeed.c:432
 msgid "bits"
 msgstr "بت"
 
-#. translators: kilobits (short)
-#: ../netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:440
 msgid "k"
 msgstr "ك.بت"
 
-#. translators: Kilobytes (short)
-#: ../netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:440
 msgid "K"
 msgstr "كب"
 
-#: ../netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:442
 msgid "kb/s"
 msgstr "ك.بت\\ثا"
 
-#: ../netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:442
 msgid "KiB/s"
 msgstr "كب\\ثا"
 
-#: ../netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:445
 msgid "kb"
 msgstr "ك.بت"
 
-#: ../netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:445
 msgid "KiB"
 msgstr "كب"
 
-#. translators: megabits (short)
-#: ../netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:455
 msgid "m"
 msgstr "م.بت"
 
-#. translators: Megabytes (short)
-#: ../netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:455
 msgid "M"
 msgstr "مب"
 
-#: ../netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:457
 msgid "Mb/s"
 msgstr "م.بت\\ثا"
 
-#: ../netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:457
 msgid "MiB/s"
 msgstr "مب\\ثا"
 
-#: ../netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:460
 msgid "Mb"
 msgstr "م.بت"
 
-#: ../netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:460
 msgid "MiB"
 msgstr "مب"
 
-#: ../netspeed/src/netspeed.c:791
+#: netspeed/src/netspeed.c:784
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1968,145 +1977,144 @@ msgstr ""
 "حدث خطأ عند عرض المساعدة:\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:828
+#: netspeed/src/netspeed.c:821
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: ../netspeed/src/netspeed.c:830
+#: netspeed/src/netspeed.c:823
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
-"Copyright © 2015-2019 MATE developers"
+"Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: ../netspeed/src/netspeed.c:833
+#: netspeed/src/netspeed.c:826
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr "بريمج صغير يعرض بعض المعلومات عن حركة اﻷنترنت في جهاز شبكة محدد"
 
-#: ../netspeed/src/netspeed.c:994
+#: netspeed/src/netspeed.c:987
 msgid "MATE Netspeed Preferences"
 msgstr ""
 
-#: ../netspeed/src/netspeed.c:1016
+#: netspeed/src/netspeed.c:1009
 msgid "General Settings"
 msgstr "الإعدادات العامّة"
 
-#: ../netspeed/src/netspeed.c:1038
+#: netspeed/src/netspeed.c:1031
 msgid "Network _device:"
 msgstr "جهاز _شبكة:"
 
-#. Default means device with default route set
-#: ../netspeed/src/netspeed.c:1050
+#: netspeed/src/netspeed.c:1043
 msgid "Default"
 msgstr "الافتراضي"
 
-#: ../netspeed/src/netspeed.c:1063
+#: netspeed/src/netspeed.c:1056
 msgid "Show _sum instead of in & out"
 msgstr "أظهر المجم_وع بدلًا من الواردة و الصادرة"
 
-#: ../netspeed/src/netspeed.c:1067
+#: netspeed/src/netspeed.c:1060
 msgid "Show _bits instead of bytes"
 msgstr "اظهر _بت بدلا من بايت"
 
-#: ../netspeed/src/netspeed.c:1071
+#: netspeed/src/netspeed.c:1064
 msgid "Shorten _unit legend"
 msgstr "علامة اختصار ال_وحدة"
 
-#: ../netspeed/src/netspeed.c:1075
+#: netspeed/src/netspeed.c:1068
 msgid "_Change icon according to the selected device"
 msgstr ""
 
-#: ../netspeed/src/netspeed.c:1079
+#: netspeed/src/netspeed.c:1072
 msgid "Show _icon"
 msgstr "أظهر اﻷيقونة"
 
-#: ../netspeed/src/netspeed.c:1083
+#: netspeed/src/netspeed.c:1076
 msgid "Show signal _quality icon for wireless devices"
 msgstr "عرض أيقونة جودة الإشارة للأجهزة اللاسلكية"
 
-#: ../netspeed/src/netspeed.c:1201
+#: netspeed/src/netspeed.c:1194
 #, c-format
 msgid "Device Details for %s"
 msgstr "تفاصيل الجهاز لـ %s"
 
-#: ../netspeed/src/netspeed.c:1226
+#: netspeed/src/netspeed.c:1219
 msgid "_In graph color"
 msgstr "لون الرسم البياني للشبكة الدا_خلة"
 
-#: ../netspeed/src/netspeed.c:1227
+#: netspeed/src/netspeed.c:1220
 msgid "_Out graph color"
 msgstr "لون الرسم البياني للشبكة ال_خارجة"
 
-#: ../netspeed/src/netspeed.c:1243
+#: netspeed/src/netspeed.c:1236
 msgid "Internet Address:"
 msgstr "عنوان الأنترنت:"
 
-#: ../netspeed/src/netspeed.c:1244
+#: netspeed/src/netspeed.c:1237
 msgid "Netmask:"
 msgstr "قناع الأنترنت:"
 
-#: ../netspeed/src/netspeed.c:1245
+#: netspeed/src/netspeed.c:1238
 msgid "Hardware Address:"
 msgstr "العنوان العتادي:"
 
-#: ../netspeed/src/netspeed.c:1246
+#: netspeed/src/netspeed.c:1239
 msgid "P-t-P Address:"
 msgstr "عنوان P-t_P:"
 
-#: ../netspeed/src/netspeed.c:1247
+#: netspeed/src/netspeed.c:1240
 msgid "Bytes in:"
 msgstr "عدد البايتات الواردة:"
 
-#: ../netspeed/src/netspeed.c:1248
+#: netspeed/src/netspeed.c:1241
 msgid "Bytes out:"
 msgstr "عدد البايتات الصادرة:"
 
-#: ../netspeed/src/netspeed.c:1250 ../netspeed/src/netspeed.c:1251
-#: ../netspeed/src/netspeed.c:1252 ../netspeed/src/netspeed.c:1253
+#: netspeed/src/netspeed.c:1243 netspeed/src/netspeed.c:1244
+#: netspeed/src/netspeed.c:1245 netspeed/src/netspeed.c:1246
 msgid "none"
 msgstr "لا شيء"
 
-#: ../netspeed/src/netspeed.c:1304
+#: netspeed/src/netspeed.c:1297
 msgid "IPV6 Address:"
 msgstr "عنوان IP6:"
 
-#: ../netspeed/src/netspeed.c:1337
+#: netspeed/src/netspeed.c:1330
 msgid "Signal Strength:"
 msgstr "قوة الإشارة:"
 
-#: ../netspeed/src/netspeed.c:1338
+#: netspeed/src/netspeed.c:1331
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: ../netspeed/src/netspeed.c:1379
+#: netspeed/src/netspeed.c:1372
 msgid "Device _Details"
 msgstr "ت_فاصيل الجهاز"
 
-#: ../netspeed/src/netspeed.c:1381
+#: netspeed/src/netspeed.c:1374
 msgid "Preferences..."
 msgstr "التفضيلات..."
 
-#: ../netspeed/src/netspeed.c:1383
+#: netspeed/src/netspeed.c:1376
 msgid "Help"
 msgstr "مساعدة"
 
-#: ../netspeed/src/netspeed.c:1385
+#: netspeed/src/netspeed.c:1378
 msgid "About..."
 msgstr "عنْ..."
 
-#: ../netspeed/src/netspeed.c:1426
+#: netspeed/src/netspeed.c:1419
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "أتريد فصل %s الآن؟"
 
-#: ../netspeed/src/netspeed.c:1430
+#: netspeed/src/netspeed.c:1423
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "أتريد وصل %s الآن؟"
 
-#: ../netspeed/src/netspeed.c:1457
+#: netspeed/src/netspeed.c:1450
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2115,12 +2123,12 @@ msgstr ""
 "<b>فشل تشغيل اﻷمر %s</b>\n"
 "%s"
 
-#: ../netspeed/src/netspeed.c:1516
+#: netspeed/src/netspeed.c:1509
 #, c-format
 msgid "%s is down"
 msgstr "%s يهبط"
 
-#: ../netspeed/src/netspeed.c:1521
+#: netspeed/src/netspeed.c:1514
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2129,11 +2137,11 @@ msgstr ""
 "%s: %s\n"
 "داخل: %s خارج: %s"
 
-#: ../netspeed/src/netspeed.c:1523 ../netspeed/src/netspeed.c:1532
+#: netspeed/src/netspeed.c:1516 netspeed/src/netspeed.c:1525
 msgid "has no ip"
 msgstr "لا يملك IP"
 
-#: ../netspeed/src/netspeed.c:1530
+#: netspeed/src/netspeed.c:1523
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2142,7 +2150,7 @@ msgstr ""
 "%s: %s\n"
 "مجموع: %s"
 
-#: ../netspeed/src/netspeed.c:1539
+#: netspeed/src/netspeed.c:1532
 #, c-format
 msgid ""
 "\n"
@@ -2153,241 +2161,247 @@ msgstr ""
 "قيمة ESSID: %s\n"
 "القوة: %d %%"
 
-#: ../netspeed/src/netspeed.c:1540
+#: netspeed/src/netspeed.c:1533
 msgid "unknown"
 msgstr "مجهول"
 
-#: ../netspeed/src/netspeed.c:1591
+#: netspeed/src/netspeed.c:1584
 msgid "MATE Netspeed"
 msgstr ""
 
-#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:1
+#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
+#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
 msgid "Sticky Notes Applet Factory"
 msgstr "مصنع بريمج الملاحظات اللاصقة"
 
-#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:2
-#: ../stickynotes/stickynotes_applet.c:170
-#: ../stickynotes/stickynotes_applet.c:412
+#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:9
+#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:412
 msgid "Sticky Notes"
 msgstr "ملاحظات لاصقة"
 
-#: ../stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.in.in.h:3
+#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:10
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "أنشئ و اعرض و أدر ملاحظات لاصقة على سطح مكتبك"
 
-#: ../stickynotes/stickynotes.c:577
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
+msgid "mate-sticky-notes-applet"
+msgstr ""
+
+#: stickynotes/stickynotes.c:577
 msgid "This note is locked."
 msgstr "هذه الملاحظة موصدة."
 
-#: ../stickynotes/stickynotes.c:581
+#: stickynotes/stickynotes.c:581
 msgid "This note is unlocked."
 msgstr "هذه الملاحظة غير موصدة."
 
-#: ../stickynotes/stickynotes.ui.h:1 ../stickynotes/stickynotes_applet.c:34
+#: stickynotes/stickynotes.ui:26 stickynotes/stickynotes_applet.c:34
 msgid "_New Note"
 msgstr "ملاحظة _جديدة"
 
-#: ../stickynotes/stickynotes.ui.h:2
+#: stickynotes/stickynotes.ui:32
 msgid "_Delete Note..."
 msgstr "ا_حذف الملاحظة..."
 
-#: ../stickynotes/stickynotes.ui.h:3
+#: stickynotes/stickynotes.ui:38
 msgid "_Lock Note"
 msgstr "أ_وصِد الملاحظة"
 
-#: ../stickynotes/stickynotes.ui.h:4
+#: stickynotes/stickynotes.ui:44
 msgid "_Properties"
 msgstr "_خصائص"
 
-#: ../stickynotes/stickynotes.ui.h:5
+#: stickynotes/stickynotes.ui:62
 msgid "Sticky Notes Preferences"
 msgstr "تفضيلات الملاحظات اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:6
+#: stickynotes/stickynotes.ui:82
 msgid "Default Note Properties"
 msgstr "خصائص الملاحظة المبدئية"
 
-#: ../stickynotes/stickynotes.ui.h:7
+#: stickynotes/stickynotes.ui:119
 msgid "Choose a font to use for all sticky notes"
 msgstr "اختر خطًا ليُستخدم في كلّ الملاحظات اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:8
+#: stickynotes/stickynotes.ui:120
 msgid "Pick a default sticky note font"
 msgstr "اختر خطًا افتراضيًا للملاحظات اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:9
+#: stickynotes/stickynotes.ui:139 stickynotes/stickynotes.ui:994
 msgid "_Font:"
 msgstr "ال_خط:"
 
-#: ../stickynotes/stickynotes.ui.h:10
+#: stickynotes/stickynotes.ui:153
 msgid "Use fo_nt from the system theme"
 msgstr "استخدم خط سِمة ال_نّظام"
 
-#: ../stickynotes/stickynotes.ui.h:11
+#: stickynotes/stickynotes.ui:176
 msgid "Note C_olor:"
 msgstr "_لون الملاحظة:"
 
-#: ../stickynotes/stickynotes.ui.h:12
+#: stickynotes/stickynotes.ui:197
 msgid "Font Co_lor:"
 msgstr "لون ال_خط:"
 
-#: ../stickynotes/stickynotes.ui.h:13
+#: stickynotes/stickynotes.ui:230
 msgid "Choose a base color to use for all sticky notes"
 msgstr "اختر لونًا أساسيًا ليُستخدم في كل الملاحظات اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:14
+#: stickynotes/stickynotes.ui:231
 msgid "Pick a default sticky note color"
 msgstr "اختر لونًا افتراضيًا للملاحظات اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:15
+#: stickynotes/stickynotes.ui:243
 msgid "Use co_lor from the system theme"
 msgstr "استخدم ألوان سِمة ال_نّظام"
 
-#: ../stickynotes/stickynotes.ui.h:16
+#: stickynotes/stickynotes.ui:262
 msgid "Specify the default height (in pixels) of new notes"
 msgstr "حدّد الارتفاع الافتراضي للملاحظات الجديدة (بالبكسل)"
 
-#: ../stickynotes/stickynotes.ui.h:17
+#: stickynotes/stickynotes.ui:279
 msgid "Specify the default width (in pixels) of new notes"
 msgstr "حدّد العرض الافتراضي للملاحظات الجديدة (بالبكسل)"
 
-#: ../stickynotes/stickynotes.ui.h:18
+#: stickynotes/stickynotes.ui:294
 msgid "H_eight:"
 msgstr "الار_تفاع:"
 
-#: ../stickynotes/stickynotes.ui.h:19
+#: stickynotes/stickynotes.ui:309
 msgid "_Width:"
 msgstr "ال_عرض:"
 
-#: ../stickynotes/stickynotes.ui.h:20
+#: stickynotes/stickynotes.ui:343
 msgid "Behavior"
 msgstr "السلوك"
 
-#: ../stickynotes/stickynotes.ui.h:21
+#: stickynotes/stickynotes.ui:377
 msgid "Hide notes when the des_ktop is clicked on"
 msgstr "أخف الملاحظات عند النّقر على _سطح المكتب"
 
-#: ../stickynotes/stickynotes.ui.h:22
+#: stickynotes/stickynotes.ui:381
 msgid "Choose whether to hide all notes when selecting on the desktop"
 msgstr "اختر ما إذا ستُخفى كل الملاحظات عند إظهار سطح المكتب"
 
-#: ../stickynotes/stickynotes.ui.h:23
+#: stickynotes/stickynotes.ui:394
 msgid "Force _default color and font on notes"
 msgstr "افرض كلًا من اللّون و الخط الافتراضيين على كل الملاحظات"
 
-#: ../stickynotes/stickynotes.ui.h:24
+#: stickynotes/stickynotes.ui:398
 msgid "Choose if the default style is forced on all notes"
 msgstr "اختر فرض التنسيق الافتراضي على كل الملاحظات"
 
-#: ../stickynotes/stickynotes.ui.h:25
+#: stickynotes/stickynotes.ui:411
 msgid "_Put notes on all workspaces"
 msgstr "_ضع الملاحظات على كل مساحات العمل"
 
-#: ../stickynotes/stickynotes.ui.h:26
+#: stickynotes/stickynotes.ui:415
 msgid "Choose if notes are visible on all workspaces"
 msgstr "اختر ظهور الملاحظات في كل مساحات العمل"
 
-#: ../stickynotes/stickynotes.ui.h:27
+#: stickynotes/stickynotes.ui:540
 msgid "Delete this sticky note?"
 msgstr "أأحذف هذه الملاحظة اللاصقة؟"
 
-#: ../stickynotes/stickynotes.ui.h:28
+#: stickynotes/stickynotes.ui:555 stickynotes/stickynotes.ui:673
 msgid "This cannot be undone."
 msgstr "لا يُمكن التّراجع عن هذا."
 
-#: ../stickynotes/stickynotes.ui.h:29
+#: stickynotes/stickynotes.ui:658
 msgid "Delete all sticky notes?"
 msgstr "أأحذف كل الملاحظات اللاصقة؟"
 
-#: ../stickynotes/stickynotes.ui.h:30
+#: stickynotes/stickynotes.ui:741
 msgid "_Delete All"
 msgstr "احذف ال_كل"
 
-#: ../stickynotes/stickynotes.ui.h:31
+#: stickynotes/stickynotes.ui:779
 msgid "Sticky Note"
 msgstr "ملاحظة لاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:32
+#: stickynotes/stickynotes.ui:790
 msgid "Lock/Unlock note"
 msgstr "أوصِد\\افتح الملاحظة"
 
-#: ../stickynotes/stickynotes.ui.h:33
+#: stickynotes/stickynotes.ui:820
 msgid "Delete note"
 msgstr ""
 
-#: ../stickynotes/stickynotes.ui.h:34
+#: stickynotes/stickynotes.ui:868 stickynotes/stickynotes.ui:887
 msgid "Resize note"
 msgstr "غيّر حجم الملاحظة"
 
-#: ../stickynotes/stickynotes.ui.h:35
+#: stickynotes/stickynotes.ui:917
 msgid "Sticky Note Properties"
 msgstr "خصائص الملاحظة اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:36
+#: stickynotes/stickynotes.ui:937
 msgid "Properties"
 msgstr "الخصائص"
 
-#: ../stickynotes/stickynotes.ui.h:37
+#: stickynotes/stickynotes.ui:974
 msgid "Choose a font for the note"
 msgstr "اختر خطًا للملاحظة"
 
-#: ../stickynotes/stickynotes.ui.h:38
+#: stickynotes/stickynotes.ui:975
 msgid "Pick a font for the sticky note"
 msgstr "اختر خطًا للملاحظة اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:39
+#: stickynotes/stickynotes.ui:1008
 msgid "Use default fo_nt"
 msgstr "استخدم ال_خط الافتراضي"
 
-#: ../stickynotes/stickynotes.ui.h:40
+#: stickynotes/stickynotes.ui:1028
 msgid "Choose a color for the note"
 msgstr "اختر لونًا للملاحظة"
 
-#: ../stickynotes/stickynotes.ui.h:41
+#: stickynotes/stickynotes.ui:1029
 msgid "Pick a color for the sticky note"
 msgstr "اختر لونًا للملاحظة اللاصقة"
 
-#: ../stickynotes/stickynotes.ui.h:42
+#: stickynotes/stickynotes.ui:1048
 msgid "Note _Color:"
 msgstr "لون ال_ملاحظة:"
 
-#: ../stickynotes/stickynotes.ui.h:43
+#: stickynotes/stickynotes.ui:1083
 msgid "Font C_olor:"
 msgstr "_لون الخط:"
 
-#: ../stickynotes/stickynotes.ui.h:44
+#: stickynotes/stickynotes.ui:1097
 msgid "Use default co_lor"
 msgstr "استخدم ال_لون الافتراضي"
 
-#: ../stickynotes/stickynotes.ui.h:45
+#: stickynotes/stickynotes.ui:1115
 msgid "Specify a title for the note"
 msgstr "حدّد عنوانًا للملاحظة"
 
-#: ../stickynotes/stickynotes.ui.h:46
+#: stickynotes/stickynotes.ui:1127
 msgid "_Title:"
 msgstr "ال_مُسمّى:"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:1
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:5
 msgid "Default width for new notes"
 msgstr "العرض الافتراضي للملاحظات الجديدة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:2
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:6
 msgid "Default width for new sticky notes in pixels."
 msgstr "العرض الافتراضي للملاحظة اللاصقة الجديدة بالبكسل."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:3
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:10
 msgid "Default height for new notes"
 msgstr "الارتفاع الافتراضي للملاحظات الجديدة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:4
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:11
 msgid "Default height for new sticky notes in pixels."
 msgstr "الارتفاع الافتراضي للملاحظات اللاصقة الجديدة بالبكسل."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:5
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:15
 msgid "Default color for new notes"
 msgstr "اللون الافتراضي للملاحظات الجديدة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:6
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:16
 msgid ""
 "Default color for new sticky notes. This should be in html hex "
 "specification, for example \"#30FF50\"."
@@ -2395,11 +2409,11 @@ msgstr ""
 "اللون الافتراضي للملاحظات اللاصقة. يجب أن يكون بمواصفات html hex، مثلا "
 "\"#30FF50\"."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:7
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:20
 msgid "Default color for font"
 msgstr "اللون الافتراضي للخط"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:8
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:21
 msgid ""
 "Default font color for new sticky notes. This should be in html hex "
 "specification, for example \"#000000\"."
@@ -2407,11 +2421,11 @@ msgstr ""
 "الخط الافتراضي للملاحظات اللاصقة. يجب أن يكون بمواصفات html hex، مثلا "
 "\"#000000\"."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:9
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:25
 msgid "Default font for new notes"
 msgstr "الخط الافتراضي للملاحظات الجديدة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:10
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:26
 msgid ""
 "Default font for new sticky notes. This should be a Pango Font Name, for "
 "example \"Sans Italic 10\"."
@@ -2419,30 +2433,30 @@ msgstr ""
 "الخط الافتراضي للملاحظات اللاصقة الجديدة. يجب أن يكون اسم خط بانغو، مثلا "
 "\"Sans Italic 10\"."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:11
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:30
 msgid "Sticky notes' workspace stickyness"
 msgstr "التصاق الملاحظات اللاصقة على مساحات العمل"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:12
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:31
 msgid ""
 "Specifies whether the sticky notes are visible on ALL workspaces on the "
 "desktop, or not."
 msgstr ""
 "يحدّد ما إذا كانت الملاحظات اللاصقة مرئية على جميع مساحات العمل أم لا."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:13
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:35
 msgid "Sticky notes' locked state"
 msgstr "حالة وصد للملاحظات اللاصقة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:14
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:36
 msgid "Specifies whether the sticky notes are locked (non-editable) or not."
 msgstr "يحدّد ما إذا كانت الملاحظات اللاصقة موصدة أم لا (غير قالبة للتحرير)."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:15
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:40
 msgid "Date format of note's title"
 msgstr "صيغة التاريخ في عنوان الملاحظة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:16
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:41
 msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
@@ -2451,11 +2465,11 @@ msgstr ""
 "مبدئيا، عنوان الملاحظات اللاصقة هو التاريخ الحالي. هذه الصّيغة مستخدمة؛ أي "
 "شيء يمكن تحليله من قبل ‪strftime()‬ مقبول."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:17
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:45
 msgid "Whether to use the default system color"
 msgstr "حول استخدام لون النظام المبدئي"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:18
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:46
 msgid ""
 "If this option is disabled, a custom color can be used as the default color "
 "for all sticky notes."
@@ -2463,11 +2477,11 @@ msgstr ""
 "إذا عطّل هذا الخيار، سيمكن استخدام لون مخصّص كلون مبدئي لجميع الملاحظات "
 "اللّاصقة."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:19
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:50
 msgid "Whether to use the default system font"
 msgstr "حول استخدام خط النظام المبدئي"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:20
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:51
 msgid ""
 "If this option is disabled, a custom font can be used as the default font "
 "for all sticky notes."
@@ -2475,11 +2489,11 @@ msgstr ""
 "إذا عطّل هذا الخيار، سيمكن استخدام خط خاص كخط مبدئي لجميع الملاحظات "
 "اللّاصقة."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:21
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:55
 msgid "Whether to force the default color and font on all notes"
 msgstr "حول إجبار استخدام اللون و الخط المبدئيين على كل الملاحظات"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:22
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:56
 msgid ""
 "If this option is enabled, the custom colors and fonts that have been "
 "assigned to individual notes will be ignored."
@@ -2487,11 +2501,11 @@ msgstr ""
 "إذا فعّل هذا الخيار، ستُتَجاهل الألوان و الخطوط الخاصّة المرتبطة بالملاحظات "
 "الشخصيّة."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:23
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:60
 msgid "Whether to hide all notes when the desktop is selected"
 msgstr "حول إخفاء كل الملاحظات عند إظهار سطح المكتب"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:24
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:61
 msgid ""
 "If this option is enabled, selecting the desktop in any way will "
 "automatically hide all the open notes."
@@ -2499,27 +2513,27 @@ msgstr ""
 "عند تفعيل هذا الخيار ، النّقر في سطح المكتب بأي طريقة سيخفي كل الملاحظات "
 "المفتوحة تلقائيًا."
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:25
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:65
 msgid "Whether to ask for confirmation when deleting a note"
 msgstr "حول طلب التأكيد عند حذف ملاحظة"
 
-#: ../stickynotes/org.mate.stickynotes.gschema.xml.in.h:26
+#: stickynotes/org.mate.stickynotes.gschema.xml.in:66
 msgid "Empty notes are always deleted without confirmation."
 msgstr "الملاحظات الفارغة تُحذف دومًا دون طلب تأكيد."
 
-#: ../stickynotes/stickynotes_applet.c:37
+#: stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "ا_خفِ الملاحظات"
 
-#: ../stickynotes/stickynotes_applet.c:40
+#: stickynotes/stickynotes_applet.c:40
 msgid "_Delete Notes"
 msgstr "ا_حذف الملاحظات"
 
-#: ../stickynotes/stickynotes_applet.c:56
+#: stickynotes/stickynotes_applet.c:56
 msgid "_Lock Notes"
 msgstr "أ_وصِد الملاحظات"
 
-#: ../stickynotes/stickynotes_applet.c:591
+#: stickynotes/stickynotes_applet.c:591
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
@@ -2530,133 +2544,151 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../stickynotes/stickynotes_applet.c:592
+#: stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
 msgstr "اعرض الملاحظات اللاصقة"
 
-#: ../stickynotes/stickynotes_applet_callbacks.c:379
+#: stickynotes/stickynotes_applet_callbacks.c:379
 msgid "About Sticky Notes"
 msgstr ""
 
-#: ../stickynotes/stickynotes_applet_callbacks.c:381
+#: stickynotes/stickynotes_applet_callbacks.c:381
 msgid ""
 "Copyright © 2002-2003 Loban A Rahman\n"
 "Copyright © 2005 Davyd Madeley\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../stickynotes/stickynotes_applet_callbacks.c:384
+#: stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "ملاحظات لاصقة لبيئة سطح المكتب متّة"
 
-#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:1
+#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
+#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Timer Factory"
 msgstr ""
 
-#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:2
+#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
 msgid "Timer"
 msgstr "مؤقّت"
 
-#: ../timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.in.in.h:3
-#: ../timerapplet/timerapplet.c:277
+#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
+#: timerapplet/timerapplet.c:277
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "ابدأ مؤقّتًا و استقبل تنبيها بالإكمال"
 
-#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
+msgid "mate-panel-clock"
+msgstr ""
+
+#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
 msgstr "اسم عداد الوقت"
 
-#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:2
+#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:9
 msgid "Duration of timer in seconds"
 msgstr "مدة المؤقّت بالثواني"
 
-#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:3
+#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:13
 msgid "Show notification popup when timer finish"
 msgstr "أظهر تنبيهًا منبثقًا عند انتهاء المؤقّت"
 
-#: ../timerapplet/org.mate.panel.applet.timer.gschema.xml.in.h:4
+#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:17
 msgid "Show dialog window when timer finish"
 msgstr "اظهر نافذة الحوار عند انتهاء المؤقت"
 
-#: ../timerapplet/timerapplet.c:79
+#: timerapplet/timerapplet.c:79
 msgid "_Start timer"
 msgstr "ابدأ المؤقّت"
 
-#: ../timerapplet/timerapplet.c:80
+#: timerapplet/timerapplet.c:80
 msgid "P_ause timer"
 msgstr "أوقف المؤقّت"
 
-#: ../timerapplet/timerapplet.c:81
+#: timerapplet/timerapplet.c:81
 msgid "S_top timer"
 msgstr "انه المؤقّت"
 
-#: ../timerapplet/timerapplet.c:82
+#: timerapplet/timerapplet.c:82
 msgid "R_eset"
 msgstr ""
 
-#: ../timerapplet/timerapplet.c:156 ../timerapplet/timerapplet.c:168
+#: timerapplet/timerapplet.c:156 timerapplet/timerapplet.c:168
 msgid "Timer finished!"
 msgstr "انتهى المؤقّت !"
 
-#: ../timerapplet/timerapplet.c:272
+#: timerapplet/timerapplet.c:272
 msgid "About Timer Applet"
 msgstr ""
 
-#: ../timerapplet/timerapplet.c:274
+#: timerapplet/timerapplet.c:274
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
-"Copyright © 2015-2019 MATE developers"
+"Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: ../timerapplet/timerapplet.c:310
+#: timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
 msgstr "إعدادات تطبيق المؤقّت"
 
-#: ../timerapplet/timerapplet.c:323
+#: timerapplet/timerapplet.c:323
 msgid "Name:"
 msgstr "الاسم:"
 
-#: ../timerapplet/timerapplet.c:332
+#: timerapplet/timerapplet.c:332
 msgid "Hours:"
 msgstr "الساعات:"
 
-#: ../timerapplet/timerapplet.c:343
+#: timerapplet/timerapplet.c:343
 msgid "Minutes:"
 msgstr "الدقائق:"
 
-#: ../timerapplet/timerapplet.c:354
+#: timerapplet/timerapplet.c:354
 msgid "Seconds:"
 msgstr "الثواني:"
 
-#: ../timerapplet/timerapplet.c:365
+#: timerapplet/timerapplet.c:365
 msgid "Show notification popup"
 msgstr "أظهر تنبيهًا مُنبثقًا"
 
-#: ../timerapplet/timerapplet.c:369
+#: timerapplet/timerapplet.c:369
 msgid "Show dialog"
 msgstr "أعرض الحوار"
 
-#: ../timerapplet/timerapplet.c:403
+#: timerapplet/timerapplet.c:403
 msgid "Timer Applet"
 msgstr "بريمج المؤقّت"
 
-#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:1
+#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
+#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:6
+msgid "Trash Applet Factory"
+msgstr ""
+
+#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:9
 msgid "Trash"
 msgstr "المهملات"
 
-#: ../trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.in.in.h:2
+#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:10
 msgid "Go to Trash"
 msgstr "اذهب إلى المهملات"
 
-#: ../trashapplet/src/trashapplet.c:68 ../trashapplet/src/trash-empty.c:352
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
+msgid "user-trash-full"
+msgstr ""
+
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
 msgstr "أ_فرِغ المهملات"
 
-#: ../trashapplet/src/trashapplet.c:71
+#: trashapplet/src/trashapplet.c:71
 msgid "_Open Trash"
 msgstr "ا_فتح المهملات"
 
-#: ../trashapplet/src/trashapplet.c:127
+#: trashapplet/src/trashapplet.c:127
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
@@ -2667,11 +2699,11 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: ../trashapplet/src/trashapplet.c:135
+#: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
 msgstr "لا عناصر في المهملات"
 
-#: ../trashapplet/src/trashapplet.c:378
+#: trashapplet/src/trashapplet.c:378
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
@@ -2680,18 +2712,18 @@ msgstr ""
 "خطأ أثناء بدء كاجا:\n"
 "%s"
 
-#: ../trashapplet/src/trashapplet.c:432
+#: trashapplet/src/trashapplet.c:432
 msgid "About Trash Applet"
 msgstr ""
 
-#: ../trashapplet/src/trashapplet.c:434
+#: trashapplet/src/trashapplet.c:434
 msgid ""
 "Copyright © 2004 Michiel Sikkes\n"
 "Copyright © 2008 Ryan Lortie\n"
-"Copyright © 2012-2019 MATE developers"
+"Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: ../trashapplet/src/trashapplet.c:437
+#: trashapplet/src/trashapplet.c:437
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
@@ -2699,40 +2731,40 @@ msgstr ""
 "سلّة مهملات متّة التي تسكن في اللوحة. يمكنك استخدامها لعرض المهملات أو اسحب "
 "وأسقط العناصر إلى المهملات."
 
-#: ../trashapplet/src/trashapplet.c:462
+#: trashapplet/src/trashapplet.c:462
 msgid "Delete Immediately?"
 msgstr "أأحذف في الحال؟"
 
-#: ../trashapplet/src/trashapplet.c:492
+#: trashapplet/src/trashapplet.c:492
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "لا يمكن نقل العناصر إلى المهملات، هل تريد حذفها فورًا؟"
 
-#: ../trashapplet/src/trashapplet.c:497
+#: trashapplet/src/trashapplet.c:497
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "لا يمكن نقل بعض العناصر إلى المهملات، هل تريد حذفها فورًا؟"
 
-#: ../trashapplet/src/trashapplet.c:627
+#: trashapplet/src/trashapplet.c:625
 msgid "Trash Applet"
 msgstr "بريمج المهملات"
 
 #. Translators: the %s in this string should be read as %d.
-#: ../trashapplet/src/trash-empty.c:80
+#: trashapplet/src/trash-empty.c:80
 #, c-format
 msgid "Removing item %s of %s"
 msgstr "يحذف العنصر  %s من %s"
 
 #. Translators: %s is a file name
-#: ../trashapplet/src/trash-empty.c:106
+#: trashapplet/src/trash-empty.c:106
 #, c-format
 msgid "Removing: %s"
 msgstr "يحذف: %s"
 
-#: ../trashapplet/src/trash-empty.c:332
+#: trashapplet/src/trash-empty.c:332
 msgid "Empty all of the items from the trash?"
 msgstr "هل أفرغ كل العناصر من المهملات؟"
 
-#: ../trashapplet/src/trash-empty.c:339
+#: trashapplet/src/trash-empty.c:339
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -2740,10 +2772,11 @@ msgstr ""
 "إذا اخترت إفراغ المهملات، ستفقد كل العناصر الموجودة بها نهائيًا. لاحظ رجاءً "
 "إمكانية حذفهم بشكل منفصل."
 
-#: ../trashapplet/trashapplet-empty-progress.ui.h:1
+#: trashapplet/trashapplet-empty-progress.ui:7
+#: trashapplet/trashapplet-empty-progress.ui:21
 msgid "Emptying the Trash"
 msgstr "يجري إفراغ المهملات"
 
-#: ../trashapplet/trashapplet-empty-progress.ui.h:2
+#: trashapplet/trashapplet-empty-progress.ui:36
 msgid "From:"
 msgstr "من:"
