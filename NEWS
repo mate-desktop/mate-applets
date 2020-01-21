@@ -1,6 +1,32 @@
+### mate-applets 1.23.1
+
+  * update translations
+  * use ${datadir}/dbus-1/system.d as the default D-Bus config dir
+  * Update copyright to 2020
+  * make the dbus directory configurable
+  * fix redefined MATELOCALEDIR
+  * migrate from intltools to gettext
+  * Initialize "surface" before testing its value to avoid a crash.
+  * avoid redundant redeclarations
+  * build: Don't stop building when cpufreq.h isn't available
+  * drivemount: remove -Wformat-nonliteral warning
+  * netspeed: remove -Wunused-but-set-variable warning
+  * cpufreq: remove -Wabsolute-value warning
+  * build: extend --enable-more-warnings configure flag
+  * Make cpufreq builds independent from kernel header version.
+  * timerapplet.c: remove reductant condition
+  * geyes: avoid memory leak
+  * multiload: Use /proc/diskstats for NVMe drives
+  * treat output as utf8 when limiting width.
+  * command: use MaCommand object
+  * Make command applet run commands asynchronously
+  * command: use MaCommand object
+  * Make command applet run commands asynchronously
+  * Update FSF address
+
 ### mate-applets 1.23.0
 
-  * tx: sync with transifex
+  * update translations
   * Create FUNDING.yml
   * [ci] Add cppcheck html report
   * cpufreq: deprecated g_type_class_add_private
