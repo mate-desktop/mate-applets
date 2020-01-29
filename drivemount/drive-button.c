@@ -304,7 +304,7 @@ drive_button_update (gpointer user_data)
     /* if no volume or mount, display general image */
     if (!self->volume && !self->mount)
     {
-        gtk_widget_set_tooltip_text (GTK_WIDGET (self), "nothing to mount");
+        gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("nothing to mount"));
         screen = gtk_widget_get_screen (GTK_WIDGET (self));
         icon_theme = gtk_icon_theme_get_for_screen (screen); //m
         // note - other good icon would be emblem-unreadable
