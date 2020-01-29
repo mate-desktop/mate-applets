@@ -65,7 +65,7 @@ void       drive_list_set_panel_size  (DriveList *list,
 				       int panel_size);
 void       drive_list_set_transparent (DriveList *self,
 				       gboolean transparent);
-GSettings *settings;
+extern GSettings *settings;
 void       drive_list_redraw (DriveList *self);
 void       settings_color_changed (GSettings *settings, gchar *key, DriveList *drive_list);
 
