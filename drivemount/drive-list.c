@@ -32,6 +32,8 @@
 
 G_DEFINE_TYPE (DriveList, drive_list, GTK_TYPE_GRID);
 
+GSettings *settings;
+
 static GVolumeMonitor *volume_monitor = NULL;
 
 static void drive_list_finalize (GObject *object);
@@ -152,6 +154,8 @@ drive_list_finalize (GObject *object)
 
     g_hash_table_destroy (self->volumes);
     g_hash_table_destroy (self->mounts);
+
+    g_object_unref (settings);
 
     if (G_OBJECT_CLASS (drive_list_parent_class)->finalize)
 	(* G_OBJECT_CLASS (drive_list_parent_class)->finalize) (object);
