@@ -245,7 +245,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext Package])
 AC_DEFINE_DIR(MATELOCALEDIR, "${datadir}/locale", [locale directory])
 
 # this is the directory where the *.{mo,gmo} files are installed
-matelocaledir='${prefix}/${DATADIRNAME}/locale'
+matelocaledir='${datadir}/locale'
 AC_SUBST(matelocaledir)
 
 dnl ***************************************************************************
