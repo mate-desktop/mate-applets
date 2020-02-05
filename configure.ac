@@ -633,6 +633,8 @@ mate-applets-$VERSION configure summary:
     Prefix:                        ${prefix}
     Source code location:          ${srcdir}
     Compiler:                      ${CC}
+    Compiler flags:                ${CFLAGS}
+    Compiler warnings:             ${WARN_CFLAGS}
 
     Building:
         - accessx-status           $HAVE_XKB
