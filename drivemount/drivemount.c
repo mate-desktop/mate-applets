@@ -189,13 +189,8 @@ applet_factory (MatePanelApplet *applet,
 	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 	mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
 
-	settings = g_settings_new ( "org.mate.drivemount");
-
 	drive_list = drive_list_new ();
-    g_signal_connect(settings,
-                     "changed::drivemount-checkmark-color",
-                     G_CALLBACK (settings_color_changed),
-                     drive_list);
+
 	gtk_container_add (GTK_CONTAINER (applet), drive_list);
 
 	g_signal_connect_object (applet, "change_orient",
