@@ -32,8 +32,6 @@
 
 G_DEFINE_TYPE (DriveList, drive_list, GTK_TYPE_GRID);
 
-GSettings *settings;
-
 static GVolumeMonitor *volume_monitor = NULL;
 
 static void drive_list_finalize (GObject *object);
@@ -89,8 +87,14 @@ drive_list_init (DriveList *self)
     self->mounts = g_hash_table_new (NULL, NULL);
     self->orientation = GTK_ORIENTATION_HORIZONTAL;
     self->layout_tag = 0;
+    self->settings = g_settings_new ("org.mate.drivemount");
     self->icon_size = 24;
     self->relief = GTK_RELIEF_NORMAL;
+
+    g_signal_connect(self->settings,
+                     "changed::drivemount-checkmark-color",
+                     G_CALLBACK (settings_color_changed),
+                     self);
 
     /* listen for drive connects/disconnects, and add
      * currently connected drives. */
@@ -154,8 +158,7 @@ drive_list_finalize (GObject *object)
 
     g_hash_table_destroy (self->volumes);
     g_hash_table_destroy (self->mounts);
-
-    g_object_unref (settings);
+    g_object_unref (self->settings);
 
     if (G_OBJECT_CLASS (drive_list_parent_class)->finalize)
 	(* G_OBJECT_CLASS (drive_list_parent_class)->finalize) (object);
