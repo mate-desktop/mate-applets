@@ -228,9 +228,27 @@ AC_SUBST(LIBMATEWEATHER_LIBS)
 AM_CONDITIONAL(BUILD_LIBMATEWEATHER_APPLETS, $build_libmateweather_applets)
 
 dnl ***************************************************************************
-dnl *** GSettings                                                               ***
+dnl *** GSettings                                                           ***
 dnl ***************************************************************************
 GLIB_GSETTINGS
+
+dnl ***************************************************************************
+dnl *** GLIB_COMPILE_RESOURCES                                              ***
+dnl ***************************************************************************
+AC_ARG_VAR([GLIB_COMPILE_RESOURCES],[glib-compile-resources bin])
+AC_PATH_PROG([GLIB_COMPILE_RESOURCES],[glib-compile-resources],[])
+if test -z "$GLIB_COMPILE_RESOURCES"; then
+  AC_MSG_ERROR([glib-compile-resources not found])
+fi
+
+dnl ***************************************************************************
+dnl *** XMLLINT                                                             ***
+dnl ***************************************************************************
+AC_ARG_VAR([XMLLINT],[xmllint bin])
+AC_PATH_PROG([XMLLINT],[xmllint],[])
+if test -z "$XMLLINT"; then
+  AC_MSG_ERROR([xmllint not found])
+fi
 
 dnl ***************************************************************************
 dnl *** Set up gettext                                                      ***
