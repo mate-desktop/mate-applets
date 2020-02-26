@@ -43,6 +43,8 @@ static void (*status_updated_callback) (void);
  */
 static gboolean status_update_scheduled;
 
+static GPtrArray *devices;
+
 static gboolean
 update_status_idle (gpointer junk)
 {
@@ -83,9 +85,6 @@ battstat_upower_initialise (void (*callback) (void))
   int i, num;
 
   status_updated_callback = callback;
-#if UP_CHECK_VERSION (0, 99, 0)
-  GPtrArray *devices;
-#endif
 
   if( upc != NULL )
     return g_strdup( "Already initialised!" );
@@ -101,7 +100,6 @@ battstat_upower_initialise (void (*callback) (void))
   if (!devices) {
     goto error_shutdownclient;
   }
-  g_ptr_array_unref(devices);
 #else
   if (! up_client_enumerate_devices_sync( upc, cancellable, &gerror ) ) {
     sprintf(error_str, "Unable to enumerate upower devices: %s\n", gerror->message);
@@ -132,7 +130,7 @@ battstat_upower_cleanup( void )
 {
   if( upc == NULL )
     return;
-  
+
   g_object_unref( upc );
   upc = NULL;
 }
@@ -154,9 +152,6 @@ battstat_upower_cleanup( void )
 void
 battstat_upower_get_battery_info( BatteryStatus *status )
 {
-
-  GPtrArray *devices = up_client_get_devices( upc );
-
   /* The calculation to get overall percentage power remaining is as follows:
    *
    *    Sum( Current charges ) / Sum( Full Capacities )
@@ -211,7 +206,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     int type, state;
     double current_charge, full_capacity, rate;
     gint64 time_to_full, time_to_empty;
-    
+
     g_object_get( upd,
       "kind", &type,
       "state", &state,
@@ -259,7 +254,6 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     status->on_ac_power = TRUE;
     status->charging = FALSE;
 
-    g_ptr_array_unref( devices );
     return;
   }
 
@@ -279,7 +273,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
      * (ie: the PMU or APM subsystem).
      *
      * upower gives remaining time in seconds with a 0 to mean that the
-     * remaining time is unknown.  Battstat uses minutes and -1 for 
+     * remaining time is unknown.  Battstat uses minutes and -1 for
      * unknown time remaining.
      */
 
@@ -326,8 +320,6 @@ battstat_upower_get_battery_info( BatteryStatus *status )
   /* These are simple and well-explained above. */
   status->charging = charging;
   status->on_ac_power = on_ac_power;
-  
-  g_ptr_array_unref( devices );
 }
 
 void
