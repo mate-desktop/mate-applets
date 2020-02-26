@@ -128,12 +128,13 @@ error_out:
 void
 battstat_upower_cleanup( void )
 {
-  if( upc == NULL )
-    return;
+  if( upc != NULL )
+    g_object_unref( upc );
+  if( devices != NULL )
+    g_ptr_array_unref( devices );
   
-  g_object_unref( devices );
-  g_object_unref( upc );
   upc = NULL;
+  devices = NULL;
 }
 
 #include "battstat.h"
