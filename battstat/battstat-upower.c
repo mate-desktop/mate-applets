@@ -130,7 +130,8 @@ battstat_upower_cleanup( void )
 {
   if( upc == NULL )
     return;
-
+  
+  g_object_unref( devices );
   g_object_unref( upc );
   upc = NULL;
 }
@@ -206,7 +207,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     int type, state;
     double current_charge, full_capacity, rate;
     gint64 time_to_full, time_to_empty;
-
+    
     g_object_get( upd,
       "kind", &type,
       "state", &state,
@@ -273,7 +274,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
      * (ie: the PMU or APM subsystem).
      *
      * upower gives remaining time in seconds with a 0 to mean that the
-     * remaining time is unknown.  Battstat uses minutes and -1 for
+     * remaining time is unknown.  Battstat uses minutes and -1 for 
      * unknown time remaining.
      */
 
