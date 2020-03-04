@@ -1,7 +1,6 @@
 AM_CPPFLAGS = -I$(top_srcdir) -I$(includedir) \
        $(GIO_CFLAGS) $(GTOP_APPLETS_CFLAGS) \
        $(MATE_APPLETS4_CFLAGS) $(MATEDESKTOP_CFLAGS) \
-       -DMATELOCALEDIR=\""$(datadir)/locale"\" \
        -DNETSPEED_MENU_UI_DIR=\""$(datadir)/mate/ui"\"
 
 libexec_PROGRAMS = mate-netspeed-applet
