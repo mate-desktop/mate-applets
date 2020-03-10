@@ -56,7 +56,6 @@ struct _CPUFreqApplet {
     MatePanelAppletOrient  orient;
     gint                   size;
 
-    GtkWidget             *container;
     GtkWidget             *box;
     GtkWidget             *icon;
     GtkWidget             *labels_box;
@@ -184,23 +183,21 @@ cpufreq_applet_init (CPUFreqApplet *applet)
     applet->size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet));
     applet->orient = mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet));
 
+    applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+    gtk_container_add (GTK_CONTAINER (applet), applet->box);
+    gtk_widget_set_valign (applet->box, GTK_ALIGN_CENTER);
+    gtk_widget_show (applet->box);
+
     switch (applet->orient) {
         case MATE_PANEL_APPLET_ORIENT_LEFT:
         case MATE_PANEL_APPLET_ORIENT_RIGHT:
-            applet->container = gtk_alignment_new (0.5, 0.5, 0, 0);
+            gtk_widget_set_halign (applet->box, GTK_ALIGN_CENTER);
             break;
         case MATE_PANEL_APPLET_ORIENT_UP:
         case MATE_PANEL_APPLET_ORIENT_DOWN:
-            applet->container = gtk_alignment_new (0, 0.5, 0, 0);
+            gtk_widget_set_halign (applet->box, GTK_ALIGN_START);
             break;
     }
-
-    gtk_container_add (GTK_CONTAINER (applet), applet->container);
-    gtk_widget_show (applet->container);
-
-    applet->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
-    gtk_container_add (GTK_CONTAINER (applet->container), applet->box);
-    gtk_widget_show (applet->box);
 
     applet->icon = gtk_image_new ();
     gtk_box_pack_start (GTK_BOX (applet->box), applet->icon, FALSE, FALSE, 0);
@@ -401,12 +398,10 @@ cpufreq_applet_change_orient (MatePanelApplet       *pa,
         (orient == MATE_PANEL_APPLET_ORIENT_RIGHT))
     {
         size = allocation.width;
-        gtk_alignment_set (GTK_ALIGNMENT (applet->container),
-                           0.5, 0.5, 0, 0);
+        gtk_widget_set_halign (applet->box, GTK_ALIGN_CENTER);
     } else {
         size = allocation.height;
-        gtk_alignment_set (GTK_ALIGNMENT (applet->container),
-                           0, 0.5, 0, 0);
+        gtk_widget_set_halign (applet->box, GTK_ALIGN_START);
     }
 
     if (size != applet->size) {
