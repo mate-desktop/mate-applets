@@ -53,10 +53,12 @@ gsettings_SCHEMAS = $(geyes_gschema_in_files:.xml.in=.xml)
 themesdir = $(pkgdatadir)/geyes
 
 icons =	\
-	mate-eyes-applet.svg	 \
-	mate-eyes-applet.32.png \
-	mate-eyes-applet.24.png \
-	mate-eyes-applet.22.png \
+	mate-eyes-applet.svg		\
+	mate-eyes-applet.256.png	\
+	mate-eyes-applet.64.png		\
+	mate-eyes-applet.32.png		\
+	mate-eyes-applet.24.png		\
+	mate-eyes-applet.22.png		\
 	mate-eyes-applet.16.png
 
 CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
