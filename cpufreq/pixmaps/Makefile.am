@@ -12,6 +12,8 @@ icons = \
 	mate-cpu-frequency-applet.22.png \
 	mate-cpu-frequency-applet.24.png \
 	mate-cpu-frequency-applet.32.png \
+	mate-cpu-frequency-applet.64.png \
+	mate-cpu-frequency-applet.256.png \
 	mate-cpu-frequency-applet.svg
 
 EXTRA_DIST = \
