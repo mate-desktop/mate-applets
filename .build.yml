@@ -111,7 +111,6 @@ requires:
     - yelp-tools
 
 variables:
-  - CFLAGS="-Wall -Werror=format-security -Wextra -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wunused-but-set-variable -Wformat-nonliteral -Wabsolute-value -Wredundant-decls"
   - 'CHECKERS="
     -enable-checker deadcode.DeadStores
     -enable-checker alpha.deadcode.UnreachableCode
