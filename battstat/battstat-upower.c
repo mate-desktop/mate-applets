@@ -43,6 +43,8 @@ static void (*status_updated_callback) (void);
  */
 static gboolean status_update_scheduled;
 
+static GPtrArray *devices;
+
 static gboolean
 update_status_idle (gpointer junk)
 {
@@ -67,12 +69,10 @@ device_cb (UpClient *client, UpDevice *device, gpointer user_data) {
   schedule_status_callback();
 }
 
-#if UP_CHECK_VERSION (0, 99, 0)
 static void
 device_removed_cb (UpClient *client, const gchar *object_path, gpointer user_data) {
   schedule_status_callback();
 }
-#endif
 
 /* ---- public functions ---- */
 
@@ -83,9 +83,6 @@ battstat_upower_initialise (void (*callback) (void))
   int i, num;
 
   status_updated_callback = callback;
-#if UP_CHECK_VERSION (0, 99, 0)
-  GPtrArray *devices;
-#endif
 
   if( upc != NULL )
     return g_strdup( "Already initialised!" );
@@ -96,26 +93,13 @@ battstat_upower_initialise (void (*callback) (void))
   GCancellable *cancellable = g_cancellable_new();
   GError *gerror;
 
-#if UP_CHECK_VERSION(0, 99, 0)
-  devices = up_client_get_devices(upc);
+  devices = up_client_get_devices2(upc);
   if (!devices) {
     goto error_shutdownclient;
   }
-  g_ptr_array_unref(devices);
-#else
-  if (! up_client_enumerate_devices_sync( upc, cancellable, &gerror ) ) {
-    sprintf(error_str, "Unable to enumerate upower devices: %s\n", gerror->message);
-    goto error_shutdownclient;
-  }
-#endif
 
   g_signal_connect_after( upc, "device-added", G_CALLBACK (device_cb), NULL );
-#if UP_CHECK_VERSION(0, 99, 0)
   g_signal_connect_after( upc, "device-removed", G_CALLBACK (device_removed_cb), NULL );
-#else
-  g_signal_connect_after( upc, "device-changed", G_CALLBACK (device_cb), NULL );
-  g_signal_connect_after( upc, "device-removed", G_CALLBACK (device_cb), NULL );
-#endif
 
   return NULL;
 
@@ -130,11 +114,13 @@ error_out:
 void
 battstat_upower_cleanup( void )
 {
-  if( upc == NULL )
-    return;
+  if( upc != NULL )
+    g_object_unref( upc );
+  if( devices != NULL )
+    g_ptr_array_unref( devices );
   
-  g_object_unref( upc );
   upc = NULL;
+  devices = NULL;
 }
 
 #include "battstat.h"
@@ -154,9 +140,6 @@ battstat_upower_cleanup( void )
 void
 battstat_upower_get_battery_info( BatteryStatus *status )
 {
-
-  GPtrArray *devices = up_client_get_devices( upc );
-
   /* The calculation to get overall percentage power remaining is as follows:
    *
    *    Sum( Current charges ) / Sum( Full Capacities )
@@ -259,7 +242,6 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     status->on_ac_power = TRUE;
     status->charging = FALSE;
 
-    g_ptr_array_unref( devices );
     return;
   }
 
@@ -326,8 +308,6 @@ battstat_upower_get_battery_info( BatteryStatus *status )
   /* These are simple and well-explained above. */
   status->charging = charging;
   status->on_ac_power = on_ac_power;
-  
-  g_ptr_array_unref( devices );
 }
 
 void
