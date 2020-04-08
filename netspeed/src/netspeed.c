@@ -119,16 +119,6 @@ update_tooltip(MateNetspeedApplet* applet);
 static void
 device_change_cb(GtkComboBox *combo, MateNetspeedApplet *applet);
 
-/* Adds a Pango markup "size" to a bytestring
- */
-static void
-add_markup_size(char **string, int size)
-{
-	char *tmp = *string;
-	*string = g_strdup_printf("<span size=\"%d\">%s</span>", size * 1000, tmp);
-	g_free(tmp);
-}
-
 /* Adds a Pango markup "foreground" to a bytestring
  */
 static void
