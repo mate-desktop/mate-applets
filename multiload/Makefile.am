@@ -6,7 +6,8 @@ AM_CPPFLAGS =			\
 	$(MATE_APPLETS4_CFLAGS)	\
 	$(GTOP_APPLETS_CFLAGS)	\
 	$(MATEDESKTOP_CFLAGS)	\
-	$(GIO_CFLAGS)
+	$(GIO_CFLAGS)		\
+	${WARN_CFLAGS}
 
 libexec_PROGRAMS = mate-multiload-applet
 

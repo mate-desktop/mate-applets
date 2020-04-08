@@ -29,9 +29,12 @@ mate_cpufreq_applet_SOURCES =  \
 	$(cpufreq_files)						\
 	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
 
-mate_cpufreq_applet_LDADD =  \
+mate_cpufreq_applet_CFLAGS =		\
+	${WARN_CFLAGS}
+
+mate_cpufreq_applet_LDADD =		\
 	$(MATE_APPLETS4_LIBS)   	\
-	$(MATEDESKTOP_LIBS)   	\
+	$(MATEDESKTOP_LIBS)		\
 	$(LIBCPUFREQ_LIBS)		\
 	$(DBUS_LIBS)
 

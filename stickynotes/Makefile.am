@@ -24,6 +24,7 @@ AM_CPPFLAGS =					\
 	$(XML2_CFLAGS)				\
 	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\" \
 	-DGRESOURCE=\""/org/mate/mate-applets/sticky-notes/\"" \
+	${WARN_CFLAGS}				\
 	$(NULL)
 
 libexec_PROGRAMS = stickynotes-applet

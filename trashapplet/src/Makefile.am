@@ -1,8 +1,9 @@
-AM_CPPFLAGS = -I$(top_srcdir)		\
-	   $(MATE_APPLETS4_CFLAGS)	\
-	   $(MATEDESKTOP_CFLAGS)	\
-	   $(GIO_CFLAGS)		\
-           -DTRASH_MENU_UI_DIR=\""$(datadir)/mate/ui"\"
+AM_CPPFLAGS = -I$(top_srcdir)	\
+	$(MATE_APPLETS4_CFLAGS)	\
+	$(MATEDESKTOP_CFLAGS)	\
+	$(GIO_CFLAGS)		\
+	-DTRASH_MENU_UI_DIR=\""$(datadir)/mate/ui"\" \
+	${WARN_CFLAGS}
 
 libexec_PROGRAMS = trashapplet
 
