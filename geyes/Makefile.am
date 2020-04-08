@@ -3,11 +3,12 @@ SUBDIRS = themes docs
 AM_CPPFLAGS =						\
 	-I.						\
 	-I$(srcdir) 					\
-	$(MATE_APPLETS4_CFLAGS)			\
-	$(MATEDESKTOP_CFLAGS)			\
+	$(MATE_APPLETS4_CFLAGS)				\
+	$(MATEDESKTOP_CFLAGS)				\
 	-I$(includedir) 				\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
-	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"
+	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"		\
+	${WARN_CFLAGS}
 
 libexec_PROGRAMS = mate-geyes-applet
 

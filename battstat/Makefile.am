@@ -24,10 +24,11 @@ SUBDIRS = docs sounds $(APMDIR)
 DIST_SUBDIRS = docs sounds apmlib
 
 AM_CPPFLAGS =					\
-	$(MATE_APPLETS4_CFLAGS)		\
-	$(MATEDESKTOP_CFLAGS)		\
+	${WARN_CFLAGS}				\
+	$(MATE_APPLETS4_CFLAGS)			\
+	$(MATEDESKTOP_CFLAGS)			\
 	$(LIBNOTIFY_CFLAGS)			\
-	$(UPOWER_CFLAGS)	\
+	$(UPOWER_CFLAGS)			\
 	$(APMINC)				\
 	$(ACPIINC)				\
 	-DG_LOG_DOMAIN=\"battstat_applet\"	\

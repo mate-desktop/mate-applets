@@ -5,12 +5,13 @@ SUBDIRS = docs
 AM_CPPFLAGS =					\
 	-I$(srcdir)				\
 	-I$(top_srcdir)				\
-	-DMATEWEATHER_MENU_UI_DIR=\""$(uidir)"\"	\
-	$(MATE_APPLETS4_CFLAGS)		\
-	$(MATEDESKTOP_CFLAGS)		\
+	-DMATEWEATHER_MENU_UI_DIR=\""$(uidir)"\" \
+	$(MATE_APPLETS4_CFLAGS)			\
+	$(MATEDESKTOP_CFLAGS)			\
 	$(LIBNOTIFY_CFLAGS)			\
-	$(LIBMATEWEATHER_CFLAGS)			\
-	$(DBUS_CFLAGS)
+	$(LIBMATEWEATHER_CFLAGS)		\
+	$(DBUS_CFLAGS)				\
+	${WARN_CFLAGS}
 
 libexec_PROGRAMS = mateweather-applet
 

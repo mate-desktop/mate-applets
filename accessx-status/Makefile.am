@@ -1,6 +1,7 @@
 SUBDIRS = docs pixmaps
 
 AM_CPPFLAGS = \
+	${WARN_CFLAGS} \
 	$(MATE_APPLETS4_CFLAGS) \
 	$(MATEDESKTOP_CFLAGS) \
 	$(GIO_CFLAGS) \

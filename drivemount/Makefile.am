@@ -4,6 +4,7 @@ AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
+	${WARN_CFLAGS}				\
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(MATEDESKTOP_CFLAGS)
 

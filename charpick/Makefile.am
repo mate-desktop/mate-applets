@@ -4,8 +4,9 @@ AM_CPPFLAGS =					\
 	-I.					\
 	-I$(srcdir)				\
 	-DCHARPICK_MENU_UI_DIR=\""$(uidir)"\"	\
-	$(MATE_APPLETS4_CFLAGS)		\
-	$(MATEDESKTOP_CFLAGS)		\
+	${WARN_CFLAGS}				\
+	$(MATE_APPLETS4_CFLAGS)			\
+	$(MATEDESKTOP_CFLAGS)			\
 	$(GUCHARMAP_CFLAGS)
 
 libexec_PROGRAMS = mate-charpick-applet
