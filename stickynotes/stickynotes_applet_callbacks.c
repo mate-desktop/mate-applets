@@ -77,7 +77,7 @@ stickynote_show_notes (gboolean visible)
 }
 
 static void
-stickynote_toggle_notes_visible ()
+stickynote_toggle_notes_visible (void)
 {
     stickynote_show_notes(!stickynotes->visible);
 }
