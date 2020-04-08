@@ -60,14 +60,14 @@ G_DEFINE_TYPE_WITH_PRIVATE (MateWeatherDialog, mateweather_dialog, GTK_TYPE_DIAL
 
 static void mateweather_dialog_save_geometry(MateWeatherDialog* dialog)
 {
+#if 0
 	GSettings* settings;
 	int w, h;
 
+	gtk_window_get_size (GTK_WINDOW (dialog), &w, &h);
+
 	settings = dialog->priv->applet->settings;
 
-	gtk_window_get_size(GTK_WINDOW(dialog), &w, &h);
-
-#if 0
 	/* FIXME those keys are not in org.mate.weather! */
 	g_settings_set_int (settings, "dialog-width", w);
 	g_settings_set_int (settings, "dialog-height", h);
@@ -76,12 +76,12 @@ static void mateweather_dialog_save_geometry(MateWeatherDialog* dialog)
 
 static void mateweather_dialog_load_geometry(MateWeatherDialog* dialog)
 {
+#if 0
 	GSettings* settings;
 	int w, h;
 
 	settings = dialog->priv->applet->settings;
 
-#if 0
 	/* FIXME those keys are not in org.mate.weather! */
 	w = g_settings_get_int (settings, "dialog-width");
 	h = g_settings_get_int (settings, "dialog-height");

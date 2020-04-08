@@ -403,7 +403,6 @@ static GdkPixbuf* accessx_status_applet_get_glyph_pixbuf(GtkWidget* widget, GdkP
 static cairo_surface_t* accessx_status_applet_altgraph_image(AccessxStatusApplet *sapplet, GtkStateFlags state)
 {
 	GtkIconTheme *icon_theme;
-	cairo_t* cr;
 	GdkPixbuf* pixbuf;
 	GdkPixbuf* glyph_pixbuf;
 	GdkPixbuf* icon_base;

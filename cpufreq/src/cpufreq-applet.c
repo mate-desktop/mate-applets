@@ -807,7 +807,6 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
 	GtkActionGroup *action_group;
 	gchar          *ui_path;
         AtkObject      *atk_obj;
-        gchar          *prefs_key;
 	GSettings      *settings;
 
 	g_set_application_name  (_("CPU Frequency Scaling Monitor"));
