@@ -153,36 +153,6 @@ drive_button_dispose (GObject *object)
 	(* G_OBJECT_CLASS (drive_button_parent_class)->dispose) (object);
 }
 
-#if 0
-static void
-drive_button_unrealize (GtkWidget *widget)
-{
-    DriveButton *self = DRIVE_BUTTON (widget);
-
-    drive_button_reset_popup (self);
-
-    if (GTK_WIDGET_CLASS (drive_button_parent_class)->unrealize)
-	(* GTK_WIDGET_CLASS (drive_button_parent_class)->unrealize) (widget);
-}
-#endif /* 0 */
-
-static int
-_gtk_get_monitor_num (GdkMonitor *monitor)
-{
-    GdkDisplay *display;
-    int n_monitors, i;
-
-    display = gdk_monitor_get_display(monitor);
-    n_monitors = gdk_display_get_n_monitors(display);
-
-    for(i = 0; i < n_monitors; i++)
-    {
-        if(gdk_display_get_monitor(display, i) == monitor) return i;
-    }
-
-    return -1;
-}
-
 static gboolean
 drive_button_button_press (GtkWidget      *widget,
 			   GdkEventButton *event)

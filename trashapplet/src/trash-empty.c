@@ -46,14 +46,6 @@ static gsize       volatile trash_empty_total_files;
 static gboolean    volatile trash_empty_update_pending;
 
 static gboolean
-trash_empty_clear_pending (gpointer user_data)
-{
-  trash_empty_update_pending = FALSE;
-
-  return FALSE;
-}
-
-static gboolean
 trash_empty_update_dialog (gpointer user_data)
 {
   gsize deleted, total;

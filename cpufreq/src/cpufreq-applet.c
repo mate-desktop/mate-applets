@@ -280,24 +280,6 @@ cpufreq_applet_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
         GTK_WIDGET_CLASS (cpufreq_applet_parent_class)->size_allocate (widget, allocation);
 }
 
-static gint
-get_max_text_width (GtkWidget *widget,
-                    const char *text)
-{
-	PangoContext *context;
-	PangoLayout *layout;
-	PangoRectangle logical_rect;
-
-	context = gtk_widget_get_pango_context (widget);
-	layout = pango_layout_new (context);
-	pango_layout_set_text (layout, text, -1);
-	pango_layout_get_pixel_extents (layout, NULL, &logical_rect);
-
-	g_object_unref (layout);
-
-	return logical_rect.width;
-}
-
 static void
 cpufreq_applet_menu_popup (CPUFreqApplet *applet,
                            guint32        time)
@@ -317,7 +299,7 @@ cpufreq_applet_menu_popup (CPUFreqApplet *applet,
 
         if (!menu)
                 return;
-                
+
         /*Set up theme and transparency support*/
         GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
         /* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
