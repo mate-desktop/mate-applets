@@ -296,8 +296,6 @@ GetSwap (int Maximum, int data [2], LoadGraph *g)
 void
 GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
 {
-    float used;
-
     glibtop_loadavg loadavg;
     glibtop_get_loadavg (&loadavg);
 
@@ -380,7 +378,6 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
 
     for(i = 0; i < netlist.number; ++i)
     {
-        int index;
         glibtop_netload netload;
 
         glibtop_get_netload(&netload, devices[i]);
@@ -419,7 +416,6 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
     else
     {
         int delta[COUNT_TYPES];
-        int max;
         int total = 0;
 
         for (i = 0; i < COUNT_TYPES; i++)

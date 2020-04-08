@@ -274,12 +274,11 @@ static void
 menuitem_activated (GtkMenuItem *menuitem, charpick_data *curr_data)
 {
 	gchar *string;
-	MatePanelApplet *applet = MATE_PANEL_APPLET (curr_data->applet);
-	
+
 	string = g_object_get_data (G_OBJECT (menuitem), "string");
 	if (g_ascii_strcasecmp (curr_data->charlist, string) == 0)
 		return;
-	
+
 	curr_data->charlist = string;
 	build_table (curr_data);
 	if (g_settings_is_writable (curr_data->settings, "current-list"))
@@ -642,10 +641,9 @@ save_chartable (charpick_data *curr_data)
 static void
 get_chartable (charpick_data *curr_data)
 {
-	MatePanelApplet *applet = MATE_PANEL_APPLET (curr_data->applet);
 	gint i, n;
 	GList *value = NULL;
-	
+
 	value = mate_panel_applet_settings_get_glist (curr_data->settings, "chartable");
 	if (value) {
 		curr_data->chartable = value;
@@ -654,16 +652,13 @@ get_chartable (charpick_data *curr_data)
 		n = G_N_ELEMENTS (chartable);
 		for (i=0; i<n; i++) {
 			gchar *string;
-		
+
 			string = g_ucs4_to_utf8 (chartable[i], -1, NULL, NULL, NULL);
 			curr_data->chartable = g_list_append (curr_data->chartable, string);
-		
 		}
 		if ( ! g_settings_is_writable (curr_data->settings, "chartable"))
 			save_chartable (curr_data);
 	}
-	
-
 }
 
 static const GtkActionEntry charpick_applet_menu_actions [] = {

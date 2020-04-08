@@ -580,7 +580,6 @@ search_for_up_if(MateNetspeedApplet *applet)
 {
 	const gchar *default_route;
 	GList *devices, *tmp;
-	DevInfo info;
 
 	default_route = get_default_route();
 
@@ -1569,7 +1568,6 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 {
 	MateNetspeedApplet *applet;
 	int i;
-	char* menu_string;
 	GtkIconTheme *icon_theme;
 	GtkWidget *spacer, *spacer_box;
 

@@ -79,13 +79,7 @@ device_removed_cb (UpClient *client, const gchar *object_path, gpointer user_dat
 char *
 battstat_upower_initialise (void (*callback) (void))
 {
-  char *error_str;
-  int i, num;
-
   status_updated_callback = callback;
-#if UP_CHECK_VERSION (0, 99, 0)
-  GPtrArray *devices;
-#endif
 
   if( upc != NULL )
     return g_strdup( "Already initialised!" );
@@ -93,18 +87,18 @@ battstat_upower_initialise (void (*callback) (void))
   if( (upc = up_client_new() ) == NULL )
     goto error_out;
 
-  GCancellable *cancellable = g_cancellable_new();
-  GError *gerror;
-
 #if UP_CHECK_VERSION(0, 99, 0)
+  GPtrArray *devices;
   devices = up_client_get_devices(upc);
   if (!devices) {
     goto error_shutdownclient;
   }
   g_ptr_array_unref(devices);
 #else
-  if (! up_client_enumerate_devices_sync( upc, cancellable, &gerror ) ) {
-    sprintf(error_str, "Unable to enumerate upower devices: %s\n", gerror->message);
+  GError *gerror;
+  GCancellable *cancellable = g_cancellable_new ();
+  if (! up_client_enumerate_devices_sync (upc, cancellable, &gerror)) {
+    g_debug ("Unable to enumerate upower devices: %s\n", gerror->message);
     goto error_shutdownclient;
   }
 #endif
@@ -199,9 +193,6 @@ battstat_upower_get_battery_info( BatteryStatus *status )
    */
   int charging = 0;
 
-  /* A list iterator. */
-  GSList *item;
-
   /* For each physical battery bay... */
   int i;
   for( i = 0; i < devices->len; i++ )
@@ -211,7 +202,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     int type, state;
     double current_charge, full_capacity, rate;
     gint64 time_to_full, time_to_empty;
-    
+
     g_object_get( upd,
       "kind", &type,
       "state", &state,

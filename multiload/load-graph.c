@@ -106,7 +106,6 @@ load_graph_draw (LoadGraph *g)
     }
     //printf("max = %d ", maxnet);
     guint level = 0;
-    GdkRGBA grid_color;
     if (maxnet > g->net_threshold3) {
       g->net_threshold = g->net_threshold3;
       level = 3;
