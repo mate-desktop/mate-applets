@@ -114,9 +114,7 @@ start_procman (MultiloadApplet *ma)
 	screen = gtk_widget_get_screen (GTK_WIDGET (ma->applet));
 	appinfo = g_desktop_app_info_new (monitor);
 	if (appinfo) {
-		GdkScreen *screen;
 		GdkAppLaunchContext *context;
-		screen = gtk_widget_get_screen (GTK_WIDGET (ma->applet));
 		display = gdk_screen_get_display (screen);
 		context = gdk_display_get_app_launch_context (display);
 		gdk_app_launch_context_set_screen (context, screen);
@@ -157,8 +155,7 @@ start_procman (MultiloadApplet *ma)
 				  NULL);
 
 		gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-		gtk_window_set_screen (GTK_WINDOW (dialog),
-				       gtk_widget_get_screen (GTK_WIDGET (ma->applet)));
+		gtk_window_set_screen (GTK_WINDOW (dialog), screen);
 
 		gtk_widget_show (dialog);
 
