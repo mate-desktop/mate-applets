@@ -19,7 +19,6 @@ LIBPANEL4_REQUIRED=1.17.0
 LIBGTOP_REQUIRED=2.12.0
 LIBNOTIFY_REQUIRED=0.7.0
 UPOWER_REQUIRED=0.9.4
-DBUS_REQUIRED=1.10.0
 DBUS_GLIB_REQUIRED=0.74
 LIBXML_REQUIRED=2.5.0
 POLKIT_REQUIRED=0.97
@@ -109,9 +108,9 @@ PKG_CHECK_MODULES(CPUFREQ_SELECTOR, glib-2.0 >= $GLIB_REQUIRED gobject-2.0 >= $G
 AC_SUBST(CPUFREQ_SELECTOR_CFLAGS)
 AC_SUBST(CPUFREQ_SELECTOR_LIBS)
 
-dnl -- check for dbus (required for cpufreq-selector)
-PKG_CHECK_MODULES(DBUS, dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED, HAVE_DBUS=yes, HAVE_DBUS=no)
-
+dnl -- check for dbus-glib (optional) -----------------------------------------
+PKG_CHECK_MODULES(DBUS, dbus-glib-1 >= $DBUS_GLIB_REQUIRED, HAVE_DBUS=yes, HAVE_DBUS=no)
+AM_CONDITIONAL(HAVE_DBUS, test "x$HAVE_DBUS" = "xyes")
 AC_SUBST(DBUS_CFLAGS)
 AC_SUBST(DBUS_LIBS)
 
@@ -123,7 +122,10 @@ AC_ARG_ENABLE([polkit],
     enable_polkit=$enableval,
     enable_polkit=auto)
 if test "x$enable_polkit" != "xno"; then
-    PKG_CHECK_MODULES(POLKIT, polkit-gobject-1 >= $POLKIT_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED, HAVE_POLKIT=yes, HAVE_POLKIT=no)
+    if test "x$enable_polkit" = "xyes" -a "x$HAVE_DBUS" = "xno"; then
+        AC_MSG_ERROR([PolicyKit support explicitly requested but dbus-glib-1 not found])
+    fi
+    PKG_CHECK_MODULES(POLKIT, polkit-gobject-1 >= $POLKIT_REQUIRED, HAVE_POLKIT=yes, HAVE_POLKIT=no)
     if test "x$enable_polkit" = "xyes" -a "x$HAVE_POLKIT" = "xno"; then
         AC_MSG_ERROR([PolicyKit support explicitly requested but dependencies not found])
     fi

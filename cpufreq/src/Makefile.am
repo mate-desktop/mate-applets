@@ -6,9 +6,12 @@ SUBDIRS = $(selector_SUBDIR)
 
 AM_CPPFLAGS = \
 	-DCPUFREQ_MENU_UI_DIR=\""$(datadir)/mate/ui"\" 	\
-	$(MATE_APPLETS4_CFLAGS) 				\
-	$(MATEDESKTOP_CFLAGS) 				\
-	$(DBUS_CFLAGS)
+	$(MATE_APPLETS4_CFLAGS)				\
+	$(MATEDESKTOP_CFLAGS)
+
+if HAVE_DBUS
+AM_CPPFLAGS += $(DBUS_CFLAGS)
+endif
 
 libexec_PROGRAMS = mate-cpufreq-applet
 
@@ -35,7 +38,10 @@ mate_cpufreq_applet_CFLAGS =		\
 mate_cpufreq_applet_LDADD =		\
 	$(MATE_APPLETS4_LIBS)   	\
 	$(MATEDESKTOP_LIBS)		\
-	$(LIBCPUFREQ_LIBS)		\
-	$(DBUS_LIBS)
+	$(LIBCPUFREQ_LIBS)
+
+if HAVE_DBUS
+mate_cpufreq_applet_LDADD += $(DBUS_LIBS)
+endif
 
 -include $(top_srcdir)/git.mk
