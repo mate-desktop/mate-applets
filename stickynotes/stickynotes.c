@@ -488,19 +488,19 @@ stickynote_set_color (StickyNote  *note,
 			colors[i].blue = (colors[i].blue * (10 - i)) / 10;
 		}
 
-		gtk_widget_override_background_color (note->w_window, GTK_STATE_NORMAL, &colors[0]);
-		gtk_widget_override_background_color (note->w_body, GTK_STATE_NORMAL, &colors[0]);
-		gtk_widget_override_background_color (note->w_lock, GTK_STATE_NORMAL, &colors[0]);
-		gtk_widget_override_background_color (note->w_close, GTK_STATE_NORMAL, &colors[0]);
-		gtk_widget_override_background_color (note->w_resize_se, GTK_STATE_NORMAL, &colors[0]);
-		gtk_widget_override_background_color (note->w_resize_sw, GTK_STATE_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_window, GTK_STATE_FLAG_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_body, GTK_STATE_FLAG_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_lock, GTK_STATE_FLAG_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_close, GTK_STATE_FLAG_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_resize_se, GTK_STATE_FLAG_NORMAL, &colors[0]);
+		gtk_widget_override_background_color (note->w_resize_sw, GTK_STATE_FLAG_NORMAL, &colors[0]);
 	} else {
-		gtk_widget_override_background_color (note->w_window, GTK_STATE_NORMAL, NULL);
-		gtk_widget_override_background_color (note->w_body, GTK_STATE_NORMAL, NULL);
-		gtk_widget_override_background_color (note->w_lock, GTK_STATE_NORMAL, NULL);
-		gtk_widget_override_background_color (note->w_close, GTK_STATE_NORMAL, NULL);
-		gtk_widget_override_background_color (note->w_resize_se, GTK_STATE_NORMAL, NULL);
-		gtk_widget_override_background_color (note->w_resize_sw, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_window, GTK_STATE_FLAG_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_body, GTK_STATE_FLAG_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_lock, GTK_STATE_FLAG_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_close, GTK_STATE_FLAG_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_resize_se, GTK_STATE_FLAG_NORMAL, NULL);
+		gtk_widget_override_background_color (note->w_resize_sw, GTK_STATE_FLAG_NORMAL, NULL);
 	}
 
 	if (font_color_str_actual)
@@ -509,13 +509,13 @@ stickynote_set_color (StickyNote  *note,
 
 		gdk_rgba_parse (&color, font_color_str_actual);
 
-		gtk_widget_override_color (note->w_window, GTK_STATE_NORMAL, &color);
-		gtk_widget_override_color (note->w_body, GTK_STATE_NORMAL, &color);
+		gtk_widget_override_color (note->w_window, GTK_STATE_FLAG_NORMAL, &color);
+		gtk_widget_override_color (note->w_body, GTK_STATE_FLAG_NORMAL, &color);
 	}
 	else
 	{
-		gtk_widget_override_color (note->w_window, GTK_STATE_NORMAL, NULL);
-		gtk_widget_override_color (note->w_body, GTK_STATE_NORMAL, NULL);
+		gtk_widget_override_color (note->w_window, GTK_STATE_FLAG_NORMAL, NULL);
+		gtk_widget_override_color (note->w_body, GTK_STATE_FLAG_NORMAL, NULL);
 	}
 
 	if (color_str_actual)
