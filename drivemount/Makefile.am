@@ -5,8 +5,7 @@ AM_CPPFLAGS =					\
 	-I$(srcdir)				\
 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
 	${WARN_CFLAGS}				\
-	$(MATE_APPLETS4_CFLAGS)			\
-	$(MATEDESKTOP_CFLAGS)
+	$(MATE_APPLETS4_CFLAGS)
 
 libexec_PROGRAMS = mate-drivemount-applet
 
@@ -18,8 +17,7 @@ mate_drivemount_applet_SOURCES =	\
 	drive-button.h
 
 mate_drivemount_applet_LDADD =	\
-	$(MATE_APPLETS4_LIBS)	\
-	$(MATEDESKTOP_LIBS)
+	$(MATE_APPLETS4_LIBS)
 
 uidir           = $(datadir)/mate/ui
 ui_DATA         = drivemount-applet-menu.xml

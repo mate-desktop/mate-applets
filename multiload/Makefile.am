@@ -5,7 +5,6 @@ AM_CPPFLAGS =			\
 	-DMULTILOAD_MENU_UI_DIR=\""$(uidir)"\" \
 	$(MATE_APPLETS4_CFLAGS)	\
 	$(GTOP_APPLETS_CFLAGS)	\
-	$(MATEDESKTOP_CFLAGS)	\
 	$(GIO_CFLAGS)		\
 	${WARN_CFLAGS}
 
@@ -26,7 +25,6 @@ mate_multiload_applet_SOURCES = \
 mate_multiload_applet_LDADD = \
 				$(MATE_APPLETS4_LIBS) 	\
 				$(GTOP_APPLETS_LIBS)	\
-				$(MATEDESKTOP_LIBS)		\
 				$(GIO_LIBS)				\
 				-lm
 

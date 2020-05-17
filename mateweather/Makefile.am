@@ -7,7 +7,6 @@ AM_CPPFLAGS =					\
 	-I$(top_srcdir)				\
 	-DMATEWEATHER_MENU_UI_DIR=\""$(uidir)"\" \
 	$(MATE_APPLETS4_CFLAGS)			\
-	$(MATEDESKTOP_CFLAGS)			\
 	$(LIBNOTIFY_CFLAGS)			\
 	$(LIBMATEWEATHER_CFLAGS)		\
 	${WARN_CFLAGS}
@@ -25,7 +24,6 @@ mateweather_applet_SOURCES = \
 mateweather_applet_LDADD = 	\
 	$(LIBNOTIFY_LIBS) 	\
 	$(MATE_APPLETS4_LIBS)	\
-	$(MATEDESKTOP_LIBS)	\
 	$(MATE_LIBS2_LIBS)	\
 	$(LIBMATEWEATHER_LIBS)
 

@@ -4,7 +4,6 @@ AM_CPPFLAGS =						\
 	-I.						\
 	-I$(srcdir) 					\
 	$(MATE_APPLETS4_CFLAGS)				\
-	$(MATEDESKTOP_CFLAGS)				\
 	-I$(includedir) 				\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
 	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"		\
@@ -19,7 +18,6 @@ mate_geyes_applet_SOURCES =	\
 
 mate_geyes_applet_LDADD = 		\
 	$(MATE_APPLETS4_LIBS) \
-	$(MATEDESKTOP_LIBS) \
 	-lm
 
 appletdir       = $(datadir)/mate-panel/applets
