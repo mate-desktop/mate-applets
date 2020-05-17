@@ -26,7 +26,6 @@ DIST_SUBDIRS = docs sounds apmlib
 AM_CPPFLAGS =					\
 	${WARN_CFLAGS}				\
 	$(MATE_APPLETS4_CFLAGS)			\
-	$(MATEDESKTOP_CFLAGS)			\
 	$(LIBNOTIFY_CFLAGS)			\
 	$(UPOWER_CFLAGS)			\
 	$(APMINC)				\
@@ -53,7 +52,6 @@ battstat_applet_SOURCES = \
 
 battstat_applet_LDADD = \
 		     $(MATE_APPLETS4_LIBS) \
-		     $(MATEDESKTOP_LIBS) \
 		     $(LIBNOTIFY_LIBS) \
 			 $(APMLIB) \
 			 $(UPOWER_LIBS) \
