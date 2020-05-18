@@ -33,7 +33,7 @@
 #include "cpufreq-utils.h"
 
 #ifdef HAVE_POLKIT
-#include <dbus/dbus-glib.h>
+#include <gio/gio.h>
 #endif /* HAVE_POLKIT */
 
 guint
@@ -45,7 +45,7 @@ cpufreq_utils_get_n_cpus (void)
 
 	if (n_cpus > 0)
 		return n_cpus;
-	
+
 	do {
 		if (file)
 			g_free (file);
@@ -111,13 +111,14 @@ cpufreq_utils_display_error (const gchar *message,
 static gboolean
 selector_is_available (void)
 {
-        DBusGProxy             *proxy;
-	static DBusGConnection *system_bus = NULL;
+	GDBusProxy             *proxy;
+	static GDBusConnection *system_bus = NULL;
 	GError                 *error = NULL;
+	GVariant               *reply;
 	gboolean                result;
 
 	if (!system_bus) {
-		system_bus = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
+		system_bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
 		if (!system_bus) {
 			g_warning ("%s", error->message);
 			g_error_free (error);
@@ -126,18 +127,37 @@ selector_is_available (void)
 		}
 	}
 
-        proxy = dbus_g_proxy_new_for_name (system_bus,
-                                           "org.mate.CPUFreqSelector",
-                                           "/org/mate/cpufreq_selector/selector",
-                                           "org.mate.CPUFreqSelector");
+	proxy = g_dbus_proxy_new_sync (system_bus,
+	                               G_DBUS_PROXY_FLAGS_NONE,
+	                               NULL,
+	                               "org.mate.CPUFreqSelector",
+	                               "/org/mate/cpufreq_selector/selector",
+	                               "org.mate.CPUFreqSelector",
+	                               NULL,
+	                               &error);
 
-        if (!dbus_g_proxy_call (proxy, "CanSet", &error,
-                           	G_TYPE_INVALID,
-                           	G_TYPE_BOOLEAN, &result,
-                           	G_TYPE_INVALID)) {
+	if (!proxy) {
+		g_warning ("%s", error->message);
+		g_error_free (error);
+
+		return FALSE;
+	}
+
+	reply = g_dbus_proxy_call_sync (proxy,
+	                                "CanSet",
+	                                NULL,
+	                                G_DBUS_CALL_FLAGS_NONE,
+	                                -1,
+	                                NULL,
+	                                &error);
+
+	if (!reply) {
 		g_warning ("Error calling org.mate.CPUFreqSelector.CanSet: %s", error->message);
 		g_error_free (error);
 		result = FALSE;
+	} else {
+		g_variant_get (reply, "(b)", &result);
+		g_variant_unref (reply);
 	}
 
 	g_object_unref (proxy);
