@@ -118,16 +118,16 @@ dnl -- check for PolicyKit and PolicyKit-mate (optional) -----------------------
 POLKIT_CFLAGS=
 POLKIT_LIBS=
 AC_ARG_ENABLE([polkit],
-    AC_HELP_STRING([--enable-polkit], [Enable PolicyKit support @<:@default auto@:>@]),
+    AC_HELP_STRING([--enable-polkit], [Enable PolicyKit support @<:@default yes@:>@]),
     enable_polkit=$enableval,
-    enable_polkit=auto)
+    enable_polkit=yes)
 if test "x$enable_polkit" != "xno"; then
     if test "x$enable_polkit" = "xyes" -a "x$HAVE_DBUS" = "xno"; then
-        AC_MSG_ERROR([PolicyKit support explicitly requested but dbus-glib-1 not found])
+        AC_MSG_ERROR([PolicyKit support requested but dbus-glib-1 not found])
     fi
     PKG_CHECK_MODULES(POLKIT, polkit-gobject-1 >= $POLKIT_REQUIRED, HAVE_POLKIT=yes, HAVE_POLKIT=no)
     if test "x$enable_polkit" = "xyes" -a "x$HAVE_POLKIT" = "xno"; then
-        AC_MSG_ERROR([PolicyKit support explicitly requested but dependencies not found])
+        AC_MSG_ERROR([PolicyKit support requested but dependencies not found])
     fi
 fi
 dnl - This is only so the printout at the end of configure is correct -
