@@ -33,6 +33,9 @@
 
 #include "backend.h"
 
+#define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
+#define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
+
  /* Icons for the interfaces */
 static const char* const dev_type_icon[DEV_UNKNOWN + 1] = {
 	/* FIXME: Need an actual loopback icon... */
@@ -869,12 +872,6 @@ pref_response_cb (GtkDialog *dialog, gint id, gpointer data)
     }
     g_settings_delay (applet->gsettings);
     g_settings_set_string (applet->gsettings, "device", applet->devinfo.name);
-    g_settings_set_boolean (applet->gsettings, "show-sum", applet->show_sum);
-    g_settings_set_boolean (applet->gsettings, "show-bits", applet->show_bits);
-    g_settings_set_boolean (applet->gsettings, "short-unit", applet->short_unit);
-    g_settings_set_boolean (applet->gsettings, "show-icon", applet->show_icon);
-    g_settings_set_boolean (applet->gsettings, "show-quality-icon", applet->show_quality_icon);
-    g_settings_set_boolean (applet->gsettings, "change-icon", applet->change_icon);
     g_settings_set_boolean (applet->gsettings, "auto-change-device", applet->auto_change_device);
     g_settings_apply (applet->gsettings);
 
@@ -942,24 +939,8 @@ changeicon_change_cb(GtkToggleButton *togglebutton, MateNetspeedApplet *applet)
 static void
 settings_cb(GtkAction *action, gpointer data)
 {
+	GtkBuilder *builder;
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
-	GtkWidget *vbox;
-	GtkWidget *hbox;
-	GtkWidget *categories_vbox;
-	GtkWidget *category_vbox;
-	GtkWidget *controls_vbox;
-	GtkWidget *category_header_label;
-	GtkWidget *network_device_hbox;
-	GtkWidget *network_device_label;
-	GtkWidget *indent_label;
-	GtkWidget *show_sum_checkbutton;
-	GtkWidget *show_bits_checkbutton;
-	GtkWidget *short_unit_checkbutton;
-	GtkWidget *show_icon_checkbutton;
-	GtkWidget *show_quality_icon_checkbutton;
-	GtkWidget *change_icon_checkbutton;
-	GtkSizeGroup *category_label_size_group;
-  	gchar *header_str;
 	GList *ptr, *devices;
 	int i, active = -1;
 
@@ -971,62 +952,22 @@ settings_cb(GtkAction *action, gpointer data)
 		return;
 	}
 
-	category_label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/netspeed/netspeed-preferences.ui");
 
-	applet->settings = GTK_DIALOG(gtk_dialog_new_with_buttons(_("MATE Netspeed Preferences"),
-								  NULL,
-								  GTK_DIALOG_DESTROY_WITH_PARENT,
-								  "gtk-help", GTK_RESPONSE_HELP,
-								  "gtk-close", GTK_RESPONSE_ACCEPT,
-								  NULL));
+	applet->settings = GET_DIALOG ("preferences_dialog");
+	applet->network_device_combo = GET_WIDGET ("network_device_combo");
 
-	gtk_window_set_resizable(GTK_WINDOW(applet->settings), FALSE);
 	gtk_window_set_screen(GTK_WINDOW(applet->settings),
 			      gtk_widget_get_screen(GTK_WIDGET(applet->settings)));
 
 	gtk_dialog_set_default_response(GTK_DIALOG(applet->settings), GTK_RESPONSE_CLOSE);
 
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(vbox), 12);
-
-	categories_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-	gtk_box_pack_start(GTK_BOX (vbox), categories_vbox, TRUE, TRUE, 0);
-
-	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_box_pack_start(GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
-
-	header_str = g_strconcat("<span weight=\"bold\">", _("General Settings"), "</span>", NULL);
-	category_header_label = gtk_label_new(header_str);
-	gtk_label_set_use_markup(GTK_LABEL(category_header_label), TRUE);
-	gtk_label_set_justify(GTK_LABEL(category_header_label), GTK_JUSTIFY_LEFT);
-	gtk_label_set_xalign (GTK_LABEL (category_header_label), 0.0);
-	gtk_label_set_yalign (GTK_LABEL (category_header_label), 0.5);
-	gtk_box_pack_start(GTK_BOX (category_vbox), category_header_label, FALSE, FALSE, 0);
-	g_free(header_str);
-
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	gtk_box_pack_start(GTK_BOX (category_vbox), hbox, TRUE, TRUE, 0);
-
-	indent_label = gtk_label_new("    ");
-	gtk_label_set_justify(GTK_LABEL (indent_label), GTK_JUSTIFY_LEFT);
-	gtk_box_pack_start(GTK_BOX (hbox), indent_label, FALSE, FALSE, 0);
-
-	controls_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-	gtk_box_pack_start(GTK_BOX(hbox), controls_vbox, TRUE, TRUE, 0);
-
-	network_device_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), network_device_hbox, TRUE, TRUE, 0);
-
-	network_device_label = gtk_label_new_with_mnemonic(_("Network _device:"));
-	gtk_label_set_justify(GTK_LABEL(network_device_label), GTK_JUSTIFY_LEFT);
-	gtk_label_set_xalign (GTK_LABEL (network_device_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (network_device_label), 0.5f);
-	gtk_size_group_add_widget(category_label_size_group, network_device_label);
-	gtk_box_pack_start(GTK_BOX (network_device_hbox), network_device_label, FALSE, FALSE, 0);
-
-	applet->network_device_combo = gtk_combo_box_text_new();
-	gtk_label_set_mnemonic_widget(GTK_LABEL(network_device_label), applet->network_device_combo);
-	gtk_box_pack_start (GTK_BOX (network_device_hbox), applet->network_device_combo, TRUE, TRUE, 0);
+	g_settings_bind (applet->gsettings, "show-sum", gtk_builder_get_object (builder, "show_sum_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (applet->gsettings, "show-bits", gtk_builder_get_object (builder, "show_bits_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (applet->gsettings, "short-unit", gtk_builder_get_object (builder, "short_unit_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (applet->gsettings, "show-icon", gtk_builder_get_object (builder, "show_icon_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (applet->gsettings, "show-quality-icon", gtk_builder_get_object (builder, "show_quality_icon_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (applet->gsettings, "change-icon", gtk_builder_get_object (builder, "change_icon_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
 
 	/* Default means device with default route set */
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(applet->network_device_combo), _("Default"));
@@ -1042,55 +983,20 @@ settings_cb(GtkAction *action, gpointer data)
 	gtk_combo_box_set_active(GTK_COMBO_BOX(applet->network_device_combo), active);
 	g_object_set_data_full(G_OBJECT(applet->network_device_combo), "devices", devices, (GDestroyNotify)free_devices_list);
 
-	show_sum_checkbutton = gtk_check_button_new_with_mnemonic(_("Show _sum instead of in & out"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_sum_checkbutton), applet->show_sum);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), show_sum_checkbutton, FALSE, FALSE, 0);
+	/* signals */
+	gtk_builder_add_callback_symbols (builder,
+	                                  "on_network_device_combo_changed", G_CALLBACK (device_change_cb),
+	                                  "on_show_sum_checkbutton_toggled", G_CALLBACK (showsum_change_cb),
+	                                  "on_show_bits_checkbutton_toggled", G_CALLBACK(showbits_change_cb),
+	                                  "on_short_unit_checkbutton_toggled", G_CALLBACK(shortunit_change_cb),
+	                                  "on_change_icon_checkbutton_toggled", G_CALLBACK (changeicon_change_cb),
+	                                  "on_show_icon_checkbutton_toggled", G_CALLBACK (showicon_change_cb),
+	                                  "on_show_quality_icon_checkbutton_toggled", G_CALLBACK (showqualityicon_change_cb),
+	                                  "on_preferences_dialog_response", G_CALLBACK(pref_response_cb),
+	                                  NULL);
+	gtk_builder_connect_signals (builder, applet);
 
-	show_bits_checkbutton = gtk_check_button_new_with_mnemonic(_("Show _bits instead of bytes"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_bits_checkbutton), applet->show_bits);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), show_bits_checkbutton, FALSE, FALSE, 0);
-
-	short_unit_checkbutton = gtk_check_button_new_with_mnemonic(_("Shorten _unit legend"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(short_unit_checkbutton), applet->short_unit);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), short_unit_checkbutton, FALSE, FALSE, 0);
-
-	change_icon_checkbutton = gtk_check_button_new_with_mnemonic(_("_Change icon according to the selected device"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(change_icon_checkbutton), applet->change_icon);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), change_icon_checkbutton, FALSE, FALSE, 0);
-
-	show_icon_checkbutton = gtk_check_button_new_with_mnemonic(_("Show _icon"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_icon_checkbutton), applet->show_icon);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), show_icon_checkbutton, FALSE, FALSE, 0);
-
-	show_quality_icon_checkbutton = gtk_check_button_new_with_mnemonic(_("Show signal _quality icon for wireless devices"));
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_quality_icon_checkbutton), applet->show_quality_icon);
-	gtk_box_pack_start(GTK_BOX(controls_vbox), show_quality_icon_checkbutton, FALSE, FALSE, 0);
-
-	g_signal_connect(G_OBJECT (applet->network_device_combo), "changed",
-			 G_CALLBACK(device_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (show_sum_checkbutton), "toggled",
-			 G_CALLBACK(showsum_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (show_bits_checkbutton), "toggled",
-			 G_CALLBACK(showbits_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (short_unit_checkbutton), "toggled",
-			 G_CALLBACK(shortunit_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (show_icon_checkbutton), "toggled",
-			 G_CALLBACK(showicon_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (show_quality_icon_checkbutton), "toggled",
-			 G_CALLBACK(showqualityicon_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (change_icon_checkbutton), "toggled",
-			 G_CALLBACK(changeicon_change_cb), (gpointer)applet);
-
-	g_signal_connect(G_OBJECT (applet->settings), "response",
-			 G_CALLBACK(pref_response_cb), (gpointer)applet);
-
-	gtk_container_add(GTK_CONTAINER(gtk_dialog_get_content_area (applet->settings)), vbox);
+	g_object_unref (builder);
 
 	gtk_widget_show_all(GTK_WIDGET(applet->settings));
 }
@@ -1580,13 +1486,6 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	applet->applet = applet_widget;
 	memset(&applet->devinfo, 0, sizeof(DevInfo));
 	applet->refresh_time = 1000.0;
-	applet->show_sum = FALSE;
-	applet->show_bits = FALSE;
-	applet->short_unit = FALSE;
-	applet->show_icon = TRUE;
-	applet->show_quality_icon = TRUE;
-	applet->change_icon = TRUE;
-	applet->auto_change_device = TRUE;
 
 	/* Set the default colors of the graph
 	*/
@@ -1607,8 +1506,6 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 
 	/* Get stored settings from gsettings
 	 */
-	char *tmp = NULL;
-
 	applet->show_sum = g_settings_get_boolean (applet->gsettings, "show-sum");
 	applet->show_bits = g_settings_get_boolean (applet->gsettings, "show-bits");
 	applet->short_unit = g_settings_get_boolean (applet->gsettings, "short-unit");
@@ -1617,18 +1514,21 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	applet->change_icon = g_settings_get_boolean (applet->gsettings, "change-icon");
 	applet->auto_change_device = g_settings_get_boolean (applet->gsettings, "auto-change-device");
 
+	char *tmp = NULL;
 	tmp = g_settings_get_string (applet->gsettings, "device");
 	if (tmp && strcmp(tmp, ""))
 	{
 		get_device_info(tmp, &applet->devinfo);
 		g_free(tmp);
 	}
+
 	tmp = g_settings_get_string (applet->gsettings, "up-command");
 	if (tmp && strcmp(tmp, ""))
 	{
 		applet->up_cmd = g_strdup(tmp);
 		g_free(tmp);
 	}
+
 	tmp = g_settings_get_string (applet->gsettings, "down-command");
 	if (tmp && strcmp(tmp, ""))
 	{
@@ -1642,6 +1542,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 		gdk_rgba_parse (&applet->in_color, tmp);
 		g_free(tmp);
 	}
+
 	tmp = g_settings_get_string (applet->gsettings, "out-color");
 	if (tmp)
 	{
