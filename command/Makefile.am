@@ -6,9 +6,18 @@ AM_CPPFLAGS = \
 APPLET_LOCATION = $(libexecdir)/command-applet
 
 libexec_PROGRAMS = command-applet
+
+BUILT_SOURCES = command-resources.c command-resources.h
+nodist_command_applet_SOURCES = $(BUILT_SOURCES)
 command_applet_SOURCES = command.c ma-command.c ma-command.h
 command_applet_LDADD = $(MATE_APPLETS4_LIBS)
 command_applet_CFLAGS = $(WARN_CFLAGS)
+
+command-resources.c: command-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/command-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name command $<
+
+command-resources.h: command-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/command-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name command $<
 
 appletsdir       = $(datadir)/mate-panel/applets
 applets_in_files = org.mate.applets.CommandApplet.mate-panel-applet.desktop.in
@@ -38,8 +47,16 @@ gsettings_SCHEMAS = $(command_gschema_in_files:.xml.in=.xml)
 EXTRA_DIST = \
 	$(applets_in_files).in \
 	$(service_in_files) \
-	$(command_gschema_in_files)
+	$(command_gschema_in_files) \
+	command-preferences.ui \
+	command-resources.gresource.xml
 
-CLEANFILES = $(applets_DATA) $(applets_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = \
+	$(BUILT_SOURCES) \
+	$(applets_DATA) \
+	$(applets_in_files) \
+	$(service_DATA) \
+	$(gsettings_SCHEMAS) \
+	*.gschema.valid
 
 -include $(top_srcdir)/git.mk
