@@ -1,3 +1,5 @@
+NULL =
+
 SUBDIRS = themes docs
 
 AM_CPPFLAGS =						\
@@ -11,14 +13,23 @@ AM_CPPFLAGS =						\
 
 libexec_PROGRAMS = mate-geyes-applet
 
+BUILT_SOURCES = geyes-resources.c geyes-resources.h
+nodist_mate_geyes_applet_SOURCES = $(BUILT_SOURCES)
 mate_geyes_applet_SOURCES =	\
-        geyes.c \
-	themes.c \
-	geyes.h
+	geyes.c			\
+	geyes.h			\
+	themes.c		\
+	$(NULL)
 
-mate_geyes_applet_LDADD = 		\
-	$(MATE_APPLETS4_LIBS) \
+mate_geyes_applet_LDADD =	\
+	$(MATE_APPLETS4_LIBS)	\
 	-lm
+
+geyes-resources.c: geyes-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/geyes-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name eyes $<
+
+geyes-resources.h: geyes-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/geyes-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name eyes $<
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in
@@ -60,15 +71,25 @@ icons =	\
 	mate-eyes-applet.22.png		\
 	mate-eyes-applet.16.png
 
-CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES = \
+	$(BUILT_SOURCES)		\
+	$(applet_DATA)			\
+	$(applet_in_files)		\
+	$(service_DATA)			\
+	$(gsettings_SCHEMAS)		\
+	*.gschema.valid			\
+	$(NULL)
 
 EXTRA_DIST = \
-	     README.themes					\
-		 $(applet_in_files).in	\
-		 $(service_in_files)				\
-	     $(geyes_gschema_in_files)				\
-	     $(ui_DATA)						\
-	     $(icons)
+	geyes-resources.gresource.xml	\
+	themes.ui			\
+	README.themes			\
+	$(applet_in_files).in		\
+	$(service_in_files)		\
+	$(geyes_gschema_in_files)	\
+	$(ui_DATA)			\
+	$(icons)			\
+	$(NULL)
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 

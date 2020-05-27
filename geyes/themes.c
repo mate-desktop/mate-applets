@@ -26,8 +26,9 @@
 #include <gio/gio.h>
 #include "geyes.h"
 
+#define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
+
 #define NUM_THEME_DIRECTORIES 2
-#define HIG_IDENTATION  "    "
 
 static char *theme_directories[NUM_THEME_DIRECTORIES];
 
@@ -249,17 +250,12 @@ void
 properties_cb (GtkAction  *action,
 	       EyesApplet *eyes_applet)
 {
-	GtkWidget *pbox, *hbox;
-	GtkWidget *vbox, *indent;
-	GtkWidget *categories_vbox;
-	GtkWidget *category_vbox, *control_vbox;
+        GtkBuilder *builder;
         GtkWidget *tree;
-	GtkWidget *scrolled;
         GtkWidget *label;
         GtkListStore *model;
         GtkTreeViewColumn *column;
         GtkCellRenderer *cell;
-        GtkTreeSelection *selection;
         GtkTreeIter iter;
         DIR *dfd;
         struct dirent *dp;
@@ -267,9 +263,8 @@ properties_cb (GtkAction  *action,
 #ifdef PATH_MAX
         gchar filename [PATH_MAX];
 #else
-	gchar *filename;
+        gchar *filename;
 #endif
-        gchar *title;
 
 	if (eyes_applet->prop_box.pbox) {
 		gtk_window_set_screen (
@@ -279,87 +274,18 @@ properties_cb (GtkAction  *action,
 		return;
 	}
 
-        pbox = gtk_dialog_new_with_buttons (_("Eyes Preferences"), NULL,
-        				     GTK_DIALOG_DESTROY_WITH_PARENT,
-					     "gtk-close", GTK_RESPONSE_CLOSE,
-					     "gtk-help", GTK_RESPONSE_HELP,
-					     NULL);
+	builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/eyes/themes.ui");
 
-	gtk_window_set_screen (GTK_WINDOW (pbox),
-			       gtk_widget_get_screen (GTK_WIDGET (eyes_applet->applet)));
-
-	gtk_widget_set_size_request (GTK_WIDGET (pbox), 300, 200);
-        gtk_dialog_set_default_response(GTK_DIALOG (pbox), GTK_RESPONSE_CLOSE);
-        gtk_container_set_border_width (GTK_CONTAINER (pbox), 5);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (pbox))), 2);
-
-        g_signal_connect (pbox, "response",
-			  G_CALLBACK (presponse_cb),
-			  eyes_applet);
-
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
-	gtk_widget_show (vbox);
-
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (pbox))), vbox,
-			    TRUE, TRUE, 0);
-
-	categories_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-	gtk_box_pack_start (GTK_BOX (vbox), categories_vbox, TRUE, TRUE, 0);
-	gtk_widget_show (categories_vbox);
-
-	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
-	gtk_widget_show (category_vbox);
-
-	title = g_strconcat ("<span weight=\"bold\">", _("Themes"), "</span>", NULL);
-	label = gtk_label_new (_(title));
-	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-	gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-	gtk_box_pack_start (GTK_BOX (category_vbox), label, FALSE, FALSE, 0);
-	g_free (title);
-
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	gtk_box_pack_start (GTK_BOX (category_vbox), hbox, TRUE, TRUE, 0);
-	gtk_widget_show (hbox);
-
-	indent = gtk_label_new (HIG_IDENTATION);
-	gtk_label_set_justify (GTK_LABEL (indent), GTK_JUSTIFY_LEFT);
-	gtk_box_pack_start (GTK_BOX (hbox), indent, FALSE, FALSE, 0);
-	gtk_widget_show (indent);
-
-	control_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_box_pack_start (GTK_BOX (hbox), control_vbox, TRUE, TRUE, 0);
-	gtk_widget_show (control_vbox);
-
-	label = gtk_label_new_with_mnemonic (_("_Select a theme:"));
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-	gtk_box_pack_start (GTK_BOX (control_vbox), label, FALSE, FALSE, 0);
-
-	scrolled = gtk_scrolled_window_new (NULL, NULL);
-	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled), GTK_SHADOW_IN);
-	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
+	eyes_applet->prop_box.pbox = GET_WIDGET ("preferences_dialog");
+	tree = GET_WIDGET ("themes_treeview");
+	label = GET_WIDGET ("select_theme_label");
 
 	model = gtk_list_store_new (TOTAL_COLS, G_TYPE_STRING, G_TYPE_STRING);
-	tree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (model));
-	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (tree), FALSE);
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), tree);
-	g_object_unref (model);
-
-	gtk_container_add (GTK_CONTAINER (scrolled), tree);
-
+	gtk_tree_view_set_model (GTK_TREE_VIEW (tree), GTK_TREE_MODEL (model));
 	cell = gtk_cell_renderer_text_new ();
 	column = gtk_tree_view_column_new_with_attributes ("not used", cell,
                                                            "text", COL_THEME_NAME, NULL);
         gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
-
-        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
-	g_signal_connect (selection, "changed",
-			  G_CALLBACK (theme_selected_cb),
-			  eyes_applet);
 
 	if ( ! g_settings_is_writable (eyes_applet->settings, "theme-path")) {
 		gtk_widget_set_sensitive (tree, FALSE);
@@ -408,14 +334,18 @@ properties_cb (GtkAction  *action,
 #ifndef PATH_MAX
 	g_free (filename);
 #endif
+	g_object_unref (model);
 
-        gtk_box_pack_start (GTK_BOX (control_vbox), scrolled, TRUE, TRUE, 0);
+	/* signals */
+	gtk_builder_add_callback_symbols (builder,
+	                                  "on_preferences_dialog_response", G_CALLBACK (presponse_cb),
+	                                  "on_themes_treeselection_changed", G_CALLBACK (theme_selected_cb),
+	                                  NULL);
+	gtk_builder_connect_signals (builder, eyes_applet);
 
-        gtk_widget_show_all (pbox);
+	g_object_unref (builder);
 
-        eyes_applet->prop_box.pbox = pbox;
+	gtk_widget_show_all (eyes_applet->prop_box.pbox);
 
 	return;
 }
-
-
