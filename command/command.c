@@ -50,6 +50,9 @@
 #define GK_COMMAND_OUTPUT  "Output"
 #define GK_COMMAND_ICON    "Icon"
 
+#define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
+#define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
+
 typedef struct
 {
     MatePanelApplet   *applet;
@@ -184,65 +187,27 @@ static void
 command_settings_callback (GtkAction *action, CommandApplet *command_applet)
 {
     GtkDialog *dialog;
-    GtkGrid *grid;
-    GtkWidget *widget;
-    GtkWidget *command;
-    GtkWidget *interval;
-    GtkWidget *width;
-    GtkWidget *showicon;
+    GtkBuilder *builder;
 
-    dialog = GTK_DIALOG (gtk_dialog_new_with_buttons(_("Command Applet Preferences"),
-                                                     NULL,
-                                                     GTK_DIALOG_MODAL,
-                                                     "gtk-close",
-                                                     GTK_RESPONSE_CLOSE,
-                                                     NULL));
-    grid = GTK_GRID (gtk_grid_new ());
-    gtk_grid_set_row_spacing (grid, 12);
-    gtk_grid_set_column_spacing (grid, 12);
+    builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/command/command-preferences.ui");
 
-    gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
-    gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
+    dialog = GET_DIALOG ("preferences_dialog");
 
-    widget = gtk_label_new (_("Command:"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 0, 1, 1);
+    g_settings_bind (command_applet->settings, COMMAND_KEY, GET_WIDGET ("command_entry"), "text", G_SETTINGS_BIND_GET_NO_CHANGES);
+    g_settings_bind (command_applet->settings, INTERVAL_KEY, GET_WIDGET ("interval_spinbutton"), "value", G_SETTINGS_BIND_GET_NO_CHANGES);
+    g_settings_bind (command_applet->settings, WIDTH_KEY, GET_WIDGET ("width_spinbutton"), "value", G_SETTINGS_BIND_GET_NO_CHANGES);
+    g_settings_bind (command_applet->settings, SHOW_ICON_KEY, GET_WIDGET ("show_icon_check"), "active", G_SETTINGS_BIND_DEFAULT);
 
-    command = gtk_entry_new ();
-    gtk_grid_attach (grid, command, 2, 0, 1, 1);
-
-    widget = gtk_label_new (_("Interval (seconds):"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 1, 1, 1);
-
-    interval = gtk_spin_button_new_with_range (1.0, 86400.0, 1.0);
-    gtk_grid_attach (grid, interval, 2, 1, 1, 1);
-
-    widget = gtk_label_new (_("Maximum width (chars):"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 2, 1, 1);
-
-    width = gtk_spin_button_new_with_range(1.0, 100.0, 1.0);
-    gtk_grid_attach (grid, width, 2, 2, 1, 1);
-
-    showicon = gtk_check_button_new_with_label (_("Show icon"));
-    gtk_grid_attach (grid, showicon, 2, 3, 1, 1);
-
-    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (grid), TRUE, TRUE, 0);
-
+    /* signals */
+    gtk_builder_add_callback_symbols (builder,
+                                      "on_command_entry_focus_out_event", G_CALLBACK (command_text_changed),
+                                      "on_interval_spinbutton_value_changed", G_CALLBACK (interval_value_changed),
+                                      "on_width_spinbutton_value_changed", G_CALLBACK (width_value_changed),
+                                      NULL);
+    gtk_builder_connect_signals (builder, command_applet);
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
-    g_signal_connect(command, "focus-out-event", G_CALLBACK (command_text_changed), command_applet);
-    g_signal_connect(interval, "value-changed", G_CALLBACK (interval_value_changed), command_applet);
-    g_signal_connect(width, "value-changed", G_CALLBACK (width_value_changed), command_applet);
-    /* use g_settings_bind to manage settings */
-    g_settings_bind (command_applet->settings, COMMAND_KEY, command, "text", G_SETTINGS_BIND_GET_NO_CHANGES);
-    g_settings_bind (command_applet->settings, INTERVAL_KEY, interval, "value", G_SETTINGS_BIND_GET_NO_CHANGES);
-    g_settings_bind (command_applet->settings, WIDTH_KEY, width, "value", G_SETTINGS_BIND_GET_NO_CHANGES);
-    g_settings_bind (command_applet->settings, SHOW_ICON_KEY, showicon, "active", G_SETTINGS_BIND_DEFAULT);
+    g_object_unref (builder);
 
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
