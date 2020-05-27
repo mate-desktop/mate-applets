@@ -45,6 +45,10 @@
 #define SHOW_NOTIFICATION_KEY   "show-notification"
 #define SHOW_DIALOG_KEY         "show-dialog"
 
+#define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
+#define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
+#define GET_SPIN_BUTTON(x) (GTK_SPIN_BUTTON (gtk_builder_get_object (builder, (x))))
+
 typedef struct
 {
     MatePanelApplet   *applet;
@@ -286,7 +290,7 @@ timer_spin_button_value_changed (GtkSpinButton *spinbutton, TimerApplet *applet)
 {
     gint duration = 0;
 
-    duration += gtk_spin_button_get_value (applet->hours) * 60 * 60;
+    duration += gtk_spin_button_get_value (applet->hours) * 3600;
     duration += gtk_spin_button_get_value (applet->minutes) * 60;
     duration += gtk_spin_button_get_value (applet->seconds);
 
@@ -297,82 +301,40 @@ timer_spin_button_value_changed (GtkSpinButton *spinbutton, TimerApplet *applet)
 static void
 timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 {
+    GtkBuilder *builder;
     GtkDialog *dialog;
-    GtkGrid *grid;
-    GtkWidget *widget;
     gint duration, hours, minutes, seconds;
+
+    builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/timerapplet/timerapplet-preferences.ui");
+
+    dialog = GET_DIALOG ("preferences_dialog");
+    applet->hours = GET_SPIN_BUTTON ("hours_spinbutton");
+    applet->minutes = GET_SPIN_BUTTON ("minutes_spinbutton");
+    applet->seconds = GET_SPIN_BUTTON ("seconds_spinbutton");
 
     duration = g_settings_get_int (applet->settings, DURATION_KEY);
     hours = duration / 60 / 60;
     minutes = duration / 60 % 60;
     seconds = duration % 60;
 
-    dialog = GTK_DIALOG (gtk_dialog_new_with_buttons(_("Timer Applet Preferences"),
-                                                     NULL,
-                                                     GTK_DIALOG_MODAL,
-                                                     "gtk-close",
-                                                     GTK_RESPONSE_CLOSE,
-                                                     NULL));
-    grid = GTK_GRID (gtk_grid_new ());
-    gtk_grid_set_row_spacing (grid, 12);
-    gtk_grid_set_column_spacing (grid, 12);
+    gtk_spin_button_set_value (applet->hours,   hours);
+    gtk_spin_button_set_value (applet->minutes, minutes);
+    gtk_spin_button_set_value (applet->seconds, seconds);
 
-    gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 150);
-    gtk_container_set_border_width (GTK_CONTAINER (dialog), 10);
+    g_settings_bind (applet->settings, NAME_KEY, GET_WIDGET ("name_entry"), "text", G_SETTINGS_BIND_DEFAULT);
+    g_settings_bind (applet->settings, SHOW_NOTIFICATION_KEY, GET_WIDGET ("show_notification_popup_check"), "active", G_SETTINGS_BIND_DEFAULT);
+    g_settings_bind (applet->settings, SHOW_DIALOG_KEY, GET_WIDGET ("show_dialog_check"), "active", G_SETTINGS_BIND_DEFAULT);
 
-    widget = gtk_label_new (_("Name:"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 0, 1, 1);
-
-    widget = gtk_entry_new ();
-    gtk_grid_attach (grid, widget, 2, 0, 1, 1);
-    g_settings_bind (applet->settings, NAME_KEY, widget, "text", G_SETTINGS_BIND_DEFAULT);
-
-    widget = gtk_label_new (_("Hours:"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 1, 1, 1);
-
-    widget = gtk_spin_button_new_with_range (0.0, 100.0, 1.0);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), hours);
-    gtk_grid_attach (grid, widget, 2, 1, 1, 1);
-    applet->hours = GTK_SPIN_BUTTON (widget);
-    g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
-
-    widget = gtk_label_new (_("Minutes:"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 2, 1, 1);
-
-    widget = gtk_spin_button_new_with_range (0.0, 59.0, 1.0);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), minutes);
-    gtk_grid_attach (grid, widget, 2, 2, 1, 1);;
-    applet->minutes = GTK_SPIN_BUTTON (widget);
-    g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
-
-    widget = gtk_label_new (_("Seconds:"));
-    gtk_label_set_xalign (GTK_LABEL (widget), 1.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.5);
-    gtk_grid_attach (grid, widget, 1, 3, 1, 1);
-
-    widget = gtk_spin_button_new_with_range (0.0, 59.0, 1.0);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), seconds);
-    gtk_grid_attach (grid, widget, 2, 3, 1, 1);
-    applet->seconds = GTK_SPIN_BUTTON (widget);
-    g_signal_connect (widget, "value-changed", G_CALLBACK (timer_spin_button_value_changed), applet);
-
-    widget = gtk_check_button_new_with_label (_("Show notification popup"));
-    gtk_grid_attach (grid, widget, 2, 4, 1, 1);
-    g_settings_bind (applet->settings, SHOW_NOTIFICATION_KEY, widget, "active", G_SETTINGS_BIND_DEFAULT);
-
-    widget = gtk_check_button_new_with_label (_("Show dialog"));
-    gtk_grid_attach (grid, widget, 2, 5, 1, 1);
-    g_settings_bind (applet->settings, SHOW_DIALOG_KEY, widget, "active", G_SETTINGS_BIND_DEFAULT);
-
-    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (dialog)), GTK_WIDGET (grid), TRUE, TRUE, 0);
-
+    /* signals */
+    gtk_builder_add_callback_symbols (builder,
+                                      "on_hours_spinbutton_value_changed", G_CALLBACK (timer_spin_button_value_changed),
+                                      "on_minutes_spinbutton_value_changed", G_CALLBACK (timer_spin_button_value_changed),
+                                      "on_seconds_spinbutton_value_changed", G_CALLBACK (timer_spin_button_value_changed),
+                                      NULL);
+    gtk_builder_connect_signals (builder, applet);
     g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+
+    g_object_unref (builder);
 
     gtk_widget_show_all (GTK_WIDGET (dialog));
 }
