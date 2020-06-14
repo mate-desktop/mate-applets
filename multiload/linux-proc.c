@@ -250,26 +250,22 @@ GetPage (int Maximum, int data [3], LoadGraph *g)
 #endif /* 0 */
 
 void
-GetMemory (int Maximum, int data [5], LoadGraph *g)
+GetMemory (int Maximum, int data [2], LoadGraph *g)
 {
-    int user, shared, buffer, cached;
-
+    int user;
     glibtop_mem mem;
+    float ratio;
 
     glibtop_get_mem (&mem);
 
     g_return_if_fail ((mem.flags & needed_mem_flags) == needed_mem_flags);
 
-    user    = rint (Maximum * (float)mem.user / (float)mem.total);
-    shared  = rint (Maximum * (float)mem.shared / (float)mem.total);
-    buffer  = rint (Maximum * (float)mem.buffer / (float)mem.total);
-    cached = rint (Maximum * (float)mem.cached / (float)mem.total);
+    ratio = (float)mem.user  / (float)mem.total;
+    g->percentage_used = 100.0f * ratio;
+    user = rint (Maximum * ratio);
 
-    data [0] = user;
-    data [1] = shared;
-    data [2] = buffer;
-    data [3] = cached;
-    data [4] = Maximum-user-shared-buffer-cached;
+    data[0] = user;
+    data[1] = Maximum - user;
 }
 
 void
@@ -301,10 +297,9 @@ GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
 
     g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
 
-    /* g->loadavg1 represents %used */
-    g->loadavg1 = loadavg.loadavg[0];
+    g->percentage_used = loadavg.loadavg[0];
 
-    data [0] = rint ((float) Maximum * g->loadavg1);
+    data [0] = rint ((float) Maximum * g->percentage_used);
     data [1] = Maximum - data[0];
 }
 

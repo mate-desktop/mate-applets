@@ -288,27 +288,14 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		g_assert_not_reached();
 
 	if (!strncmp(g->name, "memload", strlen("memload"))) {
-		guint mem_user, mem_cache, user_percent, cache_percent;
-		mem_user  = g->data[1][0];
-		mem_cache = g->data[1][1] + g->data[1][2] + g->data[1][3];
-		user_percent = 100.0f * mem_user / g->draw_height;
-		cache_percent = 100.0f * mem_cache / g->draw_height;
-		user_percent = MIN(user_percent, 100);
-		cache_percent = MIN(cache_percent, 100);
-
-		/* xgettext: use and cache are > 1 most of the time,
-		   please assume that they always are.
-		 */
 		tooltip_text = g_strdup_printf(_("%s:\n"
-						 "%u%% in use by programs\n"
-						 "%u%% in use as cache"),
+						 "%0.02f%% in use"),
 					       name,
-					       user_percent,
-					       cache_percent);
+					       g->percentage_used);
 	} else if (!strcmp(g->name, "loadavg")) {
 
 		tooltip_text = g_strdup_printf(_("The system load average is %0.02f"),
-					       g->loadavg1);
+					       g->percentage_used);
 
 	} else if (!strcmp(g->name, "netload2")) {
 		char *tx_in, *tx_out;
@@ -357,7 +344,7 @@ multiload_create_graphs(MultiloadApplet *ma)
 		 LoadGraphDataFunc callback;
 	       } graph_types[] = {
 			{ _("CPU Load"),     "cpuload",  5, GetLoad },
-			{ _("Memory Load"),  "memload",  5, GetMemory },
+			{ _("Memory Load"),  "memload",  2, GetMemory },
 			{ _("Net Load"),     "netload2",  6, GetNet },
 			{ _("Swap Load"),    "swapload", 2, GetSwap },
 			{ _("Load Average"), "loadavg",  3, GetLoadAvg },
