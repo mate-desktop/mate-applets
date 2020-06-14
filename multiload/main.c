@@ -266,26 +266,10 @@ multiload_key_press_event_cb (GtkWidget *widget, GdkEventKey *event, MultiloadAp
 void
 multiload_applet_tooltip_update(LoadGraph *g)
 {
-	gchar *tooltip_text, *name;
+	gchar *tooltip_text;
 
 	g_assert(g);
 	g_assert(g->name);
-
-	/* label the tooltip intuitively */
-	if (!strncmp(g->name, "cpuload", strlen("cpuload")))
-		name = g_strdup(_("Processor"));
-	else if (!strncmp(g->name, "memload", strlen("memload")))
-		name = g_strdup(_("Memory"));
-	else if (!strncmp(g->name, "netload2", strlen("netload2")))
-		name = g_strdup(_("Network"));
-	else if (!strncmp(g->name, "swapload", strlen("swapload")))
-		name = g_strdup(_("Swap Space"));
-	else if (!strncmp(g->name, "loadavg", strlen("loadavg")))
-		name = g_strdup(_("Load Average"));
-	else if (!strncmp (g->name, "diskload", strlen("diskload")))
-		name = g_strdup(_("Disk"));
-	else
-		g_assert_not_reached();
 
 	if (!strncmp(g->name, "memload", strlen("memload"))) {
 		guint mem_user, mem_cache, user_percent, cache_percent;
@@ -299,10 +283,9 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		/* xgettext: use and cache are > 1 most of the time,
 		   please assume that they always are.
 		 */
-		tooltip_text = g_strdup_printf(_("%s:\n"
+		tooltip_text = g_strdup_printf(_("Memory:\n"
 						 "%u%% in use by programs\n"
 						 "%u%% in use as cache"),
-					       name,
 					       user_percent,
 					       cache_percent);
 	} else if (!strcmp(g->name, "loadavg")) {
@@ -315,10 +298,11 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		tx_in = netspeed_get(g->netspeed_in);
 		tx_out = netspeed_get(g->netspeed_out);
 		/* xgettext: same as in graphic tab of g-s-m */
-		tooltip_text = g_strdup_printf(_("%s:\n"
+		tooltip_text = g_strdup_printf(_("Network:\n"
 						 "Receiving %s\n"
 						 "Sending %s"),
-					       name, tx_in, tx_out);
+		                                 tx_in,
+		                                 tx_out);
 		g_free(tx_in);
 		g_free(tx_out);
 	} else {
@@ -331,21 +315,32 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		percent = 100.0f * total_used / g->draw_height;
 		percent = MIN(percent, 100);
 
-		msg = ngettext("%s:\n"
-			       "%u%% in use",
-			       "%s:\n"
-			       "%u%% in use",
-			       percent);
+		if (!strncmp(g->name, "cpuload", strlen("cpuload")))
+			msg = ngettext("Processor:\n"
+			               "%u%% in use",
+			               "Processor:\n"
+			               "%u%% in use",
+			               percent);
+		else if (!strncmp(g->name, "swapload", strlen("swapload")))
+			msg = ngettext("Swap Space:\n"
+			               "%u%% in use",
+			               "Swap Space:\n"
+			               "%u%% in use",
+			               percent);
+		else if (!strncmp (g->name, "diskload", strlen("diskload")))
+			msg = ngettext("Disk:\n"
+			               "%u%% in use",
+			               "Disk:\n"
+			               "%u%% in use",
+			               percent);
 
 		tooltip_text = g_strdup_printf(msg,
-					       name,
 					       percent);
 	}
 
 	gtk_widget_set_tooltip_text(g->disp, tooltip_text);
 
 	g_free(tooltip_text);
-	g_free(name);
 }
 
 static void
