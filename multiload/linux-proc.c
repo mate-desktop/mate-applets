@@ -280,9 +280,14 @@ GetSwap (int Maximum, int data [2], LoadGraph *g)
 
     if (swap.total == 0) {
         used = 0;
+        g->percentage_used = 0;
     }
     else {
-        used = rint (Maximum * (float)swap.used / swap.total);
+        float ratio;
+
+        ratio = (float)swap.used / (float)swap.total;
+        g->percentage_used = 100.0f * ratio;
+        used = rint (Maximum * ratio);
     }
 
     data [0] = used;

@@ -277,6 +277,12 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		                                 "%0.02f%% in use"),
 		                               g->percentage_used);
 
+	} else if (!strcmp(g->name, "swapload")) {
+
+		tooltip_text = g_strdup_printf(_("Swap Space:\n"
+		                                 "%0.02f%% in use"),
+		                               g->percentage_used);
+
 	} else if (!strcmp(g->name, "loadavg")) {
 
 		tooltip_text = g_strdup_printf(_("The system load average is %0.02f"),
@@ -309,12 +315,6 @@ multiload_applet_tooltip_update(LoadGraph *g)
 			msg = ngettext("Processor:\n"
 			               "%u%% in use",
 			               "Processor:\n"
-			               "%u%% in use",
-			               percent);
-		else if (!strncmp(g->name, "swapload", strlen("swapload")))
-			msg = ngettext("Swap Space:\n"
-			               "%u%% in use",
-			               "Swap Space:\n"
 			               "%u%% in use",
 			               percent);
 		else if (!strncmp (g->name, "diskload", strlen("diskload")))
