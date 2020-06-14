@@ -53,6 +53,8 @@ struct _LoadGraph {
     guint net_threshold1;
     guint net_threshold2;
     guint net_threshold3;
+    guint64 disk_readdiff;
+    guint64 disk_writediff;
 
     gboolean visible;
     gboolean tooltip_update;

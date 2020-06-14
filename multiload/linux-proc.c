@@ -105,7 +105,6 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
     gboolean nvme_diskstats;
 
     guint64 read, write;
-    guint64 readdiff, writediff;
 
     nvme_diskstats = g_settings_get_boolean (g->multiload->settings, "diskload-nvme-diskstats");
 
@@ -175,14 +174,15 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
             }
 
             glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
-            read += fsusage.read; write += fsusage.write;
+            read += fsusage.read * fsusage.block_size;
+            write += fsusage.write * fsusage.block_size;
         }
 
         g_free(mountentries);
     }
 
-    readdiff  = read - lastread;
-    writediff = write - lastwrite;
+    g->disk_readdiff  = read - lastread;
+    g->disk_writediff = write - lastwrite;
 
     lastread  = read;
     lastwrite = write;
@@ -194,10 +194,10 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
         return;
     }
 
-    max = autoscaler_get_max(&scaler, readdiff + writediff);
+    max = autoscaler_get_max(&scaler, g->disk_readdiff + g->disk_writediff);
 
-    data[0] = (float)Maximum *  readdiff / (float)max;
-    data[1] = (float)Maximum * writediff / (float)max;
+    data[0] = (float)Maximum *  g->disk_readdiff / (float)max;
+    data[1] = (float)Maximum * g->disk_writediff / (float)max;
     data[2] = (float)Maximum - (data [0] + data[1]);
 }
 

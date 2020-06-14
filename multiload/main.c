@@ -321,6 +321,18 @@ multiload_applet_tooltip_update(LoadGraph *g)
 					       name, tx_in, tx_out);
 		g_free(tx_in);
 		g_free(tx_out);
+	} else if (!strcmp(g->name, "diskload")) {
+		char *disk_read, *disk_write;
+		disk_read = g_format_size (g->disk_readdiff);
+		disk_write = g_format_size (g->disk_writediff);
+		tooltip_text = g_strdup_printf(_("%s:\n"
+		                                 "Read %s\n"
+		                                 "Write %s"),
+		                               name,
+		                               disk_read,
+		                               disk_write);
+		g_free (disk_read);
+		g_free (disk_write);
 	} else {
 		const char *msg;
 		guint i, total_used, percent;
