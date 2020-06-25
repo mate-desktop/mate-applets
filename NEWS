@@ -1,3 +1,31 @@
+### mate-applets 1.25.0
+
+  * update translations
+  * timerapplet: Add timerapplet-preferences.ui
+  * mate-cpufreq-selector: Fix example in man page
+  * command: Add command-preferences.ui
+  * netspeed: Add netspeed-preferences.ui
+  * charpic-about: fix DE name in about dialog
+  * stickynotes: Remove enum conversion warnings
+  * build: set 'enable_polkit=yes' if not given
+  * cpufreq: Port client of selector service to GDBus
+  * build: Remove MATEDESKTOP_CFLAGS and MATEDESKTOP_LIBS
+  * build: Use dbus-glib only when required
+  * Remove unused-function warnings
+  * build: silent build warnings for distcheck
+  * multiload: declaration of ‘screen’ shadows a previous local
+  * Remove unused-variable warnings
+  * stickynotes: Remove strict-prototypes warning
+  * build: Remove --enable-more-warnings configure flag
+  * build: Use WARN_CFLAGS variable
+  * cpufreq: generate missing 256x256 and 64x64 icons from svg file
+  * eyes: generate missing 256x256 and 64x64 icons from svg file
+  * stickynotes: Use gresources for UI files
+  * netspeed: don't define MATELOCALEDIR
+  * build: drop unused matelocaledir variable
+  * tx: pull with fixed translations of pt and pt_BR
+  * drivemount: Remove global variable
+
 ### mate-applets 1.24.0
 
   * update translations
