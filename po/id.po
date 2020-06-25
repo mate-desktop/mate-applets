@@ -14,6 +14,7 @@
 # La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2018
 # Anton Toni Agung <vdrive6@gmail.com>, 2018
 # Kukuh Syafaat <syafaatkukuh@gmail.com>, 2018
+# Chotibul Studio <chotibulstudio@gmail.com>, 2020
 # Andika Triwidada <andika@gmail.com>, 2020
 # 
 msgid ""
@@ -34,7 +35,7 @@ msgstr ""
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
-msgstr ""
+msgstr "Tim Dokumentasi Sun GNOME <gdocteam@sun.com>"
 
 #: accessx-status/applet.c:87 battstat/battstat_applet.c:819
 #: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
@@ -43,11 +44,11 @@ msgstr ""
 #: stickynotes/stickynotes_applet_callbacks.c:368
 #: trashapplet/src/trashapplet.c:421
 msgid "MATE Documentation Team"
-msgstr ""
+msgstr "Tim Dokumentasi MATE"
 
 #: accessx-status/applet.c:98
 msgid "About AccessX Status"
-msgstr ""
+msgstr "Tentang Status AccessX"
 
 #: accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -58,6 +59,8 @@ msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2003 Sun Microsystems\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: accessx-status/applet.c:105 battstat/battstat_applet.c:844
 #: charpick/charpick.c:592 command/command.c:128
@@ -71,7 +74,8 @@ msgstr ""
 "Ahmad Riza H Nst  <ari@160c.afraid.org>\n"
 "Dirgita <dirgita@gmail.com>\n"
 "Tim MATE Indonesia <http://id.mate.org>\n"
-"Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017."
+"Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017.\n"
+"Andika Triwidada <andika@gmail.com>, 2020"
 
 #: accessx-status/applet.c:124
 #, c-format
@@ -195,25 +199,25 @@ msgstr "Tidak diketahui waktu (%d%%) sampai terisi"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] ""
+msgstr[0] "%d menit (%d%%) tersisa"
 
 #: battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] ""
+msgstr[0] "%d menit sampai penuh (%d%%)"
 
 #: battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] ""
+msgstr[0] "%d jam (%d%%) tersisa"
 
 #: battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] ""
+msgstr[0] "%d jam sampai penuh (%d%%)"
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -223,12 +227,12 @@ msgstr "%d %s %d %s (%d%%) lagi"
 #: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
+msgstr[0] "jam"
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
+msgstr[0] "menit"
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -259,6 +263,7 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
+"Anda punya sisa daya baterai selama %d menit (%d%% dari kapasitas total)."
 
 #: battstat/battstat_applet.c:395
 msgid ""
@@ -322,7 +327,7 @@ msgstr "Dukungan legasi diaktifkan."
 
 #: battstat/battstat_applet.c:836
 msgid "About Battery Charge Monitor"
-msgstr ""
+msgstr "Tentang Pemantau Muatan Baterai"
 
 #: battstat/battstat_applet.c:838
 msgid ""
@@ -330,6 +335,9 @@ msgid ""
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2000 The Gnulix Society\n"
+"Hak Cipta © 2002-2005 Free Software Foundation dan yang lain\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
@@ -384,7 +392,7 @@ msgstr "Pabrikan Battstat"
 #. file name)!
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
 msgid "battery"
-msgstr ""
+msgstr "battery"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
@@ -474,13 +482,15 @@ msgstr "Masukkan karakter khusus %s"
 
 #: charpick/charpick.c:583
 msgid "About Character Palette"
-msgstr ""
+msgstr "Tentang Palet Karakter"
 
 #: charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 1998, 2004-2005 Pemelihara Aplet GNOME dan yang lain\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: charpick/charpick.c:587
 msgid ""
@@ -510,7 +520,7 @@ msgstr "Pabrik Aplet Pemilih Karakter"
 #. file name)!
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
 msgid "accessories-character-map"
-msgstr ""
+msgstr "accessories-character-map"
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -595,13 +605,15 @@ msgstr "Preferensi Karakter Palet"
 
 #: command/command.c:122
 msgid "About Command Applet"
-msgstr ""
+msgstr "Tentang Aplet Perintah"
 
 #: command/command.c:124
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2013-2014 Stefano Karapetsas\n"
+"Hak Cipta © 2015-2020 pengembang MATE"
 
 #: command/command.c:127
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
@@ -724,7 +736,7 @@ msgstr "Memantau Skala Frekuensi CPU"
 #. file name)!
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-cpu-frequency-applet"
-msgstr ""
+msgstr "mate-cpu-frequency-applet"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -770,13 +782,15 @@ msgstr "Dokumen bantuan tidak dapat dibuka"
 
 #: cpufreq/src/cpufreq-applet.c:481
 msgid "About CPU Frequency Scaling Monitor"
-msgstr ""
+msgstr "Tentang Pemantau Skala Frekuensi CPU"
 
 #: cpufreq/src/cpufreq-applet.c:483
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2004 Carlos Garcia Campos\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: cpufreq/src/cpufreq-applet.c:485
 msgid "This utility shows the current CPU Frequency Scaling."
@@ -865,13 +879,15 @@ msgstr "K_eluarkan %s"
 
 #: drivemount/drivemount.c:120
 msgid "About Disk Mounter"
-msgstr ""
+msgstr "Tentang Pengait Diska"
 
 #: drivemount/drivemount.c:122
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2004 Canonical Ltd\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
@@ -898,11 +914,11 @@ msgstr "Mengaitkan diska dan perangkat lokal"
 #. file name)!
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
 msgid "media-floppy"
-msgstr ""
+msgstr "media-floppy"
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
-msgstr ""
+msgstr "Tentang Mata"
 
 #: geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
@@ -913,6 +929,8 @@ msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 1999 Dave Camp\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: geyes/geyes.c:389 geyes/geyes.c:419 geyes/geyes.c:421
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
@@ -926,7 +944,7 @@ msgstr "Gaya eyes pada arah penunjuk mouse"
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "Pabrik Aplet Mata"
 
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
@@ -936,7 +954,7 @@ msgstr "Satu set bola mata untuk panel Anda"
 #. file name)!
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-eyes-applet"
-msgstr ""
+msgstr "mate-eyes-applet"
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -953,7 +971,7 @@ msgstr "Terjadi galat yang fatal ketika memuat tema."
 
 #: geyes/themes.c:282
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Preferensi Mata"
 
 #: geyes/themes.c:315
 msgid "Themes"
@@ -965,13 +983,15 @@ msgstr "_Pilih tema:"
 
 #: mateweather/mateweather-about.c:54
 msgid "About Weather Report"
-msgstr ""
+msgstr "Tentang Laporan Cuaca"
 
 #: mateweather/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 1999-2005 by S. Papadimitriou dan yang lain\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
@@ -1290,17 +1310,19 @@ msgstr "Tampilkan informasi cuaca dan prakiraan ke depan"
 #. file name)!
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
 msgid "weather-storm"
-msgstr ""
+msgstr "weather-storm"
 
 #: multiload/main.c:60
 msgid "About System Monitor"
-msgstr ""
+msgstr "Tentang Pemantau Sistem"
 
 #: multiload/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 1999-2005 Free Software Foundation dan yang lain\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: multiload/main.c:64
 msgid ""
@@ -1379,6 +1401,8 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
+"%s:\n"
+"%u%% terpakai"
 
 #: multiload/main.c:362
 msgid "CPU Load"
@@ -1416,11 +1440,11 @@ msgstr "%s/s"
 
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
 msgid "MultiLoad Applet Factory"
-msgstr ""
+msgstr "Pabrik Aplet MultiLoad"
 
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
 msgid "Factory for creating the load applet."
-msgstr ""
+msgstr "Pabrik untuk membuat aplet beban."
 
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
@@ -1430,7 +1454,7 @@ msgstr "Indikator beban sistem"
 #. file name)!
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
 msgid "utilities-system-monitor"
-msgstr ""
+msgstr "utilities-system-monitor"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1535,19 +1559,19 @@ msgstr "Warna garis grid"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:98
 msgid "Indicator color"
-msgstr ""
+msgstr "Warna indikator"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:102
 msgid "Network threshold 1 in bytes"
-msgstr ""
+msgstr "Ambang jaringan 1 dalam byte"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:106
 msgid "Network threshold 2 in bytes"
-msgstr ""
+msgstr "Ambang jaringan 2 dalam byte"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:110
 msgid "Network threshold 3 in bytes"
-msgstr ""
+msgstr "Ambang jaringan 3 dalam byte"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:114
 msgid "Graph color for user-related swap usage"
@@ -1579,7 +1603,7 @@ msgstr "Warna latar belakang untuk grafik beban disk"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:146
 msgid "Uses /proc/diskstats to determine NVMe disk load"
-msgstr ""
+msgstr "Memakai /proc/diskstats untuk menentukan beban diska NVMe"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:150
 msgid "The desktop description file to execute as the system monitor"
@@ -1700,7 +1724,7 @@ msgstr "_garis grid"
 
 #: multiload/properties.c:666
 msgid "_Indicator"
-msgstr ""
+msgstr "_Indikator"
 
 #: multiload/properties.c:670
 msgid "_Used"
@@ -1732,15 +1756,15 @@ msgstr "_Tulis"
 
 #: multiload/properties.c:684
 msgid "Use diskstats for NVMe"
-msgstr ""
+msgstr "Memakai diskstats untuk NVMe"
 
 #: multiload/properties.c:686
 msgid "Network speed thresholds"
-msgstr ""
+msgstr "Ambang kecepatan jaringan"
 
 #: multiload/properties.c:714
 msgid "Threshold 1: "
-msgstr ""
+msgstr "Ambang 1:"
 
 #: multiload/properties.c:745 multiload/properties.c:780
 #: multiload/properties.c:815 netspeed/src/netspeed.c:432
@@ -1749,11 +1773,11 @@ msgstr "byte"
 
 #: multiload/properties.c:753
 msgid "Threshold 2: "
-msgstr ""
+msgstr "Ambang 2:"
 
 #: multiload/properties.c:788
 msgid "Threshold 3: "
-msgstr ""
+msgstr "Ambang 3:"
 
 #: multiload/properties.c:853
 msgid "System Monitor Preferences"
@@ -1872,7 +1896,7 @@ msgstr "Monitor Jaringan"
 #. file name)!
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-netspeed-applet"
-msgstr ""
+msgstr "mate-netspeed-applet"
 
 #: netspeed/src/netspeed.c:427
 msgid "b"
@@ -1953,7 +1977,7 @@ msgstr ""
 
 #: netspeed/src/netspeed.c:821
 msgid "About MATE Netspeed"
-msgstr ""
+msgstr "Tentang MATE Netspeed"
 
 #: netspeed/src/netspeed.c:823
 msgid ""
@@ -1961,6 +1985,9 @@ msgid ""
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2002-2003 Jörgen Scheibengruber\n"
+"Hak Cipta © 2011-2014 Stefano Karapetsas\n"
+"Hak Cipta © 2015-2020 pengembang MATE"
 
 #: netspeed/src/netspeed.c:826
 msgid ""
@@ -1972,7 +1999,7 @@ msgstr ""
 
 #: netspeed/src/netspeed.c:987
 msgid "MATE Netspeed Preferences"
-msgstr ""
+msgstr "Preferensi MATE Netspeed"
 
 #: netspeed/src/netspeed.c:1009
 msgid "General Settings"
@@ -2143,7 +2170,7 @@ msgstr "Tidak diketahui"
 
 #: netspeed/src/netspeed.c:1584
 msgid "MATE Netspeed"
-msgstr ""
+msgstr "MATE Netspeed"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2163,7 +2190,7 @@ msgstr "Buat dan atur kertas catatan pada dekstop Anda"
 #. file name)!
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-sticky-notes-applet"
-msgstr ""
+msgstr "mate-sticky-notes-applet"
 
 #: stickynotes/stickynotes.c:577
 msgid "This note is locked."
@@ -2517,7 +2544,7 @@ msgstr "Kunci _Catatan"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] ""
+msgstr[0] "%d catatan"
 
 #: stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2525,7 +2552,7 @@ msgstr "Tampilkan catatan"
 
 #: stickynotes/stickynotes_applet_callbacks.c:379
 msgid "About Sticky Notes"
-msgstr ""
+msgstr "Tentang Catatan Tempel"
 
 #: stickynotes/stickynotes_applet_callbacks.c:381
 msgid ""
@@ -2533,6 +2560,9 @@ msgid ""
 "Copyright © 2005 Davyd Madeley\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2002-2003 Loban A Rahman\n"
+"Hak Cipta © 2005 Davyd Madeley\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
@@ -2556,7 +2586,7 @@ msgstr "Memulai pewaktu dan menerima notifikasi ketika sudah selesai"
 #. file name)!
 #: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-panel-clock"
-msgstr ""
+msgstr "mate-panel-clock"
 
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
@@ -2588,7 +2618,7 @@ msgstr "Hen_tikan timer"
 
 #: timerapplet/timerapplet.c:82
 msgid "R_eset"
-msgstr ""
+msgstr "R_eset"
 
 #: timerapplet/timerapplet.c:156 timerapplet/timerapplet.c:168
 msgid "Timer finished!"
@@ -2596,13 +2626,15 @@ msgstr "Timer selesai!"
 
 #: timerapplet/timerapplet.c:272
 msgid "About Timer Applet"
-msgstr ""
+msgstr "Tentang Aplet Timer"
 
 #: timerapplet/timerapplet.c:274
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2014 Stefano Karapetsas\n"
+"Hak Cipta © 2015-2020 pengembang MATE"
 
 #: timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
@@ -2639,7 +2671,7 @@ msgstr "Aplet Pewaktu"
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:6
 msgid "Trash Applet Factory"
-msgstr ""
+msgstr "Pabrik Aplet Tong Sampah"
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:9
 msgid "Trash"
@@ -2653,7 +2685,7 @@ msgstr "Ke Tempat Sampah"
 #. file name)!
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
 msgid "user-trash-full"
-msgstr ""
+msgstr "user-trash-full"
 
 #: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
@@ -2667,7 +2699,7 @@ msgstr "_Buka Tempat Sampah"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] ""
+msgstr[0] "%d Butir dalam Tong Sampah"
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
@@ -2684,7 +2716,7 @@ msgstr ""
 
 #: trashapplet/src/trashapplet.c:432
 msgid "About Trash Applet"
-msgstr ""
+msgstr "Tentang Aplet Tong Sampah"
 
 #: trashapplet/src/trashapplet.c:434
 msgid ""
@@ -2692,6 +2724,9 @@ msgid ""
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Hak Cipta © 2004 Michiel Sikkes\n"
+"Hak Cipta © 2008 Ryan Lortie\n"
+"Hak Cipta © 2012-2020 pengembang MATE"
 
 #: trashapplet/src/trashapplet.c:437
 msgid ""
