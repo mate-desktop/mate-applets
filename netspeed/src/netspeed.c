@@ -87,7 +87,7 @@ typedef struct
 
 	gboolean labels_dont_shrink;
 
-	DevInfo devinfo;
+	DevInfo *devinfo;
 	gboolean device_has_changed;
 
 	guint timeout_id;
@@ -155,9 +155,9 @@ change_icons(MateNetspeedApplet *applet)
 	icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
 
 	/* If the user wants a different icon than current, we load it */
-	if (applet->show_icon && applet->change_icon) {
+	if (applet->show_icon && applet->change_icon && applet->devinfo) {
 		dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[applet->devinfo.type],
+			dev_type_icon[applet->devinfo->type],
 			icon_size, icon_scale, NULL, 0, NULL);
 	} else {
 			dev = gtk_icon_theme_load_surface(icon_theme,
@@ -182,7 +182,7 @@ change_icons(MateNetspeedApplet *applet)
 	cairo_surface_destroy(in_arrow);
 	cairo_surface_destroy(out_arrow);
 
-	if (applet->devinfo.running) {
+	if (applet->devinfo && applet->devinfo->running) {
 		gtk_widget_show(applet->in_box);
 		gtk_widget_show(applet->out_box);
 	} else {
@@ -327,8 +327,8 @@ applet_change_size_or_orient(MatePanelApplet *applet_widget, int arg1, MateNetsp
 static void
 change_quality_icon(MateNetspeedApplet *applet)
 {
-	if (applet->devinfo.type == DEV_WIRELESS &&
-		applet->devinfo.up && applet->show_quality_icon) {
+	if (applet->devinfo->type == DEV_WIRELESS &&
+		applet->devinfo->up && applet->show_quality_icon) {
 		gtk_widget_show(applet->qual_pix);
 	} else {
 		gtk_widget_hide(applet->qual_pix);
@@ -344,7 +344,7 @@ update_quality_icon(MateNetspeedApplet *applet)
 
 	unsigned int q;
 
-	q = (applet->devinfo.qual);
+	q = (applet->devinfo->qual);
 	q /= 25;
 	q = CLAMP(q, 0, 3); /* q out of range would crash when accessing qual_surfaces[q] */
 	gtk_image_set_from_surface (GTK_IMAGE(applet->qual_pix), applet->qual_surfaces[q]);
@@ -393,7 +393,7 @@ icon_theme_changed_cb(GtkIconTheme *icon_theme, gpointer user_data)
     MateNetspeedApplet *applet = (MateNetspeedApplet*)user_data;
 
     init_quality_surfaces(user_data);
-    if (applet->devinfo.type == DEV_WIRELESS && applet->devinfo.up)
+    if (applet->devinfo->type == DEV_WIRELESS && applet->devinfo->up)
         update_quality_icon(user_data);
     change_icons(user_data);
 }
@@ -540,18 +540,18 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 static gboolean
 set_applet_devinfo(MateNetspeedApplet* applet, const char* iface)
 {
-	DevInfo info;
+	DevInfo *info;
 
-	get_device_info(iface, &info);
+	get_device_info (iface, &info);
 
-	if (info.running) {
-		free_device_info(&applet->devinfo);
+	if (info->running) {
+		free_device_info(applet->devinfo);
 		applet->devinfo = info;
 		applet->device_has_changed = TRUE;
 		return TRUE;
 	}
 
-	free_device_info(&info);
+	free_device_info (info);
 	return FALSE;
 }
 
@@ -619,16 +619,16 @@ update_applet(MateNetspeedApplet *applet)
 	double inrate, outrate;
 	char *inbytes, *outbytes;
 	int i;
-	DevInfo oldinfo;
+	DevInfo *oldinfo;
 
 	if (!applet)	return;
 
 	/* First we try to figure out if the device has changed */
 	oldinfo = applet->devinfo;
-	get_device_info(oldinfo.name, &applet->devinfo);
-	if (compare_device_info(&applet->devinfo, &oldinfo))
+	get_device_info (oldinfo->name, &applet->devinfo);
+	if (compare_device_info (applet->devinfo, oldinfo))
 		applet->device_has_changed = TRUE;
-	free_device_info(&oldinfo);
+	free_device_info (oldinfo);
 
 	/* If the device has changed, reintialize stuff */
 	if (applet->device_has_changed) {
@@ -636,8 +636,8 @@ update_applet(MateNetspeedApplet *applet)
 		change_quality_icon(applet);
 		for (i = 0; i < OLD_VALUES; i++)
 		{
-			applet->in_old[i] = applet->devinfo.rx;
-			applet->out_old[i] = applet->devinfo.tx;
+			applet->in_old[i] = applet->devinfo->rx;
+			applet->out_old[i] = applet->devinfo->tx;
 		}
 		for (i = 0; i < GRAPH_VALUES; i++)
 		{
@@ -650,12 +650,12 @@ update_applet(MateNetspeedApplet *applet)
 	}
 
 	/* create the strings for the labels and tooltips */
-	if (applet->devinfo.running)
+	if (applet->devinfo->running)
 	{
-		if (applet->devinfo.rx < applet->in_old[applet->index_old]) indiff = 0;
-		else indiff = applet->devinfo.rx - applet->in_old[applet->index_old];
-		if (applet->devinfo.tx < applet->out_old[applet->index_old]) outdiff = 0;
-		else outdiff = applet->devinfo.tx - applet->out_old[applet->index_old];
+		if (applet->devinfo->rx < applet->in_old[applet->index_old]) indiff = 0;
+		else indiff = applet->devinfo->rx - applet->in_old[applet->index_old];
+		if (applet->devinfo->tx < applet->out_old[applet->index_old]) outdiff = 0;
+		else outdiff = applet->devinfo->tx - applet->out_old[applet->index_old];
 
 		inrate = (double)indiff / OLD_VALUES_DBL;
 		outrate = (double)outdiff / OLD_VALUES_DBL;
@@ -665,30 +665,30 @@ update_applet(MateNetspeedApplet *applet)
 		applet->max_graph = MAX(inrate, applet->max_graph);
 		applet->max_graph = MAX(outrate, applet->max_graph);
 
-		format_transfer_rate (applet->devinfo.rx_rate, inrate, applet->show_bits);
-		format_transfer_rate (applet->devinfo.tx_rate, outrate, applet->show_bits);
-		format_transfer_rate (applet->devinfo.sum_rate, inrate + outrate, applet->show_bits);
+		format_transfer_rate (applet->devinfo->rx_rate, inrate, applet->show_bits);
+		format_transfer_rate (applet->devinfo->tx_rate, outrate, applet->show_bits);
+		format_transfer_rate (applet->devinfo->sum_rate, inrate + outrate, applet->show_bits);
 	} else {
-		applet->devinfo.rx_rate[0] = '\0';
-		applet->devinfo.tx_rate[0] = '\0';
-		applet->devinfo.sum_rate[0] = '\0';
+		applet->devinfo->rx_rate[0] = '\0';
+		applet->devinfo->tx_rate[0] = '\0';
+		applet->devinfo->sum_rate[0] = '\0';
 		applet->in_graph[applet->index_graph] = 0;
 		applet->out_graph[applet->index_graph] = 0;
 	}
 
-	if (applet->devinfo.type == DEV_WIRELESS) {
-		if (applet->devinfo.up)
+	if (applet->devinfo->type == DEV_WIRELESS) {
+		if (applet->devinfo->up)
 			update_quality_icon(applet);
 
 		if (applet->signalbar) {
 			float quality;
 			char *text;
 
-			quality = applet->devinfo.qual / 100.0f;
+			quality = applet->devinfo->qual / 100.0f;
 			if (quality > 1.0)
 				quality = 1.0;
 
-			text = g_strdup_printf ("%d %%", applet->devinfo.qual);
+			text = g_strdup_printf ("%d %%", applet->devinfo->qual);
 			gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (applet->signalbar), quality);
 			gtk_progress_bar_set_text (GTK_PROGRESS_BAR (applet->signalbar), text);
 			g_free(text);
@@ -697,9 +697,9 @@ update_applet(MateNetspeedApplet *applet)
 		/* Refresh the value of Conected Time */
 		if (applet->connected_time_text) {
 			char *text;
-			text = format_time (applet->devinfo.connected_time);
+			text = format_time (applet->devinfo->connected_time);
 			gtk_label_set_text (GTK_LABEL (applet->connected_time_text),
-			                    applet->devinfo.connected_time > 0 ? text : _("na"));
+			                    applet->devinfo->connected_time > 0 ? text : _("na"));
 			g_free (text);
 		}
 #endif
@@ -709,26 +709,26 @@ update_applet(MateNetspeedApplet *applet)
 
 	/* Refresh the text of the labels and tooltip */
 	if (applet->show_sum) {
-		gtk_label_set_text (GTK_LABEL (applet->sum_label), applet->devinfo.sum_rate);
+		gtk_label_set_text (GTK_LABEL (applet->sum_label), applet->devinfo->sum_rate);
 	} else {
-		gtk_label_set_text (GTK_LABEL (applet->in_label), applet->devinfo.rx_rate);
-		gtk_label_set_text (GTK_LABEL (applet->out_label), applet->devinfo.tx_rate);
+		gtk_label_set_text (GTK_LABEL (applet->in_label), applet->devinfo->rx_rate);
+		gtk_label_set_text (GTK_LABEL (applet->out_label), applet->devinfo->tx_rate);
 	}
 
 	/* Refresh the values of the Infodialog */
 	if (applet->inbytes_text) {
 		if (applet->show_bits)
-			inbytes = g_format_size_full (applet->devinfo.rx*8, G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
+			inbytes = g_format_size_full (applet->devinfo->rx*8, G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
 		else
-			inbytes = g_format_size_full (applet->devinfo.rx, G_FORMAT_SIZE_IEC_UNITS);
+			inbytes = g_format_size_full (applet->devinfo->rx, G_FORMAT_SIZE_IEC_UNITS);
 		gtk_label_set_text(GTK_LABEL(applet->inbytes_text), inbytes);
 		g_free(inbytes);
 	}
 	if (applet->outbytes_text) {
 		if (applet->show_bits)
-			outbytes = g_format_size_full (applet->devinfo.tx*8, G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
+			outbytes = g_format_size_full (applet->devinfo->tx*8, G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
 		else
-			outbytes = g_format_size_full (applet->devinfo.tx, G_FORMAT_SIZE_IEC_UNITS);
+			outbytes = g_format_size_full (applet->devinfo->tx, G_FORMAT_SIZE_IEC_UNITS);
 		gtk_label_set_text(GTK_LABEL(applet->outbytes_text), outbytes);
 		g_free(outbytes);
 	}
@@ -737,8 +737,8 @@ update_applet(MateNetspeedApplet *applet)
 		gtk_widget_queue_draw (GTK_WIDGET (applet->drawingarea));
 
 	/* Save old values... */
-	applet->in_old[applet->index_old] = applet->devinfo.rx;
-	applet->out_old[applet->index_old] = applet->devinfo.tx;
+	applet->in_old[applet->index_old] = applet->devinfo->rx;
+	applet->out_old[applet->index_old] = applet->devinfo->tx;
 	applet->index_old = (applet->index_old + 1) % OLD_VALUES;
 
 	/* Move the graphindex. Check if we can scale down again */
@@ -756,13 +756,13 @@ update_applet(MateNetspeedApplet *applet)
 
 	/* Always follow the default route */
 	if (applet->auto_change_device) {
-		gboolean change_device_now = !applet->devinfo.running;
+		gboolean change_device_now = !applet->devinfo->running;
 		if (!change_device_now) {
 			const gchar *default_route;
 			default_route = get_default_route();
 			change_device_now = (default_route != NULL
 						&& strcmp(default_route,
-							applet->devinfo.name));
+							applet->devinfo->name));
 		}
 		if (change_device_now) {
 			search_for_up_if(applet);
@@ -882,10 +882,10 @@ device_change_cb(GtkComboBox *combo, MateNetspeedApplet *applet)
 		for (i = 1; i < active; i++) {
 			devices = g_list_next(devices);
 		}
-		if (g_str_equal(devices->data, applet->devinfo.name))
+		if (g_str_equal(devices->data, applet->devinfo->name))
 			return;
-		free_device_info(&applet->devinfo);
-		get_device_info(devices->data, &applet->devinfo);
+		free_device_info (applet->devinfo);
+		get_device_info (devices->data, &applet->devinfo);
 	}
 
 	applet->device_has_changed = TRUE;
@@ -905,7 +905,7 @@ pref_response_cb (GtkDialog *dialog, gint id, gpointer data)
 	return;
     }
     g_settings_delay (applet->gsettings);
-    g_settings_set_string (applet->gsettings, "device", applet->devinfo.name);
+    g_settings_set_string (applet->gsettings, "device", applet->devinfo->name);
     g_settings_set_boolean (applet->gsettings, "auto-change-device", applet->auto_change_device);
     g_settings_apply (applet->gsettings);
 
@@ -999,7 +999,7 @@ settings_cb(GtkAction *action, gpointer data)
 	ptr = devices = get_available_devices();
 	for (i = 0; ptr; ptr = g_list_next(ptr)) {
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(applet->network_device_combo), ptr->data);
-		if (g_str_equal(ptr->data, applet->devinfo.name)) active = (i + 1);
+		if (g_str_equal(ptr->data, applet->devinfo->name)) active = (i + 1);
 		++i;
 	}
 	if (active < 0 || applet->auto_change_device) {
@@ -1127,7 +1127,7 @@ showinfo_cb(GtkAction *action, gpointer data)
 		return;
 	}
 
-	text = g_strdup_printf(_("Device Details for %s"), applet->devinfo.name);
+	text = g_strdup_printf(_("Device Details for %s"), applet->devinfo->name);
 	applet->details = GTK_DIALOG(gtk_dialog_new_with_buttons(text,
 		NULL,
 		GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -1176,16 +1176,16 @@ showinfo_cb(GtkAction *action, gpointer data)
 	inbytes_label = gtk_label_new(_("Bytes in:"));
 	outbytes_label = gtk_label_new(_("Bytes out:"));
 
-	ip_text = gtk_label_new(applet->devinfo.ip ? applet->devinfo.ip : _("none"));
-	netmask_text = gtk_label_new(applet->devinfo.netmask ? applet->devinfo.netmask : _("none"));
-	if (applet->devinfo.type != DEV_LO) {
-		text = mac_addr_n2a (applet->devinfo.hwaddr);
+	ip_text = gtk_label_new(applet->devinfo->ip[0] != '\0' ? applet->devinfo->ip : _("none"));
+	netmask_text = gtk_label_new(applet->devinfo->netmask[0] != '\0' ? applet->devinfo->netmask : _("none"));
+	if (applet->devinfo->type != DEV_LO) {
+		text = mac_addr_n2a (applet->devinfo->hwaddr);
 		hwaddr_text = gtk_label_new (text);
 		g_free (text);
 	} else {
 		hwaddr_text = gtk_label_new (_("none"));
 	}
-	ptpip_text = gtk_label_new(applet->devinfo.ptpip ? applet->devinfo.ptpip : _("none"));
+	ptpip_text = gtk_label_new(applet->devinfo->ptpip[0] != '\0' ? applet->devinfo->ptpip : _("none"));
 	applet->inbytes_text = gtk_label_new("0 byte");
 	applet->outbytes_text = gtk_label_new("0 byte");
 
@@ -1233,11 +1233,11 @@ showinfo_cb(GtkAction *action, gpointer data)
 	gtk_grid_attach(GTK_GRID(grid), applet->outbytes_text, 3, 2, 1, 1);
 
 	/* check if we got an ipv6 address */
-	if (applet->devinfo.ipv6 && (strlen (applet->devinfo.ipv6) > 2)) {
+	if (strlen (applet->devinfo->ipv6) > 2) {
 		GtkWidget *ipv6_label, *ipv6_text;
 
 		ipv6_label = gtk_label_new (_("IPV6 Address:"));
-		ipv6_text = gtk_label_new (applet->devinfo.ipv6);
+		ipv6_text = gtk_label_new (applet->devinfo->ipv6);
 
 		gtk_label_set_selectable (GTK_LABEL (ipv6_text), TRUE);
 
@@ -1249,7 +1249,7 @@ showinfo_cb(GtkAction *action, gpointer data)
 		gtk_grid_attach (GTK_GRID (grid), ipv6_text, 1, 3, 1, 1);
 	}
 
-	if (applet->devinfo.type == DEV_WIRELESS) {
+	if (applet->devinfo->type == DEV_WIRELESS) {
 		GtkWidget *signal_label;
 		GtkWidget *essid_label;
 		GtkWidget *essid_text;
@@ -1266,34 +1266,34 @@ showinfo_cb(GtkAction *action, gpointer data)
 
 		applet->signalbar = gtk_progress_bar_new ();
 
-		quality = applet->devinfo.qual / 100.0f;
+		quality = applet->devinfo->qual / 100.0f;
 		if (quality > 1.0)
 		quality = 1.0;
 
-		text = g_strdup_printf ("%d %%", applet->devinfo.qual);
+		text = g_strdup_printf ("%d %%", applet->devinfo->qual);
 		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (applet->signalbar), quality);
 		gtk_progress_bar_set_text (GTK_PROGRESS_BAR (applet->signalbar), text);
 		g_free(text);
 
 		signal_label = gtk_label_new (_("Signal Strength:"));
 		essid_label = gtk_label_new (_("ESSID:"));
-		essid_text = gtk_label_new (applet->devinfo.essid ? applet->devinfo.essid : _("none"));
+		essid_text = gtk_label_new (applet->devinfo->essid ? applet->devinfo->essid : _("none"));
 
 #ifdef HAVE_NL
 		station_label = gtk_label_new (_("Station:"));
-		if (applet->devinfo.running) {
-			text = mac_addr_n2a (applet->devinfo.station_mac_addr);
+		if (applet->devinfo->running) {
+			text = mac_addr_n2a (applet->devinfo->station_mac_addr);
 			station_text = gtk_label_new (text);
 			g_free (text);
 		} else {
 			station_text = gtk_label_new (_("unknown"));
 		}
 		channel_label = gtk_label_new (_("Channel:"));
-		channel_text = gtk_label_new (applet->devinfo.channel ? applet->devinfo.channel : _("unknown"));
+		channel_text = gtk_label_new (applet->devinfo->channel ? applet->devinfo->channel : _("unknown"));
 		connected_time_label = gtk_label_new (_("Connected Time:"));
 
-		text = format_time (applet->devinfo.connected_time);
-		applet->connected_time_text = gtk_label_new (applet->devinfo.connected_time > 0 ? text : _("na"));
+		text = format_time (applet->devinfo->connected_time);
+		applet->connected_time_text = gtk_label_new (applet->devinfo->connected_time > 0 ? text : _("na"));
 		g_free (text);
 #endif /* HAVE_NL */
 
@@ -1385,69 +1385,65 @@ label_size_allocate_cb(GtkWidget *widget, GtkAllocation *allocation, MateNetspee
 }
 
 static gboolean
-applet_button_press(GtkWidget *widget, GdkEventButton *event, MateNetspeedApplet *applet)
+applet_button_press (GtkWidget          *widget,
+                     GdkEventButton     *event,
+                     MateNetspeedApplet *applet)
 {
-	if (event->button == 1)
-	{
-		GError *error = NULL;
+    if (event->button == 1) {
+        GError *error = NULL;
 
-		if (applet->connect_dialog)
-		{
-			gtk_window_present(GTK_WINDOW(applet->connect_dialog));
-			return FALSE;
-		}
+        if (applet->connect_dialog) {
+            gtk_window_present (GTK_WINDOW (applet->connect_dialog));
+            return FALSE;
+        }
 
-		if (applet->up_cmd && applet->down_cmd)
-		{
-			const char *question;
-			int response;
+        if (applet->up_cmd && applet->down_cmd) {
+            char *question;
+            int   response;
 
-			if (applet->devinfo.up)
-			{
-				question = _("Do you want to disconnect %s now?");
-			}
-			else
-			{
-				question = _("Do you want to connect %s now?");
-			}
+            if (applet->devinfo->up)
+                question = g_strdup_printf (_("Do you want to disconnect %s now?"),
+                                            applet->devinfo->name);
+            else
+                question = g_strdup_printf (_("Do you want to connect %s now?"),
+                                            applet->devinfo->name);
 
-			applet->connect_dialog = gtk_message_dialog_new(NULL,
-					GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-					GTK_MESSAGE_QUESTION, GTK_BUTTONS_YES_NO,
-					question,
-					applet->devinfo.name);
-			response = gtk_dialog_run(GTK_DIALOG(applet->connect_dialog));
-			gtk_widget_destroy (applet->connect_dialog);
-			applet->connect_dialog = NULL;
+            applet->connect_dialog =
+                gtk_message_dialog_new (NULL,
+                                        GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_QUESTION, GTK_BUTTONS_YES_NO,
+                                        "%s", question);
 
-			if (response == GTK_RESPONSE_YES)
-			{
-				GtkWidget *dialog;
-				char *command;
+            response = gtk_dialog_run (GTK_DIALOG (applet->connect_dialog));
+            gtk_widget_destroy (applet->connect_dialog);
+            applet->connect_dialog = NULL;
+            g_free (question);
 
-				command = g_strdup_printf("%s %s",
-					applet->devinfo.up ? applet->down_cmd : applet->up_cmd,
-					applet->devinfo.name);
+            if (response == GTK_RESPONSE_YES) {
+                GtkWidget *dialog;
+                char      *command;
 
-				if (!g_spawn_command_line_async(command, &error))
-				{
+                command = g_strdup_printf ("%s %s",
+                                           applet->devinfo->up ? applet->down_cmd : applet->up_cmd,
+                                           applet->devinfo->name);
 
-					dialog = gtk_message_dialog_new_with_markup(NULL,
-							GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-							GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
-							_("<b>Running command %s failed</b>\n%s"),
-							command,
-							error->message);
-					gtk_dialog_run (GTK_DIALOG (dialog));
-					gtk_widget_destroy (dialog);
-					g_error_free (error);
-				}
-				g_free(command);
-			}
-		}
-	}
+                if (!g_spawn_command_line_async (command, &error)) {
+                    dialog = gtk_message_dialog_new_with_markup (NULL,
+                                                                 GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                                 GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+                                                                 _("<b>Running command %s failed</b>\n%s"), command, error->message);
+                    gtk_dialog_run (GTK_DIALOG (dialog));
+                    gtk_widget_destroy (dialog);
 
-	return FALSE;
+                    g_error_free (error);
+                }
+
+                g_free(command);
+            }
+        }
+    }
+
+    return FALSE;
 }
 
 /* Frees the applet and all the data it contains
@@ -1476,7 +1472,7 @@ applet_destroy(MatePanelApplet *applet_widget, MateNetspeedApplet *applet)
 		g_object_unref (applet->gsettings);
 
 	/* Should never be NULL */
-	free_device_info(&applet->devinfo);
+	free_device_info(applet->devinfo);
 	g_free(applet);
 	return;
 }
@@ -1493,42 +1489,42 @@ update_tooltip(MateNetspeedApplet* applet)
 
   tooltip = g_string_new("");
 
-  if (!applet->devinfo.running)
-    g_string_printf(tooltip, _("%s is down"), applet->devinfo.name);
+  if (!applet->devinfo->running)
+    g_string_printf(tooltip, _("%s is down"), applet->devinfo->name);
   else {
     if (applet->show_sum) {
       g_string_printf(
 		      tooltip,
 		      _("%s: %s\nin: %s out: %s"),
-		      applet->devinfo.name,
-		      applet->devinfo.ip ? applet->devinfo.ip : _("has no ip"),
-		      applet->devinfo.rx_rate,
-		      applet->devinfo.tx_rate
+		      applet->devinfo->name,
+		      applet->devinfo->ip[0] != '\0' ? applet->devinfo->ip : _("has no ip"),
+		      applet->devinfo->rx_rate,
+		      applet->devinfo->tx_rate
 		      );
     } else {
       g_string_printf(
 		      tooltip,
 		      _("%s: %s\nsum: %s"),
-		      applet->devinfo.name,
-		      applet->devinfo.ip ? applet->devinfo.ip : _("has no ip"),
-		      applet->devinfo.sum_rate
+		      applet->devinfo->name,
+		      applet->devinfo->ip[0] != '\0' ? applet->devinfo->ip : _("has no ip"),
+		      applet->devinfo->sum_rate
 		      );
     }
 #ifdef HAVE_NL
-    if (applet->devinfo.type == DEV_WIRELESS)
+    if (applet->devinfo->type == DEV_WIRELESS)
       g_string_append_printf (tooltip,
                               _("\nESSID: %s\nRSSI: %d dBm\nRX Bitrate: %s\nTX Bitrate: %s"),
-                              applet->devinfo.essid ? applet->devinfo.essid : _("unknown"),
-                              applet->devinfo.rssi,
-                              applet->devinfo.rx_bitrate,
-                              applet->devinfo.tx_bitrate);
+                              applet->devinfo->essid ? applet->devinfo->essid : _("unknown"),
+                              applet->devinfo->rssi,
+                              applet->devinfo->rx_bitrate,
+                              applet->devinfo->tx_bitrate);
 #endif /* HAVE_NL */
 #ifdef HAVE_IW
-    if (applet->devinfo.type == DEV_WIRELESS)
+    if (applet->devinfo->type == DEV_WIRELESS)
       g_string_append_printf (tooltip,
                               _("\nESSID: %s\nStrength: %d %%"),
-                              applet->devinfo.essid ? applet->devinfo.essid : _("unknown"),
-                              applet->devinfo.qual);
+                              applet->devinfo->essid ? applet->devinfo->essid : _("unknown"),
+                              applet->devinfo->qual);
 #endif /* HAVE_IW */
   }
 
@@ -1583,9 +1579,8 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	/* Alloc the applet. The "NULL-setting" is really redudant
  	 * but aren't we paranoid?
 	 */
-	applet = g_malloc0(sizeof(MateNetspeedApplet));
+	applet = g_new0 (MateNetspeedApplet, 1);
 	applet->applet = applet_widget;
-	memset(&applet->devinfo, 0, sizeof(DevInfo));
 
 	/* Set the default colors of the graph
 	*/
@@ -1649,7 +1644,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 		g_free(tmp);
 	}
 
-	if (!applet->devinfo.name) {
+	if (!applet->devinfo) {
 		GList *ptr, *devices = get_available_devices();
 		ptr = devices;
 		while (ptr) {
@@ -1661,7 +1656,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 		}
 		free_devices_list(devices);
 	}
-	if (!applet->devinfo.name)
+	if (!applet->devinfo)
 		get_device_info("lo", &applet->devinfo);
 	applet->device_has_changed = TRUE;
 
