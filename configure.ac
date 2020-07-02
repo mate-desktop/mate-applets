@@ -150,7 +150,7 @@ if test "x$with_upower" != xno; then
    PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED,
          HAVE_UPOWER="yes",
          HAVE_UPOWER="no")
-         
+
    if test "x$HAVE_UPOWER" = "xyes"; then
        AC_DEFINE(HAVE_UPOWER, 1, [UPOWER available])
    fi
@@ -399,24 +399,54 @@ dnl ***************************************************************************
 AM_CONDITIONAL(BUILD_TIMERAPPLET, test "x$HAVE_LIBNOTIFY" = "xyes")
 
 dnl ***************************************************************************
-dnl *** iwlib support for netspeed applet                                   ***
+dnl *** iwlib/netfilter support for netspeed applet                         ***
 dnl ***************************************************************************
-have_iwevgenie=no
-AC_MSG_CHECKING([for libiw >= 28pre9])
-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
-                #include <iwlib.h>
-                #ifndef IWEVGENIE
-                #error "not found"
-                #endif])],
-               [have_iwevgenie=yes],
-    AC_MSG_WARN([iwlib.h not found. It's provided by libiw or wireless-tools (depends on the distro)])
-)
-AC_MSG_RESULT([$have_iwevgenie])
-if test "$have_iwevgenie" = yes; then
-    AC_DEFINE(HAVE_IW, 1, [Defined if you have libiw/wireless-tools (depends on the distro)])
-    IWLIB=-liw
-    AC_SUBST(IWLIB)
+
+AC_ARG_WITH(iwevgenie,
+            AS_HELP_STRING([--with-iwevgenie],
+                           [Build with iwlib support for netspeed applet]),
+            [],
+            [with_iwevgenie=no])
+AC_ARG_WITH(nl,
+            AS_HELP_STRING([--with-nl],
+                           [Build with netfilter support for netspeed applet]),
+            [],
+            [with_nl=yes])
+
+if test "x$with_iwevgenie" = "xyes" -a "x$with_nl" = "xyes"; then
+  AC_MSG_ERROR([--with-iwevgenie and --with-nl cannot be used at the same time])
 fi
+
+have_iwevgenie=no
+if test "x$with_iwevgenie" = "xyes"; then
+  AC_MSG_CHECKING([for libiw >= 28pre9])
+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
+    #include <iwlib.h>
+    #ifndef IWEVGENIE
+    #error "not found"
+    #endif])],
+    [have_iwevgenie=yes],
+    AC_MSG_WARN([iwlib.h not found. It's provided by libiw or wireless-tools (depends on the distro)])
+  )
+  AC_MSG_RESULT([$have_iwevgenie])
+fi
+if test "x$have_iwevgenie" = "xyes"; then
+  AC_DEFINE(HAVE_IW, 1, [Defined if you have libiw/wireless-tools (depends on the distro)])
+  IW_LIBS=-liw
+  AC_SUBST(IW_LIBS)
+fi
+AM_CONDITIONAL(HAVE_IW, test "x$have_iwevgenie" = "xyes")
+
+have_nl=no
+if test "x$with_nl" = "xyes"; then
+  PKG_CHECK_MODULES(NL, libnl-genl-3.0, [have_nl=yes])
+fi
+if test "x$have_nl" = "xyes"; then
+  AC_DEFINE(HAVE_NL, 1, [Enable Generic Netlink Library])
+  AC_SUBST(NL_CFLAGS)
+  AC_SUBST(NL_LIBS)
+fi
+AM_CONDITIONAL(HAVE_NL, test "x$have_nl" = "xyes")
 
 dnl ***************************************************************************
 dnl *** Check if IPv6 is available                                          ***
@@ -627,6 +657,7 @@ mate-applets-$VERSION configure summary:
         - multiload                $build_gtop_applets
         - netspeed                 $build_gtop_applets
             - iwlib support        $have_iwevgenie
+            - netfilter support    $have_nl
         - stickynotes              $enable_stickynotes
         - timerapplet              $HAVE_LIBNOTIFY
         - trashapplet              always

@@ -37,6 +37,10 @@
 #define SIOCGIWNAME     0x8B01          /* get name == wireless protocol */
 #define SIOCGIWENCODE	0x8B2B		    /* get encoding token & mode */
 
+#define ETH_ALEN        8
+#define ETH_LEN         20
+#define MAX_FORMAT_SIZE 15
+
 /* Different types of interfaces */
 typedef enum
 {
@@ -57,16 +61,24 @@ typedef struct
 	char *name;
 	char *ip;
 	char *netmask; 
-	char *hwaddr;
+	guint8 hwaddr[ETH_ALEN];
 	char *ptpip;
 	char *ipv6;
 	char *essid;
 	gboolean up, running;
 	guint64 tx, rx;
 	int qual;
-	char *tx_rate;
-	char *rx_rate;
-	char *sum_rate;
+	char rx_rate[MAX_FORMAT_SIZE];
+	char tx_rate[MAX_FORMAT_SIZE];
+	char sum_rate[MAX_FORMAT_SIZE];
+#ifdef HAVE_NL
+	int rssi;
+	char *tx_bitrate;
+	char *rx_bitrate;
+	char *channel;
+	guint32 connected_time;
+	unsigned char station_mac_addr[ETH_ALEN];
+#endif /* HAVE_NL */
 } DevInfo;
 
 GList*
@@ -90,6 +102,6 @@ get_device_info(const char *device, DevInfo *info);
 gboolean
 compare_device_info(const DevInfo *a, const DevInfo *b);
 
-void 
+void
 get_wireless_info (DevInfo *devinfo);
 #endif /* _BACKEND_H */
