@@ -13,6 +13,10 @@ AM_CPPFLAGS =			\
 	-DNETSPEED_MENU_UI_DIR=\""$(datadir)/mate/ui"\" \
 	${WARN_CFLAGS}
 
+if HAVE_NL
+AM_CPPFLAGS += $(NL_CFLAGS)
+endif
+
 libexec_PROGRAMS = mate-netspeed-applet
 
 BUILT_SOURCES = netspeed-resources.c netspeed-resources.h
@@ -23,9 +27,23 @@ mate_netspeed_applet_SOURCES =	\
 	netspeed.c		\
 	$(NULL)
 
+if HAVE_NL
+mate_netspeed_applet_SOURCES +=	\
+	nl80211.h		\
+	ieee80211.h		\
+	$(NULL)
+endif
+
 mate_netspeed_applet_LDADD = $(GIO_LIBS) $(GTOP_APPLETS_LIBS) \
        $(MATE_APPLETS4_LIBS) \
-       $(IWLIB) $(INTLLIBS) -lm
+       $(INTLLIBS) -lm
+
+if HAVE_IW
+mate_netspeed_applet_LDADD += $(IW_LIBS)
+endif
+if HAVE_NL
+mate_netspeed_applet_LDADD += $(NL_LIBS)
+endif
 
 netspeed-resources.c: netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/netspeed-resources.gresource.xml)
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name netspeed $<
