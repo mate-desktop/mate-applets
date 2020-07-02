@@ -149,35 +149,30 @@ free_devices_list(GList *list)
 /* Frees a DevInfo struct and all the stuff it contains
  */
 void
-free_device_info(DevInfo *devinfo)
+free_device_info (DevInfo *devinfo)
 {
-	g_free(devinfo->name);
-	g_free(devinfo->ip);
-	g_free(devinfo->netmask);
-	g_free(devinfo->ptpip);
-	g_free(devinfo->ipv6);
-	g_free(devinfo->essid);
+    g_free (devinfo->name);
+    g_free (devinfo->essid);
 #ifdef HAVE_NL
-	g_free(devinfo->tx_bitrate);
-	g_free(devinfo->rx_bitrate);
-	g_free(devinfo->channel);
+    g_free (devinfo->tx_bitrate);
+    g_free (devinfo->rx_bitrate);
+    g_free (devinfo->channel);
 #endif /* HAVE_NL */
+    g_free (devinfo);
 }
 
-static char*
-format_ipv4(guint32 ip)
+static void
+format_ipv4 (guint32  ip,
+             char    *dest)
 {
-	char *str = g_malloc(INET_ADDRSTRLEN);
-	inet_ntop(AF_INET, &ip, str, INET_ADDRSTRLEN);
-	return str;
+    inet_ntop (AF_INET, &ip, dest, INET_ADDRSTRLEN);
 }
 
-static char*
-format_ipv6(const guint8 ip[16])
+static void
+format_ipv6 (const guint8  ip[16],
+             char         *dest)
 {
-	char *str = g_malloc(INET6_ADDRSTRLEN);
-	inet_ntop(AF_INET6, ip, str, INET6_ADDRSTRLEN);
-	return str;
+    inet_ntop (AF_INET6, ip, dest, INET6_ADDRSTRLEN);
 }
 
 /* TODO:
@@ -197,25 +192,24 @@ get_ptp_info(DevInfo *devinfo)
 	if (ioctl(fd, SIOCGIFDSTADDR, &request) >= 0) {
 		struct sockaddr_in* addr;
 		addr = (struct sockaddr_in*)&request.ifr_dstaddr;
-		devinfo->ptpip = format_ipv4(addr->sin_addr.s_addr);
+		format_ipv4 (addr->sin_addr.s_addr, devinfo->ptpip);
 	}
 
 	close(fd);
 }
 
-
-
-
 void
-get_device_info (const char *device,
-                 DevInfo    *devinfo)
+get_device_info (const char  *device,
+                 DevInfo    **info)
 {
+	DevInfo *devinfo;
 	glibtop_netload netload;
 	gboolean ptp = FALSE;
 
 	g_assert(device);
 
-	memset(devinfo, 0, sizeof *devinfo);
+	*info = g_new0 (DevInfo, 1);
+	devinfo = *info;
 
 	devinfo->name = g_strdup(device);
 	devinfo->type = DEV_UNKNOWN;
@@ -265,9 +259,11 @@ get_device_info (const char *device,
     }
 
     if (devinfo->running) {
-        devinfo->ip = format_ipv4(netload.address);
-        devinfo->netmask = format_ipv4(netload.subnet);
-        devinfo->ipv6 = format_ipv6(netload.address6);
+        if (netload.address > 0)
+            format_ipv4 (netload.address, devinfo->ip);
+        if (netload.subnet > 0)
+            format_ipv4 (netload.subnet, devinfo->netmask);
+        format_ipv6 (netload.address6, devinfo->ipv6);
 #if defined (HAVE_NL)
         if (devinfo->type != DEV_WIRELESS) {
             devinfo->tx = netload.bytes_out;
@@ -285,17 +281,14 @@ get_device_info (const char *device,
 }
 
 gboolean
-compare_device_info(const DevInfo *a, const DevInfo *b)
+compare_device_info (const DevInfo *a,
+                     const DevInfo *b)
 {
 	g_assert(a && b);
 	g_assert(a->name && b->name);
 
 	if (!g_str_equal(a->name, b->name)) return TRUE;
-	if (a->ip && b->ip) {
-		if (!g_str_equal(a->ip, b->ip)) return TRUE;
-	} else {
-		if (a->ip || b->ip) return TRUE;
-	}
+	if (strcmp (a->ip, b->ip)) return TRUE;
 	/* Ignore hwaddr, ptpip and netmask... I think this is ok */
 	if (a->up != b->up) return TRUE;
 	if (a->running != b->running) return TRUE;

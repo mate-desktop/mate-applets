@@ -51,7 +51,7 @@ typedef enum
 	DEV_PLIP,
 	DEV_SLIP,
 	DEV_UNKNOWN	// this has to be the last one
-} DevType;	
+} DevType;
 
 /* Some information about the selected network device
  */
@@ -59,11 +59,11 @@ typedef struct
 {
 	DevType type;
 	char *name;
-	char *ip;
-	char *netmask; 
+	char ip[INET_ADDRSTRLEN];
+	char netmask[INET_ADDRSTRLEN];
 	guint8 hwaddr[ETH_ALEN];
-	char *ptpip;
-	char *ipv6;
+	char ptpip[INET_ADDRSTRLEN];
+	char ipv6[INET6_ADDRSTRLEN];
 	char *essid;
 	gboolean up, running;
 	guint64 tx, rx;
@@ -97,7 +97,7 @@ void
 free_device_info(DevInfo *devinfo);
 
 void
-get_device_info(const char *device, DevInfo *info);
+get_device_info(const char *device, DevInfo **info);
 
 gboolean
 compare_device_info(const DevInfo *a, const DevInfo *b);
