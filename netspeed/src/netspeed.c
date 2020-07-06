@@ -93,7 +93,7 @@ typedef struct
 	char *up_cmd, *down_cmd;
 	gboolean show_sum, show_bits;
 	gboolean change_icon, auto_change_device;
-	gboolean show_icon, short_unit;
+	gboolean show_icon;
 	gboolean show_quality_icon;
 	GdkRGBA         in_color;
 	GdkRGBA         out_color;
@@ -397,63 +397,36 @@ icon_theme_changed_cb(GtkIconTheme *icon_theme, gpointer user_data)
     change_icons(user_data);
 }
 
+#define IEC_KIBI_DBL  1024.0
+#define IEC_MEBI_DBL  1024.0*1024.0
+#define IEC_GIBI_DBL  1024.0*1024.0*1024.0
+
 static void
-netspeed_format_size (gchar   *out,
+format_transfer_rate (gchar   *out,
                       double   bytes,
-                      gboolean per_sec,
-                      gboolean bits,
-                      gboolean shortened)
+                      gboolean bits)
 {
 	const char *format;
 	const char *unit;
-	guint kilo; /* no really a kilo : a kilo or kibi */
 
-	if (bits) {
-		bytes *= 8;
-		kilo = 1000;
-	} else
-		kilo = 1024;
+	if (bits)
+		bytes *= 8.0;
 
-	if (bytes < kilo) {
-
+	if (bytes < IEC_KIBI_DBL) {
 		format = "%.0f %s";
-
-		if (per_sec)
-			if (shortened) {
-				unit = bits ? /* translators: bits (short) */ N_("b"): /* translators: Bytes (short) */ N_("B");
-			} else {
-				unit = bits ? N_("b/s") : N_("B/s");
-			}
-		else
-			unit = bits ? N_("bits") : N_("bytes");
-
-	} else if (bytes < (kilo * kilo)) {
-		format = (bytes < (100 * kilo)) ? "%.1f %s" : "%.0f %s";
-		bytes /= kilo;
-
-		if (per_sec)
-			if (shortened) {
-				unit = bits ? /* translators: kilobits (short) */ N_("k") : /* translators: Kilobytes (short) */ N_("K");
-			} else {
-				unit = bits ? N_("kb/s") : N_("KiB/s");
-			}
-		else
-			unit = bits ? N_("kb")   : N_("KiB");
-
-	} else {
-
+		unit = bits ? /* translators: bits (short) */ N_("bit/s"): /* translators: Bytes (short) */ N_("B/s");
+	} else if (bytes < IEC_MEBI_DBL) {
+		format = (bytes < (100.0 * IEC_KIBI_DBL)) ? "%.1f %s" : "%.0f %s";
+		bytes /= IEC_KIBI_DBL;
+		unit = bits ? /* translators: kibibits (short) */ N_("Kibit/s") : /* translators: Kibibytes (short) */ N_("KiB/s");
+	} else if (bytes < IEC_GIBI_DBL) {
 		format = "%.1f %s";
-
-		bytes /= kilo * kilo;
-
-		if (per_sec)
-			if (shortened) {
-				unit = bits ? /* translators: megabits (short) */ N_("m") : /* translators: Megabytes (short) */ N_("M");
-			} else {
-				unit = bits ? N_("Mb/s") : N_("MiB/s");
-			}
-		else
-			unit = bits ? N_("Mb")   : N_("MiB");
+		bytes /= IEC_MEBI_DBL;
+		unit = bits ? /* translators: Mebibit (short) */ N_("Mibit/s") : /* translators: Mebibyte (short) */ N_("MiB/s");
+	} else {
+		format = "%.1f %s";
+		bytes /= IEC_GIBI_DBL;
+		unit = bits ? /* translators: Gibibit (short) */ N_("Gibit/s") : /* translators: Gibibyte (short) */ N_("GiB/s");
 	}
 
 	g_snprintf (out, MAX_FORMAT_SIZE, format, bytes, gettext(unit));
@@ -464,10 +437,10 @@ netspeed_format_size (gchar   *out,
  * The string has to be freed
  */
 static char*
-bytes_to_string(double bytes, gboolean per_sec, gboolean bits, gboolean shortened)
+bps_to_string(double bytes, gboolean bits)
 {
     char res[MAX_FORMAT_SIZE];
-    netspeed_format_size (res, bytes, per_sec, bits, shortened);
+    format_transfer_rate (res, bytes, bits);
     return g_strdup (res);
 }
 
@@ -545,7 +518,7 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	}
 	cairo_stroke (cr);
 
-	text = bytes_to_string(max_val, TRUE, applet->show_bits, applet->short_unit);
+	text = bps_to_string (max_val, applet->show_bits);
 	add_markup_fgcolor(&text, "black");
 	layout = gtk_widget_create_pango_layout (da, NULL);
 	pango_layout_set_markup(layout, text, -1);
@@ -553,7 +526,7 @@ redraw_graph(MateNetspeedApplet *applet, cairo_t *cr)
 	gtk_render_layout(stylecontext, cr, 3, 2, layout);
 	g_object_unref(G_OBJECT(layout));
 
-	text = bytes_to_string(0.0, TRUE, applet->show_bits, applet->short_unit);
+	text = bps_to_string (0.0, applet->show_bits);
 	add_markup_fgcolor(&text, "black");
 	layout = gtk_widget_create_pango_layout (da, NULL);
 	pango_layout_set_markup(layout, text, -1);
@@ -693,9 +666,9 @@ update_applet(MateNetspeedApplet *applet)
 		applet->max_graph = MAX(inrate, applet->max_graph);
 		applet->max_graph = MAX(outrate, applet->max_graph);
 
-		netspeed_format_size (applet->devinfo.rx_rate, inrate, TRUE, applet->show_bits, applet->short_unit);
-		netspeed_format_size (applet->devinfo.tx_rate, outrate, TRUE, applet->show_bits, applet->short_unit);
-		netspeed_format_size (applet->devinfo.sum_rate, inrate + outrate, TRUE, applet->show_bits, applet->short_unit);
+		format_transfer_rate (applet->devinfo.rx_rate, inrate, applet->show_bits);
+		format_transfer_rate (applet->devinfo.tx_rate, outrate, applet->show_bits);
+		format_transfer_rate (applet->devinfo.sum_rate, inrate + outrate, applet->show_bits);
 	} else {
 		applet->devinfo.rx_rate[0] = '\0';
 		applet->devinfo.tx_rate[0] = '\0';
@@ -959,14 +932,6 @@ showbits_change_cb(GtkToggleButton *togglebutton, MateNetspeedApplet *applet)
 	applet->show_bits = gtk_toggle_button_get_active(togglebutton);
 }
 
-/* Called when the shortunit checkbutton is toggled...
- */
-static void
-shortunit_change_cb(GtkToggleButton *togglebutton, MateNetspeedApplet *applet)
-{
-	applet->short_unit = gtk_toggle_button_get_active(togglebutton);
-}
-
 /* Called when the showicon checkbutton is toggled...
  */
 static void
@@ -1026,7 +991,6 @@ settings_cb(GtkAction *action, gpointer data)
 
 	g_settings_bind (applet->gsettings, "show-sum", gtk_builder_get_object (builder, "show_sum_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (applet->gsettings, "show-bits", gtk_builder_get_object (builder, "show_bits_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
-	g_settings_bind (applet->gsettings, "short-unit", gtk_builder_get_object (builder, "short_unit_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (applet->gsettings, "show-icon", gtk_builder_get_object (builder, "show_icon_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (applet->gsettings, "show-quality-icon", gtk_builder_get_object (builder, "show_quality_icon_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (applet->gsettings, "change-icon", gtk_builder_get_object (builder, "change_icon_checkbutton"), "active", G_SETTINGS_BIND_DEFAULT);
@@ -1050,7 +1014,6 @@ settings_cb(GtkAction *action, gpointer data)
 	                                  "on_network_device_combo_changed", G_CALLBACK (device_change_cb),
 	                                  "on_show_sum_checkbutton_toggled", G_CALLBACK (showsum_change_cb),
 	                                  "on_show_bits_checkbutton_toggled", G_CALLBACK(showbits_change_cb),
-	                                  "on_short_unit_checkbutton_toggled", G_CALLBACK(shortunit_change_cb),
 	                                  "on_change_icon_checkbutton_toggled", G_CALLBACK (changeicon_change_cb),
 	                                  "on_show_icon_checkbutton_toggled", G_CALLBACK (showicon_change_cb),
 	                                  "on_show_quality_icon_checkbutton_toggled", G_CALLBACK (showqualityicon_change_cb),
@@ -1647,7 +1610,6 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	 */
 	applet->show_sum = g_settings_get_boolean (applet->gsettings, "show-sum");
 	applet->show_bits = g_settings_get_boolean (applet->gsettings, "show-bits");
-	applet->short_unit = g_settings_get_boolean (applet->gsettings, "short-unit");
 	applet->show_icon = g_settings_get_boolean (applet->gsettings, "show-icon");
 	applet->show_quality_icon = g_settings_get_boolean (applet->gsettings, "show-quality-icon");
 	applet->change_icon = g_settings_get_boolean (applet->gsettings, "change-icon");
