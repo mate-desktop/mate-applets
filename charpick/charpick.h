@@ -1,5 +1,8 @@
 /* charpick.h -- header file for character picker applet */
 
+#ifndef __CHARPICK_H__
+#define __CHARPICK_H__
+
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -59,3 +62,5 @@ void set_atk_name_description (GtkWidget         *widget,
 			       const char        *description);
 gboolean key_writable (MatePanelApplet *applet, const char *key);
 
+
+#endif	/* __CHARPICK_H__ */

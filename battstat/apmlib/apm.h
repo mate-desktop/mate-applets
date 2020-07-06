@@ -20,6 +20,9 @@
  * $Id$
  * 
  */
+#ifndef __APM_H__
+#define __APM_H__
+
 #include <linux/apm_bios.h>
 #include <sys/types.h>
 
@@ -75,3 +78,5 @@ extern const char *apm_time_nosec(time_t t);
 #ifdef APM_IOC_REJECT
 #define APM_REJECT_ENABLED
 #endif
+
+#endif	/* __APM_H__ */
