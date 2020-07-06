@@ -65,9 +65,11 @@ static const char LOGO_ICON[] = "mate-netspeed-applet";
  * of these values -> prevents the value from
  * "jumping around like crazy"
  */
-#define OLD_VALUES 5
-#define GRAPH_VALUES 180
-#define GRAPH_LINES 4
+#define OLD_VALUES          5
+#define OLD_VALUES_DBL      5.0
+#define GRAPH_VALUES      180
+#define GRAPH_LINES         4
+#define REFRESH_TIME     1000
 
 /* A struct containing all the "global" data of the
  * applet
@@ -89,7 +91,6 @@ typedef struct
 	gboolean device_has_changed;
 
 	guint timeout_id;
-	int refresh_time;
 	char *up_cmd, *down_cmd;
 	gboolean show_sum, show_bits;
 	gboolean change_icon, auto_change_device;
@@ -656,10 +657,8 @@ update_applet(MateNetspeedApplet *applet)
 		if (applet->devinfo.tx < applet->out_old[applet->index_old]) outdiff = 0;
 		else outdiff = applet->devinfo.tx - applet->out_old[applet->index_old];
 
-		inrate = indiff * 1000.0;
-		inrate /= (double)(applet->refresh_time * OLD_VALUES);
-		outrate = outdiff * 1000.0;
-		outrate /= (double)(applet->refresh_time * OLD_VALUES);
+		inrate = (double)indiff / OLD_VALUES_DBL;
+		outrate = (double)outdiff / OLD_VALUES_DBL;
 
 		applet->in_graph[applet->index_graph] = inrate;
 		applet->out_graph[applet->index_graph] = outrate;
@@ -1587,7 +1586,6 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	applet = g_malloc0(sizeof(MateNetspeedApplet));
 	applet->applet = applet_widget;
 	memset(&applet->devinfo, 0, sizeof(DevInfo));
-	applet->refresh_time = 1000.0;
 
 	/* Set the default colors of the graph
 	*/
@@ -1695,7 +1693,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 
 	mate_panel_applet_set_flags(applet_widget, MATE_PANEL_APPLET_EXPAND_MINOR);
 
-	applet->timeout_id = g_timeout_add(applet->refresh_time,
+	applet->timeout_id = g_timeout_add (REFRESH_TIME,
                            (GSourceFunc)timeout_function,
                            (gpointer)applet);
 
