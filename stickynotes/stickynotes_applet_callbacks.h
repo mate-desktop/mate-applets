@@ -17,10 +17,10 @@
  * 02110-1301, USA.
  */
 
-#include <stickynotes_applet.h>
-
 #ifndef __STICKYNOTES_APPLET_CALLBACKS_H__
 #define __STICKYNOTES_APPLET_CALLBACKS_H__
+
+#include <stickynotes_applet.h>
 
 /* Callbacks for the sticky notes applet */
 gboolean applet_button_cb(GtkWidget *widget, GdkEventButton *event, StickyNotesApplet *applet);
