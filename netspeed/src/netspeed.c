@@ -141,6 +141,7 @@ typedef struct
     int              index_graph;
     GtkWidget       *connect_dialog;
     gboolean         show_tooltip;
+    GtkIconTheme    *icon_theme;
     GSettings       *gsettings;
 } MateNetspeedApplet;
 
@@ -165,88 +166,95 @@ add_markup_fgcolor (char       **string,
 /* Change the icons according to the selected device
  */
 static void
-change_icons(MateNetspeedApplet *applet)
+change_icons (MateNetspeedApplet *applet)
 {
-	cairo_surface_t *dev, *down;
-	cairo_surface_t *in_arrow, *out_arrow;
-	GtkIconTheme *icon_theme;
-	gint icon_scale;
-	gint icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet->applet)) - 8;
+    cairo_surface_t *dev, *down;
+    cairo_surface_t *in_arrow, *out_arrow;
+    gint icon_scale;
+    gint icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet->applet)) - 8;
 
-	/* FIXME: Not all network icons include a high enough resolution, so to make them all
-	 * consistent, we cap them at 48px.*/
-	icon_size = CLAMP (icon_size, 16, 48);
+    /* FIXME: Not all network icons include a high enough resolution, so to make them all
+     * consistent, we cap them at 48px.*/
+    icon_size = CLAMP (icon_size, 16, 48);
 
-	icon_theme = gtk_icon_theme_get_default();
-	icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
+    icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
 
-	/* If the user wants a different icon than current, we load it */
-	if (applet->show_icon && applet->change_icon && applet->devinfo) {
-		dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[applet->devinfo->type],
-			icon_size, icon_scale, NULL, 0, NULL);
-	} else {
-			dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[DEV_UNKNOWN],
-			icon_size, icon_scale, NULL, 0, NULL);
-	}
+    /* If the user wants a different icon than current, we load it */
+    if (applet->show_icon && applet->change_icon && applet->devinfo) {
+        dev = gtk_icon_theme_load_surface (applet->icon_theme,
+                                           dev_type_icon [applet->devinfo->type],
+                                           icon_size, icon_scale, NULL, 0, NULL);
+    } else {
+        dev = gtk_icon_theme_load_surface (applet->icon_theme,
+                                           dev_type_icon [DEV_UNKNOWN],
+                                           icon_size, icon_scale, NULL, 0, NULL);
+    }
 
-	/* We need a fallback */
-	if (dev == NULL)
-		dev = gtk_icon_theme_load_surface(icon_theme,
-			dev_type_icon[DEV_UNKNOWN],
-			icon_size, icon_scale, NULL, 0, NULL);
+    /* We need a fallback */
+    if (dev == NULL)
+        dev = gtk_icon_theme_load_surface (applet->icon_theme,
+                                           dev_type_icon [DEV_UNKNOWN],
+                                           icon_size, icon_scale, NULL, 0, NULL);
 
-	in_arrow = gtk_icon_theme_load_surface(icon_theme, IN_ICON, 16, icon_scale, NULL, 0, NULL);
-	out_arrow = gtk_icon_theme_load_surface(icon_theme, OUT_ICON, 16, icon_scale, NULL, 0, NULL);
+    in_arrow = gtk_icon_theme_load_surface (applet->icon_theme,
+                                            IN_ICON,
+                                            16, icon_scale, NULL, 0, NULL);
 
-	/* Set the windowmanager icon for the applet */
-	gtk_window_set_default_icon_name(LOGO_ICON);
+    out_arrow = gtk_icon_theme_load_surface (applet->icon_theme,
+                                             OUT_ICON,
+                                             16, icon_scale, NULL, 0, NULL);
 
-	gtk_image_set_from_surface(GTK_IMAGE(applet->out_pix), out_arrow);
-	gtk_image_set_from_surface(GTK_IMAGE(applet->in_pix), in_arrow);
-	cairo_surface_destroy(in_arrow);
-	cairo_surface_destroy(out_arrow);
+    /* Set the windowmanager icon for the applet */
+    gtk_window_set_default_icon_name (LOGO_ICON);
 
-	if (applet->devinfo && applet->devinfo->running) {
-		gtk_widget_show(applet->in_box);
-		gtk_widget_show(applet->out_box);
-	} else {
-		cairo_t *cr;
-		cairo_surface_t *copy;
-		gint down_coords;
+    gtk_image_set_from_surface (GTK_IMAGE (applet->out_pix), out_arrow);
+    gtk_image_set_from_surface (GTK_IMAGE (applet->in_pix), in_arrow);
+    cairo_surface_destroy (in_arrow);
+    cairo_surface_destroy (out_arrow);
 
-		gtk_widget_hide(applet->in_box);
-		gtk_widget_hide(applet->out_box);
+    if (applet->devinfo && applet->devinfo->running) {
+        gtk_widget_show (applet->in_box);
+        gtk_widget_show (applet->out_box);
+    } else {
+        cairo_t *cr;
+        cairo_surface_t *copy;
+        gint down_coords;
 
-		/* We're not allowed to modify "dev" */
-		copy = cairo_surface_create_similar (dev,
-			                             cairo_surface_get_content (dev),
-			                             cairo_image_surface_get_width (dev) / icon_scale,
-			                             cairo_image_surface_get_height (dev) / icon_scale);
-		cr = cairo_create (copy);
-		cairo_set_source_surface (cr, dev, 0, 0);
-		cairo_paint (cr);
+        gtk_widget_hide (applet->in_box);
+        gtk_widget_hide (applet->out_box);
 
-		down = gtk_icon_theme_load_surface(icon_theme, ERROR_ICON, icon_size, icon_scale, NULL, 0, NULL);
-		down_coords = cairo_image_surface_get_width (copy) / icon_scale;
-		cairo_scale (cr, 0.5, 0.5);
-		cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
-		cairo_set_source_surface (cr, down, down_coords, down_coords);
-		cairo_paint (cr);
+        /* We're not allowed to modify "dev" */
+        copy = cairo_surface_create_similar (dev,
+                                             cairo_surface_get_content (dev),
+                                             cairo_image_surface_get_width (dev) / icon_scale,
+                                             cairo_image_surface_get_height (dev) / icon_scale);
+        cr = cairo_create (copy);
+        cairo_set_source_surface (cr, dev, 0, 0);
+        cairo_paint (cr);
 
-		cairo_surface_destroy(down);
-		cairo_surface_destroy(dev);
-		dev = copy;
-	}
+        down = gtk_icon_theme_load_surface (applet->icon_theme,
+                                            ERROR_ICON,
+                                            icon_size, icon_scale, NULL, 0, NULL);
 
-	if (applet->show_icon) {
-		gtk_widget_show(applet->dev_pix);
-		gtk_image_set_from_surface(GTK_IMAGE(applet->dev_pix), dev);
-	} else {
-		gtk_widget_hide(applet->dev_pix);
-	}
-	cairo_surface_destroy(dev);
+        down_coords = cairo_image_surface_get_width (copy) / icon_scale;
+        cairo_scale (cr, 0.5, 0.5);
+        cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+        cairo_set_source_surface (cr, down, down_coords, down_coords);
+        cairo_paint (cr);
+
+        cairo_surface_destroy (down);
+        cairo_surface_destroy (dev);
+        dev = copy;
+    }
+
+    if (applet->show_icon) {
+        gtk_widget_show (applet->dev_pix);
+        gtk_image_set_from_surface (GTK_IMAGE (applet->dev_pix), dev);
+    } else {
+        gtk_widget_hide (applet->dev_pix);
+    }
+
+    cairo_surface_destroy(dev);
 }
 
 /* Here some rearangement of the icons and the labels occurs
@@ -377,44 +385,47 @@ update_quality_icon(MateNetspeedApplet *applet)
 }
 
 static void
-init_quality_surfaces(MateNetspeedApplet *applet)
+init_quality_surfaces (MateNetspeedApplet *applet)
 {
-	GtkIconTheme *icon_theme;
-	int i;
-	cairo_surface_t *surface;
-	gint icon_scale;
+    int i;
+    cairo_surface_t *surface;
+    gint icon_scale;
 
-	/* FIXME: Add larger icon files. */
-	gint icon_size = 24;
+    /* FIXME: Add larger icon files. */
+    gint icon_size = 24;
 
-	icon_theme = gtk_icon_theme_get_default();
-	icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
+    icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
 
-	for (i = 0; i < 4; i++) {
-		if (applet->qual_surfaces[i])
-			cairo_surface_destroy(applet->qual_surfaces[i]);
-		surface = gtk_icon_theme_load_surface(icon_theme,
-			wireless_quality_icon[i], icon_size, icon_scale, NULL, 0, NULL);
-		if (surface) {
-		  cairo_t *cr;
-		  applet->qual_surfaces[i] = cairo_surface_create_similar (surface,
-			                                                   cairo_surface_get_content (surface),
-			                                                   cairo_image_surface_get_width (surface) / icon_scale,
-			                                                   cairo_image_surface_get_height (surface) / icon_scale);
-		  cr = cairo_create (applet->qual_surfaces[i]);
-		  cairo_set_source_surface (cr, surface, 0, 0);
-		  cairo_paint (cr);
-		  cairo_surface_destroy(surface);
-		}
-		else {
-		  applet->qual_surfaces[i] = NULL;
-		}
-	}
+    for (i = 0; i < 4; i++) {
+        if (applet->qual_surfaces[i])
+            cairo_surface_destroy (applet->qual_surfaces[i]);
+
+        surface = gtk_icon_theme_load_surface (applet->icon_theme,
+                                               wireless_quality_icon[i],
+                                               icon_size, icon_scale, NULL, 0, NULL);
+
+        if (surface) {
+            cairo_t *cr;
+
+            applet->qual_surfaces[i] = cairo_surface_create_similar (surface,
+                                                                     cairo_surface_get_content (surface),
+                                                                     cairo_image_surface_get_width (surface) / icon_scale,
+                                                                     cairo_image_surface_get_height (surface) / icon_scale);
+
+            cr = cairo_create (applet->qual_surfaces[i]);
+            cairo_set_source_surface (cr, surface, 0, 0);
+            cairo_paint (cr);
+            cairo_surface_destroy (surface);
+        }
+        else {
+            applet->qual_surfaces[i] = NULL;
+        }
+    }
 }
 
-
 static void
-icon_theme_changed_cb(GtkIconTheme *icon_theme, gpointer user_data)
+icon_theme_changed_cb (GtkIconTheme *icon_theme,
+                       gpointer      user_data)
 {
     MateNetspeedApplet *applet = (MateNetspeedApplet*)user_data;
 
@@ -1422,31 +1433,32 @@ applet_button_press (GtkWidget          *widget,
  * Removes the timeout_cb
  */
 static void
-applet_destroy(MatePanelApplet *applet_widget, MateNetspeedApplet *applet)
+applet_destroy (MatePanelApplet    *applet_widget,
+                MateNetspeedApplet *applet)
 {
-	GtkIconTheme *icon_theme;
+    g_assert(applet);
 
-	g_assert(applet);
+    if (applet->icon_theme != NULL) {
+        g_signal_handlers_disconnect_by_func (applet->icon_theme,
+                                              icon_theme_changed_cb,
+                                              applet);
+        applet->icon_theme = NULL;
+    }
 
-	icon_theme = gtk_icon_theme_get_default();
-	g_object_disconnect(G_OBJECT(icon_theme), "changed",
-			    G_CALLBACK(icon_theme_changed_cb), (gpointer)applet,
-			    NULL);
+    g_source_remove (applet->timeout_id);
+    applet->timeout_id = 0;
 
-	g_source_remove(applet->timeout_id);
-	applet->timeout_id = 0;
+    if (applet->up_cmd)
+        g_free (applet->up_cmd);
+    if (applet->down_cmd)
+        g_free (applet->down_cmd);
+    if (applet->gsettings)
+        g_object_unref (applet->gsettings);
 
-	if (applet->up_cmd)
-		g_free(applet->up_cmd);
-	if (applet->down_cmd)
-		g_free(applet->down_cmd);
-	if (applet->gsettings)
-		g_object_unref (applet->gsettings);
-
-	/* Should never be NULL */
-	free_device_info(applet->devinfo);
-	g_free(applet);
-	return;
+    /* Should never be NULL */
+    free_device_info (applet->devinfo);
+    g_free (applet);
+    return;
 }
 
 static void
@@ -1537,7 +1549,6 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 {
 	MateNetspeedApplet *applet;
 	int i;
-	GtkIconTheme *icon_theme;
 	GtkWidget *spacer, *spacer_box;
 
 	/* Have our background automatically painted. */
@@ -1550,13 +1561,12 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	glibtop_init();
 	g_set_application_name (_("MATE Netspeed"));
 
-	icon_theme = gtk_icon_theme_get_default();
-
 	/* Alloc the applet. The "NULL-setting" is really redudant
  	 * but aren't we paranoid?
 	 */
 	applet = g_new0 (MateNetspeedApplet, 1);
 	applet->applet = applet_widget;
+	applet->icon_theme = gtk_icon_theme_get_default ();
 
 	/* Set the default colors of the graph
 	*/
@@ -1672,7 +1682,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
                            G_CALLBACK(applet_change_size_or_orient),
                            (gpointer)applet);
 
-	g_signal_connect(G_OBJECT(icon_theme), "changed",
+	g_signal_connect(G_OBJECT(applet->icon_theme), "changed",
                            G_CALLBACK(icon_theme_changed_cb),
                            (gpointer)applet);
 
