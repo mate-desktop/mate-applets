@@ -1,6 +1,7 @@
 NULL =
 
 builder_files =			\
+	netspeed-details.ui	\
 	netspeed-preferences.ui	\
 	$(NULL)
 
