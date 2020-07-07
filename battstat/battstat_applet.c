@@ -561,34 +561,34 @@ possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
   if (batt_life <= battstat->red_val)
   {
     if (info->charging)
-      icon_name = g_strdup("battery-caution-charging");
+      icon_name = "battery-caution-charging";
     else
-      icon_name = g_strdup("battery-caution");
+      icon_name = "battery-caution";
   }
   else if (batt_life <= battstat->orange_val)
   {
     if (info->charging)
-      icon_name = g_strdup("battery-low-charging");
+      icon_name = "battery-low-charging";
     else
-      icon_name = g_strdup("battery-low");
+      icon_name = "battery-low";
   }
   else if (batt_life <= battstat->yellow_val)
   {
     if (info->charging)
-      icon_name = g_strdup("battery-good-charging");
+      icon_name = "battery-good-charging";
     else
-      icon_name = g_strdup("battery-good");
+      icon_name = "battery-good";
   }
   else if (info->on_ac_power)
   {
     if (info->charging)
-      icon_name = g_strdup("battery-full-charging");
+      icon_name = "battery-full-charging";
     else
-      icon_name = g_strdup("battery-full-charged");
+      icon_name = "battery-full-charged";
   }
   else
   {
-    icon_name = g_strdup("battery-full");
+    icon_name = "battery-full";
   }
 
   theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (battstat->applet)));
@@ -597,7 +597,6 @@ possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
   icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (battstat->applet));
 
   surface = gtk_icon_theme_load_surface (theme, icon_name, icon_size, icon_scale, NULL, 0, NULL);
-  g_free (icon_name);
 
   gtk_image_set_from_surface (GTK_IMAGE(battstat->status), surface);
   cairo_surface_destroy (surface);
@@ -1106,7 +1105,6 @@ battstat_applet_fill (MatePanelApplet *applet)
   ProgressData *battstat;
   AtkObject *atk_widget;
   GtkActionGroup *action_group;
-  gchar *ui_path;
   const char *err;
 
   if (DEBUG) g_print("main()\n");
@@ -1146,10 +1144,9 @@ battstat_applet_fill (MatePanelApplet *applet)
 				battstat_menu_actions,
 				G_N_ELEMENTS (battstat_menu_actions),
 				battstat);
-  ui_path = g_build_filename (BATTSTAT_MENU_UI_DIR, "battstat-applet-menu.xml", NULL);
   mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (battstat->applet),
-				     ui_path, action_group);
-  g_free (ui_path);
+                                          BATTSTAT_MENU_UI_DIR G_DIR_SEPARATOR_S "battstat-applet-menu.xml",
+                                          action_group);
 
   if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (battstat->applet))) {
 	  GtkAction *action;
