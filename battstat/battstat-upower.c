@@ -118,7 +118,7 @@ error_shutdownclient:
   upc = NULL;
 
 error_out:
-  return "Can not initialize upower";
+  return g_strdup ("Can not initialize upower");
 }
 
 void
