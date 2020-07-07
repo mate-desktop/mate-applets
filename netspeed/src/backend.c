@@ -161,63 +161,49 @@ free_device_info (DevInfo *devinfo)
     g_free (devinfo);
 }
 
-static void
-format_ipv4 (guint32  ip,
-             char    *dest)
-{
-    inet_ntop (AF_INET, &ip, dest, INET_ADDRSTRLEN);
-}
-
-static void
-format_ipv6 (const guint8  ip[16],
-             char         *dest)
-{
-    inet_ntop (AF_INET6, ip, dest, INET6_ADDRSTRLEN);
-}
-
 /* TODO:
    these stuff are not portable because of ioctl
 */
 static void
-get_ptp_info(DevInfo *devinfo)
+get_ptp_info (DevInfo *devinfo)
 {
-	int fd = -1;
-	struct ifreq request = {};
+    int fd = -1;
+    struct ifreq request = {};
 
-	g_strlcpy(request.ifr_name, devinfo->name, sizeof request.ifr_name);
+    g_strlcpy (request.ifr_name, devinfo->name, sizeof request.ifr_name);
 
-	if ((fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-		return;
+    if ((fd = socket (AF_INET, SOCK_STREAM, 0)) < 0)
+        return;
 
-	if (ioctl(fd, SIOCGIFDSTADDR, &request) >= 0) {
-		struct sockaddr_in* addr;
-		addr = (struct sockaddr_in*)&request.ifr_dstaddr;
-		format_ipv4 (addr->sin_addr.s_addr, devinfo->ptpip);
-	}
+    if (ioctl(fd, SIOCGIFDSTADDR, &request) >= 0) {
+        struct sockaddr_in* addr;
+        addr = (struct sockaddr_in*)&request.ifr_dstaddr;
+        devinfo->ptpip = addr->sin_addr.s_addr;
+    }
 
-	close(fd);
+    close(fd);
 }
 
 void
 get_device_info (const char  *device,
                  DevInfo    **info)
 {
-	DevInfo *devinfo;
-	glibtop_netload netload;
-	gboolean ptp = FALSE;
+    DevInfo *devinfo;
+    glibtop_netload netload;
+    gboolean ptp = FALSE;
 
-	g_assert(device);
+    g_assert(device);
 
-	*info = g_new0 (DevInfo, 1);
-	devinfo = *info;
+    *info = g_new0 (DevInfo, 1);
+    devinfo = *info;
 
-	devinfo->name = g_strdup(device);
-	devinfo->type = DEV_UNKNOWN;
+    devinfo->name = g_strdup (device);
+    devinfo->type = DEV_UNKNOWN;
 
-	glibtop_get_netload(&netload, device);
+    glibtop_get_netload (&netload, device);
 
-	devinfo->up = (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP) ? TRUE : FALSE);
-	devinfo->running = (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_RUNNING) ? TRUE : FALSE);
+    devinfo->up = (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP) ? TRUE : FALSE);
+    devinfo->running = (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_RUNNING) ? TRUE : FALSE);
 
     if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_LOOPBACK)) {
         devinfo->type = DEV_LO;
@@ -259,11 +245,9 @@ get_device_info (const char  *device,
     }
 
     if (devinfo->running) {
-        if (netload.address > 0)
-            format_ipv4 (netload.address, devinfo->ip);
-        if (netload.subnet > 0)
-            format_ipv4 (netload.subnet, devinfo->netmask);
-        format_ipv6 (netload.address6, devinfo->ipv6);
+        devinfo->ip = netload.address;
+        devinfo->netmask = netload.subnet;
+        memcpy (devinfo->ipv6, netload.address6, 16);
 #if defined (HAVE_NL)
         if (devinfo->type != DEV_WIRELESS) {
             devinfo->tx = netload.bytes_out;
@@ -288,7 +272,7 @@ compare_device_info (const DevInfo *a,
 	g_assert(a->name && b->name);
 
 	if (!g_str_equal(a->name, b->name)) return TRUE;
-	if (strcmp (a->ip, b->ip)) return TRUE;
+	if (a->ip != b->ip) return TRUE;
 	/* Ignore hwaddr, ptpip and netmask... I think this is ok */
 	if (a->up != b->up) return TRUE;
 	if (a->running != b->running) return TRUE;

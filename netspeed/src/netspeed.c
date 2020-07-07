@@ -33,26 +33,28 @@
 
 #include "backend.h"
 
-#define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
+#define GET_COLOR_CHOOSER(x) (GTK_COLOR_CHOOSER (gtk_builder_get_object (builder, (x))))
 #define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
+#define GET_DRAWING_AREA(x) (GTK_DRAWING_AREA (gtk_builder_get_object (builder, (x))))
+#define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
 
  /* Icons for the interfaces */
-static const char* const dev_type_icon[DEV_UNKNOWN + 1] = {
-	/* FIXME: Need an actual loopback icon... */
-	"reload",                    /* DEV_LO */
-	"network-wired",             /* DEV_ETHERNET */
-	"network-wireless",          /* DEV_WIRELESS */
-	"modem",                     /* DEV_PPP */
-	"mate-netspeed-plip",        /* DEV_PLIP */
-	"mate-netspeed-plip",        /* DEV_SLIP */
-	"network-workgroup",         /* DEV_UNKNOWN */
+static const char* const dev_type_icon [DEV_UNKNOWN + 1] = {
+    /* FIXME: Need an actual loopback icon... */
+    "reload",                    /* DEV_LO */
+    "network-wired",             /* DEV_ETHERNET */
+    "network-wireless",          /* DEV_WIRELESS */
+    "modem",                     /* DEV_PPP */
+    "mate-netspeed-plip",        /* DEV_PLIP */
+    "mate-netspeed-plip",        /* DEV_SLIP */
+    "network-workgroup",         /* DEV_UNKNOWN */
 };
 
-static const char* wireless_quality_icon[] = {
-	"mate-netspeed-wireless-25",
-	"mate-netspeed-wireless-50",
-	"mate-netspeed-wireless-75",
-	"mate-netspeed-wireless-100"
+static const char* wireless_quality_icon [] = {
+    "mate-netspeed-wireless-25",
+    "mate-netspeed-wireless-50",
+    "mate-netspeed-wireless-75",
+    "mate-netspeed-wireless-100"
 };
 
 static const char IN_ICON[] = "go-down";
@@ -76,48 +78,70 @@ static const char LOGO_ICON[] = "mate-netspeed-applet";
  */
 typedef struct
 {
-	MatePanelApplet *applet;
-	GtkWidget *box, *pix_box, *speed_box,
-	*in_box, *in_label, *in_pix,
-	*out_box, *out_label, *out_pix,
-	*sum_box, *sum_label, *dev_pix, *qual_pix;
-	cairo_surface_t *qual_surfaces[4];
-
-	GtkWidget *signalbar;
-
-	gboolean labels_dont_shrink;
-
-	DevInfo *devinfo;
-	gboolean device_has_changed;
-
-	guint timeout_id;
-	char *up_cmd, *down_cmd;
-	gboolean show_sum, show_bits;
-	gboolean change_icon, auto_change_device;
-	gboolean show_icon;
-	gboolean show_quality_icon;
-	GdkRGBA         in_color;
-	GdkRGBA         out_color;
-	int width;
-
+    MatePanelApplet *applet;
+    GtkWidget       *box;
+    GtkWidget       *pix_box;
+    GtkWidget       *speed_box;
+    GtkWidget       *in_box;
+    GtkWidget       *in_label;
+    GtkWidget       *in_pix;
+    GtkWidget       *out_box;
+    GtkWidget       *out_label;
+    GtkWidget       *out_pix;
+    GtkWidget       *sum_box;
+    GtkWidget       *sum_label;
+    GtkWidget       *dev_pix;
+    GtkWidget       *qual_pix;
+    cairo_surface_t *qual_surfaces[4];
+    gboolean         labels_dont_shrink;
+    DevInfo         *devinfo;
+    gboolean         device_has_changed;
+    guint            timeout_id;
+    char            *up_cmd;
+    char            *down_cmd;
+    gboolean         show_sum;
+    gboolean         show_bits;
+    gboolean         change_icon;
+    gboolean         auto_change_device;
+    gboolean         show_icon;
+    gboolean         show_quality_icon;
+    GdkRGBA          in_color;
+    GdkRGBA          out_color;
+    int              width;
+    /* details dialog */
+    GtkDialog       *details;
+    GtkDrawingArea  *drawingarea;
+    GtkWidget       *ip_text;
+    GtkWidget       *netmask_text;
+    GtkWidget       *ptpip_text;
+    GtkWidget       *ipv6_text;
+    GtkWidget       *hwaddr_text;
+    GtkWidget       *inbytes_text;
+    GtkWidget       *outbytes_text;
+    GtkWidget       *essid_text;
+    GtkWidget       *signalbar;
 #ifdef HAVE_NL
-	GtkWidget *connected_time_text;
+    GtkWidget       *station_text;
+    GtkWidget       *channel_text;
+    GtkWidget       *connected_time_text;
 #endif
-	GtkWidget *inbytes_text, *outbytes_text;
-	GtkDialog *details, *settings;
-	GtkDrawingArea *drawingarea;
-	GtkWidget *network_device_combo;
+    GtkWidget       *ipv6_box;
+    GtkWidget       *netlink_box;
+    GtkWidget       *wireless_box;
+    /* settings dialog */
+    GtkDialog       *settings;
+    GtkWidget       *network_device_combo;
 
-	guint index_old;
-	guint64 in_old[OLD_VALUES], out_old[OLD_VALUES];
-	double max_graph, in_graph[GRAPH_VALUES], out_graph[GRAPH_VALUES];
-	int index_graph;
-
-	GtkWidget *connect_dialog;
-
-	gboolean show_tooltip;
-
-	GSettings *gsettings;
+    guint            index_old;
+    guint64          in_old [OLD_VALUES];
+    guint64          out_old [OLD_VALUES];
+    double           max_graph;
+    double           in_graph [GRAPH_VALUES];
+    double           out_graph [GRAPH_VALUES];
+    int              index_graph;
+    GtkWidget       *connect_dialog;
+    gboolean         show_tooltip;
+    GSettings       *gsettings;
 } MateNetspeedApplet;
 
 static void
@@ -129,11 +153,13 @@ device_change_cb(GtkComboBox *combo, MateNetspeedApplet *applet);
 /* Adds a Pango markup "foreground" to a bytestring
  */
 static void
-add_markup_fgcolor(char **string, const char *color)
+add_markup_fgcolor (char       **string,
+                    const char  *color)
 {
-	char *tmp = *string;
-	*string = g_strdup_printf("<span foreground=\"%s\">%s</span>", color, tmp);
-	g_free(tmp);
+    char *tmp = *string;
+
+    *string = g_strdup_printf ("<span foreground=\"%s\">%s</span>", color, tmp);
+    g_free (tmp);
 }
 
 /* Change the icons according to the selected device
@@ -145,8 +171,8 @@ change_icons(MateNetspeedApplet *applet)
 	cairo_surface_t *in_arrow, *out_arrow;
 	GtkIconTheme *icon_theme;
 	gint icon_scale;
-
 	gint icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet->applet)) - 8;
+
 	/* FIXME: Not all network icons include a high enough resolution, so to make them all
 	 * consistent, we cap them at 48px.*/
 	icon_size = CLAMP (icon_size, 16, 48);
@@ -407,30 +433,30 @@ format_transfer_rate (gchar   *out,
                       double   bytes,
                       gboolean bits)
 {
-	const char *format;
-	const char *unit;
+    const char *format;
+    const char *unit;
 
-	if (bits)
-		bytes *= 8.0;
+    if (bits)
+        bytes *= 8.0;
 
-	if (bytes < IEC_KIBI_DBL) {
-		format = "%.0f %s";
-		unit = bits ? /* translators: bits (short) */ N_("bit/s"): /* translators: Bytes (short) */ N_("B/s");
-	} else if (bytes < IEC_MEBI_DBL) {
-		format = (bytes < (100.0 * IEC_KIBI_DBL)) ? "%.1f %s" : "%.0f %s";
-		bytes /= IEC_KIBI_DBL;
-		unit = bits ? /* translators: kibibits (short) */ N_("Kibit/s") : /* translators: Kibibytes (short) */ N_("KiB/s");
-	} else if (bytes < IEC_GIBI_DBL) {
-		format = "%.1f %s";
-		bytes /= IEC_MEBI_DBL;
-		unit = bits ? /* translators: Mebibit (short) */ N_("Mibit/s") : /* translators: Mebibyte (short) */ N_("MiB/s");
-	} else {
-		format = "%.1f %s";
-		bytes /= IEC_GIBI_DBL;
-		unit = bits ? /* translators: Gibibit (short) */ N_("Gibit/s") : /* translators: Gibibyte (short) */ N_("GiB/s");
-	}
+    if (bytes < IEC_KIBI_DBL) {
+        format = "%.0f %s";
+        unit = bits ? /* translators: bits (short) */ N_("bit/s"): /* translators: Bytes (short) */ N_("B/s");
+    } else if (bytes < IEC_MEBI_DBL) {
+        format = (bytes < (100.0 * IEC_KIBI_DBL)) ? "%.1f %s" : "%.0f %s";
+        bytes /= IEC_KIBI_DBL;
+        unit = bits ? /* translators: kibibits (short) */ N_("Kibit/s") : /* translators: Kibibytes (short) */ N_("KiB/s");
+    } else if (bytes < IEC_GIBI_DBL) {
+        format = "%.1f %s";
+        bytes /= IEC_MEBI_DBL;
+        unit = bits ? /* translators: Mebibit (short) */ N_("Mibit/s") : /* translators: Mebibyte (short) */ N_("MiB/s");
+    } else {
+        format = "%.1f %s";
+        bytes /= IEC_GIBI_DBL;
+        unit = bits ? /* translators: Gibibit (short) */ N_("Gibit/s") : /* translators: Gibibyte (short) */ N_("GiB/s");
+    }
 
-	g_snprintf (out, MAX_FORMAT_SIZE, format, bytes, gettext(unit));
+    g_snprintf (out, MAX_FORMAT_SIZE, format, bytes, gettext(unit));
 }
 
 /* Converts a number of bytes into a human
@@ -611,163 +637,304 @@ format_time (guint32 sec)
     return res;
 }
 
+static char *
+mac_addr_n2a (const unsigned char *hw)
+{
+    if (hw[6] || hw[7]) {
+        return g_strdup_printf ("%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x",
+                                hw[0], hw[1], hw[2], hw[3],
+                                hw[4], hw[5], hw[6], hw[7]);
+    } else {
+        return g_strdup_printf ("%02x:%02x:%02x:%02x:%02x:%02x",
+                                hw[0], hw[1], hw[2],
+                                hw[3], hw[4], hw[5]);
+    }
+}
+
+static void
+format_ipv4 (guint32  ip,
+             char    *dest)
+{
+    inet_ntop (AF_INET, &ip, dest, INET_ADDRSTRLEN);
+}
+
+static void
+format_ipv6 (const guint8  ip[16],
+             char         *dest)
+{
+    inet_ntop (AF_INET6, ip, dest, INET6_ADDRSTRLEN);
+}
+
+static void
+fill_details_dialog (MateNetspeedApplet *applet)
+{
+    char *text;
+    char ipv4_text [INET_ADDRSTRLEN];
+    char ipv6_text [INET6_ADDRSTRLEN];
+
+    if (applet->devinfo->ip) {
+        format_ipv4 (applet->devinfo->ip, ipv4_text);
+        text = ipv4_text;
+    } else {
+        text = _("none");
+    }
+    gtk_label_set_text (GTK_LABEL (applet->ip_text), text);
+
+    if (applet->devinfo->netmask) {
+        format_ipv4 (applet->devinfo->netmask, ipv4_text);
+        text = ipv4_text;
+    } else {
+        text = _("none");
+    }
+    gtk_label_set_text (GTK_LABEL (applet->netmask_text), text);
+
+    if (applet->devinfo->type != DEV_LO) {
+        text = mac_addr_n2a (applet->devinfo->hwaddr);
+        gtk_label_set_text (GTK_LABEL (applet->hwaddr_text), text);
+        g_free (text);
+    } else {
+        gtk_label_set_text (GTK_LABEL (applet->hwaddr_text), _("none"));
+    }
+
+    if (applet->devinfo->ptpip) {
+        format_ipv4 (applet->devinfo->ptpip, ipv4_text);
+        text = ipv4_text;
+    } else {
+        text = _("none");
+    }
+    gtk_label_set_text (GTK_LABEL (applet->ptpip_text), text);
+
+    /* check if we got an ipv6 address */
+    format_ipv6 (applet->devinfo->ipv6, ipv6_text);
+    if (strlen (ipv6_text) > 2) {
+        gtk_label_set_text (GTK_LABEL (applet->ipv6_text), ipv6_text);
+        gtk_widget_show (applet->ipv6_box);
+    } else {
+        gtk_widget_hide (applet->ipv6_box);
+    }
+
+    if (applet->devinfo->type == DEV_WIRELESS) {
+        float quality;
+
+        /* _maybe_ we can add the encrypted icon between the essid and the signal bar. */
+
+        quality = applet->devinfo->qual / 100.0f;
+        if (quality > 1.0)
+            quality = 1.0;
+
+        text = g_strdup_printf ("%d %%", applet->devinfo->qual);
+        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (applet->signalbar), quality);
+        gtk_progress_bar_set_text (GTK_PROGRESS_BAR (applet->signalbar), text);
+        g_free(text);
+
+        gtk_label_set_text (GTK_LABEL (applet->essid_text),
+                            applet->devinfo->essid);
+
+#ifdef HAVE_NL
+        if (applet->devinfo->running) {
+            text = mac_addr_n2a (applet->devinfo->station_mac_addr);
+            gtk_label_set_text (GTK_LABEL (applet->station_text), text);
+            g_free (text);
+        } else {
+            gtk_label_set_text (GTK_LABEL (applet->station_text), _("unknown"));
+        }
+
+        gtk_label_set_text (GTK_LABEL (applet->channel_text),
+                            applet->devinfo->channel ? applet->devinfo->channel : _("unknown"));
+
+        text = format_time (applet->devinfo->connected_time);
+        gtk_label_set_text (GTK_LABEL (applet->connected_time_text),
+                            applet->devinfo->connected_time > 0 ? text : _("na"));
+        g_free (text);
+
+        gtk_widget_show (applet->netlink_box);
+#else
+        gtk_widget_hide (applet->netlink_box);
+#endif /* HAVE_NL */
+        gtk_widget_show (applet->wireless_box);
+    } else {
+        gtk_widget_hide (applet->wireless_box);
+    }
+}
+
 /* Here happens the really interesting stuff */
 static void
-update_applet(MateNetspeedApplet *applet)
+update_applet (MateNetspeedApplet *applet)
 {
-	guint64 indiff, outdiff;
-	double inrate, outrate;
-	char *inbytes, *outbytes;
-	int i;
-	DevInfo *oldinfo;
+    guint64 indiff, outdiff;
+    double inrate, outrate;
+    char *inbytes, *outbytes;
+    int i;
+    DevInfo *oldinfo;
 
-	if (!applet)	return;
+    if (!applet) return;
 
-	/* First we try to figure out if the device has changed */
-	oldinfo = applet->devinfo;
-	get_device_info (oldinfo->name, &applet->devinfo);
-	if (compare_device_info (applet->devinfo, oldinfo))
-		applet->device_has_changed = TRUE;
-	free_device_info (oldinfo);
+    /* First we try to figure out if the device has changed */
+    oldinfo = applet->devinfo;
+    get_device_info (oldinfo->name, &applet->devinfo);
+    if (compare_device_info (applet->devinfo, oldinfo))
+        applet->device_has_changed = TRUE;
+    free_device_info (oldinfo);
 
-	/* If the device has changed, reintialize stuff */
-	if (applet->device_has_changed) {
-		change_icons(applet);
-		change_quality_icon(applet);
-		for (i = 0; i < OLD_VALUES; i++)
-		{
-			applet->in_old[i] = applet->devinfo->rx;
-			applet->out_old[i] = applet->devinfo->tx;
-		}
-		for (i = 0; i < GRAPH_VALUES; i++)
-		{
-			applet->in_graph[i] = -1;
-			applet->out_graph[i] = -1;
-		}
-		applet->max_graph = 0;
-		applet->index_graph = 0;
-		applet->device_has_changed = FALSE;
-	}
+    /* If the device has changed, reintialize stuff */
+    if (applet->device_has_changed) {
+        change_icons (applet);
+        change_quality_icon (applet);
 
-	/* create the strings for the labels and tooltips */
-	if (applet->devinfo->running)
-	{
-		if (applet->devinfo->rx < applet->in_old[applet->index_old]) indiff = 0;
-		else indiff = applet->devinfo->rx - applet->in_old[applet->index_old];
-		if (applet->devinfo->tx < applet->out_old[applet->index_old]) outdiff = 0;
-		else outdiff = applet->devinfo->tx - applet->out_old[applet->index_old];
+        for (i = 0; i < OLD_VALUES; i++) {
+            applet->in_old[i] = applet->devinfo->rx;
+            applet->out_old[i] = applet->devinfo->tx;
+        }
 
-		inrate = (double)indiff / OLD_VALUES_DBL;
-		outrate = (double)outdiff / OLD_VALUES_DBL;
+        for (i = 0; i < GRAPH_VALUES; i++) {
+            applet->in_graph[i] = -1;
+            applet->out_graph[i] = -1;
+        }
 
-		applet->in_graph[applet->index_graph] = inrate;
-		applet->out_graph[applet->index_graph] = outrate;
-		applet->max_graph = MAX(inrate, applet->max_graph);
-		applet->max_graph = MAX(outrate, applet->max_graph);
+        applet->max_graph = 0;
+        applet->index_graph = 0;
 
-		format_transfer_rate (applet->devinfo->rx_rate, inrate, applet->show_bits);
-		format_transfer_rate (applet->devinfo->tx_rate, outrate, applet->show_bits);
-		format_transfer_rate (applet->devinfo->sum_rate, inrate + outrate, applet->show_bits);
-	} else {
-		applet->devinfo->rx_rate[0] = '\0';
-		applet->devinfo->tx_rate[0] = '\0';
-		applet->devinfo->sum_rate[0] = '\0';
-		applet->in_graph[applet->index_graph] = 0;
-		applet->out_graph[applet->index_graph] = 0;
-	}
+        if (applet->details) {
+            fill_details_dialog (applet);
+        }
 
-	if (applet->devinfo->type == DEV_WIRELESS) {
-		if (applet->devinfo->up)
-			update_quality_icon(applet);
+        applet->device_has_changed = FALSE;
+    }
 
-		if (applet->signalbar) {
-			float quality;
-			char *text;
+    /* create the strings for the labels and tooltips */
+    if (applet->devinfo->running) {
+        if (applet->devinfo->rx < applet->in_old[applet->index_old])
+            indiff = 0;
+        else
+            indiff = applet->devinfo->rx - applet->in_old[applet->index_old];
 
-			quality = applet->devinfo->qual / 100.0f;
-			if (quality > 1.0)
-				quality = 1.0;
+        if (applet->devinfo->tx < applet->out_old[applet->index_old])
+            outdiff = 0;
+        else
+            outdiff = applet->devinfo->tx - applet->out_old[applet->index_old];
 
-			text = g_strdup_printf ("%d %%", applet->devinfo->qual);
-			gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (applet->signalbar), quality);
-			gtk_progress_bar_set_text (GTK_PROGRESS_BAR (applet->signalbar), text);
-			g_free(text);
-		}
+        inrate = (double)indiff / OLD_VALUES_DBL;
+        outrate = (double)outdiff / OLD_VALUES_DBL;
+
+        applet->in_graph[applet->index_graph] = inrate;
+        applet->out_graph[applet->index_graph] = outrate;
+        applet->max_graph = MAX(inrate, applet->max_graph);
+        applet->max_graph = MAX(outrate, applet->max_graph);
+
+        format_transfer_rate (applet->devinfo->rx_rate, inrate, applet->show_bits);
+        format_transfer_rate (applet->devinfo->tx_rate, outrate, applet->show_bits);
+        format_transfer_rate (applet->devinfo->sum_rate, inrate + outrate, applet->show_bits);
+    } else {
+        applet->devinfo->rx_rate[0] = '\0';
+        applet->devinfo->tx_rate[0] = '\0';
+        applet->devinfo->sum_rate[0] = '\0';
+        applet->in_graph[applet->index_graph] = 0;
+        applet->out_graph[applet->index_graph] = 0;
+    }
+
+    if (applet->devinfo->type == DEV_WIRELESS) {
+        if (applet->devinfo->up)
+            update_quality_icon(applet);
+
+        if (applet->signalbar) {
+            float quality;
+            char *text;
+
+            quality = applet->devinfo->qual / 100.0f;
+            if (quality > 1.0)
+                quality = 1.0;
+
+            text = g_strdup_printf ("%d %%", applet->devinfo->qual);
+            gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (applet->signalbar), quality);
+            gtk_progress_bar_set_text (GTK_PROGRESS_BAR (applet->signalbar), text);
+            g_free(text);
+        }
 #ifdef HAVE_NL
-		/* Refresh the value of Conected Time */
-		if (applet->connected_time_text) {
-			char *text;
-			text = format_time (applet->devinfo->connected_time);
-			gtk_label_set_text (GTK_LABEL (applet->connected_time_text),
-			                    applet->devinfo->connected_time > 0 ? text : _("na"));
-			g_free (text);
-		}
+        /* Refresh the value of Connected Time */
+        if (applet->connected_time_text) {
+            char *text;
+
+            text = format_time (applet->devinfo->connected_time);
+            gtk_label_set_text (GTK_LABEL (applet->connected_time_text),
+                                applet->devinfo->connected_time > 0 ? text : _("na"));
+            g_free (text);
+        }
 #endif
-	}
+    }
 
-	update_tooltip(applet);
+    update_tooltip(applet);
 
-	/* Refresh the text of the labels and tooltip */
-	if (applet->show_sum) {
-		gtk_label_set_text (GTK_LABEL (applet->sum_label), applet->devinfo->sum_rate);
-	} else {
-		gtk_label_set_text (GTK_LABEL (applet->in_label), applet->devinfo->rx_rate);
-		gtk_label_set_text (GTK_LABEL (applet->out_label), applet->devinfo->tx_rate);
-	}
+    /* Refresh the text of the labels and tooltip */
+    if (applet->show_sum) {
+        gtk_label_set_text (GTK_LABEL (applet->sum_label),
+                            applet->devinfo->sum_rate);
+    } else {
+        gtk_label_set_text (GTK_LABEL (applet->in_label),
+                            applet->devinfo->rx_rate);
+        gtk_label_set_text (GTK_LABEL (applet->out_label),
+                            applet->devinfo->tx_rate);
+    }
 
-	/* Refresh the values of the Infodialog */
-	if (applet->inbytes_text) {
-		if (applet->show_bits)
-			inbytes = g_format_size_full (applet->devinfo->rx*8, G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
-		else
-			inbytes = g_format_size_full (applet->devinfo->rx, G_FORMAT_SIZE_IEC_UNITS);
-		gtk_label_set_text(GTK_LABEL(applet->inbytes_text), inbytes);
-		g_free(inbytes);
-	}
-	if (applet->outbytes_text) {
-		if (applet->show_bits)
-			outbytes = g_format_size_full (applet->devinfo->tx*8, G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
-		else
-			outbytes = g_format_size_full (applet->devinfo->tx, G_FORMAT_SIZE_IEC_UNITS);
-		gtk_label_set_text(GTK_LABEL(applet->outbytes_text), outbytes);
-		g_free(outbytes);
-	}
-	/* Redraw the graph of the Infodialog */
-	if (applet->drawingarea)
-		gtk_widget_queue_draw (GTK_WIDGET (applet->drawingarea));
+    /* Refresh the values of the Infodialog */
+    if (applet->inbytes_text) {
+        if (applet->show_bits)
+            inbytes = g_format_size_full (applet->devinfo->rx*8,
+                                          G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
+        else
+            inbytes = g_format_size_full (applet->devinfo->rx,
+                                          G_FORMAT_SIZE_IEC_UNITS);
 
-	/* Save old values... */
-	applet->in_old[applet->index_old] = applet->devinfo->rx;
-	applet->out_old[applet->index_old] = applet->devinfo->tx;
-	applet->index_old = (applet->index_old + 1) % OLD_VALUES;
+        gtk_label_set_text (GTK_LABEL (applet->inbytes_text), inbytes);
+        g_free (inbytes);
+    }
+    if (applet->outbytes_text) {
+        if (applet->show_bits)
+            outbytes = g_format_size_full (applet->devinfo->tx*8,
+                                           G_FORMAT_SIZE_IEC_UNITS | G_FORMAT_SIZE_BITS);
+        else
+            outbytes = g_format_size_full (applet->devinfo->tx,
+                                           G_FORMAT_SIZE_IEC_UNITS);
 
-	/* Move the graphindex. Check if we can scale down again */
-	applet->index_graph = (applet->index_graph + 1) % GRAPH_VALUES;
-	if (applet->index_graph % 20 == 0)
-	{
-		double max = 0;
-		for (i = 0; i < GRAPH_VALUES; i++)
-		{
-			max = MAX(max, applet->in_graph[i]);
-			max = MAX(max, applet->out_graph[i]);
-		}
-		applet->max_graph = max;
-	}
+        gtk_label_set_text (GTK_LABEL (applet->outbytes_text), outbytes);
+	g_free (outbytes);
+    }
 
-	/* Always follow the default route */
-	if (applet->auto_change_device) {
-		gboolean change_device_now = !applet->devinfo->running;
-		if (!change_device_now) {
-			const gchar *default_route;
-			default_route = get_default_route();
-			change_device_now = (default_route != NULL
-						&& strcmp(default_route,
-							applet->devinfo->name));
-		}
-		if (change_device_now) {
-			search_for_up_if(applet);
-		}
-	}
+    /* Redraw the graph of the Infodialog */
+    if (applet->drawingarea)
+        gtk_widget_queue_draw (GTK_WIDGET (applet->drawingarea));
+
+    /* Save old values... */
+    applet->in_old  [applet->index_old] = applet->devinfo->rx;
+    applet->out_old [applet->index_old] = applet->devinfo->tx;
+    applet->index_old = (applet->index_old + 1) % OLD_VALUES;
+
+    /* Move the graphindex. Check if we can scale down again */
+    applet->index_graph = (applet->index_graph + 1) % GRAPH_VALUES;
+    if (applet->index_graph % 20 == 0) {
+        double max = 0;
+
+        for (i = 0; i < GRAPH_VALUES; i++) {
+            max = MAX (max, applet->in_graph[i]);
+            max = MAX (max, applet->out_graph[i]);
+        }
+        applet->max_graph = max;
+    }
+
+    /* Always follow the default route */
+    if (applet->auto_change_device) {
+        gboolean change_device_now = !applet->devinfo->running;
+
+        if (!change_device_now) {
+            const gchar *default_route;
+
+            default_route = get_default_route();
+            change_device_now = (default_route != NULL &&
+                                 strcmp (default_route, applet->devinfo->name));
+        }
+        if (change_device_now) {
+            search_for_up_if(applet);
+        }
+    }
 }
 
 static gboolean
@@ -822,9 +989,10 @@ display_help (GtkWidget *dialog, const gchar *section)
 /* Opens gnome help application
  */
 static void
-help_cb (GtkAction *action, MateNetspeedApplet *ap)
+help_cb (GtkAction          *action,
+         MateNetspeedApplet *ap)
 {
-	display_help (GTK_WIDGET (ap->applet), NULL);
+    display_help (GTK_WIDGET (ap->applet), NULL);
 }
 
 /* Just the about window... If it's already open, just fokus it
@@ -963,7 +1131,8 @@ changeicon_change_cb(GtkToggleButton *togglebutton, MateNetspeedApplet *applet)
  * them in the gsettings database
  */
 static void
-settings_cb(GtkAction *action, gpointer data)
+settings_cb (GtkAction *action,
+             gpointer   data)
 {
 	GtkBuilder *builder;
 	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
@@ -1068,292 +1237,95 @@ outcolor_changed_cb (GtkColorChooser *button, gpointer data)
 /* Handle info dialog response event
  */
 static void
-info_response_cb (GtkDialog *dialog, gint id, MateNetspeedApplet *applet)
+info_response_cb (GtkDialog          *dialog,
+                  gint                id,
+                  MateNetspeedApplet *applet)
 {
 
-	if(id == GTK_RESPONSE_HELP){
-		display_help (GTK_WIDGET (dialog), "netspeed_applet-details");
-		return;
-	}
-
-	gtk_widget_destroy(GTK_WIDGET(applet->details));
-
-	applet->details = NULL;
-	applet->inbytes_text = NULL;
-#ifdef HAVE_NL
-	applet->connected_time_text = NULL;
-#endif
-	applet->outbytes_text = NULL;
-	applet->drawingarea = NULL;
-	applet->signalbar = NULL;
-}
-
-static char*
-mac_addr_n2a (const unsigned char *hw)
-{
-    if (hw[6] || hw[7]) {
-        return g_strdup_printf ("%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x",
-                                hw[0], hw[1], hw[2], hw[3],
-                                hw[4], hw[5], hw[6], hw[7]);
-    } else {
-        return g_strdup_printf ("%02x:%02x:%02x:%02x:%02x:%02x",
-                                hw[0], hw[1], hw[2],
-                                hw[3], hw[4], hw[5]);
+    if (id == GTK_RESPONSE_HELP) {
+        display_help (GTK_WIDGET (dialog), "netspeed_applet-details");
+        return;
     }
+
+    gtk_widget_destroy(GTK_WIDGET(applet->details));
+
+    applet->details       = NULL;
+    applet->drawingarea   = NULL;
+    applet->ip_text       = NULL;
+    applet->netmask_text  = NULL;
+    applet->ptpip_text    = NULL;
+    applet->ipv6_text     = NULL;
+    applet->hwaddr_text   = NULL;
+    applet->inbytes_text  = NULL;
+    applet->outbytes_text = NULL;
+    applet->essid_text    = NULL;
+    applet->signalbar     = NULL;
+#ifdef HAVE_NL
+    applet->station_text        = NULL;
+    applet->channel_text        = NULL;
+    applet->connected_time_text = NULL;
+#endif /* HAVE_NL */
+    applet->ipv6_box      = NULL;
+    applet->netlink_box   = NULL;
+    applet->wireless_box  = NULL;
 }
 
 /* Creates the details dialog
  */
 static void
-showinfo_cb(GtkAction *action, gpointer data)
+showinfo_cb (GtkAction *action,
+             gpointer   data)
 {
-	MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
-	GtkWidget *box, *hbox;
-	GtkWidget *grid, *da_frame;
-	GtkWidget *ip_label, *netmask_label;
-	GtkWidget *hwaddr_label, *ptpip_label;
-	GtkWidget *ip_text, *netmask_text;
-	GtkWidget *hwaddr_text, *ptpip_text;
-	GtkWidget *inbytes_label, *outbytes_label;
-	GtkWidget *incolor_sel, *incolor_label;
-	GtkWidget *outcolor_sel, *outcolor_label;
-	char *text;
+    GtkBuilder *builder;
+    MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
 
-	g_assert(applet);
+    g_assert(applet);
 
-	if (applet->details)
-	{
-		gtk_window_present(GTK_WINDOW(applet->details));
-		return;
-	}
+    if (applet->details) {
+        gtk_window_present(GTK_WINDOW(applet->details));
+        return;
+    }
 
-	text = g_strdup_printf(_("Device Details for %s"), applet->devinfo->name);
-	applet->details = GTK_DIALOG(gtk_dialog_new_with_buttons(text,
-		NULL,
-		GTK_DIALOG_DESTROY_WITH_PARENT,
-		"gtk-close", GTK_RESPONSE_ACCEPT,
-		"gtk-help", GTK_RESPONSE_HELP,
-		NULL));
-	g_free (text);
+    builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/netspeed/netspeed-details.ui");
 
-	gtk_dialog_set_default_response(GTK_DIALOG(applet->details), GTK_RESPONSE_CLOSE);
+    applet->details       = GET_DIALOG ("dialog");
+    applet->drawingarea   = GET_DRAWING_AREA ("drawingarea");
 
-	box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-	gtk_container_set_border_width(GTK_CONTAINER(box), 12);
-
-	grid = gtk_grid_new ();
-	gtk_grid_set_row_spacing (GTK_GRID(grid), 10);
-	gtk_grid_set_column_spacing (GTK_GRID(grid), 15);
-
-	da_frame = gtk_frame_new(NULL);
-	gtk_frame_set_shadow_type(GTK_FRAME(da_frame), GTK_SHADOW_NONE);
-	applet->drawingarea = GTK_DRAWING_AREA(gtk_drawing_area_new());
-	gtk_widget_set_size_request(GTK_WIDGET(applet->drawingarea), -1, 180);
-	gtk_container_add(GTK_CONTAINER(da_frame), GTK_WIDGET(applet->drawingarea));
-
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
-	incolor_label = gtk_label_new_with_mnemonic(_("_In graph color"));
-	outcolor_label = gtk_label_new_with_mnemonic(_("_Out graph color"));
-
-	incolor_sel = gtk_color_button_new ();
-	outcolor_sel = gtk_color_button_new ();
-
-	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (incolor_sel),  &applet->in_color);
-	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (outcolor_sel),  &applet->out_color);
-
-	gtk_label_set_mnemonic_widget(GTK_LABEL(incolor_label), incolor_sel);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(outcolor_label), outcolor_sel);
-
-	gtk_box_pack_start(GTK_BOX(hbox), incolor_sel, FALSE, FALSE, 0);
-	gtk_box_pack_start(GTK_BOX(hbox), incolor_label, FALSE, FALSE, 0);
-	gtk_box_pack_start(GTK_BOX(hbox), outcolor_sel, FALSE, FALSE, 0);
-	gtk_box_pack_start(GTK_BOX(hbox), outcolor_label, FALSE, FALSE, 0);
-
-	ip_label = gtk_label_new(_("Internet Address:"));
-	netmask_label = gtk_label_new(_("Netmask:"));
-	hwaddr_label = gtk_label_new(_("Hardware Address:"));
-	ptpip_label = gtk_label_new(_("P-t-P Address:"));
-	inbytes_label = gtk_label_new(_("Bytes in:"));
-	outbytes_label = gtk_label_new(_("Bytes out:"));
-
-	ip_text = gtk_label_new(applet->devinfo->ip[0] != '\0' ? applet->devinfo->ip : _("none"));
-	netmask_text = gtk_label_new(applet->devinfo->netmask[0] != '\0' ? applet->devinfo->netmask : _("none"));
-	if (applet->devinfo->type != DEV_LO) {
-		text = mac_addr_n2a (applet->devinfo->hwaddr);
-		hwaddr_text = gtk_label_new (text);
-		g_free (text);
-	} else {
-		hwaddr_text = gtk_label_new (_("none"));
-	}
-	ptpip_text = gtk_label_new(applet->devinfo->ptpip[0] != '\0' ? applet->devinfo->ptpip : _("none"));
-	applet->inbytes_text = gtk_label_new("0 byte");
-	applet->outbytes_text = gtk_label_new("0 byte");
-
-	gtk_label_set_selectable(GTK_LABEL(ip_text), TRUE);
-	gtk_label_set_selectable(GTK_LABEL(netmask_text), TRUE);
-	gtk_label_set_selectable(GTK_LABEL(hwaddr_text), TRUE);
-	gtk_label_set_selectable(GTK_LABEL(ptpip_text), TRUE);
-
-	gtk_label_set_xalign (GTK_LABEL (ip_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (ip_label), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (ip_text), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (ip_text), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (netmask_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (netmask_label), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (netmask_text), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (netmask_text), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (hwaddr_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (hwaddr_label), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (hwaddr_text), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (hwaddr_text), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (ptpip_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (ptpip_label), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (ptpip_text), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (ptpip_text), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (inbytes_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (inbytes_label), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (applet->inbytes_text), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (applet->inbytes_text), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (outbytes_label), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (outbytes_label), 0.5f);
-	gtk_label_set_xalign (GTK_LABEL (applet->outbytes_text), 0.0f);
-	gtk_label_set_yalign (GTK_LABEL (applet->outbytes_text), 0.5f);
-
-	gtk_grid_attach(GTK_GRID(grid), ip_label, 0, 0, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), ip_text, 1, 0, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), netmask_label, 2, 0, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), netmask_text, 3, 0, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), hwaddr_label, 0, 1, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), hwaddr_text, 1, 1, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), ptpip_label, 2, 1, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), ptpip_text, 3, 1, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), inbytes_label, 0, 2, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), applet->inbytes_text, 1, 2, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), outbytes_label, 2, 2, 1, 1);
-	gtk_grid_attach(GTK_GRID(grid), applet->outbytes_text, 3, 2, 1, 1);
-
-	/* check if we got an ipv6 address */
-	if (strlen (applet->devinfo->ipv6) > 2) {
-		GtkWidget *ipv6_label, *ipv6_text;
-
-		ipv6_label = gtk_label_new (_("IPV6 Address:"));
-		ipv6_text = gtk_label_new (applet->devinfo->ipv6);
-
-		gtk_label_set_selectable (GTK_LABEL (ipv6_text), TRUE);
-
-		gtk_label_set_xalign (GTK_LABEL (ipv6_label), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (ipv6_label), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (ipv6_text), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (ipv6_text), 0.5f);
-		gtk_grid_attach (GTK_GRID (grid), ipv6_label, 0, 3, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), ipv6_text, 1, 3, 1, 1);
-	}
-
-	if (applet->devinfo->type == DEV_WIRELESS) {
-		GtkWidget *signal_label;
-		GtkWidget *essid_label;
-		GtkWidget *essid_text;
+    applet->ip_text       = GET_WIDGET ("ip_text");
+    applet->netmask_text  = GET_WIDGET ("netmask_text");
+    applet->ptpip_text    = GET_WIDGET ("ptpip_text");
+    applet->ipv6_text     = GET_WIDGET ("ipv6_text");
+    applet->hwaddr_text   = GET_WIDGET ("hwaddr_text");
+    applet->inbytes_text  = GET_WIDGET ("inbytes_text");
+    applet->outbytes_text = GET_WIDGET ("outbytes_text");
+    applet->essid_text    = GET_WIDGET ("essid_text");
+    applet->signalbar     = GET_WIDGET ("signalbar");
 #ifdef HAVE_NL
-		GtkWidget *station_label;
-		GtkWidget *station_text;
-		GtkWidget *channel_label;
-		GtkWidget *channel_text;
-		GtkWidget *connected_time_label;
+    applet->station_text  = GET_WIDGET ("station_text");
+    applet->channel_text  = GET_WIDGET ("channel_text");
+
+    applet->connected_time_text = GET_WIDGET ("connected_time_text");
 #endif /* HAVE_NL */
-		float quality;
+    applet->ipv6_box      = GET_WIDGET ("ipv6_box");
+    applet->netlink_box   = GET_WIDGET ("netlink_box");
+    applet->wireless_box  = GET_WIDGET ("wireless_box");
 
-		/* _maybe_ we can add the encrypted icon between the essid and the signal bar. */
+    gtk_color_chooser_set_rgba (GET_COLOR_CHOOSER ("incolor_sel"),  &applet->in_color);
+    gtk_color_chooser_set_rgba (GET_COLOR_CHOOSER ("outcolor_sel"),  &applet->out_color);
 
-		applet->signalbar = gtk_progress_bar_new ();
+    fill_details_dialog (applet);
 
-		quality = applet->devinfo->qual / 100.0f;
-		if (quality > 1.0)
-		quality = 1.0;
+    gtk_builder_add_callback_symbols (builder,
+                                      "on_drawingarea_draw", G_CALLBACK (da_draw),
+                                      "on_incolor_sel_color_set", G_CALLBACK (incolor_changed_cb),
+                                      "on_outcolor_sel_color_set", G_CALLBACK (outcolor_changed_cb),
+                                      "on_dialog_response", G_CALLBACK (info_response_cb),
+                                      NULL);
+    gtk_builder_connect_signals (builder, applet);
 
-		text = g_strdup_printf ("%d %%", applet->devinfo->qual);
-		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (applet->signalbar), quality);
-		gtk_progress_bar_set_text (GTK_PROGRESS_BAR (applet->signalbar), text);
-		g_free(text);
+    g_object_unref (builder);
 
-		signal_label = gtk_label_new (_("Signal Strength:"));
-		essid_label = gtk_label_new (_("ESSID:"));
-		essid_text = gtk_label_new (applet->devinfo->essid ? applet->devinfo->essid : _("none"));
-
-#ifdef HAVE_NL
-		station_label = gtk_label_new (_("Station:"));
-		if (applet->devinfo->running) {
-			text = mac_addr_n2a (applet->devinfo->station_mac_addr);
-			station_text = gtk_label_new (text);
-			g_free (text);
-		} else {
-			station_text = gtk_label_new (_("unknown"));
-		}
-		channel_label = gtk_label_new (_("Channel:"));
-		channel_text = gtk_label_new (applet->devinfo->channel ? applet->devinfo->channel : _("unknown"));
-		connected_time_label = gtk_label_new (_("Connected Time:"));
-
-		text = format_time (applet->devinfo->connected_time);
-		applet->connected_time_text = gtk_label_new (applet->devinfo->connected_time > 0 ? text : _("na"));
-		g_free (text);
-#endif /* HAVE_NL */
-
-		gtk_label_set_xalign (GTK_LABEL (signal_label), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (signal_label), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (essid_label), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (essid_label), 0.5f);;
-		gtk_label_set_xalign (GTK_LABEL (essid_text), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (essid_text), 0.5f);
-		gtk_label_set_selectable (GTK_LABEL (essid_text), TRUE);
-#ifdef HAVE_NL
-		gtk_label_set_xalign (GTK_LABEL (station_label), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (station_label), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (station_text), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (station_text), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (channel_text), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (channel_text), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (channel_label), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (channel_label), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (connected_time_label), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (connected_time_label), 0.5f);
-		gtk_label_set_xalign (GTK_LABEL (applet->connected_time_text), 0.0f);
-		gtk_label_set_yalign (GTK_LABEL (applet->connected_time_text), 0.5f);
-#endif /* HAVE_NL */
-
-		gtk_grid_attach (GTK_GRID (grid), signal_label, 2, 4, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), GTK_WIDGET (applet->signalbar), 3, 4, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), essid_label, 0, 4, 3, 1);
-		gtk_grid_attach (GTK_GRID (grid), essid_text, 1, 4, 3, 1);
-#ifdef HAVE_NL
-		gtk_grid_attach (GTK_GRID (grid), station_label, 0, 5, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), station_text, 1, 5, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), channel_label, 2, 5, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), channel_text, 3, 5, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), connected_time_label, 0, 6, 1, 1);
-		gtk_grid_attach (GTK_GRID (grid), applet->connected_time_text, 1, 6, 3, 1);
-#endif /* HAVE_NL */
-	}
-
-	g_signal_connect(G_OBJECT(applet->drawingarea), "draw",
-			 G_CALLBACK(da_draw),
-			 (gpointer)applet);
-
-	g_signal_connect(G_OBJECT(incolor_sel), "color_set",
-			 G_CALLBACK(incolor_changed_cb),
-			 (gpointer)applet);
-
-	g_signal_connect(G_OBJECT(outcolor_sel), "color_set",
-			 G_CALLBACK(outcolor_changed_cb),
-			 (gpointer)applet);
-
-	g_signal_connect(G_OBJECT(applet->details), "response",
-			 G_CALLBACK(info_response_cb), (gpointer)applet);
-
-	gtk_box_pack_start(GTK_BOX(box), da_frame, TRUE, TRUE, 0);
-	gtk_box_pack_start(GTK_BOX(box), hbox, FALSE, FALSE, 0);
-	gtk_box_pack_start(GTK_BOX(box), grid, FALSE, FALSE, 0);
-
-	gtk_container_add(GTK_CONTAINER(gtk_dialog_get_content_area (applet->details)), box);
-	gtk_widget_show_all(GTK_WIDGET(applet->details));
+    gtk_window_present (GTK_WINDOW (applet->details));
 }
 
 static const GtkActionEntry mate_netspeed_applet_menu_actions [] = {
@@ -1477,60 +1449,64 @@ applet_destroy(MatePanelApplet *applet_widget, MateNetspeedApplet *applet)
 	return;
 }
 
-
-
 static void
-update_tooltip(MateNetspeedApplet* applet)
+update_tooltip (MateNetspeedApplet* applet)
 {
-  GString* tooltip;
+    GString* tooltip;
 
-  if (!applet->show_tooltip)
-    return;
+    if (!applet->show_tooltip)
+        return;
 
-  tooltip = g_string_new("");
+    tooltip = g_string_new("");
 
-  if (!applet->devinfo->running)
-    g_string_printf(tooltip, _("%s is down"), applet->devinfo->name);
-  else {
-    if (applet->show_sum) {
-      g_string_printf(
-		      tooltip,
-		      _("%s: %s\nin: %s out: %s"),
-		      applet->devinfo->name,
-		      applet->devinfo->ip[0] != '\0' ? applet->devinfo->ip : _("has no ip"),
-		      applet->devinfo->rx_rate,
-		      applet->devinfo->tx_rate
-		      );
-    } else {
-      g_string_printf(
-		      tooltip,
-		      _("%s: %s\nsum: %s"),
-		      applet->devinfo->name,
-		      applet->devinfo->ip[0] != '\0' ? applet->devinfo->ip : _("has no ip"),
-		      applet->devinfo->sum_rate
-		      );
-    }
+    if (!applet->devinfo->running)
+        g_string_printf(tooltip, _("%s is down"), applet->devinfo->name);
+    else {
+        char ipv4_text [INET_ADDRSTRLEN];
+        char *ip;
+
+        if (applet->devinfo->ip) {
+            format_ipv4 (applet->devinfo->ip, ipv4_text);
+            ip = ipv4_text;
+        } else {
+            ip = _("has no ip");
+        }
+
+        if (applet->show_sum) {
+            g_string_printf(tooltip,
+                            _("%s: %s\nin: %s out: %s"),
+                            applet->devinfo->name,
+                            ip,
+                            applet->devinfo->rx_rate,
+                            applet->devinfo->tx_rate);
+        } else {
+            g_string_printf(tooltip,
+                            _("%s: %s\nsum: %s"),
+                            applet->devinfo->name,
+                            ip,
+                            applet->devinfo->sum_rate);
+        }
 #ifdef HAVE_NL
-    if (applet->devinfo->type == DEV_WIRELESS)
-      g_string_append_printf (tooltip,
-                              _("\nESSID: %s\nRSSI: %d dBm\nRX Bitrate: %s\nTX Bitrate: %s"),
-                              applet->devinfo->essid ? applet->devinfo->essid : _("unknown"),
-                              applet->devinfo->rssi,
-                              applet->devinfo->rx_bitrate,
-                              applet->devinfo->tx_bitrate);
+        if (applet->devinfo->type == DEV_WIRELESS)
+            g_string_append_printf (tooltip,
+                                    _("\nESSID: %s\nRSSI: %d dBm\nRX Bitrate: %s\nTX Bitrate: %s"),
+                                    applet->devinfo->essid ? applet->devinfo->essid : _("unknown"),
+                                    applet->devinfo->rssi,
+                                    applet->devinfo->rx_bitrate,
+                                    applet->devinfo->tx_bitrate);
 #endif /* HAVE_NL */
 #ifdef HAVE_IW
-    if (applet->devinfo->type == DEV_WIRELESS)
-      g_string_append_printf (tooltip,
-                              _("\nESSID: %s\nStrength: %d %%"),
-                              applet->devinfo->essid ? applet->devinfo->essid : _("unknown"),
-                              applet->devinfo->qual);
+        if (applet->devinfo->type == DEV_WIRELESS)
+            g_string_append_printf (tooltip,
+                                    _("\nESSID: %s\nStrength: %d %%"),
+                                    applet->devinfo->essid ? applet->devinfo->essid : _("unknown"),
+                                    applet->devinfo->qual);
 #endif /* HAVE_IW */
-  }
+    }
 
-  gtk_widget_set_tooltip_text(GTK_WIDGET(applet->applet), tooltip->str);
-  gtk_widget_trigger_tooltip_query(GTK_WIDGET(applet->applet));
-  g_string_free(tooltip, TRUE);
+    gtk_widget_set_tooltip_text (GTK_WIDGET (applet->applet), tooltip->str);
+    gtk_widget_trigger_tooltip_query (GTK_WIDGET (applet->applet));
+    g_string_free (tooltip, TRUE);
 }
 
 

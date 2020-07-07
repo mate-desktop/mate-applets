@@ -42,42 +42,42 @@
 #define MAX_FORMAT_SIZE 15
 
 /* Different types of interfaces */
-typedef enum
-{
-	DEV_LO,
-	DEV_ETHERNET,
-	DEV_WIRELESS,
-	DEV_PPP,
-	DEV_PLIP,
-	DEV_SLIP,
-	DEV_UNKNOWN	// this has to be the last one
+typedef enum {
+    DEV_LO,
+    DEV_ETHERNET,
+    DEV_WIRELESS,
+    DEV_PPP,
+    DEV_PLIP,
+    DEV_SLIP,
+    DEV_UNKNOWN	// this has to be the last one
 } DevType;
 
 /* Some information about the selected network device
  */
-typedef struct
-{
-	DevType type;
-	char *name;
-	char ip[INET_ADDRSTRLEN];
-	char netmask[INET_ADDRSTRLEN];
-	guint8 hwaddr[ETH_ALEN];
-	char ptpip[INET_ADDRSTRLEN];
-	char ipv6[INET6_ADDRSTRLEN];
-	char *essid;
-	gboolean up, running;
-	guint64 tx, rx;
-	int qual;
-	char rx_rate[MAX_FORMAT_SIZE];
-	char tx_rate[MAX_FORMAT_SIZE];
-	char sum_rate[MAX_FORMAT_SIZE];
+typedef struct {
+    DevType        type;
+    char          *name;
+    guint32        ip;
+    guint32        netmask;
+    guint32        ptpip;
+    guint8         hwaddr [ETH_ALEN];
+    guint8         ipv6 [16];
+    char          *essid;
+    gboolean       up;
+    gboolean       running;
+    guint64        tx;
+    guint64        rx;
+    int            qual;
+    char           rx_rate [MAX_FORMAT_SIZE];
+    char           tx_rate [MAX_FORMAT_SIZE];
+    char           sum_rate [MAX_FORMAT_SIZE];
 #ifdef HAVE_NL
-	int rssi;
-	char *tx_bitrate;
-	char *rx_bitrate;
-	char *channel;
-	guint32 connected_time;
-	unsigned char station_mac_addr[ETH_ALEN];
+    int            rssi;
+    char          *tx_bitrate;
+    char          *rx_bitrate;
+    char          *channel;
+    guint32        connected_time;
+    unsigned char  station_mac_addr [ETH_ALEN];
 #endif /* HAVE_NL */
 } DevInfo;
 
