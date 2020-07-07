@@ -748,6 +748,7 @@ destroy_applet( GtkWidget *widget, ProgressData *battstat )
 
   g_object_unref( G_OBJECT(battstat->status) );
   g_object_unref( G_OBJECT(battstat->percent) );
+  g_object_unref (battstat->settings);
 
   static_global_teardown (battstat);
 
