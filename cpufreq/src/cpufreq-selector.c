@@ -44,9 +44,9 @@ G_DEFINE_TYPE (CPUFreqSelector, cpufreq_selector, G_TYPE_OBJECT)
 static void
 cpufreq_selector_finalize (GObject *object)
 {
+#ifdef HAVE_POLKIT
 	CPUFreqSelector *selector = CPUFREQ_SELECTOR (object);
 
-#ifdef HAVE_POLKIT
 	g_clear_object (&selector->proxy);
 	g_clear_object (&selector->system_bus);
 #endif /* HAVE_POLKIT */

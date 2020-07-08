@@ -416,7 +416,6 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
     else
     {
         int delta[COUNT_TYPES];
-        int total = 0;
 
         for (i = 0; i < COUNT_TYPES; i++)
         {
@@ -425,10 +424,7 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
                 delta[i] = (present[i] - past[i]);
             else
                 delta[i] = 0;
-            total += delta[i];
         }
-
-        //max = autoscaler_get_max(&scaler, total);
 
         for (i = 0; i < COUNT_TYPES; i++)
             data[i]   = delta[i];
