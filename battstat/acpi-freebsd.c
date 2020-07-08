@@ -141,7 +141,6 @@ acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info * acpiinfo)
 {
   int time;
   int life;
-  int acline;
   int state;
   size_t len;
   int rate;

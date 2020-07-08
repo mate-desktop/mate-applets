@@ -434,12 +434,12 @@ power_management_getinfo( BatteryStatus *status )
 const char *
 power_management_initialise (void (*callback) (void))
 {
-  char *err;
 #ifdef __linux__
   struct stat statbuf;
-#endif
-
+#endif /* __linux__ */
 #ifdef HAVE_UPOWER
+  char *err;
+
   err = battstat_upower_initialise (callback);
 
   if( err == NULL ) /* UPOWER is up */
@@ -451,8 +451,8 @@ power_management_initialise (void (*callback) (void))
   else
     /* fallback to legacy methods */
     g_free( err );
-#endif
-    
+#endif /* HAVE_UPOWER */
+
 #ifdef __linux__
 
   if (acpi_linux_init(&acpiinfo)) {
