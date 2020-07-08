@@ -196,7 +196,7 @@ acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info * acpiinfo)
   if (!charging) {
     apminfo->ai_batt_time = time;
   }
-  else if (charging && rate > 0) {
+  else if (rate > 0) {
     apminfo->ai_batt_time = (int) ((acpiinfo->max_capacity-remain)/(float)rate);
   }
   else
