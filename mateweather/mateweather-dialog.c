@@ -115,7 +115,7 @@ static void link_cb(GtkButton* button, gpointer data)
 static gchar* replace_multiple_new_lines(gchar* s)
 {
 	gchar *prev_s = s;
-	gint count = 0;
+	gint count;
 	gint i;
 
 	if (s == NULL) {

@@ -93,7 +93,7 @@ load_graph_draw (LoadGraph *g)
   {
     guint maxnet = 1;
     gint segments = 1;
-    gint combined = 0;
+    gint combined;
     for (i = 0; i < g->draw_width; i++)
     {
       g->pos [i] = g->draw_height - 1;
@@ -154,7 +154,7 @@ load_graph_draw (LoadGraph *g)
 
     /* draw grid lines if needed */
     gdk_cairo_set_source_rgba (cr, &(g->colors [4]));
-    double spacing = 0;
+    double spacing;
     for (k = 0; k < segments -1; k++)
     {
       spacing = ((double) g->draw_height/segments) * (k+1);
@@ -209,7 +209,7 @@ load_graph_draw (LoadGraph *g)
     /* draw grid lines in Load graph if needed */
     gdk_cairo_set_source_rgba (cr, &(g->colors [2]));
 
-    double spacing = 0;
+    double spacing;
     for (k = 0; k < load - 1; k++)
     {
       spacing = ((double) g->draw_height/load) * (k+1);
