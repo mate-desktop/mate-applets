@@ -43,20 +43,31 @@ static int xkb_base_event_type = 0;
 #define ALT_GRAPH_LED_MASK (0x10)
 #define ICON_PADDING 4
 
+typedef enum {
+	modifier_Shift = 0,
+	modifier_Control,
+	modifier_Mod1,
+	modifier_Mod2,
+	modifier_Mod3,
+	modifier_Mod4,
+	modifier_Mod5,
+	modifier_n
+} E_modifiers;
+
 typedef struct {
 	unsigned int mask;
 	GtkWidget* indicator;
 	gchar *icon_name;
 } ModifierStruct;
 
-static ModifierStruct modifiers[] = {
-	{ShiftMask, NULL, SHIFT_KEY_ICON},
-	{ControlMask, NULL, CONTROL_KEY_ICON},
-	{Mod1Mask, NULL, ALT_KEY_ICON},
-	{Mod2Mask, NULL, META_KEY_ICON},
-	{Mod3Mask, NULL, HYPER_KEY_ICON},
-	{Mod4Mask, NULL, SUPER_KEY_ICON},
-	{Mod5Mask, NULL, ALTGRAPH_KEY_ICON}
+static ModifierStruct modifiers[modifier_n] = {
+	[modifier_Shift] = {ShiftMask, NULL, SHIFT_KEY_ICON},
+	[modifier_Control] = {ControlMask, NULL, CONTROL_KEY_ICON},
+	[modifier_Mod1] = {Mod1Mask, NULL, ALT_KEY_ICON},
+	[modifier_Mod2] = {Mod2Mask, NULL, META_KEY_ICON},
+	[modifier_Mod3] = {Mod3Mask, NULL, HYPER_KEY_ICON},
+	[modifier_Mod4] = {Mod4Mask, NULL, SUPER_KEY_ICON},
+	[modifier_Mod5] = {Mod5Mask, NULL, ALTGRAPH_KEY_ICON}
 };
 
 typedef struct {
@@ -245,7 +256,6 @@ static gboolean accessx_status_applet_xkb_select(AccessxStatusApplet* sapplet)
 
 static void accessx_status_applet_init_modifiers(AccessxStatusApplet* sapplet)
 {
-	int i;
 	unsigned int hyper_mask, super_mask, alt_gr_mask;
 
 	unsigned int alt_mask = XkbKeysymToModifiers(sapplet->xkb_display, XK_Alt_L);
@@ -298,37 +308,13 @@ static void accessx_status_applet_init_modifiers(AccessxStatusApplet* sapplet)
 		gtk_widget_hide(sapplet->alt_graph_indicator);
 	}
 
-	for (i = 0; i < G_N_ELEMENTS(modifiers); ++i)
-	{
-		if (modifiers[i].mask == ShiftMask)
-		{
-			modifiers[i].indicator = sapplet->shift_indicator;
-		}
-		else if (modifiers[i].mask == ControlMask)
-		{
-			modifiers[i].indicator = sapplet->ctrl_indicator;
-		}
-		else if (modifiers[i].mask == Mod1Mask)
-		{
-			modifiers[i].indicator = sapplet->alt_indicator;
-		}
-		else if (modifiers[i].mask == Mod2Mask)
-		{
-			modifiers[i].indicator = sapplet->meta_indicator;
-		}
-		else if (modifiers[i].mask == Mod3Mask)
-		{
-			modifiers[i].indicator = sapplet->hyper_indicator;
-		}
-		else if (modifiers[i].mask == Mod4Mask)
-		{
-			modifiers[i].indicator = sapplet->super_indicator;
-		}
-		else if (modifiers[i].mask == Mod5Mask)
-		{
-			modifiers[i].indicator = sapplet->alt_graph_indicator;
-		}
-	}
+	modifiers[modifier_Shift].indicator = sapplet->shift_indicator;
+	modifiers[modifier_Control].indicator = sapplet->ctrl_indicator;
+	modifiers[modifier_Mod1].indicator = sapplet->alt_indicator;
+	modifiers[modifier_Mod2].indicator = sapplet->meta_indicator;
+	modifiers[modifier_Mod3].indicator = sapplet->hyper_indicator;
+	modifiers[modifier_Mod4].indicator = sapplet->super_indicator;
+	modifiers[modifier_Mod5].indicator = sapplet->alt_graph_indicator;
 }
 
 static gboolean timer_reset_slowkeys_image(AccessxStatusApplet* sapplet)
@@ -777,7 +763,7 @@ static void accessx_status_applet_update(AccessxStatusApplet* sapplet, AccessxSt
 			latched_mods = state.latched_mods;
 		}
 		/* determine which modifiers are locked, and set state accordingly */
-		for (i = 0; i < G_N_ELEMENTS(modifiers); ++i)
+		for (i = 0; i < modifier_n; ++i)
 		{
 			if (modifiers[i].indicator != NULL && modifiers[i].mask)
 			{
@@ -925,12 +911,12 @@ static void accessx_status_applet_notify_xkb_device(AccessxStatusApplet* sapplet
 		if (event->led_state &= ALT_GRAPH_LED_MASK)
 		{
 			gtk_widget_set_sensitive(sapplet->alt_graph_indicator, TRUE);
-			accessx_status_applet_set_state_icon (sapplet, &modifiers[Mod5Mask], GTK_STATE_FLAG_NORMAL);
+			accessx_status_applet_set_state_icon (sapplet, &modifiers[modifier_Mod5], GTK_STATE_FLAG_NORMAL);
 		}
 		else
 		{
 			gtk_widget_set_sensitive(sapplet->alt_graph_indicator, FALSE);
-			accessx_status_applet_set_state_icon (sapplet, &modifiers[Mod5Mask], GTK_STATE_FLAG_INSENSITIVE);
+			accessx_status_applet_set_state_icon (sapplet, &modifiers[modifier_Mod5], GTK_STATE_FLAG_INSENSITIVE);
 		}
 	}
 }
