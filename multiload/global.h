@@ -76,11 +76,20 @@ struct _MultiloadApplet
     GtkWidget *notebook;
     int last_clicked;
 
-    long cpu_time [NCPUSTATES];
-    long cpu_last [NCPUSTATES];
-    int cpu_initialized;
+    float cpu_used_ratio;
+    long  cpu_time [NCPUSTATES];
+    long  cpu_last [NCPUSTATES];
+    int   cpu_initialized;
 
     double loadavg1;
+
+    float memload_user_ratio;
+    float memload_cache_ratio;
+
+    float swapload_used_ratio;
+
+    float diskload_used_ratio;
+
     NetSpeed *netspeed_in;
     NetSpeed *netspeed_out;
     guint net_threshold1;
