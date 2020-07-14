@@ -185,45 +185,45 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
 
     case PROP_NET_THRESHOLD1:
       g_settings_set_uint (ma->settings, (gchar *)name, value);
-      if (value >= ma->graphs[2]->net_threshold2)
+      if (value >= ma->net_threshold2)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
             (gdouble)g_settings_get_uint (ma->settings, "netthreshold2") - 1);
-        ma->graphs[2]->net_threshold1 = g_settings_get_uint (ma->settings, "netthreshold2") - 1;
+        ma->net_threshold1 = g_settings_get_uint (ma->settings, "netthreshold2") - 1;
       }
       else
-        ma->graphs[2]->net_threshold1 = value;
+        ma->net_threshold1 = value;
   		break;
 
     case PROP_NET_THRESHOLD2:
       g_settings_set_uint (ma->settings, (gchar *)name, value);
-      if (value >= ma->graphs[2]->net_threshold3)
+      if (value >= ma->net_threshold3)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
             (gdouble)g_settings_get_uint (ma->settings, "netthreshold3") - 1);
-        ma->graphs[2]->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold3") - 1;
+        ma->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold3") - 1;
       }
-      else if (value <= ma->graphs[2]->net_threshold1)
+      else if (value <= ma->net_threshold1)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
             (gdouble)g_settings_get_uint (ma->settings, "netthreshold1") + 1);
-        ma->graphs[2]->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold1") + 1;
+        ma->net_threshold2 = g_settings_get_uint (ma->settings, "netthreshold1") + 1;
       }
       else
-        ma->graphs[2]->net_threshold2 = value;
+        ma->net_threshold2 = value;
 
   		break;
 
     case PROP_NET_THRESHOLD3:
       g_settings_set_uint (ma->settings, (gchar *)name, value);
-      if (value <= ma->graphs[2]->net_threshold2)
+      if (value <= ma->net_threshold2)
       {
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(widget),
             (gdouble)g_settings_get_uint (ma->settings, "netthreshold2") + 1);
-        ma->graphs[2]->net_threshold3 = g_settings_get_uint (ma->settings, "netthreshold2") + 1;
+        ma->net_threshold3 = g_settings_get_uint (ma->settings, "netthreshold2") + 1;
       }
       else
-        ma->graphs[2]->net_threshold3 = value;
+        ma->net_threshold3 = value;
       break;
     default:
       g_assert_not_reached();

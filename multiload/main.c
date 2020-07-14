@@ -209,6 +209,9 @@ multiload_destroy_cb(GtkWidget *widget, gpointer data)
 		g_free(ma->graphs[i]);
 	}
 
+	netspeed_delete (ma->netspeed_in);
+	netspeed_delete (ma->netspeed_out);
+
 	if (ma->about_dialog)
 		gtk_widget_destroy (ma->about_dialog);
 
@@ -267,9 +270,12 @@ void
 multiload_applet_tooltip_update(LoadGraph *g)
 {
 	gchar *tooltip_text, *name;
+	MultiloadApplet *multiload;
 
 	g_assert(g);
 	g_assert(g->name);
+
+	multiload = g->multiload;
 
 	/* label the tooltip intuitively */
 	if (!strncmp(g->name, "cpuload", strlen("cpuload")))
@@ -308,12 +314,12 @@ multiload_applet_tooltip_update(LoadGraph *g)
 	} else if (!strcmp(g->name, "loadavg")) {
 
 		tooltip_text = g_strdup_printf(_("The system load average is %0.02f"),
-					       g->loadavg1);
+					       multiload->loadavg1);
 
 	} else if (!strcmp(g->name, "netload2")) {
 		char *tx_in, *tx_out;
-		tx_in = netspeed_get(g->netspeed_in);
-		tx_out = netspeed_get(g->netspeed_out);
+		tx_in = netspeed_get(multiload->netspeed_in);
+		tx_out = netspeed_get(multiload->netspeed_out);
 		/* xgettext: same as in graphic tab of g-s-m */
 		tooltip_text = g_strdup_printf(_("%s:\n"
 						 "Receiving %s\n"
@@ -415,9 +421,11 @@ multiload_create_graphs(MultiloadApplet *ma)
 	/* for Network graph, colors[4] is grid line color, it should not be used in loop in load-graph.c */
 	/* for Network graph, colors[5] is indicator color, it should not be used in loop in load-graph.c */
 	ma->graphs[2]->n = 4;
-	ma->graphs[2]->net_threshold1 = net_threshold1;
-	ma->graphs[2]->net_threshold2 = net_threshold2;
-	ma->graphs[2]->net_threshold3 = net_threshold3;
+	ma->net_threshold1 = net_threshold1;
+	ma->net_threshold2 = net_threshold2;
+	ma->net_threshold3 = net_threshold3;
+	ma->netspeed_in = netspeed_new(ma->graphs[2]);
+	ma->netspeed_out = netspeed_new(ma->graphs[2]);
 	/* for Load graph, colors[2] is grid line color, it should not be used in loop in load-graph.c */
 	ma->graphs[4]->n = 2;
 }
