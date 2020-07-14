@@ -51,6 +51,9 @@ load_graph_draw (LoadGraph *g)
   guint i, j, k;
   cairo_t *cr;
   int load;
+  MultiloadApplet *multiload;
+
+  multiload = g->multiload;
 
   /* we might get called before the configure event so that
    * g->disp->allocation may not have the correct size
@@ -94,6 +97,8 @@ load_graph_draw (LoadGraph *g)
     guint maxnet = 1;
     gint segments = 1;
     gint combined;
+    guint net_threshold;
+
     for (i = 0; i < g->draw_width; i++)
     {
       g->pos [i] = g->draw_height - 1;
@@ -106,27 +111,27 @@ load_graph_draw (LoadGraph *g)
     }
     //printf("max = %d ", maxnet);
     guint level = 0;
-    if (maxnet > g->net_threshold3) {
-      g->net_threshold = g->net_threshold3;
+    if (maxnet > multiload->net_threshold3) {
+      net_threshold = multiload->net_threshold3;
       level = 3;
     }
     else
-      if (maxnet > g->net_threshold2) {
-        g->net_threshold = g->net_threshold2;
+      if (maxnet > multiload->net_threshold2) {
+        net_threshold = multiload->net_threshold2;
         level = 2;
       }
       else {
-        g->net_threshold = g->net_threshold1;
+        net_threshold = multiload->net_threshold1;
         level = 1;
-        if (maxnet < g->net_threshold1)
+        if (maxnet < multiload->net_threshold1)
           level = 0;
       }
 
     //printf("level %d maxnet = %d ", level, maxnet);
-    maxnet = maxnet/g->net_threshold;
+    maxnet = maxnet/net_threshold;
     segments = MAX (maxnet+1,1);
-    float ratio = (float)g->draw_height/g->net_threshold/segments;
-    //printf("segments %d ratio = %f t1=%ld t2=%ld t3=%ld t=%ld\n", segments, ratio, g->net_threshold1, g->net_threshold2, g->net_threshold3, g->net_threshold);
+    float ratio = (float)g->draw_height/net_threshold/segments;
+    //printf("segments %d ratio = %f t1=%ld t2=%ld t3=%ld t=%ld\n", segments, ratio, multiload->net_threshold1, multiload->net_threshold2, multiload->net_threshold3, multiload->net_threshold);
 
     for (j = 0; j < g->n-1; j++)
     {
@@ -338,8 +343,6 @@ load_graph_destroy (GtkWidget *widget, gpointer data_ptr)
     LoadGraph *g = (LoadGraph *) data_ptr;
 
     load_graph_stop (g);
-    netspeed_delete(g->netspeed_in);
-    netspeed_delete(g->netspeed_out);
 
     gtk_widget_destroy(widget);
 }
@@ -405,8 +408,6 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     MatePanelAppletOrient orient;
 
     g = g_new0 (LoadGraph, 1);
-    g->netspeed_in = netspeed_new(g);
-    g->netspeed_out = netspeed_new(g);
     g->visible = visible;
     g->name = name;
     g->n = n;

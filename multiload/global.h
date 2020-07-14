@@ -42,18 +42,6 @@ struct _LoadGraph {
 
     gint show_frame;
 
-    long cpu_time [NCPUSTATES];
-    long cpu_last [NCPUSTATES];
-    int cpu_initialized;
-
-    double loadavg1;
-    NetSpeed *netspeed_in;
-    NetSpeed *netspeed_out;
-    guint net_threshold;
-    guint net_threshold1;
-    guint net_threshold2;
-    guint net_threshold3;
-
     gboolean visible;
     gboolean tooltip_update;
     const gchar *name;
@@ -81,6 +69,17 @@ struct _MultiloadApplet
 	GtkWidget *prop_dialog;
 	GtkWidget *notebook;
 	int last_clicked;
+
+    long cpu_time [NCPUSTATES];
+    long cpu_last [NCPUSTATES];
+    int cpu_initialized;
+
+    double loadavg1;
+    NetSpeed *netspeed_in;
+    NetSpeed *netspeed_out;
+    guint net_threshold1;
+    guint net_threshold2;
+    guint net_threshold3;
 };
 
 #include "load-graph.h"

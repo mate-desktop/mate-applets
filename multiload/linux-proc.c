@@ -52,33 +52,35 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
 {
     int usr, nice, sys, iowait, free;
     int total;
-
     glibtop_cpu cpu;
+    MultiloadApplet *multiload;
+
+    multiload = g->multiload;
 
     glibtop_get_cpu (&cpu);
 
     g_return_if_fail ((cpu.flags & needed_cpu_flags) == needed_cpu_flags);
 
-    g->cpu_time [0] = cpu.user;
-    g->cpu_time [1] = cpu.nice;
-    g->cpu_time [2] = cpu.sys;
-    g->cpu_time [3] = cpu.iowait + cpu.irq + cpu.softirq;
-    g->cpu_time [4] = cpu.idle;
+    multiload->cpu_time [0] = cpu.user;
+    multiload->cpu_time [1] = cpu.nice;
+    multiload->cpu_time [2] = cpu.sys;
+    multiload->cpu_time [3] = cpu.iowait + cpu.irq + cpu.softirq;
+    multiload->cpu_time [4] = cpu.idle;
 
-    if (!g->cpu_initialized) {
-        memcpy (g->cpu_last, g->cpu_time, sizeof (g->cpu_last));
-        g->cpu_initialized = 1;
+    if (!multiload->cpu_initialized) {
+        memcpy (multiload->cpu_last, multiload->cpu_time, sizeof (multiload->cpu_last));
+        multiload->cpu_initialized = 1;
     }
 
-    usr  = g->cpu_time [0] - g->cpu_last [0];
-    nice = g->cpu_time [1] - g->cpu_last [1];
-    sys  = g->cpu_time [2] - g->cpu_last [2];
-    iowait = g->cpu_time [3] - g->cpu_last [3];
-    free = g->cpu_time [4] - g->cpu_last [4];
+    usr  = multiload->cpu_time [0] - multiload->cpu_last [0];
+    nice = multiload->cpu_time [1] - multiload->cpu_last [1];
+    sys  = multiload->cpu_time [2] - multiload->cpu_last [2];
+    iowait = multiload->cpu_time [3] - multiload->cpu_last [3];
+    free = multiload->cpu_time [4] - multiload->cpu_last [4];
 
     total = usr + nice + sys + free + iowait;
 
-    memcpy(g->cpu_last, g->cpu_time, sizeof g->cpu_last);
+    memcpy(multiload->cpu_last, multiload->cpu_time, sizeof multiload->cpu_last);
 
     usr  = rint (Maximum * (float)(usr)  / total);
     nice = rint (Maximum * (float)(nice) / total);
@@ -107,7 +109,11 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
     guint64 read, write;
     guint64 readdiff, writediff;
 
-    nvme_diskstats = g_settings_get_boolean (g->multiload->settings, "diskload-nvme-diskstats");
+    MultiloadApplet *multiload;
+
+    multiload = g->multiload;
+
+    nvme_diskstats = g_settings_get_boolean (multiload->settings, "diskload-nvme-diskstats");
 
     if(first_call)
     {
@@ -125,7 +131,7 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
         fdr = fopen("/proc/diskstats", "r");
         if (!fdr)
         {
-            g_settings_set_boolean (g->multiload->settings, "diskload-nvme-diskstats", FALSE);
+            g_settings_set_boolean (multiload->settings, "diskload-nvme-diskstats", FALSE);
             return;
         }
 
@@ -297,14 +303,17 @@ void
 GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
 {
     glibtop_loadavg loadavg;
+    MultiloadApplet *multiload;
+
+    multiload = g->multiload;
     glibtop_get_loadavg (&loadavg);
 
     g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
 
-    /* g->loadavg1 represents %used */
-    g->loadavg1 = loadavg.loadavg[0];
+    /* multiload->loadavg1 represents %used */
+    multiload->loadavg1 = loadavg.loadavg[0];
 
-    data [0] = rint ((float) Maximum * g->loadavg1);
+    data [0] = rint ((float) Maximum * multiload->loadavg1);
     data [1] = Maximum - data[0];
 }
 
@@ -369,6 +378,10 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
     gchar **devices;
     glibtop_netlist netlist;
 
+    MultiloadApplet *multiload;
+
+    multiload = g->multiload;
+
     if(ticks == 0)
     {
         autoscaler_init(&scaler, 60, 501);
@@ -405,8 +418,8 @@ GetNet (int Maximum, int data [4], LoadGraph *g)
     }
 
     g_strfreev(devices);
-    netspeed_add(g->netspeed_in, present[IN_COUNT]);
-    netspeed_add(g->netspeed_out, present[OUT_COUNT]);
+    netspeed_add (multiload->netspeed_in, present[IN_COUNT]);
+    netspeed_add (multiload->netspeed_out, present[OUT_COUNT]);
 
     if(ticks < 2) /* avoid initial spike */
     {
