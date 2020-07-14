@@ -294,27 +294,21 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		g_assert_not_reached();
 
 	if (!strncmp(g->name, "memload", strlen("memload"))) {
-		guint mem_user, mem_cache, user_percent, cache_percent;
-		mem_user  = g->data[1][0];
-		mem_cache = g->data[1][1] + g->data[1][2] + g->data[1][3];
-		user_percent = 100.0f * mem_user / g->draw_height;
-		cache_percent = 100.0f * mem_cache / g->draw_height;
-		user_percent = MIN(user_percent, 100);
-		cache_percent = MIN(cache_percent, 100);
+		float user_percent, cache_percent;
 
-		/* xgettext: use and cache are > 1 most of the time,
-		   please assume that they always are.
-		 */
-		tooltip_text = g_strdup_printf(_("%s:\n"
-						 "%u%% in use by programs\n"
-						 "%u%% in use as cache"),
-					       name,
-					       user_percent,
-					       cache_percent);
+		user_percent = MIN (multiload->memload_user_ratio * 100.0f, 100.0f);
+		cache_percent = MIN (multiload->memload_cache_ratio * 100.0f, 100.0f);
+		tooltip_text = g_strdup_printf (_("%s:\n"
+		                                  "%.01f%% in use by programs\n"
+		                                  "%.01f%% in use as cache"),
+		                                name,
+		                                user_percent,
+		                                cache_percent);
+
 	} else if (!strcmp(g->name, "loadavg")) {
 
-		tooltip_text = g_strdup_printf(_("The system load average is %0.02f"),
-					       multiload->loadavg1);
+		tooltip_text = g_strdup_printf (_("The system load average is %0.02f"),
+					        multiload->loadavg1);
 
 	} else if (!strcmp(g->name, "netload2")) {
 		char *tx_in, *tx_out;
@@ -328,22 +322,19 @@ multiload_applet_tooltip_update(LoadGraph *g)
 		g_free(tx_in);
 		g_free(tx_out);
 	} else {
-		const char *msg;
-		guint i, total_used, percent;
+		float ratio = 1.0f;
+		float percent;
 
-		for (i = 0, total_used = 0; i < (g->n - 1); i++)
-			total_used += g->data[1][i];
+		if (!strcmp(g->name, "cpuload"))
+			ratio = multiload->cpu_used_ratio;
+		else if (!strcmp(g->name, "swapload"))
+			ratio = multiload->swapload_used_ratio;
+		else if (!strcmp (g->name, "diskload"))
+			ratio = multiload->diskload_used_ratio;
 
-		percent = 100.0f * total_used / g->draw_height;
-		percent = MIN(percent, 100);
-
-		msg = ngettext("%s:\n"
-			       "%u%% in use",
-			       "%s:\n"
-			       "%u%% in use",
-			       percent);
-
-		tooltip_text = g_strdup_printf(msg,
+		percent = CLAMP (ratio * 100.0f, 0.0f, 100.0f);
+		tooltip_text = g_strdup_printf(_("%s:\n"
+		                               "%.01f%% in use"),
 					       name,
 					       percent);
 	}

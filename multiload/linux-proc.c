@@ -55,11 +55,11 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
     glibtop_cpu cpu;
     MultiloadApplet *multiload;
 
-    multiload = g->multiload;
-
     glibtop_get_cpu (&cpu);
 
     g_return_if_fail ((cpu.flags & needed_cpu_flags) == needed_cpu_flags);
+
+    multiload = g->multiload;
 
     multiload->cpu_time [0] = cpu.user;
     multiload->cpu_time [1] = cpu.nice;
@@ -81,6 +81,7 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
     total = usr + nice + sys + free + iowait;
 
     memcpy(multiload->cpu_last, multiload->cpu_time, sizeof multiload->cpu_last);
+    multiload->cpu_used_ratio = (float)(usr + nice + sys + iowait) / (float)total;
 
     usr  = rint (Maximum * (float)(usr)  / total);
     nice = rint (Maximum * (float)(nice) / total);
@@ -202,6 +203,8 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
 
     max = autoscaler_get_max(&scaler, readdiff + writediff);
 
+    multiload->diskload_used_ratio = (float)(readdiff + writediff) / (float)max;
+
     data[0] = (float)Maximum *  readdiff / (float)max;
     data[1] = (float)Maximum * writediff / (float)max;
     data[2] = (float)Maximum - (data [0] + data[1]);
@@ -259,17 +262,25 @@ void
 GetMemory (int Maximum, int data [5], LoadGraph *g)
 {
     int user, shared, buffer, cached;
-
     glibtop_mem mem;
+    float user_ratio, cache_ratio;
+    MultiloadApplet *multiload;
 
     glibtop_get_mem (&mem);
 
     g_return_if_fail ((mem.flags & needed_mem_flags) == needed_mem_flags);
 
-    user    = rint (Maximum * (float)mem.user / (float)mem.total);
-    shared  = rint (Maximum * (float)mem.shared / (float)mem.total);
-    buffer  = rint (Maximum * (float)mem.buffer / (float)mem.total);
-    cached = rint (Maximum * (float)mem.cached / (float)mem.total);
+    user_ratio  = (float)mem.user / (float)mem.total;
+    cache_ratio = (float)(mem.shared + mem.buffer + mem.cached) / (float)mem.total;
+
+    multiload = g->multiload;
+    multiload->memload_user_ratio  = user_ratio;
+    multiload->memload_cache_ratio = cache_ratio;
+
+    user    = rint ((float)Maximum * user_ratio);
+    shared  = rint ((float)Maximum * (float)mem.shared / (float)mem.total);
+    buffer  = rint ((float)Maximum * (float)mem.buffer / (float)mem.total);
+    cached  = rint ((float)Maximum * (float)mem.cached / (float)mem.total);
 
     data [0] = user;
     data [1] = shared;
@@ -282,17 +293,24 @@ void
 GetSwap (int Maximum, int data [2], LoadGraph *g)
 {
     int used;
-
+    MultiloadApplet *multiload;
     glibtop_swap swap;
 
     glibtop_get_swap (&swap);
     g_return_if_fail ((swap.flags & needed_swap_flags) == needed_swap_flags);
 
+    multiload = g->multiload;
+
     if (swap.total == 0) {
         used = 0;
+        multiload->swapload_used_ratio = 0.0f;
     }
     else {
-        used = rint (Maximum * (float)swap.used / swap.total);
+        float ratio;
+
+        ratio = (float)swap.used / (float)swap.total;
+        used = rint ((float) Maximum * ratio);
+        multiload->swapload_used_ratio = ratio;
     }
 
     data [0] = used;
@@ -305,15 +323,14 @@ GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
     glibtop_loadavg loadavg;
     MultiloadApplet *multiload;
 
-    multiload = g->multiload;
     glibtop_get_loadavg (&loadavg);
 
     g_return_if_fail ((loadavg.flags & needed_loadavg_flags) == needed_loadavg_flags);
 
-    /* multiload->loadavg1 represents %used */
+    multiload = g->multiload;
     multiload->loadavg1 = loadavg.loadavg[0];
 
-    data [0] = rint ((float) Maximum * multiload->loadavg1);
+    data [0] = rint ((float) Maximum * loadavg.loadavg[0]);
     data [1] = Maximum - data[0];
 }
 
