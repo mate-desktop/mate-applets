@@ -260,10 +260,10 @@ GetMemory (int Maximum, int data [5], LoadGraph *g)
 
     g_return_if_fail ((mem.flags & needed_mem_flags) == needed_mem_flags);
 
-    user    = rint (Maximum * (float)mem.user / (float)mem.total);
+    user    = rint (Maximum * (float)(mem.user - mem.shared) / (float)mem.total);
     shared  = rint (Maximum * (float)mem.shared / (float)mem.total);
     buffer  = rint (Maximum * (float)mem.buffer / (float)mem.total);
-    cached = rint (Maximum * (float)mem.cached / (float)mem.total);
+    cached  = rint (Maximum * (float)(mem.total - mem.user - mem.buffer - mem.free) / (float)mem.total);
 
     data [0] = user;
     data [1] = shared;
