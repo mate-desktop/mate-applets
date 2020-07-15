@@ -29,7 +29,7 @@
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <stdlib.h>
 #include <string.h>
 

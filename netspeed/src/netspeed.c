@@ -28,7 +28,7 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 #include <glib.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gio/gio.h>
 
 #include "backend.h"

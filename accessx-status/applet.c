@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <glib-object.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>

@@ -4,7 +4,7 @@
 #define __CHARPICK_H__
 
 #include <glib.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
