@@ -918,15 +918,15 @@ load_preferences(ProgressData *battstat)
   if (DEBUG) g_print("load_preferences()\n");
 
   battstat->red_val = g_settings_get_int (settings, "red-value");
-  battstat->red_val = CLAMP (battstat->red_val, 0, 100);
+  battstat->red_val = MIN (battstat->red_val, 100);
   battstat->red_value_is_time = g_settings_get_boolean (settings, "red-value-is-time");
 
   /* automatically calculate orangle and yellow values from the red value */
   battstat->orange_val = battstat->red_val * ORANGE_MULTIPLIER;
-  battstat->orange_val = CLAMP (battstat->orange_val, 0, 100);
+  battstat->orange_val = MIN (battstat->orange_val, 100);
 
   battstat->yellow_val = battstat->red_val * YELLOW_MULTIPLIER;
-  battstat->yellow_val = CLAMP (battstat->yellow_val, 0, 100);
+  battstat->yellow_val = MIN (battstat->yellow_val, 100);
 
   battstat->lowbattnotification = g_settings_get_boolean (settings, "low-battery-notification");
   battstat->fullbattnot = g_settings_get_boolean (settings, "full-battery-notification");

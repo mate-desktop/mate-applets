@@ -380,7 +380,7 @@ update_quality_icon(MateNetspeedApplet *applet)
 
 	q = (applet->devinfo->qual);
 	q /= 25;
-	q = CLAMP(q, 0, 3); /* q out of range would crash when accessing qual_surfaces[q] */
+	q = MIN (q, 3); /* q out of range would crash when accessing qual_surfaces[q] */
 	gtk_image_set_from_surface (GTK_IMAGE(applet->qual_pix), applet->qual_surfaces[q]);
 }
 
