@@ -36,8 +36,14 @@ void netspeed_add(NetSpeed *ns, gulong tx)
 static char*
 format_rate_for_display(guint rate)
 {
-	char* bytes = g_format_size(rate);
-	return g_strdup_printf(_("%s/s"), bytes);
+	char *bytes;
+	char *text;
+
+	bytes = g_format_size (rate);
+	text = g_strdup_printf (_("%s/s"), bytes);
+	g_free (bytes);
+
+	return text;
 }
 
 char* netspeed_get(NetSpeed *ns)
