@@ -23,7 +23,6 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
-gchar * get_current_date(const gchar *format);
 void	xstuff_change_workspace (GtkWindow *window,
 			         int        new_space);
 int	xstuff_get_current_workspace (GtkWindow *window);

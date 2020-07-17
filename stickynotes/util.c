@@ -20,33 +20,11 @@
 #include <config.h>
 #include "util.h"
 
-#include <time.h>
-
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-
-/* Returns the current date in a customizable form, the default
- * looks like this: "Nov 30, '78" */
-gchar * get_current_date(const gchar *format)
-{
-  	time_t clock = time(NULL);
-  	struct tm *current = localtime(&clock);
-
-	gint date_length = 10;
-  	gchar *date = g_new(gchar, date_length);
-  	
-	do
-	{
-		date_length += 5;
-		date = (gchar *) g_renew(gchar, date, date_length);
-	}
-  	while(strftime(date, date_length, format, current) == 0);
-	
-  	return date;
-}
 
 static Atom
 xstuff_atom_get (const char *atom_name)
