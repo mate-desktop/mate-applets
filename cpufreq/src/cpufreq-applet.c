@@ -787,7 +787,6 @@ static void
 cpufreq_applet_setup (CPUFreqApplet *applet)
 {
 	GtkActionGroup *action_group;
-	gchar          *ui_path;
         AtkObject      *atk_obj;
 	GSettings      *settings;
 
@@ -830,10 +829,9 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
 				      cpufreq_applet_menu_actions,
 				      G_N_ELEMENTS (cpufreq_applet_menu_actions),
 				      applet);
-	ui_path = g_build_filename (CPUFREQ_MENU_UI_DIR, "cpufreq-applet-menu.xml", NULL);
-        mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet),
-					   ui_path, action_group);
-	g_free (ui_path);
+        mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
+                                                    CPUFREQ_RESOURCE_PATH "cpufreq-applet-menu.xml",
+                                                    action_group);
 
         if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (applet))) {
 		GtkAction *action;
