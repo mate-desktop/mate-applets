@@ -1,22 +1,36 @@
+NULL =
+
 SUBDIRS = help
 
-AM_CPPFLAGS =					\
-	-I.					\
-	-I$(srcdir)				\
-	-DCHARPICK_MENU_UI_DIR=\""$(uidir)"\"	\
-	${WARN_CFLAGS}				\
-	$(MATE_APPLETS4_CFLAGS)			\
-	$(GUCHARMAP_CFLAGS)
+AM_CPPFLAGS =			\
+	-I.			\
+	-I$(srcdir)		\
+	-DCHARPICK_RESOURCE_PATH=\""/org/mate/mate-applets/charpick/"\"	\
+	${WARN_CFLAGS}		\
+	$(MATE_APPLETS4_CFLAGS)	\
+	$(GUCHARMAP_CFLAGS)	\
+	$(NULL)
 
 libexec_PROGRAMS = mate-charpick-applet
 
-mate_charpick_applet_SOURCES = charpick.c \
-                          charpick.h \
-                          properties.c
+BUILT_SOURCES = charpick-resources.c charpick-resources.h
+nodist_mate_charpick_applet_SOURCES = $(BUILT_SOURCES)
+mate_charpick_applet_SOURCES = 	\
+	charpick.c		\
+	charpick.h		\
+	properties.c		\
+	$(NULL)
 
-mate_charpick_applet_LDADD = \
-		       $(MATE_APPLETS4_LIBS)	\
-		       $(GUCHARMAP_LIBS)
+mate_charpick_applet_LDADD =	\
+	$(MATE_APPLETS4_LIBS)	\
+	$(GUCHARMAP_LIBS)	\
+	$(NULL)
+
+charpick-resources.c: charpick-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/charpick-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name charpick $<
+
+charpick-resources.h: charpick-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/charpick-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name charpick $<
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in
@@ -44,15 +58,21 @@ charpick_gschema_in_files = org.mate.panel.applet.charpick.gschema.xml.in
 gsettings_SCHEMAS = $(charpick_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
-uidir = $(datadir)/mate/ui
-ui_DATA = charpick-applet-menu.xml
+CLEANFILES =			\
+	$(applet_DATA)		\
+	$(applet_in_files)	\
+	$(service_DATA)		\
+	$(gsettings_SCHEMAS)	\
+	$(BUILT_SOURCES)	\
+	*.gschema.valid		\
+	$(NULL)
 
-CLEANFILES = $(applet_DATA)  $(applet_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
-
-EXTRA_DIST =							\
-	$(applet_in_files).in	\
-	$(service_in_files)					\
-	$(ui_DATA)						\
-	$(charpick_gschema_in_files)
+EXTRA_DIST =					\
+	$(applet_in_files).in			\
+	$(service_in_files)			\
+	$(charpick_gschema_in_files)		\
+	charpick-applet-menu.xml		\
+	charpick-resources.gresource.xml	\
+	$(NULL)
 
 -include $(top_srcdir)/git.mk

@@ -703,7 +703,6 @@ charpicker_applet_fill (MatePanelApplet *applet)
   GList *list;
   gchar *string;
   GtkActionGroup *action_group;
-  gchar *ui_path;
 
   g_set_application_name (_("Character Palette"));
   
@@ -787,10 +786,10 @@ charpicker_applet_fill (MatePanelApplet *applet)
 				charpick_applet_menu_actions,
 				G_N_ELEMENTS (charpick_applet_menu_actions),
 				curr_data);
-  ui_path = g_build_filename (CHARPICK_MENU_UI_DIR, "charpick-applet-menu.xml", NULL);
-  mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet),
-                                     ui_path, action_group);
-  g_free (ui_path);
+
+  mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
+                                              CHARPICK_RESOURCE_PATH "charpick-applet-menu.xml",
+                                              action_group);
 
   if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (applet))) {
 	  GtkAction *action;
