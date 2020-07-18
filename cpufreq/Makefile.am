@@ -1,3 +1,5 @@
+NULL =
+
 SUBDIRS = help pixmaps src
 
 cpufreq_gschema_in_files = org.mate.panel.applet.cpufreq.gschema.xml.in
@@ -26,25 +28,23 @@ org.mate.panel.applet.CPUFreqAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-builder_DATA = cpufreq-preferences.ui
+CLEANFILES =				\
+	$(applet_DATA)			\
+	$(applet_in_files)		\
+	$(service_DATA)			\
+	$(gsettings_SCHEMAS)		\
+	*.gschema.valid			\
+	$(NULL)
 
-uidir = $(datadir)/mate/ui
-ui_DATA = cpufreq-applet-menu.xml
-
-CLEANFILES = \
-             $(applet_DATA)			\
-               $(applet_in_files)			\
-             $(service_DATA)			\
-	     $(gsettings_SCHEMAS)               \
-	     *.gschema.valid                    \
-	     *.bak                              \
-	     *.gladep
-
-EXTRA_DIST = \
-		$(applet_in_files).in	\
-		$(service_in_files)				\
-		$(cpufreq_gschema_in_files)			\
-		$(builder_DATA)                 			\
-		$(ui_DATA)
+EXTRA_DIST =				\
+	$(applet_in_files).in		\
+	$(service_in_files)		\
+	$(cpufreq_gschema_in_files)	\
+	$(builder_DATA)			\
+	$(ui_DATA)			\
+	cpufreq-applet-menu.xml		\
+	cpufreq-preferences.ui		\
+	cpufreq-resources.gresource.xml	\
+	$(NULL)
 
 -include $(top_srcdir)/git.mk
