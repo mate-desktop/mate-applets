@@ -1342,7 +1342,6 @@ static gboolean accessx_status_applet_fill(MatePanelApplet* applet)
 	AccessxStatusApplet* sapplet;
 	AtkObject* atk_object;
 	GtkActionGroup* action_group;
-	gchar* ui_path;
 	gboolean was_realized = FALSE;
 
 	sapplet = create_applet(applet);
@@ -1369,9 +1368,9 @@ static gboolean accessx_status_applet_fill(MatePanelApplet* applet)
 	action_group = gtk_action_group_new("Accessx Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions(action_group, accessx_status_applet_menu_actions, G_N_ELEMENTS(accessx_status_applet_menu_actions), sapplet);
-	ui_path = g_build_filename(ACCESSX_MENU_UI_DIR, "accessx-status-applet-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file(sapplet->applet, ui_path, action_group);
-	g_free(ui_path);
+	mate_panel_applet_setup_menu_from_resource (sapplet->applet,
+	                                            ACCESSX_RESOURCE_PATH "accessx-status-applet-menu.xml",
+	                                            action_group);
 
 	if (mate_panel_applet_get_locked_down(sapplet->applet))
 	{
