@@ -41,7 +41,7 @@
 
 typedef enum
 {
-  APPLET_SHOW_NONE,
+  APPLET_SHOW_NONE = 0,
   APPLET_SHOW_PERCENT,
   APPLET_SHOW_TIME
 } AppletTextType;
@@ -87,14 +87,6 @@ typedef struct
 typedef struct _ProgressData {
   GtkWidget *applet;
 
-  /* these are used by properties.c */
-  GtkWidget *radio_text_1;
-  GtkWidget *radio_text_2;
-  GtkWidget *check_text;
-  GtkWidget *lowbatt_toggle;
-  GtkWidget *full_toggle;
-  GtkWidget *hbox_ptr;
-
   /* flags set from gsettings or the properties dialog */
   GSettings *settings;
   guint red_val;
@@ -118,7 +110,7 @@ typedef struct _ProgressData {
   GtkWidget *percent;
 
   /* dialog boxes that might be displayed */
-  GtkDialog *prop_win;
+  GtkWidget *prop_win;
   GtkWidget *battery_low_dialog;
 
   /* text label inside the low battery dialog */
@@ -149,12 +141,10 @@ typedef struct _ProgressData {
   gboolean last_present;
 } ProgressData;
 
-/* properties.c */
-void prop_cb (GtkAction *, ProgressData *);
-
 /* battstat_applet.c */
 void reconfigure_layout( ProgressData *battstat );
 void battstat_show_help( ProgressData *battstat, const char *section );
+void prop_cb (GtkAction *, ProgressData *);
 
 /* power-management.c */
 const char *power_management_getinfo( BatteryStatus *status );

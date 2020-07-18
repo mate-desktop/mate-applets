@@ -45,10 +45,7 @@
 #endif
 
 #include "battstat.h"
-
-#ifndef gettext_noop
-#define gettext_noop(String) (String)
-#endif
+#include "battstat-preferences.h"
 
 #define BATTSTAT_SCHEMA "org.mate.panel.applet.battstat"
 
@@ -759,7 +756,8 @@ destroy_applet( GtkWidget *widget, ProgressData *battstat )
  * button in the preferences dialog.
  */
 void
-battstat_show_help( ProgressData *battstat, const char *section )
+battstat_show_help (ProgressData *battstat,
+                    const char   *section)
 {
   GError *error = NULL;
   char *uri;
@@ -770,21 +768,21 @@ battstat_show_help( ProgressData *battstat, const char *section )
     uri = g_strdup ("help:mate-battstat");
 
   gtk_show_uri_on_window (NULL,
-                uri,
-                gtk_get_current_event_time (),
-                &error);
+                          uri,
+                          gtk_get_current_event_time (),
+                          &error);
 
   g_free (uri);
 
-  if( error )
+  if (error)
   {
     char *message;
 
-    message = g_strdup_printf( _("There was an error displaying help: %s"),
+    message = g_strdup_printf (_("There was an error displaying help: %s"),
                                error->message );
-    battstat_error_dialog( battstat->applet, message );
-    g_error_free( error );
-    g_free( message );
+    battstat_error_dialog (battstat->applet, message);
+    g_error_free (error);
+    g_free (message);
   }
 }
 
@@ -1098,6 +1096,20 @@ create_layout(ProgressData *battstat)
   return FALSE;
 }
 
+void
+prop_cb (GtkAction    *action,
+         ProgressData *battstat)
+{
+  if (battstat->prop_win) {
+    gtk_window_set_screen (GTK_WINDOW (battstat->prop_win),
+                           gtk_widget_get_screen (battstat->applet));
+    gtk_window_present (GTK_WINDOW (battstat->prop_win));
+  } else {
+    battstat->prop_win = battstat_preferences_new (battstat);
+    gtk_widget_show_all (GTK_WIDGET (battstat->prop_win));
+  }
+}
+
 /* Called by the factory to fill in the fields for the applet.
  */
 static gboolean
@@ -1145,9 +1157,10 @@ battstat_applet_fill (MatePanelApplet *applet)
 				battstat_menu_actions,
 				G_N_ELEMENTS (battstat_menu_actions),
 				battstat);
-  mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (battstat->applet),
-                                          BATTSTAT_MENU_UI_DIR G_DIR_SEPARATOR_S "battstat-applet-menu.xml",
-                                          action_group);
+
+  mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (battstat->applet),
+                                              BATTSTAT_RESOURCE_PATH "battstat-applet-menu.xml",
+                                              action_group);
 
   if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (battstat->applet))) {
 	  GtkAction *action;
