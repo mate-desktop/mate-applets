@@ -18,7 +18,6 @@
 
 #include <libmateweather/mateweather-prefs.h>
 
-
 /* Radar map on by default. */
 #define RADARMAP
 
