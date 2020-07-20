@@ -92,8 +92,6 @@ struct _LoadGraph {
     cairo_surface_t *surface;
     int timer_index;
 
-    gint show_frame;
-
     gboolean visible;
     gboolean tooltip_update;
     const gchar *name;
