@@ -514,9 +514,10 @@ build_table(charpick_data *p_curr_data)
 	index = CLAMP (index, 0, size_ratio-1);	
   	gtk_box_pack_start (GTK_BOX (row_box[index]), toggle_button[i], TRUE, TRUE, 0);
   }
- 
+
   g_free (toggle_button);
-  
+  g_free (row_box);
+
   gtk_container_add (GTK_CONTAINER(p_curr_data->applet), box);
   gtk_widget_show_all (p_curr_data->box);
 
