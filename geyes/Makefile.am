@@ -8,7 +8,7 @@ AM_CPPFLAGS =						\
 	$(MATE_APPLETS4_CFLAGS)				\
 	-I$(includedir) 				\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
-	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"		\
+	-DGEYES_RESOURCE_PATH=\""/org/mate/mate-applets/eyes/"\" \
 	${WARN_CFLAGS}
 
 libexec_PROGRAMS = mate-geyes-applet
@@ -53,9 +53,6 @@ org.mate.panel.applet.GeyesAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir = $(datadir)/mate/ui
-ui_DATA = geyes-applet-menu.xml
-
 geyes_gschema_in_files = org.mate.panel.applet.geyes.gschema.xml.in
 gsettings_SCHEMAS = $(geyes_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
@@ -81,13 +78,13 @@ CLEANFILES = \
 	$(NULL)
 
 EXTRA_DIST = \
+	geyes-applet-menu.xml		\
 	geyes-resources.gresource.xml	\
 	themes.ui			\
 	README.themes			\
 	$(applet_in_files).in		\
 	$(service_in_files)		\
 	$(geyes_gschema_in_files)	\
-	$(ui_DATA)			\
 	$(icons)			\
 	$(NULL)
 
