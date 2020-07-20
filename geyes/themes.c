@@ -274,7 +274,7 @@ properties_cb (GtkAction  *action,
 		return;
 	}
 
-	builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/eyes/themes.ui");
+	builder = gtk_builder_new_from_resource (GEYES_RESOURCE_PATH "themes.ui");
 
 	eyes_applet->prop_box.pbox = GET_WIDGET ("preferences_dialog");
 	tree = GET_WIDGET ("themes_treeview");

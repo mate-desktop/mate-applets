@@ -6,7 +6,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -384,14 +384,13 @@ geyes_applet_fill (MatePanelApplet *applet)
 {
 	EyesApplet *eyes_applet;
 	GtkActionGroup *action_group;
-	gchar *ui_path;
 
 	g_set_application_name (_("Eyes"));
-	
+
 	gtk_window_set_default_icon_name ("mate-eyes-applet");
 	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 	mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
-	
+
         eyes_applet = create_eyes (applet);
 
         eyes_applet->timeout_id = g_timeout_add (
@@ -399,14 +398,15 @@ geyes_applet_fill (MatePanelApplet *applet)
 
 	action_group = gtk_action_group_new ("Geyes Applet Actions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+
 	gtk_action_group_add_actions (action_group,
-				      geyes_applet_menu_actions,
-				      G_N_ELEMENTS (geyes_applet_menu_actions),
-				      eyes_applet);
-	ui_path = g_build_filename (GEYES_MENU_UI_DIR, "geyes-applet-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file (eyes_applet->applet,
-					   ui_path, action_group);
-	g_free (ui_path);
+	                              geyes_applet_menu_actions,
+	                              G_N_ELEMENTS (geyes_applet_menu_actions),
+	                              eyes_applet);
+
+	mate_panel_applet_setup_menu_from_resource (eyes_applet->applet,
+	                                            GEYES_RESOURCE_PATH "geyes-applet-menu.xml",
+	                                            action_group);
 
 	if (mate_panel_applet_get_locked_down (eyes_applet->applet)) {
 		GtkAction *action;
