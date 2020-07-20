@@ -109,6 +109,8 @@ load_theme (EyesApplet *eyes_applet, const gchar *theme_dir)
 	FILE* theme_file;
         gchar *file_name;
 
+        if (eyes_applet->theme_dir)
+                g_free (eyes_applet->theme_dir);
         eyes_applet->theme_dir = g_strdup_printf ("%s/", theme_dir);
 
         file_name = g_strdup_printf("%s%s",theme_dir,"/config");
