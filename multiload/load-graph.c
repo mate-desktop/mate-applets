@@ -415,7 +415,6 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     g->size   = MAX (size, 10);
     g->pixel_size = mate_panel_applet_get_size (ma->applet);
     g->tooltip_update = FALSE;
-    g->show_frame = TRUE;
     g->multiload = ma;
 
     g->main_widget = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
@@ -441,18 +440,10 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
         g_assert_not_reached ();
     }
 
-    if (g->show_frame)
-    {
-        g->frame = gtk_frame_new (NULL);
-        gtk_frame_set_shadow_type (GTK_FRAME (g->frame), GTK_SHADOW_IN);
-        gtk_container_add (GTK_CONTAINER (g->frame), g->box);
-        gtk_box_pack_start (GTK_BOX (g->main_widget), g->frame, TRUE, TRUE, 0);
-    }
-    else
-    {
-        g->frame = NULL;
-        gtk_box_pack_start (GTK_BOX (g->main_widget), g->box, TRUE, TRUE, 0);
-    }
+    g->frame = gtk_frame_new (NULL);
+    gtk_frame_set_shadow_type (GTK_FRAME (g->frame), GTK_SHADOW_IN);
+    gtk_container_add (GTK_CONTAINER (g->frame), g->box);
+    gtk_box_pack_start (GTK_BOX (g->main_widget), g->frame, TRUE, TRUE, 0);
 
     load_graph_load_config (g);
 
