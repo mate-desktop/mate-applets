@@ -1,37 +1,46 @@
+NULL =
+
 SUBDIRS = help
 
-AM_CPPFLAGS =					\
-	-I.					\
-	-I$(srcdir)				\
-	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
-	${WARN_CFLAGS}				\
-	$(MATE_APPLETS4_CFLAGS)
+AM_CPPFLAGS =				\
+	-I.				\
+	-I$(srcdir)			\
+	-DDRIVEMOUNT_RESOURCE_PATH=\""/org/mate/mate-applets/drivemount/"\" \
+	${WARN_CFLAGS}			\
+	$(MATE_APPLETS4_CFLAGS)		\
+	$(NULL)
 
 libexec_PROGRAMS = mate-drivemount-applet
 
-mate_drivemount_applet_SOURCES =	\
-	drivemount.c		\
-	drive-list.c		\
-	drive-list.h		\
-	drive-button.c		\
-	drive-button.h
+BUILT_SOURCES =				\
+	drivemount-resources.c		\
+	drivemount-resources.h		\
+	$(NULL)
 
-mate_drivemount_applet_LDADD =	\
+nodist_mate_drivemount_applet_SOURCES =	\
+	$(BUILT_SOURCES)		\
+	$(NULL)
+
+mate_drivemount_applet_SOURCES =	\
+	drivemount.c			\
+	drive-list.c			\
+	drive-list.h			\
+	drive-button.c			\
+	drive-button.h			\
+	$(NULL)
+
+mate_drivemount_applet_LDADD =		\
 	$(MATE_APPLETS4_LIBS)
 
-uidir           = $(datadir)/mate/ui
-ui_DATA         = drivemount-applet-menu.xml
+drivemount-resources.c: drivemount-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/drivemount-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name drivemount $<
+
+drivemount-resources.h: drivemount-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/drivemount-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name drivemount $<
 
 drivemount_gschema_in_files = org.mate.drivemount.gschema.xml.in
 gsettings_SCHEMAS = $(drivemount_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-EXTRA_DIST =                                                    \
-        $(applet_in_files).in                                   \
-        $(service_in_files)                                     \
-        $(drivemount_gschema_in_files)                          \
-        $(ui_DATA)
-
 
 appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in
@@ -55,6 +64,21 @@ org.mate.panel.applet.DriveMountAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA) $(gsettings_SCHEMAS) *.gschema.valid
+CLEANFILES =				\
+	$(applet_DATA)			\
+	$(applet_in_files)		\
+	$(service_DATA)			\
+	$(gsettings_SCHEMAS)		\
+	$(BUILT_SOURCES)		\
+	*.gschema.valid			\
+	$(NULL)
+
+EXTRA_DIST =				\
+	$(applet_in_files).in		\
+	$(service_in_files)		\
+	$(drivemount_gschema_in_files)	\
+	drivemount-applet-menu.xml	\
+	drivemount-resources.gresource.xml \
+	$(NULL)
 
 -include $(top_srcdir)/git.mk

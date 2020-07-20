@@ -179,7 +179,6 @@ applet_factory (MatePanelApplet *applet,
     GtkWidget *drive_list;
     AtkObject *ao;
     GtkActionGroup *action_group;
-    gchar *ui_path;
 
     if (!strcmp (iid, drivemount_iid)) {
 	g_set_application_name (_("Disk Mounter"));
@@ -211,9 +210,9 @@ applet_factory (MatePanelApplet *applet,
 				      applet_menu_actions,
 				      G_N_ELEMENTS (applet_menu_actions),
 				      drive_list);
-	ui_path = g_build_filename (DRIVEMOUNT_MENU_UI_DIR, "drivemount-applet-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file (applet, ui_path, action_group);
-	g_free (ui_path);
+	mate_panel_applet_setup_menu_from_resource (applet,
+	                                            DRIVEMOUNT_RESOURCE_PATH "drivemount-applet-menu.xml",
+	                                            action_group);
 	g_object_unref (action_group);
 
 	ao = gtk_widget_get_accessible (GTK_WIDGET (applet));
