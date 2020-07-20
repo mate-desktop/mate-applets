@@ -39,31 +39,30 @@
 CPUFreqMonitor *
 cpufreq_monitor_factory_create_monitor (guint cpu)
 {
-	   CPUFreqMonitor *monitor = NULL;
-
 #ifdef HAVE_LIBCPUFREQ
-	   monitor = cpufreq_monitor_libcpufreq_new (cpu);
-	   return monitor;
-#endif	
-	   
-	   if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
-		   monitor = cpufreq_monitor_sysfs_new (cpu);
-	   } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel (Deprecated)*/
-		   monitor = cpufreq_monitor_procfs_new (cpu);
-	   } else if (g_file_test ("/proc/cpuinfo", G_FILE_TEST_EXISTS)) {
-		   /* If there is no cpufreq support it shows only the cpu frequency,
-		    * I think is better than do nothing. I have to notify it to the user, because
-		    * he could think that cpufreq is supported but it doesn't work succesfully
-		    */
-		   
-		   cpufreq_utils_display_error (_("CPU frequency scaling unsupported"),
-						_("You will not be able to modify the frequency of your machine.  "
-						  "Your machine may be misconfigured or not have hardware support "
-						  "for CPU frequency scaling."));
-		   
-		   monitor = cpufreq_monitor_cpuinfo_new (cpu);
-	   }
-	   
-	   return monitor;
+        return cpufreq_monitor_libcpufreq_new (cpu);
+#else
+        CPUFreqMonitor *monitor = NULL;
+
+        if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+                monitor = cpufreq_monitor_sysfs_new (cpu);
+        } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel (Deprecated)*/
+                monitor = cpufreq_monitor_procfs_new (cpu);
+        } else if (g_file_test ("/proc/cpuinfo", G_FILE_TEST_EXISTS)) {
+                /* If there is no cpufreq support it shows only the cpu frequency,
+                 * I think is better than do nothing. I have to notify it to the user, because
+                 * he could think that cpufreq is supported but it doesn't work succesfully
+                 */
+
+                cpufreq_utils_display_error (_("CPU frequency scaling unsupported"),
+                                             _("You will not be able to modify the frequency of your machine.  "
+                                               "Your machine may be misconfigured or not have hardware support "
+                                               "for CPU frequency scaling."));
+
+                monitor = cpufreq_monitor_cpuinfo_new (cpu);
+        }
+
+        return monitor;
+#endif
 }
 
