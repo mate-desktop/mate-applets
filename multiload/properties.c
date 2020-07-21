@@ -723,7 +723,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 
 	spin_size = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
-	spin_button = gtk_spin_button_new_with_range(10, 1000000000, 5);
+	spin_button = gtk_spin_button_new_with_range (MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1, 5);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
 	g_object_set_data(G_OBJECT(spin_button), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(spin_button), "prop_type",
@@ -759,7 +759,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (control_hbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 
-	spin_button = gtk_spin_button_new_with_range(10, 1000000000, 5);
+	spin_button = gtk_spin_button_new_with_range (MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2, 5);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
 	g_object_set_data(G_OBJECT(spin_button), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(spin_button), "prop_type",
@@ -794,7 +794,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	gtk_box_pack_start (GTK_BOX (control_hbox), hbox, TRUE, TRUE, 0);
 	gtk_widget_show (hbox);
 
-	spin_button = gtk_spin_button_new_with_range(10, 1000000000, 5);
+	spin_button = gtk_spin_button_new_with_range (MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3, 5);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
 	g_object_set_data(G_OBJECT(spin_button), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(spin_button), "prop_type",

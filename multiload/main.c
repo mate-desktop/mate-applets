@@ -378,9 +378,9 @@ multiload_create_graphs(MultiloadApplet *ma)
 
 	speed = g_settings_get_int (ma->settings, "speed");
 	size = g_settings_get_int (ma->settings, "size");
-	net_threshold1  = g_settings_get_uint (ma->settings, "netthreshold1");
-	net_threshold2  = g_settings_get_uint (ma->settings, "netthreshold2");
-	net_threshold3  = g_settings_get_uint (ma->settings, "netthreshold3");
+	net_threshold1  = CLAMP (g_settings_get_uint (ma->settings, "netthreshold1"), MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1);
+	net_threshold2  = CLAMP (g_settings_get_uint (ma->settings, "netthreshold2"), MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2);
+	net_threshold3  = CLAMP (g_settings_get_uint (ma->settings, "netthreshold3"), MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3);
 	if (net_threshold1 >= net_threshold2)
 	{
 	   net_threshold1 = net_threshold2 - 1;

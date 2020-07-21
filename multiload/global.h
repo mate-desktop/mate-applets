@@ -12,6 +12,12 @@ G_BEGIN_DECLS
 
 #define NCPUSTATES 5
 #define NGRAPHS 6
+#define MIN_NET_THRESHOLD1 10
+#define MIN_NET_THRESHOLD2 11
+#define MIN_NET_THRESHOLD3 12
+#define MAX_NET_THRESHOLD1  999999998
+#define MAX_NET_THRESHOLD2  999999999
+#define MAX_NET_THRESHOLD3 1000000000
 
 typedef struct _MultiloadApplet MultiloadApplet;
 typedef struct _LoadGraph LoadGraph;
