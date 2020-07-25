@@ -55,26 +55,26 @@ struct _LoadGraph {
 
 struct _MultiloadApplet
 {
-	MatePanelApplet *applet;
+    MatePanelApplet *applet;
 
-	GSettings *settings;
+    GSettings *settings;
 
-	LoadGraph *graphs[NGRAPHS];
+    LoadGraph *graphs [NGRAPHS];
 
-	GtkWidget *box;
+    GtkWidget *box;
 
-	gboolean view_cpuload;
-	gboolean view_memload;
-	gboolean view_netload;
-	gboolean view_swapload;
-	gboolean view_loadavg;
-	gboolean view_diskload;
+    gboolean view_cpuload;
+    gboolean view_memload;
+    gboolean view_netload;
+    gboolean view_swapload;
+    gboolean view_loadavg;
+    gboolean view_diskload;
 
-	GtkWidget *about_dialog;
-	GtkWidget *check_boxes[NGRAPHS];
-	GtkWidget *prop_dialog;
-	GtkWidget *notebook;
-	int last_clicked;
+    GtkWidget *about_dialog;
+    GtkWidget *check_boxes [NGRAPHS];
+    GtkWidget *prop_dialog;
+    GtkWidget *notebook;
+    int last_clicked;
 
     long cpu_time [NCPUSTATES];
     long cpu_last [NCPUSTATES];
@@ -94,15 +94,15 @@ struct _MultiloadApplet
 /* show properties dialog */
 G_GNUC_INTERNAL void
 multiload_properties_cb (GtkAction       *action,
-			 MultiloadApplet *ma);
+                         MultiloadApplet *ma);
 
 /* remove the old graphs and rebuild them */
 G_GNUC_INTERNAL void
-multiload_applet_refresh(MultiloadApplet *ma);
+multiload_applet_refresh (MultiloadApplet *ma);
 
 /* update the tooltip to the graph's current "used" percentage */
 G_GNUC_INTERNAL void
-multiload_applet_tooltip_update(LoadGraph *g);
+multiload_applet_tooltip_update (LoadGraph *g);
 
 G_END_DECLS
 
