@@ -195,7 +195,7 @@ multiload_destroy_cb(GtkWidget *widget, gpointer data)
 	gint i;
 	MultiloadApplet *ma = data;
 
-	for (i = 0; i < NGRAPHS; i++)
+	for (i = 0; i < graph_n; i++)
 	{
 		load_graph_stop(ma->graphs[i]);
 		if (ma->graphs[i]->colors)
@@ -269,97 +269,99 @@ multiload_key_press_event_cb (GtkWidget *widget, GdkEventKey *event, MultiloadAp
 void
 multiload_applet_tooltip_update(LoadGraph *g)
 {
-	gchar *tooltip_text, *name;
+	gchar *tooltip_text;
 	MultiloadApplet *multiload;
+	const char *tooltip_label [graph_n] = {
+		[graph_cpuload]  = N_("Processor"),
+		[graph_memload]  = N_("Memory"),
+		[graph_netload2] = N_("Network"),
+		[graph_swapload] = N_("Swap Space"),
+		[graph_loadavg]  = N_("Load Average"),
+		[graph_diskload] = N_("Disk")
+	};
+	const char *name;
 
 	g_assert(g);
-	g_assert(g->name);
 
 	multiload = g->multiload;
 
 	/* label the tooltip intuitively */
-	if (!strncmp(g->name, "cpuload", strlen("cpuload")))
-		name = g_strdup(_("Processor"));
-	else if (!strncmp(g->name, "memload", strlen("memload")))
-		name = g_strdup(_("Memory"));
-	else if (!strncmp(g->name, "netload2", strlen("netload2")))
-		name = g_strdup(_("Network"));
-	else if (!strncmp(g->name, "swapload", strlen("swapload")))
-		name = g_strdup(_("Swap Space"));
-	else if (!strncmp(g->name, "loadavg", strlen("loadavg")))
-		name = g_strdup(_("Load Average"));
-	else if (!strncmp (g->name, "diskload", strlen("diskload")))
-		name = g_strdup(_("Disk"));
-	else
-		g_assert_not_reached();
+	name = gettext (tooltip_label [g->id]);
 
-	if (!strncmp(g->name, "memload", strlen("memload"))) {
-		float user_percent, cache_percent;
+	switch (g->id) {
+		case graph_memload: {
+			float user_percent, cache_percent;
 
-		user_percent = MIN (multiload->memload_user_ratio * 100.0f, 100.0f);
-		cache_percent = MIN (multiload->memload_cache_ratio * 100.0f, 100.0f);
-		tooltip_text = g_strdup_printf (_("%s:\n"
-		                                  "%.01f%% in use by programs\n"
-		                                  "%.01f%% in use as cache"),
-		                                name,
-		                                user_percent,
-		                                cache_percent);
+			user_percent  = MIN ((float)(100 * multiload->memload_user)  / (float)(multiload->memload_total), 100.0f);
+			cache_percent = MIN ((float)(100 * multiload->memload_cache) / (float)(multiload->memload_total), 100.0f);
+			tooltip_text = g_strdup_printf (_("%s:\n"
+			                                  "%.01f%% in use by programs\n"
+			                                  "%.01f%% in use as cache"),
+			                                name,
+			                                user_percent,
+			                                cache_percent);
+			break;
+		}
+		case graph_loadavg: {
+			tooltip_text = g_strdup_printf (_("The system load average is %0.02f"),
+						        multiload->loadavg1);
+			break;
+		}
+		case graph_netload2: {
+			char *tx_in, *tx_out;
 
-	} else if (!strcmp(g->name, "loadavg")) {
+			tx_in = netspeed_get(multiload->netspeed_in);
+			tx_out = netspeed_get(multiload->netspeed_out);
+			/* xgettext: same as in graphic tab of g-s-m */
+			tooltip_text = g_strdup_printf(_("%s:\n"
+							 "Receiving %s\n"
+							 "Sending %s"),
+						       name, tx_in, tx_out);
+			g_free(tx_in);
+			g_free(tx_out);
+			break;
+		}
+		default: {
+			float ratio;
+			float percent;
 
-		tooltip_text = g_strdup_printf (_("The system load average is %0.02f"),
-					        multiload->loadavg1);
+			if (g->id == graph_cpuload)
+				ratio = multiload->cpu_used_ratio;
+			else if (g->id == graph_swapload)
+				ratio = multiload->swapload_used_ratio;
+			else if (g->id == graph_diskload)
+				ratio = multiload->diskload_used_ratio;
+			else
+				g_assert_not_reached ();
 
-	} else if (!strcmp(g->name, "netload2")) {
-		char *tx_in, *tx_out;
-		tx_in = netspeed_get(multiload->netspeed_in);
-		tx_out = netspeed_get(multiload->netspeed_out);
-		/* xgettext: same as in graphic tab of g-s-m */
-		tooltip_text = g_strdup_printf(_("%s:\n"
-						 "Receiving %s\n"
-						 "Sending %s"),
-					       name, tx_in, tx_out);
-		g_free(tx_in);
-		g_free(tx_out);
-	} else {
-		float ratio = 1.0f;
-		float percent;
-
-		if (!strcmp(g->name, "cpuload"))
-			ratio = multiload->cpu_used_ratio;
-		else if (!strcmp(g->name, "swapload"))
-			ratio = multiload->swapload_used_ratio;
-		else if (!strcmp (g->name, "diskload"))
-			ratio = multiload->diskload_used_ratio;
-
-		percent = CLAMP (ratio * 100.0f, 0.0f, 100.0f);
-		tooltip_text = g_strdup_printf(_("%s:\n"
-		                               "%.01f%% in use"),
-					       name,
-					       percent);
+			percent = CLAMP (ratio * 100.0f, 0.0f, 100.0f);
+			tooltip_text = g_strdup_printf(_("%s:\n"
+			                               "%.01f%% in use"),
+						       name,
+						       percent);
+		}
 	}
 
 	gtk_widget_set_tooltip_text(g->disp, tooltip_text);
 
 	g_free(tooltip_text);
-	g_free(name);
 }
 
 static void
 multiload_create_graphs(MultiloadApplet *ma)
 {
 	struct { const char *label;
-		 const char *name;
-		 int num_colours;
-		 LoadGraphDataFunc callback;
-	       } graph_types[] = {
-			{ _("CPU Load"),     "cpuload",  5, GetLoad },
-			{ _("Memory Load"),  "memload",  5, GetMemory },
-			{ _("Net Load"),     "netload2",  6, GetNet },
-			{ _("Swap Load"),    "swapload", 2, GetSwap },
-			{ _("Load Average"), "loadavg",  3, GetLoadAvg },
-			{ _("Disk Load"),    "diskload", 3, GetDiskLoad }
-		};
+	         const char *name;
+	         int num_colours;
+	         LoadGraphDataFunc callback;
+	       } graph_types [graph_n] = {
+	         [graph_cpuload]  = { _("CPU Load"),     "cpuload",  cpuload_n,  GetLoad },
+	         [graph_memload]  = { _("Memory Load"),  "memload",  memload_n,  GetMemory },
+	         [graph_netload2] = { _("Net Load"),     "netload2", 6,          GetNet },
+	         [graph_swapload] = { _("Swap Load"),    "swapload", swapload_n, GetSwap },
+	         [graph_loadavg]  = { _("Load Average"), "loadavg",  3,          GetLoadAvg },
+	         [graph_diskload] = { _("Disk Load"),    "diskload", diskload_n, GetDiskLoad }
+	       };
 
 	gint speed, size;
 	guint net_threshold1;
@@ -383,7 +385,7 @@ multiload_create_graphs(MultiloadApplet *ma)
 	speed = MAX (speed, 50);
 	size = CLAMP (size, 10, 400);
 
-	for (i = 0; i < G_N_ELEMENTS (graph_types); i++)
+	for (i = 0; i < graph_n; i++)
 	{
 		gboolean visible;
 		char *key;
@@ -391,7 +393,7 @@ multiload_create_graphs(MultiloadApplet *ma)
 		/* This is a special case to handle migration from an
 		 * older version of netload to a newer one in the
 		 * 2.25.1 release. */
-		if (g_strcmp0 ("netload2", graph_types[i].name) == 0) {
+		if (i == graph_netload2) {
 		  key = g_strdup ("view-netload");
 		} else {
 		  key = g_strdup_printf ("view-%s", graph_types[i].name);
@@ -411,14 +413,14 @@ multiload_create_graphs(MultiloadApplet *ma)
 	}
 	/* for Network graph, colors[4] is grid line color, it should not be used in loop in load-graph.c */
 	/* for Network graph, colors[5] is indicator color, it should not be used in loop in load-graph.c */
-	ma->graphs[2]->n = 4;
+	ma->graphs[graph_netload2]->n = 4;
 	ma->net_threshold1 = net_threshold1;
 	ma->net_threshold2 = net_threshold2;
 	ma->net_threshold3 = net_threshold3;
-	ma->netspeed_in = netspeed_new(ma->graphs[2]);
-	ma->netspeed_out = netspeed_new(ma->graphs[2]);
+	ma->netspeed_in = netspeed_new (ma->graphs [graph_netload2]);
+	ma->netspeed_out = netspeed_new (ma->graphs [graph_netload2]);
 	/* for Load graph, colors[2] is grid line color, it should not be used in loop in load-graph.c */
-	ma->graphs[4]->n = 2;
+	ma->graphs[graph_loadavg]->n = 2;
 }
 
 /* remove the old graphs and rebuild them */
@@ -429,7 +431,7 @@ multiload_applet_refresh(MultiloadApplet *ma)
 	MatePanelAppletOrient orientation;
 
 	/* stop and free the old graphs */
-	for (i = 0; i < NGRAPHS; i++)
+	for (i = 0; i < graph_n; i++)
 	{
 		if (!ma->graphs[i])
 			continue;
@@ -455,12 +457,12 @@ multiload_applet_refresh(MultiloadApplet *ma)
 
 	gtk_container_add(GTK_CONTAINER(ma->applet), ma->box);
 
-	/* create the NGRAPHS graphs, passing in their user-configurable properties with gsettings. */
+	/* create the N graphs, passing in their user-configurable properties with gsettings. */
 	multiload_create_graphs (ma);
 
 	/* only start and display the graphs the user has turned on */
 
-	for (i = 0; i < NGRAPHS; i++) {
+	for (i = 0; i < graph_n; i++) {
 	    gtk_box_pack_start(GTK_BOX(ma->box),
 			       ma->graphs[i]->main_widget,
 			       TRUE, TRUE, 1);

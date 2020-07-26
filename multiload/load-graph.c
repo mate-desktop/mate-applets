@@ -70,7 +70,7 @@ load_graph_draw (LoadGraph *g)
   cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
 
   /* all graphs except Load and Net go this path */
-  if (g->id != 4 && g->id != 2)
+  if (g->id != graph_loadavg && g->id != graph_netload2)
   {
     for (i = 0; i < g->draw_width; i++)
       g->pos [i] = g->draw_height - 1;
@@ -92,7 +92,7 @@ load_graph_draw (LoadGraph *g)
     }
   }
   /* This is for network graph */
-  else if (g->id == 2)
+  else if (g->id == graph_netload2)
   {
     guint maxnet = 1;
     gint segments = 1;
