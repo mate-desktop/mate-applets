@@ -10,8 +10,6 @@
 
 G_BEGIN_DECLS
 
-#define NCPUSTATES 5
-#define NGRAPHS 6
 #define MIN_NET_THRESHOLD1 10
 #define MIN_NET_THRESHOLD2 11
 #define MIN_NET_THRESHOLD3 12
@@ -24,6 +22,47 @@ typedef struct _LoadGraph LoadGraph;
 typedef void (*LoadGraphDataFunc) (int, int [], LoadGraph *);
 
 #include "netspeed.h"
+
+typedef enum {
+    graph_cpuload = 0,
+    graph_memload,
+    graph_netload2,
+    graph_swapload,
+    graph_loadavg,
+    graph_diskload,
+    graph_n,
+} E_graph;
+
+typedef enum {
+    memload_user = 0,
+    memload_shared,
+    memload_buffer,
+    memload_cached,
+    memload_free,
+    memload_n
+} E_memload;
+
+typedef enum {
+    cpuload_usr = 0,
+    cpuload_sys,
+    cpuload_nice,
+    cpuload_iowait,
+    cpuload_free,
+    cpuload_n
+} E_cpuload;
+
+typedef enum {
+    diskload_read = 0,
+    diskload_write,
+    diskload_free,
+    diskload_n
+} E_diskload;
+
+typedef enum {
+    swapload_used = 0,
+    swapload_free,
+    swapload_n
+} E_swapload;
 
 struct _LoadGraph {
     MultiloadApplet *multiload;
@@ -59,7 +98,7 @@ struct _MultiloadApplet
 
     GSettings *settings;
 
-    LoadGraph *graphs [NGRAPHS];
+    LoadGraph *graphs [graph_n];
 
     GtkWidget *box;
 
@@ -71,20 +110,21 @@ struct _MultiloadApplet
     gboolean view_diskload;
 
     GtkWidget *about_dialog;
-    GtkWidget *check_boxes [NGRAPHS];
+    GtkWidget *check_boxes [graph_n];
     GtkWidget *prop_dialog;
     GtkWidget *notebook;
     int last_clicked;
 
     float cpu_used_ratio;
-    long  cpu_time [NCPUSTATES];
-    long  cpu_last [NCPUSTATES];
+    long  cpu_time [cpuload_n];
+    long  cpu_last [cpuload_n];
     int   cpu_initialized;
 
     double loadavg1;
 
-    float memload_user_ratio;
-    float memload_cache_ratio;
+    guint64 memload_user;
+    guint64 memload_cache;
+    guint64 memload_total;
 
     float swapload_used_ratio;
 

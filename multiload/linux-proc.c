@@ -46,14 +46,16 @@ static const unsigned needed_netload_flags =
 (1 << GLIBTOP_NETLOAD_IF_FLAGS) +
 (1 << GLIBTOP_NETLOAD_BYTES_TOTAL);
 
-
 void
-GetLoad (int Maximum, int data [5], LoadGraph *g)
+GetLoad (int        Maximum,
+         int        data [cpuload_n],
+         LoadGraph *g)
 {
-    int usr, nice, sys, iowait, free;
-    int total;
-    glibtop_cpu cpu;
     MultiloadApplet *multiload;
+    glibtop_cpu cpu;
+    long cpu_aux [cpuload_n], used = 0, total = 0;
+    int current_scaled, used_scaled = 0;
+    int i;
 
     glibtop_get_cpu (&cpu);
 
@@ -61,43 +63,39 @@ GetLoad (int Maximum, int data [5], LoadGraph *g)
 
     multiload = g->multiload;
 
-    multiload->cpu_time [0] = cpu.user;
-    multiload->cpu_time [1] = cpu.nice;
-    multiload->cpu_time [2] = cpu.sys;
-    multiload->cpu_time [3] = cpu.iowait + cpu.irq + cpu.softirq;
-    multiload->cpu_time [4] = cpu.idle;
+    multiload->cpu_time [cpuload_usr]    = cpu.user;
+    multiload->cpu_time [cpuload_nice]   = cpu.nice;
+    multiload->cpu_time [cpuload_sys]    = cpu.sys;
+    multiload->cpu_time [cpuload_iowait] = cpu.iowait + cpu.irq + cpu.softirq;
+    multiload->cpu_time [cpuload_free]   = cpu.idle;
 
     if (!multiload->cpu_initialized) {
         memcpy (multiload->cpu_last, multiload->cpu_time, sizeof (multiload->cpu_last));
         multiload->cpu_initialized = 1;
     }
 
-    usr  = multiload->cpu_time [0] - multiload->cpu_last [0];
-    nice = multiload->cpu_time [1] - multiload->cpu_last [1];
-    sys  = multiload->cpu_time [2] - multiload->cpu_last [2];
-    iowait = multiload->cpu_time [3] - multiload->cpu_last [3];
-    free = multiload->cpu_time [4] - multiload->cpu_last [4];
+    for (i = 0; i < cpuload_n; i++) {
+        cpu_aux [i] = multiload->cpu_time [i] - multiload->cpu_last [i];
+        total += cpu_aux [i];
+    }
 
-    total = usr + nice + sys + free + iowait;
+    for (i = 0; i < cpuload_free; i++) {
+        used += cpu_aux [i];
+        current_scaled = rint ((float)(cpu_aux [i] * Maximum) / (float)total);
+        used_scaled += current_scaled;
+        data [i] = current_scaled;
+    }
+    data [cpuload_free] = Maximum - used_scaled;
 
-    memcpy(multiload->cpu_last, multiload->cpu_time, sizeof multiload->cpu_last);
-    multiload->cpu_used_ratio = (float)(usr + nice + sys + iowait) / (float)total;
+    multiload->cpu_used_ratio = (float)(used) / (float)total;
 
-    usr  = rint (Maximum * (float)(usr)  / total);
-    nice = rint (Maximum * (float)(nice) / total);
-    sys  = rint (Maximum * (float)(sys)  / total);
-    iowait = rint (Maximum * (float)(iowait) / total);
-    free = Maximum - usr - nice - sys - iowait;
-
-    data [0] = usr;
-    data [1] = sys;
-    data [2] = nice;
-    data [3] = iowait;
-    data [4] = free;
+    memcpy (multiload->cpu_last, multiload->cpu_time, sizeof multiload->cpu_last);
 }
 
 void
-GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
+GetDiskLoad (int        Maximum,
+             int        data [diskload_n],
+             LoadGraph *g)
 {
     static gboolean first_call = TRUE;
     static guint64 lastread = 0, lastwrite = 0;
@@ -205,9 +203,9 @@ GetDiskLoad (int Maximum, int data [3], LoadGraph *g)
 
     multiload->diskload_used_ratio = (float)(readdiff + writediff) / (float)max;
 
-    data[0] = (float)Maximum *  readdiff / (float)max;
-    data[1] = (float)Maximum * writediff / (float)max;
-    data[2] = (float)Maximum - (data [0] + data[1]);
+    data [diskload_read]  = rint ((float)Maximum *  (float)readdiff / (float)max);
+    data [diskload_write] = rint ((float)Maximum * (float)writediff / (float)max);
+    data [diskload_free]  = Maximum - (data [0] + data[1]);
 }
 
 #if 0
@@ -259,38 +257,45 @@ GetPage (int Maximum, int data [3], LoadGraph *g)
 #endif /* 0 */
 
 void
-GetMemory (int Maximum, int data [5], LoadGraph *g)
+GetMemory (int        Maximum,
+           int        data [memload_n],
+           LoadGraph *g)
 {
-    int user, shared, buffer, cached;
-    glibtop_mem mem;
-    float user_ratio, cache_ratio;
     MultiloadApplet *multiload;
+    glibtop_mem mem;
+    guint64 aux [memload_n], cache = 0;
+    int current_scaled, used_scaled = 0;
+    int i;
 
     glibtop_get_mem (&mem);
 
     g_return_if_fail ((mem.flags & needed_mem_flags) == needed_mem_flags);
 
-    user_ratio  = (float)mem.user / (float)mem.total;
-    cache_ratio = (float)(mem.shared + mem.buffer + mem.cached) / (float)mem.total;
-
     multiload = g->multiload;
-    multiload->memload_user_ratio  = user_ratio;
-    multiload->memload_cache_ratio = cache_ratio;
+    multiload->memload_user  = mem.user;
+    multiload->memload_cache = mem.cached;
+    multiload->memload_total = mem.total;
 
-    user    = rint ((float)Maximum * user_ratio);
-    shared  = rint ((float)Maximum * (float)mem.shared / (float)mem.total);
-    buffer  = rint ((float)Maximum * (float)mem.buffer / (float)mem.total);
-    cached  = rint ((float)Maximum * (float)mem.cached / (float)mem.total);
+    aux [memload_user]   = mem.user;
+    aux [memload_shared] = mem.shared;
+    aux [memload_buffer] = mem.buffer;
+    aux [memload_cached] = mem.cached;
 
-    data [0] = user;
-    data [1] = shared;
-    data [2] = buffer;
-    data [3] = cached;
-    data [4] = Maximum-user-shared-buffer-cached;
+    for (i = 0; i < memload_free; i++) {
+        current_scaled = rint ((float)(aux [i] * Maximum) / (float)mem.total);
+        if (i != memload_user) {
+            cache += aux [i];
+        }
+        used_scaled += current_scaled;
+        data [i] = current_scaled;
+    }
+    data [memload_free] = MAX (Maximum - used_scaled, 0);
 }
 
 void
-GetSwap (int Maximum, int data [2], LoadGraph *g)
+GetSwap (int        Maximum,
+         int        data [swapload_n],
+         LoadGraph *g)
 {
     int used;
     MultiloadApplet *multiload;
@@ -318,7 +323,9 @@ GetSwap (int Maximum, int data [2], LoadGraph *g)
 }
 
 void
-GetLoadAvg (int Maximum, int data [2], LoadGraph *g)
+GetLoadAvg (int       Maximum,
+            int        data [2],
+            LoadGraph *g)
 {
     glibtop_loadavg loadavg;
     MultiloadApplet *multiload;
@@ -376,7 +383,9 @@ is_net_device_virtual(char *device)
 }
 
 void
-GetNet (int Maximum, int data [4], LoadGraph *g)
+GetNet (int        Maximum,
+        int        data [4],
+        LoadGraph *g)
 {
     enum Types {
         IN_COUNT = 0,

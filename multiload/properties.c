@@ -64,7 +64,7 @@ properties_set_insensitive(MultiloadApplet *ma)
 	total_graphs = 0;
 	last_graph = 0;
 
-	for (i = 0; i < NGRAPHS; i++)
+	for (i = 0; i < graph_n; i++)
 		if (ma->graphs[i]->visible)
 		{
 			last_graph = i;
@@ -122,7 +122,7 @@ property_toggled_cb(GtkWidget *widget, gpointer name)
 
 	if (active)
 	{
-		for (i = 0; i < NGRAPHS; i++)
+		for (i = 0; i < graph_n; i++)
 			soft_set_sensitive(ma->check_boxes[i], TRUE);
 		gtk_widget_show_all (ma->graphs[prop_type]->main_widget);
 		ma->graphs[prop_type]->visible = TRUE;
@@ -154,7 +154,7 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
   {
     case PROP_SPEED:
       g_settings_set_int (ma->settings, (gchar *)name, value);
-      for (i = 0; i < NGRAPHS; i++)
+      for (i = 0; i < graph_n; i++)
       {
         load_graph_stop(ma->graphs[i]);
         ma->graphs[i]->speed = value;
@@ -165,7 +165,7 @@ spin_button_changed_cb(GtkWidget *widget, gpointer name)
       break;
 
     case PROP_SIZE:
-      for (i = 0; i < NGRAPHS; i++)
+      for (i = 0; i < graph_n; i++)
       {
         g_settings_set_int (ma->settings, (gchar *)name, value);
         ma->graphs[i]->size = value ;
