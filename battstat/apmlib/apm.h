@@ -41,10 +41,10 @@ typedef struct apm_info
     const char driver_version[10];
     int apm_version_major;
     int apm_version_minor;
-    int apm_flags;
-    int ac_line_status;
-    int battery_status;
-    int battery_flags;
+    unsigned short apm_flags;
+    unsigned short ac_line_status;
+    unsigned short battery_status;
+    unsigned short battery_flags;
     int battery_percentage;
     int battery_time;
     int using_minutes;

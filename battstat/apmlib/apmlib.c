@@ -68,7 +68,7 @@ int apm_read(apm_info * i)
     /* Should check for other driver versions; driver 1.9 (and some
      * others) uses this format, which doesn't expose # batteries.
      */
-    sscanf(buffer, "%s %d.%d %x %x %x %x %d%% %d %s\n",
+    sscanf(buffer, "%s %d.%d %hx %hx %hx %hx %d%% %d %s\n",
 	   (char *) i->driver_version,
 	   &i->apm_version_major,
 	   &i->apm_version_minor,
@@ -102,7 +102,7 @@ int apm_read(apm_info * i)
 	if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
 	    printf("fgets error\n");
 
-	sscanf(buffer, "Flags: 0x%02x", &i->apm_flags);
+	sscanf(buffer, "Flags: 0x%02hx", &i->apm_flags);
 	if (i->apm_flags & APM_32_BIT_SUPPORT)
 	{
 	    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
@@ -142,7 +142,7 @@ int apm_read(apm_info * i)
 		    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
 			printf("fgets error\n");
 
-		    sscanf(buffer, "Battery flag: 0x%02x", &i->battery_flags);
+		    sscanf(buffer, "Battery flag: 0x%02hx", &i->battery_flags);
 
 		    if (fgets(buffer, sizeof(buffer) - 1, str) == NULL)
 			printf("fgets error\n");
