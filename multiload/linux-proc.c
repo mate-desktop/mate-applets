@@ -208,54 +208,6 @@ GetDiskLoad (int        Maximum,
     data [diskload_free]  = Maximum - (data [0] + data[1]);
 }
 
-#if 0
-void
-GetPage (int Maximum, int data [3], LoadGraph *g)
-{
-    static int max = 100; /* guess at maximum page rate (= in + out) */
-    static u_int64_t lastin = 0;
-    static u_int64_t lastout = 0;
-    int in, out, idle;
-
-    glibtop_swap swap;
-
-    glibtop_get_swap (&swap);
-
-    assert ((swap.flags & needed_page_flags) == needed_page_flags);
-
-    if ((lastin > 0) && (lastin < swap.pagein)) {
-	in = swap.pagein - lastin;
-    }
-    else {
-	in = 0;
-    }
-    lastin = swap.pagein;
-
-    if ((lastout > 0) && (lastout < swap.pageout)) {
-	out = swap.pageout - lastout;
-    }
-    else {
-	out = 0;
-    }
-    lastout = swap.pageout;
-
-    if ((in + out) > max) {
-	/* Maximum page rate has increased. Change the scale without
-	   any indication whatsoever to the user (not a nice thing to
-	   do). */
-	max = in + out;
-    }
-
-    in   = rint (Maximum * ((float)in / max));
-    out  = rint (Maximum * ((float)out / max));
-    idle = Maximum - in - out;
-
-    data [0] = in;
-    data [1] = out;
-    data [2] = idle;
-}
-#endif /* 0 */
-
 void
 GetMemory (int        Maximum,
            int        data [memload_n],
