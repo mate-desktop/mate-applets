@@ -288,11 +288,11 @@ timer_about_callback (GtkAction *action, TimerApplet *applet)
 static void
 timer_spin_button_value_changed (GtkSpinButton *spinbutton, TimerApplet *applet)
 {
-    gint duration = 0;
+    gint duration;
 
-    duration += gtk_spin_button_get_value (applet->hours) * 3600;
-    duration += gtk_spin_button_get_value (applet->minutes) * 60;
-    duration += gtk_spin_button_get_value (applet->seconds);
+    duration =  gtk_spin_button_get_value_as_int (applet->seconds);
+    duration += gtk_spin_button_get_value_as_int (applet->minutes) * 60;
+    duration += gtk_spin_button_get_value_as_int (applet->hours)   * 3600;
 
     g_settings_set_int (applet->settings, DURATION_KEY, duration);
 }
