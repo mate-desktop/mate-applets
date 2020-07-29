@@ -708,7 +708,7 @@ get_wireless_info (DevInfo *devinfo)
     if (!devinfo->running)
         goto cleanup;
 
-    /* Get in/out bitrate/rate/total, siganl quality from station message */
+    /* Get in/out bitrate/rate/total, signal quality from station message */
     msg = nlmsg_alloc ();
     if (!msg) {
         g_warning ("failed to allocate netlink message");
