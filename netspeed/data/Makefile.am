@@ -1,3 +1,5 @@
+NULL =
+
 APPLET_LOCATION = $(libexecdir)/mate-netspeed-applet
 
 appletdir       = $(datadir)/mate-panel/applets
@@ -32,7 +34,11 @@ EXTRA_DIST = \
 	$(applet_in_files).in	\
 	$(xmlui_DATA) \
 	$(service_in_files) \
-	$(netspeed_gschema_in_files)
+	$(netspeed_gschema_in_files) \
+	netspeed-details.ui \
+	netspeed-preferences.ui \
+	netspeed-resources.gresource.xml \
+	$(NULL)
 
 CLEANFILES = \
 	$(gsettings_SCHEMAS) \

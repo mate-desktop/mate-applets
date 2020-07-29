@@ -1,10 +1,5 @@
 NULL =
 
-builder_files =			\
-	netspeed-details.ui	\
-	netspeed-preferences.ui	\
-	$(NULL)
-
 AM_CPPFLAGS =			\
 	-I$(top_srcdir)		\
 	-I$(includedir)		\
@@ -46,19 +41,14 @@ if HAVE_NL
 mate_netspeed_applet_LDADD += $(NL_LIBS)
 endif
 
-netspeed-resources.c: netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/netspeed-resources.gresource.xml)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name netspeed $<
+netspeed-resources.c: $(srcdir)/../data/netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/netspeed-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name netspeed $<
 
-netspeed-resources.h: netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/netspeed-resources.gresource.xml)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name netspeed $<
+netspeed-resources.h: $(srcdir)/../data/netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/netspeed-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name netspeed $<
 
 CLEANFILES =			\
 	$(BUILT_SOURCES)	\
-	$(NULL)
-
-EXTRA_DIST =					\
-	$(builder_files)			\
-	netspeed-resources.gresource.xml	\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk
