@@ -1147,7 +1147,7 @@ settings_cb (GtkAction *action,
 		return;
 	}
 
-	builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/netspeed/netspeed-preferences.ui");
+	builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-preferences.ui");
 
 	applet->settings = GET_DIALOG ("preferences_dialog");
 	applet->network_device_combo = GET_WIDGET ("network_device_combo");
@@ -1286,7 +1286,7 @@ showinfo_cb (GtkAction *action,
         return;
     }
 
-    builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/netspeed/netspeed-details.ui");
+    builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-details.ui");
 
     applet->details       = GET_DIALOG ("dialog");
     applet->drawingarea   = GET_DRAWING_AREA ("drawingarea");
@@ -1539,6 +1539,7 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 	int i;
 	GtkIconTheme *icon_theme;
 	GtkWidget *spacer, *spacer_box;
+	GtkActionGroup *action_group;
 
 	/* Have our background automatically painted. */
 	mate_panel_applet_set_background_widget(MATE_PANEL_APPLET(applet_widget),
@@ -1708,17 +1709,17 @@ mate_netspeed_applet_factory(MatePanelApplet *applet_widget, const gchar *iid, g
 			 G_CALLBACK(mate_netspeed_enter_cb),
 			 (gpointer)applet);
 
-	GtkActionGroup *action_group;
-	gchar *ui_path;
 	action_group = gtk_action_group_new ("Netspeed Applet Actions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (action_group,
                                   mate_netspeed_applet_menu_actions,
                                   G_N_ELEMENTS (mate_netspeed_applet_menu_actions),
                                   applet);
-	ui_path = g_build_filename (NETSPEED_MENU_UI_DIR, "netspeed-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet->applet), ui_path, action_group);
-	g_free (ui_path);
+
+	mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet->applet),
+	                                            NETSPEED_RESOURCE_PATH "netspeed-menu.xml",
+	                                            action_group);
+
 	g_object_unref (action_group);
 
 	return TRUE;
