@@ -412,8 +412,7 @@ scan_cb (struct nl_msg  *msg,
     if (!bss[NL80211_BSS_STATUS]) return NL_SKIP;
 
     if (nla_get_u32 (bss[NL80211_BSS_STATUS]) != NL80211_BSS_STATUS_ASSOCIATED) return NL_SKIP;
-    int len = MIN(ETH_ALEN, nla_len (bss[NL80211_BSS_BSSID]));
-    memcpy (devinfo->station_mac_addr, nla_data (bss[NL80211_BSS_BSSID]), len);
+    memcpy (devinfo->station_mac_addr, nla_data (bss[NL80211_BSS_BSSID]), ETH_ALEN);
 
     return NL_SKIP;
 }
@@ -614,8 +613,7 @@ iface_cb (struct nl_msg *msg,
                genlmsg_attrlen(gnlh, 0), NULL);
 
     if (tb_msg[NL80211_ATTR_MAC]) {
-        int len = MIN(ETH_ALEN, nla_len (tb_msg[NL80211_ATTR_MAC]));
-        memcpy (devinfo->hwaddr, nla_data (tb_msg[NL80211_ATTR_MAC]), len);
+        memcpy (devinfo->hwaddr, nla_data (tb_msg[NL80211_ATTR_MAC]), ETH_ALEN);
     }
 
     if (tb_msg[NL80211_ATTR_SSID]) {
@@ -710,7 +708,7 @@ get_wireless_info (DevInfo *devinfo)
     if (!devinfo->running)
         goto cleanup;
 
-    /* Get in/out bitrate/rate/total, siganl quality from station message */
+    /* Get in/out bitrate/rate/total, signal quality from station message */
     msg = nlmsg_alloc ();
     if (!msg) {
         g_warning ("failed to allocate netlink message");
