@@ -14,9 +14,6 @@ $(applet_in_files): $(applet_in_files).in Makefile
 $(applet_DATA): $(applet_in_files) Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
-xmluidir   = $(datadir)/mate/ui
-xmlui_DATA = netspeed-menu.xml
-
 servicedir       = $(datadir)/dbus-1/services
 service_in_files = org.mate.panel.applet.NetspeedAppletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
@@ -32,10 +29,10 @@ gsettings_SCHEMAS = $(netspeed_gschema_in_files:.xml.in=.xml)
 
 EXTRA_DIST = \
 	$(applet_in_files).in	\
-	$(xmlui_DATA) \
 	$(service_in_files) \
 	$(netspeed_gschema_in_files) \
 	netspeed-details.ui \
+	netspeed-menu.xml \
 	netspeed-preferences.ui \
 	netspeed-resources.gresource.xml \
 	$(NULL)

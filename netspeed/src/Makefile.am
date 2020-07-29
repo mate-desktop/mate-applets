@@ -6,7 +6,7 @@ AM_CPPFLAGS =			\
 	$(GIO_CFLAGS)		\
 	$(GTOP_APPLETS_CFLAGS)	\
 	$(MATE_APPLETS4_CFLAGS)	\
-	-DNETSPEED_MENU_UI_DIR=\""$(datadir)/mate/ui"\" \
+	-DNETSPEED_RESOURCE_PATH=\""/org/mate/mate-applets/netspeed/"\" \
 	${WARN_CFLAGS}
 
 if HAVE_NL
