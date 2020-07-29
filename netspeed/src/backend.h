@@ -37,7 +37,7 @@
 #define SIOCGIWNAME     0x8B01          /* get name == wireless protocol */
 #define SIOCGIWENCODE	0x8B2B		    /* get encoding token & mode */
 
-#define ETH_ALEN        8
+#define ETH_ALEN        6
 #define ETH_LEN         20
 #define MAX_FORMAT_SIZE 15
 
@@ -60,7 +60,7 @@ typedef struct {
     guint32        ip;
     guint32        netmask;
     guint32        ptpip;
-    guint8         hwaddr [ETH_ALEN];
+    guint8         hwaddr [8]; /* EUI-48 or EUI-64 */
     guint8         ipv6 [16];
     char          *essid;
     gboolean       up;
