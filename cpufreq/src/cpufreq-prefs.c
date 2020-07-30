@@ -50,7 +50,7 @@ struct _CPUFreqPrefsPrivate {
 	GtkWidget *show_unit;
 	GtkWidget *show_perc;
 	GtkWidget *cpu_combo;
-	GtkWidget *monitor_settings_box;
+	GtkWidget *monitor_settings_frame;
 	GtkWidget *show_mode_combo;
 };
 
@@ -369,9 +369,9 @@ static void
 cpufreq_prefs_dialog_update_visibility (CPUFreqPrefs *prefs)
 {
 	if (cpufreq_utils_get_n_cpus () > 1)
-		gtk_widget_show (prefs->priv->monitor_settings_box);
+		gtk_widget_show (prefs->priv->monitor_settings_frame);
 	else
-		gtk_widget_hide (prefs->priv->monitor_settings_box);
+		gtk_widget_hide (prefs->priv->monitor_settings_frame);
 }
 
 static void
@@ -532,7 +532,7 @@ cpufreq_prefs_dialog_create (CPUFreqPrefs *prefs)
 	prefs->priv->show_unit = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_show_unit"));
 	prefs->priv->show_perc = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_show_perc"));
 
-	prefs->priv->monitor_settings_box = GTK_WIDGET (gtk_builder_get_object (builder, "monitor_settings_box"));
+	prefs->priv->monitor_settings_frame = GTK_WIDGET (gtk_builder_get_object (builder, "monitor_settings_frame"));
 
 	g_object_unref (builder);
 
