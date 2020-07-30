@@ -326,43 +326,14 @@ add_color_selector(GtkWidget *page, gchar *name, gchar *key, MultiloadApplet *ma
 
 /* save the checkbox option to gsettings and apply it on the applet */
 static void
-checkbox_toggled_cb(GtkCheckButton *checkbox, gchar *key)
+nvme_checkbox_toggled_cb (GtkCheckButton  *checkbox,
+                          MultiloadApplet *ma)
 {
-	MultiloadApplet *ma;
 	gboolean option;
 
-	ma = g_object_get_data (G_OBJECT (checkbox), "MultiloadApplet");
-
-	option = g_settings_get_boolean(ma->settings, key);
-	g_settings_set_boolean(ma->settings, key, !option);
-
-	return;
-}
-
-/* adds checkbox option */
-static void
-add_checkbox(GtkWidget *page, gchar *name, gchar *key, MultiloadApplet *ma)
-{
-	GtkWidget *vbox;
-	GtkWidget *checkbox;
-	gboolean option;
-
-	option = g_settings_get_boolean (ma->settings, key);
-
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	checkbox = gtk_check_button_new_with_mnemonic (name);
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbox), option);
-
-	gtk_box_pack_start(GTK_BOX(vbox), checkbox, FALSE, FALSE, 0);
-
-	gtk_box_pack_start(GTK_BOX(page), vbox, FALSE, FALSE, 0);
-
-	g_object_set_data (G_OBJECT (checkbox), "MultiloadApplet", ma);
-
-	g_signal_connect(G_OBJECT(checkbox), "toggled", G_CALLBACK(checkbox_toggled_cb), key);
-
-	if ( ! g_settings_is_writable (ma->settings, key))
-		hard_set_sensitive (vbox, FALSE);
+	option = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (checkbox));
+	ma->nvme_diskstats = option;
+	g_settings_set_boolean (ma->settings, "diskload-nvme-diskstats", option);
 
 	return;
 }
@@ -681,7 +652,16 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	add_color_selector (page, _("_Read"), "diskload-color0", ma);
 	add_color_selector (page, _("_Write"), "diskload-color1", ma);
 	add_color_selector (page, _("_Background"), "diskload-color2", ma);
-	add_checkbox(page, _("Use diskstats for NVMe"), "diskload-nvme-diskstats", ma);
+	GtkWidget *nvme_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	GtkWidget *nvme_checkbox = gtk_check_button_new_with_mnemonic (_("Use diskstats for NVMe"));
+	ma->nvme_diskstats = g_settings_get_boolean (ma->settings, "diskload-nvme-diskstats");
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (nvme_checkbox),
+	                              ma->nvme_diskstats);
+	g_signal_connect (G_OBJECT (nvme_checkbox), "toggled",
+	                  G_CALLBACK (nvme_checkbox_toggled_cb), ma);
+	gtk_box_pack_start (GTK_BOX(nvme_box), nvme_checkbox, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX(page), nvme_box, FALSE, FALSE, 0);
+	gtk_widget_show (nvme_box);
 
 	title = g_strconcat ("<span weight=\"bold\">", _("Network speed thresholds"), "</span>", NULL);
 	label = gtk_label_new (title);

@@ -129,6 +129,7 @@ struct _MultiloadApplet
     float swapload_used_ratio;
 
     float diskload_used_ratio;
+    gboolean nvme_diskstats;
 
     NetSpeed *netspeed_in;
     NetSpeed *netspeed_out;

@@ -103,7 +103,6 @@ GetDiskLoad (int        Maximum,
 
     guint i;
     int max;
-    gboolean nvme_diskstats;
 
     guint64 read, write;
     guint64 readdiff, writediff;
@@ -112,7 +111,6 @@ GetDiskLoad (int        Maximum,
 
     multiload = g->multiload;
 
-    nvme_diskstats = g_settings_get_boolean (multiload->settings, "diskload-nvme-diskstats");
 
     if(first_call)
     {
@@ -121,7 +119,7 @@ GetDiskLoad (int        Maximum,
 
     read = write = 0;
 
-    if (nvme_diskstats)
+    if (multiload->nvme_diskstats)
     {
         FILE *fdr;
         char line[255];
@@ -130,6 +128,7 @@ GetDiskLoad (int        Maximum,
         fdr = fopen("/proc/diskstats", "r");
         if (!fdr)
         {
+            multiload->nvme_diskstats = FALSE;
             g_settings_set_boolean (multiload->settings, "diskload-nvme-diskstats", FALSE);
             return;
         }
