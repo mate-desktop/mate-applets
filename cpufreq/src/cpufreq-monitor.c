@@ -125,7 +125,7 @@ cpufreq_monitor_class_init (CPUFreqMonitorClass *klass)
                                          g_param_spec_int ("max-frequency",
                                                            "MaxFrequency",
                                                            "The max cpu frequency",
-                                                           0,
+                                                           -1,
                                                            G_MAXINT,
                                                            0,
                                                            G_PARAM_READWRITE));
