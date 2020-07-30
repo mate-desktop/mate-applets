@@ -351,16 +351,17 @@ static void
 multiload_create_graphs(MultiloadApplet *ma)
 {
 	struct { const char *label;
+	         const char *visibility_key;
 	         const char *name;
 	         int num_colours;
 	         LoadGraphDataFunc callback;
 	       } graph_types [graph_n] = {
-	         [graph_cpuload]  = { _("CPU Load"),     "cpuload",  cpuload_n,  GetLoad },
-	         [graph_memload]  = { _("Memory Load"),  "memload",  memload_n,  GetMemory },
-	         [graph_netload2] = { _("Net Load"),     "netload2", 6,          GetNet },
-	         [graph_swapload] = { _("Swap Load"),    "swapload", swapload_n, GetSwap },
-	         [graph_loadavg]  = { _("Load Average"), "loadavg",  3,          GetLoadAvg },
-	         [graph_diskload] = { _("Disk Load"),    "diskload", diskload_n, GetDiskLoad }
+	         [graph_cpuload]  = { _("CPU Load"),     VIEW_CPULOAD_KEY,  "cpuload",  cpuload_n,  GetLoad },
+	         [graph_memload]  = { _("Memory Load"),  VIEW_MEMLOAD_KEY,  "memload",  memload_n,  GetMemory },
+	         [graph_netload2] = { _("Net Load"),     VIEW_NETLOAD_KEY,  "netload2", 6,          GetNet },
+	         [graph_swapload] = { _("Swap Load"),    VIEW_SWAPLOAD_KEY, "swapload", swapload_n, GetSwap },
+	         [graph_loadavg]  = { _("Load Average"), VIEW_LOADAVG_KEY,  "loadavg",  3,          GetLoadAvg },
+	         [graph_diskload] = { _("Disk Load"),    VIEW_DISKLOAD_KEY, "diskload", diskload_n, GetDiskLoad }
 	       };
 
 	gint speed, size;
@@ -387,27 +388,13 @@ multiload_create_graphs(MultiloadApplet *ma)
 
 	for (i = 0; i < graph_n; i++)
 	{
-		gboolean visible;
-		char *key;
-
-		/* This is a special case to handle migration from an
-		 * older version of netload to a newer one in the
-		 * 2.25.1 release. */
-		if (i == graph_netload2) {
-		  key = g_strdup ("view-netload");
-		} else {
-		  key = g_strdup_printf ("view-%s", graph_types[i].name);
-		}
-		visible = g_settings_get_boolean (ma->settings, key);
-		g_free (key);
-
 		ma->graphs[i] = load_graph_new (ma,
 				                graph_types[i].num_colours,
 						graph_types[i].label,
                                                 i,
 						speed,
 						size,
-						visible,
+						g_settings_get_boolean (ma->settings, graph_types[i].visibility_key),
 						graph_types[i].name,
 						graph_types[i].callback);
 	}

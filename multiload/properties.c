@@ -430,78 +430,81 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 	check_box = gtk_check_button_new_with_mnemonic(_("_Processor"));
 	ma->check_boxes[0] = check_box;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box),
-				g_settings_get_boolean (ma->settings, "view-cpuload"));
+				g_settings_get_boolean (ma->settings, VIEW_CPULOAD_KEY));
 	g_object_set_data(G_OBJECT(check_box), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(check_box), "prop_type", GINT_TO_POINTER(PROP_CPU));
 	g_signal_connect(G_OBJECT(check_box), "toggled",
-				G_CALLBACK(property_toggled_cb), "view-cpuload");
+				G_CALLBACK(property_toggled_cb), VIEW_CPULOAD_KEY);
 	gtk_box_pack_start (GTK_BOX (control_hbox), check_box, FALSE, FALSE, 0);
 
-	if ( ! g_settings_is_writable (ma->settings, "view-cpuload"))
+	if ( ! g_settings_is_writable (ma->settings, VIEW_CPULOAD_KEY))
 		hard_set_sensitive (check_box, FALSE);
 
 	check_box = gtk_check_button_new_with_mnemonic(_("_Memory"));
 	ma->check_boxes[1] = check_box;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box),
-				g_settings_get_boolean (ma->settings, "view-memload"));
+				g_settings_get_boolean (ma->settings, VIEW_MEMLOAD_KEY));
 	g_object_set_data(G_OBJECT(check_box), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(check_box), "prop_type", GINT_TO_POINTER(PROP_MEM));
 	g_signal_connect(G_OBJECT(check_box), "toggled",
-				G_CALLBACK(property_toggled_cb), "view-memload");
+				G_CALLBACK(property_toggled_cb), VIEW_MEMLOAD_KEY);
 	gtk_box_pack_start (GTK_BOX (control_hbox), check_box, FALSE, FALSE, 0);
 
-	if ( ! g_settings_is_writable (ma->settings, "view-memload"))
+	if ( ! g_settings_is_writable (ma->settings, VIEW_MEMLOAD_KEY))
 		hard_set_sensitive (check_box, FALSE);
 
 	check_box = gtk_check_button_new_with_mnemonic(_("_Network"));
 	ma->check_boxes[2] = check_box;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box),
-				g_settings_get_boolean (ma->settings, "view-netload"));
+				g_settings_get_boolean (ma->settings, VIEW_NETLOAD_KEY));
 	g_object_set_data(G_OBJECT(check_box), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(check_box), "prop_type", GINT_TO_POINTER(PROP_NET));
 	g_signal_connect(G_OBJECT(check_box), "toggled",
-				G_CALLBACK(property_toggled_cb), "view-netload");
+				G_CALLBACK(property_toggled_cb), VIEW_NETLOAD_KEY);
 	gtk_box_pack_start (GTK_BOX (control_hbox), check_box, FALSE, FALSE, 0);
 
-	if ( ! g_settings_is_writable (ma->settings, "view-netload"))
+	if ( ! g_settings_is_writable (ma->settings, VIEW_NETLOAD_KEY))
 		hard_set_sensitive (check_box, FALSE);
 
 	check_box = gtk_check_button_new_with_mnemonic (_("S_wap Space"));
 	ma->check_boxes[3] = check_box;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box),
-				g_settings_get_boolean (ma->settings, "view-swapload"));
+				g_settings_get_boolean (ma->settings, VIEW_SWAPLOAD_KEY));
 	g_object_set_data(G_OBJECT(check_box), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(check_box), "prop_type", GINT_TO_POINTER(PROP_SWAP));
 	g_signal_connect(G_OBJECT(check_box), "toggled",
-				G_CALLBACK(property_toggled_cb), "view-swapload");
+				G_CALLBACK(property_toggled_cb), VIEW_SWAPLOAD_KEY);
 	gtk_box_pack_start (GTK_BOX (control_hbox), check_box, FALSE, FALSE, 0);
 
-	if ( ! g_settings_is_writable (ma->settings, "view-swapload"))
+	if ( ! g_settings_is_writable (ma->settings, VIEW_SWAPLOAD_KEY))
 		hard_set_sensitive (check_box, FALSE);
 
 	check_box = gtk_check_button_new_with_mnemonic(_("_Load"));
 	ma->check_boxes[4] = check_box;
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_box),
-				g_settings_get_boolean (ma->settings, "view-loadavg"));
+				g_settings_get_boolean (ma->settings, VIEW_LOADAVG_KEY));
 	g_object_set_data(G_OBJECT(check_box), "MultiloadApplet", ma);
 	g_object_set_data(G_OBJECT(check_box), "prop_type", GINT_TO_POINTER(PROP_AVG));
 	g_signal_connect(G_OBJECT(check_box), "toggled",
-				G_CALLBACK(property_toggled_cb), "view-loadavg");
+				G_CALLBACK(property_toggled_cb), VIEW_LOADAVG_KEY);
 	gtk_box_pack_start(GTK_BOX(control_hbox), check_box, FALSE, FALSE, 0);
 
-	if ( ! g_settings_is_writable (ma->settings, "view-loadavg"))
+	if ( ! g_settings_is_writable (ma->settings, VIEW_LOADAVG_KEY))
 		hard_set_sensitive (check_box, FALSE);
 
 	check_box = gtk_check_button_new_with_mnemonic(_("_Harddisk"));
 	ma->check_boxes[5] = check_box;
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check_box),
-			g_settings_get_boolean (ma->settings, "view-diskload"));
+			g_settings_get_boolean (ma->settings, VIEW_DISKLOAD_KEY));
 	g_object_set_data (G_OBJECT (check_box), "MultiloadApplet", ma);
 	g_object_set_data (G_OBJECT (check_box), "prop_type",
 			GINT_TO_POINTER (PROP_DISK));
 	g_signal_connect (G_OBJECT (check_box), "toggled",
-			G_CALLBACK (property_toggled_cb), "view-diskload");
+			G_CALLBACK (property_toggled_cb), VIEW_DISKLOAD_KEY);
 	gtk_box_pack_start (GTK_BOX (control_hbox), check_box, FALSE, FALSE, 0);
+
+	if ( ! g_settings_is_writable (ma->settings, VIEW_DISKLOAD_KEY))
+		hard_set_sensitive (check_box, FALSE);
 
 	category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);

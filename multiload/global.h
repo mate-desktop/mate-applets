@@ -17,6 +17,13 @@ G_BEGIN_DECLS
 #define MAX_NET_THRESHOLD2  999999999
 #define MAX_NET_THRESHOLD3 1000000000
 
+#define VIEW_CPULOAD_KEY   "view-cpuload"
+#define VIEW_MEMLOAD_KEY   "view-memload"
+#define VIEW_NETLOAD_KEY   "view-netload"
+#define VIEW_SWAPLOAD_KEY  "view-swapload"
+#define VIEW_LOADAVG_KEY   "view-loadavg"
+#define VIEW_DISKLOAD_KEY  "view-diskload"
+
 typedef struct _MultiloadApplet MultiloadApplet;
 typedef struct _LoadGraph LoadGraph;
 typedef void (*LoadGraphDataFunc) (int, int [], LoadGraph *);
