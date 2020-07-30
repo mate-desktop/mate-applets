@@ -411,6 +411,7 @@ multiload_create_graphs(MultiloadApplet *ma)
 						graph_types[i].name,
 						graph_types[i].callback);
 	}
+	ma->nvme_diskstats = g_settings_get_boolean (ma->settings, "diskload-nvme-diskstats");
 	/* for Network graph, colors[4] is grid line color, it should not be used in loop in load-graph.c */
 	/* for Network graph, colors[5] is indicator color, it should not be used in loop in load-graph.c */
 	ma->graphs[graph_netload2]->n = 4;
