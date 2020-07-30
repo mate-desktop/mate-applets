@@ -40,8 +40,6 @@ EXTRA_DIST =				\
 	$(applet_in_files).in		\
 	$(service_in_files)		\
 	$(cpufreq_gschema_in_files)	\
-	$(builder_DATA)			\
-	$(ui_DATA)			\
 	cpufreq-applet-menu.xml		\
 	cpufreq-preferences.ui		\
 	cpufreq-resources.gresource.xml	\
