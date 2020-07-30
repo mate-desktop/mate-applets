@@ -35,7 +35,9 @@ typedef enum {
 
 typedef enum {
     memload_user = 0,
+#ifndef __linux__
     memload_shared,
+#endif /* __linux__ */
     memload_buffer,
     memload_cached,
     memload_free,

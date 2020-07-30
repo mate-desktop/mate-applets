@@ -256,6 +256,18 @@ GetPage (int Maximum, int data [3], LoadGraph *g)
 }
 #endif /* 0 */
 
+/* GNU/Linux: The Shared memory (mem.shared) is part of the Cached memory
+ * (mem.cached).
+ *   aux [memload_user]   = (mem.total - mem.free) - (mem.cached + mem.buffer)
+ *   aux [memload_buffer] = mem.buffer;
+ *   aux [memload_cached] = mem.cached;
+ *
+ * Other operating systems:
+ *   aux [memload_user]   = mem.user;
+ *   aux [memload_shared] = mem.shared;
+ *   aux [memload_buffer] = mem.buffer;
+ *   aux [memload_cached] = mem.cached;
+ */
 void
 GetMemory (int        Maximum,
            int        data [memload_n],
@@ -271,13 +283,12 @@ GetMemory (int        Maximum,
 
     g_return_if_fail ((mem.flags & needed_mem_flags) == needed_mem_flags);
 
-    multiload = g->multiload;
-    multiload->memload_user  = mem.user;
-    multiload->memload_cache = mem.cached;
-    multiload->memload_total = mem.total;
-
+#ifndef __linux__
     aux [memload_user]   = mem.user;
     aux [memload_shared] = mem.shared;
+#else
+    aux [memload_user]   = mem.total - mem.free - mem.buffer - mem.cached;
+#endif /* __linux__ */
     aux [memload_buffer] = mem.buffer;
     aux [memload_cached] = mem.cached;
 
@@ -290,6 +301,11 @@ GetMemory (int        Maximum,
         data [i] = current_scaled;
     }
     data [memload_free] = MAX (Maximum - used_scaled, 0);
+
+    multiload = g->multiload;
+    multiload->memload_user  = aux [memload_user];
+    multiload->memload_cache = cache;
+    multiload->memload_total = mem.total;
 }
 
 void

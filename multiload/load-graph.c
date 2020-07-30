@@ -386,16 +386,36 @@ load_graph_load_config (LoadGraph *g)
     if (!g->colors)
         g->colors = g_new0(GdkRGBA, g->n);
 
-    for (i = 0; i < g->n; i++)
-    {
-        name = g_strdup_printf ("%s-color%u", g->name, i);
-        temp = g_settings_get_string(g->multiload->settings, name);
-        if (!temp)
-            temp = g_strdup ("#000000");
-        gdk_rgba_parse(&(g->colors[i]), temp);
-        g_free(temp);
-        g_free(name);
+#ifdef __linux__
+    if (g->id == graph_memload) {
+        /* memload graph */
+        guint j = 0;
+        for (i = 0; i < g->n; i++) {
+            if (i == 1)
+                j++; /* skip memload-color1 */
+            name = g_strdup_printf ("%s-color%u", g->name, j);
+            temp = g_settings_get_string(g->multiload->settings, name);
+            if (!temp)
+                temp = g_strdup ("#000000");
+            gdk_rgba_parse (&(g->colors[i]), temp);
+            g_free (temp);
+            g_free (name);
+            j++;
+        }
+    } else {
+#endif /* __linux__ */
+        for (i = 0; i < g->n; i++) {
+            name = g_strdup_printf ("%s-color%u", g->name, i);
+            temp = g_settings_get_string (g->multiload->settings, name);
+            if (!temp)
+                temp = g_strdup ("#000000");
+            gdk_rgba_parse (&(g->colors[i]), temp);
+            g_free (temp);
+            g_free (name);
+        }
+#ifdef __linux__
     }
+#endif /* __linux__ */
 }
 
 LoadGraph *
