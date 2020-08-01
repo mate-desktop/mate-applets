@@ -1,6 +1,6 @@
 NULL =
 
-SUBDIRS = docs pixmaps
+SUBDIRS = docs icons
 
 AM_CPPFLAGS = \
 	${WARN_CFLAGS} \
