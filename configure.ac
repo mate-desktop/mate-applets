@@ -578,9 +578,12 @@ charpick/help/Makefile
 mateweather/Makefile
 mateweather/docs/Makefile
 geyes/Makefile
-geyes/org.mate.panel.applet.geyes.gschema.xml
+geyes/data/Makefile
+geyes/data/org.mate.panel.applet.geyes.gschema.xml
+geyes/icons/Makefile
 geyes/themes/Makefile
 geyes/docs/Makefile
+geyes/src/Makefile
 battstat/Makefile
 battstat/org.mate.panel.applet.battstat.gschema.xml
 battstat/apmlib/Makefile
