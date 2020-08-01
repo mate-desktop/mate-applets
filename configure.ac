@@ -603,7 +603,9 @@ cpufreq/help/Makefile
 timerapplet/Makefile
 timerapplet/org.mate.panel.applet.timer.gschema.xml
 command/Makefile
-command/org.mate.panel.applet.command.gschema.xml
+command/data/Makefile
+command/data/org.mate.panel.applet.command.gschema.xml
+command/src/Makefile
 netspeed/Makefile
 netspeed/data/Makefile
 netspeed/data/org.mate.panel.applet.netspeed.gschema.xml
