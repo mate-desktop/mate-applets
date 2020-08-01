@@ -40,15 +40,15 @@ typedef struct _CPUFreqApplet      CPUFreqApplet;
 typedef struct _CPUFreqAppletClass CPUFreqAppletClass;
 
 typedef enum {
-        CPUFREQ_MODE_GRAPHIC,
-        CPUFREQ_MODE_TEXT,
-        CPUFREQ_MODE_BOTH
+    CPUFREQ_MODE_GRAPHIC,
+    CPUFREQ_MODE_TEXT,
+    CPUFREQ_MODE_BOTH
 } CPUFreqShowMode;
 
 typedef enum {
-        CPUFREQ_MODE_TEXT_FREQUENCY,
-        CPUFREQ_MODE_TEXT_FREQUENCY_UNIT,
-        CPUFREQ_MODE_TEXT_PERCENTAGE
+    CPUFREQ_MODE_TEXT_FREQUENCY,
+    CPUFREQ_MODE_TEXT_FREQUENCY_UNIT,
+    CPUFREQ_MODE_TEXT_PERCENTAGE
 } CPUFreqShowTextMode;
 
 GType    cpufreq_applet_get_type                (void) G_GNUC_CONST;
