@@ -560,8 +560,10 @@ AC_OUTPUT([
 Makefile
 po/Makefile.in
 accessx-status/Makefile
+accessx-status/data/Makefile
 accessx-status/docs/Makefile
 accessx-status/icons/Makefile
+accessx-status/src/Makefile
 drivemount/Makefile
 drivemount/help/Makefile
 drivemount/org.mate.drivemount.gschema.xml
