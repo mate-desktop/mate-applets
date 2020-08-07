@@ -550,9 +550,6 @@ update_percent_label( ProgressData *battstat, BatteryStatus *info )
 static void
 possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
 {
-  GtkIconTheme *theme;
-  cairo_surface_t *surface;
-  gint icon_size, icon_scale;
   gchar *icon_name;
   int batt_life;
 
@@ -591,15 +588,7 @@ possibly_update_status_icon( ProgressData *battstat, BatteryStatus *info )
     icon_name = "battery-full";
   }
 
-  theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (battstat->applet)));
-
-  icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (battstat->applet));
-  icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (battstat->applet));
-
-  surface = gtk_icon_theme_load_surface (theme, icon_name, icon_size, icon_scale, NULL, 0, NULL);
-
-  gtk_image_set_from_surface (GTK_IMAGE(battstat->status), surface);
-  cairo_surface_destroy (surface);
+  gtk_image_set_from_icon_name (GTK_IMAGE(battstat->status), icon_name, GTK_ICON_SIZE_LARGE_TOOLBAR);
 }
 
 /* Gets called as a gtk_timeout once per second.  Checks for updates and
@@ -1054,7 +1043,7 @@ create_layout(ProgressData *battstat)
   /* Allocate the four widgets that we need. */
   battstat->grid = gtk_grid_new ();
   battstat->percent = gtk_label_new( "" );
-  battstat->status = gtk_image_new();
+  battstat->status = gtk_image_new_from_icon_name ("battery-caution", GTK_ICON_SIZE_LARGE_TOOLBAR);
 
   /* When you first get a pointer to a newly created GtkWidget it has one
      'floating' reference.  When you first add this widget to a container
