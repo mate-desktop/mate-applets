@@ -1156,11 +1156,14 @@ static void mateweather_pref_set_property(GObject* object, guint prop_id, const 
 {
     MateWeatherPref* pref = MATEWEATHER_PREF(object);
 
-    switch (prop_id)
-    {
-		case PROP_MATEWEATHER_APPLET:
-			pref->priv->applet = g_value_get_pointer(value);
-			break;
+    switch (prop_id) {
+        case PROP_MATEWEATHER_APPLET:
+            pref->priv->applet = g_value_get_pointer(value);
+            break;
+        default:
+            /* We don't have any other property... */
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
     }
 }
 
@@ -1169,11 +1172,14 @@ static void mateweather_pref_get_property(GObject* object, guint prop_id, GValue
 {
     MateWeatherPref* pref = MATEWEATHER_PREF(object);
 
-    switch (prop_id)
-    {
-		case PROP_MATEWEATHER_APPLET:
-			g_value_set_pointer(value, pref->priv->applet);
-			break;
+    switch (prop_id) {
+        case PROP_MATEWEATHER_APPLET:
+            g_value_set_pointer(value, pref->priv->applet);
+            break;
+        default:
+            /* We don't have any other property... */
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
     }
 }
 
