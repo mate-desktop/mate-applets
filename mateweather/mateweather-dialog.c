@@ -265,6 +265,10 @@ mateweather_dialog_set_property (GObject      *object,
         case PROP_MATEWEATHER_APPLET:
             dialog->applet = g_value_get_pointer (value);
             break;
+        default:
+            /* We don't have any other property... */
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
     }
 }
 
@@ -282,6 +286,10 @@ mateweather_dialog_get_property (GObject    *object,
 	case PROP_MATEWEATHER_APPLET:
 	    g_value_set_pointer (value, dialog->applet);
 	    break;
+        default:
+            /* We don't have any other property... */
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
     }
 }
 
