@@ -1,3 +1,57 @@
+### mate-applets 1.25.1
+
+  * update translations
+  * accessx-status: add src and data folders
+  * accessx-status: Simplify icons installation
+  * geyes: Use common subdirs - src, icons, data
+  * command: Use common subdirs - src, data
+  * Remove -Wtype-limits warnings
+  * netspeed: Simplify icons/Makefile.am
+  * netspeed: Load netspeed-menu.xml from resources
+  * netspeed: move ui files to data folder
+  * battstat: Rewrite preference dialog from scratch
+  * battstat: invalidScanfArgType_int cppcheck warnings (/proc/apm)
+  * cpufreq: Remove warning about unreachable code reported by scan-build
+  * cpufreq: -1 indicates error obtaining max frequency
+  * cpufreq: Update cpufreq-preferences.ui
+  * cpufreq: remove builder_DATA, ui_DATA variables from EXTRA_DIST
+  * cpufreq: avoid deprecated GtkAlignment
+  * cpufreq: create all needed widgets only once
+  * cpufreq: fix code-style
+  * geyes: Load menu from resources
+  * charpick: Load menu from resources
+  * cpufreq: Load menu and ui file from resources
+  * multiload: Use the id instead of the name to identify the graph type
+  * multiload: Display the percentage used accurately on tooltip
+  * accessx-status: Load menu from resources
+  * battstat: Fix memory leak
+  * battstat: Reduce the dynamically allocated memory
+  * battstat: Free only dynamically allocated memory
+  * netspeed: remove warning about g_object_disconnect on remove it from panel
+  * Netspeed kernel warning (#510)
+  * netspeed: Add netspeed-details.ui
+  * netspeed: fix memory leaks on backend
+  * charpick: Fix memory leak reported by clang static analyzer
+  * mateweather: Add mateweather-dialog.ui in POTFILES.in
+  * mateweather: Add mateweather-dialog.ui
+  * multiload: code formatting - global.h
+  * multiload: the initialization of the variable is not really used
+  * multiload: set and check the ranges for all network thresholds
+  * multiload: Do not add the same global variables within all graphs
+  * stickynotes: Fix -Wformat-nonliteral warning
+  * multiload: Fix memory leak
+  * netspeed: Use a macro for setting refresh time value
+  * netspeed: Use IEC units for transfer rates
+  * netspeed: add netlink support
+  * Remove warning about assigned value is never used reported by cppcheck
+  * battstat: warning about boolean algebra reported by cppcheck
+  * Remove unused variable warning reported by cppcheck
+  * command: Remove runtime warning about invalid icon size 24
+  * battstat: bump upower required version and drop legacy code
+  * batstatt: fix deprecated up_client_get_devices
+  * Guard block is missing
+  * geyes: Add themes.ui
+
 ### mate-applets 1.25.0
 
   * update translations
