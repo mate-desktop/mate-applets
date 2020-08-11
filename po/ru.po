@@ -4,31 +4,34 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Christopher Schramm <transifex@cschramm.eu>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Dmitry Mandryk <dmandryk@gmail.com>, 2018
-# Aleksandr <pc01.alex@yandex.ru>, 2018
-# Ivan, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2018
-# Дмитрий Михирев, 2018
-# Alexander <alex.grushetskiy@gmail.com>, 2018
-# AlexL <loginov.alex.valer@gmail.com>, 2018
-# monsta <monsta@inbox.ru>, 2018
-# theirix <theirix@gmail.com>, 2018
-# Oldboy Boyold <boyoldboyold@gmail.com>, 2018
-# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
-# Alex Putz, 2018
-# Aleksey Kabanov <ak099@mail.ru>, 2019
-# Olesya Gerasimenko <gammaray@basealt.ru>, 2019
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Christopher Schramm <transifex@cschramm.eu>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Александр Кураченко <alexander@basealt.ru>, 2020
+# Aleksandr <pc01.alex@yandex.ru>, 2020
+# Dmitry Mandryk <dmandryk@gmail.com>, 2020
+# Ivan Kuzmenko, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Alexei Sorokin, 2020
+# Дмитрий Михирев, 2020
+# Alexander <alex.grushetskiy@gmail.com>, 2020
+# AlexL <loginov.alex.valer@gmail.com>, 2020
+# monsta <monsta@inbox.ru>, 2020
+# theirix <theirix@gmail.com>, 2020
+# Oldboy Boyold <boyoldboyold@gmail.com>, 2020
+# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2020
+# Alex Putz, 2020
+# Olesya Gerasimenko <gammaray@basealt.ru>, 2020
+# Aleksey Kabanov <ak099@mail.ru>, 2020
+# Anna Vyalkova <cybertailor@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-applets 1.23.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2020-01-10 17:58+0100\n"
-"PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Olesya Gerasimenko <gammaray@basealt.ru>, 2019\n"
+"PO-Revision-Date: 2020-02-15 11:22+0000\n"
+"Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +56,7 @@ msgstr "Команда документирования MATE"
 
 #: accessx-status/applet.c:98
 msgid "About AccessX Status"
-msgstr ""
+msgstr "О приложении Статус AccessX"
 
 #: accessx-status/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -64,6 +67,8 @@ msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 2003 Sun Microsystems\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: accessx-status/applet.c:105 battstat/battstat_applet.c:844
 #: charpick/charpick.c:592 command/command.c:128
@@ -98,6 +103,7 @@ msgstr ""
 "Константин Гусев <kilolife@gmail.com>\n"
 "Леонид Кантер <leon@asplinux.ru>\n"
 "Макс Валянский <max.valjanski@gmail.com>\n"
+"Олеся Герасименко <gammaray@basealt.ru>\n"
 "Павел Жовнер <zhovner@ukr.net>\n"
 "Сергей Колосов <m17.admin@gmail.com>\n"
 "Сергей Панов <sipan@mit.edu>\n"
@@ -129,7 +135,7 @@ msgstr "_Параметры специальных возможностей кл
 #: mateweather/mateweather-applet.c:117 multiload/main.c:488
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
-msgstr "_Помощь"
+msgstr "_Справка"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
 #: charpick/charpick.c:676 command/command.c:84
@@ -138,7 +144,7 @@ msgstr "_Помощь"
 #: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
 #: trashapplet/src/trashapplet.c:77
 msgid "_About"
-msgstr "_Об апплете"
+msgstr "_О программе"
 
 #: accessx-status/applet.c:504 accessx-status/applet.c:558
 msgid "a"
@@ -192,7 +198,7 @@ msgstr "Показывает состояние специальных возм�
 #. file name)!
 #: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
 msgid "preferences-desktop-accessibility"
-msgstr ""
+msgstr "preferences-desktop-accessibility"
 
 #: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
@@ -228,37 +234,37 @@ msgstr "Оставшееся до полного заряда время (%d%%) 
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] "Осталась %d минута (%d%%)"
-msgstr[1] "Осталось %d минут (%d%%)"
-msgstr[2] "Осталось %d минут (%d%%)"
-msgstr[3] "Осталось %d минут (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] "До полного заряда осталась %d минута (%d%%)"
-msgstr[1] "До полного заряда осталось %d минут (%d%%)"
-msgstr[2] "До полного заряда осталось %d минут (%d%%)"
-msgstr[3] "До полного заряда осталось %d минут (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] "Остался %d час (%d%%)"
-msgstr[1] "Осталось %d часов (%d%%)"
-msgstr[2] "Осталось %d часов (%d%%)"
-msgstr[3] "Осталось %d часов (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] "До полного заряда %d час (%d%%)"
-msgstr[1] "До полного заряда %d часов (%d%%)"
-msgstr[2] "До полного заряда %d часов (%d%%)"
-msgstr[3] "До полного заряда %d часов (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -268,18 +274,18 @@ msgstr "Осталось %d %s %d %s (%d%%)"
 #: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "час"
-msgstr[1] "часов"
-msgstr[2] "часов"
-msgstr[3] "часов"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] "минута"
-msgstr[1] "минут"
-msgstr[2] "минут"
-msgstr[3] "минут"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -310,13 +316,9 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
-"Оставшееся время работы на батарее - %d минута (%d%% от общей емкости)."
 msgstr[1] ""
-"Оставшееся время работы на батарее - %d минут (%d%% от общей емкости)."
 msgstr[2] ""
-"Оставшееся время работы на батарее - %d минут (%d%% от общей емкости)."
 msgstr[3] ""
-"Оставшееся время работы на батарее - %d минут (%d%% от общей емкости)."
 
 #: battstat/battstat_applet.c:395
 msgid ""
@@ -380,7 +382,7 @@ msgstr "Включён устаревший драйвер."
 
 #: battstat/battstat_applet.c:836
 msgid "About Battery Charge Monitor"
-msgstr ""
+msgstr "О приложении Индикатор состояния батареи"
 
 #: battstat/battstat_applet.c:838
 msgid ""
@@ -388,6 +390,9 @@ msgid ""
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 2000 The Gnulix Society\n"
+"Copyright © 2002-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
@@ -442,7 +447,7 @@ msgstr "Фабрика апплета состояния батареи"
 #. file name)!
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
 msgid "battery"
-msgstr ""
+msgstr "battery"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
@@ -533,13 +538,15 @@ msgstr "вставить специальный символ %s"
 
 #: charpick/charpick.c:583
 msgid "About Character Palette"
-msgstr ""
+msgstr "О приложении Касса символов"
 
 #: charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: charpick/charpick.c:587
 msgid ""
@@ -569,7 +576,7 @@ msgstr "Фабрика апплета выбора символов"
 #. file name)!
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
 msgid "accessories-character-map"
-msgstr ""
+msgstr "accessories-character-map"
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -654,13 +661,15 @@ msgstr "Параметры кассы символов"
 
 #: command/command.c:122
 msgid "About Command Applet"
-msgstr ""
+msgstr "О приложении Командный апплет"
 
 #: command/command.c:124
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2020 MATE developers"
 
 #: command/command.c:127
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
@@ -706,7 +715,7 @@ msgstr "Команда"
 #. file name)!
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
 msgid "utilities-terminal"
-msgstr ""
+msgstr "utilities-terminal"
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
@@ -783,7 +792,7 @@ msgstr "Отслеживает изменение частоты процесс�
 #. file name)!
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-cpu-frequency-applet"
-msgstr ""
+msgstr "mate-cpu-frequency-applet"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -829,13 +838,15 @@ msgstr "Не удается открыть документ справки"
 
 #: cpufreq/src/cpufreq-applet.c:481
 msgid "About CPU Frequency Scaling Monitor"
-msgstr ""
+msgstr "О приложении Монитор изменения частоты процессора"
 
 #: cpufreq/src/cpufreq-applet.c:483
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 2004 Carlos Garcia Campos\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: cpufreq/src/cpufreq-applet.c:485
 msgid "This utility shows the current CPU Frequency Scaling."
@@ -925,13 +936,15 @@ msgstr "_Извлечь %s"
 
 #: drivemount/drivemount.c:120
 msgid "About Disk Mounter"
-msgstr ""
+msgstr "О приложении Подключение диска"
 
 #: drivemount/drivemount.c:122
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 2004 Canonical Ltd\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: drivemount/drivemount.c:124
 msgid "Applet for mounting and unmounting block volumes."
@@ -958,11 +971,11 @@ msgstr "Подключает локальные диски и устройств
 #. file name)!
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
 msgid "media-floppy"
-msgstr ""
+msgstr "media-floppy"
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
-msgstr ""
+msgstr "О приложении Глазки"
 
 #: geyes/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
@@ -973,6 +986,8 @@ msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 1999 Dave Camp\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: geyes/geyes.c:389 geyes/geyes.c:419 geyes/geyes.c:421
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
@@ -986,7 +1001,7 @@ msgstr "Глазки смотрят в направлении указателя
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
 msgid "Eyes Applet Factory"
-msgstr ""
+msgstr "Фабрика апплета «Глазки»"
 
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
@@ -996,7 +1011,7 @@ msgstr "Апплет устанавливает «Глазки» на панел
 #. file name)!
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-eyes-applet"
-msgstr ""
+msgstr "mate-eyes-applet"
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -1013,7 +1028,7 @@ msgstr "Произошла ошибка при попытке загрузки �
 
 #: geyes/themes.c:282
 msgid "Eyes Preferences"
-msgstr ""
+msgstr "Параметры апплета «Глазки»"
 
 #: geyes/themes.c:315
 msgid "Themes"
@@ -1025,13 +1040,15 @@ msgstr "_Выберите тему:"
 
 #: mateweather/mateweather-about.c:54
 msgid "About Weather Report"
-msgstr ""
+msgstr "О приложении Сводка погоды"
 
 #: mateweather/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 1999-2005 by S. Papadimitriou and others\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: mateweather/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
@@ -1352,17 +1369,19 @@ msgstr "Апплет отображает текущую сводку погод
 #. file name)!
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
 msgid "weather-storm"
-msgstr ""
+msgstr "weather-storm"
 
 #: multiload/main.c:60
 msgid "About System Monitor"
-msgstr ""
+msgstr "О приложении System Monitor"
 
 #: multiload/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 1999-2005 Free Software Foundation and others\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: multiload/main.c:64
 msgid ""
@@ -1441,17 +1460,9 @@ msgid_plural ""
 "%s:\n"
 "%u%% in use"
 msgstr[0] ""
-"%s:\n"
-"%u%% используется"
 msgstr[1] ""
-"%s:\n"
-"%u%% используется"
 msgstr[2] ""
-"%s:\n"
-"%u%% используется"
 msgstr[3] ""
-"%s:\n"
-"%u%% используется"
 
 #: multiload/main.c:362
 msgid "CPU Load"
@@ -1489,11 +1500,11 @@ msgstr "%s/с"
 
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
 msgid "MultiLoad Applet Factory"
-msgstr ""
+msgstr "Фабрика апплета MultiLoad"
 
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
 msgid "Factory for creating the load applet."
-msgstr ""
+msgstr "Фабрика для создания апплета загрузки."
 
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
@@ -1503,7 +1514,7 @@ msgstr "Апплет отображает текущую загрузку сис
 #. file name)!
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
 msgid "utilities-system-monitor"
-msgstr ""
+msgstr "utilities-system-monitor"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1652,7 +1663,7 @@ msgstr "Цвет фона графика загрузки диска"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:146
 msgid "Uses /proc/diskstats to determine NVMe disk load"
-msgstr ""
+msgstr "Использует /proc/diskstats, чтобы определить загрузку диска NVMe"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:150
 msgid "The desktop description file to execute as the system monitor"
@@ -1700,7 +1711,7 @@ msgstr "_Высота системного монитора: "
 
 #: multiload/properties.c:573
 msgid "pixels"
-msgstr "пикселей"
+msgstr "пиксела"
 
 #: multiload/properties.c:581
 msgid "Sys_tem monitor update interval: "
@@ -1805,7 +1816,7 @@ msgstr "_Запись"
 
 #: multiload/properties.c:684
 msgid "Use diskstats for NVMe"
-msgstr ""
+msgstr "Использовать diskstats для NVMe"
 
 #: multiload/properties.c:686
 msgid "Network speed thresholds"
@@ -1950,7 +1961,7 @@ msgstr "Индикатор скорости"
 #. file name)!
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-netspeed-applet"
-msgstr ""
+msgstr "mate-netspeed-applet"
 
 #: netspeed/src/netspeed.c:427
 msgid "b"
@@ -2031,7 +2042,7 @@ msgstr ""
 
 #: netspeed/src/netspeed.c:821
 msgid "About MATE Netspeed"
-msgstr ""
+msgstr "О приложении MATE Netspeed"
 
 #: netspeed/src/netspeed.c:823
 msgid ""
@@ -2039,6 +2050,9 @@ msgid ""
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
+"Copyright © 2002-2003 Jörgen Scheibengruber\n"
+"Copyright © 2011-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2020 MATE developers"
 
 #: netspeed/src/netspeed.c:826
 msgid ""
@@ -2050,7 +2064,7 @@ msgstr ""
 
 #: netspeed/src/netspeed.c:987
 msgid "MATE Netspeed Preferences"
-msgstr ""
+msgstr "Параметры MATE Netspeed"
 
 #: netspeed/src/netspeed.c:1009
 msgid "General Settings"
@@ -2221,7 +2235,7 @@ msgstr "неизвестно"
 
 #: netspeed/src/netspeed.c:1584
 msgid "MATE Netspeed"
-msgstr ""
+msgstr "MATE Netspeed"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2241,7 +2255,7 @@ msgstr "Создание, просмотра и управление липки�
 #. file name)!
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-sticky-notes-applet"
-msgstr ""
+msgstr "mate-sticky-notes-applet"
 
 #: stickynotes/stickynotes.c:577
 msgid "This note is locked."
@@ -2265,7 +2279,7 @@ msgstr "_Зафиксировать записку"
 
 #: stickynotes/stickynotes.ui:44
 msgid "_Properties"
-msgstr "_Параметры"
+msgstr "_Свойства"
 
 #: stickynotes/stickynotes.ui:62
 msgid "Sticky Notes Preferences"
@@ -2592,10 +2606,10 @@ msgstr "_Зафиксировать записки"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] "%d записка"
-msgstr[1] "%d записок"
-msgstr[2] "%d записок"
-msgstr[3] "%d записок"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: stickynotes/stickynotes_applet.c:592
 msgid "Show sticky notes"
@@ -2603,7 +2617,7 @@ msgstr "Отображать липкие записки"
 
 #: stickynotes/stickynotes_applet_callbacks.c:379
 msgid "About Sticky Notes"
-msgstr ""
+msgstr "О приложении Липкие записки"
 
 #: stickynotes/stickynotes_applet_callbacks.c:381
 msgid ""
@@ -2611,6 +2625,9 @@ msgid ""
 "Copyright © 2005 Davyd Madeley\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 2002-2003 Loban A Rahman\n"
+"Copyright © 2005 Davyd Madeley\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: stickynotes/stickynotes_applet_callbacks.c:384
 msgid "Sticky Notes for the MATE Desktop Environment"
@@ -2634,7 +2651,7 @@ msgstr "Таймер обратного отсчёта с уведомление
 #. file name)!
 #: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
 msgid "mate-panel-clock"
-msgstr ""
+msgstr "mate-panel-clock"
 
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
@@ -2674,13 +2691,15 @@ msgstr "Таймер завершён!"
 
 #: timerapplet/timerapplet.c:272
 msgid "About Timer Applet"
-msgstr ""
+msgstr "О приложении Апплет таймера"
 
 #: timerapplet/timerapplet.c:274
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
+"Copyright © 2014 Stefano Karapetsas\n"
+"Copyright © 2015-2020 MATE developers"
 
 #: timerapplet/timerapplet.c:310
 msgid "Timer Applet Preferences"
@@ -2717,7 +2736,7 @@ msgstr "Апплет таймера"
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:6
 msgid "Trash Applet Factory"
-msgstr ""
+msgstr "Фабрика апплета «Корзина»"
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:9
 msgid "Trash"
@@ -2731,7 +2750,7 @@ msgstr "Перейти в корзину"
 #. file name)!
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
 msgid "user-trash-full"
-msgstr ""
+msgstr "user-trash-full"
 
 #: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
@@ -2745,10 +2764,10 @@ msgstr "_Открыть корзину"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] "%d элемент в корзине"
-msgstr[1] "%d элементов в корзине"
-msgstr[2] "%d элементов в корзине"
-msgstr[3] "%d элементов в корзине"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
@@ -2765,7 +2784,7 @@ msgstr ""
 
 #: trashapplet/src/trashapplet.c:432
 msgid "About Trash Applet"
-msgstr ""
+msgstr "О приложении Апплет корзины"
 
 #: trashapplet/src/trashapplet.c:434
 msgid ""
@@ -2773,6 +2792,9 @@ msgid ""
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 2004 Michiel Sikkes\n"
+"Copyright © 2008 Ryan Lortie\n"
+"Copyright © 2012-2020 MATE developers"
 
 #: trashapplet/src/trashapplet.c:437
 msgid ""
