@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.23.0\n"
+"Project-Id-Version: mate-applets 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-10 17:58+0100\n"
+"POT-Creation-Date: 2020-06-25 09:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019\n"
+"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,14 +22,14 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr "Sun GNOME 문서 팀 <gdocteam@sun.com>"
 
 #: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
 #: drivemount/drivemount.c:109 geyes/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
@@ -52,11 +52,11 @@ msgid ""
 msgstr ""
 
 #: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:592 command/command.c:128
-#: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
+#: charpick/charpick.c:591 command/command.c:131
+#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
 #: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:278 trashapplet/src/trashapplet.c:442
+#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
 "Elex https://launchpad.net/~mysticzizone\n"
@@ -85,54 +85,57 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "키보드 접근성 기본 설정(_K)"
 
 #: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:488
+#: mateweather/mateweather-applet.c:117 multiload/main.c:485
+#: netspeed/src/netspeed-preferences.ui:33
+#: stickynotes/sticky-notes-preferences.ui:51
+#: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "도움말(_H)"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:676 command/command.c:84
+#: charpick/charpick.c:671 command/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
+#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
+#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
 #: trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "정보(_A)"
 
-#: accessx-status/applet.c:504 accessx-status/applet.c:558
+#: accessx-status/applet.c:503 accessx-status/applet.c:557
 msgid "a"
 msgstr "a"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1109
-#: accessx-status/applet.c:1194 accessx-status/applet.c:1388
+#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
+#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
 msgid "AccessX Status"
 msgstr "AccessX 상태"
 
-#: accessx-status/applet.c:1044 accessx-status/applet.c:1195
+#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "접근성 기능을 사용할 때 키보드 상태를 보여줍니다."
 
-#: accessx-status/applet.c:1078
+#: accessx-status/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "XKB 확장 기능을 켜지 않았습니다"
 
-#: accessx-status/applet.c:1083
+#: accessx-status/applet.c:1082
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
 
-#: accessx-status/applet.c:1087
+#: accessx-status/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "오류: %s"
 
-#: accessx-status/applet.c:1385
+#: accessx-status/applet.c:1384
 #: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
 msgid "Keyboard Accessibility Status"
 msgstr "키보드 접근성 상태"
 
-#: accessx-status/applet.c:1389
+#: accessx-status/applet.c:1388
 msgid "Displays current state of keyboard accessibility features"
 msgstr "키보드 접근성 기능의 현재 상태를 보여줍니다"
 
@@ -148,16 +151,10 @@ msgstr "키보드 접근성 상태 애플릿 팩토리"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "키보드 접근성 기능의 상태를 보여줍니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:482
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
+#: mateweather/mateweather-applet.c:114 multiload/main.c:479
+#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
@@ -293,7 +290,7 @@ msgstr "없음"
 
 #: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
 #: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:747
+#: mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -373,12 +370,6 @@ msgstr "배터리가 완전히 충전되면 알림(_N)"
 msgid "Battstat Factory"
 msgstr "배터리 상태 팩토리"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
-msgid "battery"
-msgstr ""
-
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
 msgstr "빨간색 값 단계"
@@ -443,47 +434,55 @@ msgstr "분 남았을 때"
 msgid "Battery Status Utility"
 msgstr "배터리 상태 유틸리티"
 
-#: charpick/charpick.c:404
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
+msgid "Battery power low"
+msgstr "배터리 전력이 부족합니다"
+
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
+msgid "Battery fully re-charged"
+msgstr "배터리가 완전히 충전되었습니다!"
+
+#: charpick/charpick.c:403
 msgid "Available palettes"
 msgstr "사용 가능한 팔레트"
 
-#: charpick/charpick.c:453
+#: charpick/charpick.c:452
 #, c-format
 msgid "Insert \"%s\""
 msgstr "\"%s\" 입력"
 
-#: charpick/charpick.c:456
+#: charpick/charpick.c:455
 msgid "Insert special character"
 msgstr "특수 문자 입력"
 
-#: charpick/charpick.c:460
+#: charpick/charpick.c:459
 #, c-format
 msgid "insert special character %s"
 msgstr "특수 문자 %s 입력"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:582
 msgid "About Character Palette"
 msgstr "문자 팔레트 소개"
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:584
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:586
 msgid ""
-"Mate Panel applet for selecting strange characters that are not on my "
+"MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
-msgstr "내 키보드에 없는 이상한 글자를 선택하는 마테 패널 애플릿.  GNU 일반 공중 라이선스로 배포함."
+msgstr ""
 
-#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/charpick.c:694 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "문자 팔레트"
 
-#: charpick/charpick.c:699
+#: charpick/charpick.c:694
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "문자 입력"
@@ -492,12 +491,6 @@ msgstr "문자 입력"
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
 msgstr "문자선택 애플릿 팩토리"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
-msgid "accessories-character-map"
-msgstr ""
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -578,46 +571,51 @@ msgstr "선택한 팔레트를 삭제하려면 클릭하십시오"
 msgid "Character Palette Preferences"
 msgstr "문자 팔레트 기본 설정"
 
-#: command/command.c:122
+#: command/command.c:125
 msgid "About Command Applet"
 msgstr "명령 애플릿 소개"
 
-#: command/command.c:124
+#: command/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: command/command.c:127
+#: command/command.c:130
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the output of a command"
 msgstr "명령 출력을 표시합니다"
 
-#: command/command.c:194
+#: command/command.c:408
+msgid "Command Applet"
+msgstr "명령 애플릿"
+
+#: command/command-preferences.ui:25
 msgid "Command Applet Preferences"
 msgstr "명령 애플릿 기본 설정"
 
-#: command/command.c:207
-msgid "Command:"
-msgstr "명령:"
+#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "닫기(_C)"
 
-#: command/command.c:215
-msgid "Interval (seconds):"
-msgstr "주기(초):"
+#: command/command-preferences.ui:77
+msgid "C_ommand:"
+msgstr "명령(_O):"
 
-#: command/command.c:223
-msgid "Maximum width (chars):"
-msgstr "최대 폭 (문자):"
+#: command/command-preferences.ui:91
+msgid "_Interval (seconds):"
+msgstr ""
 
-#: command/command.c:231
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr "아이콘 표시"
+#: command/command-preferences.ui:105
+msgid "Maximum _width (chars):"
+msgstr ""
 
-#: command/command.c:443
-msgid "Command Applet"
-msgstr "명령 애플릿"
+#: command/command-preferences.ui:161
+msgid "_Show icon"
+msgstr ""
 
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
@@ -627,12 +625,6 @@ msgstr "명령어 팩토리"
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
 msgid "Command"
 msgstr "명령어"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-terminal"
-msgstr ""
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
@@ -657,6 +649,11 @@ msgstr "출력 폭"
 #: command/org.mate.panel.applet.command.gschema.xml.in:16
 msgid "Number of characters to display"
 msgstr "표시할 문자 개수"
+
+#: command/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
+msgstr "아이콘 표시"
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:21
 msgid "If applet icon is shown or not"
@@ -696,7 +693,7 @@ msgstr "CPU 주파수을 퍼센트로 표시(_P)"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:813 cpufreq/src/cpufreq-applet.c:868
+#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU 주파수 스케일링 정보"
 
@@ -704,12 +701,6 @@ msgstr "CPU 주파수 스케일링 정보"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "CPU 주파수 스케일링을 봅니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-cpu-frequency-applet"
-msgstr ""
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -744,25 +735,25 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr "값이 0이면 CPU 주파수를 표시하고, 1이면 주파수와 단위를 표시하고, 2이면 주파수 대신에 퍼센트를 표시합니다."
 
-#: cpufreq/src/cpufreq-applet.c:449 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "도움말 문서를 열 수 없습니다"
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:463
 msgid "About CPU Frequency Scaling Monitor"
 msgstr "CPU 주파수 스케일링 정보 소개"
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:465
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:485
+#: cpufreq/src/cpufreq-applet.c:467
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "이 유틸리티는 CPU 주파수 스케일링을 표시합니다."
 
-#: cpufreq/src/cpufreq-applet.c:869
+#: cpufreq/src/cpufreq-applet.c:850
 msgid "This utility shows the current CPU Frequency"
 msgstr "이 유틸리티는 현재 CPU 주파수을 표시합니다."
 
@@ -800,42 +791,46 @@ msgstr "CPU 주파수 스케일링 바꾸기"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "CPU 주파수 스케일링을 바꾸려면 권한이 필요합니다."
 
-#: drivemount/drive-button.c:340 drivemount/drive-button.c:354
+#: drivemount/drive-button.c:277
+msgid "nothing to mount"
+msgstr ""
+
+#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
 msgid "(mounted)"
 msgstr "(마운트함)"
 
-#: drivemount/drive-button.c:347
+#: drivemount/drive-button.c:317
 msgid "(not mounted)"
 msgstr "(마운트하지 않음)"
 
-#: drivemount/drive-button.c:619
+#: drivemount/drive-button.c:589
 msgid "Cannot execute Caja"
 msgstr " Caja를 실행할 수 없습니다"
 
-#: drivemount/drive-button.c:943
+#: drivemount/drive-button.c:913
 msgid "_Play DVD"
 msgstr "DVD 재생(_P)"
 
-#: drivemount/drive-button.c:947
+#: drivemount/drive-button.c:917
 msgid "_Play CD"
 msgstr "CD 재생(_P)"
 
-#: drivemount/drive-button.c:950
+#: drivemount/drive-button.c:920
 #, c-format
 msgid "_Open %s"
 msgstr "%s 열기(_O)"
 
-#: drivemount/drive-button.c:958
+#: drivemount/drive-button.c:928
 #, c-format
 msgid "Un_mount %s"
 msgstr "%s 마운트 해제(_M)"
 
-#: drivemount/drive-button.c:964
+#: drivemount/drive-button.c:934
 #, c-format
 msgid "_Mount %s"
 msgstr "%s 마운트(_M)"
 
-#: drivemount/drive-button.c:972
+#: drivemount/drive-button.c:942
 #, c-format
 msgid "_Eject %s"
 msgstr "%s 꺼내기(_E)"
@@ -854,7 +849,7 @@ msgstr ""
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "블록 볼륨을 마운트하고 마운트 해제하는 데 쓰이는 애플릿."
 
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "디스크 마운트"
@@ -870,12 +865,6 @@ msgstr "드라이브 마운트 애플릿을 위한 팩토리"
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
 msgstr "로컬 디스크와 장치를 마운트합니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
-msgid "media-floppy"
-msgstr ""
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
@@ -908,12 +897,6 @@ msgstr "아이즈 애플릿 팩토리"
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
 msgstr "패널 위의 눈동자"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-eyes-applet"
-msgstr ""
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -1106,148 +1089,148 @@ msgstr "주소 입력란"
 msgid "Enter the URL"
 msgstr "URL 입력"
 
-#: mateweather/mateweather-pref.c:283
+#: mateweather/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "위치 XML 데이터베이스를 읽어오는 데 실패했습니다.  버그로 리포트해 주십시오."
 
-#: mateweather/mateweather-pref.c:807
+#: mateweather/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "날씨 기본 설정"
 
-#: mateweather/mateweather-pref.c:831 mateweather/mateweather-pref.c:1034
+#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "자동 업데이트 간격(_A):"
 
-#: mateweather/mateweather-pref.c:847
+#: mateweather/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "기온 단위(_T):"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "켈빈"
 
-#: mateweather/mateweather-pref.c:859
+#: mateweather/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "섭"
 
-#: mateweather/mateweather-pref.c:860
+#: mateweather/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "화씨"
 
-#: mateweather/mateweather-pref.c:869
+#: mateweather/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "풍속 단위(_W):"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/mateweather-pref.c:878
 msgid "m/s"
 msgstr "m/s"
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/mateweather-pref.c:880
 msgid "km/h"
 msgstr "km/h"
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/mateweather-pref.c:882
 msgid "mph"
 msgstr "mph"
 
-#: mateweather/mateweather-pref.c:886
+#: mateweather/mateweather-pref.c:884
 msgid "knots"
 msgstr "knots"
 
-#: mateweather/mateweather-pref.c:887
+#: mateweather/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "보퍼트 풍력 계수"
 
-#: mateweather/mateweather-pref.c:896
+#: mateweather/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "기압 단위(_P):"
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/mateweather-pref.c:905
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/mateweather-pref.c:907
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/mateweather-pref.c:909
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/mateweather-pref.c:913
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/mateweather-pref.c:917
+#: mateweather/mateweather-pref.c:915
 msgid "atm"
 msgstr "기압"
 
-#: mateweather/mateweather-pref.c:926
+#: mateweather/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "시계 단위(_V):"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/mateweather-pref.c:935
 msgid "meters"
 msgstr "미터"
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/mateweather-pref.c:937
 msgid "km"
 msgstr "km"
 
-#: mateweather/mateweather-pref.c:941
+#: mateweather/mateweather-pref.c:939
 msgid "miles"
 msgstr "마일"
 
-#: mateweather/mateweather-pref.c:971
+#: mateweather/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "레이더 지도 사용(_R)"
 
-#: mateweather/mateweather-pref.c:987
+#: mateweather/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr "레이더 지도에 설정한 주소 사용(_C)"
 
-#: mateweather/mateweather-pref.c:1005
+#: mateweather/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "주소(_D):"
 
-#: mateweather/mateweather-pref.c:1020
+#: mateweather/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr "알림 표시(_N)"
 
-#: mateweather/mateweather-pref.c:1030
+#: mateweather/mateweather-pref.c:1028
 msgid "Update"
 msgstr "업데이트"
 
-#: mateweather/mateweather-pref.c:1047
+#: mateweather/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "분"
 
-#: mateweather/mateweather-pref.c:1065
+#: mateweather/mateweather-pref.c:1063
 msgid "Display"
 msgstr "표시"
 
-#: mateweather/mateweather-pref.c:1084
+#: mateweather/mateweather-pref.c:1082
 msgid "General"
 msgstr "일반"
 
-#: mateweather/mateweather-pref.c:1095
+#: mateweather/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "위치 선택(_S):"
 
-#: mateweather/mateweather-pref.c:1117
+#: mateweather/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "찾기(_F):"
 
-#: mateweather/mateweather-pref.c:1123
+#: mateweather/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "다음 찾기(_N)"
 
-#: mateweather/mateweather-pref.c:1144
+#: mateweather/mateweather-pref.c:1142
 msgid "Location"
 msgstr "위치"
 
@@ -1262,12 +1245,6 @@ msgstr "날씨 애플릿을 만드는 팩토리."
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "현재 날씨 상태를 표시하고, 예보합니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
-msgid "weather-storm"
-msgstr ""
 
 #: multiload/main.c:60
 msgid "About System Monitor"
@@ -1285,40 +1262,40 @@ msgid ""
 "space use, plus network traffic."
 msgstr "시스템 사용량 모니터는 CPU, 램, 스왑 공간 사용량 및 네트워크 사용량을 그래프로 보여줍니다."
 
-#: multiload/main.c:129
+#: multiload/main.c:127
 msgid "Start system-monitor"
 msgstr "시스템 모니터 시작하기"
 
-#: multiload/main.c:151
+#: multiload/main.c:149
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "'%s'(을)를 실행하는 중 오류가 발생했습니다: %s"
 
-#: multiload/main.c:279 multiload/properties.c:643
+#: multiload/main.c:276 multiload/properties.c:643
 msgid "Processor"
 msgstr "프로세서"
 
-#: multiload/main.c:281 multiload/properties.c:651
+#: multiload/main.c:278 multiload/properties.c:651
 msgid "Memory"
 msgstr "메모리"
 
-#: multiload/main.c:283 multiload/properties.c:659
+#: multiload/main.c:280 multiload/properties.c:659
 msgid "Network"
 msgstr "네트워크"
 
-#: multiload/main.c:285 multiload/properties.c:668
+#: multiload/main.c:282 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "스왑 공간"
 
-#: multiload/main.c:287 multiload/main.c:366
+#: multiload/main.c:284 multiload/main.c:363
 msgid "Load Average"
 msgstr "평균 사용량"
 
-#: multiload/main.c:289
+#: multiload/main.c:286
 msgid "Disk"
 msgstr "디스크"
 
-#: multiload/main.c:305
+#: multiload/main.c:302
 #, c-format
 msgid ""
 "%s:\n"
@@ -1329,12 +1306,12 @@ msgstr ""
 "%u%% 사용중, 그 중에서\n"
 "%u%%는 캐시"
 
-#: multiload/main.c:313
+#: multiload/main.c:310
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "시스템 사용량 평균은 %0.02f입니다"
 
-#: multiload/main.c:321
+#: multiload/main.c:318
 #, c-format
 msgid ""
 "%s:\n"
@@ -1345,7 +1322,7 @@ msgstr ""
 "%s 받음\n"
 "%s 보냄"
 
-#: multiload/main.c:337
+#: multiload/main.c:334
 #, c-format
 msgid ""
 "%s:\n"
@@ -1357,31 +1334,31 @@ msgstr[0] ""
 "%s:\n"
 "%u%% 사용 중"
 
-#: multiload/main.c:362
+#: multiload/main.c:359
 msgid "CPU Load"
 msgstr "CPU 사용량"
 
-#: multiload/main.c:363
+#: multiload/main.c:360
 msgid "Memory Load"
 msgstr "메모리 사용량"
 
-#: multiload/main.c:364
+#: multiload/main.c:361
 msgid "Net Load"
 msgstr "네트웍 사용량"
 
-#: multiload/main.c:365
+#: multiload/main.c:362
 msgid "Swap Load"
 msgstr "스왑 사용량"
 
-#: multiload/main.c:367
+#: multiload/main.c:364
 msgid "Disk Load"
 msgstr "디스크 사용량"
 
-#: multiload/main.c:485
+#: multiload/main.c:482
 msgid "_Open System Monitor"
 msgstr "시스템 정보 열기(_O)"
 
-#: multiload/main.c:517
+#: multiload/main.c:514
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "시스템 정보"
@@ -1402,12 +1379,6 @@ msgstr ""
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "시스템 사용량 표시"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-system-monitor"
-msgstr ""
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1718,7 +1689,7 @@ msgid "Threshold 1: "
 msgstr "임계값 1:"
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:432
+#: multiload/properties.c:815 netspeed/src/netspeed.c:425
 msgid "bytes"
 msgstr "바이트"
 
@@ -1841,81 +1812,75 @@ msgstr "넷스피드 애플릿"
 msgid "Network Monitor"
 msgstr "네트워크 모니터"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-netspeed-applet"
-msgstr ""
-
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "b"
 msgstr "b"
 
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "B"
 msgstr "B"
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "b/s"
 msgstr "b/s"
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "B/s"
 msgstr "B/s"
 
-#: netspeed/src/netspeed.c:432
+#: netspeed/src/netspeed.c:425
 msgid "bits"
 msgstr "비트"
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "k"
 msgstr "k"
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "K"
 msgstr "K"
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "kb/s"
 msgstr "kb/s"
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "kb"
 msgstr "kb"
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "KiB"
 msgstr "KiB"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "m"
 msgstr "m"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "M"
 msgstr "M"
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "Mb/s"
 msgstr "Mb/s"
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "MiB/s"
 msgstr "MiB/s"
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "Mb"
 msgstr "Mb"
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "MiB"
 msgstr "MiB"
 
-#: netspeed/src/netspeed.c:784
+#: netspeed/src/netspeed.c:776
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1924,144 +1889,108 @@ msgstr ""
 "도움말을 표시하는데 오류가 있습니다:\n"
 "%s"
 
-#: netspeed/src/netspeed.c:821
+#: netspeed/src/netspeed.c:813
 msgid "About MATE Netspeed"
 msgstr "마테 넷스피드 소개"
 
-#: netspeed/src/netspeed.c:823
+#: netspeed/src/netspeed.c:815
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:826
+#: netspeed/src/netspeed.c:818
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr "지정 네트워크 장치의 트래픽 정보를 보여주는 작은 애플릿입니다"
 
-#: netspeed/src/netspeed.c:987
-msgid "MATE Netspeed Preferences"
-msgstr "마테 넷스피드 기본 설정"
-
-#: netspeed/src/netspeed.c:1009
-msgid "General Settings"
-msgstr "일반 설정"
-
-#: netspeed/src/netspeed.c:1031
-msgid "Network _device:"
-msgstr "네트워크 장치(_D):"
-
-#: netspeed/src/netspeed.c:1043
+#: netspeed/src/netspeed.c:973
 msgid "Default"
 msgstr "기본값"
 
-#: netspeed/src/netspeed.c:1056
-msgid "Show _sum instead of in & out"
-msgstr "송수신 대신 합계 표시(_S)"
-
-#: netspeed/src/netspeed.c:1060
-msgid "Show _bits instead of bytes"
-msgstr "바이트 단위 대신 비트 단위 표시(_B)"
-
-#: netspeed/src/netspeed.c:1064
-msgid "Shorten _unit legend"
-msgstr "단위 범례 단순화(_U)"
-
-#: netspeed/src/netspeed.c:1068
-msgid "_Change icon according to the selected device"
-msgstr "선택한 장치에 따라 아이콘 바꾸기(_C)"
-
-#: netspeed/src/netspeed.c:1072
-msgid "Show _icon"
-msgstr "아이콘 표시(_I)"
-
-#: netspeed/src/netspeed.c:1076
-msgid "Show signal _quality icon for wireless devices"
-msgstr "무선 장비를 위한 신호 감도 아이콘 표시(_Q)"
-
-#: netspeed/src/netspeed.c:1194
+#: netspeed/src/netspeed.c:1089
 #, c-format
 msgid "Device Details for %s"
 msgstr "%s 장치 세부 사항"
 
-#: netspeed/src/netspeed.c:1219
+#: netspeed/src/netspeed.c:1114
 msgid "_In graph color"
 msgstr "수신 그래프 색상(_I)"
 
-#: netspeed/src/netspeed.c:1220
+#: netspeed/src/netspeed.c:1115
 msgid "_Out graph color"
 msgstr "송신 그래프 색상(_O)"
 
-#: netspeed/src/netspeed.c:1236
+#: netspeed/src/netspeed.c:1131
 msgid "Internet Address:"
 msgstr "인터넷 주소:"
 
-#: netspeed/src/netspeed.c:1237
+#: netspeed/src/netspeed.c:1132
 msgid "Netmask:"
 msgstr "넷마스크:"
 
-#: netspeed/src/netspeed.c:1238
+#: netspeed/src/netspeed.c:1133
 msgid "Hardware Address:"
 msgstr "하드웨어 주소:"
 
-#: netspeed/src/netspeed.c:1239
+#: netspeed/src/netspeed.c:1134
 msgid "P-t-P Address:"
 msgstr "P-t-P 주소:"
 
-#: netspeed/src/netspeed.c:1240
+#: netspeed/src/netspeed.c:1135
 msgid "Bytes in:"
 msgstr "수신 바이트 수:"
 
-#: netspeed/src/netspeed.c:1241
+#: netspeed/src/netspeed.c:1136
 msgid "Bytes out:"
 msgstr "송신 바이트 수:"
 
-#: netspeed/src/netspeed.c:1243 netspeed/src/netspeed.c:1244
-#: netspeed/src/netspeed.c:1245 netspeed/src/netspeed.c:1246
+#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
+#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
 msgid "none"
 msgstr "없음"
 
-#: netspeed/src/netspeed.c:1297
+#: netspeed/src/netspeed.c:1192
 msgid "IPV6 Address:"
 msgstr "IPv6 주소:"
 
-#: netspeed/src/netspeed.c:1330
+#: netspeed/src/netspeed.c:1225
 msgid "Signal Strength:"
 msgstr "신호 세기:"
 
-#: netspeed/src/netspeed.c:1331
+#: netspeed/src/netspeed.c:1226
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: netspeed/src/netspeed.c:1372
+#: netspeed/src/netspeed.c:1267
 msgid "Device _Details"
 msgstr "장치 세부 사항(_D)"
 
-#: netspeed/src/netspeed.c:1374
+#: netspeed/src/netspeed.c:1269
 msgid "Preferences..."
 msgstr "기본 설정..."
 
-#: netspeed/src/netspeed.c:1376
+#: netspeed/src/netspeed.c:1271
 msgid "Help"
 msgstr "도움말"
 
-#: netspeed/src/netspeed.c:1378
+#: netspeed/src/netspeed.c:1273
 msgid "About..."
 msgstr "정보..."
 
-#: netspeed/src/netspeed.c:1419
+#: netspeed/src/netspeed.c:1314
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "%s의 연결을 끊으시겠습니까?"
 
-#: netspeed/src/netspeed.c:1423
+#: netspeed/src/netspeed.c:1318
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "%s을(를) 연결하시겠습니까?"
 
-#: netspeed/src/netspeed.c:1450
+#: netspeed/src/netspeed.c:1345
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2070,12 +1999,12 @@ msgstr ""
 "<b>명령문 %s 실행 실패</b>\n"
 "%s"
 
-#: netspeed/src/netspeed.c:1509
+#: netspeed/src/netspeed.c:1404
 #, c-format
 msgid "%s is down"
 msgstr "%s 장치를 껐습니다"
 
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:1409
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2084,11 +2013,11 @@ msgstr ""
 "%s: %s\n"
 "수신: %s 송신: %s"
 
-#: netspeed/src/netspeed.c:1516 netspeed/src/netspeed.c:1525
+#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
 msgid "has no ip"
 msgstr "IP 없음"
 
-#: netspeed/src/netspeed.c:1523
+#: netspeed/src/netspeed.c:1418
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2097,7 +2026,7 @@ msgstr ""
 "%s: %s\n"
 "s합계: %s"
 
-#: netspeed/src/netspeed.c:1532
+#: netspeed/src/netspeed.c:1427
 #, c-format
 msgid ""
 "\n"
@@ -2108,13 +2037,49 @@ msgstr ""
 "ESSID: %s\n"
 "세기: %d %%"
 
-#: netspeed/src/netspeed.c:1533
+#: netspeed/src/netspeed.c:1428
 msgid "unknown"
 msgstr "알 수 없음"
 
-#: netspeed/src/netspeed.c:1584
+#: netspeed/src/netspeed.c:1478
 msgid "MATE Netspeed"
 msgstr "마테 넷스피드"
+
+#: netspeed/src/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr "마테 넷스피드 기본 설정"
+
+#: netspeed/src/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr "네트워크 장치(_D):"
+
+#: netspeed/src/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr "송수신 대신 합계 표시(_S)"
+
+#: netspeed/src/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr "바이트 단위 대신 비트 단위 표시(_B)"
+
+#: netspeed/src/netspeed-preferences.ui:165
+msgid "Shorten _unit legend"
+msgstr "단위 범례 단순화(_U)"
+
+#: netspeed/src/netspeed-preferences.ui:182
+msgid "_Change icon according to the selected device"
+msgstr "선택한 장치에 따라 아이콘 바꾸기(_C)"
+
+#: netspeed/src/netspeed-preferences.ui:199
+msgid "Show _icon"
+msgstr "아이콘 표시(_I)"
+
+#: netspeed/src/netspeed-preferences.ui:216
+msgid "Show signal _quality icon for wireless devices"
+msgstr "무선 장비를 위한 신호 감도 아이콘 표시(_Q)"
+
+#: netspeed/src/netspeed-preferences.ui:240
+msgid "General Settings"
+msgstr "일반 설정"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2130,203 +2095,200 @@ msgstr "메모지"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "데스크톱에 메모지를 만들고, 보여주고, 관리합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-sticky-notes-applet"
-msgstr ""
-
-#: stickynotes/stickynotes.c:577
+#: stickynotes/stickynotes.c:578
 msgid "This note is locked."
 msgstr "이 메모지는 잠겼습니다."
 
-#: stickynotes/stickynotes.c:581
+#: stickynotes/stickynotes.c:582
 msgid "This note is unlocked."
 msgstr "이 메모지는 풀렸습니다."
 
-#: stickynotes/stickynotes.ui:26 stickynotes/stickynotes_applet.c:34
-msgid "_New Note"
-msgstr "새 메모(_N)"
+#: stickynotes/sticky-notes-delete-all.ui:36
+#: stickynotes/sticky-notes-delete.ui:37
+msgid "_Cancel"
+msgstr "취소(_C)"
 
-#: stickynotes/stickynotes.ui:32
-msgid "_Delete Note..."
-msgstr "메모 삭제(_D)..."
-
-#: stickynotes/stickynotes.ui:38
-msgid "_Lock Note"
-msgstr "메모 잠금(_L)"
-
-#: stickynotes/stickynotes.ui:44
-msgid "_Properties"
-msgstr "속성(_P)"
-
-#: stickynotes/stickynotes.ui:62
-msgid "Sticky Notes Preferences"
-msgstr "메모지 기본 설정"
-
-#: stickynotes/stickynotes.ui:82
-msgid "Default Note Properties"
-msgstr "기본 메모 속성"
-
-#: stickynotes/stickynotes.ui:119
-msgid "Choose a font to use for all sticky notes"
-msgstr "메모지에 쓸 글꼴을 결정하세요"
-
-#: stickynotes/stickynotes.ui:120
-msgid "Pick a default sticky note font"
-msgstr "기본 메모지 글꼴을 고르세요"
-
-#: stickynotes/stickynotes.ui:139 stickynotes/stickynotes.ui:994
-msgid "_Font:"
-msgstr "글꼴(_F):"
-
-#: stickynotes/stickynotes.ui:153
-msgid "Use fo_nt from the system theme"
-msgstr "시스템 테마에서 글꼴 사용(_N)"
-
-#: stickynotes/stickynotes.ui:176
-msgid "Note C_olor:"
-msgstr "메모지 색(_O):"
-
-#: stickynotes/stickynotes.ui:197
-msgid "Font Co_lor:"
-msgstr "글꼴 색(_L):"
-
-#: stickynotes/stickynotes.ui:230
-msgid "Choose a base color to use for all sticky notes"
-msgstr "메모지에 쓸 기본 색을 결정합니다"
-
-#: stickynotes/stickynotes.ui:231
-msgid "Pick a default sticky note color"
-msgstr "기본 메모지 색을 고르세요"
-
-#: stickynotes/stickynotes.ui:243
-msgid "Use co_lor from the system theme"
-msgstr "시스템 테마에서 색 사용(_L)"
-
-#: stickynotes/stickynotes.ui:262
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "새 메모의 기본 높이를 지정합니다(픽셀)"
-
-#: stickynotes/stickynotes.ui:279
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "새 메모의 기본 너비를 지정합니다(픽셀)"
-
-#: stickynotes/stickynotes.ui:294
-msgid "H_eight:"
-msgstr "높이(_E):"
-
-#: stickynotes/stickynotes.ui:309
-msgid "_Width:"
-msgstr "너비(_W):"
-
-#: stickynotes/stickynotes.ui:343
-msgid "Behavior"
-msgstr "동작"
-
-#: stickynotes/stickynotes.ui:377
-msgid "Hide notes when the des_ktop is clicked on"
-msgstr "데스크톱을 누르면 메모 숨기기(_K)"
-
-#: stickynotes/stickynotes.ui:381
-msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr "데스크톱을 선택했을 때 메모를 모두 숨길지 선택하십시오"
-
-#: stickynotes/stickynotes.ui:394
-msgid "Force _default color and font on notes"
-msgstr "메모에 기본 색과 글꼴을 강제로 사용합니다(_D)"
-
-#: stickynotes/stickynotes.ui:398
-msgid "Choose if the default style is forced on all notes"
-msgstr "메모지에 기본 스타일을 강제할 지 결정하세요"
-
-#: stickynotes/stickynotes.ui:411
-msgid "_Put notes on all workspaces"
-msgstr "모든 작업공간에서 메모지 보기(_P)"
-
-#: stickynotes/stickynotes.ui:415
-msgid "Choose if notes are visible on all workspaces"
-msgstr "메모지를 모든 작업 공간에서 보이게 할 지 결정하세요"
-
-#: stickynotes/stickynotes.ui:540
-msgid "Delete this sticky note?"
-msgstr "이 메모지를 삭제하시겠습니까?"
-
-#: stickynotes/stickynotes.ui:555 stickynotes/stickynotes.ui:673
-msgid "This cannot be undone."
-msgstr "이 동작은 취소할 수 없습니다."
-
-#: stickynotes/stickynotes.ui:658
-msgid "Delete all sticky notes?"
-msgstr "모든 메모지를 삭제하시겠습니까?"
-
-#: stickynotes/stickynotes.ui:741
+#: stickynotes/sticky-notes-delete-all.ui:53
 msgid "_Delete All"
 msgstr "모두 삭제(_D)"
 
-#: stickynotes/stickynotes.ui:779
+#: stickynotes/sticky-notes-delete-all.ui:106
+msgid "Delete all sticky notes?"
+msgstr "모든 메모지를 삭제하시겠습니까?"
+
+#: stickynotes/sticky-notes-delete-all.ui:123
+#: stickynotes/sticky-notes-delete.ui:124
+msgid "This cannot be undone."
+msgstr "이 동작은 취소할 수 없습니다."
+
+#: stickynotes/sticky-notes-delete.ui:54
+msgid "_Delete"
+msgstr "삭제(_D)"
+
+#: stickynotes/sticky-notes-delete.ui:107
+msgid "Delete this sticky note?"
+msgstr "이 메모지를 삭제하시겠습니까?"
+
+#: stickynotes/sticky-notes-note.ui:11
 msgid "Sticky Note"
 msgstr "메모지"
 
-#: stickynotes/stickynotes.ui:790
+#: stickynotes/sticky-notes-note.ui:28
 msgid "Lock/Unlock note"
 msgstr "메모 잠그기/잠금 해제"
 
-#: stickynotes/stickynotes.ui:820
+#: stickynotes/sticky-notes-note.ui:66
 msgid "Delete note"
 msgstr "메모 삭제"
 
-#: stickynotes/stickynotes.ui:868 stickynotes/stickynotes.ui:887
+#: stickynotes/sticky-notes-note.ui:119 stickynotes/sticky-notes-note.ui:142
 msgid "Resize note"
 msgstr "메모 크기 바꾸기"
 
-#: stickynotes/stickynotes.ui:917
+#: stickynotes/sticky-notes-preferences.ui:32
+msgid "Sticky Notes Preferences"
+msgstr "메모지 기본 설정"
+
+#: stickynotes/sticky-notes-preferences.ui:108
+msgid "Default Note Properties"
+msgstr "기본 메모 속성"
+
+#: stickynotes/sticky-notes-preferences.ui:131
+msgid "_Width:"
+msgstr "너비(_W):"
+
+#: stickynotes/sticky-notes-preferences.ui:144
+msgid "H_eight:"
+msgstr "높이(_E):"
+
+#: stickynotes/sticky-notes-preferences.ui:157
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "새 메모의 기본 너비를 지정합니다(픽셀)"
+
+#: stickynotes/sticky-notes-preferences.ui:158
+msgid "1"
+msgstr "1"
+
+#: stickynotes/sticky-notes-preferences.ui:172
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "새 메모의 기본 높이를 지정합니다(픽셀)"
+
+#: stickynotes/sticky-notes-preferences.ui:173
+msgid "0"
+msgstr "0"
+
+#: stickynotes/sticky-notes-preferences.ui:185
+msgid "Use co_lor from the system theme"
+msgstr "시스템 테마에서 색 사용(_L)"
+
+#: stickynotes/sticky-notes-preferences.ui:203
+msgid "Font Co_lor:"
+msgstr "글꼴 색(_L):"
+
+#: stickynotes/sticky-notes-preferences.ui:216
+msgid "Note C_olor:"
+msgstr "메모지 색(_O):"
+
+#: stickynotes/sticky-notes-preferences.ui:241
+msgid "Choose a base color to use for all sticky notes"
+msgstr "메모지에 쓸 기본 색을 결정합니다"
+
+#: stickynotes/sticky-notes-preferences.ui:242
+msgid "Pick a default sticky note color"
+msgstr "기본 메모지 색을 고르세요"
+
+#: stickynotes/sticky-notes-preferences.ui:251
+msgid "Use fo_nt from the system theme"
+msgstr "시스템 테마에서 글꼴 사용(_N)"
+
+#: stickynotes/sticky-notes-preferences.ui:269
+#: stickynotes/sticky-notes-properties.ui:226
+msgid "_Font:"
+msgstr "글꼴(_F):"
+
+#: stickynotes/sticky-notes-preferences.ui:283
+msgid "Choose a font to use for all sticky notes"
+msgstr "메모지에 쓸 글꼴을 결정하세요"
+
+#: stickynotes/sticky-notes-preferences.ui:285
+msgid "Pick a default sticky note font"
+msgstr "기본 메모지 글꼴을 고르세요"
+
+#: stickynotes/sticky-notes-preferences.ui:316
+msgid "Behavior"
+msgstr "동작"
+
+#: stickynotes/sticky-notes-preferences.ui:337
+msgid "_Put notes on all workspaces"
+msgstr "모든 작업공간에서 메모지 보기(_P)"
+
+#: stickynotes/sticky-notes-preferences.ui:341
+msgid "Choose if notes are visible on all workspaces"
+msgstr "메모지를 모든 작업 공간에서 보이게 할 지 결정하세요"
+
+#: stickynotes/sticky-notes-preferences.ui:354
+msgid "Force _default color and font on notes"
+msgstr "메모에 기본 색과 글꼴을 강제로 사용합니다(_D)"
+
+#: stickynotes/sticky-notes-preferences.ui:358
+msgid "Choose if the default style is forced on all notes"
+msgstr "메모지에 기본 스타일을 강제할 지 결정하세요"
+
+#: stickynotes/sticky-notes-preferences.ui:371
+msgid "Hide notes when the des_ktop is clicked on"
+msgstr "데스크톱을 누르면 메모 숨기기(_K)"
+
+#: stickynotes/sticky-notes-preferences.ui:375
+msgid "Choose whether to hide all notes when selecting on the desktop"
+msgstr "데스크톱을 선택했을 때 메모를 모두 숨길지 선택하십시오"
+
+#: stickynotes/sticky-notes-properties.ui:18
 msgid "Sticky Note Properties"
 msgstr "메모지 속성"
 
-#: stickynotes/stickynotes.ui:937
+#: stickynotes/sticky-notes-properties.ui:94
 msgid "Properties"
 msgstr "속성"
 
-#: stickynotes/stickynotes.ui:974
-msgid "Choose a font for the note"
-msgstr "메모의 글꼴을 고르세요"
+#: stickynotes/sticky-notes-properties.ui:117
+msgid "_Title:"
+msgstr "직위(_T):"
 
-#: stickynotes/stickynotes.ui:975
-msgid "Pick a font for the sticky note"
-msgstr "메모지에 쓸 글꼴을 고르세요"
-
-#: stickynotes/stickynotes.ui:1008
-msgid "Use default fo_nt"
-msgstr "기본 글꼴 사용(_N)"
-
-#: stickynotes/stickynotes.ui:1028
-msgid "Choose a color for the note"
-msgstr "메모의 색을 고르세요"
-
-#: stickynotes/stickynotes.ui:1029
-msgid "Pick a color for the sticky note"
-msgstr "메모지에 쓸 색을 고르세요"
-
-#: stickynotes/stickynotes.ui:1048
-msgid "Note _Color:"
-msgstr "메모지 색(_C):"
-
-#: stickynotes/stickynotes.ui:1083
-msgid "Font C_olor:"
-msgstr "글꼴 색(_O):"
-
-#: stickynotes/stickynotes.ui:1097
-msgid "Use default co_lor"
-msgstr "기본 색 사용(_L)"
-
-#: stickynotes/stickynotes.ui:1115
+#: stickynotes/sticky-notes-properties.ui:130
 msgid "Specify a title for the note"
 msgstr "메모의 제목을 정하세요"
 
-#: stickynotes/stickynotes.ui:1127
-msgid "_Title:"
-msgstr "직위(_T):"
+#: stickynotes/sticky-notes-properties.ui:139
+msgid "Use default co_lor"
+msgstr "기본 색 사용(_L)"
+
+#: stickynotes/sticky-notes-properties.ui:158
+msgid "Font C_olor:"
+msgstr "글꼴 색(_O):"
+
+#: stickynotes/sticky-notes-properties.ui:172
+msgid "Note _Color:"
+msgstr "메모지 색(_C):"
+
+#: stickynotes/sticky-notes-properties.ui:183
+msgid "Use default fo_nt"
+msgstr "기본 글꼴 사용(_N)"
+
+#: stickynotes/sticky-notes-properties.ui:213
+msgid "Choose a color for the note"
+msgstr "메모의 색을 고르세요"
+
+#: stickynotes/sticky-notes-properties.ui:214
+msgid "Pick a color for the sticky note"
+msgstr "메모지에 쓸 색을 고르세요"
+
+#: stickynotes/sticky-notes-properties.ui:240
+msgid "Choose a font for the note"
+msgstr "메모의 글꼴을 고르세요"
+
+#: stickynotes/sticky-notes-properties.ui:242
+msgid "Pick a font for the sticky note"
+msgstr "메모지에 쓸 글꼴을 고르세요"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:5
 msgid "Default width for new notes"
@@ -2453,6 +2415,10 @@ msgstr "메모를 삭제할 때 확인 질문을 할 것인지 여부"
 msgid "Empty notes are always deleted without confirmation."
 msgstr "빈 메모는 항상 확인 질문 없이 삭제합니다."
 
+#: stickynotes/stickynotes_applet.c:34
+msgid "_New Note"
+msgstr "새 메모(_N)"
+
 #: stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "메모 숨기기(_D)"
@@ -2500,15 +2466,9 @@ msgid "Timer"
 msgstr "타이머"
 
 #: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:277
+#: timerapplet/timerapplet.c:281
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "타이머를 시작하고 끝나면 알림을 받습니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-panel-clock"
-msgstr ""
 
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
@@ -2526,67 +2486,67 @@ msgstr "타이머 동작이 끝나면 풍선 알림을 표시합니다"
 msgid "Show dialog window when timer finish"
 msgstr "타이머 동작이 끝나면 대화상자 창을 표시합니다"
 
-#: timerapplet/timerapplet.c:79
+#: timerapplet/timerapplet.c:83
 msgid "_Start timer"
 msgstr "타이머 시작(_S)"
 
-#: timerapplet/timerapplet.c:80
+#: timerapplet/timerapplet.c:84
 msgid "P_ause timer"
 msgstr "타이머 일시정지(_A)"
 
-#: timerapplet/timerapplet.c:81
+#: timerapplet/timerapplet.c:85
 msgid "S_top timer"
 msgstr "타이머 멈춤(_T)"
 
-#: timerapplet/timerapplet.c:82
+#: timerapplet/timerapplet.c:86
 msgid "R_eset"
 msgstr "초기화(_E)"
 
-#: timerapplet/timerapplet.c:156 timerapplet/timerapplet.c:168
+#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
 msgid "Timer finished!"
 msgstr "타이머 동작이 끝났습니다!"
 
-#: timerapplet/timerapplet.c:272
+#: timerapplet/timerapplet.c:276
 msgid "About Timer Applet"
 msgstr "타이머 애플릿 소개"
 
-#: timerapplet/timerapplet.c:274
+#: timerapplet/timerapplet.c:278
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:310
+#: timerapplet/timerapplet.c:365
+msgid "Timer Applet"
+msgstr "타이머 애플릿"
+
+#: timerapplet/timerapplet-preferences.ui:28
 msgid "Timer Applet Preferences"
 msgstr "타이머 애플릿 기본 설정"
 
-#: timerapplet/timerapplet.c:323
-msgid "Name:"
-msgstr "이름:"
+#: timerapplet/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "이름(_N):"
 
-#: timerapplet/timerapplet.c:332
-msgid "Hours:"
-msgstr "시:"
+#: timerapplet/timerapplet-preferences.ui:93
+msgid "_Hours:"
+msgstr ""
 
-#: timerapplet/timerapplet.c:343
-msgid "Minutes:"
-msgstr "분:"
+#: timerapplet/timerapplet-preferences.ui:107
+msgid "_Minutes:"
+msgstr ""
 
-#: timerapplet/timerapplet.c:354
-msgid "Seconds:"
-msgstr "초:"
+#: timerapplet/timerapplet-preferences.ui:121
+msgid "_Seconds:"
+msgstr ""
 
-#: timerapplet/timerapplet.c:365
-msgid "Show notification popup"
-msgstr "풍선 알림 표시"
+#: timerapplet/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
+msgstr ""
 
-#: timerapplet/timerapplet.c:369
-msgid "Show dialog"
-msgstr "대화 상자 표시"
-
-#: timerapplet/timerapplet.c:403
-msgid "Timer Applet"
-msgstr "타이머 애플릿"
+#: timerapplet/timerapplet-preferences.ui:205
+msgid "Show _dialog"
+msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:6
@@ -2601,13 +2561,7 @@ msgstr "휴지통"
 msgid "Go to Trash"
 msgstr "휴지통으로 가기"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
-msgid "user-trash-full"
-msgstr ""
-
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
 msgid "_Empty Trash"
 msgstr "휴지통 비우기(_E)"
 
@@ -2669,22 +2623,22 @@ msgid "Trash Applet"
 msgstr "휴지통 애플릿"
 
 #. Translators: the %s in this string should be read as %d.
-#: trashapplet/src/trash-empty.c:80
+#: trashapplet/src/trash-empty.c:72
 #, c-format
 msgid "Removing item %s of %s"
 msgstr "%2$s개 중에 %1$s번째 항목을 제거하는 중입니다"
 
 #. Translators: %s is a file name
-#: trashapplet/src/trash-empty.c:106
+#: trashapplet/src/trash-empty.c:98
 #, c-format
 msgid "Removing: %s"
 msgstr "제거중: %s"
 
-#: trashapplet/src/trash-empty.c:332
+#: trashapplet/src/trash-empty.c:324
 msgid "Empty all of the items from the trash?"
 msgstr "휴지통에 들어 있는 항목을 모두 비우시겠습니까?"
 
-#: trashapplet/src/trash-empty.c:339
+#: trashapplet/src/trash-empty.c:331
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."

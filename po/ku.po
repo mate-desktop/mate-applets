@@ -5,15 +5,15 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.23.0\n"
+"Project-Id-Version: mate-applets 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-10 17:58+0100\n"
+"POT-Creation-Date: 2020-06-25 09:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Kurdish (https://www.transifex.com/mate/teams/13566/ku/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,14 +21,14 @@ msgstr ""
 "Language: ku\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
 #: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
 #: drivemount/drivemount.c:109 geyes/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
@@ -51,11 +51,11 @@ msgid ""
 msgstr ""
 
 #: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:592 command/command.c:128
-#: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
+#: charpick/charpick.c:591 command/command.c:131
+#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
 #: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:278 trashapplet/src/trashapplet.c:442
+#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr "Erdal Ronahî"
 
@@ -78,54 +78,57 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Vebijarkên _Gihaştina Klavyeyê"
 
 #: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:488
+#: mateweather/mateweather-applet.c:117 multiload/main.c:485
+#: netspeed/src/netspeed-preferences.ui:33
+#: stickynotes/sticky-notes-preferences.ui:51
+#: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_Alîkarî"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:676 command/command.c:84
+#: charpick/charpick.c:671 command/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
+#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
+#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
 #: trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Der barê"
 
-#: accessx-status/applet.c:504 accessx-status/applet.c:558
+#: accessx-status/applet.c:503 accessx-status/applet.c:557
 msgid "a"
 msgstr "a"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1109
-#: accessx-status/applet.c:1194 accessx-status/applet.c:1388
+#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
+#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
 msgid "AccessX Status"
 msgstr "Rewşa AccessX"
 
-#: accessx-status/applet.c:1044 accessx-status/applet.c:1195
+#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Dema taybetiyên gihaştinê hatin bikaranîn rewşa klavyeyê nîşan dide."
 
-#: accessx-status/applet.c:1078
+#: accessx-status/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "Lehêqên XKB ne çalak in"
 
-#: accessx-status/applet.c:1083
+#: accessx-status/applet.c:1082
 msgid "Unknown error"
 msgstr "Çewtiya nenas"
 
-#: accessx-status/applet.c:1087
+#: accessx-status/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "Çewtî: %s"
 
-#: accessx-status/applet.c:1385
+#: accessx-status/applet.c:1384
 #: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
 msgid "Keyboard Accessibility Status"
 msgstr "Rewşa Gihaştina Klavyeyê"
 
-#: accessx-status/applet.c:1389
+#: accessx-status/applet.c:1388
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Rewşa heyî ya taybetiyên gihaştina klavyeyê nîşan dide"
 
@@ -141,16 +144,10 @@ msgstr "Hilberînerê Sepankariya Rewşa Gihaştina Klavyeyê"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Rewşa taybetiyên gihaştina klavyeyê nîşan dide"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:482
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
+#: mateweather/mateweather-applet.c:114 multiload/main.c:479
+#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Vebijêrk"
 
@@ -293,7 +290,7 @@ msgstr "Nîn e"
 
 #: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
 #: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:747
+#: mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -373,12 +370,6 @@ msgstr "Dema batarya bi _tevahî tijî bû hişyar bike"
 msgid "Battstat Factory"
 msgstr "Hilberînerê Battstat"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
-msgid "battery"
-msgstr ""
-
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
 msgstr "Hişyariya nirxa sor"
@@ -445,49 +436,55 @@ msgstr "Dema xulek ma"
 msgid "Battery Status Utility"
 msgstr "Amûra rewşa bataryayê"
 
-#: charpick/charpick.c:404
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
+msgid "Battery power low"
+msgstr "Hêza bataryayê qels e"
+
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
+msgid "Battery fully re-charged"
+msgstr "Batarya bi tevahî şarj bû"
+
+#: charpick/charpick.c:403
 msgid "Available palettes"
 msgstr "Paletên dikarin bên bikaranîn"
 
-#: charpick/charpick.c:453
+#: charpick/charpick.c:452
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Lê zêde bike \"%s\""
 
-#: charpick/charpick.c:456
+#: charpick/charpick.c:455
 msgid "Insert special character"
 msgstr "Karakterên taybet lê zêde bike"
 
-#: charpick/charpick.c:460
+#: charpick/charpick.c:459
 #, c-format
 msgid "insert special character %s"
 msgstr "Tîpa taybet a %s lê zêde bike"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:582
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:584
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:586
 msgid ""
-"Mate Panel applet for selecting strange characters that are not on my "
+"MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
-"Sepankareke paela Mate ji bo tîpên di klavyeyê de nîn in bête hilbijartin. "
-"Li gor lîsansa civakê ya giştî ya GNU hatiye weşandin."
 
-#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/charpick.c:694 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Paleta tîpan"
 
-#: charpick/charpick.c:699
+#: charpick/charpick.c:694
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Tîpan lê zêde bike"
@@ -496,12 +493,6 @@ msgstr "Tîpan lê zêde bike"
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
 msgstr "Hilberînerê sepankarê hilbijêrê tîpan"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
-msgid "accessories-character-map"
-msgstr ""
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -584,45 +575,50 @@ msgstr "Ji bo jêbirina paleta hilbijartî bitikîne"
 msgid "Character Palette Preferences"
 msgstr "Tercîha Paleta Karakteran"
 
-#: command/command.c:122
+#: command/command.c:125
 msgid "About Command Applet"
 msgstr ""
 
-#: command/command.c:124
+#: command/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: command/command.c:127
+#: command/command.c:130
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the output of a command"
 msgstr ""
 
-#: command/command.c:194
+#: command/command.c:408
+msgid "Command Applet"
+msgstr ""
+
+#: command/command-preferences.ui:25
 msgid "Command Applet Preferences"
 msgstr ""
 
-#: command/command.c:207
-msgid "Command:"
+#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "_Bigire"
+
+#: command/command-preferences.ui:77
+msgid "C_ommand:"
 msgstr ""
 
-#: command/command.c:215
-msgid "Interval (seconds):"
+#: command/command-preferences.ui:91
+msgid "_Interval (seconds):"
 msgstr ""
 
-#: command/command.c:223
-msgid "Maximum width (chars):"
+#: command/command-preferences.ui:105
+msgid "Maximum _width (chars):"
 msgstr ""
 
-#: command/command.c:231
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr ""
-
-#: command/command.c:443
-msgid "Command Applet"
+#: command/command-preferences.ui:161
+msgid "_Show icon"
 msgstr ""
 
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
@@ -633,12 +629,6 @@ msgstr ""
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
 msgid "Command"
 msgstr "Ferman"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-terminal"
-msgstr ""
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
@@ -662,6 +652,11 @@ msgstr ""
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:16
 msgid "Number of characters to display"
+msgstr ""
+
+#: command/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
 msgstr ""
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:21
@@ -702,7 +697,7 @@ msgstr "Frekansa CPU wekî _sedane nîşan bide"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:813 cpufreq/src/cpufreq-applet.c:868
+#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Temaşekerê Asta Frekansa Xebatkerê"
 
@@ -710,12 +705,6 @@ msgstr "Temaşekerê Asta Frekansa Xebatkerê"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "Temaşevanê Asta Frekansa CPU"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-cpu-frequency-applet"
-msgstr ""
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -753,25 +742,25 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:449 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "Dosyaya alîkariyê venebû"
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:463
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:465
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:485
+#: cpufreq/src/cpufreq-applet.c:467
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ev alîkar asta frekansa CPU ya niha nîşan dide."
 
-#: cpufreq/src/cpufreq-applet.c:869
+#: cpufreq/src/cpufreq-applet.c:850
 msgid "This utility shows the current CPU Frequency"
 msgstr "Ev alîkar frekansa niha ya CPU nîşan dide"
 
@@ -811,42 +800,46 @@ msgstr ""
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr ""
 
-#: drivemount/drive-button.c:340 drivemount/drive-button.c:354
+#: drivemount/drive-button.c:277
+msgid "nothing to mount"
+msgstr ""
+
+#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
 msgid "(mounted)"
 msgstr "(girêdayî)"
 
-#: drivemount/drive-button.c:347
+#: drivemount/drive-button.c:317
 msgid "(not mounted)"
 msgstr "(nehatiye girêdan)"
 
-#: drivemount/drive-button.c:619
+#: drivemount/drive-button.c:589
 msgid "Cannot execute Caja"
 msgstr ""
 
-#: drivemount/drive-button.c:943
+#: drivemount/drive-button.c:913
 msgid "_Play DVD"
 msgstr "_xebata DVD"
 
-#: drivemount/drive-button.c:947
+#: drivemount/drive-button.c:917
 msgid "_Play CD"
 msgstr "CD'yê bi_leyîze"
 
-#: drivemount/drive-button.c:950
+#: drivemount/drive-button.c:920
 #, c-format
 msgid "_Open %s"
 msgstr "%s _veke"
 
-#: drivemount/drive-button.c:958
+#: drivemount/drive-button.c:928
 #, c-format
 msgid "Un_mount %s"
 msgstr "%s _veqetîne"
 
-#: drivemount/drive-button.c:964
+#: drivemount/drive-button.c:934
 #, c-format
 msgid "_Mount %s"
 msgstr "%s _girê bide"
 
-#: drivemount/drive-button.c:972
+#: drivemount/drive-button.c:942
 #, c-format
 msgid "_Eject %s"
 msgstr "%s bia_vêje"
@@ -865,7 +858,7 @@ msgstr ""
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Sepanok ji bo amadekirin û jêbirina mezinahiyên qalibkirî"
 
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "Pêwendîkerê Dîskê"
@@ -881,12 +874,6 @@ msgstr "Fabrîqeya ji bo amadekirina sepana biçûk (sepanokê)"
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
 msgstr "Amadekirina dîsket û amûrên herêmî"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
-msgid "media-floppy"
-msgstr ""
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
@@ -919,12 +906,6 @@ msgstr ""
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
 msgstr "Ji bo panela te cotek çav"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-eyes-applet"
-msgstr ""
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -1117,150 +1098,150 @@ msgstr "Têketina Navnîşanê"
 msgid "Enter the URL"
 msgstr "URLyê têkevê"
 
-#: mateweather/mateweather-pref.c:283
+#: mateweather/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr ""
 "Di barkirina danegira XML ya herêmî de çewtî çêbû. Ji kerema xwe re vê yekê "
 "wekî çewtiyekê ragihîne."
 
-#: mateweather/mateweather-pref.c:807
+#: mateweather/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "Tercîhên Rewşa Hewê"
 
-#: mateweather/mateweather-pref.c:831 mateweather/mateweather-pref.c:1034
+#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "_Bi van navberan bixweber rojane bike:"
 
-#: mateweather/mateweather-pref.c:847
+#: mateweather/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "_Yekeya Germê"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "Kelvîn"
 
-#: mateweather/mateweather-pref.c:859
+#: mateweather/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "Santîgrat"
 
-#: mateweather/mateweather-pref.c:860
+#: mateweather/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "Fahrenayt"
 
-#: mateweather/mateweather-pref.c:869
+#: mateweather/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "_Yekeya Leza Bê:"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/mateweather-pref.c:878
 msgid "m/s"
 msgstr "m/ç"
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/mateweather-pref.c:880
 msgid "km/h"
 msgstr "km/h"
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/mateweather-pref.c:882
 msgid "mph"
 msgstr "mph"
 
-#: mateweather/mateweather-pref.c:886
+#: mateweather/mateweather-pref.c:884
 msgid "knots"
 msgstr "knot"
 
-#: mateweather/mateweather-pref.c:887
+#: mateweather/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "Pîvanga Beaufort"
 
-#: mateweather/mateweather-pref.c:896
+#: mateweather/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "_Yekeya Pestoyê:"
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/mateweather-pref.c:905
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/mateweather-pref.c:907
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/mateweather-pref.c:909
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/mateweather-pref.c:913
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/mateweather-pref.c:917
+#: mateweather/mateweather-pref.c:915
 msgid "atm"
 msgstr "atm"
 
-#: mateweather/mateweather-pref.c:926
+#: mateweather/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "Yekeya Xuyanîbûnê:"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/mateweather-pref.c:935
 msgid "meters"
 msgstr "metre"
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/mateweather-pref.c:937
 msgid "km"
 msgstr "km"
 
-#: mateweather/mateweather-pref.c:941
+#: mateweather/mateweather-pref.c:939
 msgid "miles"
 msgstr "mayl"
 
-#: mateweather/mateweather-pref.c:971
+#: mateweather/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "Nexşeya radarê çalak bike"
 
-#: mateweather/mateweather-pref.c:987
+#: mateweather/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr "Ji bo nexşeya radarê_ navnîşana taybet bikar bîne"
 
-#: mateweather/mateweather-pref.c:1005
+#: mateweather/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "_Navnîşan:"
 
-#: mateweather/mateweather-pref.c:1020
+#: mateweather/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr ""
 
-#: mateweather/mateweather-pref.c:1030
+#: mateweather/mateweather-pref.c:1028
 msgid "Update"
 msgstr "Rojanekirin"
 
-#: mateweather/mateweather-pref.c:1047
+#: mateweather/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "xulek"
 
-#: mateweather/mateweather-pref.c:1065
+#: mateweather/mateweather-pref.c:1063
 msgid "Display"
 msgstr "Dîmen"
 
-#: mateweather/mateweather-pref.c:1084
+#: mateweather/mateweather-pref.c:1082
 msgid "General"
 msgstr "Giştî"
 
-#: mateweather/mateweather-pref.c:1095
+#: mateweather/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "_Pozîsyonekê hilbijêre:"
 
-#: mateweather/mateweather-pref.c:1117
+#: mateweather/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "_Bibîne:"
 
-#: mateweather/mateweather-pref.c:1123
+#: mateweather/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "Ya _Piştre Bibîne"
 
-#: mateweather/mateweather-pref.c:1144
+#: mateweather/mateweather-pref.c:1142
 msgid "Location"
 msgstr "Cih"
 
@@ -1275,12 +1256,6 @@ msgstr "Hiberînera ku Ji bo sepanoka rewşa hewê"
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Rewşa hewê ya niha û pêşbîniya wê temaşe bike"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
-msgid "weather-storm"
-msgstr ""
 
 #: multiload/main.c:60
 msgid "About System Monitor"
@@ -1300,40 +1275,40 @@ msgstr ""
 "Temaşekereke barê pergalê ye ku kirar, bîr, bikaranîna qada pevguhartinê û "
 "xanxanka tîrbûna torê dikare bide nîşandan."
 
-#: multiload/main.c:129
+#: multiload/main.c:127
 msgid "Start system-monitor"
 msgstr ""
 
-#: multiload/main.c:151
+#: multiload/main.c:149
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Dema %s dihate xebitandin xeletî çêbû: %s"
 
-#: multiload/main.c:279 multiload/properties.c:643
+#: multiload/main.c:276 multiload/properties.c:643
 msgid "Processor"
 msgstr "Kirar"
 
-#: multiload/main.c:281 multiload/properties.c:651
+#: multiload/main.c:278 multiload/properties.c:651
 msgid "Memory"
 msgstr "Bîr"
 
-#: multiload/main.c:283 multiload/properties.c:659
+#: multiload/main.c:280 multiload/properties.c:659
 msgid "Network"
 msgstr "Tor"
 
-#: multiload/main.c:285 multiload/properties.c:668
+#: multiload/main.c:282 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "Qada pevguhertinê"
 
-#: multiload/main.c:287 multiload/main.c:366
+#: multiload/main.c:284 multiload/main.c:363
 msgid "Load Average"
 msgstr "Bara nîvekî"
 
-#: multiload/main.c:289
+#: multiload/main.c:286
 msgid "Disk"
 msgstr "Dîsk"
 
-#: multiload/main.c:305
+#: multiload/main.c:302
 #, c-format
 msgid ""
 "%s:\n"
@@ -1344,12 +1319,12 @@ msgstr ""
 "%u%% ji aliyê bernameyan tê bikaranîn\n"
 "%u%% weke tampon tê bikaranîn"
 
-#: multiload/main.c:313
+#: multiload/main.c:310
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr ""
 
-#: multiload/main.c:321
+#: multiload/main.c:318
 #, c-format
 msgid ""
 "%s:\n"
@@ -1357,7 +1332,7 @@ msgid ""
 "Sending %s"
 msgstr ""
 
-#: multiload/main.c:337
+#: multiload/main.c:334
 #, c-format
 msgid ""
 "%s:\n"
@@ -1368,31 +1343,31 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: multiload/main.c:362
+#: multiload/main.c:359
 msgid "CPU Load"
 msgstr "Bara CPU"
 
-#: multiload/main.c:363
+#: multiload/main.c:360
 msgid "Memory Load"
 msgstr "Bara Bîrê"
 
-#: multiload/main.c:364
+#: multiload/main.c:361
 msgid "Net Load"
 msgstr "Bara Torê"
 
-#: multiload/main.c:365
+#: multiload/main.c:362
 msgid "Swap Load"
 msgstr "Barê Pehguhartinê"
 
-#: multiload/main.c:367
+#: multiload/main.c:364
 msgid "Disk Load"
 msgstr "Barê Dîskê"
 
-#: multiload/main.c:485
+#: multiload/main.c:482
 msgid "_Open System Monitor"
 msgstr "_Temaşekerê Pergalê Veke"
 
-#: multiload/main.c:517
+#: multiload/main.c:514
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "Temaşekerê Pergalê"
@@ -1413,12 +1388,6 @@ msgstr ""
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "Nîşaneka barê pergalê"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-system-monitor"
-msgstr ""
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1731,7 +1700,7 @@ msgid "Threshold 1: "
 msgstr ""
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:432
+#: multiload/properties.c:815 netspeed/src/netspeed.c:425
 msgid "bytes"
 msgstr ""
 
@@ -1854,255 +1823,213 @@ msgstr ""
 msgid "Network Monitor"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-netspeed-applet"
-msgstr ""
-
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "b"
 msgstr ""
 
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "B"
 msgstr ""
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "b/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "B/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:432
+#: netspeed/src/netspeed.c:425
 msgid "bits"
 msgstr ""
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "k"
 msgstr ""
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "K"
 msgstr "K"
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "kb/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "KiB/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "kb"
 msgstr ""
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "KiB"
 msgstr ""
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "m"
 msgstr "m"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "M"
 msgstr ""
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "Mb/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "MiB/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "Mb"
 msgstr ""
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "MiB"
 msgstr ""
 
-#: netspeed/src/netspeed.c:784
+#: netspeed/src/netspeed.c:776
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:821
+#: netspeed/src/netspeed.c:813
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: netspeed/src/netspeed.c:823
+#: netspeed/src/netspeed.c:815
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:826
+#: netspeed/src/netspeed.c:818
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr ""
 
-#: netspeed/src/netspeed.c:987
-msgid "MATE Netspeed Preferences"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1009
-msgid "General Settings"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1031
-msgid "Network _device:"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1043
+#: netspeed/src/netspeed.c:973
 msgid "Default"
 msgstr "Wekî heyî"
 
-#: netspeed/src/netspeed.c:1056
-msgid "Show _sum instead of in & out"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1060
-msgid "Show _bits instead of bytes"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1064
-msgid "Shorten _unit legend"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1068
-msgid "_Change icon according to the selected device"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1072
-msgid "Show _icon"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1076
-msgid "Show signal _quality icon for wireless devices"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1194
+#: netspeed/src/netspeed.c:1089
 #, c-format
 msgid "Device Details for %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1219
+#: netspeed/src/netspeed.c:1114
 msgid "_In graph color"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1220
+#: netspeed/src/netspeed.c:1115
 msgid "_Out graph color"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1236
+#: netspeed/src/netspeed.c:1131
 msgid "Internet Address:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1237
+#: netspeed/src/netspeed.c:1132
 msgid "Netmask:"
 msgstr "Rûpûşa torê:"
 
-#: netspeed/src/netspeed.c:1238
+#: netspeed/src/netspeed.c:1133
 msgid "Hardware Address:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1239
+#: netspeed/src/netspeed.c:1134
 msgid "P-t-P Address:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1240
+#: netspeed/src/netspeed.c:1135
 msgid "Bytes in:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1241
+#: netspeed/src/netspeed.c:1136
 msgid "Bytes out:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1243 netspeed/src/netspeed.c:1244
-#: netspeed/src/netspeed.c:1245 netspeed/src/netspeed.c:1246
+#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
+#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
 msgid "none"
 msgstr "tune"
 
-#: netspeed/src/netspeed.c:1297
+#: netspeed/src/netspeed.c:1192
 msgid "IPV6 Address:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1330
+#: netspeed/src/netspeed.c:1225
 msgid "Signal Strength:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1331
+#: netspeed/src/netspeed.c:1226
 msgid "ESSID:"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1372
+#: netspeed/src/netspeed.c:1267
 msgid "Device _Details"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1374
+#: netspeed/src/netspeed.c:1269
 msgid "Preferences..."
 msgstr ""
 
-#: netspeed/src/netspeed.c:1376
+#: netspeed/src/netspeed.c:1271
 msgid "Help"
 msgstr "Alîkarî"
 
-#: netspeed/src/netspeed.c:1378
+#: netspeed/src/netspeed.c:1273
 msgid "About..."
 msgstr ""
 
-#: netspeed/src/netspeed.c:1419
+#: netspeed/src/netspeed.c:1314
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1423
+#: netspeed/src/netspeed.c:1318
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1450
+#: netspeed/src/netspeed.c:1345
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1509
+#: netspeed/src/netspeed.c:1404
 #, c-format
 msgid "%s is down"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:1409
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1516 netspeed/src/netspeed.c:1525
+#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
 msgid "has no ip"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1523
+#: netspeed/src/netspeed.c:1418
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1532
+#: netspeed/src/netspeed.c:1427
 #, c-format
 msgid ""
 "\n"
@@ -2110,12 +2037,48 @@ msgid ""
 "Strength: %d %%"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1533
+#: netspeed/src/netspeed.c:1428
 msgid "unknown"
 msgstr "nenas"
 
-#: netspeed/src/netspeed.c:1584
+#: netspeed/src/netspeed.c:1478
 msgid "MATE Netspeed"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:165
+msgid "Shorten _unit legend"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:182
+msgid "_Change icon according to the selected device"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:199
+msgid "Show _icon"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:216
+msgid "Show signal _quality icon for wireless devices"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:240
+msgid "General Settings"
 msgstr ""
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
@@ -2132,206 +2095,203 @@ msgstr "Nîşeyên Mezeloqî"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Li sermaseya xwe nîşeyên mezeloqî çêbikin, nîşan bidin û rê ve bibin"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-sticky-notes-applet"
-msgstr ""
-
-#: stickynotes/stickynotes.c:577
+#: stickynotes/stickynotes.c:578
 msgid "This note is locked."
 msgstr "Ev nîşe hate kilîtkirin."
 
-#: stickynotes/stickynotes.c:581
+#: stickynotes/stickynotes.c:582
 msgid "This note is unlocked."
 msgstr "Kilîta vê nîşeyê vebû."
 
-#: stickynotes/stickynotes.ui:26 stickynotes/stickynotes_applet.c:34
-msgid "_New Note"
-msgstr "_Nîşeya Nû"
+#: stickynotes/sticky-notes-delete-all.ui:36
+#: stickynotes/sticky-notes-delete.ui:37
+msgid "_Cancel"
+msgstr "_Betal"
 
-#: stickynotes/stickynotes.ui:32
-msgid "_Delete Note..."
-msgstr "_Nîşeyê Jê Bibe..."
+#: stickynotes/sticky-notes-delete-all.ui:53
+msgid "_Delete All"
+msgstr "_Hemûyan Jê Bibe"
 
-#: stickynotes/stickynotes.ui:38
-msgid "_Lock Note"
-msgstr "_Nîşeyê Kilît Bike"
+#: stickynotes/sticky-notes-delete-all.ui:106
+msgid "Delete all sticky notes?"
+msgstr ""
 
-#: stickynotes/stickynotes.ui:44
-msgid "_Properties"
-msgstr "_Taybetî"
+#: stickynotes/sticky-notes-delete-all.ui:123
+#: stickynotes/sticky-notes-delete.ui:124
+msgid "This cannot be undone."
+msgstr ""
 
-#: stickynotes/stickynotes.ui:62
+#: stickynotes/sticky-notes-delete.ui:54
+msgid "_Delete"
+msgstr "_Rake"
+
+#: stickynotes/sticky-notes-delete.ui:107
+msgid "Delete this sticky note?"
+msgstr ""
+
+#: stickynotes/sticky-notes-note.ui:11
+msgid "Sticky Note"
+msgstr "Nîşeya Mezeloqî"
+
+#: stickynotes/sticky-notes-note.ui:28
+msgid "Lock/Unlock note"
+msgstr "Nîşeyê kilît bike/serbest berde"
+
+#: stickynotes/sticky-notes-note.ui:66
+msgid "Delete note"
+msgstr ""
+
+#: stickynotes/sticky-notes-note.ui:119 stickynotes/sticky-notes-note.ui:142
+msgid "Resize note"
+msgstr "Mezinbûna nîşeyê ji nû ve çêbikin"
+
+#: stickynotes/sticky-notes-preferences.ui:32
 msgid "Sticky Notes Preferences"
 msgstr "Vebijarkên Nîşeyên Mezeloqî"
 
-#: stickynotes/stickynotes.ui:82
+#: stickynotes/sticky-notes-preferences.ui:108
 msgid "Default Note Properties"
 msgstr ""
 
-#: stickynotes/stickynotes.ui:119
-msgid "Choose a font to use for all sticky notes"
-msgstr "Curenivîsa ku wê di hemû nîşeyên mezeloqî de were bikaranîn hilbijêre"
+#: stickynotes/sticky-notes-preferences.ui:131
+msgid "_Width:"
+msgstr "_Firehî:"
 
-#: stickynotes/stickynotes.ui:120
-msgid "Pick a default sticky note font"
-msgstr "Curenivîsa nîşeya mezeloqî ya pêşravekî hilbijêre"
+#: stickynotes/sticky-notes-preferences.ui:144
+msgid "H_eight:"
+msgstr "_Bilindahî:"
 
-#: stickynotes/stickynotes.ui:139 stickynotes/stickynotes.ui:994
-msgid "_Font:"
-msgstr "_Curenivîs:"
+#: stickynotes/sticky-notes-preferences.ui:157
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "Ji bo nîşeyên nû firehbûna pêşravekî (ji cureyê pitikan) diyar bike"
 
-#: stickynotes/stickynotes.ui:153
-msgid "Use fo_nt from the system theme"
-msgstr "Ji temaya pergalê curenivîsê bikar bîne"
-
-#: stickynotes/stickynotes.ui:176
-msgid "Note C_olor:"
+#: stickynotes/sticky-notes-preferences.ui:158
+msgid "1"
 msgstr ""
 
-#: stickynotes/stickynotes.ui:197
+#: stickynotes/sticky-notes-preferences.ui:172
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "Ji bo nîşeyên nû qama pêşravekî (ji cinsê tipikan) diyar bikin."
+
+#: stickynotes/sticky-notes-preferences.ui:173
+msgid "0"
+msgstr ""
+
+#: stickynotes/sticky-notes-preferences.ui:185
+msgid "Use co_lor from the system theme"
+msgstr "Ji dirbê temayê rengan bikar bîne"
+
+#: stickynotes/sticky-notes-preferences.ui:203
 msgid "Font Co_lor:"
 msgstr ""
 
-#: stickynotes/stickynotes.ui:230
+#: stickynotes/sticky-notes-preferences.ui:216
+msgid "Note C_olor:"
+msgstr ""
+
+#: stickynotes/sticky-notes-preferences.ui:241
 msgid "Choose a base color to use for all sticky notes"
 msgstr ""
 "Ji bo hemû nîşeyên ku mezeloqî yê weke rengê bingeh were bikaranîn hilbijêre"
 
-#: stickynotes/stickynotes.ui:231
+#: stickynotes/sticky-notes-preferences.ui:242
 msgid "Pick a default sticky note color"
 msgstr "Rengê nîşeya mezeloqî ya pêşravekî hilbijêre"
 
-#: stickynotes/stickynotes.ui:243
-msgid "Use co_lor from the system theme"
-msgstr "Ji dirbê temayê rengan bikar bîne"
+#: stickynotes/sticky-notes-preferences.ui:251
+msgid "Use fo_nt from the system theme"
+msgstr "Ji temaya pergalê curenivîsê bikar bîne"
 
-#: stickynotes/stickynotes.ui:262
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "Ji bo nîşeyên nû qama pêşravekî (ji cinsê tipikan) diyar bikin."
+#: stickynotes/sticky-notes-preferences.ui:269
+#: stickynotes/sticky-notes-properties.ui:226
+msgid "_Font:"
+msgstr "_Curenivîs:"
 
-#: stickynotes/stickynotes.ui:279
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "Ji bo nîşeyên nû firehbûna pêşravekî (ji cureyê pitikan) diyar bike"
+#: stickynotes/sticky-notes-preferences.ui:283
+msgid "Choose a font to use for all sticky notes"
+msgstr "Curenivîsa ku wê di hemû nîşeyên mezeloqî de were bikaranîn hilbijêre"
 
-#: stickynotes/stickynotes.ui:294
-msgid "H_eight:"
-msgstr "_Bilindahî:"
+#: stickynotes/sticky-notes-preferences.ui:285
+msgid "Pick a default sticky note font"
+msgstr "Curenivîsa nîşeya mezeloqî ya pêşravekî hilbijêre"
 
-#: stickynotes/stickynotes.ui:309
-msgid "_Width:"
-msgstr "_Firehî:"
-
-#: stickynotes/stickynotes.ui:343
+#: stickynotes/sticky-notes-preferences.ui:316
 msgid "Behavior"
 msgstr "Helwest"
 
-#: stickynotes/stickynotes.ui:377
-msgid "Hide notes when the des_ktop is clicked on"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:381
-msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:394
-msgid "Force _default color and font on notes"
-msgstr "Di nîşeyan de_ reng û curenivîsa pêşravekî bikar bîne"
-
-#: stickynotes/stickynotes.ui:398
-msgid "Choose if the default style is forced on all notes"
-msgstr ""
-"Hilbijêre ku dê ji bo hemû nîşeyan teşeya pêşdanasîn were sepandin an na."
-
-#: stickynotes/stickynotes.ui:411
+#: stickynotes/sticky-notes-preferences.ui:337
 msgid "_Put notes on all workspaces"
 msgstr "_Nîşeyê têxe hemû qadên xebatê"
 
-#: stickynotes/stickynotes.ui:415
+#: stickynotes/sticky-notes-preferences.ui:341
 msgid "Choose if notes are visible on all workspaces"
 msgstr ""
 "Hilbijêrin da ku nîşe li hemû qadên xebatê xuyanî bibin an jî xuyanî nebin"
 
-#: stickynotes/stickynotes.ui:540
-msgid "Delete this sticky note?"
+#: stickynotes/sticky-notes-preferences.ui:354
+msgid "Force _default color and font on notes"
+msgstr "Di nîşeyan de_ reng û curenivîsa pêşravekî bikar bîne"
+
+#: stickynotes/sticky-notes-preferences.ui:358
+msgid "Choose if the default style is forced on all notes"
+msgstr ""
+"Hilbijêre ku dê ji bo hemû nîşeyan teşeya pêşdanasîn were sepandin an na."
+
+#: stickynotes/sticky-notes-preferences.ui:371
+msgid "Hide notes when the des_ktop is clicked on"
 msgstr ""
 
-#: stickynotes/stickynotes.ui:555 stickynotes/stickynotes.ui:673
-msgid "This cannot be undone."
+#: stickynotes/sticky-notes-preferences.ui:375
+msgid "Choose whether to hide all notes when selecting on the desktop"
 msgstr ""
 
-#: stickynotes/stickynotes.ui:658
-msgid "Delete all sticky notes?"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:741
-msgid "_Delete All"
-msgstr "_Hemûyan Jê Bibe"
-
-#: stickynotes/stickynotes.ui:779
-msgid "Sticky Note"
-msgstr "Nîşeya Mezeloqî"
-
-#: stickynotes/stickynotes.ui:790
-msgid "Lock/Unlock note"
-msgstr "Nîşeyê kilît bike/serbest berde"
-
-#: stickynotes/stickynotes.ui:820
-msgid "Delete note"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:868 stickynotes/stickynotes.ui:887
-msgid "Resize note"
-msgstr "Mezinbûna nîşeyê ji nû ve çêbikin"
-
-#: stickynotes/stickynotes.ui:917
+#: stickynotes/sticky-notes-properties.ui:18
 msgid "Sticky Note Properties"
 msgstr "Taybetmendiyên Nîşeya Mezeloqî"
 
-#: stickynotes/stickynotes.ui:937
+#: stickynotes/sticky-notes-properties.ui:94
 msgid "Properties"
 msgstr "Taybetmendî"
 
-#: stickynotes/stickynotes.ui:974
-msgid "Choose a font for the note"
-msgstr "Ji bo nîşeyê curenivîsekê hilbijêre"
+#: stickynotes/sticky-notes-properties.ui:117
+msgid "_Title:"
+msgstr "_Sernav:"
 
-#: stickynotes/stickynotes.ui:975
-msgid "Pick a font for the sticky note"
-msgstr "Ji bo nîşeya mezeloqî cureyê nivîsê hilbijêre"
-
-#: stickynotes/stickynotes.ui:1008
-msgid "Use default fo_nt"
-msgstr "Curenivîsa_pêşravekî bikar bîne"
-
-#: stickynotes/stickynotes.ui:1028
-msgid "Choose a color for the note"
-msgstr "Ji bo nîşeyê rengekî hilbijêre"
-
-#: stickynotes/stickynotes.ui:1029
-msgid "Pick a color for the sticky note"
-msgstr "Ji bo nîşeya mezeloqî rengekî hilbijêre"
-
-#: stickynotes/stickynotes.ui:1048
-msgid "Note _Color:"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:1083
-msgid "Font C_olor:"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:1097
-msgid "Use default co_lor"
-msgstr "Rengê_pêşravekî bikar bîne"
-
-#: stickynotes/stickynotes.ui:1115
+#: stickynotes/sticky-notes-properties.ui:130
 msgid "Specify a title for the note"
 msgstr "Ji bo nîşeyê sernavekî diyar bikin"
 
-#: stickynotes/stickynotes.ui:1127
-msgid "_Title:"
-msgstr "_Sernav:"
+#: stickynotes/sticky-notes-properties.ui:139
+msgid "Use default co_lor"
+msgstr "Rengê_pêşravekî bikar bîne"
+
+#: stickynotes/sticky-notes-properties.ui:158
+msgid "Font C_olor:"
+msgstr ""
+
+#: stickynotes/sticky-notes-properties.ui:172
+msgid "Note _Color:"
+msgstr ""
+
+#: stickynotes/sticky-notes-properties.ui:183
+msgid "Use default fo_nt"
+msgstr "Curenivîsa_pêşravekî bikar bîne"
+
+#: stickynotes/sticky-notes-properties.ui:213
+msgid "Choose a color for the note"
+msgstr "Ji bo nîşeyê rengekî hilbijêre"
+
+#: stickynotes/sticky-notes-properties.ui:214
+msgid "Pick a color for the sticky note"
+msgstr "Ji bo nîşeya mezeloqî rengekî hilbijêre"
+
+#: stickynotes/sticky-notes-properties.ui:240
+msgid "Choose a font for the note"
+msgstr "Ji bo nîşeyê curenivîsekê hilbijêre"
+
+#: stickynotes/sticky-notes-properties.ui:242
+msgid "Pick a font for the sticky note"
+msgstr "Ji bo nîşeya mezeloqî cureyê nivîsê hilbijêre"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:5
 msgid "Default width for new notes"
@@ -2472,6 +2432,10 @@ msgstr "Jêpirsîna erêkirinê ya dema nîşê jê tên birin"
 msgid "Empty notes are always deleted without confirmation."
 msgstr ""
 
+#: stickynotes/stickynotes_applet.c:34
+msgid "_New Note"
+msgstr "_Nîşeya Nû"
+
 #: stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "Nîşeyan Veşêre"
@@ -2520,14 +2484,8 @@ msgid "Timer"
 msgstr ""
 
 #: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:277
+#: timerapplet/timerapplet.c:281
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-panel-clock"
 msgstr ""
 
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
@@ -2546,66 +2504,66 @@ msgstr ""
 msgid "Show dialog window when timer finish"
 msgstr ""
 
-#: timerapplet/timerapplet.c:79
+#: timerapplet/timerapplet.c:83
 msgid "_Start timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:80
+#: timerapplet/timerapplet.c:84
 msgid "P_ause timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:81
+#: timerapplet/timerapplet.c:85
 msgid "S_top timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:82
+#: timerapplet/timerapplet.c:86
 msgid "R_eset"
 msgstr ""
 
-#: timerapplet/timerapplet.c:156 timerapplet/timerapplet.c:168
+#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
 msgid "Timer finished!"
 msgstr ""
 
-#: timerapplet/timerapplet.c:272
+#: timerapplet/timerapplet.c:276
 msgid "About Timer Applet"
 msgstr ""
 
-#: timerapplet/timerapplet.c:274
+#: timerapplet/timerapplet.c:278
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:310
+#: timerapplet/timerapplet.c:365
+msgid "Timer Applet"
+msgstr ""
+
+#: timerapplet/timerapplet-preferences.ui:28
 msgid "Timer Applet Preferences"
 msgstr ""
 
-#: timerapplet/timerapplet.c:323
-msgid "Name:"
-msgstr "Nav:"
+#: timerapplet/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "_Nav:"
 
-#: timerapplet/timerapplet.c:332
-msgid "Hours:"
+#: timerapplet/timerapplet-preferences.ui:93
+msgid "_Hours:"
 msgstr ""
 
-#: timerapplet/timerapplet.c:343
-msgid "Minutes:"
+#: timerapplet/timerapplet-preferences.ui:107
+msgid "_Minutes:"
 msgstr ""
 
-#: timerapplet/timerapplet.c:354
-msgid "Seconds:"
+#: timerapplet/timerapplet-preferences.ui:121
+msgid "_Seconds:"
 msgstr ""
 
-#: timerapplet/timerapplet.c:365
-msgid "Show notification popup"
+#: timerapplet/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
 msgstr ""
 
-#: timerapplet/timerapplet.c:369
-msgid "Show dialog"
-msgstr ""
-
-#: timerapplet/timerapplet.c:403
-msgid "Timer Applet"
+#: timerapplet/timerapplet-preferences.ui:205
+msgid "Show _dialog"
 msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
@@ -2621,13 +2579,7 @@ msgstr "Qirşikdank"
 msgid "Go to Trash"
 msgstr "Biçe Qutiya Çopê"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
-msgid "user-trash-full"
-msgstr ""
-
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
 msgid "_Empty Trash"
 msgstr "_Çopê Vala Bike"
 
@@ -2693,22 +2645,22 @@ msgid "Trash Applet"
 msgstr "Sepanoka Qutiya Çopê"
 
 #. Translators: the %s in this string should be read as %d.
-#: trashapplet/src/trash-empty.c:80
+#: trashapplet/src/trash-empty.c:72
 #, c-format
 msgid "Removing item %s of %s"
 msgstr "Hêman %s %s jê tê rakirin"
 
 #. Translators: %s is a file name
-#: trashapplet/src/trash-empty.c:106
+#: trashapplet/src/trash-empty.c:98
 #, c-format
 msgid "Removing: %s"
 msgstr ""
 
-#: trashapplet/src/trash-empty.c:332
+#: trashapplet/src/trash-empty.c:324
 msgid "Empty all of the items from the trash?"
 msgstr "Tu bawer î ku hemû hêmanên di çopê de ye vala bike?"
 
-#: trashapplet/src/trash-empty.c:339
+#: trashapplet/src/trash-empty.c:331
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."

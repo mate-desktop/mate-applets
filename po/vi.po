@@ -6,19 +6,19 @@
 # Translators:
 # Meongu Ng. <meongu@gmail.com>, 2018
 # Brian P. Dung <brianp.dung@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Anh Phan <vietnamesel10n@gmail.com>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
 # Duy Truong Nguyen <truongap.ars@gmail.com>, 2018
-# Horazone Detex <thmmt2017d@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Horazone Detex <thmmt2017d@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.23.0\n"
+"Project-Id-Version: mate-applets 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-10 17:58+0100\n"
+"POT-Creation-Date: 2020-06-25 09:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2018\n"
+"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,14 +26,14 @@ msgstr ""
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
 #: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
 #: drivemount/drivemount.c:109 geyes/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
@@ -56,11 +56,11 @@ msgid ""
 msgstr ""
 
 #: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:592 command/command.c:128
-#: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
+#: charpick/charpick.c:591 command/command.c:131
+#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
 #: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:278 trashapplet/src/trashapplet.c:442
+#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr "giới thiệu-nhóm dịch"
 
@@ -83,54 +83,57 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Tùy thích _khả năng truy cập bàn phím"
 
 #: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:488
+#: mateweather/mateweather-applet.c:117 multiload/main.c:485
+#: netspeed/src/netspeed-preferences.ui:33
+#: stickynotes/sticky-notes-preferences.ui:51
+#: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "Trợ _giúp"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:676 command/command.c:84
+#: charpick/charpick.c:671 command/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
+#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
+#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
 #: trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Giới thiệu"
 
-#: accessx-status/applet.c:504 accessx-status/applet.c:558
+#: accessx-status/applet.c:503 accessx-status/applet.c:557
 msgid "a"
 msgstr "a"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1109
-#: accessx-status/applet.c:1194 accessx-status/applet.c:1388
+#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
+#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
 msgid "AccessX Status"
 msgstr "Trạng thái AccessX"
 
-#: accessx-status/applet.c:1044 accessx-status/applet.c:1195
+#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Hiện trạng thái bàn phím khi tính năng khả năng truy cập được dùng."
 
-#: accessx-status/applet.c:1078
+#: accessx-status/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "Chưa bật chạy phần mở rộng XKB"
 
-#: accessx-status/applet.c:1083
+#: accessx-status/applet.c:1082
 msgid "Unknown error"
 msgstr "Lỗi không xác định"
 
-#: accessx-status/applet.c:1087
+#: accessx-status/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "Lỗi: %s"
 
-#: accessx-status/applet.c:1385
+#: accessx-status/applet.c:1384
 #: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
 msgid "Keyboard Accessibility Status"
 msgstr "Trạng thái khả năng truy cập bàn phím"
 
-#: accessx-status/applet.c:1389
+#: accessx-status/applet.c:1388
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 "Hiển thị trạng thái hiện thời của các tính năng khả năng truy cập bàn phím."
@@ -147,16 +150,10 @@ msgstr "Bộ tạo tiểu dụng trạng thái khả năng truy cập bàn phím
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Hiện trạng thái tính năng khả năng truy cập bàn phím"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:482
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
+#: mateweather/mateweather-applet.c:114 multiload/main.c:479
+#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Tùy thích"
 
@@ -292,7 +289,7 @@ msgstr "⌀ có"
 
 #: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
 #: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:747
+#: mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -372,12 +369,6 @@ msgstr "Báo khi pi_n được tái sạc đầy"
 msgid "Battstat Factory"
 msgstr "Bộ tạo thống kê nạp pin"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
-msgid "battery"
-msgstr ""
-
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
 msgstr "Cấp giá trị Đỏ"
@@ -449,49 +440,55 @@ msgstr "phút còn lại"
 msgid "Battery Status Utility"
 msgstr "Tiện ích xem trạng thái pin"
 
-#: charpick/charpick.c:404
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
+msgid "Battery power low"
+msgstr "Pin thấp"
+
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
+msgid "Battery fully re-charged"
+msgstr "Pin đã được sạc đầy."
+
+#: charpick/charpick.c:403
 msgid "Available palettes"
 msgstr "Bảng chọn hiện có"
 
-#: charpick/charpick.c:453
+#: charpick/charpick.c:452
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Chèn \"%s\""
 
-#: charpick/charpick.c:456
+#: charpick/charpick.c:455
 msgid "Insert special character"
 msgstr "Chèn ký tự đặc biệt"
 
-#: charpick/charpick.c:460
+#: charpick/charpick.c:459
 #, c-format
 msgid "insert special character %s"
 msgstr "Chèn ký tự đặc biệt %s"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:582
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:584
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:586
 msgid ""
-"Mate Panel applet for selecting strange characters that are not on my "
+"MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
-"Tiểu dụng Bảng điều khiển MATE dùng để chọn ký tự lạ không có trên bàn phím "
-"thường của bạn. Được phát hành dưới Bản quyền Công Chung GNU (GPL)."
 
-#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/charpick.c:694 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Bảng chọn ký tự"
 
-#: charpick/charpick.c:699
+#: charpick/charpick.c:694
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Chèn ký tự"
@@ -500,12 +497,6 @@ msgstr "Chèn ký tự"
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
 msgstr "Bộ tạo tiểu dụng chọn ký tự"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
-msgid "accessories-character-map"
-msgstr ""
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -588,45 +579,50 @@ msgstr "Nhấn để xóa bỏ bảng chọn được chọn."
 msgid "Character Palette Preferences"
 msgstr "Tùy thích bảng chọn ký tự"
 
-#: command/command.c:122
+#: command/command.c:125
 msgid "About Command Applet"
 msgstr ""
 
-#: command/command.c:124
+#: command/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: command/command.c:127
+#: command/command.c:130
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the output of a command"
 msgstr ""
 
-#: command/command.c:194
+#: command/command.c:408
+msgid "Command Applet"
+msgstr ""
+
+#: command/command-preferences.ui:25
 msgid "Command Applet Preferences"
 msgstr ""
 
-#: command/command.c:207
-msgid "Command:"
+#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "Đón_g"
+
+#: command/command-preferences.ui:77
+msgid "C_ommand:"
+msgstr "Lện_h:"
+
+#: command/command-preferences.ui:91
+msgid "_Interval (seconds):"
 msgstr ""
 
-#: command/command.c:215
-msgid "Interval (seconds):"
+#: command/command-preferences.ui:105
+msgid "Maximum _width (chars):"
 msgstr ""
 
-#: command/command.c:223
-msgid "Maximum width (chars):"
-msgstr ""
-
-#: command/command.c:231
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr "Hiện biểu tượng"
-
-#: command/command.c:443
-msgid "Command Applet"
+#: command/command-preferences.ui:161
+msgid "_Show icon"
 msgstr ""
 
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
@@ -637,12 +633,6 @@ msgstr ""
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
 msgid "Command"
 msgstr "Lệnh"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-terminal"
-msgstr ""
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
@@ -667,6 +657,11 @@ msgstr ""
 #: command/org.mate.panel.applet.command.gschema.xml.in:16
 msgid "Number of characters to display"
 msgstr ""
+
+#: command/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
+msgstr "Hiện biểu tượng"
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:21
 msgid "If applet icon is shown or not"
@@ -706,7 +701,7 @@ msgstr "Hiện tần số CPU dạng _phần trăm"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:813 cpufreq/src/cpufreq-applet.c:868
+#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Bộ theo dõi cách quản lý tỷ lệ tần số CPU"
 
@@ -714,12 +709,6 @@ msgstr "Bộ theo dõi cách quản lý tỷ lệ tần số CPU"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "Theo dõi cách quản lý tỷ lệ tần số CPU"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-cpu-frequency-applet"
-msgstr ""
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -758,25 +747,25 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:449 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "Không mở được tài liệu trợ giúp."
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:463
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:465
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:485
+#: cpufreq/src/cpufreq-applet.c:467
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Tiện ích này hiển thị cách quản lý tỷ lệ tần số CPU hiện có."
 
-#: cpufreq/src/cpufreq-applet.c:869
+#: cpufreq/src/cpufreq-applet.c:850
 msgid "This utility shows the current CPU Frequency"
 msgstr "Tiện ích này hiển thị tần số CPU hiện có."
 
@@ -816,42 +805,46 @@ msgstr "Thay đổi tỷ lệ tần số CPU"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Cần quyền đặc biệt để thay đổi tỷ lệ tần số CPU."
 
-#: drivemount/drive-button.c:340 drivemount/drive-button.c:354
+#: drivemount/drive-button.c:277
+msgid "nothing to mount"
+msgstr ""
+
+#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
 msgid "(mounted)"
 msgstr "(đã lắp)"
 
-#: drivemount/drive-button.c:347
+#: drivemount/drive-button.c:317
 msgid "(not mounted)"
 msgstr "(chưa lắp)"
 
-#: drivemount/drive-button.c:619
+#: drivemount/drive-button.c:589
 msgid "Cannot execute Caja"
 msgstr ""
 
-#: drivemount/drive-button.c:943
+#: drivemount/drive-button.c:913
 msgid "_Play DVD"
 msgstr "_Phát đĩa DVD"
 
-#: drivemount/drive-button.c:947
+#: drivemount/drive-button.c:917
 msgid "_Play CD"
 msgstr "_Phát đĩa CD"
 
-#: drivemount/drive-button.c:950
+#: drivemount/drive-button.c:920
 #, c-format
 msgid "_Open %s"
 msgstr "_Mở %s"
 
-#: drivemount/drive-button.c:958
+#: drivemount/drive-button.c:928
 #, c-format
 msgid "Un_mount %s"
 msgstr "_Tháo lắp %s"
 
-#: drivemount/drive-button.c:964
+#: drivemount/drive-button.c:934
 #, c-format
 msgid "_Mount %s"
 msgstr "_Lắp %s"
 
-#: drivemount/drive-button.c:972
+#: drivemount/drive-button.c:942
 #, c-format
 msgid "_Eject %s"
 msgstr "Đẩy _ra %s"
@@ -870,7 +863,7 @@ msgstr ""
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Tiểu dụng dùng để lắp/tháo lắp các ổ đĩa khối."
 
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "Bộ lắp đĩa"
@@ -886,12 +879,6 @@ msgstr "Bộ tạo tiểu dụng lắp đĩa"
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
 msgstr "Lắp đĩa và thiết bị nội bộ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
-msgid "media-floppy"
-msgstr ""
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
@@ -926,12 +913,6 @@ msgstr ""
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
 msgstr "Một đôi con mắt cho bảng điều khiển của bạn"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-eyes-applet"
-msgstr ""
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -1124,148 +1105,148 @@ msgstr "Mục nhập địa chỉ"
 msgid "Enter the URL"
 msgstr "Nhập địa chỉ Mạng"
 
-#: mateweather/mateweather-pref.c:283
+#: mateweather/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Lỗi tải cơ sở dữ liệu XML địa điểm. Vui lòng thông báo lỗi này."
 
-#: mateweather/mateweather-pref.c:807
+#: mateweather/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "Tùy thích cho thời tiết"
 
-#: mateweather/mateweather-pref.c:831 mateweather/mateweather-pref.c:1034
+#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "Cậ_p nhật tự động mỗi:"
 
-#: mateweather/mateweather-pref.c:847
+#: mateweather/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "Đơn vị nhiệ_t độ :"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: mateweather/mateweather-pref.c:859
+#: mateweather/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "Độ C"
 
-#: mateweather/mateweather-pref.c:860
+#: mateweather/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "Cái đo nhiệt Fa-ren-hét"
 
-#: mateweather/mateweather-pref.c:869
+#: mateweather/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "Đơn vị tốc độ _gió :"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/mateweather-pref.c:878
 msgid "m/s"
 msgstr "mét/giây"
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/mateweather-pref.c:880
 msgid "km/h"
 msgstr "cây số/giờ"
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/mateweather-pref.c:882
 msgid "mph"
 msgstr "lý/giờ"
 
-#: mateweather/mateweather-pref.c:886
+#: mateweather/mateweather-pref.c:884
 msgid "knots"
 msgstr "hải lý"
 
-#: mateweather/mateweather-pref.c:887
+#: mateweather/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "Tỷ lệ Beaufort"
 
-#: mateweather/mateweather-pref.c:896
+#: mateweather/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "Đơn vị á_p suất:"
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/mateweather-pref.c:905
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/mateweather-pref.c:907
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/mateweather-pref.c:909
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/mateweather-pref.c:913
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/mateweather-pref.c:917
+#: mateweather/mateweather-pref.c:915
 msgid "atm"
 msgstr "atm"
 
-#: mateweather/mateweather-pref.c:926
+#: mateweather/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "Đơn _vị tầm nhìn:"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/mateweather-pref.c:935
 msgid "meters"
 msgstr "mét"
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/mateweather-pref.c:937
 msgid "km"
 msgstr "cây số"
 
-#: mateweather/mateweather-pref.c:941
+#: mateweather/mateweather-pref.c:939
 msgid "miles"
 msgstr "lý"
 
-#: mateweather/mateweather-pref.c:971
+#: mateweather/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "Bật bản đồ _ra đa"
 
-#: mateweather/mateweather-pref.c:987
+#: mateweather/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr "Dùng địa _chỉ tự chọn cho bản đồ ra-đa"
 
-#: mateweather/mateweather-pref.c:1005
+#: mateweather/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "Đị_a chỉ:"
 
-#: mateweather/mateweather-pref.c:1020
+#: mateweather/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr ""
 
-#: mateweather/mateweather-pref.c:1030
+#: mateweather/mateweather-pref.c:1028
 msgid "Update"
 msgstr "Cập nhật"
 
-#: mateweather/mateweather-pref.c:1047
+#: mateweather/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "phút"
 
-#: mateweather/mateweather-pref.c:1065
+#: mateweather/mateweather-pref.c:1063
 msgid "Display"
 msgstr "Hiển thị"
 
-#: mateweather/mateweather-pref.c:1084
+#: mateweather/mateweather-pref.c:1082
 msgid "General"
 msgstr "Chung"
 
-#: mateweather/mateweather-pref.c:1095
+#: mateweather/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "_Chọn địa điểm:"
 
-#: mateweather/mateweather-pref.c:1117
+#: mateweather/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "_Tìm:"
 
-#: mateweather/mateweather-pref.c:1123
+#: mateweather/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "Tìm _kế"
 
-#: mateweather/mateweather-pref.c:1144
+#: mateweather/mateweather-pref.c:1142
 msgid "Location"
 msgstr "Vị trí"
 
@@ -1280,12 +1261,6 @@ msgstr "Bộ tạo tiểu dụng thời tiết."
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Theo dõi thời tiết hiện thời và hiển thị dự đoán thời tiết."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
-msgid "weather-storm"
-msgstr ""
 
 #: multiload/main.c:60
 msgid "About System Monitor"
@@ -1306,40 +1281,40 @@ msgstr ""
 " CPU (đơn vị xử lý trung tâm), RAM (bộ nhớ truy cập ngẫu nhiên) và bộ nhớ "
 "trao đổi, và cũng lưu tải cho mạng."
 
-#: multiload/main.c:129
+#: multiload/main.c:127
 msgid "Start system-monitor"
 msgstr ""
 
-#: multiload/main.c:151
+#: multiload/main.c:149
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Gặp lỗi khi thực thi « %s » : %s"
 
-#: multiload/main.c:279 multiload/properties.c:643
+#: multiload/main.c:276 multiload/properties.c:643
 msgid "Processor"
 msgstr "Bộ xử lý"
 
-#: multiload/main.c:281 multiload/properties.c:651
+#: multiload/main.c:278 multiload/properties.c:651
 msgid "Memory"
 msgstr "Bộ nhớ"
 
-#: multiload/main.c:283 multiload/properties.c:659
+#: multiload/main.c:280 multiload/properties.c:659
 msgid "Network"
 msgstr "Mạng"
 
-#: multiload/main.c:285 multiload/properties.c:668
+#: multiload/main.c:282 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "Bộ nhớ trao đổi"
 
-#: multiload/main.c:287 multiload/main.c:366
+#: multiload/main.c:284 multiload/main.c:363
 msgid "Load Average"
 msgstr "Trọng tải trung bình"
 
-#: multiload/main.c:289
+#: multiload/main.c:286
 msgid "Disk"
 msgstr "Đĩa"
 
-#: multiload/main.c:305
+#: multiload/main.c:302
 #, c-format
 msgid ""
 "%s:\n"
@@ -1350,12 +1325,12 @@ msgstr ""
 "%u%% đang dùng bởi chương trình\n"
 "%u%% là bộ nhớ tạm đang dùng"
 
-#: multiload/main.c:313
+#: multiload/main.c:310
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Số trung bình tải trọng hệ thống là %0.02f"
 
-#: multiload/main.c:321
+#: multiload/main.c:318
 #, c-format
 msgid ""
 "%s:\n"
@@ -1366,7 +1341,7 @@ msgstr ""
 "Đang nhận %s\n"
 "Đang gửi %s"
 
-#: multiload/main.c:337
+#: multiload/main.c:334
 #, c-format
 msgid ""
 "%s:\n"
@@ -1376,31 +1351,31 @@ msgid_plural ""
 "%u%% in use"
 msgstr[0] ""
 
-#: multiload/main.c:362
+#: multiload/main.c:359
 msgid "CPU Load"
 msgstr "Trọng tải CPU"
 
-#: multiload/main.c:363
+#: multiload/main.c:360
 msgid "Memory Load"
 msgstr "Trọng tải của bộ nhớ"
 
-#: multiload/main.c:364
+#: multiload/main.c:361
 msgid "Net Load"
 msgstr "Trọng tải cho mạng"
 
-#: multiload/main.c:365
+#: multiload/main.c:362
 msgid "Swap Load"
 msgstr "Trọng tải tráo đổi"
 
-#: multiload/main.c:367
+#: multiload/main.c:364
 msgid "Disk Load"
 msgstr "Trọng tải đĩa"
 
-#: multiload/main.c:485
+#: multiload/main.c:482
 msgid "_Open System Monitor"
 msgstr "Mở bộ the_o dõi hệ thống"
 
-#: multiload/main.c:517
+#: multiload/main.c:514
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "Bộ theo dõi hệ thống"
@@ -1421,12 +1396,6 @@ msgstr ""
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "Bộ chỉ thị trọng tải hệ thống"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-system-monitor"
-msgstr ""
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1743,7 +1712,7 @@ msgid "Threshold 1: "
 msgstr ""
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:432
+#: multiload/properties.c:815 netspeed/src/netspeed.c:425
 msgid "bytes"
 msgstr "bytes"
 
@@ -1868,81 +1837,75 @@ msgstr ""
 msgid "Network Monitor"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-netspeed-applet"
-msgstr ""
-
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "b"
 msgstr "b"
 
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "B"
 msgstr "B"
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "b/s"
 msgstr "b/s"
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "B/s"
 msgstr "B/s"
 
-#: netspeed/src/netspeed.c:432
+#: netspeed/src/netspeed.c:425
 msgid "bits"
 msgstr "bits"
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "k"
 msgstr "k"
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "K"
 msgstr "K"
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "kb/s"
 msgstr "kb/s"
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "kb"
 msgstr "kb"
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "KiB"
 msgstr "KiB"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "m"
 msgstr "m"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "M"
 msgstr "M"
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "Mb/s"
 msgstr "Mb/s"
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "MiB/s"
 msgstr "MiB"
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "Mb"
 msgstr "Mb"
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "MiB"
 msgstr "MiB"
 
-#: netspeed/src/netspeed.c:784
+#: netspeed/src/netspeed.c:776
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1951,18 +1914,18 @@ msgstr ""
 "Gặp lỗi khi hiển thị trợ giúp: \n"
 "%s"
 
-#: netspeed/src/netspeed.c:821
+#: netspeed/src/netspeed.c:813
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: netspeed/src/netspeed.c:823
+#: netspeed/src/netspeed.c:815
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:826
+#: netspeed/src/netspeed.c:818
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
@@ -1970,127 +1933,91 @@ msgstr ""
 "Một ứng dụng nhỏ hiển thị một số thông tin về lưu lượng của thiết bị mạng "
 "chuyên biệt"
 
-#: netspeed/src/netspeed.c:987
-msgid "MATE Netspeed Preferences"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1009
-msgid "General Settings"
-msgstr "Cài đặt chung"
-
-#: netspeed/src/netspeed.c:1031
-msgid "Network _device:"
-msgstr "Thiết bị _mạng:"
-
-#: netspeed/src/netspeed.c:1043
+#: netspeed/src/netspeed.c:973
 msgid "Default"
 msgstr "Mặt định"
 
-#: netspeed/src/netspeed.c:1056
-msgid "Show _sum instead of in & out"
-msgstr "Hiển thị sum thay vì _in & out"
-
-#: netspeed/src/netspeed.c:1060
-msgid "Show _bits instead of bytes"
-msgstr "_Hiển thị bits thay vì bytes"
-
-#: netspeed/src/netspeed.c:1064
-msgid "Shorten _unit legend"
-msgstr "_Chú thích đơn vị ngắn gọn"
-
-#: netspeed/src/netspeed.c:1068
-msgid "_Change icon according to the selected device"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1072
-msgid "Show _icon"
-msgstr "Hiện _biểu tượng"
-
-#: netspeed/src/netspeed.c:1076
-msgid "Show signal _quality icon for wireless devices"
-msgstr "Hiển thị biểu tượng _chất lượng sóng cho các thiết bị không dây"
-
-#: netspeed/src/netspeed.c:1194
+#: netspeed/src/netspeed.c:1089
 #, c-format
 msgid "Device Details for %s"
 msgstr "Chi tiết thiết bị %s"
 
-#: netspeed/src/netspeed.c:1219
+#: netspeed/src/netspeed.c:1114
 msgid "_In graph color"
 msgstr "Màu đồ thị _vào"
 
-#: netspeed/src/netspeed.c:1220
+#: netspeed/src/netspeed.c:1115
 msgid "_Out graph color"
 msgstr "Màu đồ thị _ra"
 
-#: netspeed/src/netspeed.c:1236
+#: netspeed/src/netspeed.c:1131
 msgid "Internet Address:"
 msgstr "Địa chỉ Internet:"
 
-#: netspeed/src/netspeed.c:1237
+#: netspeed/src/netspeed.c:1132
 msgid "Netmask:"
 msgstr "Netmask:"
 
-#: netspeed/src/netspeed.c:1238
+#: netspeed/src/netspeed.c:1133
 msgid "Hardware Address:"
 msgstr "Đại chỉ phần cứng:"
 
-#: netspeed/src/netspeed.c:1239
+#: netspeed/src/netspeed.c:1134
 msgid "P-t-P Address:"
 msgstr "Địa chỉ P-t-P"
 
-#: netspeed/src/netspeed.c:1240
+#: netspeed/src/netspeed.c:1135
 msgid "Bytes in:"
 msgstr "Bytes vào:"
 
-#: netspeed/src/netspeed.c:1241
+#: netspeed/src/netspeed.c:1136
 msgid "Bytes out:"
 msgstr "Bytes ra:"
 
-#: netspeed/src/netspeed.c:1243 netspeed/src/netspeed.c:1244
-#: netspeed/src/netspeed.c:1245 netspeed/src/netspeed.c:1246
+#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
+#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
 msgid "none"
 msgstr "trống"
 
-#: netspeed/src/netspeed.c:1297
+#: netspeed/src/netspeed.c:1192
 msgid "IPV6 Address:"
 msgstr "Địa chỉ IPV6"
 
-#: netspeed/src/netspeed.c:1330
+#: netspeed/src/netspeed.c:1225
 msgid "Signal Strength:"
 msgstr "Cường độ sóng:"
 
-#: netspeed/src/netspeed.c:1331
+#: netspeed/src/netspeed.c:1226
 msgid "ESSID:"
 msgstr "ESSID"
 
-#: netspeed/src/netspeed.c:1372
+#: netspeed/src/netspeed.c:1267
 msgid "Device _Details"
 msgstr "Chi _tiết thiết bị"
 
-#: netspeed/src/netspeed.c:1374
+#: netspeed/src/netspeed.c:1269
 msgid "Preferences..."
 msgstr "Tùy thích..."
 
-#: netspeed/src/netspeed.c:1376
+#: netspeed/src/netspeed.c:1271
 msgid "Help"
 msgstr "Hỗ trợ "
 
-#: netspeed/src/netspeed.c:1378
+#: netspeed/src/netspeed.c:1273
 msgid "About..."
 msgstr "Giới thiệu"
 
-#: netspeed/src/netspeed.c:1419
+#: netspeed/src/netspeed.c:1314
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Bạn có muốn ngắt kết nối %s ngay bây giờ?"
 
-#: netspeed/src/netspeed.c:1423
+#: netspeed/src/netspeed.c:1318
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Bạn có muốn kết nối %s ngay bây giờ?"
 
-#: netspeed/src/netspeed.c:1450
+#: netspeed/src/netspeed.c:1345
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2099,12 +2026,12 @@ msgstr ""
 "<b>Chạy lệnh %s thất bại</b>\n"
 "%s"
 
-#: netspeed/src/netspeed.c:1509
+#: netspeed/src/netspeed.c:1404
 #, c-format
 msgid "%s is down"
 msgstr "%s bị ngắt"
 
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:1409
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2113,11 +2040,11 @@ msgstr ""
 "%s: %s\n"
 "vào: %s out: %s"
 
-#: netspeed/src/netspeed.c:1516 netspeed/src/netspeed.c:1525
+#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
 msgid "has no ip"
 msgstr "không có ip"
 
-#: netspeed/src/netspeed.c:1523
+#: netspeed/src/netspeed.c:1418
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2126,7 +2053,7 @@ msgstr ""
 "%s: %s\n"
 "sum: %s"
 
-#: netspeed/src/netspeed.c:1532
+#: netspeed/src/netspeed.c:1427
 #, c-format
 msgid ""
 "\n"
@@ -2137,13 +2064,49 @@ msgstr ""
 "ESID: %s\n"
 "Cường độ: %d %%"
 
-#: netspeed/src/netspeed.c:1533
+#: netspeed/src/netspeed.c:1428
 msgid "unknown"
 msgstr "không rõ"
 
-#: netspeed/src/netspeed.c:1584
+#: netspeed/src/netspeed.c:1478
 msgid "MATE Netspeed"
 msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr "Thiết bị _mạng:"
+
+#: netspeed/src/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr "Hiển thị sum thay vì _in & out"
+
+#: netspeed/src/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr "_Hiển thị bits thay vì bytes"
+
+#: netspeed/src/netspeed-preferences.ui:165
+msgid "Shorten _unit legend"
+msgstr "_Chú thích đơn vị ngắn gọn"
+
+#: netspeed/src/netspeed-preferences.ui:182
+msgid "_Change icon according to the selected device"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:199
+msgid "Show _icon"
+msgstr "Hiện _biểu tượng"
+
+#: netspeed/src/netspeed-preferences.ui:216
+msgid "Show signal _quality icon for wireless devices"
+msgstr "Hiển thị biểu tượng _chất lượng sóng cho các thiết bị không dây"
+
+#: netspeed/src/netspeed-preferences.ui:240
+msgid "General Settings"
+msgstr "Cài đặt chung"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2159,203 +2122,200 @@ msgstr "Ghi chép dính"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Tạo, xem, và quản lý ghi chép dính trên màn hình nền"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-sticky-notes-applet"
-msgstr ""
-
-#: stickynotes/stickynotes.c:577
+#: stickynotes/stickynotes.c:578
 msgid "This note is locked."
 msgstr "Ghi chép này bị khóa."
 
-#: stickynotes/stickynotes.c:581
+#: stickynotes/stickynotes.c:582
 msgid "This note is unlocked."
 msgstr "Ghi chép này đã bỏ khóa."
 
-#: stickynotes/stickynotes.ui:26 stickynotes/stickynotes_applet.c:34
-msgid "_New Note"
-msgstr "_Tạo ghi chép"
+#: stickynotes/sticky-notes-delete-all.ui:36
+#: stickynotes/sticky-notes-delete.ui:37
+msgid "_Cancel"
+msgstr "Th_ôi"
 
-#: stickynotes/stickynotes.ui:32
-msgid "_Delete Note..."
-msgstr "_Xoá ghi chép..."
-
-#: stickynotes/stickynotes.ui:38
-msgid "_Lock Note"
-msgstr "_Khóa ghi chép"
-
-#: stickynotes/stickynotes.ui:44
-msgid "_Properties"
-msgstr "_Thuộc tính"
-
-#: stickynotes/stickynotes.ui:62
-msgid "Sticky Notes Preferences"
-msgstr "Tùy thích Ghi chép dính"
-
-#: stickynotes/stickynotes.ui:82
-msgid "Default Note Properties"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:119
-msgid "Choose a font to use for all sticky notes"
-msgstr "Chọn phông chữ cần dùng cho mọi ghi chép dính"
-
-#: stickynotes/stickynotes.ui:120
-msgid "Pick a default sticky note font"
-msgstr "Chọn một phông chữ ghi chép dính mặc định"
-
-#: stickynotes/stickynotes.ui:139 stickynotes/stickynotes.ui:994
-msgid "_Font:"
-msgstr "_Phông:"
-
-#: stickynotes/stickynotes.ui:153
-msgid "Use fo_nt from the system theme"
-msgstr "Dù_ng phông chữ từ sắc thái mặc định"
-
-#: stickynotes/stickynotes.ui:176
-msgid "Note C_olor:"
-msgstr "Mà_u ghi chép:"
-
-#: stickynotes/stickynotes.ui:197
-msgid "Font Co_lor:"
-msgstr "Màu p_hông:"
-
-#: stickynotes/stickynotes.ui:230
-msgid "Choose a base color to use for all sticky notes"
-msgstr "Chọn màu cơ bản cần dùng cho mọi ghi chép dính"
-
-#: stickynotes/stickynotes.ui:231
-msgid "Pick a default sticky note color"
-msgstr "Chọn một màu ghi chép dính mặc định"
-
-#: stickynotes/stickynotes.ui:243
-msgid "Use co_lor from the system theme"
-msgstr "Dùng màu từ _sắc thái hệ thống"
-
-#: stickynotes/stickynotes.ui:262
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "Xác định chiều cao mặc định (theo điểm ảnh) cùa mọi ghi chép mới"
-
-#: stickynotes/stickynotes.ui:279
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "Xác định chiều rộng mặc định (theo điểm ảnh) cùa mọi ghi chép mới"
-
-#: stickynotes/stickynotes.ui:294
-msgid "H_eight:"
-msgstr "C_ao :"
-
-#: stickynotes/stickynotes.ui:309
-msgid "_Width:"
-msgstr "_Rộng:"
-
-#: stickynotes/stickynotes.ui:343
-msgid "Behavior"
-msgstr "Ứng xử"
-
-#: stickynotes/stickynotes.ui:377
-msgid "Hide notes when the des_ktop is clicked on"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:381
-msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:394
-msgid "Force _default color and font on notes"
-msgstr "_Buộc màu và phông mặc định trên ghi chép"
-
-#: stickynotes/stickynotes.ui:398
-msgid "Choose if the default style is forced on all notes"
-msgstr "Chọn nếu kiểu dáng mặc định bị ép buộc trên mọi ghi chép hay không"
-
-#: stickynotes/stickynotes.ui:411
-msgid "_Put notes on all workspaces"
-msgstr "Để ghi chép trên mọi _vùng làm việc"
-
-#: stickynotes/stickynotes.ui:415
-msgid "Choose if notes are visible on all workspaces"
-msgstr "Chọn nếu ghi chép hiện rõ trên mọi vùng làm việc hay không"
-
-#: stickynotes/stickynotes.ui:540
-msgid "Delete this sticky note?"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:555 stickynotes/stickynotes.ui:673
-msgid "This cannot be undone."
-msgstr ""
-
-#: stickynotes/stickynotes.ui:658
-msgid "Delete all sticky notes?"
-msgstr ""
-
-#: stickynotes/stickynotes.ui:741
+#: stickynotes/sticky-notes-delete-all.ui:53
 msgid "_Delete All"
 msgstr "_Xoá tất cả"
 
-#: stickynotes/stickynotes.ui:779
+#: stickynotes/sticky-notes-delete-all.ui:106
+msgid "Delete all sticky notes?"
+msgstr ""
+
+#: stickynotes/sticky-notes-delete-all.ui:123
+#: stickynotes/sticky-notes-delete.ui:124
+msgid "This cannot be undone."
+msgstr ""
+
+#: stickynotes/sticky-notes-delete.ui:54
+msgid "_Delete"
+msgstr "_Xóa bỏ"
+
+#: stickynotes/sticky-notes-delete.ui:107
+msgid "Delete this sticky note?"
+msgstr ""
+
+#: stickynotes/sticky-notes-note.ui:11
 msgid "Sticky Note"
 msgstr "Ghi chép dính"
 
-#: stickynotes/stickynotes.ui:790
+#: stickynotes/sticky-notes-note.ui:28
 msgid "Lock/Unlock note"
 msgstr "(Mở) khoá ghi chép"
 
-#: stickynotes/stickynotes.ui:820
+#: stickynotes/sticky-notes-note.ui:66
 msgid "Delete note"
 msgstr ""
 
-#: stickynotes/stickynotes.ui:868 stickynotes/stickynotes.ui:887
+#: stickynotes/sticky-notes-note.ui:119 stickynotes/sticky-notes-note.ui:142
 msgid "Resize note"
 msgstr "Đổi cỡ ghi chép"
 
-#: stickynotes/stickynotes.ui:917
+#: stickynotes/sticky-notes-preferences.ui:32
+msgid "Sticky Notes Preferences"
+msgstr "Tùy thích Ghi chép dính"
+
+#: stickynotes/sticky-notes-preferences.ui:108
+msgid "Default Note Properties"
+msgstr ""
+
+#: stickynotes/sticky-notes-preferences.ui:131
+msgid "_Width:"
+msgstr "_Rộng:"
+
+#: stickynotes/sticky-notes-preferences.ui:144
+msgid "H_eight:"
+msgstr "C_ao :"
+
+#: stickynotes/sticky-notes-preferences.ui:157
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "Xác định chiều rộng mặc định (theo điểm ảnh) cùa mọi ghi chép mới"
+
+#: stickynotes/sticky-notes-preferences.ui:158
+msgid "1"
+msgstr "1"
+
+#: stickynotes/sticky-notes-preferences.ui:172
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "Xác định chiều cao mặc định (theo điểm ảnh) cùa mọi ghi chép mới"
+
+#: stickynotes/sticky-notes-preferences.ui:173
+msgid "0"
+msgstr "0"
+
+#: stickynotes/sticky-notes-preferences.ui:185
+msgid "Use co_lor from the system theme"
+msgstr "Dùng màu từ _sắc thái hệ thống"
+
+#: stickynotes/sticky-notes-preferences.ui:203
+msgid "Font Co_lor:"
+msgstr "Màu p_hông:"
+
+#: stickynotes/sticky-notes-preferences.ui:216
+msgid "Note C_olor:"
+msgstr "Mà_u ghi chép:"
+
+#: stickynotes/sticky-notes-preferences.ui:241
+msgid "Choose a base color to use for all sticky notes"
+msgstr "Chọn màu cơ bản cần dùng cho mọi ghi chép dính"
+
+#: stickynotes/sticky-notes-preferences.ui:242
+msgid "Pick a default sticky note color"
+msgstr "Chọn một màu ghi chép dính mặc định"
+
+#: stickynotes/sticky-notes-preferences.ui:251
+msgid "Use fo_nt from the system theme"
+msgstr "Dù_ng phông chữ từ sắc thái mặc định"
+
+#: stickynotes/sticky-notes-preferences.ui:269
+#: stickynotes/sticky-notes-properties.ui:226
+msgid "_Font:"
+msgstr "_Phông:"
+
+#: stickynotes/sticky-notes-preferences.ui:283
+msgid "Choose a font to use for all sticky notes"
+msgstr "Chọn phông chữ cần dùng cho mọi ghi chép dính"
+
+#: stickynotes/sticky-notes-preferences.ui:285
+msgid "Pick a default sticky note font"
+msgstr "Chọn một phông chữ ghi chép dính mặc định"
+
+#: stickynotes/sticky-notes-preferences.ui:316
+msgid "Behavior"
+msgstr "Ứng xử"
+
+#: stickynotes/sticky-notes-preferences.ui:337
+msgid "_Put notes on all workspaces"
+msgstr "Để ghi chép trên mọi _vùng làm việc"
+
+#: stickynotes/sticky-notes-preferences.ui:341
+msgid "Choose if notes are visible on all workspaces"
+msgstr "Chọn nếu ghi chép hiện rõ trên mọi vùng làm việc hay không"
+
+#: stickynotes/sticky-notes-preferences.ui:354
+msgid "Force _default color and font on notes"
+msgstr "_Buộc màu và phông mặc định trên ghi chép"
+
+#: stickynotes/sticky-notes-preferences.ui:358
+msgid "Choose if the default style is forced on all notes"
+msgstr "Chọn nếu kiểu dáng mặc định bị ép buộc trên mọi ghi chép hay không"
+
+#: stickynotes/sticky-notes-preferences.ui:371
+msgid "Hide notes when the des_ktop is clicked on"
+msgstr ""
+
+#: stickynotes/sticky-notes-preferences.ui:375
+msgid "Choose whether to hide all notes when selecting on the desktop"
+msgstr ""
+
+#: stickynotes/sticky-notes-properties.ui:18
 msgid "Sticky Note Properties"
 msgstr "Thuộc tính Ghi chép dính"
 
-#: stickynotes/stickynotes.ui:937
+#: stickynotes/sticky-notes-properties.ui:94
 msgid "Properties"
 msgstr "Thông tin"
 
-#: stickynotes/stickynotes.ui:974
-msgid "Choose a font for the note"
-msgstr "Chọn phông chữ cho ghi chép"
+#: stickynotes/sticky-notes-properties.ui:117
+msgid "_Title:"
+msgstr "_Tước:"
 
-#: stickynotes/stickynotes.ui:975
-msgid "Pick a font for the sticky note"
-msgstr "Chọn một phông chữ cho ghi chép dính"
-
-#: stickynotes/stickynotes.ui:1008
-msgid "Use default fo_nt"
-msgstr "Dù_ng phông chữ mặc định"
-
-#: stickynotes/stickynotes.ui:1028
-msgid "Choose a color for the note"
-msgstr "Chọn màu cho ghi chép"
-
-#: stickynotes/stickynotes.ui:1029
-msgid "Pick a color for the sticky note"
-msgstr "Chọn màu cho ghi chép dính"
-
-#: stickynotes/stickynotes.ui:1048
-msgid "Note _Color:"
-msgstr "Màu ghi _chép:"
-
-#: stickynotes/stickynotes.ui:1083
-msgid "Font C_olor:"
-msgstr "Mà_u phông:"
-
-#: stickynotes/stickynotes.ui:1097
-msgid "Use default co_lor"
-msgstr "Dùng mà_u mặc định"
-
-#: stickynotes/stickynotes.ui:1115
+#: stickynotes/sticky-notes-properties.ui:130
 msgid "Specify a title for the note"
 msgstr "Xác định một tựa đề cho ghi chép này"
 
-#: stickynotes/stickynotes.ui:1127
-msgid "_Title:"
-msgstr "_Tước:"
+#: stickynotes/sticky-notes-properties.ui:139
+msgid "Use default co_lor"
+msgstr "Dùng mà_u mặc định"
+
+#: stickynotes/sticky-notes-properties.ui:158
+msgid "Font C_olor:"
+msgstr "Mà_u phông:"
+
+#: stickynotes/sticky-notes-properties.ui:172
+msgid "Note _Color:"
+msgstr "Màu ghi _chép:"
+
+#: stickynotes/sticky-notes-properties.ui:183
+msgid "Use default fo_nt"
+msgstr "Dù_ng phông chữ mặc định"
+
+#: stickynotes/sticky-notes-properties.ui:213
+msgid "Choose a color for the note"
+msgstr "Chọn màu cho ghi chép"
+
+#: stickynotes/sticky-notes-properties.ui:214
+msgid "Pick a color for the sticky note"
+msgstr "Chọn màu cho ghi chép dính"
+
+#: stickynotes/sticky-notes-properties.ui:240
+msgid "Choose a font for the note"
+msgstr "Chọn phông chữ cho ghi chép"
+
+#: stickynotes/sticky-notes-properties.ui:242
+msgid "Pick a font for the sticky note"
+msgstr "Chọn một phông chữ cho ghi chép dính"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:5
 msgid "Default width for new notes"
@@ -2497,6 +2457,10 @@ msgstr "Có hỏi xác nhận xóa bỏ ghi chép hay không"
 msgid "Empty notes are always deleted without confirmation."
 msgstr "Các ghi chép rỗng lúc nào cũng bị xóa mà không cần hỏi xác nhận."
 
+#: stickynotes/stickynotes_applet.c:34
+msgid "_New Note"
+msgstr "_Tạo ghi chép"
+
 #: stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "Ẩ_n ghi chép"
@@ -2544,14 +2508,8 @@ msgid "Timer"
 msgstr ""
 
 #: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:277
+#: timerapplet/timerapplet.c:281
 msgid "Start a timer and receive a notification when it is finished"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-panel-clock"
 msgstr ""
 
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
@@ -2570,66 +2528,66 @@ msgstr ""
 msgid "Show dialog window when timer finish"
 msgstr ""
 
-#: timerapplet/timerapplet.c:79
+#: timerapplet/timerapplet.c:83
 msgid "_Start timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:80
+#: timerapplet/timerapplet.c:84
 msgid "P_ause timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:81
+#: timerapplet/timerapplet.c:85
 msgid "S_top timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:82
+#: timerapplet/timerapplet.c:86
 msgid "R_eset"
 msgstr ""
 
-#: timerapplet/timerapplet.c:156 timerapplet/timerapplet.c:168
+#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
 msgid "Timer finished!"
 msgstr ""
 
-#: timerapplet/timerapplet.c:272
+#: timerapplet/timerapplet.c:276
 msgid "About Timer Applet"
 msgstr ""
 
-#: timerapplet/timerapplet.c:274
+#: timerapplet/timerapplet.c:278
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:310
+#: timerapplet/timerapplet.c:365
+msgid "Timer Applet"
+msgstr ""
+
+#: timerapplet/timerapplet-preferences.ui:28
 msgid "Timer Applet Preferences"
 msgstr ""
 
-#: timerapplet/timerapplet.c:323
-msgid "Name:"
-msgstr "Tên:"
+#: timerapplet/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "Tê_n:"
 
-#: timerapplet/timerapplet.c:332
-msgid "Hours:"
+#: timerapplet/timerapplet-preferences.ui:93
+msgid "_Hours:"
 msgstr ""
 
-#: timerapplet/timerapplet.c:343
-msgid "Minutes:"
+#: timerapplet/timerapplet-preferences.ui:107
+msgid "_Minutes:"
 msgstr ""
 
-#: timerapplet/timerapplet.c:354
-msgid "Seconds:"
+#: timerapplet/timerapplet-preferences.ui:121
+msgid "_Seconds:"
 msgstr ""
 
-#: timerapplet/timerapplet.c:365
-msgid "Show notification popup"
+#: timerapplet/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
 msgstr ""
 
-#: timerapplet/timerapplet.c:369
-msgid "Show dialog"
-msgstr ""
-
-#: timerapplet/timerapplet.c:403
-msgid "Timer Applet"
+#: timerapplet/timerapplet-preferences.ui:205
+msgid "Show _dialog"
 msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
@@ -2645,13 +2603,7 @@ msgstr "Thùng rác"
 msgid "Go to Trash"
 msgstr "Tới Sọt Rác"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
-msgid "user-trash-full"
-msgstr ""
-
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
 msgid "_Empty Trash"
 msgstr "Đổ _Rác"
 
@@ -2719,22 +2671,22 @@ msgid "Trash Applet"
 msgstr "Tiểu dụng Sọt Rác"
 
 #. Translators: the %s in this string should be read as %d.
-#: trashapplet/src/trash-empty.c:80
+#: trashapplet/src/trash-empty.c:72
 #, c-format
 msgid "Removing item %s of %s"
 msgstr "Đang gỡ bỏ mục %s trên %s"
 
 #. Translators: %s is a file name
-#: trashapplet/src/trash-empty.c:106
+#: trashapplet/src/trash-empty.c:98
 #, c-format
 msgid "Removing: %s"
 msgstr ""
 
-#: trashapplet/src/trash-empty.c:332
+#: trashapplet/src/trash-empty.c:324
 msgid "Empty all of the items from the trash?"
 msgstr "Đổ mọi mục khỏi Sọt Rác chứ?"
 
-#: trashapplet/src/trash-empty.c:339
+#: trashapplet/src/trash-empty.c:331
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."

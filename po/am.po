@@ -6,15 +6,15 @@
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# samson <sambelet@yahoo.com>, 2018
+# samson <sambelet@yahoo.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.23.0\n"
+"Project-Id-Version: mate-applets 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-10 17:58+0100\n"
+"POT-Creation-Date: 2020-06-25 09:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: samson <sambelet@yahoo.com>, 2018\n"
+"Last-Translator: samson <sambelet@yahoo.com>, 2020\n"
 "Language-Team: Amharic (https://www.transifex.com/mate/teams/13566/am/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,14 +22,14 @@ msgstr ""
 "Language: am\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
 #: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
 #: drivemount/drivemount.c:109 geyes/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
@@ -52,11 +52,11 @@ msgid ""
 msgstr ""
 
 #: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:592 command/command.c:128
-#: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
+#: charpick/charpick.c:591 command/command.c:131
+#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
 #: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:278 trashapplet/src/trashapplet.c:442
+#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr "Samson-Belete-Belayineh"
 
@@ -79,54 +79,57 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "የ _ፊደል ገበታ ጋር መድረሻ ምርጫዎች"
 
 #: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:488
+#: mateweather/mateweather-applet.c:117 multiload/main.c:485
+#: netspeed/src/netspeed-preferences.ui:33
+#: stickynotes/sticky-notes-preferences.ui:51
+#: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_እርዳታ"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:676 command/command.c:84
+#: charpick/charpick.c:671 command/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
+#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
+#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
 #: trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_ስለ"
 
-#: accessx-status/applet.c:504 accessx-status/applet.c:558
+#: accessx-status/applet.c:503 accessx-status/applet.c:557
 msgid "a"
 msgstr "a"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1109
-#: accessx-status/applet.c:1194 accessx-status/applet.c:1388
+#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
+#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
 msgid "AccessX Status"
 msgstr ""
 
-#: accessx-status/applet.c:1044 accessx-status/applet.c:1195
+#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "የ ፊደል ገበታ ሁኔታ ማሳያ የ መድረሻ ገጽታዎች በሚጠቀሙ ጊዜ"
 
-#: accessx-status/applet.c:1078
+#: accessx-status/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "XKB ተጨማሪዎች አላስቻሉም"
 
-#: accessx-status/applet.c:1083
+#: accessx-status/applet.c:1082
 msgid "Unknown error"
 msgstr "ያልታወቀ ስህተት "
 
-#: accessx-status/applet.c:1087
+#: accessx-status/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "ስህተት : %s"
 
-#: accessx-status/applet.c:1385
+#: accessx-status/applet.c:1384
 #: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
 msgid "Keyboard Accessibility Status"
 msgstr "የ ፊደል ገበታ ጋር መድረሻ ሁኔታዎች"
 
-#: accessx-status/applet.c:1389
+#: accessx-status/applet.c:1388
 msgid "Displays current state of keyboard accessibility features"
 msgstr "የ አሁኑን የ ፊደል ገበታ ሁኔታ ማሳያ በ መድረሻ ገጽታዎች ውስጥ"
 
@@ -142,16 +145,10 @@ msgstr "የ ፊደል ገበታ መድረሻ ሁኔታ አፕሌት ፋክቶሪ
 msgid "Shows the status of keyboard accessibility features"
 msgstr "የ ፊደል ገበታ መድረሻ ገጽታዎች ሁኔታ ማሳያ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:482
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
+#: mateweather/mateweather-applet.c:114 multiload/main.c:479
+#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_ምርጫዎች "
 
@@ -294,7 +291,7 @@ msgstr "ዝ/አ"
 
 #: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
 #: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:747
+#: mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -374,12 +371,6 @@ msgstr "_አስታወቀኝ የ ባትሪ ሐይል ሲሞላ"
 msgid "Battstat Factory"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
-msgid "battery"
-msgstr ""
-
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
 msgstr "የ ቀይ ዋጋ መጠን"
@@ -444,47 +435,55 @@ msgstr "ደቂቆች የቀረው "
 msgid "Battery Status Utility"
 msgstr "የ ባትሪው የ ተለያየ ሁኔታ"
 
-#: charpick/charpick.c:404
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
+msgid "Battery power low"
+msgstr "የ ባትሪው ሐይል ዝቅተኛ ነው "
+
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
+msgid "Battery fully re-charged"
+msgstr "ባትሪው በሙሉ እንደገና-ሞልቷል "
+
+#: charpick/charpick.c:403
 msgid "Available palettes"
 msgstr "ዝግጁ መደርደሪያ"
 
-#: charpick/charpick.c:453
+#: charpick/charpick.c:452
 #, c-format
 msgid "Insert \"%s\""
 msgstr "ማስገቢያ \"%s\""
 
-#: charpick/charpick.c:456
+#: charpick/charpick.c:455
 msgid "Insert special character"
 msgstr "የተለዩ ባህሪዎች ማስገቢያ "
 
-#: charpick/charpick.c:460
+#: charpick/charpick.c:459
 #, c-format
 msgid "insert special character %s"
 msgstr "የተለዩ ባህሪዎች ማስገቢያ %s"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:582
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:584
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:586
 msgid ""
-"Mate Panel applet for selecting strange characters that are not on my "
+"MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/charpick.c:694 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "ባህሪዎች መደርደሪያ"
 
-#: charpick/charpick.c:699
+#: charpick/charpick.c:694
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "ባህሪዎች ማስገቢያ"
@@ -492,12 +491,6 @@ msgstr "ባህሪዎች ማስገቢያ"
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:5
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
-msgid "accessories-character-map"
 msgstr ""
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
@@ -579,46 +572,51 @@ msgstr "ይጫኑ ለ ማጥፋት የ ተመረጠውን መደርደሪያ"
 msgid "Character Palette Preferences"
 msgstr "የ ባህሪ አፕሌት ምርጫ"
 
-#: command/command.c:122
+#: command/command.c:125
 msgid "About Command Applet"
 msgstr ""
 
-#: command/command.c:124
+#: command/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: command/command.c:127
+#: command/command.c:130
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the output of a command"
 msgstr "የ ትእዛዝ ውጤት ማሳያ"
 
-#: command/command.c:194
+#: command/command.c:408
+msgid "Command Applet"
+msgstr "የ ትእዛዝ አፕሌት"
+
+#: command/command-preferences.ui:25
 msgid "Command Applet Preferences"
 msgstr "የ ትእዛዝ አፕሌት ምርጫ"
 
-#: command/command.c:207
-msgid "Command:"
-msgstr "ትእዛዝ:"
+#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "_መዝጊያ"
 
-#: command/command.c:215
-msgid "Interval (seconds):"
-msgstr "ክፍተት (ሰከንዶች):"
+#: command/command-preferences.ui:77
+msgid "C_ommand:"
+msgstr "ት_እዛዝ:"
 
-#: command/command.c:223
-msgid "Maximum width (chars):"
-msgstr "ከፍተኛ ስፋት (chars):"
+#: command/command-preferences.ui:91
+msgid "_Interval (seconds):"
+msgstr ""
 
-#: command/command.c:231
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr "ምልክት ማሳያ"
+#: command/command-preferences.ui:105
+msgid "Maximum _width (chars):"
+msgstr ""
 
-#: command/command.c:443
-msgid "Command Applet"
-msgstr "የ ትእዛዝ አፕሌት"
+#: command/command-preferences.ui:161
+msgid "_Show icon"
+msgstr ""
 
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
@@ -628,12 +626,6 @@ msgstr "የ ትእዛዝ ፋክቶሪ"
 #: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
 msgid "Command"
 msgstr "ትእዛዝ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-terminal"
-msgstr ""
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
@@ -658,6 +650,11 @@ msgstr "የ ውጤት ስፋት"
 #: command/org.mate.panel.applet.command.gschema.xml.in:16
 msgid "Number of characters to display"
 msgstr "የሚታየው የ ባህሪ ቁጥር "
+
+#: command/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
+msgstr "ምልክት ማሳያ"
 
 #: command/org.mate.panel.applet.command.gschema.xml.in:21
 msgid "If applet icon is shown or not"
@@ -697,7 +694,7 @@ msgstr "የ ሲፒዩ ድግግሞሽ እንደ _ ፐርሰንት ማሳያ "
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:813 cpufreq/src/cpufreq-applet.c:868
+#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
 msgid "CPU Frequency Scaling Monitor"
 msgstr "የ ሲፒዩ ድግግሞሽ መመጠኛ መቆጣጠሪያ"
 
@@ -705,12 +702,6 @@ msgstr "የ ሲፒዩ ድግግሞሽ መመጠኛ መቆጣጠሪያ"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "የ ሲፒዩ ድግግሞሽ መመጠኛ መቆጣጠሪያ "
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-cpu-frequency-applet"
-msgstr ""
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -743,25 +734,25 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:449 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "የ እርዳታ ሰነዱድ መክፈት አልተቻለም "
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:463
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:465
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:485
+#: cpufreq/src/cpufreq-applet.c:467
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "ይህ የ ተለያየ የሚያሳየው የ አሁኑን የ ሲፒዩ ድግግሞሽ መመጠኛ ነው"
 
-#: cpufreq/src/cpufreq-applet.c:869
+#: cpufreq/src/cpufreq-applet.c:850
 msgid "This utility shows the current CPU Frequency"
 msgstr "ይህ የ ተለያየ የሚያሳየው የ አሁኑን የ ሲፒዩ ድግግሞሽ መመጠኛ ነው "
 
@@ -799,42 +790,46 @@ msgstr "የ ሲፒዩ ድግግሞሽ መመጠኛ መቀየሪያ"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr ""
 
-#: drivemount/drive-button.c:340 drivemount/drive-button.c:354
+#: drivemount/drive-button.c:277
+msgid "nothing to mount"
+msgstr ""
+
+#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
 msgid "(mounted)"
 msgstr "(ተጭኗል)"
 
-#: drivemount/drive-button.c:347
+#: drivemount/drive-button.c:317
 msgid "(not mounted)"
 msgstr "(አልተጫነም)"
 
-#: drivemount/drive-button.c:619
+#: drivemount/drive-button.c:589
 msgid "Cannot execute Caja"
 msgstr "ካጃ መፈጸም አልተቻለም"
 
-#: drivemount/drive-button.c:943
+#: drivemount/drive-button.c:913
 msgid "_Play DVD"
 msgstr "ዲቪዲ _ማጫወቻ "
 
-#: drivemount/drive-button.c:947
+#: drivemount/drive-button.c:917
 msgid "_Play CD"
 msgstr "ሲዲ _ማጫወቻ "
 
-#: drivemount/drive-button.c:950
+#: drivemount/drive-button.c:920
 #, c-format
 msgid "_Open %s"
 msgstr "_መክፈቻ %s"
 
-#: drivemount/drive-button.c:958
+#: drivemount/drive-button.c:928
 #, c-format
 msgid "Un_mount %s"
 msgstr "ማው_ረጃ %s"
 
-#: drivemount/drive-button.c:964
+#: drivemount/drive-button.c:934
 #, c-format
 msgid "_Mount %s"
 msgstr "_መጫኛ %s"
 
-#: drivemount/drive-button.c:972
+#: drivemount/drive-button.c:942
 #, c-format
 msgid "_Eject %s"
 msgstr "_ማውጫ %s"
@@ -853,7 +848,7 @@ msgstr ""
 msgid "Applet for mounting and unmounting block volumes."
 msgstr ""
 
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "ዲስክ መጫኛ"
@@ -868,12 +863,6 @@ msgstr ""
 
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
-msgid "media-floppy"
 msgstr ""
 
 #: geyes/geyes.c:178
@@ -906,12 +895,6 @@ msgstr ""
 
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-eyes-applet"
 msgstr ""
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
@@ -1105,148 +1088,148 @@ msgstr "አድራሻ ማስገቢያ"
 msgid "Enter the URL"
 msgstr "URLን አስገባ"
 
-#: mateweather/mateweather-pref.c:283
+#: mateweather/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr ""
 
-#: mateweather/mateweather-pref.c:807
+#: mateweather/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "የ አየር ንብረት ምርጫ"
 
-#: mateweather/mateweather-pref.c:831 mateweather/mateweather-pref.c:1034
+#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "_ራሱ በራሱ በየቀኑ ማሻሻያ:"
 
-#: mateweather/mateweather-pref.c:847
+#: mateweather/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "የ _አየር ንብረት መለኪያ:"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "ኬልቪን "
 
-#: mateweather/mateweather-pref.c:859
+#: mateweather/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "ሴልሺየስ "
 
-#: mateweather/mateweather-pref.c:860
+#: mateweather/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "ፋርሀናይት "
 
-#: mateweather/mateweather-pref.c:869
+#: mateweather/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "የ _ንፋስ ፍጥነት መለኪያ:"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/mateweather-pref.c:878
 msgid "m/s"
 msgstr "ሚ/ሰ "
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/mateweather-pref.c:880
 msgid "km/h"
 msgstr "ኪሚ/ሰ "
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/mateweather-pref.c:882
 msgid "mph"
 msgstr "ሚ/ሰ "
 
-#: mateweather/mateweather-pref.c:886
+#: mateweather/mateweather-pref.c:884
 msgid "knots"
 msgstr "ኖትስ"
 
-#: mateweather/mateweather-pref.c:887
+#: mateweather/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "የ ንፋስ ፍጥነት"
 
-#: mateweather/mateweather-pref.c:896
+#: mateweather/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "የ _አየር ግፊት መለኪያ: "
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/mateweather-pref.c:905
 msgid "kPa"
 msgstr "ኪሎ ፓስካል"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/mateweather-pref.c:907
 msgid "hPa"
 msgstr "ሄክቶ ፓስካል"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/mateweather-pref.c:909
 msgid "mb"
 msgstr "ሚሊ ባር"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "%.1f ሚሚ ሜርኩሪ"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/mateweather-pref.c:913
 msgid "inHg"
 msgstr "ኢንች ሜርኩሪ"
 
-#: mateweather/mateweather-pref.c:917
+#: mateweather/mateweather-pref.c:915
 msgid "atm"
 msgstr "አትሞስፍዬር"
 
-#: mateweather/mateweather-pref.c:926
+#: mateweather/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "_መመልከቻ መለኪያ:"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/mateweather-pref.c:935
 msgid "meters"
 msgstr "ሚትሮች "
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/mateweather-pref.c:937
 msgid "km"
 msgstr "ኪሚ "
 
-#: mateweather/mateweather-pref.c:941
+#: mateweather/mateweather-pref.c:939
 msgid "miles"
 msgstr "ማይልስ "
 
-#: mateweather/mateweather-pref.c:971
+#: mateweather/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "የ ራዳር ካርታ ማስቻያ"
 
-#: mateweather/mateweather-pref.c:987
+#: mateweather/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr ""
 
-#: mateweather/mateweather-pref.c:1005
+#: mateweather/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "አ_ድራሻ :"
 
-#: mateweather/mateweather-pref.c:1020
+#: mateweather/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr "_ማስታወቂያዎች ማሳያ"
 
-#: mateweather/mateweather-pref.c:1030
+#: mateweather/mateweather-pref.c:1028
 msgid "Update"
 msgstr "ማሻሻያ"
 
-#: mateweather/mateweather-pref.c:1047
+#: mateweather/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "ደቂቃዎች"
 
-#: mateweather/mateweather-pref.c:1065
+#: mateweather/mateweather-pref.c:1063
 msgid "Display"
 msgstr "ማሳያ"
 
-#: mateweather/mateweather-pref.c:1084
+#: mateweather/mateweather-pref.c:1082
 msgid "General"
 msgstr "ባጠቃላይ"
 
-#: mateweather/mateweather-pref.c:1095
+#: mateweather/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "አካባቢ _ይምረጡ :"
 
-#: mateweather/mateweather-pref.c:1117
+#: mateweather/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "_መፈለጊያ:"
 
-#: mateweather/mateweather-pref.c:1123
+#: mateweather/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "_ቀጥሎ መፈለጊያ "
 
-#: mateweather/mateweather-pref.c:1144
+#: mateweather/mateweather-pref.c:1142
 msgid "Location"
 msgstr "አካባቢ"
 
@@ -1260,12 +1243,6 @@ msgstr ""
 
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the current weather conditions, and forecasts"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
-msgid "weather-storm"
 msgstr ""
 
 #: multiload/main.c:60
@@ -1284,40 +1261,40 @@ msgid ""
 "space use, plus network traffic."
 msgstr ""
 
-#: multiload/main.c:129
+#: multiload/main.c:127
 msgid "Start system-monitor"
 msgstr "የ ስርአት-መቆጣጠሪያ ማስጀመሪያ"
 
-#: multiload/main.c:151
+#: multiload/main.c:149
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "ስህተት ተፈጥሯል በማስኬድ ላይ እንዳለ '%s': %s"
 
-#: multiload/main.c:279 multiload/properties.c:643
+#: multiload/main.c:276 multiload/properties.c:643
 msgid "Processor"
 msgstr "ሂደት"
 
-#: multiload/main.c:281 multiload/properties.c:651
+#: multiload/main.c:278 multiload/properties.c:651
 msgid "Memory"
 msgstr "Memory"
 
-#: multiload/main.c:283 multiload/properties.c:659
+#: multiload/main.c:280 multiload/properties.c:659
 msgid "Network"
 msgstr "ኔትዎርክ:"
 
-#: multiload/main.c:285 multiload/properties.c:668
+#: multiload/main.c:282 multiload/properties.c:668
 msgid "Swap Space"
 msgstr ""
 
-#: multiload/main.c:287 multiload/main.c:366
+#: multiload/main.c:284 multiload/main.c:363
 msgid "Load Average"
 msgstr "መሀከለኛ መጫኛ"
 
-#: multiload/main.c:289
+#: multiload/main.c:286
 msgid "Disk"
 msgstr "ዲስክ"
 
-#: multiload/main.c:305
+#: multiload/main.c:302
 #, c-format
 msgid ""
 "%s:\n"
@@ -1328,12 +1305,12 @@ msgstr ""
 "%u%% ፕሮግራሞች እየተጠቀሙበት ነው\n"
 "%u%% ማጠራቀሚያ እየተጠቀሙበት ነው"
 
-#: multiload/main.c:313
+#: multiload/main.c:310
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "የ ስርአቱ መሀከለኛ መጫኛ ነው %0.02f"
 
-#: multiload/main.c:321
+#: multiload/main.c:318
 #, c-format
 msgid ""
 "%s:\n"
@@ -1344,7 +1321,7 @@ msgstr ""
 "በ መቀበል ላይ %s\n"
 "በ መላክ ላይ %s"
 
-#: multiload/main.c:337
+#: multiload/main.c:334
 #, c-format
 msgid ""
 "%s:\n"
@@ -1359,31 +1336,31 @@ msgstr[1] ""
 "%s:\n"
 "%u%% በ ስራ ላይ"
 
-#: multiload/main.c:362
+#: multiload/main.c:359
 msgid "CPU Load"
 msgstr "የ ሲፒዩ ጭነት"
 
-#: multiload/main.c:363
+#: multiload/main.c:360
 msgid "Memory Load"
 msgstr ""
 
-#: multiload/main.c:364
+#: multiload/main.c:361
 msgid "Net Load"
 msgstr ""
 
-#: multiload/main.c:365
+#: multiload/main.c:362
 msgid "Swap Load"
 msgstr ""
 
-#: multiload/main.c:367
+#: multiload/main.c:364
 msgid "Disk Load"
 msgstr "ዲስክ መጫኛ"
 
-#: multiload/main.c:485
+#: multiload/main.c:482
 msgid "_Open System Monitor"
 msgstr "ስርአት መቆጣጠሪያ _መክፈቻ"
 
-#: multiload/main.c:517
+#: multiload/main.c:514
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "ስርአት መቆጣጠሪያ "
@@ -1404,12 +1381,6 @@ msgstr ""
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "የ ስርአት ጭነት ጠቋሚ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-system-monitor"
-msgstr ""
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1720,7 +1691,7 @@ msgid "Threshold 1: "
 msgstr ""
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:432
+#: multiload/properties.c:815 netspeed/src/netspeed.c:425
 msgid "bytes"
 msgstr "ባይትስ "
 
@@ -1844,81 +1815,75 @@ msgstr ""
 msgid "Network Monitor"
 msgstr "ኔትዎርክ መቆጣጠሪያ "
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-netspeed-applet"
-msgstr ""
-
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "b"
 msgstr "ቢ"
 
-#: netspeed/src/netspeed.c:427
+#: netspeed/src/netspeed.c:420
 msgid "B"
 msgstr "B"
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "b/s"
 msgstr "ቢ/ሰ "
 
-#: netspeed/src/netspeed.c:429
+#: netspeed/src/netspeed.c:422
 msgid "B/s"
 msgstr "ቢ/ሰ "
 
-#: netspeed/src/netspeed.c:432
+#: netspeed/src/netspeed.c:425
 msgid "bits"
 msgstr "ቢትስ "
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "k"
 msgstr "ኪ"
 
-#: netspeed/src/netspeed.c:440
+#: netspeed/src/netspeed.c:433
 msgid "K"
 msgstr "ኬ "
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "kb/s"
 msgstr "ኪቢ/ሰ "
 
-#: netspeed/src/netspeed.c:442
+#: netspeed/src/netspeed.c:435
 msgid "KiB/s"
 msgstr "ኪቢ/ሰ"
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "kb"
 msgstr "ኪቢ "
 
-#: netspeed/src/netspeed.c:445
+#: netspeed/src/netspeed.c:438
 msgid "KiB"
 msgstr "ኪቢ"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "m"
 msgstr "ሜ"
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:448
 msgid "M"
 msgstr "ሜ"
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "Mb/s"
 msgstr "ሜቢ/ስ "
 
-#: netspeed/src/netspeed.c:457
+#: netspeed/src/netspeed.c:450
 msgid "MiB/s"
 msgstr "ሜቢ/ስ "
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "Mb"
 msgstr "ሜቢ "
 
-#: netspeed/src/netspeed.c:460
+#: netspeed/src/netspeed.c:453
 msgid "MiB"
 msgstr "ሜቢ "
 
-#: netspeed/src/netspeed.c:784
+#: netspeed/src/netspeed.c:776
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1927,144 +1892,108 @@ msgstr ""
 "እርዳታ በማሳየት ላይ እንዳለ ስህተት ተፈጥሯል:\n"
 "%s"
 
-#: netspeed/src/netspeed.c:821
+#: netspeed/src/netspeed.c:813
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: netspeed/src/netspeed.c:823
+#: netspeed/src/netspeed.c:815
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:826
+#: netspeed/src/netspeed.c:818
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr "በተወሰነው የ ኔትዎርክ አካል ላይ ያለውን የትራፊክ መረጃ የሚያሳይ ትንሽ ክፍል "
 
-#: netspeed/src/netspeed.c:987
-msgid "MATE Netspeed Preferences"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1009
-msgid "General Settings"
-msgstr "ባጠቃላይ ማሰናጃ"
-
-#: netspeed/src/netspeed.c:1031
-msgid "Network _device:"
-msgstr "የ ኔትዎርክ _አካሎች:"
-
-#: netspeed/src/netspeed.c:1043
+#: netspeed/src/netspeed.c:973
 msgid "Default"
 msgstr "ነባር "
 
-#: netspeed/src/netspeed.c:1056
-msgid "Show _sum instead of in & out"
-msgstr "ከ ገባው & ከ ወጣው ይልቅ _ድምር ማሳያ"
-
-#: netspeed/src/netspeed.c:1060
-msgid "Show _bits instead of bytes"
-msgstr "ከ ባይትስ ይልቅ _ቢትስ ማሳያ"
-
-#: netspeed/src/netspeed.c:1064
-msgid "Shorten _unit legend"
-msgstr "አጭር የመለኪያ _መግለጫ"
-
-#: netspeed/src/netspeed.c:1068
-msgid "_Change icon according to the selected device"
-msgstr "እንደ ተመረጠው አካል አይነት ምልክት _መቀየሪያ"
-
-#: netspeed/src/netspeed.c:1072
-msgid "Show _icon"
-msgstr " _ምልክት ማሳያ"
-
-#: netspeed/src/netspeed.c:1076
-msgid "Show signal _quality icon for wireless devices"
-msgstr "ለ ሽቦ አልባ አክሎች የ ምልክት _ጥራት ማሳያ "
-
-#: netspeed/src/netspeed.c:1194
+#: netspeed/src/netspeed.c:1089
 #, c-format
 msgid "Device Details for %s"
 msgstr "የ አካሉ ዝርዝር ለ %s"
 
-#: netspeed/src/netspeed.c:1219
+#: netspeed/src/netspeed.c:1114
 msgid "_In graph color"
 msgstr "በ ቀለም ግራፍ _ውስጥ"
 
-#: netspeed/src/netspeed.c:1220
+#: netspeed/src/netspeed.c:1115
 msgid "_Out graph color"
 msgstr "ከ ቀለም ግራፍ _ውጪ"
 
-#: netspeed/src/netspeed.c:1236
+#: netspeed/src/netspeed.c:1131
 msgid "Internet Address:"
 msgstr "የ ኢንተርኔት አድራሻ :"
 
-#: netspeed/src/netspeed.c:1237
+#: netspeed/src/netspeed.c:1132
 msgid "Netmask:"
 msgstr "Netmask:"
 
-#: netspeed/src/netspeed.c:1238
+#: netspeed/src/netspeed.c:1133
 msgid "Hardware Address:"
 msgstr "የ ጠንካራ አካል አድራሻ:"
 
-#: netspeed/src/netspeed.c:1239
+#: netspeed/src/netspeed.c:1134
 msgid "P-t-P Address:"
 msgstr "P-t-P አድራሻ:"
 
-#: netspeed/src/netspeed.c:1240
+#: netspeed/src/netspeed.c:1135
 msgid "Bytes in:"
 msgstr "ባይትስ በ:"
 
-#: netspeed/src/netspeed.c:1241
+#: netspeed/src/netspeed.c:1136
 msgid "Bytes out:"
 msgstr "ባይትስ ውጪ:"
 
-#: netspeed/src/netspeed.c:1243 netspeed/src/netspeed.c:1244
-#: netspeed/src/netspeed.c:1245 netspeed/src/netspeed.c:1246
+#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
+#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
 msgid "none"
 msgstr "ምንም"
 
-#: netspeed/src/netspeed.c:1297
+#: netspeed/src/netspeed.c:1192
 msgid "IPV6 Address:"
 msgstr "IPV6 Address:"
 
-#: netspeed/src/netspeed.c:1330
+#: netspeed/src/netspeed.c:1225
 msgid "Signal Strength:"
 msgstr "የ ምልክት ጥንካሬ"
 
-#: netspeed/src/netspeed.c:1331
+#: netspeed/src/netspeed.c:1226
 msgid "ESSID:"
 msgstr "ESSID:"
 
-#: netspeed/src/netspeed.c:1372
+#: netspeed/src/netspeed.c:1267
 msgid "Device _Details"
 msgstr "የ አካሎች _ዝርዝር"
 
-#: netspeed/src/netspeed.c:1374
+#: netspeed/src/netspeed.c:1269
 msgid "Preferences..."
 msgstr "ምርጫዎች..."
 
-#: netspeed/src/netspeed.c:1376
+#: netspeed/src/netspeed.c:1271
 msgid "Help"
 msgstr "እርዳታ "
 
-#: netspeed/src/netspeed.c:1378
+#: netspeed/src/netspeed.c:1273
 msgid "About..."
 msgstr "ስለ..."
 
-#: netspeed/src/netspeed.c:1419
+#: netspeed/src/netspeed.c:1314
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "እርስዎ አሁን መገናኘት %s ይፈልጋሉ?"
 
-#: netspeed/src/netspeed.c:1423
+#: netspeed/src/netspeed.c:1318
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "እርስዎ መገናኘት %s ይፈልጋሉ?"
 
-#: netspeed/src/netspeed.c:1450
+#: netspeed/src/netspeed.c:1345
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2073,12 +2002,12 @@ msgstr ""
 "<b>ትእዛዝ ማስኬድ %s አልተቻለም</b>\n"
 "%s"
 
-#: netspeed/src/netspeed.c:1509
+#: netspeed/src/netspeed.c:1404
 #, c-format
 msgid "%s is down"
 msgstr "%s አይሰራም "
 
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:1409
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2087,11 +2016,11 @@ msgstr ""
 "%s: %s\n"
 "ውስጥ: %s ውጪ: %s"
 
-#: netspeed/src/netspeed.c:1516 netspeed/src/netspeed.c:1525
+#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
 msgid "has no ip"
 msgstr " ip የለውም "
 
-#: netspeed/src/netspeed.c:1523
+#: netspeed/src/netspeed.c:1418
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2100,7 +2029,7 @@ msgstr ""
 "%s: %s\n"
 "ድምር: %s"
 
-#: netspeed/src/netspeed.c:1532
+#: netspeed/src/netspeed.c:1427
 #, c-format
 msgid ""
 "\n"
@@ -2111,13 +2040,49 @@ msgstr ""
 "ESSID: %s\n"
 "ጥንካሬ: %d %%"
 
-#: netspeed/src/netspeed.c:1533
+#: netspeed/src/netspeed.c:1428
 msgid "unknown"
 msgstr "ያልታወቀ"
 
-#: netspeed/src/netspeed.c:1584
+#: netspeed/src/netspeed.c:1478
 msgid "MATE Netspeed"
 msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr ""
+
+#: netspeed/src/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr "የ ኔትዎርክ _አካሎች:"
+
+#: netspeed/src/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr "ከ ገባው & ከ ወጣው ይልቅ _ድምር ማሳያ"
+
+#: netspeed/src/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr "ከ ባይትስ ይልቅ _ቢትስ ማሳያ"
+
+#: netspeed/src/netspeed-preferences.ui:165
+msgid "Shorten _unit legend"
+msgstr "አጭር የመለኪያ _መግለጫ"
+
+#: netspeed/src/netspeed-preferences.ui:182
+msgid "_Change icon according to the selected device"
+msgstr "እንደ ተመረጠው አካል አይነት ምልክት _መቀየሪያ"
+
+#: netspeed/src/netspeed-preferences.ui:199
+msgid "Show _icon"
+msgstr " _ምልክት ማሳያ"
+
+#: netspeed/src/netspeed-preferences.ui:216
+msgid "Show signal _quality icon for wireless devices"
+msgstr "ለ ሽቦ አልባ አክሎች የ ምልክት _ጥራት ማሳያ "
+
+#: netspeed/src/netspeed-preferences.ui:240
+msgid "General Settings"
+msgstr "ባጠቃላይ ማሰናጃ"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2133,203 +2098,200 @@ msgstr "ተጣባቂ ማስታወሻ"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "የ ተጣባቂ ማስታወሻ በ ዴስክቶፕ ላይ መፍጠሪያ እና ማስተዳደሪያ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-sticky-notes-applet"
-msgstr ""
-
-#: stickynotes/stickynotes.c:577
+#: stickynotes/stickynotes.c:578
 msgid "This note is locked."
 msgstr "ይህ አልተቆለፍም"
 
-#: stickynotes/stickynotes.c:581
+#: stickynotes/stickynotes.c:582
 msgid "This note is unlocked."
 msgstr "ይህ ማስታወሻ አልተቆለፍም"
 
-#: stickynotes/stickynotes.ui:26 stickynotes/stickynotes_applet.c:34
-msgid "_New Note"
-msgstr "_አዲስ ማስታወሻ"
+#: stickynotes/sticky-notes-delete-all.ui:36
+#: stickynotes/sticky-notes-delete.ui:37
+msgid "_Cancel"
+msgstr "_መሰረዣ "
 
-#: stickynotes/stickynotes.ui:32
-msgid "_Delete Note..."
-msgstr "ማስታወሻ _ማጥፊያ..."
-
-#: stickynotes/stickynotes.ui:38
-msgid "_Lock Note"
-msgstr "ማስታወሻ _መቆለፊያ"
-
-#: stickynotes/stickynotes.ui:44
-msgid "_Properties"
-msgstr "_ባህሪዎች "
-
-#: stickynotes/stickynotes.ui:62
-msgid "Sticky Notes Preferences"
-msgstr "የ ተጣባቂ ማስታወሻ ምርጫዎች"
-
-#: stickynotes/stickynotes.ui:82
-msgid "Default Note Properties"
-msgstr "ነባር የማስታወሻ ባህሪ"
-
-#: stickynotes/stickynotes.ui:119
-msgid "Choose a font to use for all sticky notes"
-msgstr "ለ ተጣባቂ ማስታወሻ ፊደል ይምረጡ"
-
-#: stickynotes/stickynotes.ui:120
-msgid "Pick a default sticky note font"
-msgstr "ለ ተጣባቂ ማስታወሻ ነባር ፊደል ይምረጡ"
-
-#: stickynotes/stickynotes.ui:139 stickynotes/stickynotes.ui:994
-msgid "_Font:"
-msgstr "_ፊደል:"
-
-#: stickynotes/stickynotes.ui:153
-msgid "Use fo_nt from the system theme"
-msgstr "ከ ስርአት ገጽታ ውስጥ ፊደ_ል ይጠቀሙ"
-
-#: stickynotes/stickynotes.ui:176
-msgid "Note C_olor:"
-msgstr "የማስታወሻ ቀ_ለም:"
-
-#: stickynotes/stickynotes.ui:197
-msgid "Font Co_lor:"
-msgstr "የፊደል ቀለ_ም:"
-
-#: stickynotes/stickynotes.ui:230
-msgid "Choose a base color to use for all sticky notes"
-msgstr "ይምረጡ መሰረታዊ ቀለም በ ተጣባቂ ማስታወሻ ላይ ለ መጠቀም"
-
-#: stickynotes/stickynotes.ui:231
-msgid "Pick a default sticky note color"
-msgstr "ነባር የ ተጣባቂ ማስታወሻ ቀለም ይምረጡ"
-
-#: stickynotes/stickynotes.ui:243
-msgid "Use co_lor from the system theme"
-msgstr "ይጠቀሙ ቀለ_ም ከ ስርአቱ ገጽታ ውስጥ"
-
-#: stickynotes/stickynotes.ui:262
-msgid "Specify the default height (in pixels) of new notes"
-msgstr "ነባር እርዝመት ለ ተጣባቂ ማስታወሻ ( በፒክስል) ይወስኑ"
-
-#: stickynotes/stickynotes.ui:279
-msgid "Specify the default width (in pixels) of new notes"
-msgstr "ነባር ስፋት ለ ተጣባቂ ማስታወሻ ( በፒክስል) ይወስኑ"
-
-#: stickynotes/stickynotes.ui:294
-msgid "H_eight:"
-msgstr "እ_ርዝመት:"
-
-#: stickynotes/stickynotes.ui:309
-msgid "_Width:"
-msgstr "_ስፋት :"
-
-#: stickynotes/stickynotes.ui:343
-msgid "Behavior"
-msgstr "ባህሪ"
-
-#: stickynotes/stickynotes.ui:377
-msgid "Hide notes when the des_ktop is clicked on"
-msgstr "በ ዴስ_ክቶፕ ላይ በምጫን ጊዜ ማስታወሻ መደበቂያ"
-
-#: stickynotes/stickynotes.ui:381
-msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr "በ ዴስ_ክቶፕ ላይ በምጫን ጊዜ ማስታወሻ ይደበቅ እንደሆን መወሰኛ"
-
-#: stickynotes/stickynotes.ui:394
-msgid "Force _default color and font on notes"
-msgstr "_ነባር ቀለም እና ፊደል ለ ማስታወሻ ማስገደጃ"
-
-#: stickynotes/stickynotes.ui:398
-msgid "Choose if the default style is forced on all notes"
-msgstr "ይምረጡ ነባር ዘዴዎች በ ሁሉም ማስታወሻዎች ላይ ይገደዱ እንደሆን መወሰኛ"
-
-#: stickynotes/stickynotes.ui:411
-msgid "_Put notes on all workspaces"
-msgstr "ማስታወሻ በ ሁሉም የ ስራ ቦታዎች ላይ _ማኖሪያ"
-
-#: stickynotes/stickynotes.ui:415
-msgid "Choose if notes are visible on all workspaces"
-msgstr "ይምረጡ ሁሉም ማስታወሻዎች  በ ሁሉም የ ስራ ቦታዎች ላይ ይታዩ እንደሆን መወሰኛ"
-
-#: stickynotes/stickynotes.ui:540
-msgid "Delete this sticky note?"
-msgstr "ተጣባቂ ማስታወሻ ላጥፋ?"
-
-#: stickynotes/stickynotes.ui:555 stickynotes/stickynotes.ui:673
-msgid "This cannot be undone."
-msgstr "ይህን መተው አይቻልም"
-
-#: stickynotes/stickynotes.ui:658
-msgid "Delete all sticky notes?"
-msgstr "ሁሉንም ተጣባቂ ማስታወሻ ላጥፋ?"
-
-#: stickynotes/stickynotes.ui:741
+#: stickynotes/sticky-notes-delete-all.ui:53
 msgid "_Delete All"
 msgstr "ሁሉንም _ማጥፊያ "
 
-#: stickynotes/stickynotes.ui:779
+#: stickynotes/sticky-notes-delete-all.ui:106
+msgid "Delete all sticky notes?"
+msgstr "ሁሉንም ተጣባቂ ማስታወሻ ላጥፋ?"
+
+#: stickynotes/sticky-notes-delete-all.ui:123
+#: stickynotes/sticky-notes-delete.ui:124
+msgid "This cannot be undone."
+msgstr "ይህን መተው አይቻልም"
+
+#: stickynotes/sticky-notes-delete.ui:54
+msgid "_Delete"
+msgstr "_ማጥፊያ"
+
+#: stickynotes/sticky-notes-delete.ui:107
+msgid "Delete this sticky note?"
+msgstr "ተጣባቂ ማስታወሻ ላጥፋ?"
+
+#: stickynotes/sticky-notes-note.ui:11
 msgid "Sticky Note"
 msgstr "ተጣባቂ ማስታወሻ"
 
-#: stickynotes/stickynotes.ui:790
+#: stickynotes/sticky-notes-note.ui:28
 msgid "Lock/Unlock note"
 msgstr "ማስታወሻ መቆለፊያ/መክፈቻ"
 
-#: stickynotes/stickynotes.ui:820
+#: stickynotes/sticky-notes-note.ui:66
 msgid "Delete note"
 msgstr "ማስታወሻ ማጥፊያ"
 
-#: stickynotes/stickynotes.ui:868 stickynotes/stickynotes.ui:887
+#: stickynotes/sticky-notes-note.ui:119 stickynotes/sticky-notes-note.ui:142
 msgid "Resize note"
 msgstr "ማስታወሻ እንደገና መመጠኛ"
 
-#: stickynotes/stickynotes.ui:917
+#: stickynotes/sticky-notes-preferences.ui:32
+msgid "Sticky Notes Preferences"
+msgstr "የ ተጣባቂ ማስታወሻ ምርጫዎች"
+
+#: stickynotes/sticky-notes-preferences.ui:108
+msgid "Default Note Properties"
+msgstr "ነባር የማስታወሻ ባህሪ"
+
+#: stickynotes/sticky-notes-preferences.ui:131
+msgid "_Width:"
+msgstr "_ስፋት :"
+
+#: stickynotes/sticky-notes-preferences.ui:144
+msgid "H_eight:"
+msgstr "እ_ርዝመት:"
+
+#: stickynotes/sticky-notes-preferences.ui:157
+msgid "Specify the default width (in pixels) of new notes"
+msgstr "ነባር ስፋት ለ ተጣባቂ ማስታወሻ ( በፒክስል) ይወስኑ"
+
+#: stickynotes/sticky-notes-preferences.ui:158
+msgid "1"
+msgstr "1"
+
+#: stickynotes/sticky-notes-preferences.ui:172
+msgid "Specify the default height (in pixels) of new notes"
+msgstr "ነባር እርዝመት ለ ተጣባቂ ማስታወሻ ( በፒክስል) ይወስኑ"
+
+#: stickynotes/sticky-notes-preferences.ui:173
+msgid "0"
+msgstr "0"
+
+#: stickynotes/sticky-notes-preferences.ui:185
+msgid "Use co_lor from the system theme"
+msgstr "ይጠቀሙ ቀለ_ም ከ ስርአቱ ገጽታ ውስጥ"
+
+#: stickynotes/sticky-notes-preferences.ui:203
+msgid "Font Co_lor:"
+msgstr "የፊደል ቀለ_ም:"
+
+#: stickynotes/sticky-notes-preferences.ui:216
+msgid "Note C_olor:"
+msgstr "የማስታወሻ ቀ_ለም:"
+
+#: stickynotes/sticky-notes-preferences.ui:241
+msgid "Choose a base color to use for all sticky notes"
+msgstr "ይምረጡ መሰረታዊ ቀለም በ ተጣባቂ ማስታወሻ ላይ ለ መጠቀም"
+
+#: stickynotes/sticky-notes-preferences.ui:242
+msgid "Pick a default sticky note color"
+msgstr "ነባር የ ተጣባቂ ማስታወሻ ቀለም ይምረጡ"
+
+#: stickynotes/sticky-notes-preferences.ui:251
+msgid "Use fo_nt from the system theme"
+msgstr "ከ ስርአት ገጽታ ውስጥ ፊደ_ል ይጠቀሙ"
+
+#: stickynotes/sticky-notes-preferences.ui:269
+#: stickynotes/sticky-notes-properties.ui:226
+msgid "_Font:"
+msgstr "_ፊደል:"
+
+#: stickynotes/sticky-notes-preferences.ui:283
+msgid "Choose a font to use for all sticky notes"
+msgstr "ለ ተጣባቂ ማስታወሻ ፊደል ይምረጡ"
+
+#: stickynotes/sticky-notes-preferences.ui:285
+msgid "Pick a default sticky note font"
+msgstr "ለ ተጣባቂ ማስታወሻ ነባር ፊደል ይምረጡ"
+
+#: stickynotes/sticky-notes-preferences.ui:316
+msgid "Behavior"
+msgstr "ባህሪ"
+
+#: stickynotes/sticky-notes-preferences.ui:337
+msgid "_Put notes on all workspaces"
+msgstr "ማስታወሻ በ ሁሉም የ ስራ ቦታዎች ላይ _ማኖሪያ"
+
+#: stickynotes/sticky-notes-preferences.ui:341
+msgid "Choose if notes are visible on all workspaces"
+msgstr "ይምረጡ ሁሉም ማስታወሻዎች  በ ሁሉም የ ስራ ቦታዎች ላይ ይታዩ እንደሆን መወሰኛ"
+
+#: stickynotes/sticky-notes-preferences.ui:354
+msgid "Force _default color and font on notes"
+msgstr "_ነባር ቀለም እና ፊደል ለ ማስታወሻ ማስገደጃ"
+
+#: stickynotes/sticky-notes-preferences.ui:358
+msgid "Choose if the default style is forced on all notes"
+msgstr "ይምረጡ ነባር ዘዴዎች በ ሁሉም ማስታወሻዎች ላይ ይገደዱ እንደሆን መወሰኛ"
+
+#: stickynotes/sticky-notes-preferences.ui:371
+msgid "Hide notes when the des_ktop is clicked on"
+msgstr "በ ዴስ_ክቶፕ ላይ በምጫን ጊዜ ማስታወሻ መደበቂያ"
+
+#: stickynotes/sticky-notes-preferences.ui:375
+msgid "Choose whether to hide all notes when selecting on the desktop"
+msgstr "በ ዴስ_ክቶፕ ላይ በምጫን ጊዜ ማስታወሻ ይደበቅ እንደሆን መወሰኛ"
+
+#: stickynotes/sticky-notes-properties.ui:18
 msgid "Sticky Note Properties"
 msgstr "የ ተጣባቂ ማስታወሻ ባህሪዎች"
 
-#: stickynotes/stickynotes.ui:937
+#: stickynotes/sticky-notes-properties.ui:94
 msgid "Properties"
 msgstr "ባህሪዎች"
 
-#: stickynotes/stickynotes.ui:974
-msgid "Choose a font for the note"
-msgstr "ለማስታወሻው ፊደል ይምረጡ"
+#: stickynotes/sticky-notes-properties.ui:117
+msgid "_Title:"
+msgstr "_አርእስት:"
 
-#: stickynotes/stickynotes.ui:975
-msgid "Pick a font for the sticky note"
-msgstr "ለ ማስታወሻው ፊደል ይምረጡ"
-
-#: stickynotes/stickynotes.ui:1008
-msgid "Use default fo_nt"
-msgstr "ነባር ፊደ_ል መጠቀሚያ"
-
-#: stickynotes/stickynotes.ui:1028
-msgid "Choose a color for the note"
-msgstr "ለማስታወሻው ቀለም ይምረጡ"
-
-#: stickynotes/stickynotes.ui:1029
-msgid "Pick a color for the sticky note"
-msgstr "ለ ማስታወሻው ፊደል ይምረጡ"
-
-#: stickynotes/stickynotes.ui:1048
-msgid "Note _Color:"
-msgstr "የማስታወሻ _ቀለም:"
-
-#: stickynotes/stickynotes.ui:1083
-msgid "Font C_olor:"
-msgstr "የፊደል ቀ_ለም:"
-
-#: stickynotes/stickynotes.ui:1097
-msgid "Use default co_lor"
-msgstr "ነባር ቀለ_ም መጠቀሚያ"
-
-#: stickynotes/stickynotes.ui:1115
+#: stickynotes/sticky-notes-properties.ui:130
 msgid "Specify a title for the note"
 msgstr "ለ ማስታወሻው አርእስት ይወስኑ"
 
-#: stickynotes/stickynotes.ui:1127
-msgid "_Title:"
-msgstr "_አርእስት:"
+#: stickynotes/sticky-notes-properties.ui:139
+msgid "Use default co_lor"
+msgstr "ነባር ቀለ_ም መጠቀሚያ"
+
+#: stickynotes/sticky-notes-properties.ui:158
+msgid "Font C_olor:"
+msgstr "የፊደል ቀ_ለም:"
+
+#: stickynotes/sticky-notes-properties.ui:172
+msgid "Note _Color:"
+msgstr "የማስታወሻ _ቀለም:"
+
+#: stickynotes/sticky-notes-properties.ui:183
+msgid "Use default fo_nt"
+msgstr "ነባር ፊደ_ል መጠቀሚያ"
+
+#: stickynotes/sticky-notes-properties.ui:213
+msgid "Choose a color for the note"
+msgstr "ለማስታወሻው ቀለም ይምረጡ"
+
+#: stickynotes/sticky-notes-properties.ui:214
+msgid "Pick a color for the sticky note"
+msgstr "ለ ማስታወሻው ፊደል ይምረጡ"
+
+#: stickynotes/sticky-notes-properties.ui:240
+msgid "Choose a font for the note"
+msgstr "ለማስታወሻው ፊደል ይምረጡ"
+
+#: stickynotes/sticky-notes-properties.ui:242
+msgid "Pick a font for the sticky note"
+msgstr "ለ ማስታወሻው ፊደል ይምረጡ"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:5
 msgid "Default width for new notes"
@@ -2456,6 +2418,10 @@ msgstr "ማስታወሻ በሚጠፋ ጊዜ ማረጋገጫ ይጠየቅ እን�
 msgid "Empty notes are always deleted without confirmation."
 msgstr "ባዶ ማስታወሻዎች ሁልጊዜ ምንም ማረጋገጫ ሳይጠየቅ ይጠፋሉ"
 
+#: stickynotes/stickynotes_applet.c:34
+msgid "_New Note"
+msgstr "_አዲስ ማስታወሻ"
+
 #: stickynotes/stickynotes_applet.c:37
 msgid "Hi_de Notes"
 msgstr "ማስታወሻ መደ_በቂያ"
@@ -2504,15 +2470,9 @@ msgid "Timer"
 msgstr "ጊዜ ቆጣሪ"
 
 #: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:277
+#: timerapplet/timerapplet.c:281
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "ጊዜ ማስጀመሪያ እና መቀበያ ማስታወቂያዎች በሚጨረስ ጊዜ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-panel-clock"
-msgstr ""
 
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
@@ -2530,67 +2490,67 @@ msgstr "የ ማስጠንቀቂያ ብቅ ባይ ማሳያ ጊዜ ቆጣሪው �
 msgid "Show dialog window when timer finish"
 msgstr "ጊዜ ቆጣሪው ሲጨርስ የ ንግግር መስኮት ማሳያ"
 
-#: timerapplet/timerapplet.c:79
+#: timerapplet/timerapplet.c:83
 msgid "_Start timer"
 msgstr "ጊዜ ቆጣሪ _ማስጀመሪያ"
 
-#: timerapplet/timerapplet.c:80
+#: timerapplet/timerapplet.c:84
 msgid "P_ause timer"
 msgstr "ጊዜ ቆጣሪ ማ_ስቆሚያ"
 
-#: timerapplet/timerapplet.c:81
+#: timerapplet/timerapplet.c:85
 msgid "S_top timer"
 msgstr "ጊዜ ቆጣሪ ማ_ስቆሚያ"
 
-#: timerapplet/timerapplet.c:82
+#: timerapplet/timerapplet.c:86
 msgid "R_eset"
 msgstr ""
 
-#: timerapplet/timerapplet.c:156 timerapplet/timerapplet.c:168
+#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
 msgid "Timer finished!"
 msgstr "ጊዜ ቆጣሪው ጨርሷል!"
 
-#: timerapplet/timerapplet.c:272
+#: timerapplet/timerapplet.c:276
 msgid "About Timer Applet"
 msgstr ""
 
-#: timerapplet/timerapplet.c:274
+#: timerapplet/timerapplet.c:278
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:310
+#: timerapplet/timerapplet.c:365
+msgid "Timer Applet"
+msgstr "የ ጊዜ ቆጣሪ "
+
+#: timerapplet/timerapplet-preferences.ui:28
 msgid "Timer Applet Preferences"
 msgstr "የ ጊዜ ቆጣሪ ምርጫዎች"
 
-#: timerapplet/timerapplet.c:323
-msgid "Name:"
-msgstr "ስም:"
+#: timerapplet/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "_ስም:"
 
-#: timerapplet/timerapplet.c:332
-msgid "Hours:"
-msgstr "ሰአቶች:"
+#: timerapplet/timerapplet-preferences.ui:93
+msgid "_Hours:"
+msgstr ""
 
-#: timerapplet/timerapplet.c:343
-msgid "Minutes:"
-msgstr "ደቂቃዎች:"
+#: timerapplet/timerapplet-preferences.ui:107
+msgid "_Minutes:"
+msgstr ""
 
-#: timerapplet/timerapplet.c:354
-msgid "Seconds:"
-msgstr "ሰከንዶች: "
+#: timerapplet/timerapplet-preferences.ui:121
+msgid "_Seconds:"
+msgstr ""
 
-#: timerapplet/timerapplet.c:365
-msgid "Show notification popup"
-msgstr "የ ማስጠንቀቂያ ብቅ ባይ ማሳያ "
+#: timerapplet/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
+msgstr ""
 
-#: timerapplet/timerapplet.c:369
-msgid "Show dialog"
-msgstr "ንግግር ማሳያ"
-
-#: timerapplet/timerapplet.c:403
-msgid "Timer Applet"
-msgstr "የ ጊዜ ቆጣሪ "
+#: timerapplet/timerapplet-preferences.ui:205
+msgid "Show _dialog"
+msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:6
@@ -2605,13 +2565,7 @@ msgstr "ቆሻሻ "
 msgid "Go to Trash"
 msgstr "ወደ ቆሻሽ መሄጃ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
-msgid "user-trash-full"
-msgstr ""
-
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
 msgid "_Empty Trash"
 msgstr "ቆሻሻውን ባዶ ማድረጊያ"
 
@@ -2676,22 +2630,22 @@ msgid "Trash Applet"
 msgstr "የ ቆሻሻ አፕሌት"
 
 #. Translators: the %s in this string should be read as %d.
-#: trashapplet/src/trash-empty.c:80
+#: trashapplet/src/trash-empty.c:72
 #, c-format
 msgid "Removing item %s of %s"
 msgstr "በማስወገድ ላይ እቃውን %s ከ %s"
 
 #. Translators: %s is a file name
-#: trashapplet/src/trash-empty.c:106
+#: trashapplet/src/trash-empty.c:98
 #, c-format
 msgid "Removing: %s"
 msgstr "በማስወገድ ላይ: %s"
 
-#: trashapplet/src/trash-empty.c:332
+#: trashapplet/src/trash-empty.c:324
 msgid "Empty all of the items from the trash?"
 msgstr "በቆሻሻ ውስጥ ያለውን ባዶ ላድርገው? "
 
-#: trashapplet/src/trash-empty.c:339
+#: trashapplet/src/trash-empty.c:331
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
