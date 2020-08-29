@@ -602,7 +602,9 @@ cpufreq/src/cpufreq-selector/Makefile
 cpufreq/pixmaps/Makefile
 cpufreq/help/Makefile
 timerapplet/Makefile
-timerapplet/org.mate.panel.applet.timer.gschema.xml
+timerapplet/data/Makefile
+timerapplet/data/org.mate.panel.applet.timer.gschema.xml
+timerapplet/src/Makefile
 command/Makefile
 command/data/Makefile
 command/data/org.mate.panel.applet.command.gschema.xml
