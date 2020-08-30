@@ -30,17 +30,17 @@
 static void
 shift_right(LoadGraph *g)
 {
-	unsigned i;
-	int* last_data;
+    unsigned i;
+    int* last_data;
 
-	/* data[g->draw_width - 1] becomes data[0] */
-	last_data = g->data[g->draw_width - 1];
+    /* data[g->draw_width - 1] becomes data[0] */
+    last_data = g->data[g->draw_width - 1];
 
-	/* data[i+1] = data[i] */
-	for(i = g->draw_width - 1; i != 0; --i)
-		g->data[i] = g->data[i - 1];
+    /* data[i+1] = data[i] */
+    for(i = g->draw_width - 1; i != 0; --i)
+        g->data[i] = g->data[i - 1];
 
-	g->data[0] = last_data;
+    g->data[0] = last_data;
 }
 
 
@@ -179,7 +179,7 @@ load_graph_draw (LoadGraph *g)
   /* this is Load graph */
   else
   {
-    guint maxload =	1;
+    guint maxload = 1;
     for (i = 0; i < g->draw_width; i++)
     {
       g->pos [i] = g->draw_height - 1;
@@ -219,7 +219,7 @@ load_graph_draw (LoadGraph *g)
       spacing = ((double) g->draw_height/load) * (k+1);
       cairo_move_to (cr, 0.5, spacing);
       cairo_line_to (cr, g->draw_width-0.5, spacing);
-		}
+        }
 
     cairo_stroke (cr);
   }
@@ -233,12 +233,12 @@ static gboolean
 load_graph_update (LoadGraph *g)
 {
     if (g->data == NULL)
-	return TRUE;
+    return TRUE;
 
     shift_right(g);
 
     if (g->tooltip_update)
-	multiload_applet_tooltip_update(g);
+    multiload_applet_tooltip_update(g);
 
     g->get_data (g->draw_height, g->data [0], g);
 
@@ -252,7 +252,7 @@ load_graph_unalloc (LoadGraph *g)
     guint i;
 
     if (!g->allocated)
-		return;
+        return;
 
     for (i = 0; i < g->draw_width; i++)
     {

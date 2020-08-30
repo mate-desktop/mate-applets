@@ -6,8 +6,8 @@
 /* Create new load graph. */
 G_GNUC_INTERNAL LoadGraph *
 load_graph_new (MultiloadApplet *multiload, guint n, const gchar *label,
-		guint id, guint speed, guint size, gboolean visible, 
-		const gchar *name, LoadGraphDataFunc get_data);
+                guint id, guint speed, guint size, gboolean visible, 
+                const gchar *name, LoadGraphDataFunc get_data);
 
 /* Start load graph. */
 G_GNUC_INTERNAL void
@@ -20,5 +20,5 @@ load_graph_stop (LoadGraph *g);
 /* free load graph */
 G_GNUC_INTERNAL void
 load_graph_unalloc (LoadGraph *g);
-		      
+
 #endif
