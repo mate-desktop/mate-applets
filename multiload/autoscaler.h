@@ -8,13 +8,13 @@ typedef struct _AutoScaler AutoScaler;
 
 struct _AutoScaler
 {
-	/* const */ unsigned update_interval;
-	/* const */ unsigned floor;
-	unsigned max;
-	unsigned count;
-	time_t last_update;
-	float sum;
-	float last_average;
+    /* const */ unsigned update_interval;
+    /* const */ unsigned floor;
+    unsigned max;
+    unsigned count;
+    time_t last_update;
+    float sum;
+    float last_average;
 };
 
 
