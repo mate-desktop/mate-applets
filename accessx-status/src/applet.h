@@ -76,41 +76,41 @@
 #define BOUNCEKEYS_ICON           "mate-ax-bouncekeys"
 
 typedef enum {
-	ACCESSX_STATUS_ERROR_NONE = 0,
-	ACCESSX_STATUS_ERROR_XKB_DISABLED,
-	ACCESSX_STATUS_ERROR_UNKNOWN
+    ACCESSX_STATUS_ERROR_NONE = 0,
+    ACCESSX_STATUS_ERROR_XKB_DISABLED,
+    ACCESSX_STATUS_ERROR_UNKNOWN
 }AccessxStatusErrorType;
 
 typedef struct {
-	MatePanelApplet* applet;
-	GtkWidget* box;
-	GtkWidget* idlefoo;
-	GtkWidget* mousefoo;
-	GtkWidget* stickyfoo;
-	GtkWidget* slowfoo;
-	GtkWidget* bouncefoo;
-	GtkWidget* shift_indicator;
-	GtkWidget* ctrl_indicator;
-	GtkWidget* alt_indicator;
-	GtkWidget* meta_indicator;
-	GtkWidget* hyper_indicator;
-	GtkWidget* super_indicator;
-	GtkWidget* alt_graph_indicator;
-	MatePanelAppletOrient orient;
-	GtkIconFactory* icon_factory;
-	gboolean initialized;
-	XkbDescRec* xkb;
-	Display* xkb_display;
-	AccessxStatusErrorType error_type;
+    MatePanelApplet* applet;
+    GtkWidget* box;
+    GtkWidget* idlefoo;
+    GtkWidget* mousefoo;
+    GtkWidget* stickyfoo;
+    GtkWidget* slowfoo;
+    GtkWidget* bouncefoo;
+    GtkWidget* shift_indicator;
+    GtkWidget* ctrl_indicator;
+    GtkWidget* alt_indicator;
+    GtkWidget* meta_indicator;
+    GtkWidget* hyper_indicator;
+    GtkWidget* super_indicator;
+    GtkWidget* alt_graph_indicator;
+    MatePanelAppletOrient orient;
+    GtkIconFactory* icon_factory;
+    gboolean initialized;
+    XkbDescRec* xkb;
+    Display* xkb_display;
+    AccessxStatusErrorType error_type;
 } AccessxStatusApplet;
 
 typedef enum {
-	ACCESSX_STATUS_MODIFIERS = 1 << 0,
-	ACCESSX_STATUS_SLOWKEYS = 1 << 1,
-	ACCESSX_STATUS_BOUNCEKEYS = 1 << 2,
-	ACCESSX_STATUS_MOUSEKEYS = 1 << 3,
-	ACCESSX_STATUS_ENABLED = 1 << 4,
-	ACCESSX_STATUS_ALL = 0xFFFF
+    ACCESSX_STATUS_MODIFIERS = 1 << 0,
+    ACCESSX_STATUS_SLOWKEYS = 1 << 1,
+    ACCESSX_STATUS_BOUNCEKEYS = 1 << 2,
+    ACCESSX_STATUS_MOUSEKEYS = 1 << 3,
+    ACCESSX_STATUS_ENABLED = 1 << 4,
+    ACCESSX_STATUS_ALL = 0xFFFF
 } AccessxStatusNotifyType;
 
 #endif
