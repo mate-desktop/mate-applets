@@ -142,15 +142,15 @@ typedef struct _ProgressData {
 } ProgressData;
 
 /* battstat_applet.c */
-void reconfigure_layout( ProgressData *battstat );
-void battstat_show_help( ProgressData *battstat, const char *section );
+void reconfigure_layout (ProgressData *battstat);
+void battstat_show_help (ProgressData *battstat, const char *section);
 void prop_cb (GtkAction *, ProgressData *);
 
 /* power-management.c */
-const char *power_management_getinfo( BatteryStatus *status );
+const char *power_management_getinfo (BatteryStatus *status);
 const char *power_management_initialise (void (*callback) (void));
-void power_management_cleanup( void );
+void power_management_cleanup (void);
 
-int power_management_using_upower( void );
+int power_management_using_upower (void);
 
 #endif /* _battstat_h_ */
