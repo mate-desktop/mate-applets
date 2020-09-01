@@ -34,7 +34,7 @@ static UpClient *upc;
 static void (*status_updated_callback) (void);
 
 
-/* status_updated_callback() can not be called directly because at the time of
+/* status_updated_callback () can not be called directly because at the time of
  * the device-remove signal, the device is not actually removed from the list
  * of devices known to the up_client object (see libupower-glib/up-client.c in
  * upower). Waiting for the next idle timer works around this issue and has has
@@ -64,12 +64,12 @@ schedule_status_callback (void)
 
 static void
 device_cb (UpClient *client, UpDevice *device, gpointer user_data) {
-  schedule_status_callback();
+  schedule_status_callback ();
 }
 
 static void
 device_removed_cb (UpClient *client, const gchar *object_path, gpointer user_data) {
-  schedule_status_callback();
+  schedule_status_callback ();
 }
 
 /* ---- public functions ---- */
@@ -79,10 +79,10 @@ battstat_upower_initialise (void (*callback) (void))
 {
   status_updated_callback = callback;
 
-  if( upc != NULL )
-    return g_strdup( "Already initialised!" );
+  if (upc != NULL)
+    return g_strdup ("Already initialised!");
 
-  if( (upc = up_client_new() ) == NULL )
+  if ((upc = up_client_new ()) == NULL)
     goto error_out;
 
   GPtrArray *devices;
@@ -90,15 +90,15 @@ battstat_upower_initialise (void (*callback) (void))
   if (!devices) {
     goto error_shutdownclient;
   }
-  g_ptr_array_unref(devices);
+  g_ptr_array_unref (devices);
 
-  g_signal_connect_after( upc, "device-added", G_CALLBACK (device_cb), NULL );
-  g_signal_connect_after( upc, "device-removed", G_CALLBACK (device_removed_cb), NULL );
+  g_signal_connect_after (upc, "device-added", G_CALLBACK (device_cb), NULL);
+  g_signal_connect_after (upc, "device-removed", G_CALLBACK (device_removed_cb), NULL);
 
   return NULL;
 
 error_shutdownclient:
-  g_object_unref( upc );
+  g_object_unref (upc);
   upc = NULL;
 
 error_out:
@@ -106,12 +106,12 @@ error_out:
 }
 
 void
-battstat_upower_cleanup( void )
+battstat_upower_cleanup (void)
 {
-  if( upc == NULL )
+  if (upc == NULL)
     return;
   
-  g_object_unref( upc );
+  g_object_unref (upc);
   upc = NULL;
 }
 
@@ -130,14 +130,14 @@ battstat_upower_cleanup( void )
  *   http://lists.freedesktop.org/archives/hal/2005-July/002841.html
  */
 void
-battstat_upower_get_battery_info( BatteryStatus *status )
+battstat_upower_get_battery_info (BatteryStatus *status)
 {
 
   GPtrArray *devices = up_client_get_devices2 (upc);
 
   /* The calculation to get overall percentage power remaining is as follows:
    *
-   *    Sum( Current charges ) / Sum( Full Capacities )
+   *    Sum (Current charges) / Sum (Full Capacities)
    *
    * We can't just take an average of all of the percentages since this
    * doesn't deal with the case that one battery might have a larger
@@ -179,15 +179,15 @@ battstat_upower_get_battery_info( BatteryStatus *status )
 
   /* For each physical battery bay... */
   int i;
-  for( i = 0; i < devices->len; i++ )
+  for (i = 0; i < devices->len; i++)
   {
-    UpDevice *upd = g_ptr_array_index( devices, i );
+    UpDevice *upd = g_ptr_array_index (devices, i);
 
     int type, state;
     double current_charge, full_capacity, rate;
     gint64 time_to_full, time_to_empty;
 
-    g_object_get( upd,
+    g_object_get (upd,
       "kind", &type,
       "state", &state,
       "energy", &current_charge,
@@ -195,7 +195,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
       "energy-rate", &rate,
       "time-to-full", &time_to_full,
       "time-to-empty", &time_to_empty,
-      NULL );
+      NULL);
 
     /* Only count batteries here */
 
@@ -206,11 +206,11 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     present++;
 
     /* At least one battery charging -> composite battery is charging. */
-    if( state == UP_DEVICE_STATE_CHARGING )
+    if (state == UP_DEVICE_STATE_CHARGING)
       charging = 1;
 
     /* At least one battery is discharging -> we're not on AC. */
-    if( state == UP_DEVICE_STATE_DISCHARGING )
+    if (state == UP_DEVICE_STATE_DISCHARGING)
       on_ac_power = 0;
 
     /* Sum the totals for current charge, design capacity, (dis)charge rate. */
@@ -222,7 +222,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     remaining_time = (state == UP_DEVICE_STATE_DISCHARGING ? time_to_empty : time_to_full);
   }
 
-  if( !present || full_capacity_total <= 0 || (charging && !on_ac_power) )
+  if (!present || full_capacity_total <= 0 || (charging && !on_ac_power))
   {
     /* Either no battery is present or something has gone horribly wrong.
      * In either case we must return that the composite battery is not
@@ -234,7 +234,7 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     status->on_ac_power = TRUE;
     status->charging = FALSE;
 
-    g_ptr_array_unref( devices );
+    g_ptr_array_unref (devices);
     return;
   }
 
@@ -243,11 +243,11 @@ battstat_upower_get_battery_info( BatteryStatus *status )
 
   /* As per above, overall charge is:
    *
-   *    Sum( Current charges ) / Sum( Full Capacities )
+   *    Sum (Current charges) / Sum (Full Capacities)
    */
-  status->percent = ( current_charge_total / full_capacity_total ) * 100.0 + 0.5;
+  status->percent =  (current_charge_total / full_capacity_total) * 100.0 + 0.5;
 
-  if( present == 1 )
+  if (present == 1)
   {
     /* In the case of exactly one battery, report the time remaining figure
      * from upower directly since it might have come from an authorative source
@@ -258,13 +258,13 @@ battstat_upower_get_battery_info( BatteryStatus *status )
      * unknown time remaining.
      */
 
-    if( remaining_time == 0 )
+    if (remaining_time == 0)
       status->minutes = -1;
     else
       status->minutes = (remaining_time + 30) / 60;
   }
   /* Rest of cases to deal with multiple battery systems... */
-  else if( !on_ac_power && rate_total != 0 )
+  else if (!on_ac_power && rate_total != 0)
   {
     /* Then we're discharging.  Calculate time remaining until at zero. */
 
@@ -272,9 +272,9 @@ battstat_upower_get_battery_info( BatteryStatus *status )
 
     remaining = current_charge_total;
     remaining /= rate_total;
-    status->minutes = (int) floor( remaining * 60.0 + 0.5 );
+    status->minutes = (int) floor (remaining * 60.0 + 0.5);
   }
-  else if( charging && rate_total != 0 )
+  else if (charging && rate_total != 0)
   {
     /* Calculate time remaining until charged.  For systems with more than
      * one battery, this code is very approximate.  The assumption is that if
@@ -286,11 +286,11 @@ battstat_upower_get_battery_info( BatteryStatus *status )
     double remaining;
 
     remaining = full_capacity_total - current_charge_total;
-    if( remaining < 0 )
+    if (remaining < 0)
       remaining = 0;
     remaining /= rate_total;
 
-    status->minutes = (int) floor( remaining * 60.0 + 0.5 );
+    status->minutes = (int) floor (remaining * 60.0 + 0.5);
   }
   else
   {
@@ -302,27 +302,27 @@ battstat_upower_get_battery_info( BatteryStatus *status )
   status->charging = charging;
   status->on_ac_power = on_ac_power;
   
-  g_ptr_array_unref( devices );
+  g_ptr_array_unref (devices);
 }
 
 void
-error_dialog( const char *fmt , ...)
+error_dialog (const char *fmt , ...)
 {
   va_list ap;
-  va_start(ap, fmt);
+  va_start (ap, fmt);
   char str[1000];
-  vsprintf(str, fmt, ap);
-  va_end(ap);
+  vsprintf (str, fmt, ap);
+  va_end (ap);
   GtkWidget *dialog;
 
-  dialog = gtk_message_dialog_new( NULL, 0, GTK_MESSAGE_ERROR,
+  dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR,
                                    GTK_BUTTONS_OK, "%s", str);
 
-  g_signal_connect_swapped( G_OBJECT (dialog), "response",
+  g_signal_connect_swapped (G_OBJECT (dialog), "response",
                             G_CALLBACK (gtk_widget_destroy),
-                            G_OBJECT (dialog) );
+                            G_OBJECT (dialog));
 
-  gtk_widget_show_all( dialog );
+  gtk_widget_show_all (dialog);
 }
 
 #endif /* HAVE_UPOWER */

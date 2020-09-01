@@ -22,18 +22,18 @@
 #define __ACPI_LINUX_H__
 
 struct acpi_info {
-  const char *ac_state_state, *batt_state_state, *charging_state;
-  gboolean  ac_online;
-  int       event_fd;
-  int       max_capacity;
-  int       low_capacity;
-  int       critical_capacity;
-  GIOChannel  * channel;
+    const char *ac_state_state, *batt_state_state, *charging_state;
+    gboolean  ac_online;
+    int       event_fd;
+    int       max_capacity;
+    int       low_capacity;
+    int       critical_capacity;
+    GIOChannel  * channel;
 };
 
-gboolean acpi_linux_read(struct apm_info *apminfo, struct acpi_info * acpiinfo);
-gboolean acpi_process_event(struct acpi_info * acpiinfo);
-gboolean acpi_linux_init(struct acpi_info * acpiinfo);
-void acpi_linux_cleanup(struct acpi_info * acpiinfo);
+gboolean acpi_linux_read (struct apm_info *apminfo, struct acpi_info * acpiinfo);
+gboolean acpi_process_event (struct acpi_info * acpiinfo);
+gboolean acpi_linux_init (struct acpi_info * acpiinfo);
+void acpi_linux_cleanup (struct acpi_info * acpiinfo);
 
 #endif /* __ACPI_LINUX_H__ */

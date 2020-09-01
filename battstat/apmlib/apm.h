@@ -51,22 +51,22 @@ typedef struct apm_info
 }
 apm_info;
 
-extern int apm_exists(void);
-extern int apm_read(apm_info * i);
-extern dev_t apm_dev(void);
-extern int apm_open(void);
-extern int apm_close(int fd);
-extern int apm_get_events(int fd, int timeout, apm_event_t * events, int n);
-extern int apm_suspend(int fd);
-extern int apm_standby(int fd);
-extern int apm_set_ignore(int fd, int mode);
-extern unsigned int apm_last_error(int fd);
-extern const char *apm_error_name( unsigned int err );
-extern int apm_reject(int fd);
-extern const char *apm_event_name(apm_event_t event);
-extern const char *apm_time(time_t t);
-extern const char *apm_delta_time(time_t then, time_t now);
-extern const char *apm_time_nosec(time_t t);
+extern int apm_exists (void);
+extern int apm_read (apm_info * i);
+extern dev_t apm_dev (void);
+extern int apm_open (void);
+extern int apm_close (int fd);
+extern int apm_get_events (int fd, int timeout, apm_event_t * events, int n);
+extern int apm_suspend (int fd);
+extern int apm_standby (int fd);
+extern int apm_set_ignore (int fd, int mode);
+extern unsigned int apm_last_error (int fd);
+extern const char *apm_error_name (unsigned int err);
+extern int apm_reject (int fd);
+extern const char *apm_event_name (apm_event_t event);
+extern const char *apm_time (time_t t);
+extern const char *apm_delta_time (time_t then, time_t now);
+extern const char *apm_time_nosec (time_t t);
 
 #define SUSPEND 0
 #define STANDBY 1
@@ -79,4 +79,4 @@ extern const char *apm_time_nosec(time_t t);
 #define APM_REJECT_ENABLED
 #endif
 
-#endif	/* __APM_H__ */
+#endif /* __APM_H__ */

@@ -94,19 +94,19 @@ static int using_upower;
 BatteryStatus test_status;
 
 static void
-test_update_boolean( GtkToggleButton *button, gboolean *value )
+test_update_boolean (GtkToggleButton *button, gboolean *value)
 {
-  *value = gtk_toggle_button_get_active( button );
+  *value = gtk_toggle_button_get_active (button);
 }
 
 static void
-test_update_integer( GtkSpinButton *spin, gint *value )
+test_update_integer (GtkSpinButton *spin, gint *value)
 {
-  *value = gtk_spin_button_get_value_as_int( spin );
+  *value = gtk_spin_button_get_value_as_int (spin);
 }
 
 static void
-initialise_test( void )
+initialise_test (void)
 {
   GtkWidget *w;
   GtkBox *box;
@@ -117,43 +117,43 @@ initialise_test( void )
   test_status.on_ac_power = FALSE;
   test_status.charging = FALSE;
 
-  box = GTK_BOX( gtk_box_new (GTK_ORIENTATION_VERTICAL, 5 ) );
+  box = GTK_BOX (gtk_box_new (GTK_ORIENTATION_VERTICAL, 5));
 
-  gtk_box_pack_start( box, gtk_label_new( "percent" ), TRUE, TRUE, 0);
-  w = gtk_spin_button_new_with_range( -1.0, 100.0, 1 );
-  gtk_spin_button_set_value( GTK_SPIN_BUTTON( w ), 50.0 );
-  g_signal_connect( G_OBJECT( w ), "value-changed",
-                    G_CALLBACK( test_update_integer ), &test_status.percent );
-  gtk_box_pack_start( box, w, TRUE, TRUE, 0 );
+  gtk_box_pack_start (box, gtk_label_new ("percent"), TRUE, TRUE, 0);
+  w = gtk_spin_button_new_with_range (-1.0, 100.0, 1);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (w), 50.0);
+  g_signal_connect (G_OBJECT (w), "value-changed",
+                    G_CALLBACK (test_update_integer), &test_status.percent);
+  gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
-  gtk_box_pack_start( box, gtk_label_new( "minutes" ), TRUE, TRUE, 0);
-  w = gtk_spin_button_new_with_range( -1.0, 1000.0, 1 );
-  gtk_spin_button_set_value( GTK_SPIN_BUTTON( w ), 180.0 );
-  g_signal_connect( G_OBJECT( w ), "value-changed",
-                    G_CALLBACK( test_update_integer ), &test_status.minutes );
-  gtk_box_pack_start( box, w, TRUE, TRUE, 0);
+  gtk_box_pack_start (box, gtk_label_new ("minutes"), TRUE, TRUE, 0);
+  w = gtk_spin_button_new_with_range (-1.0, 1000.0, 1);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (w), 180.0);
+  g_signal_connect (G_OBJECT (w), "value-changed",
+                    G_CALLBACK (test_update_integer), &test_status.minutes);
+  gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
 
-  w = gtk_toggle_button_new_with_label( "on_ac_power" );
-  g_signal_connect( G_OBJECT( w ), "toggled",
-                    G_CALLBACK( test_update_boolean ),
-                    &test_status.on_ac_power );
-  gtk_box_pack_start( box, w, TRUE, TRUE, 0);
+  w = gtk_toggle_button_new_with_label ("on_ac_power");
+  g_signal_connect (G_OBJECT (w), "toggled",
+                    G_CALLBACK (test_update_boolean),
+                    &test_status.on_ac_power);
+  gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
-  w = gtk_toggle_button_new_with_label( "charging" );
-  g_signal_connect( G_OBJECT( w ), "toggled",
-                    G_CALLBACK( test_update_boolean ), &test_status.charging );
-  gtk_box_pack_start( box, w, TRUE, TRUE, 0);
+  w = gtk_toggle_button_new_with_label ("charging");
+  g_signal_connect (G_OBJECT (w), "toggled",
+                    G_CALLBACK (test_update_boolean), &test_status.charging);
+  gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
-  w = gtk_toggle_button_new_with_label( "present" );
-  gtk_toggle_button_set_active( GTK_TOGGLE_BUTTON( w ), TRUE );
-  g_signal_connect( G_OBJECT( w ), "toggled",
-                    G_CALLBACK( test_update_boolean ), &test_status.present );
-  gtk_box_pack_start( box, w, TRUE, TRUE, 0);
+  w = gtk_toggle_button_new_with_label ("present");
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (w), TRUE);
+  g_signal_connect (G_OBJECT (w), "toggled",
+                    G_CALLBACK (test_update_boolean), &test_status.present);
+  gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
-  w = gtk_window_new( GTK_WINDOW_TOPLEVEL );
-  gtk_container_add( GTK_CONTAINER( w ), GTK_WIDGET( box ) );
-  gtk_widget_show_all( w );
+  w = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_container_add (GTK_CONTAINER (w), GTK_WIDGET (box));
+  gtk_widget_show_all (w);
 }
 
 static const char *
@@ -161,8 +161,8 @@ apm_readinfo (BatteryStatus *status)
 {
   static int test_initialised;
 
-  if( !test_initialised )
-    initialise_test();
+  if (!test_initialised)
+    initialise_test ();
 
   test_initialised = 1;
   *status = test_status;
@@ -189,13 +189,13 @@ apm_readinfo (BatteryStatus *status)
 {
   int fd;
 
-  if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
+  if (DEBUG) g_print ("apm_readinfo () (FreeBSD)\n");
 
   if (using_acpi) {
     if (acpi_count <= 0) {
       acpi_count = 30;
-      acpi_process_event(&acpiinfo);
-      if (acpi_freebsd_read(&apminfo, &acpiinfo) == FALSE)
+      acpi_process_event (&acpiinfo);
+      if (acpi_freebsd_read (&apminfo, &acpiinfo) == FALSE)
         return ERR_FREEBSD_ACPI;
     }
     acpi_count--;
@@ -206,17 +206,17 @@ apm_readinfo (BatteryStatus *status)
        FreeBSD.  Each time this functions is called (once every second)
        the APM device is opened, read from and then closed.
     */
-    fd = open(APMDEVICE, O_RDONLY);
+    fd = open (APMDEVICE, O_RDONLY);
     if (fd == -1) {
       return ERR_OPEN_APMDEV;
     }
 
-    if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
-      err(1, "ioctl(APMIO_GETINFO)");
+    if (ioctl (fd, APMIO_GETINFO, &apminfo) == -1)
+      err (1, "ioctl (APMIO_GETINFO)");
 
-    close(fd);
+    close (fd);
 
-    if(apminfo.ai_status == 0)
+    if (apminfo.ai_status == 0)
       return ERR_APM_E;
   }
 
@@ -257,9 +257,9 @@ apm_readinfo (BatteryStatus *status)
   int fd;
 
 #if defined(__NetBSD__)
-  if (DEBUG) g_print("apm_readinfo() (NetBSD)\n");
+  if (DEBUG) g_print ("apm_readinfo () (NetBSD)\n");
 #else /* __OpenBSD__ */
-  if (DEBUG) g_print("apm_readinfo() (OpenBSD)\n");
+  if (DEBUG) g_print ("apm_readinfo () (OpenBSD)\n");
 #endif
 
   fd = open(APMDEVICE, O_RDONLY);
@@ -268,9 +268,9 @@ apm_readinfo (BatteryStatus *status)
     pm_initialised = 0;
     return ERR_OPEN_APMDEV;
   }
-  if (ioctl(fd, APM_IOC_GETPOWER, &apminfo) == -1)
-    err(1, "ioctl(APM_IOC_GETPOWER)");
-  close(fd);
+  if (ioctl (fd, APM_IOC_GETPOWER, &apminfo) == -1)
+    err(1, "ioctl (APM_IOC_GETPOWER)");
+  close (fd);
 
   status->present = TRUE;
   status->on_ac_power = apminfo.ac_state ? 1 : 0;
@@ -295,13 +295,13 @@ static struct apm_info apminfo;
 static gboolean acpi_callback (GIOChannel * chan, GIOCondition cond, gpointer data)
 {
   if (cond & (G_IO_ERR | G_IO_HUP)) {
-    acpi_linux_cleanup(&acpiinfo);
+    acpi_linux_cleanup (&acpiinfo);
     apminfo.battery_percentage = -1;
     return FALSE;
   }
   
-  if (acpi_process_event(&acpiinfo)) {
-    acpi_linux_read(&apminfo, &acpiinfo);
+  if (acpi_process_event (&acpiinfo)) {
+    acpi_linux_read (&apminfo, &acpiinfo);
   }
   return TRUE;
 }
@@ -309,35 +309,35 @@ static gboolean acpi_callback (GIOChannel * chan, GIOCondition cond, gpointer da
 static const char *
 apm_readinfo (BatteryStatus *status)
 {
-  /* Code for Linux by Thomas Hood <jdthood@mail.com>. apm_read() will
+  /* Code for Linux by Thomas Hood <jdthood@mail.com>. apm_read () will
      read from /proc/... instead and we do not need to open the device
      ourselves.
   */
-  if (DEBUG) g_print("apm_readinfo() (Linux)\n");
+  if (DEBUG) g_print ("apm_readinfo () (Linux)\n");
 
   /* ACPI support added by Lennart Poettering <lennart@poettering.de> 10/27/2001
    * Updated by David Moore <dcm@acm.org> 5/29/2003 to poll less and
    *   use ACPI events. */
   if (using_acpi && acpiinfo.event_fd >= 0) {
     if (acpi_count <= 0) {
-      /* Only call this one out of 30 calls to apm_readinfo() (every 30 seconds)
+      /* Only call this one out of 30 calls to apm_readinfo () (every 30 seconds)
        * since reading the ACPI system takes CPU cycles. */
       acpi_count=30;
-      acpi_linux_read(&apminfo, &acpiinfo);
+      acpi_linux_read (&apminfo, &acpiinfo);
     }
     acpi_count--;
   }
   /* If we lost the file descriptor with ACPI events, try to get it back. */
   else if (using_acpi) {
-      if (acpi_linux_init(&acpiinfo)) {
+      if (acpi_linux_init (&acpiinfo)) {
           acpiwatch = g_io_add_watch (acpiinfo.channel,
               G_IO_IN | G_IO_ERR | G_IO_HUP,
               acpi_callback, NULL);
-          acpi_linux_read(&apminfo, &acpiinfo);
+          acpi_linux_read (&apminfo, &acpiinfo);
       }
   }
   else
-    apm_read(&apminfo);
+    apm_read (&apminfo);
 
   status->present = TRUE;
   status->on_ac_power = apminfo.ac_line_status ? 1 : 0;
@@ -379,11 +379,11 @@ apm_readinfo (BatteryStatus *status)
  * the problem might be.  This error message is not to be freed.
  */
 const char *
-power_management_getinfo( BatteryStatus *status )
+power_management_getinfo (BatteryStatus *status)
 {
   const char *retval;
 
-  if( !pm_initialised )
+  if (!pm_initialised)
   {
     status->on_ac_power = TRUE;
     status->minutes = -1;
@@ -395,27 +395,27 @@ power_management_getinfo( BatteryStatus *status )
   }
 
   #ifdef HAVE_UPOWER
-    if( using_upower)
+    if (using_upower)
     {
-      battstat_upower_get_battery_info( status );
+      battstat_upower_get_battery_info (status);
       return NULL;
     }
   #endif
   
-  retval = apm_readinfo( status );
+  retval = apm_readinfo (status);
 
-  if(status->percent == -1) {
+  if (status->percent == -1) {
     status->percent = 0;
     status->present = FALSE;
   }
 
-  if(status->percent > 100)
+  if (status->percent > 100)
     status->percent = 100;
 
-  if(status->percent == 100)
+  if (status->percent == 100)
     status->charging = FALSE;
 
-  if(!status->on_ac_power)
+  if (!status->on_ac_power)
     status->charging = FALSE;
 
   return retval;
@@ -442,7 +442,7 @@ power_management_initialise (void (*callback) (void))
 
   err = battstat_upower_initialise (callback);
 
-  if( err == NULL ) /* UPOWER is up */
+  if (err == NULL) /* UPOWER is up */
   {
     pm_initialised = 1;
     using_upower = TRUE;
@@ -450,12 +450,12 @@ power_management_initialise (void (*callback) (void))
   }
   else
     /* fallback to legacy methods */
-    g_free( err );
+    g_free (err);
 #endif /* HAVE_UPOWER */
 
 #ifdef __linux__
 
-  if (acpi_linux_init(&acpiinfo)) {
+  if (acpi_linux_init (&acpiinfo)) {
     using_acpi = TRUE;
     acpi_count = 0;
   }
@@ -464,21 +464,21 @@ power_management_initialise (void (*callback) (void))
 
   /* If neither ACPI nor APM could be read, but ACPI does seem to be
    * installed, warn the user how to get ACPI working. */
-  if (!using_acpi && (apm_exists() == 1) &&
-          (stat("/proc/acpi", &statbuf) == 0)) {
+  if (!using_acpi && (apm_exists () == 1) &&
+          (stat ("/proc/acpi", &statbuf) == 0)) {
     using_acpi = TRUE;
     acpi_count = 0;
     return ERR_ACPID;
   }
 
-  /* Watch for ACPI events and handle them immediately with acpi_callback(). */
+  /* Watch for ACPI events and handle them immediately with acpi_callback (). */
   if (using_acpi && acpiinfo.event_fd >= 0) {
     acpiwatch = g_io_add_watch (acpiinfo.channel,
         G_IO_IN | G_IO_ERR | G_IO_HUP,
         acpi_callback, NULL);
   }
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-  if (acpi_freebsd_init(&acpiinfo)) {
+  if (acpi_freebsd_init (&acpiinfo)) {
     using_acpi = TRUE;
     acpi_count = 0;
   }
@@ -496,12 +496,12 @@ power_management_initialise (void (*callback) (void))
  * Perform any cleanup that might be required.
  */
 void
-power_management_cleanup( void )
+power_management_cleanup (void)
 {
 #ifdef HAVE_UPOWER
-  if( using_upower)
+  if (using_upower)
   {
-    battstat_upower_cleanup();
+    battstat_upower_cleanup ();
     pm_initialised = 1;
     return;
   }
@@ -511,13 +511,13 @@ power_management_cleanup( void )
   if (using_acpi)
   {
     if (acpiwatch != 0)
-      g_source_remove(acpiwatch);
+      g_source_remove (acpiwatch);
      acpiwatch = 0;
-     acpi_linux_cleanup(&acpiinfo);
+     acpi_linux_cleanup (&acpiinfo);
   }
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
   if (using_acpi) {
-    acpi_freebsd_cleanup(&acpiinfo);
+    acpi_freebsd_cleanup (&acpiinfo);
   }
 #endif
 
@@ -525,7 +525,7 @@ power_management_cleanup( void )
 }
 
 int
-power_management_using_upower( void)
+power_management_using_upower (void)
 {
 #ifdef HAVE_UPOWER
  return using_upower;
