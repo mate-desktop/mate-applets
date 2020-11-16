@@ -44,93 +44,90 @@ cpufreq_monitor_cpuinfo_init (CPUFreqMonitorCPUInfo *monitor)
 static void
 cpufreq_monitor_cpuinfo_class_init (CPUFreqMonitorCPUInfoClass *klass)
 {
-        CPUFreqMonitorClass *monitor_class = CPUFREQ_MONITOR_CLASS (klass);
+    CPUFreqMonitorClass *monitor_class = CPUFREQ_MONITOR_CLASS (klass);
 
-        monitor_class->run = cpufreq_monitor_cpuinfo_run;
+    monitor_class->run = cpufreq_monitor_cpuinfo_run;
 }
 
 CPUFreqMonitor *
 cpufreq_monitor_cpuinfo_new (guint cpu)
 {
-        CPUFreqMonitorCPUInfo *monitor;
+    CPUFreqMonitorCPUInfo *monitor;
 
-        monitor = g_object_new (CPUFREQ_TYPE_MONITOR_CPUINFO, "cpu", cpu, NULL);
+    monitor = g_object_new (CPUFREQ_TYPE_MONITOR_CPUINFO, "cpu", cpu, NULL);
 
-        return CPUFREQ_MONITOR (monitor);
+    return CPUFREQ_MONITOR (monitor);
 }
 
 static gboolean
 cpufreq_monitor_cpuinfo_run (CPUFreqMonitor *monitor)
 {
-        gchar *file;
-        gchar                   **lines;
-        gchar *buffer = NULL;
-        gchar                    *p;
-        gint                      cpu, i;
-        gint cur_freq, max_freq;
-        gchar *governor;
-        GError *error = NULL;
+    gchar  *file;
+    gchar **lines;
+    gchar  *buffer = NULL;
+    gchar  *p;
+    gint    cpu, i;
+    gint    cur_freq, max_freq;
+    gchar  *governor;
+    GError *error = NULL;
 
-        file = g_strdup ("/proc/cpuinfo");
-        if (!cpufreq_file_get_contents (file, &buffer, NULL, &error)) {
-                g_warning ("%s", error->message);
-                g_error_free (error);
+    file = g_strdup ("/proc/cpuinfo");
+    if (!cpufreq_file_get_contents (file, &buffer, NULL, &error)) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-                g_free (file);
+        g_free (file);
+
+        return FALSE;
+    }
+    g_free (file);
+
+    /* TODO: SMP support */
+    lines = g_strsplit (buffer, "\n", -1);
+    for (i = 0; lines[i]; i++) {
+        if (g_ascii_strncasecmp ("cpu MHz", lines[i], strlen ("cpu MHz")) == 0) {
+            p = g_strrstr (lines[i], ":");
+
+            if (p == NULL) {
+                g_strfreev (lines);
+                g_free (buffer);
 
                 return FALSE;
+            }
+
+            if (strlen (lines[i]) < (size_t)(p - lines[i])) {
+                g_strfreev (lines);
+                g_free (buffer);
+
+                return FALSE;
+            }
+
+            if ((sscanf (p + 1, "%d.", &cpu)) != 1) {
+                g_strfreev (lines);
+                g_free (buffer);
+
+                return FALSE;
+            }
+
+            break;
         }
-        g_free (file);
-                
-        /* TODO: SMP support */
-        lines = g_strsplit (buffer, "\n", -1);
-        for (i = 0; lines[i]; i++) {
-                if (g_ascii_strncasecmp ("cpu MHz", lines[i], strlen ("cpu MHz")) == 0) {
-                        p = g_strrstr (lines[i], ":");
+    }
 
-                        if (p == NULL) {
-                                g_strfreev (lines);
-                                g_free (buffer);
-                                                  
-                                return FALSE;
-                        }
+    g_strfreev (lines);
+    g_free (buffer);
 
-                        if (strlen (lines[i]) < (size_t)(p - lines[i])) {
-                                g_strfreev (lines);
-                                g_free (buffer);
-                                                  
-                                return FALSE;
-                        }
+    governor = g_strdup (_("Frequency Scaling Unsupported"));
+    cur_freq = cpu * 1000;
+    max_freq = cur_freq;
 
-                        if ((sscanf (p + 1, "%d.", &cpu)) != 1) {
-                                g_strfreev (lines);
-                                g_free (buffer);
-                                                  
-                                return FALSE;
-                        }
+    g_object_set (G_OBJECT (monitor),
+                  "governor", governor,
+                  "frequency", cur_freq,
+                  "max-frequency", max_freq,
+                  NULL);
 
-                        break;
-                }
-        }
+    g_free (governor);
 
-        g_strfreev (lines);
-        g_free (buffer);
-           
-        governor = g_strdup (_("Frequency Scaling Unsupported"));
-        cur_freq = cpu * 1000;
-        max_freq = cur_freq;
-
-        g_object_set (G_OBJECT (monitor),
-                      "governor", governor,
-                      "frequency", cur_freq,
-                      "max-frequency", max_freq,
-                      NULL);
-
-        g_free (governor);
-
-        return TRUE;
+    return TRUE;
 }
-
-
-
 
