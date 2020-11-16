@@ -55,55 +55,55 @@ cpufreq_monitor_libcpufreq_init (CPUFreqMonitorLibcpufreq *monitor)
 
 static GObject *
 cpufreq_monitor_libcpufreq_constructor (GType                  type,
-					guint                  n_construct_properties,
-					GObjectConstructParam *construct_params)
+                                        guint                  n_construct_properties,
+                                        GObjectConstructParam *construct_params)
 {
-	GObject *object;
-	gulong   max_freq, min_freq;
-	guint    cpu;
+    GObject *object;
+    gulong   max_freq, min_freq;
+    guint    cpu;
 
-	object = G_OBJECT_CLASS (
-		cpufreq_monitor_libcpufreq_parent_class)->constructor (type,
-								       n_construct_properties,
-								       construct_params);
-	g_object_get (G_OBJECT (object),
-		      "cpu", &cpu,
-		      NULL);
-	
-	if (cpufreq_get_hardware_limits (cpu, &min_freq, &max_freq) != 0) {
-		g_warning ("Error getting CPUINFO_MAX\n");
-		max_freq = -1;
-	}
+    object = G_OBJECT_CLASS (
+        cpufreq_monitor_libcpufreq_parent_class)->constructor (type,
+                                                               n_construct_properties,
+                                                               construct_params);
+    g_object_get (G_OBJECT (object),
+                  "cpu", &cpu,
+                  NULL);
 
-	g_object_set (G_OBJECT (object),
-		      "max-frequency", max_freq,
-		      NULL);
+    if (cpufreq_get_hardware_limits (cpu, &min_freq, &max_freq) != 0) {
+        g_warning ("Error getting CPUINFO_MAX\n");
+        max_freq = -1;
+    }
 
-	return object;
+    g_object_set (G_OBJECT (object),
+                  "max-frequency", max_freq,
+                  NULL);
+
+    return object;
 }
 
 static void
 cpufreq_monitor_libcpufreq_class_init (CPUFreqMonitorLibcpufreqClass *klass)
 {
-	GObjectClass        *object_class = G_OBJECT_CLASS (klass);
-        CPUFreqMonitorClass *monitor_class = CPUFREQ_MONITOR_CLASS (klass);
+    GObjectClass        *object_class = G_OBJECT_CLASS (klass);
+    CPUFreqMonitorClass *monitor_class = CPUFREQ_MONITOR_CLASS (klass);
 
-	object_class->constructor = cpufreq_monitor_libcpufreq_constructor;
-	
-        monitor_class->run = cpufreq_monitor_libcpufreq_run;
-        monitor_class->get_available_frequencies = cpufreq_monitor_libcpufreq_get_available_frequencies;
-        monitor_class->get_available_governors = cpufreq_monitor_libcpufreq_get_available_governors;
+    object_class->constructor = cpufreq_monitor_libcpufreq_constructor;
+
+    monitor_class->run = cpufreq_monitor_libcpufreq_run;
+    monitor_class->get_available_frequencies = cpufreq_monitor_libcpufreq_get_available_frequencies;
+    monitor_class->get_available_governors = cpufreq_monitor_libcpufreq_get_available_governors;
 }
 
 CPUFreqMonitor *
 cpufreq_monitor_libcpufreq_new (guint cpu)
 {
-        CPUFreqMonitorLibcpufreq *monitor;
+    CPUFreqMonitorLibcpufreq *monitor;
 
-        monitor = g_object_new (CPUFREQ_TYPE_MONITOR_LIBCPUFREQ,
-                                "cpu", cpu, NULL);
+    monitor = g_object_new (CPUFREQ_TYPE_MONITOR_LIBCPUFREQ,
+                            "cpu", cpu, NULL);
 
-        return CPUFREQ_MONITOR (monitor);
+    return CPUFREQ_MONITOR (monitor);
 }
 
 #ifdef HAVE_IS_CPU_ONLINE
@@ -113,103 +113,104 @@ extern int cpupower_is_cpu_online (unsigned int cpu);
 static gboolean
 cpufreq_monitor_libcpufreq_run (CPUFreqMonitor *monitor)
 {
-        guint          cpu;
-	CPUFreqPolicy *policy;
+    guint          cpu;
+    CPUFreqPolicy *policy;
 
-        g_object_get (G_OBJECT (monitor), "cpu", &cpu, NULL);
+    g_object_get (G_OBJECT (monitor), "cpu", &cpu, NULL);
 
-	policy = cpufreq_get_policy (cpu);
-	if (!policy) {
-		/* Check whether it failed because
-		 * cpu is not online.
-		 */
+    policy = cpufreq_get_policy (cpu);
+    if (!policy) {
+        /* Check whether it failed because
+         * cpu is not online.
+         */
 #ifndef HAVE_IS_CPU_ONLINE
-		if (!cpufreq_cpu_exists (cpu)) {
+        if (!cpufreq_cpu_exists (cpu)) {
 #else
-		if (cpupower_is_cpu_online (cpu)) {
+        if (cpupower_is_cpu_online (cpu)) {
 #endif
-			g_object_set (G_OBJECT (monitor), "online", FALSE, NULL);
-			return TRUE;
-		}
-		return FALSE;
-	}
+            g_object_set (G_OBJECT (monitor), "online", FALSE, NULL);
+            return TRUE;
+        }
+        return FALSE;
+    }
 
-        g_object_set (G_OBJECT (monitor),
-		      "online", TRUE,
-                      "governor", policy->governor,
-                      "frequency", cpufreq_get_freq_kernel (cpu),
-                      NULL);
+    g_object_set (G_OBJECT (monitor),
+                  "online", TRUE,
+                  "governor", policy->governor,
+                  "frequency", cpufreq_get_freq_kernel (cpu),
+                  NULL);
 
-	cpufreq_put_policy (policy);
-        
-        return TRUE;
+    cpufreq_put_policy (policy);
+
+    return TRUE;
 }
 
 static gint
-compare (gconstpointer a, gconstpointer b)
+compare (gconstpointer a,
+         gconstpointer b)
 {
-        gint aa, bb;
+    gint aa, bb;
 
-        aa = atoi ((gchar *) a);
-        bb = atoi ((gchar *) b);
+    aa = atoi ((gchar *) a);
+    bb = atoi ((gchar *) b);
 
-        if (aa == bb)
-                return 0;
-        else if (aa > bb)
-                return -1;
-        else
-                return 1;
+    if (aa == bb)
+        return 0;
+    else if (aa > bb)
+        return -1;
+    else
+        return 1;
 }
 
 static GList *
 cpufreq_monitor_libcpufreq_get_available_frequencies (CPUFreqMonitor *monitor)
 {
-	GList                *list = NULL;
-	guint                 cpu;
-	CPUFreqFrequencyList *freqs, *freq;
+    GList                *list = NULL;
+    guint                 cpu;
+    CPUFreqFrequencyList *freqs, *freq;
 
-        g_object_get (G_OBJECT (monitor),
-                      "cpu", &cpu, NULL);
+    g_object_get (G_OBJECT (monitor),
+                  "cpu", &cpu, NULL);
 
-	freqs = cpufreq_get_available_frequencies (cpu);
-	if (!freqs)
-		return NULL;
+    freqs = cpufreq_get_available_frequencies (cpu);
+    if (!freqs)
+        return NULL;
 
-	for (freq = freqs; freq; freq = freq->next) {
-		gchar *frequency;
+    for (freq = freqs; freq; freq = freq->next) {
+        gchar *frequency;
 
-		frequency = g_strdup_printf ("%lu", freq->frequency);
-		
-		if (!g_list_find_custom (list, frequency, compare))
-			list = g_list_prepend (list, frequency);
-		else
-			g_free (frequency);
-	}
+        frequency = g_strdup_printf ("%lu", freq->frequency);
 
-	cpufreq_put_available_frequencies (freqs);
+        if (!g_list_find_custom (list, frequency, compare))
+            list = g_list_prepend (list, frequency);
+        else
+            g_free (frequency);
+    }
 
-        return g_list_sort (list, compare);
+    cpufreq_put_available_frequencies (freqs);
+
+    return g_list_sort (list, compare);
 }
 
 static GList *
 cpufreq_monitor_libcpufreq_get_available_governors (CPUFreqMonitor *monitor)
 {
-	guint                cpu;
-        GList               *list = NULL;
-	CPUFreqGovernorList *govs, *gov;
+    guint                cpu;
+    GList               *list = NULL;
+    CPUFreqGovernorList *govs, *gov;
 
-        g_object_get (G_OBJECT (monitor),
-                      "cpu", &cpu, NULL);
-        
-	govs = cpufreq_get_available_governors (cpu);
-	if (!govs)
-		return NULL;
+    g_object_get (G_OBJECT (monitor),
+                  "cpu", &cpu, NULL);
 
-	for (gov = govs; gov; gov = gov->next) {
-		list = g_list_prepend (list, g_strdup (gov->governor));
-	}
+    govs = cpufreq_get_available_governors (cpu);
+    if (!govs)
+        return NULL;
 
-	cpufreq_put_available_governors (govs);
+    for (gov = govs; gov; gov = gov->next) {
+        list = g_list_prepend (list, g_strdup (gov->governor));
+    }
 
-        return list;
+    cpufreq_put_available_governors (govs);
+
+    return list;
 }
