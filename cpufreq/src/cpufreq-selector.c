@@ -27,16 +27,16 @@
 #include "cpufreq-selector.h"
 
 struct _CPUFreqSelector {
-	GObject parent;
+    GObject parent;
 
 #ifdef HAVE_POLKIT
-	GDBusConnection *system_bus;
-	GDBusProxy      *proxy;
+    GDBusConnection *system_bus;
+    GDBusProxy      *proxy;
 #endif /* HAVE_POLKIT */
 };
 
 struct _CPUFreqSelectorClass {
-	GObjectClass parent_class;
+    GObjectClass parent_class;
 };
 
 G_DEFINE_TYPE (CPUFreqSelector, cpufreq_selector, G_TYPE_OBJECT)
@@ -45,21 +45,21 @@ static void
 cpufreq_selector_finalize (GObject *object)
 {
 #ifdef HAVE_POLKIT
-	CPUFreqSelector *selector = CPUFREQ_SELECTOR (object);
+    CPUFreqSelector *selector = CPUFREQ_SELECTOR (object);
 
-	g_clear_object (&selector->proxy);
-	g_clear_object (&selector->system_bus);
+    g_clear_object (&selector->proxy);
+    g_clear_object (&selector->system_bus);
 #endif /* HAVE_POLKIT */
 
-	G_OBJECT_CLASS (cpufreq_selector_parent_class)->finalize (object);
+    G_OBJECT_CLASS (cpufreq_selector_parent_class)->finalize (object);
 }
 
 static void
 cpufreq_selector_class_init (CPUFreqSelectorClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+    GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->finalize = cpufreq_selector_finalize;
+    object_class->finalize = cpufreq_selector_finalize;
 }
 
 static void
@@ -70,52 +70,52 @@ cpufreq_selector_init (CPUFreqSelector *selector)
 CPUFreqSelector *
 cpufreq_selector_get_default (void)
 {
-	static CPUFreqSelector *selector = NULL;
+    static CPUFreqSelector *selector = NULL;
 
-	if (!selector)
-		selector = CPUFREQ_SELECTOR (g_object_new (CPUFREQ_TYPE_SELECTOR, NULL));
+    if (!selector)
+        selector = CPUFREQ_SELECTOR (g_object_new (CPUFREQ_TYPE_SELECTOR, NULL));
 
-	return selector;
+    return selector;
 }
 
 #ifdef HAVE_POLKIT
 typedef enum {
-	FREQUENCY,
-	GOVERNOR
+    FREQUENCY,
+    GOVERNOR
 } CPUFreqSelectorCall;
 
 typedef struct {
-	CPUFreqSelector *selector;
+    CPUFreqSelector *selector;
 
-	CPUFreqSelectorCall call;
+    CPUFreqSelectorCall call;
 
-	guint  cpu;
-	guint  frequency;
-	gchar *governor;
+    guint  cpu;
+    guint  frequency;
+    gchar *governor;
 
-	guint32 parent_xid;
+    guint32 parent_xid;
 } SelectorAsyncData;
 
 static void
 selector_async_data_free (SelectorAsyncData *data)
 {
-	if (!data)
-		return;
+    if (!data)
+        return;
 
-	g_free (data->governor);
-	g_free (data);
+    g_free (data->governor);
+    g_free (data);
 }
 
 static gboolean
 cpufreq_selector_connect_to_system_bus (CPUFreqSelector *selector,
-					GError         **error)
+                                        GError         **error)
 {
-	if (selector->system_bus)
-		return TRUE;
+    if (selector->system_bus)
+        return TRUE;
 
-	selector->system_bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, error);
+    selector->system_bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, error);
 
-	return (selector->system_bus != NULL);
+    return (selector->system_bus != NULL);
 }
 
 
@@ -123,19 +123,19 @@ static gboolean
 cpufreq_selector_create_proxy (CPUFreqSelector  *selector,
                                GError          **error)
 {
-	if (selector->proxy)
-		return TRUE;
+    if (selector->proxy)
+        return TRUE;
 
-	selector->proxy = g_dbus_proxy_new_sync (selector->system_bus,
-	                                         G_DBUS_PROXY_FLAGS_NONE,
-	                                         NULL,
-	                                         "org.mate.CPUFreqSelector",
-	                                         "/org/mate/cpufreq_selector/selector",
-	                                         "org.mate.CPUFreqSelector",
-	                                         NULL,
-	                                         error);
+    selector->proxy = g_dbus_proxy_new_sync (selector->system_bus,
+                                             G_DBUS_PROXY_FLAGS_NONE,
+                                             NULL,
+                                             "org.mate.CPUFreqSelector",
+                                             "/org/mate/cpufreq_selector/selector",
+                                             "org.mate.CPUFreqSelector",
+                                             NULL,
+                                             error);
 
-	return (selector->proxy != NULL);
+    return (selector->proxy != NULL);
 }
 
 static void
@@ -143,184 +143,184 @@ selector_setter_cb (GObject      *source,
                     GAsyncResult *result,
                     gpointer      user_data)
 {
-	GDBusProxy *proxy = G_DBUS_PROXY (source);
-	SelectorAsyncData *data = (SelectorAsyncData *)user_data;
-	GError *error = NULL;
+    GDBusProxy *proxy = G_DBUS_PROXY (source);
+    SelectorAsyncData *data = (SelectorAsyncData *)user_data;
+    GError *error = NULL;
 
-	g_dbus_proxy_call_finish (proxy, result, &error);
-	if (error != NULL) {
-		g_warning ("%s", error->message);
-		g_clear_error (&error);
-	}
-	selector_async_data_free (data);
+    g_dbus_proxy_call_finish (proxy, result, &error);
+    if (error != NULL) {
+        g_warning ("%s", error->message);
+        g_clear_error (&error);
+    }
+    selector_async_data_free (data);
 }
 
 static void
 selector_set_frequency_async (SelectorAsyncData *data)
 {
-	GError *error = NULL;
+    GError *error = NULL;
 
-	if (!cpufreq_selector_connect_to_system_bus (data->selector, &error)) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    if (!cpufreq_selector_connect_to_system_bus (data->selector, &error)) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-		selector_async_data_free (data);
+        selector_async_data_free (data);
 
-		return;
-	}
+        return;
+    }
 
-	if (!cpufreq_selector_create_proxy (data->selector, &error)) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    if (!cpufreq_selector_create_proxy (data->selector, &error)) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-		selector_async_data_free (data);
-		return;
-	}
+        selector_async_data_free (data);
+        return;
+    }
 
-	g_dbus_proxy_call (data->selector->proxy,
-	                   "SetFrequency",
-	                   g_variant_new ("(uu)",
-	                                  data->cpu,
-	                                  data->frequency),
-	                   G_DBUS_CALL_FLAGS_NONE,
-	                   -1,
-	                   NULL,
-	                   selector_setter_cb,
-	                   data);
+    g_dbus_proxy_call (data->selector->proxy,
+                       "SetFrequency",
+                       g_variant_new ("(uu)",
+                                      data->cpu,
+                                      data->frequency),
+                       G_DBUS_CALL_FLAGS_NONE,
+                       -1,
+                       NULL,
+                       selector_setter_cb,
+                       data);
 }
 
 void
 cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
-				      guint            cpu,
-				      guint            frequency)
+                                      guint            cpu,
+                                      guint            frequency)
 {
     guint            cores;
     cores = get_nprocs() ;
-	for (cpu = 0; cpu < cores; cpu = cpu+1){ 
-	    SelectorAsyncData *data;
+    for (cpu = 0; cpu < cores; cpu = cpu+1) {
+        SelectorAsyncData *data;
 
-	    data = g_new0 (SelectorAsyncData, 1);
+        data = g_new0 (SelectorAsyncData, 1);
 
-	    data->selector = selector;
-	    data->call = FREQUENCY;
-	    data->cpu = cpu;
-	    data->frequency = frequency;
+        data->selector = selector;
+        data->call = FREQUENCY;
+        data->cpu = cpu;
+        data->frequency = frequency;
 
-	    selector_set_frequency_async (data);
-        }
+        selector_set_frequency_async (data);
+    }
 }
 
 static void
 selector_set_governor_async (SelectorAsyncData *data)
 {
-	GError *error = NULL;
+    GError *error = NULL;
 
-	if (!cpufreq_selector_connect_to_system_bus (data->selector, &error)) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    if (!cpufreq_selector_connect_to_system_bus (data->selector, &error)) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-		selector_async_data_free (data);
+        selector_async_data_free (data);
 
-		return;
-	}
+        return;
+    }
 
-	if (!cpufreq_selector_create_proxy (data->selector, &error)) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    if (!cpufreq_selector_create_proxy (data->selector, &error)) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-		selector_async_data_free (data);
+        selector_async_data_free (data);
 
-		return;
-	}
+        return;
+    }
 
-	g_dbus_proxy_call (data->selector->proxy,
-	                   "SetGovernor",
-	                   g_variant_new ("(us)",
-	                                  data->cpu,
-	                                  data->governor),
-	                   G_DBUS_CALL_FLAGS_NONE,
-	                   -1,
-	                   NULL,
-	                   selector_setter_cb,
-	                   data);
+    g_dbus_proxy_call (data->selector->proxy,
+                       "SetGovernor",
+                       g_variant_new ("(us)",
+                                      data->cpu,
+                                      data->governor),
+                       G_DBUS_CALL_FLAGS_NONE,
+                       -1,
+                       NULL,
+                       selector_setter_cb,
+                       data);
 }
 
 void
 cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
-				     guint            cpu,
-				     const gchar     *governor)
+                                     guint            cpu,
+                                     const gchar     *governor)
 {
     guint            cores;
     cores = get_nprocs() ;
     for (cpu = 0; cpu < cores; cpu = cpu+1){
-	    SelectorAsyncData *data;
+        SelectorAsyncData *data;
 
-	    data = g_new0 (SelectorAsyncData, 1);
+        data = g_new0 (SelectorAsyncData, 1);
 
-	    data->selector = selector;
-	    data->call = GOVERNOR;
-	    data->cpu = cpu;
-	    data->governor = g_strdup (governor);
+        data->selector = selector;
+        data->call = GOVERNOR;
+        data->cpu = cpu;
+        data->governor = g_strdup (governor);
 
-	    selector_set_governor_async (data);
+        selector_set_governor_async (data);
    }
 }
 #else /* !HAVE_POLKIT */
 static void
 cpufreq_selector_run_command (CPUFreqSelector *selector,
-			      const gchar     *args)
+                              const gchar     *args)
 {
-	gchar  *command;
-	gchar  *path;
-	GError *error = NULL;
+    gchar  *command;
+    gchar  *path;
+    GError *error = NULL;
 
-	path = g_find_program_in_path ("cpufreq-selector");
+    path = g_find_program_in_path ("cpufreq-selector");
 
-	if (!path)
-		return;
+    if (!path)
+        return;
 
-	command = g_strdup_printf ("%s %s", path, args);
-	g_free (path);
+    command = g_strdup_printf ("%s %s", path, args);
+    g_free (path);
 
-	g_spawn_command_line_async (command, &error);
-	g_free (command);
+    g_spawn_command_line_async (command, &error);
+    g_free (command);
 
-	if (error) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
-	}
+    if (error) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
+    }
 }
 
 void
 cpufreq_selector_set_frequency_async (CPUFreqSelector *selector,
-				      guint            cpu,
-				      guint            frequency)
+                                      guint            cpu,
+                                      guint            frequency)
 {
-    guint            cores;
-    cores = get_nprocs() ;
+    guint           cores;
+    cores = get_nprocs ();
 
-    for (cpu = 0; cpu < cores; cpu = cpu+1){
-	    gchar *args;
+    for (cpu = 0; cpu < cores; cpu = cpu+1) {
+        gchar *args;
 
-	    args = g_strdup_printf ("-c %u -f %u", cpu, frequency);
-	    cpufreq_selector_run_command (selector, args);
-	    g_free (args);
+        args = g_strdup_printf ("-c %u -f %u", cpu, frequency);
+        cpufreq_selector_run_command (selector, args);
+        g_free (args);
     }
 }
 
 void
 cpufreq_selector_set_governor_async (CPUFreqSelector *selector,
-				     guint            cpu,
-				     const gchar     *governor)
+                                     guint            cpu,
+                                     const gchar     *governor)
 {
     guint            cores;
     cores = get_nprocs() ;
     for (cpu = 0; cpu < cores; cpu = cpu+1){
-	    gchar *args;
+        gchar *args;
 
-	    args = g_strdup_printf ("-c %u -g %s", cpu, governor);
-	    cpufreq_selector_run_command (selector, args);
-	    g_free (args);
+        args = g_strdup_printf ("-c %u -g %s", cpu, governor);
+        cpufreq_selector_run_command (selector, args);
+        g_free (args);
     }
 }
 #endif /* HAVE_POLKIT */
