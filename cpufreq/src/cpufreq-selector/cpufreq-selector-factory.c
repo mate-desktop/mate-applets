@@ -31,17 +31,17 @@
 CPUFreqSelector *
 cpufreq_selector_factory_create_selector (guint cpu)
 {
-	CPUFreqSelector *selector = NULL;
-	
+    CPUFreqSelector *selector = NULL;
+
 #ifdef HAVE_LIBCPUFREQ
-	selector = cpufreq_selector_libcpufreq_new (cpu);
+    selector = cpufreq_selector_libcpufreq_new (cpu);
 #else
-	if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
-		selector = cpufreq_selector_sysfs_new (cpu);
-	} else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
-		selector = cpufreq_selector_procfs_new (cpu);
-	}
+    if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+        selector = cpufreq_selector_sysfs_new (cpu);
+    } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
+        selector = cpufreq_selector_procfs_new (cpu);
+    }
 #endif /* HAVE_LIBCPUFREQ */
 
-	return selector;
+    return selector;
 }

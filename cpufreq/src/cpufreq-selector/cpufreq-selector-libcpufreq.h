@@ -29,27 +29,27 @@
 G_BEGIN_DECLS
 
 #define CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ            \
-	(cpufreq_selector_libcpufreq_get_type ())
+    (cpufreq_selector_libcpufreq_get_type ())
 #define CPUFREQ_SELECTOR_LIBCPUFREQ(obj)            \
-	(G_TYPE_CHECK_INSTANCE_CAST ((obj), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ, CPUFreqSelectorLibcpufreq))
+    (G_TYPE_CHECK_INSTANCE_CAST ((obj), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ, CPUFreqSelectorLibcpufreq))
 #define CPUFREQ_SELECTOR_LIBCPUFREQ_CLASS(klass)    \
-	(G_TYPE_CHECK_CLASS_CAST((klass), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ, CPUFreqSelectorLibcpufreqClass))
+    (G_TYPE_CHECK_CLASS_CAST((klass), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ, CPUFreqSelectorLibcpufreqClass))
 #define CPUFREQ_IS_SELECTOR_LIBCPUFREQ(obj)         \
-	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ))
+    (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ))
 #define CPUFREQ_IS_SELECTOR_LIBCPUFREQ_CLASS(klass) \
-	(G_TYPE_CHECK_CLASS_TYPE ((klass), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ))
+    (G_TYPE_CHECK_CLASS_TYPE ((klass), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ))
 #define CPUFREQ_SELECTOR_LIBCPUFREQ_GET_CLASS(obj)  \
-	(G_TYPE_INSTANCE_GET_CLASS ((obj), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ, CPUFreqSelectorLibcpufreqClass))
+    (G_TYPE_INSTANCE_GET_CLASS ((obj), CPUFREQ_TYPE_SELECTOR_LIBCPUFREQ, CPUFreqSelectorLibcpufreqClass))
 
 typedef struct _CPUFreqSelectorLibcpufreq      CPUFreqSelectorLibcpufreq;
 typedef struct _CPUFreqSelectorLibcpufreqClass CPUFreqSelectorLibcpufreqClass;
 
 struct _CPUFreqSelectorLibcpufreq {
-        CPUFreqSelector parent;
+    CPUFreqSelector parent;
 };
 
 struct _CPUFreqSelectorLibcpufreqClass {
-        CPUFreqSelectorClass parent_class;
+    CPUFreqSelectorClass parent_class;
 };
 
 
