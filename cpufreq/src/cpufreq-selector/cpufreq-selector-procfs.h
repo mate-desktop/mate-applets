@@ -39,11 +39,11 @@ typedef struct _CPUFreqSelectorProcfs         CPUFreqSelectorProcfs;
 typedef struct _CPUFreqSelectorProcfsClass    CPUFreqSelectorProcfsClass;
 
 struct _CPUFreqSelectorProcfs {
-        CPUFreqSelector parent;
+    CPUFreqSelector parent;
 };
 
 struct _CPUFreqSelectorProcfsClass {
-        CPUFreqSelectorClass parent_class;
+    CPUFreqSelectorClass parent_class;
 };
 
 GType            cpufreq_selector_procfs_get_type (void) G_GNUC_CONST;
