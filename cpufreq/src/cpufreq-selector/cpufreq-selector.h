@@ -34,9 +34,9 @@
 #define CPUFREQ_SELECTOR_ERROR (cpufreq_selector_error_quark ())
 
 enum {
-	SELECTOR_ERROR_INVALID_CPU,
-	SELECTOR_ERROR_INVALID_GOVERNOR,
-	SELECTOR_ERROR_SET_FREQUENCY
+    SELECTOR_ERROR_INVALID_CPU,
+    SELECTOR_ERROR_INVALID_GOVERNOR,
+    SELECTOR_ERROR_SET_FREQUENCY
 };
 
 typedef struct _CPUFreqSelector        CPUFreqSelector;
@@ -46,18 +46,18 @@ typedef struct _CPUFreqSelectorPrivate CPUFreqSelectorPrivate;
 struct _CPUFreqSelector {
         GObject parent;
 
-	CPUFreqSelectorPrivate *priv;
+    CPUFreqSelectorPrivate *priv;
 };
 
 struct _CPUFreqSelectorClass {
-        GObjectClass parent_class;
+    GObjectClass parent_class;
 
-	gboolean  (* set_frequency) (CPUFreqSelector *selector,
-				     guint            frequency,
-				     GError         **error);
-        gboolean  (* set_governor)  (CPUFreqSelector *selector,
-				     const gchar     *governor,
-				     GError         **error);
+    gboolean (* set_frequency) (CPUFreqSelector *selector,
+                                guint            frequency,
+                                GError         **error);
+    gboolean (* set_governor)  (CPUFreqSelector *selector,
+                                const gchar     *governor,
+                                GError         **error);
 };
 
 
@@ -65,10 +65,10 @@ GType    cpufreq_selector_get_type      (void) G_GNUC_CONST;
 GQuark   cpufreq_selector_error_quark   (void) G_GNUC_CONST;
 
 gboolean cpufreq_selector_set_frequency (CPUFreqSelector *selector,
-					 guint            frequency,
-					 GError         **error);
+                                         guint            frequency,
+                                         GError         **error);
 gboolean cpufreq_selector_set_governor  (CPUFreqSelector *selector,
-					 const gchar     *governor,
-					 GError         **error);
+                                         const gchar     *governor,
+                                         GError         **error);
 
 #endif /* __CPUFREQ_SELECTOR_H__ */
