@@ -38,20 +38,20 @@ typedef struct _CPUFreqMonitorClass   CPUFreqMonitorClass;
 typedef struct _CPUFreqMonitorPrivate CPUFreqMonitorPrivate;
 
 struct _CPUFreqMonitor {
-        GObject parent;
+    GObject parent;
 
-        CPUFreqMonitorPrivate *priv;
+    CPUFreqMonitorPrivate *priv;
 };
 
 struct _CPUFreqMonitorClass {
-        GObjectClass parent_class;
+    GObjectClass parent_class;
 
-        gboolean  (* run)                       (CPUFreqMonitor *monitor);
-        GList    *(* get_available_frequencies) (CPUFreqMonitor *monitor);
-        GList    *(* get_available_governors)   (CPUFreqMonitor *monitor);
+    gboolean  (* run)                       (CPUFreqMonitor *monitor);
+    GList    *(* get_available_frequencies) (CPUFreqMonitor *monitor);
+    GList    *(* get_available_governors)   (CPUFreqMonitor *monitor);
 
-        /*< signals >*/
-        void      (* changed)                   (CPUFreqMonitor *monitor);
+    /*< signals >*/
+    void      (* changed)                   (CPUFreqMonitor *monitor);
 };
 
 GType        cpufreq_monitor_get_type                  (void) G_GNUC_CONST;

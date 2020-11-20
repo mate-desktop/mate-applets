@@ -41,24 +41,24 @@ typedef struct _CPUFreqPopupClass   CPUFreqPopupClass;
 typedef struct _CPUFreqPopupPrivate CPUFreqPopupPrivate;
 
 struct _CPUFreqPopup {
-	GObject              base;
+    GObject              base;
 
-	CPUFreqPopupPrivate *priv;
+    CPUFreqPopupPrivate *priv;
 };
 
 struct _CPUFreqPopupClass {
-	GObjectClass         parent_class;
+    GObjectClass         parent_class;
 };
 
 GType         cpufreq_popup_get_type        (void) G_GNUC_CONST;
 CPUFreqPopup *cpufreq_popup_new             (void);
 
 void          cpufreq_popup_set_preferences (CPUFreqPopup   *popup,
-					     CPUFreqPrefs   *prefs);
+                                             CPUFreqPrefs   *prefs);
 void          cpufreq_popup_set_monitor     (CPUFreqPopup   *popup,
-					     CPUFreqMonitor *monitor);
+                                             CPUFreqMonitor *monitor);
 void          cpufreq_popup_set_parent      (CPUFreqPopup   *popup,
-					     GtkWidget      *parent);
+                                             GtkWidget      *parent);
 GtkWidget    *cpufreq_popup_get_menu        (CPUFreqPopup   *popup);
 
 G_END_DECLS

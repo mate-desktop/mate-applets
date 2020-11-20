@@ -38,10 +38,10 @@ G_BEGIN_DECLS
 #define CPUFREQ_TYPE_SELECTOR_SERVICE_ERROR      (cpufreq_selector_service_error_get_type ())
 
 enum {
-	SERVICE_ERROR_GENERAL,
-	SERVICE_ERROR_DBUS,
-	SERVICE_ERROR_ALREADY_REGISTERED,
-	SERVICE_ERROR_NOT_AUTHORIZED
+    SERVICE_ERROR_GENERAL,
+    SERVICE_ERROR_DBUS,
+    SERVICE_ERROR_ALREADY_REGISTERED,
+    SERVICE_ERROR_NOT_AUTHORIZED
 };
 
 typedef struct _CPUFreqSelectorService        CPUFreqSelectorService;
@@ -52,18 +52,18 @@ GType                   cpufreq_selector_service_error_get_type (void) G_GNUC_CO
 GQuark                  cpufreq_selector_service_error_quark    (void) G_GNUC_CONST;
 CPUFreqSelectorService *cpufreq_selector_service_get_instance   (void);
 gboolean                cpufreq_selector_service_register       (CPUFreqSelectorService *service,
-								 GError                **error);
+                                                                 GError                **error);
 
 gboolean                cpufreq_selector_service_set_frequency  (CPUFreqSelectorService *service,
-								 guint                   cpu,
-								 guint                   frequency,
-								 DBusGMethodInvocation  *context);
+                                                                 guint                   cpu,
+                                                                 guint                   frequency,
+                                                                 DBusGMethodInvocation  *context);
 gboolean                cpufreq_selector_service_set_governor   (CPUFreqSelectorService *service,
-								 guint                   cpu,
-								 const gchar            *governor,
-								 DBusGMethodInvocation  *context);
+                                                                 guint                   cpu,
+                                                                 const gchar            *governor,
+                                                                 DBusGMethodInvocation  *context);
 gboolean               cpufreq_selector_service_can_set         (CPUFreqSelectorService *service,
-								 DBusGMethodInvocation  *context);
+                                                                 DBusGMethodInvocation  *context);
 
 G_END_DECLS
 

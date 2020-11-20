@@ -41,13 +41,13 @@ typedef struct _CPUFreqPrefsClass   CPUFreqPrefsClass;
 typedef struct _CPUFreqPrefsPrivate CPUFreqPrefsPrivate;
 
 struct _CPUFreqPrefs {
-	GObject              base;
+    GObject              base;
 
-	CPUFreqPrefsPrivate *priv;
+    CPUFreqPrefsPrivate *priv;
 };
 
 struct _CPUFreqPrefsClass {
-	GObjectClass         parent_class;
+    GObjectClass         parent_class;
 };
 
 GType               cpufreq_prefs_get_type           (void) G_GNUC_CONST;
@@ -60,7 +60,7 @@ CPUFreqShowTextMode cpufreq_prefs_get_show_text_mode (CPUFreqPrefs *prefs);
 
 /* Properties dialog */
 void                cpufreq_preferences_dialog_run   (CPUFreqPrefs *prefs,
-						      GdkScreen    *screen);
+                                                      GdkScreen    *screen);
 
 G_END_DECLS
 

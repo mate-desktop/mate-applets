@@ -27,18 +27,22 @@
 #include "cpufreq-selector-sysfs.h"
 
 struct _CPUFreqSelectorSysfsPrivate {
-	GList *available_freqs;
-	GList *available_govs;
+    GList *available_freqs;
+    GList *available_govs;
 };
 
-static void     cpufreq_selector_sysfs_finalize      (GObject                   *object);
+static void
+cpufreq_selector_sysfs_finalize      (GObject                   *object);
 
-static gboolean cpufreq_selector_sysfs_set_frequency (CPUFreqSelector           *selector,
-						      guint                      frequency,
-						      GError                   **error);
-static gboolean cpufreq_selector_sysfs_set_governor  (CPUFreqSelector           *selector,
-						      const gchar               *governor,
-						      GError                   **error);
+static gboolean
+cpufreq_selector_sysfs_set_frequency (CPUFreqSelector           *selector,
+                                      guint                      frequency,
+                                      GError                   **error);
+
+static gboolean
+cpufreq_selector_sysfs_set_governor  (CPUFreqSelector           *selector,
+                                      const gchar               *governor,
+                                      GError                   **error);
 
 #define CPUFREQ_SYSFS_BASE_PATH "/sys/devices/system/cpu/cpu%u/cpufreq/%s"
 
@@ -47,115 +51,115 @@ G_DEFINE_TYPE_WITH_PRIVATE (CPUFreqSelectorSysfs, cpufreq_selector_sysfs, CPUFRE
 static void
 cpufreq_selector_sysfs_init (CPUFreqSelectorSysfs *selector)
 {
-	selector->priv = cpufreq_selector_sysfs_get_instance_private (selector);
+    selector->priv = cpufreq_selector_sysfs_get_instance_private (selector);
 
-	selector->priv->available_freqs = NULL;
-	selector->priv->available_govs = NULL;
+    selector->priv->available_freqs = NULL;
+    selector->priv->available_govs = NULL;
 }
 
 static void
 cpufreq_selector_sysfs_class_init (CPUFreqSelectorSysfsClass *klass)
 {
-        GObjectClass         *object_class = G_OBJECT_CLASS (klass);
-        CPUFreqSelectorClass *selector_class = CPUFREQ_SELECTOR_CLASS (klass);
+    GObjectClass         *object_class = G_OBJECT_CLASS (klass);
+    CPUFreqSelectorClass *selector_class = CPUFREQ_SELECTOR_CLASS (klass);
 
-	selector_class->set_frequency = cpufreq_selector_sysfs_set_frequency;
-        selector_class->set_governor = cpufreq_selector_sysfs_set_governor;
+    selector_class->set_frequency = cpufreq_selector_sysfs_set_frequency;
+    selector_class->set_governor = cpufreq_selector_sysfs_set_governor;
 
-        object_class->finalize = cpufreq_selector_sysfs_finalize;
+    object_class->finalize = cpufreq_selector_sysfs_finalize;
 }
 
 static void
 cpufreq_selector_sysfs_finalize (GObject *object)
 {
-        CPUFreqSelectorSysfs *selector = CPUFREQ_SELECTOR_SYSFS (object);
+    CPUFreqSelectorSysfs *selector = CPUFREQ_SELECTOR_SYSFS (object);
 
-        if (selector->priv->available_freqs) {
-                g_list_free_full (selector->priv->available_freqs, g_free);
-                selector->priv->available_freqs = NULL;
-	}
+    if (selector->priv->available_freqs) {
+        g_list_free_full (selector->priv->available_freqs, g_free);
+        selector->priv->available_freqs = NULL;
+    }
 
-        if (selector->priv->available_govs) {
-                g_list_free_full (selector->priv->available_govs, g_free);
-                selector->priv->available_govs = NULL;
-	}
+    if (selector->priv->available_govs) {
+        g_list_free_full (selector->priv->available_govs, g_free);
+        selector->priv->available_govs = NULL;
+    }
 
-	G_OBJECT_CLASS (cpufreq_selector_sysfs_parent_class)->finalize (object);
+    G_OBJECT_CLASS (cpufreq_selector_sysfs_parent_class)->finalize (object);
 }
 
 CPUFreqSelector *
 cpufreq_selector_sysfs_new (guint cpu)
 {
-        CPUFreqSelector *selector;
+    CPUFreqSelector *selector;
 
-        selector = CPUFREQ_SELECTOR (g_object_new (CPUFREQ_TYPE_SELECTOR_SYSFS,
-						   "cpu", cpu, 
-						   NULL));
+    selector = CPUFREQ_SELECTOR (g_object_new (CPUFREQ_TYPE_SELECTOR_SYSFS,
+                                               "cpu", cpu,
+                                               NULL));
 
-        return selector;
+    return selector;
 }
 
 static gchar *
 cpufreq_sysfs_read (const gchar *path,
-		    GError     **error)
+                    GError     **error)
 {
-	gchar  *buffer = NULL;
+    gchar  *buffer = NULL;
 
-	if (!g_file_get_contents (path, &buffer, NULL, error)) {
-		return NULL;
-	}
+    if (!g_file_get_contents (path, &buffer, NULL, error)) {
+        return NULL;
+    }
 
-	return g_strchomp (buffer);
+    return g_strchomp (buffer);
 }
 
 static gboolean
 cpufreq_sysfs_write (const gchar *path,
-		     const gchar *setting,
-		     GError     **error)
+                     const gchar *setting,
+                     GError     **error)
 {
-	FILE *fd;
+    FILE *fd;
 
-	fd = g_fopen (path, "w");
+    fd = g_fopen (path, "w");
 
-	if (!fd) {
-		g_set_error (error,
-			     G_FILE_ERROR,
-			     g_file_error_from_errno (errno),
-			     "Failed to open '%s' for writing: "
-			     "g_fopen() failed: %s",
-			     path,
-			     g_strerror (errno));
+    if (!fd) {
+        g_set_error (error,
+                     G_FILE_ERROR,
+                     g_file_error_from_errno (errno),
+                     "Failed to open '%s' for writing: "
+                     "g_fopen() failed: %s",
+                     path,
+                     g_strerror (errno));
 
-		return FALSE;
-	}
+        return FALSE;
+    }
 
-	if (g_fprintf (fd, "%s", setting) < 0) {
-		g_set_error (error,
-			     G_FILE_ERROR,
-			     g_file_error_from_errno (errno),
-			     "Failed to write '%s': "
-			     "g_fprintf() failed: %s",
-			     path,
-			     g_strerror (errno));
+    if (g_fprintf (fd, "%s", setting) < 0) {
+        g_set_error (error,
+                     G_FILE_ERROR,
+                     g_file_error_from_errno (errno),
+                     "Failed to write '%s': "
+                     "g_fprintf() failed: %s",
+                     path,
+                     g_strerror (errno));
 
-		fclose (fd);
+        fclose (fd);
 
-		return FALSE;
-	}
+        return FALSE;
+    }
 
-	fclose (fd);
+    fclose (fd);
 
-	return TRUE;
+    return TRUE;
 }
 
 static gint
 compare (gconstpointer a, gconstpointer b)
 {
         gint aa, bb;
-	
+
         aa = atoi ((gchar *) a);
         bb = atoi ((gchar *) b);
-	
+
         if (aa == bb)
                 return 0;
         else if (aa > bb)
@@ -167,251 +171,251 @@ compare (gconstpointer a, gconstpointer b)
 static GList *
 cpufreq_selector_sysfs_get_freqs (CPUFreqSelectorSysfs *selector)
 {
-        gchar  *buffer;
-        GList  *list = NULL;
-        gchar **frequencies = NULL;
-        gint    i;
-        gchar  *path;
-	guint   cpu;
-	GError *error = NULL;
+    gchar  *buffer;
+    GList  *list = NULL;
+    gchar **frequencies = NULL;
+    gint    i;
+    gchar  *path;
+    guint   cpu;
+    GError *error = NULL;
 
-	g_object_get (G_OBJECT (selector),
-		      "cpu", &cpu,
-		      NULL);
-	
-        path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu, 
-				"scaling_available_frequencies");
+    g_object_get (G_OBJECT (selector),
+                            "cpu", &cpu,
+                            NULL);
 
-	buffer = cpufreq_sysfs_read (path, &error);
-	if (!buffer) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
+                            "scaling_available_frequencies");
 
-		g_free (path);
+    buffer = cpufreq_sysfs_read (path, &error);
+    if (!buffer) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-		return NULL;
-	}
+        g_free (path);
 
-	g_free (path);
+        return NULL;
+    }
 
-	frequencies = g_strsplit (buffer, " ", -1);
+    g_free (path);
 
-	i = 0;
-	while (frequencies[i]) {
-		if (!g_list_find_custom (list, frequencies[i], compare))
-			list = g_list_prepend (list, g_strdup (frequencies[i]));
-		i++;
-	}
+    frequencies = g_strsplit (buffer, " ", -1);
 
-	g_strfreev (frequencies);
-	g_free (buffer);
+    i = 0;
+    while (frequencies[i]) {
+        if (!g_list_find_custom (list, frequencies[i], compare))
+            list = g_list_prepend (list, g_strdup (frequencies[i]));
+        i++;
+    }
 
-	return g_list_sort (list, compare);
+    g_strfreev (frequencies);
+    g_free (buffer);
+
+    return g_list_sort (list, compare);
 }
 
 static const gchar *
 cpufreq_selector_sysfs_get_valid_frequency (CPUFreqSelectorSysfs *selector,
-					    guint                 frequency)
+                                            guint                 frequency)
 {
-	GList       *list = NULL;
-	GList       *l;
-	gint         dist = G_MAXINT;
-	const gchar *retval = NULL;
-	
-	if (!selector->priv->available_freqs) {
-		list = cpufreq_selector_sysfs_get_freqs (selector);
-		selector->priv->available_freqs = list;
-	} else {
-		list = selector->priv->available_freqs;
-	}
+    GList       *list = NULL;
+    GList       *l;
+    gint         dist = G_MAXINT;
+    const gchar *retval = NULL;
 
-	if (!list)
-		return NULL;
+    if (!selector->priv->available_freqs) {
+        list = cpufreq_selector_sysfs_get_freqs (selector);
+        selector->priv->available_freqs = list;
+    } else {
+        list = selector->priv->available_freqs;
+    }
 
-	for (l = list; l && l->data; l = g_list_next (l)) {
-		const gchar *freq;
-		guint        f;
-		guint        current_dist;
+    if (!list)
+        return NULL;
 
-		freq = (const gchar *) l->data;
-		f = atoi (freq);
+    for (l = list; l && l->data; l = g_list_next (l)) {
+        const gchar *freq;
+        guint        f;
+        guint        current_dist;
 
-		if (f == frequency)
-			return freq;
+        freq = (const gchar *) l->data;
+        f = atoi (freq);
 
-		current_dist = abs ((int)frequency - (int)f);
-		if (current_dist < dist) {
-			dist = current_dist;
-			retval = freq;
-		}
-	}
+        if (f == frequency)
+            return freq;
 
-	return retval;
+        current_dist = abs ((int)frequency - (int)f);
+        if (current_dist < dist) {
+            dist = current_dist;
+            retval = freq;
+        }
+    }
+
+    return retval;
 }
 
 static gboolean
 cpufreq_selector_sysfs_set_frequency (CPUFreqSelector *selector,
-				      guint            frequency,
-				      GError         **error)
+                                      guint            frequency,
+                                      GError         **error)
 {
-	gchar       *governor;
-	gchar       *path;
-	const gchar *frequency_text;
-	guint        cpu;
+    gchar       *governor;
+    gchar       *path;
+    const gchar *frequency_text;
+    guint        cpu;
 
-	g_object_get (G_OBJECT (selector),
-		      "cpu", &cpu,
-		      NULL);
-	
-	path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
-				"scaling_governor");
-	
-	governor = cpufreq_sysfs_read (path, error);
-	g_free (path);
-	
-	if (!governor)
-		return FALSE;
+    g_object_get (G_OBJECT (selector),
+                  "cpu", &cpu,
+                  NULL);
 
-	if (g_ascii_strcasecmp (governor, "userspace") != 0) {
-		if (!cpufreq_selector_sysfs_set_governor (selector,
-							  "userspace",
-							  error)) {
-			g_free (governor);
+    path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
+                            "scaling_governor");
 
-			return FALSE;
-		}
-	}
+    governor = cpufreq_sysfs_read (path, error);
+    g_free (path);
 
-	g_free (governor);
+    if (!governor)
+        return FALSE;
 
-	frequency_text =
-		cpufreq_selector_sysfs_get_valid_frequency (CPUFREQ_SELECTOR_SYSFS (selector),
-							    frequency);
-	if (!frequency_text) {
-		g_set_error (error,
-			     CPUFREQ_SELECTOR_ERROR,
-			     SELECTOR_ERROR_SET_FREQUENCY,
-			     "Cannot set frequency '%d'",
-			     frequency);
+    if (g_ascii_strcasecmp (governor, "userspace") != 0) {
+        if (!cpufreq_selector_sysfs_set_governor (selector,
+                                                  "userspace",
+                                                  error)) {
+            g_free (governor);
 
-		return FALSE;
-	}
+            return FALSE;
+        }
+    }
 
-	path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
-				"scaling_setspeed");
-	if (!cpufreq_sysfs_write (path, frequency_text, error)) {
-		g_free (path);
-		
-		return FALSE;
-	}
-	
-	g_free (path);
-	
-	return TRUE;
+    g_free (governor);
+
+    frequency_text =
+        cpufreq_selector_sysfs_get_valid_frequency (CPUFREQ_SELECTOR_SYSFS (selector),
+                                                    frequency);
+    if (!frequency_text) {
+        g_set_error (error,
+                     CPUFREQ_SELECTOR_ERROR,
+                     SELECTOR_ERROR_SET_FREQUENCY,
+                     "Cannot set frequency '%d'",
+                     frequency);
+
+        return FALSE;
+    }
+
+    path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
+                            "scaling_setspeed");
+    if (!cpufreq_sysfs_write (path, frequency_text, error)) {
+        g_free (path);
+
+        return FALSE;
+    }
+
+    g_free (path);
+
+    return TRUE;
 }
 
 static GList *
 cpufreq_selector_sysfs_get_govs (CPUFreqSelectorSysfs *selector)
 {
-	gchar  *buffer;
-	GList  *list = NULL;
-	gchar **governors = NULL;
-	gint    i;
-	gchar  *path;
-	guint   cpu;
-	GError *error = NULL;
+    gchar  *buffer;
+    GList  *list = NULL;
+    gchar **governors = NULL;
+    gint    i;
+    gchar  *path;
+    guint   cpu;
+    GError *error = NULL;
 
-	g_object_get (G_OBJECT (selector),
-		      "cpu", &cpu,
-		      NULL);
+    g_object_get (G_OBJECT (selector),
+                  "cpu", &cpu,
+                  NULL);
 
-	path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu, 
-				"scaling_available_governors");
+    path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
+                            "scaling_available_governors");
 
-	buffer = cpufreq_sysfs_read (path, &error);
-	if (!buffer) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    buffer = cpufreq_sysfs_read (path, &error);
+    if (!buffer) {
+        g_warning ("%s", error->message);
+        g_error_free (error);
 
-		g_free (path);
+        g_free (path);
 
-		return NULL;
-	}
+        return NULL;
+    }
 
-	g_free (path);
+    g_free (path);
 
-	governors = g_strsplit (buffer, " ", -1);
+    governors = g_strsplit (buffer, " ", -1);
 
-	i = 0;
-	while (governors[i]) {
-		list = g_list_prepend (list, g_strdup (governors[i]));
-		i++;
-	}
+    i = 0;
+    while (governors[i]) {
+        list = g_list_prepend (list, g_strdup (governors[i]));
+        i++;
+    }
 
-	g_strfreev (governors);
-	g_free (buffer);
-	
-	return list;
+    g_strfreev (governors);
+    g_free (buffer);
+
+    return list;
 }
 
 static gboolean
 cpufreq_selector_sysfs_validate_governor (CPUFreqSelectorSysfs *selector,
-					  const gchar          *governor)
+                                          const gchar          *governor)
 {
-	GList *list = NULL;
-	
-	if (!selector->priv->available_govs) {
-		list = cpufreq_selector_sysfs_get_govs (selector);
-		selector->priv->available_govs = list;
-	} else {
-		list = selector->priv->available_govs;
-	}
+    GList *list = NULL;
 
-	if (!list)
-		return FALSE;
-	
-	list = g_list_find_custom (selector->priv->available_govs,
-				   governor,
-				   (GCompareFunc) g_ascii_strcasecmp);
-	
-	return (list != NULL);
+    if (!selector->priv->available_govs) {
+        list = cpufreq_selector_sysfs_get_govs (selector);
+        selector->priv->available_govs = list;
+    } else {
+        list = selector->priv->available_govs;
+    }
+
+    if (!list)
+        return FALSE;
+
+    list = g_list_find_custom (selector->priv->available_govs,
+                               governor,
+                               (GCompareFunc) g_ascii_strcasecmp);
+
+    return (list != NULL);
 }
 
 static gboolean
 cpufreq_selector_sysfs_set_governor (CPUFreqSelector *selector,
-				     const gchar     *governor,
-				     GError         **error)
+                                     const gchar     *governor,
+                                     GError         **error)
 {
-	CPUFreqSelectorSysfs *selector_sysfs;
-        gchar                *path;
-	guint                 cpu;
+    CPUFreqSelectorSysfs *selector_sysfs;
+    gchar                *path;
+    guint                 cpu;
 
-	selector_sysfs = CPUFREQ_SELECTOR_SYSFS (selector);
+    selector_sysfs = CPUFREQ_SELECTOR_SYSFS (selector);
 
-	if (!cpufreq_selector_sysfs_validate_governor (selector_sysfs, governor)) {
-		g_set_error (error,
-			     CPUFREQ_SELECTOR_ERROR,
-			     SELECTOR_ERROR_INVALID_GOVERNOR,
-			     "Invalid governor '%s'",
-			     governor);
-		
-		return FALSE;
-	}
-	
-	g_object_get (G_OBJECT (selector),
-		      "cpu", &cpu,
-		      NULL);
+    if (!cpufreq_selector_sysfs_validate_governor (selector_sysfs, governor)) {
+        g_set_error (error,
+                     CPUFREQ_SELECTOR_ERROR,
+                     SELECTOR_ERROR_INVALID_GOVERNOR,
+                     "Invalid governor '%s'",
+                     governor);
 
-        path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
-				"scaling_governor");
+        return FALSE;
+    }
 
-	if (!cpufreq_sysfs_write (path, governor, error)) {
-		g_free (path);
-		
-		return FALSE;
-	}
+    g_object_get (G_OBJECT (selector),
+                  "cpu", &cpu,
+                  NULL);
 
+    path = g_strdup_printf (CPUFREQ_SYSFS_BASE_PATH, cpu,
+                            "scaling_governor");
+
+    if (!cpufreq_sysfs_write (path, governor, error)) {
         g_free (path);
 
-	return TRUE;
+        return FALSE;
+    }
+
+    g_free (path);
+
+    return TRUE;
 }

@@ -27,27 +27,27 @@
 #include "cpufreq-monitor.h"
 
 #define CPUFREQ_TYPE_MONITOR_LIBCPUFREQ            \
-	(cpufreq_monitor_libcpufreq_get_type ())
+    (cpufreq_monitor_libcpufreq_get_type ())
 #define CPUFREQ_MONITOR_LIBCPUFREQ(obj)            \
-	(G_TYPE_CHECK_INSTANCE_CAST ((obj), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ, CPUFreqMonitorLibcpufreq))
+    (G_TYPE_CHECK_INSTANCE_CAST ((obj), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ, CPUFreqMonitorLibcpufreq))
 #define CPUFREQ_MONITOR_LIBCPUFREQ_CLASS(klass)    \
-	(G_TYPE_CHECK_CLASS_CAST((klass), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ, CPUFreqMonitorLibcpufreqClass))
+    (G_TYPE_CHECK_CLASS_CAST((klass), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ, CPUFreqMonitorLibcpufreqClass))
 #define CPUFREQ_IS_MONITOR_LIBCPUFREQ(obj)         \
-	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ))
+    (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ))
 #define CPUFREQ_IS_MONITOR_LIBCPUFREQ_CLASS(klass) \
-	(G_TYPE_CHECK_CLASS_TYPE ((klass), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ))
+    (G_TYPE_CHECK_CLASS_TYPE ((klass), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ))
 #define CPUFREQ_MONITOR_LIBCPUFREQ_GET_CLASS(obj)  \
-	(G_TYPE_INSTANCE_GET_CLASS ((obj), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ, CPUFreqMonitorLibcpufreqClass))
+    (G_TYPE_INSTANCE_GET_CLASS ((obj), CPUFREQ_TYPE_MONITOR_LIBCPUFREQ, CPUFreqMonitorLibcpufreqClass))
 
 typedef struct _CPUFreqMonitorLibcpufreq      CPUFreqMonitorLibcpufreq;
 typedef struct _CPUFreqMonitorLibcpufreqClass CPUFreqMonitorLibcpufreqClass;
 
 struct _CPUFreqMonitorLibcpufreq {
-        CPUFreqMonitor parent;
+    CPUFreqMonitor parent;
 };
 
 struct _CPUFreqMonitorLibcpufreqClass {
-        CPUFreqMonitorClass parent_class;
+    CPUFreqMonitorClass parent_class;
 };
 
 GType           cpufreq_monitor_libcpufreq_get_type (void) G_GNUC_CONST;

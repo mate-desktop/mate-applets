@@ -40,13 +40,13 @@ typedef struct _CPUFreqSelectorSysfsClass   CPUFreqSelectorSysfsClass;
 typedef struct _CPUFreqSelectorSysfsPrivate CPUFreqSelectorSysfsPrivate;
 
 struct _CPUFreqSelectorSysfs {
-        CPUFreqSelector parent;
+    CPUFreqSelector parent;
 
-	CPUFreqSelectorSysfsPrivate *priv;
+    CPUFreqSelectorSysfsPrivate *priv;
 };
 
 struct _CPUFreqSelectorSysfsClass {
-        CPUFreqSelectorClass parent_class;
+    CPUFreqSelectorClass parent_class;
 };
 
 

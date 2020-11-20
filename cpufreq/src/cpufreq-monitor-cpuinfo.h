@@ -37,11 +37,11 @@ typedef struct _CPUFreqMonitorCPUInfo      CPUFreqMonitorCPUInfo;
 typedef struct _CPUFreqMonitorCPUInfoClass CPUFreqMonitorCPUInfoClass;
 
 struct _CPUFreqMonitorCPUInfo {
-        CPUFreqMonitor parent;
+    CPUFreqMonitor parent;
 };
 
 struct _CPUFreqMonitorCPUInfoClass {
-        CPUFreqMonitorClass parent_class;
+    CPUFreqMonitorClass parent_class;
 };
 
 GType           cpufreq_monitor_cpuinfo_get_type (void) G_GNUC_CONST;
