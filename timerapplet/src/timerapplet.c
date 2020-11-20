@@ -149,7 +149,8 @@ timer_callback (TimerApplet *applet)
             applet->active = FALSE;
             applet->timeout_id = 0;
 
-            label = g_strdup_printf ("Finished %s", name);
+            /* Translators: %s is a placeholder for the timer name, 'Timer' by default */
+            label = g_strdup_printf (_("Finished %s"), name);
             gtk_label_set_text (applet->label, label);
             gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), name);
             gtk_widget_hide (GTK_WIDGET (applet->pause_image));
