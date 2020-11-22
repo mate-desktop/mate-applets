@@ -68,13 +68,51 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-compile-warnings=no \
 	CFLAGS='-Wno-deprecated-declarations'
 
-EXTRA_DIST = \
+M4_FILES = \
 	m4/ac-define-dir.m4 \
-	m4/as-ac-expand.m4 \
+	m4/as-ac-expand.m4
+
+EXTRA_DIST = \
+	$(M4_FILES) \
 	COPYING-DOCS \
 	xmldocs.make \
 	omf.make \
 	autogen.sh
+
+M4_FILES = m4/ac-define-dir.m4 m4/as-ac-expand.m4
+MAINTAINERCLEANFILES = \
+	ABOUT-NLS \
+	INSTALL \
+	aclocal.m4 \
+	compile \
+	config.guess \
+	config.h.in \
+	config.h.in~ \
+	config.log \
+	config.rpath \
+	config.sub \
+	configure \
+	depcomp \
+	install-sh \
+	libtool \
+	ltmain.sh \
+	missing \
+	omf.make \
+	po/*.po~ \
+	po/@GETTEXT_PACKAGE@.pot \
+	po/Makefile.in.in \
+	po/Makevars.template \
+	po/Rules-quot \
+	po/boldquot.sed \
+	po/en@boldquot.header \
+	po/en@quot.header \
+	po/insert-header.sin \
+	po/quot.sed \
+	po/remove-potcdate.sin \
+	stamp-h1 \
+	xmldocs.make \
+	$(filter-out $(M4_FILES), $(wildcard m4/*.m4)) \
+	`find "$(srcdir)" -type f -name Makefile.in -print`
 
 # Build ChangeLog from GIT  history
 ChangeLog:
