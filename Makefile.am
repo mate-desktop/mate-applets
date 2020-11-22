@@ -70,6 +70,7 @@ DISTCHECK_CONFIGURE_FLAGS = \
 
 EXTRA_DIST = \
 	m4/ac-define-dir.m4 \
+	m4/as-ac-expand.m4 \
 	COPYING-DOCS \
 	xmldocs.make \
 	omf.make \

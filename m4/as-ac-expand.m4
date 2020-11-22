@@ -1,6 +1,15 @@
+dnl as-ac-expand.m4 0.2.0                                   -*- autoconf -*-
+dnl autostars m4 macro for expanding directories using configure's prefix
+
+dnl (C) 2003, 2004, 2005 Thomas Vander Stichele <thomas at apestaart dot org>
+
+dnl Copying and distribution of this file, with or without modification,
+dnl are permitted in any medium without royalty provided the copyright
+dnl notice and this notice are preserved.
+
 dnl AS_AC_EXPAND(VAR, CONFIGURE_VAR)
-dnl
-dnl example
+
+dnl example:
 dnl AS_AC_EXPAND(SYSCONFDIR, $sysconfdir)
 dnl will set SYSCONFDIR to /usr/local/etc if prefix=/usr/local
 
@@ -15,7 +24,7 @@ AC_DEFUN([AS_AC_EXPAND],
 
   dnl if no prefix given, then use /usr/local, the default prefix
   if test "x$prefix" = "xNONE"; then
-    prefix=$ac_default_prefix
+    prefix="$ac_default_prefix"
   fi
   dnl if no exec_prefix given, then use prefix
   if test "x$exec_prefix" = "xNONE"; then
