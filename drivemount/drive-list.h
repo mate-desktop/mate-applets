@@ -62,11 +62,11 @@ struct _DriveListClass
 GType      drive_list_get_type (void);
 GtkWidget *drive_list_new (void);
 void       drive_list_set_orientation (DriveList *list,
-				       GtkOrientation orientation);
+                                       GtkOrientation orientation);
 void       drive_list_set_panel_size  (DriveList *list,
-				       int panel_size);
+                                       int panel_size);
 void       drive_list_set_transparent (DriveList *self,
-				       gboolean transparent);
+                                       gboolean transparent);
 void       drive_list_redraw (DriveList *self);
 void       settings_color_changed (GSettings *settings, gchar *key, DriveList *drive_list);
 

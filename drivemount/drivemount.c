@@ -36,78 +36,76 @@ static const char drivemount_iid[] = "DriveMountApplet";
 static const char factory_iid[] = "DriveMountAppletFactory";
 
 static void
-change_orient (MatePanelApplet *applet, MatePanelAppletOrient o, DriveList *drive_list)
+change_orient (MatePanelApplet *applet,
+               MatePanelAppletOrient o,
+               DriveList *drive_list)
 {
     GtkOrientation orientation;
 
     switch (o) {
-    case MATE_PANEL_APPLET_ORIENT_LEFT:
-    case MATE_PANEL_APPLET_ORIENT_RIGHT:
-	orientation = GTK_ORIENTATION_VERTICAL;
-	break;
-    case MATE_PANEL_APPLET_ORIENT_UP:
-    case MATE_PANEL_APPLET_ORIENT_DOWN:
-    default:
-	orientation = GTK_ORIENTATION_HORIZONTAL;
-	break;
+        case MATE_PANEL_APPLET_ORIENT_LEFT:
+        case MATE_PANEL_APPLET_ORIENT_RIGHT:
+            orientation = GTK_ORIENTATION_VERTICAL;
+            break;
+        case MATE_PANEL_APPLET_ORIENT_UP:
+        case MATE_PANEL_APPLET_ORIENT_DOWN:
+        default:
+            orientation = GTK_ORIENTATION_HORIZONTAL;
     }
     drive_list_set_orientation (drive_list, orientation);
 }
 
 static void
-size_allocate (MatePanelApplet  *applet,
-	       GdkRectangle *allocation,
-	       DriveList    *drive_list)
+size_allocate (MatePanelApplet *applet,
+               GdkRectangle    *allocation,
+               DriveList       *drive_list)
 {
     int size;
 
     switch (mate_panel_applet_get_orient (applet)) {
-    case MATE_PANEL_APPLET_ORIENT_LEFT:
-    case MATE_PANEL_APPLET_ORIENT_RIGHT:
-	size = allocation->width;
-	break;
-    case MATE_PANEL_APPLET_ORIENT_UP:
-    case MATE_PANEL_APPLET_ORIENT_DOWN:
-    default:
-	size = allocation->height;
-	break;
+        case MATE_PANEL_APPLET_ORIENT_LEFT:
+        case MATE_PANEL_APPLET_ORIENT_RIGHT:
+            size = allocation->width;
+            break;
+        case MATE_PANEL_APPLET_ORIENT_UP:
+        case MATE_PANEL_APPLET_ORIENT_DOWN:
+        default:
+            size = allocation->height;
     }
     drive_list_set_panel_size (drive_list, size);
 }
 
 static void
 change_background (MatePanelApplet               *applet,
-		   MatePanelAppletBackgroundType  type,
-		   GdkColor                  *colour,
-		   cairo_pattern_t           *pattern,
-		   DriveList                 *drivelist)
+                   MatePanelAppletBackgroundType  type,
+                   GdkColor                      *colour,
+                   cairo_pattern_t               *pattern,
+                   DriveList                     *drivelist)
 {
     switch (type) {
-    case PANEL_NO_BACKGROUND:
-	drive_list_set_transparent (drivelist, FALSE);
-	break;
-
-    case PANEL_COLOR_BACKGROUND:
-    case PANEL_PIXMAP_BACKGROUND:
-	drive_list_set_transparent (drivelist, TRUE);
-	break;
+        case PANEL_NO_BACKGROUND:
+            drive_list_set_transparent (drivelist, FALSE);
+            break;
+        case PANEL_COLOR_BACKGROUND:
+        case PANEL_PIXMAP_BACKGROUND:
+            drive_list_set_transparent (drivelist, TRUE);
     }
 }
 
 static void
 display_about_dialog (GtkAction *action,
-		      DriveList *drive_list)
+                      DriveList *drive_list)
 {
     const gchar *authors[] = {
-	"James Henstridge <jamesh@canonical.com>",
-	NULL
+        "James Henstridge <jamesh@canonical.com>",
+        NULL
     };
 
     const gchar *documenters[] = {
-	"Dan Mueth <muet@alumni.uchicago.edu>",
-	"John Fleck <jfleck@inkstain.net>",
-	N_("MATE Documentation Team"),
-	NULL
+        "Dan Mueth <muet@alumni.uchicago.edu>",
+        "John Fleck <jfleck@inkstain.net>",
+        N_("MATE Documentation Team"),
+        NULL
     };
 
 #ifdef ENABLE_NLS
@@ -117,21 +115,21 @@ display_about_dialog (GtkAction *action,
 #endif
 
     gtk_show_about_dialog (NULL,
-	"title",       _("About Disk Mounter"),
-	"version",     VERSION,
-	"copyright",   _("Copyright \xC2\xA9 2004 Canonical Ltd\n"
-	                 "Copyright \xc2\xa9 2012-2020 MATE developers"),
-	"comments",    _("Applet for mounting and unmounting block volumes."),
-	"authors",     authors,
-	"documenters", documenters,
-	"translator-credits", _("translator-credits"),
-	"logo_icon_name",     "media-floppy",
-	NULL);
+                           "title",              _("About Disk Mounter"),
+                           "version",            VERSION,
+                           "copyright",          _("Copyright \xC2\xA9 2004 Canonical Ltd\n"
+                                                   "Copyright \xc2\xa9 2012-2020 MATE developers"),
+                           "comments",           _("Applet for mounting and unmounting block volumes."),
+                           "authors",            authors,
+                           "documenters",        documenters,
+                           "translator-credits", _("translator-credits"),
+                           "logo_icon_name",     "media-floppy",
+                           NULL);
 }
 
 static void
 display_help (GtkAction *action,
-	      DriveList *drive_list)
+              DriveList *drive_list)
 {
     GdkScreen *screen;
     GError *error = NULL;
@@ -139,25 +137,25 @@ display_help (GtkAction *action,
     screen = gtk_widget_get_screen (GTK_WIDGET (drive_list));
 
     gtk_show_uri_on_window (NULL,
-                           "help:mate-drivemount",
+                            "help:mate-drivemount",
                             gtk_get_current_event_time (),
                             &error);
 
     if (error) {
-	GtkWidget *dialog;
+        GtkWidget *dialog;
 
-	dialog = gtk_message_dialog_new (NULL,
-					 GTK_DIALOG_MODAL,
-					 GTK_MESSAGE_ERROR,
-					 GTK_BUTTONS_OK,
-					 _("There was an error displaying help: %s"),
-					 error->message);
-	g_signal_connect (dialog, "response",
-			  G_CALLBACK (gtk_widget_destroy), NULL);
-	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-	gtk_window_set_screen (GTK_WINDOW (dialog), screen);
-	gtk_widget_show (dialog);
-	g_error_free (error);
+        dialog = gtk_message_dialog_new (NULL,
+                                         GTK_DIALOG_MODAL,
+                                         GTK_MESSAGE_ERROR,
+                                         GTK_BUTTONS_OK,
+                                         _("There was an error displaying help: %s"),
+                                         error->message);
+        g_signal_connect (dialog, "response",
+                          G_CALLBACK (gtk_widget_destroy), NULL);
+        gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+        gtk_window_set_screen (GTK_WINDOW (dialog), screen);
+        gtk_widget_show (dialog);
+        g_error_free (error);
     }
 }
 
@@ -172,8 +170,8 @@ static const GtkActionEntry applet_menu_actions[] = {
 
 static gboolean
 applet_factory (MatePanelApplet *applet,
-		const char  *iid,
-		gpointer     user_data)
+                const char      *iid,
+                gpointer         user_data)
 {
     gboolean ret = FALSE;
     GtkWidget *drive_list;
@@ -181,52 +179,53 @@ applet_factory (MatePanelApplet *applet,
     GtkActionGroup *action_group;
 
     if (!strcmp (iid, drivemount_iid)) {
-	g_set_application_name (_("Disk Mounter"));
+        g_set_application_name (_("Disk Mounter"));
 
-	gtk_window_set_default_icon_name ("media-floppy");
+        gtk_window_set_default_icon_name ("media-floppy");
 
-	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
-	mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
+        mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
+        mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
 
-	drive_list = drive_list_new ();
+        drive_list = drive_list_new ();
 
-	gtk_container_add (GTK_CONTAINER (applet), drive_list);
+        gtk_container_add (GTK_CONTAINER (applet), drive_list);
 
-	g_signal_connect_object (applet, "change_orient",
-				 G_CALLBACK (change_orient), drive_list, 0);
-	g_signal_connect_object (applet, "size_allocate",
-				 G_CALLBACK (size_allocate), drive_list, 0);
-	g_signal_connect (applet, "change_background",
-			  G_CALLBACK (change_background), drive_list);
+        g_signal_connect_object (applet, "change_orient",
+                                 G_CALLBACK (change_orient), drive_list, 0);
+        g_signal_connect_object (applet, "size_allocate",
+                                 G_CALLBACK (size_allocate), drive_list, 0);
+        g_signal_connect (applet, "change_background",
+                          G_CALLBACK (change_background), drive_list);
 
-	/* set initial state */
-	change_orient (applet,
-		       mate_panel_applet_get_orient (applet),
-		       DRIVE_LIST (drive_list));
+        /* set initial state */
+        change_orient (applet,
+                       mate_panel_applet_get_orient (applet),
+                       DRIVE_LIST (drive_list));
 
-	action_group = gtk_action_group_new ("DriveMount Applet Actions");
-	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (action_group,
-				      applet_menu_actions,
-				      G_N_ELEMENTS (applet_menu_actions),
-				      drive_list);
-	mate_panel_applet_setup_menu_from_resource (applet,
-	                                            DRIVEMOUNT_RESOURCE_PATH "drivemount-applet-menu.xml",
-	                                            action_group);
-	g_object_unref (action_group);
+        action_group = gtk_action_group_new ("DriveMount Applet Actions");
+        gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+        gtk_action_group_add_actions (action_group,
+                                      applet_menu_actions,
+                                      G_N_ELEMENTS (applet_menu_actions),
+                                      drive_list);
+        mate_panel_applet_setup_menu_from_resource (applet,
+                                                    DRIVEMOUNT_RESOURCE_PATH "drivemount-applet-menu.xml",
+                                                    action_group);
+        g_object_unref (action_group);
 
-	ao = gtk_widget_get_accessible (GTK_WIDGET (applet));
-	atk_object_set_name (ao, _("Disk Mounter"));
+        ao = gtk_widget_get_accessible (GTK_WIDGET (applet));
+        atk_object_set_name (ao, _("Disk Mounter"));
 
-	gtk_widget_show_all (GTK_WIDGET (applet));
+        gtk_widget_show_all (GTK_WIDGET (applet));
 
-	ret = TRUE;
+        ret = TRUE;
     }
 
     return ret;
 }
 
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY (factory_iid,
-				  PANEL_TYPE_APPLET,
-				  "Drive-Mount-Applet",
-				  applet_factory, NULL)
+                                       PANEL_TYPE_APPLET,
+                                       "Drive-Mount-Applet",
+                                       applet_factory, NULL)
+
