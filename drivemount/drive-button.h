@@ -59,10 +59,10 @@ GtkWidget *drive_button_new             (GVolume *volume);
 GtkWidget *drive_button_new_from_mount  (GMount *mount);
 void       drive_button_queue_update    (DriveButton *button);
 void       drive_button_set_size        (DriveButton *button,
-					 int          icon_size);
+                                         int          icon_size);
 
 int        drive_button_compare         (DriveButton *button,
-					 DriveButton *other_button);
+                                         DriveButton *other_button);
 
 void       drive_button_redraw (gpointer key, gpointer value, gpointer user_data);
 
