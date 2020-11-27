@@ -211,7 +211,7 @@ trash_applet_dispose (GObject *object)
 static void
 trash_applet_init (TrashApplet *applet)
 {
-  const GtkTargetEntry drop_types[] = { { "text/uri-list" } };
+  const GtkTargetEntry drop_types[] = { { "text/uri-list", 0, 0 } };
 
   /* needed to clamp ourselves to the panel size */
   mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
