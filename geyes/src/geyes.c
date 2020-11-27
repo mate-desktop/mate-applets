@@ -291,7 +291,7 @@ create_eyes (MatePanelApplet *applet)
 }
 
 static void
-dispose_cb (GObject *object, EyesApplet *eyes_applet)
+destroy_cb (GObject *object, EyesApplet *eyes_applet)
 {
 	g_return_if_fail (eyes_applet);
 
@@ -422,8 +422,8 @@ geyes_applet_fill (MatePanelApplet *applet)
 			_("The eyes look in the direction of the mouse pointer"));
 
 	g_signal_connect (eyes_applet->vbox,
-			  "dispose",
-			  G_CALLBACK (dispose_cb),
+			  "destroy",
+			  G_CALLBACK (destroy_cb),
 			  eyes_applet);
 
 	gtk_widget_show_all (GTK_WIDGET (eyes_applet->applet));
