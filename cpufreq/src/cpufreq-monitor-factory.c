@@ -28,13 +28,13 @@
 
 #include "cpufreq-applet.h"
 #include "cpufreq-utils.h"
-#include "cpufreq-monitor-sysfs.h"
-#include "cpufreq-monitor-procfs.h"
-#include "cpufreq-monitor-cpuinfo.h"
+#include "cpufreq-monitor-factory.h"
 #ifdef HAVE_LIBCPUFREQ
 #include "cpufreq-monitor-libcpufreq.h"
+#else
+#include "cpufreq-monitor-sysfs.h"
+#include "cpufreq-monitor-cpuinfo.h"
 #endif
-#include "cpufreq-monitor-factory.h"
 
 CPUFreqMonitor *
 cpufreq_monitor_factory_create_monitor (guint cpu)
@@ -44,10 +44,8 @@ cpufreq_monitor_factory_create_monitor (guint cpu)
 #else
     CPUFreqMonitor *monitor = NULL;
 
-    if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+    if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) {
         monitor = cpufreq_monitor_sysfs_new (cpu);
-    } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel (Deprecated)*/
-        monitor = cpufreq_monitor_procfs_new (cpu);
     } else if (g_file_test ("/proc/cpuinfo", G_FILE_TEST_EXISTS)) {
         /* If there is no cpufreq support it shows only the cpu frequency,
          * I think is better than do nothing. I have to notify it to the user, because

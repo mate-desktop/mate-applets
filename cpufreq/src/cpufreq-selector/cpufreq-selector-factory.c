@@ -22,26 +22,24 @@
 #endif
 
 #include "cpufreq-selector-factory.h"
-#include "cpufreq-selector-sysfs.h"
-#include "cpufreq-selector-procfs.h"
 #ifdef HAVE_LIBCPUFREQ
 #include "cpufreq-selector-libcpufreq.h"
+#else
+#include "cpufreq-selector-sysfs.h"
 #endif
 
 CPUFreqSelector *
 cpufreq_selector_factory_create_selector (guint cpu)
 {
+#ifdef HAVE_LIBCPUFREQ
+    return cpufreq_selector_libcpufreq_new (cpu);
+#else
     CPUFreqSelector *selector = NULL;
 
-#ifdef HAVE_LIBCPUFREQ
-    selector = cpufreq_selector_libcpufreq_new (cpu);
-#else
-    if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+    if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) {
         selector = cpufreq_selector_sysfs_new (cpu);
-    } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
-        selector = cpufreq_selector_procfs_new (cpu);
     }
-#endif /* HAVE_LIBCPUFREQ */
 
     return selector;
+#endif /* HAVE_LIBCPUFREQ */
 }
