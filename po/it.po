@@ -7,7 +7,6 @@
 # Emilio Bologna <io@emilio.i5-my.name>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Marco Z. <minaz666@gmail.com>, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Dario Di Nucci <linkin88mail@gmail.com>, 2020
 # Giuseppe Pignataro <rogepix@gmail.com>, 2020
@@ -16,13 +15,14 @@
 # Mat V <enthusedquill6@gmail.com>, 2020
 # l3nn4rt, 2020
 # andrea pittaro <transifex@andreapittaro.it>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.23.0\n"
+"Project-Id-Version: mate-applets 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-10 17:58+0100\n"
+"POT-Creation-Date: 2020-08-11 21:05+0200\n"
 "PO-Revision-Date: 2020-02-15 11:22+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
@@ -32,14 +32,14 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: accessx-status/applet.c:86 charpick/charpick.c:572 geyes/geyes.c:166
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr "Team Documentazione GNOME Sun <gdocteam@sun.com>"
 
-#: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: accessx-status/applet.c:87 battstat/battstat_applet.c:820
+#: charpick/charpick.c:573 cpufreq/src/cpufreq-applet.c:466
 #: drivemount/drivemount.c:109 geyes/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
@@ -65,8 +65,8 @@ msgstr ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 Gli sviluppatori di MATE"
 
-#: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:592 command/command.c:128
+#: accessx-status/applet.c:105 battstat/battstat_applet.c:845
+#: charpick/charpick.c:593 command/command.c:128
 #: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
 #: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
 #: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
@@ -95,7 +95,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "Preferen_ze di accessibilità alla tastiera"
 
 #: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: charpick/charpick.c:674 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/drivemount.c:165 geyes/geyes.c:359
 #: mateweather/mateweather-applet.c:117 multiload/main.c:488
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
@@ -103,7 +103,7 @@ msgid "_Help"
 msgstr "_Aiuto"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:676 command/command.c:84
+#: charpick/charpick.c:677 command/command.c:84
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
 #: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
 #: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
@@ -163,13 +163,7 @@ msgid "Shows the status of keyboard accessibility features"
 msgstr ""
 "Mostra lo stato delle funzionalità di accesso facilitato alla tastiera"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: battstat/battstat_applet.c:60 charpick/charpick.c:671 command/command.c:83
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
 #: mateweather/mateweather-applet.c:114 multiload/main.c:482
 #: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
@@ -317,7 +311,7 @@ msgstr "Stato della batteria sconosciuto"
 msgid "N/A"
 msgstr "N/D"
 
-#: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
+#: battstat/battstat_applet.c:784 drivemount/drivemount.c:153
 #: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
 #: mateweather/mateweather-pref.c:747
 #: stickynotes/stickynotes_applet_callbacks.c:345
@@ -327,23 +321,23 @@ msgstr "N/D"
 msgid "There was an error displaying help: %s"
 msgstr "Si è verificato un errore nel visualizzare il manuale: %s"
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:825
 msgid "This utility shows the status of your laptop battery."
 msgstr "Questa utilità mostra lo stato della batteria del proprio portatile."
 
-#: battstat/battstat_applet.c:826
+#: battstat/battstat_applet.c:827
 msgid "upower backend enabled."
 msgstr "backend upower abilitato."
 
-#: battstat/battstat_applet.c:827
+#: battstat/battstat_applet.c:828
 msgid "Legacy backend enabled."
 msgstr "backend legacy abilitato."
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:837
 msgid "About Battery Charge Monitor"
 msgstr "Informazioni sul Monitor Carica della Batteria"
 
-#: battstat/battstat_applet.c:838
+#: battstat/battstat_applet.c:839
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
@@ -353,12 +347,12 @@ msgstr ""
 "Copyright © 2002-2005 Free Software Foundation ed altri\n"
 "Copyright © 2012-2020 Gli sviluppatori di MATE"
 
-#: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
+#: battstat/battstat_applet.c:1115 battstat/battstat_applet.c:1165
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Monitor Carica della batteria"
 
-#: battstat/battstat_applet.c:1165
+#: battstat/battstat_applet.c:1166
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "Monitoraggio della carica rimanente di un portatile"
@@ -401,12 +395,6 @@ msgstr "Notifica _quando la batteria è completamente ricaricata"
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:6
 msgid "Battstat Factory"
 msgstr "Fabbrica Battstat"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
-msgid "battery"
-msgstr "batteria"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
@@ -480,6 +468,14 @@ msgstr "Minuti rimanenti"
 msgid "Battery Status Utility"
 msgstr "Utilità stato della batteria"
 
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
+msgid "Battery power low"
+msgstr "Batteria quasi scarica"
+
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
+msgid "Battery fully re-charged"
+msgstr "Batteria completamente ricaricata"
+
 #: charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "Tavolozze disponibili"
@@ -498,11 +494,11 @@ msgstr "Inserisce il carattere speciale"
 msgid "insert special character %s"
 msgstr "inserisce il carattere speciale %s"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:584
 msgid "About Character Palette"
 msgstr "Info su Tavolozza caratteri"
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:586
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
@@ -510,7 +506,7 @@ msgstr ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers ed altri\n"
 "Copyright © 2012-2020 Gli sviluppatori di MATE"
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:588
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -518,13 +514,13 @@ msgstr ""
 "Applet del pannello di MATE per selezionare caratteri strani che non si "
 "trovano sulla tastiera. Rilasciata sotto la GNU General Public Licence."
 
-#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/charpick.c:700 charpick/charpick.c:714
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Tavolozza caratteri"
 
-#: charpick/charpick.c:699
+#: charpick/charpick.c:700
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Inserisce i caratteri"
@@ -533,12 +529,6 @@ msgstr "Inserisce i caratteri"
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
 msgstr "Fabbrica applet Tavolozza caratteri"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
-msgid "accessories-character-map"
-msgstr "accessories-character-map"
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -673,12 +663,6 @@ msgstr "Fabbrica di Comando"
 msgid "Command"
 msgstr "Comando"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
-
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
 msgstr "Comando da eseguire"
@@ -749,12 +733,6 @@ msgstr "Monitor Variazione della frequenza CPU"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "Monitora la variazione della frequenza della CPU"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-cpu-frequency-applet"
-msgstr "mate-cpu-frequency-applet"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -858,6 +836,10 @@ msgstr ""
 "Sono richiesti privilegi per cambiare la variazione della frequenza della "
 "CPU"
 
+#: drivemount/drive-button.c:307
+msgid "nothing to mount"
+msgstr "nulla da montare"
+
 #: drivemount/drive-button.c:340 drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(montato)"
@@ -914,7 +896,7 @@ msgstr ""
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Applet per montare e smontare volumi a blocchi."
 
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "Montadischi"
@@ -930,12 +912,6 @@ msgstr "Fabbrica dell'applet per montaggio dischi"
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
 msgstr "Monta dischi e dispositivi locali"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
-msgid "media-floppy"
-msgstr "media-floppy"
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
@@ -971,12 +947,6 @@ msgstr "Fabbrica applet Occhi"
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
 msgstr "Un gruppo di bulbi oculari per il proprio pannello"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-eyes-applet"
-msgstr "mate-eyes-applet"
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -1334,12 +1304,6 @@ msgstr "Fabbrica per creare le applet meteo."
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Monitoraggio delle condizioni meteo e previsioni"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
-msgid "weather-storm"
-msgstr "weather-storm"
-
 #: multiload/main.c:60
 msgid "About System Monitor"
 msgstr "Info su Monitor di Sistema"
@@ -1464,7 +1428,7 @@ msgstr "_Apri «Monitor di sistema»"
 msgid "System Monitor"
 msgstr "Monitor di sistema"
 
-#: multiload/netspeed.c:40
+#: multiload/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
@@ -1480,12 +1444,6 @@ msgstr "Fabbrica per creare applet di caricamento. "
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "Un indicatore del carico del sistema"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-system-monitor"
-msgstr "utilities-system-monitor"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1929,12 +1887,6 @@ msgstr "Applet Monitor di rete"
 msgid "Network Monitor"
 msgstr "Monitor di rete"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-netspeed-applet"
-msgstr "mate-netspeed-applet"
-
 #: netspeed/src/netspeed.c:427
 msgid "b"
 msgstr "b"
@@ -2222,12 +2174,6 @@ msgstr "Note adesive"
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:10
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Crea, visualizza e gestisce le note adesive sulla scrivania"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-sticky-notes-applet"
-msgstr "mate-sticky-notes-applet"
 
 #: stickynotes/stickynotes.c:577
 msgid "This note is locked."
@@ -2623,12 +2569,6 @@ msgstr "Timer"
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Avvia un timer e ricevi una notifica quando scade il tempo"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-panel-clock"
-msgstr "mate-panel-clock"
-
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
 msgstr "Nome del timer"
@@ -2721,12 +2661,6 @@ msgstr "Cestino"
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:10
 msgid "Go to Trash"
 msgstr "Va al cestino"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
-msgid "user-trash-full"
-msgstr "user-trash-full"
 
 #: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"

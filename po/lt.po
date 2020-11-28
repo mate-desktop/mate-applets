@@ -7,15 +7,15 @@
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # brennus <jonas.ska@gmail.com>, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Moo, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.23.0\n"
+"Project-Id-Version: mate-applets 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-10 17:58+0100\n"
+"POT-Creation-Date: 2020-08-11 21:05+0200\n"
 "PO-Revision-Date: 2020-02-15 11:22+0000\n"
 "Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
@@ -25,14 +25,14 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:571 geyes/geyes.c:166
+#: accessx-status/applet.c:86 charpick/charpick.c:572 geyes/geyes.c:166
 #: mateweather/mateweather-about.c:41 multiload/main.c:48
 #: stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr "Sun GNOME dokumentacijos komanda <gdocteam@sun.com>"
 
-#: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:466
+#: accessx-status/applet.c:87 battstat/battstat_applet.c:820
+#: charpick/charpick.c:573 cpufreq/src/cpufreq-applet.c:466
 #: drivemount/drivemount.c:109 geyes/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
@@ -56,8 +56,8 @@ msgstr ""
 "Autorių teisės © 2003 Sun Microsystems\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:592 command/command.c:128
+#: accessx-status/applet.c:105 battstat/battstat_applet.c:845
+#: charpick/charpick.c:593 command/command.c:128
 #: cpufreq/src/cpufreq-applet.c:490 drivemount/drivemount.c:127
 #: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
 #: netspeed/src/netspeed.c:829 stickynotes/stickynotes_applet_callbacks.c:388
@@ -94,7 +94,7 @@ msgid "_Keyboard Accessibility Preferences"
 msgstr "_Klaviatūros prieinamumo nustatymai"
 
 #: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:673 cpufreq/src/cpufreq-applet.c:119
+#: charpick/charpick.c:674 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/drivemount.c:165 geyes/geyes.c:359
 #: mateweather/mateweather-applet.c:117 multiload/main.c:488
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
@@ -102,7 +102,7 @@ msgid "_Help"
 msgstr "_Žinynas"
 
 #: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:676 command/command.c:84
+#: charpick/charpick.c:677 command/command.c:84
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
 #: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:491
 #: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:84
@@ -157,13 +157,7 @@ msgstr "Klaviatūros prieinamumo būklės įtaiso gamykla"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Rodo klaviatūros pagalbinių ypatybių būklę"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:12
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:670 command/command.c:83
+#: battstat/battstat_applet.c:60 charpick/charpick.c:671 command/command.c:83
 #: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
 #: mateweather/mateweather-applet.c:114 multiload/main.c:482
 #: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:83
@@ -321,7 +315,7 @@ msgstr "Baterijos būsena nežinoma"
 msgid "N/A"
 msgstr "Nepasiekiama"
 
-#: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
+#: battstat/battstat_applet.c:784 drivemount/drivemount.c:153
 #: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
 #: mateweather/mateweather-pref.c:747
 #: stickynotes/stickynotes_applet_callbacks.c:345
@@ -331,23 +325,23 @@ msgstr "Nepasiekiama"
 msgid "There was an error displaying help: %s"
 msgstr "Rodant žinyną įvyko klaida: %s"
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:825
 msgid "This utility shows the status of your laptop battery."
 msgstr "Ši pagalbinė programa parodo nešiojamo kompiuterio baterijos būseną."
 
-#: battstat/battstat_applet.c:826
+#: battstat/battstat_applet.c:827
 msgid "upower backend enabled."
 msgstr "upower posistemė įjungta."
 
-#: battstat/battstat_applet.c:827
+#: battstat/battstat_applet.c:828
 msgid "Legacy backend enabled."
 msgstr "Palikiminė vidinė pusė įjungta."
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:837
 msgid "About Battery Charge Monitor"
 msgstr "Apie baterijos įkrovos monitorių"
 
-#: battstat/battstat_applet.c:838
+#: battstat/battstat_applet.c:839
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
@@ -357,12 +351,12 @@ msgstr ""
 "Autorių teisės © 2002-2005 Free Software Foundation ir kiti\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
+#: battstat/battstat_applet.c:1115 battstat/battstat_applet.c:1165
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Baterijos įkrovos monitorius"
 
-#: battstat/battstat_applet.c:1165
+#: battstat/battstat_applet.c:1166
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "Stebėti likusią nešiojamojo kompiuterio energiją"
@@ -405,12 +399,6 @@ msgstr "Pra_nešti, kai baterija yra pilnai pakrauta"
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:6
 msgid "Battstat Factory"
 msgstr "Battstat gamykla"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:12
-msgid "battery"
-msgstr "battery"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
@@ -480,6 +468,14 @@ msgstr "min. iki išsikrovimo"
 msgid "Battery Status Utility"
 msgstr "Baterijos būsenos pagalbinė programa"
 
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
+msgid "Battery power low"
+msgstr "Baterija beveik išsikrovusi"
+
+#: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
+msgid "Battery fully re-charged"
+msgstr "Baterija yra pilnai įkrauta."
+
 #: charpick/charpick.c:404
 msgid "Available palettes"
 msgstr "Prieinamos paletės"
@@ -498,11 +494,11 @@ msgstr "Įterpkite specialų simbolį"
 msgid "insert special character %s"
 msgstr "įterpti specialų simbolį %s"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:584
 msgid "About Character Palette"
 msgstr "Apie simbolių paletę"
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:586
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
@@ -510,7 +506,7 @@ msgstr ""
 "Autorių teisės © 1998, 2004-2005 GNOME įtaisų prižiūrėtojai ir kiti\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:588
 msgid ""
 "Mate Panel applet for selecting strange characters that are not on my "
 "keyboard. Released under GNU General Public Licence."
@@ -518,13 +514,13 @@ msgstr ""
 "MATE skydelio įtaisas, padedantis įterpti keistus simbolius, kurių nėra "
 "klaviatūroje. Išleistas GPL sąlygomis."
 
-#: charpick/charpick.c:699 charpick/charpick.c:713
+#: charpick/charpick.c:700 charpick/charpick.c:714
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Simbolių paletė"
 
-#: charpick/charpick.c:699
+#: charpick/charpick.c:700
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Įterpti simbolius"
@@ -533,12 +529,6 @@ msgstr "Įterpti simbolius"
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Charpicker Applet Factory"
 msgstr "Charpicker įtaiso gamykla"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:12
-msgid "accessories-character-map"
-msgstr "accessories-character-map"
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:5
 msgid "Characters shown on applet startup"
@@ -673,12 +663,6 @@ msgstr "Komandų gamykla"
 msgid "Command"
 msgstr "Komanda"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
-
 #: command/org.mate.panel.applet.command.gschema.xml.in:5
 msgid "Command to execute"
 msgstr "Paleidžiama komanda"
@@ -749,12 +733,6 @@ msgstr "CPU dažnio mastelio monitorius"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
 msgstr "Stebėti CPU dažnio mastelį"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-cpu-frequency-applet"
-msgstr "mate-cpu-frequency-applet"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -855,6 +833,10 @@ msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr ""
 "Norint keisti CPU dažnių reguliavimą reikia turėti administratoriaus teises."
 
+#: drivemount/drive-button.c:307
+msgid "nothing to mount"
+msgstr "nieko prijungimui"
+
 #: drivemount/drive-button.c:340 drivemount/drive-button.c:354
 msgid "(mounted)"
 msgstr "(prijungtas)"
@@ -911,7 +893,7 @@ msgstr ""
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Įtaisas duomenų laikmenų prijungimui ir atjungimui."
 
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:225
+#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 msgid "Disk Mounter"
 msgstr "Diskų prijungimas"
@@ -927,12 +909,6 @@ msgstr "Diskų prijungimo priedo gamykla"
 #: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
 msgstr "Prijungti vietinius diskus ir įrenginius"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:12
-msgid "media-floppy"
-msgstr "media-floppy"
 
 #: geyes/geyes.c:178
 msgid "About Eyes"
@@ -967,12 +943,6 @@ msgstr "Akių įtaiso gamykla"
 #: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
 msgstr "Keletas akių skydeliui"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-eyes-applet"
-msgstr "mate-eyes-applet"
 
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -1324,12 +1294,6 @@ msgstr "Gamykla orų įtaiso sukūrimui."
 msgid "Monitor the current weather conditions, and forecasts"
 msgstr "Stebėkite esamas orų sąlygas ir prognozes"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:12
-msgid "weather-storm"
-msgstr "weather-storm"
-
 #: multiload/main.c:60
 msgid "About System Monitor"
 msgstr "Apie sistemos monitorių"
@@ -1460,7 +1424,7 @@ msgstr "_Atverti sistemos monitorių"
 msgid "System Monitor"
 msgstr "Sistemos monitorius"
 
-#: multiload/netspeed.c:40
+#: multiload/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
@@ -1476,12 +1440,6 @@ msgstr "Gamykla įkėlimo įtaiso sukūrimui."
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
 msgstr "Sistemos apkrovos indikatorius"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:12
-msgid "utilities-system-monitor"
-msgstr "utilities-system-monitor"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
@@ -1922,12 +1880,6 @@ msgstr "Tinklo greičio įtaisas"
 msgid "Network Monitor"
 msgstr "Tinklo monitorius"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-netspeed-applet"
-msgstr "mate-netspeed-applet"
-
 #: netspeed/src/netspeed.c:427
 msgid "b"
 msgstr "b"
@@ -2215,12 +2167,6 @@ msgstr "Lipnūs rašteliai"
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:10
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Kurkite, žiūrėkite ir tvarkykite lipnius darbalaukio raštelius"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-sticky-notes-applet"
-msgstr "mate-sticky-notes-applet"
 
 #: stickynotes/stickynotes.c:577
 msgid "This note is locked."
@@ -2616,12 +2562,6 @@ msgstr "Laikmatis"
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Pradėti laikmatį ir gauti įspėjimą, kai jo trukmė pasibaigs"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-panel-clock"
-msgstr "mate-panel-clock"
-
 #: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
 msgstr "Laikmačio pavadinimas"
@@ -2714,12 +2654,6 @@ msgstr "Šiukšlinė"
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:10
 msgid "Go to Trash"
 msgstr "Eiti į šiukšlinę"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:12
-msgid "user-trash-full"
-msgstr "user-trash-full"
 
 #: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:352
 msgid "_Empty Trash"
