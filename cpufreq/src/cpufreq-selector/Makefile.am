@@ -15,11 +15,6 @@ if CPUFREQ_SELECTOR_SUID
 	chmod 4755 $(DESTDIR)$(bindir)/mate-cpufreq-selector
 endif
 
-
-if HAVE_LIBCPUFREQ
-cpufreq_files=cpufreq-selector-libcpufreq.c        cpufreq-selector-libcpufreq.h
-endif
-
 if HAVE_POLKIT
 service_files=cpufreq-selector-service.c       cpufreq-selector-service.h
 endif
@@ -27,12 +22,20 @@ endif
 mate_cpufreq_selector_SOURCES = \
 	cpufreq-selector.c               cpufreq-selector.h        	\
 	cpufreq-selector-sysfs.c         cpufreq-selector-sysfs.h  	\
-	cpufreq-selector-procfs.c        cpufreq-selector-procfs.h 	\
-	$(cpufreq_files)					   	\
 	$(service_files)						\
 	cpufreq-selector-factory.c	 cpufreq-selector-factory.h	\
 	$(BUILT_SOURCES)						\
 	main.c
+
+if HAVE_LIBCPUFREQ
+mate_cpufreq_selector_SOURCES += \
+	cpufreq-selector-libcpufreq.c \
+	cpufreq-selector-libcpufreq.h
+else
+mate_cpufreq_selector_SOURCES += \
+	cpufreq-selector-sysfs.h \
+	cpufreq-selector-sysfs.c
+endif
 
 mate_cpufreq_selector_LDADD = \
 	$(CPUFREQ_SELECTOR_LIBS) 	\

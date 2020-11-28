@@ -10,10 +10,6 @@ AM_CPPFLAGS = \
 
 libexec_PROGRAMS = mate-cpufreq-applet
 
-if HAVE_LIBCPUFREQ
-cpufreq_files=cpufreq-monitor-libcpufreq.c    cpufreq-monitor-libcpufreq.h
-endif
-
 BUILT_SOURCES = \
 	cpufreq-resources.c		cpufreq-resources.h
 
@@ -27,11 +23,19 @@ mate_cpufreq_applet_SOURCES = \
 	cpufreq-selector.c		cpufreq-selector.h		\
 	cpufreq-popup.c                 cpufreq-popup.h			\
 	cpufreq-monitor.c       	cpufreq-monitor.h	      	\
-	cpufreq-monitor-factory.c	cpufreq-monitor-factory.h	\
-	cpufreq-monitor-procfs.c	cpufreq-monitor-procfs.h	\
-	cpufreq-monitor-sysfs.c	        cpufreq-monitor-sysfs.h	        \
-	$(cpufreq_files)						\
-	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
+	cpufreq-monitor-factory.c	cpufreq-monitor-factory.h
+
+if HAVE_LIBCPUFREQ
+mate_cpufreq_applet_SOURCES += \
+	cpufreq-monitor-libcpufreq.c \
+	cpufreq-monitor-libcpufreq.h
+else
+mate_cpufreq_applet_SOURCES += \
+	cpufreq-monitor-cpuinfo.c \
+	cpufreq-monitor-cpuinfo.h \
+	cpufreq-monitor-sysfs.c \
+	cpufreq-monitor-sysfs.h
+endif
 
 mate_cpufreq_applet_CFLAGS =		\
 	${WARN_CFLAGS}
