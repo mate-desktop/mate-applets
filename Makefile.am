@@ -79,7 +79,6 @@ EXTRA_DIST = \
 	omf.make \
 	autogen.sh
 
-M4_FILES = m4/ac-define-dir.m4 m4/as-ac-expand.m4
 MAINTAINERCLEANFILES = \
 	ABOUT-NLS \
 	INSTALL \
