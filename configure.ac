@@ -530,12 +530,9 @@ pixmapsdir="${datadir}/pixmaps"
 AC_SUBST(pixmapsdir)
 pkgdatadir="${datadir}/mate-applets"
 AC_SUBST(pkgdatadir)
-builderdir="${pkgdatadir}/builder"
-AC_SUBST(builderdir)
 
 AC_DEFINE_DIR(MATE_PIXMAPSDIR, "${pixmapsdir}", [Mate Pixmaps Directory])
 AC_DEFINE_DIR(PKGDATADIR, "${pkgdatadir}", [Mate Applets Directory])
-AC_DEFINE_DIR(GTK_BUILDERDIR, "${builderdir}", [GtkBuilder Resources Directory])
 AC_DEFINE_DIR(DATADIR, "${datadir}", [datadir])
 AC_DEFINE_DIR(PKG_DATA_DIR, "${pkgdatadir}", [pkgdatadir])
 AC_DEFINE_DIR(SYSCONFDIR, "${sysconfdir}", [sysconfdir])
@@ -543,14 +540,12 @@ AC_DEFINE_DIR(LIBDIR, "${libdir}", [libdir])
 AC_DEFINE_DIR(PREFIX, "$prefix", [install prefix])
 
 AS_AC_EXPAND(DATADIR, "${datadir}")
-AS_AC_EXPAND(BUILDERDIR, $builderdir)
 
 AC_SUBST(VERSION)
 AC_SUBST(PACKAGE)
 AC_SUBST(DATADIR)
 AC_SUBST(LIBDIR)
 AC_SUBST(PKGDATADIR)
-AC_SUBST(BUILDERDIR)
 
 dnl ***************************************************************************
 dnl *** Output Makefiles et al                                              ***
