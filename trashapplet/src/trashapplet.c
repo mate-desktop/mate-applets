@@ -620,7 +620,6 @@ trash_applet_factory (MatePanelApplet *applet,
   if (!strcmp (iid, "TrashApplet"))
     {
       GtkActionGroup *action_group;
-      gchar          *ui_path;
 
       g_set_application_name (_("Trash Applet"));
 
@@ -633,9 +632,9 @@ trash_applet_factory (MatePanelApplet *applet,
 				    trash_applet_menu_actions,
 				    G_N_ELEMENTS (trash_applet_menu_actions),
 				    applet);
-      ui_path = g_build_filename (TRASH_MENU_UI_DIR, "trashapplet-menu.xml", NULL);
-      mate_panel_applet_setup_menu_from_file (applet, ui_path, action_group);
-      g_free (ui_path);
+      mate_panel_applet_setup_menu_from_resource (applet,
+                                                  GRESOURCE "trashapplet-menu.xml",
+                                                  action_group);
       g_object_unref (action_group);
 
       gtk_widget_show (GTK_WIDGET (applet));

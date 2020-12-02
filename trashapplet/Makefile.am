@@ -22,16 +22,12 @@ org.mate.panel.applet.TrashAppletFactory.service: $(service_in_files)
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir = $(datadir)/mate/ui
-ui_DATA = trashapplet-menu.xml
-
-builder_DATA = trashapplet-empty-progress.ui
-
 EXTRA_DIST = \
-	$(ui_DATA) \
 	$(applet_in_files).in	\
 	$(service_in_files) \
-	$(builder_DATA)
+	trashapplet-empty-progress.ui \
+	trashapplet-menu.xml \
+	trashapplet-resources.gresource.xml
 
 CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA)
 

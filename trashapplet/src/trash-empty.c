@@ -236,10 +236,7 @@ trash_empty_start (GtkWidget *parent)
   GtkBuilder *builder;
   gint i;
 
-  builder = gtk_builder_new ();
-  gtk_builder_add_from_file (builder,
-                             GTK_BUILDERDIR "/trashapplet-empty-progress.ui",
-                             NULL);
+  builder = gtk_builder_new_from_resource (GRESOURCE "trashapplet-empty-progress.ui");
 
   for (i = 0; i < G_N_ELEMENTS (widgets); i++)
     {
