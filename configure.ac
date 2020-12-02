@@ -533,7 +533,6 @@ AC_SUBST(pkgdatadir)
 builderdir="${pkgdatadir}/builder"
 AC_SUBST(builderdir)
 
-AC_DEFINE_DIR(MATE_ICONDIR, "${iconsdir}", [Mate Icon Directory])
 AC_DEFINE_DIR(MATE_PIXMAPSDIR, "${pixmapsdir}", [Mate Pixmaps Directory])
 AC_DEFINE_DIR(PKGDATADIR, "${pkgdatadir}", [Mate Applets Directory])
 AC_DEFINE_DIR(GTK_BUILDERDIR, "${builderdir}", [GtkBuilder Resources Directory])
