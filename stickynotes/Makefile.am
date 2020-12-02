@@ -1,14 +1,5 @@
 SUBDIRS = pixmaps docs
 
-ui_files = stickynotes-applet-menu.xml
-builder_files =					\
-	sticky-notes-delete.ui			\
-	sticky-notes-delete-all.ui		\
-	sticky-notes-note.ui			\
-	sticky-notes-preferences.ui		\
-	sticky-notes-properties.ui		\
-	$(NULL)
-
 applet_in_files = org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in
 service_in_files = org.mate.panel.applet.StickyNotesAppletFactory.service.in
 schemas_in_files = stickynotes.schemas.in
@@ -21,7 +12,6 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
-	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\" \
 	-DGRESOURCE=\""/org/mate/mate-applets/sticky-notes/\"" \
 	${WARN_CFLAGS}				\
 	$(NULL)
@@ -51,9 +41,6 @@ stickynotes_applet_LDADD =			\
 	-lX11					\
 	$(NULL)
 
-uidir = $(datadir)/mate/ui
-ui_DATA = $(ui_files)
-
 stickynotes_gschema_in_files = org.mate.stickynotes.gschema.xml.in
 gsettings_SCHEMAS = $(stickynotes_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
@@ -67,7 +54,7 @@ sticky-notes-resources.h: sticky-notes-resources.gresource.xml $(shell $(GLIB_CO
 appletdir   = $(datadir)/mate-panel/applets
 applet_DATA = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
 
-$(applet_in_files): $(applet_in_files).in Makefile
+$(applet_in_files): $(applet_in_files:=.in) Makefile
 	$(AM_V_GEN)sed \
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
@@ -97,13 +84,16 @@ CLEANFILES =					\
 endif
 
 EXTRA_DIST =					\
-	$(builder_files)			\
-	$(ui_files)				\
 	$(stickynotes_gschema_in_files)		\
 	$(service_in_files)			\
-	$(applet_in_files).in			\
-	sticky-notes-resources.gresource.xml	\
+	$(applet_in_files:=.in)			\
+	sticky-notes-delete.ui                  \
+	sticky-notes-delete-all.ui              \
+	sticky-notes-note.ui                    \
+	sticky-notes-preferences.ui             \
+	sticky-notes-properties.ui              \
+	sticky-notes-resources.gresource.xml    \
+	stickynotes-applet-menu.xml		\
 	$(NULL)
-
 
 -include $(top_srcdir)/git.mk

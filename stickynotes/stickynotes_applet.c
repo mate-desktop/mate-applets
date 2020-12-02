@@ -340,7 +340,6 @@ StickyNotesApplet *
 stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 {
 	AtkObject *atk_obj;
-	gchar *ui_path;
 
 	/* Create Sticky Notes Applet */
 	StickyNotesApplet *applet = g_new(StickyNotesApplet, 1);
@@ -373,9 +372,9 @@ stickynotes_applet_new(MatePanelApplet *mate_panel_applet)
 					     stickynotes_applet_menu_toggle_actions,
 					     G_N_ELEMENTS (stickynotes_applet_menu_toggle_actions),
 					     applet);
-	ui_path = g_build_filename (STICKYNOTES_MENU_UI_DIR, "stickynotes-applet-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file(mate_panel_applet, ui_path, applet->action_group);
-	g_free (ui_path);
+	mate_panel_applet_setup_menu_from_resource (mate_panel_applet,
+	                                            GRESOURCE "menu.xml",
+	                                            applet->action_group);
 
 	if (mate_panel_applet_get_locked_down (mate_panel_applet)) {
 		GtkAction *action;
