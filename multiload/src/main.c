@@ -484,7 +484,6 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
     MultiloadApplet *ma;
     GSettings *lockdown_settings;
     GtkActionGroup *action_group;
-    gchar *ui_path;
 
     context = gtk_widget_get_style_context (GTK_WIDGET (applet));
     gtk_style_context_add_class (context, "multiload-applet");
@@ -510,10 +509,9 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
                                   multiload_menu_actions,
                                   G_N_ELEMENTS (multiload_menu_actions),
                                   ma);
-    ui_path = g_build_filename (MULTILOAD_MENU_UI_DIR, "multiload-applet-menu.xml", NULL);
-    mate_panel_applet_setup_menu_from_file (applet, ui_path, action_group);
-    g_free (ui_path);
-
+    mate_panel_applet_setup_menu_from_file (applet,
+                                            MULTILOAD_MENU_UI_DIR "multiload-applet-menu.xml",
+                                            action_group);
 
     if (mate_panel_applet_get_locked_down (applet)) {
         GtkAction *action;
