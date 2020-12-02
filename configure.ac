@@ -572,7 +572,9 @@ charpick/Makefile
 charpick/org.mate.panel.applet.charpick.gschema.xml
 charpick/help/Makefile
 mateweather/Makefile
+mateweather/data/Makefile
 mateweather/docs/Makefile
+mateweather/src/Makefile
 geyes/Makefile
 geyes/data/Makefile
 geyes/data/org.mate.panel.applet.geyes.gschema.xml
