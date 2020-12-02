@@ -568,8 +568,10 @@ drivemount/Makefile
 drivemount/help/Makefile
 drivemount/org.mate.drivemount.gschema.xml
 multiload/Makefile
-multiload/org.mate.panel.applet.multiload.gschema.xml
+multiload/data/Makefile
+multiload/data/org.mate.panel.applet.multiload.gschema.xml
 multiload/docs/Makefile
+multiload/src/Makefile
 charpick/Makefile
 charpick/org.mate.panel.applet.charpick.gschema.xml
 charpick/help/Makefile
