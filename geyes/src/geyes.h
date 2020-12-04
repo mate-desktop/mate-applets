@@ -26,6 +26,9 @@
 #include <mate-panel-applet.h>
 
 #define MAX_EYES 1000
+#define GEYES_SETTINGS_SCHEMA "org.mate.panel.applet.geyes"
+#define GEYES_SETTINGS_THEME_PATH_KEY "theme-path"
+
 typedef struct
 {
     GtkWidget *pbox;
