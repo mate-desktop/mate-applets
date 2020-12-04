@@ -206,7 +206,8 @@ properties_load (EyesApplet *eyes_applet)
     gchar *theme_path = NULL;
     gboolean result;
 
-    theme_path = g_settings_get_string (eyes_applet->settings, "theme-path");
+    theme_path = g_settings_get_string (eyes_applet->settings,
+                                        GEYES_SETTINGS_THEME_PATH_KEY);
 
     if (theme_path == NULL)
         theme_path = g_strdup (GEYES_THEMES_DIR "Default-tiny");
@@ -287,7 +288,7 @@ create_eyes (MatePanelApplet *applet)
     eyes_applet->vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
     eyes_applet->settings =
         mate_panel_applet_settings_new (applet,
-                                        "org.mate.panel.applet.geyes");
+                                        GEYES_SETTINGS_SCHEMA);
     gtk_container_add (GTK_CONTAINER (applet), eyes_applet->vbox);
     return eyes_applet;
 }

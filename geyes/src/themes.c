@@ -210,7 +210,9 @@ theme_selected_cb (GtkTreeSelection *selection,
     load_theme (eyes_applet, theme);
     setup_eyes (eyes_applet);
 
-    g_settings_set_string (eyes_applet->settings, "theme-path", theme);
+    g_settings_set_string (eyes_applet->settings,
+                           GEYES_SETTINGS_THEME_PATH_KEY,
+                           theme);
 
     g_free (theme);
 }
@@ -300,7 +302,7 @@ properties_cb (GtkAction  *action,
                                                        NULL);
     gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
 
-    if (!g_settings_is_writable (eyes_applet->settings, "theme-path")) {
+    if (!g_settings_is_writable (eyes_applet->settings, GEYES_SETTINGS_THEME_PATH_KEY)) {
         gtk_widget_set_sensitive (tree, FALSE);
         gtk_widget_set_sensitive (label, FALSE);
     }
