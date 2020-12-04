@@ -25,7 +25,7 @@ static const gunichar def_code[] = {225, 224, 233, 237, 241, 243, 189, 169, 1579
 /* static const gchar *a_list = "áàâãäåæª"; */
 static const gunichar a_code[] = {225, 224, 226, 227, 228, 229, 230, 170, 0};
 /* static const gchar *cap_a_list = "ÁÀÂÃÄÅÆª"; */
-static const gunichar cap_a_code[] = {192, 193, 194, 195, 196, 197, 198, 170, 0}; 
+static const gunichar cap_a_code[] = {192, 193, 194, 195, 196, 197, 198, 170, 0};
 /* ccedil, cent, copy */
 /* static const gchar *c_list = "çÇ¢©"; */
 static const gunichar c_code[] = {231, 199, 162, 169, 0};
@@ -62,7 +62,7 @@ static const gunichar cap_u_code[] = {217, 218, 219, 220, 0};
 /* static const gchar *y_list = "ýÝÿ¥"; */
 static const gunichar y_code[] = {253, 221, 255, 165, 0};
 
-/* extra characters unrelated to the latin alphabet. All characters in 
+/* extra characters unrelated to the latin alphabet. All characters in
    ISO-8859-1 should now be accounted for.*/
 /* not shy macr plusmn */
 /* static const gchar *dash_list = "¬­¯±"; */
@@ -72,7 +72,7 @@ static const gunichar dash_code[] = {172, 173, 175, 177, 0};
 static const gunichar quote_code[] = {171, 187, 168, 183, 215, 0};
 /* curren, pound, yen, cent, dollar */
 /* static const gchar *currency_list = "€£¥¢$"; */
-static const gunichar currency_code[] = {164, 163, 165, 162, 36, 8364, 0}; 
+static const gunichar currency_code[] = {164, 163, 165, 162, 36, 8364, 0};
 /* sup1 frac12 */
 /* static const gchar *one_list = "¹œŒ"; */
 static const gunichar one_code[] = {185, 178, 179, 188, 189, 190, 0};
@@ -155,26 +155,26 @@ toggle_button_toggled_cb (GtkToggleButton *button,
     gint button_index;
     gboolean toggled;
 
-    button_index = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (button), "index")); 
-    toggled = gtk_toggle_button_get_active (button); 
+    button_index = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (button), "index"));
+    toggled = gtk_toggle_button_get_active (button);
 
     if (toggled)
-    { 
+    {
         gunichar unichar;
         if (curr_data->last_toggle_button && (button != curr_data->last_toggle_button))
             gtk_toggle_button_set_active (curr_data->last_toggle_button, FALSE);
 
-        curr_data->last_toggle_button = button; 
+        curr_data->last_toggle_button = button;
         gtk_widget_grab_focus (curr_data->applet);
         unichar = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (button), "unichar"));
         curr_data->selected_unichar = unichar;
         /* set this? widget as the selection owner */
         gtk_selection_owner_set (curr_data->applet,
                                  GDK_SELECTION_PRIMARY,
-                                 GDK_CURRENT_TIME); 
+                                 GDK_CURRENT_TIME);
         gtk_selection_owner_set (curr_data->applet,
                                  GDK_SELECTION_CLIPBOARD,
-                                 GDK_CURRENT_TIME); 
+                                 GDK_CURRENT_TIME);
         curr_data->last_index = button_index;
     }
     return TRUE;
@@ -213,7 +213,7 @@ key_press_event (GtkWidget   *widget,
                  break;
       case 'A' : code = cap_a_code;
                  break;
-      case 'c' : 
+      case 'c' :
       case 'C' : code = c_code;
                  break;
       case 'e' : code = e_code;
@@ -224,7 +224,7 @@ key_press_event (GtkWidget   *widget,
                  break;
       case 'I' : code =  cap_i_code;
                  break;
-      case 'n' : 
+      case 'n' :
       case 'N' : code = n_code;
                  break;
       case 'o' : code = o_code;
@@ -233,14 +233,14 @@ key_press_event (GtkWidget   *widget,
                  break;
       case 's' : code = s_code;
                  break;
-      case 't' : 
+      case 't' :
       case 'T' : code = t_code;
                  break;
       case 'u' : code = u_code;
                  break;
       case 'U' : code = cap_u_code;
                  break;
-      case 'y' : 
+      case 'y' :
       case 'Y' : code = y_code;
                  break;
       case '-' : code = dash_code;
@@ -249,7 +249,7 @@ key_press_event (GtkWidget   *widget,
                  break;
       case '$' : code = currency_code;
                  break;
-      case '1' : 
+      case '1' :
       case '2' :
       case '3' : code = one_code;
                  break;
@@ -398,7 +398,7 @@ build_table (charpick_data *p_curr_data)
 
     if (p_curr_data->panel_vertical)
         box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-    else 
+    else
         box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
     gtk_widget_show (box);
@@ -465,7 +465,7 @@ build_table (charpick_data *p_curr_data)
 #else
         name = g_strdup (_("Insert special character"));
 #endif
-   
+
         toggle_button[i] = gtk_toggle_button_new_with_label (label);
         atk_desc =  g_strdup_printf (_("insert special character %s"), label);
 
@@ -485,14 +485,14 @@ build_table (charpick_data *p_curr_data)
         max_width = MAX (max_width, req.width);
         max_height = MAX (max_height, req.height-2);
 
-        g_object_set_data (G_OBJECT (toggle_button[i]), "unichar", 
+        g_object_set_data (G_OBJECT (toggle_button[i]), "unichar",
                            GINT_TO_POINTER (g_utf8_get_char (label)));
 
         g_signal_connect (G_OBJECT (toggle_button[i]), "toggled",
                           G_CALLBACK (toggle_button_toggled_cb),
                           p_curr_data);
 
-        g_signal_connect (G_OBJECT (toggle_button[i]), "button_press_event", 
+        g_signal_connect (G_OBJECT (toggle_button[i]), "button_press_event",
                           G_CALLBACK (button_press_hack),
                           p_curr_data->applet);
     }
@@ -646,7 +646,7 @@ applet_destroy (GtkWidget *widget,
     g_return_if_fail (curr_data);
 
     if (curr_data->about_dialog)
-        gtk_widget_destroy (curr_data->about_dialog);   
+        gtk_widget_destroy (curr_data->about_dialog);
     if (curr_data->propwindow)
         gtk_widget_destroy (curr_data->propwindow);
     if (curr_data->box)
@@ -656,7 +656,7 @@ applet_destroy (GtkWidget *widget,
     g_free (curr_data);
 }
 
-void 
+void
 save_chartable (charpick_data *curr_data)
 {
     mate_panel_applet_settings_set_glist (curr_data->settings,
@@ -735,8 +735,6 @@ charpicker_applet_fill (MatePanelApplet *applet)
 
     gtk_window_set_default_icon_name ("accessories-character-map");
 
-    mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
-
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
     curr_data = g_new0 (charpick_data, 1);
@@ -746,7 +744,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
     curr_data->add_edit_dialog = NULL;
     curr_data->settings = mate_panel_applet_settings_new (applet,
                                                           "org.mate.panel.applet.charpick");
- 
+
     get_chartable (curr_data);
 
     string  = g_settings_get_string (curr_data->settings, "current-list");
@@ -766,13 +764,13 @@ charpicker_applet_fill (MatePanelApplet *applet)
             g_free (string);
     }
     else {
-        curr_data->charlist = curr_data->chartable->data;  
+        curr_data->charlist = curr_data->chartable->data;
     }
 
     curr_data->panel_size = mate_panel_applet_get_size (applet);
-  
+
     orientation = mate_panel_applet_get_orient (applet);
-    curr_data->panel_vertical = (orientation == MATE_PANEL_APPLET_ORIENT_LEFT) 
+    curr_data->panel_vertical = (orientation == MATE_PANEL_APPLET_ORIENT_LEFT)
                              || (orientation == MATE_PANEL_APPLET_ORIENT_RIGHT);
     build_table (curr_data);
 
@@ -781,11 +779,11 @@ charpicker_applet_fill (MatePanelApplet *applet)
 
     utf8_atom = gdk_atom_intern ("UTF8_STRING", FALSE);
 
-    gtk_selection_add_target (curr_data->applet, 
+    gtk_selection_add_target (curr_data->applet,
                               GDK_SELECTION_PRIMARY,
                               utf8_atom, 0);
 
-    gtk_selection_add_target (curr_data->applet, 
+    gtk_selection_add_target (curr_data->applet,
                               GDK_SELECTION_CLIPBOARD,
                               utf8_atom, 0);
 
@@ -799,7 +797,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
 
     make_applet_accessible (GTK_WIDGET (applet));
 
-    /* session save signal */ 
+    /* session save signal */
     g_signal_connect (G_OBJECT (applet), "change_orient",
                       G_CALLBACK (applet_change_orient), curr_data);
 
@@ -844,7 +842,7 @@ charpicker_applet_factory (MatePanelApplet *applet,
     gboolean retval = FALSE;
 
     if (!strcmp (iid, "CharpickerApplet"))
-        retval = charpicker_applet_fill (applet); 
+        retval = charpicker_applet_fill (applet);
 
     return retval;
 }

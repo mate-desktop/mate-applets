@@ -1685,9 +1685,6 @@ accessx_status_applet_fill (MatePanelApplet* applet)
         accessx_status_applet_reset (sapplet);
     }
 
-    mate_panel_applet_set_background_widget (sapplet->applet,
-                                             GTK_WIDGET (sapplet->applet));
-
     return TRUE;
 }
 

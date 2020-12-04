@@ -409,7 +409,6 @@ command_applet_fill (MatePanelApplet* applet)
     gtk_window_set_default_icon_name (APPLET_ICON);
 
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
-    mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
 
     command_applet = g_malloc0(sizeof(CommandApplet));
     command_applet->applet = applet;
