@@ -200,23 +200,21 @@ about_cb (GtkAction  *action,
                            NULL);
 }
 
-static int
+static gboolean
 properties_load (EyesApplet *eyes_applet)
 {
     gchar *theme_path = NULL;
+    gboolean result;
 
     theme_path = g_settings_get_string (eyes_applet->settings, "theme-path");
 
     if (theme_path == NULL)
         theme_path = g_strdup (GEYES_THEMES_DIR "Default-tiny");
 
-    if (load_theme (eyes_applet, theme_path) == FALSE) {
-        g_free (theme_path);
-        return FALSE;
-    }
-
+    result = load_theme (eyes_applet, theme_path);
     g_free (theme_path);
-    return TRUE;
+
+    return result;
 }
 
 void
@@ -396,6 +394,7 @@ geyes_applet_fill (MatePanelApplet *applet)
 {
     EyesApplet *eyes_applet;
     GtkActionGroup *action_group;
+    gboolean result;
 
     g_set_application_name (_("Eyes"));
     gtk_window_set_default_icon_name ("mate-eyes-applet");
@@ -441,12 +440,10 @@ geyes_applet_fill (MatePanelApplet *applet)
     /* setup here and not in create eyes so the destroy signal is set so
      * that when there is an error within loading the theme
      * we can emit this signal */
-    if (properties_load (eyes_applet) == FALSE)
-        return FALSE;
+    if ((result = properties_load (eyes_applet)) == TRUE)
+        setup_eyes (eyes_applet);
 
-    setup_eyes (eyes_applet);
-
-    return TRUE;
+    return result;
 }
 
 static gboolean
