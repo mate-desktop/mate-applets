@@ -60,7 +60,7 @@ parse_theme_file (EyesApplet *eyes_applet,
     gchar *token;
 
     if (fgets (line_buf, 512, theme_file) == NULL)
-        printf ("fgets error\n");
+        g_debug ("fgets error");
 
     while (!feof (theme_file)) {
         token = strtok (line_buf, "=");
@@ -94,7 +94,7 @@ parse_theme_file (EyesApplet *eyes_applet,
                 = g_strdup_printf ("%s%s", eyes_applet->theme_dir, token);
         }
         if (fgets (line_buf, 512, theme_file) == NULL)
-            printf ("fgets error\n");
+            g_debug ("fgets error");
     }
 }
 
