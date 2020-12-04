@@ -314,20 +314,16 @@ destroy_cb (GObject    *object,
         g_object_unref (eyes_applet->pupil_image);
     eyes_applet->pupil_image = NULL;
 
-    if (eyes_applet->theme_dir)
-        g_free (eyes_applet->theme_dir);
+    g_free (eyes_applet->theme_dir);
     eyes_applet->theme_dir = NULL;
 
-    if (eyes_applet->theme_name)
-        g_free (eyes_applet->theme_name);
+    g_free (eyes_applet->theme_name);
     eyes_applet->theme_name = NULL;
 
-    if (eyes_applet->eye_filename)
-        g_free (eyes_applet->eye_filename);
+    g_free (eyes_applet->eye_filename);
     eyes_applet->eye_filename = NULL;
 
-    if (eyes_applet->pupil_filename)
-        g_free (eyes_applet->pupil_filename);
+    g_free (eyes_applet->pupil_filename);
     eyes_applet->pupil_filename = NULL;
 
     if (eyes_applet->prop_box.pbox)
