@@ -358,8 +358,7 @@ help_cb (GtkAction  *action,
         gtk_window_set_screen (GTK_WINDOW (dialog),
                                gtk_widget_get_screen (GTK_WIDGET (eyes_applet->applet)));
         gtk_widget_show (dialog);
-        g_error_free (error);
-        error = NULL;
+        g_clear_error (&error);
     }
 }
 

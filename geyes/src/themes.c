@@ -238,8 +238,7 @@ phelp_cb (GtkDialog *dialog)
         gtk_window_set_screen (GTK_WINDOW (error_dialog),
                                gtk_widget_get_screen (GTK_WIDGET (dialog)));
         gtk_widget_show (error_dialog);
-        g_error_free (error);
-        error = NULL;
+        g_clear_error (&error);
     }
 }
 
