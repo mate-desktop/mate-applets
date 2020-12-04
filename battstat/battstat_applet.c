@@ -664,7 +664,7 @@ check_for_updates (gpointer data)
             (battstat->red_value_is_time &&
              battstat->last_minutes > battstat->red_val &&
              info.minutes <= battstat->red_val)
-        ) 
+        )
         && info.present)
     {
         /* Warn that battery dropped below red_val */
@@ -1061,10 +1061,6 @@ static gint
 create_layout (ProgressData *battstat)
 {
     if (DEBUG) g_print ("create_layout ()\n");
-
-    /* Have our background automatically painted. */
-    mate_panel_applet_set_background_widget (MATE_PANEL_APPLET (battstat->applet),
-                                             GTK_WIDGET (battstat->applet));
 
     /* Allocate the four widgets that we need. */
     battstat->grid = gtk_grid_new ();

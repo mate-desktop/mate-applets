@@ -43,7 +43,7 @@ gtk_align_to_gfloat (GtkAlign align)
 }
 
 /* TODO - Optimize this a bit */
-static void 
+static void
 calculate_pupil_xy (EyesApplet *eyes_applet,
 		    gint x, gint y,
 		    gint *pupil_x, gint *pupil_y, GtkWidget* widget)
@@ -66,7 +66,7 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
 
 	 nx = x - MAX(width - eyes_applet->eye_width, 0) * xalign - eyes_applet->eye_width / 2;
 	 ny = y - MAX(height- eyes_applet->eye_height, 0) * yalign - eyes_applet->eye_height / 2;
-  
+
 	 h = hypot (nx, ny);
         if (h < 0.5 || fabs (h)
             < (fabs (hypot (eyes_applet->eye_height / 2, eyes_applet->eye_width / 2)) - eyes_applet->wall_thickness - eyes_applet->pupil_height)) {
@@ -74,10 +74,10 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
                 *pupil_y = ny + eyes_applet->eye_height / 2;
                 return;
         }
-        
-	 sina = nx / h; 
+
+	 sina = nx / h;
 	 cosa = ny / h;
-	
+
         temp = hypot ((eyes_applet->eye_width / 2) * sina, (eyes_applet->eye_height / 2) * cosa);
         temp -= hypot ((eyes_applet->pupil_width / 2) * sina, (eyes_applet->pupil_height / 2) * cosa);
         temp -= hypot ((eyes_applet->wall_thickness / 2) * sina, (eyes_applet->wall_thickness / 2) * cosa);
@@ -86,10 +86,10 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
         *pupil_y = temp * cosa + (eyes_applet->eye_height / 2);
 }
 
-static void 
+static void
 draw_eye (EyesApplet *eyes_applet,
-	  gint eye_num, 
-          gint pupil_x, 
+	  gint eye_num,
+          gint pupil_x,
           gint pupil_y)
 {
 	GdkPixbuf *pixbuf;
@@ -105,7 +105,7 @@ draw_eye (EyesApplet *eyes_applet,
 	r2.width = eyes_applet->eye_width;
 	r2.height = eyes_applet->eye_height;
 	gdk_rectangle_intersect (&r1, &r2, &rect);
-	gdk_pixbuf_composite (eyes_applet->pupil_image, pixbuf, 
+	gdk_pixbuf_composite (eyes_applet->pupil_image, pixbuf,
 					   rect.x,
 					   rect.y,
 					   rect.width,
@@ -120,7 +120,7 @@ draw_eye (EyesApplet *eyes_applet,
 
 }
 
-static gint 
+static gint
 timer_cb (EyesApplet *eyes_applet)
 {
         GdkDisplay *display;
@@ -138,11 +138,11 @@ timer_cb (EyesApplet *eyes_applet)
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);
 
-			if ((x != eyes_applet->pointer_last_x[i]) || (y != eyes_applet->pointer_last_y[i])) { 
+			if ((x != eyes_applet->pointer_last_x[i]) || (y != eyes_applet->pointer_last_y[i])) {
 
 				calculate_pupil_xy (eyes_applet, x, y, &pupil_x, &pupil_y, eyes_applet->eyes[i]);
 				draw_eye (eyes_applet, i, pupil_x, pupil_y);
-	    	        
+
 			        eyes_applet->pointer_last_x[i] = x;
 			        eyes_applet->pointer_last_y[i] = y;
 			}
@@ -197,7 +197,7 @@ properties_load (EyesApplet *eyes_applet)
 
 	if (theme_path == NULL)
 		theme_path = g_strdup (GEYES_THEMES_DIR "Default-tiny");
-	
+
         if (load_theme (eyes_applet, theme_path) == FALSE) {
 		g_free (theme_path);
 
@@ -205,12 +205,12 @@ properties_load (EyesApplet *eyes_applet)
 	}
 
         g_free (theme_path);
-	
+
 	return TRUE;
 }
 
 void
-setup_eyes (EyesApplet *eyes_applet) 
+setup_eyes (EyesApplet *eyes_applet)
 {
 	int i;
 
@@ -225,19 +225,19 @@ setup_eyes (EyesApplet *eyes_applet)
                 eyes_applet->eyes[i] = gtk_image_new ();
                 if (eyes_applet->eyes[i] == NULL)
                         g_error ("Error creating geyes\n");
-               
+
 		gtk_widget_set_size_request (GTK_WIDGET (eyes_applet->eyes[i]),
 					     eyes_applet->eye_width,
 					     eyes_applet->eye_height);
- 
+
                 gtk_widget_show (eyes_applet->eyes[i]);
-                
-		gtk_box_pack_start (GTK_BOX (eyes_applet->hbox), 
+
+		gtk_box_pack_start (GTK_BOX (eyes_applet->hbox),
                                     eyes_applet->eyes [i],
                                     TRUE,
                                     TRUE,
                                     0);
-                
+
 		if ((eyes_applet->num_eyes != 1) && (i == 0)) {
 			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_END);
 			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
@@ -250,16 +250,16 @@ setup_eyes (EyesApplet *eyes_applet)
 			gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
 			gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
 		}
-		
+
                 gtk_widget_realize (eyes_applet->eyes[i]);
-		
+
 		eyes_applet->pointer_last_x[i] = G_MAXINT;
 		eyes_applet->pointer_last_y[i] = G_MAXINT;
-		
+
 		draw_eye (eyes_applet, i,
 			  eyes_applet->eye_width / 2,
                           eyes_applet->eye_height / 2);
-                
+
         }
         gtk_widget_show (eyes_applet->hbox);
 }
@@ -282,7 +282,7 @@ create_eyes (MatePanelApplet *applet)
 
         eyes_applet->applet = applet;
         eyes_applet->vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	eyes_applet->settings = 
+	eyes_applet->settings =
 		mate_panel_applet_settings_new (applet, "org.mate.panel.applet.geyes");
 
 	gtk_container_add (GTK_CONTAINER (applet), eyes_applet->vbox);
@@ -317,7 +317,7 @@ dispose_cb (GObject *object, EyesApplet *eyes_applet)
 	if (eyes_applet->pupil_filename)
 		g_free (eyes_applet->pupil_filename);
 	eyes_applet->pupil_filename = NULL;
-	
+
 	if (eyes_applet->prop_box.pbox)
 		gtk_widget_destroy (eyes_applet->prop_box.pbox);
 
@@ -340,7 +340,7 @@ help_cb (GtkAction  *action,
 	                        &error);
 
 	if (error) {
-		GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, 
+		GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
 							    _("There was an error displaying help: %s"), error->message);
 		g_signal_connect (G_OBJECT (dialog), "response", G_CALLBACK (gtk_widget_destroy), NULL);
 		gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
@@ -369,7 +369,7 @@ set_atk_name_description (GtkWidget *widget, const gchar *name,
     const gchar *description)
 {
 	AtkObject *aobj;
-   
+
 	aobj = gtk_widget_get_accessible (widget);
 	/* Check if gail is loaded */
 	if (GTK_IS_ACCESSIBLE (aobj) == FALSE)
@@ -389,7 +389,6 @@ geyes_applet_fill (MatePanelApplet *applet)
 
 	gtk_window_set_default_icon_name ("mate-eyes-applet");
 	mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
-	mate_panel_applet_set_background_widget (applet, GTK_WIDGET (applet));
 
         eyes_applet = create_eyes (applet);
 
@@ -418,7 +417,7 @@ geyes_applet_fill (MatePanelApplet *applet)
 
 	gtk_widget_set_tooltip_text (GTK_WIDGET (eyes_applet->applet), _("Eyes"));
 
-	set_atk_name_description (GTK_WIDGET (eyes_applet->applet), _("Eyes"), 
+	set_atk_name_description (GTK_WIDGET (eyes_applet->applet), _("Eyes"),
 			_("The eyes look in the direction of the mouse pointer"));
 
 	g_signal_connect (eyes_applet->vbox,
@@ -428,7 +427,7 @@ geyes_applet_fill (MatePanelApplet *applet)
 
 	gtk_widget_show_all (GTK_WIDGET (eyes_applet->applet));
 
-	/* setup here and not in create eyes so the destroy signal is set so 
+	/* setup here and not in create eyes so the destroy signal is set so
 	 * that when there is an error within loading the theme
 	 * we can emit this signal */
         if (properties_load (eyes_applet) == FALSE)
@@ -449,8 +448,8 @@ geyes_applet_factory (MatePanelApplet *applet,
 	theme_dirs_create ();
 
 	if (!strcmp (iid, "GeyesApplet"))
-		retval = geyes_applet_fill (applet); 
-   
+		retval = geyes_applet_fill (applet);
+
 	if (retval == FALSE) {
 		exit (-1);
 	}

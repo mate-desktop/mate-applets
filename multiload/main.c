@@ -500,7 +500,6 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
     g_set_application_name (_("System Monitor"));
 
     gtk_window_set_default_icon_name ("utilities-system-monitor");
-    mate_panel_applet_set_background_widget (applet, GTK_WIDGET(applet));
 
     ma->settings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.multiload");
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);

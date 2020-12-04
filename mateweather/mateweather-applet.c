@@ -337,9 +337,6 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
 
     mate_panel_applet_set_flags (gw_applet->applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
-    mate_panel_applet_set_background_widget(gw_applet->applet,
-                                       GTK_WIDGET(gw_applet->applet));
-
     g_set_application_name (_("Weather Report"));
 
     gtk_window_set_default_icon_name ("weather-storm");
