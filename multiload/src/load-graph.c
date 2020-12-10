@@ -265,8 +265,9 @@ load_graph_unalloc (LoadGraph *g)
     g->pos = NULL;
     g->data = NULL;
 
-    g->size = g_settings_get_int(g->multiload->settings, "size");
-    g->size = MAX (g->size, 10);
+    g->size = CLAMP (g_settings_get_uint (g->multiload->settings, GRAPH_SIZE_KEY),
+                     GRAPH_SIZE_MIN,
+                     GRAPH_SIZE_MAX);
 
     if (g->surface) {
         cairo_surface_destroy (g->surface);
@@ -412,7 +413,7 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     g->n = n;
     g->id = id;
     g->speed = speed;
-    g->size = MAX (size, 10);
+    g->size = size;
     g->pixel_size = mate_panel_applet_get_size (ma->applet);
     g->tooltip_update = FALSE;
     g->multiload = ma;

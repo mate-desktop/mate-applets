@@ -361,7 +361,7 @@ multiload_create_graphs(MultiloadApplet *ma)
              [graph_diskload] = { _("Disk Load"),    VIEW_DISKLOAD_KEY, "diskload", diskload_n, GetDiskLoad }
            };
 
-    gint  size;
+    guint size;
     guint speed;
     guint net_threshold1;
     guint net_threshold2;
@@ -369,10 +369,10 @@ multiload_create_graphs(MultiloadApplet *ma)
     gint i;
 
     speed = CLAMP (g_settings_get_uint (ma->settings, REFRESH_RATE_KEY), REFRESH_RATE_MIN, REFRESH_RATE_MAX);
-    size = CLAMP (g_settings_get_int (ma->settings, "size"), 10, 400);
-    net_threshold1  = CLAMP (g_settings_get_uint (ma->settings, "netthreshold1"), MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1);
-    net_threshold2  = CLAMP (g_settings_get_uint (ma->settings, "netthreshold2"), MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2);
-    net_threshold3  = CLAMP (g_settings_get_uint (ma->settings, "netthreshold3"), MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3);
+    size = CLAMP (g_settings_get_uint (ma->settings, GRAPH_SIZE_KEY), GRAPH_SIZE_MIN, GRAPH_SIZE_MAX);
+    net_threshold1  = CLAMP (g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD1), MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1);
+    net_threshold2  = CLAMP (g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD2), MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2);
+    net_threshold3  = CLAMP (g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD3), MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3);
     if (net_threshold1 >= net_threshold2)
     {
        net_threshold1 = net_threshold2 - 1;
