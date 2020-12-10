@@ -24,6 +24,10 @@ G_BEGIN_DECLS
 #define VIEW_LOADAVG_KEY   "view-loadavg"
 #define VIEW_DISKLOAD_KEY  "view-diskload"
 
+#define REFRESH_RATE_KEY   "speed"
+#define REFRESH_RATE_MIN   50
+#define REFRESH_RATE_MAX   60000
+
 typedef struct _MultiloadApplet MultiloadApplet;
 typedef struct _LoadGraph LoadGraph;
 typedef void (*LoadGraphDataFunc) (int, int [], LoadGraph *);

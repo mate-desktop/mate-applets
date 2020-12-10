@@ -411,8 +411,8 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     g->name = name;
     g->n = n;
     g->id = id;
-    g->speed  = MAX (speed, 50);
-    g->size   = MAX (size, 10);
+    g->speed = speed;
+    g->size = MAX (size, 10);
     g->pixel_size = mate_panel_applet_get_size (ma->applet);
     g->tooltip_update = FALSE;
     g->multiload = ma;

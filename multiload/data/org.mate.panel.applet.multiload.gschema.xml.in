@@ -24,7 +24,8 @@
       <default>false</default>
       <summary>Enable disk load graph</summary>
     </key>
-    <key name="speed" type="i">
+    <key name="speed" type="u">
+      <range min="50" max="60000"/>
       <default>500</default>
       <summary>Applet refresh rate in milliseconds</summary>
     </key>

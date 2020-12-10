@@ -28,7 +28,6 @@
 #define PROP_AVG              4
 #define PROP_DISK             5
 
-#define PROP_SPEED            6
 #define PROP_SIZE             7
 #define PROP_NET_THRESHOLD1   8
 #define PROP_NET_THRESHOLD2   9
@@ -140,30 +139,37 @@ property_toggled_cb(GtkWidget *widget, gpointer name)
 }
 
 static void
-spin_button_changed_cb(GtkWidget *widget, gpointer name)
+on_speed_spin_button_value_changed (GtkSpinButton *spin_button,
+                                    gpointer       user_data)
+{
+    MultiloadApplet *ma = user_data;
+    gint value;
+    gint i;
+
+    value = gtk_spin_button_get_value_as_int (spin_button);
+    g_settings_set_uint (ma->settings, REFRESH_RATE_KEY, (guint) value);
+    for (i = 0; i < graph_n; i++) {
+        load_graph_stop (ma->graphs[i]);
+        ma->graphs[i]->speed = (guint) value;
+        if (ma->graphs[i]->visible)
+            load_graph_start (ma->graphs[i]);
+    }
+}
+
+static void
+spin_button_changed_cb (GtkWidget *widget,
+                        gpointer   name)
 {
     MultiloadApplet *ma;
     gint value;
     gint prop_type, i;
 
-    ma = g_object_get_data(G_OBJECT(widget), "MultiloadApplet");
-    prop_type = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(widget), "prop_type"));
-    value = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(widget));
+    ma = g_object_get_data (G_OBJECT (widget), "MultiloadApplet");
+    prop_type = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (widget), "prop_type"));
+    value = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (widget));
 
     switch(prop_type)
     {
-        case PROP_SPEED:
-            g_settings_set_int (ma->settings, (gchar *)name, value);
-            for (i = 0; i < graph_n; i++)
-            {
-                load_graph_stop(ma->graphs[i]);
-                ma->graphs[i]->speed = value;
-                if (ma->graphs[i]->visible)
-                    load_graph_start(ma->graphs[i]);
-            }
-
-            break;
-
         case PROP_SIZE:
             for (i = 0; i < graph_n; i++)
             {
@@ -569,19 +575,20 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
     gtk_box_pack_start (GTK_BOX (control_hbox), hbox, TRUE, TRUE, 0);
     gtk_widget_show (hbox);
 
-    spin_button = gtk_spin_button_new_with_range(50, 10000, 50);
+    spin_button = gtk_spin_button_new_with_range (REFRESH_RATE_MIN,
+                                                  REFRESH_RATE_MAX,
+                                                  50);
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
-    g_object_set_data(G_OBJECT(spin_button), "MultiloadApplet", ma);
-    g_object_set_data(G_OBJECT(spin_button), "prop_type",
-                      GINT_TO_POINTER(PROP_SPEED));
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_button),
-                              (gdouble)g_settings_get_int (ma->settings, "speed"));
-    g_signal_connect(G_OBJECT(spin_button), "value_changed",
-                     G_CALLBACK(spin_button_changed_cb), "speed");
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button),
+                              (gdouble) CLAMP (g_settings_get_uint (ma->settings, REFRESH_RATE_KEY),
+                                               REFRESH_RATE_MIN,
+                                               REFRESH_RATE_MAX));
+    g_signal_connect (GTK_SPIN_BUTTON (spin_button), "value_changed",
+                      G_CALLBACK (on_speed_spin_button_value_changed), ma);
     gtk_size_group_add_widget (spin_size, spin_button);
     gtk_box_pack_start (GTK_BOX (hbox), spin_button, FALSE, FALSE, 0);
 
-    if ( ! g_settings_is_writable (ma->settings, "speed")) {
+    if ( ! g_settings_is_writable (ma->settings, REFRESH_RATE_KEY)) {
         hard_set_sensitive (label, FALSE);
         hard_set_sensitive (hbox, FALSE);
     }
@@ -591,7 +598,6 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
     gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
 
     g_free(label_text);
-
 
     category_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
     gtk_box_pack_start (GTK_BOX (categories_vbox), category_vbox, TRUE, TRUE, 0);
