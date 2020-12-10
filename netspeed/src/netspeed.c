@@ -873,9 +873,9 @@ update_applet (MateNetspeedApplet *applet)
 #endif
     }
 
-    update_tooltip(applet);
+    update_tooltip (applet);
 
-    /* Refresh the text of the labels and tooltip */
+    /* Refresh the text of the labels */
     if (applet->show_sum) {
         gtk_label_set_text (GTK_LABEL (applet->sum_label),
                             applet->devinfo->sum_rate);
@@ -1475,13 +1475,19 @@ update_tooltip (MateNetspeedApplet* applet)
         g_string_printf(tooltip, _("%s is down"), applet->devinfo->name);
     else {
         char ipv4_text [INET_ADDRSTRLEN];
+        char ipv6_text [INET6_ADDRSTRLEN];
         char *ip;
 
         if (applet->devinfo->ip) {
             format_ipv4 (applet->devinfo->ip, ipv4_text);
             ip = ipv4_text;
         } else {
-            ip = _("has no ip");
+            format_ipv6 (applet->devinfo->ipv6, ipv6_text);
+            if (strlen (ipv6_text) > 2) {
+                ip = ipv6_text;
+            } else {
+                ip = _("has no ip");
+            }
         }
 
         if (applet->show_sum) {
