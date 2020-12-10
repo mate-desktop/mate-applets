@@ -29,7 +29,8 @@
       <default>500</default>
       <summary>Applet refresh rate in milliseconds</summary>
     </key>
-    <key name="size" type="i">
+    <key name="size" type="u">
+      <range min="10" max="1000"/>
       <default>40</default>
       <summary>Graph size</summary>
       <description>For horizontal panels, the width of the graphs in pixels.  For vertical panels, this is the height of the graphs.</description>

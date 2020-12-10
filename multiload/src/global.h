@@ -10,6 +10,9 @@
 
 G_BEGIN_DECLS
 
+#define KEY_NET_THRESHOLD1 "netthreshold1"
+#define KEY_NET_THRESHOLD2 "netthreshold2"
+#define KEY_NET_THRESHOLD3 "netthreshold3"
 #define MIN_NET_THRESHOLD1 10
 #define MIN_NET_THRESHOLD2 11
 #define MIN_NET_THRESHOLD3 12
@@ -27,6 +30,10 @@ G_BEGIN_DECLS
 #define REFRESH_RATE_KEY   "speed"
 #define REFRESH_RATE_MIN   50
 #define REFRESH_RATE_MAX   60000
+
+#define GRAPH_SIZE_KEY     "size"
+#define GRAPH_SIZE_MIN     10
+#define GRAPH_SIZE_MAX     1000
 
 typedef struct _MultiloadApplet MultiloadApplet;
 typedef struct _LoadGraph LoadGraph;
