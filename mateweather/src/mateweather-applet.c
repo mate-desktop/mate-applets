@@ -122,14 +122,15 @@ static const GtkActionEntry weather_applet_menu_actions [] = {
 	  G_CALLBACK (about_cb) }
 };
 
-static void place_widgets (MateWeatherApplet *gw_applet)
+static void
+place_widgets (MateWeatherApplet *gw_applet)
 {
     GtkRequisition req;
     int total_size = 0;
     gboolean horizontal = FALSE;
     int panel_size = gw_applet->size;
-    const gchar *temp;
-    const gchar *icon_name;
+    const gchar *temp = NULL;
+    const gchar *icon_name = NULL;
 
     switch (gw_applet->orient) {
 	case MATE_PANEL_APPLET_ORIENT_LEFT:
@@ -143,25 +144,23 @@ static void place_widgets (MateWeatherApplet *gw_applet)
     }
 
     /* Create the weather icon */
-    icon_name = weather_info_get_icon_name (gw_applet->mateweather_info);
-    gw_applet->image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
-
-    if (icon_name != NULL) {
-        gtk_widget_show (gw_applet->image);
-        gtk_widget_get_preferred_size (gw_applet->image, &req, NULL);
-        if (horizontal)
-            total_size += req.height;
-        else
-            total_size += req.width;
+    if ((gw_applet->mateweather_info) && ((icon_name = weather_info_get_icon_name (gw_applet->mateweather_info)) != NULL)) {
+        gw_applet->image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
+    } else {
+        gw_applet->image = gtk_image_new_from_icon_name ("weather-storm", GTK_ICON_SIZE_BUTTON);;
     }
-
-    /* Create the temperature label */
-    gw_applet->label = gtk_label_new("0\302\260F");
+    gtk_widget_show (gw_applet->image);
+    gtk_widget_get_preferred_size (gw_applet->image, &req, NULL);
+    if (horizontal)
+        total_size += req.height;
+    else
+        total_size += req.width;
 
     /* Update temperature text */
-    temp = weather_info_get_temp_summary(gw_applet->mateweather_info);
-    if (temp)
-        gtk_label_set_text(GTK_LABEL(gw_applet->label), temp);
+    if ((gw_applet->mateweather_info != NULL) && ((temp = weather_info_get_temp_summary (gw_applet->mateweather_info)) != NULL))
+        gw_applet->label = gtk_label_new (temp);
+    else
+        gw_applet->label = gtk_label_new(_("?"));
 
     /* Check the label size to determine box layout */
     gtk_widget_show (gw_applet->label);
@@ -510,9 +509,11 @@ gint suncalc_timeout_cb (gpointer data)
 void mateweather_update (MateWeatherApplet *gw_applet)
 {
     WeatherPrefs prefs;
-    const gchar *icon_name;
+    const gchar *icon_name = NULL;
 
-    icon_name = weather_info_get_icon_name(gw_applet->mateweather_info);
+    if (gw_applet->mateweather_info)
+        icon_name = weather_info_get_icon_name (gw_applet->mateweather_info);
+
     gtk_image_set_from_icon_name (GTK_IMAGE (gw_applet->image),
     			          icon_name, GTK_ICON_SIZE_BUTTON);
     gtk_widget_set_tooltip_text (GTK_WIDGET(gw_applet->applet),  _("Updating..."));
