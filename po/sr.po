@@ -10,9 +10,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.24.0\n"
+"Project-Id-Version: mate-applets 1.25.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-06-25 09:58+0200\n"
+"POT-Creation-Date: 2020-08-11 16:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
@@ -22,31 +22,48 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
-#: mateweather/mateweather-about.c:41 multiload/main.c:48
-#: stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
+msgid "AccessX Status Applet Factory"
+msgstr "Погон програмчета стања приступасчности Икса"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
+msgid "Keyboard Accessibility Status Applet Factory"
+msgstr "Погон програмчета стања приступачности тастатуре"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
+#: accessx-status/src/applet.c:1383
+msgid "Keyboard Accessibility Status"
+msgstr "Стање приступачности тастатуре"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
+msgid "Shows the status of keyboard accessibility features"
+msgstr "Приказује стање функција приступачности тастатуре"
+
+#: accessx-status/src/applet.c:86 charpick/charpick.c:571
+#: geyes/src/geyes.c:166 mateweather/mateweather-about.c:41
+#: multiload/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr "Тим документације Гнома „Sun“ <gdocteam@sun.com>"
 
-#: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
-#: drivemount/drivemount.c:109 geyes/geyes.c:167
+#: accessx-status/src/applet.c:87 battstat/battstat_applet.c:817
+#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:464
+#: drivemount/drivemount.c:109 geyes/src/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
 #: trashapplet/src/trashapplet.c:421
 msgid "MATE Documentation Team"
 msgstr "Тим документације Гнома"
 
-#: accessx-status/applet.c:98
+#: accessx-status/src/applet.c:98
 msgid "About AccessX Status"
 msgstr "О стању приступачности Икса"
 
-#: accessx-status/applet.c:100
+#: accessx-status/src/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr ""
 "Приказује стање функција Приступачности Икса као што су задржани измењивачи"
 
-#: accessx-status/applet.c:101
+#: accessx-status/src/applet.c:101
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
@@ -54,131 +71,118 @@ msgstr ""
 "Ауторска права © 2003 Sun Microsystems\n"
 "Ауторска права © 2012-2020 Програмери Мејта"
 
-#: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:591 command/command.c:131
-#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
-#: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: accessx-status/src/applet.c:105 battstat/battstat_applet.c:842
+#: charpick/charpick.c:592 command/src/command.c:131
+#: cpufreq/src/cpufreq-applet.c:488 drivemount/drivemount.c:127
+#: geyes/src/geyes.c:186 mateweather/mateweather-about.c:61
+#: multiload/main.c:69 netspeed/src/netspeed.c:1034
+#: stickynotes/stickynotes_applet_callbacks.c:388
 #: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr "Мирослав Николић <miroslavnikolic@rocketmail.com>"
 
-#: accessx-status/applet.c:124
+#: accessx-status/src/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Дошло је до грешке при покретању прегледача помоћи: %s"
 
-#: accessx-status/applet.c:152
+#: accessx-status/src/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr "Отвори прозорче поставки тастатуре"
 
-#: accessx-status/applet.c:167
+#: accessx-status/src/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Дошло је до грешке при приказивању прозорчета поставки тастатуре: %s"
 
-#: accessx-status/applet.c:182
+#: accessx-status/src/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Поставке приступачности _тастатуре"
 
-#: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
-#: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:485
-#: netspeed/src/netspeed-preferences.ui:33
+#: accessx-status/src/applet.c:183 battstat/battstat_applet.c:60
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:669
+#: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
+#: drivemount/drivemount.c:165 geyes/data/themes.ui:35 geyes/src/geyes.c:359
+#: mateweather/mateweather-applet.c:117 multiload/main.c:486
+#: netspeed/data/netspeed-details.ui:31
+#: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "По_моћ"
 
-#: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:671 command/command.c:87
+#: accessx-status/src/applet.c:184 battstat/battstat_applet.c:63
+#: charpick/charpick.c:672 command/src/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
-#: trashapplet/src/trashapplet.c:77
+#: geyes/src/geyes.c:362 mateweather/mateweather-applet.c:120
+#: multiload/main.c:489 stickynotes/stickynotes_applet.c:49
+#: timerapplet/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_О програму"
 
-#: accessx-status/applet.c:503 accessx-status/applet.c:557
+#: accessx-status/src/applet.c:503 accessx-status/src/applet.c:557
 msgid "a"
 msgstr "а"
 
-#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
-#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
+#: accessx-status/src/applet.c:1042 accessx-status/src/applet.c:1108
+#: accessx-status/src/applet.c:1193 accessx-status/src/applet.c:1386
 msgid "AccessX Status"
 msgstr "Стање приступачности Икса"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
+#: accessx-status/src/applet.c:1043 accessx-status/src/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Приказује стање тастатуре када се користе функције приступачности."
 
-#: accessx-status/applet.c:1077
+#: accessx-status/src/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "ХКБ проширење није укључено"
 
-#: accessx-status/applet.c:1082
+#: accessx-status/src/applet.c:1082
 msgid "Unknown error"
 msgstr "Непозната грешка"
 
-#: accessx-status/applet.c:1086
+#: accessx-status/src/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "Грешка: %s"
 
-#: accessx-status/applet.c:1384
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-msgid "Keyboard Accessibility Status"
-msgstr "Стање приступачности тастатуре"
-
-#: accessx-status/applet.c:1388
+#: accessx-status/src/applet.c:1387
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Приказује текуће стање функција приступачности тастатуре"
 
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
-msgid "AccessX Status Applet Factory"
-msgstr "Погон програмчета стања приступасчности Икса"
-
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
-msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "Погон програмчета стања приступачности тастатуре"
-
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
-msgid "Shows the status of keyboard accessibility features"
-msgstr "Приказује стање функција приступачности тастатуре"
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
-#: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:479
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
+#: battstat/battstat_applet.c:57 charpick/charpick.c:666
+#: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
+#: geyes/src/geyes.c:356 mateweather/mateweather-applet.c:114
+#: multiload/main.c:480 stickynotes/stickynotes_applet.c:43
+#: timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Поставке"
 
-#: battstat/battstat_applet.c:71
+#: battstat/battstat_applet.c:68
 msgid "System is running on AC power"
 msgstr "Систем се напаја из електричне мреже"
 
-#: battstat/battstat_applet.c:72
+#: battstat/battstat_applet.c:69
 msgid "System is running on battery power"
 msgstr "Систем се напаја из батерије"
 
-#: battstat/battstat_applet.c:176
+#: battstat/battstat_applet.c:173
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Батерија је напуњена (%d%%)"
 
-#: battstat/battstat_applet.c:178
+#: battstat/battstat_applet.c:175
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Није познато преостало време (%d%%)"
 
-#: battstat/battstat_applet.c:180
+#: battstat/battstat_applet.c:177
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Није познато преостало време пуњења (%d%%)"
 
-#: battstat/battstat_applet.c:185
+#: battstat/battstat_applet.c:182
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
@@ -186,7 +190,7 @@ msgstr[0] "Преостаје %d минут (%d%%)"
 msgstr[1] "Преостају %d минута (%d%%)"
 msgstr[2] "Преостаје %d минута (%d%%)"
 
-#: battstat/battstat_applet.c:190
+#: battstat/battstat_applet.c:187
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
@@ -194,7 +198,7 @@ msgstr[0] "%d минут до пуне батерије (%d%%)"
 msgstr[1] "%d минута до пуне батерије (%d%%)"
 msgstr[2] "%d минута до пуне батерије (%d%%)"
 
-#: battstat/battstat_applet.c:196
+#: battstat/battstat_applet.c:193
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
@@ -202,7 +206,7 @@ msgstr[0] "Преостаје %d сат (%d%%)"
 msgstr[1] "Преостају %d сата (%d%%)"
 msgstr[2] "Преостаје %d сати (%d%%)"
 
-#: battstat/battstat_applet.c:201
+#: battstat/battstat_applet.c:198
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -210,48 +214,48 @@ msgstr[0] "%d сат до пуне батерије (%d%%)"
 msgstr[1] "%d сата до пуне батерије (%d%%)"
 msgstr[2] "%d сати до пуне батерије (%d%%)"
 
-#: battstat/battstat_applet.c:208
+#: battstat/battstat_applet.c:205
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "Преостаје %d %s и %d %s (%d%%)"
 
-#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
+#: battstat/battstat_applet.c:206 battstat/battstat_applet.c:213
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "сат"
 msgstr[1] "сата"
 msgstr[2] "сати"
 
-#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
+#: battstat/battstat_applet.c:207 battstat/battstat_applet.c:214
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "минут"
 msgstr[1] "минута"
 msgstr[2] "минута"
 
-#: battstat/battstat_applet.c:215
+#: battstat/battstat_applet.c:212
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s до пуне батерије (%d%%)"
 
-#: battstat/battstat_applet.c:229
+#: battstat/battstat_applet.c:226
 msgid "Battery Monitor"
 msgstr "Праћење стања батерије"
 
-#: battstat/battstat_applet.c:240 battstat/battstat_applet.c:300
+#: battstat/battstat_applet.c:237 battstat/battstat_applet.c:297
 msgid "Your battery is now fully recharged"
 msgstr "Батерија је сада у потпуности напуњена"
 
-#: battstat/battstat_applet.c:275 battstat/battstat_applet.c:432
+#: battstat/battstat_applet.c:272 battstat/battstat_applet.c:429
 msgid "Battery Notice"
 msgstr "Обавештење о батерији"
 
-#: battstat/battstat_applet.c:377
+#: battstat/battstat_applet.c:374
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "Преостало вам је укупно %d%% од капацитета батерије."
 
-#: battstat/battstat_applet.c:383
+#: battstat/battstat_applet.c:380
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -264,7 +268,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Можете да радите још %d минута на батерији (%d%% укупног капацитета)."
 
-#: battstat/battstat_applet.c:395
+#: battstat/battstat_applet.c:392
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -274,7 +278,7 @@ msgstr ""
 " • прикључите преносни рачунар на електричну мрежу, или\n"
 " • сачувајте отворене документе и искључите рачунар."
 
-#: battstat/battstat_applet.c:403
+#: battstat/battstat_applet.c:400
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -286,25 +290,25 @@ msgstr ""
 " • прикључите га на електричну мрежу, или\n"
 " • сачувајте отворене документе и искључите рачунар."
 
-#: battstat/battstat_applet.c:411
+#: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
 msgstr "Батерија је скоро празна"
 
-#: battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:505
 msgid "No battery present"
 msgstr "Батерија није присутна"
 
-#: battstat/battstat_applet.c:511
+#: battstat/battstat_applet.c:508
 msgid "Battery status unknown"
 msgstr "Није познато стање батерије"
 
-#: battstat/battstat_applet.c:540
+#: battstat/battstat_applet.c:537
 msgid "N/A"
 msgstr "Н/Д"
 
-#: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
-#: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:745
+#: battstat/battstat_applet.c:781 drivemount/drivemount.c:153
+#: geyes/src/geyes.c:344 geyes/src/themes.c:224
+#: mateweather/mateweather-applet.c:63 mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -312,23 +316,23 @@ msgstr "Н/Д"
 msgid "There was an error displaying help: %s"
 msgstr "Дошло је до грешке приказивања помоћи: %s"
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:822
 msgid "This utility shows the status of your laptop battery."
 msgstr "Ова алатка приказује стање батерије вашег преносног рачунара."
 
-#: battstat/battstat_applet.c:826
+#: battstat/battstat_applet.c:824
 msgid "upower backend enabled."
 msgstr "Укључен је позадинац „upower“."
 
-#: battstat/battstat_applet.c:827
+#: battstat/battstat_applet.c:825
 msgid "Legacy backend enabled."
 msgstr "Укључен је стари позадинац."
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:834
 msgid "About Battery Charge Monitor"
 msgstr "О праћењу стања батерије"
 
-#: battstat/battstat_applet.c:838
+#: battstat/battstat_applet.c:836
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
@@ -338,49 +342,65 @@ msgstr ""
 "Ауторска права © 2002-2005 Фондација слободног софтвера и остали\n"
 "Ауторска права © 2012-2020 Програмери Мејта"
 
-#: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
+#: battstat/battstat_applet.c:1125 battstat/battstat_applet.c:1175
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Праћење стања батерије"
 
-#: battstat/battstat_applet.c:1165
+#: battstat/battstat_applet.c:1176
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "Пратите преостало напајање преносног рачунара"
 
-#: battstat/battstat_applet.ui:14
+#: battstat/battstat-preferences.ui:23
 msgid "Battery Charge Monitor Preferences"
 msgstr "Поставке праћења стања батерије"
 
-#: battstat/battstat_applet.ui:33
-msgid "Appearance"
-msgstr "Изглед"
+#: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
+#: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
+#: mateweather/mateweather-dialog.ui:45 netspeed/data/netspeed-details.ui:47
+#: netspeed/data/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "_Затвори"
 
-#: battstat/battstat_applet.ui:68
+#: battstat/battstat-preferences.ui:102
 msgid "_Show time/percentage:"
 msgstr "При_кажи време/постотак:"
 
-#: battstat/battstat_applet.ui:102
+#: battstat/battstat-preferences.ui:125
 msgid "Show _time remaining"
 msgstr "Прикажи преостало _време"
 
-#: battstat/battstat_applet.ui:117
+#: battstat/battstat-preferences.ui:143
 msgid "Show _percentage remaining"
 msgstr "Прикажи преостали _постотак"
 
-#: battstat/battstat_applet.ui:175
-msgid "Notifications"
-msgstr "Обавештења"
+#: battstat/battstat-preferences.ui:175
+msgid "Appearance"
+msgstr "Изглед"
 
-#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
-#. drops to: [XX] percent/minutes remaining'
-#: battstat/battstat_applet.ui:206
+#: battstat/battstat-preferences.ui:214
 msgid "_Warn when battery charge drops to:"
 msgstr "_Упозори када напуњеност батерија спадне на:"
 
-#: battstat/battstat_applet.ui:262
+#: battstat/battstat-preferences.ui:255
+msgid "Percent"
+msgstr "Проценат"
+
+#: battstat/battstat-preferences.ui:256
+msgid "Minutes Remaining"
+msgstr "Преостало минута"
+
+#: battstat/battstat-preferences.ui:282
 msgid "_Notify when battery is fully recharged"
 msgstr "_Обавести када се батерија потпуно напуни"
+
+#: battstat/battstat-preferences.ui:305
+msgid "Notifications"
+msgstr "Обавештења"
 
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:5
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:6
@@ -443,14 +463,6 @@ msgstr "Приказује време/постотак напуњености"
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
 msgstr "0 за искључивање ознаке, 1 за проценат и 2 за преостало време."
 
-#: battstat/properties.c:237
-msgid "Percent"
-msgstr "Проценат"
-
-#: battstat/properties.c:243
-msgid "Minutes Remaining"
-msgstr "Преостало минута"
-
 #: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:3
 msgid "Battery Status Utility"
 msgstr "Алатка за стање батерије"
@@ -481,11 +493,11 @@ msgstr "Уметни нарочити знак"
 msgid "insert special character %s"
 msgstr "умеће нарочити знак %s"
 
-#: charpick/charpick.c:582
+#: charpick/charpick.c:583
 msgid "About Character Palette"
 msgstr "О палети знакова"
 
-#: charpick/charpick.c:584
+#: charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
@@ -493,7 +505,7 @@ msgstr ""
 "Ауторска права © 1998, 2004-2005 Одржаваоци Гномових програмчића и остали\n"
 "Ауторска права © 2012-2020 Програмери Мејта"
 
-#: charpick/charpick.c:586
+#: charpick/charpick.c:587
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
@@ -501,13 +513,13 @@ msgstr ""
 "Програмче Мејтовог панела за избор чудних знакова који се не налазе на "
 "тастатури. Објављено под Гнуовом Општом јавном лиценцом (GNU GPL)."
 
-#: charpick/charpick.c:694 charpick/charpick.c:708
+#: charpick/charpick.c:695 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Палета знакова"
 
-#: charpick/charpick.c:694
+#: charpick/charpick.c:695
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Унесите знакове"
@@ -598,11 +610,78 @@ msgstr "Кликните да обришете изабрану палету"
 msgid "Character Palette Preferences"
 msgstr "Поставке палете знакова"
 
-#: command/command.c:125
+#: command/data/command-preferences.ui:25
+msgid "Command Applet Preferences"
+msgstr "Поставке програмчета наредби"
+
+#: command/data/command-preferences.ui:77
+msgid "C_ommand:"
+msgstr "Н_аредба:"
+
+#: command/data/command-preferences.ui:91
+msgid "_Interval (seconds):"
+msgstr "_Период (у секундама):"
+
+#: command/data/command-preferences.ui:105
+msgid "Maximum _width (chars):"
+msgstr "Највећа _ширина (знакова):"
+
+#: command/data/command-preferences.ui:161
+msgid "_Show icon"
+msgstr "_Прикажи иконицу"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
+msgid "Command Factory"
+msgstr "Погон наредби"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
+msgid "Command"
+msgstr "Наредба"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
+#: command/src/command.c:130
+msgid "Shows the output of a command"
+msgstr "Приказује излаз наредбе"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:5
+msgid "Command to execute"
+msgstr "Наредба за извршавање"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:6
+msgid "Command/script to execute to get the output"
+msgstr "Наредба/скрипта која ће се извршити за добијање излаза"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:10
+msgid "Interval for the command"
+msgstr "Период за наредбу"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:11
+msgid "Interval to execute the command (in seconds)"
+msgstr "Период за извршавање наредбе (у секундама)"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:15
+msgid "Width of output"
+msgstr "Ширина исписа"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:16
+msgid "Number of characters to display"
+msgstr "Број знакова за приказивање"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
+msgstr "Приказује иконицу"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:21
+msgid "If applet icon is shown or not"
+msgstr "Да ли се приказује иконица програмчета"
+
+#: command/src/command.c:125
 msgid "About Command Applet"
 msgstr "О програмчету наредби"
 
-#: command/command.c:127
+#: command/src/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
@@ -610,119 +689,45 @@ msgstr ""
 "Ауторска права © 2013-2014 Стефано Карапетас\n"
 "Ауторска права © 2015-2020 Програмери Мејта"
 
-#: command/command.c:130
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
-msgid "Shows the output of a command"
-msgstr "Приказује излаз наредбе"
-
-#: command/command.c:408
+#: command/src/command.c:408
 msgid "Command Applet"
 msgstr "Програмче наредби"
 
-#: command/command-preferences.ui:25
-msgid "Command Applet Preferences"
-msgstr "Поставке програмчета наредби"
-
-#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
-#: stickynotes/sticky-notes-preferences.ui:68
-#: stickynotes/sticky-notes-properties.ui:54
-#: timerapplet/timerapplet-preferences.ui:41
-msgid "_Close"
-msgstr "_Затвори"
-
-#: command/command-preferences.ui:77
-msgid "C_ommand:"
-msgstr "Н_аредба:"
-
-#: command/command-preferences.ui:91
-msgid "_Interval (seconds):"
-msgstr "_Период (у секундама):"
-
-#: command/command-preferences.ui:105
-msgid "Maximum _width (chars):"
-msgstr "Највећа _ширина (знакова):"
-
-#: command/command-preferences.ui:161
-msgid "_Show icon"
-msgstr "_Прикажи иконицу"
-
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
-msgid "Command Factory"
-msgstr "Погон наредби"
-
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
-msgid "Command"
-msgstr "Наредба"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:5
-msgid "Command to execute"
-msgstr "Наредба за извршавање"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:6
-msgid "Command/script to execute to get the output"
-msgstr "Наредба/скрипта која ће се извршити за добијање излаза"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:10
-msgid "Interval for the command"
-msgstr "Период за наредбу"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:11
-msgid "Interval to execute the command (in seconds)"
-msgstr "Период за извршавање наредбе (у секундама)"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:15
-msgid "Width of output"
-msgstr "Ширина исписа"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:16
-msgid "Number of characters to display"
-msgstr "Број знакова за приказивање"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr "Приказује иконицу"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:21
-msgid "If applet icon is shown or not"
-msgstr "Да ли се приказује иконица програмчета"
-
-#: cpufreq/cpufreq-preferences.ui:7
+#: cpufreq/cpufreq-preferences.ui:18
 msgid "CPU Frequency Monitor Preferences"
 msgstr "Поставке праћења учестаности процесора"
 
-#: cpufreq/cpufreq-preferences.ui:28
-msgid "Monitor Settings"
-msgstr "Подешавања монитора"
-
-#: cpufreq/cpufreq-preferences.ui:60
+#: cpufreq/cpufreq-preferences.ui:97
 msgid "_Monitored CPU:"
 msgstr "_Надгледани процесори:"
 
-#: cpufreq/cpufreq-preferences.ui:102
-msgid "Display Settings"
-msgstr "Подешавања екрана"
+#: cpufreq/cpufreq-preferences.ui:127
+msgid "Monitor Settings"
+msgstr "Подешавања монитора"
 
-#: cpufreq/cpufreq-preferences.ui:138
+#: cpufreq/cpufreq-preferences.ui:168
 msgid "_Appearance:"
 msgstr "_Изглед:"
 
-#: cpufreq/cpufreq-preferences.ui:163
+#: cpufreq/cpufreq-preferences.ui:199
 msgid "Show CPU frequency as _frequency"
 msgstr "Прикажи фреквенцију процесора"
 
-#: cpufreq/cpufreq-preferences.ui:181
+#: cpufreq/cpufreq-preferences.ui:216
 msgid "Show frequency _units"
 msgstr "Прикажи и мерне јединице"
 
-#: cpufreq/cpufreq-preferences.ui:197
+#: cpufreq/cpufreq-preferences.ui:233
 msgid "Show CPU frequency as _percentage"
 msgstr "Прикажи фреквенцију процесора у _процентима"
 
+#: cpufreq/cpufreq-preferences.ui:256
+msgid "Display Settings"
+msgstr "Подешавања екрана"
+
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
+#: cpufreq/src/cpufreq-applet.c:792 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Праћење промене фреквенције процесора"
 
@@ -771,15 +776,15 @@ msgstr ""
 "приказана фреквенција и јединице, а 2 значи да ће бити приказани проценти "
 "оптерећења уместо фреквенције."
 
-#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:447 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "Не могу да отворим документ помоћи"
 
-#: cpufreq/src/cpufreq-applet.c:463
+#: cpufreq/src/cpufreq-applet.c:479
 msgid "About CPU Frequency Scaling Monitor"
 msgstr "О праћењу промене фреквенције процесора"
 
-#: cpufreq/src/cpufreq-applet.c:465
+#: cpufreq/src/cpufreq-applet.c:481
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
@@ -787,11 +792,11 @@ msgstr ""
 "Ауторска права © 2004 Карлос Гарсија Кампос\n"
 "Ауторска права © 2012-2020 Програмери Мејта"
 
-#: cpufreq/src/cpufreq-applet.c:467
+#: cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ова алатка приказује текуће стање фреквенције процесора."
 
-#: cpufreq/src/cpufreq-applet.c:850
+#: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
 msgstr "Ова алатка приказује текућу фреквенцију процесора"
 
@@ -811,11 +816,11 @@ msgstr "График и текст"
 msgid "Frequency Scaling Unsupported"
 msgstr "Није подржана промена фреквенције"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:59
+#: cpufreq/src/cpufreq-monitor-factory.c:57
 msgid "CPU frequency scaling unsupported"
 msgstr "Измена фреквенције процесора није подржана"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:60
+#: cpufreq/src/cpufreq-monitor-factory.c:58
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -908,15 +913,46 @@ msgstr "Погон програмчета за прикључивање диск
 msgid "Mount local disks and devices"
 msgstr "Прикључите локалне дискове и уређаје"
 
-#: geyes/geyes.c:178
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
+msgid "Eyes Applet Factory"
+msgstr "Фабрика програмчета Очи"
+
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
+#: geyes/src/geyes.c:388 geyes/src/geyes.c:419 geyes/src/geyes.c:421
+msgid "Eyes"
+msgstr "Очи"
+
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
+msgid "A set of eyeballs for your panel"
+msgstr "Пар очију за ваш панел"
+
+#: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:5
+#: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:6
+msgid "Directory in which the theme is located"
+msgstr "Директоријум у ком се налази тема"
+
+#: geyes/data/themes.ui:18
+msgid "Eyes Preferences"
+msgstr "Поставке Очију"
+
+#: geyes/data/themes.ui:100
+msgid "_Select a theme:"
+msgstr "_Изаберите тему:"
+
+#: geyes/data/themes.ui:148
+msgid "Themes"
+msgstr "Теме"
+
+#: geyes/src/geyes.c:178
 msgid "About Eyes"
 msgstr "О очима"
 
-#: geyes/geyes.c:180
+#: geyes/src/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Шашаве очи за Мејтов панел које прате курсор миша."
 
-#: geyes/geyes.c:182
+#: geyes/src/geyes.c:182
 msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
@@ -924,48 +960,17 @@ msgstr ""
 "Ауторска права © 1999 Дејв Камп\n"
 "Ауторска права © 2012-2020 Програмери Мејта"
 
-#: geyes/geyes.c:389 geyes/geyes.c:419 geyes/geyes.c:421
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-msgid "Eyes"
-msgstr "Очи"
-
-#: geyes/geyes.c:422
+#: geyes/src/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Погледом очи верно прате кретњу миша"
 
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
-msgid "Eyes Applet Factory"
-msgstr "Фабрика програмчета Очи"
-
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
-msgid "A set of eyeballs for your panel"
-msgstr "Пар очију за ваш панел"
-
-#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
-#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
-msgid "Directory in which the theme is located"
-msgstr "Директоријум у ком се налази тема"
-
-#: geyes/themes.c:129
+#: geyes/src/themes.c:130
 msgid "Can not launch the eyes applet."
 msgstr "Не могу да покренем програмче с очима."
 
-#: geyes/themes.c:130
+#: geyes/src/themes.c:131
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Дошло је до кобне грешке при покушају учитавања теме."
-
-#: geyes/themes.c:282
-msgid "Eyes Preferences"
-msgstr "Поставке Очију"
-
-#: geyes/themes.c:315
-msgid "Themes"
-msgstr "Теме"
-
-#: geyes/themes.c:336
-msgid "_Select a theme:"
-msgstr "_Изаберите тему:"
 
 #: mateweather/mateweather-about.c:54
 msgid "About Weather Report"
@@ -987,24 +992,24 @@ msgstr "Програмче панела за праћење локалних в�
 msgid "_Details"
 msgstr "_Појединости"
 
-#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.c:183
+#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.ui:30
 msgid "_Update"
 msgstr "_Освежи"
 
-#: mateweather/mateweather-applet.c:345
+#: mateweather/mateweather-applet.c:343
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
 msgid "Weather Report"
 msgstr "Извештај о времену"
 
-#: mateweather/mateweather-applet.c:360 mateweather/mateweather-applet.c:364
+#: mateweather/mateweather-applet.c:358 mateweather/mateweather-applet.c:362
 msgid "MATE Weather"
 msgstr "Мејтово време"
 
-#: mateweather/mateweather-applet.c:463
+#: mateweather/mateweather-applet.c:460
 msgid "Weather Forecast"
 msgstr "Временска прогноза"
 
-#: mateweather/mateweather-applet.c:475
+#: mateweather/mateweather-applet.c:472
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1015,101 +1020,101 @@ msgstr ""
 "Небо: %s\n"
 "Температура: %s"
 
-#: mateweather/mateweather-applet.c:524
+#: mateweather/mateweather-applet.c:521
 msgid "Updating..."
 msgstr "Освежава..."
 
-#: mateweather/mateweather-dialog.c:181
+#: mateweather/mateweather-dialog.c:231
+msgid "Forecast not currently available for this location."
+msgstr "Прогноза није тренутно доступна за ово место."
+
+#: mateweather/mateweather-dialog.ui:13
 msgid "Details"
 msgstr "Појединости"
 
-#: mateweather/mateweather-dialog.c:223
+#: mateweather/mateweather-dialog.ui:88
 msgid "City:"
 msgstr "Место:"
 
-#: mateweather/mateweather-dialog.c:229
+#: mateweather/mateweather-dialog.ui:100
 msgid "Last update:"
 msgstr "Последња допуна:"
 
-#: mateweather/mateweather-dialog.c:235
+#: mateweather/mateweather-dialog.ui:112
 msgid "Conditions:"
 msgstr "Услови:"
 
-#: mateweather/mateweather-dialog.c:241
+#: mateweather/mateweather-dialog.ui:124
 msgid "Sky:"
 msgstr "Небо:"
 
-#: mateweather/mateweather-dialog.c:247
+#: mateweather/mateweather-dialog.ui:136
 msgid "Temperature:"
 msgstr "Температура:"
 
-#: mateweather/mateweather-dialog.c:253
+#: mateweather/mateweather-dialog.ui:148
 msgid "Feels like:"
 msgstr "Осећа се као:"
 
-#: mateweather/mateweather-dialog.c:259
+#: mateweather/mateweather-dialog.ui:160
 msgid "Dew point:"
 msgstr "Тачка росе:"
 
-#: mateweather/mateweather-dialog.c:265
+#: mateweather/mateweather-dialog.ui:172
 msgid "Relative humidity:"
 msgstr "Релативна влажност:"
 
-#: mateweather/mateweather-dialog.c:271
+#: mateweather/mateweather-dialog.ui:184
 msgid "Wind:"
 msgstr "Ветар:"
 
-#: mateweather/mateweather-dialog.c:277
+#: mateweather/mateweather-dialog.ui:196
 msgid "Pressure:"
 msgstr "Притисак:"
 
-#: mateweather/mateweather-dialog.c:283
+#: mateweather/mateweather-dialog.ui:208
 msgid "Visibility:"
 msgstr "Видљивост:"
 
-#: mateweather/mateweather-dialog.c:289
+#: mateweather/mateweather-dialog.ui:220
 msgid "Sunrise:"
 msgstr "Зора:"
 
-#: mateweather/mateweather-dialog.c:295
+#: mateweather/mateweather-dialog.ui:232
 msgid "Sunset:"
 msgstr "Залазак:"
 
-#: mateweather/mateweather-dialog.c:403
+#: mateweather/mateweather-dialog.ui:409
 msgid "Current Conditions"
 msgstr "Текуће прилике"
 
-#: mateweather/mateweather-dialog.c:420
+#: mateweather/mateweather-dialog.ui:434
 msgid "Forecast Report"
 msgstr "Временска прогноза"
 
-#: mateweather/mateweather-dialog.c:420
+#: mateweather/mateweather-dialog.ui:435
 msgid "See the ForeCast Details"
 msgstr "Погледајте детаљну прогнозу"
 
-#: mateweather/mateweather-dialog.c:430
+#: mateweather/mateweather-dialog.ui:456
 msgid "Forecast"
 msgstr "Прогноза"
 
-#: mateweather/mateweather-dialog.c:438
-msgid "Radar Map"
-msgstr "Радарска мапа"
-
-#: mateweather/mateweather-dialog.c:471
+#: mateweather/mateweather-dialog.ui:497
 msgid "_Visit Weather.com"
 msgstr "_Посети „Weather.com“"
 
-#: mateweather/mateweather-dialog.c:472
+#: mateweather/mateweather-dialog.ui:505
 msgid "Visit Weather.com"
 msgstr "Посетите „Weather.com“"
 
-#: mateweather/mateweather-dialog.c:472
+#: mateweather/mateweather-dialog.ui:506
 msgid "Click to Enter Weather.com"
 msgstr "Кликните да посетите „Weather.com“"
 
-#: mateweather/mateweather-dialog.c:603
-msgid "Forecast not currently available for this location."
-msgstr "Прогноза није тренутно доступна за ово место."
+#: mateweather/mateweather-dialog.ui:525
+msgid "Radar Map"
+msgstr "Радарска мапа"
 
 #: mateweather/mateweather-pref.c:158
 msgid "Location view"
@@ -1322,47 +1327,47 @@ msgstr "Покрени праћење система"
 msgid "There was an error executing '%s': %s"
 msgstr "Дошло је до грешке при извршавању „%s“: %s"
 
-#: multiload/main.c:276 multiload/properties.c:643
+#: multiload/main.c:275 multiload/properties.c:643
 msgid "Processor"
 msgstr "Процесор"
 
-#: multiload/main.c:278 multiload/properties.c:651
+#: multiload/main.c:276 multiload/properties.c:651
 msgid "Memory"
 msgstr "Оперативна меморија"
 
-#: multiload/main.c:280 multiload/properties.c:659
+#: multiload/main.c:277 multiload/properties.c:659
 msgid "Network"
 msgstr "Мрежа"
 
-#: multiload/main.c:282 multiload/properties.c:668
+#: multiload/main.c:278 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "Заменска меморија"
 
-#: multiload/main.c:284 multiload/main.c:363
+#: multiload/main.c:279 multiload/main.c:362
 msgid "Load Average"
 msgstr "Просечно оптерећење"
 
-#: multiload/main.c:286
+#: multiload/main.c:280
 msgid "Disk"
 msgstr "Диск"
 
-#: multiload/main.c:302
+#: multiload/main.c:297
 #, c-format
 msgid ""
 "%s:\n"
-"%u%% in use by programs\n"
-"%u%% in use as cache"
+"%.01f%% in use by programs\n"
+"%.01f%% in use as cache"
 msgstr ""
 "%s:\n"
-"%u%% употребљавају програми\n"
-"%u%% је у употреби као остава"
+"%.01f%% користе програми\n"
+"%.01f%% се користи као остава"
 
-#: multiload/main.c:310
+#: multiload/main.c:306
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Просечно оптерећење система је %0.02f"
 
-#: multiload/main.c:318
+#: multiload/main.c:316
 #, c-format
 msgid ""
 "%s:\n"
@@ -1373,54 +1378,45 @@ msgstr ""
 "Прима %s\n"
 "Шаље %s"
 
-#: multiload/main.c:334
+#: multiload/main.c:338
 #, c-format
 msgid ""
 "%s:\n"
-"%u%% in use"
-msgid_plural ""
+"%.01f%% in use"
+msgstr ""
 "%s:\n"
-"%u%% in use"
-msgstr[0] ""
-"%s:\n"
-"%u%% у употреби"
-msgstr[1] ""
-"%s:\n"
-"%u%% у употреби"
-msgstr[2] ""
-"%s:\n"
-"%u%% у употреби"
+"%.01f%% у употреби"
 
-#: multiload/main.c:359
+#: multiload/main.c:358
 msgid "CPU Load"
 msgstr "Оптерећење процесора"
 
-#: multiload/main.c:360
+#: multiload/main.c:359
 msgid "Memory Load"
 msgstr "Оптерећење меморије"
 
-#: multiload/main.c:361
+#: multiload/main.c:360
 msgid "Net Load"
 msgstr "Оптерећење мреже"
 
-#: multiload/main.c:362
+#: multiload/main.c:361
 msgid "Swap Load"
 msgstr "Оптерећење меморије на диску"
 
-#: multiload/main.c:364
+#: multiload/main.c:363
 msgid "Disk Load"
 msgstr "Оптерећење диска"
 
-#: multiload/main.c:482
+#: multiload/main.c:483
 msgid "_Open System Monitor"
 msgstr "_Покрени Праћење система"
 
-#: multiload/main.c:514
+#: multiload/main.c:515
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "Праћење система"
 
-#: multiload/netspeed.c:40
+#: multiload/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
@@ -1534,7 +1530,7 @@ msgid "Network graph background color"
 msgstr "Боја позадине графикона мреже"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:130
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:133
 msgid "Grid line color"
 msgstr "Боја линије мреже"
 
@@ -1542,51 +1538,51 @@ msgstr "Боја линије мреже"
 msgid "Indicator color"
 msgstr "Боја указивача"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:102
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:103
 msgid "Network threshold 1 in bytes"
 msgstr "1. померај мреже у бајтовима"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:106
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:108
 msgid "Network threshold 2 in bytes"
 msgstr "2. померај мреже у бајтовима"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:110
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:113
 msgid "Network threshold 3 in bytes"
 msgstr "3. померај мреже у бајтовима"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:114
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:117
 msgid "Graph color for user-related swap usage"
 msgstr "Боја графикона корисничке искоришћености разменске меморије"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:118
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:121
 msgid "Swap graph background color"
 msgstr "Боја позадине графикона разменске меморије"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:122
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:125
 msgid "Graph color for load average"
 msgstr "Боја графикона за просек оптерећења"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:126
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:129
 msgid "Load graph background color"
 msgstr "Боја позадине графикона оптерећења"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:134
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:137
 msgid "Graph color for disk read"
 msgstr "Боја графикона за читање диска"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:138
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:141
 msgid "Graph color for disk write"
 msgstr "Боја графикона за писање диска"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:142
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:145
 msgid "Background color for disk load graph"
 msgstr "Боја позадине за графикон оптерећења диска"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:146
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:149
 msgid "Uses /proc/diskstats to determine NVMe disk load"
 msgstr "Користи „/proc/diskstats“ да одреди „NVMe“ оптерећење диска"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:150
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:153
 msgid "The desktop description file to execute as the system monitor"
 msgstr "Датотека описа радне површи за извршавање као пратилац система"
 
@@ -1748,7 +1744,7 @@ msgid "Threshold 1: "
 msgstr "Померај 1:"
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:425
+#: multiload/properties.c:815
 msgid "bytes"
 msgstr "бајта"
 
@@ -1763,6 +1759,102 @@ msgstr "Померај 3:"
 #: multiload/properties.c:853
 msgid "System Monitor Preferences"
 msgstr "Поставке праћења система"
+
+#: netspeed/data/netspeed-details.ui:101
+msgid "Transfer Rate Graph"
+msgstr "График протока преноса"
+
+#: netspeed/data/netspeed-details.ui:133
+msgid "_In graph color"
+msgstr "Боја графика _долазног"
+
+#: netspeed/data/netspeed-details.ui:160
+msgid "_Out graph color"
+msgstr "Боја графика _одлазног"
+
+#: netspeed/data/netspeed-details.ui:194
+msgid "IPv4 Address:"
+msgstr "ИПв4 адреса:"
+
+#: netspeed/data/netspeed-details.ui:222
+msgid "Netmask:"
+msgstr "Мрежна маска:"
+
+#: netspeed/data/netspeed-details.ui:262
+msgid "Hardware Address:"
+msgstr "Хардверска адреса:"
+
+#: netspeed/data/netspeed-details.ui:290
+msgid "P-t-P Address:"
+msgstr "Т-д-Т адреса:"
+
+#: netspeed/data/netspeed-details.ui:330
+msgid "Bytes in:"
+msgstr "Долазних бајтова:"
+
+#: netspeed/data/netspeed-details.ui:344 netspeed/data/netspeed-details.ui:372
+msgid "0 byte"
+msgstr "0 бајта"
+
+#: netspeed/data/netspeed-details.ui:358
+msgid "Bytes out:"
+msgstr "Одлазних бајтова:"
+
+#: netspeed/data/netspeed-details.ui:398
+msgid "IPv6 Address:"
+msgstr "ИПв6 адреса:"
+
+#: netspeed/data/netspeed-details.ui:444
+msgid "ESSID:"
+msgstr "ЕССИД:"
+
+#: netspeed/data/netspeed-details.ui:472
+msgid "Signal Strength:"
+msgstr "Јачина сигнала:"
+
+#: netspeed/data/netspeed-details.ui:516
+msgid "Station:"
+msgstr "Станица:"
+
+#: netspeed/data/netspeed-details.ui:541
+msgid "Channel:"
+msgstr "Канал:"
+
+#: netspeed/data/netspeed-details.ui:578
+msgid "Connected Time:"
+msgstr "Време прикључења:"
+
+#: netspeed/data/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr "Поставке Мејтове Мрежне брзине"
+
+#: netspeed/data/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr "Мрежни _уређај:"
+
+#: netspeed/data/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr "Прикажи _збир уместо долазног и одлазног"
+
+#: netspeed/data/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr "Прикажи _битове уместо бајтова"
+
+#: netspeed/data/netspeed-preferences.ui:165
+msgid "_Change icon according to the selected device"
+msgstr "_Промени иконицу складно са изабраним уређајем"
+
+#: netspeed/data/netspeed-preferences.ui:182
+msgid "Show _icon"
+msgstr "Прикажи _иконицу"
+
+#: netspeed/data/netspeed-preferences.ui:199
+msgid "Show signal _quality icon for wireless devices"
+msgstr "Прикажи иконицу _квалитета сигнала за бежичне уређаје"
+
+#: netspeed/data/netspeed-preferences.ui:223
+msgid "General Settings"
+msgstr "Општа подешавања"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:5
 msgid "Device to monitor"
@@ -1794,70 +1886,58 @@ msgid "If true, show main icon."
 msgstr "Ако је изабрано, приказиваће главну иконицу."
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:25
-msgid "Short unit legend"
-msgstr "Кратка легенда јединице"
-
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
-msgid ""
-"If true, shorten unit legend to one letter: lowercase for bits / uppercase "
-"for Bytes."
-msgstr ""
-"Ако је изабрано, скратиће легенду јединице на једно слово: мало слово за "
-"битове / велико за Бајтове."
-
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Change icon"
 msgstr "Мења иконицу"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
 msgid "If true, change the icon due to selected device."
 msgstr "Ако је изабрано, промениће иконицу услед изабраног уређаја."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Auto change device"
 msgstr "Сам мења уређај"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
 msgid "If true, change automatically the selected device."
 msgstr "Ако је изабрано, сам ће променити изабрани уређај."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
 msgid "In color"
 msgstr "Боја долазног"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
 msgid "The color of the graph of the inbound traffic"
 msgstr "Боја графика долазног саобраћаја"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
 msgid "Out color"
 msgstr "Боја одлазног"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
 msgid "The color of the graph of the outbound traffic"
 msgstr "Боја графика одлазног саобраћаја"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
 msgid "Up command"
 msgstr "Наредба покретања"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
 msgid "Command to execute to activate the device"
 msgstr "Наредба за извршавање за покретање уређаја"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
 msgid "Down command"
 msgstr "Наредба заустављања"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
 msgid "Command to execute to shut down the device"
 msgstr "Наредба за извршавање за гашење уређаја"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:60
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
 msgid "Show signal quality icon"
 msgstr "Приказује иконицу квалитета сигнала"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:61
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
 msgid "If true, show signal quality icon for wireless devices."
 msgstr ""
 "Ако је изабрано, приказаће иконицу квалитета сигнала за бежичне уређаје."
@@ -1875,75 +1955,197 @@ msgstr "Програмче Мрежне брзине"
 msgid "Network Monitor"
 msgstr "Праћење мреже"
 
-#: netspeed/src/netspeed.c:420
-msgid "b"
-msgstr "b"
+#: netspeed/src/backend.c:448
+#, c-format
+msgid "%d.%d MBit/s"
+msgstr "%d.%d MBit/s"
 
-#: netspeed/src/netspeed.c:420
-msgid "B"
-msgstr "B"
+#: netspeed/src/backend.c:450
+#, c-format
+msgid "(unknown)"
+msgstr "(непознато)"
 
-#: netspeed/src/netspeed.c:422
-msgid "b/s"
-msgstr "b/s"
+#: netspeed/src/backend.c:454
+#, c-format
+msgid " MCS %d"
+msgstr " MCS %d"
 
-#: netspeed/src/netspeed.c:422
+#: netspeed/src/backend.c:457
+#, c-format
+msgid " VHT-MCS %d"
+msgstr " VHT-MCS %d"
+
+#: netspeed/src/backend.c:459
+#, c-format
+msgid " 40MHz"
+msgstr " 40MHz"
+
+#: netspeed/src/backend.c:461
+#, c-format
+msgid " 80MHz"
+msgstr " 80MHz"
+
+#: netspeed/src/backend.c:463
+#, c-format
+msgid " 80P80MHz"
+msgstr " 80P80MHz"
+
+#: netspeed/src/backend.c:465
+#, c-format
+msgid " 160MHz"
+msgstr " 160MHz"
+
+#: netspeed/src/backend.c:467
+#, c-format
+msgid " short GI)"
+msgstr " кратко ГС)"
+
+#: netspeed/src/backend.c:470
+#, c-format
+msgid " VHT-NSS %d"
+msgstr " VHT-NSS %d"
+
+#: netspeed/src/backend.c:473
+#, c-format
+msgid " HE-MCS %d"
+msgstr " HE-MCS %d"
+
+#: netspeed/src/backend.c:476
+#, c-format
+msgid " HE-NSS %d"
+msgstr " HE-NSS %d"
+
+#: netspeed/src/backend.c:479
+#, c-format
+msgid " HE-GI %d"
+msgstr " HE-GI %d"
+
+#: netspeed/src/backend.c:482
+#, c-format
+msgid " HE-DCM %d"
+msgstr " HE-DCM %d"
+
+#: netspeed/src/backend.c:566
+msgid "20 MHz (no HT)"
+msgstr "20 MHz (не HT)"
+
+#: netspeed/src/backend.c:568
+msgid "20 MHz"
+msgstr "20 MHz"
+
+#: netspeed/src/backend.c:570
+msgid "40 MHz"
+msgstr "40 MHz"
+
+#: netspeed/src/backend.c:572
+msgid "80 MHz"
+msgstr "80 MHz"
+
+#: netspeed/src/backend.c:574
+msgid "80+80 MHz"
+msgstr "80+80 MHz"
+
+#: netspeed/src/backend.c:576
+msgid "160 MHz"
+msgstr "160 MHz"
+
+#: netspeed/src/backend.c:578
+msgid "5 MHz"
+msgstr "5 MHz"
+
+#: netspeed/src/backend.c:580
+msgid "10 MHz"
+msgstr "10 MHz"
+
+#: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
+#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1505
+#: netspeed/src/netspeed.c:1514
+msgid "unknown"
+msgstr "непознато"
+
+#: netspeed/src/backend.c:633
+#, c-format
+msgid "%d (%d MHz)"
+msgstr "%d (%d MHz)"
+
+#: netspeed/src/backend.c:637
+#, c-format
+msgid ", width: %s"
+msgstr ", ширина: %s"
+
+#: netspeed/src/netspeed.c:455
+msgid "bit/s"
+msgstr "bit/s"
+
+#: netspeed/src/netspeed.c:455
 msgid "B/s"
 msgstr "B/s"
 
-#: netspeed/src/netspeed.c:425
-msgid "bits"
-msgstr "бита"
+#: netspeed/src/netspeed.c:459
+msgid "Kibit/s"
+msgstr "Kibit/s"
 
-#: netspeed/src/netspeed.c:433
-msgid "k"
-msgstr "k"
-
-#: netspeed/src/netspeed.c:433
-msgid "K"
-msgstr "K"
-
-#: netspeed/src/netspeed.c:435
-msgid "kb/s"
-msgstr "kb/s"
-
-#: netspeed/src/netspeed.c:435
+#: netspeed/src/netspeed.c:459
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: netspeed/src/netspeed.c:438
-msgid "kb"
-msgstr "kb"
+#: netspeed/src/netspeed.c:463
+msgid "Mibit/s"
+msgstr "Mibit/s"
 
-#: netspeed/src/netspeed.c:438
-msgid "KiB"
-msgstr "KiB"
-
-#: netspeed/src/netspeed.c:448
-msgid "m"
-msgstr "m"
-
-#: netspeed/src/netspeed.c:448
-msgid "M"
-msgstr "M"
-
-#: netspeed/src/netspeed.c:450
-msgid "Mb/s"
-msgstr "Mb/s"
-
-#: netspeed/src/netspeed.c:450
+#: netspeed/src/netspeed.c:463
 msgid "MiB/s"
 msgstr "MiB/s"
 
-#: netspeed/src/netspeed.c:453
-msgid "Mb"
-msgstr "Mb"
+#: netspeed/src/netspeed.c:467
+msgid "Gibit/s"
+msgstr "Gibit/s"
 
-#: netspeed/src/netspeed.c:453
-msgid "MiB"
-msgstr "MiB"
+#: netspeed/src/netspeed.c:467
+msgid "GiB/s"
+msgstr "GiB/s"
 
-#: netspeed/src/netspeed.c:776
+#: netspeed/src/netspeed.c:629
+msgid "%'"
+msgid_plural "%'"
+msgstr[0] "%'"
+msgstr[1] "%'"
+msgstr[2] "%'"
+
+#: netspeed/src/netspeed.c:635
+#, c-format
+msgid "%'d minute"
+msgid_plural "%'d minutes"
+msgstr[0] "%'d минут"
+msgstr[1] "%'d минута"
+msgstr[2] "%'d минута"
+
+#: netspeed/src/netspeed.c:636
+#, c-format
+msgid "%'d secon"
+msgid_plural "%'d seconds"
+msgstr[0] "%'d секунда"
+msgstr[1] "%'d секунде"
+msgstr[2] "%'d секунди"
+
+#: netspeed/src/netspeed.c:641
+#, c-format
+msgid "%'d hour"
+msgid_plural "%'d hours"
+msgstr[0] "%'d сат"
+msgstr[1] "%'d сата"
+msgstr[2] "%'d сати"
+
+#: netspeed/src/netspeed.c:690 netspeed/src/netspeed.c:698
+#: netspeed/src/netspeed.c:707 netspeed/src/netspeed.c:714
+msgid "none"
+msgstr "ништа"
+
+#: netspeed/src/netspeed.c:758 netspeed/src/netspeed.c:870
+msgid "na"
+msgstr "нд."
+
+#: netspeed/src/netspeed.c:988
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1952,11 +2154,11 @@ msgstr ""
 "Дошло је до грешке приказивања помоћи:\n"
 "%s"
 
-#: netspeed/src/netspeed.c:813
+#: netspeed/src/netspeed.c:1026
 msgid "About MATE Netspeed"
 msgstr "О Мејтовој мрежној брзини"
 
-#: netspeed/src/netspeed.c:815
+#: netspeed/src/netspeed.c:1028
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
@@ -1966,7 +2168,7 @@ msgstr ""
 "Ауторска права © 2011–2014 Стефано Карапетас\n"
 "Ауторска права © 2015–2020 Програмери Мејта"
 
-#: netspeed/src/netspeed.c:818
+#: netspeed/src/netspeed.c:1031
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
@@ -1974,91 +2176,37 @@ msgstr ""
 "Програмче које приказује неке податке о саобраћају на наведеном мрежном "
 "уређају"
 
-#: netspeed/src/netspeed.c:973
+#: netspeed/src/netspeed.c:1178
 msgid "Default"
 msgstr "Основно"
 
-#: netspeed/src/netspeed.c:1089
-#, c-format
-msgid "Device Details for %s"
-msgstr "Појединости уређаја за „%s“"
-
-#: netspeed/src/netspeed.c:1114
-msgid "_In graph color"
-msgstr "Боја графика _долазног"
-
-#: netspeed/src/netspeed.c:1115
-msgid "_Out graph color"
-msgstr "Боја графика _одлазног"
-
-#: netspeed/src/netspeed.c:1131
-msgid "Internet Address:"
-msgstr "Интернет адреса:"
-
-#: netspeed/src/netspeed.c:1132
-msgid "Netmask:"
-msgstr "Мрежна маска:"
-
-#: netspeed/src/netspeed.c:1133
-msgid "Hardware Address:"
-msgstr "Хардверска адреса:"
-
-#: netspeed/src/netspeed.c:1134
-msgid "P-t-P Address:"
-msgstr "Т-д-Т адреса:"
-
-#: netspeed/src/netspeed.c:1135
-msgid "Bytes in:"
-msgstr "Долазних бајтова:"
-
-#: netspeed/src/netspeed.c:1136
-msgid "Bytes out:"
-msgstr "Одлазних бајтова:"
-
-#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
-#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
-msgid "none"
-msgstr "ништа"
-
-#: netspeed/src/netspeed.c:1192
-msgid "IPV6 Address:"
-msgstr "ИПв6 адреса:"
-
-#: netspeed/src/netspeed.c:1225
-msgid "Signal Strength:"
-msgstr "Јачина сигнала:"
-
-#: netspeed/src/netspeed.c:1226
-msgid "ESSID:"
-msgstr "ЕССИД:"
-
-#: netspeed/src/netspeed.c:1267
+#: netspeed/src/netspeed.c:1343
 msgid "Device _Details"
 msgstr "Појединости _уређаја"
 
-#: netspeed/src/netspeed.c:1269
+#: netspeed/src/netspeed.c:1345
 msgid "Preferences..."
 msgstr "Поставке..."
 
-#: netspeed/src/netspeed.c:1271
+#: netspeed/src/netspeed.c:1347
 msgid "Help"
 msgstr "Помоћ"
 
-#: netspeed/src/netspeed.c:1273
+#: netspeed/src/netspeed.c:1349
 msgid "About..."
 msgstr "О програму..."
 
-#: netspeed/src/netspeed.c:1314
+#: netspeed/src/netspeed.c:1388
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Да ли желите сада да прекинете везу са „%s“?"
 
-#: netspeed/src/netspeed.c:1318
+#: netspeed/src/netspeed.c:1391
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Да ли желите сада да успоставите везу са „%s“?"
 
-#: netspeed/src/netspeed.c:1345
+#: netspeed/src/netspeed.c:1417
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2067,12 +2215,16 @@ msgstr ""
 "<b>Покретање наредбе „%s“ није успело</b>\n"
 "%s"
 
-#: netspeed/src/netspeed.c:1404
+#: netspeed/src/netspeed.c:1475
 #, c-format
 msgid "%s is down"
 msgstr "%s је угашен"
 
-#: netspeed/src/netspeed.c:1409
+#: netspeed/src/netspeed.c:1484
+msgid "has no ip"
+msgstr "нема ип"
+
+#: netspeed/src/netspeed.c:1489
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2081,11 +2233,7 @@ msgstr ""
 "%s: %s\n"
 "дол.: %s одл.: %s"
 
-#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
-msgid "has no ip"
-msgstr "нема ип"
-
-#: netspeed/src/netspeed.c:1418
+#: netspeed/src/netspeed.c:1496
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2094,7 +2242,22 @@ msgstr ""
 "%s: %s\n"
 "збир: %s"
 
-#: netspeed/src/netspeed.c:1427
+#: netspeed/src/netspeed.c:1504
+#, c-format
+msgid ""
+"\n"
+"ESSID: %s\n"
+"RSSI: %d dBm\n"
+"RX Bitrate: %s\n"
+"TX Bitrate: %s"
+msgstr ""
+"\n"
+"ESSID: %s\n"
+"RSSI: %d dBm\n"
+"RX проток бита: %s\n"
+"TX проток бита: %s"
+
+#: netspeed/src/netspeed.c:1513
 #, c-format
 msgid ""
 "\n"
@@ -2105,49 +2268,9 @@ msgstr ""
 "ЕССИД: %s\n"
 "Јачина: %d %%"
 
-#: netspeed/src/netspeed.c:1428
-msgid "unknown"
-msgstr "непознато"
-
-#: netspeed/src/netspeed.c:1478
+#: netspeed/src/netspeed.c:1563
 msgid "MATE Netspeed"
 msgstr "Мејтова Мрежна брзина"
-
-#: netspeed/src/netspeed-preferences.ui:18
-msgid "MATE Netspeed Preferences"
-msgstr "Поставке Мејтове Мрежне брзине"
-
-#: netspeed/src/netspeed-preferences.ui:100
-msgid "Network _device:"
-msgstr "Мрежни _уређај:"
-
-#: netspeed/src/netspeed-preferences.ui:131
-msgid "Show _sum instead of in & out"
-msgstr "Прикажи _збир уместо долазног и одлазног"
-
-#: netspeed/src/netspeed-preferences.ui:148
-msgid "Show _bits instead of bytes"
-msgstr "Прикажи _битове уместо бајтова"
-
-#: netspeed/src/netspeed-preferences.ui:165
-msgid "Shorten _unit legend"
-msgstr "Кратка легенда _јединице"
-
-#: netspeed/src/netspeed-preferences.ui:182
-msgid "_Change icon according to the selected device"
-msgstr "_Промени иконицу складно са изабраним уређајем"
-
-#: netspeed/src/netspeed-preferences.ui:199
-msgid "Show _icon"
-msgstr "Прикажи _иконицу"
-
-#: netspeed/src/netspeed-preferences.ui:216
-msgid "Show signal _quality icon for wireless devices"
-msgstr "Прикажи иконицу _квалитета сигнала за бежичне уређаје"
-
-#: netspeed/src/netspeed-preferences.ui:240
-msgid "General Settings"
-msgstr "Општа подешавања"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2163,11 +2286,11 @@ msgstr "Белешке"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Направите, гледајте и управљајте белешкама на радној површини"
 
-#: stickynotes/stickynotes.c:578
+#: stickynotes/stickynotes.c:582
 msgid "This note is locked."
 msgstr "Ова белешка је закључана."
 
-#: stickynotes/stickynotes.c:582
+#: stickynotes/stickynotes.c:586
 msgid "This note is unlocked."
 msgstr "Ова белешка је откључана."
 

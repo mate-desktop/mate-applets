@@ -7,16 +7,16 @@
 # Martin Wimpress <code@flexion.org>, 2018
 # brennus <jonas.ska@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# Moo, 2020
 # Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
+# Moo, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.24.0\n"
+"Project-Id-Version: mate-applets 1.25.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-06-25 09:58+0200\n"
+"POT-Creation-Date: 2020-08-11 16:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020\n"
+"Last-Translator: Moo, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,30 +24,47 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
-#: mateweather/mateweather-about.c:41 multiload/main.c:48
-#: stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
+msgid "AccessX Status Applet Factory"
+msgstr "AccessX būklės įtaiso gamykla"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
+msgid "Keyboard Accessibility Status Applet Factory"
+msgstr "Klaviatūros prieinamumo būklės įtaiso gamykla"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
+#: accessx-status/src/applet.c:1383
+msgid "Keyboard Accessibility Status"
+msgstr "Klaviatūros prieinamumo būklė"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
+msgid "Shows the status of keyboard accessibility features"
+msgstr "Rodo klaviatūros pagalbinių ypatybių būklę"
+
+#: accessx-status/src/applet.c:86 charpick/charpick.c:571
+#: geyes/src/geyes.c:166 mateweather/mateweather-about.c:41
+#: multiload/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr "Sun GNOME dokumentacijos komanda <gdocteam@sun.com>"
 
-#: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
-#: drivemount/drivemount.c:109 geyes/geyes.c:167
+#: accessx-status/src/applet.c:87 battstat/battstat_applet.c:817
+#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:464
+#: drivemount/drivemount.c:109 geyes/src/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
 #: trashapplet/src/trashapplet.c:421
 msgid "MATE Documentation Team"
 msgstr "MATE dokumentacijos komanda"
 
-#: accessx-status/applet.c:98
+#: accessx-status/src/applet.c:98
 msgid "About AccessX Status"
 msgstr "Apie AccessX būseną"
 
-#: accessx-status/applet.c:100
+#: accessx-status/src/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Rodo AccessX ypatybių tokių kaip „latched modifiers“ būseną"
 
-#: accessx-status/applet.c:101
+#: accessx-status/src/applet.c:101
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
@@ -55,11 +72,12 @@ msgstr ""
 "Autorių teisės © 2003 Sun Microsystems\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:591 command/command.c:131
-#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
-#: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: accessx-status/src/applet.c:105 battstat/battstat_applet.c:842
+#: charpick/charpick.c:592 command/src/command.c:131
+#: cpufreq/src/cpufreq-applet.c:488 drivemount/drivemount.c:127
+#: geyes/src/geyes.c:186 mateweather/mateweather-about.c:61
+#: multiload/main.c:69 netspeed/src/netspeed.c:1034
+#: stickynotes/stickynotes_applet_callbacks.c:388
 #: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
@@ -75,122 +93,108 @@ msgstr ""
 "Moo\n"
 "Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>"
 
-#: accessx-status/applet.c:124
+#: accessx-status/src/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Įvyko klaida paleidžiant žinyno žiūryklę: %s"
 
-#: accessx-status/applet.c:152
+#: accessx-status/src/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr "Atverti klaviatūros nustatymų dialogą"
 
-#: accessx-status/applet.c:167
+#: accessx-status/src/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Įvyko klaida, paleidžiant klaviatūros nustatymų dialogą: %s"
 
-#: accessx-status/applet.c:182
+#: accessx-status/src/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "_Klaviatūros prieinamumo nustatymai"
 
-#: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
-#: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:485
-#: netspeed/src/netspeed-preferences.ui:33
+#: accessx-status/src/applet.c:183 battstat/battstat_applet.c:60
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:669
+#: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
+#: drivemount/drivemount.c:165 geyes/data/themes.ui:35 geyes/src/geyes.c:359
+#: mateweather/mateweather-applet.c:117 multiload/main.c:486
+#: netspeed/data/netspeed-details.ui:31
+#: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "_Žinynas"
 
-#: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:671 command/command.c:87
+#: accessx-status/src/applet.c:184 battstat/battstat_applet.c:63
+#: charpick/charpick.c:672 command/src/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
-#: trashapplet/src/trashapplet.c:77
+#: geyes/src/geyes.c:362 mateweather/mateweather-applet.c:120
+#: multiload/main.c:489 stickynotes/stickynotes_applet.c:49
+#: timerapplet/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Apie"
 
-#: accessx-status/applet.c:503 accessx-status/applet.c:557
+#: accessx-status/src/applet.c:503 accessx-status/src/applet.c:557
 msgid "a"
 msgstr "a"
 
-#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
-#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
+#: accessx-status/src/applet.c:1042 accessx-status/src/applet.c:1108
+#: accessx-status/src/applet.c:1193 accessx-status/src/applet.c:1386
 msgid "AccessX Status"
 msgstr "AccessX būklė"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
+#: accessx-status/src/applet.c:1043 accessx-status/src/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Rodo klaviatūros buklę kai naudojamos prieinamumo funkcijos."
 
-#: accessx-status/applet.c:1077
+#: accessx-status/src/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "XKB plėtinys neįjungtas"
 
-#: accessx-status/applet.c:1082
+#: accessx-status/src/applet.c:1082
 msgid "Unknown error"
 msgstr "Nežinoma klaida"
 
-#: accessx-status/applet.c:1086
+#: accessx-status/src/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "Klaida: %s"
 
-#: accessx-status/applet.c:1384
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-msgid "Keyboard Accessibility Status"
-msgstr "Klaviatūros prieinamumo būklė"
-
-#: accessx-status/applet.c:1388
+#: accessx-status/src/applet.c:1387
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Rodo dabartinę klaviatūros pagalbinių savybių būseną"
 
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
-msgid "AccessX Status Applet Factory"
-msgstr "AccessX būklės įtaiso gamykla"
-
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
-msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "Klaviatūros prieinamumo būklės įtaiso gamykla"
-
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
-msgid "Shows the status of keyboard accessibility features"
-msgstr "Rodo klaviatūros pagalbinių ypatybių būklę"
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
-#: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:479
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
+#: battstat/battstat_applet.c:57 charpick/charpick.c:666
+#: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
+#: geyes/src/geyes.c:356 mateweather/mateweather-applet.c:114
+#: multiload/main.c:480 stickynotes/stickynotes_applet.c:43
+#: timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Nustatymai"
 
-#: battstat/battstat_applet.c:71
+#: battstat/battstat_applet.c:68
 msgid "System is running on AC power"
 msgstr "Sistema naudoja kintamąją srovę"
 
-#: battstat/battstat_applet.c:72
+#: battstat/battstat_applet.c:69
 msgid "System is running on battery power"
 msgstr "Sistema naudoja baterijos energiją"
 
-#: battstat/battstat_applet.c:176
+#: battstat/battstat_applet.c:173
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Baterija įkrauta (%d%%)"
 
-#: battstat/battstat_applet.c:178
+#: battstat/battstat_applet.c:175
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Nežinoma kiek liko laiko (%d%%)"
 
-#: battstat/battstat_applet.c:180
+#: battstat/battstat_applet.c:177
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Nežinoma, kiek liko laiko iki įkrovimo (%d%%)"
 
-#: battstat/battstat_applet.c:185
+#: battstat/battstat_applet.c:182
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
@@ -199,7 +203,7 @@ msgstr[1] "liko %d minutės (%d%%)"
 msgstr[2] "liko %d minučių (%d%%)"
 msgstr[3] "liko %d minutė (%d%%)"
 
-#: battstat/battstat_applet.c:190
+#: battstat/battstat_applet.c:187
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
@@ -208,7 +212,7 @@ msgstr[1] "%d minutės iki įkrovimo (%d%%)"
 msgstr[2] "%d minučių iki įkrovimo (%d%%)"
 msgstr[3] "%d minutė iki įkrovimo (%d%%)"
 
-#: battstat/battstat_applet.c:196
+#: battstat/battstat_applet.c:193
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
@@ -217,7 +221,7 @@ msgstr[1] "liko %d valandos (%d%%)"
 msgstr[2] "liko %d valandų (%d%%)"
 msgstr[3] "liko %d valandų (%d%%)"
 
-#: battstat/battstat_applet.c:201
+#: battstat/battstat_applet.c:198
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -226,12 +230,12 @@ msgstr[1] "%d valandos iki įkrovimo (%d%%)"
 msgstr[2] "%d valandų iki įkrovimo (%d%%)"
 msgstr[3] "%d valandų iki įkrovimo (%d%%)"
 
-#: battstat/battstat_applet.c:208
+#: battstat/battstat_applet.c:205
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "liko %d %s %d %s (%d%%)"
 
-#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
+#: battstat/battstat_applet.c:206 battstat/battstat_applet.c:213
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "valanda"
@@ -239,7 +243,7 @@ msgstr[1] "valandos"
 msgstr[2] "valandų"
 msgstr[3] "valanda"
 
-#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
+#: battstat/battstat_applet.c:207 battstat/battstat_applet.c:214
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minutė"
@@ -247,29 +251,29 @@ msgstr[1] "minutės"
 msgstr[2] "minučių"
 msgstr[3] "minutė"
 
-#: battstat/battstat_applet.c:215
+#: battstat/battstat_applet.c:212
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s iki įkrovimo (%d%%)"
 
-#: battstat/battstat_applet.c:229
+#: battstat/battstat_applet.c:226
 msgid "Battery Monitor"
 msgstr "Baterijos monitorius"
 
-#: battstat/battstat_applet.c:240 battstat/battstat_applet.c:300
+#: battstat/battstat_applet.c:237 battstat/battstat_applet.c:297
 msgid "Your battery is now fully recharged"
 msgstr "Baterija dabar yra pilnai įkrauta"
 
-#: battstat/battstat_applet.c:275 battstat/battstat_applet.c:432
+#: battstat/battstat_applet.c:272 battstat/battstat_applet.c:429
 msgid "Battery Notice"
 msgstr "Baterijos pranešimas"
 
-#: battstat/battstat_applet.c:377
+#: battstat/battstat_applet.c:374
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "Liko %d%% baterijos."
 
-#: battstat/battstat_applet.c:383
+#: battstat/battstat_applet.c:380
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -280,7 +284,7 @@ msgstr[1] "Baterijos energijos liko %d minutėms (%d%% visos talpos)."
 msgstr[2] "Baterijos energijos liko %d minučių (%d%% visos talpos)."
 msgstr[3] "Baterijos energijos liko %d minutei (%d%% visos talpos)."
 
-#: battstat/battstat_applet.c:395
+#: battstat/battstat_applet.c:392
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -290,7 +294,7 @@ msgstr ""
 " • įjunkite savo nešiojamąjį kompiuterį į tinklą, arba\n"
 " • įrašykite atvertus dokumentus ir išjunkite kompiuterį."
 
-#: battstat/battstat_applet.c:403
+#: battstat/battstat_applet.c:400
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -302,25 +306,25 @@ msgstr ""
 " • įjunkite kompiuterį į tinklą,\n"
 " • įrašykite atvertus dokumentus ir kompiuterį išjunkite."
 
-#: battstat/battstat_applet.c:411
+#: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
 msgstr "Baterija baigia išsikrauti"
 
-#: battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:505
 msgid "No battery present"
 msgstr "Baterijos nėra"
 
-#: battstat/battstat_applet.c:511
+#: battstat/battstat_applet.c:508
 msgid "Battery status unknown"
 msgstr "Baterijos būsena nežinoma"
 
-#: battstat/battstat_applet.c:540
+#: battstat/battstat_applet.c:537
 msgid "N/A"
 msgstr "Nepasiekiama"
 
-#: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
-#: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:745
+#: battstat/battstat_applet.c:781 drivemount/drivemount.c:153
+#: geyes/src/geyes.c:344 geyes/src/themes.c:224
+#: mateweather/mateweather-applet.c:63 mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -328,23 +332,23 @@ msgstr "Nepasiekiama"
 msgid "There was an error displaying help: %s"
 msgstr "Rodant žinyną įvyko klaida: %s"
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:822
 msgid "This utility shows the status of your laptop battery."
 msgstr "Ši pagalbinė programa parodo nešiojamo kompiuterio baterijos būseną."
 
-#: battstat/battstat_applet.c:826
+#: battstat/battstat_applet.c:824
 msgid "upower backend enabled."
 msgstr "upower posistemė įjungta."
 
-#: battstat/battstat_applet.c:827
+#: battstat/battstat_applet.c:825
 msgid "Legacy backend enabled."
 msgstr "Palikiminė vidinė pusė įjungta."
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:834
 msgid "About Battery Charge Monitor"
 msgstr "Apie baterijos įkrovos monitorių"
 
-#: battstat/battstat_applet.c:838
+#: battstat/battstat_applet.c:836
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
@@ -354,49 +358,65 @@ msgstr ""
 "Autorių teisės © 2002-2005 Free Software Foundation ir kiti\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
+#: battstat/battstat_applet.c:1125 battstat/battstat_applet.c:1175
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Baterijos įkrovos monitorius"
 
-#: battstat/battstat_applet.c:1165
+#: battstat/battstat_applet.c:1176
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "Stebėti likusią nešiojamojo kompiuterio energiją"
 
-#: battstat/battstat_applet.ui:14
+#: battstat/battstat-preferences.ui:23
 msgid "Battery Charge Monitor Preferences"
 msgstr "Baterijos įkrovos stebėtuvo nustatymai"
 
-#: battstat/battstat_applet.ui:33
-msgid "Appearance"
-msgstr "Išvaizda"
+#: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
+#: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
+#: mateweather/mateweather-dialog.ui:45 netspeed/data/netspeed-details.ui:47
+#: netspeed/data/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "_Užverti"
 
-#: battstat/battstat_applet.ui:68
+#: battstat/battstat-preferences.ui:102
 msgid "_Show time/percentage:"
 msgstr "_Rodyti laiką/procentus:"
 
-#: battstat/battstat_applet.ui:102
+#: battstat/battstat-preferences.ui:125
 msgid "Show _time remaining"
 msgstr "Rodyti likusį _laiką"
 
-#: battstat/battstat_applet.ui:117
+#: battstat/battstat-preferences.ui:143
 msgid "Show _percentage remaining"
 msgstr "Rodyti likusius _procentus"
 
-#: battstat/battstat_applet.ui:175
-msgid "Notifications"
-msgstr "Pranešimai"
+#: battstat/battstat-preferences.ui:175
+msgid "Appearance"
+msgstr "Išvaizda"
 
-#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
-#. drops to: [XX] percent/minutes remaining'
-#: battstat/battstat_applet.ui:206
+#: battstat/battstat-preferences.ui:214
 msgid "_Warn when battery charge drops to:"
 msgstr "Įs_pėti, kai baterija išsikrauna iki:"
 
-#: battstat/battstat_applet.ui:262
+#: battstat/battstat-preferences.ui:255
+msgid "Percent"
+msgstr "Procentai"
+
+#: battstat/battstat-preferences.ui:256
+msgid "Minutes Remaining"
+msgstr "min. iki išsikrovimo"
+
+#: battstat/battstat-preferences.ui:282
 msgid "_Notify when battery is fully recharged"
 msgstr "Pra_nešti, kai baterija yra pilnai pakrauta"
+
+#: battstat/battstat-preferences.ui:305
+msgid "Notifications"
+msgstr "Pranešimai"
 
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:5
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:6
@@ -459,14 +479,6 @@ msgstr "Rodyti laiko/procentų užrašą"
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
 msgstr "0 - nėra užrašo, 1 - procentai, 2 - likęs laikas"
 
-#: battstat/properties.c:237
-msgid "Percent"
-msgstr "Procentai"
-
-#: battstat/properties.c:243
-msgid "Minutes Remaining"
-msgstr "min. iki išsikrovimo"
-
 #: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:3
 msgid "Battery Status Utility"
 msgstr "Baterijos būsenos pagalbinė programa"
@@ -497,11 +509,11 @@ msgstr "Įterpkite specialų simbolį"
 msgid "insert special character %s"
 msgstr "įterpti specialų simbolį %s"
 
-#: charpick/charpick.c:582
+#: charpick/charpick.c:583
 msgid "About Character Palette"
 msgstr "Apie simbolių paletę"
 
-#: charpick/charpick.c:584
+#: charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
@@ -509,7 +521,7 @@ msgstr ""
 "Autorių teisės © 1998, 2004-2005 GNOME įtaisų prižiūrėtojai ir kiti\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: charpick/charpick.c:586
+#: charpick/charpick.c:587
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
@@ -517,13 +529,13 @@ msgstr ""
 "MATE skydelio įtaisas, padedantis įterpti keistus simbolius, kurių nėra "
 "klaviatūroje. Išleistas GPL sąlygomis."
 
-#: charpick/charpick.c:694 charpick/charpick.c:708
+#: charpick/charpick.c:695 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "Simbolių paletė"
 
-#: charpick/charpick.c:694
+#: charpick/charpick.c:695
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Įterpti simbolius"
@@ -614,11 +626,78 @@ msgstr "Norėdami ištrinti pasirinktą paletę, spragtelkite čia"
 msgid "Character Palette Preferences"
 msgstr "Simbolių paletės nustatymai"
 
-#: command/command.c:125
+#: command/data/command-preferences.ui:25
+msgid "Command Applet Preferences"
+msgstr "Komandos programėlės nustatymai"
+
+#: command/data/command-preferences.ui:77
+msgid "C_ommand:"
+msgstr "Ko_manda:"
+
+#: command/data/command-preferences.ui:91
+msgid "_Interval (seconds):"
+msgstr "_Delsa (s)"
+
+#: command/data/command-preferences.ui:105
+msgid "Maximum _width (chars):"
+msgstr "Didžiausias plotis (simbolių):"
+
+#: command/data/command-preferences.ui:161
+msgid "_Show icon"
+msgstr "_Rodyti piktogramą"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
+msgid "Command Factory"
+msgstr "Komandų gamykla"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
+msgid "Command"
+msgstr "Komanda"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
+#: command/src/command.c:130
+msgid "Shows the output of a command"
+msgstr "Rodo komandos išvestį"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:5
+msgid "Command to execute"
+msgstr "Paleidžiama komanda"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:6
+msgid "Command/script to execute to get the output"
+msgstr "Paleidžiamas scenarijus arba komanda, kurios išvestis rodoma"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:10
+msgid "Interval for the command"
+msgstr "Komandos intervalas"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:11
+msgid "Interval to execute the command (in seconds)"
+msgstr "Komandos paleidimo intervalas (sekundėmis)"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:15
+msgid "Width of output"
+msgstr "Išvesties plotis"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:16
+msgid "Number of characters to display"
+msgstr "Rodomų simbolių skaičius"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
+msgstr "Rodyti piktogramą"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:21
+msgid "If applet icon is shown or not"
+msgstr "Ar programėlės piktograma rodoma, ar ne"
+
+#: command/src/command.c:125
 msgid "About Command Applet"
 msgstr "Apie komandų įtaisą"
 
-#: command/command.c:127
+#: command/src/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
@@ -626,119 +705,45 @@ msgstr ""
 "Autorių teisės © 2013-2014 Stefano Karapetsas\n"
 "Autorių teisės © 2015-2020 MATE kūrėjai"
 
-#: command/command.c:130
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
-msgid "Shows the output of a command"
-msgstr "Rodo komandos išvestį"
-
-#: command/command.c:408
+#: command/src/command.c:408
 msgid "Command Applet"
 msgstr "Komandų progamėlė"
 
-#: command/command-preferences.ui:25
-msgid "Command Applet Preferences"
-msgstr "Komandos programėlės nustatymai"
-
-#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
-#: stickynotes/sticky-notes-preferences.ui:68
-#: stickynotes/sticky-notes-properties.ui:54
-#: timerapplet/timerapplet-preferences.ui:41
-msgid "_Close"
-msgstr "_Užverti"
-
-#: command/command-preferences.ui:77
-msgid "C_ommand:"
-msgstr "Ko_manda:"
-
-#: command/command-preferences.ui:91
-msgid "_Interval (seconds):"
-msgstr "_Delsa (s)"
-
-#: command/command-preferences.ui:105
-msgid "Maximum _width (chars):"
-msgstr "Didžiausias plotis (simbolių):"
-
-#: command/command-preferences.ui:161
-msgid "_Show icon"
-msgstr "_Rodyti piktogramą"
-
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
-msgid "Command Factory"
-msgstr "Komandų gamykla"
-
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
-msgid "Command"
-msgstr "Komanda"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:5
-msgid "Command to execute"
-msgstr "Paleidžiama komanda"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:6
-msgid "Command/script to execute to get the output"
-msgstr "Paleidžiamas scenarijus arba komanda, kurios išvestis rodoma"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:10
-msgid "Interval for the command"
-msgstr "Komandos intervalas"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:11
-msgid "Interval to execute the command (in seconds)"
-msgstr "Komandos paleidimo intervalas (sekundėmis)"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:15
-msgid "Width of output"
-msgstr "Išvesties plotis"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:16
-msgid "Number of characters to display"
-msgstr "Rodomų simbolių skaičius"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr "Rodyti piktogramą"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:21
-msgid "If applet icon is shown or not"
-msgstr "Ar programėlės piktograma rodoma, ar ne"
-
-#: cpufreq/cpufreq-preferences.ui:7
+#: cpufreq/cpufreq-preferences.ui:18
 msgid "CPU Frequency Monitor Preferences"
 msgstr "CPU dažnio stebėjimo nustatymai"
 
-#: cpufreq/cpufreq-preferences.ui:28
-msgid "Monitor Settings"
-msgstr "Stebėjimo nustatymai"
-
-#: cpufreq/cpufreq-preferences.ui:60
+#: cpufreq/cpufreq-preferences.ui:97
 msgid "_Monitored CPU:"
 msgstr "_Stebimas CPU:"
 
-#: cpufreq/cpufreq-preferences.ui:102
-msgid "Display Settings"
-msgstr "Rodymo nustatymai"
+#: cpufreq/cpufreq-preferences.ui:127
+msgid "Monitor Settings"
+msgstr "Stebėjimo nustatymai"
 
-#: cpufreq/cpufreq-preferences.ui:138
+#: cpufreq/cpufreq-preferences.ui:168
 msgid "_Appearance:"
 msgstr "_Išvaizda:"
 
-#: cpufreq/cpufreq-preferences.ui:163
+#: cpufreq/cpufreq-preferences.ui:199
 msgid "Show CPU frequency as _frequency"
 msgstr "Rodyti CPU dažnį, kaip _dažnį"
 
-#: cpufreq/cpufreq-preferences.ui:181
+#: cpufreq/cpufreq-preferences.ui:216
 msgid "Show frequency _units"
 msgstr "Rodyti dažnio _vienetus"
 
-#: cpufreq/cpufreq-preferences.ui:197
+#: cpufreq/cpufreq-preferences.ui:233
 msgid "Show CPU frequency as _percentage"
 msgstr "Rodyti CPU dažnį _procentais"
 
+#: cpufreq/cpufreq-preferences.ui:256
+msgid "Display Settings"
+msgstr "Rodymo nustatymai"
+
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
+#: cpufreq/src/cpufreq-applet.c:792 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU dažnio mastelio monitorius"
 
@@ -785,15 +790,15 @@ msgstr ""
 "0-inė reikšmė reiškia, kad rodomas CPU dažnis, 1 - kad rodomas dažnis ir "
 "vienetai, 2 - kad vietoje dažnio rodomi procentai."
 
-#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:447 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "Nepavyko atverti žinyno dokumento"
 
-#: cpufreq/src/cpufreq-applet.c:463
+#: cpufreq/src/cpufreq-applet.c:479
 msgid "About CPU Frequency Scaling Monitor"
 msgstr "Apie CPU dažnio mastelio monitorių"
 
-#: cpufreq/src/cpufreq-applet.c:465
+#: cpufreq/src/cpufreq-applet.c:481
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
@@ -801,11 +806,11 @@ msgstr ""
 "Autorių teisės © 2004 Carlos Garcia Campos\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: cpufreq/src/cpufreq-applet.c:467
+#: cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ši pagalbinė programa rodo esamą CPU dažnio mastelį."
 
-#: cpufreq/src/cpufreq-applet.c:850
+#: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
 msgstr "Ši pagalbinė programa rodo esamą CPU dažnį"
 
@@ -825,11 +830,11 @@ msgstr "Grafikas ir tekstas"
 msgid "Frequency Scaling Unsupported"
 msgstr "Dažnio keitimas nepalaikomas"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:59
+#: cpufreq/src/cpufreq-monitor-factory.c:57
 msgid "CPU frequency scaling unsupported"
 msgstr "CPU dažnio keitimas nepalaikomas"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:60
+#: cpufreq/src/cpufreq-monitor-factory.c:58
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -923,15 +928,46 @@ msgstr "Diskų prijungimo priedo gamykla"
 msgid "Mount local disks and devices"
 msgstr "Prijungti vietinius diskus ir įrenginius"
 
-#: geyes/geyes.c:178
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
+msgid "Eyes Applet Factory"
+msgstr "Akių įtaiso gamykla"
+
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
+#: geyes/src/geyes.c:388 geyes/src/geyes.c:419 geyes/src/geyes.c:421
+msgid "Eyes"
+msgstr "Akys"
+
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
+msgid "A set of eyeballs for your panel"
+msgstr "Keletas akių skydeliui"
+
+#: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:5
+#: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:6
+msgid "Directory in which the theme is located"
+msgstr "Katalogas kuriame yra tema"
+
+#: geyes/data/themes.ui:18
+msgid "Eyes Preferences"
+msgstr "Akių nustatymai"
+
+#: geyes/data/themes.ui:100
+msgid "_Select a theme:"
+msgstr "Pa_sirinkite temą:"
+
+#: geyes/data/themes.ui:148
+msgid "Themes"
+msgstr "Temos"
+
+#: geyes/src/geyes.c:178
 msgid "About Eyes"
 msgstr "Apie akis"
 
-#: geyes/geyes.c:180
+#: geyes/src/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "Akys MATE skydeliui, sekiojančios pelės žymeklį."
 
-#: geyes/geyes.c:182
+#: geyes/src/geyes.c:182
 msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
@@ -939,48 +975,17 @@ msgstr ""
 "Autorių teisės © 1999 Dave Camp\n"
 "Autorių teisės © 2012-2020 MATE kūrėjai"
 
-#: geyes/geyes.c:389 geyes/geyes.c:419 geyes/geyes.c:421
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-msgid "Eyes"
-msgstr "Akys"
-
-#: geyes/geyes.c:422
+#: geyes/src/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Akys žiūri pelės žymeklio kryptimis"
 
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
-msgid "Eyes Applet Factory"
-msgstr "Akių įtaiso gamykla"
-
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
-msgid "A set of eyeballs for your panel"
-msgstr "Keletas akių skydeliui"
-
-#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
-#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
-msgid "Directory in which the theme is located"
-msgstr "Katalogas kuriame yra tema"
-
-#: geyes/themes.c:129
+#: geyes/src/themes.c:130
 msgid "Can not launch the eyes applet."
 msgstr "Nepavyko paleisti akių įtaiso."
 
-#: geyes/themes.c:130
+#: geyes/src/themes.c:131
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Įkeliant temą įvyko lemtinga klaida."
-
-#: geyes/themes.c:282
-msgid "Eyes Preferences"
-msgstr "Akių nustatymai"
-
-#: geyes/themes.c:315
-msgid "Themes"
-msgstr "Temos"
-
-#: geyes/themes.c:336
-msgid "_Select a theme:"
-msgstr "Pa_sirinkite temą:"
 
 #: mateweather/mateweather-about.c:54
 msgid "About Weather Report"
@@ -1002,24 +1007,24 @@ msgstr "Skydelio įtaisas skirtas stebėti vietinėms orų sąlygoms."
 msgid "_Details"
 msgstr "_Išsamiau"
 
-#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.c:183
+#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.ui:30
 msgid "_Update"
 msgstr "_Atnaujinti"
 
-#: mateweather/mateweather-applet.c:345
+#: mateweather/mateweather-applet.c:343
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
 msgid "Weather Report"
 msgstr "Orų prognozė"
 
-#: mateweather/mateweather-applet.c:360 mateweather/mateweather-applet.c:364
+#: mateweather/mateweather-applet.c:358 mateweather/mateweather-applet.c:362
 msgid "MATE Weather"
 msgstr "MATE orai"
 
-#: mateweather/mateweather-applet.c:463
+#: mateweather/mateweather-applet.c:460
 msgid "Weather Forecast"
 msgstr "Orų prognozė"
 
-#: mateweather/mateweather-applet.c:475
+#: mateweather/mateweather-applet.c:472
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1030,101 +1035,101 @@ msgstr ""
 "Dangus: %s\n"
 "Temperatūra: %s"
 
-#: mateweather/mateweather-applet.c:524
+#: mateweather/mateweather-applet.c:521
 msgid "Updating..."
 msgstr "Atnaujinu..."
 
-#: mateweather/mateweather-dialog.c:181
+#: mateweather/mateweather-dialog.c:231
+msgid "Forecast not currently available for this location."
+msgstr "Šiuo metu prognozė šiai vietovei yra neprieinama."
+
+#: mateweather/mateweather-dialog.ui:13
 msgid "Details"
 msgstr "Detalės"
 
-#: mateweather/mateweather-dialog.c:223
+#: mateweather/mateweather-dialog.ui:88
 msgid "City:"
 msgstr "Miestas:"
 
-#: mateweather/mateweather-dialog.c:229
+#: mateweather/mateweather-dialog.ui:100
 msgid "Last update:"
 msgstr "Paskutinis atnaujinimas:"
 
-#: mateweather/mateweather-dialog.c:235
+#: mateweather/mateweather-dialog.ui:112
 msgid "Conditions:"
 msgstr "Sąlygos:"
 
-#: mateweather/mateweather-dialog.c:241
+#: mateweather/mateweather-dialog.ui:124
 msgid "Sky:"
 msgstr "Dangus:"
 
-#: mateweather/mateweather-dialog.c:247
+#: mateweather/mateweather-dialog.ui:136
 msgid "Temperature:"
 msgstr "Temperatūra:"
 
-#: mateweather/mateweather-dialog.c:253
+#: mateweather/mateweather-dialog.ui:148
 msgid "Feels like:"
 msgstr "Jaučiama kaip:"
 
-#: mateweather/mateweather-dialog.c:259
+#: mateweather/mateweather-dialog.ui:160
 msgid "Dew point:"
 msgstr "Rasos taškas:"
 
-#: mateweather/mateweather-dialog.c:265
+#: mateweather/mateweather-dialog.ui:172
 msgid "Relative humidity:"
 msgstr "Santykinis drėgnumas:"
 
-#: mateweather/mateweather-dialog.c:271
+#: mateweather/mateweather-dialog.ui:184
 msgid "Wind:"
 msgstr "Vėjas:"
 
-#: mateweather/mateweather-dialog.c:277
+#: mateweather/mateweather-dialog.ui:196
 msgid "Pressure:"
 msgstr "Slėgis:"
 
-#: mateweather/mateweather-dialog.c:283
+#: mateweather/mateweather-dialog.ui:208
 msgid "Visibility:"
 msgstr "Matomumas:"
 
-#: mateweather/mateweather-dialog.c:289
+#: mateweather/mateweather-dialog.ui:220
 msgid "Sunrise:"
 msgstr "Saulėtekis:"
 
-#: mateweather/mateweather-dialog.c:295
+#: mateweather/mateweather-dialog.ui:232
 msgid "Sunset:"
 msgstr "Saulėlydis:"
 
-#: mateweather/mateweather-dialog.c:403
+#: mateweather/mateweather-dialog.ui:409
 msgid "Current Conditions"
 msgstr "Esamos sąlygos"
 
-#: mateweather/mateweather-dialog.c:420
+#: mateweather/mateweather-dialog.ui:434
 msgid "Forecast Report"
 msgstr "Prognozės ataskaita"
 
-#: mateweather/mateweather-dialog.c:420
+#: mateweather/mateweather-dialog.ui:435
 msgid "See the ForeCast Details"
 msgstr "Žiūrėti išsamesnę prognozę"
 
-#: mateweather/mateweather-dialog.c:430
+#: mateweather/mateweather-dialog.ui:456
 msgid "Forecast"
 msgstr "Prognozė"
 
-#: mateweather/mateweather-dialog.c:438
-msgid "Radar Map"
-msgstr "Radarinis žemėlapis"
-
-#: mateweather/mateweather-dialog.c:471
+#: mateweather/mateweather-dialog.ui:497
 msgid "_Visit Weather.com"
 msgstr "_Aplankykite Weather.com"
 
-#: mateweather/mateweather-dialog.c:472
+#: mateweather/mateweather-dialog.ui:505
 msgid "Visit Weather.com"
 msgstr "Aplankykite Weather.com"
 
-#: mateweather/mateweather-dialog.c:472
+#: mateweather/mateweather-dialog.ui:506
 msgid "Click to Enter Weather.com"
 msgstr "Spauskite, jei norite aplankyti Weather.com"
 
-#: mateweather/mateweather-dialog.c:603
-msgid "Forecast not currently available for this location."
-msgstr "Šiuo metu prognozė šiai vietovei yra neprieinama."
+#: mateweather/mateweather-dialog.ui:525
+msgid "Radar Map"
+msgstr "Radarinis žemėlapis"
 
 #: mateweather/mateweather-pref.c:158
 msgid "Location view"
@@ -1336,47 +1341,44 @@ msgstr "Paleisti sistemos monitorių"
 msgid "There was an error executing '%s': %s"
 msgstr "Įvyko klaida vykdant „%s“: %s"
 
-#: multiload/main.c:276 multiload/properties.c:643
+#: multiload/main.c:275 multiload/properties.c:643
 msgid "Processor"
 msgstr "Procesorius"
 
-#: multiload/main.c:278 multiload/properties.c:651
+#: multiload/main.c:276 multiload/properties.c:651
 msgid "Memory"
 msgstr "Atmintis"
 
-#: multiload/main.c:280 multiload/properties.c:659
+#: multiload/main.c:277 multiload/properties.c:659
 msgid "Network"
 msgstr "Tinklas"
 
-#: multiload/main.c:282 multiload/properties.c:668
+#: multiload/main.c:278 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "Swap talpa"
 
-#: multiload/main.c:284 multiload/main.c:363
+#: multiload/main.c:279 multiload/main.c:362
 msgid "Load Average"
 msgstr "Apkrovos vidurkis"
 
-#: multiload/main.c:286
+#: multiload/main.c:280
 msgid "Disk"
 msgstr "Diskas"
 
-#: multiload/main.c:302
+#: multiload/main.c:297
 #, c-format
 msgid ""
 "%s:\n"
-"%u%% in use by programs\n"
-"%u%% in use as cache"
+"%.01f%% in use by programs\n"
+"%.01f%% in use as cache"
 msgstr ""
-"%s:\n"
-"%u%% naudojama programų\n"
-"%u%% naudojama kaip podėlis"
 
-#: multiload/main.c:310
+#: multiload/main.c:306
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Sistemos apkrovos vidurkis yra %0.02f"
 
-#: multiload/main.c:318
+#: multiload/main.c:316
 #, c-format
 msgid ""
 "%s:\n"
@@ -1387,57 +1389,43 @@ msgstr ""
 "Gaunama %s\n"
 "Siunčiama %s"
 
-#: multiload/main.c:334
+#: multiload/main.c:338
 #, c-format
 msgid ""
 "%s:\n"
-"%u%% in use"
-msgid_plural ""
-"%s:\n"
-"%u%% in use"
-msgstr[0] ""
-"%s:\n"
-"naudojama %u%%"
-msgstr[1] ""
-"%s:\n"
-"naudojama %u%%"
-msgstr[2] ""
-"%s:\n"
-"naudojama %u%%"
-msgstr[3] ""
-"%s:\n"
-"naudojama %u%%"
+"%.01f%% in use"
+msgstr ""
 
-#: multiload/main.c:359
+#: multiload/main.c:358
 msgid "CPU Load"
 msgstr "CPU apkrova"
 
-#: multiload/main.c:360
+#: multiload/main.c:359
 msgid "Memory Load"
 msgstr "Atminties apkrova"
 
-#: multiload/main.c:361
+#: multiload/main.c:360
 msgid "Net Load"
 msgstr "Tinklo apkrovimas"
 
-#: multiload/main.c:362
+#: multiload/main.c:361
 msgid "Swap Load"
 msgstr "Swap apkrova"
 
-#: multiload/main.c:364
+#: multiload/main.c:363
 msgid "Disk Load"
 msgstr "Disko apkrova"
 
-#: multiload/main.c:482
+#: multiload/main.c:483
 msgid "_Open System Monitor"
 msgstr "_Atverti sistemos monitorių"
 
-#: multiload/main.c:514
+#: multiload/main.c:515
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "Sistemos monitorius"
 
-#: multiload/netspeed.c:40
+#: multiload/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
@@ -1551,7 +1539,7 @@ msgid "Network graph background color"
 msgstr "Tinklo grafiko fono spalva"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:130
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:133
 msgid "Grid line color"
 msgstr "Tinklelio linijos spalva"
 
@@ -1559,51 +1547,51 @@ msgstr "Tinklelio linijos spalva"
 msgid "Indicator color"
 msgstr "Indikatoriaus spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:102
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:103
 msgid "Network threshold 1 in bytes"
 msgstr "Tinklo slenkstis 1, baitais"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:106
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:108
 msgid "Network threshold 2 in bytes"
 msgstr "Tinklo slenkstis 2, baitais"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:110
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:113
 msgid "Network threshold 3 in bytes"
 msgstr "Tinklo slenkstis 3, baitais"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:114
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:117
 msgid "Graph color for user-related swap usage"
 msgstr "Grafiko, susijusio su naudotojo swap naudojimu, spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:118
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:121
 msgid "Swap graph background color"
 msgstr "Swap grafiko fono spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:122
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:125
 msgid "Graph color for load average"
 msgstr "Vidutinės apkrovos grafiko spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:126
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:129
 msgid "Load graph background color"
 msgstr "Apkrovos grafiko fono spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:134
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:137
 msgid "Graph color for disk read"
 msgstr "Disko skaitymo grafiko spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:138
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:141
 msgid "Graph color for disk write"
 msgstr "Disko rašymo grafiko spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:142
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:145
 msgid "Background color for disk load graph"
 msgstr "Disko apkrovos grafiko fono spalva"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:146
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:149
 msgid "Uses /proc/diskstats to determine NVMe disk load"
 msgstr "Naudoja /proc/diskstats NVMe disko naudojimui nustatyti."
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:150
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:153
 msgid "The desktop description file to execute as the system monitor"
 msgstr "Darbalaukio aprašymo failas, vykdytinas kaip sistemos monitorius"
 
@@ -1765,7 +1753,7 @@ msgid "Threshold 1: "
 msgstr "Slenkstis 1: "
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:425
+#: multiload/properties.c:815
 msgid "bytes"
 msgstr "baitų"
 
@@ -1780,6 +1768,102 @@ msgstr "Slenkstis 3: "
 #: multiload/properties.c:853
 msgid "System Monitor Preferences"
 msgstr "Sistemos monitoriaus nustatymai"
+
+#: netspeed/data/netspeed-details.ui:101
+msgid "Transfer Rate Graph"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:133
+msgid "_In graph color"
+msgstr "_Gaunamų duomenų grafiko spalva"
+
+#: netspeed/data/netspeed-details.ui:160
+msgid "_Out graph color"
+msgstr "Iš_siunčiamų duomenų grafiko spalva"
+
+#: netspeed/data/netspeed-details.ui:194
+msgid "IPv4 Address:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:222
+msgid "Netmask:"
+msgstr "Tinklo kaukė:"
+
+#: netspeed/data/netspeed-details.ui:262
+msgid "Hardware Address:"
+msgstr "Aparatinės įrangos adresas:"
+
+#: netspeed/data/netspeed-details.ui:290
+msgid "P-t-P Address:"
+msgstr "P-t-P adresas:"
+
+#: netspeed/data/netspeed-details.ui:330
+msgid "Bytes in:"
+msgstr "Baitų gauta:"
+
+#: netspeed/data/netspeed-details.ui:344 netspeed/data/netspeed-details.ui:372
+msgid "0 byte"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:358
+msgid "Bytes out:"
+msgstr "Baitų išsiųsta:"
+
+#: netspeed/data/netspeed-details.ui:398
+msgid "IPv6 Address:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:444
+msgid "ESSID:"
+msgstr "ESSID:"
+
+#: netspeed/data/netspeed-details.ui:472
+msgid "Signal Strength:"
+msgstr "Signalo stiprumas:"
+
+#: netspeed/data/netspeed-details.ui:516
+msgid "Station:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:541
+msgid "Channel:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:578
+msgid "Connected Time:"
+msgstr ""
+
+#: netspeed/data/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr "MATE tinklo greičio nustatymai"
+
+#: netspeed/data/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr "Tinklo _įrenginys:"
+
+#: netspeed/data/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr "Rodyti _sumą vietoje gaunamo ir išsiunčiamo srauto"
+
+#: netspeed/data/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr "Rodyti _bitus vietoje baitų"
+
+#: netspeed/data/netspeed-preferences.ui:165
+msgid "_Change icon according to the selected device"
+msgstr "Keisti _piktogramą atsižvelgiant į pasirinktą įrenginį"
+
+#: netspeed/data/netspeed-preferences.ui:182
+msgid "Show _icon"
+msgstr "Rodyti p_iktogramą"
+
+#: netspeed/data/netspeed-preferences.ui:199
+msgid "Show signal _quality icon for wireless devices"
+msgstr "Belaidžiams įrenginiams rodyti signalo _kokybės piktogramą"
+
+#: netspeed/data/netspeed-preferences.ui:223
+msgid "General Settings"
+msgstr "Bendrieji nustatymai"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:5
 msgid "Device to monitor"
@@ -1812,70 +1896,58 @@ msgid "If true, show main icon."
 msgstr "Jei teigiama, rodyti pagrindinę piktogramą."
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:25
-msgid "Short unit legend"
-msgstr "Rodyti matavimo vienetus glaustai"
-
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
-msgid ""
-"If true, shorten unit legend to one letter: lowercase for bits / uppercase "
-"for Bytes."
-msgstr ""
-"Jei teigiama, sutrumpinti matavimų vienetų užrašus iki vienos raidės:  b - "
-"bitai, B - baitai."
-
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Change icon"
 msgstr "Keisti piktogramą"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
 msgid "If true, change the icon due to selected device."
 msgstr "Jei teigiama, keisti piktogramą pagal įrenginį."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Auto change device"
 msgstr "Automatiškai keisti įrenginį."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
 msgid "If true, change automatically the selected device."
 msgstr "Jei teigiama, automatiškai keisti pasirinktą įrenginį."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
 msgid "In color"
 msgstr "Gaunamo spalva"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
 msgid "The color of the graph of the inbound traffic"
 msgstr "Gaunamo duomenų srauto grafiko spalva."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
 msgid "Out color"
 msgstr "Išsiunčiamo spalva"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
 msgid "The color of the graph of the outbound traffic"
 msgstr "Išsiunčiamo duomenų srauto grafiko spalva."
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
 msgid "Up command"
 msgstr "Aktyvavimo komanda"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
 msgid "Command to execute to activate the device"
 msgstr "Komanda, vykdoma įrenginiui aktyvuoti (įjungti)"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
 msgid "Down command"
 msgstr "Deaktyvavimo komanda"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
 msgid "Command to execute to shut down the device"
 msgstr "Komanda, vykdoma įrenginiui išjungti"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:60
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
 msgid "Show signal quality icon"
 msgstr "Rodyti signalo kokybės piktogramą"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:61
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
 msgid "If true, show signal quality icon for wireless devices."
 msgstr ""
 "Jei teigiama, belaidžiams įrenginiams rodyti signalo kokybės piktogramą."
@@ -1893,75 +1965,201 @@ msgstr "Tinklo greičio įtaisas"
 msgid "Network Monitor"
 msgstr "Tinklo monitorius"
 
-#: netspeed/src/netspeed.c:420
-msgid "b"
-msgstr "b"
+#: netspeed/src/backend.c:448
+#, c-format
+msgid "%d.%d MBit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:420
-msgid "B"
-msgstr "B"
+#: netspeed/src/backend.c:450
+#, c-format
+msgid "(unknown)"
+msgstr ""
 
-#: netspeed/src/netspeed.c:422
-msgid "b/s"
-msgstr "b/s"
+#: netspeed/src/backend.c:454
+#, c-format
+msgid " MCS %d"
+msgstr ""
 
-#: netspeed/src/netspeed.c:422
+#: netspeed/src/backend.c:457
+#, c-format
+msgid " VHT-MCS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:459
+#, c-format
+msgid " 40MHz"
+msgstr " 40MHz"
+
+#: netspeed/src/backend.c:461
+#, c-format
+msgid " 80MHz"
+msgstr " 80MHz"
+
+#: netspeed/src/backend.c:463
+#, c-format
+msgid " 80P80MHz"
+msgstr " 80P80MHz"
+
+#: netspeed/src/backend.c:465
+#, c-format
+msgid " 160MHz"
+msgstr " 160MHz"
+
+#: netspeed/src/backend.c:467
+#, c-format
+msgid " short GI)"
+msgstr ""
+
+#: netspeed/src/backend.c:470
+#, c-format
+msgid " VHT-NSS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:473
+#, c-format
+msgid " HE-MCS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:476
+#, c-format
+msgid " HE-NSS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:479
+#, c-format
+msgid " HE-GI %d"
+msgstr ""
+
+#: netspeed/src/backend.c:482
+#, c-format
+msgid " HE-DCM %d"
+msgstr ""
+
+#: netspeed/src/backend.c:566
+msgid "20 MHz (no HT)"
+msgstr ""
+
+#: netspeed/src/backend.c:568
+msgid "20 MHz"
+msgstr "20 MHz"
+
+#: netspeed/src/backend.c:570
+msgid "40 MHz"
+msgstr "40 MHz"
+
+#: netspeed/src/backend.c:572
+msgid "80 MHz"
+msgstr "80 MHz"
+
+#: netspeed/src/backend.c:574
+msgid "80+80 MHz"
+msgstr "80+80 MHz"
+
+#: netspeed/src/backend.c:576
+msgid "160 MHz"
+msgstr "160 MHz"
+
+#: netspeed/src/backend.c:578
+msgid "5 MHz"
+msgstr "5 MHz"
+
+#: netspeed/src/backend.c:580
+msgid "10 MHz"
+msgstr "10 MHz"
+
+#: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
+#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1505
+#: netspeed/src/netspeed.c:1514
+msgid "unknown"
+msgstr "nežinomas"
+
+#: netspeed/src/backend.c:633
+#, c-format
+msgid "%d (%d MHz)"
+msgstr "%d (%d MHz)"
+
+#: netspeed/src/backend.c:637
+#, c-format
+msgid ", width: %s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:455
+msgid "bit/s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:455
 msgid "B/s"
 msgstr "B/s"
 
-#: netspeed/src/netspeed.c:425
-msgid "bits"
-msgstr "bitų"
+#: netspeed/src/netspeed.c:459
+msgid "Kibit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:433
-msgid "k"
-msgstr "k"
-
-#: netspeed/src/netspeed.c:433
-msgid "K"
-msgstr "K"
-
-#: netspeed/src/netspeed.c:435
-msgid "kb/s"
-msgstr "kb/s"
-
-#: netspeed/src/netspeed.c:435
+#: netspeed/src/netspeed.c:459
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: netspeed/src/netspeed.c:438
-msgid "kb"
-msgstr "kb"
+#: netspeed/src/netspeed.c:463
+msgid "Mibit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:438
-msgid "KiB"
-msgstr "KiB"
-
-#: netspeed/src/netspeed.c:448
-msgid "m"
-msgstr "m"
-
-#: netspeed/src/netspeed.c:448
-msgid "M"
-msgstr "M"
-
-#: netspeed/src/netspeed.c:450
-msgid "Mb/s"
-msgstr "Mb/s"
-
-#: netspeed/src/netspeed.c:450
+#: netspeed/src/netspeed.c:463
 msgid "MiB/s"
 msgstr "MiB/s"
 
-#: netspeed/src/netspeed.c:453
-msgid "Mb"
-msgstr "Mb"
+#: netspeed/src/netspeed.c:467
+msgid "Gibit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:453
-msgid "MiB"
-msgstr "MiB"
+#: netspeed/src/netspeed.c:467
+msgid "GiB/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:776
+#: netspeed/src/netspeed.c:629
+msgid "%'"
+msgid_plural "%'"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: netspeed/src/netspeed.c:635
+#, c-format
+msgid "%'d minute"
+msgid_plural "%'d minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: netspeed/src/netspeed.c:636
+#, c-format
+msgid "%'d secon"
+msgid_plural "%'d seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: netspeed/src/netspeed.c:641
+#, c-format
+msgid "%'d hour"
+msgid_plural "%'d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: netspeed/src/netspeed.c:690 netspeed/src/netspeed.c:698
+#: netspeed/src/netspeed.c:707 netspeed/src/netspeed.c:714
+msgid "none"
+msgstr "nėra"
+
+#: netspeed/src/netspeed.c:758 netspeed/src/netspeed.c:870
+msgid "na"
+msgstr ""
+
+#: netspeed/src/netspeed.c:988
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1970,11 +2168,11 @@ msgstr ""
 "Rodant žinyną, įvyko klaida:\n"
 "%s"
 
-#: netspeed/src/netspeed.c:813
+#: netspeed/src/netspeed.c:1026
 msgid "About MATE Netspeed"
 msgstr "Apie MATE tinklo greitį"
 
-#: netspeed/src/netspeed.c:815
+#: netspeed/src/netspeed.c:1028
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
@@ -1984,7 +2182,7 @@ msgstr ""
 "Autorių teisės © 2011-2014 Stefano Karapetsas\n"
 "Autorių teisės © 2015-2020 MATE kūrėjai"
 
-#: netspeed/src/netspeed.c:818
+#: netspeed/src/netspeed.c:1031
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
@@ -1992,91 +2190,37 @@ msgstr ""
 "Mažas įtaisas, rodantis informaciją apie nurodyto tinklo įrenginio duomenų "
 "srautą"
 
-#: netspeed/src/netspeed.c:973
+#: netspeed/src/netspeed.c:1178
 msgid "Default"
 msgstr "Numatytasis"
 
-#: netspeed/src/netspeed.c:1089
-#, c-format
-msgid "Device Details for %s"
-msgstr "Išsamesnė %s įrenginio informacija"
-
-#: netspeed/src/netspeed.c:1114
-msgid "_In graph color"
-msgstr "_Gaunamų duomenų grafiko spalva"
-
-#: netspeed/src/netspeed.c:1115
-msgid "_Out graph color"
-msgstr "Iš_siunčiamų duomenų grafiko spalva"
-
-#: netspeed/src/netspeed.c:1131
-msgid "Internet Address:"
-msgstr "Interneto adresas:"
-
-#: netspeed/src/netspeed.c:1132
-msgid "Netmask:"
-msgstr "Tinklo kaukė:"
-
-#: netspeed/src/netspeed.c:1133
-msgid "Hardware Address:"
-msgstr "Aparatinės įrangos adresas:"
-
-#: netspeed/src/netspeed.c:1134
-msgid "P-t-P Address:"
-msgstr "P-t-P adresas:"
-
-#: netspeed/src/netspeed.c:1135
-msgid "Bytes in:"
-msgstr "Baitų gauta:"
-
-#: netspeed/src/netspeed.c:1136
-msgid "Bytes out:"
-msgstr "Baitų išsiųsta:"
-
-#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
-#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
-msgid "none"
-msgstr "nėra"
-
-#: netspeed/src/netspeed.c:1192
-msgid "IPV6 Address:"
-msgstr "IPV6 adresas:"
-
-#: netspeed/src/netspeed.c:1225
-msgid "Signal Strength:"
-msgstr "Signalo stiprumas:"
-
-#: netspeed/src/netspeed.c:1226
-msgid "ESSID:"
-msgstr "ESSID:"
-
-#: netspeed/src/netspeed.c:1267
+#: netspeed/src/netspeed.c:1343
 msgid "Device _Details"
 msgstr "Išsamesnė įrenginio _informacija"
 
-#: netspeed/src/netspeed.c:1269
+#: netspeed/src/netspeed.c:1345
 msgid "Preferences..."
 msgstr "Nustatymai..."
 
-#: netspeed/src/netspeed.c:1271
+#: netspeed/src/netspeed.c:1347
 msgid "Help"
 msgstr "Žinynas"
 
-#: netspeed/src/netspeed.c:1273
+#: netspeed/src/netspeed.c:1349
 msgid "About..."
 msgstr "Apie..."
 
-#: netspeed/src/netspeed.c:1314
+#: netspeed/src/netspeed.c:1388
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "Ar norite dabar atjungti %s?"
 
-#: netspeed/src/netspeed.c:1318
+#: netspeed/src/netspeed.c:1391
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "Ar norite dabar prijungti %s?"
 
-#: netspeed/src/netspeed.c:1345
+#: netspeed/src/netspeed.c:1417
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2085,12 +2229,16 @@ msgstr ""
 "<b>Komandos %s vykdymas nepavyko</b>\n"
 "%s"
 
-#: netspeed/src/netspeed.c:1404
+#: netspeed/src/netspeed.c:1475
 #, c-format
 msgid "%s is down"
 msgstr "%s atjungtas"
 
-#: netspeed/src/netspeed.c:1409
+#: netspeed/src/netspeed.c:1484
+msgid "has no ip"
+msgstr "neturi ip"
+
+#: netspeed/src/netspeed.c:1489
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2099,11 +2247,7 @@ msgstr ""
 "%s: %s\n"
 "gaunama: %s siunčiama: %s"
 
-#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
-msgid "has no ip"
-msgstr "neturi ip"
-
-#: netspeed/src/netspeed.c:1418
+#: netspeed/src/netspeed.c:1496
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2112,7 +2256,17 @@ msgstr ""
 "%s: %s\n"
 "bendra: %s"
 
-#: netspeed/src/netspeed.c:1427
+#: netspeed/src/netspeed.c:1504
+#, c-format
+msgid ""
+"\n"
+"ESSID: %s\n"
+"RSSI: %d dBm\n"
+"RX Bitrate: %s\n"
+"TX Bitrate: %s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:1513
 #, c-format
 msgid ""
 "\n"
@@ -2123,49 +2277,9 @@ msgstr ""
 "ESSID: %s\n"
 "Stiprumas: %d %%"
 
-#: netspeed/src/netspeed.c:1428
-msgid "unknown"
-msgstr "nežinomas"
-
-#: netspeed/src/netspeed.c:1478
+#: netspeed/src/netspeed.c:1563
 msgid "MATE Netspeed"
 msgstr "MATE tinklo greitis"
-
-#: netspeed/src/netspeed-preferences.ui:18
-msgid "MATE Netspeed Preferences"
-msgstr "MATE tinklo greičio nustatymai"
-
-#: netspeed/src/netspeed-preferences.ui:100
-msgid "Network _device:"
-msgstr "Tinklo _įrenginys:"
-
-#: netspeed/src/netspeed-preferences.ui:131
-msgid "Show _sum instead of in & out"
-msgstr "Rodyti _sumą vietoje gaunamo ir išsiunčiamo srauto"
-
-#: netspeed/src/netspeed-preferences.ui:148
-msgid "Show _bits instead of bytes"
-msgstr "Rodyti _bitus vietoje baitų"
-
-#: netspeed/src/netspeed-preferences.ui:165
-msgid "Shorten _unit legend"
-msgstr "Sutrumpinti vienetų žymėjimus"
-
-#: netspeed/src/netspeed-preferences.ui:182
-msgid "_Change icon according to the selected device"
-msgstr "Keisti _piktogramą atsižvelgiant į pasirinktą įrenginį"
-
-#: netspeed/src/netspeed-preferences.ui:199
-msgid "Show _icon"
-msgstr "Rodyti p_iktogramą"
-
-#: netspeed/src/netspeed-preferences.ui:216
-msgid "Show signal _quality icon for wireless devices"
-msgstr "Belaidžiams įrenginiams rodyti signalo _kokybės piktogramą"
-
-#: netspeed/src/netspeed-preferences.ui:240
-msgid "General Settings"
-msgstr "Bendrieji nustatymai"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2181,11 +2295,11 @@ msgstr "Lipnūs rašteliai"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "Kurkite, žiūrėkite ir tvarkykite lipnius darbalaukio raštelius"
 
-#: stickynotes/stickynotes.c:578
+#: stickynotes/stickynotes.c:582
 msgid "This note is locked."
 msgstr "Šis raštelis yra užrakintas."
 
-#: stickynotes/stickynotes.c:582
+#: stickynotes/stickynotes.c:586
 msgid "This note is unlocked."
 msgstr "Šis raštelis yra atrakintas."
 

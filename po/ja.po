@@ -19,9 +19,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.24.0\n"
+"Project-Id-Version: mate-applets 1.25.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-06-25 09:58+0200\n"
+"POT-Creation-Date: 2020-08-11 16:58+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: ABE Tsunehiko, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
@@ -31,40 +31,58 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: accessx-status/applet.c:86 charpick/charpick.c:570 geyes/geyes.c:166
-#: mateweather/mateweather-about.c:41 multiload/main.c:48
-#: stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
+msgid "AccessX Status Applet Factory"
+msgstr "AccessX ステータス・アプレットのファクトリ"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
+msgid "Keyboard Accessibility Status Applet Factory"
+msgstr "キーボード操作性ステータス・アプレットのファクトリ"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
+#: accessx-status/src/applet.c:1383
+msgid "Keyboard Accessibility Status"
+msgstr "キーボード操作性のステータス"
+
+#: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
+msgid "Shows the status of keyboard accessibility features"
+msgstr "キーボード操作性の設定値を表示します"
+
+#: accessx-status/src/applet.c:86 charpick/charpick.c:571
+#: geyes/src/geyes.c:166 mateweather/mateweather-about.c:41
+#: multiload/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
-#: accessx-status/applet.c:87 battstat/battstat_applet.c:819
-#: charpick/charpick.c:571 cpufreq/src/cpufreq-applet.c:448
-#: drivemount/drivemount.c:109 geyes/geyes.c:167
+#: accessx-status/src/applet.c:87 battstat/battstat_applet.c:817
+#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:464
+#: drivemount/drivemount.c:109 geyes/src/geyes.c:167
 #: mateweather/mateweather-about.c:43 multiload/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
 #: trashapplet/src/trashapplet.c:421
 msgid "MATE Documentation Team"
 msgstr "MATE ドキュメンテーション・チーム"
 
-#: accessx-status/applet.c:98
+#: accessx-status/src/applet.c:98
 msgid "About AccessX Status"
 msgstr ""
 
-#: accessx-status/applet.c:100
+#: accessx-status/src/applet.c:100
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "修飾キーなどの AccessX 機能のステータスを表示します"
 
-#: accessx-status/applet.c:101
+#: accessx-status/src/applet.c:101
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: accessx-status/applet.c:105 battstat/battstat_applet.c:844
-#: charpick/charpick.c:591 command/command.c:131
-#: cpufreq/src/cpufreq-applet.c:472 drivemount/drivemount.c:127
-#: geyes/geyes.c:186 mateweather/mateweather-about.c:61 multiload/main.c:69
-#: netspeed/src/netspeed.c:821 stickynotes/stickynotes_applet_callbacks.c:388
+#: accessx-status/src/applet.c:105 battstat/battstat_applet.c:842
+#: charpick/charpick.c:592 command/src/command.c:131
+#: cpufreq/src/cpufreq-applet.c:488 drivemount/drivemount.c:127
+#: geyes/src/geyes.c:186 mateweather/mateweather-about.c:61
+#: multiload/main.c:69 netspeed/src/netspeed.c:1034
+#: stickynotes/stickynotes_applet_callbacks.c:388
 #: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
 msgid "translator-credits"
 msgstr ""
@@ -80,183 +98,169 @@ msgstr ""
 "松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
-#: accessx-status/applet.c:124
+#: accessx-status/src/applet.c:124
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "ヘルプ・ビューアを起動する際にエラーが発生しました : %s"
 
-#: accessx-status/applet.c:152
+#: accessx-status/src/applet.c:152
 msgid "Open the keyboard preferences dialog"
 msgstr "キーボードの設定を開く"
 
-#: accessx-status/applet.c:167
+#: accessx-status/src/applet.c:167
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "キーボードの設定ダイアログを表示する際にエラーが発生しました : %s"
 
-#: accessx-status/applet.c:182
+#: accessx-status/src/applet.c:182
 msgid "_Keyboard Accessibility Preferences"
 msgstr "キーボード操作性の設定(_K)"
 
-#: accessx-status/applet.c:183 battstat/battstat_applet.c:63
-#: charpick/charpick.c:668 cpufreq/src/cpufreq-applet.c:119
-#: drivemount/drivemount.c:165 geyes/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:485
-#: netspeed/src/netspeed-preferences.ui:33
+#: accessx-status/src/applet.c:183 battstat/battstat_applet.c:60
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:669
+#: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
+#: drivemount/drivemount.c:165 geyes/data/themes.ui:35 geyes/src/geyes.c:359
+#: mateweather/mateweather-applet.c:117 multiload/main.c:486
+#: netspeed/data/netspeed-details.ui:31
+#: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: accessx-status/applet.c:184 battstat/battstat_applet.c:66
-#: charpick/charpick.c:671 command/command.c:87
+#: accessx-status/src/applet.c:184 battstat/battstat_applet.c:63
+#: charpick/charpick.c:672 command/src/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/geyes.c:362 mateweather/mateweather-applet.c:120 multiload/main.c:488
-#: stickynotes/stickynotes_applet.c:49 timerapplet/timerapplet.c:88
-#: trashapplet/src/trashapplet.c:77
+#: geyes/src/geyes.c:362 mateweather/mateweather-applet.c:120
+#: multiload/main.c:489 stickynotes/stickynotes_applet.c:49
+#: timerapplet/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "情報(_A)"
 
-#: accessx-status/applet.c:503 accessx-status/applet.c:557
+#: accessx-status/src/applet.c:503 accessx-status/src/applet.c:557
 msgid "a"
 msgstr "a"
 
-#: accessx-status/applet.c:1042 accessx-status/applet.c:1108
-#: accessx-status/applet.c:1193 accessx-status/applet.c:1387
+#: accessx-status/src/applet.c:1042 accessx-status/src/applet.c:1108
+#: accessx-status/src/applet.c:1193 accessx-status/src/applet.c:1386
 msgid "AccessX Status"
 msgstr "AccessX ステータス"
 
-#: accessx-status/applet.c:1043 accessx-status/applet.c:1194
+#: accessx-status/src/applet.c:1043 accessx-status/src/applet.c:1194
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "アクセシビリティ機能が有効ならば、キーボードのステータスを表示します"
 
-#: accessx-status/applet.c:1077
+#: accessx-status/src/applet.c:1077
 msgid "XKB Extension is not enabled"
 msgstr "XKB 拡張は有効ではありません"
 
-#: accessx-status/applet.c:1082
+#: accessx-status/src/applet.c:1082
 msgid "Unknown error"
 msgstr "不明なエラー"
 
-#: accessx-status/applet.c:1086
+#: accessx-status/src/applet.c:1086
 #, c-format
 msgid "Error: %s"
 msgstr "エラー: %s"
 
-#: accessx-status/applet.c:1384
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-msgid "Keyboard Accessibility Status"
-msgstr "キーボード操作性のステータス"
-
-#: accessx-status/applet.c:1388
+#: accessx-status/src/applet.c:1387
 msgid "Displays current state of keyboard accessibility features"
 msgstr "キーボード操作性に関連する機能の現在のステータスを表示します"
 
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
-msgid "AccessX Status Applet Factory"
-msgstr "AccessX ステータス・アプレットのファクトリ"
-
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
-msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "キーボード操作性ステータス・アプレットのファクトリ"
-
-#: accessx-status/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
-msgid "Shows the status of keyboard accessibility features"
-msgstr "キーボード操作性の設定値を表示します"
-
-#: battstat/battstat_applet.c:60 charpick/charpick.c:665 command/command.c:86
-#: cpufreq/src/cpufreq-applet.c:116 geyes/geyes.c:356
-#: mateweather/mateweather-applet.c:114 multiload/main.c:479
-#: stickynotes/stickynotes_applet.c:43 timerapplet/timerapplet.c:87
+#: battstat/battstat_applet.c:57 charpick/charpick.c:666
+#: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
+#: geyes/src/geyes.c:356 mateweather/mateweather-applet.c:114
+#: multiload/main.c:480 stickynotes/stickynotes_applet.c:43
+#: timerapplet/timerapplet.c:87
 msgid "_Preferences"
 msgstr "設定(_P)"
 
-#: battstat/battstat_applet.c:71
+#: battstat/battstat_applet.c:68
 msgid "System is running on AC power"
 msgstr "システムは AC 電源で動いています"
 
-#: battstat/battstat_applet.c:72
+#: battstat/battstat_applet.c:69
 msgid "System is running on battery power"
 msgstr "システムはバッテリで動いています"
 
-#: battstat/battstat_applet.c:176
+#: battstat/battstat_applet.c:173
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "充電が完了しました (%d%%)"
 
-#: battstat/battstat_applet.c:178
+#: battstat/battstat_applet.c:175
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "残り時間は不明です (%d%%)"
 
-#: battstat/battstat_applet.c:180
+#: battstat/battstat_applet.c:177
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "充電完了までの所要時間は不明です (%d%%)"
 
-#: battstat/battstat_applet.c:185
+#: battstat/battstat_applet.c:182
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:190
+#: battstat/battstat_applet.c:187
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:196
+#: battstat/battstat_applet.c:193
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:201
+#: battstat/battstat_applet.c:198
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:208
+#: battstat/battstat_applet.c:205
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "残り %d%s %d%s (%d%%)"
 
-#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
+#: battstat/battstat_applet.c:206 battstat/battstat_applet.c:213
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
+#: battstat/battstat_applet.c:207 battstat/battstat_applet.c:214
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:215
+#: battstat/battstat_applet.c:212
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "充電完了まで %d %s %d %s (%d%%)"
 
-#: battstat/battstat_applet.c:229
+#: battstat/battstat_applet.c:226
 msgid "Battery Monitor"
 msgstr "バッテリモニタ"
 
-#: battstat/battstat_applet.c:240 battstat/battstat_applet.c:300
+#: battstat/battstat_applet.c:237 battstat/battstat_applet.c:297
 msgid "Your battery is now fully recharged"
 msgstr "バッテリの再充電が完了しました"
 
-#: battstat/battstat_applet.c:275 battstat/battstat_applet.c:432
+#: battstat/battstat_applet.c:272 battstat/battstat_applet.c:429
 msgid "Battery Notice"
 msgstr "バッテリ通知"
 
-#: battstat/battstat_applet.c:377
+#: battstat/battstat_applet.c:374
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr "残りのバッテリの残量は %d%% です"
 
-#: battstat/battstat_applet.c:383
+#: battstat/battstat_applet.c:380
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -264,7 +268,7 @@ msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:395
+#: battstat/battstat_applet.c:392
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -274,7 +278,7 @@ msgstr ""
 "・ラップトップの電源コードを外部電源のコンセントに差し込むか、または\n"
 "・現在開いているドキュメントを保存してラップトップの電源を落としてください"
 
-#: battstat/battstat_applet.c:403
+#: battstat/battstat_applet.c:400
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -286,25 +290,25 @@ msgstr ""
 "・ラップトップの電源コードを外部電源のコンセントに差し込む\n"
 "・現在開いているドキュメントを保存してラップトップの電源を落としてください"
 
-#: battstat/battstat_applet.c:411
+#: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
 msgstr "お使いのバッテリ充電率が低くなっています"
 
-#: battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:505
 msgid "No battery present"
 msgstr "バッテリの残量がありません"
 
-#: battstat/battstat_applet.c:511
+#: battstat/battstat_applet.c:508
 msgid "Battery status unknown"
 msgstr "バッテリの状態が不明です"
 
-#: battstat/battstat_applet.c:540
+#: battstat/battstat_applet.c:537
 msgid "N/A"
 msgstr "無し"
 
-#: battstat/battstat_applet.c:783 drivemount/drivemount.c:153
-#: geyes/geyes.c:344 geyes/themes.c:223 mateweather/mateweather-applet.c:63
-#: mateweather/mateweather-pref.c:745
+#: battstat/battstat_applet.c:781 drivemount/drivemount.c:153
+#: geyes/src/geyes.c:344 geyes/src/themes.c:224
+#: mateweather/mateweather-applet.c:63 mateweather/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
 #: trashapplet/src/trashapplet.c:399
@@ -312,72 +316,88 @@ msgstr "無し"
 msgid "There was an error displaying help: %s"
 msgstr "ヘルプを表示する際にエラーが発生しました: %s"
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:822
 msgid "This utility shows the status of your laptop battery."
 msgstr "ラップトップのバッテリ充電率を表示します"
 
-#: battstat/battstat_applet.c:826
+#: battstat/battstat_applet.c:824
 msgid "upower backend enabled."
 msgstr "使用中のバックエンド: upower"
 
-#: battstat/battstat_applet.c:827
+#: battstat/battstat_applet.c:825
 msgid "Legacy backend enabled."
 msgstr "使用中のバックエンド: 旧式"
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:834
 msgid "About Battery Charge Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:838
+#: battstat/battstat_applet.c:836
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: battstat/battstat_applet.c:1114 battstat/battstat_applet.c:1164
+#: battstat/battstat_applet.c:1125 battstat/battstat_applet.c:1175
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "バッテリ充電モニタ"
 
-#: battstat/battstat_applet.c:1165
+#: battstat/battstat_applet.c:1176
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "ラップトップのバッテリの残量をモニターします"
 
-#: battstat/battstat_applet.ui:14
+#: battstat/battstat-preferences.ui:23
 msgid "Battery Charge Monitor Preferences"
 msgstr "バッテリ充電モニタの設定"
 
-#: battstat/battstat_applet.ui:33
-msgid "Appearance"
-msgstr "外観"
+#: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
+#: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
+#: mateweather/mateweather-dialog.ui:45 netspeed/data/netspeed-details.ui:47
+#: netspeed/data/netspeed-preferences.ui:49
+#: stickynotes/sticky-notes-preferences.ui:68
+#: stickynotes/sticky-notes-properties.ui:54
+#: timerapplet/timerapplet-preferences.ui:41
+msgid "_Close"
+msgstr "閉じる(_C)"
 
-#: battstat/battstat_applet.ui:68
+#: battstat/battstat-preferences.ui:102
 msgid "_Show time/percentage:"
 msgstr "充電時間/充電率を表示する(_S):"
 
-#: battstat/battstat_applet.ui:102
+#: battstat/battstat-preferences.ui:125
 msgid "Show _time remaining"
 msgstr "残量を時間で表示する(_T)"
 
-#: battstat/battstat_applet.ui:117
+#: battstat/battstat-preferences.ui:143
 msgid "Show _percentage remaining"
 msgstr "残量を百分率(%)で表示する(_P)"
 
-#: battstat/battstat_applet.ui:175
-msgid "Notifications"
-msgstr "通知"
+#: battstat/battstat-preferences.ui:175
+msgid "Appearance"
+msgstr "外観"
 
-#. TRANSLATOR: This is the beginning of the sentence 'Warn when battery charge
-#. drops to: [XX] percent/minutes remaining'
-#: battstat/battstat_applet.ui:206
+#: battstat/battstat-preferences.ui:214
 msgid "_Warn when battery charge drops to:"
 msgstr "次の充電率に下がったら警告する(_W):"
 
-#: battstat/battstat_applet.ui:262
+#: battstat/battstat-preferences.ui:255
+msgid "Percent"
+msgstr "百分率 (%)"
+
+#: battstat/battstat-preferences.ui:256
+msgid "Minutes Remaining"
+msgstr "分 (残り時間)"
+
+#: battstat/battstat-preferences.ui:282
 msgid "_Notify when battery is fully recharged"
 msgstr "充電が完了したら通知する(_N)"
+
+#: battstat/battstat-preferences.ui:305
+msgid "Notifications"
+msgstr "通知"
 
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:5
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:6
@@ -436,14 +456,6 @@ msgstr "充電時間/率を示すラベルを表示する"
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
 msgstr "バッテリ残量の表示形式です。指定可能な値: 0 (ラベルなし)、1 (充電率)、2 (残り時間)"
 
-#: battstat/properties.c:237
-msgid "Percent"
-msgstr "百分率 (%)"
-
-#: battstat/properties.c:243
-msgid "Minutes Remaining"
-msgstr "分 (残り時間)"
-
 #: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:3
 msgid "Battery Status Utility"
 msgstr "バッテリ充電モニタ"
@@ -474,29 +486,29 @@ msgstr "特殊な文字を挿入します"
 msgid "insert special character %s"
 msgstr "特殊な文字 %s を挿入します"
 
-#: charpick/charpick.c:582
+#: charpick/charpick.c:583
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:584
+#: charpick/charpick.c:585
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:586
+#: charpick/charpick.c:587
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:694 charpick/charpick.c:708
+#: charpick/charpick.c:695 charpick/charpick.c:708
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:451
 msgid "Character Palette"
 msgstr "キャラクタ・パレット"
 
-#: charpick/charpick.c:694
+#: charpick/charpick.c:695
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "いろいろな文字を挿入します"
@@ -585,129 +597,122 @@ msgstr "指定したパレットを削除します"
 msgid "Character Palette Preferences"
 msgstr "キャラクタ・パレットの設定"
 
-#: command/command.c:125
+#: command/data/command-preferences.ui:25
+msgid "Command Applet Preferences"
+msgstr "アプレットの設定のコマンド"
+
+#: command/data/command-preferences.ui:77
+msgid "C_ommand:"
+msgstr "コマンド(_O):"
+
+#: command/data/command-preferences.ui:91
+msgid "_Interval (seconds):"
+msgstr ""
+
+#: command/data/command-preferences.ui:105
+msgid "Maximum _width (chars):"
+msgstr ""
+
+#: command/data/command-preferences.ui:161
+msgid "_Show icon"
+msgstr ""
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
+msgid "Command Factory"
+msgstr "コマンドファクトリー"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
+msgid "Command"
+msgstr "コマンド"
+
+#: command/data/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
+#: command/src/command.c:130
+msgid "Shows the output of a command"
+msgstr "コマンドの出力を表示"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:5
+msgid "Command to execute"
+msgstr "実行するコマンド"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:6
+msgid "Command/script to execute to get the output"
+msgstr "結果を得るために実行するコマンド/スクリプト"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:10
+msgid "Interval for the command"
+msgstr "コマンドの間隔"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:11
+msgid "Interval to execute the command (in seconds)"
+msgstr "コマンドを実行する間隔(秒)"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:15
+msgid "Width of output"
+msgstr "出力幅"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:16
+msgid "Number of characters to display"
+msgstr "表示する文字数"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show icon"
+msgstr "アイコンを表示"
+
+#: command/data/org.mate.panel.applet.command.gschema.xml.in:21
+msgid "If applet icon is shown or not"
+msgstr "アプレットアイコンを表示するかどうか"
+
+#: command/src/command.c:125
 msgid "About Command Applet"
 msgstr ""
 
-#: command/command.c:127
+#: command/src/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: command/command.c:130
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:10
-msgid "Shows the output of a command"
-msgstr "コマンドの出力を表示"
-
-#: command/command.c:408
+#: command/src/command.c:408
 msgid "Command Applet"
 msgstr "コマンドアプレット"
 
-#: command/command-preferences.ui:25
-msgid "Command Applet Preferences"
-msgstr "アプレットの設定のコマンド"
-
-#: command/command-preferences.ui:39 netspeed/src/netspeed-preferences.ui:49
-#: stickynotes/sticky-notes-preferences.ui:68
-#: stickynotes/sticky-notes-properties.ui:54
-#: timerapplet/timerapplet-preferences.ui:41
-msgid "_Close"
-msgstr "閉じる(_C)"
-
-#: command/command-preferences.ui:77
-msgid "C_ommand:"
-msgstr "コマンド(_O):"
-
-#: command/command-preferences.ui:91
-msgid "_Interval (seconds):"
-msgstr ""
-
-#: command/command-preferences.ui:105
-msgid "Maximum _width (chars):"
-msgstr ""
-
-#: command/command-preferences.ui:161
-msgid "_Show icon"
-msgstr ""
-
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:5
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:6
-msgid "Command Factory"
-msgstr "コマンドファクトリー"
-
-#: command/org.mate.applets.CommandApplet.mate-panel-applet.desktop.in.in:9
-msgid "Command"
-msgstr "コマンド"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:5
-msgid "Command to execute"
-msgstr "実行するコマンド"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:6
-msgid "Command/script to execute to get the output"
-msgstr "結果を得るために実行するコマンド/スクリプト"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:10
-msgid "Interval for the command"
-msgstr "コマンドの間隔"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:11
-msgid "Interval to execute the command (in seconds)"
-msgstr "コマンドを実行する間隔(秒)"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:15
-msgid "Width of output"
-msgstr "出力幅"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:16
-msgid "Number of characters to display"
-msgstr "表示する文字数"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
-msgid "Show icon"
-msgstr "アイコンを表示"
-
-#: command/org.mate.panel.applet.command.gschema.xml.in:21
-msgid "If applet icon is shown or not"
-msgstr "アプレットアイコンを表示するかどうか"
-
-#: cpufreq/cpufreq-preferences.ui:7
+#: cpufreq/cpufreq-preferences.ui:18
 msgid "CPU Frequency Monitor Preferences"
 msgstr "CPU 周波数モニタの設定"
 
-#: cpufreq/cpufreq-preferences.ui:28
-msgid "Monitor Settings"
-msgstr "モニタの設定"
-
-#: cpufreq/cpufreq-preferences.ui:60
+#: cpufreq/cpufreq-preferences.ui:97
 msgid "_Monitored CPU:"
 msgstr "モニターする CPU(_M):"
 
-#: cpufreq/cpufreq-preferences.ui:102
-msgid "Display Settings"
-msgstr "表示の設定"
+#: cpufreq/cpufreq-preferences.ui:127
+msgid "Monitor Settings"
+msgstr "モニタの設定"
 
-#: cpufreq/cpufreq-preferences.ui:138
+#: cpufreq/cpufreq-preferences.ui:168
 msgid "_Appearance:"
 msgstr "外観(_A):"
 
-#: cpufreq/cpufreq-preferences.ui:163
+#: cpufreq/cpufreq-preferences.ui:199
 msgid "Show CPU frequency as _frequency"
 msgstr "CPU の周波数を表示する(_F)"
 
-#: cpufreq/cpufreq-preferences.ui:181
+#: cpufreq/cpufreq-preferences.ui:216
 msgid "Show frequency _units"
 msgstr "周波数の単位を表示する(_U)"
 
-#: cpufreq/cpufreq-preferences.ui:197
+#: cpufreq/cpufreq-preferences.ui:233
 msgid "Show CPU frequency as _percentage"
 msgstr "CPU 周波数を百分率で表示する(_P)"
 
+#: cpufreq/cpufreq-preferences.ui:256
+msgid "Display Settings"
+msgstr "表示の設定"
+
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:794 cpufreq/src/cpufreq-applet.c:849
+#: cpufreq/src/cpufreq-applet.c:792 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU 周波数の計測モニタ"
 
@@ -749,25 +754,25 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr "0 はCPU 周波数の表示、1 は周波数と単位の表示、2 は周波数ではなく比率の表示を意味します"
 
-#: cpufreq/src/cpufreq-applet.c:431 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:447 cpufreq/src/cpufreq-prefs.c:358
 msgid "Could not open help document"
 msgstr "ヘルプを開けませんでした"
 
-#: cpufreq/src/cpufreq-applet.c:463
+#: cpufreq/src/cpufreq-applet.c:479
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:465
+#: cpufreq/src/cpufreq-applet.c:481
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:467
+#: cpufreq/src/cpufreq-applet.c:483
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "このユーティリティは CPU 周波数を計測して表示します。"
 
-#: cpufreq/src/cpufreq-applet.c:850
+#: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
 msgstr "このユーティリティは CPU 周波数を表示します"
 
@@ -787,11 +792,11 @@ msgstr "アイコンとラベル"
 msgid "Frequency Scaling Unsupported"
 msgstr "周波数の計測は未サポート"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:59
+#: cpufreq/src/cpufreq-monitor-factory.c:57
 msgid "CPU frequency scaling unsupported"
 msgstr "CPU 周波数の計測がサポートされていません"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:60
+#: cpufreq/src/cpufreq-monitor-factory.c:58
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -882,62 +887,62 @@ msgstr "ドライブ・マウント・アプレットのファクトリ"
 msgid "Mount local disks and devices"
 msgstr "ローカルディスクとデバイスをマウントします"
 
-#: geyes/geyes.c:178
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
+msgid "Eyes Applet Factory"
+msgstr ""
+
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
+#: geyes/src/geyes.c:388 geyes/src/geyes.c:419 geyes/src/geyes.c:421
+msgid "Eyes"
+msgstr "MATE 目玉"
+
+#: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
+msgid "A set of eyeballs for your panel"
+msgstr "パネル用の目玉アプレットです"
+
+#: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:5
+#: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:6
+msgid "Directory in which the theme is located"
+msgstr "テーマを格納するフォルダです"
+
+#: geyes/data/themes.ui:18
+msgid "Eyes Preferences"
+msgstr ""
+
+#: geyes/data/themes.ui:100
+msgid "_Select a theme:"
+msgstr "テーマの選択(_S):"
+
+#: geyes/data/themes.ui:148
+msgid "Themes"
+msgstr "テーマ"
+
+#: geyes/src/geyes.c:178
 msgid "About Eyes"
 msgstr ""
 
-#: geyes/geyes.c:180
+#: geyes/src/geyes.c:180
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "MATE パネル向けのキュートなお目々です (マウスの動きに追従します)。"
 
-#: geyes/geyes.c:182
+#: geyes/src/geyes.c:182
 msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: geyes/geyes.c:389 geyes/geyes.c:419 geyes/geyes.c:421
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-msgid "Eyes"
-msgstr "MATE 目玉"
-
-#: geyes/geyes.c:422
+#: geyes/src/geyes.c:422
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "目玉がマウスのポインタの方向を向きます"
 
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
-msgid "Eyes Applet Factory"
-msgstr ""
-
-#: geyes/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
-msgid "A set of eyeballs for your panel"
-msgstr "パネル用の目玉アプレットです"
-
-#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:5
-#: geyes/org.mate.panel.applet.geyes.gschema.xml.in:6
-msgid "Directory in which the theme is located"
-msgstr "テーマを格納するフォルダです"
-
-#: geyes/themes.c:129
+#: geyes/src/themes.c:130
 msgid "Can not launch the eyes applet."
 msgstr "MATE 目玉アプレットを起動できません。"
 
-#: geyes/themes.c:130
+#: geyes/src/themes.c:131
 msgid "There was a fatal error while trying to load the theme."
 msgstr "テーマを読み込む際に致命的なエラーが発生しました。"
-
-#: geyes/themes.c:282
-msgid "Eyes Preferences"
-msgstr ""
-
-#: geyes/themes.c:315
-msgid "Themes"
-msgstr "テーマ"
-
-#: geyes/themes.c:336
-msgid "_Select a theme:"
-msgstr "テーマの選択(_S):"
 
 #: mateweather/mateweather-about.c:54
 msgid "About Weather Report"
@@ -957,24 +962,24 @@ msgstr "各地の天気状況をモニタするアプレットです。"
 msgid "_Details"
 msgstr "詳細(_D)"
 
-#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.c:183
+#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.ui:30
 msgid "_Update"
 msgstr "更新する(_U)"
 
-#: mateweather/mateweather-applet.c:345
+#: mateweather/mateweather-applet.c:343
 #: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
 msgid "Weather Report"
 msgstr "お天気 MATE"
 
-#: mateweather/mateweather-applet.c:360 mateweather/mateweather-applet.c:364
+#: mateweather/mateweather-applet.c:358 mateweather/mateweather-applet.c:362
 msgid "MATE Weather"
 msgstr "お天気 MATE"
 
-#: mateweather/mateweather-applet.c:463
+#: mateweather/mateweather-applet.c:460
 msgid "Weather Forecast"
 msgstr "天気予報"
 
-#: mateweather/mateweather-applet.c:475
+#: mateweather/mateweather-applet.c:472
 #, c-format
 msgid ""
 "City: %s\n"
@@ -985,101 +990,101 @@ msgstr ""
 "天候: %s\n"
 "気温: %s"
 
-#: mateweather/mateweather-applet.c:524
+#: mateweather/mateweather-applet.c:521
 msgid "Updating..."
 msgstr "更新中..."
 
-#: mateweather/mateweather-dialog.c:181
+#: mateweather/mateweather-dialog.c:231
+msgid "Forecast not currently available for this location."
+msgstr "現在、この場所の予報は利用できません。"
+
+#: mateweather/mateweather-dialog.ui:13
 msgid "Details"
 msgstr "詳細"
 
-#: mateweather/mateweather-dialog.c:223
+#: mateweather/mateweather-dialog.ui:88
 msgid "City:"
 msgstr "都市:"
 
-#: mateweather/mateweather-dialog.c:229
+#: mateweather/mateweather-dialog.ui:100
 msgid "Last update:"
 msgstr "最終更新:"
 
-#: mateweather/mateweather-dialog.c:235
+#: mateweather/mateweather-dialog.ui:112
 msgid "Conditions:"
 msgstr "状態:"
 
-#: mateweather/mateweather-dialog.c:241
+#: mateweather/mateweather-dialog.ui:124
 msgid "Sky:"
 msgstr "天候:"
 
-#: mateweather/mateweather-dialog.c:247
+#: mateweather/mateweather-dialog.ui:136
 msgid "Temperature:"
 msgstr "気温:"
 
-#: mateweather/mateweather-dialog.c:253
+#: mateweather/mateweather-dialog.ui:148
 msgid "Feels like:"
 msgstr "体感温度:"
 
-#: mateweather/mateweather-dialog.c:259
+#: mateweather/mateweather-dialog.ui:160
 msgid "Dew point:"
 msgstr "露点:"
 
-#: mateweather/mateweather-dialog.c:265
+#: mateweather/mateweather-dialog.ui:172
 msgid "Relative humidity:"
 msgstr "相対湿度:"
 
-#: mateweather/mateweather-dialog.c:271
+#: mateweather/mateweather-dialog.ui:184
 msgid "Wind:"
 msgstr "風力:"
 
-#: mateweather/mateweather-dialog.c:277
+#: mateweather/mateweather-dialog.ui:196
 msgid "Pressure:"
 msgstr "気圧:"
 
-#: mateweather/mateweather-dialog.c:283
+#: mateweather/mateweather-dialog.ui:208
 msgid "Visibility:"
 msgstr "視界:"
 
-#: mateweather/mateweather-dialog.c:289
+#: mateweather/mateweather-dialog.ui:220
 msgid "Sunrise:"
 msgstr "日の出の時刻:"
 
-#: mateweather/mateweather-dialog.c:295
+#: mateweather/mateweather-dialog.ui:232
 msgid "Sunset:"
 msgstr "日没の時刻:"
 
-#: mateweather/mateweather-dialog.c:403
+#: mateweather/mateweather-dialog.ui:409
 msgid "Current Conditions"
 msgstr "現在の状態"
 
-#: mateweather/mateweather-dialog.c:420
+#: mateweather/mateweather-dialog.ui:434
 msgid "Forecast Report"
 msgstr "予報の報告"
 
-#: mateweather/mateweather-dialog.c:420
+#: mateweather/mateweather-dialog.ui:435
 msgid "See the ForeCast Details"
 msgstr "予報の詳細をみてください"
 
-#: mateweather/mateweather-dialog.c:430
+#: mateweather/mateweather-dialog.ui:456
 msgid "Forecast"
 msgstr "予報"
 
-#: mateweather/mateweather-dialog.c:438
-msgid "Radar Map"
-msgstr "レーダー・マップ"
-
-#: mateweather/mateweather-dialog.c:471
+#: mateweather/mateweather-dialog.ui:497
 msgid "_Visit Weather.com"
 msgstr "Weather.com へジャンプ(_V)"
 
-#: mateweather/mateweather-dialog.c:472
+#: mateweather/mateweather-dialog.ui:505
 msgid "Visit Weather.com"
 msgstr "Weather.com へジャンプ"
 
-#: mateweather/mateweather-dialog.c:472
+#: mateweather/mateweather-dialog.ui:506
 msgid "Click to Enter Weather.com"
 msgstr "クリックすると Weather.com をブラウザで開きます"
 
-#: mateweather/mateweather-dialog.c:603
-msgid "Forecast not currently available for this location."
-msgstr "現在、この場所の予報は利用できません。"
+#: mateweather/mateweather-dialog.ui:525
+msgid "Radar Map"
+msgstr "レーダー・マップ"
 
 #: mateweather/mateweather-pref.c:158
 msgid "Location view"
@@ -1287,47 +1292,44 @@ msgstr "システムモニターを起動します"
 msgid "There was an error executing '%s': %s"
 msgstr "'%s' を実行した際にエラーが発生しました: %s"
 
-#: multiload/main.c:276 multiload/properties.c:643
+#: multiload/main.c:275 multiload/properties.c:643
 msgid "Processor"
 msgstr "プロセッサ"
 
-#: multiload/main.c:278 multiload/properties.c:651
+#: multiload/main.c:276 multiload/properties.c:651
 msgid "Memory"
 msgstr "メモリー"
 
-#: multiload/main.c:280 multiload/properties.c:659
+#: multiload/main.c:277 multiload/properties.c:659
 msgid "Network"
 msgstr "ネットワーク"
 
-#: multiload/main.c:282 multiload/properties.c:668
+#: multiload/main.c:278 multiload/properties.c:668
 msgid "Swap Space"
 msgstr "スワップ"
 
-#: multiload/main.c:284 multiload/main.c:363
+#: multiload/main.c:279 multiload/main.c:362
 msgid "Load Average"
 msgstr "負荷平均"
 
-#: multiload/main.c:286
+#: multiload/main.c:280
 msgid "Disk"
 msgstr "ディスク"
 
-#: multiload/main.c:302
+#: multiload/main.c:297
 #, c-format
 msgid ""
 "%s:\n"
-"%u%% in use by programs\n"
-"%u%% in use as cache"
+"%.01f%% in use by programs\n"
+"%.01f%% in use as cache"
 msgstr ""
-"%s:\n"
-" プログラムが使用: %u%%\n"
-" キャッシュとして使用: %u%%"
 
-#: multiload/main.c:310
+#: multiload/main.c:306
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "システムの平均使用率は %0.02f です"
 
-#: multiload/main.c:318
+#: multiload/main.c:316
 #, c-format
 msgid ""
 "%s:\n"
@@ -1338,46 +1340,43 @@ msgstr ""
 "(受信) %s\n"
 "(送信) %s"
 
-#: multiload/main.c:334
+#: multiload/main.c:338
 #, c-format
 msgid ""
 "%s:\n"
-"%u%% in use"
-msgid_plural ""
-"%s:\n"
-"%u%% in use"
-msgstr[0] ""
+"%.01f%% in use"
+msgstr ""
 
-#: multiload/main.c:359
+#: multiload/main.c:358
 msgid "CPU Load"
 msgstr "CPU 負荷"
 
-#: multiload/main.c:360
+#: multiload/main.c:359
 msgid "Memory Load"
 msgstr "メモリ負荷"
 
-#: multiload/main.c:361
+#: multiload/main.c:360
 msgid "Net Load"
 msgstr "ネット負荷"
 
-#: multiload/main.c:362
+#: multiload/main.c:361
 msgid "Swap Load"
 msgstr "スワップ負荷"
 
-#: multiload/main.c:364
+#: multiload/main.c:363
 msgid "Disk Load"
 msgstr "ディスク負荷"
 
-#: multiload/main.c:482
+#: multiload/main.c:483
 msgid "_Open System Monitor"
 msgstr "システムモニタを開く(_O)"
 
-#: multiload/main.c:514
+#: multiload/main.c:515
 #: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 msgid "System Monitor"
 msgstr "システムモニター"
 
-#: multiload/netspeed.c:40
+#: multiload/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/秒"
@@ -1489,7 +1488,7 @@ msgid "Network graph background color"
 msgstr "ネットワークグラフの背景色"
 
 #: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:130
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:133
 msgid "Grid line color"
 msgstr "グリッドラインの色"
 
@@ -1497,51 +1496,51 @@ msgstr "グリッドラインの色"
 msgid "Indicator color"
 msgstr ""
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:102
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:103
 msgid "Network threshold 1 in bytes"
 msgstr ""
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:106
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:108
 msgid "Network threshold 2 in bytes"
 msgstr ""
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:110
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:113
 msgid "Network threshold 3 in bytes"
 msgstr ""
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:114
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:117
 msgid "Graph color for user-related swap usage"
 msgstr "スワップ使用率グラフの色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:118
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:121
 msgid "Swap graph background color"
 msgstr "スワップグラフの背景色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:122
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:125
 msgid "Graph color for load average"
 msgstr "平均使用率グラフの色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:126
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:129
 msgid "Load graph background color"
 msgstr "平均使用率グラフの背景色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:134
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:137
 msgid "Graph color for disk read"
 msgstr "ディスク読み込みのグラフの色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:138
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:141
 msgid "Graph color for disk write"
 msgstr "ディスク書き込みのグラフの色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:142
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:145
 msgid "Background color for disk load graph"
 msgstr "ディスク使用率グラフの背景色"
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:146
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:149
 msgid "Uses /proc/diskstats to determine NVMe disk load"
 msgstr ""
 
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:150
+#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:153
 msgid "The desktop description file to execute as the system monitor"
 msgstr "システム・モニタとして実行するデスクトップ記述ファイル"
 
@@ -1703,7 +1702,7 @@ msgid "Threshold 1: "
 msgstr ""
 
 #: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815 netspeed/src/netspeed.c:425
+#: multiload/properties.c:815
 msgid "bytes"
 msgstr "バイト"
 
@@ -1718,6 +1717,102 @@ msgstr ""
 #: multiload/properties.c:853
 msgid "System Monitor Preferences"
 msgstr "システムモニターの設定"
+
+#: netspeed/data/netspeed-details.ui:101
+msgid "Transfer Rate Graph"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:133
+msgid "_In graph color"
+msgstr "受信グラフの色(_I)"
+
+#: netspeed/data/netspeed-details.ui:160
+msgid "_Out graph color"
+msgstr "送信グラフの色(_O)"
+
+#: netspeed/data/netspeed-details.ui:194
+msgid "IPv4 Address:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:222
+msgid "Netmask:"
+msgstr "ネットマスク:"
+
+#: netspeed/data/netspeed-details.ui:262
+msgid "Hardware Address:"
+msgstr "ハードウェアアドレス:"
+
+#: netspeed/data/netspeed-details.ui:290
+msgid "P-t-P Address:"
+msgstr "P-t-P アドレス:"
+
+#: netspeed/data/netspeed-details.ui:330
+msgid "Bytes in:"
+msgstr "受信量:"
+
+#: netspeed/data/netspeed-details.ui:344 netspeed/data/netspeed-details.ui:372
+msgid "0 byte"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:358
+msgid "Bytes out:"
+msgstr "送信量:"
+
+#: netspeed/data/netspeed-details.ui:398
+msgid "IPv6 Address:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:444
+msgid "ESSID:"
+msgstr "ESSID:"
+
+#: netspeed/data/netspeed-details.ui:472
+msgid "Signal Strength:"
+msgstr "信号の強さ:"
+
+#: netspeed/data/netspeed-details.ui:516
+msgid "Station:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:541
+msgid "Channel:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:578
+msgid "Connected Time:"
+msgstr ""
+
+#: netspeed/data/netspeed-preferences.ui:18
+msgid "MATE Netspeed Preferences"
+msgstr ""
+
+#: netspeed/data/netspeed-preferences.ui:100
+msgid "Network _device:"
+msgstr "ネットワークデバイス(_D)"
+
+#: netspeed/data/netspeed-preferences.ui:131
+msgid "Show _sum instead of in & out"
+msgstr "受信と送信の代わりに合計を表示する(_S)"
+
+#: netspeed/data/netspeed-preferences.ui:148
+msgid "Show _bits instead of bytes"
+msgstr "バイト単位の代わりにビット単位で表示する(_B)"
+
+#: netspeed/data/netspeed-preferences.ui:165
+msgid "_Change icon according to the selected device"
+msgstr "選択されたデバイスに応じてアイコンを変える(_C)"
+
+#: netspeed/data/netspeed-preferences.ui:182
+msgid "Show _icon"
+msgstr "アイコンを表示する"
+
+#: netspeed/data/netspeed-preferences.ui:199
+msgid "Show signal _quality icon for wireless devices"
+msgstr "ワイヤレスデバイスの信号品質アイコンを表示する"
+
+#: netspeed/data/netspeed-preferences.ui:223
+msgid "General Settings"
+msgstr "一般的な設定"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:5
 msgid "Device to monitor"
@@ -1748,68 +1843,58 @@ msgid "If true, show main icon."
 msgstr "TRUE にすると、メインアイコンを表示します。"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:25
-msgid "Short unit legend"
-msgstr "省略した単位表示"
-
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
-msgid ""
-"If true, shorten unit legend to one letter: lowercase for bits / uppercase "
-"for Bytes."
-msgstr "TRUE の場合、単位を1文字で表示します。b はビット、B はバイトです。"
-
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Change icon"
 msgstr "アイコンの変更"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
 msgid "If true, change the icon due to selected device."
 msgstr "TRUE の場合、選択されたデバイスに応じてアイコンを変更します。"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Auto change device"
 msgstr "デバイスの自動変更"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
 msgid "If true, change automatically the selected device."
 msgstr "TRUEの場合、自動的に選択中のデバイスを変更する。"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
 msgid "In color"
 msgstr "受信グラフの色"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
 msgid "The color of the graph of the inbound traffic"
 msgstr "内向きの通信のグラフの色"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
 msgid "Out color"
 msgstr "送信グラフの色"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
 msgid "The color of the graph of the outbound traffic"
 msgstr "外向きの通信のグラフの色"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
 msgid "Up command"
 msgstr "起動コマンド"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
 msgid "Command to execute to activate the device"
 msgstr "デバイスを有効にするのに実行するコマンド"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
 msgid "Down command"
 msgstr "終了コマンド"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
 msgid "Command to execute to shut down the device"
 msgstr "デバイスを切断するのに実行するコマンド"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:60
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
 msgid "Show signal quality icon"
 msgstr "信号品質アイコンの表示"
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:61
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
 msgid "If true, show signal quality icon for wireless devices."
 msgstr "trueの場合、ワイヤレスデバイスの信号品質アイコンを表示します。"
 
@@ -1826,75 +1911,189 @@ msgstr "ネットスピードアプレット"
 msgid "Network Monitor"
 msgstr "ネットワークモニター"
 
-#: netspeed/src/netspeed.c:420
-msgid "b"
-msgstr "b"
+#: netspeed/src/backend.c:448
+#, c-format
+msgid "%d.%d MBit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:420
-msgid "B"
-msgstr "B"
+#: netspeed/src/backend.c:450
+#, c-format
+msgid "(unknown)"
+msgstr ""
 
-#: netspeed/src/netspeed.c:422
-msgid "b/s"
-msgstr "b/s"
+#: netspeed/src/backend.c:454
+#, c-format
+msgid " MCS %d"
+msgstr ""
 
-#: netspeed/src/netspeed.c:422
+#: netspeed/src/backend.c:457
+#, c-format
+msgid " VHT-MCS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:459
+#, c-format
+msgid " 40MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:461
+#, c-format
+msgid " 80MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:463
+#, c-format
+msgid " 80P80MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:465
+#, c-format
+msgid " 160MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:467
+#, c-format
+msgid " short GI)"
+msgstr ""
+
+#: netspeed/src/backend.c:470
+#, c-format
+msgid " VHT-NSS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:473
+#, c-format
+msgid " HE-MCS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:476
+#, c-format
+msgid " HE-NSS %d"
+msgstr ""
+
+#: netspeed/src/backend.c:479
+#, c-format
+msgid " HE-GI %d"
+msgstr ""
+
+#: netspeed/src/backend.c:482
+#, c-format
+msgid " HE-DCM %d"
+msgstr ""
+
+#: netspeed/src/backend.c:566
+msgid "20 MHz (no HT)"
+msgstr ""
+
+#: netspeed/src/backend.c:568
+msgid "20 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:570
+msgid "40 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:572
+msgid "80 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:574
+msgid "80+80 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:576
+msgid "160 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:578
+msgid "5 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:580
+msgid "10 MHz"
+msgstr ""
+
+#: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
+#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1505
+#: netspeed/src/netspeed.c:1514
+msgid "unknown"
+msgstr "不明"
+
+#: netspeed/src/backend.c:633
+#, c-format
+msgid "%d (%d MHz)"
+msgstr ""
+
+#: netspeed/src/backend.c:637
+#, c-format
+msgid ", width: %s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:455
+msgid "bit/s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:455
 msgid "B/s"
 msgstr "B/s"
 
-#: netspeed/src/netspeed.c:425
-msgid "bits"
-msgstr "ビット"
+#: netspeed/src/netspeed.c:459
+msgid "Kibit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:433
-msgid "k"
-msgstr "k"
-
-#: netspeed/src/netspeed.c:433
-msgid "K"
-msgstr "K"
-
-#: netspeed/src/netspeed.c:435
-msgid "kb/s"
-msgstr "kb/s"
-
-#: netspeed/src/netspeed.c:435
+#: netspeed/src/netspeed.c:459
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: netspeed/src/netspeed.c:438
-msgid "kb"
-msgstr "kb"
+#: netspeed/src/netspeed.c:463
+msgid "Mibit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:438
-msgid "KiB"
-msgstr "KiB"
-
-#: netspeed/src/netspeed.c:448
-msgid "m"
-msgstr "m"
-
-#: netspeed/src/netspeed.c:448
-msgid "M"
-msgstr "M"
-
-#: netspeed/src/netspeed.c:450
-msgid "Mb/s"
-msgstr "Mb/s"
-
-#: netspeed/src/netspeed.c:450
+#: netspeed/src/netspeed.c:463
 msgid "MiB/s"
 msgstr "MiB/s"
 
-#: netspeed/src/netspeed.c:453
-msgid "Mb"
-msgstr "Mb"
+#: netspeed/src/netspeed.c:467
+msgid "Gibit/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:453
-msgid "MiB"
-msgstr "MiB"
+#: netspeed/src/netspeed.c:467
+msgid "GiB/s"
+msgstr ""
 
-#: netspeed/src/netspeed.c:776
+#: netspeed/src/netspeed.c:629
+msgid "%'"
+msgid_plural "%'"
+msgstr[0] ""
+
+#: netspeed/src/netspeed.c:635
+#, c-format
+msgid "%'d minute"
+msgid_plural "%'d minutes"
+msgstr[0] ""
+
+#: netspeed/src/netspeed.c:636
+#, c-format
+msgid "%'d secon"
+msgid_plural "%'d seconds"
+msgstr[0] ""
+
+#: netspeed/src/netspeed.c:641
+#, c-format
+msgid "%'d hour"
+msgid_plural "%'d hours"
+msgstr[0] ""
+
+#: netspeed/src/netspeed.c:690 netspeed/src/netspeed.c:698
+#: netspeed/src/netspeed.c:707 netspeed/src/netspeed.c:714
+msgid "none"
+msgstr "なし"
+
+#: netspeed/src/netspeed.c:758 netspeed/src/netspeed.c:870
+msgid "na"
+msgstr ""
+
+#: netspeed/src/netspeed.c:988
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1903,108 +2102,54 @@ msgstr ""
 "ヘルプを表示中にエラーが発生しました:\n"
 "%s"
 
-#: netspeed/src/netspeed.c:813
+#: netspeed/src/netspeed.c:1026
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: netspeed/src/netspeed.c:815
+#: netspeed/src/netspeed.c:1028
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:818
+#: netspeed/src/netspeed.c:1031
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr "指定されたネットワークデバイスの通信量の情報を表示する小さなアプレット"
 
-#: netspeed/src/netspeed.c:973
+#: netspeed/src/netspeed.c:1178
 msgid "Default"
 msgstr "デフォルト"
 
-#: netspeed/src/netspeed.c:1089
-#, c-format
-msgid "Device Details for %s"
-msgstr "%s の機器の詳細"
-
-#: netspeed/src/netspeed.c:1114
-msgid "_In graph color"
-msgstr "受信グラフの色(_I)"
-
-#: netspeed/src/netspeed.c:1115
-msgid "_Out graph color"
-msgstr "送信グラフの色(_O)"
-
-#: netspeed/src/netspeed.c:1131
-msgid "Internet Address:"
-msgstr "インターネットアドレス:"
-
-#: netspeed/src/netspeed.c:1132
-msgid "Netmask:"
-msgstr "ネットマスク:"
-
-#: netspeed/src/netspeed.c:1133
-msgid "Hardware Address:"
-msgstr "ハードウェアアドレス:"
-
-#: netspeed/src/netspeed.c:1134
-msgid "P-t-P Address:"
-msgstr "P-t-P アドレス:"
-
-#: netspeed/src/netspeed.c:1135
-msgid "Bytes in:"
-msgstr "受信量:"
-
-#: netspeed/src/netspeed.c:1136
-msgid "Bytes out:"
-msgstr "送信量:"
-
-#: netspeed/src/netspeed.c:1138 netspeed/src/netspeed.c:1139
-#: netspeed/src/netspeed.c:1140 netspeed/src/netspeed.c:1141
-msgid "none"
-msgstr "なし"
-
-#: netspeed/src/netspeed.c:1192
-msgid "IPV6 Address:"
-msgstr "IPv６ アドレス:"
-
-#: netspeed/src/netspeed.c:1225
-msgid "Signal Strength:"
-msgstr "信号の強さ:"
-
-#: netspeed/src/netspeed.c:1226
-msgid "ESSID:"
-msgstr "ESSID:"
-
-#: netspeed/src/netspeed.c:1267
+#: netspeed/src/netspeed.c:1343
 msgid "Device _Details"
 msgstr "デバイスの詳細(_D)"
 
-#: netspeed/src/netspeed.c:1269
+#: netspeed/src/netspeed.c:1345
 msgid "Preferences..."
 msgstr "設定"
 
-#: netspeed/src/netspeed.c:1271
+#: netspeed/src/netspeed.c:1347
 msgid "Help"
 msgstr "ヘルプ"
 
-#: netspeed/src/netspeed.c:1273
+#: netspeed/src/netspeed.c:1349
 msgid "About..."
 msgstr "このアプリについて"
 
-#: netspeed/src/netspeed.c:1314
+#: netspeed/src/netspeed.c:1388
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr "%s の接続を解除しますか？"
 
-#: netspeed/src/netspeed.c:1318
+#: netspeed/src/netspeed.c:1391
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr "%s の接続を開始しますか？"
 
-#: netspeed/src/netspeed.c:1345
+#: netspeed/src/netspeed.c:1417
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
@@ -2013,12 +2158,16 @@ msgstr ""
 "<b>コマンド %s の実行に失敗しました</b>\n"
 "%s"
 
-#: netspeed/src/netspeed.c:1404
+#: netspeed/src/netspeed.c:1475
 #, c-format
 msgid "%s is down"
 msgstr "%s は起動していません"
 
-#: netspeed/src/netspeed.c:1409
+#: netspeed/src/netspeed.c:1484
+msgid "has no ip"
+msgstr "IP アドレスがありません"
+
+#: netspeed/src/netspeed.c:1489
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2027,11 +2176,7 @@ msgstr ""
 "%s: %s\n"
 "受信: %s 送信:%s"
 
-#: netspeed/src/netspeed.c:1411 netspeed/src/netspeed.c:1420
-msgid "has no ip"
-msgstr "IP アドレスがありません"
-
-#: netspeed/src/netspeed.c:1418
+#: netspeed/src/netspeed.c:1496
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2040,7 +2185,17 @@ msgstr ""
 "%s: %s\n"
 "合計: %s"
 
-#: netspeed/src/netspeed.c:1427
+#: netspeed/src/netspeed.c:1504
+#, c-format
+msgid ""
+"\n"
+"ESSID: %s\n"
+"RSSI: %d dBm\n"
+"RX Bitrate: %s\n"
+"TX Bitrate: %s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:1513
 #, c-format
 msgid ""
 "\n"
@@ -2051,49 +2206,9 @@ msgstr ""
 "ESSID: %s\n"
 "強さ: %d %%"
 
-#: netspeed/src/netspeed.c:1428
-msgid "unknown"
-msgstr "不明"
-
-#: netspeed/src/netspeed.c:1478
+#: netspeed/src/netspeed.c:1563
 msgid "MATE Netspeed"
 msgstr ""
-
-#: netspeed/src/netspeed-preferences.ui:18
-msgid "MATE Netspeed Preferences"
-msgstr ""
-
-#: netspeed/src/netspeed-preferences.ui:100
-msgid "Network _device:"
-msgstr "ネットワークデバイス(_D)"
-
-#: netspeed/src/netspeed-preferences.ui:131
-msgid "Show _sum instead of in & out"
-msgstr "受信と送信の代わりに合計を表示する(_S)"
-
-#: netspeed/src/netspeed-preferences.ui:148
-msgid "Show _bits instead of bytes"
-msgstr "バイト単位の代わりにビット単位で表示する(_B)"
-
-#: netspeed/src/netspeed-preferences.ui:165
-msgid "Shorten _unit legend"
-msgstr "単位を短く表現する(_U)"
-
-#: netspeed/src/netspeed-preferences.ui:182
-msgid "_Change icon according to the selected device"
-msgstr "選択されたデバイスに応じてアイコンを変える(_C)"
-
-#: netspeed/src/netspeed-preferences.ui:199
-msgid "Show _icon"
-msgstr "アイコンを表示する"
-
-#: netspeed/src/netspeed-preferences.ui:216
-msgid "Show signal _quality icon for wireless devices"
-msgstr "ワイヤレスデバイスの信号品質アイコンを表示する"
-
-#: netspeed/src/netspeed-preferences.ui:240
-msgid "General Settings"
-msgstr "一般的な設定"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2109,11 +2224,11 @@ msgstr "付箋紙"
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr "デスクトップ上で付箋紙の生成/表示/管理を行います"
 
-#: stickynotes/stickynotes.c:578
+#: stickynotes/stickynotes.c:582
 msgid "This note is locked."
 msgstr "ロックしています"
 
-#: stickynotes/stickynotes.c:582
+#: stickynotes/stickynotes.c:586
 msgid "This note is unlocked."
 msgstr "ロックしていません"
 
