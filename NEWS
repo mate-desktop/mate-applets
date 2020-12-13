@@ -1,3 +1,50 @@
+### mate-applets 1.25.2
+
+  * tx:sync with transifex
+  * mateweather: Use common subdirs - src, data
+  * netspeed: show ipv6 address in tooltip if ipv4 address is not used
+  * multiload: Use common subdirs - src, data
+  * stickynotes: Add stickynotes-applet-menu.xml into resource bundle
+  * drivemount: Use common subdirs - data, src
+  * geyes: Do not use dirent
+  * geyes: define GEYES_SETTINGS_THEME_PATH_KEY & GEYES_SETTINGS_SCHEMA
+  * geyes: Use g_clear_error
+  * geyes: use returned value by load_theme
+  * geyes: Remove duplicated NULL check
+  * geyes: Use g_debug instead of printf for logging
+  * geyes: format code
+  * trashapplet: load menu and ui files from resource bundle
+  * cpufreq: Remove /proc/cpufreq support (Linux 2.4)
+  * build: Remove legacy variable MATE_ICONDIR
+  * update issue template
+  * update issue template
+  * geyes: signal 'dispose' is invalid for instance 'ID' of type 'GtkBox'
+  * remove dead function mate_panel_applet_set_background_widget
+  * trashapplet: Remove warning about missing initializer
+  * build: Do not define M4_FILES twice
+  * ac-define-dir.m4: Remove execution bit
+  * fix build warning caused by several translations
+  * build: make maintainer-clean
+  * drivemount: improve code-style
+  * build: replace acinclude.m4 with original as-ac-expand.m4
+  * timer: i18n  label
+  * Cpufreq: improve code-style
+  * Remove USE_MATE2_MACROS from autogen.sh (legacy)
+  * charpick: improve code-style
+  * timerapplet: Use common subdirs - src, data
+  * battstat: improve code-style
+  * mateweather: Warn about accessing an undefined property of object
+  * accessx-status: improve code-style
+  * multiload: improve code-style
+  * accessx-status: array subscript 128 is above array bounds
+  * drivemount: Load menu from resources
+  * multiload: do not count shared memory twice on Linux
+  * multiload: Remove legacy variable 'show_frame'
+  * multiload: do not use a computed compound key for graph visibility
+  * multiload: Do not get "diskload-nvme-diskstats" on GetDiskLoad
+  * multiload: Remove dead function - GetPage
+  * timerapplet: Use gtk_spin_button_get_value_as_int for int values
+
 ### mate-applets 1.25.1
 
   * update translations
