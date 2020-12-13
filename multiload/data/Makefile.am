@@ -2,9 +2,6 @@ multiload_gschema_in_files = org.mate.panel.applet.multiload.gschema.xml.in
 gsettings_SCHEMAS = $(multiload_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
-uidir              = $(datadir)/mate/ui
-ui_DATA	           = multiload-applet-menu.xml
-
 appletdir          = $(datadir)/mate-panel/applets
 applet_in_in_files = org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in
 applet_in_files    = $(applet_in_in_files:.desktop.in.in=.desktop.in)
@@ -39,6 +36,7 @@ EXTRA_DIST = \
 	$(applet_in_in_files) \
 	$(service_in_files) \
 	$(multiload_gschema_in_files) \
-	$(ui_DATA)
+	multiload-applet-menu.xml \
+	multiload-resources.gresource.xml
 
 -include $(top_srcdir)/git.mk

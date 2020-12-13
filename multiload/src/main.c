@@ -509,9 +509,9 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
                                   multiload_menu_actions,
                                   G_N_ELEMENTS (multiload_menu_actions),
                                   ma);
-    mate_panel_applet_setup_menu_from_file (applet,
-                                            MULTILOAD_MENU_UI_DIR "multiload-applet-menu.xml",
-                                            action_group);
+    mate_panel_applet_setup_menu_from_resource (applet,
+                                                MULTILOAD_RESOURCE_PATH "multiload-applet-menu.xml",
+                                                action_group);
 
     if (mate_panel_applet_get_locked_down (applet)) {
         GtkAction *action;
