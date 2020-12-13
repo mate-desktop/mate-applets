@@ -14,7 +14,7 @@
 #define RADARMAP
 
 #ifdef HAVE_CONFIG_H
-	#include <config.h>
+#include <config.h>
 #endif
 
 #include <stdio.h>
@@ -47,16 +47,16 @@ struct _MateWeatherPrefPrivate {
 	GtkWidget* find_entry;
 	GtkWidget* find_next_btn;
 
-	#ifdef RADARMAP
-		GtkWidget* basic_radar_btn;
-		GtkWidget* basic_radar_url_btn;
-		GtkWidget* basic_radar_url_hbox;
-		GtkWidget* basic_radar_url_entry;
-	#endif /* RADARMAP */
+#ifdef RADARMAP
+	GtkWidget* basic_radar_btn;
+	GtkWidget* basic_radar_url_btn;
+	GtkWidget* basic_radar_url_hbox;
+	GtkWidget* basic_radar_url_entry;
+#endif /* RADARMAP */
 
-    #ifdef HAVE_LIBNOTIFY
-        GtkWidget* basic_show_notifications_btn;
-    #endif
+#ifdef HAVE_LIBNOTIFY
+	GtkWidget* basic_show_notifications_btn;
+#endif /* HAVE_LIBNOTIFY */
 
 	GtkWidget* basic_update_spin;
 	GtkWidget* basic_update_btn;
@@ -80,7 +80,6 @@ static void hard_set_sensitive(GtkWidget* w, gboolean sensitivity)
 	gtk_widget_set_sensitive(w, sensitivity);
 	g_object_set_data(G_OBJECT(w), NEVER_SENSITIVE, GINT_TO_POINTER(!sensitivity));
 }
-
 
 /* set sensitive, but always insensitive if NEVER_SENSITIVE is set */
 static void soft_set_sensitive(GtkWidget* w, gboolean sensitivity)
@@ -160,7 +159,6 @@ static void mateweather_pref_set_accessibility(MateWeatherPref* pref)
     set_access_namedesc(pref->priv->basic_radar_url_entry, _("Address Entry"), _("Enter the URL"));
 }
 
-
 /* Update pref dialog from mateweather_pref */
 static gboolean update_dialog(MateWeatherPref* pref)
 {
@@ -200,7 +198,9 @@ static gboolean update_dialog(MateWeatherPref* pref)
     return TRUE;
 }
 
-static void row_selected_cb(GtkTreeSelection* selection, MateWeatherPref* pref)
+static void
+on_row_selected (GtkTreeSelection *selection,
+                 MateWeatherPref  *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	GtkTreeModel* model;
@@ -228,7 +228,7 @@ static void row_selected_cb(GtkTreeSelection* selection, MateWeatherPref* pref)
 		weather_location_free(gw_applet->mateweather_pref.location);
 	}
 
-	gw_applet->mateweather_pref.location = 
+	gw_applet->mateweather_pref.location =
 		weather_location_new (loc->name, loc->code, loc->zone, loc->radar, loc->coordinates,
 			NULL, NULL);
 
@@ -292,23 +292,27 @@ static void load_locations(MateWeatherPref* pref)
 	}
 }
 
-static void show_notifications_toggled(GtkToggleButton* button, MateWeatherPref* pref)
+static void
+on_show_notifications_toggled (GtkToggleButton *button,
+                               MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
-	
+
 	gboolean toggled = gtk_toggle_button_get_active(button);
-	
+
 	if (toggled != gw_applet->mateweather_pref.show_notifications)
 	{
 		/* sync with mateweather_pref struct */
 		gw_applet->mateweather_pref.show_notifications = toggled;
-	    
+
 		/* sync with gsettings */
 		g_settings_set_boolean (gw_applet->settings, "show-notifications", toggled);
 	}
 }
 
-static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
+static void
+on_auto_update_toggled (GtkToggleButton *button,
+                        MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	gboolean toggled;
@@ -341,7 +345,9 @@ static void auto_update_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 	}
 }
 
-static void temp_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
+static void
+on_temp_combo_changed (GtkComboBox     *combo,
+                       MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	TempUnit new_unit, old_unit;
@@ -369,7 +375,9 @@ static void temp_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 	}
 }
 
-static void speed_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
+static void
+on_speed_combo_changed (GtkComboBox     *combo,
+                        MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	SpeedUnit new_unit, old_unit;
@@ -395,7 +403,9 @@ static void speed_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 	}
 }
 
-static void pres_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
+static void
+on_pres_combo_changed (GtkComboBox     *combo,
+                       MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	PressureUnit new_unit, old_unit;
@@ -421,7 +431,9 @@ static void pres_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 	}
 }
 
-static void dist_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
+static void
+on_dist_combo_changed (GtkComboBox     *combo,
+                       MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	DistanceUnit new_unit, old_unit;
@@ -447,7 +459,9 @@ static void dist_combo_changed_cb(GtkComboBox* combo, MateWeatherPref* pref)
 	}
 }
 
-static void radar_toggled(GtkToggleButton* button, MateWeatherPref* pref)
+static void
+on_radar_toggled (GtkToggleButton *button,
+                  MateWeatherPref *pref)
 {
     MateWeatherApplet* gw_applet = pref->priv->applet;
     gboolean toggled;
@@ -463,7 +477,9 @@ static void radar_toggled(GtkToggleButton* button, MateWeatherPref* pref)
 	}
 }
 
-static void use_radar_url_toggled(GtkToggleButton* button, MateWeatherPref* pref)
+static void
+on_use_radar_url_toggled (GtkToggleButton *button,
+                          MateWeatherPref *pref)
 {
     MateWeatherApplet* gw_applet = pref->priv->applet;
     gboolean toggled;
@@ -474,7 +490,10 @@ static void use_radar_url_toggled(GtkToggleButton* button, MateWeatherPref* pref
     soft_set_sensitive(pref->priv->basic_radar_url_hbox, toggled);
 }
 
-static gboolean radar_url_changed(GtkWidget* widget, GdkEventFocus* event, MateWeatherPref* pref)
+static gboolean
+on_radar_url_changed  (GtkWidget       *widget,
+                       GdkEventFocus   *event,
+                       MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 	gchar *text;
@@ -501,7 +520,9 @@ static gboolean radar_url_changed(GtkWidget* widget, GdkEventFocus* event, MateW
 	return FALSE;
 }
 
-static void update_interval_changed(GtkSpinButton* button, MateWeatherPref* pref)
+static void
+on_update_interval_changed (GtkSpinButton   *button,
+                            MateWeatherPref *pref)
 {
 	MateWeatherApplet* gw_applet = pref->priv->applet;
 
@@ -534,7 +555,6 @@ static gboolean free_data(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* i
 
 	return FALSE;
 }
-
 
 static GtkWidget* create_hig_category(GtkWidget* main_box, gchar* title)
 {
@@ -633,7 +653,9 @@ static gboolean find_location(GtkTreeModel* model, GtkTreeIter* iter, const gcha
 	return FALSE;
 }
 
-static void find_next_clicked(GtkButton* button, MateWeatherPref* pref)
+static void
+on_find_next_clicked (GtkButton       *button,
+                      MateWeatherPref *pref)
 {
 	GtkTreeView *tree;
 	GtkTreeModel *model;
@@ -689,7 +711,9 @@ static void find_next_clicked(GtkButton* button, MateWeatherPref* pref)
 	}
 }
 
-static void find_entry_changed(GtkEditable* entry, MateWeatherPref* pref)
+static void
+find_entry_changed (GtkEditable     *entry,
+                    MateWeatherPref *pref)
 {
 	GtkTreeView *tree;
 	GtkTreeModel *model;
@@ -725,7 +749,6 @@ static void find_entry_changed(GtkEditable* entry, MateWeatherPref* pref)
 	}
 }
 
-
 static void help_cb(GtkDialog* dialog, MateWeatherPref* pref)
 {
 	gint current_page;
@@ -752,8 +775,10 @@ static void help_cb(GtkDialog* dialog, MateWeatherPref* pref)
 	}
 }
 
-
-static void response_cb(GtkDialog* dialog, gint id, MateWeatherPref* pref)
+static void
+on_response (GtkDialog       *dialog,
+             gint             id,
+             MateWeatherPref *pref)
 {
 	if (id == GTK_RESPONSE_HELP)
 	{
@@ -766,7 +791,8 @@ static void response_cb(GtkDialog* dialog, gint id, MateWeatherPref* pref)
 }
 
 
-static void mateweather_pref_create(MateWeatherPref* pref)
+static void
+mateweather_pref_create (MateWeatherPref* pref)
 {
 	GtkWidget* pref_vbox;
 	#ifdef RADARMAP
@@ -830,7 +856,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_widget_set_halign (pref->priv->basic_update_btn, GTK_ALIGN_START);
 	gtk_widget_set_vexpand (pref->priv->basic_update_btn, TRUE);
 	gtk_widget_show (pref->priv->basic_update_btn);
-	g_signal_connect (G_OBJECT (pref->priv->basic_update_btn), "toggled", G_CALLBACK (auto_update_toggled), pref);
 
 	if (!g_settings_is_writable (pref->priv->applet->settings, "auto-update"))
 	{
@@ -959,16 +984,9 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_grid_attach(GTK_GRID(unit_grid), dist_combo,  1, 3, 1, 1);
 	gtk_widget_show(unit_grid);
 
-	g_signal_connect (temp_combo, "changed", G_CALLBACK (temp_combo_changed_cb), pref);
-	g_signal_connect (speed_combo, "changed", G_CALLBACK (speed_combo_changed_cb), pref);
-	g_signal_connect (dist_combo, "changed", G_CALLBACK (dist_combo_changed_cb), pref);
-	g_signal_connect (pres_combo, "changed", G_CALLBACK (pres_combo_changed_cb), pref);
-
-
 	#ifdef RADARMAP
 		pref->priv->basic_radar_btn = gtk_check_button_new_with_mnemonic (_("Enable _radar map"));
 		gtk_widget_show (pref->priv->basic_radar_btn);
-		g_signal_connect (G_OBJECT (pref->priv->basic_radar_btn), "toggled", G_CALLBACK (radar_toggled), pref);
 
 		if (!g_settings_is_writable (pref->priv->applet->settings, "enable-radar-map"))
 		{
@@ -985,8 +1003,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		pref->priv->basic_radar_url_btn = gtk_check_button_new_with_mnemonic (_("Use _custom address for radar map"));
 		gtk_widget_show (pref->priv->basic_radar_url_btn);
 		gtk_box_pack_start (GTK_BOX (radar_toggle_hbox), pref->priv->basic_radar_url_btn, FALSE, FALSE, 0);
-
-		g_signal_connect (G_OBJECT (pref->priv->basic_radar_url_btn), "toggled", G_CALLBACK (use_radar_url_toggled), pref);
 
 		if ( ! g_settings_is_writable (pref->priv->applet->settings, "use-custom-radar-url"))
 		{
@@ -1006,7 +1022,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		pref->priv->basic_radar_url_entry = gtk_entry_new ();
 		gtk_widget_show (pref->priv->basic_radar_url_entry);
 		gtk_box_pack_start (GTK_BOX (pref->priv->basic_radar_url_hbox), pref->priv->basic_radar_url_entry, TRUE, TRUE, 0);
-		g_signal_connect (G_OBJECT (pref->priv->basic_radar_url_entry), "focus_out_event", G_CALLBACK (radar_url_changed), pref);
+
 		if ( ! g_settings_is_writable (pref->priv->applet->settings, "radar"))
 		{
 			hard_set_sensitive (pref->priv->basic_radar_url_entry, FALSE);
@@ -1021,8 +1037,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		{
 			hard_set_sensitive (pref->priv->basic_show_notifications_btn, FALSE);
 		}
-
-		g_signal_connect (G_OBJECT (pref->priv->basic_show_notifications_btn), "toggled", G_CALLBACK (show_notifications_toggled), pref);
     #endif
 
 	frame = create_hig_category (pref_basic_vbox, _("Update"));
@@ -1040,7 +1054,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 
 	gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (pref->priv->basic_update_spin), TRUE);
 	gtk_spin_button_set_update_policy (GTK_SPIN_BUTTON (pref->priv->basic_update_spin), GTK_UPDATE_IF_VALID);
-	g_signal_connect (G_OBJECT (pref->priv->basic_update_spin), "value_changed", G_CALLBACK (update_interval_changed), pref);
 
 	pref_basic_update_sec_lbl = gtk_label_new (_("minutes"));
 	gtk_widget_show (pref_basic_update_sec_lbl);
@@ -1071,7 +1084,7 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 		gtk_box_pack_start (GTK_BOX (vbox), radar_toggle_hbox, TRUE, TRUE, 0);
 		gtk_box_pack_start (GTK_BOX (vbox), pref->priv->basic_radar_url_hbox, TRUE, TRUE, 0);
 	#endif /* RADARMAP */
-	
+
 	#ifdef HAVE_LIBNOTIFY
 		/* add the show-notification toggle button to the vbox of the display section */
 		gtk_box_pack_start (GTK_BOX (vbox), pref->priv->basic_show_notifications_btn, TRUE, TRUE, 0);
@@ -1103,7 +1116,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (pref->priv->tree), FALSE);
 
 	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (pref->priv->tree));
-	g_signal_connect (G_OBJECT (selection), "changed", G_CALLBACK (row_selected_cb), pref);
 
 	gtk_container_add (GTK_CONTAINER (scrolled_window), pref->priv->tree);
 	gtk_widget_show (pref->priv->tree);
@@ -1124,9 +1136,6 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	image = gtk_image_new_from_icon_name ("edit-find", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image (GTK_BUTTON (pref->priv->find_next_btn), image);
 
-	g_signal_connect (G_OBJECT (pref->priv->find_next_btn), "clicked", G_CALLBACK (find_next_clicked), pref);
-	g_signal_connect (G_OBJECT (pref->priv->find_entry), "changed", G_CALLBACK (find_entry_changed), pref);
-
 	gtk_container_set_border_width (GTK_CONTAINER (pref_find_hbox), 0);
 	gtk_box_pack_start (GTK_BOX (pref_find_hbox), pref_find_label, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (pref_find_hbox), pref->priv->find_entry, TRUE, TRUE, 0);
@@ -1143,14 +1152,33 @@ static void mateweather_pref_create(MateWeatherPref* pref)
 	gtk_widget_show (pref_loc_note_lbl);
 	gtk_notebook_set_tab_label (GTK_NOTEBOOK (pref->priv->notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (pref->priv->notebook), 1), pref_loc_note_lbl);
 
-
-	g_signal_connect (G_OBJECT (pref), "response", G_CALLBACK (response_cb), pref);
-
 	mateweather_pref_set_accessibility (pref);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (pref_basic_update_sec_lbl), pref->priv->basic_update_spin);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), pref->priv->basic_radar_url_entry);
-}
 
+    /* Set the initial values */
+    update_dialog (pref);
+
+    /* signals */
+    g_signal_connect (temp_combo,  "changed", G_CALLBACK (on_temp_combo_changed), pref);
+    g_signal_connect (speed_combo, "changed", G_CALLBACK (on_speed_combo_changed), pref);
+    g_signal_connect (dist_combo,  "changed", G_CALLBACK (on_dist_combo_changed), pref);
+    g_signal_connect (pres_combo,  "changed", G_CALLBACK (on_pres_combo_changed), pref);
+    g_signal_connect (pref->priv->basic_update_btn, "toggled", G_CALLBACK (on_auto_update_toggled), pref);
+#ifdef RADARMAP
+    g_signal_connect (pref->priv->basic_radar_btn, "toggled", G_CALLBACK (on_radar_toggled), pref);
+    g_signal_connect (pref->priv->basic_radar_url_btn, "toggled", G_CALLBACK (on_use_radar_url_toggled), pref);
+    g_signal_connect (pref->priv->basic_radar_url_entry, "focus_out_event", G_CALLBACK (on_radar_url_changed), pref);
+#endif /* RADARMAP */
+#ifdef HAVE_LIBNOTIFY
+    g_signal_connect (pref->priv->basic_show_notifications_btn, "toggled", G_CALLBACK (on_show_notifications_toggled), pref);
+#endif /* HAVE_LIBNOTIFY */
+    g_signal_connect (pref->priv->find_next_btn, "clicked", G_CALLBACK (on_find_next_clicked), pref);
+    g_signal_connect (pref->priv->find_entry, "changed", G_CALLBACK (find_entry_changed), pref);
+    g_signal_connect (selection, "changed", G_CALLBACK (on_row_selected), pref);
+    g_signal_connect (pref->priv->basic_update_spin, "value-changed", G_CALLBACK (on_update_interval_changed), pref);
+    g_signal_connect (pref, "response", G_CALLBACK (on_response), pref);
+}
 
 static void mateweather_pref_set_property(GObject* object, guint prop_id, const GValue* value, GParamSpec *pspec)
 {
@@ -1167,7 +1195,6 @@ static void mateweather_pref_set_property(GObject* object, guint prop_id, const 
     }
 }
 
-
 static void mateweather_pref_get_property(GObject* object, guint prop_id, GValue* value, GParamSpec* pspec)
 {
     MateWeatherPref* pref = MATEWEATHER_PREF(object);
@@ -1183,33 +1210,31 @@ static void mateweather_pref_get_property(GObject* object, guint prop_id, GValue
     }
 }
 
-
 static void mateweather_pref_init(MateWeatherPref* self)
 {
 	self->priv = mateweather_pref_get_instance_private(self);
 }
 
-
-static GObject* mateweather_pref_constructor(GType type, guint n_construct_params, GObjectConstructParam* construct_params)
+static GObject*
+mateweather_pref_constructor (GType                  type,
+                              guint                  n_construct_params,
+                              GObjectConstructParam *construct_params)
 {
-    GObject* object;
-    MateWeatherPref* self;
+    GObject *object;
+    MateWeatherPref *self;
 
-    object = G_OBJECT_CLASS(mateweather_pref_parent_class)->constructor(type, n_construct_params, construct_params);
-    self = MATEWEATHER_PREF(object);
+    object = G_OBJECT_CLASS (mateweather_pref_parent_class)->constructor(type, n_construct_params, construct_params);
+    self = MATEWEATHER_PREF (object);
 
-    mateweather_pref_create(self);
-    update_dialog(self);
+    mateweather_pref_create (self);
 
     return object;
 }
-
 
 GtkWidget* mateweather_pref_new(MateWeatherApplet* applet)
 {
     return g_object_new(MATEWEATHER_TYPE_PREF, "mateweather-applet", applet, NULL);
 }
-
 
 static void mateweather_pref_finalize(GObject* object)
 {
@@ -1220,7 +1245,6 @@ static void mateweather_pref_finalize(GObject* object)
 
 	G_OBJECT_CLASS(mateweather_pref_parent_class)->finalize(object);
 }
-
 
 static void mateweather_pref_class_init(MateWeatherPrefClass* klass)
 {
@@ -1236,5 +1260,3 @@ static void mateweather_pref_class_init(MateWeatherPrefClass* klass)
     /* This becomes an OBJECT property when MateWeatherApplet is redone */
     g_object_class_install_property(object_class, PROP_MATEWEATHER_APPLET, g_param_spec_pointer("mateweather-applet", "MateWeather Applet", "The MateWeather Applet", G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 }
-
-
