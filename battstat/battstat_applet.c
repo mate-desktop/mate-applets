@@ -375,8 +375,8 @@ battery_low_update_text (ProgressData  *battstat,
     if (info->minutes < 0 && !info->on_ac_power)
     {
         /* we don't know the remaining time */
-        remaining = g_strdup_printf (_("You have %d%% of your total battery"
-                                     "capacity remaining."), info->percent);
+        remaining = g_strdup_printf (_("You have %d%% of your total battery "
+                                       "capacity remaining."), info->percent);
     }
     else
     {
