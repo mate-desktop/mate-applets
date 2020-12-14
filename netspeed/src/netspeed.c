@@ -99,6 +99,7 @@ typedef struct
     guint            timeout_id;
     char            *up_cmd;
     char            *down_cmd;
+    gboolean         show_all_addresses;
     gboolean         show_sum;
     gboolean         show_bits;
     gboolean         change_icon;
@@ -1079,7 +1080,6 @@ device_change_cb (GtkComboBox        *combo,
     update_applet (applet);
 }
 
-
 /* Handle preference dialog response event
  */
 static void
@@ -1100,6 +1100,15 @@ pref_response_cb (GtkDialog *dialog,
 
     gtk_widget_destroy (GTK_WIDGET (applet->settings));
     applet->settings = NULL;
+}
+
+/* Called when the showalladdresses checkbutton is toggled...
+ */
+static void
+showalladdresses_change_cb (GtkToggleButton    *togglebutton,
+                            MateNetspeedApplet *applet)
+{
+    applet->show_all_addresses = gtk_toggle_button_get_active (togglebutton);
 }
 
 /* Called when the showsum checkbutton is toggled...
@@ -1183,6 +1192,10 @@ settings_cb (GtkAction *action,
 
     gtk_dialog_set_default_response (GTK_DIALOG (applet->settings), GTK_RESPONSE_CLOSE);
 
+    g_settings_bind (applet->gsettings, "show-all-addresses",
+                     gtk_builder_get_object (builder, "show_all_addresses_checkbutton"),
+                     "active", G_SETTINGS_BIND_DEFAULT);
+
     g_settings_bind (applet->gsettings, "show-sum",
                      gtk_builder_get_object (builder, "show_sum_checkbutton"),
                      "active", G_SETTINGS_BIND_DEFAULT);
@@ -1224,6 +1237,7 @@ settings_cb (GtkAction *action,
     /* signals */
     gtk_builder_add_callback_symbols (builder,
                                       "on_network_device_combo_changed", G_CALLBACK (device_change_cb),
+                                      "on_show_all_addresses_checkbutton_toggled", G_CALLBACK (showalladdresses_change_cb),
                                       "on_show_sum_checkbutton_toggled", G_CALLBACK (showsum_change_cb),
                                       "on_show_bits_checkbutton_toggled", G_CALLBACK (showbits_change_cb),
                                       "on_change_icon_checkbutton_toggled", G_CALLBACK (changeicon_change_cb),
@@ -1517,32 +1531,63 @@ update_tooltip (MateNetspeedApplet* applet)
         char ipv6_text [INET6_ADDRSTRLEN];
         char *ip;
 
-        if (applet->devinfo->ip) {
-            format_ipv4 (applet->devinfo->ip, ipv4_text);
-            ip = ipv4_text;
-        } else {
+        if (applet->show_all_addresses) {
             format_ipv6 (applet->devinfo->ipv6, ipv6_text);
-            if (strlen (ipv6_text) > 2) {
-                ip = ipv6_text;
+            if (applet->devinfo->ip) {
+                format_ipv4 (applet->devinfo->ip, ipv4_text);
+                if (strlen (ipv6_text) > 2) {
+                    g_string_printf (tooltip,
+                                     _("%s: %s and %s"),
+                                     applet->devinfo->name,
+                                     ipv4_text,
+                                     ipv6_text);
+                } else {
+                    g_string_printf (tooltip,
+                                     _("%s: %s"),
+                                     applet->devinfo->name,
+                                     ipv4_text);
+                }
             } else {
-                ip = _("has no ip");
+                if (strlen (ipv6_text) > 2) {
+                    g_string_printf (tooltip,
+                                     _("%s: %s"),
+                                     applet->devinfo->name,
+                                     ipv4_text);
+                } else {
+                    g_string_printf (tooltip,
+                                     _("%s: has no ip"),
+                                     applet->devinfo->name);
+                }
             }
+        } else {
+            if (applet->devinfo->ip) {
+                format_ipv4 (applet->devinfo->ip, ipv4_text);
+                ip = ipv4_text;
+            } else {
+                format_ipv6 (applet->devinfo->ipv6, ipv6_text);
+                if (strlen (ipv6_text) > 2) {
+                    ip = ipv6_text;
+                } else {
+                    ip = _("has no ip");
+                }
+            }
+            g_string_printf (tooltip,
+                             _("%s: %s"),
+                             applet->devinfo->name,
+                             ip);
         }
 
         if (applet->show_sum) {
-            g_string_printf (tooltip,
-                             _("%s: %s\nin: %s out: %s"),
-                             applet->devinfo->name,
-                             ip,
-                             applet->devinfo->rx_rate,
-                             applet->devinfo->tx_rate);
+            g_string_append_printf (tooltip,
+                                    _("\nin: %s out: %s"),
+                                    applet->devinfo->rx_rate,
+                                    applet->devinfo->tx_rate);
         } else {
-            g_string_printf (tooltip,
-                             _("%s: %s\nsum: %s"),
-                             applet->devinfo->name,
-                             ip,
-                             applet->devinfo->sum_rate);
+            g_string_append_printf (tooltip,
+                                    _("\nsum: %s"),
+                                    applet->devinfo->sum_rate);
         }
+
 #ifdef HAVE_NL
         if (applet->devinfo->type == DEV_WIRELESS)
             g_string_append_printf (tooltip,
@@ -1635,6 +1680,7 @@ mate_netspeed_applet_factory (MatePanelApplet *applet_widget,
 
     /* Get stored settings from gsettings
      */
+    applet->show_all_addresses = g_settings_get_boolean (applet->gsettings, "show-all-addresses");
     applet->show_sum = g_settings_get_boolean (applet->gsettings, "show-sum");
     applet->show_bits = g_settings_get_boolean (applet->gsettings, "show-bits");
     applet->show_icon = g_settings_get_boolean (applet->gsettings, "show-icon");
