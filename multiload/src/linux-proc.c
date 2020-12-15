@@ -364,7 +364,6 @@ GetNet (int        Maximum,
 
     static int ticks = 0;
     static gulong past[COUNT_TYPES] = {0};
-    static AutoScaler scaler;
 
     gulong present[COUNT_TYPES] = {0};
 
@@ -375,12 +374,6 @@ GetNet (int        Maximum,
     MultiloadApplet *multiload;
 
     multiload = g->multiload;
-
-    if(ticks == 0)
-    {
-        autoscaler_init (&scaler, g->speed, 501);
-    }
-
     devices = glibtop_get_netlist(&netlist);
 
     for(i = 0; i < netlist.number; ++i)
