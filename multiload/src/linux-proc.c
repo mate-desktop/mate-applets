@@ -411,24 +411,20 @@ GetNet (int        Maximum,
     if(ticks < 2) /* avoid initial spike */
     {
         ticks++;
-        memset(data, 0, COUNT_TYPES * sizeof data[0]);
+        memset(data, 0, (COUNT_TYPES + 1) * sizeof data[0]);
     }
     else
     {
-        int delta[COUNT_TYPES];
-
+        data[COUNT_TYPES] = 0;
         for (i = 0; i < COUNT_TYPES; i++)
         {
             /* protect against weirdness */
             if (present[i] >= past[i])
-                delta[i] = (present[i] - past[i]);
+                data[i] = (present[i] - past[i]);
             else
-                delta[i] = 0;
+                data[i] = 0;
+            data[COUNT_TYPES] += data[i];
         }
-
-        for (i = 0; i < COUNT_TYPES; i++)
-            data[i]   = delta[i];
-
     }
 
     memcpy(past, present, sizeof past);

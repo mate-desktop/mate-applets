@@ -96,17 +96,13 @@ load_graph_draw (LoadGraph *g)
   {
     guint maxnet = 1;
     gint segments = 1;
-    gint combined;
     guint net_threshold;
 
     for (i = 0; i < g->draw_width; i++)
     {
       g->pos [i] = g->draw_height - 1;
-      combined = g->data[i][0] +
-                 g->data[i][1] +
-                 g->data[i][2];
-      if (combined > maxnet)
-        maxnet = combined;
+      if (g->data[i][3] > maxnet)
+        maxnet = g->data[i][3];
     }
     //printf("max = %d ", maxnet);
     guint level = 0;
