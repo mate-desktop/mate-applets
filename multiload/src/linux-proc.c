@@ -114,7 +114,7 @@ GetDiskLoad (int        Maximum,
 
     if(first_call)
     {
-        autoscaler_init(&scaler, 60, 500);
+        autoscaler_init (&scaler, g->speed, 500);
     }
 
     read = write = 0;
@@ -378,7 +378,7 @@ GetNet (int        Maximum,
 
     if(ticks == 0)
     {
-        autoscaler_init(&scaler, 60, 501);
+        autoscaler_init (&scaler, g->speed, 501);
     }
 
     devices = glibtop_get_netlist(&netlist);
