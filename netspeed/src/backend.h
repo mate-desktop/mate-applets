@@ -82,25 +82,25 @@ typedef struct {
 } DevInfo;
 
 GList*
-get_available_devices(void);
+get_available_devices (void);
 
 const gchar*
-get_default_route(void);
+get_default_route (void);
 
 gboolean
-is_dummy_device(const char* device);
+is_dummy_device (const char* device);
 
 void
-free_devices_list(GList *list);
+free_devices_list (GList *list);
 
 void
-free_device_info(DevInfo *devinfo);
+free_device_info (DevInfo *devinfo);
 
 void
-get_device_info(const char *device, DevInfo **info);
+get_device_info (const char *device, DevInfo **info);
 
 gboolean
-compare_device_info(const DevInfo *a, const DevInfo *b);
+compare_device_info (const DevInfo *a, const DevInfo *b);
 
 void
 get_wireless_info (DevInfo *devinfo);
