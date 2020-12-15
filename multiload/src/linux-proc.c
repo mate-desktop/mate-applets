@@ -363,9 +363,9 @@ GetNet (int        Maximum,
     };
 
     static int ticks = 0;
-    static gulong past[COUNT_TYPES] = {0};
+    static guint64 past[COUNT_TYPES] = {0};
 
-    gulong present[COUNT_TYPES] = {0};
+    guint64 present[COUNT_TYPES] = {0};
 
     guint i;
     gchar **devices;
@@ -416,11 +416,12 @@ GetNet (int        Maximum,
     else
     {
         data[COUNT_TYPES] = 0;
+        float seconds = (float) g->speed / 1000.0f;
         for (i = 0; i < COUNT_TYPES; i++)
         {
             /* protect against weirdness */
             if (present[i] >= past[i])
-                data[i] = (present[i] - past[i]);
+                data[i] = (int) ((float) (present[i] - past[i]) / seconds);
             else
                 data[i] = 0;
             data[COUNT_TYPES] += data[i];
