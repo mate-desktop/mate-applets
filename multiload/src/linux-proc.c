@@ -2,7 +2,6 @@
 #include <config.h>
 #include <sys/types.h>
 #include <sys/statvfs.h>
-#include <math.h>
 #include <fcntl.h>
 #include <unistd.h>
 
@@ -47,15 +46,15 @@ static const unsigned needed_netload_flags =
 (1 << GLIBTOP_NETLOAD_BYTES_TOTAL);
 
 void
-GetLoad (int        Maximum,
-         int        data [cpuload_n],
+GetLoad (guint64    Maximum,
+         guint64    data [cpuload_n],
          LoadGraph *g)
 {
     MultiloadApplet *multiload;
     glibtop_cpu cpu;
-    long cpu_aux [cpuload_n], used = 0, total = 0;
-    int current_scaled, used_scaled = 0;
-    int i;
+    guint64 cpu_aux [cpuload_n], used = 0, total = 0;
+    guint64 current_scaled, used_scaled = 0;
+    unsigned i;
 
     glibtop_get_cpu (&cpu);
 
@@ -71,7 +70,7 @@ GetLoad (int        Maximum,
 
     if (!multiload->cpu_initialized) {
         memcpy (multiload->cpu_last, multiload->cpu_time, sizeof (multiload->cpu_last));
-        multiload->cpu_initialized = 1;
+        multiload->cpu_initialized = TRUE;
     }
 
     for (i = 0; i < cpuload_n; i++) {
@@ -81,7 +80,7 @@ GetLoad (int        Maximum,
 
     for (i = 0; i < cpuload_free; i++) {
         used += cpu_aux [i];
-        current_scaled = rint ((float)(cpu_aux [i] * Maximum) / (float)total);
+        current_scaled = (guint64) ((float)(cpu_aux [i] * Maximum) / (float)total);
         used_scaled += current_scaled;
         data [i] = current_scaled;
     }
@@ -93,19 +92,18 @@ GetLoad (int        Maximum,
 }
 
 void
-GetDiskLoad (int        Maximum,
-             int        data [diskload_n],
+GetDiskLoad (guint64    Maximum,
+             guint64    data [diskload_n],
              LoadGraph *g)
 {
     static gboolean first_call = TRUE;
     static guint64 lastread = 0, lastwrite = 0;
     static AutoScaler scaler;
 
-    guint i;
-    int max;
-
+    guint64 max;
     guint64 read, write;
     guint64 readdiff, writediff;
+    guint   i;
 
     MultiloadApplet *multiload;
 
@@ -179,7 +177,8 @@ GetDiskLoad (int        Maximum,
             }
 
             glibtop_get_fsusage(&fsusage, mountentries[i].mountdir);
-            read += fsusage.read; write += fsusage.write;
+            read += fsusage.read;
+            write += fsusage.write;
         }
 
         g_free(mountentries);
@@ -202,8 +201,8 @@ GetDiskLoad (int        Maximum,
 
     multiload->diskload_used_ratio = (float)(readdiff + writediff) / (float)max;
 
-    data [diskload_read]  = rint ((float)Maximum *  (float)readdiff / (float)max);
-    data [diskload_write] = rint ((float)Maximum * (float)writediff / (float)max);
+    data [diskload_read]  = (guint64) ((float)Maximum *  (float)readdiff / (float)max);
+    data [diskload_write] = (guint64) ((float)Maximum * (float)writediff / (float)max);
     data [diskload_free]  = Maximum - (data [0] + data[1]);
 }
 
@@ -220,14 +219,14 @@ GetDiskLoad (int        Maximum,
  *   aux [memload_buffer] = mem.buffer;
  */
 void
-GetMemory (int        Maximum,
-           int        data [memload_n],
+GetMemory (guint64    Maximum,
+           guint64    data [memload_n],
            LoadGraph *g)
 {
     MultiloadApplet *multiload;
     glibtop_mem mem;
     guint64 aux [memload_n], cache = 0;
-    int current_scaled, used_scaled = 0;
+    guint64 current_scaled, used_scaled = 0;
     int i;
 
     glibtop_get_mem (&mem);
@@ -245,7 +244,7 @@ GetMemory (int        Maximum,
     aux [memload_buffer] = mem.buffer;
 
     for (i = 0; i < memload_free; i++) {
-        current_scaled = rint ((float)(aux [i] * Maximum) / (float)mem.total);
+        current_scaled = (guint64) ((float)(aux [i] * Maximum) / (float)mem.total);
         if (i != memload_user) {
             cache += aux [i];
         }
@@ -261,11 +260,11 @@ GetMemory (int        Maximum,
 }
 
 void
-GetSwap (int        Maximum,
-         int        data [swapload_n],
+GetSwap (guint64    Maximum,
+         guint64    data [swapload_n],
          LoadGraph *g)
 {
-    int used;
+    guint64 used;
     MultiloadApplet *multiload;
     glibtop_swap swap;
 
@@ -282,7 +281,7 @@ GetSwap (int        Maximum,
         float ratio;
 
         ratio = (float)swap.used / (float)swap.total;
-        used = rint ((float) Maximum * ratio);
+        used = (guint64) ((float) Maximum * ratio);
         multiload->swapload_used_ratio = ratio;
     }
 
@@ -291,8 +290,8 @@ GetSwap (int        Maximum,
 }
 
 void
-GetLoadAvg (int       Maximum,
-            int        data [2],
+GetLoadAvg (guint64    Maximum,
+            guint64    data [2],
             LoadGraph *g)
 {
     glibtop_loadavg loadavg;
@@ -305,7 +304,7 @@ GetLoadAvg (int       Maximum,
     multiload = g->multiload;
     multiload->loadavg1 = loadavg.loadavg[0];
 
-    data [0] = rint ((float) Maximum * loadavg.loadavg[0]);
+    data [0] = (guint64) ((float) Maximum * loadavg.loadavg[0]);
     data [1] = Maximum - data[0];
 }
 
@@ -351,8 +350,8 @@ is_net_device_virtual(char *device)
 }
 
 void
-GetNet (int        Maximum,
-        int        data [4],
+GetNet (guint64    Maximum,
+        guint64    data [4],
         LoadGraph *g)
 {
     enum Types {
@@ -421,7 +420,7 @@ GetNet (int        Maximum,
         {
             /* protect against weirdness */
             if (present[i] >= past[i])
-                data[i] = (int) ((float) (present[i] - past[i]) / seconds);
+                data[i] = (guint) ((float) (present[i] - past[i]) / seconds);
             else
                 data[i] = 0;
             data[COUNT_TYPES] += data[i];

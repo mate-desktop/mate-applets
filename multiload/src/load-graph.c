@@ -30,15 +30,15 @@
 static void
 shift_right(LoadGraph *g)
 {
-    unsigned i;
-    int* last_data;
+    guint64 *last_data;
+    gsize i;
 
     /* data[g->draw_width - 1] becomes data[0] */
     last_data = g->data[g->draw_width - 1];
 
     /* data[i+1] = data[i] */
-    for(i = g->draw_width - 1; i != 0; --i)
-        g->data[i] = g->data[i - 1];
+    for (i = g->draw_width - 1; i != 0; --i)
+      g->data[i] = g->data[i - 1];
 
     g->data[0] = last_data;
 }
@@ -50,7 +50,6 @@ load_graph_draw (LoadGraph *g)
 {
   guint i, j, k;
   cairo_t *cr;
-  int load;
   MultiloadApplet *multiload;
 
   multiload = g->multiload;
@@ -62,7 +61,8 @@ load_graph_draw (LoadGraph *g)
   if (!g->surface)
     g->surface = gdk_window_create_similar_surface (gtk_widget_get_window (g->disp),
                                                     CAIRO_CONTENT_COLOR,
-                                                    g->draw_width, g->draw_height);
+                                                    (int) g->draw_width,
+                                                    (int) g->draw_height);
 
   cr = cairo_create (g->surface);
   cairo_set_line_width (cr, 1.0);
@@ -70,33 +70,16 @@ load_graph_draw (LoadGraph *g)
   cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
 
   /* all graphs except Load and Net go this path */
-  if (g->id != graph_loadavg && g->id != graph_netload2)
-  {
-    for (i = 0; i < g->draw_width; i++)
-      g->pos [i] = g->draw_height - 1;
+  switch (g->id) {
 
-    for (j = 0; j < g->n; j++)
-    {
-      gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
-
-      for (i = 0; i < g->draw_width; i++)
-      {
-        if (g->data [i][j] != 0)
-        {
-          cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
-          cairo_line_to (cr, g->draw_width - i - 0.5, g->pos[i] - (g->data [i][j] - 0.5));
-        }
-        g->pos [i] -= g->data [i][j];
-      }
-      cairo_stroke (cr);
-    }
-  }
   /* This is for network graph */
-  else if (g->id == graph_netload2)
-  {
-    guint maxnet = 1;
-    gint segments = 1;
-    guint net_threshold;
+  case graph_netload2: {
+    guint64 maxnet = 1;
+    guint64 segments = 1;
+    guint64 net_threshold;
+    guint   level = 0;
+    double  ratio;
+    double  spacing;
 
     for (i = 0; i < g->draw_width; i++)
     {
@@ -105,7 +88,6 @@ load_graph_draw (LoadGraph *g)
         maxnet = g->data[i][3];
     }
     //printf("max = %d ", maxnet);
-    guint level = 0;
     if (maxnet > multiload->net_threshold3) {
       net_threshold = multiload->net_threshold3;
       level = 3;
@@ -117,15 +99,14 @@ load_graph_draw (LoadGraph *g)
       }
       else {
         net_threshold = multiload->net_threshold1;
-        level = 1;
-        if (maxnet < multiload->net_threshold1)
-          level = 0;
+        if (maxnet >= multiload->net_threshold1)
+            level = 1;
       }
 
     //printf("level %d maxnet = %d ", level, maxnet);
     maxnet = maxnet/net_threshold;
     segments = MAX (maxnet+1,1);
-    float ratio = (float)g->draw_height/net_threshold/segments;
+    ratio = (double) g->draw_height / (double) (net_threshold*segments);
     //printf("segments %d ratio = %f t1=%ld t2=%ld t3=%ld t=%ld\n", segments, ratio, multiload->net_threshold1, multiload->net_threshold2, multiload->net_threshold3, multiload->net_threshold);
 
     for (j = 0; j < g->n-1; j++)
@@ -134,9 +115,10 @@ load_graph_draw (LoadGraph *g)
 
       for (i = 0; i < g->draw_width; i++)
       {
-        cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
-        cairo_line_to (cr, g->draw_width - i - 0.5, g->pos[i] - 0.5 - ((g->data [i][j] * ratio)));
-        g->pos [i] -= ((g->data [i][j] * ratio));
+        double x = (double) (g->draw_width - i) - 0.5;
+        cairo_move_to (cr, x, (double) g->pos[i] + 0.5);
+        cairo_line_to (cr, x, (double) g->pos[i] - 0.5 - (((double) g->data [i][j] * ratio)));
+        g->pos [i] -= (guint64) ((double) g->data [i][j] * ratio);
       }
       cairo_stroke (cr);
     }
@@ -146,20 +128,20 @@ load_graph_draw (LoadGraph *g)
       gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
       for (i = 0; i < g->draw_width; i++)
       {
-          cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
-          cairo_line_to (cr, g->draw_width - i - 0.5, 0.5);
+          double x = (double) (g->draw_width - i) - 0.5;
+          cairo_move_to (cr, x, (double) g->pos[i] + 0.5);
+          cairo_line_to (cr, x, 0.5);
       }
       cairo_stroke (cr);
     }
 
     /* draw grid lines if needed */
     gdk_cairo_set_source_rgba (cr, &(g->colors [4]));
-    double spacing;
     for (k = 0; k < segments -1; k++)
     {
-      spacing = ((double) g->draw_height/segments) * (k+1);
+      spacing = ((double) g->draw_height / (double) segments) * (k+1);
       cairo_move_to (cr, 0.5, spacing);
-      cairo_line_to (cr, g->draw_width-0.5, spacing);
+      cairo_line_to (cr, (double) g->draw_width - 0.5, spacing);
     }
     cairo_stroke (cr);
     /* draw indicator if needed */
@@ -167,15 +149,19 @@ load_graph_draw (LoadGraph *g)
     {
       gdk_cairo_set_source_rgba (cr, &(g->colors [5]));
       for (k = 0; k< level; k++ )
-        cairo_rectangle(cr, 0.5, (k*2) * g->draw_height/5, 5, g->draw_height/5);
+        cairo_rectangle (cr,
+                         0.5, (double) k * 2.0 * (double) g->draw_height / 5.0,
+                         5.0, (double) g->draw_height / 5.0);
       cairo_fill(cr);
     }
     cairo_stroke (cr);
+    break;
   }
+
   /* this is Load graph */
-  else
-  {
-    guint maxload = 1;
+  case graph_loadavg: {
+    double load;
+    guint64 maxload = 1;
     for (i = 0; i < g->draw_width; i++)
     {
       g->pos [i] = g->draw_height - 1;
@@ -183,8 +169,7 @@ load_graph_draw (LoadGraph *g)
       if (g->data[i][0] > maxload)
         maxload = g->data[i][0];
     }
-    load = ceil ((double) (maxload/g->draw_height)) + 1;
-    load = MAX (load,1);
+    load = ceil ((double) maxload / (double) g->draw_height) + 1.0;
 
     for (j = 0; j < g->n; j++)
     {
@@ -192,16 +177,17 @@ load_graph_draw (LoadGraph *g)
 
       for (i = 0; i < g->draw_width; i++)
       {
-        cairo_move_to (cr, g->draw_width - i - 0.5, g->pos[i] + 0.5);
+        double x = (double) (g->draw_width - i) - 0.5;
+        cairo_move_to (cr, x, (double) g->pos[i] + 0.5);
         if (j == 0)
         {
-          cairo_line_to (cr, g->draw_width - i - 0.5, g->pos[i] - ((g->data [i][j] - 0.5)/load));
+          cairo_line_to (cr, x, (double) g->pos[i] - (((double) g->data [i][j] - 0.5)/load));
         }
         else
         {
-          cairo_line_to (cr, g->draw_width - i - 0.5, 0.5);
+          cairo_line_to (cr, x, 0.5);
         }
-        g->pos [i] -= g->data [i][j] / load;
+        g->pos [i] -= (guint64) ((double) g->data [i][j] / load);
       }
       cairo_stroke (cr);
     }
@@ -214,11 +200,35 @@ load_graph_draw (LoadGraph *g)
     {
       spacing = ((double) g->draw_height/load) * (k+1);
       cairo_move_to (cr, 0.5, spacing);
-      cairo_line_to (cr, g->draw_width-0.5, spacing);
-        }
+      cairo_line_to (cr, (double) g->draw_width - 0.5, spacing);
+    }
 
     cairo_stroke (cr);
+    break;
   }
+
+  default:
+    for (i = 0; i < g->draw_width; i++)
+      g->pos [i] = g->draw_height - 1;
+
+    for (j = 0; j < g->n; j++)
+    {
+      gdk_cairo_set_source_rgba (cr, &(g->colors [j]));
+
+      for (i = 0; i < g->draw_width; i++)
+      {
+        if (g->data [i][j] != 0)
+        {
+          double x = (double) (g->draw_width - i) - 0.5;
+          cairo_move_to (cr, x, (double) g->pos[i] + 0.5);
+          cairo_line_to (cr, x, (double) g->pos[i] - (double) g->data [i][j] - 0.5);
+        }
+        g->pos [i] -= g->data [i][j];
+      }
+      cairo_stroke (cr);
+    }
+  }
+
   gtk_widget_queue_draw (g->disp);
 
   cairo_destroy (cr);
@@ -229,12 +239,12 @@ static gboolean
 load_graph_update (LoadGraph *g)
 {
     if (g->data == NULL)
-    return TRUE;
+        return TRUE;
 
     shift_right(g);
 
     if (g->tooltip_update)
-    multiload_applet_tooltip_update(g);
+        multiload_applet_tooltip_update (g);
 
     g->get_data (g->draw_height, g->data [0], g);
 
@@ -245,7 +255,7 @@ load_graph_update (LoadGraph *g)
 void
 load_graph_unalloc (LoadGraph *g)
 {
-    guint i;
+    gsize i;
 
     if (!g->allocated)
         return;
@@ -276,18 +286,19 @@ load_graph_unalloc (LoadGraph *g)
 static void
 load_graph_alloc (LoadGraph *g)
 {
-    guint i;
+    gsize i;
+    gsize data_size;
 
     if (g->allocated)
         return;
 
-    g->data = g_new0 (gint *, g->draw_width);
-    g->pos = g_new0 (guint, g->draw_width);
+    g->data = g_new0 (guint64 *, g->draw_width);
+    g->pos = g_new0 (guint64, g->draw_width);
 
-    g->data_size = sizeof (guint) * g->n;
+    data_size = sizeof (guint64) * g->n;
 
     for (i = 0; i < g->draw_width; i++) {
-        g->data [i] = g_malloc0 (g->data_size);
+        g->data [i] = g_malloc0 (data_size);
     }
 
     g->allocated = TRUE;
@@ -304,8 +315,8 @@ load_graph_configure (GtkWidget *widget, GdkEventConfigure *event,
 
     gtk_widget_get_allocation (c->disp, &allocation);
 
-    c->draw_width = allocation.width;
-    c->draw_height = allocation.height;
+    c->draw_width = (gsize) allocation.width;
+    c->draw_height = (guint64) allocation.height;
     c->draw_width = MAX (c->draw_width, 1);
     c->draw_height = MAX (c->draw_height, 1);
 
@@ -314,7 +325,8 @@ load_graph_configure (GtkWidget *widget, GdkEventConfigure *event,
     if (!c->surface)
         c->surface = gdk_window_create_similar_surface (gtk_widget_get_window (c->disp),
                                                         CAIRO_CONTENT_COLOR,
-                                                        c->draw_width, c->draw_height);
+                                                        (int) c->draw_width,
+                                                        (int) c->draw_height);
     gtk_widget_queue_draw (widget);
 
     return TRUE;
@@ -397,7 +409,7 @@ load_graph_load_config (LoadGraph *g)
 
 LoadGraph *
 load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
-                guint id, guint speed, guint size, gboolean visible,
+                gint id, guint speed, guint size, gboolean visible,
                 const gchar *name, LoadGraphDataFunc get_data)
 {
     LoadGraph *g;
@@ -449,9 +461,9 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
     g->timer_index = -1;
 
     if (g->orient)
-        gtk_widget_set_size_request (g->main_widget, -1, g->size);
+        gtk_widget_set_size_request (g->main_widget, -1, (gint) g->size);
     else
-        gtk_widget_set_size_request (g->main_widget, g->size, -1);
+        gtk_widget_set_size_request (g->main_widget, (gint) g->size, -1);
 
     g->disp = gtk_drawing_area_new ();
     gtk_widget_set_events (g->disp, GDK_EXPOSURE_MASK |
@@ -481,18 +493,22 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
 void
 load_graph_start (LoadGraph *g)
 {
-    if (g->timer_index != -1)
-        g_source_remove (g->timer_index);
+    guint event_source_id;
 
-    g->timer_index = g_timeout_add (g->speed,
+    if (g->timer_index != -1)
+        g_source_remove ((guint) g->timer_index);
+
+    event_source_id = g_timeout_add (g->speed,
                                     (GSourceFunc) load_graph_update, g);
+
+    g->timer_index = (gint) event_source_id;
 }
 
 void
 load_graph_stop (LoadGraph *g)
 {
     if (g->timer_index != -1)
-        g_source_remove (g->timer_index);
+        g_source_remove ((guint) g->timer_index);
 
     g->timer_index = -1;
 }
