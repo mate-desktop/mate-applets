@@ -54,10 +54,9 @@ soft_set_sensitive (GtkWidget *w, gboolean sensitivity)
 static void
 properties_set_insensitive(MultiloadApplet *ma)
 {
-    gint i, total_graphs, last_graph;
-
-    total_graphs = 0;
-    last_graph = 0;
+    guint total_graphs = 0;
+    guint last_graph = 0;
+    guint i;
 
     for (i = 0; i < graph_n; i++)
         if (ma->graphs[i]->visible)
@@ -104,9 +103,10 @@ static void
 property_toggled_cb(GtkWidget *widget, gpointer name)
 {
     MultiloadApplet *ma;
-    gint prop_type, i;
-    gboolean active = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widget));
+    gint prop_type;
+    gboolean active;
 
+    active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
     ma = g_object_get_data(G_OBJECT(widget), "MultiloadApplet");
     prop_type = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(widget), "prop_type"));
 
@@ -117,6 +117,8 @@ property_toggled_cb(GtkWidget *widget, gpointer name)
 
     if (active)
     {
+        guint i;
+
         for (i = 0; i < graph_n; i++)
             soft_set_sensitive(ma->check_boxes[i], TRUE);
         gtk_widget_show_all (ma->graphs[prop_type]->main_widget);
@@ -140,7 +142,7 @@ on_speed_spin_button_value_changed (GtkSpinButton *spin_button,
 {
     MultiloadApplet *ma = user_data;
     gint value;
-    gint i;
+    guint i;
 
     value = gtk_spin_button_get_value_as_int (spin_button);
     g_settings_set_uint (ma->settings, REFRESH_RATE_KEY, (guint) value);
@@ -158,7 +160,7 @@ on_graph_size_spin_button_value_changed (GtkSpinButton *spin_button,
 {
     MultiloadApplet *ma = user_data;
     gint value;
-    gint i;
+    guint i;
 
     value = gtk_spin_button_get_value_as_int (spin_button);
     g_settings_set_uint (ma->settings, GRAPH_SIZE_KEY, (guint) value);
@@ -166,12 +168,12 @@ on_graph_size_spin_button_value_changed (GtkSpinButton *spin_button,
         ma->graphs[i]->size = (guint) value;
         if (ma->graphs[i]->orient) {
             gtk_widget_set_size_request (ma->graphs[i]->main_widget,
-                                         ma->graphs[i]->pixel_size,
-                                         ma->graphs[i]->size);
+                                         (gint) ma->graphs[i]->pixel_size,
+                                         (gint) ma->graphs[i]->size);
         } else {
             gtk_widget_set_size_request (ma->graphs[i]->main_widget,
-                                         ma->graphs[i]->size,
-                                         ma->graphs[i]->pixel_size);
+                                         (gint) ma->graphs[i]->size,
+                                         (gint) ma->graphs[i]->pixel_size);
         }
     }
 }
@@ -181,15 +183,15 @@ on_net_threshold1_spin_button_value_changed (GtkSpinButton *spin_button,
                                              gpointer       user_data)
 {
     MultiloadApplet *ma = user_data;
-    gint value;
+    gdouble temp;
 
-    value = gtk_spin_button_get_value_as_int (spin_button);
-    if (value >= (gint) ma->net_threshold2) {
-        value = (gint) ma->net_threshold2 - 1;
-        gtk_spin_button_set_value (spin_button, (gdouble) value);
+    temp = gtk_spin_button_get_value (spin_button);
+    ma->net_threshold1 = (guint64) temp;
+    if (ma->net_threshold1 >= ma->net_threshold2) {
+        ma->net_threshold1 = ma->net_threshold2 - 1;
+        gtk_spin_button_set_value (spin_button, (gdouble) ma->net_threshold1);
     }
-    ma->net_threshold1 = (guint) value;
-    g_settings_set_uint (ma->settings, KEY_NET_THRESHOLD1, ma->net_threshold1);
+    g_settings_set_uint64 (ma->settings, KEY_NET_THRESHOLD1, ma->net_threshold1);
 }
 
 
@@ -198,18 +200,18 @@ on_net_threshold2_spin_button_value_changed (GtkSpinButton *spin_button,
                                              gpointer       user_data)
 {
     MultiloadApplet *ma = user_data;
-    gint value;
+    gdouble temp;
 
-    value = gtk_spin_button_get_value_as_int (spin_button);
-    if (value >= (gint) ma->net_threshold3) {
-        value = (gint) ma->net_threshold3 - 1;
-        gtk_spin_button_set_value (spin_button, (gdouble) value);
-    } else if (value <= (gint) ma->net_threshold1) {
-        value = (gint) ma->net_threshold1 + 1;
-        gtk_spin_button_set_value (spin_button, (gdouble) value);
+    temp = gtk_spin_button_get_value (spin_button);
+    ma->net_threshold2 = (guint64) temp;
+    if (ma->net_threshold2 >= ma->net_threshold3) {
+        ma->net_threshold2 = ma->net_threshold3 - 1;
+        gtk_spin_button_set_value (spin_button, (gdouble) ma->net_threshold2);
+    } else if (ma->net_threshold2 <= ma->net_threshold1) {
+        ma->net_threshold2 = ma->net_threshold1 + 1;
+        gtk_spin_button_set_value (spin_button, (gdouble) ma->net_threshold2);
     }
-    ma->net_threshold2 = (guint) value;
-    g_settings_set_uint (ma->settings, KEY_NET_THRESHOLD2, ma->net_threshold2);
+    g_settings_set_uint64 (ma->settings, KEY_NET_THRESHOLD2, ma->net_threshold2);
 }
 
 
@@ -218,15 +220,15 @@ on_net_threshold3_spin_button_value_changed (GtkSpinButton *spin_button,
                                              gpointer       user_data)
 {
     MultiloadApplet *ma = user_data;
-    gint value;
+    gdouble temp;
 
-    value = gtk_spin_button_get_value_as_int (spin_button);
-    if (value <= (gint) ma->net_threshold2) {
-        value = (gint) ma->net_threshold2 + 1;
-        gtk_spin_button_set_value (spin_button, (gdouble) value);
+    temp = gtk_spin_button_get_value (spin_button);
+    ma->net_threshold3 = (guint64) temp;
+    if (ma->net_threshold3 <= ma->net_threshold2) {
+        ma->net_threshold3 = ma->net_threshold2 + 1;
+        gtk_spin_button_set_value (spin_button, (gdouble) ma->net_threshold3);
     }
-    ma->net_threshold3 = (guint) value;
-    g_settings_set_uint (ma->settings, KEY_NET_THRESHOLD3, ma->net_threshold3);
+    g_settings_set_uint64 (ma->settings, KEY_NET_THRESHOLD3, ma->net_threshold3);
 }
 
 /* create a new page in the notebook widget, add it, and return a pointer to it */
@@ -355,6 +357,7 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
     gchar *label_text;
     gchar *title;
     guint  spin_value_uint;
+    guint64 spin_value_uint64;
 
     vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
     gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
@@ -707,8 +710,8 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 
     spin_button = gtk_spin_button_new_with_range (MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1, 5);
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
-    spin_value_uint = g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD1);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), (gdouble) spin_value_uint);
+    spin_value_uint64 = g_settings_get_uint64 (ma->settings, KEY_NET_THRESHOLD1);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), (gdouble) spin_value_uint64);
     g_signal_connect (GTK_SPIN_BUTTON (spin_button), "value-changed",
                       G_CALLBACK (on_net_threshold1_spin_button_value_changed), ma);
 
@@ -740,8 +743,8 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 
     spin_button = gtk_spin_button_new_with_range (MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2, 5);
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
-    spin_value_uint = g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD2);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), (gdouble) spin_value_uint);
+    spin_value_uint64 = g_settings_get_uint64 (ma->settings, KEY_NET_THRESHOLD2);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), (gdouble) spin_value_uint64);
     g_signal_connect (GTK_SPIN_BUTTON (spin_button), "value-changed",
                       G_CALLBACK (on_net_threshold2_spin_button_value_changed), ma);
     gtk_size_group_add_widget (spin_size, spin_button);
@@ -772,8 +775,8 @@ fill_properties(GtkWidget *dialog, MultiloadApplet *ma)
 
     spin_button = gtk_spin_button_new_with_range (MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3, 5);
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
-    spin_value_uint = g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD3);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), (gdouble) spin_value_uint);
+    spin_value_uint64 = g_settings_get_uint64 (ma->settings, KEY_NET_THRESHOLD3);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin_button), (gdouble) spin_value_uint64);
     g_signal_connect (GTK_SPIN_BUTTON (spin_button), "value-changed",
                       G_CALLBACK (on_net_threshold3_spin_button_value_changed), ma);
     gtk_size_group_add_widget (spin_size, spin_button);

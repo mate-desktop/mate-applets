@@ -1,6 +1,5 @@
 #include <config.h>
 #include <glib.h>
-#include <time.h>
 
 #include "netspeed.h"
 
@@ -9,13 +8,14 @@ enum { N_STATES = 4 };
 struct _NetSpeed
 {
     LoadGraph *graph;
-    gulong states[N_STATES];
+    guint64 states[N_STATES];
     size_t cur;
 };
 
-NetSpeed* netspeed_new(LoadGraph *g)
+NetSpeed*
+netspeed_new (LoadGraph *g)
 {
-    NetSpeed *ns = g_new0(NetSpeed, 1);
+    NetSpeed *ns = g_new0 (NetSpeed, 1);
     ns->graph = g;
     return ns;
 }
@@ -25,31 +25,22 @@ void netspeed_delete(NetSpeed *ns)
     g_free(ns);
 }
 
-void netspeed_add(NetSpeed *ns, gulong tx)
+void
+netspeed_add (NetSpeed *ns,
+              guint64   tx)
 {
     ns->cur = (ns->cur + 1) % N_STATES;
     ns->states[ns->cur] = tx;
 }
 
-/* Something very similar to g_format_size() but for rates.
- * This should give the same display as in g-s-m */
-static char*
-format_rate_for_display(guint rate)
+char*
+netspeed_get (NetSpeed *ns)
 {
-    char *bytes;
-    char *text;
-
-    bytes = g_format_size (rate);
-    text = g_strdup_printf (_("%s/s"), bytes);
-    g_free (bytes);
-
-    return text;
-}
-
-char* netspeed_get(NetSpeed *ns)
-{
-    gulong older, newer;
-    guint rate;
+    guint64  older;
+    guint64  newer;
+    guint64  rate;
+    char    *bytes;
+    char    *text;
 
     newer = ns->states[ns->cur];
     older = ns->states[(ns->cur + 1) % N_STATES];
@@ -65,6 +56,9 @@ char* netspeed_get(NetSpeed *ns)
         few seconds. */
         rate = 0;
 
-    return format_rate_for_display(rate);
-}
+    bytes = g_format_size (rate);
+    text = g_strdup_printf (_("%s/s"), bytes);
+    g_free (bytes);
 
+    return text;
+}

@@ -189,7 +189,7 @@ multiload_change_orient_cb(MatePanelApplet *applet, gint arg1, gpointer data)
 static void
 multiload_destroy_cb(GtkWidget *widget, gpointer data)
 {
-    gint i;
+    guint i;
     MultiloadApplet *ma = data;
 
     for (i = 0; i < graph_n; i++)
@@ -350,7 +350,7 @@ multiload_create_graphs(MultiloadApplet *ma)
     struct { const char *label;
              const char *visibility_key;
              const char *name;
-             int num_colours;
+             guint num_colours;
              LoadGraphDataFunc callback;
            } graph_types [graph_n] = {
              [graph_cpuload]  = { _("CPU Load"),     VIEW_CPULOAD_KEY,  "cpuload",  cpuload_n,  GetLoad },
@@ -363,16 +363,16 @@ multiload_create_graphs(MultiloadApplet *ma)
 
     guint size;
     guint speed;
-    guint net_threshold1;
-    guint net_threshold2;
-    guint net_threshold3;
+    guint64 net_threshold1;
+    guint64 net_threshold2;
+    guint64 net_threshold3;
     gint i;
 
     speed = CLAMP (g_settings_get_uint (ma->settings, REFRESH_RATE_KEY), REFRESH_RATE_MIN, REFRESH_RATE_MAX);
     size = CLAMP (g_settings_get_uint (ma->settings, GRAPH_SIZE_KEY), GRAPH_SIZE_MIN, GRAPH_SIZE_MAX);
-    net_threshold1  = CLAMP (g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD1), MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1);
-    net_threshold2  = CLAMP (g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD2), MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2);
-    net_threshold3  = CLAMP (g_settings_get_uint (ma->settings, KEY_NET_THRESHOLD3), MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3);
+    net_threshold1  = CLAMP (g_settings_get_uint64 (ma->settings, KEY_NET_THRESHOLD1), MIN_NET_THRESHOLD1, MAX_NET_THRESHOLD1);
+    net_threshold2  = CLAMP (g_settings_get_uint64 (ma->settings, KEY_NET_THRESHOLD2), MIN_NET_THRESHOLD2, MAX_NET_THRESHOLD2);
+    net_threshold3  = CLAMP (g_settings_get_uint64 (ma->settings, KEY_NET_THRESHOLD3), MIN_NET_THRESHOLD3, MAX_NET_THRESHOLD3);
     if (net_threshold1 >= net_threshold2)
     {
        net_threshold1 = net_threshold2 - 1;
@@ -411,7 +411,7 @@ multiload_create_graphs(MultiloadApplet *ma)
 void
 multiload_applet_refresh(MultiloadApplet *ma)
 {
-    gint i;
+    guint i;
     MatePanelAppletOrient orientation;
 
     /* stop and free the old graphs */

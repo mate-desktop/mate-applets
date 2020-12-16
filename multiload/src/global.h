@@ -37,7 +37,7 @@ G_BEGIN_DECLS
 
 typedef struct _MultiloadApplet MultiloadApplet;
 typedef struct _LoadGraph LoadGraph;
-typedef void (*LoadGraphDataFunc) (int, int [], LoadGraph *);
+typedef void (*LoadGraphDataFunc) (guint64, guint64 [], LoadGraph *);
 
 #include "netspeed.h"
 
@@ -85,18 +85,19 @@ typedef enum {
 struct _LoadGraph {
     MultiloadApplet *multiload;
 
-    guint n, id;
+    guint n;
+    gint  id;
     guint speed, size;
     guint orient, pixel_size;
-    guint draw_width, draw_height;
+    gsize draw_width;
+    guint64 draw_height;
     LoadGraphDataFunc get_data;
 
     guint allocated;
 
     GdkRGBA *colors;
-    gint **data;
-    guint data_size;
-    guint *pos;
+    guint64 **data;
+    guint64  *pos;
 
     GtkWidget *main_widget;
     GtkWidget *frame, *box, *disp;
@@ -129,12 +130,12 @@ struct _MultiloadApplet
     GtkWidget *check_boxes [graph_n];
     GtkWidget *prop_dialog;
     GtkWidget *notebook;
-    int last_clicked;
+    gint last_clicked;
 
-    float cpu_used_ratio;
-    long  cpu_time [cpuload_n];
-    long  cpu_last [cpuload_n];
-    int   cpu_initialized;
+    float    cpu_used_ratio;
+    guint64  cpu_time [cpuload_n];
+    guint64  cpu_last [cpuload_n];
+    gboolean cpu_initialized;
 
     double loadavg1;
 
@@ -149,9 +150,9 @@ struct _MultiloadApplet
 
     NetSpeed *netspeed_in;
     NetSpeed *netspeed_out;
-    guint net_threshold1;
-    guint net_threshold2;
-    guint net_threshold3;
+    guint64 net_threshold1;
+    guint64 net_threshold2;
+    guint64 net_threshold3;
 };
 
 #include "load-graph.h"
