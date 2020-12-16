@@ -59,27 +59,27 @@ struct nl80211_state {
 #endif /* HAVE_NL */
 
 gboolean
-is_dummy_device(const char* device)
+is_dummy_device (const char* device)
 {
-	glibtop_netload netload;
-	glibtop_get_netload(&netload, device);
+    glibtop_netload netload;
+    glibtop_get_netload (&netload, device);
 
-	if (netload.if_flags & (1 << GLIBTOP_IF_FLAGS_LOOPBACK))
-		return TRUE;
+    if (netload.if_flags & (1 << GLIBTOP_IF_FLAGS_LOOPBACK))
+        return TRUE;
 
-	/* Skip interfaces without any IPv4/IPv6 address (or
-	   those with only a LINK ipv6 addr) However we need to
-	   be able to exclude these while still keeping the
-	   value so when they get online (with NetworkManager
-	   for example) we don't get a suddent peak.  Once we're
-	   able to get this, ignoring down interfaces will be
-	   possible too.  */
-	if (!(netload.flags & (1 << GLIBTOP_NETLOAD_ADDRESS6)
-	      && netload.scope6 != GLIBTOP_IF_IN6_SCOPE_LINK)
-	    && !(netload.flags & (1 << GLIBTOP_NETLOAD_ADDRESS)))
-		return TRUE;
+    /* Skip interfaces without any IPv4/IPv6 address (or
+       those with only a LINK ipv6 addr) However we need to
+       be able to exclude these while still keeping the
+       value so when they get online (with NetworkManager
+       for example) we don't get a suddent peak.  Once we're
+       able to get this, ignoring down interfaces will be
+       possible too.  */
+    if (!(netload.flags & (1 << GLIBTOP_NETLOAD_ADDRESS6)
+        && netload.scope6 != GLIBTOP_IF_IN6_SCOPE_LINK)
+        && !(netload.flags & (1 << GLIBTOP_NETLOAD_ADDRESS)))
+        return TRUE;
 
-	return FALSE;
+    return FALSE;
 }
 
 
@@ -88,62 +88,63 @@ is_dummy_device(const char* device)
  * TODO: drop it, use glibtop_get_netlist directly / gchar**
  */
 GList*
-get_available_devices(void)
+get_available_devices (void)
 {
-	glibtop_netlist buf;
-	char **devices, **dev;
-	GList *device_glist = NULL;
+    glibtop_netlist buf;
+    char **devices, **dev;
+    GList *device_glist = NULL;
 
-	devices = glibtop_get_netlist(&buf);
+    devices = glibtop_get_netlist (&buf);
 
-	for(dev = devices; *dev; ++dev) {
-		device_glist = g_list_prepend(device_glist, g_strdup(*dev));
-	}
+    for (dev = devices; *dev; ++dev) {
+        device_glist = g_list_prepend (device_glist, g_strdup (*dev));
+    }
 
-	g_strfreev(devices);
+    g_strfreev (devices);
 
-	return device_glist;
+    return device_glist;
 }
 
 const gchar*
-get_default_route(void)
+get_default_route (void)
 {
-	FILE *fp;
-	static char device[50];
+    FILE *fp;
+    static char device[50];
 
-	fp = fopen("/proc/net/route", "r");
+    fp = fopen ("/proc/net/route", "r");
 
-	if (fp == NULL) return NULL;
+    if (fp == NULL) return NULL;
 
-	while (!feof(fp)) {
-		char buffer[1024];
-		unsigned int ip, gw, flags, ref, use, metric, mask, mtu, window, irtt;
-		int retval;
-		char *rv;
+    while (!feof (fp)) {
+        char buffer[1024];
+        unsigned int ip, gw, flags, ref, use, metric, mask, mtu, window, irtt;
+        int retval;
+        char *rv;
 
-		rv = fgets(buffer, 1024, fp);
-		if (!rv) {
-			break;
-		}
+        rv = fgets (buffer, 1024, fp);
+        if (!rv) {
+            break;
+        }
 
-		retval = sscanf(buffer, "%49s %x %x %x %u %u %u %x %u %u %u",
-				device, &ip, &gw, &flags, &ref, &use, &metric, &mask, &mtu, &window, &irtt);
+        retval = sscanf (buffer, "%49s %x %x %x %u %u %u %x %u %u %u",
+                         device, &ip, &gw, &flags, &ref, &use, &metric,
+                         &mask, &mtu, &window, &irtt);
 
-		if (retval != 11) continue;
+        if (retval != 11) continue;
 
-		if (ip == 0 && !is_dummy_device(device)) {
-			fclose(fp);
-			return device;
-		}
-	}
-	fclose(fp);
-	return NULL;
+        if (ip == 0 && !is_dummy_device (device)) {
+            fclose (fp);
+            return device;
+        }
+    }
+    fclose (fp);
+    return NULL;
 }
 
 void
-free_devices_list(GList *list)
+free_devices_list (GList *list)
 {
-	g_list_free_full (list, g_free);
+    g_list_free_full (list, g_free);
 }
 
 /* Frees a DevInfo struct and all the stuff it contains
@@ -175,13 +176,13 @@ get_ptp_info (DevInfo *devinfo)
     if ((fd = socket (AF_INET, SOCK_STREAM, 0)) < 0)
         return;
 
-    if (ioctl(fd, SIOCGIFDSTADDR, &request) >= 0) {
+    if (ioctl (fd, SIOCGIFDSTADDR, &request) >= 0) {
         struct sockaddr_in* addr;
         addr = (struct sockaddr_in*)&request.ifr_dstaddr;
         devinfo->ptpip = addr->sin_addr.s_addr;
     }
 
-    close(fd);
+    close (fd);
 }
 
 void
@@ -192,7 +193,7 @@ get_device_info (const char  *device,
     glibtop_netload netload;
     gboolean ptp = FALSE;
 
-    g_assert(device);
+    g_assert (device);
 
     *info = g_new0 (DevInfo, 1);
     devinfo = *info;
@@ -211,11 +212,11 @@ get_device_info (const char  *device,
     else if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_WIRELESS)) {
         devinfo->type = DEV_WIRELESS;
     }
-    else if(netload.if_flags & (1L << GLIBTOP_IF_FLAGS_POINTOPOINT)) {
-        if (g_str_has_prefix(device, "plip")) {
+    else if (netload.if_flags & (1L << GLIBTOP_IF_FLAGS_POINTOPOINT)) {
+        if (g_str_has_prefix (device, "plip")) {
             devinfo->type = DEV_PLIP;
         }
-        else if (g_str_has_prefix(device, "sl")) {
+        else if (g_str_has_prefix (device, "sl")) {
             devinfo->type = DEV_SLIP;
         }
         else {
@@ -268,63 +269,67 @@ gboolean
 compare_device_info (const DevInfo *a,
                      const DevInfo *b)
 {
-	g_assert(a && b);
-	g_assert(a->name && b->name);
+    g_assert (a && b);
+    g_assert (a->name && b->name);
 
-	if (!g_str_equal(a->name, b->name)) return TRUE;
-	if (a->ip != b->ip) return TRUE;
-	/* Ignore hwaddr, ptpip and netmask... I think this is ok */
-	if (a->up != b->up) return TRUE;
-	if (a->running != b->running) return TRUE;
+    if (!g_str_equal (a->name, b->name))
+        return TRUE;
+    if (a->ip != b->ip)
+        return TRUE;
+    /* Ignore hwaddr, ptpip and netmask... I think this is ok */
+    if (a->up != b->up)
+        return TRUE;
+    if (a->running != b->running)
+        return TRUE;
 
-	return FALSE;
+    return FALSE;
 }
 #ifdef HAVE_IW
 void
 get_wireless_info (DevInfo *devinfo)
 {
-	int fd;
-	int newqual;
-	wireless_info info = {0};
+    int fd;
+    int newqual;
+    wireless_info info = {0};
 
-	fd = iw_sockets_open ();
+    fd = iw_sockets_open ();
 
-	if (fd < 0)
-		return;
+    if (fd < 0)
+        return;
 
-	if (iw_get_basic_config (fd, devinfo->name, &info.b) < 0)
-		goto out;
+    if (iw_get_basic_config (fd, devinfo->name, &info.b) < 0)
+        goto out;
 
-	if (info.b.has_essid) {
-		if ((!devinfo->essid) || (strcmp (devinfo->essid, info.b.essid) != 0)) {
-			devinfo->essid = g_strdup (info.b.essid);
-		}
-	} else {
-		devinfo->essid = NULL;
-	}
+    if (info.b.has_essid) {
+        if ((!devinfo->essid) || (strcmp (devinfo->essid, info.b.essid) != 0)) {
+            devinfo->essid = g_strdup (info.b.essid);
+        }
+    } else {
+        devinfo->essid = NULL;
+    }
 
-	if (iw_get_stats (fd, devinfo->name, &info.stats, &info.range, info.has_range) >= 0)
-		info.has_stats = 1;
+    if (iw_get_stats (fd, devinfo->name, &info.stats, &info.range, info.has_range) >= 0)
+        info.has_stats = 1;
 
-	if (info.has_stats) {
-		if ((iw_get_range_info(fd, devinfo->name, &info.range) >= 0) && (info.range.max_qual.qual > 0)) {
-			newqual = 0.5f + (100.0f * info.stats.qual.qual) / (1.0f * info.range.max_qual.qual);
-		} else {
-			newqual = info.stats.qual.qual;
-		}
+    if (info.has_stats) {
+        if ((iw_get_range_info (fd, devinfo->name, &info.range) >= 0) && (info.range.max_qual.qual > 0)) {
+            newqual = 0.5f + (100.0f * info.stats.qual.qual) / (1.0f * info.range.max_qual.qual);
+        } else {
+            newqual = info.stats.qual.qual;
+        }
 
-		newqual = CLAMP(newqual, 0, 100);
-		if (devinfo->qual != newqual)
-			devinfo->qual = newqual;
+        newqual = CLAMP (newqual, 0, 100);
+        if (devinfo->qual != newqual)
+            devinfo->qual = newqual;
 
-	} else {
-		devinfo->qual = 0;
-	}
+    } else {
+        devinfo->qual = 0;
+    }
 
-	goto out;
+    goto out;
 out:
-	if (fd != -1)
-		close (fd);
+    if (fd != -1)
+        close (fd);
 }
 #endif /* HAVE_IW */
 
@@ -408,10 +413,14 @@ scan_cb (struct nl_msg  *msg,
         g_warning ("failed to parse nested attributes!");
         return NL_SKIP;
     }
-    if (!bss[NL80211_BSS_BSSID]) return NL_SKIP;
-    if (!bss[NL80211_BSS_STATUS]) return NL_SKIP;
+    if (!bss[NL80211_BSS_BSSID])
+        return NL_SKIP;
+    if (!bss[NL80211_BSS_STATUS])
+        return NL_SKIP;
 
-    if (nla_get_u32 (bss[NL80211_BSS_STATUS]) != NL80211_BSS_STATUS_ASSOCIATED) return NL_SKIP;
+    if (nla_get_u32 (bss[NL80211_BSS_STATUS]) != NL80211_BSS_STATUS_ASSOCIATED)
+        return NL_SKIP;
+
     memcpy (devinfo->station_mac_addr, nla_data (bss[NL80211_BSS_BSSID]), ETH_ALEN);
 
     return NL_SKIP;
@@ -472,10 +481,10 @@ parse_bitrate (struct nlattr *bitrate_attr,
         pos += snprintf (pos, buflen - (pos - buf),
                          _(" HE-MCS %d"), nla_get_u8 (rinfo[NL80211_RATE_INFO_HE_MCS]));
     if (rinfo[NL80211_RATE_INFO_HE_NSS])
-        pos += snprintf(pos, buflen - (pos - buf),
+        pos += snprintf (pos, buflen - (pos - buf),
                         _(" HE-NSS %d"), nla_get_u8 (rinfo[NL80211_RATE_INFO_HE_NSS]));
     if (rinfo[NL80211_RATE_INFO_HE_GI])
-        pos += snprintf(pos, buflen - (pos - buf),
+        pos += snprintf (pos, buflen - (pos - buf),
                         _(" HE-GI %d"), nla_get_u8 (rinfo[NL80211_RATE_INFO_HE_GI]));
     if (rinfo[NL80211_RATE_INFO_HE_DCM])
         snprintf (pos, buflen - (pos - buf),
@@ -512,8 +521,8 @@ station_cb (struct nl_msg *msg,
         return NL_SKIP;
     }
     if (nla_parse_nested (sinfo, NL80211_STA_INFO_MAX,
-                 tb[NL80211_ATTR_STA_INFO],
-                 stats_policy)) {
+                          tb[NL80211_ATTR_STA_INFO],
+                          stats_policy)) {
         g_warning ("failed to parse nested attributes!\n");
         return NL_SKIP;
     }
@@ -610,7 +619,7 @@ iface_cb (struct nl_msg *msg,
     struct nlattr *tb_msg[NL80211_ATTR_MAX + 1];
 
     nla_parse (tb_msg, NL80211_ATTR_MAX, genlmsg_attrdata (gnlh, 0),
-               genlmsg_attrlen(gnlh, 0), NULL);
+               genlmsg_attrlen (gnlh, 0), NULL);
 
     if (tb_msg[NL80211_ATTR_MAC]) {
         memcpy (devinfo->hwaddr, nla_data (tb_msg[NL80211_ATTR_MAC]), ETH_ALEN);
