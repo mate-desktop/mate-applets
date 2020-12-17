@@ -10,6 +10,31 @@
 
 G_BEGIN_DECLS
 
+#define KEY_CPULOAD_USR_COLOR         "cpuload-color0"
+#define KEY_CPULOAD_SYS_COLOR         "cpuload-color1"
+#define KEY_CPULOAD_NICE_COLOR        "cpuload-color2"
+#define KEY_CPULOAD_IOWAIT_COLOR      "cpuload-color3"
+#define KEY_CPULOAD_IDLE_COLOR        "cpuload-color4"
+#define KEY_MEMLOAD_USER_COLOR        "memload-color0"
+#define KEY_MEMLOAD_SHARED_COLOR      "memload-color1"
+#define KEY_MEMLOAD_BUFFER_COLOR      "memload-color2"
+#define KEY_MEMLOAD_CACHED_COLOR      "memload-color3"
+#define KEY_MEMLOAD_FREE_COLOR        "memload-color4"
+#define KEY_NETLOAD2_IN_COLOR         "netload2-color0"
+#define KEY_NETLOAD2_OUT_COLOR        "netload2-color1"
+#define KEY_NETLOAD2_LOOPBACK_COLOR   "netload2-color2"
+#define KEY_NETLOAD2_BACKGROUND_COLOR "netload2-color3"
+#define KEY_NETLOAD2_GRIDLINE_COLOR   "netload2-color4"
+#define KEY_NETLOAD2_INDICATOR_COLOR  "netload2-color5"
+#define KEY_SWAPLOAD_USED_COLOR       "swapload-color0"
+#define KEY_SWAPLOAD_FREE_COLOR       "swapload-color1"
+#define KEY_LOADAVG_AVERAGE_COLOR     "loadavg-color0"
+#define KEY_LOADAVG_BACKGROUND_COLOR  "loadavg-color1"
+#define KEY_LOADAVG_GRIDLINE_COLOR    "loadavg-color2"
+#define KEY_DISKLOAD_READ_COLOR       "diskload-color0"
+#define KEY_DISKLOAD_WRITE_COLOR      "diskload-color1"
+#define KEY_DISKLOAD_FREE_COLOR       "diskload-color2"
+
 #define KEY_NET_THRESHOLD1 "netthreshold1"
 #define KEY_NET_THRESHOLD2 "netthreshold2"
 #define KEY_NET_THRESHOLD3 "netthreshold3"
@@ -26,6 +51,8 @@ G_BEGIN_DECLS
 #define VIEW_SWAPLOAD_KEY  "view-swapload"
 #define VIEW_LOADAVG_KEY   "view-loadavg"
 #define VIEW_DISKLOAD_KEY  "view-diskload"
+
+#define DISKLOAD_NVME_KEY  "diskload-nvme-diskstats"
 
 #define REFRESH_RATE_KEY   "speed"
 #define REFRESH_RATE_MIN   50
@@ -52,15 +79,6 @@ typedef enum {
 } E_graph;
 
 typedef enum {
-    memload_user = 0,
-    memload_shared,
-    memload_buffer,
-    memload_cached,
-    memload_free,
-    memload_n
-} E_memload;
-
-typedef enum {
     cpuload_usr = 0,
     cpuload_sys,
     cpuload_nice,
@@ -70,17 +88,43 @@ typedef enum {
 } E_cpuload;
 
 typedef enum {
-    diskload_read = 0,
-    diskload_write,
-    diskload_free,
-    diskload_n
-} E_diskload;
+    memload_user = 0,
+    memload_shared,
+    memload_buffer,
+    memload_cached,
+    memload_free,
+    memload_n
+} E_memload;
+
+typedef enum {
+    netload2_in = 0,
+    netload2_out,
+    netload2_loopback,
+    netload2_background,
+    netload2_gridline,
+    netload2_indicator,
+    netload2_n
+} E_netload2;
 
 typedef enum {
     swapload_used = 0,
     swapload_free,
     swapload_n
 } E_swapload;
+
+typedef enum {
+    loadavg_average = 0,
+    loadavg_background,
+    loadavg_gridline,
+    loadavg_n
+} E_loadavg;
+
+typedef enum {
+    diskload_read = 0,
+    diskload_write,
+    diskload_free,
+    diskload_n
+} E_diskload;
 
 struct _LoadGraph {
     MultiloadApplet *multiload;
