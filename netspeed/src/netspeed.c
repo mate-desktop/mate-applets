@@ -30,6 +30,10 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <sys/types.h>
+#include <ifaddrs.h>
 
 #include "backend.h"
 
@@ -1529,52 +1533,67 @@ update_tooltip (MateNetspeedApplet* applet)
     else {
         char ipv4_text [INET_ADDRSTRLEN];
         char ipv6_text [INET6_ADDRSTRLEN];
-        char *ip;
+        char *ip, *ipv6;
+
+        if (applet->devinfo->ip) {
+            format_ipv4 (applet->devinfo->ip, ipv4_text);
+            ip = ipv4_text;
+        } else {
+            ip = _("no IPv4");
+            ipv6 = _("no IPv6");
+        }
 
         if (applet->show_all_addresses) {
             format_ipv6 (applet->devinfo->ipv6, ipv6_text);
-            if (applet->devinfo->ip) {
-                format_ipv4 (applet->devinfo->ip, ipv4_text);
-                if (strlen (ipv6_text) > 2) {
-                    g_string_printf (tooltip,
-                                     _("%s: %s and %s"),
-                                     applet->devinfo->name,
-                                     ipv4_text,
-                                     ipv6_text);
-                } else {
-                    g_string_printf (tooltip,
-                                     _("%s: %s"),
-                                     applet->devinfo->name,
-                                     ipv4_text);
+
+            if (strlen (ipv6_text) > 2) {
+                struct ifaddrs *ifaddr;
+                int family, s;
+                ipv6 = "";
+                char host[NI_MAXHOST];
+
+                if (getifaddrs(&ifaddr) == -1) {
+                    // Error handling?
                 }
+
+                for (struct ifaddrs *ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
+                    if (ifa->ifa_addr == NULL)
+                        continue;
+
+                    family = ifa->ifa_addr->sa_family;
+
+                    if (family == AF_INET6 && !strcmp(applet->devinfo->name,ifa->ifa_name)) {
+                        s = getnameinfo(ifa->ifa_addr,
+                                        sizeof(struct sockaddr_in6),
+                                        host, NI_MAXHOST,
+                                        NULL, 0, NI_NUMERICHOST);
+                        if (s != 0) {
+                            //printf("getnameinfo() failed: %s\n", gai_strerror(s));
+                            // Error handling?
+                        }
+                        ipv6 = g_strconcat(ipv6, "\n IPv6: ", host, NULL);
+                    }
+                }
+                freeifaddrs(ifaddr);  
             } else {
-                if (strlen (ipv6_text) > 2) {
-                    g_string_printf (tooltip,
-                                     _("%s: %s"),
-                                     applet->devinfo->name,
-                                     ipv4_text);
-                } else {
-                    g_string_printf (tooltip,
-                                     _("%s: has no ip"),
-                                     applet->devinfo->name);
-                }
+                ipv6 = ", no IPv6";
             }
-        } else {
-            if (applet->devinfo->ip) {
-                format_ipv4 (applet->devinfo->ip, ipv4_text);
-                ip = ipv4_text;
-            } else {
-                format_ipv6 (applet->devinfo->ipv6, ipv6_text);
-                if (strlen (ipv6_text) > 2) {
-                    ip = ipv6_text;
-                } else {
-                    ip = _("has no ip");
-                }
-            }
+
+            g_string_printf (tooltip,
+                             _("%s: %s%s"),
+                             applet->devinfo->name,
+                             ip,
+                             ipv6);
+
+        } else if (applet->devinfo->ip) {
             g_string_printf (tooltip,
                              _("%s: %s"),
                              applet->devinfo->name,
                              ip);
+        } else {
+            g_string_printf (tooltip,
+                             _("%s: has no IPv4"),
+                             applet->devinfo->name);
         }
 
         if (applet->show_sum) {
