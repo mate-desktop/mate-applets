@@ -104,4 +104,8 @@ compare_device_info (const DevInfo *a, const DevInfo *b);
 
 void
 get_wireless_info (DevInfo *devinfo);
+
+GSList*
+get_ip_address_list (const char *ifa_name, gboolean ipv4);
+
 #endif /* _BACKEND_H */

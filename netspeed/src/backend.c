@@ -27,6 +27,12 @@
 #include <sys/sockio.h>
 #endif
 
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <ifaddrs.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glibtop/netlist.h>
@@ -103,6 +109,102 @@ get_available_devices (void)
     g_strfreev (devices);
 
     return device_glist;
+}
+
+GSList*
+get_ip_address_list (const char *iface_name,
+                     gboolean    ipv4)
+{
+    GSList *list = NULL;
+    struct ifaddrs *ifaces;
+
+    if (getifaddrs (&ifaces) != -1) {
+        int family;
+        char ip[INET6_ADDRSTRLEN];
+
+        family = ipv4 ? AF_INET : AF_INET6;
+        for (struct ifaddrs *iface = ifaces; iface != NULL; iface = iface->ifa_next) {
+            if (iface->ifa_addr == NULL)
+                continue;
+
+            if ((iface->ifa_addr->sa_family == family) &&
+                !g_strcmp0 (iface->ifa_name, iface_name))
+            {
+                unsigned int netmask = 0;
+                void *sinx_addr = NULL;
+
+                if (iface->ifa_addr->sa_family == AF_INET6) {
+                    struct sockaddr_in6 ip6_addr;
+                    struct sockaddr_in6 ip6_network;
+                    uint32_t ip6_netmask = 0;
+                    const char *scope;
+                    int i;
+
+                    memcpy (&ip6_addr, iface->ifa_addr, sizeof (struct sockaddr_in6));
+                    memcpy (&ip6_network, iface->ifa_netmask, sizeof (struct sockaddr_in6));
+
+                    /* get network scope */
+                    if (IN6_IS_ADDR_LINKLOCAL (&ip6_addr.sin6_addr)) {
+                        scope = _("link-local");
+                    } else if (IN6_IS_ADDR_SITELOCAL (&ip6_addr.sin6_addr)) {
+                        scope = _("site-local");
+                    } else if (IN6_IS_ADDR_V4MAPPED (&ip6_addr.sin6_addr)) {
+                        scope = _("v4mapped");
+                    } else if (IN6_IS_ADDR_V4COMPAT (&ip6_addr.sin6_addr)) {
+                        scope = _("v4compat");
+                    } else if (IN6_IS_ADDR_LOOPBACK (&ip6_addr.sin6_addr)) {
+                        scope = _("host");
+                    } else if (IN6_IS_ADDR_UNSPECIFIED (&ip6_addr.sin6_addr)) {
+                        scope = _("unspecified");
+                    } else {
+                        scope = _("global");
+                    }
+
+                    /* get network ip */
+                    sinx_addr = &ip6_addr.sin6_addr;
+                    inet_ntop (iface->ifa_addr->sa_family, sinx_addr, ip, sizeof (ip));
+
+                    /* get network mask length */
+                    for (i = 0; i < 4; i++) {
+                        ip6_netmask = ntohl (((uint32_t*)(&ip6_network.sin6_addr))[i]);
+                            while (ip6_netmask) {
+                                netmask++;
+                                ip6_netmask <<= 1;
+                            }
+                    }
+
+                    list = g_slist_prepend (list,
+                                            g_strdup_printf ("%s: %s/%u",
+                                                             scope, ip, netmask));
+                } else {
+                    struct sockaddr_in ip4_addr;
+                    struct sockaddr_in ip4_network;
+                    in_addr_t ip4_netmask = 0;
+
+                    memcpy (&ip4_addr, iface->ifa_addr, sizeof (struct sockaddr_in));
+                    memcpy (&ip4_network, iface->ifa_netmask, sizeof (struct sockaddr_in));
+
+                    /* get network ip */
+                    sinx_addr = &ip4_addr.sin_addr;
+                    inet_ntop (iface->ifa_addr->sa_family, sinx_addr, ip, sizeof (ip));
+
+                    /* get network mask length */
+                    ip4_netmask = ntohl (ip4_network.sin_addr.s_addr);
+                    while (ip4_netmask) {
+                        netmask++;
+                        ip4_netmask <<= 1;
+                    }
+
+                    list = g_slist_prepend (list,
+                                            g_strdup_printf ("%s/%u", ip, netmask));
+                }
+            }
+        }
+        if (list != NULL)
+            list = g_slist_sort (list, (GCompareFunc) g_strcmp0);
+        freeifaddrs (ifaces);
+    }
+    return list;
 }
 
 const gchar*
