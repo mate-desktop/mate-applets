@@ -688,7 +688,6 @@ fill_details_dialog (MateNetspeedApplet *applet)
 {
     char *text;
     char ipv4_text [INET_ADDRSTRLEN];
-    char ipv6_text [INET6_ADDRSTRLEN];
 
     if (applet->devinfo->ip) {
         format_ipv4 (applet->devinfo->ip, ipv4_text);
@@ -723,10 +722,23 @@ fill_details_dialog (MateNetspeedApplet *applet)
     gtk_label_set_text (GTK_LABEL (applet->ptpip_text), text);
 
     /* check if we got an ipv6 address */
-    format_ipv6 (applet->devinfo->ipv6, ipv6_text);
-    if (strlen (ipv6_text) > 2) {
-        gtk_label_set_text (GTK_LABEL (applet->ipv6_text), ipv6_text);
-        gtk_widget_show (applet->ipv6_box);
+    GSList *ipv6_address_list = get_ip_address_list (applet->devinfo->name, FALSE);
+    if (ipv6_address_list != NULL) {
+        GSList *iterator;
+        GString *string = NULL;
+
+        for (iterator = ipv6_address_list; iterator; iterator = iterator->next) {
+            if (string == NULL)
+                string = g_string_new ((char*) iterator->data);
+            else
+                g_string_append_printf (string, "\n%s", (char*) iterator->data);
+        }
+        if (string != NULL) {
+            gtk_label_set_text (GTK_LABEL (applet->ipv6_text), string->str);
+            gtk_widget_show (applet->ipv6_box);
+        }
+        g_string_free (string, TRUE);
+        g_slist_free_full (ipv6_address_list, g_free);
     } else {
         gtk_widget_hide (applet->ipv6_box);
     }
