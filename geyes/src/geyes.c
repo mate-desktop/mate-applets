@@ -31,14 +31,14 @@ gtk_align_to_gfloat (GtkAlign align)
 {
     switch (align) {
         case GTK_ALIGN_START:
-            return 0.0;
+            return 0.0f;
         case GTK_ALIGN_END:
-            return 1.0;
+            return 1.0f;
         case GTK_ALIGN_CENTER:
-            case GTK_ALIGN_FILL:
-            return 0.5;
+        case GTK_ALIGN_FILL:
+            return 0.5f;
         default:
-            return 0.0;
+            return 0.0f;
     }
 }
 
@@ -52,55 +52,52 @@ calculate_pupil_xy (EyesApplet *eyes_applet,
                     GtkWidget  *widget)
 {
     GtkAllocation allocation;
-    double sina;
-    double cosa;
-    double h;
-    double temp;
-    double nx, ny;
-
-    gfloat xalign, yalign;
-    gint width, height;
+    float sina;
+    float cosa;
+    float h;
+    float temp;
+    float nx, ny;
+    float xalign, yalign;
+    float eye_width_half, eye_height_half;
 
     gtk_widget_get_allocation (GTK_WIDGET (widget), &allocation);
-    width = allocation.width;
-    height = allocation.height;
     xalign = gtk_align_to_gfloat (gtk_widget_get_halign (widget));
     yalign = gtk_align_to_gfloat (gtk_widget_get_valign (widget));
+    eye_width_half = (float) eyes_applet->eye_width * 0.5f;
+    eye_height_half = (float) eyes_applet->eye_height * 0.5f;
 
-    nx = x - MAX (width - eyes_applet->eye_width, 0) * xalign
-         - eyes_applet->eye_width / 2;
-    ny = y - MAX (height - eyes_applet->eye_height, 0) * yalign
-         - eyes_applet->eye_height / 2;
+    nx = (float) x - (float) MAX (allocation.width - eyes_applet->eye_width, 0) * xalign
+         - eye_width_half;
+    ny = (float) y - (float) MAX (allocation.height - eyes_applet->eye_height, 0) * yalign
+         - eye_height_half;
 
-    h = hypot (nx, ny);
-    if (h < 0.5
-        || fabs (h)
-           < (fabs (hypot (eyes_applet->eye_height / 2,
-                           eyes_applet->eye_width / 2))
-              - eyes_applet->wall_thickness
-              - eyes_applet->pupil_height)) {
-        *pupil_x = nx + eyes_applet->eye_width / 2;
-        *pupil_y = ny + eyes_applet->eye_height / 2;
+    h = hypotf (nx, ny);
+    if ((h < 0.5f) ||
+        (fabs (h) < (fabs (hypotf (eye_height_half, eye_width_half)
+                           - (float) eyes_applet->wall_thickness
+                           - (float) eyes_applet->pupil_height)))) {
+        *pupil_x = (gint)(nx + eye_width_half);
+        *pupil_y = (gint)(ny + eye_height_half);
         return;
     }
 
     sina = nx / h;
     cosa = ny / h;
 
-    temp = hypot ((eyes_applet->eye_width / 2) * sina,
-                  (eyes_applet->eye_height / 2) * cosa);
-    temp -= hypot ((eyes_applet->pupil_width / 2) * sina,
-                   (eyes_applet->pupil_height / 2) * cosa);
-    temp -= hypot ((eyes_applet->wall_thickness / 2) * sina,
-                   (eyes_applet->wall_thickness / 2) * cosa);
+    temp  = hypotf ((float) eyes_applet->eye_width * sina,
+                    (float) eyes_applet->eye_height * cosa);
+    temp -= hypotf ((float) eyes_applet->pupil_width * sina,
+                    (float) eyes_applet->pupil_height * cosa);
+    temp -= (float) eyes_applet->wall_thickness * hypotf (sina, cosa);
+    temp *= 0.5f;
 
-    *pupil_x = temp * sina + (eyes_applet->eye_width / 2);
-    *pupil_y = temp * cosa + (eyes_applet->eye_height / 2);
+    *pupil_x = (gint)(temp * sina + eye_width_half);
+    *pupil_y = (gint)(temp * cosa + eye_height_half);
 }
 
 static void
 draw_eye (EyesApplet *eyes_applet,
-          gint        eye_num,
+          gsize       eye_num,
           gint        pupil_x,
           gint        pupil_y)
 {
@@ -137,7 +134,7 @@ timer_cb (EyesApplet *eyes_applet)
     GdkSeat *seat;
     gint x, y;
     gint pupil_x, pupil_y;
-    gint i;
+    gsize i;
 
     display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
     seat = gdk_display_get_default_seat (display);
@@ -221,7 +218,7 @@ properties_load (EyesApplet *eyes_applet)
 void
 setup_eyes (EyesApplet *eyes_applet)
 {
-    int i;
+    gsize i;
 
     eyes_applet->hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_pack_start (GTK_BOX (eyes_applet->vbox), eyes_applet->hbox, TRUE,
