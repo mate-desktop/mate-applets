@@ -54,7 +54,7 @@ typedef struct
     gchar           *theme_name;
     gchar           *eye_filename;
     gchar           *pupil_filename;
-    gint             num_eyes;
+    gsize            num_eyes;
     gint             eye_height;
     gint             eye_width;
     gint             pupil_height;

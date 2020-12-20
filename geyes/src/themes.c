@@ -73,7 +73,7 @@ parse_theme_file (EyesApplet *eyes_applet,
             while (!isdigit (*token)) {
                 token++;
             }
-            sscanf (token, "%d", &eyes_applet->num_eyes);
+            sscanf (token, "%" G_GSIZE_FORMAT, &eyes_applet->num_eyes);
             if (eyes_applet->num_eyes > MAX_EYES)
                 eyes_applet->num_eyes = MAX_EYES;
         } else if (strncmp (token, "eye-pixmap", strlen ("eye-pixmap")) == 0) {
