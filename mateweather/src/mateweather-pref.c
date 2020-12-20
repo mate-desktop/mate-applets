@@ -170,13 +170,17 @@ static gboolean update_dialog(MateWeatherPref* pref)
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_update_btn), gw_applet->mateweather_pref.update_enabled);
     soft_set_sensitive(pref->priv->basic_update_spin, gw_applet->mateweather_pref.update_enabled);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_temp_combo), gw_applet->mateweather_pref.temperature_unit - 2);
+    gtk_combo_box_set_active (GTK_COMBO_BOX (pref->priv->basic_temp_combo),
+                              (gint) gw_applet->mateweather_pref.temperature_unit - 2);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_speed_combo), gw_applet->mateweather_pref.speed_unit - 2);
+    gtk_combo_box_set_active (GTK_COMBO_BOX (pref->priv->basic_speed_combo),
+                              (gint) gw_applet->mateweather_pref.speed_unit - 2);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_pres_combo), gw_applet->mateweather_pref.pressure_unit - 2);
+    gtk_combo_box_set_active (GTK_COMBO_BOX (pref->priv->basic_pres_combo),
+                              (gint) gw_applet->mateweather_pref.pressure_unit - 2);
 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(pref->priv->basic_dist_combo), gw_applet->mateweather_pref.distance_unit - 2);
+    gtk_combo_box_set_active (GTK_COMBO_BOX (pref->priv->basic_dist_combo),
+                              (gint) gw_applet->mateweather_pref.distance_unit - 2);
 
 	#ifdef RADARMAP
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pref->priv->basic_radar_btn), gw_applet->mateweather_pref.radar_enabled);
@@ -335,12 +339,16 @@ on_auto_update_toggled (GtkToggleButton *button,
 
 	if (gw_applet->mateweather_pref.update_enabled)
 	{
-		gw_applet->timeout_tag = g_timeout_add_seconds(gw_applet->mateweather_pref.update_interval, timeout_cb, gw_applet);
-		nxtSunEvent = weather_info_next_sun_event(gw_applet->mateweather_info);
+		gw_applet->timeout_tag
+			= g_timeout_add_seconds ((guint) gw_applet->mateweather_pref.update_interval,
+		                                 timeout_cb, gw_applet);
 
+		nxtSunEvent = weather_info_next_sun_event (gw_applet->mateweather_info);
 		if (nxtSunEvent >= 0)
 		{
-			gw_applet->suncalc_timeout_tag = g_timeout_add_seconds(nxtSunEvent, suncalc_timeout_cb, gw_applet);
+			gw_applet->suncalc_timeout_tag
+				= g_timeout_add_seconds ((guint) nxtSunEvent,
+				                         suncalc_timeout_cb, gw_applet);
 		}
 	}
 }
@@ -536,7 +544,9 @@ on_update_interval_changed (GtkSpinButton   *button,
 
 	if (gw_applet->mateweather_pref.update_enabled)
 	{
-		gw_applet->timeout_tag = g_timeout_add_seconds(gw_applet->mateweather_pref.update_interval, timeout_cb, gw_applet);
+		gw_applet->timeout_tag
+			= g_timeout_add_seconds ((guint) gw_applet->mateweather_pref.update_interval,
+			                         timeout_cb, gw_applet);
 	}
 }
 
@@ -592,14 +602,10 @@ static gboolean find_location(GtkTreeModel* model, GtkTreeIter* iter, const gcha
 	GtkTreeIter iter_parent;
 	gchar* aux_loc;
 	gboolean valid;
-	int len;
+	size_t len;
 
-	len = strlen (location);
-
-	if (len <= 0)
-	{
+	if ((len = strlen (location)) == 0)
 		return FALSE;
-	}
 
 	do {
 

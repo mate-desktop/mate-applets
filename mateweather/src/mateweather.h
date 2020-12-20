@@ -35,9 +35,9 @@ typedef struct _MateWeatherApplet {
 	GtkWidget* image;
 
 	MatePanelAppletOrient orient;
-	gint size;
-	gint timeout_tag;
-	gint suncalc_timeout_tag;
+	guint size;
+	guint timeout_tag;
+	guint suncalc_timeout_tag;
 
 	/* preferences  */
 	MateWeatherPrefs mateweather_pref;

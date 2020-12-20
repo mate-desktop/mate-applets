@@ -128,7 +128,7 @@ place_widgets (MateWeatherApplet *gw_applet)
     GtkRequisition req;
     int total_size = 0;
     gboolean horizontal = FALSE;
-    int panel_size = gw_applet->size;
+    int panel_size = (int) gw_applet->size;
     const gchar *temp = NULL;
     const gchar *icon_name = NULL;
 
@@ -208,20 +208,24 @@ static void change_orient_cb (MatePanelApplet *w, MatePanelAppletOrient o, gpoin
 
 static void size_allocate_cb(MatePanelApplet *w, GtkAllocation *allocation, gpointer data)
 {
+    guint size;
     MateWeatherApplet *gw_applet = (MateWeatherApplet *)data;
 
-    if ((gw_applet->orient == MATE_PANEL_APPLET_ORIENT_LEFT) || (gw_applet->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)) {
-      if (gw_applet->size == allocation->width)
-	return;
-      gw_applet->size = allocation->width;
-    } else {
-      if (gw_applet->size == allocation->height)
-	return;
-      gw_applet->size = allocation->height;
+    switch (gw_applet->orient) {
+      case MATE_PANEL_APPLET_ORIENT_LEFT:
+      case MATE_PANEL_APPLET_ORIENT_RIGHT:
+        size = (guint) allocation->width;
+        break;
+
+      default:
+        size = (guint) allocation->height;
     }
 
-    place_widgets(gw_applet);
-    return;
+    if (gw_applet->size == size)
+      return;
+
+    gw_applet->size = size;
+    place_widgets (gw_applet);
 }
 
 static gboolean clicked_cb (GtkWidget *widget, GdkEventButton *ev, gpointer data)
@@ -294,13 +298,13 @@ applet_destroy (GtkWidget *widget, MateWeatherApplet *gw_applet)
     if (gw_applet->details_dialog)
        gtk_widget_destroy (gw_applet->details_dialog);
 
-    if (gw_applet->timeout_tag > 0) {
-       g_source_remove(gw_applet->timeout_tag);
+    if (gw_applet->timeout_tag != 0) {
+       g_source_remove (gw_applet->timeout_tag);
        gw_applet->timeout_tag = 0;
     }
 
-    if (gw_applet->suncalc_timeout_tag > 0) {
-       g_source_remove(gw_applet->suncalc_timeout_tag);
+    if (gw_applet->suncalc_timeout_tag != 0) {
+       g_source_remove (gw_applet->suncalc_timeout_tag);
        gw_applet->suncalc_timeout_tag = 0;
     }
 
@@ -410,13 +414,13 @@ update_finish (WeatherInfo *info, gpointer data)
         gint nxtSunEvent;
 
         gw_applet->timeout_tag
-            = g_timeout_add_seconds (gw_applet->mateweather_pref.update_interval,
+            = g_timeout_add_seconds ((guint) gw_applet->mateweather_pref.update_interval,
                                      timeout_cb, gw_applet);
 
         if ((info != NULL) && ((nxtSunEvent = weather_info_next_sun_event (info)) >= 0))
         {
             gw_applet->suncalc_timeout_tag
-                = g_timeout_add_seconds (nxtSunEvent,
+                = g_timeout_add_seconds ((guint) nxtSunEvent,
                                          suncalc_timeout_cb, gw_applet);
         }
     }
