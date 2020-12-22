@@ -58,7 +58,6 @@ typedef struct {
     DevType        type;
     char          *name;
     guint32        ip;
-    guint32        netmask;
     guint32        ptpip;
     guint8         hwaddr [8]; /* EUI-48 or EUI-64 */
     guint8         ipv6 [16];

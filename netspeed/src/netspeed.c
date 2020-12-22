@@ -113,7 +113,6 @@ typedef struct
     GtkDialog       *details;
     GtkDrawingArea  *drawingarea;
     GtkWidget       *ip_text;
-    GtkWidget       *netmask_text;
     GtkWidget       *ptpip_text;
     GtkWidget       *ipv6_text;
     GtkWidget       *hwaddr_text;
@@ -689,21 +688,27 @@ fill_details_dialog (MateNetspeedApplet *applet)
     char *text;
     char ipv4_text [INET_ADDRSTRLEN];
 
-    if (applet->devinfo->ip) {
-        format_ipv4 (applet->devinfo->ip, ipv4_text);
-        text = ipv4_text;
-    } else {
-        text = _("none");
-    }
-    gtk_label_set_text (GTK_LABEL (applet->ip_text), text);
+    /* check if we got an ipv4 address */
+    GSList *ipv4_address_list = get_ip_address_list (applet->devinfo->name, TRUE);
+    if (ipv4_address_list != NULL) {
+        GSList *iterator;
+        GString *string = NULL;
 
-    if (applet->devinfo->netmask) {
-        format_ipv4 (applet->devinfo->netmask, ipv4_text);
-        text = ipv4_text;
+        for (iterator = ipv4_address_list; iterator; iterator = iterator->next) {
+            if (string == NULL)
+                string = g_string_new ((char*) iterator->data);
+            else
+                g_string_append_printf (string, "\n%s", (char*) iterator->data);
+        }
+        if (string != NULL) {
+            gtk_label_set_text (GTK_LABEL (applet->ip_text), string->str);
+        }
+        g_string_free (string, TRUE);
+        g_slist_free_full (ipv4_address_list, g_free);
     } else {
-        text = _("none");
+        gtk_label_set_text (GTK_LABEL (applet->ip_text), _("none"));
     }
-    gtk_label_set_text (GTK_LABEL (applet->netmask_text), text);
+
 
     if (applet->devinfo->type != DEV_LO) {
         text = mac_addr_n2a (applet->devinfo->hwaddr);
@@ -1326,7 +1331,6 @@ info_response_cb (GtkDialog          *dialog,
     applet->details       = NULL;
     applet->drawingarea   = NULL;
     applet->ip_text       = NULL;
-    applet->netmask_text  = NULL;
     applet->ptpip_text    = NULL;
     applet->ipv6_text     = NULL;
     applet->hwaddr_text   = NULL;
@@ -1366,7 +1370,6 @@ showinfo_cb (GtkAction *action,
     applet->drawingarea   = GET_DRAWING_AREA ("drawingarea");
 
     applet->ip_text       = GET_WIDGET ("ip_text");
-    applet->netmask_text  = GET_WIDGET ("netmask_text");
     applet->ptpip_text    = GET_WIDGET ("ptpip_text");
     applet->ipv6_text     = GET_WIDGET ("ipv6_text");
     applet->hwaddr_text   = GET_WIDGET ("hwaddr_text");

@@ -349,7 +349,6 @@ get_device_info (const char  *device,
 
     if (devinfo->running) {
         devinfo->ip = netload.address;
-        devinfo->netmask = netload.subnet;
         memcpy (devinfo->ipv6, netload.address6, 16);
 #if defined (HAVE_NL)
         if (devinfo->type != DEV_WIRELESS) {
