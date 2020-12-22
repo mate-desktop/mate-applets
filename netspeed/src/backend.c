@@ -64,31 +64,6 @@ struct nl80211_state {
 
 #endif /* HAVE_NL */
 
-gboolean
-is_dummy_device (const char* device)
-{
-    glibtop_netload netload;
-    glibtop_get_netload (&netload, device);
-
-    if (netload.if_flags & (1 << GLIBTOP_IF_FLAGS_LOOPBACK))
-        return TRUE;
-
-    /* Skip interfaces without any IPv4/IPv6 address (or
-       those with only a LINK ipv6 addr) However we need to
-       be able to exclude these while still keeping the
-       value so when they get online (with NetworkManager
-       for example) we don't get a suddent peak.  Once we're
-       able to get this, ignoring down interfaces will be
-       possible too.  */
-    if (!(netload.flags & (1 << GLIBTOP_NETLOAD_ADDRESS6)
-        && netload.scope6 != GLIBTOP_IF_IN6_SCOPE_LINK)
-        && !(netload.flags & (1 << GLIBTOP_NETLOAD_ADDRESS)))
-        return TRUE;
-
-    return FALSE;
-}
-
-
 /* Check for all available devices. This really should be
  * portable for at least all plattforms using the gnu c lib
  * TODO: drop it, use glibtop_get_netlist directly / gchar**
@@ -205,42 +180,6 @@ get_ip_address_list (const char *iface_name,
         freeifaddrs (ifaces);
     }
     return list;
-}
-
-const gchar*
-get_default_route (void)
-{
-    FILE *fp;
-    static char device[50];
-
-    fp = fopen ("/proc/net/route", "r");
-
-    if (fp == NULL) return NULL;
-
-    while (!feof (fp)) {
-        char buffer[1024];
-        unsigned int ip, gw, flags, ref, use, metric, mask, mtu, window, irtt;
-        int retval;
-        char *rv;
-
-        rv = fgets (buffer, 1024, fp);
-        if (!rv) {
-            break;
-        }
-
-        retval = sscanf (buffer, "%49s %x %x %x %u %u %u %x %u %u %u",
-                         device, &ip, &gw, &flags, &ref, &use, &metric,
-                         &mask, &mtu, &window, &irtt);
-
-        if (retval != 11) continue;
-
-        if (ip == 0 && !is_dummy_device (device)) {
-            fclose (fp);
-            return device;
-        }
-    }
-    fclose (fp);
-    return NULL;
 }
 
 void

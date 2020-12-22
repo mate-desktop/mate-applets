@@ -580,49 +580,6 @@ redraw_graph (MateNetspeedApplet *applet,
     g_object_unref (G_OBJECT (layout));
 }
 
-static gboolean
-set_applet_devinfo (MateNetspeedApplet* applet,
-                    const char*         iface)
-{
-    DevInfo *info;
-
-    get_device_info (iface, &info);
-
-    if (info->running) {
-        free_device_info (applet->devinfo);
-        applet->devinfo = info;
-        applet->device_has_changed = TRUE;
-        return TRUE;
-    }
-
-    free_device_info (info);
-    return FALSE;
-}
-
-/* Find the first available device, that is running and != lo */
-static void
-search_for_up_if (MateNetspeedApplet *applet)
-{
-    const gchar *default_route;
-    GList *devices, *tmp;
-
-    default_route = get_default_route ();
-
-    if (default_route != NULL) {
-        if (set_applet_devinfo (applet, default_route))
-            return;
-    }
-
-    devices = get_available_devices ();
-    for (tmp = devices; tmp; tmp = g_list_next (tmp)) {
-        if (is_dummy_device (tmp->data))
-            continue;
-        if (set_applet_devinfo (applet, tmp->data))
-            break;
-    }
-    free_devices_list (devices);
-}
-
 static char *
 format_time (guint32 sec)
 {
@@ -948,22 +905,6 @@ update_applet (MateNetspeedApplet *applet)
             max = MAX (max, applet->out_graph[i]);
         }
         applet->max_graph = max;
-    }
-
-    /* Always follow the default route */
-    if (applet->auto_change_device) {
-        gboolean change_device_now = !applet->devinfo->running;
-
-        if (!change_device_now) {
-            const gchar *default_route;
-
-            default_route = get_default_route ();
-            change_device_now = (default_route != NULL &&
-                                 strcmp (default_route, applet->devinfo->name));
-        }
-        if (change_device_now) {
-            search_for_up_if (applet);
-        }
     }
 }
 
