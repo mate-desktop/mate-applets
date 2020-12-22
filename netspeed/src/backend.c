@@ -174,8 +174,8 @@ get_ip_address_list (const char *iface_name,
                     }
 
                     list = g_slist_prepend (list,
-                                            g_strdup_printf ("%s: %s/%u",
-                                                             scope, ip, netmask));
+                                            g_strdup_printf ("%s/%u (%s)",
+                                                             ip, netmask, scope));
                 } else {
                     struct sockaddr_in ip4_addr;
                     struct sockaddr_in ip4_network;
