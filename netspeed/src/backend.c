@@ -167,10 +167,10 @@ get_ip_address_list (const char *iface_name,
                     /* get network mask length */
                     for (i = 0; i < 4; i++) {
                         ip6_netmask = ntohl (((uint32_t*)(&ip6_network.sin6_addr))[i]);
-                            while (ip6_netmask) {
-                                netmask++;
-                                ip6_netmask <<= 1;
-                            }
+                        while (ip6_netmask) {
+                            netmask++;
+                            ip6_netmask <<= 1;
+                        }
                     }
 
                     list = g_slist_prepend (list,
@@ -364,7 +364,7 @@ get_device_info (const char  *device,
         if (ptp)
             get_ptp_info (devinfo);
 #endif /* HAVE_NL */
-        }
+    }
 }
 
 gboolean
