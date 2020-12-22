@@ -1564,7 +1564,7 @@ update_tooltip (MateNetspeedApplet* applet)
                     g_string_printf (tooltip,
                                      _("%s: %s"),
                                      applet->devinfo->name,
-                                     ipv4_text);
+                                     ipv6_text);
                 } else {
                     g_string_printf (tooltip,
                                      _("%s: has no ip"),
