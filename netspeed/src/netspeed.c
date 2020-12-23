@@ -32,6 +32,7 @@
 #include <gio/gio.h>
 
 #include "backend.h"
+#include "netspeed.h"
 
 #define GET_COLOR_CHOOSER(x) (GTK_COLOR_CHOOSER (gtk_builder_get_object (builder, (x))))
 #define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
@@ -76,9 +77,10 @@ static const char LOGO_ICON[] = "mate-netspeed-applet";
 /* A struct containing all the "global" data of the
  * applet
  */
-typedef struct
+struct _NetspeedApplet
 {
-    MatePanelApplet *applet;
+    MatePanelApplet  parent;
+
     GtkWidget       *box;
     GtkWidget       *pix_box;
     GtkWidget       *speed_box;
@@ -144,14 +146,16 @@ typedef struct
     gboolean         show_tooltip;
     GtkIconTheme    *icon_theme;
     GSettings       *gsettings;
-} MateNetspeedApplet;
+};
+
+G_DEFINE_TYPE (NetspeedApplet, netspeed_applet, PANEL_TYPE_APPLET)
 
 static void
-update_tooltip (MateNetspeedApplet* applet);
+update_tooltip (NetspeedApplet* applet);
 
 static void
-device_change_cb (GtkComboBox        *combo,
-                  MateNetspeedApplet *applet);
+device_change_cb (GtkComboBox    *combo,
+                  NetspeedApplet *applet);
 
 /* Adds a Pango markup "foreground" to a bytestring
  */
@@ -168,18 +172,18 @@ add_markup_fgcolor (char       **string,
 /* Change the icons according to the selected device
  */
 static void
-change_icons (MateNetspeedApplet *applet)
+change_icons (NetspeedApplet *applet)
 {
     cairo_surface_t *dev, *down;
     cairo_surface_t *in_arrow, *out_arrow;
     gint icon_scale;
-    gint icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet->applet)) - 8;
+    gint icon_size = mate_panel_applet_get_size (MATE_PANEL_APPLET (applet)) - 8;
 
     /* FIXME: Not all network icons include a high enough resolution, so to make them all
      * consistent, we cap them at 48px.*/
     icon_size = CLAMP (icon_size, 16, 48);
 
-    icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
+    icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet));
 
     /* If the user wants a different icon than current, we load it */
     if (applet->show_icon && applet->change_icon && applet->devinfo) {
@@ -264,9 +268,9 @@ change_icons (MateNetspeedApplet *applet)
  * or just the sum
  */
 static void
-applet_change_size_or_orient (MatePanelApplet    *applet_widget,
-                              int                 arg1,
-                              MateNetspeedApplet *applet)
+applet_change_size_or_orient (MatePanelApplet *applet_widget,
+                              int              arg1,
+                              NetspeedApplet  *applet)
 {
     int size;
     MatePanelAppletOrient orient;
@@ -355,7 +359,7 @@ applet_change_size_or_orient (MatePanelApplet    *applet_widget,
     if (!applet->show_icon) {
         gtk_widget_hide (applet->dev_pix);
     }
-    gtk_container_add (GTK_CONTAINER (applet->applet), applet->box);
+    gtk_container_add (GTK_CONTAINER (applet), applet->box);
 
     change_icons (applet);
 }
@@ -363,7 +367,7 @@ applet_change_size_or_orient (MatePanelApplet    *applet_widget,
 /* Change visibility of signal quality icon for wireless devices
  */
 static void
-change_quality_icon (MateNetspeedApplet *applet)
+change_quality_icon (NetspeedApplet *applet)
 {
     if (applet->devinfo->type == DEV_WIRELESS &&
         applet->devinfo->up && applet->show_quality_icon) {
@@ -374,7 +378,7 @@ change_quality_icon (MateNetspeedApplet *applet)
 }
 
 static void
-update_quality_icon (MateNetspeedApplet *applet)
+update_quality_icon (NetspeedApplet *applet)
 {
     if (!applet->show_quality_icon) {
         return;
@@ -389,7 +393,7 @@ update_quality_icon (MateNetspeedApplet *applet)
 }
 
 static void
-init_quality_surfaces (MateNetspeedApplet *applet)
+init_quality_surfaces (NetspeedApplet *applet)
 {
     int i;
     cairo_surface_t *surface;
@@ -398,7 +402,7 @@ init_quality_surfaces (MateNetspeedApplet *applet)
     /* FIXME: Add larger icon files. */
     gint icon_size = 24;
 
-    icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet->applet));
+    icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (applet));
 
     for (i = 0; i < 4; i++) {
         if (applet->qual_surfaces[i])
@@ -431,7 +435,7 @@ static void
 icon_theme_changed_cb (GtkIconTheme *icon_theme,
                        gpointer      user_data)
 {
-    MateNetspeedApplet *applet = (MateNetspeedApplet*)user_data;
+    NetspeedApplet *applet = (NetspeedApplet*)user_data;
 
     init_quality_surfaces (user_data);
     if (applet->devinfo->type == DEV_WIRELESS && applet->devinfo->up)
@@ -491,8 +495,8 @@ bps_to_string (double   bytes,
  * Some really black magic is going on in here ;-)
  */
 static void
-redraw_graph (MateNetspeedApplet *applet,
-              cairo_t            *cr)
+redraw_graph (NetspeedApplet *applet,
+              cairo_t        *cr)
 {
     GtkWidget *da = GTK_WIDGET (applet->drawingarea);
     GtkStyleContext *stylecontext = gtk_widget_get_style_context (da);
@@ -581,8 +585,8 @@ redraw_graph (MateNetspeedApplet *applet,
 }
 
 static gboolean
-set_applet_devinfo (MateNetspeedApplet* applet,
-                    const char*         iface)
+set_applet_devinfo (NetspeedApplet *applet,
+                    const char     *iface)
 {
     DevInfo *info;
 
@@ -601,7 +605,7 @@ set_applet_devinfo (MateNetspeedApplet* applet,
 
 /* Find the first available device, that is running and != lo */
 static void
-search_for_up_if (MateNetspeedApplet *applet)
+search_for_up_if (NetspeedApplet *applet)
 {
     const gchar *default_route;
     GList *devices, *tmp;
@@ -684,7 +688,7 @@ format_ipv6 (const guint8  ip[16],
 }
 
 static void
-fill_details_dialog (MateNetspeedApplet *applet)
+fill_details_dialog (NetspeedApplet *applet)
 {
     char *text;
     char ipv4_text [INET_ADDRSTRLEN];
@@ -789,7 +793,7 @@ fill_details_dialog (MateNetspeedApplet *applet)
 
 /* Here happens the really interesting stuff */
 static void
-update_applet (MateNetspeedApplet *applet)
+update_applet (NetspeedApplet *applet)
 {
     guint64 indiff, outdiff;
     double inrate, outrate;
@@ -968,7 +972,7 @@ update_applet (MateNetspeedApplet *applet)
 }
 
 static gboolean
-timeout_function (MateNetspeedApplet *applet)
+timeout_function (NetspeedApplet *applet)
 {
     if (!applet)
         return FALSE;
@@ -1020,10 +1024,10 @@ display_help (GtkWidget   *dialog,
 /* Opens gnome help application
  */
 static void
-help_cb (GtkAction          *action,
-         MateNetspeedApplet *ap)
+help_cb (GtkAction      *action,
+         NetspeedApplet *applet)
 {
-    display_help (GTK_WIDGET (ap->applet), NULL);
+    display_help (GTK_WIDGET (applet), NULL);
 }
 
 /* Just the about window... If it's already open, just fokus it
@@ -1062,8 +1066,8 @@ about_cb (GtkAction *action,
  * and then calls applet_device_change () and change_icons ()
  */
 static void
-device_change_cb (GtkComboBox        *combo,
-                  MateNetspeedApplet *applet)
+device_change_cb (GtkComboBox    *combo,
+                  NetspeedApplet *applet)
 {
     GList *devices;
     int i, active;
@@ -1099,7 +1103,7 @@ pref_response_cb (GtkDialog *dialog,
                   gint       id,
                   gpointer   data)
 {
-    MateNetspeedApplet *applet = data;
+    NetspeedApplet *applet = data;
 
     if (id == GTK_RESPONSE_HELP) {
         display_help (GTK_WIDGET (dialog), "netspeed_applet-settings");
@@ -1117,8 +1121,8 @@ pref_response_cb (GtkDialog *dialog,
 /* Called when the showalladdresses checkbutton is toggled...
  */
 static void
-showalladdresses_change_cb (GtkToggleButton    *togglebutton,
-                            MateNetspeedApplet *applet)
+showalladdresses_change_cb (GtkToggleButton *togglebutton,
+                            NetspeedApplet  *applet)
 {
     applet->show_all_addresses = gtk_toggle_button_get_active (togglebutton);
 }
@@ -1126,19 +1130,19 @@ showalladdresses_change_cb (GtkToggleButton    *togglebutton,
 /* Called when the showsum checkbutton is toggled...
  */
 static void
-showsum_change_cb (GtkToggleButton    *togglebutton,
-                   MateNetspeedApplet *applet)
+showsum_change_cb (GtkToggleButton *togglebutton,
+                   NetspeedApplet  *applet)
 {
     applet->show_sum = gtk_toggle_button_get_active (togglebutton);
-    applet_change_size_or_orient (applet->applet, -1, (gpointer) applet);
+    applet_change_size_or_orient (MATE_PANEL_APPLET (applet), -1, (gpointer) applet);
     change_icons (applet);
 }
 
 /* Called when the showbits checkbutton is toggled...
  */
 static void
-showbits_change_cb (GtkToggleButton    *togglebutton,
-                    MateNetspeedApplet *applet)
+showbits_change_cb (GtkToggleButton  *togglebutton,
+                    NetspeedApplet   *applet)
 {
     applet->show_bits = gtk_toggle_button_get_active (togglebutton);
 }
@@ -1146,8 +1150,8 @@ showbits_change_cb (GtkToggleButton    *togglebutton,
 /* Called when the showicon checkbutton is toggled...
  */
 static void
-showicon_change_cb (GtkToggleButton    *togglebutton,
-                    MateNetspeedApplet *applet)
+showicon_change_cb (GtkToggleButton *togglebutton,
+                    NetspeedApplet  *applet)
 {
     applet->show_icon = gtk_toggle_button_get_active (togglebutton);
     change_icons (applet);
@@ -1156,8 +1160,8 @@ showicon_change_cb (GtkToggleButton    *togglebutton,
 /* Called when the showqualityicon checkbutton is toggled...
  */
 static void
-showqualityicon_change_cb (GtkToggleButton    *togglebutton,
-                           MateNetspeedApplet *applet)
+showqualityicon_change_cb (GtkToggleButton *togglebutton,
+                           NetspeedApplet  *applet)
 {
     applet->show_quality_icon = gtk_toggle_button_get_active (togglebutton);
     change_quality_icon (applet);
@@ -1166,8 +1170,8 @@ showqualityicon_change_cb (GtkToggleButton    *togglebutton,
 /* Called when the changeicon checkbutton is toggled...
  */
 static void
-changeicon_change_cb (GtkToggleButton    *togglebutton,
-                      MateNetspeedApplet *applet)
+changeicon_change_cb (GtkToggleButton *togglebutton,
+                      NetspeedApplet  *applet)
 {
     applet->change_icon = gtk_toggle_button_get_active (togglebutton);
     change_icons (applet);
@@ -1182,7 +1186,7 @@ settings_cb (GtkAction *action,
              gpointer   data)
 {
     GtkBuilder *builder;
-    MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
+    NetspeedApplet *applet = (NetspeedApplet*)data;
     GList *ptr, *devices;
     int i, active = -1;
 
@@ -1269,7 +1273,7 @@ da_draw (GtkWidget *widget,
          cairo_t   *cr,
          gpointer   data)
 {
-    MateNetspeedApplet *applet = (MateNetspeedApplet*) data;
+    NetspeedApplet *applet = (NetspeedApplet*) data;
 
     redraw_graph (applet, cr);
 
@@ -1280,7 +1284,7 @@ static void
 incolor_changed_cb (GtkColorChooser *button,
                     gpointer         data)
 {
-    MateNetspeedApplet *applet = (MateNetspeedApplet*) data;
+    NetspeedApplet *applet = (NetspeedApplet*) data;
     GdkRGBA color;
     gchar *string;
 
@@ -1296,7 +1300,7 @@ static void
 outcolor_changed_cb (GtkColorChooser *button,
                      gpointer data)
 {
-    MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
+    NetspeedApplet *applet = (NetspeedApplet*)data;
     GdkRGBA color;
     gchar *string;
 
@@ -1311,9 +1315,9 @@ outcolor_changed_cb (GtkColorChooser *button,
 /* Handle info dialog response event
  */
 static void
-info_response_cb (GtkDialog          *dialog,
-                  gint                id,
-                  MateNetspeedApplet *applet)
+info_response_cb (GtkDialog      *dialog,
+                  gint            id,
+                  NetspeedApplet *applet)
 {
 
     if (id == GTK_RESPONSE_HELP) {
@@ -1351,7 +1355,7 @@ showinfo_cb (GtkAction *action,
              gpointer   data)
 {
     GtkBuilder *builder;
-    MateNetspeedApplet *applet = (MateNetspeedApplet*)data;
+    NetspeedApplet *applet = (NetspeedApplet*)data;
 
     g_assert (applet);
 
@@ -1402,14 +1406,14 @@ showinfo_cb (GtkAction *action,
     gtk_window_present (GTK_WINDOW (applet->details));
 }
 
-static const GtkActionEntry mate_netspeed_applet_menu_actions [] = {
-        { "MateNetspeedAppletDetails", "dialog-information", N_("Device _Details"),
+static const GtkActionEntry netspeed_applet_menu_actions [] = {
+        { "NetspeedAppletDetails", "dialog-information", N_("Device _Details"),
           NULL, NULL, G_CALLBACK (showinfo_cb) },
-        { "MateNetspeedAppletProperties", "document-properties", N_("Preferences..."),
+        { "NetspeedAppletProperties", "document-properties", N_("Preferences..."),
           NULL, NULL, G_CALLBACK (settings_cb) },
-        { "MateNetspeedAppletHelp", "help-browser", N_("Help"),
+        { "NetspeedAppletHelp", "help-browser", N_("Help"),
           NULL, NULL, G_CALLBACK (help_cb) },
-        { "MateNetspeedAppletAbout", "help-about", N_("About..."),
+        { "NetspeedAppletAbout", "help-about", N_("About..."),
           NULL, NULL, G_CALLBACK (about_cb) }
 };
 
@@ -1420,9 +1424,9 @@ static const GtkActionEntry mate_netspeed_applet_menu_actions [] = {
  * "jumping around" in the mate_panel which looks uggly
  */
 static void
-label_size_allocate_cb (GtkWidget          *widget,
-                        GtkAllocation      *allocation,
-                        MateNetspeedApplet *applet)
+label_size_allocate_cb (GtkWidget      *widget,
+                        GtkAllocation  *allocation,
+                        NetspeedApplet *applet)
 {
     if (applet->labels_dont_shrink) {
         if (allocation->width <= applet->width)
@@ -1433,9 +1437,9 @@ label_size_allocate_cb (GtkWidget          *widget,
 }
 
 static gboolean
-applet_button_press (GtkWidget          *widget,
-                     GdkEventButton     *event,
-                     MateNetspeedApplet *applet)
+applet_button_press (GtkWidget      *widget,
+                     GdkEventButton *event,
+                     NetspeedApplet *applet)
 {
     if (event->button == 1) {
         GError *error = NULL;
@@ -1498,8 +1502,8 @@ applet_button_press (GtkWidget          *widget,
  * Removes the timeout_cb
  */
 static void
-applet_destroy (MatePanelApplet    *applet_widget,
-                MateNetspeedApplet *applet)
+applet_destroy (MatePanelApplet *applet_widget,
+                NetspeedApplet  *applet)
 {
     g_assert (applet);
 
@@ -1527,7 +1531,7 @@ applet_destroy (MatePanelApplet    *applet_widget,
 }
 
 static void
-update_tooltip (MateNetspeedApplet* applet)
+update_tooltip (NetspeedApplet* applet)
 {
     GString* tooltip;
 
@@ -1618,18 +1622,18 @@ update_tooltip (MateNetspeedApplet* applet)
 #endif /* HAVE_IW */
     }
 
-    gtk_widget_set_tooltip_text (GTK_WIDGET (applet->applet), tooltip->str);
-    gtk_widget_trigger_tooltip_query (GTK_WIDGET (applet->applet));
+    gtk_widget_set_tooltip_text (GTK_WIDGET (applet), tooltip->str);
+    gtk_widget_trigger_tooltip_query (GTK_WIDGET (applet));
     g_string_free (tooltip, TRUE);
 }
 
 
 static gboolean
-mate_netspeed_enter_cb (GtkWidget        *widget,
-                        GdkEventCrossing *event,
-                        gpointer          data)
+netspeed_applet_enter_cb (GtkWidget        *widget,
+                          GdkEventCrossing *event,
+                          gpointer          data)
 {
-    MateNetspeedApplet *applet = data;
+    NetspeedApplet *applet = data;
 
     applet->show_tooltip = TRUE;
     update_tooltip (applet);
@@ -1638,24 +1642,34 @@ mate_netspeed_enter_cb (GtkWidget        *widget,
 }
 
 static gboolean
-mate_netspeed_leave_cb (GtkWidget        *widget,
+netspeed_applet_leave_cb (GtkWidget       *widget,
                         GdkEventCrossing *event,
                         gpointer          data)
 {
-    MateNetspeedApplet *applet = data;
+    NetspeedApplet *applet = data;
 
     applet->show_tooltip = FALSE;
     return TRUE;
 }
 
+static void
+netspeed_applet_class_init (NetspeedAppletClass *netspeed_class)
+{
+}
+
+static void
+netspeed_applet_init (NetspeedApplet *netspeed)
+{
+}
+
 /* The "main" function of the applet
  */
 static gboolean
-mate_netspeed_applet_factory (MatePanelApplet *applet_widget,
-                              const gchar     *iid,
-                              gpointer         data)
+netspeed_applet_factory (MatePanelApplet *applet_widget,
+                         const gchar     *iid,
+                         gpointer         data)
 {
-    MateNetspeedApplet *applet;
+    NetspeedApplet *applet;
     int i;
     GtkWidget *spacer, *spacer_box;
     GtkActionGroup *action_group;
@@ -1666,11 +1680,7 @@ mate_netspeed_applet_factory (MatePanelApplet *applet_widget,
     glibtop_init ();
     g_set_application_name (_("MATE Netspeed"));
 
-    /* Alloc the applet. The "NULL-setting" is really redudant
-      * but aren't we paranoid?
-     */
-    applet = g_new0 (MateNetspeedApplet, 1);
-    applet->applet = applet_widget;
+    applet = NETSPEED_APPLET (applet_widget);
     applet->icon_theme = gtk_icon_theme_get_default ();
 
     /* Set the default colors of the graph
@@ -1813,21 +1823,21 @@ mate_netspeed_applet_factory (MatePanelApplet *applet_widget,
                       (gpointer)applet);
 
     g_signal_connect (G_OBJECT (applet_widget), "leave_notify_event",
-                      G_CALLBACK (mate_netspeed_leave_cb),
+                      G_CALLBACK (netspeed_applet_leave_cb),
                       (gpointer)applet);
 
     g_signal_connect (G_OBJECT (applet_widget), "enter_notify_event",
-                      G_CALLBACK (mate_netspeed_enter_cb),
+                      G_CALLBACK (netspeed_applet_enter_cb),
                       (gpointer)applet);
 
     action_group = gtk_action_group_new ("Netspeed Applet Actions");
     gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
     gtk_action_group_add_actions (action_group,
-                                  mate_netspeed_applet_menu_actions,
-                                  G_N_ELEMENTS (mate_netspeed_applet_menu_actions),
+                                  netspeed_applet_menu_actions,
+                                  G_N_ELEMENTS (netspeed_applet_menu_actions),
                                   applet);
 
-    mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet->applet),
+    mate_panel_applet_setup_menu_from_resource (applet_widget,
                                                 NETSPEED_RESOURCE_PATH "netspeed-menu.xml",
                                                 action_group);
 
@@ -1837,7 +1847,7 @@ mate_netspeed_applet_factory (MatePanelApplet *applet_widget,
 }
 
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("NetspeedAppletFactory",
-                                       PANEL_TYPE_APPLET,
+                                       NETSPEED_TYPE_APPLET,
                                        "NetspeedApplet",
-                                       mate_netspeed_applet_factory,
+                                       netspeed_applet_factory,
                                        NULL)
