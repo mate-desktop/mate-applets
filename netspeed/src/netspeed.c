@@ -35,7 +35,6 @@
 #include "netspeed.h"
 
 #define GET_COLOR_CHOOSER(x) (GTK_COLOR_CHOOSER (gtk_builder_get_object (builder, (x))))
-#define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
 #define GET_DRAWING_AREA(x) (GTK_DRAWING_AREA (gtk_builder_get_object (builder, (x))))
 #define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
 
@@ -112,7 +111,7 @@ struct _NetspeedApplet
     GdkRGBA          out_color;
     int              width;
     /* details dialog */
-    GtkDialog       *details;
+    GtkWidget       *details;
     GtkDrawingArea  *drawingarea;
     GtkWidget       *ip_text;
     GtkWidget       *netmask_text;
@@ -132,7 +131,7 @@ struct _NetspeedApplet
     GtkWidget       *netlink_box;
     GtkWidget       *wireless_box;
     /* settings dialog */
-    GtkDialog       *settings;
+    GtkWidget       *settings;
     GtkWidget       *network_device_combo;
 
     guint            index_old;
@@ -1110,7 +1109,7 @@ pref_response_cb (GtkDialog      *dialog,
     g_settings_set_boolean (netspeed->gsettings, "auto-change-device", netspeed->auto_change_device);
     g_settings_apply (netspeed->gsettings);
 
-    gtk_widget_destroy (GTK_WIDGET (netspeed->settings));
+    gtk_widget_destroy (netspeed->settings);
     netspeed->settings = NULL;
 }
 
@@ -1195,11 +1194,11 @@ settings_cb (GtkAction      *action,
 
     builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-preferences.ui");
 
-    netspeed->settings = GET_DIALOG ("preferences_dialog");
+    netspeed->settings = GET_WIDGET ("preferences_dialog");
     netspeed->network_device_combo = GET_WIDGET ("network_device_combo");
 
     gtk_window_set_screen (GTK_WINDOW (netspeed->settings),
-                           gtk_widget_get_screen (GTK_WIDGET (netspeed->settings)));
+                           gtk_widget_get_screen (netspeed->settings));
 
     gtk_dialog_set_default_response (GTK_DIALOG (netspeed->settings), GTK_RESPONSE_CLOSE);
 
@@ -1260,7 +1259,7 @@ settings_cb (GtkAction      *action,
 
     g_object_unref (builder);
 
-    gtk_widget_show_all (GTK_WIDGET (netspeed->settings));
+    gtk_widget_show_all (netspeed->settings);
 }
 
 static gboolean
@@ -1316,7 +1315,7 @@ info_response_cb (GtkDialog      *dialog,
         return;
     }
 
-    gtk_widget_destroy (GTK_WIDGET (netspeed->details));
+    gtk_widget_destroy (netspeed->details);
 
     netspeed->details       = NULL;
     netspeed->drawingarea   = NULL;
@@ -1356,7 +1355,7 @@ showinfo_cb (GtkAction      *action,
 
     builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-details.ui");
 
-    netspeed->details       = GET_DIALOG ("dialog");
+    netspeed->details       = GET_WIDGET ("dialog");
     netspeed->drawingarea   = GET_DRAWING_AREA ("drawingarea");
 
     netspeed->ip_text       = GET_WIDGET ("ip_text");
@@ -1427,11 +1426,11 @@ label_size_allocate_cb (GtkWidget      *widget,
 }
 
 static gboolean
-applet_button_press (GtkWidget      *widget,
-                     GdkEventButton *event,
-                     NetspeedApplet *netspeed)
+netspeed_applet_button_press_event (GtkWidget      *widget,
+                                    GdkEventButton *event)
 {
     if (event->button == 1) {
+        NetspeedApplet *netspeed = NETSPEED_APPLET (widget);
         GError *error = NULL;
 
         if (netspeed->connect_dialog) {
@@ -1485,17 +1484,16 @@ applet_button_press (GtkWidget      *widget,
         }
     }
 
-    return FALSE;
+    return GTK_WIDGET_CLASS (netspeed_applet_parent_class)->button_press_event (widget, event);
 }
 
 /* Frees the applet and all the data it contains
  * Removes the timeout_cb
  */
 static void
-applet_destroy (MatePanelApplet *applet,
-                NetspeedApplet  *netspeed)
+netspeed_applet_finalize (GObject *object)
 {
-    g_assert (netspeed);
+    NetspeedApplet *netspeed = NETSPEED_APPLET (object);
 
     if (netspeed->icon_theme != NULL) {
         g_signal_handlers_disconnect_by_func (netspeed->icon_theme,
@@ -1504,18 +1502,23 @@ applet_destroy (MatePanelApplet *applet,
         netspeed->icon_theme = NULL;
     }
 
-    g_source_remove (netspeed->timeout_id);
-    netspeed->timeout_id = 0;
+    if (netspeed->timeout_id > 0) {
+        g_source_remove (netspeed->timeout_id);
+        netspeed->timeout_id = 0;
+    }
+
+    g_clear_object (&netspeed->gsettings);
+
+    g_clear_pointer (&netspeed->details, gtk_widget_destroy);
+    g_clear_pointer (&netspeed->settings, gtk_widget_destroy);
 
     g_free (netspeed->up_cmd);
     g_free (netspeed->down_cmd);
-    if (netspeed->gsettings)
-        g_object_unref (netspeed->gsettings);
 
     /* Should never be NULL */
     free_device_info (netspeed->devinfo);
 
-    return;
+    G_OBJECT_CLASS (netspeed_applet_parent_class)->finalize (object);
 }
 
 static void
@@ -1617,27 +1620,37 @@ update_tooltip (NetspeedApplet *netspeed)
 
 
 static gboolean
-netspeed_applet_enter_cb (GtkWidget        *widget,
-                          GdkEventCrossing *event,
-                          NetspeedApplet   *netspeed)
+netspeed_applet_enter_notify_event (GtkWidget        *widget,
+                                    GdkEventCrossing *event)
 {
+    NetspeedApplet *netspeed = NETSPEED_APPLET (widget);
+
     netspeed->show_tooltip = TRUE;
     update_tooltip (netspeed);
     return TRUE;
 }
 
 static gboolean
-netspeed_applet_leave_cb (GtkWidget        *widget,
-                          GdkEventCrossing *event,
-                          NetspeedApplet   *netspeed)
+netspeed_applet_leave_notify_event (GtkWidget        *widget,
+                                    GdkEventCrossing *event)
 {
+    NetspeedApplet *netspeed = NETSPEED_APPLET (widget);
+
     netspeed->show_tooltip = FALSE;
     return TRUE;
 }
 
 static void
-netspeed_applet_class_init (NetspeedAppletClass *netspeed_class)
+netspeed_applet_class_init (NetspeedAppletClass *klass)
 {
+    GObjectClass *object_class = G_OBJECT_CLASS (klass);
+    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+    object_class->finalize = netspeed_applet_finalize;
+
+    widget_class->button_press_event = netspeed_applet_button_press_event;
+    widget_class->leave_notify_event = netspeed_applet_leave_notify_event;
+    widget_class->enter_notify_event = netspeed_applet_enter_notify_event;
 }
 
 static void
@@ -1795,22 +1808,6 @@ netspeed_applet_factory (MatePanelApplet *applet,
 
     g_signal_connect (netspeed->sum_label, "size_allocate",
                       G_CALLBACK (label_size_allocate_cb),
-                      netspeed);
-
-    g_signal_connect (applet, "destroy",
-                      G_CALLBACK (applet_destroy),
-                      netspeed);
-
-    g_signal_connect (applet, "button-press-event",
-                      G_CALLBACK (applet_button_press),
-                      netspeed);
-
-    g_signal_connect (applet, "leave_notify_event",
-                      G_CALLBACK (netspeed_applet_leave_cb),
-                      netspeed);
-
-    g_signal_connect (applet, "enter_notify_event",
-                      G_CALLBACK (netspeed_applet_enter_cb),
                       netspeed);
 
     action_group = gtk_action_group_new ("Netspeed Applet Actions");
