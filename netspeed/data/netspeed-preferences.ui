@@ -12,13 +12,13 @@
     <property name="can-focus">False</property>
     <property name="icon-name">window-close</property>
   </object>
-  <object class="GtkDialog" id="preferences_dialog">
+  <template class="NetspeedPreferences" parent="GtkDialog">
     <property name="can-focus">False</property>
     <property name="border-width">12</property>
     <property name="title" translatable="yes">MATE Netspeed Preferences</property>
+    <property name="destroy-with-parent">True</property>
     <property name="icon-name">mate-netspeed-applet</property>
     <property name="type-hint">dialog</property>
-    <signal name="response" handler="on_preferences_dialog_response" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox">
         <property name="can-focus">False</property>
@@ -135,7 +135,6 @@
                         <property name="halign">start</property>
                         <property name="use-underline">True</property>
                         <property name="draw-indicator">True</property>
-                        <signal name="toggled" handler="on_show_sum_checkbutton_toggled" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -152,7 +151,6 @@
                         <property name="halign">start</property>
                         <property name="use-underline">True</property>
                         <property name="draw-indicator">True</property>
-                        <signal name="toggled" handler="on_show_bits_checkbutton_toggled" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -169,7 +167,6 @@
                         <property name="halign">start</property>
                         <property name="use-underline">True</property>
                         <property name="draw-indicator">True</property>
-                        <signal name="toggled" handler="on_change_icon_checkbutton_toggled" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -186,7 +183,6 @@
                         <property name="halign">start</property>
                         <property name="use-underline">True</property>
                         <property name="draw-indicator">True</property>
-                        <signal name="toggled" handler="on_show_icon_checkbutton_toggled" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -203,7 +199,6 @@
                         <property name="halign">start</property>
                         <property name="use-underline">True</property>
                         <property name="draw-indicator">True</property>
-                        <signal name="toggled" handler="on_show_quality_icon_checkbutton_toggled" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -220,7 +215,6 @@
                         <property name="halign">start</property>
                         <property name="use-underline">True</property>
                         <property name="draw-indicator">True</property>
-                        <signal name="toggled" handler="on_show_all_addresses_checkbutton_toggled" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -256,5 +250,5 @@
       <action-widget response="-11">button1</action-widget>
       <action-widget response="-3">button2</action-widget>
     </action-widgets>
-  </object>
+  </template>
 </interface>

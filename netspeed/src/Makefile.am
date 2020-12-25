@@ -22,6 +22,8 @@ mate_netspeed_applet_SOURCES =	\
 	backend.c		\
 	netspeed.c		\
 	netspeed.h		\
+	netspeed-preferences.c	\
+	netspeed-preferences.h	\
 	$(NULL)
 
 if HAVE_NL

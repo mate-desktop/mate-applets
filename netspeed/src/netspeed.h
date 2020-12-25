@@ -21,8 +21,15 @@
 
 #include <mate-panel-applet.h>
 
+#include "backend.h"
+#include "netspeed-preferences.h"
+
 #define NETSPEED_TYPE_APPLET netspeed_applet_get_type ()
 G_DECLARE_FINAL_TYPE (NetspeedApplet, netspeed_applet,
                       NETSPEED, APPLET, MatePanelApplet)
+
+GSettings * netspeed_applet_get_settings (NetspeedApplet *netspeed);
+const gchar * netspeed_applet_get_current_device_name (NetspeedApplet *netspeed);
+void netspeed_applet_display_help (GtkWidget *dialog, const gchar *section);
 
 #endif
