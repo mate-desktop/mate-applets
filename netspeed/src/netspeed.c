@@ -32,6 +32,8 @@
 #include <gio/gio.h>
 
 #include "backend.h"
+#include "netspeed-preferences.h"
+
 #include "netspeed.h"
 
 #define GET_COLOR_CHOOSER(x) (GTK_COLOR_CHOOSER (gtk_builder_get_object (builder, (x))))
@@ -131,8 +133,7 @@ struct _NetspeedApplet
     GtkWidget       *netlink_box;
     GtkWidget       *wireless_box;
     /* settings dialog */
-    GtkWidget       *settings;
-    GtkWidget       *network_device_combo;
+    GtkWidget       *preferences;
 
     guint            index_old;
     guint64          in_old [OLD_VALUES];
@@ -144,7 +145,7 @@ struct _NetspeedApplet
     GtkWidget       *connect_dialog;
     gboolean         show_tooltip;
     GtkIconTheme    *icon_theme;
-    GSettings       *gsettings;
+    GSettings       *settings;
 };
 
 G_DEFINE_TYPE (NetspeedApplet, netspeed_applet, PANEL_TYPE_APPLET)
@@ -152,9 +153,17 @@ G_DEFINE_TYPE (NetspeedApplet, netspeed_applet, PANEL_TYPE_APPLET)
 static void
 update_tooltip (NetspeedApplet *netspeed);
 
-static void
-device_change_cb (GtkComboBox    *combo,
-                  NetspeedApplet *netspeed);
+GSettings *
+netspeed_applet_get_settings (NetspeedApplet *netspeed)
+{
+    return netspeed->settings;
+}
+
+const gchar *
+netspeed_applet_get_current_device_name (NetspeedApplet *netspeed)
+{
+    return netspeed->devinfo->name;
+}
 
 /* Adds a Pango markup "foreground" to a bytestring
  */
@@ -982,9 +991,9 @@ timeout_function (NetspeedApplet *netspeed)
 
 /* Display a section of netspeed help
  */
-static void
-display_help (GtkWidget   *dialog,
-              const gchar *section)
+void
+netspeed_applet_display_help (GtkWidget   *dialog,
+                              const gchar *section)
 {
     GError *error = NULL;
     gboolean ret;
@@ -1024,7 +1033,7 @@ static void
 help_cb (GtkAction      *action,
          NetspeedApplet *netspeed)
 {
-    display_help (GTK_WIDGET (netspeed), NULL);
+    netspeed_applet_display_help (GTK_WIDGET (netspeed), NULL);
 }
 
 /* Just the about window... If it's already open, just fokus it
@@ -1059,117 +1068,15 @@ about_cb (GtkAction *action,
                             NULL);
 }
 
-/* this basically just retrieves the new devicestring
- * and then calls applet_device_change () and change_icons ()
- */
 static void
-device_change_cb (GtkComboBox    *combo,
-                  NetspeedApplet *netspeed)
+netspeed_applet_destory_preferences (GtkWidget *widget,
+                                     gpointer   user_data)
 {
-    GList *devices;
-    int i, active;
+	NetspeedApplet *netspeed;
+	(void) widget;
 
-    g_assert (combo);
-    devices = g_object_get_data (G_OBJECT (combo), "devices");
-    active = gtk_combo_box_get_active (combo);
-    g_assert (active > -1);
-
-    if (0 == active) {
-        if (netspeed->auto_change_device)
-            return;
-        netspeed->auto_change_device = TRUE;
-    } else {
-        netspeed->auto_change_device = FALSE;
-        for (i = 1; i < active; i++) {
-            devices = g_list_next (devices);
-        }
-        if (g_str_equal (devices->data, netspeed->devinfo->name))
-            return;
-        free_device_info (netspeed->devinfo);
-        get_device_info (devices->data, &netspeed->devinfo);
-    }
-
-    netspeed->device_has_changed = TRUE;
-    update_applet (netspeed);
-}
-
-/* Handle preference dialog response event
- */
-static void
-pref_response_cb (GtkDialog      *dialog,
-                  gint            id,
-                  NetspeedApplet *netspeed)
-{
-    if (id == GTK_RESPONSE_HELP) {
-        display_help (GTK_WIDGET (dialog), "netspeed_applet-settings");
-        return;
-    }
-    g_settings_delay (netspeed->gsettings);
-    g_settings_set_string (netspeed->gsettings, "device", netspeed->devinfo->name);
-    g_settings_set_boolean (netspeed->gsettings, "auto-change-device", netspeed->auto_change_device);
-    g_settings_apply (netspeed->gsettings);
-
-    gtk_widget_destroy (netspeed->settings);
-    netspeed->settings = NULL;
-}
-
-/* Called when the showalladdresses checkbutton is toggled...
- */
-static void
-showalladdresses_change_cb (GtkToggleButton *button,
-                            NetspeedApplet  *netspeed)
-{
-    netspeed->show_all_addresses = gtk_toggle_button_get_active (button);
-}
-
-/* Called when the showsum checkbutton is toggled...
- */
-static void
-showsum_change_cb (GtkToggleButton *button,
-                   NetspeedApplet  *netspeed)
-{
-    netspeed->show_sum = gtk_toggle_button_get_active (button);
-    applet_change_size_or_orient (MATE_PANEL_APPLET (netspeed), -1, netspeed);
-    change_icons (netspeed);
-}
-
-/* Called when the showbits checkbutton is toggled...
- */
-static void
-showbits_change_cb (GtkToggleButton  *button,
-                    NetspeedApplet   *netspeed)
-{
-    netspeed->show_bits = gtk_toggle_button_get_active (button);
-}
-
-/* Called when the showicon checkbutton is toggled...
- */
-static void
-showicon_change_cb (GtkToggleButton *button,
-                    NetspeedApplet  *netspeed)
-{
-    netspeed->show_icon = gtk_toggle_button_get_active (button);
-    change_icons (netspeed);
-}
-
-/* Called when the showqualityicon checkbutton is toggled...
- */
-static void
-showqualityicon_change_cb (GtkToggleButton *button,
-                           NetspeedApplet  *netspeed)
-{
-    netspeed->show_quality_icon = gtk_toggle_button_get_active (button);
-    change_quality_icon (netspeed);
-}
-
-/* Called when the changeicon checkbutton is toggled...
- */
-static void
-changeicon_change_cb (GtkToggleButton *button,
-                      NetspeedApplet  *netspeed)
-{
-    netspeed->change_icon = gtk_toggle_button_get_active (button);
-    change_icons (netspeed);
+	netspeed = NETSPEED_APPLET (user_data);
+	netspeed->preferences = NULL;
 }
 
 /* Creates the settings dialog
@@ -1180,86 +1087,18 @@ static void
 settings_cb (GtkAction      *action,
              NetspeedApplet *netspeed)
 {
-    GtkBuilder *builder;
-    GList *ptr, *devices;
-    int i, active = -1;
-
     g_assert (netspeed);
 
-    if (netspeed->settings)
+    if (netspeed->preferences)
     {
-        gtk_window_present (GTK_WINDOW (netspeed->settings));
+        gtk_window_present (GTK_WINDOW (netspeed->preferences));
         return;
     }
 
-    builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-preferences.ui");
-
-    netspeed->settings = GET_WIDGET ("preferences_dialog");
-    netspeed->network_device_combo = GET_WIDGET ("network_device_combo");
-
-    gtk_window_set_screen (GTK_WINDOW (netspeed->settings),
-                           gtk_widget_get_screen (netspeed->settings));
-
-    gtk_dialog_set_default_response (GTK_DIALOG (netspeed->settings), GTK_RESPONSE_CLOSE);
-
-    g_settings_bind (netspeed->gsettings, "show-all-addresses",
-                     gtk_builder_get_object (builder, "show_all_addresses_checkbutton"),
-                     "active", G_SETTINGS_BIND_DEFAULT);
-
-    g_settings_bind (netspeed->gsettings, "show-sum",
-                     gtk_builder_get_object (builder, "show_sum_checkbutton"),
-                     "active", G_SETTINGS_BIND_DEFAULT);
-
-    g_settings_bind (netspeed->gsettings, "show-bits",
-                     gtk_builder_get_object (builder, "show_bits_checkbutton"),
-                     "active", G_SETTINGS_BIND_DEFAULT);
-
-    g_settings_bind (netspeed->gsettings, "show-icon",
-                     gtk_builder_get_object (builder, "show_icon_checkbutton"),
-                     "active", G_SETTINGS_BIND_DEFAULT);
-
-    g_settings_bind (netspeed->gsettings, "show-quality-icon",
-                     gtk_builder_get_object (builder, "show_quality_icon_checkbutton"),
-                     "active", G_SETTINGS_BIND_DEFAULT);
-
-    g_settings_bind (netspeed->gsettings, "change-icon",
-                     gtk_builder_get_object (builder, "change_icon_checkbutton"),
-                     "active", G_SETTINGS_BIND_DEFAULT);
-
-    /* Default means device with default route set */
-    gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (netspeed->network_device_combo),
-                                    _("Default"));
-    ptr = devices = get_available_devices ();
-    for (i = 0; ptr; ptr = g_list_next (ptr)) {
-        gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (netspeed->network_device_combo),
-                                        ptr->data);
-        if (g_str_equal (ptr->data, netspeed->devinfo->name))
-            active = (i + 1);
-        ++i;
-    }
-    if (active < 0 || netspeed->auto_change_device) {
-        active = 0;
-    }
-    gtk_combo_box_set_active (GTK_COMBO_BOX (netspeed->network_device_combo), active);
-    g_object_set_data_full (G_OBJECT (netspeed->network_device_combo), "devices",
-                            devices, (GDestroyNotify)free_devices_list);
-
-    /* signals */
-    gtk_builder_add_callback_symbols (builder,
-                                      "on_network_device_combo_changed", G_CALLBACK (device_change_cb),
-                                      "on_show_all_addresses_checkbutton_toggled", G_CALLBACK (showalladdresses_change_cb),
-                                      "on_show_sum_checkbutton_toggled", G_CALLBACK (showsum_change_cb),
-                                      "on_show_bits_checkbutton_toggled", G_CALLBACK (showbits_change_cb),
-                                      "on_change_icon_checkbutton_toggled", G_CALLBACK (changeicon_change_cb),
-                                      "on_show_icon_checkbutton_toggled", G_CALLBACK (showicon_change_cb),
-                                      "on_show_quality_icon_checkbutton_toggled", G_CALLBACK (showqualityicon_change_cb),
-                                      "on_preferences_dialog_response", G_CALLBACK (pref_response_cb),
-                                      NULL);
-    gtk_builder_connect_signals (builder, netspeed);
-
-    g_object_unref (builder);
-
-    gtk_widget_show_all (netspeed->settings);
+    netspeed->preferences = netspeed_preferences_new (netspeed);
+    g_signal_connect (netspeed->preferences, "destroy",
+                      G_CALLBACK (netspeed_applet_destory_preferences), netspeed);
+    gtk_widget_show_all (netspeed->preferences);
 }
 
 static gboolean
@@ -1283,7 +1122,7 @@ incolor_changed_cb (GtkColorChooser *button,
     netspeed->in_color = color;
 
     string = gdk_rgba_to_string (&color);
-    g_settings_set_string (netspeed->gsettings, "in-color", string);
+    g_settings_set_string (netspeed->settings, "in-color", string);
     g_free (string);
 }
 
@@ -1298,7 +1137,7 @@ outcolor_changed_cb (GtkColorChooser *button,
     netspeed->out_color = color;
 
     string = gdk_rgba_to_string (&color);
-    g_settings_set_string (netspeed->gsettings, "out-color", string);
+    g_settings_set_string (netspeed->settings, "out-color", string);
     g_free (string);
 }
 
@@ -1311,7 +1150,7 @@ info_response_cb (GtkDialog      *dialog,
 {
 
     if (id == GTK_RESPONSE_HELP) {
-        display_help (GTK_WIDGET (dialog), "netspeed_applet-details");
+        netspeed_applet_display_help (GTK_WIDGET (dialog), "netspeed_applet-details");
         return;
     }
 
@@ -1507,18 +1346,16 @@ netspeed_applet_finalize (GObject *object)
         netspeed->timeout_id = 0;
     }
 
-    g_clear_object (&netspeed->gsettings);
+    g_clear_object (&netspeed->settings);
 
     g_clear_pointer (&netspeed->details, gtk_widget_destroy);
-    g_clear_pointer (&netspeed->settings, gtk_widget_destroy);
+    g_clear_pointer (&netspeed->preferences, gtk_widget_destroy);
 
     g_free (netspeed->up_cmd);
     g_free (netspeed->down_cmd);
 
     /* Should never be NULL */
     free_device_info (netspeed->devinfo);
-
-    G_OBJECT_CLASS (netspeed_applet_parent_class)->finalize (object);
 }
 
 static void
@@ -1658,6 +1495,81 @@ netspeed_applet_init (NetspeedApplet *netspeed)
 {
 }
 
+static void
+changeicon_settings_changed (GSettings      *settings,
+                             const gchar    *key,
+                             NetspeedApplet *netspeed)
+{
+    netspeed->change_icon = g_settings_get_boolean (settings, key);
+    change_icons (netspeed);
+}
+
+static void
+showalladdresses_settings_changed (GSettings      *settings,
+                                   const gchar    *key,
+                                   NetspeedApplet *netspeed)
+{
+    netspeed->show_all_addresses = g_settings_get_boolean (settings, key);
+}
+
+static void
+showsum_settings_changed (GSettings      *settings,
+                          const gchar    *key,
+                          NetspeedApplet *netspeed)
+{
+    netspeed->show_sum = g_settings_get_boolean (settings, key);
+    applet_change_size_or_orient (MATE_PANEL_APPLET (netspeed), -1, netspeed);
+    change_icons (netspeed);
+}
+
+static void
+showbits_settings_changed (GSettings      *settings,
+                           const gchar    *key,
+                           NetspeedApplet *netspeed)
+{
+    netspeed->show_bits = g_settings_get_boolean (settings, key);
+}
+
+static void
+showicon_settings_changed (GSettings      *settings,
+                           const gchar    *key,
+                           NetspeedApplet *netspeed)
+{
+    netspeed->show_icon = g_settings_get_boolean (settings, key);
+    change_icons (netspeed);
+}
+
+static void
+showqualityicon_settings_changed (GSettings      *settings,
+                                  const gchar    *key,
+                                  NetspeedApplet *netspeed)
+{
+    netspeed->show_quality_icon = g_settings_get_boolean (settings, key);
+    change_quality_icon (netspeed);
+}
+
+static void
+auto_change_device_settings_changed (GSettings      *settings,
+                                     const gchar    *key,
+                                     NetspeedApplet *netspeed)
+{
+    netspeed->auto_change_device = g_settings_get_boolean (settings, key);
+    netspeed->device_has_changed = TRUE;
+    update_applet (netspeed);
+}
+
+static void
+device_settings_changed (GSettings      *settings,
+                         const gchar    *key,
+                         NetspeedApplet *netspeed)
+{
+    char *davice;
+
+    davice = g_settings_get_string (settings, key);
+    set_applet_devinfo (netspeed, davice);
+    g_free (davice);
+}
+
 /* The "main" function of the applet
  */
 static gboolean
@@ -1694,44 +1606,44 @@ netspeed_applet_factory (MatePanelApplet *applet,
         netspeed->out_graph[i] = -1;
     }
 
-    netspeed->gsettings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.netspeed");
+    netspeed->settings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.netspeed");
 
     /* Get stored settings from gsettings
      */
-    netspeed->show_all_addresses = g_settings_get_boolean (netspeed->gsettings, "show-all-addresses");
-    netspeed->show_sum = g_settings_get_boolean (netspeed->gsettings, "show-sum");
-    netspeed->show_bits = g_settings_get_boolean (netspeed->gsettings, "show-bits");
-    netspeed->show_icon = g_settings_get_boolean (netspeed->gsettings, "show-icon");
-    netspeed->show_quality_icon = g_settings_get_boolean (netspeed->gsettings, "show-quality-icon");
-    netspeed->change_icon = g_settings_get_boolean (netspeed->gsettings, "change-icon");
-    netspeed->auto_change_device = g_settings_get_boolean (netspeed->gsettings, "auto-change-device");
+    netspeed->show_all_addresses = g_settings_get_boolean (netspeed->settings, "show-all-addresses");
+    netspeed->show_sum = g_settings_get_boolean (netspeed->settings, "show-sum");
+    netspeed->show_bits = g_settings_get_boolean (netspeed->settings, "show-bits");
+    netspeed->show_icon = g_settings_get_boolean (netspeed->settings, "show-icon");
+    netspeed->show_quality_icon = g_settings_get_boolean (netspeed->settings, "show-quality-icon");
+    netspeed->change_icon = g_settings_get_boolean (netspeed->settings, "change-icon");
+    netspeed->auto_change_device = g_settings_get_boolean (netspeed->settings, "auto-change-device");
 
     char *tmp = NULL;
-    tmp = g_settings_get_string (netspeed->gsettings, "device");
+    tmp = g_settings_get_string (netspeed->settings, "device");
     if (tmp && strcmp (tmp, "")) {
         get_device_info (tmp, &netspeed->devinfo);
         g_free (tmp);
     }
 
-    tmp = g_settings_get_string (netspeed->gsettings, "up-command");
+    tmp = g_settings_get_string (netspeed->settings, "up-command");
     if (tmp && strcmp (tmp, "")) {
         netspeed->up_cmd = g_strdup (tmp);
         g_free (tmp);
     }
 
-    tmp = g_settings_get_string (netspeed->gsettings, "down-command");
+    tmp = g_settings_get_string (netspeed->settings, "down-command");
     if (tmp && strcmp (tmp, "")) {
         netspeed->down_cmd = g_strdup (tmp);
         g_free (tmp);
     }
 
-    tmp = g_settings_get_string (netspeed->gsettings, "in-color");
+    tmp = g_settings_get_string (netspeed->settings, "in-color");
     if (tmp) {
         gdk_rgba_parse (&netspeed->in_color, tmp);
         g_free (tmp);
     }
 
-    tmp = g_settings_get_string (netspeed->gsettings, "out-color");
+    tmp = g_settings_get_string (netspeed->settings, "out-color");
     if (tmp) {
         gdk_rgba_parse (&netspeed->out_color, tmp);
         g_free (tmp);
@@ -1808,6 +1720,38 @@ netspeed_applet_factory (MatePanelApplet *applet,
 
     g_signal_connect (netspeed->sum_label, "size_allocate",
                       G_CALLBACK (label_size_allocate_cb),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::auto-change-device",
+                      G_CALLBACK (auto_change_device_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::device",
+                      G_CALLBACK (device_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::show-all-addresses",
+                      G_CALLBACK (showalladdresses_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::show-sum",
+                      G_CALLBACK (showsum_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::show-bits",
+                      G_CALLBACK (showbits_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::change-icon",
+                      G_CALLBACK (changeicon_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::show-icon",
+                      G_CALLBACK (showicon_settings_changed),
+                      netspeed);
+
+    g_signal_connect (netspeed->settings, "changed::show-quality-icon",
+                      G_CALLBACK (showqualityicon_settings_changed),
                       netspeed);
 
     action_group = gtk_action_group_new ("Netspeed Applet Actions");
