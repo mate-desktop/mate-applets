@@ -23,8 +23,8 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
-void	xstuff_change_workspace (GtkWindow *window,
-			         int        new_space);
-int	xstuff_get_current_workspace (GtkWindow *window);
+void    xstuff_change_workspace (GtkWindow *window,
+                                 int        new_space);
+int     xstuff_get_current_workspace (GtkWindow *window);
 
 #endif /* #ifndef __UTIL_H__ */
