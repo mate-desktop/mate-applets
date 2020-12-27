@@ -22,6 +22,11 @@ which yelp-build || {
     exit 1
 }
 
+which autopoint || {
+    echo "You need to install autopoint"
+    exit 1
+}
+
 REQUIRED_AUTOMAKE_VERSION=1.9
 USE_COMMON_DOC_BUILD=yes
 
