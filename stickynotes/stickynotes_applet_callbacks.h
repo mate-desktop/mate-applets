@@ -23,30 +23,83 @@
 #include <stickynotes_applet.h>
 
 /* Callbacks for the sticky notes applet */
-gboolean applet_button_cb(GtkWidget *widget, GdkEventButton *event, StickyNotesApplet *applet);
-gboolean applet_key_cb(GtkWidget *widget, GdkEventKey *event, StickyNotesApplet *applet);
-gboolean applet_cross_cb(GtkWidget *widget, GdkEventCrossing *event, StickyNotesApplet *applet);
-gboolean applet_focus_cb(GtkWidget *widget, GdkEventFocus *event, StickyNotesApplet *applet);
-void install_check_click_on_desktop (void);
-void applet_change_orient_cb(MatePanelApplet *mate_panel_applet, MatePanelAppletOrient orient, StickyNotesApplet *applet);
-void applet_size_allocate_cb(GtkWidget *widget, GtkAllocation *allocation, StickyNotesApplet *applet);
-void applet_destroy_cb (MatePanelApplet *mate_panel_applet, StickyNotesApplet *applet);
+gboolean
+applet_button_cb (GtkWidget         *widget,
+                  GdkEventButton    *event,
+                  StickyNotesApplet *applet);
+gboolean
+applet_key_cb (GtkWidget         *widget,
+               GdkEventKey       *event,
+               StickyNotesApplet *applet);
+gboolean
+applet_cross_cb (GtkWidget         *widget,
+                 GdkEventCrossing  *event,
+                 StickyNotesApplet *applet);
+gboolean
+applet_focus_cb (GtkWidget         *widget,
+                 GdkEventFocus     *event,
+                 StickyNotesApplet *applet);
+
+void
+install_check_click_on_desktop (void);
+void
+applet_change_orient_cb (MatePanelApplet       *mate_panel_applet,
+                         MatePanelAppletOrient  orient,
+                         StickyNotesApplet     *applet);
+void
+applet_size_allocate_cb (GtkWidget         *widget,
+                         GtkAllocation     *allocation,
+                         StickyNotesApplet *applet);
+void
+applet_destroy_cb (MatePanelApplet   *mate_panel_applet,
+                   StickyNotesApplet *applet);
+
 /* Callbacks for sticky notes applet menu */
-void menu_create_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_new_note_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_hide_notes_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_destroy_all_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_toggle_lock_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_preferences_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_help_cb(GtkAction *action, StickyNotesApplet *applet);
-void menu_about_cb(GtkAction *action, StickyNotesApplet *applet);
+void
+menu_create_cb (GtkAction         *action,
+                StickyNotesApplet *applet);
+void
+menu_new_note_cb (GtkAction         *action,
+                  StickyNotesApplet *applet);
+void
+menu_hide_notes_cb (GtkAction         *action,
+                    StickyNotesApplet *applet);
+void
+menu_destroy_all_cb (GtkAction         *action,
+                     StickyNotesApplet *applet);
+void
+menu_toggle_lock_cb (GtkAction         *action,
+                     StickyNotesApplet *applet);
+void
+menu_preferences_cb (GtkAction         *action,
+                     StickyNotesApplet *applet);
+void
+menu_help_cb (GtkAction         *action,
+              StickyNotesApplet *applet);
+void
+menu_about_cb (GtkAction         *action,
+               StickyNotesApplet *applet);
 
 /* Callbacks for sticky notes preferences dialog */
-void preferences_save_cb(gpointer data);
-void preferences_color_cb (GtkWidget *button, gpointer data);
-void preferences_font_cb (GtkWidget *button, gpointer data);
-void preferences_apply_cb(GSettings *settings, gchar *key, gpointer data);
-void preferences_response_cb(GtkWidget *dialog, gint response, gpointer data);
-gboolean preferences_delete_cb(GtkWidget *widget, GdkEvent *event, gpointer data);
+void
+preferences_save_cb (gpointer data);
+void
+preferences_color_cb (GtkWidget *button,
+                      gpointer   data);
+void
+preferences_font_cb (GtkWidget *button,
+                     gpointer   data);
+void
+preferences_apply_cb (GSettings *settings,
+                      gchar     *key,
+                      gpointer   data);
+void
+preferences_response_cb (GtkWidget *dialog,
+                         gint       response,
+                         gpointer   data);
+gboolean
+preferences_delete_cb (GtkWidget *widget,
+                       GdkEvent  *event,
+                       gpointer   data);
 
 #endif /* __STICKYNOTES_APPLET_CALLBACKS_H__ */
