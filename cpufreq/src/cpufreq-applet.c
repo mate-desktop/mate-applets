@@ -813,8 +813,9 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
                       (gpointer) applet);
 
     /* Monitor */
-    applet->monitor = cpufreq_monitor_factory_create_monitor (
-        cpufreq_prefs_get_cpu (applet->prefs));
+    applet->monitor =
+        cpufreq_monitor_factory_create_monitor (cpufreq_prefs_get_cpu (applet->prefs));
+
     cpufreq_monitor_run (applet->monitor);
     g_signal_connect_swapped (G_OBJECT (applet->monitor), "changed",
                               G_CALLBACK (cpufreq_applet_update),

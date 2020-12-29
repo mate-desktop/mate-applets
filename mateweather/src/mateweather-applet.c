@@ -457,11 +457,10 @@ update_finish (WeatherInfo *info, gpointer data)
 	           	 message = g_strdup_printf ("%s: %s",
 					 weather_info_get_location_name (info),
 					 weather_info_get_sky (info));
-	           	 detail = g_strdup_printf (
-					 _("City: %s\nSky: %s\nTemperature: %s"),
-					 weather_info_get_location_name (info),
-					 weather_info_get_sky (info),
-					 weather_info_get_temp_summary (info));
+	           	 detail = g_strdup_printf (_("City: %s\nSky: %s\nTemperature: %s"),
+			                           weather_info_get_location_name (info),
+			                           weather_info_get_sky (info),
+			                           weather_info_get_temp_summary (info));
 
 			 icon = weather_info_get_icon_name (gw_applet->mateweather_info);
 			 if (icon == NULL)

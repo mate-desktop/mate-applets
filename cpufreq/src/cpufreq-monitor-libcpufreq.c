@@ -62,10 +62,12 @@ cpufreq_monitor_libcpufreq_constructor (GType                  type,
     gulong   max_freq, min_freq;
     guint    cpu;
 
-    object = G_OBJECT_CLASS (
-        cpufreq_monitor_libcpufreq_parent_class)->constructor (type,
-                                                               n_construct_properties,
-                                                               construct_params);
+    object =
+        G_OBJECT_CLASS (cpufreq_monitor_libcpufreq_parent_class)
+            ->constructor (type,
+                           n_construct_properties,
+                           construct_params);
+
     g_object_get (G_OBJECT (object),
                   "cpu", &cpu,
                   NULL);

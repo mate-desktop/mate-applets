@@ -181,26 +181,26 @@ get_remaining (BatteryStatus *info)
     else
         if (hours == 0)
             if (!info->on_ac_power)
-                return g_strdup_printf (ngettext (
-                                        "%d minute (%d%%) remaining",
-                                        "%d minutes (%d%%) remaining",
-                                         mins), mins, info->percent);
+                return g_strdup_printf (ngettext ("%d minute (%d%%) remaining",
+                                                  "%d minutes (%d%%) remaining",
+                                                  mins),
+                                        mins, info->percent);
             else
-                return g_strdup_printf (ngettext (
-                                        "%d minute until charged (%d%%)",
-                                        "%d minutes until charged (%d%%)",
-                                        mins), mins, info->percent);
+                return g_strdup_printf (ngettext ("%d minute until charged (%d%%)",
+                                                  "%d minutes until charged (%d%%)",
+                                                  mins),
+                                        mins, info->percent);
         else if (mins == 0)
             if (!info->on_ac_power)
-                return g_strdup_printf (ngettext (
-                                        "%d hour (%d%%) remaining",
-                                        "%d hours (%d%%) remaining",
-                                        hours), hours, info->percent);
+                return g_strdup_printf (ngettext ("%d hour (%d%%) remaining",
+                                                  "%d hours (%d%%) remaining",
+                                                  hours),
+                                        hours, info->percent);
             else
-                return g_strdup_printf (ngettext (
-                                        "%d hour until charged (%d%%)",
-                                        "%d hours until charged (%d%%)",
-                                        hours), hours, info->percent);
+                return g_strdup_printf (ngettext ("%d hour until charged (%d%%)",
+                                                  "%d hours until charged (%d%%)",
+                                                  hours),
+                                        hours, info->percent);
         else
             if (!info->on_ac_power)
                 /* TRANSLATOR: "%d %s %d %s" are "%d hours %d minutes"
