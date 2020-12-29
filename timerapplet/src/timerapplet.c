@@ -333,7 +333,10 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
                                       "on_seconds_spinbutton_value_changed", G_CALLBACK (timer_spin_button_value_changed),
                                       NULL);
     gtk_builder_connect_signals (builder, applet);
-    g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+
+    g_signal_connect (dialog, "response",
+                      G_CALLBACK (gtk_widget_destroy),
+                      dialog);
 
     g_object_unref (builder);
 
@@ -400,12 +403,13 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     gtk_widget_show_all (GTK_WIDGET (applet->applet));
     gtk_widget_hide (GTK_WIDGET (applet->pause_image));
 
-    g_signal_connect(G_OBJECT (applet->applet), "destroy",
-                     G_CALLBACK (timer_applet_destroy),
-                     applet);
+    g_signal_connect (applet->applet, "destroy",
+                      G_CALLBACK (timer_applet_destroy),
+                      applet);
 
-    g_signal_connect_swapped(GTK_WIDGET (applet->applet), "button-release-event",
-                             G_CALLBACK (timer_applet_click), applet);
+    g_signal_connect_swapped (applet->applet, "button-release-event",
+                              G_CALLBACK (timer_applet_click),
+                              applet);
 
     /* set up context menu */
     applet->action_group = gtk_action_group_new ("Timer Applet Actions");
@@ -418,8 +422,9 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     timer_callback (applet);
 
     /* GSettings callback */
-    g_signal_connect (G_OBJECT (applet->settings), "changed",
-                      G_CALLBACK (timer_settings_changed), applet);
+    g_signal_connect (applet->settings, "changed",
+                      G_CALLBACK (timer_settings_changed),
+                      applet);
 
     return TRUE;
 }

@@ -318,7 +318,7 @@ error_dialog (const char *fmt , ...)
   dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR,
                                    GTK_BUTTONS_OK, "%s", str);
 
-  g_signal_connect_swapped (G_OBJECT (dialog), "response",
+  g_signal_connect_swapped (dialog, "response",
                             G_CALLBACK (gtk_widget_destroy),
                             G_OBJECT (dialog));
 

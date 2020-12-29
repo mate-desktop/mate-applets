@@ -61,7 +61,9 @@ static void help_cb (GtkAction      *action,
     if (error) {
 	GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
 						    _("There was an error displaying help: %s"), error->message);
-	g_signal_connect (G_OBJECT (dialog), "response", G_CALLBACK (gtk_widget_destroy), NULL);
+	g_signal_connect (dialog, "response",
+	                  G_CALLBACK (gtk_widget_destroy),
+	                  NULL);
 	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 	gtk_window_set_screen (GTK_WINDOW (dialog), gtk_widget_get_screen (GTK_WIDGET (gw_applet->applet)));
 	gtk_widget_show (dialog);
@@ -344,16 +346,25 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
 
     gtk_window_set_default_icon_name ("weather-storm");
 
-    g_signal_connect (G_OBJECT(gw_applet->applet), "change_orient",
-                       G_CALLBACK(change_orient_cb), gw_applet);
-    g_signal_connect (G_OBJECT(gw_applet->applet), "size_allocate",
-                       G_CALLBACK(size_allocate_cb), gw_applet);
-    g_signal_connect (G_OBJECT(gw_applet->applet), "destroy",
-                       G_CALLBACK (applet_destroy), gw_applet);
-    g_signal_connect (G_OBJECT(gw_applet->applet), "button_press_event",
-                       G_CALLBACK(clicked_cb), gw_applet);
-    g_signal_connect (G_OBJECT(gw_applet->applet), "key_press_event",
-			G_CALLBACK(key_press_cb), gw_applet);
+    g_signal_connect (gw_applet->applet, "change_orient",
+                      G_CALLBACK (change_orient_cb),
+                      gw_applet);
+
+    g_signal_connect (gw_applet->applet, "size_allocate",
+                      G_CALLBACK (size_allocate_cb),
+                      gw_applet);
+
+    g_signal_connect (gw_applet->applet, "destroy",
+                      G_CALLBACK (applet_destroy),
+                      gw_applet);
+
+    g_signal_connect (gw_applet->applet, "button_press_event",
+                      G_CALLBACK(clicked_cb),
+                      gw_applet);
+
+    g_signal_connect (gw_applet->applet, "key_press_event",
+                      G_CALLBACK (key_press_cb),
+                      gw_applet);
 
     gtk_widget_set_tooltip_text (GTK_WIDGET(gw_applet->applet), _("MATE Weather"));
 
@@ -387,7 +398,9 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
 
     monitor = g_network_monitor_get_default();
     g_signal_connect (monitor, "network-changed",
-                      G_CALLBACK (network_changed), gw_applet);}
+                      G_CALLBACK (network_changed),
+                      gw_applet);
+}
 
 gint timeout_cb (gpointer data)
 {

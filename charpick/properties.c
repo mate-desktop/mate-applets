@@ -224,13 +224,11 @@ add_palette (GtkButton     *buttonk,
     if (curr_data->add_edit_dialog == NULL) {
         add_edit_dialog_create (curr_data, NULL, _("Add Palette"));
 
-        g_signal_connect (curr_data->add_edit_dialog, 
-                          "response", 
+        g_signal_connect (curr_data->add_edit_dialog, "response",
                           G_CALLBACK (add_palette_cb),
                           curr_data);
 
-        g_signal_connect (curr_data->add_edit_dialog,
-                          "destroy",
+        g_signal_connect (curr_data->add_edit_dialog, "destroy",
                           G_CALLBACK (gtk_widget_destroyed),
                           &curr_data->add_edit_dialog);
 
@@ -262,13 +260,11 @@ edit_palette (GtkButton     *button,
 
         add_edit_dialog_create (curr_data, charlist, _("Edit Palette"));
 
-        g_signal_connect (curr_data->add_edit_dialog, 
-                          "response", 
+        g_signal_connect (curr_data->add_edit_dialog, "response",
                           G_CALLBACK (edit_palette_cb),
                           curr_data);
 
-        g_signal_connect (curr_data->add_edit_dialog,
-                          "destroy",
+        g_signal_connect (curr_data->add_edit_dialog, "destroy",
                           G_CALLBACK (gtk_widget_destroyed),
                           &curr_data->add_edit_dialog);
 
@@ -381,18 +377,18 @@ create_palettes_tree (charpick_data *curr_data,
     while (list) {
         GtkTreeIter iter;
         gchar *charlist = list->data;
-        
+
         gtk_list_store_append (GTK_LIST_STORE (model), &iter);
         gtk_list_store_set (GTK_LIST_STORE (model),
                             &iter, 0,
                             charlist, 1,
                             charlist, -1);
-        
+
         list = g_list_next (list);
     }
 
     selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
-    g_signal_connect (G_OBJECT (selection), "changed",
+    g_signal_connect (selection, "changed",
                       G_CALLBACK (selection_changed),
                       scrolled);
 
@@ -475,12 +471,12 @@ default_chars_frame_create (charpick_data *curr_data)
                          NULL));
 
     gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);
-    g_signal_connect (G_OBJECT (button), "clicked",
-                      G_CALLBACK (add_palette), 
+    g_signal_connect (button, "clicked",
+                      G_CALLBACK (add_palette),
                       curr_data);
     set_access_namedesc (button, _("Add button"),
                          _("Click to add a new palette"));
- 
+
     button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
                          "label", CHARPICK_STOCK_EDIT,
                          "use-stock", TRUE,
@@ -488,14 +484,14 @@ default_chars_frame_create (charpick_data *curr_data)
                          NULL));
 
     gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);
-    g_signal_connect (G_OBJECT (button), "clicked",
+    g_signal_connect (button, "clicked",
                       G_CALLBACK (edit_palette),
                       curr_data);
     g_object_set_data (G_OBJECT (scrolled),
                        "edit_button", button);
     set_access_namedesc (button, _("Edit button"),
                          _("Click to edit the selected palette"));
-  
+
     button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
                          "label", "gtk-delete",
                          "use-stock", TRUE,
@@ -503,7 +499,7 @@ default_chars_frame_create (charpick_data *curr_data)
                          NULL));
 
     gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);
-    g_signal_connect (G_OBJECT (button), "clicked",
+    g_signal_connect (button, "clicked",
                       G_CALLBACK (delete_palette),
                       curr_data);
     g_object_set_data (G_OBJECT (scrolled),
@@ -577,8 +573,8 @@ show_preferences_dialog (GtkAction     *action,
     gtk_dialog_set_default_response (GTK_DIALOG (curr_data->propwindow), GTK_RESPONSE_CLOSE);
 
     default_chars_frame_create (curr_data);
-    g_signal_connect (G_OBJECT (curr_data->propwindow), "response",
+    g_signal_connect (curr_data->propwindow, "response",
                       G_CALLBACK (response_cb), curr_data);
-              
+
     gtk_widget_show_all (curr_data->propwindow);
 }

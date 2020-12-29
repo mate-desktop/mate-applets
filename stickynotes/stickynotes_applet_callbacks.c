@@ -383,8 +383,7 @@ menu_help_cb (GtkAction         *action,
                                                     _("There was an error displaying help: %s"),
                                                     error->message);
 
-        g_signal_connect (dialog,
-                          "response",
+        g_signal_connect (dialog, "response",
                           G_CALLBACK (gtk_widget_destroy),
                           NULL);
 
@@ -612,12 +611,10 @@ preferences_response_cb (GtkWidget *dialog,
                                              _("There was an error displaying help: %s"),
                                              error->message);
 
-            g_signal_connect (G_OBJECT (dialog),
-                              "response",
+            g_signal_connect (dialog, "response",
                               G_CALLBACK (gtk_widget_destroy),
                               NULL);
-            gtk_window_set_resizable (GTK_WINDOW (dialog),
-                                      FALSE);
+            gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
             gtk_window_set_screen (GTK_WINDOW (dialog),
                                    gtk_widget_get_screen (GTK_WIDGET (dialog)));
             gtk_widget_show (dialog);

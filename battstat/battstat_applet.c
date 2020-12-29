@@ -153,7 +153,7 @@ battstat_error_dialog (GtkWidget  *applet,
     gtk_window_set_screen (GTK_WINDOW (dialog),
                            gtk_widget_get_screen (GTK_WIDGET (applet)));
 
-    g_signal_connect_swapped (G_OBJECT (dialog), "response",
+    g_signal_connect_swapped (dialog, "response",
                               G_CALLBACK (gtk_widget_destroy),
                               G_OBJECT (dialog));
 
@@ -276,10 +276,9 @@ battery_full_dialog (GtkWidget *applet)
                                           "gtk-ok",
                                           GTK_RESPONSE_ACCEPT,
                                           NULL);
-    g_signal_connect_swapped (G_OBJECT (dialog),
-                              "response",
+    g_signal_connect_swapped (dialog, "response",
                               G_CALLBACK (gtk_widget_destroy),
-                              G_OBJECT (dialog));
+                              dialog);
 
     gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
     hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
@@ -438,8 +437,7 @@ battery_low_dialog (ProgressData  *battery,
     gtk_dialog_set_default_response (GTK_DIALOG (battery->battery_low_dialog),
                                      GTK_RESPONSE_ACCEPT);
 
-    g_signal_connect_swapped (G_OBJECT (battery->battery_low_dialog),
-                              "response",
+    g_signal_connect_swapped (battery->battery_low_dialog, "response",
                               G_CALLBACK (battery_low_dialog_destroy),
                               battery);
 
@@ -1091,18 +1089,15 @@ create_layout (ProgressData *battstat)
     gtk_widget_show_all (battstat->applet);
 
     /* Attach all sorts of signals to the applet. */
-    g_signal_connect (G_OBJECT (battstat->applet),
-                      "destroy",
+    g_signal_connect (battstat->applet, "destroy",
                       G_CALLBACK (destroy_applet),
                       battstat);
 
-    g_signal_connect (battstat->applet,
-                      "change_orient",
+    g_signal_connect (battstat->applet, "change_orient",
                       G_CALLBACK (change_orient),
                       battstat);
 
-    g_signal_connect (battstat->applet,
-                      "size_allocate",
+    g_signal_connect (battstat->applet, "size_allocate",
                       G_CALLBACK (size_allocate),
                       battstat);
 

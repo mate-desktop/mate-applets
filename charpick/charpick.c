@@ -308,7 +308,7 @@ populate_menu (charpick_data *curr_data)
         group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (menuitem));
         gtk_widget_show (menuitem);
         g_object_set_data (G_OBJECT (menuitem), "string", string);
-        g_signal_connect (G_OBJECT (menuitem), "activate",
+        g_signal_connect (menuitem, "activate",
                           G_CALLBACK (menuitem_activated),
                           curr_data);
         gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
@@ -437,11 +437,11 @@ build_table (charpick_data *p_curr_data)
         force_no_button_padding (button);
 
         gtk_box_pack_start (GTK_BOX (box), button, TRUE, TRUE, 0);
-        g_signal_connect (G_OBJECT (button), "clicked",
+        g_signal_connect (button, "clicked",
                           G_CALLBACK (chooser_button_clicked),
                           p_curr_data);
 
-        g_signal_connect (G_OBJECT (button), "button_press_event",
+        g_signal_connect (button, "button_press_event",
                           G_CALLBACK (button_press_hack),
                           p_curr_data->applet);
     }
@@ -488,11 +488,11 @@ build_table (charpick_data *p_curr_data)
         g_object_set_data (G_OBJECT (toggle_button[i]), "unichar",
                            GINT_TO_POINTER (g_utf8_get_char (label)));
 
-        g_signal_connect (G_OBJECT (toggle_button[i]), "toggled",
+        g_signal_connect (toggle_button[i], "toggled",
                           G_CALLBACK (toggle_button_toggled_cb),
                           p_curr_data);
 
-        g_signal_connect (G_OBJECT (toggle_button[i]), "button_press_event",
+        g_signal_connect (toggle_button[i], "button_press_event",
                           G_CALLBACK (button_press_hack),
                           p_curr_data->applet);
     }
@@ -774,7 +774,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
                              || (orientation == MATE_PANEL_APPLET_ORIENT_RIGHT);
     build_table (curr_data);
 
-    g_signal_connect (G_OBJECT (curr_data->applet), "key_press_event",
+    g_signal_connect (curr_data->applet, "key_press_event",
                       G_CALLBACK (key_press_event), curr_data);
 
     utf8_atom = gdk_atom_intern ("UTF8_STRING", FALSE);
@@ -787,24 +787,24 @@ charpicker_applet_fill (MatePanelApplet *applet)
                               GDK_SELECTION_CLIPBOARD,
                               utf8_atom, 0);
 
-    g_signal_connect (G_OBJECT (curr_data->applet), "selection_get",
-                                G_CALLBACK (charpick_selection_handler),
-                                curr_data);
+    g_signal_connect (curr_data->applet, "selection_get",
+                      G_CALLBACK (charpick_selection_handler),
+                      curr_data);
 
-    g_signal_connect (G_OBJECT (curr_data->applet), "selection_clear_event",
+    g_signal_connect (curr_data->applet, "selection_clear_event",
                       G_CALLBACK (selection_clear_cb),
                       curr_data);
 
     make_applet_accessible (GTK_WIDGET (applet));
 
     /* session save signal */
-    g_signal_connect (G_OBJECT (applet), "change_orient",
+    g_signal_connect (applet, "change_orient",
                       G_CALLBACK (applet_change_orient), curr_data);
 
-    g_signal_connect (G_OBJECT (applet), "size_allocate",
+    g_signal_connect (applet, "size_allocate",
                       G_CALLBACK (applet_size_allocate), curr_data);
 
-    g_signal_connect (G_OBJECT (applet), "destroy",
+    g_signal_connect (applet, "destroy",
                       G_CALLBACK (applet_destroy), curr_data);
 
     gtk_widget_show_all (GTK_WIDGET (applet));

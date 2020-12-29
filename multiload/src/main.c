@@ -533,16 +533,16 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 
     g_object_unref (action_group);
 
-    g_signal_connect(G_OBJECT(applet), "change_size",
-                     G_CALLBACK(multiload_change_size_cb), ma);
-    g_signal_connect(G_OBJECT(applet), "change_orient",
-                     G_CALLBACK(multiload_change_orient_cb), ma);
-    g_signal_connect(G_OBJECT(applet), "destroy",
-                     G_CALLBACK(multiload_destroy_cb), ma);
-    g_signal_connect(G_OBJECT(applet), "button_press_event",
-                     G_CALLBACK(multiload_button_press_event_cb), ma);
-    g_signal_connect(G_OBJECT(applet), "key_press_event",
-                     G_CALLBACK(multiload_key_press_event_cb), ma);
+    g_signal_connect (applet, "change_size",
+                      G_CALLBACK (multiload_change_size_cb), ma);
+    g_signal_connect (applet, "change_orient",
+                      G_CALLBACK (multiload_change_orient_cb), ma);
+    g_signal_connect (applet, "destroy",
+                      G_CALLBACK (multiload_destroy_cb), ma);
+    g_signal_connect (applet, "button_press_event",
+                      G_CALLBACK (multiload_button_press_event_cb), ma);
+    g_signal_connect (applet, "key_press_event",
+                      G_CALLBACK (multiload_key_press_event_cb), ma);
 
     multiload_applet_refresh (ma);
 

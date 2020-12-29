@@ -772,7 +772,9 @@ static void help_cb(GtkDialog* dialog, MateWeatherPref* pref)
 	if (error)
 	{
 		GtkWidget* error_dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _("There was an error displaying help: %s"), error->message);
-		g_signal_connect (G_OBJECT (error_dialog), "response", G_CALLBACK (gtk_widget_destroy), NULL);
+		g_signal_connect (error_dialog, "response",
+		                  G_CALLBACK (gtk_widget_destroy),
+		                  NULL);
 		gtk_window_set_resizable (GTK_WINDOW (error_dialog), FALSE);
 		gtk_window_set_screen (GTK_WINDOW (error_dialog), gtk_widget_get_screen (GTK_WIDGET (dialog)));
 		gtk_widget_show (error_dialog);

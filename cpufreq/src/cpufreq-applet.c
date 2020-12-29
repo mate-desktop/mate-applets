@@ -799,27 +799,27 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
     settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (applet), "org.mate.panel.applet.cpufreq");
     applet->prefs = cpufreq_prefs_new (settings);
 
-    g_signal_connect (G_OBJECT (applet->prefs),
-                      "notify::cpu",
+    g_signal_connect (applet->prefs, "notify::cpu",
                       G_CALLBACK (cpufreq_applet_prefs_cpu_changed),
-                      (gpointer) applet);
-    g_signal_connect (G_OBJECT (applet->prefs),
-                      "notify::show-mode",
+                      applet);
+
+    g_signal_connect (applet->prefs, "notify::show-mode",
                       G_CALLBACK (cpufreq_applet_prefs_show_mode_changed),
-                      (gpointer) applet);
-    g_signal_connect (G_OBJECT (applet->prefs),
-                      "notify::show-text-mode",
+                      applet);
+
+    g_signal_connect (applet->prefs, "notify::show-text-mode",
                       G_CALLBACK (cpufreq_applet_prefs_show_mode_changed),
-                      (gpointer) applet);
+                      applet);
 
     /* Monitor */
     applet->monitor =
         cpufreq_monitor_factory_create_monitor (cpufreq_prefs_get_cpu (applet->prefs));
 
     cpufreq_monitor_run (applet->monitor);
-    g_signal_connect_swapped (G_OBJECT (applet->monitor), "changed",
+
+    g_signal_connect_swapped (applet->monitor, "changed",
                               G_CALLBACK (cpufreq_applet_update),
-                              (gpointer) applet);
+                              applet);
 
     /* Setup the menus */
     action_group = gtk_action_group_new ("CPUFreq Applet Actions");

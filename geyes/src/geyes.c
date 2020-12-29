@@ -349,7 +349,7 @@ help_cb (GtkAction  *action,
                                       GTK_BUTTONS_CLOSE,
                                       _("There was an error displaying help: %s"),
                                       error->message);
-        g_signal_connect (G_OBJECT (dialog), "response",
+        g_signal_connect (dialog, "response",
                           G_CALLBACK (gtk_widget_destroy),
                           NULL);
         gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
@@ -427,8 +427,7 @@ geyes_applet_fill (MatePanelApplet *applet)
     set_atk_name_description (GTK_WIDGET (eyes_applet->applet), _("Eyes"),
                               _("The eyes look in the direction of the mouse pointer"));
 
-    g_signal_connect (eyes_applet->vbox,
-                      "destroy",
+    g_signal_connect (eyes_applet->vbox, "destroy",
                       G_CALLBACK (destroy_cb),
                       eyes_applet);
 

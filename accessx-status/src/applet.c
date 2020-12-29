@@ -143,8 +143,7 @@ help_cb (GtkAction*           action,
                                                     _("There was an error launching the help viewer: %s"),
                                                     error->message);
 
-        g_signal_connect (G_OBJECT (dialog),
-                          "response",
+        g_signal_connect (dialog, "response",
                           G_CALLBACK (gtk_widget_destroy),
                           NULL);
 
@@ -200,8 +199,7 @@ dialog_cb (GtkAction*           action,
                                                     _("There was an error launching the keyboard preferences dialog: %s"),
                                                     error->message);
 
-        g_signal_connect (G_OBJECT (dialog),
-                          "response",
+        g_signal_connect (dialog, "response",
                           G_CALLBACK (gtk_widget_destroy),
                           NULL);
 
@@ -1295,8 +1293,7 @@ popup_error_dialog (AccessxStatusApplet* sapplet)
                                      _("Error: %s"),
                                      error_txt);
 
-    g_signal_connect (G_OBJECT (dialog),
-                      "response",
+    g_signal_connect (dialog, "response",
                       G_CALLBACK (gtk_widget_destroy),
                       NULL);
 
@@ -1626,8 +1623,7 @@ accessx_status_applet_fill (MatePanelApplet* applet)
 
     if (!gtk_widget_get_realized (sapplet->box))
     {
-        g_signal_connect_after (G_OBJECT (sapplet->box),
-                                "realize",
+        g_signal_connect_after (sapplet->box, "realize",
                                 G_CALLBACK (accessx_status_applet_realize),
                                 sapplet);
     }
@@ -1638,18 +1634,16 @@ accessx_status_applet_fill (MatePanelApplet* applet)
     }
 
     g_object_connect (sapplet->applet,
-        "signal::destroy", accessx_status_applet_destroy, sapplet,
-        "signal::change_orient", accessx_status_applet_reorient, sapplet,
-        "signal::change_size", accessx_status_applet_resize, sapplet,
-        NULL);
+                      "signal::destroy", accessx_status_applet_destroy, sapplet,
+                      "signal::change_orient", accessx_status_applet_reorient, sapplet,
+                      "signal::change_size", accessx_status_applet_resize, sapplet,
+                      NULL);
 
-    g_signal_connect (sapplet->applet,
-                      "button_press_event",
+    g_signal_connect (sapplet->applet, "button_press_event",
                       G_CALLBACK (button_press_cb),
                       sapplet);
 
-    g_signal_connect (sapplet->applet,
-                      "key_press_event",
+    g_signal_connect (sapplet->applet, "key_press_event",
                       G_CALLBACK (key_press_cb),
                       sapplet);
 

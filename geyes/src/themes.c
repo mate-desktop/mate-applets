@@ -225,7 +225,7 @@ phelp_cb (GtkDialog *dialog)
                                       GTK_BUTTONS_CLOSE,
                                       _("There was an error displaying help: %s"),
                                       error->message);
-        g_signal_connect (G_OBJECT (error_dialog), "response",
+        g_signal_connect (error_dialog, "response",
                           G_CALLBACK (gtk_widget_destroy),
                           NULL);
         gtk_window_set_resizable (GTK_WINDOW (error_dialog), FALSE);
