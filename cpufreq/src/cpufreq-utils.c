@@ -99,9 +99,9 @@ cpufreq_utils_display_error (const gchar *message,
 
     gtk_window_set_title (GTK_WINDOW (dialog), ""); /* as per HIG */
     gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), TRUE);
-    g_signal_connect (G_OBJECT (dialog),
-                      "response",
-                      G_CALLBACK (gtk_widget_destroy), NULL);
+    g_signal_connect (dialog, "response",
+                      G_CALLBACK (gtk_widget_destroy),
+                      NULL);
     gtk_widget_show (dialog);
 }
 

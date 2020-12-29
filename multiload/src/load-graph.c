@@ -471,17 +471,17 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
                                     GDK_LEAVE_NOTIFY_MASK |
                                     GDK_BUTTON_PRESS_MASK);
 
-    g_signal_connect (G_OBJECT (g->disp), "draw",
+    g_signal_connect (g->disp, "draw",
                       G_CALLBACK (load_graph_expose), g);
-    g_signal_connect (G_OBJECT(g->disp), "configure_event",
+    g_signal_connect (g->disp, "configure_event",
                       G_CALLBACK (load_graph_configure), g);
-    g_signal_connect (G_OBJECT(g->disp), "destroy",
+    g_signal_connect (g->disp, "destroy",
                       G_CALLBACK (load_graph_destroy), g);
-    g_signal_connect (G_OBJECT(g->disp), "button-press-event",
+    g_signal_connect (g->disp, "button-press-event",
                       G_CALLBACK (load_graph_clicked), g);
-    g_signal_connect (G_OBJECT(g->disp), "enter-notify-event",
+    g_signal_connect (g->disp, "enter-notify-event",
                       G_CALLBACK(load_graph_enter_cb), g);
-    g_signal_connect (G_OBJECT(g->disp), "leave-notify-event",
+    g_signal_connect (g->disp, "leave-notify-event",
                       G_CALLBACK(load_graph_leave_cb), g);
 
     gtk_box_pack_start (GTK_BOX (g->box), g->disp, TRUE, TRUE, 0);

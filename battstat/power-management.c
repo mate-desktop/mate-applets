@@ -122,32 +122,32 @@ initialise_test (void)
   gtk_box_pack_start (box, gtk_label_new ("percent"), TRUE, TRUE, 0);
   w = gtk_spin_button_new_with_range (-1.0, 100.0, 1);
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (w), 50.0);
-  g_signal_connect (G_OBJECT (w), "value-changed",
+  g_signal_connect (w, "value-changed",
                     G_CALLBACK (test_update_integer), &test_status.percent);
   gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
   gtk_box_pack_start (box, gtk_label_new ("minutes"), TRUE, TRUE, 0);
   w = gtk_spin_button_new_with_range (-1.0, 1000.0, 1);
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (w), 180.0);
-  g_signal_connect (G_OBJECT (w), "value-changed",
+  g_signal_connect (w, "value-changed",
                     G_CALLBACK (test_update_integer), &test_status.minutes);
   gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
 
   w = gtk_toggle_button_new_with_label ("on_ac_power");
-  g_signal_connect (G_OBJECT (w), "toggled",
+  g_signal_connect (w, "toggled",
                     G_CALLBACK (test_update_boolean),
                     &test_status.on_ac_power);
   gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
   w = gtk_toggle_button_new_with_label ("charging");
-  g_signal_connect (G_OBJECT (w), "toggled",
+  g_signal_connect (w, "toggled",
                     G_CALLBACK (test_update_boolean), &test_status.charging);
   gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 
   w = gtk_toggle_button_new_with_label ("present");
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (w), TRUE);
-  g_signal_connect (G_OBJECT (w), "toggled",
+  g_signal_connect (w, "toggled",
                     G_CALLBACK (test_update_boolean), &test_status.present);
   gtk_box_pack_start (box, w, TRUE, TRUE, 0);
 

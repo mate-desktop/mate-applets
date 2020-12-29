@@ -244,14 +244,14 @@ cpufreq_popup_menu_add_action (CPUFreqPopup   *popup,
 
         g_signal_connect (action, "activate",
                           G_CALLBACK (cpufreq_popup_frequencies_menu_activate),
-                                      (gpointer) popup);
+                          popup);
     } else if (g_ascii_strcasecmp (menu, "Governor") == 0) {
         popup->priv->govs_actions = g_slist_prepend (popup->priv->govs_actions,
                                                      (gpointer) action);
 
         g_signal_connect (action, "activate",
                           G_CALLBACK (cpufreq_popup_governors_menu_activate),
-                          (gpointer) popup);
+                          popup);
     }
 
     gtk_action_group_add_action (action_group, GTK_ACTION (action));

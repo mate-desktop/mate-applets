@@ -553,25 +553,29 @@ cpufreq_prefs_dialog_create (CPUFreqPrefs *prefs)
     if (cpufreq_utils_get_n_cpus () > 1)
         cpufreq_prefs_dialog_cpu_combo_setup (prefs);
 
-    g_signal_connect_swapped (G_OBJECT (prefs->priv->dialog), "response",
+    g_signal_connect_swapped (prefs->priv->dialog, "response",
                               G_CALLBACK (cpufreq_prefs_dialog_response_cb),
-                              (gpointer) prefs);
+                              prefs);
 
-    g_signal_connect (G_OBJECT (prefs->priv->show_freq), "toggled",
+    g_signal_connect (prefs->priv->show_freq, "toggled",
                       G_CALLBACK (cpufreq_prefs_dialog_show_freq_toggled),
-                      (gpointer) prefs);
-    g_signal_connect (G_OBJECT (prefs->priv->show_unit), "toggled",
+                      prefs);
+
+    g_signal_connect (prefs->priv->show_unit, "toggled",
                       G_CALLBACK (cpufreq_prefs_dialog_show_unit_toggled),
-                      (gpointer) prefs);
-    g_signal_connect (G_OBJECT (prefs->priv->show_perc), "toggled",
+                      prefs);
+
+    g_signal_connect (prefs->priv->show_perc, "toggled",
                       G_CALLBACK (cpufreq_prefs_dialog_show_perc_toggled),
-                      (gpointer) prefs);
-    g_signal_connect (G_OBJECT (prefs->priv->cpu_combo), "changed",
+                      prefs);
+
+    g_signal_connect (prefs->priv->cpu_combo, "changed",
                       G_CALLBACK (cpufreq_prefs_dialog_cpu_number_changed),
-                      (gpointer) prefs);
-    g_signal_connect (G_OBJECT (prefs->priv->show_mode_combo), "changed",
+                      prefs);
+
+    g_signal_connect (prefs->priv->show_mode_combo, "changed",
                       G_CALLBACK (cpufreq_prefs_dialog_show_mode_changed),
-                      (gpointer) prefs);
+                      prefs);
 }
 
 void

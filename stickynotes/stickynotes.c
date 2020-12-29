@@ -262,79 +262,122 @@ stickynote_new_aux (GdkScreen *screen,
      * we would have an invalid GtkMenu. We need to ref it.
      */
     g_object_ref (note->w_menu);
-    g_signal_connect (G_OBJECT (note->w_window), "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu), note->w_menu);
 
-    g_signal_connect (G_OBJECT (note->w_lock), "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu), note->w_menu);
+    g_signal_connect (note->w_window, "button-press-event",
+                      G_CALLBACK (stickynote_show_popup_menu),
+                      note->w_menu);
 
-    g_signal_connect (G_OBJECT (note->w_close), "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu), note->w_menu);
+    g_signal_connect (note->w_lock, "button-press-event",
+                      G_CALLBACK (stickynote_show_popup_menu),
+                      note->w_menu);
 
-    g_signal_connect (G_OBJECT (note->w_resize_se), "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu), note->w_menu);
+    g_signal_connect (note->w_close, "button-press-event",
+                      G_CALLBACK (stickynote_show_popup_menu),
+                      note->w_menu);
 
-    g_signal_connect (G_OBJECT (note->w_resize_sw), "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu), note->w_menu);
+    g_signal_connect (note->w_resize_se, "button-press-event",
+                      G_CALLBACK (stickynote_show_popup_menu),
+                      note->w_menu);
+
+    g_signal_connect (note->w_resize_sw, "button-press-event",
+                      G_CALLBACK (stickynote_show_popup_menu),
+                      note->w_menu);
 
     /* Connect a properties dialog to the note */
     gtk_window_set_transient_for (GTK_WINDOW (note->w_properties),
                                   GTK_WINDOW (note->w_window));
     gtk_dialog_set_default_response (GTK_DIALOG (note->w_properties),
                                      GTK_RESPONSE_CLOSE);
-    g_signal_connect (G_OBJECT (note->w_properties), "response",
-                      G_CALLBACK (response_cb), note);
+    g_signal_connect (note->w_properties, "response",
+                      G_CALLBACK (response_cb),
+                      note);
 
     /* Connect signals to the sticky note */
-    g_signal_connect (G_OBJECT (note->w_lock), "clicked",
-                      G_CALLBACK (stickynote_toggle_lock_cb), note);
-    g_signal_connect (G_OBJECT (note->w_close), "clicked",
-                      G_CALLBACK (stickynote_close_cb), note);
-    g_signal_connect (G_OBJECT (note->w_resize_se), "button-press-event",
-                      G_CALLBACK (stickynote_resize_cb), note);
-    g_signal_connect (G_OBJECT (note->w_resize_sw), "button-press-event",
-                      G_CALLBACK (stickynote_resize_cb), note);
+    g_signal_connect (note->w_lock, "clicked",
+                      G_CALLBACK (stickynote_toggle_lock_cb),
+                      note);
 
-    g_signal_connect (G_OBJECT (note->w_window), "button-press-event",
-                      G_CALLBACK (stickynote_move_cb), note);
-    g_signal_connect (G_OBJECT (note->w_window), "configure-event",
-                      G_CALLBACK (stickynote_configure_cb), note);
-    g_signal_connect (G_OBJECT (note->w_window), "delete-event",
-                      G_CALLBACK (stickynote_delete_cb), note);
+    g_signal_connect (note->w_close, "clicked",
+                      G_CALLBACK (stickynote_close_cb),
+                      note);
 
-    g_signal_connect (gtk_builder_get_object (builder, "popup_create"),
-                      "activate", G_CALLBACK (popup_create_cb), note);
-    g_signal_connect (gtk_builder_get_object (builder, "popup_destroy"),
-                      "activate", G_CALLBACK (popup_destroy_cb), note);
-    g_signal_connect (gtk_builder_get_object (builder, "popup_toggle_lock"),
-                      "toggled", G_CALLBACK (popup_toggle_lock_cb), note);
-    g_signal_connect (gtk_builder_get_object (builder, "popup_properties"),
-                      "activate", G_CALLBACK (popup_properties_cb), note);
+    g_signal_connect (note->w_resize_se, "button-press-event",
+                      G_CALLBACK (stickynote_resize_cb),
+                      note);
 
-    g_signal_connect_swapped (G_OBJECT (note->w_entry), "changed",
-                              G_CALLBACK (properties_apply_title_cb), note);
-    g_signal_connect (G_OBJECT (note->w_color), "color-set",
-                      G_CALLBACK (properties_color_cb), note);
-    g_signal_connect (G_OBJECT (note->w_font_color), "color-set",
-                      G_CALLBACK (properties_color_cb), note);
-    g_signal_connect_swapped (G_OBJECT (note->w_def_color), "toggled",
-                              G_CALLBACK (properties_apply_color_cb), note);
-    g_signal_connect (G_OBJECT (note->w_font), "font-set",
-                      G_CALLBACK (properties_font_cb), note);
-    g_signal_connect_swapped (G_OBJECT (note->w_def_font), "toggled",
-                              G_CALLBACK (properties_apply_font_cb), note);
-    g_signal_connect (G_OBJECT (note->w_entry), "activate",
-                      G_CALLBACK (properties_activate_cb), note);
-    g_signal_connect (G_OBJECT (note->w_properties), "delete-event",
-                      G_CALLBACK (gtk_widget_hide), note);
+    g_signal_connect (note->w_resize_sw, "button-press-event",
+                      G_CALLBACK (stickynote_resize_cb),
+                      note);
+
+    g_signal_connect (note->w_window, "button-press-event",
+                      G_CALLBACK (stickynote_move_cb),
+                      note);
+
+    g_signal_connect (note->w_window, "configure-event",
+                      G_CALLBACK (stickynote_configure_cb),
+                      note);
+
+    g_signal_connect (note->w_window, "delete-event",
+                      G_CALLBACK (stickynote_delete_cb),
+                      note);
+
+    g_signal_connect (gtk_builder_get_object (builder, "popup_create"), "activate",
+                      G_CALLBACK (popup_create_cb),
+                      note);
+
+    g_signal_connect (gtk_builder_get_object (builder, "popup_destroy"), "activate",
+                      G_CALLBACK (popup_destroy_cb),
+                      note);
+
+    g_signal_connect (gtk_builder_get_object (builder, "popup_toggle_lock"), "toggled",
+                      G_CALLBACK (popup_toggle_lock_cb),
+                      note);
+
+    g_signal_connect (gtk_builder_get_object (builder, "popup_properties"), "activate",
+                      G_CALLBACK (popup_properties_cb),
+                      note);
+
+    g_signal_connect_swapped (note->w_entry, "changed",
+                              G_CALLBACK (properties_apply_title_cb),
+                              note);
+
+    g_signal_connect (note->w_color, "color-set",
+                      G_CALLBACK (properties_color_cb),
+                      note);
+
+    g_signal_connect (note->w_font_color, "color-set",
+                      G_CALLBACK (properties_color_cb),
+                      note);
+
+    g_signal_connect_swapped (note->w_def_color, "toggled",
+                              G_CALLBACK (properties_apply_color_cb),
+                              note);
+
+    g_signal_connect (note->w_font, "font-set",
+                      G_CALLBACK (properties_font_cb),
+                      note);
+
+    g_signal_connect_swapped (note->w_def_font, "toggled",
+                              G_CALLBACK (properties_apply_font_cb),
+                              note);
+
+    g_signal_connect (note->w_entry, "activate",
+                      G_CALLBACK (properties_activate_cb),
+                      note);
+
+    g_signal_connect (note->w_properties, "delete-event",
+                      G_CALLBACK (gtk_widget_hide),
+                      note);
 
     g_object_unref (builder);
 
     g_signal_connect_after (note->w_body, "button-press-event",
-                            G_CALLBACK (gtk_true), note);
+                            G_CALLBACK (gtk_true),
+                            note);
 
-    g_signal_connect (gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body)),
-                      "changed", G_CALLBACK (buffer_changed), note);
+    g_signal_connect (gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body)), "changed",
+                      G_CALLBACK (buffer_changed),
+                      note);
 
     return note;
 }

@@ -205,7 +205,10 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
                                       "on_width_spinbutton_value_changed", G_CALLBACK (width_value_changed),
                                       NULL);
     gtk_builder_connect_signals (builder, command_applet);
-    g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+
+    g_signal_connect (dialog, "response",
+                      G_CALLBACK (gtk_widget_destroy),
+                      dialog);
 
     g_object_unref (builder);
 
@@ -438,23 +441,23 @@ command_applet_fill (MatePanelApplet* applet)
 
     gtk_widget_show_all (GTK_WIDGET (command_applet->applet));
 
-    g_signal_connect(G_OBJECT (command_applet->applet), "destroy",
-                     G_CALLBACK (command_applet_destroy),
-                     command_applet);
+    g_signal_connect (command_applet->applet, "destroy",
+                      G_CALLBACK (command_applet_destroy),
+                      command_applet);
 
     /* GSettings signals */
-    g_signal_connect(command_applet->settings,
-                     "changed::" COMMAND_KEY,
-                     G_CALLBACK (settings_command_changed),
-                     command_applet);
-    g_signal_connect(command_applet->settings,
-                     "changed::" INTERVAL_KEY,
-                     G_CALLBACK (settings_interval_changed),
-                     command_applet);
-    g_signal_connect(command_applet->settings,
-                     "changed::" WIDTH_KEY,
-                     G_CALLBACK (settings_width_changed),
-                     command_applet);
+    g_signal_connect (command_applet->settings, "changed::" COMMAND_KEY,
+                      G_CALLBACK (settings_command_changed),
+                      command_applet);
+
+    g_signal_connect (command_applet->settings, "changed::" INTERVAL_KEY,
+                      G_CALLBACK (settings_interval_changed),
+                      command_applet);
+
+    g_signal_connect (command_applet->settings, "changed::" WIDTH_KEY,
+                      G_CALLBACK (settings_width_changed),
+                      command_applet);
+
     g_settings_bind (command_applet->settings,
                      SHOW_ICON_KEY,
                      command_applet->image,

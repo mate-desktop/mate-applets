@@ -339,7 +339,7 @@ error_dialog (TrashApplet *applet, const gchar *error, ...)
                                    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
                                    "%s", error_string);
 
-  g_signal_connect (G_OBJECT (dialog), "response",
+  g_signal_connect (dialog, "response",
                     G_CALLBACK (gtk_widget_destroy),
                     NULL);
 

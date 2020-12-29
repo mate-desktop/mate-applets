@@ -113,9 +113,10 @@ drive_button_new (GVolume *volume)
     self = g_object_new (DRIVE_TYPE_BUTTON, NULL);
     if (volume != NULL) {
       drive_button_set_volume (self, volume);
-      g_signal_connect (gtk_icon_theme_get_default (),
-          "changed", G_CALLBACK (drive_button_theme_change),
-          self);
+
+      g_signal_connect (gtk_icon_theme_get_default (), "changed",
+                        G_CALLBACK (drive_button_theme_change),
+                        self);
     }
 
     return (GtkWidget *)self;
@@ -129,9 +130,9 @@ drive_button_new_from_mount (GMount *mount)
     self = g_object_new (DRIVE_TYPE_BUTTON, NULL);
     drive_button_set_mount (self, mount);
 
-    g_signal_connect (gtk_icon_theme_get_default (),
-        "changed", G_CALLBACK (drive_button_theme_change),
-        self);
+    g_signal_connect (gtk_icon_theme_get_default (), "changed",
+                      G_CALLBACK (drive_button_theme_change),
+                      self);
 
     return (GtkWidget *)self;
 }
@@ -538,7 +539,8 @@ create_menu_item (DriveButton *self,
         gtk_widget_show (image);
     }
     if (callback)
-        g_signal_connect_object (item, "activate", callback, self,
+        g_signal_connect_object (item, "activate",
+                                 callback, self,
                                  G_CONNECT_SWAPPED);
     gtk_widget_set_sensitive (item, sensitive);
     gtk_widget_show (item);
@@ -599,8 +601,11 @@ open_drive (DriveButton *self,
             gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
         else
             gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "Could not find Caja");
+
         g_signal_connect (dialog, "response",
-                          G_CALLBACK (gtk_widget_destroy), NULL);
+                          G_CALLBACK (gtk_widget_destroy),
+                          NULL);
+
         gtk_widget_show (dialog);
         g_error_free (error);
     }
