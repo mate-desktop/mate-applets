@@ -36,9 +36,12 @@
 #include "trash-empty.h"
 #include "xstuff.h"
 
-typedef MatePanelAppletClass TrashAppletClass;
+#define TRASH_TYPE_APPLET (trash_applet_get_type ())
 
-typedef struct
+G_DECLARE_FINAL_TYPE (TrashApplet, trash_applet,
+                      TRASH, APPLET, MatePanelApplet)
+
+struct _TrashApplet
 {
   MatePanelApplet applet;
 
@@ -48,12 +51,9 @@ typedef struct
   GtkImage *image;
   GIcon *icon;
   gint items;
-} TrashApplet;
+};
 
 G_DEFINE_TYPE (TrashApplet, trash_applet, PANEL_TYPE_APPLET);
-#define TRASH_TYPE_APPLET (trash_applet_get_type ())
-#define TRASH_APPLET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
-                           TRASH_TYPE_APPLET, TrashApplet))
 
 static void trash_applet_do_empty    (GtkAction   *action,
                                       TrashApplet *applet);
