@@ -62,9 +62,8 @@ set_icon_geometry (GdkWindow *window,
 
     XChangeProperty (dpy,
                      GDK_WINDOW_XID (window),
-                     gdk_x11_get_xatom_by_name_for_display (
-                         gdk_window_get_display (window),
-                         "_NET_WM_ICON_GEOMETRY"),
+                     gdk_x11_get_xatom_by_name_for_display (gdk_window_get_display (window),
+                                                            "_NET_WM_ICON_GEOMETRY"),
                      XA_CARDINAL, 32, PropModeReplace,
                      (guchar *)&data, 4);
 }
@@ -1053,8 +1052,7 @@ stickynotes_load (GdkScreen *screen)
                     GtkTextBuffer *buffer;
                     GtkTextIter start, end;
 
-                    buffer = gtk_text_view_get_buffer (
-                        GTK_TEXT_VIEW (note->w_body));
+                    buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body));
                     gtk_text_buffer_get_bounds (buffer,
                                                 &start, &end);
                     gtk_text_buffer_insert (buffer,

@@ -179,8 +179,9 @@ dialog_cb (GtkAction*           action,
                                                   &error);
 
     if (!error) {
-        launch_context = gdk_display_get_app_launch_context (
-            gtk_widget_get_display (GTK_WIDGET (sapplet->applet)));
+        launch_context =
+            gdk_display_get_app_launch_context (gtk_widget_get_display (GTK_WIDGET (sapplet->applet)));
+
         gdk_app_launch_context_set_screen (launch_context, screen);
         g_app_info_launch (appinfo,
                            NULL,
