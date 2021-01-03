@@ -1069,7 +1069,7 @@ about_cb (GtkAction *action,
 }
 
 static void
-netspeed_applet_destory_preferences (GtkWidget *widget,
+netspeed_applet_destroy_preferences (GtkWidget *widget,
                                      gpointer   user_data)
 {
 	NetspeedApplet *netspeed;
@@ -1097,7 +1097,7 @@ settings_cb (GtkAction      *action,
 
     netspeed->preferences = netspeed_preferences_new (netspeed);
     g_signal_connect (netspeed->preferences, "destroy",
-                      G_CALLBACK (netspeed_applet_destory_preferences), netspeed);
+                      G_CALLBACK (netspeed_applet_destroy_preferences), netspeed);
     gtk_widget_show_all (netspeed->preferences);
 }
 
