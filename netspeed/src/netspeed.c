@@ -1563,11 +1563,14 @@ device_settings_changed (GSettings      *settings,
                          const gchar    *key,
                          NetspeedApplet *netspeed)
 {
-    char *davice;
+    char *device;
+    DevInfo *info;
 
-    davice = g_settings_get_string (settings, key);
-    set_applet_devinfo (netspeed, davice);
-    g_free (davice);
+    device = g_settings_get_string (settings, key);
+    free_device_info (netspeed->devinfo);
+    get_device_info (device, &netspeed->devinfo);
+    netspeed->device_has_changed = TRUE;
+    g_free (device);
 }
 
 /* The "main" function of the applet
