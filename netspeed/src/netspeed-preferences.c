@@ -55,12 +55,6 @@ netspeed_preferences_init (NetspeedPreferences *preferences)
 }
 
 static void
-netspeed_preferences_finalize (GObject *object)
-{
-  G_OBJECT_CLASS (netspeed_preferences_parent_class)->finalize (object);
-}
-
-static void
 netspeed_preferences_set_property (GObject      *object,
                                    guint         property_id,
                                    const GValue *value,
@@ -148,6 +142,16 @@ on_network_device_combo_changed (GtkComboBox         *combo,
   if (old_auto_change_device != auto_change_device)
     g_settings_set_boolean (preferences->settings,
                             "auto-change-device", auto_change_device);
+}
+
+static void
+netspeed_preferences_finalize (GObject *object)
+{
+  NetspeedPreferences *self = NETSPEED_PREFERENCES (object);
+  g_signal_handlers_disconnect_by_func (self->network_device_combo,
+                                        on_network_device_combo_changed,
+                                        self);
+  G_OBJECT_CLASS (netspeed_preferences_parent_class)->finalize (object);
 }
 
 static void
