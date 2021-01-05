@@ -134,7 +134,7 @@ on_network_device_combo_changed (GtkComboBox         *combo,
     for (i = 1; i < active; i++) {
       devices = g_list_next (devices);
     }
-    if (g_str_equal (devices->data, current_device_name))
+    if (!devices || !g_strcmp0 (devices->data, current_device_name))
       return;
     g_settings_set_string (preferences->settings,
                            "device", devices->data);
