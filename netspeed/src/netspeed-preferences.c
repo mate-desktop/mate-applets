@@ -38,6 +38,8 @@ struct _NetspeedPreferences
   GtkWidget *show_icon_checkbutton;
   GtkWidget *show_quality_icon_checkbutton;
   GtkWidget *change_icon_checkbutton;
+
+  GList *devices;
 };
 
 typedef enum
@@ -112,11 +114,9 @@ static void
 on_network_device_combo_changed (GtkComboBox         *combo,
                                  NetspeedPreferences *preferences)
 {
-  GList *devices;
-  int i, active;
+  gint active;
   gboolean old_auto_change_device, auto_change_device;
 
-  devices = g_object_get_data (G_OBJECT (combo), "devices");
   active = gtk_combo_box_get_active (combo);
   g_assert (active > -1);
 
@@ -128,16 +128,15 @@ on_network_device_combo_changed (GtkComboBox         *combo,
     auto_change_device = TRUE;
   } else {
     const gchar *current_device_name;
+    const gchar *selected_device_name;
 
     current_device_name = netspeed_applet_get_current_device_name (preferences->netspeed);
     auto_change_device = FALSE;
-    for (i = 1; i < active; i++) {
-      devices = g_list_next (devices);
-    }
-    if (!devices || !g_strcmp0 (devices->data, current_device_name))
+    selected_device_name = g_list_nth_data (preferences->devices, (guint) (active - 1));
+    if (!g_strcmp0 (selected_device_name, current_device_name))
       return;
     g_settings_set_string (preferences->settings,
-                           "device", devices->data);
+                           "device", selected_device_name);
   }
   if (old_auto_change_device != auto_change_device)
     g_settings_set_boolean (preferences->settings,
@@ -147,10 +146,9 @@ on_network_device_combo_changed (GtkComboBox         *combo,
 static void
 netspeed_preferences_finalize (GObject *object)
 {
-  NetspeedPreferences *self = NETSPEED_PREFERENCES (object);
-  g_signal_handlers_disconnect_by_func (self->network_device_combo,
-                                        on_network_device_combo_changed,
-                                        self);
+  NetspeedPreferences *preferences = NETSPEED_PREFERENCES (object);
+
+  free_devices_list (preferences->devices);
   G_OBJECT_CLASS (netspeed_preferences_parent_class)->finalize (object);
 }
 
@@ -188,15 +186,9 @@ netspeed_preferences_class_init (NetspeedPreferencesClass *klass)
 }
 
 static void
-free_devices (gpointer data)
-{
-  g_list_free_full (data, g_free);
-}
-
-static void
 fill_device_combo (NetspeedPreferences *preferences, GSettings *settings)
 {
-  GList *ptr, *devices;
+  GList *ptr;
   int i, active = -1;
   const gchar *current_device_name;
   gboolean auto_change_device;
@@ -204,7 +196,7 @@ fill_device_combo (NetspeedPreferences *preferences, GSettings *settings)
   /* Default means device with default route set */
   gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (preferences->network_device_combo),
                                   _("Default"));
-  ptr = devices = get_available_devices ();
+  ptr = preferences->devices = get_available_devices ();
   current_device_name = netspeed_applet_get_current_device_name (preferences->netspeed);
   auto_change_device = g_settings_get_boolean (settings, "auto-change-device");
   for (i = 0; ptr; ptr = g_list_next (ptr)) {
@@ -217,8 +209,6 @@ fill_device_combo (NetspeedPreferences *preferences, GSettings *settings)
   if (active < 0 || auto_change_device)
     active = 0;
   gtk_combo_box_set_active (GTK_COMBO_BOX (preferences->network_device_combo), active);
-  g_object_set_data_full (G_OBJECT (preferences->network_device_combo), "devices",
-                          devices, free_devices);
 }
 
 GtkWidget *
