@@ -1564,7 +1564,6 @@ device_settings_changed (GSettings      *settings,
                          NetspeedApplet *netspeed)
 {
     char *device;
-    DevInfo *info;
 
     device = g_settings_get_string (settings, key);
     free_device_info (netspeed->devinfo);
