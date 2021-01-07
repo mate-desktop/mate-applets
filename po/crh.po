@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.25.0\n"
+"Project-Id-Version: mate-applets 1.25.1\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-08-11 16:58+0200\n"
+"POT-Creation-Date: 2020-12-13 16:35+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Crimean Turkish (https://www.transifex.com/mate/teams/13566/crh/)\n"
@@ -29,7 +29,7 @@ msgid "Keyboard Accessibility Status Applet Factory"
 msgstr "Klavye İrişilebilirligi Durumı Uyğulamaçığı Fabrikası"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-#: accessx-status/src/applet.c:1383
+#: accessx-status/src/applet.c:1675
 msgid "Keyboard Accessibility Status"
 msgstr "Klavye İrişilebilirligi Durumı"
 
@@ -37,73 +37,73 @@ msgstr "Klavye İrişilebilirligi Durumı"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Klavye irişilebilirligi hususiyetleriniñ durumını kösterir"
 
-#: accessx-status/src/applet.c:86 charpick/charpick.c:571
-#: geyes/src/geyes.c:166 mateweather/mateweather-about.c:41
-#: multiload/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/src/applet.c:100 charpick/charpick.c:596
+#: geyes/src/geyes.c:178 mateweather/src/mateweather-about.c:41
+#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
-#: accessx-status/src/applet.c:87 battstat/battstat_applet.c:817
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:464
-#: drivemount/drivemount.c:109 geyes/src/geyes.c:167
-#: mateweather/mateweather-about.c:43 multiload/main.c:49
+#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:832
+#: charpick/charpick.c:597 cpufreq/src/cpufreq-applet.c:463
+#: drivemount/src/drivemount.c:107 geyes/src/geyes.c:179
+#: mateweather/src/mateweather-about.c:43 multiload/src/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
-#: trashapplet/src/trashapplet.c:421
+#: trashapplet/src/trashapplet.c:417
 msgid "MATE Documentation Team"
 msgstr ""
 
-#: accessx-status/src/applet.c:98
+#: accessx-status/src/applet.c:112
 msgid "About AccessX Status"
 msgstr ""
 
-#: accessx-status/src/applet.c:100
+#: accessx-status/src/applet.c:114
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr ""
 "AccessX özelliklerinin durumunu sürgülü (latched) düzenleyiciler olarak "
 "gösterir"
 
-#: accessx-status/src/applet.c:101
+#: accessx-status/src/applet.c:115
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: accessx-status/src/applet.c:105 battstat/battstat_applet.c:842
-#: charpick/charpick.c:592 command/src/command.c:131
-#: cpufreq/src/cpufreq-applet.c:488 drivemount/drivemount.c:127
-#: geyes/src/geyes.c:186 mateweather/mateweather-about.c:61
-#: multiload/main.c:69 netspeed/src/netspeed.c:1034
+#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:857
+#: charpick/charpick.c:617 command/src/command.c:131
+#: cpufreq/src/cpufreq-applet.c:487 drivemount/src/drivemount.c:125
+#: geyes/src/geyes.c:198 mateweather/src/mateweather-about.c:61
+#: multiload/src/main.c:69 netspeed/src/netspeed.c:1034
 #: stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
+#: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Reşat SABIQ https://launchpad.net/~tilde-birlik"
 
-#: accessx-status/src/applet.c:124
+#: accessx-status/src/applet.c:143
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Yardım körüntileyici açılğanda bir hata bar edi: %s"
 
-#: accessx-status/src/applet.c:152
+#: accessx-status/src/applet.c:177
 msgid "Open the keyboard preferences dialog"
 msgstr ""
 
-#: accessx-status/src/applet.c:167
+#: accessx-status/src/applet.c:199
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Klavye tercihleri dialogı açılğanda bir hata bar edi: %s"
 
-#: accessx-status/src/applet.c:182
+#: accessx-status/src/applet.c:219
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Klavye _İrişilebilirligi Tercihleri"
 
-#: accessx-status/src/applet.c:183 battstat/battstat_applet.c:60
-#: battstat/battstat-preferences.ui:37 charpick/charpick.c:669
+#: accessx-status/src/applet.c:221 battstat/battstat_applet.c:62
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:694
 #: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
-#: drivemount/drivemount.c:165 geyes/data/themes.ui:35 geyes/src/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:486
-#: netspeed/data/netspeed-details.ui:31
+#: drivemount/src/drivemount.c:163 geyes/data/themes.ui:35
+#: geyes/src/geyes.c:369 mateweather/src/mateweather-applet.c:117
+#: multiload/src/main.c:471 netspeed/data/netspeed-details.ui:31
 #: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
@@ -111,144 +111,144 @@ msgstr "Klavye _İrişilebilirligi Tercihleri"
 msgid "_Help"
 msgstr "_Yardım"
 
-#: accessx-status/src/applet.c:184 battstat/battstat_applet.c:63
-#: charpick/charpick.c:672 command/src/command.c:87
-#: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/src/geyes.c:362 mateweather/mateweather-applet.c:120
-#: multiload/main.c:489 stickynotes/stickynotes_applet.c:49
-#: timerapplet/timerapplet.c:88 trashapplet/src/trashapplet.c:77
+#: accessx-status/src/applet.c:223 battstat/battstat_applet.c:65
+#: charpick/charpick.c:697 command/src/command.c:87
+#: cpufreq/src/cpufreq-applet.c:122 drivemount/src/drivemount.c:166
+#: geyes/src/geyes.c:371 mateweather/src/mateweather-applet.c:120
+#: multiload/src/main.c:474 stickynotes/stickynotes_applet.c:49
+#: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Aqqında"
 
-#: accessx-status/src/applet.c:503 accessx-status/src/applet.c:557
+#: accessx-status/src/applet.c:572 accessx-status/src/applet.c:641
 msgid "a"
 msgstr "a"
 
-#: accessx-status/src/applet.c:1042 accessx-status/src/applet.c:1108
-#: accessx-status/src/applet.c:1193 accessx-status/src/applet.c:1386
+#: accessx-status/src/applet.c:1243 accessx-status/src/applet.c:1322
+#: accessx-status/src/applet.c:1444 accessx-status/src/applet.c:1678
 msgid "AccessX Status"
 msgstr "AccessX Durumı"
 
-#: accessx-status/src/applet.c:1043 accessx-status/src/applet.c:1194
+#: accessx-status/src/applet.c:1245 accessx-status/src/applet.c:1446
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "İrişilebilirlik hususiyetleri qullanılğanda klavye durumını kösterir."
 
-#: accessx-status/src/applet.c:1077
+#: accessx-status/src/applet.c:1281
 msgid "XKB Extension is not enabled"
 msgstr "XKB Uzantısı qabilleştirilgen degil"
 
-#: accessx-status/src/applet.c:1082
+#: accessx-status/src/applet.c:1286
 msgid "Unknown error"
 msgstr "Bilinmegen hata"
 
-#: accessx-status/src/applet.c:1086
+#: accessx-status/src/applet.c:1294
 #, c-format
 msgid "Error: %s"
 msgstr "Hata: %s"
 
-#: accessx-status/src/applet.c:1387
+#: accessx-status/src/applet.c:1680
 msgid "Displays current state of keyboard accessibility features"
 msgstr "Klavye irişilebilirligi hususiyetleriniñ cari durumını kösterir"
 
-#: battstat/battstat_applet.c:57 charpick/charpick.c:666
+#: battstat/battstat_applet.c:59 charpick/charpick.c:691
 #: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
-#: geyes/src/geyes.c:356 mateweather/mateweather-applet.c:114
-#: multiload/main.c:480 stickynotes/stickynotes_applet.c:43
-#: timerapplet/timerapplet.c:87
+#: geyes/src/geyes.c:367 mateweather/src/mateweather-applet.c:114
+#: multiload/src/main.c:465 stickynotes/stickynotes_applet.c:43
+#: timerapplet/src/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: battstat/battstat_applet.c:68
+#: battstat/battstat_applet.c:70
 msgid "System is running on AC power"
 msgstr "Sistem Almaşıq Aqım (AA; AC) quveti ile çapa"
 
-#: battstat/battstat_applet.c:69
+#: battstat/battstat_applet.c:71
 msgid "System is running on battery power"
 msgstr "Sistem pil quveti ile çapa"
 
-#: battstat/battstat_applet.c:173
+#: battstat/battstat_applet.c:176
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Pil yükletilgen (%d%%)"
 
-#: battstat/battstat_applet.c:175
+#: battstat/battstat_applet.c:178
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Bilinmegen zaman (%d%%) qala"
 
-#: battstat/battstat_applet.c:177
+#: battstat/battstat_applet.c:180
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Yükletilgen olğance bilinmegen zaman (%d%%)"
 
-#: battstat/battstat_applet.c:182
+#: battstat/battstat_applet.c:185
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:187
+#: battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:193
+#: battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:198
+#: battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:205
+#: battstat/battstat_applet.c:208
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "%d %s %d %s (%d%%) qala"
 
-#: battstat/battstat_applet.c:206 battstat/battstat_applet.c:213
+#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:207 battstat/battstat_applet.c:214
+#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:212
+#: battstat/battstat_applet.c:215
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "yükletilgence %1$d %2$s %3$d %4$s (%5$d%%)"
 
-#: battstat/battstat_applet.c:226
+#: battstat/battstat_applet.c:229
 msgid "Battery Monitor"
 msgstr "Pil İzleyicisi"
 
-#: battstat/battstat_applet.c:237 battstat/battstat_applet.c:297
+#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:298
 msgid "Your battery is now fully recharged"
 msgstr "Piliniz artık tam olarak doldu"
 
-#: battstat/battstat_applet.c:272 battstat/battstat_applet.c:429
+#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:431
 msgid "Battery Notice"
 msgstr "Pil Uyarısı"
 
-#: battstat/battstat_applet.c:374
+#: battstat/battstat_applet.c:378
 #, c-format
-msgid "You have %d%% of your total battery capacity remaining."
-msgstr "Toplam pilinizin %%%d kapasitesi kalmış."
+msgid "You have %d%% of your total batterycapacity remaining."
+msgstr ""
 
-#: battstat/battstat_applet.c:380
+#: battstat/battstat_applet.c:383
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -257,7 +257,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:392
+#: battstat/battstat_applet.c:396
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -267,7 +267,7 @@ msgstr ""
 " • dizüstü bilgisayarınızı harici bir güç kaynağına takın, ya da\n"
 " • açık belgeleri kaydedin ve dizüstü bilgisayarınızı kapatın."
 
-#: battstat/battstat_applet.c:400
+#: battstat/battstat_applet.c:403
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -279,61 +279,62 @@ msgstr ""
 " • dizüstü bilgisayarınızı harici bir güç kaynağına takın, ya da\n"
 " • açık belgeleri kaydedin ve dizüstü bilgisayarınızı kapatın."
 
-#: battstat/battstat_applet.c:408
+#: battstat/battstat_applet.c:409
 msgid "Your battery is running low"
 msgstr "Piliniz çok azaldı"
 
-#: battstat/battstat_applet.c:505
+#: battstat/battstat_applet.c:512
 msgid "No battery present"
 msgstr "Pil mevcut değil"
 
-#: battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:515
 msgid "Battery status unknown"
 msgstr "Pil durumu bilinmiyor"
 
-#: battstat/battstat_applet.c:537
+#: battstat/battstat_applet.c:545
 msgid "N/A"
 msgstr "Yok"
 
-#: battstat/battstat_applet.c:781 drivemount/drivemount.c:153
-#: geyes/src/geyes.c:344 geyes/src/themes.c:224
-#: mateweather/mateweather-applet.c:63 mateweather/mateweather-pref.c:745
+#: battstat/battstat_applet.c:795 drivemount/src/drivemount.c:151
+#: geyes/src/geyes.c:353 geyes/src/themes.c:226
+#: mateweather/src/mateweather-applet.c:63
+#: mateweather/src/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
-#: trashapplet/src/trashapplet.c:399
+#: trashapplet/src/trashapplet.c:395
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Yardım gösterilirken bir hata oluştu: %s"
 
-#: battstat/battstat_applet.c:822
+#: battstat/battstat_applet.c:837
 msgid "This utility shows the status of your laptop battery."
 msgstr "Bu araç dizüstü bilgisayarınızın pil durumunu gösterir."
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:839
 msgid "upower backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:825
+#: battstat/battstat_applet.c:840
 msgid "Legacy backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:834
+#: battstat/battstat_applet.c:849
 msgid "About Battery Charge Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:851
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: battstat/battstat_applet.c:1125 battstat/battstat_applet.c:1175
+#: battstat/battstat_applet.c:1138 battstat/battstat_applet.c:1193
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Pil Doluluk İzleyicisi"
 
-#: battstat/battstat_applet.c:1176
+#: battstat/battstat_applet.c:1195
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "Bir tizüstüniñ qalğan quvetini közet"
@@ -344,11 +345,12 @@ msgstr "Pil Doluluk İzleyici Tercihleri"
 
 #: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
 #: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
-#: mateweather/mateweather-dialog.ui:45 netspeed/data/netspeed-details.ui:47
+#: mateweather/data/mateweather-dialog.ui:45
+#: netspeed/data/netspeed-details.ui:47
 #: netspeed/data/netspeed-preferences.ui:49
 #: stickynotes/sticky-notes-preferences.ui:68
 #: stickynotes/sticky-notes-properties.ui:54
-#: timerapplet/timerapplet-preferences.ui:41
+#: timerapplet/data/timerapplet-preferences.ui:41
 msgid "_Close"
 msgstr "_Qapat"
 
@@ -461,47 +463,47 @@ msgstr "Pil gücü zayıf"
 msgid "Battery fully re-charged"
 msgstr "Pil tamamen doldu"
 
-#: charpick/charpick.c:403
+#: charpick/charpick.c:410
 msgid "Available palettes"
 msgstr "Kullanılabilir paletler"
 
-#: charpick/charpick.c:452
+#: charpick/charpick.c:463
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Ekle \"%s\""
 
-#: charpick/charpick.c:455
+#: charpick/charpick.c:466
 msgid "Insert special character"
 msgstr "Özel karakterler ekle"
 
-#: charpick/charpick.c:459
+#: charpick/charpick.c:470
 #, c-format
 msgid "insert special character %s"
 msgstr "%s özel karakterini ekle"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:608
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:610
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:612
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:695 charpick/charpick.c:708
+#: charpick/charpick.c:721 charpick/charpick.c:734
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
-#: charpick/properties.c:451
+#: charpick/properties.c:453
 msgid "Character Palette"
 msgstr "Karakter Paleti"
 
-#: charpick/charpick.c:695
+#: charpick/charpick.c:721
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Karakterler ekle"
@@ -524,7 +526,7 @@ msgstr ""
 "kullanıcı uygulamacığı başlattığı zaman gösterilecek."
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:10
-#: charpick/properties.c:378
+#: charpick/properties.c:371
 msgid "List of available palettes"
 msgstr "Kullanılabilir paletlerin listesi"
 
@@ -536,59 +538,59 @@ msgstr "Kullanılabilir paletleri içeren dizgilerin listesi."
 msgid "_Edit"
 msgstr "_Tarir"
 
-#: charpick/properties.c:116
+#: charpick/properties.c:94
 msgid "_Palette:"
 msgstr "_Palet:"
 
-#: charpick/properties.c:124
+#: charpick/properties.c:102
 msgid "Palette entry"
 msgstr "Palet girişi"
 
-#: charpick/properties.c:125
+#: charpick/properties.c:103
 msgid "Modify a palette by adding or removing characters"
 msgstr "Karakterler ekleyerek ya da çıkartarak paleti düzenleyin"
 
-#: charpick/properties.c:239
+#: charpick/properties.c:225
 msgid "Add Palette"
 msgstr "Palet Ekle"
 
-#: charpick/properties.c:276
+#: charpick/properties.c:263
 msgid "Edit Palette"
 msgstr "Palet Düzenle"
 
-#: charpick/properties.c:377
+#: charpick/properties.c:370
 msgid "Palettes list"
 msgstr "Palet listesi"
 
-#: charpick/properties.c:456
+#: charpick/properties.c:458
 msgid "_Palettes:"
 msgstr "_Paletler:"
 
-#: charpick/properties.c:478
+#: charpick/properties.c:481
 msgid "Add button"
 msgstr "Düğme ekle"
 
-#: charpick/properties.c:479
+#: charpick/properties.c:482
 msgid "Click to add a new palette"
 msgstr "Yeni bir palet eklemek için tıklayın"
 
-#: charpick/properties.c:491
+#: charpick/properties.c:496
 msgid "Edit button"
 msgstr "Düzenleme düğmesi"
 
-#: charpick/properties.c:492
+#: charpick/properties.c:497
 msgid "Click to edit the selected palette"
 msgstr "Seçili paleti düzenlemek için tıklayın"
 
-#: charpick/properties.c:504
+#: charpick/properties.c:511
 msgid "Delete button"
 msgstr "Silme düğmesi"
 
-#: charpick/properties.c:505
+#: charpick/properties.c:512
 msgid "Click to delete the selected palette"
 msgstr "Seçilen paleti silmek için tıklayın"
 
-#: charpick/properties.c:556
+#: charpick/properties.c:566
 msgid "Character Palette Preferences"
 msgstr "Karakter Paleti Tercihleri"
 
@@ -707,7 +709,7 @@ msgstr "Kösterim Ayarları"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:792 cpufreq/src/cpufreq-applet.c:846
+#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:845
 msgid "CPU Frequency Scaling Monitor"
 msgstr "İşlemci Frekansı Seviyesi İzleyicisi"
 
@@ -753,37 +755,37 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:447 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:446 cpufreq/src/cpufreq-prefs.c:364
 msgid "Could not open help document"
 msgstr "Yardım dosyası açılamadı"
 
-#: cpufreq/src/cpufreq-applet.c:479
+#: cpufreq/src/cpufreq-applet.c:478
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:480
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Bu yardımcı şu anki işlemci frekans seviyesini gösterir."
 
-#: cpufreq/src/cpufreq-applet.c:847
+#: cpufreq/src/cpufreq-applet.c:846
 msgid "This utility shows the current CPU Frequency"
 msgstr "Bu yardımcı, şu anki işlemci frekansını gösterir"
 
-#: cpufreq/src/cpufreq-prefs.c:493
+#: cpufreq/src/cpufreq-prefs.c:504
 msgid "Graphic"
 msgstr "Grafik"
 
-#: cpufreq/src/cpufreq-prefs.c:498
+#: cpufreq/src/cpufreq-prefs.c:509
 msgid "Text"
 msgstr "Metin"
 
-#: cpufreq/src/cpufreq-prefs.c:503
+#: cpufreq/src/cpufreq-prefs.c:514
 msgid "Graphic and Text"
 msgstr "Grafik ve Metin"
 
@@ -791,11 +793,11 @@ msgstr "Grafik ve Metin"
 msgid "Frequency Scaling Unsupported"
 msgstr "Frekans Ölçümü Desteklenmiyor"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:57
+#: cpufreq/src/cpufreq-monitor-factory.c:55
 msgid "CPU frequency scaling unsupported"
 msgstr "İşlemci frekansı ölçümü desteklenmiyor"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:58
+#: cpufreq/src/cpufreq-monitor-factory.c:56
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -812,80 +814,80 @@ msgstr "İşlemci Frekans ölçeklemesini değiştir"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "İşlemci Frekansı ölçeklemesini değiştirmek için yetkiler gerekli."
 
-#: drivemount/drive-button.c:277
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
+msgid "Drive Mount Applet Factory"
+msgstr "Sürücü Bağlama Uygulamacığı Üreticisi"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for drive mount applet"
+msgstr "Sürücü bağlama uygulamacığı için üretici"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
+#: drivemount/src/drivemount.c:182 drivemount/src/drivemount.c:216
+msgid "Disk Mounter"
+msgstr "Disk Taqıcı"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
+msgid "Mount local disks and devices"
+msgstr "Yerel diskleri ve aygıtları bağla"
+
+#: drivemount/src/drive-button.c:280
 msgid "nothing to mount"
 msgstr ""
 
-#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
+#: drivemount/src/drive-button.c:313 drivemount/src/drive-button.c:327
 msgid "(mounted)"
 msgstr "(taqılğan)"
 
-#: drivemount/drive-button.c:317
+#: drivemount/src/drive-button.c:320
 msgid "(not mounted)"
 msgstr "(taqılmağan)"
 
-#: drivemount/drive-button.c:589
+#: drivemount/src/drive-button.c:597
 msgid "Cannot execute Caja"
 msgstr ""
 
-#: drivemount/drive-button.c:913
+#: drivemount/src/drive-button.c:935
 msgid "_Play DVD"
 msgstr "_DVD Oynat"
 
-#: drivemount/drive-button.c:917
+#: drivemount/src/drive-button.c:939
 msgid "_Play CD"
 msgstr "_CD Oynat"
 
-#: drivemount/drive-button.c:920
+#: drivemount/src/drive-button.c:942
 #, c-format
 msgid "_Open %s"
 msgstr "%s _Aç"
 
-#: drivemount/drive-button.c:928
+#: drivemount/src/drive-button.c:950
 #, c-format
 msgid "Un_mount %s"
 msgstr "%s _Ayır"
 
-#: drivemount/drive-button.c:934
+#: drivemount/src/drive-button.c:956
 #, c-format
 msgid "_Mount %s"
 msgstr "%s _Taq"
 
-#: drivemount/drive-button.c:942
+#: drivemount/src/drive-button.c:964
 #, c-format
 msgid "_Eject %s"
 msgstr "%s _Çıqart"
 
-#: drivemount/drivemount.c:120
+#: drivemount/src/drivemount.c:118
 msgid "About Disk Mounter"
 msgstr ""
 
-#: drivemount/drivemount.c:122
+#: drivemount/src/drivemount.c:120
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: drivemount/drivemount.c:124
+#: drivemount/src/drivemount.c:122
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Aygıtları bağlamak ve ayırmak için uygulayıcı."
-
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
-msgid "Disk Mounter"
-msgstr "Disk Taqıcı"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
-msgid "Drive Mount Applet Factory"
-msgstr "Sürücü Bağlama Uygulamacığı Üreticisi"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for drive mount applet"
-msgstr "Sürücü bağlama uygulamacığı için üretici"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
-msgid "Mount local disks and devices"
-msgstr "Yerel diskleri ve aygıtları bağla"
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
@@ -893,7 +895,7 @@ msgid "Eyes Applet Factory"
 msgstr ""
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-#: geyes/src/geyes.c:388 geyes/src/geyes.c:419 geyes/src/geyes.c:421
+#: geyes/src/geyes.c:399 geyes/src/geyes.c:428 geyes/src/geyes.c:430
 msgid "Eyes"
 msgstr "Gözler"
 
@@ -918,68 +920,170 @@ msgstr "_Bir tema seçin:"
 msgid "Themes"
 msgstr "Temalar"
 
-#: geyes/src/geyes.c:178
+#: geyes/src/geyes.c:190
 msgid "About Eyes"
 msgstr ""
 
-#: geyes/src/geyes.c:180
+#: geyes/src/geyes.c:192
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "MATE paneli için bir takım pörtlek göz. Farenizi takip ederler."
 
-#: geyes/src/geyes.c:182
+#: geyes/src/geyes.c:194
 msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: geyes/src/geyes.c:422
+#: geyes/src/geyes.c:431
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Gözler fare imlecinin yönüne bakar"
 
-#: geyes/src/themes.c:130
+#: geyes/src/themes.c:123
 msgid "Can not launch the eyes applet."
 msgstr "Gözler uygulamacığı başlatılamıyor."
 
-#: geyes/src/themes.c:131
+#: geyes/src/themes.c:124
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Tema yüklenmeye çalışılırken önemli bir hata oluştu."
 
-#: mateweather/mateweather-about.c:54
+#: mateweather/data/mateweather-dialog.ui:13
+msgid "Details"
+msgstr "Tafsilât"
+
+#: mateweather/data/mateweather-dialog.ui:30
+#: mateweather/src/mateweather-applet.c:111
+msgid "_Update"
+msgstr "_Yañart"
+
+#: mateweather/data/mateweather-dialog.ui:88
+msgid "City:"
+msgstr "Şeer:"
+
+#: mateweather/data/mateweather-dialog.ui:100
+msgid "Last update:"
+msgstr "Soñki yañartma:"
+
+#: mateweather/data/mateweather-dialog.ui:112
+msgid "Conditions:"
+msgstr "Şartlar:"
+
+#: mateweather/data/mateweather-dialog.ui:124
+msgid "Sky:"
+msgstr "Kök:"
+
+#: mateweather/data/mateweather-dialog.ui:136
+msgid "Temperature:"
+msgstr "Sıcaqlıq:"
+
+#: mateweather/data/mateweather-dialog.ui:148
+msgid "Feels like:"
+msgstr "Şöyle is etile:"
+
+#: mateweather/data/mateweather-dialog.ui:160
+msgid "Dew point:"
+msgstr "Çıq noqtası:"
+
+#: mateweather/data/mateweather-dialog.ui:172
+msgid "Relative humidity:"
+msgstr "Nisbiy nemlilik:"
+
+#: mateweather/data/mateweather-dialog.ui:184
+msgid "Wind:"
+msgstr "Rüzgâr:"
+
+#: mateweather/data/mateweather-dialog.ui:196
+msgid "Pressure:"
+msgstr "Basım:"
+
+#: mateweather/data/mateweather-dialog.ui:208
+msgid "Visibility:"
+msgstr "Körünirlik:"
+
+#: mateweather/data/mateweather-dialog.ui:220
+msgid "Sunrise:"
+msgstr "Küneş Doğumı:"
+
+#: mateweather/data/mateweather-dialog.ui:232
+msgid "Sunset:"
+msgstr "Küneş Batımı:"
+
+#: mateweather/data/mateweather-dialog.ui:409
+msgid "Current Conditions"
+msgstr "Ağımdaki Şartlar"
+
+#: mateweather/data/mateweather-dialog.ui:434
+msgid "Forecast Report"
+msgstr "Tahmin Maruzası"
+
+#: mateweather/data/mateweather-dialog.ui:435
+msgid "See the ForeCast Details"
+msgstr "Tahmin Tafsilâtını Kör"
+
+#: mateweather/data/mateweather-dialog.ui:456
+msgid "Forecast"
+msgstr "Tahmin"
+
+#: mateweather/data/mateweather-dialog.ui:497
+msgid "_Visit Weather.com"
+msgstr "Weatcher.com'a _Gir"
+
+#: mateweather/data/mateweather-dialog.ui:505
+msgid "Visit Weather.com"
+msgstr "Weatcher.com'u ziyaret et"
+
+#: mateweather/data/mateweather-dialog.ui:506
+msgid "Click to Enter Weather.com"
+msgstr "Weather.com'a Girmek için Tıkla"
+
+#: mateweather/data/mateweather-dialog.ui:525
+msgid "Radar Map"
+msgstr "Radar Haritası"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
+msgid "Mateweather Applet Factory"
+msgstr ""
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the weather applet."
+msgstr "Ava durumı uyğulamaçığını icat içün fabrika."
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
+#: mateweather/src/mateweather-applet.c:340
+msgid "Weather Report"
+msgstr "Ava Maruzası"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
+msgid "Monitor the current weather conditions, and forecasts"
+msgstr "Cari ava şartlarını ve tahminlerini izle"
+
+#: mateweather/src/mateweather-about.c:54
 msgid "About Weather Report"
 msgstr ""
 
-#: mateweather/mateweather-about.c:56
+#: mateweather/src/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: mateweather/mateweather-about.c:58
+#: mateweather/src/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "Yerli ava şartlarını izlemek içün bir panel uyğulamaçığı."
 
-#: mateweather/mateweather-applet.c:108
+#: mateweather/src/mateweather-applet.c:108
 msgid "_Details"
 msgstr "_Ayrıntılar"
 
-#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.ui:30
-msgid "_Update"
-msgstr "_Yañart"
-
-#: mateweather/mateweather-applet.c:343
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
-msgid "Weather Report"
-msgstr "Ava Maruzası"
-
-#: mateweather/mateweather-applet.c:358 mateweather/mateweather-applet.c:362
+#: mateweather/src/mateweather-applet.c:355
+#: mateweather/src/mateweather-applet.c:359
 msgid "MATE Weather"
 msgstr "MATE Ava Durumı"
 
-#: mateweather/mateweather-applet.c:460
+#: mateweather/src/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Ava Tahmini"
 
-#: mateweather/mateweather-applet.c:472
+#: mateweather/src/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -990,296 +1094,367 @@ msgstr ""
 "Gökyüzü: %s\n"
 "Sıcaklık: %s"
 
-#: mateweather/mateweather-applet.c:521
+#: mateweather/src/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Yañartıla..."
 
-#: mateweather/mateweather-dialog.c:231
+#: mateweather/src/mateweather-dialog.c:231
 msgid "Forecast not currently available for this location."
 msgstr "Al-azırda bu qonum içün tahmin faydalanışlı degil."
 
-#: mateweather/mateweather-dialog.ui:13
-msgid "Details"
-msgstr "Tafsilât"
-
-#: mateweather/mateweather-dialog.ui:88
-msgid "City:"
-msgstr "Şeer:"
-
-#: mateweather/mateweather-dialog.ui:100
-msgid "Last update:"
-msgstr "Soñki yañartma:"
-
-#: mateweather/mateweather-dialog.ui:112
-msgid "Conditions:"
-msgstr "Şartlar:"
-
-#: mateweather/mateweather-dialog.ui:124
-msgid "Sky:"
-msgstr "Kök:"
-
-#: mateweather/mateweather-dialog.ui:136
-msgid "Temperature:"
-msgstr "Sıcaqlıq:"
-
-#: mateweather/mateweather-dialog.ui:148
-msgid "Feels like:"
-msgstr "Şöyle is etile:"
-
-#: mateweather/mateweather-dialog.ui:160
-msgid "Dew point:"
-msgstr "Çıq noqtası:"
-
-#: mateweather/mateweather-dialog.ui:172
-msgid "Relative humidity:"
-msgstr "Nisbiy nemlilik:"
-
-#: mateweather/mateweather-dialog.ui:184
-msgid "Wind:"
-msgstr "Rüzgâr:"
-
-#: mateweather/mateweather-dialog.ui:196
-msgid "Pressure:"
-msgstr "Basım:"
-
-#: mateweather/mateweather-dialog.ui:208
-msgid "Visibility:"
-msgstr "Körünirlik:"
-
-#: mateweather/mateweather-dialog.ui:220
-msgid "Sunrise:"
-msgstr "Küneş Doğumı:"
-
-#: mateweather/mateweather-dialog.ui:232
-msgid "Sunset:"
-msgstr "Küneş Batımı:"
-
-#: mateweather/mateweather-dialog.ui:409
-msgid "Current Conditions"
-msgstr "Ağımdaki Şartlar"
-
-#: mateweather/mateweather-dialog.ui:434
-msgid "Forecast Report"
-msgstr "Tahmin Maruzası"
-
-#: mateweather/mateweather-dialog.ui:435
-msgid "See the ForeCast Details"
-msgstr "Tahmin Tafsilâtını Kör"
-
-#: mateweather/mateweather-dialog.ui:456
-msgid "Forecast"
-msgstr "Tahmin"
-
-#: mateweather/mateweather-dialog.ui:497
-msgid "_Visit Weather.com"
-msgstr "Weatcher.com'a _Gir"
-
-#: mateweather/mateweather-dialog.ui:505
-msgid "Visit Weather.com"
-msgstr "Weatcher.com'u ziyaret et"
-
-#: mateweather/mateweather-dialog.ui:506
-msgid "Click to Enter Weather.com"
-msgstr "Weather.com'a Girmek için Tıkla"
-
-#: mateweather/mateweather-dialog.ui:525
-msgid "Radar Map"
-msgstr "Radar Haritası"
-
-#: mateweather/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:158
 msgid "Location view"
 msgstr "Konum görünümü"
 
-#: mateweather/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:158
 msgid "Select Location from the list"
 msgstr "Listeden Konum seçin"
 
-#: mateweather/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:159
 msgid "Update spin button"
 msgstr "Çevirme düğmelerini güncelle"
 
-#: mateweather/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:159
 msgid "Spinbutton for updating"
 msgstr "Güncelleme için çevirme düğmesi"
 
-#: mateweather/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:160
 msgid "Address Entry"
 msgstr "Adres Girişi"
 
-#: mateweather/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:160
 msgid "Enter the URL"
 msgstr "URL'yi girin"
 
-#: mateweather/mateweather-pref.c:281
+#: mateweather/src/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr ""
 "Konumlar XML veritabanı yüklenirken hata oluştur. Lütfen bunu hata olarak "
 "bildirin."
 
-#: mateweather/mateweather-pref.c:805
+#: mateweather/src/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "Ava Durumı Tercihleri"
 
-#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
+#: mateweather/src/mateweather-pref.c:829
+#: mateweather/src/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "Bu aralıklarla _otomatik güncelle:"
 
-#: mateweather/mateweather-pref.c:845
+#: mateweather/src/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "_Sıcaklık Birimi:"
 
-#: mateweather/mateweather-pref.c:855
+#: mateweather/src/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/src/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "Santigrat"
 
-#: mateweather/mateweather-pref.c:858
+#: mateweather/src/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "Fahrenhayt"
 
-#: mateweather/mateweather-pref.c:867
+#: mateweather/src/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "_Rüzgar Hızı Birimi:"
 
-#: mateweather/mateweather-pref.c:878
+#: mateweather/src/mateweather-pref.c:878
 msgid "m/s"
 msgstr "m/s"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/src/mateweather-pref.c:880
 msgid "km/h"
 msgstr "km/st"
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/src/mateweather-pref.c:882
 msgid "mph"
 msgstr "mi/st"
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/src/mateweather-pref.c:884
 msgid "knots"
 msgstr "knot"
 
-#: mateweather/mateweather-pref.c:885
+#: mateweather/src/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "Beaufort ölçeği"
 
-#: mateweather/mateweather-pref.c:894
+#: mateweather/src/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "_Basınç birimi:"
 
-#: mateweather/mateweather-pref.c:905
+#: mateweather/src/mateweather-pref.c:905
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/src/mateweather-pref.c:907
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/src/mateweather-pref.c:909
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/src/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/src/mateweather-pref.c:913
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/src/mateweather-pref.c:915
 msgid "atm"
 msgstr "atm"
 
-#: mateweather/mateweather-pref.c:924
+#: mateweather/src/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "_Görüş Alanı Birimi:"
 
-#: mateweather/mateweather-pref.c:935
+#: mateweather/src/mateweather-pref.c:935
 msgid "meters"
 msgstr "metre"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/src/mateweather-pref.c:937
 msgid "km"
 msgstr "km"
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/src/mateweather-pref.c:939
 msgid "miles"
 msgstr "mil"
 
-#: mateweather/mateweather-pref.c:969
+#: mateweather/src/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "_Radar haritasını etkinleştir"
 
-#: mateweather/mateweather-pref.c:985
+#: mateweather/src/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr "Radar haritası için _özel adres kullan"
 
-#: mateweather/mateweather-pref.c:1003
+#: mateweather/src/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "_Adres:"
 
-#: mateweather/mateweather-pref.c:1018
+#: mateweather/src/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr ""
 
-#: mateweather/mateweather-pref.c:1028
+#: mateweather/src/mateweather-pref.c:1028
 msgid "Update"
 msgstr "Yañart"
 
-#: mateweather/mateweather-pref.c:1045
+#: mateweather/src/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "daqqa"
 
-#: mateweather/mateweather-pref.c:1063
+#: mateweather/src/mateweather-pref.c:1063
 msgid "Display"
 msgstr "Gösterim"
 
-#: mateweather/mateweather-pref.c:1082
+#: mateweather/src/mateweather-pref.c:1082
 msgid "General"
 msgstr "Umumiy"
 
-#: mateweather/mateweather-pref.c:1093
+#: mateweather/src/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "_Konum seç:"
 
-#: mateweather/mateweather-pref.c:1115
+#: mateweather/src/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "_Tap:"
 
-#: mateweather/mateweather-pref.c:1121
+#: mateweather/src/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "_Sonrakini Bul"
 
-#: mateweather/mateweather-pref.c:1142
+#: mateweather/src/mateweather-pref.c:1142
 msgid "Location"
 msgstr "Konum"
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
-msgid "Mateweather Applet Factory"
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
+msgid "MultiLoad Applet Factory"
 msgstr ""
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for creating the weather applet."
-msgstr "Ava durumı uyğulamaçığını icat içün fabrika."
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the load applet."
+msgstr ""
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
-msgid "Monitor the current weather conditions, and forecasts"
-msgstr "Cari ava şartlarını ve tahminlerini izle"
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
+#: multiload/src/main.c:499
+msgid "System Monitor"
+msgstr "Sistem İzleyici"
 
-#: multiload/main.c:60
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
+msgid "A system load indicator"
+msgstr "Sistem yükü belirteci"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:5
+msgid "Enable CPU load graph"
+msgstr "İşlemci yük grafiğini etkinleştir"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:9
+msgid "Enable memory load graph"
+msgstr "Bellek yük grafiğini etkinleştir"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:13
+msgid "Enable network load graph"
+msgstr "Ağ yük grafiğini etkinleştir"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:17
+msgid "Enable swap load graph"
+msgstr "Takas yük grafiğini etkinleştir"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:21
+msgid "Enable load average graph"
+msgstr "Yük ortalaması grafiğini etkinleştir"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:25
+msgid "Enable disk load graph"
+msgstr "Disk yük grafiğini etkinleştir"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:29
+msgid "Applet refresh rate in milliseconds"
+msgstr "Milisaniye cinsinden uygulamacık tazeleme hızı"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:33
+msgid "Graph size"
+msgstr "Grafik boyutu"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:34
+msgid ""
+"For horizontal panels, the width of the graphs in pixels. For vertical "
+"panels, this is the height of the graphs."
+msgstr ""
+"Ufqiy paneller içün, grafiklerniñ piksel cınsından kenişligi. Vertikal "
+"paneller içün, grafiklerniñ yüksekligidir."
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:38
+msgid "Graph color for user-related CPU activity"
+msgstr "Kullanıcıyla ilgili işlemci aktivitesi için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:42
+msgid "Graph color for system-related CPU activity"
+msgstr "Sistemle ilgili işlemci aktivitesi grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:46
+msgid "Graph color for nice-related CPU activity"
+msgstr "Öncelikle ilgili işlemci aktivitesi için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:50
+msgid "Graph color for iowait related CPU activity"
+msgstr "Öncelikle ilgili işlemci aktivitesi için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:54
+msgid "CPU graph background color"
+msgstr "İşlemci grafiği arkaplan rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:58
+msgid "Graph color for user-related memory usage"
+msgstr "Kullanıcıyla ilgili bellek kullanımı için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:62
+msgid "Graph color for shared memory"
+msgstr "Paylaşılan bellek için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:66
+msgid "Graph color for buffer memory"
+msgstr "Tampon bellek için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:70
+msgid "Graph color for cached memory"
+msgstr "Önbellek için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:74
+msgid "Memory graph background color"
+msgstr "Bellek grafiği arkaplan rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:78
+msgid "Graph color for input network activity"
+msgstr "Kirdi şebeke faaliyeti içün grafik tüsü"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:82
+msgid "Graph color for output network activity"
+msgstr "Çıqtı şebeke faaliyeti içün grafik tüsü"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:86
+msgid "Graph color for loopback network usage"
+msgstr "Keri-ilik şebeke faaliyeti içün grafik tüsü"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:90
+msgid "Network graph background color"
+msgstr "Ağ grafiği arkaplan rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:94
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:133
+msgid "Grid line color"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:98
+msgid "Indicator color"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:103
+msgid "Network threshold 1 in bytes"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:108
+msgid "Network threshold 2 in bytes"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:113
+msgid "Network threshold 3 in bytes"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:117
+msgid "Graph color for user-related swap usage"
+msgstr "Kullanıcıyla ilgili takas kullanımı için grafik rengiKul"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:121
+msgid "Swap graph background color"
+msgstr "Takas grafiği arkaplan rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:125
+msgid "Graph color for load average"
+msgstr "Yük ortalaması için grafik rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:129
+msgid "Load graph background color"
+msgstr "Grafik arkaplan rengini yükle"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:137
+msgid "Graph color for disk read"
+msgstr "Disk okuma grafiği rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:141
+msgid "Graph color for disk write"
+msgstr "Disk yazma grafiği rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:145
+msgid "Background color for disk load graph"
+msgstr "Disk yükü grafiği için arkaplan rengi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:149
+msgid "Uses /proc/diskstats to determine NVMe disk load"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:153
+msgid "The desktop description file to execute as the system monitor"
+msgstr "Sistem izleyici olarak çalıştırılacak masaüstü tanım dosyası"
+
+#: multiload/src/main.c:60
 msgid "About System Monitor"
 msgstr ""
 
-#: multiload/main.c:62
+#: multiload/src/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: multiload/main.c:64
+#: multiload/src/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
@@ -1287,40 +1462,40 @@ msgstr ""
 "İşlemci, bellek, takas alanı kullanımı ve ağ yoğunluğunun çizelgelerini "
 "gösterebilen bir sistem yükü izleyicisidir."
 
-#: multiload/main.c:127
+#: multiload/src/main.c:124
 msgid "Start system-monitor"
 msgstr ""
 
-#: multiload/main.c:149
+#: multiload/src/main.c:146
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "'%s' çalıştırılırken hata oluştu: %s"
 
-#: multiload/main.c:275 multiload/properties.c:643
+#: multiload/src/main.c:272 multiload/src/properties.c:625
 msgid "Processor"
 msgstr "İşlemci"
 
-#: multiload/main.c:276 multiload/properties.c:651
+#: multiload/src/main.c:273 multiload/src/properties.c:633
 msgid "Memory"
 msgstr "Bellek"
 
-#: multiload/main.c:277 multiload/properties.c:659
+#: multiload/src/main.c:274 multiload/src/properties.c:641
 msgid "Network"
 msgstr "Ağ"
 
-#: multiload/main.c:278 multiload/properties.c:668
+#: multiload/src/main.c:275 multiload/src/properties.c:650
 msgid "Swap Space"
 msgstr "Takas Alanı"
 
-#: multiload/main.c:279 multiload/main.c:362
+#: multiload/src/main.c:276 multiload/src/main.c:360
 msgid "Load Average"
 msgstr "Ortalama Yük"
 
-#: multiload/main.c:280
+#: multiload/src/main.c:277
 msgid "Disk"
 msgstr "Disk"
 
-#: multiload/main.c:297
+#: multiload/src/main.c:294
 #, c-format
 msgid ""
 "%s:\n"
@@ -1328,12 +1503,12 @@ msgid ""
 "%.01f%% in use as cache"
 msgstr ""
 
-#: multiload/main.c:306
+#: multiload/src/main.c:303
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Sistem yük ortalaması %0.02f"
 
-#: multiload/main.c:316
+#: multiload/src/main.c:313
 #, c-format
 msgid ""
 "%s:\n"
@@ -1344,383 +1519,213 @@ msgstr ""
 "Alına %s\n"
 "Yiberile %s"
 
-#: multiload/main.c:338
+#: multiload/src/main.c:335
 #, c-format
 msgid ""
 "%s:\n"
 "%.01f%% in use"
 msgstr ""
 
-#: multiload/main.c:358
+#: multiload/src/main.c:356
 msgid "CPU Load"
 msgstr "Işlemci Yükü"
 
-#: multiload/main.c:359
+#: multiload/src/main.c:357
 msgid "Memory Load"
 msgstr "Bellek Yükü"
 
-#: multiload/main.c:360
+#: multiload/src/main.c:358
 msgid "Net Load"
 msgstr "Ağ Yükü"
 
-#: multiload/main.c:361
+#: multiload/src/main.c:359
 msgid "Swap Load"
 msgstr "Takas Yükü"
 
-#: multiload/main.c:363
+#: multiload/src/main.c:361
 msgid "Disk Load"
 msgstr "Disk Yükü"
 
-#: multiload/main.c:483
+#: multiload/src/main.c:468
 msgid "_Open System Monitor"
 msgstr "Sistem İzleyici'yi _Aç"
 
-#: multiload/main.c:515
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
-msgid "System Monitor"
-msgstr "Sistem İzleyici"
-
-#: multiload/netspeed.c:43
+#: multiload/src/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
 
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
-msgid "MultiLoad Applet Factory"
-msgstr ""
-
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for creating the load applet."
-msgstr ""
-
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
-msgid "A system load indicator"
-msgstr "Sistem yükü belirteci"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
-msgid "Enable CPU load graph"
-msgstr "İşlemci yük grafiğini etkinleştir"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:9
-msgid "Enable memory load graph"
-msgstr "Bellek yük grafiğini etkinleştir"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:13
-msgid "Enable network load graph"
-msgstr "Ağ yük grafiğini etkinleştir"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:17
-msgid "Enable swap load graph"
-msgstr "Takas yük grafiğini etkinleştir"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:21
-msgid "Enable load average graph"
-msgstr "Yük ortalaması grafiğini etkinleştir"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:25
-msgid "Enable disk load graph"
-msgstr "Disk yük grafiğini etkinleştir"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:29
-msgid "Applet refresh rate in milliseconds"
-msgstr "Milisaniye cinsinden uygulamacık tazeleme hızı"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:33
-msgid "Graph size"
-msgstr "Grafik boyutu"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:34
-msgid ""
-"For horizontal panels, the width of the graphs in pixels. For vertical "
-"panels, this is the height of the graphs."
-msgstr ""
-"Ufqiy paneller içün, grafiklerniñ piksel cınsından kenişligi. Vertikal "
-"paneller içün, grafiklerniñ yüksekligidir."
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:38
-msgid "Graph color for user-related CPU activity"
-msgstr "Kullanıcıyla ilgili işlemci aktivitesi için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:42
-msgid "Graph color for system-related CPU activity"
-msgstr "Sistemle ilgili işlemci aktivitesi grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:46
-msgid "Graph color for nice-related CPU activity"
-msgstr "Öncelikle ilgili işlemci aktivitesi için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:50
-msgid "Graph color for iowait related CPU activity"
-msgstr "Öncelikle ilgili işlemci aktivitesi için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:54
-msgid "CPU graph background color"
-msgstr "İşlemci grafiği arkaplan rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:58
-msgid "Graph color for user-related memory usage"
-msgstr "Kullanıcıyla ilgili bellek kullanımı için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:62
-msgid "Graph color for shared memory"
-msgstr "Paylaşılan bellek için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:66
-msgid "Graph color for buffer memory"
-msgstr "Tampon bellek için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:70
-msgid "Graph color for cached memory"
-msgstr "Önbellek için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:74
-msgid "Memory graph background color"
-msgstr "Bellek grafiği arkaplan rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:78
-msgid "Graph color for input network activity"
-msgstr "Kirdi şebeke faaliyeti içün grafik tüsü"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:82
-msgid "Graph color for output network activity"
-msgstr "Çıqtı şebeke faaliyeti içün grafik tüsü"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:86
-msgid "Graph color for loopback network usage"
-msgstr "Keri-ilik şebeke faaliyeti içün grafik tüsü"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:90
-msgid "Network graph background color"
-msgstr "Ağ grafiği arkaplan rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:133
-msgid "Grid line color"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:98
-msgid "Indicator color"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:103
-msgid "Network threshold 1 in bytes"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:108
-msgid "Network threshold 2 in bytes"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:113
-msgid "Network threshold 3 in bytes"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:117
-msgid "Graph color for user-related swap usage"
-msgstr "Kullanıcıyla ilgili takas kullanımı için grafik rengiKul"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:121
-msgid "Swap graph background color"
-msgstr "Takas grafiği arkaplan rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:125
-msgid "Graph color for load average"
-msgstr "Yük ortalaması için grafik rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:129
-msgid "Load graph background color"
-msgstr "Grafik arkaplan rengini yükle"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:137
-msgid "Graph color for disk read"
-msgstr "Disk okuma grafiği rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:141
-msgid "Graph color for disk write"
-msgstr "Disk yazma grafiği rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:145
-msgid "Background color for disk load graph"
-msgstr "Disk yükü grafiği için arkaplan rengi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:149
-msgid "Uses /proc/diskstats to determine NVMe disk load"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:153
-msgid "The desktop description file to execute as the system monitor"
-msgstr "Sistem izleyici olarak çalıştırılacak masaüstü tanım dosyası"
-
-#: multiload/properties.c:405
+#: multiload/src/properties.c:383
 msgid "Monitored Resources"
 msgstr "İzlenen Özkaynaklar"
 
-#: multiload/properties.c:430
+#: multiload/src/properties.c:408
 msgid "_Processor"
 msgstr "İş_lemci"
 
-#: multiload/properties.c:443
+#: multiload/src/properties.c:422
 msgid "_Memory"
 msgstr "_Hafiza"
 
-#: multiload/properties.c:456
+#: multiload/src/properties.c:435
 msgid "_Network"
 msgstr "_Şebeke"
 
-#: multiload/properties.c:469
+#: multiload/src/properties.c:448
 msgid "S_wap Space"
 msgstr "_Takas Alanı"
 
-#: multiload/properties.c:482
+#: multiload/src/properties.c:461
 msgid "_Load"
 msgstr "_Yük"
 
-#: multiload/properties.c:495
+#: multiload/src/properties.c:474
 msgid "_Harddisk"
 msgstr "_Sabit Disk"
 
-#: multiload/properties.c:510
+#: multiload/src/properties.c:492
 msgid "Options"
 msgstr "İhtiyariyat"
 
-#: multiload/properties.c:540
+#: multiload/src/properties.c:522
 msgid "System m_onitor width: "
 msgstr "Sistem izleyici _genişliği: "
 
-#: multiload/properties.c:542
+#: multiload/src/properties.c:524
 msgid "System m_onitor height: "
 msgstr "Sistem izleyici _yüksekliği: "
 
-#: multiload/properties.c:573
+#: multiload/src/properties.c:555
 msgid "pixels"
 msgstr "piksel"
 
-#: multiload/properties.c:581
+#: multiload/src/properties.c:563
 msgid "Sys_tem monitor update interval: "
 msgstr "Sistem izleyici güncelleme _sıklığı: "
 
-#: multiload/properties.c:607
+#: multiload/src/properties.c:589
 msgid "milliseconds"
 msgstr "milisaniye"
 
-#: multiload/properties.c:618
+#: multiload/src/properties.c:600
 msgid "Colors"
 msgstr "Renkler"
 
-#: multiload/properties.c:645 multiload/properties.c:653
+#: multiload/src/properties.c:627 multiload/src/properties.c:635
 msgid "_User"
 msgstr "_Qullanıcı"
 
-#: multiload/properties.c:646
+#: multiload/src/properties.c:628
 msgid "S_ystem"
 msgstr "_Sistem"
 
-#: multiload/properties.c:647
+#: multiload/src/properties.c:629
 msgid "N_ice"
 msgstr "Ö_ncelik"
 
-#: multiload/properties.c:648
+#: multiload/src/properties.c:630
 msgid "I_OWait"
 msgstr "I_OWait"
 
-#: multiload/properties.c:649
+#: multiload/src/properties.c:631
 msgid "I_dle"
 msgstr "B_eklemede"
 
-#: multiload/properties.c:654
+#: multiload/src/properties.c:636
 msgid "Sh_ared"
 msgstr "_Paylaşımda"
 
-#: multiload/properties.c:655
+#: multiload/src/properties.c:637
 msgid "_Buffers"
 msgstr "_Tamponlar"
 
-#: multiload/properties.c:656
+#: multiload/src/properties.c:638
 msgid "Cach_ed"
 msgstr "Önb_ellekli"
 
-#: multiload/properties.c:657
+#: multiload/src/properties.c:639
 msgid "F_ree"
 msgstr "B_oş"
 
-#: multiload/properties.c:661
+#: multiload/src/properties.c:643
 msgid "_In"
 msgstr "_İçeri"
 
-#: multiload/properties.c:662
+#: multiload/src/properties.c:644
 msgid "_Out"
 msgstr "_Tışarı"
 
-#: multiload/properties.c:663
+#: multiload/src/properties.c:645
 msgid "_Local"
 msgstr "_Yerli"
 
-#: multiload/properties.c:664 multiload/properties.c:676
-#: multiload/properties.c:683
+#: multiload/src/properties.c:646 multiload/src/properties.c:658
+#: multiload/src/properties.c:665
 msgid "_Background"
 msgstr "_Arqa-zemin"
 
-#: multiload/properties.c:665 multiload/properties.c:677
+#: multiload/src/properties.c:647 multiload/src/properties.c:659
 msgid "_Gridline"
 msgstr ""
 
-#: multiload/properties.c:666
+#: multiload/src/properties.c:648
 msgid "_Indicator"
 msgstr ""
 
-#: multiload/properties.c:670
+#: multiload/src/properties.c:652
 msgid "_Used"
 msgstr "_Qullanıla"
 
-#: multiload/properties.c:671
+#: multiload/src/properties.c:653
 msgid "_Free"
 msgstr "_Boş"
 
-#: multiload/properties.c:673
+#: multiload/src/properties.c:655
 msgid "Load"
 msgstr "Yük"
 
-#: multiload/properties.c:675
+#: multiload/src/properties.c:657
 msgid "_Average"
 msgstr "Ortalam_a"
 
-#: multiload/properties.c:679
+#: multiload/src/properties.c:661
 msgid "Harddisk"
 msgstr "_Qattı disk"
 
-#: multiload/properties.c:681
+#: multiload/src/properties.c:663
 msgid "_Read"
 msgstr "_Okuma"
 
-#: multiload/properties.c:682
+#: multiload/src/properties.c:664
 msgid "_Write"
 msgstr "_Yazma"
 
-#: multiload/properties.c:684
+#: multiload/src/properties.c:667
 msgid "Use diskstats for NVMe"
 msgstr ""
 
-#: multiload/properties.c:686
+#: multiload/src/properties.c:677
 msgid "Network speed thresholds"
 msgstr ""
 
-#: multiload/properties.c:714
+#: multiload/src/properties.c:705
 msgid "Threshold 1: "
 msgstr ""
 
-#: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815
+#: multiload/src/properties.c:736 multiload/src/properties.c:771
+#: multiload/src/properties.c:806
 msgid "bytes"
 msgstr ""
 
-#: multiload/properties.c:753
+#: multiload/src/properties.c:744
 msgid "Threshold 2: "
 msgstr ""
 
-#: multiload/properties.c:788
+#: multiload/src/properties.c:779
 msgid "Threshold 3: "
 msgstr ""
 
-#: multiload/properties.c:853
+#: multiload/src/properties.c:843
 msgid "System Monitor Preferences"
 msgstr "Sistem İzleyicisi Tercihleri"
 
@@ -2020,8 +2025,8 @@ msgid "10 MHz"
 msgstr ""
 
 #: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
-#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1505
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1511
+#: netspeed/src/netspeed.c:1520
 msgid "unknown"
 msgstr "bilinmey"
 
@@ -2169,25 +2174,25 @@ msgstr ""
 msgid "%s is down"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1484
+#: netspeed/src/netspeed.c:1489
 msgid "has no ip"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1489
+#: netspeed/src/netspeed.c:1495
 #, c-format
 msgid ""
 "%s: %s\n"
 "in: %s out: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1496
+#: netspeed/src/netspeed.c:1502
 #, c-format
 msgid ""
 "%s: %s\n"
 "sum: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1504
+#: netspeed/src/netspeed.c:1510
 #, c-format
 msgid ""
 "\n"
@@ -2197,7 +2202,7 @@ msgid ""
 "TX Bitrate: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1513
+#: netspeed/src/netspeed.c:1519
 #, c-format
 msgid ""
 "\n"
@@ -2205,7 +2210,7 @@ msgid ""
 "Strength: %d %%"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1563
+#: netspeed/src/netspeed.c:1565
 msgid "MATE Netspeed"
 msgstr ""
 
@@ -2215,7 +2220,7 @@ msgid "Sticky Notes Applet Factory"
 msgstr "Yapışkan Notlar Uygulamacık Üreticisi"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:9
-#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:412
+#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:409
 msgid "Sticky Notes"
 msgstr "Yapışkan Notlar"
 
@@ -2575,14 +2580,14 @@ msgstr "_Notları Sil"
 msgid "_Lock Notes"
 msgstr "N_otları Kilitle"
 
-#: stickynotes/stickynotes_applet.c:591
+#: stickynotes/stickynotes_applet.c:588
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: stickynotes/stickynotes_applet.c:592
+#: stickynotes/stickynotes_applet.c:589
 msgid "Show sticky notes"
 msgstr "Yapışkan notları göster"
 
@@ -2601,96 +2606,102 @@ msgstr ""
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "MATE Masaüstü Ortamı için Yapışkan Notlar"
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Timer Factory"
 msgstr ""
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
 msgid "Timer"
 msgstr ""
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:281
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
+#: timerapplet/src/timerapplet.c:282
 msgid "Start a timer and receive a notification when it is finished"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:9
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:9
 msgid "Duration of timer in seconds"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:13
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:13
 msgid "Show notification popup when timer finish"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:17
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:17
 msgid "Show dialog window when timer finish"
 msgstr ""
 
-#: timerapplet/timerapplet.c:83
+#: timerapplet/data/timerapplet-preferences.ui:28
+msgid "Timer Applet Preferences"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "_İsim:"
+
+#: timerapplet/data/timerapplet-preferences.ui:93
+msgid "_Hours:"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:107
+msgid "_Minutes:"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:121
+msgid "_Seconds:"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:205
+msgid "Show _dialog"
+msgstr ""
+
+#: timerapplet/src/timerapplet.c:83
 msgid "_Start timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:84
+#: timerapplet/src/timerapplet.c:84
 msgid "P_ause timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:85
+#: timerapplet/src/timerapplet.c:85
 msgid "S_top timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:86
+#: timerapplet/src/timerapplet.c:86
 msgid "R_eset"
 msgstr ""
 
-#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
+#. Translators: %s is a placeholder for the timer name, 'Timer' by default
+#: timerapplet/src/timerapplet.c:153
+#, c-format
+msgid "Finished %s"
+msgstr ""
+
+#: timerapplet/src/timerapplet.c:161 timerapplet/src/timerapplet.c:173
 msgid "Timer finished!"
 msgstr ""
 
-#: timerapplet/timerapplet.c:276
+#: timerapplet/src/timerapplet.c:277
 msgid "About Timer Applet"
 msgstr ""
 
-#: timerapplet/timerapplet.c:278
+#: timerapplet/src/timerapplet.c:279
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:365
+#: timerapplet/src/timerapplet.c:366
 msgid "Timer Applet"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:28
-msgid "Timer Applet Preferences"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:79
-msgid "_Name:"
-msgstr "_İsim:"
-
-#: timerapplet/timerapplet-preferences.ui:93
-msgid "_Hours:"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:107
-msgid "_Minutes:"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:121
-msgid "_Seconds:"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:189
-msgid "Show notification _popup"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:205
-msgid "Show _dialog"
 msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
@@ -2706,7 +2717,7 @@ msgstr "Çöp"
 msgid "Go to Trash"
 msgstr "Çöp Qutusına Bar"
 
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:341
 msgid "_Empty Trash"
 msgstr "Çöpni _Boşat"
 
@@ -2725,7 +2736,7 @@ msgstr[1] ""
 msgid "No Items in Trash"
 msgstr "Çöpte İç Unsur Yoq"
 
-#: trashapplet/src/trashapplet.c:378
+#: trashapplet/src/trashapplet.c:374
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
@@ -2734,18 +2745,18 @@ msgstr ""
 "Caja başlatılırken hata:\n"
 "%s"
 
-#: trashapplet/src/trashapplet.c:432
+#: trashapplet/src/trashapplet.c:428
 msgid "About Trash Applet"
 msgstr ""
 
-#: trashapplet/src/trashapplet.c:434
+#: trashapplet/src/trashapplet.c:430
 msgid ""
 "Copyright © 2004 Michiel Sikkes\n"
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: trashapplet/src/trashapplet.c:437
+#: trashapplet/src/trashapplet.c:433
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
@@ -2753,20 +2764,20 @@ msgstr ""
 "MATE Çöp Kutusu, panelinizde durur. Burdan Çöp kutunuzun durumunu görebilir "
 "ya da sürükle bırak yöntemi ile öğeleri çöpe atabilirsiniz."
 
-#: trashapplet/src/trashapplet.c:462
+#: trashapplet/src/trashapplet.c:458
 msgid "Delete Immediately?"
 msgstr "Hemen Silinsin mi?"
 
-#: trashapplet/src/trashapplet.c:492
+#: trashapplet/src/trashapplet.c:488
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "Öğeler çöpe taşınamıyor, önları direk silmek ister misiniz?"
 
-#: trashapplet/src/trashapplet.c:497
+#: trashapplet/src/trashapplet.c:493
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "Bazı öğeler çöpe taşınamıyor, önları direk silmek ister misiniz?"
 
-#: trashapplet/src/trashapplet.c:625
+#: trashapplet/src/trashapplet.c:620
 msgid "Trash Applet"
 msgstr "Çöp Uyğulamaçığı"
 
@@ -2782,11 +2793,11 @@ msgstr "Unsur %s / %s çetletile"
 msgid "Removing: %s"
 msgstr "Çetleştirile: %s"
 
-#: trashapplet/src/trash-empty.c:324
+#: trashapplet/src/trash-empty.c:321
 msgid "Empty all of the items from the trash?"
 msgstr "Çöpteki bütün öğeleri boşaltmak istediğinize emin misiniz?"
 
-#: trashapplet/src/trash-empty.c:331
+#: trashapplet/src/trash-empty.c:328
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."

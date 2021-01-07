@@ -13,9 +13,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.25.0\n"
+"Project-Id-Version: mate-applets 1.25.1\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-08-11 16:58+0200\n"
+"POT-Creation-Date: 2020-12-13 16:35+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
@@ -34,7 +34,7 @@ msgid "Keyboard Accessibility Status Applet Factory"
 msgstr "Billentyűzet-akadálymentesítés állapota factory"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-#: accessx-status/src/applet.c:1383
+#: accessx-status/src/applet.c:1675
 msgid "Keyboard Accessibility Status"
 msgstr "Billentyűzet-akadálymentesítés állapota"
 
@@ -43,44 +43,44 @@ msgid "Shows the status of keyboard accessibility features"
 msgstr ""
 "A billentyűzet akadálymentesítési szolgáltatásainak állapotát jeleníti meg"
 
-#: accessx-status/src/applet.c:86 charpick/charpick.c:571
-#: geyes/src/geyes.c:166 mateweather/mateweather-about.c:41
-#: multiload/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/src/applet.c:100 charpick/charpick.c:596
+#: geyes/src/geyes.c:178 mateweather/src/mateweather-about.c:41
+#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr "Sun GNOME Dokumentációs csapat <gdocteam@sun.com>"
 
-#: accessx-status/src/applet.c:87 battstat/battstat_applet.c:817
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:464
-#: drivemount/drivemount.c:109 geyes/src/geyes.c:167
-#: mateweather/mateweather-about.c:43 multiload/main.c:49
+#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:832
+#: charpick/charpick.c:597 cpufreq/src/cpufreq-applet.c:463
+#: drivemount/src/drivemount.c:107 geyes/src/geyes.c:179
+#: mateweather/src/mateweather-about.c:43 multiload/src/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
-#: trashapplet/src/trashapplet.c:421
+#: trashapplet/src/trashapplet.c:417
 msgid "MATE Documentation Team"
 msgstr "MATE dokumentációs csapat"
 
-#: accessx-status/src/applet.c:98
+#: accessx-status/src/applet.c:112
 msgid "About AccessX Status"
 msgstr "Az AccessX állapota névjegye"
 
-#: accessx-status/src/applet.c:100
+#: accessx-status/src/applet.c:114
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr ""
 "Az AccessX szolgáltatások, mint a lezárt módosítóbillentyűk állapotát "
 "jeleníti meg"
 
-#: accessx-status/src/applet.c:101
+#: accessx-status/src/applet.c:115
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: accessx-status/src/applet.c:105 battstat/battstat_applet.c:842
-#: charpick/charpick.c:592 command/src/command.c:131
-#: cpufreq/src/cpufreq-applet.c:488 drivemount/drivemount.c:127
-#: geyes/src/geyes.c:186 mateweather/mateweather-about.c:61
-#: multiload/main.c:69 netspeed/src/netspeed.c:1034
+#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:857
+#: charpick/charpick.c:617 command/src/command.c:131
+#: cpufreq/src/cpufreq-applet.c:487 drivemount/src/drivemount.c:125
+#: geyes/src/geyes.c:198 mateweather/src/mateweather-about.c:61
+#: multiload/src/main.c:69 netspeed/src/netspeed.c:1034
 #: stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
+#: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
 msgstr ""
 "Dvornik László<dvornik at mate dot hu>\n"
@@ -92,31 +92,31 @@ msgstr ""
 "Zoltán Rápolthy<real_zolee at hotmail dot com>\n"
 "Meskó Balázs <mesko dot balazs at fsf dot hu>"
 
-#: accessx-status/src/applet.c:124
+#: accessx-status/src/applet.c:143
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Hiba történt a súgóböngésző indításakor: %s"
 
-#: accessx-status/src/applet.c:152
+#: accessx-status/src/applet.c:177
 msgid "Open the keyboard preferences dialog"
 msgstr "Billentyűzetbeállítások megnyitása"
 
-#: accessx-status/src/applet.c:167
+#: accessx-status/src/applet.c:199
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr ""
 "Hiba történt a billentyűzet tulajdonságai párbeszédablak indításakor: %s"
 
-#: accessx-status/src/applet.c:182
+#: accessx-status/src/applet.c:219
 msgid "_Keyboard Accessibility Preferences"
 msgstr "_Billentyűzet akadálymentesítésének beállítása"
 
-#: accessx-status/src/applet.c:183 battstat/battstat_applet.c:60
-#: battstat/battstat-preferences.ui:37 charpick/charpick.c:669
+#: accessx-status/src/applet.c:221 battstat/battstat_applet.c:62
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:694
 #: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
-#: drivemount/drivemount.c:165 geyes/data/themes.ui:35 geyes/src/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:486
-#: netspeed/data/netspeed-details.ui:31
+#: drivemount/src/drivemount.c:163 geyes/data/themes.ui:35
+#: geyes/src/geyes.c:369 mateweather/src/mateweather-applet.c:117
+#: multiload/src/main.c:471 netspeed/data/netspeed-details.ui:31
 #: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
@@ -124,148 +124,148 @@ msgstr "_Billentyűzet akadálymentesítésének beállítása"
 msgid "_Help"
 msgstr "_Súgó"
 
-#: accessx-status/src/applet.c:184 battstat/battstat_applet.c:63
-#: charpick/charpick.c:672 command/src/command.c:87
-#: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/src/geyes.c:362 mateweather/mateweather-applet.c:120
-#: multiload/main.c:489 stickynotes/stickynotes_applet.c:49
-#: timerapplet/timerapplet.c:88 trashapplet/src/trashapplet.c:77
+#: accessx-status/src/applet.c:223 battstat/battstat_applet.c:65
+#: charpick/charpick.c:697 command/src/command.c:87
+#: cpufreq/src/cpufreq-applet.c:122 drivemount/src/drivemount.c:166
+#: geyes/src/geyes.c:371 mateweather/src/mateweather-applet.c:120
+#: multiload/src/main.c:474 stickynotes/stickynotes_applet.c:49
+#: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Névjegy"
 
-#: accessx-status/src/applet.c:503 accessx-status/src/applet.c:557
+#: accessx-status/src/applet.c:572 accessx-status/src/applet.c:641
 msgid "a"
 msgstr "a"
 
-#: accessx-status/src/applet.c:1042 accessx-status/src/applet.c:1108
-#: accessx-status/src/applet.c:1193 accessx-status/src/applet.c:1386
+#: accessx-status/src/applet.c:1243 accessx-status/src/applet.c:1322
+#: accessx-status/src/applet.c:1444 accessx-status/src/applet.c:1678
 msgid "AccessX Status"
 msgstr "AccessX állapota"
 
-#: accessx-status/src/applet.c:1043 accessx-status/src/applet.c:1194
+#: accessx-status/src/applet.c:1245 accessx-status/src/applet.c:1446
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "A billentyűzet állapotát jeleníti meg, ha az akadálymentesítési "
 "szolgáltatások használatban vannak."
 
-#: accessx-status/src/applet.c:1077
+#: accessx-status/src/applet.c:1281
 msgid "XKB Extension is not enabled"
 msgstr "Az XKB-kiterjesztés nincs bekapcsolva"
 
-#: accessx-status/src/applet.c:1082
+#: accessx-status/src/applet.c:1286
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"
 
-#: accessx-status/src/applet.c:1086
+#: accessx-status/src/applet.c:1294
 #, c-format
 msgid "Error: %s"
 msgstr "Hiba: %s"
 
-#: accessx-status/src/applet.c:1387
+#: accessx-status/src/applet.c:1680
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 "A billentyűzet akadálymentesítési szolgáltatásainak jelenlegi állapotát "
 "jeleníti meg"
 
-#: battstat/battstat_applet.c:57 charpick/charpick.c:666
+#: battstat/battstat_applet.c:59 charpick/charpick.c:691
 #: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
-#: geyes/src/geyes.c:356 mateweather/mateweather-applet.c:114
-#: multiload/main.c:480 stickynotes/stickynotes_applet.c:43
-#: timerapplet/timerapplet.c:87
+#: geyes/src/geyes.c:367 mateweather/src/mateweather-applet.c:114
+#: multiload/src/main.c:465 stickynotes/stickynotes_applet.c:43
+#: timerapplet/src/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Beállítások"
 
-#: battstat/battstat_applet.c:68
+#: battstat/battstat_applet.c:70
 msgid "System is running on AC power"
 msgstr "A rendszer hálózati feszültségről üzemel"
 
-#: battstat/battstat_applet.c:69
+#: battstat/battstat_applet.c:71
 msgid "System is running on battery power"
 msgstr "A rendszer akkumulátorról üzemel"
 
-#: battstat/battstat_applet.c:173
+#: battstat/battstat_applet.c:176
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Az akkumulátor feltöltődött (%d%%)"
 
-#: battstat/battstat_applet.c:175
+#: battstat/battstat_applet.c:178
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Ismeretlen idő (%d%%) van hátra"
 
-#: battstat/battstat_applet.c:177
+#: battstat/battstat_applet.c:180
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Ismeretlen idő (%d%%) van hátra a feltöltődésig"
 
-#: battstat/battstat_applet.c:182
+#: battstat/battstat_applet.c:185
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] "%d perc (%d%%) van hátra"
 msgstr[1] "%d perc (%d%%) van hátra"
 
-#: battstat/battstat_applet.c:187
+#: battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] "%d perc van hátra a feltöltődésig (%d%%)"
 msgstr[1] "%d perc van hátra a feltöltődésig (%d%%)"
 
-#: battstat/battstat_applet.c:193
+#: battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] "%d óra (%d%%) van hátra"
 msgstr[1] "%d óra (%d%%) van hátra"
 
-#: battstat/battstat_applet.c:198
+#: battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] "%d óra van hátra a feltöltődésig (%d%%)"
 msgstr[1] "%d óra van hátra a feltöltődésig (%d%%)"
 
-#: battstat/battstat_applet.c:205
+#: battstat/battstat_applet.c:208
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "%d %s %d %s (%d%%) van hátra"
 
-#: battstat/battstat_applet.c:206 battstat/battstat_applet.c:213
+#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "óra"
 msgstr[1] "óra"
 
-#: battstat/battstat_applet.c:207 battstat/battstat_applet.c:214
+#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "perc"
 msgstr[1] "perc"
 
-#: battstat/battstat_applet.c:212
+#: battstat/battstat_applet.c:215
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s van hátra a feltöltődésig (%d%%)"
 
-#: battstat/battstat_applet.c:226
+#: battstat/battstat_applet.c:229
 msgid "Battery Monitor"
 msgstr "Akkumulátorfigyelő"
 
-#: battstat/battstat_applet.c:237 battstat/battstat_applet.c:297
+#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:298
 msgid "Your battery is now fully recharged"
 msgstr "Az akkumulátor teljesen feltöltődött"
 
-#: battstat/battstat_applet.c:272 battstat/battstat_applet.c:429
+#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:431
 msgid "Battery Notice"
 msgstr "Akkumulátor értesítő"
 
-#: battstat/battstat_applet.c:374
+#: battstat/battstat_applet.c:378
 #, c-format
-msgid "You have %d%% of your total battery capacity remaining."
-msgstr "Az akkumulátor teljes kapacitásának %d százaléka van hátra."
+msgid "You have %d%% of your total batterycapacity remaining."
+msgstr ""
 
-#: battstat/battstat_applet.c:380
+#: battstat/battstat_applet.c:383
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -278,7 +278,7 @@ msgstr[1] ""
 "%d percre elegendő akkumulátortöltöttség van hátra (a teljes kapacitás "
 "%d%%-a)."
 
-#: battstat/battstat_applet.c:392
+#: battstat/battstat_applet.c:396
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -288,7 +288,7 @@ msgstr ""
 " • csatlakoztassa laptopját külső áramforrásra vagy\n"
 " • mentse el a megnyitott dokumentumokat és kapcsolja ki a laptopot."
 
-#: battstat/battstat_applet.c:400
+#: battstat/battstat_applet.c:403
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -300,62 +300,63 @@ msgstr ""
 " • csatlakoztassa laptopját külső áramforrásra vagy\n"
 " • mentse el a megnyitott dokumentumokat és kapcsolja ki a laptopot."
 
-#: battstat/battstat_applet.c:408
+#: battstat/battstat_applet.c:409
 msgid "Your battery is running low"
 msgstr "Az akkumulátor kezd lemerülni"
 
-#: battstat/battstat_applet.c:505
+#: battstat/battstat_applet.c:512
 msgid "No battery present"
 msgstr "Nincs akkumulátor"
 
-#: battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:515
 msgid "Battery status unknown"
 msgstr "Akkumulátor állapota ismeretlen"
 
-#: battstat/battstat_applet.c:537
+#: battstat/battstat_applet.c:545
 msgid "N/A"
 msgstr "N/A"
 
-#: battstat/battstat_applet.c:781 drivemount/drivemount.c:153
-#: geyes/src/geyes.c:344 geyes/src/themes.c:224
-#: mateweather/mateweather-applet.c:63 mateweather/mateweather-pref.c:745
+#: battstat/battstat_applet.c:795 drivemount/src/drivemount.c:151
+#: geyes/src/geyes.c:353 geyes/src/themes.c:226
+#: mateweather/src/mateweather-applet.c:63
+#: mateweather/src/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
-#: trashapplet/src/trashapplet.c:399
+#: trashapplet/src/trashapplet.c:395
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Hiba történt a súgó megjelenítése közben: %s"
 
-#: battstat/battstat_applet.c:822
+#: battstat/battstat_applet.c:837
 msgid "This utility shows the status of your laptop battery."
 msgstr ""
 "Ez a kisalkalmazás a laptop akkumulátorának töltöttségi állapotát jelzi."
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:839
 msgid "upower backend enabled."
 msgstr "upower háttérprogram engedélyezve."
 
-#: battstat/battstat_applet.c:825
+#: battstat/battstat_applet.c:840
 msgid "Legacy backend enabled."
 msgstr "Régi háttérprogram engedélyezve."
 
-#: battstat/battstat_applet.c:834
+#: battstat/battstat_applet.c:849
 msgid "About Battery Charge Monitor"
 msgstr "Az Akkumulátortöltöttség-figyelő névjegye"
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:851
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: battstat/battstat_applet.c:1125 battstat/battstat_applet.c:1175
+#: battstat/battstat_applet.c:1138 battstat/battstat_applet.c:1193
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Akkumulátortöltöttség-figyelő"
 
-#: battstat/battstat_applet.c:1176
+#: battstat/battstat_applet.c:1195
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "A laptop maradék töltését figyeli"
@@ -366,11 +367,12 @@ msgstr "Akkumulátortöltöttség-figyelő beállításai"
 
 #: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
 #: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
-#: mateweather/mateweather-dialog.ui:45 netspeed/data/netspeed-details.ui:47
+#: mateweather/data/mateweather-dialog.ui:45
+#: netspeed/data/netspeed-details.ui:47
 #: netspeed/data/netspeed-preferences.ui:49
 #: stickynotes/sticky-notes-preferences.ui:68
 #: stickynotes/sticky-notes-properties.ui:54
-#: timerapplet/timerapplet-preferences.ui:41
+#: timerapplet/data/timerapplet-preferences.ui:41
 msgid "_Close"
 msgstr "_Bezárás"
 
@@ -487,47 +489,47 @@ msgstr "Az akkumulátor töltöttsége alacsony"
 msgid "Battery fully re-charged"
 msgstr "Az akkumulátor teljesen feltöltődött"
 
-#: charpick/charpick.c:403
+#: charpick/charpick.c:410
 msgid "Available palettes"
 msgstr "Elérhető paletták"
 
-#: charpick/charpick.c:452
+#: charpick/charpick.c:463
 #, c-format
 msgid "Insert \"%s\""
 msgstr "„%s” beszúrása"
 
-#: charpick/charpick.c:455
+#: charpick/charpick.c:466
 msgid "Insert special character"
 msgstr "Különleges karakter beszúrása"
 
-#: charpick/charpick.c:459
+#: charpick/charpick.c:470
 #, c-format
 msgid "insert special character %s"
 msgstr "%s speciális karakter beszúrása"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:608
 msgid "About Character Palette"
 msgstr "A Karakterpaletta névjegye"
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:610
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:612
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:695 charpick/charpick.c:708
+#: charpick/charpick.c:721 charpick/charpick.c:734
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
-#: charpick/properties.c:451
+#: charpick/properties.c:453
 msgid "Character Palette"
 msgstr "Karakterpaletta"
 
-#: charpick/charpick.c:695
+#: charpick/charpick.c:721
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Karakterek beszúrása"
@@ -551,7 +553,7 @@ msgstr ""
 "elindítja a kisalkalmazást."
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:10
-#: charpick/properties.c:378
+#: charpick/properties.c:371
 msgid "List of available palettes"
 msgstr "Elérhető paletták listája"
 
@@ -563,59 +565,59 @@ msgstr "Az elérhető palettákat tartalmazó karakterláncok listája."
 msgid "_Edit"
 msgstr "_Szerkesztés"
 
-#: charpick/properties.c:116
+#: charpick/properties.c:94
 msgid "_Palette:"
 msgstr "_Paletta:"
 
-#: charpick/properties.c:124
+#: charpick/properties.c:102
 msgid "Palette entry"
 msgstr "Palettabejegyzés"
 
-#: charpick/properties.c:125
+#: charpick/properties.c:103
 msgid "Modify a palette by adding or removing characters"
 msgstr "Paletta módosítása karakterek hozzáadásával vagy eltávolításával"
 
-#: charpick/properties.c:239
+#: charpick/properties.c:225
 msgid "Add Palette"
 msgstr "Paletta hozzáadása"
 
-#: charpick/properties.c:276
+#: charpick/properties.c:263
 msgid "Edit Palette"
 msgstr "Paletta szerkesztése"
 
-#: charpick/properties.c:377
+#: charpick/properties.c:370
 msgid "Palettes list"
 msgstr "Palettalista"
 
-#: charpick/properties.c:456
+#: charpick/properties.c:458
 msgid "_Palettes:"
 msgstr "_Paletták:"
 
-#: charpick/properties.c:478
+#: charpick/properties.c:481
 msgid "Add button"
 msgstr "Gomb hozzáadása"
 
-#: charpick/properties.c:479
+#: charpick/properties.c:482
 msgid "Click to add a new palette"
 msgstr "Kattintson egy új paletta hozzáadásához"
 
-#: charpick/properties.c:491
+#: charpick/properties.c:496
 msgid "Edit button"
 msgstr "Gomb szerkesztése"
 
-#: charpick/properties.c:492
+#: charpick/properties.c:497
 msgid "Click to edit the selected palette"
 msgstr "Kattintson a kijelölt paletta szerkesztéséhez"
 
-#: charpick/properties.c:504
+#: charpick/properties.c:511
 msgid "Delete button"
 msgstr "Gomb törlése"
 
-#: charpick/properties.c:505
+#: charpick/properties.c:512
 msgid "Click to delete the selected palette"
 msgstr "Kattintson a kijelölt paletta törléséhez"
 
-#: charpick/properties.c:556
+#: charpick/properties.c:566
 msgid "Character Palette Preferences"
 msgstr "Karakterpaletta beállításai"
 
@@ -734,7 +736,7 @@ msgstr "Megjelenítés beállításai"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:792 cpufreq/src/cpufreq-applet.c:846
+#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:845
 msgid "CPU Frequency Scaling Monitor"
 msgstr "CPU órajelváltozás-figyelő"
 
@@ -781,37 +783,37 @@ msgstr ""
 "A 0 érték a CPU órajelének, az 1 az órajel és az egységek, a 2 pedig a "
 "százalékos arány megjelenítését jelenti."
 
-#: cpufreq/src/cpufreq-applet.c:447 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:446 cpufreq/src/cpufreq-prefs.c:364
 msgid "Could not open help document"
 msgstr "A súgódokumentum nem nyitható meg"
 
-#: cpufreq/src/cpufreq-applet.c:479
+#: cpufreq/src/cpufreq-applet.c:478
 msgid "About CPU Frequency Scaling Monitor"
 msgstr "A CPU órajelváltozás-figyelő névjegye"
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:480
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Ez a kisalkalmazás a CPU jelenlegi órajelének változását jelzi."
 
-#: cpufreq/src/cpufreq-applet.c:847
+#: cpufreq/src/cpufreq-applet.c:846
 msgid "This utility shows the current CPU Frequency"
 msgstr "Ez a kisalkalmazás a CPU jelenlegi órajelét jelzi"
 
-#: cpufreq/src/cpufreq-prefs.c:493
+#: cpufreq/src/cpufreq-prefs.c:504
 msgid "Graphic"
 msgstr "Kép"
 
-#: cpufreq/src/cpufreq-prefs.c:498
+#: cpufreq/src/cpufreq-prefs.c:509
 msgid "Text"
 msgstr "Szöveg"
 
-#: cpufreq/src/cpufreq-prefs.c:503
+#: cpufreq/src/cpufreq-prefs.c:514
 msgid "Graphic and Text"
 msgstr "Kép és szöveg"
 
@@ -819,11 +821,11 @@ msgstr "Kép és szöveg"
 msgid "Frequency Scaling Unsupported"
 msgstr "Az órajel változtatása nem támogatott"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:57
+#: cpufreq/src/cpufreq-monitor-factory.c:55
 msgid "CPU frequency scaling unsupported"
 msgstr "A CPU órajelének változtatása nem támogatott"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:58
+#: cpufreq/src/cpufreq-monitor-factory.c:56
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -840,80 +842,80 @@ msgstr "A CPU órajelének módosítása"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "A CPU órajelének módosításához jogosultság szükséges."
 
-#: drivemount/drive-button.c:277
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
+msgid "Drive Mount Applet Factory"
+msgstr "Meghajtócsatoló kisalkalmazás factory"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for drive mount applet"
+msgstr "Factory meghajtócsatoló kisalkalmazás készítéséhez"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
+#: drivemount/src/drivemount.c:182 drivemount/src/drivemount.c:216
+msgid "Disk Mounter"
+msgstr "Meghajtócsatoló"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
+msgid "Mount local disks and devices"
+msgstr "Helyi lemezek vagy eszközök csatolása"
+
+#: drivemount/src/drive-button.c:280
 msgid "nothing to mount"
 msgstr ""
 
-#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
+#: drivemount/src/drive-button.c:313 drivemount/src/drive-button.c:327
 msgid "(mounted)"
 msgstr "(csatolva)"
 
-#: drivemount/drive-button.c:317
+#: drivemount/src/drive-button.c:320
 msgid "(not mounted)"
 msgstr "(leválasztva)"
 
-#: drivemount/drive-button.c:589
+#: drivemount/src/drive-button.c:597
 msgid "Cannot execute Caja"
 msgstr "A Caja nem futtatható"
 
-#: drivemount/drive-button.c:913
+#: drivemount/src/drive-button.c:935
 msgid "_Play DVD"
 msgstr "_DVD lejátszása"
 
-#: drivemount/drive-button.c:917
+#: drivemount/src/drive-button.c:939
 msgid "_Play CD"
 msgstr "_CD lejátszása"
 
-#: drivemount/drive-button.c:920
+#: drivemount/src/drive-button.c:942
 #, c-format
 msgid "_Open %s"
 msgstr "%s me_gnyitása"
 
-#: drivemount/drive-button.c:928
+#: drivemount/src/drive-button.c:950
 #, c-format
 msgid "Un_mount %s"
 msgstr "%s le_választása"
 
-#: drivemount/drive-button.c:934
+#: drivemount/src/drive-button.c:956
 #, c-format
 msgid "_Mount %s"
 msgstr "%s _csatolása"
 
-#: drivemount/drive-button.c:942
+#: drivemount/src/drive-button.c:964
 #, c-format
 msgid "_Eject %s"
 msgstr "%s _kiadása"
 
-#: drivemount/drivemount.c:120
+#: drivemount/src/drivemount.c:118
 msgid "About Disk Mounter"
 msgstr "A Meghajtócsatoló névjegye"
 
-#: drivemount/drivemount.c:122
+#: drivemount/src/drivemount.c:120
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: drivemount/drivemount.c:124
+#: drivemount/src/drivemount.c:122
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Kötetek csatolására és leválasztására használható kisalkalmazás."
-
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
-msgid "Disk Mounter"
-msgstr "Meghajtócsatoló"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
-msgid "Drive Mount Applet Factory"
-msgstr "Meghajtócsatoló kisalkalmazás factory"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for drive mount applet"
-msgstr "Factory meghajtócsatoló kisalkalmazás készítéséhez"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
-msgid "Mount local disks and devices"
-msgstr "Helyi lemezek vagy eszközök csatolása"
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
@@ -921,7 +923,7 @@ msgid "Eyes Applet Factory"
 msgstr "Szemek kisalkalmazás factory"
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-#: geyes/src/geyes.c:388 geyes/src/geyes.c:419 geyes/src/geyes.c:421
+#: geyes/src/geyes.c:399 geyes/src/geyes.c:428 geyes/src/geyes.c:430
 msgid "Eyes"
 msgstr "Szemek"
 
@@ -946,68 +948,170 @@ msgstr "_Téma kiválasztása:"
 msgid "Themes"
 msgstr "Témák"
 
-#: geyes/src/geyes.c:178
+#: geyes/src/geyes.c:190
 msgid "About Eyes"
 msgstr "A Szemek névjegye"
 
-#: geyes/src/geyes.c:180
+#: geyes/src/geyes.c:192
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "MATE panelra tehető bolondos szempár, amely követi az egeret."
 
-#: geyes/src/geyes.c:182
+#: geyes/src/geyes.c:194
 msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: geyes/src/geyes.c:422
+#: geyes/src/geyes.c:431
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "A szemek az egér irányába néznek"
 
-#: geyes/src/themes.c:130
+#: geyes/src/themes.c:123
 msgid "Can not launch the eyes applet."
 msgstr "A szemek kisalkalmazás nem indítható el."
 
-#: geyes/src/themes.c:131
+#: geyes/src/themes.c:124
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Végzetes hiba történt a téma betöltése közben."
 
-#: mateweather/mateweather-about.c:54
+#: mateweather/data/mateweather-dialog.ui:13
+msgid "Details"
+msgstr "Részletek"
+
+#: mateweather/data/mateweather-dialog.ui:30
+#: mateweather/src/mateweather-applet.c:111
+msgid "_Update"
+msgstr "_Frissítés"
+
+#: mateweather/data/mateweather-dialog.ui:88
+msgid "City:"
+msgstr "Város:"
+
+#: mateweather/data/mateweather-dialog.ui:100
+msgid "Last update:"
+msgstr "Utolsó frissítés:"
+
+#: mateweather/data/mateweather-dialog.ui:112
+msgid "Conditions:"
+msgstr "Helyzet:"
+
+#: mateweather/data/mateweather-dialog.ui:124
+msgid "Sky:"
+msgstr "Ég:"
+
+#: mateweather/data/mateweather-dialog.ui:136
+msgid "Temperature:"
+msgstr "Hőmérséklet:"
+
+#: mateweather/data/mateweather-dialog.ui:148
+msgid "Feels like:"
+msgstr "Hőérzet:"
+
+#: mateweather/data/mateweather-dialog.ui:160
+msgid "Dew point:"
+msgstr "Harmatpont:"
+
+#: mateweather/data/mateweather-dialog.ui:172
+msgid "Relative humidity:"
+msgstr "Relatív páratartalom:"
+
+#: mateweather/data/mateweather-dialog.ui:184
+msgid "Wind:"
+msgstr "Szél:"
+
+#: mateweather/data/mateweather-dialog.ui:196
+msgid "Pressure:"
+msgstr "Nyomás:"
+
+#: mateweather/data/mateweather-dialog.ui:208
+msgid "Visibility:"
+msgstr "Látási viszonyok:"
+
+#: mateweather/data/mateweather-dialog.ui:220
+msgid "Sunrise:"
+msgstr "Napkelte:"
+
+#: mateweather/data/mateweather-dialog.ui:232
+msgid "Sunset:"
+msgstr "Napnyugta:"
+
+#: mateweather/data/mateweather-dialog.ui:409
+msgid "Current Conditions"
+msgstr "Jelenlegi időjárás"
+
+#: mateweather/data/mateweather-dialog.ui:434
+msgid "Forecast Report"
+msgstr "Előrejelzés"
+
+#: mateweather/data/mateweather-dialog.ui:435
+msgid "See the ForeCast Details"
+msgstr "Részletes előrejelzés"
+
+#: mateweather/data/mateweather-dialog.ui:456
+msgid "Forecast"
+msgstr "Előrejelzés"
+
+#: mateweather/data/mateweather-dialog.ui:497
+msgid "_Visit Weather.com"
+msgstr "A weather.com _meglátogatása"
+
+#: mateweather/data/mateweather-dialog.ui:505
+msgid "Visit Weather.com"
+msgstr "A weather.com meglátogatása"
+
+#: mateweather/data/mateweather-dialog.ui:506
+msgid "Click to Enter Weather.com"
+msgstr "A weather.com felkereséséhez kattintson ide"
+
+#: mateweather/data/mateweather-dialog.ui:525
+msgid "Radar Map"
+msgstr "Műholdas térkép"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
+msgid "Mateweather Applet Factory"
+msgstr "Mateweather kisalkalmazás factory"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the weather applet."
+msgstr "Factory időjárás kisalkalmazás készítéséhez."
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
+#: mateweather/src/mateweather-applet.c:340
+msgid "Weather Report"
+msgstr "Időjárás-jelentés"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
+msgid "Monitor the current weather conditions, and forecasts"
+msgstr "A jelenlegi és az előrejelzett időjárást figyeli"
+
+#: mateweather/src/mateweather-about.c:54
 msgid "About Weather Report"
 msgstr "Az Időjárás-jelentés névjegye"
 
-#: mateweather/mateweather-about.c:56
+#: mateweather/src/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: mateweather/mateweather-about.c:58
+#: mateweather/src/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "A helyi időjárási viszonyok jelzésére szolgáló kisalkalmazás."
 
-#: mateweather/mateweather-applet.c:108
+#: mateweather/src/mateweather-applet.c:108
 msgid "_Details"
 msgstr "_Részletek"
 
-#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.ui:30
-msgid "_Update"
-msgstr "_Frissítés"
-
-#: mateweather/mateweather-applet.c:343
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
-msgid "Weather Report"
-msgstr "Időjárás-jelentés"
-
-#: mateweather/mateweather-applet.c:358 mateweather/mateweather-applet.c:362
+#: mateweather/src/mateweather-applet.c:355
+#: mateweather/src/mateweather-applet.c:359
 msgid "MATE Weather"
 msgstr "Időjárás"
 
-#: mateweather/mateweather-applet.c:460
+#: mateweather/src/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Időjárás-előrejelzés"
 
-#: mateweather/mateweather-applet.c:472
+#: mateweather/src/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1018,296 +1122,367 @@ msgstr ""
 "Égbolt: %s\n"
 "Hőmérséklet: %s"
 
-#: mateweather/mateweather-applet.c:521
+#: mateweather/src/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Frissítés…"
 
-#: mateweather/mateweather-dialog.c:231
+#: mateweather/src/mateweather-dialog.c:231
 msgid "Forecast not currently available for this location."
 msgstr "Ehhez a helyhez jelenleg nem érhető el előrejelzés."
 
-#: mateweather/mateweather-dialog.ui:13
-msgid "Details"
-msgstr "Részletek"
-
-#: mateweather/mateweather-dialog.ui:88
-msgid "City:"
-msgstr "Város:"
-
-#: mateweather/mateweather-dialog.ui:100
-msgid "Last update:"
-msgstr "Utolsó frissítés:"
-
-#: mateweather/mateweather-dialog.ui:112
-msgid "Conditions:"
-msgstr "Helyzet:"
-
-#: mateweather/mateweather-dialog.ui:124
-msgid "Sky:"
-msgstr "Ég:"
-
-#: mateweather/mateweather-dialog.ui:136
-msgid "Temperature:"
-msgstr "Hőmérséklet:"
-
-#: mateweather/mateweather-dialog.ui:148
-msgid "Feels like:"
-msgstr "Hőérzet:"
-
-#: mateweather/mateweather-dialog.ui:160
-msgid "Dew point:"
-msgstr "Harmatpont:"
-
-#: mateweather/mateweather-dialog.ui:172
-msgid "Relative humidity:"
-msgstr "Relatív páratartalom:"
-
-#: mateweather/mateweather-dialog.ui:184
-msgid "Wind:"
-msgstr "Szél:"
-
-#: mateweather/mateweather-dialog.ui:196
-msgid "Pressure:"
-msgstr "Nyomás:"
-
-#: mateweather/mateweather-dialog.ui:208
-msgid "Visibility:"
-msgstr "Látási viszonyok:"
-
-#: mateweather/mateweather-dialog.ui:220
-msgid "Sunrise:"
-msgstr "Napkelte:"
-
-#: mateweather/mateweather-dialog.ui:232
-msgid "Sunset:"
-msgstr "Napnyugta:"
-
-#: mateweather/mateweather-dialog.ui:409
-msgid "Current Conditions"
-msgstr "Jelenlegi időjárás"
-
-#: mateweather/mateweather-dialog.ui:434
-msgid "Forecast Report"
-msgstr "Előrejelzés"
-
-#: mateweather/mateweather-dialog.ui:435
-msgid "See the ForeCast Details"
-msgstr "Részletes előrejelzés"
-
-#: mateweather/mateweather-dialog.ui:456
-msgid "Forecast"
-msgstr "Előrejelzés"
-
-#: mateweather/mateweather-dialog.ui:497
-msgid "_Visit Weather.com"
-msgstr "A weather.com _meglátogatása"
-
-#: mateweather/mateweather-dialog.ui:505
-msgid "Visit Weather.com"
-msgstr "A weather.com meglátogatása"
-
-#: mateweather/mateweather-dialog.ui:506
-msgid "Click to Enter Weather.com"
-msgstr "A weather.com felkereséséhez kattintson ide"
-
-#: mateweather/mateweather-dialog.ui:525
-msgid "Radar Map"
-msgstr "Műholdas térkép"
-
-#: mateweather/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:158
 msgid "Location view"
 msgstr "Hely nézet"
 
-#: mateweather/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:158
 msgid "Select Location from the list"
 msgstr "Válassza ki a helyet a listából"
 
-#: mateweather/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:159
 msgid "Update spin button"
 msgstr "Léptetőgomb frissítése"
 
-#: mateweather/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:159
 msgid "Spinbutton for updating"
 msgstr "Léptetőgomb a frissítéshez"
 
-#: mateweather/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:160
 msgid "Address Entry"
 msgstr "Címbejegyzés"
 
-#: mateweather/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:160
 msgid "Enter the URL"
 msgstr "URL megadása"
 
-#: mateweather/mateweather-pref.c:281
+#: mateweather/src/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr ""
 "Nem sikerült betölteni a helyiségek XML adatbázisát. Kérem jelentse ezt a "
 "hibát."
 
-#: mateweather/mateweather-pref.c:805
+#: mateweather/src/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "Időjárás beállításai"
 
-#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
+#: mateweather/src/mateweather-pref.c:829
+#: mateweather/src/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "_Automatikus frissítés:"
 
-#: mateweather/mateweather-pref.c:845
+#: mateweather/src/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "_Hőmérséklet egysége:"
 
-#: mateweather/mateweather-pref.c:855
+#: mateweather/src/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/src/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "Celsius fok"
 
-#: mateweather/mateweather-pref.c:858
+#: mateweather/src/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: mateweather/mateweather-pref.c:867
+#: mateweather/src/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "Szé_lsebesség egysége:"
 
-#: mateweather/mateweather-pref.c:878
+#: mateweather/src/mateweather-pref.c:878
 msgid "m/s"
 msgstr "m/s"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/src/mateweather-pref.c:880
 msgid "km/h"
 msgstr "km/h"
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/src/mateweather-pref.c:882
 msgid "mph"
 msgstr "mph"
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/src/mateweather-pref.c:884
 msgid "knots"
 msgstr "csomó"
 
-#: mateweather/mateweather-pref.c:885
+#: mateweather/src/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "Beaufort skála"
 
-#: mateweather/mateweather-pref.c:894
+#: mateweather/src/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "Ny_omás egysége:"
 
-#: mateweather/mateweather-pref.c:905
+#: mateweather/src/mateweather-pref.c:905
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/src/mateweather-pref.c:907
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/src/mateweather-pref.c:909
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/src/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/src/mateweather-pref.c:913
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/src/mateweather-pref.c:915
 msgid "atm"
 msgstr "atm"
 
-#: mateweather/mateweather-pref.c:924
+#: mateweather/src/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "Látás_i viszonyok egysége:"
 
-#: mateweather/mateweather-pref.c:935
+#: mateweather/src/mateweather-pref.c:935
 msgid "meters"
 msgstr "méter"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/src/mateweather-pref.c:937
 msgid "km"
 msgstr "km"
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/src/mateweather-pref.c:939
 msgid "miles"
 msgstr "mérföld"
 
-#: mateweather/mateweather-pref.c:969
+#: mateweather/src/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "_Műholdas térképek engedélyezése"
 
-#: mateweather/mateweather-pref.c:985
+#: mateweather/src/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr "A radartérkép he_lyének beállítása"
 
-#: mateweather/mateweather-pref.c:1003
+#: mateweather/src/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "_Cím:"
 
-#: mateweather/mateweather-pref.c:1018
+#: mateweather/src/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr "Értesítések megjele_nítése"
 
-#: mateweather/mateweather-pref.c:1028
+#: mateweather/src/mateweather-pref.c:1028
 msgid "Update"
 msgstr "Frissítés"
 
-#: mateweather/mateweather-pref.c:1045
+#: mateweather/src/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "perc"
 
-#: mateweather/mateweather-pref.c:1063
+#: mateweather/src/mateweather-pref.c:1063
 msgid "Display"
 msgstr "Kijelző"
 
-#: mateweather/mateweather-pref.c:1082
+#: mateweather/src/mateweather-pref.c:1082
 msgid "General"
 msgstr "Általános"
 
-#: mateweather/mateweather-pref.c:1093
+#: mateweather/src/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "_Hely kiválasztása:"
 
-#: mateweather/mateweather-pref.c:1115
+#: mateweather/src/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "_Keresés:"
 
-#: mateweather/mateweather-pref.c:1121
+#: mateweather/src/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "Kö_vetkező találat"
 
-#: mateweather/mateweather-pref.c:1142
+#: mateweather/src/mateweather-pref.c:1142
 msgid "Location"
 msgstr "Hely"
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
-msgid "Mateweather Applet Factory"
-msgstr "Mateweather kisalkalmazás factory"
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
+msgid "MultiLoad Applet Factory"
+msgstr ""
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for creating the weather applet."
-msgstr "Factory időjárás kisalkalmazás készítéséhez."
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the load applet."
+msgstr ""
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
-msgid "Monitor the current weather conditions, and forecasts"
-msgstr "A jelenlegi és az előrejelzett időjárást figyeli"
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
+#: multiload/src/main.c:499
+msgid "System Monitor"
+msgstr "Rendszerfigyelő"
 
-#: multiload/main.c:60
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
+msgid "A system load indicator"
+msgstr "Rendszerfigyelő"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:5
+msgid "Enable CPU load graph"
+msgstr "CPU terhelés grafikon engedélyezése"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:9
+msgid "Enable memory load graph"
+msgstr "Memóriaterhelés grafikonjának engedélyezése"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:13
+msgid "Enable network load graph"
+msgstr "Hálózati terhelés grafikonjának engedélyezése"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:17
+msgid "Enable swap load graph"
+msgstr "Swap terhelés grafikonjának engedélyezése"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:21
+msgid "Enable load average graph"
+msgstr "Átlagos terhelés grafikonjának engedélyezése"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:25
+msgid "Enable disk load graph"
+msgstr "Lemezterhelés grafikonjának engedélyezése"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:29
+msgid "Applet refresh rate in milliseconds"
+msgstr "Kisalkalmazás frissítési gyakorisága ezredmásodpercben"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:33
+msgid "Graph size"
+msgstr "Grafikon mérete"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:34
+msgid ""
+"For horizontal panels, the width of the graphs in pixels. For vertical "
+"panels, this is the height of the graphs."
+msgstr ""
+"A vízszintes paneloknál megadja a grafikai elemek szélességét pixelben, a "
+"függőleges paneloknál megadja a grafikai elemek magasságát pixelben."
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:38
+msgid "Graph color for user-related CPU activity"
+msgstr "Grafikonszín a felhasználóhoz kötődő CPU aktivitásnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:42
+msgid "Graph color for system-related CPU activity"
+msgstr "Grafikonszín a rendszerhez kötődő CPU aktivitásnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:46
+msgid "Graph color for nice-related CPU activity"
+msgstr "Grafikonszín a nice-szinthez kötődő CPU aktivitásnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:50
+msgid "Graph color for iowait related CPU activity"
+msgstr "Grafikonszín a iowait értékhez kötődő CPU aktivitásnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:54
+msgid "CPU graph background color"
+msgstr "Háttérszín a CPU aktivitás grafikonnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:58
+msgid "Graph color for user-related memory usage"
+msgstr "Grafikonszín a felhasználóhoz kötődő memóriahasználatnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:62
+msgid "Graph color for shared memory"
+msgstr "Grafikonszín a megosztott memóriahasználatnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:66
+msgid "Graph color for buffer memory"
+msgstr "Grafikonszín a puffer memóriahasználatnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:70
+msgid "Graph color for cached memory"
+msgstr "Grafikonszín a gyorsítótár memóriahasználatnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:74
+msgid "Memory graph background color"
+msgstr "Háttérszín a memóriahasználat grafikonnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:78
+msgid "Graph color for input network activity"
+msgstr "Grafikonszín a bejövő hálózati forgalomnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:82
+msgid "Graph color for output network activity"
+msgstr "Grafikonszín a kimenő hálózati forgalomnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:86
+msgid "Graph color for loopback network usage"
+msgstr "Grafikonszín a helyi hálózati forgalomnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:90
+msgid "Network graph background color"
+msgstr "Háttérszín a hálózati forgalom grafikonnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:94
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:133
+msgid "Grid line color"
+msgstr "Rácsvonal színe"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:98
+msgid "Indicator color"
+msgstr "Indikátor színe"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:103
+msgid "Network threshold 1 in bytes"
+msgstr "1. hálózati korlát bájtban"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:108
+msgid "Network threshold 2 in bytes"
+msgstr "2. hálózati korlát bájtban"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:113
+msgid "Network threshold 3 in bytes"
+msgstr "3. hálózati korlát bájtban"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:117
+msgid "Graph color for user-related swap usage"
+msgstr "Grafikonszín a felhasználóhoz kötődő cserehely használatnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:121
+msgid "Swap graph background color"
+msgstr "Háttérszín a cserehely használat grafikonnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:125
+msgid "Graph color for load average"
+msgstr "Grafikonszín az átlagos terhelésnek"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:129
+msgid "Load graph background color"
+msgstr "Háttérszín a átlagos terhelés grafikonnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:137
+msgid "Graph color for disk read"
+msgstr "Grafikonszín a lemezről olvasásnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:141
+msgid "Graph color for disk write"
+msgstr "Grafikonszín a lemezre írásnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:145
+msgid "Background color for disk load graph"
+msgstr "Háttérszín a lemezterhelés grafikonnak"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:149
+msgid "Uses /proc/diskstats to determine NVMe disk load"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:153
+msgid "The desktop description file to execute as the system monitor"
+msgstr "Az asztal leírófájl végrehajtása a Rendszerfigyelővel"
+
+#: multiload/src/main.c:60
 msgid "About System Monitor"
 msgstr "A Rendszerfigyelő névjegye"
 
-#: multiload/main.c:62
+#: multiload/src/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: multiload/main.c:64
+#: multiload/src/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
@@ -1315,40 +1490,40 @@ msgstr ""
 "Rendszerterhelés-figyelő, amely képes a processzor, a memória és lapozófájl "
 "használatáról, valamint a hálózati forgalomról grafikonokat rajzolni."
 
-#: multiload/main.c:127
+#: multiload/src/main.c:124
 msgid "Start system-monitor"
 msgstr "Rendszerfigyelő indítása"
 
-#: multiload/main.c:149
+#: multiload/src/main.c:146
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Hiba történt „%s” végrehajtásakor: %s"
 
-#: multiload/main.c:275 multiload/properties.c:643
+#: multiload/src/main.c:272 multiload/src/properties.c:625
 msgid "Processor"
 msgstr "Processzor"
 
-#: multiload/main.c:276 multiload/properties.c:651
+#: multiload/src/main.c:273 multiload/src/properties.c:633
 msgid "Memory"
 msgstr "Memória"
 
-#: multiload/main.c:277 multiload/properties.c:659
+#: multiload/src/main.c:274 multiload/src/properties.c:641
 msgid "Network"
 msgstr "Hálózat"
 
-#: multiload/main.c:278 multiload/properties.c:668
+#: multiload/src/main.c:275 multiload/src/properties.c:650
 msgid "Swap Space"
 msgstr "Lapozófájl"
 
-#: multiload/main.c:279 multiload/main.c:362
+#: multiload/src/main.c:276 multiload/src/main.c:360
 msgid "Load Average"
 msgstr "Átlagos terhelés"
 
-#: multiload/main.c:280
+#: multiload/src/main.c:277
 msgid "Disk"
 msgstr "Lemez"
 
-#: multiload/main.c:297
+#: multiload/src/main.c:294
 #, c-format
 msgid ""
 "%s:\n"
@@ -1356,12 +1531,12 @@ msgid ""
 "%.01f%% in use as cache"
 msgstr ""
 
-#: multiload/main.c:306
+#: multiload/src/main.c:303
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "A rendszer átlagos terhelése: %0.02f"
 
-#: multiload/main.c:316
+#: multiload/src/main.c:313
 #, c-format
 msgid ""
 "%s:\n"
@@ -1372,383 +1547,213 @@ msgstr ""
 "Fogadás %s\n"
 "Küldés %s"
 
-#: multiload/main.c:338
+#: multiload/src/main.c:335
 #, c-format
 msgid ""
 "%s:\n"
 "%.01f%% in use"
 msgstr ""
 
-#: multiload/main.c:358
+#: multiload/src/main.c:356
 msgid "CPU Load"
 msgstr "Processzor terhelés"
 
-#: multiload/main.c:359
+#: multiload/src/main.c:357
 msgid "Memory Load"
 msgstr "Memóriahasználat"
 
-#: multiload/main.c:360
+#: multiload/src/main.c:358
 msgid "Net Load"
 msgstr "Hálózathasználat"
 
-#: multiload/main.c:361
+#: multiload/src/main.c:359
 msgid "Swap Load"
 msgstr "Lapozóterület-használat"
 
-#: multiload/main.c:363
+#: multiload/src/main.c:361
 msgid "Disk Load"
 msgstr "Lemezterhelés"
 
-#: multiload/main.c:483
+#: multiload/src/main.c:468
 msgid "_Open System Monitor"
 msgstr "_Rendszerfigyelő megnyitása"
 
-#: multiload/main.c:515
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
-msgid "System Monitor"
-msgstr "Rendszerfigyelő"
-
-#: multiload/netspeed.c:43
+#: multiload/src/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
 
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
-msgid "MultiLoad Applet Factory"
-msgstr ""
-
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for creating the load applet."
-msgstr ""
-
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
-msgid "A system load indicator"
-msgstr "Rendszerfigyelő"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
-msgid "Enable CPU load graph"
-msgstr "CPU terhelés grafikon engedélyezése"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:9
-msgid "Enable memory load graph"
-msgstr "Memóriaterhelés grafikonjának engedélyezése"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:13
-msgid "Enable network load graph"
-msgstr "Hálózati terhelés grafikonjának engedélyezése"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:17
-msgid "Enable swap load graph"
-msgstr "Swap terhelés grafikonjának engedélyezése"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:21
-msgid "Enable load average graph"
-msgstr "Átlagos terhelés grafikonjának engedélyezése"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:25
-msgid "Enable disk load graph"
-msgstr "Lemezterhelés grafikonjának engedélyezése"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:29
-msgid "Applet refresh rate in milliseconds"
-msgstr "Kisalkalmazás frissítési gyakorisága ezredmásodpercben"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:33
-msgid "Graph size"
-msgstr "Grafikon mérete"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:34
-msgid ""
-"For horizontal panels, the width of the graphs in pixels. For vertical "
-"panels, this is the height of the graphs."
-msgstr ""
-"A vízszintes paneloknál megadja a grafikai elemek szélességét pixelben, a "
-"függőleges paneloknál megadja a grafikai elemek magasságát pixelben."
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:38
-msgid "Graph color for user-related CPU activity"
-msgstr "Grafikonszín a felhasználóhoz kötődő CPU aktivitásnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:42
-msgid "Graph color for system-related CPU activity"
-msgstr "Grafikonszín a rendszerhez kötődő CPU aktivitásnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:46
-msgid "Graph color for nice-related CPU activity"
-msgstr "Grafikonszín a nice-szinthez kötődő CPU aktivitásnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:50
-msgid "Graph color for iowait related CPU activity"
-msgstr "Grafikonszín a iowait értékhez kötődő CPU aktivitásnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:54
-msgid "CPU graph background color"
-msgstr "Háttérszín a CPU aktivitás grafikonnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:58
-msgid "Graph color for user-related memory usage"
-msgstr "Grafikonszín a felhasználóhoz kötődő memóriahasználatnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:62
-msgid "Graph color for shared memory"
-msgstr "Grafikonszín a megosztott memóriahasználatnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:66
-msgid "Graph color for buffer memory"
-msgstr "Grafikonszín a puffer memóriahasználatnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:70
-msgid "Graph color for cached memory"
-msgstr "Grafikonszín a gyorsítótár memóriahasználatnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:74
-msgid "Memory graph background color"
-msgstr "Háttérszín a memóriahasználat grafikonnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:78
-msgid "Graph color for input network activity"
-msgstr "Grafikonszín a bejövő hálózati forgalomnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:82
-msgid "Graph color for output network activity"
-msgstr "Grafikonszín a kimenő hálózati forgalomnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:86
-msgid "Graph color for loopback network usage"
-msgstr "Grafikonszín a helyi hálózati forgalomnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:90
-msgid "Network graph background color"
-msgstr "Háttérszín a hálózati forgalom grafikonnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:133
-msgid "Grid line color"
-msgstr "Rácsvonal színe"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:98
-msgid "Indicator color"
-msgstr "Indikátor színe"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:103
-msgid "Network threshold 1 in bytes"
-msgstr "1. hálózati korlát bájtban"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:108
-msgid "Network threshold 2 in bytes"
-msgstr "2. hálózati korlát bájtban"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:113
-msgid "Network threshold 3 in bytes"
-msgstr "3. hálózati korlát bájtban"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:117
-msgid "Graph color for user-related swap usage"
-msgstr "Grafikonszín a felhasználóhoz kötődő cserehely használatnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:121
-msgid "Swap graph background color"
-msgstr "Háttérszín a cserehely használat grafikonnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:125
-msgid "Graph color for load average"
-msgstr "Grafikonszín az átlagos terhelésnek"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:129
-msgid "Load graph background color"
-msgstr "Háttérszín a átlagos terhelés grafikonnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:137
-msgid "Graph color for disk read"
-msgstr "Grafikonszín a lemezről olvasásnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:141
-msgid "Graph color for disk write"
-msgstr "Grafikonszín a lemezre írásnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:145
-msgid "Background color for disk load graph"
-msgstr "Háttérszín a lemezterhelés grafikonnak"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:149
-msgid "Uses /proc/diskstats to determine NVMe disk load"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:153
-msgid "The desktop description file to execute as the system monitor"
-msgstr "Az asztal leírófájl végrehajtása a Rendszerfigyelővel"
-
-#: multiload/properties.c:405
+#: multiload/src/properties.c:383
 msgid "Monitored Resources"
 msgstr "Monitorozott erőforrások"
 
-#: multiload/properties.c:430
+#: multiload/src/properties.c:408
 msgid "_Processor"
 msgstr "_Processzor"
 
-#: multiload/properties.c:443
+#: multiload/src/properties.c:422
 msgid "_Memory"
 msgstr "_Memória"
 
-#: multiload/properties.c:456
+#: multiload/src/properties.c:435
 msgid "_Network"
 msgstr "_Hálózat"
 
-#: multiload/properties.c:469
+#: multiload/src/properties.c:448
 msgid "S_wap Space"
 msgstr "_Lapozófájl"
 
-#: multiload/properties.c:482
+#: multiload/src/properties.c:461
 msgid "_Load"
 msgstr "_Terhelés"
 
-#: multiload/properties.c:495
+#: multiload/src/properties.c:474
 msgid "_Harddisk"
 msgstr "Mere_vlemez"
 
-#: multiload/properties.c:510
+#: multiload/src/properties.c:492
 msgid "Options"
 msgstr "Beállítások"
 
-#: multiload/properties.c:540
+#: multiload/src/properties.c:522
 msgid "System m_onitor width: "
 msgstr "Ren_dszerfigyelő szélessége: "
 
-#: multiload/properties.c:542
+#: multiload/src/properties.c:524
 msgid "System m_onitor height: "
 msgstr "Rendszerfigyelő m_agassága: "
 
-#: multiload/properties.c:573
+#: multiload/src/properties.c:555
 msgid "pixels"
 msgstr "képpont"
 
-#: multiload/properties.c:581
+#: multiload/src/properties.c:563
 msgid "Sys_tem monitor update interval: "
 msgstr "Rendszerfigyelő frissítési idő_köze: "
 
-#: multiload/properties.c:607
+#: multiload/src/properties.c:589
 msgid "milliseconds"
 msgstr "ezredmásodperc"
 
-#: multiload/properties.c:618
+#: multiload/src/properties.c:600
 msgid "Colors"
 msgstr "Színek"
 
-#: multiload/properties.c:645 multiload/properties.c:653
+#: multiload/src/properties.c:627 multiload/src/properties.c:635
 msgid "_User"
 msgstr "_Felhasználó"
 
-#: multiload/properties.c:646
+#: multiload/src/properties.c:628
 msgid "S_ystem"
 msgstr "_Rendszer"
 
-#: multiload/properties.c:647
+#: multiload/src/properties.c:629
 msgid "N_ice"
 msgstr "N_ice"
 
-#: multiload/properties.c:648
+#: multiload/src/properties.c:630
 msgid "I_OWait"
 msgstr "I_O várakozás"
 
-#: multiload/properties.c:649
+#: multiload/src/properties.c:631
 msgid "I_dle"
 msgstr "Ür_esjárat"
 
-#: multiload/properties.c:654
+#: multiload/src/properties.c:636
 msgid "Sh_ared"
 msgstr "Me_gosztott"
 
-#: multiload/properties.c:655
+#: multiload/src/properties.c:637
 msgid "_Buffers"
 msgstr "_Pufferek"
 
-#: multiload/properties.c:656
+#: multiload/src/properties.c:638
 msgid "Cach_ed"
 msgstr "Gy_orsítótárban"
 
-#: multiload/properties.c:657
+#: multiload/src/properties.c:639
 msgid "F_ree"
 msgstr "S_zabad"
 
-#: multiload/properties.c:661
+#: multiload/src/properties.c:643
 msgid "_In"
 msgstr "B_e"
 
-#: multiload/properties.c:662
+#: multiload/src/properties.c:644
 msgid "_Out"
 msgstr "_Ki"
 
-#: multiload/properties.c:663
+#: multiload/src/properties.c:645
 msgid "_Local"
 msgstr "_Helyi"
 
-#: multiload/properties.c:664 multiload/properties.c:676
-#: multiload/properties.c:683
+#: multiload/src/properties.c:646 multiload/src/properties.c:658
+#: multiload/src/properties.c:665
 msgid "_Background"
 msgstr "Hátté_r"
 
-#: multiload/properties.c:665 multiload/properties.c:677
+#: multiload/src/properties.c:647 multiload/src/properties.c:659
 msgid "_Gridline"
 msgstr "_Rácsvonal"
 
-#: multiload/properties.c:666
+#: multiload/src/properties.c:648
 msgid "_Indicator"
 msgstr "_Indikátor"
 
-#: multiload/properties.c:670
+#: multiload/src/properties.c:652
 msgid "_Used"
 msgstr "_Felhasznált"
 
-#: multiload/properties.c:671
+#: multiload/src/properties.c:653
 msgid "_Free"
 msgstr "S_zabad"
 
-#: multiload/properties.c:673
+#: multiload/src/properties.c:655
 msgid "Load"
 msgstr "Terhelés"
 
-#: multiload/properties.c:675
+#: multiload/src/properties.c:657
 msgid "_Average"
 msgstr "Átla_gos"
 
-#: multiload/properties.c:679
+#: multiload/src/properties.c:661
 msgid "Harddisk"
 msgstr "Merevlemez"
 
-#: multiload/properties.c:681
+#: multiload/src/properties.c:663
 msgid "_Read"
 msgstr "_Olvasás"
 
-#: multiload/properties.c:682
+#: multiload/src/properties.c:664
 msgid "_Write"
 msgstr "Í_rás"
 
-#: multiload/properties.c:684
+#: multiload/src/properties.c:667
 msgid "Use diskstats for NVMe"
 msgstr ""
 
-#: multiload/properties.c:686
+#: multiload/src/properties.c:677
 msgid "Network speed thresholds"
 msgstr "Hálózati sebesség korlátjai"
 
-#: multiload/properties.c:714
+#: multiload/src/properties.c:705
 msgid "Threshold 1: "
 msgstr "1. korlát:"
 
-#: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815
+#: multiload/src/properties.c:736 multiload/src/properties.c:771
+#: multiload/src/properties.c:806
 msgid "bytes"
 msgstr "bájt"
 
-#: multiload/properties.c:753
+#: multiload/src/properties.c:744
 msgid "Threshold 2: "
 msgstr "2. korlát:"
 
-#: multiload/properties.c:788
+#: multiload/src/properties.c:779
 msgid "Threshold 3: "
 msgstr "3. korlát:"
 
-#: multiload/properties.c:853
+#: multiload/src/properties.c:843
 msgid "System Monitor Preferences"
 msgstr "Rendszerfigyelő beállításai"
 
@@ -2050,8 +2055,8 @@ msgid "10 MHz"
 msgstr ""
 
 #: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
-#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1505
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1511
+#: netspeed/src/netspeed.c:1520
 msgid "unknown"
 msgstr "ismeretlen"
 
@@ -2203,11 +2208,11 @@ msgstr ""
 msgid "%s is down"
 msgstr "%s nem működik"
 
-#: netspeed/src/netspeed.c:1484
+#: netspeed/src/netspeed.c:1489
 msgid "has no ip"
 msgstr "nincs IP-címe"
 
-#: netspeed/src/netspeed.c:1489
+#: netspeed/src/netspeed.c:1495
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2216,7 +2221,7 @@ msgstr ""
 "%s: %s\n"
 "be: %s ki: %s"
 
-#: netspeed/src/netspeed.c:1496
+#: netspeed/src/netspeed.c:1502
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2225,7 +2230,7 @@ msgstr ""
 "%s: %s\n"
 "össz: %s"
 
-#: netspeed/src/netspeed.c:1504
+#: netspeed/src/netspeed.c:1510
 #, c-format
 msgid ""
 "\n"
@@ -2235,7 +2240,7 @@ msgid ""
 "TX Bitrate: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1513
+#: netspeed/src/netspeed.c:1519
 #, c-format
 msgid ""
 "\n"
@@ -2246,7 +2251,7 @@ msgstr ""
 "ESSID: %s\n"
 "Jelerősség: %d %%"
 
-#: netspeed/src/netspeed.c:1563
+#: netspeed/src/netspeed.c:1565
 msgid "MATE Netspeed"
 msgstr "A MATE Hálózati sebesség névjegye"
 
@@ -2256,7 +2261,7 @@ msgid "Sticky Notes Applet Factory"
 msgstr "Ragadós cetlik kisalkalmazás factory"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:9
-#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:412
+#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:409
 msgid "Sticky Notes"
 msgstr "Ragadós cetlik"
 
@@ -2621,14 +2626,14 @@ msgstr "Cetlik _törlése"
 msgid "_Lock Notes"
 msgstr "_Cetlik zárolása"
 
-#: stickynotes/stickynotes_applet.c:591
+#: stickynotes/stickynotes_applet.c:588
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d cetli"
 msgstr[1] "%d cetli"
 
-#: stickynotes/stickynotes_applet.c:592
+#: stickynotes/stickynotes_applet.c:589
 msgid "Show sticky notes"
 msgstr "Ragadós cetlik mutatása"
 
@@ -2647,97 +2652,103 @@ msgstr ""
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Ragadós cetlik a MATE asztali környezethez"
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Timer Factory"
 msgstr "Időzítő factory"
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
 msgid "Timer"
 msgstr "Időzítő"
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:281
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
+#: timerapplet/src/timerapplet.c:282
 msgid "Start a timer and receive a notification when it is finished"
 msgstr "Időzítő indítása, és jelzés az idő lejáratakor"
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
 msgstr "Időzítő neve"
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:9
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:9
 msgid "Duration of timer in seconds"
 msgstr "Időzítés másodpercben megadva"
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:13
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:13
 msgid "Show notification popup when timer finish"
 msgstr "Felugró értesítés megjelenítése, amikor lejárt az időzítő."
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:17
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:17
 msgid "Show dialog window when timer finish"
 msgstr "Párbeszédablak megjelenítése, amikor lejárt az időzítő."
 
-#: timerapplet/timerapplet.c:83
+#: timerapplet/data/timerapplet-preferences.ui:28
+msgid "Timer Applet Preferences"
+msgstr "Időzítő kisalkalmazás beállításai"
+
+#: timerapplet/data/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "_Név:"
+
+#: timerapplet/data/timerapplet-preferences.ui:93
+msgid "_Hours:"
+msgstr "Ó_rák:"
+
+#: timerapplet/data/timerapplet-preferences.ui:107
+msgid "_Minutes:"
+msgstr "_Percek:"
+
+#: timerapplet/data/timerapplet-preferences.ui:121
+msgid "_Seconds:"
+msgstr "_Másodpercek:"
+
+#: timerapplet/data/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:205
+msgid "Show _dialog"
+msgstr ""
+
+#: timerapplet/src/timerapplet.c:83
 msgid "_Start timer"
 msgstr "Időzítő _indítása"
 
-#: timerapplet/timerapplet.c:84
+#: timerapplet/src/timerapplet.c:84
 msgid "P_ause timer"
 msgstr "Időzítő _szünet"
 
-#: timerapplet/timerapplet.c:85
+#: timerapplet/src/timerapplet.c:85
 msgid "S_top timer"
 msgstr "Időzí_tő leállítása"
 
-#: timerapplet/timerapplet.c:86
+#: timerapplet/src/timerapplet.c:86
 msgid "R_eset"
 msgstr "_Visszaállítás"
 
-#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
+#. Translators: %s is a placeholder for the timer name, 'Timer' by default
+#: timerapplet/src/timerapplet.c:153
+#, c-format
+msgid "Finished %s"
+msgstr ""
+
+#: timerapplet/src/timerapplet.c:161 timerapplet/src/timerapplet.c:173
 msgid "Timer finished!"
 msgstr "Lejárt az időzítő."
 
-#: timerapplet/timerapplet.c:276
+#: timerapplet/src/timerapplet.c:277
 msgid "About Timer Applet"
 msgstr "Az Időzítő kisalkalmazás névjegye"
 
-#: timerapplet/timerapplet.c:278
+#: timerapplet/src/timerapplet.c:279
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:365
+#: timerapplet/src/timerapplet.c:366
 msgid "Timer Applet"
 msgstr "Időzítő kisalkalmazás"
-
-#: timerapplet/timerapplet-preferences.ui:28
-msgid "Timer Applet Preferences"
-msgstr "Időzítő kisalkalmazás beállításai"
-
-#: timerapplet/timerapplet-preferences.ui:79
-msgid "_Name:"
-msgstr "_Név:"
-
-#: timerapplet/timerapplet-preferences.ui:93
-msgid "_Hours:"
-msgstr "Ó_rák:"
-
-#: timerapplet/timerapplet-preferences.ui:107
-msgid "_Minutes:"
-msgstr "_Percek:"
-
-#: timerapplet/timerapplet-preferences.ui:121
-msgid "_Seconds:"
-msgstr "_Másodpercek:"
-
-#: timerapplet/timerapplet-preferences.ui:189
-msgid "Show notification _popup"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:205
-msgid "Show _dialog"
-msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:6
@@ -2752,7 +2763,7 @@ msgstr "Kuka"
 msgid "Go to Trash"
 msgstr "A Kuka megnyitása"
 
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:341
 msgid "_Empty Trash"
 msgstr "_Kuka ürítése"
 
@@ -2771,7 +2782,7 @@ msgstr[1] "%d elem a Kukában"
 msgid "No Items in Trash"
 msgstr "Nincsenek elemek a Kukában"
 
-#: trashapplet/src/trashapplet.c:378
+#: trashapplet/src/trashapplet.c:374
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
@@ -2780,18 +2791,18 @@ msgstr ""
 "Hiba a Caja indítása közben:\n"
 "%s"
 
-#: trashapplet/src/trashapplet.c:432
+#: trashapplet/src/trashapplet.c:428
 msgid "About Trash Applet"
 msgstr "A Kuka kisalkalmazás névjegye"
 
-#: trashapplet/src/trashapplet.c:434
+#: trashapplet/src/trashapplet.c:430
 msgid ""
 "Copyright © 2004 Michiel Sikkes\n"
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: trashapplet/src/trashapplet.c:437
+#: trashapplet/src/trashapplet.c:433
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
@@ -2799,20 +2810,20 @@ msgstr ""
 "Egy MATE kuka, amely a panelen él. A Kuka tartalmának megtekintésére vagy "
 "elemek Kukába dobására használhatja."
 
-#: trashapplet/src/trashapplet.c:462
+#: trashapplet/src/trashapplet.c:458
 msgid "Delete Immediately?"
 msgstr "Törlés azonnal?"
 
-#: trashapplet/src/trashapplet.c:492
+#: trashapplet/src/trashapplet.c:488
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr "Az elemek nem helyezhetők át a Kukába, akarja ezeket most törölni?"
 
-#: trashapplet/src/trashapplet.c:497
+#: trashapplet/src/trashapplet.c:493
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr "Néhány elem nem helyezhető át a Kukába, akarja ezeket most törölni?"
 
-#: trashapplet/src/trashapplet.c:625
+#: trashapplet/src/trashapplet.c:620
 msgid "Trash Applet"
 msgstr "Kuka kisalkalmazás"
 
@@ -2828,11 +2839,11 @@ msgstr "%s/%s elem eltávolítása"
 msgid "Removing: %s"
 msgstr "Eltávolítás: %s"
 
-#: trashapplet/src/trash-empty.c:324
+#: trashapplet/src/trash-empty.c:321
 msgid "Empty all of the items from the trash?"
 msgstr "Ki akarja üríteni az összes elemet a Kukából?"
 
-#: trashapplet/src/trash-empty.c:331
+#: trashapplet/src/trash-empty.c:328
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."

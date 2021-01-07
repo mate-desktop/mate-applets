@@ -14,9 +14,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.25.0\n"
+"Project-Id-Version: mate-applets 1.25.1\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-08-11 16:58+0200\n"
+"POT-Creation-Date: 2020-12-13 16:35+0100\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
 "Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
@@ -35,7 +35,7 @@ msgid "Keyboard Accessibility Status Applet Factory"
 msgstr "Bộ tạo tiểu dụng trạng thái khả năng truy cập bàn phím"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-#: accessx-status/src/applet.c:1383
+#: accessx-status/src/applet.c:1675
 msgid "Keyboard Accessibility Status"
 msgstr "Trạng thái khả năng truy cập bàn phím"
 
@@ -43,69 +43,69 @@ msgstr "Trạng thái khả năng truy cập bàn phím"
 msgid "Shows the status of keyboard accessibility features"
 msgstr "Hiện trạng thái tính năng khả năng truy cập bàn phím"
 
-#: accessx-status/src/applet.c:86 charpick/charpick.c:571
-#: geyes/src/geyes.c:166 mateweather/mateweather-about.c:41
-#: multiload/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/src/applet.c:100 charpick/charpick.c:596
+#: geyes/src/geyes.c:178 mateweather/src/mateweather-about.c:41
+#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
-#: accessx-status/src/applet.c:87 battstat/battstat_applet.c:817
-#: charpick/charpick.c:572 cpufreq/src/cpufreq-applet.c:464
-#: drivemount/drivemount.c:109 geyes/src/geyes.c:167
-#: mateweather/mateweather-about.c:43 multiload/main.c:49
+#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:832
+#: charpick/charpick.c:597 cpufreq/src/cpufreq-applet.c:463
+#: drivemount/src/drivemount.c:107 geyes/src/geyes.c:179
+#: mateweather/src/mateweather-about.c:43 multiload/src/main.c:49
 #: stickynotes/stickynotes_applet_callbacks.c:368
-#: trashapplet/src/trashapplet.c:421
+#: trashapplet/src/trashapplet.c:417
 msgid "MATE Documentation Team"
 msgstr ""
 
-#: accessx-status/src/applet.c:98
+#: accessx-status/src/applet.c:112
 msgid "About AccessX Status"
 msgstr ""
 
-#: accessx-status/src/applet.c:100
+#: accessx-status/src/applet.c:114
 msgid "Shows the state of AccessX features such as latched modifiers"
 msgstr "Hiện trạng thái tính năng AccessX như phím bổ trợ đã chốt."
 
-#: accessx-status/src/applet.c:101
+#: accessx-status/src/applet.c:115
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: accessx-status/src/applet.c:105 battstat/battstat_applet.c:842
-#: charpick/charpick.c:592 command/src/command.c:131
-#: cpufreq/src/cpufreq-applet.c:488 drivemount/drivemount.c:127
-#: geyes/src/geyes.c:186 mateweather/mateweather-about.c:61
-#: multiload/main.c:69 netspeed/src/netspeed.c:1034
+#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:857
+#: charpick/charpick.c:617 command/src/command.c:131
+#: cpufreq/src/cpufreq-applet.c:487 drivemount/src/drivemount.c:125
+#: geyes/src/geyes.c:198 mateweather/src/mateweather-about.c:61
+#: multiload/src/main.c:69 netspeed/src/netspeed.c:1034
 #: stickynotes/stickynotes_applet_callbacks.c:388
-#: timerapplet/timerapplet.c:282 trashapplet/src/trashapplet.c:442
+#: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
 msgstr "giới thiệu-nhóm dịch"
 
-#: accessx-status/src/applet.c:124
+#: accessx-status/src/applet.c:143
 #, c-format
 msgid "There was an error launching the help viewer: %s"
 msgstr "Gặp lỗi khi khởi chạy bộ xem trợ giúp: %s"
 
-#: accessx-status/src/applet.c:152
+#: accessx-status/src/applet.c:177
 msgid "Open the keyboard preferences dialog"
 msgstr ""
 
-#: accessx-status/src/applet.c:167
+#: accessx-status/src/applet.c:199
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "Gặp lỗi khi khởi chạy hội thoại tùy thích bàn phím: %s"
 
-#: accessx-status/src/applet.c:182
+#: accessx-status/src/applet.c:219
 msgid "_Keyboard Accessibility Preferences"
 msgstr "Tùy thích _khả năng truy cập bàn phím"
 
-#: accessx-status/src/applet.c:183 battstat/battstat_applet.c:60
-#: battstat/battstat-preferences.ui:37 charpick/charpick.c:669
+#: accessx-status/src/applet.c:221 battstat/battstat_applet.c:62
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:694
 #: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
-#: drivemount/drivemount.c:165 geyes/data/themes.ui:35 geyes/src/geyes.c:359
-#: mateweather/mateweather-applet.c:117 multiload/main.c:486
-#: netspeed/data/netspeed-details.ui:31
+#: drivemount/src/drivemount.c:163 geyes/data/themes.ui:35
+#: geyes/src/geyes.c:369 mateweather/src/mateweather-applet.c:117
+#: multiload/src/main.c:471 netspeed/data/netspeed-details.ui:31
 #: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
@@ -113,139 +113,139 @@ msgstr "Tùy thích _khả năng truy cập bàn phím"
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#: accessx-status/src/applet.c:184 battstat/battstat_applet.c:63
-#: charpick/charpick.c:672 command/src/command.c:87
-#: cpufreq/src/cpufreq-applet.c:122 drivemount/drivemount.c:168
-#: geyes/src/geyes.c:362 mateweather/mateweather-applet.c:120
-#: multiload/main.c:489 stickynotes/stickynotes_applet.c:49
-#: timerapplet/timerapplet.c:88 trashapplet/src/trashapplet.c:77
+#: accessx-status/src/applet.c:223 battstat/battstat_applet.c:65
+#: charpick/charpick.c:697 command/src/command.c:87
+#: cpufreq/src/cpufreq-applet.c:122 drivemount/src/drivemount.c:166
+#: geyes/src/geyes.c:371 mateweather/src/mateweather-applet.c:120
+#: multiload/src/main.c:474 stickynotes/stickynotes_applet.c:49
+#: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "_Giới thiệu"
 
-#: accessx-status/src/applet.c:503 accessx-status/src/applet.c:557
+#: accessx-status/src/applet.c:572 accessx-status/src/applet.c:641
 msgid "a"
 msgstr "a"
 
-#: accessx-status/src/applet.c:1042 accessx-status/src/applet.c:1108
-#: accessx-status/src/applet.c:1193 accessx-status/src/applet.c:1386
+#: accessx-status/src/applet.c:1243 accessx-status/src/applet.c:1322
+#: accessx-status/src/applet.c:1444 accessx-status/src/applet.c:1678
 msgid "AccessX Status"
 msgstr "Trạng thái AccessX"
 
-#: accessx-status/src/applet.c:1043 accessx-status/src/applet.c:1194
+#: accessx-status/src/applet.c:1245 accessx-status/src/applet.c:1446
 msgid "Shows keyboard status when accessibility features are used."
 msgstr "Hiện trạng thái bàn phím khi tính năng khả năng truy cập được dùng."
 
-#: accessx-status/src/applet.c:1077
+#: accessx-status/src/applet.c:1281
 msgid "XKB Extension is not enabled"
 msgstr "Chưa bật chạy phần mở rộng XKB"
 
-#: accessx-status/src/applet.c:1082
+#: accessx-status/src/applet.c:1286
 msgid "Unknown error"
 msgstr "Lỗi không xác định"
 
-#: accessx-status/src/applet.c:1086
+#: accessx-status/src/applet.c:1294
 #, c-format
 msgid "Error: %s"
 msgstr "Lỗi: %s"
 
-#: accessx-status/src/applet.c:1387
+#: accessx-status/src/applet.c:1680
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 "Hiển thị trạng thái hiện thời của các tính năng khả năng truy cập bàn phím."
 
-#: battstat/battstat_applet.c:57 charpick/charpick.c:666
+#: battstat/battstat_applet.c:59 charpick/charpick.c:691
 #: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
-#: geyes/src/geyes.c:356 mateweather/mateweather-applet.c:114
-#: multiload/main.c:480 stickynotes/stickynotes_applet.c:43
-#: timerapplet/timerapplet.c:87
+#: geyes/src/geyes.c:367 mateweather/src/mateweather-applet.c:114
+#: multiload/src/main.c:465 stickynotes/stickynotes_applet.c:43
+#: timerapplet/src/timerapplet.c:87
 msgid "_Preferences"
 msgstr "_Tùy thích"
 
-#: battstat/battstat_applet.c:68
+#: battstat/battstat_applet.c:70
 msgid "System is running on AC power"
 msgstr "Hệ thống đang chạy bằng điện xoay chiều (AC)"
 
-#: battstat/battstat_applet.c:69
+#: battstat/battstat_applet.c:71
 msgid "System is running on battery power"
 msgstr "Hệ thống đang chạy bằng pin"
 
-#: battstat/battstat_applet.c:173
+#: battstat/battstat_applet.c:176
 #, c-format
 msgid "Battery charged (%d%%)"
 msgstr "Pin đã được sạc đầy  (%d%%)"
 
-#: battstat/battstat_applet.c:175
+#: battstat/battstat_applet.c:178
 #, c-format
 msgid "Unknown time (%d%%) remaining"
 msgstr "Thời gian còn lại (%d%%) chưa rõ"
 
-#: battstat/battstat_applet.c:177
+#: battstat/battstat_applet.c:180
 #, c-format
 msgid "Unknown time (%d%%) until charged"
 msgstr "Thời gian còn lại (%d%%) chưa rõ đến khi được sạc đầy"
 
-#: battstat/battstat_applet.c:182
+#: battstat/battstat_applet.c:185
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:187
+#: battstat/battstat_applet.c:190
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:193
+#: battstat/battstat_applet.c:196
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:198
+#: battstat/battstat_applet.c:201
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:205
+#: battstat/battstat_applet.c:208
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
 msgstr "%d %s %d %s (%d%%) còn lại"
 
-#: battstat/battstat_applet.c:206 battstat/battstat_applet.c:213
+#: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:207 battstat/battstat_applet.c:214
+#: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:212
+#: battstat/battstat_applet.c:215
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
 msgstr "%d %s %d %s đến khi được sạc đầy (%d%%)"
 
-#: battstat/battstat_applet.c:226
+#: battstat/battstat_applet.c:229
 msgid "Battery Monitor"
 msgstr "Bộ theo dõi nạp pin"
 
-#: battstat/battstat_applet.c:237 battstat/battstat_applet.c:297
+#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:298
 msgid "Your battery is now fully recharged"
 msgstr "Pin đã được tái sạc đầy."
 
-#: battstat/battstat_applet.c:272 battstat/battstat_applet.c:429
+#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:431
 msgid "Battery Notice"
 msgstr "Thông báo pin"
 
-#: battstat/battstat_applet.c:374
+#: battstat/battstat_applet.c:378
 #, c-format
-msgid "You have %d%% of your total battery capacity remaining."
-msgstr "Pin hiện thời có %d%% khả năng còn lại."
+msgid "You have %d%% of your total batterycapacity remaining."
+msgstr ""
 
-#: battstat/battstat_applet.c:380
+#: battstat/battstat_applet.c:383
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -253,7 +253,7 @@ msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
 
-#: battstat/battstat_applet.c:392
+#: battstat/battstat_applet.c:396
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -263,7 +263,7 @@ msgstr ""
 " • cầm phít máy tính xách tay vào năng lượng bên ngoài, hoặc\n"
 " • lưu các tài liệu đang mở, rồi tắt máy."
 
-#: battstat/battstat_applet.c:400
+#: battstat/battstat_applet.c:403
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -275,61 +275,62 @@ msgstr ""
 " • cầm phít máy tính xách tay vào năng lượng bên ngoài, hay\n"
 " • lưu các tài liệu đang mở, rồi tắt máy."
 
-#: battstat/battstat_applet.c:408
+#: battstat/battstat_applet.c:409
 msgid "Your battery is running low"
 msgstr "Pin trở thành yếu"
 
-#: battstat/battstat_applet.c:505
+#: battstat/battstat_applet.c:512
 msgid "No battery present"
 msgstr "Không có pin"
 
-#: battstat/battstat_applet.c:508
+#: battstat/battstat_applet.c:515
 msgid "Battery status unknown"
 msgstr "Chưa biết trạng thái pin"
 
-#: battstat/battstat_applet.c:537
+#: battstat/battstat_applet.c:545
 msgid "N/A"
 msgstr "⌀ có"
 
-#: battstat/battstat_applet.c:781 drivemount/drivemount.c:153
-#: geyes/src/geyes.c:344 geyes/src/themes.c:224
-#: mateweather/mateweather-applet.c:63 mateweather/mateweather-pref.c:745
+#: battstat/battstat_applet.c:795 drivemount/src/drivemount.c:151
+#: geyes/src/geyes.c:353 geyes/src/themes.c:226
+#: mateweather/src/mateweather-applet.c:63
+#: mateweather/src/mateweather-pref.c:745
 #: stickynotes/stickynotes_applet_callbacks.c:345
 #: stickynotes/stickynotes_applet_callbacks.c:540
-#: trashapplet/src/trashapplet.c:399
+#: trashapplet/src/trashapplet.c:395
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Lỗi hiển thị trợ giúp: %s"
 
-#: battstat/battstat_applet.c:822
+#: battstat/battstat_applet.c:837
 msgid "This utility shows the status of your laptop battery."
 msgstr "Tiện ích này hiển thị trạng thái pin trên máy tính xách tay bạn."
 
-#: battstat/battstat_applet.c:824
+#: battstat/battstat_applet.c:839
 msgid "upower backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:825
+#: battstat/battstat_applet.c:840
 msgid "Legacy backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:834
+#: battstat/battstat_applet.c:849
 msgid "About Battery Charge Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:836
+#: battstat/battstat_applet.c:851
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: battstat/battstat_applet.c:1125 battstat/battstat_applet.c:1175
+#: battstat/battstat_applet.c:1138 battstat/battstat_applet.c:1193
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "Bộ theo dõi nạp pin"
 
-#: battstat/battstat_applet.c:1176
+#: battstat/battstat_applet.c:1195
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "Theo dõi điện năng còn lại của máy tính xách tay"
@@ -340,11 +341,12 @@ msgstr "Tuỳ thích bộ Theo dõi Sạc Pin"
 
 #: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
 #: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
-#: mateweather/mateweather-dialog.ui:45 netspeed/data/netspeed-details.ui:47
+#: mateweather/data/mateweather-dialog.ui:45
+#: netspeed/data/netspeed-details.ui:47
 #: netspeed/data/netspeed-preferences.ui:49
 #: stickynotes/sticky-notes-preferences.ui:68
 #: stickynotes/sticky-notes-properties.ui:54
-#: timerapplet/timerapplet-preferences.ui:41
+#: timerapplet/data/timerapplet-preferences.ui:41
 msgid "_Close"
 msgstr "Đón_g"
 
@@ -460,47 +462,47 @@ msgstr "Pin thấp"
 msgid "Battery fully re-charged"
 msgstr "Pin đã được sạc đầy."
 
-#: charpick/charpick.c:403
+#: charpick/charpick.c:410
 msgid "Available palettes"
 msgstr "Bảng chọn hiện có"
 
-#: charpick/charpick.c:452
+#: charpick/charpick.c:463
 #, c-format
 msgid "Insert \"%s\""
 msgstr "Chèn \"%s\""
 
-#: charpick/charpick.c:455
+#: charpick/charpick.c:466
 msgid "Insert special character"
 msgstr "Chèn ký tự đặc biệt"
 
-#: charpick/charpick.c:459
+#: charpick/charpick.c:470
 #, c-format
 msgid "insert special character %s"
 msgstr "Chèn ký tự đặc biệt %s"
 
-#: charpick/charpick.c:583
+#: charpick/charpick.c:608
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:585
+#: charpick/charpick.c:610
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:587
+#: charpick/charpick.c:612
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:695 charpick/charpick.c:708
+#: charpick/charpick.c:721 charpick/charpick.c:734
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
-#: charpick/properties.c:451
+#: charpick/properties.c:453
 msgid "Character Palette"
 msgstr "Bảng chọn ký tự"
 
-#: charpick/charpick.c:695
+#: charpick/charpick.c:721
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "Chèn ký tự"
@@ -523,7 +525,7 @@ msgstr ""
 " hiển thị khi người dùng khởi động tiểu dụng ấy."
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:10
-#: charpick/properties.c:378
+#: charpick/properties.c:371
 msgid "List of available palettes"
 msgstr "Danh sách bảng chọn hiện có"
 
@@ -535,59 +537,59 @@ msgstr "Danh sách chuỗi chứa các bảng chọn sẵn sàng."
 msgid "_Edit"
 msgstr "_Sửa"
 
-#: charpick/properties.c:116
+#: charpick/properties.c:94
 msgid "_Palette:"
 msgstr "_Bảng chọn:"
 
-#: charpick/properties.c:124
+#: charpick/properties.c:102
 msgid "Palette entry"
 msgstr "Mục nhập bảng chọn"
 
-#: charpick/properties.c:125
+#: charpick/properties.c:103
 msgid "Modify a palette by adding or removing characters"
 msgstr "Sửa đổi bảng chọn bằng cách thêm hoặc bỏ ký tự"
 
-#: charpick/properties.c:239
+#: charpick/properties.c:225
 msgid "Add Palette"
 msgstr "Thêm bảng chọn"
 
-#: charpick/properties.c:276
+#: charpick/properties.c:263
 msgid "Edit Palette"
 msgstr "Sửa bảng chọn"
 
-#: charpick/properties.c:377
+#: charpick/properties.c:370
 msgid "Palettes list"
 msgstr "Danh sách bảng chọn"
 
-#: charpick/properties.c:456
+#: charpick/properties.c:458
 msgid "_Palettes:"
 msgstr "_Bảng chọn:"
 
-#: charpick/properties.c:478
+#: charpick/properties.c:481
 msgid "Add button"
 msgstr "Thêm nút"
 
-#: charpick/properties.c:479
+#: charpick/properties.c:482
 msgid "Click to add a new palette"
 msgstr "Nhấn để thêm bảng chọn mới"
 
-#: charpick/properties.c:491
+#: charpick/properties.c:496
 msgid "Edit button"
 msgstr "Sửa nút"
 
-#: charpick/properties.c:492
+#: charpick/properties.c:497
 msgid "Click to edit the selected palette"
 msgstr "Nhấn để sửa đổi bảng chọn được chọn."
 
-#: charpick/properties.c:504
+#: charpick/properties.c:511
 msgid "Delete button"
 msgstr "Xóa nút"
 
-#: charpick/properties.c:505
+#: charpick/properties.c:512
 msgid "Click to delete the selected palette"
 msgstr "Nhấn để xóa bỏ bảng chọn được chọn."
 
-#: charpick/properties.c:556
+#: charpick/properties.c:566
 msgid "Character Palette Preferences"
 msgstr "Tùy thích bảng chọn ký tự"
 
@@ -706,7 +708,7 @@ msgstr ""
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:792 cpufreq/src/cpufreq-applet.c:846
+#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:845
 msgid "CPU Frequency Scaling Monitor"
 msgstr "Bộ theo dõi cách quản lý tỷ lệ tần số CPU"
 
@@ -752,37 +754,37 @@ msgid ""
 "to show percentage instead of frequency."
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:447 cpufreq/src/cpufreq-prefs.c:358
+#: cpufreq/src/cpufreq-applet.c:446 cpufreq/src/cpufreq-prefs.c:364
 msgid "Could not open help document"
 msgstr "Không mở được tài liệu trợ giúp."
 
-#: cpufreq/src/cpufreq-applet.c:479
+#: cpufreq/src/cpufreq-applet.c:478
 msgid "About CPU Frequency Scaling Monitor"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:481
+#: cpufreq/src/cpufreq-applet.c:480
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:483
+#: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "Tiện ích này hiển thị cách quản lý tỷ lệ tần số CPU hiện có."
 
-#: cpufreq/src/cpufreq-applet.c:847
+#: cpufreq/src/cpufreq-applet.c:846
 msgid "This utility shows the current CPU Frequency"
 msgstr "Tiện ích này hiển thị tần số CPU hiện có."
 
-#: cpufreq/src/cpufreq-prefs.c:493
+#: cpufreq/src/cpufreq-prefs.c:504
 msgid "Graphic"
 msgstr "Đồ họa"
 
-#: cpufreq/src/cpufreq-prefs.c:498
+#: cpufreq/src/cpufreq-prefs.c:509
 msgid "Text"
 msgstr "Nhãn"
 
-#: cpufreq/src/cpufreq-prefs.c:503
+#: cpufreq/src/cpufreq-prefs.c:514
 msgid "Graphic and Text"
 msgstr "Đồ họa và chữ"
 
@@ -790,11 +792,11 @@ msgstr "Đồ họa và chữ"
 msgid "Frequency Scaling Unsupported"
 msgstr "Không hỗ trợ cách quản lý tỷ lệ tần số"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:57
+#: cpufreq/src/cpufreq-monitor-factory.c:55
 msgid "CPU frequency scaling unsupported"
 msgstr "Không hỗ trợ cách quản lý tỷ lệ tần số CPU"
 
-#: cpufreq/src/cpufreq-monitor-factory.c:58
+#: cpufreq/src/cpufreq-monitor-factory.c:56
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
@@ -810,80 +812,80 @@ msgstr "Thay đổi tỷ lệ tần số CPU"
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr "Cần quyền đặc biệt để thay đổi tỷ lệ tần số CPU."
 
-#: drivemount/drive-button.c:277
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
+msgid "Drive Mount Applet Factory"
+msgstr "Bộ tạo tiểu dụng lắp đĩa"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for drive mount applet"
+msgstr "Bộ tạo tiểu dụng lắp đĩa"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
+#: drivemount/src/drivemount.c:182 drivemount/src/drivemount.c:216
+msgid "Disk Mounter"
+msgstr "Bộ lắp đĩa"
+
+#: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
+msgid "Mount local disks and devices"
+msgstr "Lắp đĩa và thiết bị nội bộ"
+
+#: drivemount/src/drive-button.c:280
 msgid "nothing to mount"
 msgstr ""
 
-#: drivemount/drive-button.c:310 drivemount/drive-button.c:324
+#: drivemount/src/drive-button.c:313 drivemount/src/drive-button.c:327
 msgid "(mounted)"
 msgstr "(đã lắp)"
 
-#: drivemount/drive-button.c:317
+#: drivemount/src/drive-button.c:320
 msgid "(not mounted)"
 msgstr "(chưa lắp)"
 
-#: drivemount/drive-button.c:589
+#: drivemount/src/drive-button.c:597
 msgid "Cannot execute Caja"
 msgstr ""
 
-#: drivemount/drive-button.c:913
+#: drivemount/src/drive-button.c:935
 msgid "_Play DVD"
 msgstr "_Phát đĩa DVD"
 
-#: drivemount/drive-button.c:917
+#: drivemount/src/drive-button.c:939
 msgid "_Play CD"
 msgstr "_Phát đĩa CD"
 
-#: drivemount/drive-button.c:920
+#: drivemount/src/drive-button.c:942
 #, c-format
 msgid "_Open %s"
 msgstr "_Mở %s"
 
-#: drivemount/drive-button.c:928
+#: drivemount/src/drive-button.c:950
 #, c-format
 msgid "Un_mount %s"
 msgstr "_Tháo lắp %s"
 
-#: drivemount/drive-button.c:934
+#: drivemount/src/drive-button.c:956
 #, c-format
 msgid "_Mount %s"
 msgstr "_Lắp %s"
 
-#: drivemount/drive-button.c:942
+#: drivemount/src/drive-button.c:964
 #, c-format
 msgid "_Eject %s"
 msgstr "Đẩy _ra %s"
 
-#: drivemount/drivemount.c:120
+#: drivemount/src/drivemount.c:118
 msgid "About Disk Mounter"
 msgstr ""
 
-#: drivemount/drivemount.c:122
+#: drivemount/src/drivemount.c:120
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: drivemount/drivemount.c:124
+#: drivemount/src/drivemount.c:122
 msgid "Applet for mounting and unmounting block volumes."
 msgstr "Tiểu dụng dùng để lắp/tháo lắp các ổ đĩa khối."
-
-#: drivemount/drivemount.c:185 drivemount/drivemount.c:220
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
-msgid "Disk Mounter"
-msgstr "Bộ lắp đĩa"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
-msgid "Drive Mount Applet Factory"
-msgstr "Bộ tạo tiểu dụng lắp đĩa"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for drive mount applet"
-msgstr "Bộ tạo tiểu dụng lắp đĩa"
-
-#: drivemount/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
-msgid "Mount local disks and devices"
-msgstr "Lắp đĩa và thiết bị nội bộ"
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
@@ -891,7 +893,7 @@ msgid "Eyes Applet Factory"
 msgstr ""
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-#: geyes/src/geyes.c:388 geyes/src/geyes.c:419 geyes/src/geyes.c:421
+#: geyes/src/geyes.c:399 geyes/src/geyes.c:428 geyes/src/geyes.c:430
 msgid "Eyes"
 msgstr "Mắt"
 
@@ -916,70 +918,172 @@ msgstr "Chọn _sắc thái:"
 msgid "Themes"
 msgstr "Sắc thái"
 
-#: geyes/src/geyes.c:178
+#: geyes/src/geyes.c:190
 msgid "About Eyes"
 msgstr ""
 
-#: geyes/src/geyes.c:180
+#: geyes/src/geyes.c:192
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr ""
 "Một cặp con mắt hay cho bảng điều khiển MATE của bạn. Con mắt này theo vị "
 "trí của con chuột."
 
-#: geyes/src/geyes.c:182
+#: geyes/src/geyes.c:194
 msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: geyes/src/geyes.c:422
+#: geyes/src/geyes.c:431
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "Hai con mắt nhìn theo hướng con chuột. :)"
 
-#: geyes/src/themes.c:130
+#: geyes/src/themes.c:123
 msgid "Can not launch the eyes applet."
 msgstr "Không khởi động được tiểu dụng con mắt."
 
-#: geyes/src/themes.c:131
+#: geyes/src/themes.c:124
 msgid "There was a fatal error while trying to load the theme."
 msgstr "Gặp lỗi nghiêm trọng khi thử tải sắc thái."
 
-#: mateweather/mateweather-about.c:54
+#: mateweather/data/mateweather-dialog.ui:13
+msgid "Details"
+msgstr "Chi tiết"
+
+#: mateweather/data/mateweather-dialog.ui:30
+#: mateweather/src/mateweather-applet.c:111
+msgid "_Update"
+msgstr "Cậ_p nhật"
+
+#: mateweather/data/mateweather-dialog.ui:88
+msgid "City:"
+msgstr "Thành phố:"
+
+#: mateweather/data/mateweather-dialog.ui:100
+msgid "Last update:"
+msgstr "Lần cập nhật cuối:"
+
+#: mateweather/data/mateweather-dialog.ui:112
+msgid "Conditions:"
+msgstr "Hoàn cảnh:"
+
+#: mateweather/data/mateweather-dialog.ui:124
+msgid "Sky:"
+msgstr "Bầu trời:"
+
+#: mateweather/data/mateweather-dialog.ui:136
+msgid "Temperature:"
+msgstr "Nhiệt độ:"
+
+#: mateweather/data/mateweather-dialog.ui:148
+msgid "Feels like:"
+msgstr "Cảm giác như:"
+
+#: mateweather/data/mateweather-dialog.ui:160
+msgid "Dew point:"
+msgstr "Điểm sương:"
+
+#: mateweather/data/mateweather-dialog.ui:172
+msgid "Relative humidity:"
+msgstr "Độ ẩm tương đối"
+
+#: mateweather/data/mateweather-dialog.ui:184
+msgid "Wind:"
+msgstr "Gió:"
+
+#: mateweather/data/mateweather-dialog.ui:196
+msgid "Pressure:"
+msgstr "Áp suất:"
+
+#: mateweather/data/mateweather-dialog.ui:208
+msgid "Visibility:"
+msgstr "Tầm nhìn:"
+
+#: mateweather/data/mateweather-dialog.ui:220
+msgid "Sunrise:"
+msgstr "Rạng đông:"
+
+#: mateweather/data/mateweather-dialog.ui:232
+msgid "Sunset:"
+msgstr "Hoàng hôn:"
+
+#: mateweather/data/mateweather-dialog.ui:409
+msgid "Current Conditions"
+msgstr "Hoàn cảnh hiện thời"
+
+#: mateweather/data/mateweather-dialog.ui:434
+msgid "Forecast Report"
+msgstr "Báo cáo dự báo thời tiết"
+
+#: mateweather/data/mateweather-dialog.ui:435
+msgid "See the ForeCast Details"
+msgstr "Xem dự báo chi tiết"
+
+#: mateweather/data/mateweather-dialog.ui:456
+msgid "Forecast"
+msgstr "Dự báo"
+
+#: mateweather/data/mateweather-dialog.ui:497
+msgid "_Visit Weather.com"
+msgstr "Xem _Weather.com"
+
+#: mateweather/data/mateweather-dialog.ui:505
+msgid "Visit Weather.com"
+msgstr "Xem Weather.com"
+
+#: mateweather/data/mateweather-dialog.ui:506
+msgid "Click to Enter Weather.com"
+msgstr "Nhấn để vào chỗ Mạng Weather.com"
+
+#: mateweather/data/mateweather-dialog.ui:525
+msgid "Radar Map"
+msgstr "Bản đồ ra đa"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
+msgid "Mateweather Applet Factory"
+msgstr ""
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the weather applet."
+msgstr "Bộ tạo tiểu dụng thời tiết."
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
+#: mateweather/src/mateweather-applet.c:340
+msgid "Weather Report"
+msgstr "Báo cáo thời tiết"
+
+#: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
+msgid "Monitor the current weather conditions, and forecasts"
+msgstr "Theo dõi thời tiết hiện thời và hiển thị dự đoán thời tiết."
+
+#: mateweather/src/mateweather-about.c:54
 msgid "About Weather Report"
 msgstr ""
 
-#: mateweather/mateweather-about.c:56
+#: mateweather/src/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: mateweather/mateweather-about.c:58
+#: mateweather/src/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "Tiểu dụng bảng điều khiển, dùng để theo dõi thời tiết địa phương."
 
-#: mateweather/mateweather-applet.c:108
+#: mateweather/src/mateweather-applet.c:108
 msgid "_Details"
 msgstr "_Chi tiết"
 
-#: mateweather/mateweather-applet.c:111 mateweather/mateweather-dialog.ui:30
-msgid "_Update"
-msgstr "Cậ_p nhật"
-
-#: mateweather/mateweather-applet.c:343
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
-msgid "Weather Report"
-msgstr "Báo cáo thời tiết"
-
-#: mateweather/mateweather-applet.c:358 mateweather/mateweather-applet.c:362
+#: mateweather/src/mateweather-applet.c:355
+#: mateweather/src/mateweather-applet.c:359
 msgid "MATE Weather"
 msgstr "Thời tiết MATE"
 
-#: mateweather/mateweather-applet.c:460
+#: mateweather/src/mateweather-applet.c:457
 msgid "Weather Forecast"
 msgstr "Báo cáo thời tiết"
 
-#: mateweather/mateweather-applet.c:472
+#: mateweather/src/mateweather-applet.c:469
 #, c-format
 msgid ""
 "City: %s\n"
@@ -990,294 +1094,369 @@ msgstr ""
 "Bầu trời: %s\n"
 "Nhiệt độ: %s"
 
-#: mateweather/mateweather-applet.c:521
+#: mateweather/src/mateweather-applet.c:518
 msgid "Updating..."
 msgstr "Đang cập nhật..."
 
-#: mateweather/mateweather-dialog.c:231
+#: mateweather/src/mateweather-dialog.c:231
 msgid "Forecast not currently available for this location."
 msgstr "Hiện thời không có thông tin dự báo cho địa điểm này."
 
-#: mateweather/mateweather-dialog.ui:13
-msgid "Details"
-msgstr "Chi tiết"
-
-#: mateweather/mateweather-dialog.ui:88
-msgid "City:"
-msgstr "Thành phố:"
-
-#: mateweather/mateweather-dialog.ui:100
-msgid "Last update:"
-msgstr "Lần cập nhật cuối:"
-
-#: mateweather/mateweather-dialog.ui:112
-msgid "Conditions:"
-msgstr "Hoàn cảnh:"
-
-#: mateweather/mateweather-dialog.ui:124
-msgid "Sky:"
-msgstr "Bầu trời:"
-
-#: mateweather/mateweather-dialog.ui:136
-msgid "Temperature:"
-msgstr "Nhiệt độ:"
-
-#: mateweather/mateweather-dialog.ui:148
-msgid "Feels like:"
-msgstr "Cảm giác như:"
-
-#: mateweather/mateweather-dialog.ui:160
-msgid "Dew point:"
-msgstr "Điểm sương:"
-
-#: mateweather/mateweather-dialog.ui:172
-msgid "Relative humidity:"
-msgstr "Độ ẩm tương đối"
-
-#: mateweather/mateweather-dialog.ui:184
-msgid "Wind:"
-msgstr "Gió:"
-
-#: mateweather/mateweather-dialog.ui:196
-msgid "Pressure:"
-msgstr "Áp suất:"
-
-#: mateweather/mateweather-dialog.ui:208
-msgid "Visibility:"
-msgstr "Tầm nhìn:"
-
-#: mateweather/mateweather-dialog.ui:220
-msgid "Sunrise:"
-msgstr "Rạng đông:"
-
-#: mateweather/mateweather-dialog.ui:232
-msgid "Sunset:"
-msgstr "Hoàng hôn:"
-
-#: mateweather/mateweather-dialog.ui:409
-msgid "Current Conditions"
-msgstr "Hoàn cảnh hiện thời"
-
-#: mateweather/mateweather-dialog.ui:434
-msgid "Forecast Report"
-msgstr "Báo cáo dự báo thời tiết"
-
-#: mateweather/mateweather-dialog.ui:435
-msgid "See the ForeCast Details"
-msgstr "Xem dự báo chi tiết"
-
-#: mateweather/mateweather-dialog.ui:456
-msgid "Forecast"
-msgstr "Dự báo"
-
-#: mateweather/mateweather-dialog.ui:497
-msgid "_Visit Weather.com"
-msgstr "Xem _Weather.com"
-
-#: mateweather/mateweather-dialog.ui:505
-msgid "Visit Weather.com"
-msgstr "Xem Weather.com"
-
-#: mateweather/mateweather-dialog.ui:506
-msgid "Click to Enter Weather.com"
-msgstr "Nhấn để vào chỗ Mạng Weather.com"
-
-#: mateweather/mateweather-dialog.ui:525
-msgid "Radar Map"
-msgstr "Bản đồ ra đa"
-
-#: mateweather/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:158
 msgid "Location view"
 msgstr "Ô xem địa điểm"
 
-#: mateweather/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:158
 msgid "Select Location from the list"
 msgstr "Chọn địa điểm từ danh sách"
 
-#: mateweather/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:159
 msgid "Update spin button"
 msgstr "Nút chiều cập nhật"
 
-#: mateweather/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:159
 msgid "Spinbutton for updating"
 msgstr "Nút xoay tròn để cập nhật"
 
-#: mateweather/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:160
 msgid "Address Entry"
 msgstr "Mục nhập địa chỉ"
 
-#: mateweather/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:160
 msgid "Enter the URL"
 msgstr "Nhập địa chỉ Mạng"
 
-#: mateweather/mateweather-pref.c:281
+#: mateweather/src/mateweather-pref.c:281
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr "Lỗi tải cơ sở dữ liệu XML địa điểm. Vui lòng thông báo lỗi này."
 
-#: mateweather/mateweather-pref.c:805
+#: mateweather/src/mateweather-pref.c:805
 msgid "Weather Preferences"
 msgstr "Tùy thích cho thời tiết"
 
-#: mateweather/mateweather-pref.c:829 mateweather/mateweather-pref.c:1032
+#: mateweather/src/mateweather-pref.c:829
+#: mateweather/src/mateweather-pref.c:1032
 msgid "_Automatically update every:"
 msgstr "Cậ_p nhật tự động mỗi:"
 
-#: mateweather/mateweather-pref.c:845
+#: mateweather/src/mateweather-pref.c:845
 msgid "_Temperature unit:"
 msgstr "Đơn vị nhiệ_t độ :"
 
-#: mateweather/mateweather-pref.c:855
+#: mateweather/src/mateweather-pref.c:855
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: mateweather/mateweather-pref.c:857
+#: mateweather/src/mateweather-pref.c:857
 msgid "Celsius"
 msgstr "Độ C"
 
-#: mateweather/mateweather-pref.c:858
+#: mateweather/src/mateweather-pref.c:858
 msgid "Fahrenheit"
 msgstr "Cái đo nhiệt Fa-ren-hét"
 
-#: mateweather/mateweather-pref.c:867
+#: mateweather/src/mateweather-pref.c:867
 msgid "_Wind speed unit:"
 msgstr "Đơn vị tốc độ _gió :"
 
-#: mateweather/mateweather-pref.c:878
+#: mateweather/src/mateweather-pref.c:878
 msgid "m/s"
 msgstr "mét/giây"
 
-#: mateweather/mateweather-pref.c:880
+#: mateweather/src/mateweather-pref.c:880
 msgid "km/h"
 msgstr "cây số/giờ"
 
-#: mateweather/mateweather-pref.c:882
+#: mateweather/src/mateweather-pref.c:882
 msgid "mph"
 msgstr "lý/giờ"
 
-#: mateweather/mateweather-pref.c:884
+#: mateweather/src/mateweather-pref.c:884
 msgid "knots"
 msgstr "hải lý"
 
-#: mateweather/mateweather-pref.c:885
+#: mateweather/src/mateweather-pref.c:885
 msgid "Beaufort scale"
 msgstr "Tỷ lệ Beaufort"
 
-#: mateweather/mateweather-pref.c:894
+#: mateweather/src/mateweather-pref.c:894
 msgid "_Pressure unit:"
 msgstr "Đơn vị á_p suất:"
 
-#: mateweather/mateweather-pref.c:905
+#: mateweather/src/mateweather-pref.c:905
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/mateweather-pref.c:907
+#: mateweather/src/mateweather-pref.c:907
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/mateweather-pref.c:909
+#: mateweather/src/mateweather-pref.c:909
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/mateweather-pref.c:911
+#: mateweather/src/mateweather-pref.c:911
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/mateweather-pref.c:913
+#: mateweather/src/mateweather-pref.c:913
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/mateweather-pref.c:915
+#: mateweather/src/mateweather-pref.c:915
 msgid "atm"
 msgstr "atm"
 
-#: mateweather/mateweather-pref.c:924
+#: mateweather/src/mateweather-pref.c:924
 msgid "_Visibility unit:"
 msgstr "Đơn _vị tầm nhìn:"
 
-#: mateweather/mateweather-pref.c:935
+#: mateweather/src/mateweather-pref.c:935
 msgid "meters"
 msgstr "mét"
 
-#: mateweather/mateweather-pref.c:937
+#: mateweather/src/mateweather-pref.c:937
 msgid "km"
 msgstr "cây số"
 
-#: mateweather/mateweather-pref.c:939
+#: mateweather/src/mateweather-pref.c:939
 msgid "miles"
 msgstr "lý"
 
-#: mateweather/mateweather-pref.c:969
+#: mateweather/src/mateweather-pref.c:969
 msgid "Enable _radar map"
 msgstr "Bật bản đồ _ra đa"
 
-#: mateweather/mateweather-pref.c:985
+#: mateweather/src/mateweather-pref.c:985
 msgid "Use _custom address for radar map"
 msgstr "Dùng địa _chỉ tự chọn cho bản đồ ra-đa"
 
-#: mateweather/mateweather-pref.c:1003
+#: mateweather/src/mateweather-pref.c:1003
 msgid "A_ddress:"
 msgstr "Đị_a chỉ:"
 
-#: mateweather/mateweather-pref.c:1018
+#: mateweather/src/mateweather-pref.c:1018
 msgid "Show _notifications"
 msgstr ""
 
-#: mateweather/mateweather-pref.c:1028
+#: mateweather/src/mateweather-pref.c:1028
 msgid "Update"
 msgstr "Cập nhật"
 
-#: mateweather/mateweather-pref.c:1045
+#: mateweather/src/mateweather-pref.c:1045
 msgid "minutes"
 msgstr "phút"
 
-#: mateweather/mateweather-pref.c:1063
+#: mateweather/src/mateweather-pref.c:1063
 msgid "Display"
 msgstr "Hiển thị"
 
-#: mateweather/mateweather-pref.c:1082
+#: mateweather/src/mateweather-pref.c:1082
 msgid "General"
 msgstr "Chung"
 
-#: mateweather/mateweather-pref.c:1093
+#: mateweather/src/mateweather-pref.c:1093
 msgid "_Select a location:"
 msgstr "_Chọn địa điểm:"
 
-#: mateweather/mateweather-pref.c:1115
+#: mateweather/src/mateweather-pref.c:1115
 msgid "_Find:"
 msgstr "_Tìm:"
 
-#: mateweather/mateweather-pref.c:1121
+#: mateweather/src/mateweather-pref.c:1121
 msgid "Find _Next"
 msgstr "Tìm _kế"
 
-#: mateweather/mateweather-pref.c:1142
+#: mateweather/src/mateweather-pref.c:1142
 msgid "Location"
 msgstr "Vị trí"
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:5
-msgid "Mateweather Applet Factory"
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
+msgid "MultiLoad Applet Factory"
 msgstr ""
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for creating the weather applet."
-msgstr "Bộ tạo tiểu dụng thời tiết."
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
+msgid "Factory for creating the load applet."
+msgstr ""
 
-#: mateweather/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
-msgid "Monitor the current weather conditions, and forecasts"
-msgstr "Theo dõi thời tiết hiện thời và hiển thị dự đoán thời tiết."
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
+#: multiload/src/main.c:499
+msgid "System Monitor"
+msgstr "Bộ theo dõi hệ thống"
 
-#: multiload/main.c:60
+#: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
+msgid "A system load indicator"
+msgstr "Bộ chỉ thị trọng tải hệ thống"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:5
+msgid "Enable CPU load graph"
+msgstr "Bật đồ thị trọng tải CPU"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:9
+msgid "Enable memory load graph"
+msgstr "Bật đồ thị trọng tải bộ nhớ"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:13
+msgid "Enable network load graph"
+msgstr "Bật đồ thị trọng tải mạng"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:17
+msgid "Enable swap load graph"
+msgstr "Bật đồ thị trọng tải trao đổi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:21
+msgid "Enable load average graph"
+msgstr "Bật đồ thị trung bình trọng tải"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:25
+msgid "Enable disk load graph"
+msgstr "Bật đồ thị trọng tải đĩa"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:29
+msgid "Applet refresh rate in milliseconds"
+msgstr "Tần số cập nhật tiểu dụng (theo mili giây)"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:33
+msgid "Graph size"
+msgstr "Cỡ đồ thị"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:34
+msgid ""
+"For horizontal panels, the width of the graphs in pixels. For vertical "
+"panels, this is the height of the graphs."
+msgstr ""
+"Với bảng ngang thì có độ rộng của đồ thị theo điểm ảnh. Còn với bảng dọc thì"
+" có chiều cao đồ thị."
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:38
+msgid "Graph color for user-related CPU activity"
+msgstr "Màu đồ thị cho hoạt động CPU liên quan đến người dùng"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:42
+msgid "Graph color for system-related CPU activity"
+msgstr "Màu đồ thị cho hoạt động CPU liên quan đến hệ thống"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:46
+msgid "Graph color for nice-related CPU activity"
+msgstr ""
+"Màu đồ thị cho hoạt động CPU liên quan đến \"nice\" (ưu tiên CPU cho ứng "
+"dụng) "
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:50
+msgid "Graph color for iowait related CPU activity"
+msgstr ""
+"Màu đồ thị cho hoạt động CPU liên quan đến thời gian đời khi dữ liệu gõ/xuất"
+" (iowait) "
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:54
+msgid "CPU graph background color"
+msgstr "Màu nền cho đồ thị CPU"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:58
+msgid "Graph color for user-related memory usage"
+msgstr "Màu đồ thị cho việc sử dụng bộ nhớ liên quan đến người dùng"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:62
+msgid "Graph color for shared memory"
+msgstr "Màu đồ thị cho bộ nhớ dùng chung"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:66
+msgid "Graph color for buffer memory"
+msgstr "Màu đồ thị cho bộ nhớ vùng đệm"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:70
+msgid "Graph color for cached memory"
+msgstr "Màu đồ thị cho bộ nhớ tạm"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:74
+msgid "Memory graph background color"
+msgstr "Màu nền đồ thị bộ nhớ"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:78
+msgid "Graph color for input network activity"
+msgstr "Màu đồ thị cho hoạt động mạng vào"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:82
+msgid "Graph color for output network activity"
+msgstr "Màu đồ thị cho hoạt động mạng ra"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:86
+msgid "Graph color for loopback network usage"
+msgstr "Màu đồ thị cho sử dụng mạng mạch nội bộ"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:90
+msgid "Network graph background color"
+msgstr "Màu nền đồ thị mạng"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:94
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:133
+msgid "Grid line color"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:98
+msgid "Indicator color"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:103
+msgid "Network threshold 1 in bytes"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:108
+msgid "Network threshold 2 in bytes"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:113
+msgid "Network threshold 3 in bytes"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:117
+msgid "Graph color for user-related swap usage"
+msgstr "Màu đồ thị cho việc sử dụng bộ nhớ trao đổi liên quan đến người dùng"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:121
+msgid "Swap graph background color"
+msgstr "Màu nền đồ thị bộ nhớ trao đổi"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:125
+msgid "Graph color for load average"
+msgstr "Màu đồ thị cho trung bình trọng tải"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:129
+msgid "Load graph background color"
+msgstr "Màu nền đồ thị trọng tải"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:137
+msgid "Graph color for disk read"
+msgstr "Màu đồ thị cho hoạt động đọc đĩa"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:141
+msgid "Graph color for disk write"
+msgstr "Màu đồ thị cho hoạt động ghi vào đĩa"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:145
+msgid "Background color for disk load graph"
+msgstr "Màu nền cho đồ thị trọng tải đĩa"
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:149
+msgid "Uses /proc/diskstats to determine NVMe disk load"
+msgstr ""
+
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:153
+msgid "The desktop description file to execute as the system monitor"
+msgstr "Tập tin mô tả màn hình nền cần thực hiện làm bộ theo dõi hệ thống"
+
+#: multiload/src/main.c:60
 msgid "About System Monitor"
 msgstr ""
 
-#: multiload/main.c:62
+#: multiload/src/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: multiload/main.c:64
+#: multiload/src/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
@@ -1286,40 +1465,40 @@ msgstr ""
 " CPU (đơn vị xử lý trung tâm), RAM (bộ nhớ truy cập ngẫu nhiên) và bộ nhớ "
 "trao đổi, và cũng lưu tải cho mạng."
 
-#: multiload/main.c:127
+#: multiload/src/main.c:124
 msgid "Start system-monitor"
 msgstr ""
 
-#: multiload/main.c:149
+#: multiload/src/main.c:146
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Gặp lỗi khi thực thi « %s » : %s"
 
-#: multiload/main.c:275 multiload/properties.c:643
+#: multiload/src/main.c:272 multiload/src/properties.c:625
 msgid "Processor"
 msgstr "Bộ xử lý"
 
-#: multiload/main.c:276 multiload/properties.c:651
+#: multiload/src/main.c:273 multiload/src/properties.c:633
 msgid "Memory"
 msgstr "Bộ nhớ"
 
-#: multiload/main.c:277 multiload/properties.c:659
+#: multiload/src/main.c:274 multiload/src/properties.c:641
 msgid "Network"
 msgstr "Mạng"
 
-#: multiload/main.c:278 multiload/properties.c:668
+#: multiload/src/main.c:275 multiload/src/properties.c:650
 msgid "Swap Space"
 msgstr "Bộ nhớ trao đổi"
 
-#: multiload/main.c:279 multiload/main.c:362
+#: multiload/src/main.c:276 multiload/src/main.c:360
 msgid "Load Average"
 msgstr "Trọng tải trung bình"
 
-#: multiload/main.c:280
+#: multiload/src/main.c:277
 msgid "Disk"
 msgstr "Đĩa"
 
-#: multiload/main.c:297
+#: multiload/src/main.c:294
 #, c-format
 msgid ""
 "%s:\n"
@@ -1327,12 +1506,12 @@ msgid ""
 "%.01f%% in use as cache"
 msgstr ""
 
-#: multiload/main.c:306
+#: multiload/src/main.c:303
 #, c-format
 msgid "The system load average is %0.02f"
 msgstr "Số trung bình tải trọng hệ thống là %0.02f"
 
-#: multiload/main.c:316
+#: multiload/src/main.c:313
 #, c-format
 msgid ""
 "%s:\n"
@@ -1343,387 +1522,213 @@ msgstr ""
 "Đang nhận %s\n"
 "Đang gửi %s"
 
-#: multiload/main.c:338
+#: multiload/src/main.c:335
 #, c-format
 msgid ""
 "%s:\n"
 "%.01f%% in use"
 msgstr ""
 
-#: multiload/main.c:358
+#: multiload/src/main.c:356
 msgid "CPU Load"
 msgstr "Trọng tải CPU"
 
-#: multiload/main.c:359
+#: multiload/src/main.c:357
 msgid "Memory Load"
 msgstr "Trọng tải của bộ nhớ"
 
-#: multiload/main.c:360
+#: multiload/src/main.c:358
 msgid "Net Load"
 msgstr "Trọng tải cho mạng"
 
-#: multiload/main.c:361
+#: multiload/src/main.c:359
 msgid "Swap Load"
 msgstr "Trọng tải tráo đổi"
 
-#: multiload/main.c:363
+#: multiload/src/main.c:361
 msgid "Disk Load"
 msgstr "Trọng tải đĩa"
 
-#: multiload/main.c:483
+#: multiload/src/main.c:468
 msgid "_Open System Monitor"
 msgstr "Mở bộ the_o dõi hệ thống"
 
-#: multiload/main.c:515
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
-msgid "System Monitor"
-msgstr "Bộ theo dõi hệ thống"
-
-#: multiload/netspeed.c:43
+#: multiload/src/netspeed.c:43
 #, c-format
 msgid "%s/s"
 msgstr "%s/g"
 
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
-msgid "MultiLoad Applet Factory"
-msgstr ""
-
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:6
-msgid "Factory for creating the load applet."
-msgstr ""
-
-#: multiload/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
-msgid "A system load indicator"
-msgstr "Bộ chỉ thị trọng tải hệ thống"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:5
-msgid "Enable CPU load graph"
-msgstr "Bật đồ thị trọng tải CPU"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:9
-msgid "Enable memory load graph"
-msgstr "Bật đồ thị trọng tải bộ nhớ"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:13
-msgid "Enable network load graph"
-msgstr "Bật đồ thị trọng tải mạng"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:17
-msgid "Enable swap load graph"
-msgstr "Bật đồ thị trọng tải trao đổi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:21
-msgid "Enable load average graph"
-msgstr "Bật đồ thị trung bình trọng tải"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:25
-msgid "Enable disk load graph"
-msgstr "Bật đồ thị trọng tải đĩa"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:29
-msgid "Applet refresh rate in milliseconds"
-msgstr "Tần số cập nhật tiểu dụng (theo mili giây)"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:33
-msgid "Graph size"
-msgstr "Cỡ đồ thị"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:34
-msgid ""
-"For horizontal panels, the width of the graphs in pixels. For vertical "
-"panels, this is the height of the graphs."
-msgstr ""
-"Với bảng ngang thì có độ rộng của đồ thị theo điểm ảnh. Còn với bảng dọc thì"
-" có chiều cao đồ thị."
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:38
-msgid "Graph color for user-related CPU activity"
-msgstr "Màu đồ thị cho hoạt động CPU liên quan đến người dùng"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:42
-msgid "Graph color for system-related CPU activity"
-msgstr "Màu đồ thị cho hoạt động CPU liên quan đến hệ thống"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:46
-msgid "Graph color for nice-related CPU activity"
-msgstr ""
-"Màu đồ thị cho hoạt động CPU liên quan đến \"nice\" (ưu tiên CPU cho ứng "
-"dụng) "
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:50
-msgid "Graph color for iowait related CPU activity"
-msgstr ""
-"Màu đồ thị cho hoạt động CPU liên quan đến thời gian đời khi dữ liệu gõ/xuất"
-" (iowait) "
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:54
-msgid "CPU graph background color"
-msgstr "Màu nền cho đồ thị CPU"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:58
-msgid "Graph color for user-related memory usage"
-msgstr "Màu đồ thị cho việc sử dụng bộ nhớ liên quan đến người dùng"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:62
-msgid "Graph color for shared memory"
-msgstr "Màu đồ thị cho bộ nhớ dùng chung"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:66
-msgid "Graph color for buffer memory"
-msgstr "Màu đồ thị cho bộ nhớ vùng đệm"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:70
-msgid "Graph color for cached memory"
-msgstr "Màu đồ thị cho bộ nhớ tạm"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:74
-msgid "Memory graph background color"
-msgstr "Màu nền đồ thị bộ nhớ"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:78
-msgid "Graph color for input network activity"
-msgstr "Màu đồ thị cho hoạt động mạng vào"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:82
-msgid "Graph color for output network activity"
-msgstr "Màu đồ thị cho hoạt động mạng ra"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:86
-msgid "Graph color for loopback network usage"
-msgstr "Màu đồ thị cho sử dụng mạng mạch nội bộ"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:90
-msgid "Network graph background color"
-msgstr "Màu nền đồ thị mạng"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:133
-msgid "Grid line color"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:98
-msgid "Indicator color"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:103
-msgid "Network threshold 1 in bytes"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:108
-msgid "Network threshold 2 in bytes"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:113
-msgid "Network threshold 3 in bytes"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:117
-msgid "Graph color for user-related swap usage"
-msgstr "Màu đồ thị cho việc sử dụng bộ nhớ trao đổi liên quan đến người dùng"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:121
-msgid "Swap graph background color"
-msgstr "Màu nền đồ thị bộ nhớ trao đổi"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:125
-msgid "Graph color for load average"
-msgstr "Màu đồ thị cho trung bình trọng tải"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:129
-msgid "Load graph background color"
-msgstr "Màu nền đồ thị trọng tải"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:137
-msgid "Graph color for disk read"
-msgstr "Màu đồ thị cho hoạt động đọc đĩa"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:141
-msgid "Graph color for disk write"
-msgstr "Màu đồ thị cho hoạt động ghi vào đĩa"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:145
-msgid "Background color for disk load graph"
-msgstr "Màu nền cho đồ thị trọng tải đĩa"
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:149
-msgid "Uses /proc/diskstats to determine NVMe disk load"
-msgstr ""
-
-#: multiload/org.mate.panel.applet.multiload.gschema.xml.in:153
-msgid "The desktop description file to execute as the system monitor"
-msgstr "Tập tin mô tả màn hình nền cần thực hiện làm bộ theo dõi hệ thống"
-
-#: multiload/properties.c:405
+#: multiload/src/properties.c:383
 msgid "Monitored Resources"
 msgstr "Tài nguyên được theo dõi"
 
-#: multiload/properties.c:430
+#: multiload/src/properties.c:408
 msgid "_Processor"
 msgstr "Bộ _xử lý"
 
-#: multiload/properties.c:443
+#: multiload/src/properties.c:422
 msgid "_Memory"
 msgstr "_Bộ nhớ"
 
-#: multiload/properties.c:456
+#: multiload/src/properties.c:435
 msgid "_Network"
 msgstr "Mạ_ng"
 
-#: multiload/properties.c:469
+#: multiload/src/properties.c:448
 msgid "S_wap Space"
 msgstr "Bộ nhớ t_ráo đổi"
 
-#: multiload/properties.c:482
+#: multiload/src/properties.c:461
 msgid "_Load"
 msgstr "_Trọng tải"
 
-#: multiload/properties.c:495
+#: multiload/src/properties.c:474
 msgid "_Harddisk"
 msgstr "Đĩa _cứng"
 
-#: multiload/properties.c:510
+#: multiload/src/properties.c:492
 msgid "Options"
 msgstr "Tùy chọn"
 
-#: multiload/properties.c:540
+#: multiload/src/properties.c:522
 msgid "System m_onitor width: "
 msgstr "Độ rộng bộ the_o dõi hệ thống: "
 
-#: multiload/properties.c:542
+#: multiload/src/properties.c:524
 msgid "System m_onitor height: "
 msgstr "Độ cao bộ the_o dõi hệ thống: "
 
-#: multiload/properties.c:573
+#: multiload/src/properties.c:555
 msgid "pixels"
 msgstr "điểm ảnh"
 
-#: multiload/properties.c:581
+#: multiload/src/properties.c:563
 msgid "Sys_tem monitor update interval: "
 msgstr "Khoảng cập nhậ_t theo dõi hệ thống: "
 
-#: multiload/properties.c:607
+#: multiload/src/properties.c:589
 msgid "milliseconds"
 msgstr "mili giây"
 
-#: multiload/properties.c:618
+#: multiload/src/properties.c:600
 msgid "Colors"
 msgstr "Màu sắc"
 
-#: multiload/properties.c:645 multiload/properties.c:653
+#: multiload/src/properties.c:627 multiload/src/properties.c:635
 msgid "_User"
 msgstr "N_gười dùng"
 
-#: multiload/properties.c:646
+#: multiload/src/properties.c:628
 msgid "S_ystem"
 msgstr "_Hệ thống"
 
-#: multiload/properties.c:647
+#: multiload/src/properties.c:629
 msgid "N_ice"
 msgstr "Cấp N_ice"
 
-#: multiload/properties.c:648
+#: multiload/src/properties.c:630
 msgid "I_OWait"
 msgstr "Chờ _V/R"
 
-#: multiload/properties.c:649
+#: multiload/src/properties.c:631
 msgid "I_dle"
 msgstr "N_ghỉ"
 
-#: multiload/properties.c:654
+#: multiload/src/properties.c:636
 msgid "Sh_ared"
 msgstr "Chi_a sẻ"
 
-#: multiload/properties.c:655
+#: multiload/src/properties.c:637
 msgid "_Buffers"
 msgstr "_Bộ nhớ đệm"
 
-#: multiload/properties.c:656
+#: multiload/src/properties.c:638
 msgid "Cach_ed"
 msgstr "Nhớ tạ_m"
 
-#: multiload/properties.c:657
+#: multiload/src/properties.c:639
 msgid "F_ree"
 msgstr "Còn _rảnh"
 
-#: multiload/properties.c:661
+#: multiload/src/properties.c:643
 msgid "_In"
 msgstr "_Vào"
 
-#: multiload/properties.c:662
+#: multiload/src/properties.c:644
 msgid "_Out"
 msgstr "_Ra"
 
-#: multiload/properties.c:663
+#: multiload/src/properties.c:645
 msgid "_Local"
 msgstr "_Cục bộ"
 
-#: multiload/properties.c:664 multiload/properties.c:676
-#: multiload/properties.c:683
+#: multiload/src/properties.c:646 multiload/src/properties.c:658
+#: multiload/src/properties.c:665
 msgid "_Background"
 msgstr "_Nền"
 
-#: multiload/properties.c:665 multiload/properties.c:677
+#: multiload/src/properties.c:647 multiload/src/properties.c:659
 msgid "_Gridline"
 msgstr ""
 
-#: multiload/properties.c:666
+#: multiload/src/properties.c:648
 msgid "_Indicator"
 msgstr ""
 
-#: multiload/properties.c:670
+#: multiload/src/properties.c:652
 msgid "_Used"
 msgstr "Đã _dùng"
 
-#: multiload/properties.c:671
+#: multiload/src/properties.c:653
 msgid "_Free"
 msgstr "_Còn rảnh"
 
-#: multiload/properties.c:673
+#: multiload/src/properties.c:655
 msgid "Load"
 msgstr "Trọng tải"
 
-#: multiload/properties.c:675
+#: multiload/src/properties.c:657
 msgid "_Average"
 msgstr "Trung _bình"
 
-#: multiload/properties.c:679
+#: multiload/src/properties.c:661
 msgid "Harddisk"
 msgstr "Đĩa cứng"
 
-#: multiload/properties.c:681
+#: multiload/src/properties.c:663
 msgid "_Read"
 msgstr "Đọ_c"
 
-#: multiload/properties.c:682
+#: multiload/src/properties.c:664
 msgid "_Write"
 msgstr "_Ghi"
 
-#: multiload/properties.c:684
+#: multiload/src/properties.c:667
 msgid "Use diskstats for NVMe"
 msgstr ""
 
-#: multiload/properties.c:686
+#: multiload/src/properties.c:677
 msgid "Network speed thresholds"
 msgstr ""
 
-#: multiload/properties.c:714
+#: multiload/src/properties.c:705
 msgid "Threshold 1: "
 msgstr ""
 
-#: multiload/properties.c:745 multiload/properties.c:780
-#: multiload/properties.c:815
+#: multiload/src/properties.c:736 multiload/src/properties.c:771
+#: multiload/src/properties.c:806
 msgid "bytes"
 msgstr "bytes"
 
-#: multiload/properties.c:753
+#: multiload/src/properties.c:744
 msgid "Threshold 2: "
 msgstr ""
 
-#: multiload/properties.c:788
+#: multiload/src/properties.c:779
 msgid "Threshold 3: "
 msgstr ""
 
-#: multiload/properties.c:853
+#: multiload/src/properties.c:843
 msgid "System Monitor Preferences"
 msgstr "Tùy thích bộ theo dõi hệ thống"
 
@@ -2023,8 +2028,8 @@ msgid "10 MHz"
 msgstr ""
 
 #: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
-#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1505
-#: netspeed/src/netspeed.c:1514
+#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1511
+#: netspeed/src/netspeed.c:1520
 msgid "unknown"
 msgstr "không rõ"
 
@@ -2174,11 +2179,11 @@ msgstr ""
 msgid "%s is down"
 msgstr "%s bị ngắt"
 
-#: netspeed/src/netspeed.c:1484
+#: netspeed/src/netspeed.c:1489
 msgid "has no ip"
 msgstr "không có ip"
 
-#: netspeed/src/netspeed.c:1489
+#: netspeed/src/netspeed.c:1495
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2187,7 +2192,7 @@ msgstr ""
 "%s: %s\n"
 "vào: %s out: %s"
 
-#: netspeed/src/netspeed.c:1496
+#: netspeed/src/netspeed.c:1502
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -2196,7 +2201,7 @@ msgstr ""
 "%s: %s\n"
 "sum: %s"
 
-#: netspeed/src/netspeed.c:1504
+#: netspeed/src/netspeed.c:1510
 #, c-format
 msgid ""
 "\n"
@@ -2206,7 +2211,7 @@ msgid ""
 "TX Bitrate: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1513
+#: netspeed/src/netspeed.c:1519
 #, c-format
 msgid ""
 "\n"
@@ -2217,7 +2222,7 @@ msgstr ""
 "ESID: %s\n"
 "Cường độ: %d %%"
 
-#: netspeed/src/netspeed.c:1563
+#: netspeed/src/netspeed.c:1565
 msgid "MATE Netspeed"
 msgstr ""
 
@@ -2227,7 +2232,7 @@ msgid "Sticky Notes Applet Factory"
 msgstr "Bộ tạo tiểu dụng ghi chép đính"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:9
-#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:412
+#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:409
 msgid "Sticky Notes"
 msgstr "Ghi chép dính"
 
@@ -2586,13 +2591,13 @@ msgstr "_Xóa bỏ ghi chép"
 msgid "_Lock Notes"
 msgstr "_Khóa ghi chép"
 
-#: stickynotes/stickynotes_applet.c:591
+#: stickynotes/stickynotes_applet.c:588
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] ""
 
-#: stickynotes/stickynotes_applet.c:592
+#: stickynotes/stickynotes_applet.c:589
 msgid "Show sticky notes"
 msgstr "Hiện ghi chép dính"
 
@@ -2611,96 +2616,102 @@ msgstr ""
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "Ghi chép dính cho môi trường MATE"
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
 msgid "Timer Factory"
 msgstr ""
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:9
 msgid "Timer"
 msgstr ""
 
-#: timerapplet/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
-#: timerapplet/timerapplet.c:281
+#: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
+#: timerapplet/src/timerapplet.c:282
 msgid "Start a timer and receive a notification when it is finished"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:5
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:9
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:9
 msgid "Duration of timer in seconds"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:13
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:13
 msgid "Show notification popup when timer finish"
 msgstr ""
 
-#: timerapplet/org.mate.panel.applet.timer.gschema.xml.in:17
+#: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:17
 msgid "Show dialog window when timer finish"
 msgstr ""
 
-#: timerapplet/timerapplet.c:83
+#: timerapplet/data/timerapplet-preferences.ui:28
+msgid "Timer Applet Preferences"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:79
+msgid "_Name:"
+msgstr "Tê_n:"
+
+#: timerapplet/data/timerapplet-preferences.ui:93
+msgid "_Hours:"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:107
+msgid "_Minutes:"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:121
+msgid "_Seconds:"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:189
+msgid "Show notification _popup"
+msgstr ""
+
+#: timerapplet/data/timerapplet-preferences.ui:205
+msgid "Show _dialog"
+msgstr ""
+
+#: timerapplet/src/timerapplet.c:83
 msgid "_Start timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:84
+#: timerapplet/src/timerapplet.c:84
 msgid "P_ause timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:85
+#: timerapplet/src/timerapplet.c:85
 msgid "S_top timer"
 msgstr ""
 
-#: timerapplet/timerapplet.c:86
+#: timerapplet/src/timerapplet.c:86
 msgid "R_eset"
 msgstr ""
 
-#: timerapplet/timerapplet.c:160 timerapplet/timerapplet.c:172
+#. Translators: %s is a placeholder for the timer name, 'Timer' by default
+#: timerapplet/src/timerapplet.c:153
+#, c-format
+msgid "Finished %s"
+msgstr ""
+
+#: timerapplet/src/timerapplet.c:161 timerapplet/src/timerapplet.c:173
 msgid "Timer finished!"
 msgstr ""
 
-#: timerapplet/timerapplet.c:276
+#: timerapplet/src/timerapplet.c:277
 msgid "About Timer Applet"
 msgstr ""
 
-#: timerapplet/timerapplet.c:278
+#: timerapplet/src/timerapplet.c:279
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2020 MATE developers"
 msgstr ""
 
-#: timerapplet/timerapplet.c:365
+#: timerapplet/src/timerapplet.c:366
 msgid "Timer Applet"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:28
-msgid "Timer Applet Preferences"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:79
-msgid "_Name:"
-msgstr "Tê_n:"
-
-#: timerapplet/timerapplet-preferences.ui:93
-msgid "_Hours:"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:107
-msgid "_Minutes:"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:121
-msgid "_Seconds:"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:189
-msgid "Show notification _popup"
-msgstr ""
-
-#: timerapplet/timerapplet-preferences.ui:205
-msgid "Show _dialog"
 msgstr ""
 
 #: trashapplet/org.mate.applets.TrashApplet.mate-panel-applet.desktop.in.in:5
@@ -2716,7 +2727,7 @@ msgstr "Thùng rác"
 msgid "Go to Trash"
 msgstr "Tới Sọt Rác"
 
-#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:344
+#: trashapplet/src/trashapplet.c:68 trashapplet/src/trash-empty.c:341
 msgid "_Empty Trash"
 msgstr "Đổ _Rác"
 
@@ -2734,7 +2745,7 @@ msgstr[0] ""
 msgid "No Items in Trash"
 msgstr "Không có gì trong Sọt Rác"
 
-#: trashapplet/src/trashapplet.c:378
+#: trashapplet/src/trashapplet.c:374
 #, c-format
 msgid ""
 "Error while spawning caja:\n"
@@ -2743,18 +2754,18 @@ msgstr ""
 "Gặp lỗi khi tạo tiến trình con caja:\n"
 "%s"
 
-#: trashapplet/src/trashapplet.c:432
+#: trashapplet/src/trashapplet.c:428
 msgid "About Trash Applet"
 msgstr ""
 
-#: trashapplet/src/trashapplet.c:434
+#: trashapplet/src/trashapplet.c:430
 msgid ""
 "Copyright © 2004 Michiel Sikkes\n"
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: trashapplet/src/trashapplet.c:437
+#: trashapplet/src/trashapplet.c:433
 msgid ""
 "A MATE trash bin that lives in your panel. You can use it to view the trash "
 "or drag and drop items into the trash."
@@ -2762,24 +2773,24 @@ msgstr ""
 "Sọt Rác MATE ở bảng điều khiển của bạn. Có thể sử dụng nó để xem nội dung "
 "Sọt Rác hoặc kéo và thả mục vào Sọt Rác."
 
-#: trashapplet/src/trashapplet.c:462
+#: trashapplet/src/trashapplet.c:458
 msgid "Delete Immediately?"
 msgstr "Xóa bỏ ngay bây giờ chứ?"
 
-#: trashapplet/src/trashapplet.c:492
+#: trashapplet/src/trashapplet.c:488
 msgid "Cannot move items to trash, do you want to delete them immediately?"
 msgstr ""
 "Không thể di chuyển các mục này vào Sọt Rác: bạn có muốn xóa bỏ chúng ngay "
 "bây giờ không?"
 
-#: trashapplet/src/trashapplet.c:497
+#: trashapplet/src/trashapplet.c:493
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
 msgstr ""
 "Không thể di chuyển một số mục vào Sọt Rác: bạn có muốn xóa bỏ chúng ngay "
 "bây giờ không?"
 
-#: trashapplet/src/trashapplet.c:625
+#: trashapplet/src/trashapplet.c:620
 msgid "Trash Applet"
 msgstr "Tiểu dụng Sọt Rác"
 
@@ -2795,11 +2806,11 @@ msgstr "Đang gỡ bỏ mục %s trên %s"
 msgid "Removing: %s"
 msgstr ""
 
-#: trashapplet/src/trash-empty.c:324
+#: trashapplet/src/trash-empty.c:321
 msgid "Empty all of the items from the trash?"
 msgstr "Đổ mọi mục khỏi Sọt Rác chứ?"
 
-#: trashapplet/src/trash-empty.c:331
+#: trashapplet/src/trash-empty.c:328
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
