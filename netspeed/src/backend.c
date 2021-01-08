@@ -105,6 +105,7 @@ get_available_devices (void)
     for (dev = devices; *dev; ++dev) {
         device_glist = g_list_prepend (device_glist, g_strdup (*dev));
     }
+    device_glist = g_list_sort (device_glist, (GCompareFunc) g_strcmp0);
 
     g_strfreev (devices);
 
