@@ -91,9 +91,6 @@ gboolean
 is_dummy_device (const char* device);
 
 void
-free_devices_list (GList *list);
-
-void
 free_device_info (DevInfo *devinfo);
 
 void
