@@ -61,7 +61,6 @@ typedef struct {
     guint32        netmask;
     guint32        ptpip;
     guint8         hwaddr [8]; /* EUI-48 or EUI-64 */
-    guint8         ipv6 [16];
     char          *essid;
     gboolean       up;
     gboolean       running;
@@ -107,5 +106,8 @@ get_wireless_info (DevInfo *devinfo);
 
 GSList*
 get_ip_address_list (const char *ifa_name, gboolean ipv4);
+
+GSList*
+get_ip6_address_list (const char *ifa_name);
 
 #endif /* _BACKEND_H */

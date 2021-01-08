@@ -518,7 +518,7 @@ redraw_graph (NetspeedApplet *netspeed,
     w = gdk_window_get_width (real_window);
     h = gdk_window_get_height (real_window);
 
-    /* the graph hight should be: hight/2 <= applet->max_graph < hight */
+    /* the graph hight should be: hight/2 <= netspeed->max_graph < hight */
     for (max_val = 1; max_val < netspeed->max_graph; max_val *= 2) ;
 
     /* calculate the polygons (GdkPoint[]) for the graphs */
@@ -684,13 +684,6 @@ format_ipv4 (guint32  ip,
              char    *dest)
 {
     inet_ntop (AF_INET, &ip, dest, INET_ADDRSTRLEN);
-}
-
-static void
-format_ipv6 (const guint8  ip[16],
-             char         *dest)
-{
-    inet_ntop (AF_INET6, ip, dest, INET6_ADDRSTRLEN);
 }
 
 static void
@@ -1371,54 +1364,44 @@ update_tooltip (NetspeedApplet *netspeed)
     if (!netspeed->devinfo->running)
         g_string_printf (tooltip, _("%s is down"), netspeed->devinfo->name);
     else {
+        GSList *iterator;
+        GString *string = NULL;
         char ipv4_text [INET_ADDRSTRLEN];
-        char ipv6_text [INET6_ADDRSTRLEN];
-        char *ip;
 
-        if (netspeed->show_all_addresses) {
-            format_ipv6 (netspeed->devinfo->ipv6, ipv6_text);
-            if (netspeed->devinfo->ip) {
-                format_ipv4 (netspeed->devinfo->ip, ipv4_text);
-                if (strlen (ipv6_text) > 2) {
-                    g_string_printf (tooltip,
-                                     _("%s: %s and %s"),
-                                     netspeed->devinfo->name,
-                                     ipv4_text,
-                                     ipv6_text);
-                } else {
-                    g_string_printf (tooltip,
-                                     _("%s: %s"),
-                                     netspeed->devinfo->name,
-                                     ipv4_text);
-                }
-            } else {
-                if (strlen (ipv6_text) > 2) {
-                    g_string_printf (tooltip,
-                                     _("%s: %s"),
-                                     netspeed->devinfo->name,
-                                     ipv6_text);
-                } else {
-                    g_string_printf (tooltip,
-                                     _("%s: has no ip"),
-                                     netspeed->devinfo->name);
+        g_string_printf (tooltip, "%s: ", netspeed->devinfo->name);
+
+        if (netspeed->show_all_addresses || !netspeed->devinfo->ip) {
+            GSList *ip6_address_list = get_ip6_address_list (netspeed->devinfo->name);
+
+            /* check if we got IPv6 addresses */
+            if (ip6_address_list != NULL) {
+                for (iterator = ip6_address_list; iterator; iterator = iterator->next) {
+                    if (string == NULL)
+                        string = g_string_new ((char*) iterator->data);
+                    else
+                        g_string_append_printf (string,
+                                                _("\n%s"),
+                                                (char*) iterator->data);
                 }
             }
-        } else {
-            if (netspeed->devinfo->ip) {
-                format_ipv4 (netspeed->devinfo->ip, ipv4_text);
-                ip = ipv4_text;
-            } else {
-                format_ipv6 (netspeed->devinfo->ipv6, ipv6_text);
-                if (strlen (ipv6_text) > 2) {
-                    ip = ipv6_text;
-                } else {
-                    ip = _("has no ip");
-                }
-            }
-            g_string_printf (tooltip,
-                             _("%s: %s"),
-                             netspeed->devinfo->name,
-                             ip);
+
+            g_slist_free_full (ip6_address_list, g_free);
+        }
+
+        if (!netspeed->devinfo->ip && !string) {
+            g_string_append (tooltip, "has no ip");
+        }
+
+        if (netspeed->devinfo->ip) {
+            format_ipv4 (netspeed->devinfo->ip, ipv4_text);
+            g_string_append (tooltip, ipv4_text);
+        }
+
+        if (string != NULL) {
+            g_string_append_printf (tooltip,
+                                    _("\n%s"),
+                                    string->str);
+            g_string_free (string, TRUE);
         }
 
         if (netspeed->show_sum) {

@@ -207,6 +207,41 @@ get_ip_address_list (const char *iface_name,
     return list;
 }
 
+GSList*
+get_ip6_address_list (const char *iface_name)
+{
+    GSList *list = NULL;
+    struct ifaddrs *ifaces;
+
+    if (getifaddrs (&ifaces) != -1) {
+        char ip6[INET6_ADDRSTRLEN];
+
+        for (struct ifaddrs *iface = ifaces; iface != NULL; iface = iface->ifa_next) {
+            if ((iface->ifa_addr == NULL) || (iface->ifa_addr->sa_family != AF_INET6))
+                continue;
+
+            if (!g_strcmp0 (iface->ifa_name, iface_name)) {
+                void *sinx_addr = NULL;
+
+                struct sockaddr_in6 ip6_addr;
+
+                memcpy (&ip6_addr, iface->ifa_addr, sizeof (struct sockaddr_in6));
+
+                /* get network ip */
+                sinx_addr = &ip6_addr.sin6_addr;
+                inet_ntop (iface->ifa_addr->sa_family, sinx_addr, ip6, sizeof (ip6));
+
+                list = g_slist_prepend (list, g_strdup (ip6));
+            }
+        }
+
+        if (list != NULL)
+            list = g_slist_sort (list, (GCompareFunc) g_strcmp0);
+        freeifaddrs (ifaces);
+    }
+    return list;
+}
+
 const gchar*
 get_default_route (void)
 {
@@ -350,7 +385,6 @@ get_device_info (const char  *device,
     if (devinfo->running) {
         devinfo->ip = netload.address;
         devinfo->netmask = netload.subnet;
-        memcpy (devinfo->ipv6, netload.address6, 16);
 #if defined (HAVE_NL)
         if (devinfo->type != DEV_WIRELESS) {
             devinfo->tx = netload.bytes_out;
