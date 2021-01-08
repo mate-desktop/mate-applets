@@ -1567,9 +1567,11 @@ device_settings_changed (GSettings      *settings,
     DevInfo *info;
 
     device = g_settings_get_string (settings, key);
-    free_device_info (netspeed->devinfo);
-    get_device_info (device, &netspeed->devinfo);
-    netspeed->device_has_changed = TRUE;
+    if (device && *device != '\0') {
+        free_device_info (netspeed->devinfo);
+        get_device_info (device, &netspeed->devinfo);
+        netspeed->device_has_changed = TRUE;
+    }
     g_free (device);
 }
 
@@ -1584,6 +1586,7 @@ netspeed_applet_factory (MatePanelApplet *applet,
     int i;
     GtkWidget *spacer, *spacer_box;
     GtkActionGroup *action_group;
+    char *tmp;
 
     if (strcmp (iid, "NetspeedApplet"))
         return FALSE;
@@ -1593,15 +1596,6 @@ netspeed_applet_factory (MatePanelApplet *applet,
 
     netspeed = NETSPEED_APPLET (applet);
     netspeed->icon_theme = gtk_icon_theme_get_default ();
-
-    /* Set the default colors of the graph
-    */
-    netspeed->in_color.red = 0xdf00;
-    netspeed->in_color.green = 0x2800;
-    netspeed->in_color.blue = 0x4700;
-    netspeed->out_color.red = 0x3700;
-    netspeed->out_color.green = 0x2800;
-    netspeed->out_color.blue = 0xdf00;
 
     for (i = 0; i < GRAPH_VALUES; i++)
     {
@@ -1621,36 +1615,40 @@ netspeed_applet_factory (MatePanelApplet *applet,
     netspeed->change_icon = g_settings_get_boolean (netspeed->settings, "change-icon");
     netspeed->auto_change_device = g_settings_get_boolean (netspeed->settings, "auto-change-device");
 
-    char *tmp = NULL;
     tmp = g_settings_get_string (netspeed->settings, "device");
-    if (tmp && strcmp (tmp, "")) {
+    if (tmp && *tmp != '\0')
         get_device_info (tmp, &netspeed->devinfo);
-        g_free (tmp);
-    }
+    else
+        netspeed->devinfo = NULL;
+    g_free (tmp);
 
     tmp = g_settings_get_string (netspeed->settings, "up-command");
-    if (tmp && strcmp (tmp, "")) {
+    if (tmp && *tmp != '\0')
         netspeed->up_cmd = g_strdup (tmp);
-        g_free (tmp);
-    }
+    else
+        netspeed->up_cmd = NULL;
+    g_free (tmp);
 
     tmp = g_settings_get_string (netspeed->settings, "down-command");
-    if (tmp && strcmp (tmp, "")) {
+    if (tmp && *tmp != '\0')
         netspeed->down_cmd = g_strdup (tmp);
-        g_free (tmp);
-    }
+    else
+        netspeed->down_cmd = NULL;
+    g_free (tmp);
 
     tmp = g_settings_get_string (netspeed->settings, "in-color");
-    if (tmp) {
+    if (tmp && *tmp != '\0')
         gdk_rgba_parse (&netspeed->in_color, tmp);
-        g_free (tmp);
-    }
+    else
+        gdk_rgba_parse (&netspeed->in_color, "#df0028004700");
+    g_free (tmp);
 
     tmp = g_settings_get_string (netspeed->settings, "out-color");
-    if (tmp) {
+    if (tmp && *tmp != '\0')
         gdk_rgba_parse (&netspeed->out_color, tmp);
-        g_free (tmp);
-    }
+    else
+        gdk_rgba_parse (&netspeed->out_color, "#37002800df00");
+    g_free (tmp);
 
     if (!netspeed->devinfo) {
         GList *ptr, *devices = get_available_devices ();
