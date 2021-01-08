@@ -278,12 +278,6 @@ get_default_route (void)
     return NULL;
 }
 
-void
-free_devices_list (GList *list)
-{
-    g_list_free_full (list, g_free);
-}
-
 /* Frees a DevInfo struct and all the stuff it contains
  */
 void

@@ -148,7 +148,7 @@ netspeed_preferences_finalize (GObject *object)
 {
   NetspeedPreferences *preferences = NETSPEED_PREFERENCES (object);
 
-  free_devices_list (preferences->devices);
+  g_list_free_full (preferences->devices, g_free);
   G_OBJECT_CLASS (netspeed_preferences_parent_class)->finalize (object);
 }
 

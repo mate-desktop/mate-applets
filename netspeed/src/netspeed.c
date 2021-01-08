@@ -630,7 +630,7 @@ search_for_up_if (NetspeedApplet *netspeed)
         if (set_applet_devinfo (netspeed, tmp->data))
             break;
     }
-    free_devices_list (devices);
+    g_list_free_full (devices, g_free);
 }
 
 static char *
@@ -1642,7 +1642,7 @@ netspeed_applet_factory (MatePanelApplet *applet,
             }
             ptr = g_list_next (ptr);
         }
-        free_devices_list (devices);
+        g_list_free_full (devices, g_free);
     }
     if (!netspeed->devinfo)
         get_device_info ("lo", &netspeed->devinfo);
