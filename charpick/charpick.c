@@ -280,7 +280,9 @@ menuitem_activated (GtkMenuItem   *menuitem,
     if (g_ascii_strcasecmp (curr_data->charlist, string) == 0)
         return;
 
-    curr_data->charlist = string;
+    g_free (curr_data->charlist);
+    curr_data->charlist = g_strdup (string);
+
     build_table (curr_data);
     if (g_settings_is_writable (curr_data->settings, "current-list"))
         g_settings_set_string (curr_data->settings,
@@ -653,6 +655,7 @@ applet_destroy (GtkWidget *widget,
         gtk_widget_destroy (curr_data->box);
     if (curr_data->menu)
         gtk_widget_destroy (curr_data->menu);
+    g_free (curr_data->charlist);
     g_free (curr_data);
 }
 
@@ -727,7 +730,6 @@ charpicker_applet_fill (MatePanelApplet *applet)
     MatePanelAppletOrient orientation;
     charpick_data *curr_data;
     GdkAtom utf8_atom;
-    GList *list;
     gchar *string;
     GtkActionGroup *action_group;
 
@@ -748,24 +750,12 @@ charpicker_applet_fill (MatePanelApplet *applet)
     get_chartable (curr_data);
 
     string  = g_settings_get_string (curr_data->settings, "current-list");
-    if (string) {
-        list = curr_data->chartable;
-        while (list) {
-            if (g_ascii_strcasecmp (list->data, string) == 0)
-                curr_data->charlist = list->data;
-            list = g_list_next (list);
-        }
-        /* FIXME: yeah leak, but this code is full of leaks and evil
-         point shuffling.  This should really be rewritten
-         -George */
-        if (curr_data->charlist == NULL)
-            curr_data->charlist = string;
-        else
-            g_free (string);
+    if (string && *string != '\0') {
+        curr_data->charlist = g_strdup (string);
+    } else {
+        curr_data->charlist = g_strdup (curr_data->chartable->data);
     }
-    else {
-        curr_data->charlist = curr_data->chartable->data;
-    }
+    g_free (string);
 
     curr_data->panel_size = mate_panel_applet_get_size (applet);
 

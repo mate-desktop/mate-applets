@@ -138,12 +138,13 @@ add_palette_cb (GtkDialog     *dialog,
 
     if (curr_data->chartable == NULL) {
         curr_data->chartable = list;
-        curr_data->charlist = curr_data->chartable->data;
+        g_free (curr_data->charlist);
+        curr_data->charlist = g_strdup (curr_data->chartable->data);
         build_table (curr_data);
 
         if (g_settings_is_writable (curr_data->settings, "current-list"))
             g_settings_set_string (curr_data->settings,
-                                   "current-list", 
+                                   "current-list",
                                    curr_data->charlist);
     }
 
@@ -197,7 +198,7 @@ edit_palette_cb (GtkDialog     *dialog,
 
     if (!new || (g_ascii_strcasecmp (new, charlist) == 0))
         return;
-        
+
     list = g_list_find (curr_data->chartable, charlist);
     list->data = new;
     save_chartable (curr_data);
@@ -205,7 +206,8 @@ edit_palette_cb (GtkDialog     *dialog,
     gtk_list_store_set (GTK_LIST_STORE (model), &iter, 0, new, 1, new, -1);
 
     if (g_ascii_strcasecmp (curr_data->charlist, charlist) == 0) {
-        curr_data->charlist = new;
+        g_free (curr_data->charlist);
+        curr_data->charlist = g_strdup (new);
         build_table (curr_data);
 
         if (g_settings_is_writable (curr_data->settings, "current-list"))
@@ -286,19 +288,20 @@ delete_palette (GtkButton     *button,
     GtkTreeIter       next;
     GtkTreeModel     *model;
     gchar            *charlist;
-    
+
     selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (curr_data->pref_tree));
-    
+
     if (!gtk_tree_selection_get_selected (selection, &model, &iter))
         return;
-        
+
     gtk_tree_model_get (model, &iter, 1, &charlist, -1);
 
     curr_data->chartable = g_list_remove (curr_data->chartable, charlist);
 
     if (g_ascii_strcasecmp (curr_data->charlist, charlist) == 0) {
+        g_free (curr_data->charlist);
         curr_data->charlist = curr_data->chartable != NULL ?
-            curr_data->chartable->data : "";
+            g_strdup (curr_data->chartable->data) : g_strdup ("");
         if (g_settings_is_writable (curr_data->settings, "current-list"))
             g_settings_set_string (curr_data->settings,
                                    "current-list",
