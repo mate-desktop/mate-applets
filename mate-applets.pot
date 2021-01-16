@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.25.2\n"
+"Project-Id-Version: mate-applets 1.25.3\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-01-07 13:19+0100\n"
+"POT-Creation-Date: 2021-01-16 12:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Keyboard Accessibility Status Applet Factory"
 msgstr ""
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-#: accessx-status/src/applet.c:1675
+#: accessx-status/src/applet.c:1676
 msgid "Keyboard Accessibility Status"
 msgstr ""
 
@@ -60,14 +60,14 @@ msgstr ""
 #: accessx-status/src/applet.c:115
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: accessx-status/src/applet.c:119 battstat/battstat_applet.c:857
 #: charpick/charpick.c:617 command/src/command.c:131
 #: cpufreq/src/cpufreq-applet.c:487 drivemount/src/drivemount.c:125
 #: geyes/src/geyes.c:195 mateweather/src/mateweather-about.c:61
-#: multiload/src/main.c:69 netspeed/src/netspeed.c:1065
+#: multiload/src/main.c:69 netspeed/src/netspeed.c:1058
 #: stickynotes/stickynotes_applet_callbacks.c:433
 #: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
@@ -82,16 +82,16 @@ msgstr ""
 msgid "Open the keyboard preferences dialog"
 msgstr ""
 
-#: accessx-status/src/applet.c:199
+#: accessx-status/src/applet.c:200
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr ""
 
-#: accessx-status/src/applet.c:219
+#: accessx-status/src/applet.c:220
 msgid "_Keyboard Accessibility Preferences"
 msgstr ""
 
-#: accessx-status/src/applet.c:221 battstat/battstat_applet.c:62
+#: accessx-status/src/applet.c:222 battstat/battstat_applet.c:62
 #: battstat/battstat-preferences.ui:37 charpick/charpick.c:694
 #: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/src/drivemount.c:163 geyes/data/themes.ui:35
@@ -105,7 +105,7 @@ msgstr ""
 msgid "_Help"
 msgstr ""
 
-#: accessx-status/src/applet.c:223 battstat/battstat_applet.c:65
+#: accessx-status/src/applet.c:224 battstat/battstat_applet.c:65
 #: charpick/charpick.c:697 command/src/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/src/drivemount.c:166
 #: geyes/src/geyes.c:368 mateweather/src/mateweather-applet.c:120
@@ -114,33 +114,33 @@ msgstr ""
 msgid "_About"
 msgstr ""
 
-#: accessx-status/src/applet.c:572 accessx-status/src/applet.c:641
+#: accessx-status/src/applet.c:573 accessx-status/src/applet.c:642
 msgid "a"
 msgstr ""
 
-#: accessx-status/src/applet.c:1243 accessx-status/src/applet.c:1322
-#: accessx-status/src/applet.c:1444 accessx-status/src/applet.c:1678
+#: accessx-status/src/applet.c:1244 accessx-status/src/applet.c:1323
+#: accessx-status/src/applet.c:1445 accessx-status/src/applet.c:1679
 msgid "AccessX Status"
 msgstr ""
 
-#: accessx-status/src/applet.c:1245 accessx-status/src/applet.c:1446
+#: accessx-status/src/applet.c:1246 accessx-status/src/applet.c:1447
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 
-#: accessx-status/src/applet.c:1281
+#: accessx-status/src/applet.c:1282
 msgid "XKB Extension is not enabled"
 msgstr ""
 
-#: accessx-status/src/applet.c:1286
+#: accessx-status/src/applet.c:1287
 msgid "Unknown error"
 msgstr ""
 
-#: accessx-status/src/applet.c:1294
+#: accessx-status/src/applet.c:1295
 #, c-format
 msgid "Error: %s"
 msgstr ""
 
-#: accessx-status/src/applet.c:1680
+#: accessx-status/src/applet.c:1681
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 
@@ -175,28 +175,28 @@ msgstr ""
 msgid "Unknown time (%d%%) until charged"
 msgstr ""
 
-#: battstat/battstat_applet.c:185
+#: battstat/battstat_applet.c:184
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:190
+#: battstat/battstat_applet.c:189
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:196
+#: battstat/battstat_applet.c:195
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:201
+#: battstat/battstat_applet.c:200
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -313,7 +313,7 @@ msgstr ""
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: battstat/battstat_applet.c:1138 battstat/battstat_applet.c:1193
@@ -471,7 +471,7 @@ msgstr ""
 #: charpick/charpick.c:610
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: charpick/charpick.c:612
@@ -649,7 +649,7 @@ msgstr ""
 #: command/src/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
-"Copyright © 2015-2020 MATE developers"
+"Copyright © 2015-2021 MATE developers"
 msgstr ""
 
 #: command/src/command.c:408
@@ -690,7 +690,7 @@ msgstr ""
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:845
+#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
 msgstr ""
 
@@ -741,14 +741,14 @@ msgstr ""
 #: cpufreq/src/cpufreq-applet.c:480
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr ""
 
-#: cpufreq/src/cpufreq-applet.c:846
+#: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
 msgstr ""
 
@@ -854,7 +854,7 @@ msgstr ""
 #: drivemount/src/drivemount.c:120
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: drivemount/src/drivemount.c:122
@@ -903,7 +903,7 @@ msgstr ""
 #: geyes/src/geyes.c:191
 msgid ""
 "Copyright © 1999 Dave Camp\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: geyes/src/geyes.c:428
@@ -1035,7 +1035,7 @@ msgstr ""
 #: mateweather/src/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: mateweather/src/mateweather-about.c:58
@@ -1059,7 +1059,7 @@ msgstr ""
 msgid "Weather Forecast"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:465
+#: mateweather/src/mateweather-applet.c:464
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1067,7 +1067,7 @@ msgid ""
 "Temperature: %s"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:519
+#: mateweather/src/mateweather-applet.c:518
 msgid "Updating..."
 msgstr ""
 
@@ -1606,7 +1606,7 @@ msgstr ""
 #: multiload/src/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: multiload/src/main.c:64
@@ -1926,120 +1926,120 @@ msgstr ""
 msgid "global"
 msgstr ""
 
-#: netspeed/src/backend.c:559
+#: netspeed/src/backend.c:593
 #, c-format
 msgid "%d.%d MBit/s"
 msgstr ""
 
-#: netspeed/src/backend.c:561
+#: netspeed/src/backend.c:595
 #, c-format
 msgid "(unknown)"
 msgstr ""
 
-#: netspeed/src/backend.c:565
+#: netspeed/src/backend.c:599
 #, c-format
 msgid " MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:568
+#: netspeed/src/backend.c:602
 #, c-format
 msgid " VHT-MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:570
+#: netspeed/src/backend.c:604
 #, c-format
 msgid " 40MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:572
+#: netspeed/src/backend.c:606
 #, c-format
 msgid " 80MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:574
+#: netspeed/src/backend.c:608
 #, c-format
 msgid " 80P80MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:576
+#: netspeed/src/backend.c:610
 #, c-format
 msgid " 160MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:578
+#: netspeed/src/backend.c:612
 #, c-format
 msgid " short GI)"
 msgstr ""
 
-#: netspeed/src/backend.c:581
+#: netspeed/src/backend.c:615
 #, c-format
 msgid " VHT-NSS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:584
+#: netspeed/src/backend.c:618
 #, c-format
 msgid " HE-MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:587
+#: netspeed/src/backend.c:621
 #, c-format
 msgid " HE-NSS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:590
+#: netspeed/src/backend.c:624
 #, c-format
 msgid " HE-GI %d"
 msgstr ""
 
-#: netspeed/src/backend.c:593
+#: netspeed/src/backend.c:627
 #, c-format
 msgid " HE-DCM %d"
 msgstr ""
 
-#: netspeed/src/backend.c:677
+#: netspeed/src/backend.c:711
 msgid "20 MHz (no HT)"
 msgstr ""
 
-#: netspeed/src/backend.c:679
+#: netspeed/src/backend.c:713
 msgid "20 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:681
+#: netspeed/src/backend.c:715
 msgid "40 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:683
+#: netspeed/src/backend.c:717
 msgid "80 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:685
+#: netspeed/src/backend.c:719
 msgid "80+80 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:687
+#: netspeed/src/backend.c:721
 msgid "160 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:689
+#: netspeed/src/backend.c:723
 msgid "5 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:691
+#: netspeed/src/backend.c:725
 msgid "10 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:693 netspeed/src/netspeed.c:779
-#: netspeed/src/netspeed.c:783 netspeed/src/netspeed.c:1439
-#: netspeed/src/netspeed.c:1448
+#: netspeed/src/backend.c:727 netspeed/src/netspeed.c:772
+#: netspeed/src/netspeed.c:776 netspeed/src/netspeed.c:1422
+#: netspeed/src/netspeed.c:1431
 msgid "unknown"
 msgstr ""
 
-#: netspeed/src/backend.c:744
+#: netspeed/src/backend.c:778
 #, c-format
 msgid "%d (%d MHz)"
 msgstr ""
 
-#: netspeed/src/backend.c:748
+#: netspeed/src/backend.c:782
 #, c-format
 msgid ", width: %s"
 msgstr ""
@@ -2103,112 +2103,99 @@ msgid_plural "%'d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: netspeed/src/netspeed.c:706 netspeed/src/netspeed.c:714
-#: netspeed/src/netspeed.c:723 netspeed/src/netspeed.c:730
+#: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
+#: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
 msgid "none"
 msgstr ""
 
-#: netspeed/src/netspeed.c:787 netspeed/src/netspeed.c:899
+#: netspeed/src/netspeed.c:780 netspeed/src/netspeed.c:892
 msgid "na"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1018
+#: netspeed/src/netspeed.c:1011
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1057
+#: netspeed/src/netspeed.c:1050
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1059
+#: netspeed/src/netspeed.c:1052
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
-"Copyright © 2015-2020 MATE developers"
+"Copyright © 2015-2021 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1062
+#: netspeed/src/netspeed.c:1055
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1238
+#: netspeed/src/netspeed.c:1231
 msgid "Device _Details"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1240
+#: netspeed/src/netspeed.c:1233
 msgid "Preferences..."
 msgstr ""
 
-#: netspeed/src/netspeed.c:1242
+#: netspeed/src/netspeed.c:1235
 msgid "Help"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1244
+#: netspeed/src/netspeed.c:1237
 msgid "About..."
 msgstr ""
 
-#: netspeed/src/netspeed.c:1285
+#: netspeed/src/netspeed.c:1278
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1288
+#: netspeed/src/netspeed.c:1281
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1314
+#: netspeed/src/netspeed.c:1307
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1372
+#: netspeed/src/netspeed.c:1365
 #, c-format
 msgid "%s is down"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1384
+#: netspeed/src/netspeed.c:1383 netspeed/src/netspeed.c:1402
 #, c-format
-msgid "%s: %s and %s"
+msgid ""
+"\n"
+"%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1390 netspeed/src/netspeed.c:1397
-#: netspeed/src/netspeed.c:1419
-#, c-format
-msgid "%s: %s"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1402
-#, c-format
-msgid "%s: has no ip"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1415
-msgid "has no ip"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1426
+#: netspeed/src/netspeed.c:1409
 #, c-format
 msgid ""
 "\n"
 "in: %s out: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1431
+#: netspeed/src/netspeed.c:1414
 #, c-format
 msgid ""
 "\n"
 "sum: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1438
+#: netspeed/src/netspeed.c:1421
 #, c-format
 msgid ""
 "\n"
@@ -2218,7 +2205,7 @@ msgid ""
 "TX Bitrate: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1447
+#: netspeed/src/netspeed.c:1430
 #, c-format
 msgid ""
 "\n"
@@ -2226,7 +2213,7 @@ msgid ""
 "Strength: %d %%"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1592
+#: netspeed/src/netspeed.c:1578
 msgid "MATE Netspeed"
 msgstr ""
 
@@ -2244,11 +2231,11 @@ msgstr ""
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr ""
 
-#: stickynotes/stickynotes.c:660
+#: stickynotes/stickynotes.c:659
 msgid "This note is locked."
 msgstr ""
 
-#: stickynotes/stickynotes.c:666
+#: stickynotes/stickynotes.c:665
 msgid "This note is unlocked."
 msgstr ""
 
@@ -2598,7 +2585,7 @@ msgstr ""
 msgid ""
 "Copyright © 2002-2003 Loban A Rahman\n"
 "Copyright © 2005 Davyd Madeley\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: stickynotes/stickynotes_applet_callbacks.c:429
@@ -2696,7 +2683,7 @@ msgstr ""
 #: timerapplet/src/timerapplet.c:279
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
-"Copyright © 2015-2020 MATE developers"
+"Copyright © 2015-2021 MATE developers"
 msgstr ""
 
 #: timerapplet/src/timerapplet.c:366
@@ -2750,7 +2737,7 @@ msgstr ""
 msgid ""
 "Copyright © 2004 Michiel Sikkes\n"
 "Copyright © 2008 Ryan Lortie\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: trashapplet/src/trashapplet.c:433
