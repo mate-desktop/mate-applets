@@ -277,7 +277,7 @@ timer_about_callback (GtkAction *action, TimerApplet *applet)
                           "title", _("About Timer Applet"),
                           "version", VERSION,
                           "copyright", _("Copyright \xc2\xa9 2014 Stefano Karapetsas\n"
-                                         "Copyright \xc2\xa9 2015-2020 MATE developers"),
+                                         "Copyright \xc2\xa9 2015-2021 MATE developers"),
                           "authors", authors,
                           "comments", _("Start a timer and receive a notification when it is finished"),
                           "translator-credits", _("translator-credits"),

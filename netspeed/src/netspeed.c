@@ -1051,7 +1051,7 @@ about_cb (GtkAction *action,
                            "version", VERSION,
                            "copyright", _("Copyright \xc2\xa9 2002-2003 Jörgen Scheibengruber\n"
                                           "Copyright \xc2\xa9 2011-2014 Stefano Karapetsas\n"
-                                          "Copyright \xc2\xa9 2015-2020 MATE developers"),
+                                          "Copyright \xc2\xa9 2015-2021 MATE developers"),
                            "comments", _("A little applet that displays some information on the traffic on the specified network device"),
                            "authors", authors,
                            "documenters", NULL,

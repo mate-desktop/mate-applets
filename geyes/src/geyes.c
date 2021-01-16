@@ -189,7 +189,7 @@ about_cb (GtkAction  *action,
                            "comments",           _("A goofy set of eyes for the MATE "
                                                    "panel. They follow your mouse."),
                            "copyright",          _("Copyright \xC2\xA9 1999 Dave Camp\n"
-                                                   "Copyright \xc2\xa9 2012-2020 MATE developers"),
+                                                   "Copyright \xc2\xa9 2012-2021 MATE developers"),
                            "authors",            authors,
                            "documenters",        documenters,
                            "translator-credits", _("translator-credits"),
