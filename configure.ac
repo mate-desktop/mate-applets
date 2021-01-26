@@ -1,7 +1,8 @@
 dnl ***************************************************************************
 dnl *** configure.in for MATE-APPLETS                                      ***
 dnl ***************************************************************************
-AC_INIT(mate-applets, 1.25.3)
+AC_INIT([mate-applets], [1.25.3], [https://github.com/mate-desktop/mate-applets/issues],
+        [mate-applets], [https://mate-desktop.org])
 AC_PREREQ(2.59)
 
 AC_CONFIG_HEADERS(config.h)

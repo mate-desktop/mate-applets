@@ -1056,7 +1056,7 @@ about_cb (GtkAction *action,
                            "authors", authors,
                            "documenters", NULL,
                            "translator-credits", _("translator-credits"),
-                           "website", "http://www.mate-desktop.org/",
+                           "website", PACKAGE_URL,
                            "logo-icon-name", LOGO_ICON,
                             NULL);
 }
