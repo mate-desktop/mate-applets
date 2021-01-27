@@ -621,7 +621,10 @@ dnl ***************************************************************************
 dnl *** Display Summary                                                     ***
 dnl ***************************************************************************
 echo "
-mate-applets-$VERSION configure summary:
+Configure summary:
+
+    ${PACKAGE_STRING}
+    `echo $PACKAGE_STRING | sed "s/./=/g"`
 
     Prefix:                        ${prefix}
     Source code location:          ${srcdir}
