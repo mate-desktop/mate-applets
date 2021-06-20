@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mate-applets 1.25.3\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-01-16 12:30+0100\n"
+"POT-Creation-Date: 2021-06-20 12:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Keyboard Accessibility Status Applet Factory"
 msgstr ""
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-#: accessx-status/src/applet.c:1676
+#: accessx-status/src/applet.c:1670
 msgid "Keyboard Accessibility Status"
 msgstr ""
 
@@ -34,17 +34,17 @@ msgstr ""
 msgid "Shows the status of keyboard accessibility features"
 msgstr ""
 
-#: accessx-status/src/applet.c:100 charpick/charpick.c:596
+#: accessx-status/src/applet.c:100 charpick/charpick.c:598
 #: geyes/src/geyes.c:175 mateweather/src/mateweather-about.c:41
-#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:412
+#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:411
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
-#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:832
-#: charpick/charpick.c:597 cpufreq/src/cpufreq-applet.c:463
+#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:830
+#: charpick/charpick.c:599 cpufreq/src/cpufreq-applet.c:463
 #: drivemount/src/drivemount.c:107 geyes/src/geyes.c:176
 #: mateweather/src/mateweather-about.c:43 multiload/src/main.c:49
-#: stickynotes/stickynotes_applet_callbacks.c:413
+#: stickynotes/stickynotes_applet_callbacks.c:412
 #: trashapplet/src/trashapplet.c:417
 msgid "MATE Documentation Team"
 msgstr ""
@@ -63,12 +63,12 @@ msgid ""
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:857
-#: charpick/charpick.c:617 command/src/command.c:131
+#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:855
+#: charpick/charpick.c:619 command/src/command.c:131
 #: cpufreq/src/cpufreq-applet.c:487 drivemount/src/drivemount.c:125
 #: geyes/src/geyes.c:195 mateweather/src/mateweather-about.c:61
 #: multiload/src/main.c:69 netspeed/src/netspeed.c:1058
-#: stickynotes/stickynotes_applet_callbacks.c:433
+#: stickynotes/stickynotes_applet_callbacks.c:432
 #: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
 msgstr ""
@@ -78,24 +78,24 @@ msgstr ""
 msgid "There was an error launching the help viewer: %s"
 msgstr ""
 
-#: accessx-status/src/applet.c:177
+#: accessx-status/src/applet.c:176
 msgid "Open the keyboard preferences dialog"
 msgstr ""
 
-#: accessx-status/src/applet.c:200
+#: accessx-status/src/applet.c:199
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr ""
 
-#: accessx-status/src/applet.c:220
+#: accessx-status/src/applet.c:218
 msgid "_Keyboard Accessibility Preferences"
 msgstr ""
 
-#: accessx-status/src/applet.c:222 battstat/battstat_applet.c:62
-#: battstat/battstat-preferences.ui:37 charpick/charpick.c:694
+#: accessx-status/src/applet.c:220 battstat/battstat_applet.c:62
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:697
 #: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/src/drivemount.c:163 geyes/data/themes.ui:35
-#: geyes/src/geyes.c:366 mateweather/src/mateweather-applet.c:117
+#: geyes/src/geyes.c:366 mateweather/src/mateweather-applet.c:119
 #: multiload/data/properties.ui:67 multiload/src/main.c:470
 #: netspeed/data/netspeed-details.ui:31
 #: netspeed/data/netspeed-preferences.ui:33
@@ -105,48 +105,48 @@ msgstr ""
 msgid "_Help"
 msgstr ""
 
-#: accessx-status/src/applet.c:224 battstat/battstat_applet.c:65
-#: charpick/charpick.c:697 command/src/command.c:87
+#: accessx-status/src/applet.c:222 battstat/battstat_applet.c:65
+#: charpick/charpick.c:700 command/src/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/src/drivemount.c:166
-#: geyes/src/geyes.c:368 mateweather/src/mateweather-applet.c:120
+#: geyes/src/geyes.c:368 mateweather/src/mateweather-applet.c:122
 #: multiload/src/main.c:473 stickynotes/stickynotes_applet.c:49
 #: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr ""
 
-#: accessx-status/src/applet.c:573 accessx-status/src/applet.c:642
+#: accessx-status/src/applet.c:571 accessx-status/src/applet.c:640
 msgid "a"
 msgstr ""
 
-#: accessx-status/src/applet.c:1244 accessx-status/src/applet.c:1323
-#: accessx-status/src/applet.c:1445 accessx-status/src/applet.c:1679
+#: accessx-status/src/applet.c:1242 accessx-status/src/applet.c:1320
+#: accessx-status/src/applet.c:1442 accessx-status/src/applet.c:1673
 msgid "AccessX Status"
 msgstr ""
 
-#: accessx-status/src/applet.c:1246 accessx-status/src/applet.c:1447
+#: accessx-status/src/applet.c:1244 accessx-status/src/applet.c:1444
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 
-#: accessx-status/src/applet.c:1282
+#: accessx-status/src/applet.c:1280
 msgid "XKB Extension is not enabled"
 msgstr ""
 
-#: accessx-status/src/applet.c:1287
+#: accessx-status/src/applet.c:1285
 msgid "Unknown error"
 msgstr ""
 
-#: accessx-status/src/applet.c:1295
+#: accessx-status/src/applet.c:1293
 #, c-format
 msgid "Error: %s"
 msgstr ""
 
-#: accessx-status/src/applet.c:1681
+#: accessx-status/src/applet.c:1675
 msgid "Displays current state of keyboard accessibility features"
 msgstr ""
 
-#: battstat/battstat_applet.c:59 charpick/charpick.c:691
+#: battstat/battstat_applet.c:59 charpick/charpick.c:694
 #: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
-#: geyes/src/geyes.c:364 mateweather/src/mateweather-applet.c:114
+#: geyes/src/geyes.c:364 mateweather/src/mateweather-applet.c:116
 #: multiload/src/main.c:464 stickynotes/stickynotes_applet.c:43
 #: timerapplet/src/timerapplet.c:87
 msgid "_Preferences"
@@ -229,20 +229,20 @@ msgstr ""
 msgid "Battery Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:298
+#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:297
 msgid "Your battery is now fully recharged"
 msgstr ""
 
-#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:431
+#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:430
 msgid "Battery Notice"
 msgstr ""
 
-#: battstat/battstat_applet.c:378
+#: battstat/battstat_applet.c:377
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
 msgstr ""
 
-#: battstat/battstat_applet.c:383
+#: battstat/battstat_applet.c:382
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -251,14 +251,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:396
+#: battstat/battstat_applet.c:395
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
 msgstr ""
 
-#: battstat/battstat_applet.c:403
+#: battstat/battstat_applet.c:402
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -266,62 +266,62 @@ msgid ""
 " • save open documents and shut your laptop down."
 msgstr ""
 
-#: battstat/battstat_applet.c:409
+#: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
 msgstr ""
 
-#: battstat/battstat_applet.c:512
+#: battstat/battstat_applet.c:510
 msgid "No battery present"
 msgstr ""
 
-#: battstat/battstat_applet.c:515
+#: battstat/battstat_applet.c:513
 msgid "Battery status unknown"
 msgstr ""
 
-#: battstat/battstat_applet.c:545
+#: battstat/battstat_applet.c:543
 msgid "N/A"
 msgstr ""
 
-#: battstat/battstat_applet.c:795 drivemount/src/drivemount.c:151
+#: battstat/battstat_applet.c:793 drivemount/src/drivemount.c:151
 #: geyes/src/geyes.c:350 geyes/src/themes.c:226
 #: mateweather/src/mateweather-applet.c:63
 #: mateweather/src/mateweather-pref.c:774
 #: stickynotes/stickynotes_applet_callbacks.c:383
-#: stickynotes/stickynotes_applet_callbacks.c:612
+#: stickynotes/stickynotes_applet_callbacks.c:611
 #: trashapplet/src/trashapplet.c:395
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr ""
 
-#: battstat/battstat_applet.c:837
+#: battstat/battstat_applet.c:835
 msgid "This utility shows the status of your laptop battery."
 msgstr ""
 
-#: battstat/battstat_applet.c:839
+#: battstat/battstat_applet.c:837
 msgid "upower backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:840
+#: battstat/battstat_applet.c:838
 msgid "Legacy backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:849
+#: battstat/battstat_applet.c:847
 msgid "About Battery Charge Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:851
+#: battstat/battstat_applet.c:849
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: battstat/battstat_applet.c:1138 battstat/battstat_applet.c:1193
+#: battstat/battstat_applet.c:1133 battstat/battstat_applet.c:1188
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:1195
+#: battstat/battstat_applet.c:1190
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr ""
@@ -446,47 +446,47 @@ msgstr ""
 msgid "Battery fully re-charged"
 msgstr ""
 
-#: charpick/charpick.c:410
+#: charpick/charpick.c:412
 msgid "Available palettes"
 msgstr ""
 
-#: charpick/charpick.c:463
+#: charpick/charpick.c:465
 #, c-format
 msgid "Insert \"%s\""
 msgstr ""
 
-#: charpick/charpick.c:466
+#: charpick/charpick.c:468
 msgid "Insert special character"
 msgstr ""
 
-#: charpick/charpick.c:470
+#: charpick/charpick.c:472
 #, c-format
 msgid "insert special character %s"
 msgstr ""
 
-#: charpick/charpick.c:608
+#: charpick/charpick.c:610
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:610
+#: charpick/charpick.c:612
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:612
+#: charpick/charpick.c:614
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:721 charpick/charpick.c:734
+#: charpick/charpick.c:724 charpick/charpick.c:736
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
-#: charpick/properties.c:453
+#: charpick/properties.c:452
 msgid "Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:721
+#: charpick/charpick.c:724
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr ""
@@ -507,7 +507,7 @@ msgid ""
 msgstr ""
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:10
-#: charpick/properties.c:371
+#: charpick/properties.c:370
 msgid "List of available palettes"
 msgstr ""
 
@@ -531,7 +531,7 @@ msgstr ""
 msgid "Modify a palette by adding or removing characters"
 msgstr ""
 
-#: charpick/properties.c:225
+#: charpick/properties.c:227
 msgid "Add Palette"
 msgstr ""
 
@@ -539,39 +539,39 @@ msgstr ""
 msgid "Edit Palette"
 msgstr ""
 
-#: charpick/properties.c:370
+#: charpick/properties.c:369
 msgid "Palettes list"
 msgstr ""
 
-#: charpick/properties.c:458
+#: charpick/properties.c:457
 msgid "_Palettes:"
 msgstr ""
 
-#: charpick/properties.c:481
+#: charpick/properties.c:480
 msgid "Add button"
 msgstr ""
 
-#: charpick/properties.c:482
+#: charpick/properties.c:481
 msgid "Click to add a new palette"
 msgstr ""
 
-#: charpick/properties.c:496
+#: charpick/properties.c:495
 msgid "Edit button"
 msgstr ""
 
-#: charpick/properties.c:497
+#: charpick/properties.c:496
 msgid "Click to edit the selected palette"
 msgstr ""
 
-#: charpick/properties.c:511
+#: charpick/properties.c:510
 msgid "Delete button"
 msgstr ""
 
-#: charpick/properties.c:512
+#: charpick/properties.c:511
 msgid "Click to delete the selected palette"
 msgstr ""
 
-#: charpick/properties.c:566
+#: charpick/properties.c:565
 msgid "Character Palette Preferences"
 msgstr ""
 
@@ -652,7 +652,7 @@ msgid ""
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
 
-#: command/src/command.c:408
+#: command/src/command.c:411
 msgid "Command Applet"
 msgstr ""
 
@@ -803,46 +803,46 @@ msgstr ""
 msgid "Mount local disks and devices"
 msgstr ""
 
-#: drivemount/src/drive-button.c:280
+#: drivemount/src/drive-button.c:281
 msgid "nothing to mount"
 msgstr ""
 
-#: drivemount/src/drive-button.c:313 drivemount/src/drive-button.c:327
+#: drivemount/src/drive-button.c:314 drivemount/src/drive-button.c:328
 msgid "(mounted)"
 msgstr ""
 
-#: drivemount/src/drive-button.c:320
+#: drivemount/src/drive-button.c:321
 msgid "(not mounted)"
 msgstr ""
 
-#: drivemount/src/drive-button.c:597
+#: drivemount/src/drive-button.c:599
 msgid "Cannot execute Caja"
 msgstr ""
 
-#: drivemount/src/drive-button.c:935
+#: drivemount/src/drive-button.c:940
 msgid "_Play DVD"
 msgstr ""
 
-#: drivemount/src/drive-button.c:939
+#: drivemount/src/drive-button.c:944
 msgid "_Play CD"
 msgstr ""
 
-#: drivemount/src/drive-button.c:942
+#: drivemount/src/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr ""
 
-#: drivemount/src/drive-button.c:950
+#: drivemount/src/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr ""
 
-#: drivemount/src/drive-button.c:956
+#: drivemount/src/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr ""
 
-#: drivemount/src/drive-button.c:964
+#: drivemount/src/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr ""
@@ -923,7 +923,7 @@ msgid "Details"
 msgstr ""
 
 #: mateweather/data/mateweather-dialog.ui:30
-#: mateweather/src/mateweather-applet.c:111
+#: mateweather/src/mateweather-applet.c:113
 msgid "_Update"
 msgstr ""
 
@@ -1020,7 +1020,7 @@ msgid "Factory for creating the weather applet."
 msgstr ""
 
 #: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
-#: mateweather/src/mateweather-applet.c:343
+#: mateweather/src/mateweather-applet.c:345
 msgid "Weather Report"
 msgstr ""
 
@@ -1042,24 +1042,24 @@ msgstr ""
 msgid "A panel application for monitoring local weather conditions."
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:108
+#: mateweather/src/mateweather-applet.c:110
 msgid "_Details"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:163
+#: mateweather/src/mateweather-applet.c:165
 msgid "?"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:358
-#: mateweather/src/mateweather-applet.c:362
+#: mateweather/src/mateweather-applet.c:369
+#: mateweather/src/mateweather-applet.c:373
 msgid "MATE Weather"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:453
+#: mateweather/src/mateweather-applet.c:466
 msgid "Weather Forecast"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:464
+#: mateweather/src/mateweather-applet.c:477
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1067,7 +1067,7 @@ msgid ""
 "Temperature: %s"
 msgstr ""
 
-#: mateweather/src/mateweather-applet.c:518
+#: mateweather/src/mateweather-applet.c:531
 msgid "Updating..."
 msgstr ""
 
@@ -1104,144 +1104,144 @@ msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:837
+#: mateweather/src/mateweather-pref.c:839
 msgid "Weather Preferences"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:861
-#: mateweather/src/mateweather-pref.c:1052
+#: mateweather/src/mateweather-pref.c:863
+#: mateweather/src/mateweather-pref.c:1054
 msgid "_Automatically update every:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:876
+#: mateweather/src/mateweather-pref.c:878
 msgid "_Temperature unit:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:886
+#: mateweather/src/mateweather-pref.c:888
 msgid "Kelvin"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:888
+#: mateweather/src/mateweather-pref.c:890
 msgid "Celsius"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:889
+#: mateweather/src/mateweather-pref.c:891
 msgid "Fahrenheit"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:898
+#: mateweather/src/mateweather-pref.c:900
 msgid "_Wind speed unit:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:909
+#: mateweather/src/mateweather-pref.c:911
 msgid "m/s"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:911
+#: mateweather/src/mateweather-pref.c:913
 msgid "km/h"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:913
+#: mateweather/src/mateweather-pref.c:915
 msgid "mph"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:915
+#: mateweather/src/mateweather-pref.c:917
 msgid "knots"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:916
+#: mateweather/src/mateweather-pref.c:918
 msgid "Beaufort scale"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:925
+#: mateweather/src/mateweather-pref.c:927
 msgid "_Pressure unit:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:936
+#: mateweather/src/mateweather-pref.c:938
 msgid "kPa"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:938
+#: mateweather/src/mateweather-pref.c:940
 msgid "hPa"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:940
+#: mateweather/src/mateweather-pref.c:942
 msgid "mb"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:942
+#: mateweather/src/mateweather-pref.c:944
 msgid "mmHg"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:944
+#: mateweather/src/mateweather-pref.c:946
 msgid "inHg"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:946
+#: mateweather/src/mateweather-pref.c:948
 msgid "atm"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:955
+#: mateweather/src/mateweather-pref.c:957
 msgid "_Visibility unit:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:966
+#: mateweather/src/mateweather-pref.c:968
 msgid "meters"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:968
+#: mateweather/src/mateweather-pref.c:970
 msgid "km"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:970
+#: mateweather/src/mateweather-pref.c:972
 msgid "miles"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:994
+#: mateweather/src/mateweather-pref.c:996
 msgid "Enable _radar map"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1009
+#: mateweather/src/mateweather-pref.c:1011
 msgid "Use _custom address for radar map"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1025
+#: mateweather/src/mateweather-pref.c:1027
 msgid "A_ddress:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1040
+#: mateweather/src/mateweather-pref.c:1042
 msgid "Show _notifications"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1048
+#: mateweather/src/mateweather-pref.c:1050
 msgid "Update"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1064
+#: mateweather/src/mateweather-pref.c:1066
 msgid "minutes"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1082
+#: mateweather/src/mateweather-pref.c:1084
 msgid "Display"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1101
+#: mateweather/src/mateweather-pref.c:1103
 msgid "General"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1112
+#: mateweather/src/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1133
+#: mateweather/src/mateweather-pref.c:1135
 msgid "_Find:"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1139
+#: mateweather/src/mateweather-pref.c:1141
 msgid "Find _Next"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1157
+#: mateweather/src/mateweather-pref.c:1159
 msgid "Location"
 msgstr ""
 
@@ -1898,148 +1898,148 @@ msgstr ""
 msgid "Network Monitor"
 msgstr ""
 
-#: netspeed/src/backend.c:148
+#: netspeed/src/backend.c:149
 msgid "link-local"
 msgstr ""
 
-#: netspeed/src/backend.c:150
+#: netspeed/src/backend.c:151
 msgid "site-local"
 msgstr ""
 
-#: netspeed/src/backend.c:152
+#: netspeed/src/backend.c:153
 msgid "v4mapped"
 msgstr ""
 
-#: netspeed/src/backend.c:154
+#: netspeed/src/backend.c:155
 msgid "v4compat"
 msgstr ""
 
-#: netspeed/src/backend.c:156
+#: netspeed/src/backend.c:157
 msgid "host"
 msgstr ""
 
-#: netspeed/src/backend.c:158
+#: netspeed/src/backend.c:159
 msgid "unspecified"
 msgstr ""
 
-#: netspeed/src/backend.c:160
+#: netspeed/src/backend.c:161
 msgid "global"
 msgstr ""
 
-#: netspeed/src/backend.c:593
+#: netspeed/src/backend.c:588
 #, c-format
 msgid "%d.%d MBit/s"
 msgstr ""
 
-#: netspeed/src/backend.c:595
+#: netspeed/src/backend.c:590
 #, c-format
 msgid "(unknown)"
 msgstr ""
 
-#: netspeed/src/backend.c:599
+#: netspeed/src/backend.c:594
 #, c-format
 msgid " MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:602
+#: netspeed/src/backend.c:597
 #, c-format
 msgid " VHT-MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:604
+#: netspeed/src/backend.c:599
 #, c-format
 msgid " 40MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:606
+#: netspeed/src/backend.c:601
 #, c-format
 msgid " 80MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:608
+#: netspeed/src/backend.c:603
 #, c-format
 msgid " 80P80MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:610
+#: netspeed/src/backend.c:605
 #, c-format
 msgid " 160MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:612
+#: netspeed/src/backend.c:607
 #, c-format
 msgid " short GI)"
 msgstr ""
 
-#: netspeed/src/backend.c:615
+#: netspeed/src/backend.c:610
 #, c-format
 msgid " VHT-NSS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:618
+#: netspeed/src/backend.c:613
 #, c-format
 msgid " HE-MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:621
+#: netspeed/src/backend.c:616
 #, c-format
 msgid " HE-NSS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:624
+#: netspeed/src/backend.c:619
 #, c-format
 msgid " HE-GI %d"
 msgstr ""
 
-#: netspeed/src/backend.c:627
+#: netspeed/src/backend.c:622
 #, c-format
 msgid " HE-DCM %d"
 msgstr ""
 
-#: netspeed/src/backend.c:711
+#: netspeed/src/backend.c:706
 msgid "20 MHz (no HT)"
 msgstr ""
 
-#: netspeed/src/backend.c:713
+#: netspeed/src/backend.c:708
 msgid "20 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:715
+#: netspeed/src/backend.c:710
 msgid "40 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:717
+#: netspeed/src/backend.c:712
 msgid "80 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:719
+#: netspeed/src/backend.c:714
 msgid "80+80 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:721
+#: netspeed/src/backend.c:716
 msgid "160 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:723
+#: netspeed/src/backend.c:718
 msgid "5 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:725
+#: netspeed/src/backend.c:720
 msgid "10 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:727 netspeed/src/netspeed.c:772
+#: netspeed/src/backend.c:722 netspeed/src/netspeed.c:772
 #: netspeed/src/netspeed.c:776 netspeed/src/netspeed.c:1422
 #: netspeed/src/netspeed.c:1431
 msgid "unknown"
 msgstr ""
 
-#: netspeed/src/backend.c:778
+#: netspeed/src/backend.c:773
 #, c-format
 msgid "%d (%d MHz)"
 msgstr ""
 
-#: netspeed/src/backend.c:782
+#: netspeed/src/backend.c:777
 #, c-format
 msgid ", width: %s"
 msgstr ""
@@ -2213,7 +2213,7 @@ msgid ""
 "Strength: %d %%"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1578
+#: netspeed/src/netspeed.c:1577
 msgid "MATE Netspeed"
 msgstr ""
 
@@ -2231,11 +2231,11 @@ msgstr ""
 msgid "Create, view, and manage sticky notes on the desktop"
 msgstr ""
 
-#: stickynotes/stickynotes.c:659
+#: stickynotes/stickynotes.c:702
 msgid "This note is locked."
 msgstr ""
 
-#: stickynotes/stickynotes.c:665
+#: stickynotes/stickynotes.c:708
 msgid "This note is unlocked."
 msgstr ""
 
@@ -2577,18 +2577,18 @@ msgstr[1] ""
 msgid "Show sticky notes"
 msgstr ""
 
-#: stickynotes/stickynotes_applet_callbacks.c:424
+#: stickynotes/stickynotes_applet_callbacks.c:423
 msgid "About Sticky Notes"
 msgstr ""
 
-#: stickynotes/stickynotes_applet_callbacks.c:426
+#: stickynotes/stickynotes_applet_callbacks.c:425
 msgid ""
 "Copyright © 2002-2003 Loban A Rahman\n"
 "Copyright © 2005 Davyd Madeley\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: stickynotes/stickynotes_applet_callbacks.c:429
+#: stickynotes/stickynotes_applet_callbacks.c:428
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr ""
 
@@ -2686,7 +2686,7 @@ msgid ""
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
 
-#: timerapplet/src/timerapplet.c:366
+#: timerapplet/src/timerapplet.c:369
 msgid "Timer Applet"
 msgstr ""
 
