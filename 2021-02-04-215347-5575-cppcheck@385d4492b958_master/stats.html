@@ -1,0 +1,148 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-applets</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-applets: Statistics</h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Back to summary</a> </p>
+
+    </div>
+    <div id="content_index">
+<p>Top 10 files for error severity, total findings: 12<br>
+&#160;&#160;&#160;2&#160;<a href="68.html">  netspeed/src/netspeed.h</a><br>
+&#160;&#160;&#160;2&#160;<a href="2.html">  battstat/acpi-freebsd.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="48.html">  mate-panel-1.25.2/mate-panel/panel-menu-items.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="40.html">  mate-panel-1.25.2/mate-panel/libmate-panel-applet-private/panel-applets-manager-dbus.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="28.html">  mate-panel-1.25.2/applets/notification_area/na-item.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="17.html">  cpufreq/src/cpufreq-selector/cpufreq-selector.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="16.html">  cpufreq/src/cpufreq-selector/cpufreq-selector-service.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="15.html">  cpufreq/src/cpufreq-selector/cpufreq-selector-libcpufreq.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="13.html">  cpufreq/src/cpufreq-monitor-libcpufreq.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="12.html">  cpufreq/src/cpufreq-applet.c</a><br>
+</p>
+<p>Top 10 files for warning severity, total findings: 26<br>
+&#160;&#160;&#160;8&#160;<a href="77.html">  trashapplet/src/xstuff.c</a><br>
+&#160;&#160;&#160;8&#160;<a href="59.html">  mate-panel-1.25.2/mate-panel/xstuff.c</a><br>
+&#160;&#160;&#160;3&#160;<a href="26.html">  mate-panel-1.25.2/applets/fish/fish.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="58.html">  mate-panel-1.25.2/mate-panel/panel.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="55.html">  mate-panel-1.25.2/mate-panel/panel-test-applets.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="53.html">  mate-panel-1.25.2/mate-panel/panel-run-dialog.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="50.html">  mate-panel-1.25.2/mate-panel/panel-profile.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="44.html">  mate-panel-1.25.2/mate-panel/mate-submodules/libegg/eggsmclient-xsmp.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="24.html">  mate-panel-1.25.2/applets/clock/clock.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="3.html">  battstat/apmlib/apmlib.c</a><br>
+</p>
+<p>Top 10 files for portability severity, total findings: 11<br>
+&#160;&#160;&#160;8&#160;<a href="44.html">  mate-panel-1.25.2/mate-panel/mate-submodules/libegg/eggsmclient-xsmp.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="53.html">  mate-panel-1.25.2/mate-panel/panel-run-dialog.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="47.html">  mate-panel-1.25.2/mate-panel/panel-ditem-editor.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="41.html">  mate-panel-1.25.2/mate-panel/libpanel-util/panel-icon-chooser.c</a><br>
+</p>
+<p>Top 10 files for style severity, total findings: 179<br>
+&#160;&#160;&#160;10&#160;<a href="56.html">  mate-panel-1.25.2/mate-panel/panel-toplevel.c</a><br>
+&#160;&#160;&#160;9&#160;&#160;<a href="38.html">  mate-panel-1.25.2/applets/wncklet/workspace-switcher.c</a><br>
+&#160;&#160;&#160;6&#160;&#160;<a href="43.html">  mate-panel-1.25.2/mate-panel/mate-submodules/libegg/eggdesktopfile.c</a><br>
+&#160;&#160;&#160;5&#160;&#160;<a href="34.html">  mate-panel-1.25.2/applets/notification_area/system-tray/na-tray-manager.c</a><br>
+&#160;&#160;&#160;5&#160;&#160;<a href="22.html">  geyes/src/themes.c</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="76.html">  trashapplet/src/trashapplet-resources.c</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="74.html">  timerapplet/src/timerapplet-resources.c</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="70.html">  stickynotes/sticky-notes-resources.c</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="69.html">  netspeed/src/netspeed-resources.c</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="67.html">  netspeed/src/backend.c</a><br>
+</p>
+<p>Top 10 files for information severity, total findings: 7<br>
+&#160;&#160;&#160;6&#160;<a href="3.html">  battstat/apmlib/apmlib.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="57.html">  mate-panel-1.25.2/mate-panel/panel-util.c</a><br>
+</p>
+
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.3 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>

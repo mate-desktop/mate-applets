@@ -1,0 +1,1030 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-applets</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #ffffff; }
+.highlight .c { color: #888888 } /* Comment */
+.highlight .err { color: #FF0000; background-color: #FFAAAA } /* Error */
+.highlight .k { color: #008800; font-weight: bold } /* Keyword */
+.highlight .o { color: #333333 } /* Operator */
+.highlight .ch { color: #888888 } /* Comment.Hashbang */
+.highlight .cm { color: #888888 } /* Comment.Multiline */
+.highlight .cp { color: #557799 } /* Comment.Preproc */
+.highlight .cpf { color: #888888 } /* Comment.PreprocFile */
+.highlight .c1 { color: #888888 } /* Comment.Single */
+.highlight .cs { color: #cc0000; font-weight: bold } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008800; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008800; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008800; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #003388; font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: #008800; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #333399; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #6600EE; font-weight: bold } /* Literal.Number */
+.highlight .s { background-color: #fff0f0 } /* Literal.String */
+.highlight .na { color: #0000CC } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #BB0066; font-weight: bold } /* Name.Class */
+.highlight .no { color: #003366; font-weight: bold } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #880000; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #FF0000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0066BB; font-weight: bold } /* Name.Function */
+.highlight .nl { color: #997700; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #007700 } /* Name.Tag */
+.highlight .nv { color: #996633 } /* Name.Variable */
+.highlight .ow { color: #000000; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #6600EE; font-weight: bold } /* Literal.Number.Bin */
+.highlight .mf { color: #6600EE; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #005588; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #0000DD; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #4400EE; font-weight: bold } /* Literal.Number.Oct */
+.highlight .sa { background-color: #fff0f0 } /* Literal.String.Affix */
+.highlight .sb { background-color: #fff0f0 } /* Literal.String.Backtick */
+.highlight .sc { color: #0044DD } /* Literal.String.Char */
+.highlight .dl { background-color: #fff0f0 } /* Literal.String.Delimiter */
+.highlight .sd { color: #DD4422 } /* Literal.String.Doc */
+.highlight .s2 { background-color: #fff0f0 } /* Literal.String.Double */
+.highlight .se { color: #666666; font-weight: bold; background-color: #fff0f0 } /* Literal.String.Escape */
+.highlight .sh { background-color: #fff0f0 } /* Literal.String.Heredoc */
+.highlight .si { background-color: #eeeeee } /* Literal.String.Interpol */
+.highlight .sx { color: #DD2200; background-color: #fff0f0 } /* Literal.String.Other */
+.highlight .sr { color: #000000; background-color: #fff0ff } /* Literal.String.Regex */
+.highlight .s1 { background-color: #fff0f0 } /* Literal.String.Single */
+.highlight .ss { color: #AA6600 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0066BB; font-weight: bold } /* Name.Function.Magic */
+.highlight .vc { color: #336699 } /* Name.Variable.Class */
+.highlight .vg { color: #dd7700; font-weight: bold } /* Name.Variable.Global */
+.highlight .vi { color: #3333BB } /* Name.Variable.Instance */
+.highlight .vm { color: #996633 } /* Name.Variable.Magic */
+.highlight .il { color: #0000DD; font-weight: bold } /* Literal.Number.Integer.Long */
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-applets: battstat/battstat-resources.c</h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu">
+       <p id="filename"><a href="index.html">Defects:</a> battstat-resources.c</p>
+<a href="4.html#line-10"> unusedStructMember 10</a><a href="4.html#line-10"> unusedStructMember 10</a><a href="4.html#line-143"> unusedStructMember 143</a><a href="4.html#line-143"> unusedStructMember 143</a>
+    </div>
+    <div id="content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="line-1"></a><span class="cp">#include</span> <span class="cpf">&lt;gio/gio.h&gt;</span><span class="cp"></span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="cp">#if defined (__ELF__) &amp;&amp; ( __GNUC__ &gt; 2 || (__GNUC__ == 2 &amp;&amp; __GNUC_MINOR__ &gt;= 6))</span>
+<a name="line-4"></a><span class="cp"># define SECTION __attribute__ ((section (&quot;.gresource.battstat&quot;), aligned (8)))</span>
+<a name="line-5"></a><span class="cp">#else</span>
+<a name="line-6"></a><span class="cp"># define SECTION</span>
+<a name="line-7"></a><span class="cp">#endif</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="cp">#ifdef _MSC_VER</span>
+<a name="line-10"></a><span class="hll"><span class="k">static</span> <span class="k">const</span> <span class="n">SECTION</span> <span class="k">union</span> <span class="p">{</span> <span class="k">const</span> <span class="n">guint8</span> <span class="n">data</span><span class="p">[</span><span class="mi">2069</span><span class="p">];</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">alignment</span><span class="p">;</span> <span class="kt">void</span> <span class="o">*</span> <span class="k">const</span> <span class="n">ptr</span><span class="p">;}</span>  <span class="n">battstat_resource_data</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="error2">&lt;--- union member 'Anonymous0::alignment' is never used.</span><span class="error2">&lt;--- union member 'Anonymous0::ptr' is never used.</span>
+</span><a name="line-11"></a>  <span class="mo">0107</span><span class="p">,</span> <span class="mo">0126</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0151</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-12"></a>  <span class="mo">0030</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0344</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-13"></a>  <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-14"></a>  <span class="mo">0004</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0005</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0120</span><span class="p">,</span> <span class="mo">0220</span><span class="p">,</span> <span class="mo">0013</span><span class="p">,</span> 
+<a name="line-15"></a>  <span class="mo">0002</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0344</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-16"></a>  <span class="mo">0354</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0211</span><span class="p">,</span> <span class="mo">0170</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0354</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-17"></a>  <span class="mo">0027</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0265</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-18"></a>  <span class="mo">0377</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-19"></a>  <span class="mo">0140</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0252</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-20"></a>  <span class="mo">0011</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> 
+<a name="line-21"></a>  <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0005</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-22"></a>  <span class="mo">0200</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0170</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-23"></a>  <span class="mo">0030</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0275</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> 
+<a name="line-24"></a>  <span class="mo">0004</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0015</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0020</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-25"></a>  <span class="mo">0024</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0157</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0147</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0142</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> 
+<a name="line-26"></a>  <span class="mo">0163</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0146</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0143</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> 
+<a name="line-27"></a>  <span class="mo">0056</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0151</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0125</span><span class="p">,</span> <span class="mo">0106</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-28"></a>  <span class="mo">0170</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0233</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0020</span><span class="p">,</span> <span class="mo">0177</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0120</span><span class="p">,</span> <span class="mo">0365</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> 
+<a name="line-29"></a>  <span class="mo">0071</span><span class="p">,</span> <span class="mo">0276</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0306</span><span class="p">,</span> <span class="mo">0046</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0271</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0322</span><span class="p">,</span> <span class="mo">0316</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> 
+<a name="line-30"></a>  <span class="mo">0116</span><span class="p">,</span> <span class="mo">0037</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0062</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0221</span><span class="p">,</span> <span class="mo">0045</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> <span class="mo">0211</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> <span class="mo">0107</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> 
+<a name="line-31"></a>  <span class="mo">0300</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0060</span><span class="p">,</span> <span class="mo">0272</span><span class="p">,</span> <span class="mo">0073</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0217</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> <span class="mo">0256</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> 
+<a name="line-32"></a>  <span class="mo">0325</span><span class="p">,</span> <span class="mo">0256</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0376</span><span class="p">,</span> <span class="mo">0366</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0301</span><span class="p">,</span> <span class="mo">0015</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0266</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0263</span><span class="p">,</span> <span class="mo">0213</span><span class="p">,</span> 
+<a name="line-33"></a>  <span class="mo">0227</span><span class="p">,</span> <span class="mo">0020</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0260</span><span class="p">,</span> <span class="mo">0170</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0372</span><span class="p">,</span> <span class="mo">0176</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> 
+<a name="line-34"></a>  <span class="mo">0353</span><span class="p">,</span> <span class="mo">0275</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0017</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0216</span><span class="p">,</span> <span class="mo">0300</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> 
+<a name="line-35"></a>  <span class="mo">0004</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0030</span><span class="p">,</span> <span class="mo">0274</span><span class="p">,</span> <span class="mo">0272</span><span class="p">,</span> <span class="mo">0170</span><span class="p">,</span> <span class="mo">0365</span><span class="p">,</span> <span class="mo">0372</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0045</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0364</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> 
+<a name="line-36"></a>  <span class="mo">0302</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0142</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> <span class="mo">0005</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0300</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> 
+<a name="line-37"></a>  <span class="mo">0120</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0254</span><span class="p">,</span> <span class="mo">0276</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0014</span><span class="p">,</span> <span class="mo">0017</span><span class="p">,</span> <span class="mo">0017</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0011</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> 
+<a name="line-38"></a>  <span class="mo">0305</span><span class="p">,</span> <span class="mo">0070</span><span class="p">,</span> <span class="mo">0036</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0303</span><span class="p">,</span> <span class="mo">0241</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0365</span><span class="p">,</span> <span class="mo">0375</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> 
+<a name="line-39"></a>  <span class="mo">0372</span><span class="p">,</span> <span class="mo">0226</span><span class="p">,</span> <span class="mo">0111</span><span class="p">,</span> <span class="mo">0265</span><span class="p">,</span> <span class="mo">0302</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0101</span><span class="p">,</span> <span class="mo">0100</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0005</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0123</span><span class="p">,</span> 
+<a name="line-40"></a>  <span class="mo">0150</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0124</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0013</span><span class="p">,</span> <span class="mo">0265</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0014</span><span class="p">,</span> <span class="mo">0255</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0146</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0376</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> 
+<a name="line-41"></a>  <span class="mo">0275</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0335</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0100</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0012</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> 
+<a name="line-42"></a>  <span class="mo">0260</span><span class="p">,</span> <span class="mo">0367</span><span class="p">,</span> <span class="mo">0146</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0225</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0316</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> 
+<a name="line-43"></a>  <span class="mo">0263</span><span class="p">,</span> <span class="mo">0042</span><span class="p">,</span> <span class="mo">0177</span><span class="p">,</span> <span class="mo">0256</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0103</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0271</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0126</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0203</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> 
+<a name="line-44"></a>  <span class="mo">0067</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0142</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0314</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> 
+<a name="line-45"></a>  <span class="mo">0060</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0320</span><span class="p">,</span> <span class="mo">0173</span><span class="p">,</span> <span class="mo">0217</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0354</span><span class="p">,</span> <span class="mo">0034</span><span class="p">,</span> <span class="mo">0117</span><span class="p">,</span> <span class="mo">0102</span><span class="p">,</span> <span class="mo">0316</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0047</span><span class="p">,</span> <span class="mo">0364</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> 
+<a name="line-46"></a>  <span class="mo">0204</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0071</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0225</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0364</span><span class="p">,</span> <span class="mo">0014</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0311</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> 
+<a name="line-47"></a>  <span class="mo">0230</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0045</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0274</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> 
+<a name="line-48"></a>  <span class="mo">0357</span><span class="p">,</span> <span class="mo">0220</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0365</span><span class="p">,</span> <span class="mo">0111</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0045</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0261</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> 
+<a name="line-49"></a>  <span class="mo">0372</span><span class="p">,</span> <span class="mo">0227</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0375</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> <span class="mo">0233</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0053</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0300</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> 
+<a name="line-50"></a>  <span class="mo">0205</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0046</span><span class="p">,</span> <span class="mo">0221</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0261</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0127</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0351</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> 
+<a name="line-51"></a>  <span class="mo">0040</span><span class="p">,</span> <span class="mo">0046</span><span class="p">,</span> <span class="mo">0265</span><span class="p">,</span> <span class="mo">0320</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0343</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> 
+<a name="line-52"></a>  <span class="mo">0160</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0021</span><span class="p">,</span> <span class="mo">0143</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0221</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0270</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0072</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0157</span><span class="p">,</span> 
+<a name="line-53"></a>  <span class="mo">0122</span><span class="p">,</span> <span class="mo">0354</span><span class="p">,</span> <span class="mo">0047</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0320</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0100</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0272</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> 
+<a name="line-54"></a>  <span class="mo">0256</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> <span class="mo">0345</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0152</span><span class="p">,</span> <span class="mo">0151</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0042</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0341</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0037</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> 
+<a name="line-55"></a>  <span class="mo">0020</span><span class="p">,</span> <span class="mo">0310</span><span class="p">,</span> <span class="mo">0065</span><span class="p">,</span> <span class="mo">0322</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> <span class="mo">0322</span><span class="p">,</span> <span class="mo">0217</span><span class="p">,</span> <span class="mo">0065</span><span class="p">,</span> <span class="mo">0203</span><span class="p">,</span> <span class="mo">0060</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> 
+<a name="line-56"></a>  <span class="mo">0002</span><span class="p">,</span> <span class="mo">0005</span><span class="p">,</span> <span class="mo">0012</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0106</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0337</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0347</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0144</span><span class="p">,</span> 
+<a name="line-57"></a>  <span class="mo">0131</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> <span class="mo">0167</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0270</span><span class="p">,</span> <span class="mo">0211</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0013</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0127</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0015</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> 
+<a name="line-58"></a>  <span class="mo">0320</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0243</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0015</span><span class="p">,</span> <span class="mo">0241</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> 
+<a name="line-59"></a>  <span class="mo">0055</span><span class="p">,</span> <span class="mo">0372</span><span class="p">,</span> <span class="mo">0241</span><span class="p">,</span> <span class="mo">0060</span><span class="p">,</span> <span class="mo">0177</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0115</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0125</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0061</span><span class="p">,</span> <span class="mo">0252</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> 
+<a name="line-60"></a>  <span class="mo">0131</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0341</span><span class="p">,</span> <span class="mo">0123</span><span class="p">,</span> <span class="mo">0225</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0341</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0245</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0344</span><span class="p">,</span> <span class="mo">0376</span><span class="p">,</span> 
+<a name="line-61"></a>  <span class="mo">0207</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0130</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> 
+<a name="line-62"></a>  <span class="mo">0135</span><span class="p">,</span> <span class="mo">0062</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0034</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0246</span><span class="p">,</span> <span class="mo">0106</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0366</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0320</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0244</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> 
+<a name="line-63"></a>  <span class="mo">0046</span><span class="p">,</span> <span class="mo">0226</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0227</span><span class="p">,</span> <span class="mo">0124</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0020</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0375</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0106</span><span class="p">,</span> 
+<a name="line-64"></a>  <span class="mo">0125</span><span class="p">,</span> <span class="mo">0177</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0244</span><span class="p">,</span> <span class="mo">0100</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0157</span><span class="p">,</span> <span class="mo">0207</span><span class="p">,</span> <span class="mo">0224</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> 
+<a name="line-65"></a>  <span class="mo">0250</span><span class="p">,</span> <span class="mo">0101</span><span class="p">,</span> <span class="mo">0011</span><span class="p">,</span> <span class="mo">0073</span><span class="p">,</span> <span class="mo">0101</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0327</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0043</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0265</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0225</span><span class="p">,</span> 
+<a name="line-66"></a>  <span class="mo">0242</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0073</span><span class="p">,</span> <span class="mo">0103</span><span class="p">,</span> <span class="mo">0367</span><span class="p">,</span> <span class="mo">0043</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> 
+<a name="line-67"></a>  <span class="mo">0252</span><span class="p">,</span> <span class="mo">0021</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0102</span><span class="p">,</span> <span class="mo">0151</span><span class="p">,</span> <span class="mo">0177</span><span class="p">,</span> <span class="mo">0252</span><span class="p">,</span> <span class="mo">0224</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0366</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> 
+<a name="line-68"></a>  <span class="mo">0066</span><span class="p">,</span> <span class="mo">0245</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0322</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0273</span><span class="p">,</span> <span class="mo">0077</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0027</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0076</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> 
+<a name="line-69"></a>  <span class="mo">0256</span><span class="p">,</span> <span class="mo">0217</span><span class="p">,</span> <span class="mo">0243</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0103</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0043</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0027</span><span class="p">,</span> <span class="mo">0071</span><span class="p">,</span> 
+<a name="line-70"></a>  <span class="mo">0363</span><span class="p">,</span> <span class="mo">0303</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0065</span><span class="p">,</span> <span class="mo">0072</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0070</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0314</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0043</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> 
+<a name="line-71"></a>  <span class="mo">0253</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0244</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0120</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0334</span><span class="p">,</span> <span class="mo">0213</span><span class="p">,</span> <span class="mo">0244</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0014</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> <span class="mo">0036</span><span class="p">,</span> 
+<a name="line-72"></a>  <span class="mo">0051</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> <span class="mo">0311</span><span class="p">,</span> <span class="mo">0070</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> <span class="mo">0253</span><span class="p">,</span> <span class="mo">0260</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> 
+<a name="line-73"></a>  <span class="mo">0110</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0372</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0173</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0344</span><span class="p">,</span> <span class="mo">0375</span><span class="p">,</span> <span class="mo">0017</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0255</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> 
+<a name="line-74"></a>  <span class="mo">0362</span><span class="p">,</span> <span class="mo">0376</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0072</span><span class="p">,</span> <span class="mo">0207</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0015</span><span class="p">,</span> <span class="mo">0115</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0220</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0222</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> 
+<a name="line-75"></a>  <span class="mo">0171</span><span class="p">,</span> <span class="mo">0176</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0306</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0260</span><span class="p">,</span> <span class="mo">0253</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> 
+<a name="line-76"></a>  <span class="mo">0162</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> <span class="mo">0152</span><span class="p">,</span> <span class="mo">0030</span><span class="p">,</span> <span class="mo">0077</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> 
+<a name="line-77"></a>  <span class="mo">0212</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0153</span><span class="p">,</span> <span class="mo">0351</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0133</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0246</span><span class="p">,</span> <span class="mo">0303</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> 
+<a name="line-78"></a>  <span class="mo">0143</span><span class="p">,</span> <span class="mo">0245</span><span class="p">,</span> <span class="mo">0267</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0320</span><span class="p">,</span> <span class="mo">0173</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0012</span><span class="p">,</span> <span class="mo">0203</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0153</span><span class="p">,</span> 
+<a name="line-79"></a>  <span class="mo">0345</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0142</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0256</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0034</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> <span class="mo">0123</span><span class="p">,</span> <span class="mo">0254</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> 
+<a name="line-80"></a>  <span class="mo">0202</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0255</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0234</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0345</span><span class="p">,</span> <span class="mo">0133</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0060</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0254</span><span class="p">,</span> 
+<a name="line-81"></a>  <span class="mo">0360</span><span class="p">,</span> <span class="mo">0124</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0106</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0144</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> 
+<a name="line-82"></a>  <span class="mo">0326</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0123</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0072</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> <span class="mo">0126</span><span class="p">,</span> <span class="mo">0302</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0124</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0123</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> 
+<a name="line-83"></a>  <span class="mo">0364</span><span class="p">,</span> <span class="mo">0314</span><span class="p">,</span> <span class="mo">0237</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0130</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0351</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0027</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> 
+<a name="line-84"></a>  <span class="mo">0171</span><span class="p">,</span> <span class="mo">0325</span><span class="p">,</span> <span class="mo">0252</span><span class="p">,</span> <span class="mo">0032</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> <span class="mo">0061</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0245</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0271</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> 
+<a name="line-85"></a>  <span class="mo">0371</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> <span class="mo">0173</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0322</span><span class="p">,</span> <span class="mo">0106</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0224</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0234</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> 
+<a name="line-86"></a>  <span class="mo">0270</span><span class="p">,</span> <span class="mo">0311</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0157</span><span class="p">,</span> <span class="mo">0266</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0275</span><span class="p">,</span> <span class="mo">0316</span><span class="p">,</span> <span class="mo">0115</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0120</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0310</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> 
+<a name="line-87"></a>  <span class="mo">0375</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0320</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> 
+<a name="line-88"></a>  <span class="mo">0101</span><span class="p">,</span> <span class="mo">0233</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0074</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0255</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0076</span><span class="p">,</span> <span class="mo">0243</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> 
+<a name="line-89"></a>  <span class="mo">0234</span><span class="p">,</span> <span class="mo">0213</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0102</span><span class="p">,</span> <span class="mo">0271</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0017</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0027</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0347</span><span class="p">,</span> 
+<a name="line-90"></a>  <span class="mo">0240</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0302</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> <span class="mo">0331</span><span class="p">,</span> <span class="mo">0152</span><span class="p">,</span> <span class="mo">0347</span><span class="p">,</span> <span class="mo">0314</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0034</span><span class="p">,</span> <span class="mo">0102</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> 
+<a name="line-91"></a>  <span class="mo">0075</span><span class="p">,</span> <span class="mo">0300</span><span class="p">,</span> <span class="mo">0273</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0210</span><span class="p">,</span> <span class="mo">0167</span><span class="p">,</span> <span class="mo">0014</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0306</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0246</span><span class="p">,</span> <span class="mo">0303</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> 
+<a name="line-92"></a>  <span class="mo">0014</span><span class="p">,</span> <span class="mo">0011</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0367</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0103</span><span class="p">,</span> <span class="mo">0207</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> <span class="mo">0102</span><span class="p">,</span> <span class="mo">0334</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> 
+<a name="line-93"></a>  <span class="mo">0021</span><span class="p">,</span> <span class="mo">0047</span><span class="p">,</span> <span class="mo">0241</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0062</span><span class="p">,</span> <span class="mo">0234</span><span class="p">,</span> <span class="mo">0130</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0224</span><span class="p">,</span> <span class="mo">0373</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> <span class="mo">0173</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> 
+<a name="line-94"></a>  <span class="mo">0103</span><span class="p">,</span> <span class="mo">0152</span><span class="p">,</span> <span class="mo">0072</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0130</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> 
+<a name="line-95"></a>  <span class="mo">0053</span><span class="p">,</span> <span class="mo">0253</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> <span class="mo">0263</span><span class="p">,</span> <span class="mo">0300</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> <span class="mo">0331</span><span class="p">,</span> <span class="mo">0143</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0343</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> 
+<a name="line-96"></a>  <span class="mo">0314</span><span class="p">,</span> <span class="mo">0036</span><span class="p">,</span> <span class="mo">0152</span><span class="p">,</span> <span class="mo">0053</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0076</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0204</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> 
+<a name="line-97"></a>  <span class="mo">0136</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0334</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0030</span><span class="p">,</span> <span class="mo">0273</span><span class="p">,</span> <span class="mo">0042</span><span class="p">,</span> <span class="mo">0341</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> <span class="mo">0143</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0255</span><span class="p">,</span> <span class="mo">0100</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0030</span><span class="p">,</span> 
+<a name="line-98"></a>  <span class="mo">0067</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0254</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0071</span><span class="p">,</span> <span class="mo">0354</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> <span class="mo">0211</span><span class="p">,</span> <span class="mo">0224</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0310</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0226</span><span class="p">,</span> 
+<a name="line-99"></a>  <span class="mo">0215</span><span class="p">,</span> <span class="mo">0213</span><span class="p">,</span> <span class="mo">0266</span><span class="p">,</span> <span class="mo">0037</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0032</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0070</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0020</span><span class="p">,</span> <span class="mo">0334</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> 
+<a name="line-100"></a>  <span class="mo">0107</span><span class="p">,</span> <span class="mo">0072</span><span class="p">,</span> <span class="mo">0150</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0151</span><span class="p">,</span> <span class="mo">0073</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0256</span><span class="p">,</span> <span class="mo">0047</span><span class="p">,</span> <span class="mo">0324</span><span class="p">,</span> 
+<a name="line-101"></a>  <span class="mo">0273</span><span class="p">,</span> <span class="mo">0240</span><span class="p">,</span> <span class="mo">0375</span><span class="p">,</span> <span class="mo">0304</span><span class="p">,</span> <span class="mo">0272</span><span class="p">,</span> <span class="mo">0263</span><span class="p">,</span> <span class="mo">0143</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> 
+<a name="line-102"></a>  <span class="mo">0016</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0325</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0341</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0260</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0334</span><span class="p">,</span> <span class="mo">0240</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> 
+<a name="line-103"></a>  <span class="mo">0314</span><span class="p">,</span> <span class="mo">0220</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0117</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0240</span><span class="p">,</span> <span class="mo">0043</span><span class="p">,</span> <span class="mo">0334</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0245</span><span class="p">,</span> <span class="mo">0167</span><span class="p">,</span> <span class="mo">0272</span><span class="p">,</span> 
+<a name="line-104"></a>  <span class="mo">0367</span><span class="p">,</span> <span class="mo">0365</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0266</span><span class="p">,</span> <span class="mo">0107</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0303</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> 
+<a name="line-105"></a>  <span class="mo">0143</span><span class="p">,</span> <span class="mo">0244</span><span class="p">,</span> <span class="mo">0131</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0240</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0233</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0144</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> <span class="mo">0301</span><span class="p">,</span> <span class="mo">0367</span><span class="p">,</span> <span class="mo">0135</span><span class="p">,</span> <span class="mo">0215</span><span class="p">,</span> 
+<a name="line-106"></a>  <span class="mo">0253</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> <span class="mo">0270</span><span class="p">,</span> <span class="mo">0327</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0366</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0267</span><span class="p">,</span> <span class="mo">0026</span><span class="p">,</span> 
+<a name="line-107"></a>  <span class="mo">0015</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0207</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0202</span><span class="p">,</span> <span class="mo">0301</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0152</span><span class="p">,</span> <span class="mo">0263</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> <span class="mo">0115</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0260</span><span class="p">,</span> <span class="mo">0137</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> 
+<a name="line-108"></a>  <span class="mo">0363</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0111</span><span class="p">,</span> <span class="mo">0011</span><span class="p">,</span> <span class="mo">0253</span><span class="p">,</span> <span class="mo">0306</span><span class="p">,</span> <span class="mo">0011</span><span class="p">,</span> <span class="mo">0251</span><span class="p">,</span> <span class="mo">0377</span><span class="p">,</span> <span class="mo">0133</span><span class="p">,</span> <span class="mo">0256</span><span class="p">,</span> <span class="mo">0216</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> 
+<a name="line-109"></a>  <span class="mo">0014</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0021</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> <span class="mo">0130</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0074</span><span class="p">,</span> <span class="mo">0274</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0342</span><span class="p">,</span> <span class="mo">0125</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0351</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> 
+<a name="line-110"></a>  <span class="mo">0266</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0216</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0076</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0203</span><span class="p">,</span> <span class="mo">0047</span><span class="p">,</span> <span class="mo">0213</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0025</span><span class="p">,</span> <span class="mo">0271</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0242</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> 
+<a name="line-111"></a>  <span class="mo">0235</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0167</span><span class="p">,</span> <span class="mo">0203</span><span class="p">,</span> <span class="mo">0221</span><span class="p">,</span> <span class="mo">0375</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0322</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0126</span><span class="p">,</span> <span class="mo">0272</span><span class="p">,</span> <span class="mo">0303</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0147</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0331</span><span class="p">,</span> 
+<a name="line-112"></a>  <span class="mo">0003</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> <span class="mo">0255</span><span class="p">,</span> <span class="mo">0261</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0250</span><span class="p">,</span> <span class="mo">0263</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0125</span><span class="p">,</span> <span class="mo">0300</span><span class="p">,</span> <span class="mo">0065</span><span class="p">,</span> <span class="mo">0220</span><span class="p">,</span> <span class="mo">0176</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0217</span><span class="p">,</span> 
+<a name="line-113"></a>  <span class="mo">0326</span><span class="p">,</span> <span class="mo">0224</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> <span class="mo">0031</span><span class="p">,</span> <span class="mo">0372</span><span class="p">,</span> <span class="mo">0253</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0013</span><span class="p">,</span> <span class="mo">0030</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> <span class="mo">0260</span><span class="p">,</span> <span class="mo">0104</span><span class="p">,</span> <span class="mo">0341</span><span class="p">,</span> 
+<a name="line-114"></a>  <span class="mo">0225</span><span class="p">,</span> <span class="mo">0264</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0273</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0077</span><span class="p">,</span> <span class="mo">0225</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0371</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0037</span><span class="p">,</span> <span class="mo">0060</span><span class="p">,</span> 
+<a name="line-115"></a>  <span class="mo">0230</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> <span class="mo">0107</span><span class="p">,</span> <span class="mo">0302</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0002</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0370</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0331</span><span class="p">,</span> <span class="mo">0363</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> 
+<a name="line-116"></a>  <span class="mo">0123</span><span class="p">,</span> <span class="mo">0200</span><span class="p">,</span> <span class="mo">0345</span><span class="p">,</span> <span class="mo">0030</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0366</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0063</span><span class="p">,</span> <span class="mo">0142</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> <span class="mo">0100</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0066</span><span class="p">,</span> <span class="mo">0246</span><span class="p">,</span> 
+<a name="line-117"></a>  <span class="mo">0074</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0074</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0032</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0117</span><span class="p">,</span> <span class="mo">0253</span><span class="p">,</span> <span class="mo">0335</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> <span class="mo">0047</span><span class="p">,</span> <span class="mo">0307</span><span class="p">,</span> 
+<a name="line-118"></a>  <span class="mo">0216</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0034</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0273</span><span class="p">,</span> <span class="mo">0012</span><span class="p">,</span> <span class="mo">0107</span><span class="p">,</span> <span class="mo">0217</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0306</span><span class="p">,</span> <span class="mo">0337</span><span class="p">,</span> <span class="mo">0134</span><span class="p">,</span> <span class="mo">0221</span><span class="p">,</span> <span class="mo">0345</span><span class="p">,</span> 
+<a name="line-119"></a>  <span class="mo">0246</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0337</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0344</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0313</span><span class="p">,</span> <span class="mo">0122</span><span class="p">,</span> <span class="mo">0107</span><span class="p">,</span> <span class="mo">0064</span><span class="p">,</span> <span class="mo">0036</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> 
+<a name="line-120"></a>  <span class="mo">0175</span><span class="p">,</span> <span class="mo">0326</span><span class="p">,</span> <span class="mo">0107</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0053</span><span class="p">,</span> <span class="mo">0226</span><span class="p">,</span> <span class="mo">0067</span><span class="p">,</span> <span class="mo">0236</span><span class="p">,</span> <span class="mo">0102</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0133</span><span class="p">,</span> <span class="mo">0267</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0241</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0133</span><span class="p">,</span> 
+<a name="line-121"></a>  <span class="mo">0340</span><span class="p">,</span> <span class="mo">0142</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0172</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0345</span><span class="p">,</span> <span class="mo">0330</span><span class="p">,</span> <span class="mo">0275</span><span class="p">,</span> <span class="mo">0075</span><span class="p">,</span> <span class="mo">0233</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0355</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0175</span><span class="p">,</span> <span class="mo">0245</span><span class="p">,</span> 
+<a name="line-122"></a>  <span class="mo">0257</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0033</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0372</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0277</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> <span class="mo">0127</span><span class="p">,</span> <span class="mo">0327</span><span class="p">,</span> <span class="mo">0261</span><span class="p">,</span> <span class="mo">0166</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0136</span><span class="p">,</span> <span class="mo">0176</span><span class="p">,</span> 
+<a name="line-123"></a>  <span class="mo">0030</span><span class="p">,</span> <span class="mo">0140</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0046</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0325</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0244</span><span class="p">,</span> <span class="mo">0352</span><span class="p">,</span> <span class="mo">0227</span><span class="p">,</span> <span class="mo">0301</span><span class="p">,</span> <span class="mo">0356</span><span class="p">,</span> <span class="mo">0243</span><span class="p">,</span> <span class="mo">0012</span><span class="p">,</span> <span class="mo">0013</span><span class="p">,</span> 
+<a name="line-124"></a>  <span class="mo">0070</span><span class="p">,</span> <span class="mo">0231</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0266</span><span class="p">,</span> <span class="mo">0257</span><span class="p">,</span> <span class="mo">0214</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0151</span><span class="p">,</span> <span class="mo">0143</span><span class="p">,</span> <span class="mo">0254</span><span class="p">,</span> <span class="mo">0016</span><span class="p">,</span> <span class="mo">0353</span><span class="p">,</span> <span class="mo">0046</span><span class="p">,</span> <span class="mo">0376</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> 
+<a name="line-125"></a>  <span class="mo">0367</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0153</span><span class="p">,</span> <span class="mo">0023</span><span class="p">,</span> <span class="mo">0361</span><span class="p">,</span> <span class="mo">0235</span><span class="p">,</span> <span class="mo">0213</span><span class="p">,</span> <span class="mo">0262</span><span class="p">,</span> <span class="mo">0366</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0206</span><span class="p">,</span> <span class="mo">0022</span><span class="p">,</span> <span class="mo">0174</span><span class="p">,</span> <span class="mo">0212</span><span class="p">,</span> <span class="mo">0317</span><span class="p">,</span> <span class="mo">0117</span><span class="p">,</span> 
+<a name="line-126"></a>  <span class="mo">0004</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0120</span><span class="p">,</span> <span class="mo">0007</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0247</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0070</span><span class="p">,</span> <span class="mo">0321</span><span class="p">,</span> <span class="mo">0116</span><span class="p">,</span> <span class="mo">0203</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> <span class="mo">0364</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> <span class="mo">0305</span><span class="p">,</span> 
+<a name="line-127"></a>  <span class="mo">0371</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0367</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0015</span><span class="p">,</span> <span class="mo">0357</span><span class="p">,</span> <span class="mo">0205</span><span class="p">,</span> <span class="mo">0336</span><span class="p">,</span> <span class="mo">0127</span><span class="p">,</span> <span class="mo">0036</span><span class="p">,</span> <span class="mo">0076</span><span class="p">,</span> <span class="mo">0376</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0003</span><span class="p">,</span> <span class="mo">0323</span><span class="p">,</span> <span class="mo">0234</span><span class="p">,</span> 
+<a name="line-128"></a>  <span class="mo">0260</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-129"></a>  <span class="mo">0142</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0005</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-130"></a>  <span class="mo">0001</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-131"></a>  <span class="mo">0142</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> 
+<a name="line-132"></a>  <span class="mo">0155</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0156</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0170</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0306</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-133"></a>  <span class="mo">0170</span><span class="p">,</span> <span class="mo">0332</span><span class="p">,</span> <span class="mo">0263</span><span class="p">,</span> <span class="mo">0311</span><span class="p">,</span> <span class="mo">0115</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0053</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0111</span><span class="p">,</span> <span class="mo">0315</span><span class="p">,</span> <span class="mo">0125</span><span class="p">,</span> <span class="mo">0310</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0314</span><span class="p">,</span> <span class="mo">0115</span><span class="p">,</span> 
+<a name="line-134"></a>  <span class="mo">0265</span><span class="p">,</span> <span class="mo">0125</span><span class="p">,</span> <span class="mo">0162</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0056</span><span class="p">,</span> <span class="mo">0111</span><span class="p">,</span> <span class="mo">0054</span><span class="p">,</span> <span class="mo">0121</span><span class="p">,</span> <span class="mo">0010</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0312</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0110</span><span class="p">,</span> 
+<a name="line-135"></a>  <span class="mo">0055</span><span class="p">,</span> <span class="mo">0052</span><span class="p">,</span> <span class="mo">0311</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0126</span><span class="p">,</span> <span class="mo">0360</span><span class="p">,</span> <span class="mo">0004</span><span class="p">,</span> <span class="mo">0112</span><span class="p">,</span> <span class="mo">0053</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0044</span><span class="p">,</span> <span class="mo">0046</span><span class="p">,</span> <span class="mo">0227</span><span class="p">,</span> <span class="mo">0144</span><span class="p">,</span> <span class="mo">0346</span><span class="p">,</span> 
+<a name="line-136"></a>  <span class="mo">0347</span><span class="p">,</span> <span class="mo">0041</span><span class="p">,</span> <span class="mo">0124</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0024</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0333</span><span class="p">,</span> <span class="mo">0161</span><span class="p">,</span> <span class="mo">0331</span><span class="p">,</span> <span class="mo">0340</span><span class="p">,</span> <span class="mo">0062</span><span class="p">,</span> <span class="mo">0310</span><span class="p">,</span> <span class="mo">0043</span><span class="p">,</span> <span class="mo">0065</span><span class="p">,</span> 
+<a name="line-137"></a>  <span class="mo">0247</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0207</span><span class="p">,</span> <span class="mo">0021</span><span class="p">,</span> <span class="mo">0040</span><span class="p">,</span> <span class="mo">0051</span><span class="p">,</span> <span class="mo">0374</span><span class="p">,</span> <span class="mo">0232</span><span class="p">,</span> <span class="mo">0035</span><span class="p">,</span> <span class="mo">0223</span><span class="p">,</span> <span class="mo">0362</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0113</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0350</span><span class="p">,</span> <span class="mo">0006</span><span class="p">,</span> 
+<a name="line-138"></a>  <span class="mo">0313</span><span class="p">,</span> <span class="mo">0201</span><span class="p">,</span> <span class="mo">0265</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0001</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0230</span><span class="p">,</span> <span class="mo">0275</span><span class="p">,</span> <span class="mo">0105</span><span class="p">,</span> <span class="mo">0114</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0050</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0165</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0171</span><span class="p">,</span> 
+<a name="line-139"></a>  <span class="mo">0051</span><span class="p">,</span> <span class="mo">0155</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0055</span><span class="p">,</span> <span class="mo">0141</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0160</span><span class="p">,</span> <span class="mo">0154</span><span class="p">,</span> <span class="mo">0145</span><span class="p">,</span> <span class="mo">0164</span><span class="p">,</span> <span class="mo">0163</span><span class="p">,</span> <span class="mo">0057</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> 
+<a name="line-140"></a>  <span class="mo">0003</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span><span class="p">,</span> <span class="mo">0000</span>
+<a name="line-141"></a><span class="p">}</span> <span class="p">};</span>
+<a name="line-142"></a><span class="cp">#else </span><span class="cm">/* _MSC_VER */</span><span class="cp"></span>
+<a name="line-143"></a><span class="hll"><span class="k">static</span> <span class="k">const</span> <span class="n">SECTION</span> <span class="k">union</span> <span class="p">{</span> <span class="k">const</span> <span class="n">guint8</span> <span class="n">data</span><span class="p">[</span><span class="mi">2069</span><span class="p">];</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">alignment</span><span class="p">;</span> <span class="kt">void</span> <span class="o">*</span> <span class="k">const</span> <span class="n">ptr</span><span class="p">;}</span>  <span class="n">battstat_resource_data</span> <span class="o">=</span> <span class="p">{</span><span class="error2">&lt;--- union member 'Anonymous0::alignment' is never used.</span><span class="error2">&lt;--- union member 'Anonymous0::ptr' is never used.</span>
+</span><a name="line-144"></a>  <span class="s">&quot;</span><span class="se">\107\126\141\162\151\141\156\164\000\000\000\000\000\000\000\000</span><span class="s">&quot;</span>
+<a name="line-145"></a>  <span class="s">&quot;</span><span class="se">\030\000\000\000\344\000\000\000\000\000\000\050\007\000\000\000</span><span class="s">&quot;</span>
+<a name="line-146"></a>  <span class="s">&quot;</span><span class="se">\000\000\000\000\000\000\000\000\002\000\000\000\003\000\000\000</span><span class="s">&quot;</span>
+<a name="line-147"></a>  <span class="s">&quot;</span><span class="se">\004\000\000\000\005\000\000\000\006\000\000\000\113\120\220\013</span><span class="s">&quot;</span>
+<a name="line-148"></a>  <span class="s">&quot;</span><span class="se">\002\000\000\000\344\000\000\000\004\000\114\000\350\000\000\000</span><span class="s">&quot;</span>
+<a name="line-149"></a>  <span class="s">&quot;</span><span class="se">\354\000\000\000\205\041\211\170\003\000\000\000\354\000\000\000</span><span class="s">&quot;</span>
+<a name="line-150"></a>  <span class="s">&quot;</span><span class="se">\027\000\166\000\010\001\000\000\131\007\000\000\324\265\002\000</span><span class="s">&quot;</span>
+<a name="line-151"></a>  <span class="s">&quot;</span><span class="se">\377\377\377\377\131\007\000\000\001\000\114\000\134\007\000\000</span><span class="s">&quot;</span>
+<a name="line-152"></a>  <span class="s">&quot;</span><span class="se">\140\007\000\000\023\155\112\252\006\000\000\000\140\007\000\000</span><span class="s">&quot;</span>
+<a name="line-153"></a>  <span class="s">&quot;</span><span class="se">\011\000\114\000\154\007\000\000\164\007\000\000\201\321\040\031</span><span class="s">&quot;</span>
+<a name="line-154"></a>  <span class="s">&quot;</span><span class="se">\000\000\000\000\164\007\000\000\005\000\114\000\174\007\000\000</span><span class="s">&quot;</span>
+<a name="line-155"></a>  <span class="s">&quot;</span><span class="se">\200\007\000\000\156\304\170\140\003\000\000\000\200\007\000\000</span><span class="s">&quot;</span>
+<a name="line-156"></a>  <span class="s">&quot;</span><span class="se">\030\000\166\000\230\007\000\000\001\010\000\000\275\342\315\116</span><span class="s">&quot;</span>
+<a name="line-157"></a>  <span class="s">&quot;</span><span class="se">\004\000\000\000\001\010\000\000\015\000\114\000\020\010\000\000</span><span class="s">&quot;</span>
+<a name="line-158"></a>  <span class="s">&quot;</span><span class="se">\024\010\000\000\157\162\147\057\004\000\000\000\142\141\164\164</span><span class="s">&quot;</span>
+<a name="line-159"></a>  <span class="s">&quot;</span><span class="se">\163\164\141\164\055\160\162\145\146\145\162\145\156\143\145\163</span><span class="s">&quot;</span>
+<a name="line-160"></a>  <span class="s">&quot;</span><span class="se">\056\165\151\000\000\000\000\000\125\106\000\000\001\000\000\000</span><span class="s">&quot;</span>
+<a name="line-161"></a>  <span class="s">&quot;</span><span class="se">\170\332\355\134\137\223\233\066\020\177\317\247\120\365\332\361</span><span class="s">&quot;</span>
+<a name="line-162"></a>  <span class="s">&quot;</span><span class="se">\071\276\114\323\116\306\046\163\271\116\322\316\064\235\114\222</span><span class="s">&quot;</span>
+<a name="line-163"></a>  <span class="s">&quot;</span><span class="se">\116\037\031\001\062\050\221\045\052\211\363\371\333\107\200\377</span><span class="s">&quot;</span>
+<a name="line-164"></a>  <span class="s">&quot;</span><span class="se">\300\131\200\060\272\073\137\217\067\033\264\313\256\264\373\333</span><span class="s">&quot;</span>
+<a name="line-165"></a>  <span class="s">&quot;</span><span class="se">\325\256\140\376\366\166\105\301\015\026\222\160\266\200\263\213</span><span class="s">&quot;</span>
+<a name="line-166"></a>  <span class="s">&quot;</span><span class="se">\227\020\140\026\362\210\260\170\001\377\371\372\176\362\033\174</span><span class="s">&quot;</span>
+<a name="line-167"></a>  <span class="s">&quot;</span><span class="se">\353\275\230\377\064\231\200\017\230\141\201\024\216\300\232\250</span><span class="s">&quot;</span>
+<a name="line-168"></a>  <span class="s">&quot;</span><span class="se">\004\304\024\105\030\274\272\170\365\372\342\045\230\114\364\040</span><span class="s">&quot;</span>
+<a name="line-169"></a>  <span class="s">&quot;</span><span class="se">\302\024\026\113\024\142\357\005\000\163\201\377\313\210\300\022</span><span class="s">&quot;</span>
+<a name="line-170"></a>  <span class="s">&quot;</span><span class="se">\120\022\054\140\254\276\377\014\017\017\172\165\161\171\011\247</span><span class="s">&quot;</span>
+<a name="line-171"></a>  <span class="s">&quot;</span><span class="se">\305\070\036\174\303\241\002\041\105\122\056\340\007\365\375\052</span><span class="s">&quot;</span>
+<a name="line-172"></a>  <span class="s">&quot;</span><span class="se">\372\226\111\265\302\114\101\100\242\005\104\373\377\063\230\123</span><span class="s">&quot;</span>
+<a name="line-173"></a>  <span class="s">&quot;</span><span class="se">\150\232\124\360\024\013\265\001\014\255\360\002\146\251\376\007</span><span class="s">&quot;</span>
+<a name="line-174"></a>  <span class="s">&quot;</span><span class="se">\275\313\137\346\323\335\035\363\100\251\160\352\023\026\012\134</span><span class="s">&quot;</span>
+<a name="line-175"></a>  <span class="s">&quot;</span><span class="se">\260\367\146\135\004\051\212\161\225\340\316\023\346\323\122\172</span><span class="s">&quot;</span>
+<a name="line-176"></a>  <span class="s">&quot;</span><span class="se">\263\042\177\256\064\165\251\103\110\271\324\214\126\161\203\006</span><span class="s">&quot;</span>
+<a name="line-177"></a>  <span class="s">&quot;</span><span class="se">\067\104\222\200\142\350\175\025\031\356\022\052\104\314\137\362</span><span class="s">&quot;</span>
+<a name="line-178"></a>  <span class="s">&quot;</span><span class="se">\060\223\320\173\217\250\354\034\117\102\316\374\374\047\364\326</span><span class="s">&quot;</span>
+<a name="line-179"></a>  <span class="s">&quot;</span><span class="se">\204\105\174\075\051\304\071\121\225\004\323\364\014\064\311\305</span><span class="s">&quot;</span>
+<a name="line-180"></a>  <span class="s">&quot;</span><span class="se">\230\004\202\257\045\026\055\232\050\274\112\251\066\332\235\056</span><span class="s">&quot;</span>
+<a name="line-181"></a>  <span class="s">&quot;</span><span class="se">\357\220\122\122\041\365\111\340\045\026\332\324\261\204\040\105</span><span class="s">&quot;</span>
+<a name="line-182"></a>  <span class="s">&quot;</span><span class="se">\372\227\052\024\375\235\040\312\233\164\353\053\156\300\105\204</span><span class="s">&quot;</span>
+<a name="line-183"></a>  <span class="s">&quot;</span><span class="se">\205\277\046\221\112\264\261\135\166\215\127\104\351\231\003\112</span><span class="s">&quot;</span>
+<a name="line-184"></a>  <span class="s">&quot;</span><span class="se">\040\046\265\320\110\317\343\002\156\264\204\136\056\066\026\033</span><span class="s">&quot;</span>
+<a name="line-185"></a>  <span class="s">&quot;</span><span class="se">\160\235\040\021\143\360\221\063\242\270\000\025\055\072\171\157</span><span class="s">&quot;</span>
+<a name="line-186"></a>  <span class="s">&quot;</span><span class="se">\122\354\047\044\067\342\250\320\361\210\100\222\230\041\272\035</span><span class="s">&quot;</span>
+<a name="line-187"></a>  <span class="s">&quot;</span><span class="se">\256\035\067\345\114\152\151\022\304\042\212\305\341\222\037\006</span><span class="s">&quot;</span>
+<a name="line-188"></a>  <span class="s">&quot;</span><span class="se">\020\310\065\322\116\247\315\201\361\322\217\065\203\060\041\064</span><span class="s">&quot;</span>
+<a name="line-189"></a>  <span class="s">&quot;</span><span class="se">\002\005\012\150\106\223\342\257\066\210\200\337\156\347\323\144</span><span class="s">&quot;</span>
+<a name="line-190"></a>  <span class="s">&quot;</span><span class="se">\131\357\052\167\373\317\270\211\206\013\242\127\023\051\015\064</span><span class="s">&quot;</span>
+<a name="line-191"></a>  <span class="s">&quot;</span><span class="se">\320\323\210\243\110\210\250\015\241\114\121\250\161\317\264\122</span><span class="s">&quot;</span>
+<a name="line-192"></a>  <span class="s">&quot;</span><span class="se">\055\372\241\060\177\222\257\115\010\125\024\061\252\232\051\305</span><span class="s">&quot;</span>
+<a name="line-193"></a>  <span class="s">&quot;</span><span class="se">\131\135\341\123\225\066\321\121\264\341\231\362\245\332\344\376</span><span class="s">&quot;</span>
+<a name="line-194"></a>  <span class="s">&quot;</span><span class="se">\207\131\324\110\130\210\136\277\326\054\160\305\355\003\305\340</span><span class="s">&quot;</span>
+<a name="line-195"></a>  <span class="s">&quot;</span><span class="se">\135\062\223\034\001\246\106\063\366\377\320\134\232\244\352\215</span><span class="s">&quot;</span>
+<a name="line-196"></a>  <span class="s">&quot;</span><span class="se">\046\226\163\330\227\124\340\020\223\033\054\375\010\057\121\106</span><span class="s">&quot;</span>
+<a name="line-197"></a>  <span class="s">&quot;</span><span class="se">\125\177\016\244\100\113\157\207\224\175\110\063\355\137\031\323</span><span class="s">&quot;</span>
+<a name="line-198"></a>  <span class="s">&quot;</span><span class="se">\250\101\011\073\101\155\104\327\150\043\175\231\360\265\277\225</span><span class="s">&quot;</span>
+<a name="line-199"></a>  <span class="s">&quot;</span><span class="se">\242\235\105\025\054\353\214\121\370\135\073\103\367\043\361\155</span><span class="s">&quot;</span>
+<a name="line-200"></a>  <span class="s">&quot;</span><span class="se">\252\021\242\277\250\113\102\151\177\252\224\113\122\172\366\313</span><span class="s">&quot;</span>
+<a name="line-201"></a>  <span class="s">&quot;</span><span class="se">\066\245\214\322\317\247\006\273\077\305\027\312\150\076\330\031</span><span class="s">&quot;</span>
+<a name="line-202"></a>  <span class="s">&quot;</span><span class="se">\256\217\243\360\371\171\103\116\172\262\043\044\150\200\027\071</span><span class="s">&quot;</span>
+<a name="line-203"></a>  <span class="s">&quot;</span><span class="se">\363\303\175\362\065\072\342\175\070\342\314\205\043\232\324\067</span><span class="s">&quot;</span>
+<a name="line-204"></a>  <span class="s">&quot;</span><span class="se">\253\336\244\166\257\120\131\352\334\213\244\023\171\014\312\036</span><span class="s">&quot;</span>
+<a name="line-205"></a>  <span class="s">&quot;</span><span class="se">\051\172\214\066\135\031\321\311\070\340\052\253\260\116\247\116</span><span class="s">&quot;</span>
+<a name="line-206"></a>  <span class="s">&quot;</span><span class="se">\110\251\372\000\360\173\121\344\375\017\002\222\255\023\324\210</span><span class="s">&quot;</span>
+<a name="line-207"></a>  <span class="s">&quot;</span><span class="se">\362\376\055\242\072\207\156\015\115\206\051\112\220\336\222\371</span><span class="s">&quot;</span>
+<a name="line-208"></a>  <span class="s">&quot;</span><span class="se">\171\176\016\075\306\131\373\163\215\223\145\236\260\253\134\230</span><span class="s">&quot;</span>
+<a name="line-209"></a>  <span class="s">&quot;</span><span class="se">\162\333\152\030\077\140\342\206\116\236\161\002\361\122\371\051</span><span class="s">&quot;</span>
+<a name="line-210"></a>  <span class="s">&quot;</span><span class="se">\212\242\016\153\351\236\010\133\247\162\066\025\056\246\303\304</span><span class="s">&quot;</span>
+<a name="line-211"></a>  <span class="s">&quot;</span><span class="se">\143\245\267\172\204\371\212\247\320\173\175\012\203\136\236\153</span><span class="s">&quot;</span>
+<a name="line-212"></a>  <span class="s">&quot;</span><span class="se">\345\305\166\142\264\056\215\171\171\256\023\034\326\123\254\374</span><span class="s">&quot;</span>
+<a name="line-213"></a>  <span class="s">&quot;</span><span class="se">\202\257\360\255\202\155\234\172\345\133\137\164\060\006\212\254</span><span class="s">&quot;</span>
+<a name="line-214"></a>  <span class="s">&quot;</span><span class="se">\360\124\023\204\371\324\304\370\215\215\106\116\114\144\140\136</span><span class="s">&quot;</span>
+<a name="line-215"></a>  <span class="s">&quot;</span><span class="se">\326\057\123\262\066\072\163\326\126\302\230\124\110\250\123\231</span><span class="s">&quot;</span>
+<a name="line-216"></a>  <span class="s">&quot;</span><span class="se">\364\314\237\332\130\105\002\351\044\212\105\332\174\025\027\075</span><span class="s">&quot;</span>
+<a name="line-217"></a>  <span class="s">&quot;</span><span class="se">\171\325\252\032\212\307\061\305\121\245\250\121\044\150\271\231</span><span class="s">&quot;</span>
+<a name="line-218"></a>  <span class="s">&quot;</span><span class="se">\371\373\173\206\322\106\003\357\206\224\315\056\175\033\234\323</span><span class="s">&quot;</span>
+<a name="line-219"></a>  <span class="s">&quot;</span><span class="se">\270\311\353\006\157\266\054\362\275\316\115\330\120\370\310\321</span><span class="s">&quot;</span>
+<a name="line-220"></a>  <span class="s">&quot;</span><span class="se">\375\016\154\370\251\022\360\161\135\172\320\352\155\321\277\360</span><span class="s">&quot;</span>
+<a name="line-221"></a>  <span class="s">&quot;</span><span class="se">\101\233\200\350\074\010\330\255\205\171\075\076\243\210\360\052</span><span class="s">&quot;</span>
+<a name="line-222"></a>  <span class="s">&quot;</span><span class="se">\234\213\374\102\271\056\063\330\305\257\017\250\027\230\356\347</span><span class="s">&quot;</span>
+<a name="line-223"></a>  <span class="s">&quot;</span><span class="se">\240\016\004\136\041\302\264\361\331\152\347\314\006\034\102\373</span><span class="s">&quot;</span>
+<a name="line-224"></a>  <span class="s">&quot;</span><span class="se">\075\300\273\063\210\167\014\363\306\155\163\250\264\246\303\371</span><span class="s">&quot;</span>
+<a name="line-225"></a>  <span class="s">&quot;</span><span class="se">\014\011\031\367\035\066\154\103\207\175\370\160\026\102\334\204</span><span class="s">&quot;</span>
+<a name="line-226"></a>  <span class="s">&quot;</span><span class="se">\021\047\241\304\062\234\130\205\224\373\202\262\313\173\200\262</span><span class="s">&quot;</span>
+<a name="line-227"></a>  <span class="s">&quot;</span><span class="se">\103\152\072\002\332\010\150\356\000\355\016\277\130\360\114\357</span><span class="s">&quot;</span>
+<a name="line-228"></a>  <span class="s">&quot;</span><span class="se">\053\253\161\171\304\307\263\300\307\331\143\340\343\063\332\312</span><span class="s">&quot;</span>
+<a name="line-229"></a>  <span class="s">&quot;</span><span class="se">\314\036\152\053\323\076\247\055\304\315\204\215\104\333\336\164</span><span class="s">&quot;</span>
+<a name="line-230"></a>  <span class="s">&quot;</span><span class="se">\136\104\334\205\030\273\042\341\137\215\143\317\255\100\330\030</span><span class="s">&quot;</span>
+<a name="line-231"></a>  <span class="s">&quot;</span><span class="se">\067\257\064\254\040\175\071\354\346\211\224\022\044\310\024\226</span><span class="s">&quot;</span>
+<a name="line-232"></a>  <span class="s">&quot;</span><span class="se">\215\213\266\037\262\175\356\032\223\070\121\020\334\040\232\025</span><span class="s">&quot;</span>
+<a name="line-233"></a>  <span class="s">&quot;</span><span class="se">\107\072\150\324\004\137\363\151\073\377\336\353\352\256\047\324</span><span class="s">&quot;</span>
+<a name="line-234"></a>  <span class="s">&quot;</span><span class="se">\273\240\375\304\272\263\143\163\140\154\016\214\315\201\307\155</span><span class="s">&quot;</span>
+<a name="line-235"></a>  <span class="s">&quot;</span><span class="se">\016\330\325\250\116\055\357\075\341\122\336\260\022\334\240\136</span><span class="s">&quot;</span>
+<a name="line-236"></a>  <span class="s">&quot;</span><span class="se">\314\220\235\357\121\117\206\362\165\240\043\334\066\245\167\272</span><span class="s">&quot;</span>
+<a name="line-237"></a>  <span class="s">&quot;</span><span class="se">\367\365\377\105\202\201\165\202\031\010\266\107\035\303\362\250</span><span class="s">&quot;</span>
+<a name="line-238"></a>  <span class="s">&quot;</span><span class="se">\143\244\131\110\240\370\233\161\023\374\144\067\301\367\135\215</span><span class="s">&quot;</span>
+<a name="line-239"></a>  <span class="s">&quot;</span><span class="se">\253\033\346\270\327\374\277\326\342\366\155\236\044\340\267\026</span><span class="s">&quot;</span>
+<a name="line-240"></a>  <span class="s">&quot;</span><span class="se">\015\236\207\202\202\301\353\172\152\263\307\115\200\260\137\022</span><span class="s">&quot;</span>
+<a name="line-241"></a>  <span class="s">&quot;</span><span class="se">\363\262\174\111\011\253\306\011\251\377\133\256\216\323\025\162</span><span class="s">&quot;</span>
+<a name="line-242"></a>  <span class="s">&quot;</span><span class="se">\014\330\116\021\326\130\033\074\274\350\342\125\136\162\351\315</span><span class="s">&quot;</span>
+<a name="line-243"></a>  <span class="s">&quot;</span><span class="se">\266\206\216\305\076\165\242\203\047\213\353\025\271\355\242\064</span><span class="s">&quot;</span>
+<a name="line-244"></a>  <span class="s">&quot;</span><span class="se">\235\336\167\203\221\375\160\322\051\126\272\303\113\147\230\331</span><span class="s">&quot;</span>
+<a name="line-245"></a>  <span class="s">&quot;</span><span class="se">\003\067\255\261\163\250\263\136\363\125\300\065\220\176\315\217</span><span class="s">&quot;</span>
+<a name="line-246"></a>  <span class="s">&quot;</span><span class="se">\326\224\075\363\374\312\031\372\253\023\013\030\346\260\104\341</span><span class="s">&quot;</span>
+<a name="line-247"></a>  <span class="s">&quot;</span><span class="se">\225\264\033\273\035\155\112\156\077\225\055\235\371\064\037\060</span><span class="s">&quot;</span>
+<a name="line-248"></a>  <span class="s">&quot;</span><span class="se">\230\333\107\302\362\002\023\370\174\350\016\331\363\055\307\312</span><span class="s">&quot;</span>
+<a name="line-249"></a>  <span class="s">&quot;</span><span class="se">\123\200\345\030\122\366\206\063\142\312\100\114\231\075\066\246</span><span class="s">&quot;</span>
+<a name="line-250"></a>  <span class="s">&quot;</span><span class="se">\074\134\016\074\064\355\032\333\055\117\253\335\162\346\047\307</span><span class="s">&quot;</span>
+<a name="line-251"></a>  <span class="s">&quot;</span><span class="se">\216\212\034\313\214\122\273\012\107\217\352\306\337\134\221\345</span><span class="s">&quot;</span>
+<a name="line-252"></a>  <span class="s">&quot;</span><span class="se">\246\136\337\040\022\344\317\332\000\201\313\122\107\064\036\105</span><span class="s">&quot;</span>
+<a name="line-253"></a>  <span class="s">&quot;</span><span class="se">\175\326\107\121\053\226\067\236\102\035\133\267\317\241\165\133</span><span class="s">&quot;</span>
+<a name="line-254"></a>  <span class="s">&quot;</span><span class="se">\340\142\356\113\172\171\345\330\275\075\233\356\355\323\175\245</span><span class="s">&quot;</span>
+<a name="line-255"></a>  <span class="s">&quot;</span><span class="se">\257\317\033\161\235\372\166\277\321\127\327\261\166\163\136\176</span><span class="s">&quot;</span>
+<a name="line-256"></a>  <span class="s">&quot;</span><span class="se">\030\140\262\046\121\214\325\336\244\352\227\301\356\243\012\013</span><span class="s">&quot;</span>
+<a name="line-257"></a>  <span class="s">&quot;</span><span class="se">\070\231\315\266\257\214\007\212\151\143\254\016\353\046\376\165</span><span class="s">&quot;</span>
+<a name="line-258"></a>  <span class="s">&quot;</span><span class="se">\367\232\153\023\361\235\213\262\366\315\206\022\174\212\317\117</span><span class="s">&quot;</span>
+<a name="line-259"></a>  <span class="s">&quot;</span><span class="se">\004\350\120\007\230\247\024\205\070\321\116\203\305\364\110\305</span><span class="s">&quot;</span>
+<a name="line-260"></a>  <span class="s">&quot;</span><span class="se">\371\164\367\161\015\357\205\336\127\036\076\376\362\003\323\234</span><span class="s">&quot;</span>
+<a name="line-261"></a>  <span class="s">&quot;</span><span class="se">\260\000\000\050\165\165\141\171\051\057\000\000\000\000\000\000</span><span class="s">&quot;</span>
+<a name="line-262"></a>  <span class="s">&quot;</span><span class="se">\142\141\164\164\163\164\141\164\057\000\000\000\005\000\000\000</span><span class="s">&quot;</span>
+<a name="line-263"></a>  <span class="s">&quot;</span><span class="se">\001\000\000\000\155\141\164\145\057\000\000\000\006\000\000\000</span><span class="s">&quot;</span>
+<a name="line-264"></a>  <span class="s">&quot;</span><span class="se">\142\141\164\164\163\164\141\164\055\141\160\160\154\145\164\055</span><span class="s">&quot;</span>
+<a name="line-265"></a>  <span class="s">&quot;</span><span class="se">\155\145\156\165\056\170\155\154\306\000\000\000\001\000\000\000</span><span class="s">&quot;</span>
+<a name="line-266"></a>  <span class="s">&quot;</span><span class="se">\170\332\263\311\115\315\053\315\054\111\315\125\310\113\314\115</span><span class="s">&quot;</span>
+<a name="line-267"></a>  <span class="s">&quot;</span><span class="se">\265\125\162\112\054\051\051\056\111\054\121\010\050\312\057\110</span><span class="s">&quot;</span>
+<a name="line-268"></a>  <span class="s">&quot;</span><span class="se">\055\052\311\114\055\126\360\004\112\053\051\044\046\227\144\346</span><span class="s">&quot;</span>
+<a name="line-269"></a>  <span class="s">&quot;</span><span class="se">\347\041\124\040\024\050\051\350\333\161\331\340\062\310\043\065</span><span class="s">&quot;</span>
+<a name="line-270"></a>  <span class="s">&quot;</span><span class="se">\247\000\207\021\040\051\374\232\035\223\362\113\113\160\350\006</span><span class="s">&quot;</span>
+<a name="line-271"></a>  <span class="s">&quot;</span><span class="se">\313\201\265\163\001\000\230\275\105\114\000\050\165\165\141\171</span><span class="s">&quot;</span>
+<a name="line-272"></a>  <span class="s">&quot;</span><span class="se">\051\155\141\164\145\055\141\160\160\154\145\164\163\057\000\000</span><span class="s">&quot;</span>
+<a name="line-273"></a>  <span class="s">&quot;</span><span class="se">\003\000\000\000</span><span class="s">&quot;</span> <span class="p">};</span>
+<a name="line-274"></a><span class="cp">#endif </span><span class="cm">/* !_MSC_VER */</span><span class="cp"></span>
+<a name="line-275"></a>
+<a name="line-276"></a><span class="k">static</span> <span class="n">GStaticResource</span> <span class="n">static_resource</span> <span class="o">=</span> <span class="p">{</span> <span class="n">battstat_resource_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span> <span class="p">(</span><span class="n">battstat_resource_data</span><span class="p">.</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="cm">/* nul terminator */</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+<a name="line-277"></a>
+<a name="line-278"></a><span class="n">G_MODULE_EXPORT</span>
+<a name="line-279"></a><span class="n">GResource</span> <span class="o">*</span><span class="nf">battstat_get_resource</span> <span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-280"></a><span class="n">GResource</span> <span class="o">*</span><span class="nf">battstat_get_resource</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-281"></a><span class="p">{</span>
+<a name="line-282"></a>  <span class="k">return</span> <span class="n">g_static_resource_get_resource</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">static_resource</span><span class="p">);</span>
+<a name="line-283"></a><span class="p">}</span>
+<a name="line-284"></a><span class="cm">/*</span>
+<a name="line-285"></a><span class="cm">  If G_HAS_CONSTRUCTORS is true then the compiler support *both* constructors and</span>
+<a name="line-286"></a><span class="cm">  destructors, in a usable way, including e.g. on library unload. If not you&#39;re on</span>
+<a name="line-287"></a><span class="cm">  your own.</span>
+<a name="line-288"></a>
+<a name="line-289"></a><span class="cm">  Some compilers need #pragma to handle this, which does not work with macros,</span>
+<a name="line-290"></a><span class="cm">  so the way you need to use this is (for constructors):</span>
+<a name="line-291"></a>
+<a name="line-292"></a><span class="cm">  #ifdef G_DEFINE_CONSTRUCTOR_NEEDS_PRAGMA</span>
+<a name="line-293"></a><span class="cm">  #pragma G_DEFINE_CONSTRUCTOR_PRAGMA_ARGS(my_constructor)</span>
+<a name="line-294"></a><span class="cm">  #endif</span>
+<a name="line-295"></a><span class="cm">  G_DEFINE_CONSTRUCTOR(my_constructor)</span>
+<a name="line-296"></a><span class="cm">  static void my_constructor(void) {</span>
+<a name="line-297"></a><span class="cm">   ...</span>
+<a name="line-298"></a><span class="cm">  }</span>
+<a name="line-299"></a>
+<a name="line-300"></a><span class="cm">*/</span>
+<a name="line-301"></a>
+<a name="line-302"></a><span class="cp">#ifndef __GTK_DOC_IGNORE__</span>
+<a name="line-303"></a>
+<a name="line-304"></a><span class="cp">#if  __GNUC__ &gt; 2 || (__GNUC__ == 2 &amp;&amp; __GNUC_MINOR__ &gt;= 7)</span>
+<a name="line-305"></a>
+<a name="line-306"></a><span class="cp">#define G_HAS_CONSTRUCTORS 1</span>
+<a name="line-307"></a>
+<a name="line-308"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR(_func) static void __attribute__((constructor)) _func (void);</span>
+<a name="line-309"></a><span class="cp">#define G_DEFINE_DESTRUCTOR(_func) static void __attribute__((destructor)) _func (void);</span>
+<a name="line-310"></a>
+<a name="line-311"></a><span class="cp">#elif defined (_MSC_VER) &amp;&amp; (_MSC_VER &gt;= 1500)</span>
+<a name="line-312"></a><span class="cm">/* Visual studio 2008 and later has _Pragma */</span>
+<a name="line-313"></a>
+<a name="line-314"></a><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a name="line-315"></a>
+<a name="line-316"></a><span class="cp">#define G_HAS_CONSTRUCTORS 1</span>
+<a name="line-317"></a>
+<a name="line-318"></a><span class="cm">/* We do some weird things to avoid the constructors being optimized</span>
+<a name="line-319"></a><span class="cm"> * away on VS2015 if WholeProgramOptimization is enabled. First we</span>
+<a name="line-320"></a><span class="cm"> * make a reference to the array from the wrapper to make sure its</span>
+<a name="line-321"></a><span class="cm"> * references. Then we use a pragma to make sure the wrapper function</span>
+<a name="line-322"></a><span class="cm"> * symbol is always included at the link stage. Also, the symbols</span>
+<a name="line-323"></a><span class="cm"> * need to be extern (but not dllexport), even though they are not</span>
+<a name="line-324"></a><span class="cm"> * really used from another object file.</span>
+<a name="line-325"></a><span class="cm"> */</span>
+<a name="line-326"></a>
+<a name="line-327"></a><span class="cm">/* We need to account for differences between the mangling of symbols</span>
+<a name="line-328"></a><span class="cm"> * for x86 and x64/ARM/ARM64 programs, as symbols on x86 are prefixed</span>
+<a name="line-329"></a><span class="cm"> * with an underscore but symbols on x64/ARM/ARM64 are not.</span>
+<a name="line-330"></a><span class="cm"> */</span>
+<a name="line-331"></a><span class="cp">#ifdef _M_IX86</span>
+<a name="line-332"></a><span class="cp">#define G_MSVC_SYMBOL_PREFIX &quot;_&quot;</span>
+<a name="line-333"></a><span class="cp">#else</span>
+<a name="line-334"></a><span class="cp">#define G_MSVC_SYMBOL_PREFIX &quot;&quot;</span>
+<a name="line-335"></a><span class="cp">#endif</span>
+<a name="line-336"></a>
+<a name="line-337"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR(_func) G_MSVC_CTOR (_func, G_MSVC_SYMBOL_PREFIX)</span>
+<a name="line-338"></a><span class="cp">#define G_DEFINE_DESTRUCTOR(_func) G_MSVC_DTOR (_func, G_MSVC_SYMBOL_PREFIX)</span>
+<a name="line-339"></a>
+<a name="line-340"></a><span class="cp">#define G_MSVC_CTOR(_func,_sym_prefix) \</span>
+<a name="line-341"></a><span class="cp">  static void _func(void); \</span>
+<a name="line-342"></a><span class="cp">  extern int (* _array ## _func)(void);              \</span>
+<a name="line-343"></a><span class="cp">  int _func ## _wrapper(void) { _func(); g_slist_find (NULL,  _array ## _func); return 0; } \</span>
+<a name="line-344"></a><span class="cp">  __pragma(comment(linker,&quot;/include</span><span class="cpf">:&quot; _sym_prefix # _func &quot;_wrapper&quot;)) \</span><span class="cp"></span>
+<a name="line-345"></a><span class="cp">  __pragma(section(&quot;.CRT$XCU&quot;,read)) \</span>
+<a name="line-346"></a><span class="cp">  __declspec(allocate(&quot;.CRT$XCU&quot;)) int (* _array ## _func)(void) = _func ## _wrapper;</span>
+<a name="line-347"></a>
+<a name="line-348"></a><span class="cp">#define G_MSVC_DTOR(_func,_sym_prefix) \</span>
+<a name="line-349"></a><span class="cp">  static void _func(void); \</span>
+<a name="line-350"></a><span class="cp">  extern int (* _array ## _func)(void);              \</span>
+<a name="line-351"></a><span class="cp">  int _func ## _constructor(void) { atexit (_func); g_slist_find (NULL,  _array ## _func); return 0; } \</span>
+<a name="line-352"></a><span class="cp">   __pragma(comment(linker,&quot;/include</span><span class="cpf">:&quot; _sym_prefix # _func &quot;_constructor&quot;)) \</span><span class="cp"></span>
+<a name="line-353"></a><span class="cp">  __pragma(section(&quot;.CRT$XCU&quot;,read)) \</span>
+<a name="line-354"></a><span class="cp">  __declspec(allocate(&quot;.CRT$XCU&quot;)) int (* _array ## _func)(void) = _func ## _constructor;</span>
+<a name="line-355"></a>
+<a name="line-356"></a><span class="cp">#elif defined (_MSC_VER)</span>
+<a name="line-357"></a>
+<a name="line-358"></a><span class="cp">#define G_HAS_CONSTRUCTORS 1</span>
+<a name="line-359"></a>
+<a name="line-360"></a><span class="cm">/* Pre Visual studio 2008 must use #pragma section */</span>
+<a name="line-361"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR_NEEDS_PRAGMA 1</span>
+<a name="line-362"></a><span class="cp">#define G_DEFINE_DESTRUCTOR_NEEDS_PRAGMA 1</span>
+<a name="line-363"></a>
+<a name="line-364"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR_PRAGMA_ARGS(_func) \</span>
+<a name="line-365"></a><span class="cp">  section(&quot;.CRT$XCU&quot;,read)</span>
+<a name="line-366"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR(_func) \</span>
+<a name="line-367"></a><span class="cp">  static void _func(void); \</span>
+<a name="line-368"></a><span class="cp">  static int _func ## _wrapper(void) { _func(); return 0; } \</span>
+<a name="line-369"></a><span class="cp">  __declspec(allocate(&quot;.CRT$XCU&quot;)) static int (*p)(void) = _func ## _wrapper;</span>
+<a name="line-370"></a>
+<a name="line-371"></a><span class="cp">#define G_DEFINE_DESTRUCTOR_PRAGMA_ARGS(_func) \</span>
+<a name="line-372"></a><span class="cp">  section(&quot;.CRT$XCU&quot;,read)</span>
+<a name="line-373"></a><span class="cp">#define G_DEFINE_DESTRUCTOR(_func) \</span>
+<a name="line-374"></a><span class="cp">  static void _func(void); \</span>
+<a name="line-375"></a><span class="cp">  static int _func ## _constructor(void) { atexit (_func); return 0; } \</span>
+<a name="line-376"></a><span class="cp">  __declspec(allocate(&quot;.CRT$XCU&quot;)) static int (* _array ## _func)(void) = _func ## _constructor;</span>
+<a name="line-377"></a>
+<a name="line-378"></a><span class="cp">#elif defined(__SUNPRO_C)</span>
+<a name="line-379"></a>
+<a name="line-380"></a><span class="cm">/* This is not tested, but i believe it should work, based on:</span>
+<a name="line-381"></a><span class="cm"> * http://opensource.apple.com/source/OpenSSL098/OpenSSL098-35/src/fips/fips_premain.c</span>
+<a name="line-382"></a><span class="cm"> */</span>
+<a name="line-383"></a>
+<a name="line-384"></a><span class="cp">#define G_HAS_CONSTRUCTORS 1</span>
+<a name="line-385"></a>
+<a name="line-386"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR_NEEDS_PRAGMA 1</span>
+<a name="line-387"></a><span class="cp">#define G_DEFINE_DESTRUCTOR_NEEDS_PRAGMA 1</span>
+<a name="line-388"></a>
+<a name="line-389"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR_PRAGMA_ARGS(_func) \</span>
+<a name="line-390"></a><span class="cp">  init(_func)</span>
+<a name="line-391"></a><span class="cp">#define G_DEFINE_CONSTRUCTOR(_func) \</span>
+<a name="line-392"></a><span class="cp">  static void _func(void);</span>
+<a name="line-393"></a>
+<a name="line-394"></a><span class="cp">#define G_DEFINE_DESTRUCTOR_PRAGMA_ARGS(_func) \</span>
+<a name="line-395"></a><span class="cp">  fini(_func)</span>
+<a name="line-396"></a><span class="cp">#define G_DEFINE_DESTRUCTOR(_func) \</span>
+<a name="line-397"></a><span class="cp">  static void _func(void);</span>
+<a name="line-398"></a>
+<a name="line-399"></a><span class="cp">#else</span>
+<a name="line-400"></a>
+<a name="line-401"></a><span class="cm">/* constructors not supported for this compiler */</span>
+<a name="line-402"></a>
+<a name="line-403"></a><span class="cp">#endif</span>
+<a name="line-404"></a>
+<a name="line-405"></a><span class="cp">#endif </span><span class="cm">/* __GTK_DOC_IGNORE__ */</span><span class="cp"></span>
+<a name="line-406"></a>
+<a name="line-407"></a><span class="cp">#ifdef G_HAS_CONSTRUCTORS</span>
+<a name="line-408"></a>
+<a name="line-409"></a><span class="cp">#ifdef G_DEFINE_CONSTRUCTOR_NEEDS_PRAGMA</span>
+<a name="line-410"></a><span class="cp">#pragma G_DEFINE_CONSTRUCTOR_PRAGMA_ARGS(resource_constructor)</span>
+<a name="line-411"></a><span class="cp">#endif</span>
+<a name="line-412"></a><span class="n">G_DEFINE_CONSTRUCTOR</span><span class="p">(</span><span class="n">resource_constructor</span><span class="p">)</span>
+<a name="line-413"></a><span class="cp">#ifdef G_DEFINE_DESTRUCTOR_NEEDS_PRAGMA</span>
+<a name="line-414"></a><span class="cp">#pragma G_DEFINE_DESTRUCTOR_PRAGMA_ARGS(resource_destructor)</span>
+<a name="line-415"></a><span class="cp">#endif</span>
+<a name="line-416"></a><span class="n">G_DEFINE_DESTRUCTOR</span><span class="p">(</span><span class="n">resource_destructor</span><span class="p">)</span>
+<a name="line-417"></a>
+<a name="line-418"></a><span class="cp">#else</span>
+<a name="line-419"></a><span class="cp">#warning &quot;Constructor not supported on this compiler, linking in resources will not work&quot;</span>
+<a name="line-420"></a><span class="cp">#endif</span>
+<a name="line-421"></a>
+<a name="line-422"></a><span class="k">static</span> <span class="kt">void</span> <span class="n">resource_constructor</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-423"></a><span class="p">{</span>
+<a name="line-424"></a>  <span class="n">g_static_resource_init</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">static_resource</span><span class="p">);</span>
+<a name="line-425"></a><span class="p">}</span>
+<a name="line-426"></a>
+<a name="line-427"></a><span class="k">static</span> <span class="kt">void</span> <span class="n">resource_destructor</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-428"></a><span class="p">{</span>
+<a name="line-429"></a>  <span class="n">g_static_resource_fini</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">static_resource</span><span class="p">);</span>
+<a name="line-430"></a><span class="p">}</span>
+</pre></div>
+</td></tr></table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.3 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>

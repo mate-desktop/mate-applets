@@ -1,0 +1,1872 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-applets</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #ffffff; }
+.highlight .c { color: #888888 } /* Comment */
+.highlight .err { color: #FF0000; background-color: #FFAAAA } /* Error */
+.highlight .k { color: #008800; font-weight: bold } /* Keyword */
+.highlight .o { color: #333333 } /* Operator */
+.highlight .ch { color: #888888 } /* Comment.Hashbang */
+.highlight .cm { color: #888888 } /* Comment.Multiline */
+.highlight .cp { color: #557799 } /* Comment.Preproc */
+.highlight .cpf { color: #888888 } /* Comment.PreprocFile */
+.highlight .c1 { color: #888888 } /* Comment.Single */
+.highlight .cs { color: #cc0000; font-weight: bold } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008800; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008800; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008800; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #003388; font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: #008800; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #333399; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #6600EE; font-weight: bold } /* Literal.Number */
+.highlight .s { background-color: #fff0f0 } /* Literal.String */
+.highlight .na { color: #0000CC } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #BB0066; font-weight: bold } /* Name.Class */
+.highlight .no { color: #003366; font-weight: bold } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #880000; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #FF0000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0066BB; font-weight: bold } /* Name.Function */
+.highlight .nl { color: #997700; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #007700 } /* Name.Tag */
+.highlight .nv { color: #996633 } /* Name.Variable */
+.highlight .ow { color: #000000; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #6600EE; font-weight: bold } /* Literal.Number.Bin */
+.highlight .mf { color: #6600EE; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #005588; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #0000DD; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #4400EE; font-weight: bold } /* Literal.Number.Oct */
+.highlight .sa { background-color: #fff0f0 } /* Literal.String.Affix */
+.highlight .sb { background-color: #fff0f0 } /* Literal.String.Backtick */
+.highlight .sc { color: #0044DD } /* Literal.String.Char */
+.highlight .dl { background-color: #fff0f0 } /* Literal.String.Delimiter */
+.highlight .sd { color: #DD4422 } /* Literal.String.Doc */
+.highlight .s2 { background-color: #fff0f0 } /* Literal.String.Double */
+.highlight .se { color: #666666; font-weight: bold; background-color: #fff0f0 } /* Literal.String.Escape */
+.highlight .sh { background-color: #fff0f0 } /* Literal.String.Heredoc */
+.highlight .si { background-color: #eeeeee } /* Literal.String.Interpol */
+.highlight .sx { color: #DD2200; background-color: #fff0f0 } /* Literal.String.Other */
+.highlight .sr { color: #000000; background-color: #fff0ff } /* Literal.String.Regex */
+.highlight .s1 { background-color: #fff0f0 } /* Literal.String.Single */
+.highlight .ss { color: #AA6600 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0066BB; font-weight: bold } /* Name.Function.Magic */
+.highlight .vc { color: #336699 } /* Name.Variable.Class */
+.highlight .vg { color: #dd7700; font-weight: bold } /* Name.Variable.Global */
+.highlight .vi { color: #3333BB } /* Name.Variable.Instance */
+.highlight .vm { color: #996633 } /* Name.Variable.Magic */
+.highlight .il { color: #0000DD; font-weight: bold } /* Literal.Number.Integer.Long */
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-applets: charpick/charpick.c</h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu">
+       <p id="filename"><a href="index.html">Defects:</a> charpick.c</p>
+<a href="8.html#line-299"> variableScope 299</a>
+    </div>
+    <div id="content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="line-1"></a><span class="cm">/* charpick.c  This is a mate panel applet that allow users to select</span>
+<a name="line-2"></a><span class="cm"> * accented (and other) characters to be pasted into other apps.</span>
+<a name="line-3"></a><span class="cm"> */</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="cp">#include</span> <span class="cpf">&lt;gdk/gdkx.h&gt;</span><span class="cp"></span>
+<a name="line-6"></a><span class="cp">#include</span> <span class="cpf">&lt;config.h&gt;</span><span class="cp"></span>
+<a name="line-7"></a><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<a name="line-8"></a><span class="cp">#include</span> <span class="cpf">&lt;mate-panel-applet.h&gt;</span><span class="cp"></span>
+<a name="line-9"></a><span class="cp">#include</span> <span class="cpf">&lt;mate-panel-applet-gsettings.h&gt;</span><span class="cp"></span>
+<a name="line-10"></a><span class="cp">#ifdef HAVE_GUCHARMAP</span>
+<a name="line-11"></a><span class="cp">#include</span> <span class="cpf">&lt;gucharmap/gucharmap.h&gt;</span><span class="cp"></span>
+<a name="line-12"></a><span class="cp">#endif</span>
+<a name="line-13"></a><span class="cp">#include</span> <span class="cpf">&quot;charpick.h&quot;</span><span class="cp"></span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="cm">/* The comment for each char list has the html entity names of the chars */</span>
+<a name="line-16"></a><span class="cm">/* All gunicar codes should end in 0 */</span>
+<a name="line-17"></a>
+<a name="line-18"></a>
+<a name="line-19"></a><span class="cm">/* This is the default list used when starting charpick the first time */</span>
+<a name="line-20"></a><span class="cm">/* aacute, agrave, eacute, iacute, oacute, frac12, copy*/</span>
+<a name="line-21"></a><span class="cm">/* static const gchar *def_list = &quot;áàéíñóœ©&quot;; */</span>
+<a name="line-22"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">def_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">225</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">1579</span><span class="p">,</span> <span class="mi">8364</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="cm">/* aacute, agrave, acirc, atilde, auml. aring, aelig, ordf */</span>
+<a name="line-25"></a><span class="cm">/* static const gchar *a_list = &quot;áàâãäåæª&quot;; */</span>
+<a name="line-26"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">a_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">225</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">226</span><span class="p">,</span> <span class="mi">227</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">229</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-27"></a><span class="cm">/* static const gchar *cap_a_list = &quot;ÁÀÂÃÄÅÆª&quot;; */</span>
+<a name="line-28"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">cap_a_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="mi">193</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">195</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">197</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-29"></a><span class="cm">/* ccedil, cent, copy */</span>
+<a name="line-30"></a><span class="cm">/* static const gchar *c_list = &quot;çÇ¢©&quot;; */</span>
+<a name="line-31"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">c_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">231</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-32"></a><span class="cm">/* eacute, egrave, ecirc, euml, aelig */</span>
+<a name="line-33"></a><span class="cm">/* static const gchar *e_list = &quot;éèêëæ&quot;; */</span>
+<a name="line-34"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">e_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">232</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">235</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-35"></a><span class="cm">/* static const gchar *cap_e_list = &quot;ÉÈÊËÆ&quot;; */</span>
+<a name="line-36"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">cap_e_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-37"></a><span class="cm">/* iacute, igrave, icirc, iuml */</span>
+<a name="line-38"></a><span class="cm">/* static const gchar *i_list = &quot;íìîï&quot;; */</span>
+<a name="line-39"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">i_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">236</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-40"></a><span class="cm">/* static const gchar *cap_i_list = &quot;ÍÌÎÏ&quot;; */</span>
+<a name="line-41"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">cap_i_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">204</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">206</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-42"></a><span class="cm">/* ntilde (this is the most important line in this program.) */</span>
+<a name="line-43"></a><span class="cm">/* static const gchar *n_list = &quot;ñ, Ñ&quot;; */</span>
+<a name="line-44"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">n_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">241</span><span class="p">,</span> <span class="mi">209</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-45"></a><span class="cm">/* oacute, ograve, ocirc, otilde, ouml, oslash, ordm */</span>
+<a name="line-46"></a><span class="cm">/* static const gchar *o_list = &quot;óòôõöøº&quot;; */</span>
+<a name="line-47"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">o_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">242</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">244</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">246</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-48"></a><span class="cm">/* static const gchar *cap_o_list = &quot;ÓÒÔÕÖØº&quot;; */</span>
+<a name="line-49"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">cap_o_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">210</span><span class="p">,</span> <span class="mi">211</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">213</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">216</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-50"></a><span class="cm">/* szlig, sect, dollar */</span>
+<a name="line-51"></a><span class="cm">/* static const gchar *s_list = &quot;ß§$&quot;; */</span>
+<a name="line-52"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">s_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">223</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-53"></a><span class="cm">/* eth, thorn */</span>
+<a name="line-54"></a><span class="cm">/* static const gchar *t_list = &quot;ðÐþÞ&quot;; */</span>
+<a name="line-55"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">t_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">240</span><span class="p">,</span> <span class="mi">208</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-56"></a><span class="cm">/* uacute, ugrave, ucirc, uuml */</span>
+<a name="line-57"></a><span class="cm">/* static const gchar *u_list = &quot;úùûü&quot;; */</span>
+<a name="line-58"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">u_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">249</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-59"></a><span class="cm">/* static const gchar *cap_u_list = &quot;ÚÙÛÜ&quot;; */</span>
+<a name="line-60"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">cap_u_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">217</span><span class="p">,</span> <span class="mi">218</span><span class="p">,</span> <span class="mi">219</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-61"></a><span class="cm">/* yacute, yuml, yen Yes, there is no capital yuml in iso 8859-1.*/</span>
+<a name="line-62"></a><span class="cm">/* static const gchar *y_list = &quot;ýÝÿ¥&quot;; */</span>
+<a name="line-63"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">y_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">253</span><span class="p">,</span> <span class="mi">221</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-64"></a>
+<a name="line-65"></a><span class="cm">/* extra characters unrelated to the latin alphabet. All characters in</span>
+<a name="line-66"></a><span class="cm">   ISO-8859-1 should now be accounted for.*/</span>
+<a name="line-67"></a><span class="cm">/* not shy macr plusmn */</span>
+<a name="line-68"></a><span class="cm">/* static const gchar *dash_list = &quot;¬­¯±&quot;; */</span>
+<a name="line-69"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">dash_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">172</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">177</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-70"></a><span class="cm">/* laquo raquo uml */</span>
+<a name="line-71"></a><span class="cm">/* static const gchar *quote_list = &quot;«»š·×&quot;; */</span>
+<a name="line-72"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">quote_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">171</span><span class="p">,</span> <span class="mi">187</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-73"></a><span class="cm">/* curren, pound, yen, cent, dollar */</span>
+<a name="line-74"></a><span class="cm">/* static const gchar *currency_list = &quot;€£¥¢$&quot;; */</span>
+<a name="line-75"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">currency_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">164</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">8364</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-76"></a><span class="cm">/* sup1 frac12 */</span>
+<a name="line-77"></a><span class="cm">/* static const gchar *one_list = &quot;¹œŒ&quot;; */</span>
+<a name="line-78"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">one_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">185</span><span class="p">,</span> <span class="mi">178</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">188</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-79"></a><span class="cm">/* µ ¶ ® ¿ ¡ |  */</span>
+<a name="line-80"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">misc_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">181</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">161</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-81"></a>
+<a name="line-82"></a><span class="cm">/* language/region specific character groups */</span>
+<a name="line-83"></a><span class="cm">/* South Africa: Venda, Tswana and Northern Sotho */</span>
+<a name="line-84"></a><span class="cm">/* static const gchar *ZA_list = &quot;ḓḽṋṱḒḼṊṰṅṄšŠ&quot;; */</span>
+<a name="line-85"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">ZA_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7699</span><span class="p">,</span> <span class="mi">7741</span><span class="p">,</span> <span class="mi">7755</span><span class="p">,</span> <span class="mi">7793</span><span class="p">,</span> <span class="mi">7698</span><span class="p">,</span> <span class="mi">7740</span><span class="p">,</span> <span class="mi">7754</span><span class="p">,</span> <span class="mi">7792</span><span class="p">,</span> <span class="mi">7749</span><span class="p">,</span> <span class="mi">7748</span><span class="p">,</span> <span class="mi">353</span><span class="p">,</span> <span class="mi">352</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-86"></a><span class="cm">/* South Africa: Afrikaans */</span>
+<a name="line-87"></a><span class="cm">/* static const gchar *af_ZA_list = &quot;áéíóúýêîôûèäëïöüÁÉÍÓÚÝÊÎÔÛÈÄËÏÖÜ&quot;; */</span>
+<a name="line-88"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="n">af_ZA_code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">225</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">253</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">244</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">235</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">246</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">193</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">211</span><span class="p">,</span> <span class="mi">218</span><span class="p">,</span> <span class="mi">221</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">206</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">219</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<a name="line-89"></a>
+<a name="line-90"></a><span class="k">static</span> <span class="k">const</span> <span class="n">gunichar</span> <span class="o">*</span> <span class="k">const</span> <span class="n">chartable</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-91"></a>    <span class="n">def_code</span><span class="p">,</span>
+<a name="line-92"></a>    <span class="n">a_code</span><span class="p">,</span>
+<a name="line-93"></a>    <span class="n">cap_a_code</span><span class="p">,</span>
+<a name="line-94"></a>    <span class="n">c_code</span><span class="p">,</span>
+<a name="line-95"></a>    <span class="n">e_code</span><span class="p">,</span>
+<a name="line-96"></a>    <span class="n">cap_e_code</span><span class="p">,</span>
+<a name="line-97"></a>    <span class="n">i_code</span><span class="p">,</span>
+<a name="line-98"></a>    <span class="n">cap_i_code</span><span class="p">,</span>
+<a name="line-99"></a>    <span class="n">n_code</span><span class="p">,</span>
+<a name="line-100"></a>    <span class="n">o_code</span><span class="p">,</span>
+<a name="line-101"></a>    <span class="n">cap_o_code</span><span class="p">,</span>
+<a name="line-102"></a>    <span class="n">s_code</span><span class="p">,</span>
+<a name="line-103"></a>    <span class="n">t_code</span><span class="p">,</span>
+<a name="line-104"></a>    <span class="n">u_code</span><span class="p">,</span>
+<a name="line-105"></a>    <span class="n">cap_u_code</span><span class="p">,</span>
+<a name="line-106"></a>    <span class="n">y_code</span><span class="p">,</span>
+<a name="line-107"></a>    <span class="n">dash_code</span><span class="p">,</span>
+<a name="line-108"></a>    <span class="n">quote_code</span><span class="p">,</span>
+<a name="line-109"></a>    <span class="n">currency_code</span><span class="p">,</span>
+<a name="line-110"></a>    <span class="n">one_code</span><span class="p">,</span>
+<a name="line-111"></a>    <span class="n">misc_code</span><span class="p">,</span>
+<a name="line-112"></a>    <span class="n">ZA_code</span><span class="p">,</span>
+<a name="line-113"></a>    <span class="n">af_ZA_code</span>
+<a name="line-114"></a><span class="p">};</span>
+<a name="line-115"></a>
+<a name="line-116"></a><span class="cm">/* sets the picked character as the selection when it gets a request */</span>
+<a name="line-117"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-118"></a><span class="nf">charpick_selection_handler</span> <span class="p">(</span><span class="n">GtkWidget</span>        <span class="o">*</span><span class="n">widget</span><span class="p">,</span>
+<a name="line-119"></a>                            <span class="n">GtkSelectionData</span> <span class="o">*</span><span class="n">selection_data</span><span class="p">,</span>
+<a name="line-120"></a>                            <span class="n">guint</span>             <span class="n">info</span><span class="p">,</span>
+<a name="line-121"></a>                            <span class="n">guint</span>             <span class="n">time</span><span class="p">,</span>
+<a name="line-122"></a>                            <span class="n">gpointer</span>          <span class="n">data</span><span class="p">)</span>
+<a name="line-123"></a><span class="p">{</span>
+<a name="line-124"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">p_curr_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-125"></a>    <span class="n">gint</span> <span class="n">num</span><span class="p">;</span>
+<a name="line-126"></a>    <span class="n">gchar</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span>
+<a name="line-127"></a>    <span class="n">num</span> <span class="o">=</span> <span class="n">g_unichar_to_utf8</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">selected_unichar</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+<a name="line-128"></a>    <span class="n">tmp</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<a name="line-129"></a>
+<a name="line-130"></a>    <span class="n">gtk_selection_data_set_text</span> <span class="p">(</span><span class="n">selection_data</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<a name="line-131"></a>
+<a name="line-132"></a>    <span class="k">return</span><span class="p">;</span>
+<a name="line-133"></a><span class="p">}</span>
+<a name="line-134"></a>
+<a name="line-135"></a><span class="cm">/* untoggles the active toggle_button when we lose the selection */</span>
+<a name="line-136"></a><span class="k">static</span> <span class="n">gint</span>
+<a name="line-137"></a><span class="nf">selection_clear_cb</span> <span class="p">(</span><span class="n">GtkWidget</span>         <span class="o">*</span><span class="n">widget</span><span class="p">,</span>
+<a name="line-138"></a>                    <span class="n">GdkEventSelection</span> <span class="o">*</span><span class="n">event</span><span class="p">,</span>
+<a name="line-139"></a>                    <span class="n">gpointer</span>           <span class="n">data</span><span class="p">)</span>
+<a name="line-140"></a><span class="p">{</span>
+<a name="line-141"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-142"></a>
+<a name="line-143"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span><span class="p">)</span>
+<a name="line-144"></a>        <span class="n">gtk_toggle_button_set_active</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+<a name="line-145"></a>
+<a name="line-146"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-147"></a>    <span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<a name="line-148"></a><span class="p">}</span>
+<a name="line-149"></a>
+<a name="line-150"></a><span class="k">static</span> <span class="n">gint</span>
+<a name="line-151"></a><span class="nf">toggle_button_toggled_cb</span> <span class="p">(</span><span class="n">GtkToggleButton</span> <span class="o">*</span><span class="n">button</span><span class="p">,</span>
+<a name="line-152"></a>                          <span class="n">gpointer</span>         <span class="n">data</span><span class="p">)</span>
+<a name="line-153"></a><span class="p">{</span>
+<a name="line-154"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-155"></a>    <span class="n">gint</span> <span class="n">button_index</span><span class="p">;</span>
+<a name="line-156"></a>    <span class="n">gboolean</span> <span class="n">toggled</span><span class="p">;</span>
+<a name="line-157"></a>
+<a name="line-158"></a>    <span class="n">button_index</span> <span class="o">=</span> <span class="n">GPOINTER_TO_INT</span> <span class="p">(</span><span class="n">g_object_get_data</span> <span class="p">(</span><span class="n">G_OBJECT</span> <span class="p">(</span><span class="n">button</span><span class="p">),</span> <span class="s">&quot;index&quot;</span><span class="p">));</span>
+<a name="line-159"></a>    <span class="n">toggled</span> <span class="o">=</span> <span class="n">gtk_toggle_button_get_active</span> <span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<a name="line-160"></a>
+<a name="line-161"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">toggled</span><span class="p">)</span>
+<a name="line-162"></a>    <span class="p">{</span>
+<a name="line-163"></a>        <span class="n">gunichar</span> <span class="n">unichar</span><span class="p">;</span>
+<a name="line-164"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">button</span> <span class="o">!=</span> <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span><span class="p">))</span>
+<a name="line-165"></a>            <span class="n">gtk_toggle_button_set_active</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+<a name="line-166"></a>
+<a name="line-167"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span> <span class="o">=</span> <span class="n">button</span><span class="p">;</span>
+<a name="line-168"></a>        <span class="n">gtk_widget_grab_focus</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-169"></a>        <span class="n">unichar</span> <span class="o">=</span> <span class="n">GPOINTER_TO_INT</span> <span class="p">(</span><span class="n">g_object_get_data</span> <span class="p">(</span><span class="n">G_OBJECT</span> <span class="p">(</span><span class="n">button</span><span class="p">),</span> <span class="s">&quot;unichar&quot;</span><span class="p">));</span>
+<a name="line-170"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">selected_unichar</span> <span class="o">=</span> <span class="n">unichar</span><span class="p">;</span>
+<a name="line-171"></a>        <span class="cm">/* set this? widget as the selection owner */</span>
+<a name="line-172"></a>        <span class="n">gtk_selection_owner_set</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-173"></a>                                 <span class="n">GDK_SELECTION_PRIMARY</span><span class="p">,</span>
+<a name="line-174"></a>                                 <span class="n">GDK_CURRENT_TIME</span><span class="p">);</span>
+<a name="line-175"></a>        <span class="n">gtk_selection_owner_set</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-176"></a>                                 <span class="n">GDK_SELECTION_CLIPBOARD</span><span class="p">,</span>
+<a name="line-177"></a>                                 <span class="n">GDK_CURRENT_TIME</span><span class="p">);</span>
+<a name="line-178"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_index</span> <span class="o">=</span> <span class="n">button_index</span><span class="p">;</span>
+<a name="line-179"></a>    <span class="p">}</span>
+<a name="line-180"></a>    <span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<a name="line-181"></a><span class="p">}</span>
+<a name="line-182"></a>
+<a name="line-183"></a><span class="cm">/* This is a hack around the fact that gtk+ doesn&#39;t</span>
+<a name="line-184"></a><span class="cm"> * propogate button presses on button2/3.</span>
+<a name="line-185"></a><span class="cm"> */</span>
+<a name="line-186"></a><span class="k">static</span> <span class="n">gboolean</span>
+<a name="line-187"></a><span class="nf">button_press_hack</span> <span class="p">(</span><span class="n">GtkWidget</span>      <span class="o">*</span><span class="n">widget</span><span class="p">,</span>
+<a name="line-188"></a>                   <span class="n">GdkEventButton</span> <span class="o">*</span><span class="n">event</span><span class="p">,</span>
+<a name="line-189"></a>                   <span class="n">GtkWidget</span>      <span class="o">*</span><span class="n">applet</span><span class="p">)</span>
+<a name="line-190"></a><span class="p">{</span>
+<a name="line-191"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">button</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">||</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">button</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-192"></a>        <span class="n">gtk_propagate_event</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span> <span class="p">(</span><span class="n">GdkEvent</span> <span class="o">*</span><span class="p">)</span> <span class="n">event</span><span class="p">);</span>
+<a name="line-193"></a>
+<a name="line-194"></a>        <span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<a name="line-195"></a>    <span class="p">}</span>
+<a name="line-196"></a>
+<a name="line-197"></a>    <span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<a name="line-198"></a><span class="p">}</span>
+<a name="line-199"></a>
+<a name="line-200"></a><span class="k">static</span> <span class="n">gint</span>
+<a name="line-201"></a><span class="nf">key_press_event</span> <span class="p">(</span><span class="n">GtkWidget</span>   <span class="o">*</span><span class="n">widget</span><span class="p">,</span>
+<a name="line-202"></a>                 <span class="n">GdkEventKey</span> <span class="o">*</span><span class="n">event</span><span class="p">,</span>
+<a name="line-203"></a>                 <span class="n">gpointer</span>     <span class="n">data</span><span class="p">)</span>
+<a name="line-204"></a><span class="p">{</span>
+<a name="line-205"></a><span class="cp">#if 0</span><span class="c"></span>
+<a name="line-206"></a><span class="c">    charpick_data *p_curr_data = data;</span>
+<a name="line-207"></a><span class="c">    const gunichar *code = NULL;</span>
+<a name="line-208"></a><span class="c">    gchar inputchar = event-&gt;keyval;</span>
+<a name="line-209"></a>
+<a name="line-210"></a><span class="c">    switch (inputchar)</span>
+<a name="line-211"></a><span class="c">      {</span>
+<a name="line-212"></a><span class="c">      case &#39;a&#39; : code = a_code;</span>
+<a name="line-213"></a><span class="c">                 break;</span>
+<a name="line-214"></a><span class="c">      case &#39;A&#39; : code = cap_a_code;</span>
+<a name="line-215"></a><span class="c">                 break;</span>
+<a name="line-216"></a><span class="c">      case &#39;c&#39; :</span>
+<a name="line-217"></a><span class="c">      case &#39;C&#39; : code = c_code;</span>
+<a name="line-218"></a><span class="c">                 break;</span>
+<a name="line-219"></a><span class="c">      case &#39;e&#39; : code = e_code;</span>
+<a name="line-220"></a><span class="c">                 break;</span>
+<a name="line-221"></a><span class="c">      case &#39;E&#39; : code = cap_e_code;</span>
+<a name="line-222"></a><span class="c">                 break;</span>
+<a name="line-223"></a><span class="c">      case &#39;i&#39; : code = i_code;</span>
+<a name="line-224"></a><span class="c">                 break;</span>
+<a name="line-225"></a><span class="c">      case &#39;I&#39; : code =  cap_i_code;</span>
+<a name="line-226"></a><span class="c">                 break;</span>
+<a name="line-227"></a><span class="c">      case &#39;n&#39; :</span>
+<a name="line-228"></a><span class="c">      case &#39;N&#39; : code = n_code;</span>
+<a name="line-229"></a><span class="c">                 break;</span>
+<a name="line-230"></a><span class="c">      case &#39;o&#39; : code = o_code;</span>
+<a name="line-231"></a><span class="c">                 break;</span>
+<a name="line-232"></a><span class="c">      case &#39;O&#39; : code = cap_o_code;</span>
+<a name="line-233"></a><span class="c">                 break;</span>
+<a name="line-234"></a><span class="c">      case &#39;s&#39; : code = s_code;</span>
+<a name="line-235"></a><span class="c">                 break;</span>
+<a name="line-236"></a><span class="c">      case &#39;t&#39; :</span>
+<a name="line-237"></a><span class="c">      case &#39;T&#39; : code = t_code;</span>
+<a name="line-238"></a><span class="c">                 break;</span>
+<a name="line-239"></a><span class="c">      case &#39;u&#39; : code = u_code;</span>
+<a name="line-240"></a><span class="c">                 break;</span>
+<a name="line-241"></a><span class="c">      case &#39;U&#39; : code = cap_u_code;</span>
+<a name="line-242"></a><span class="c">                 break;</span>
+<a name="line-243"></a><span class="c">      case &#39;y&#39; :</span>
+<a name="line-244"></a><span class="c">      case &#39;Y&#39; : code = y_code;</span>
+<a name="line-245"></a><span class="c">                 break;</span>
+<a name="line-246"></a><span class="c">      case &#39;-&#39; : code = dash_code;</span>
+<a name="line-247"></a><span class="c">                 break;</span>
+<a name="line-248"></a><span class="c">      case &#39;\&quot;&#39; : code = quote_code;</span>
+<a name="line-249"></a><span class="c">                 break;</span>
+<a name="line-250"></a><span class="c">      case &#39;$&#39; : code = currency_code;</span>
+<a name="line-251"></a><span class="c">                 break;</span>
+<a name="line-252"></a><span class="c">      case &#39;1&#39; :</span>
+<a name="line-253"></a><span class="c">      case &#39;2&#39; :</span>
+<a name="line-254"></a><span class="c">      case &#39;3&#39; : code = one_code;</span>
+<a name="line-255"></a><span class="c">                 break;</span>
+<a name="line-256"></a><span class="c">      case &#39;d&#39; : code = NULL;</span>
+<a name="line-257"></a><span class="c">                 break;</span>
+<a name="line-258"></a><span class="c">      default :</span>
+<a name="line-259"></a><span class="c">                 return FALSE;</span>
+<a name="line-260"></a><span class="c">    }</span>
+<a name="line-261"></a><span class="c">    /* FIXME: what&#39;s wrong here ? */</span>
+<a name="line-262"></a><span class="c">    if (code)</span>
+<a name="line-263"></a><span class="c">      p_curr_data-&gt;charlist = g_ucs4_to_utf8 (code, -1, NULL, NULL, NULL);</span>
+<a name="line-264"></a><span class="c">    else</span>
+<a name="line-265"></a><span class="c">      p_curr_data-&gt;charlist = &quot;hello&quot;;</span>
+<a name="line-266"></a><span class="c">    p_curr_data-&gt;last_index = NO_LAST_INDEX;</span>
+<a name="line-267"></a><span class="c">    p_curr_data-&gt;last_toggle_button = NULL;</span>
+<a name="line-268"></a><span class="c">    build_table (p_curr_data);</span>
+<a name="line-269"></a><span class="cp">#endif</span>
+<a name="line-270"></a>  <span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<a name="line-271"></a><span class="p">}</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-274"></a><span class="nf">menuitem_activated</span> <span class="p">(</span><span class="n">GtkMenuItem</span>   <span class="o">*</span><span class="n">menuitem</span><span class="p">,</span>
+<a name="line-275"></a>                    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-276"></a><span class="p">{</span>
+<a name="line-277"></a>    <span class="n">gchar</span> <span class="o">*</span><span class="n">string</span><span class="p">;</span>
+<a name="line-278"></a>
+<a name="line-279"></a>    <span class="n">string</span> <span class="o">=</span> <span class="n">g_object_get_data</span> <span class="p">(</span><span class="n">G_OBJECT</span> <span class="p">(</span><span class="n">menuitem</span><span class="p">),</span> <span class="s">&quot;string&quot;</span><span class="p">);</span>
+<a name="line-280"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">g_ascii_strcasecmp</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-281"></a>        <span class="k">return</span><span class="p">;</span>
+<a name="line-282"></a>
+<a name="line-283"></a>    <span class="n">g_free</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">);</span>
+<a name="line-284"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span> <span class="o">=</span> <span class="n">g_strdup</span> <span class="p">(</span><span class="n">string</span><span class="p">);</span>
+<a name="line-285"></a>
+<a name="line-286"></a>    <span class="n">build_table</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-287"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">g_settings_is_writable</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span><span class="p">,</span> <span class="s">&quot;current-list&quot;</span><span class="p">))</span>
+<a name="line-288"></a>        <span class="n">g_settings_set_string</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span><span class="p">,</span>
+<a name="line-289"></a>                               <span class="s">&quot;current-list&quot;</span><span class="p">,</span>
+<a name="line-290"></a>                               <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">);</span>
+<a name="line-291"></a><span class="p">}</span>
+<a name="line-292"></a>
+<a name="line-293"></a><span class="kt">void</span>
+<a name="line-294"></a><span class="nf">populate_menu</span> <span class="p">(</span><span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-295"></a><span class="p">{</span>
+<a name="line-296"></a>    <span class="n">GList</span> <span class="o">*</span><span class="n">list</span> <span class="o">=</span> <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span><span class="p">;</span>
+<a name="line-297"></a>    <span class="n">GSList</span> <span class="o">*</span><span class="n">group</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-298"></a>    <span class="n">GtkMenu</span> <span class="o">*</span><span class="n">menu</span><span class="p">;</span>
+<a name="line-299"></a><span class="hll">    <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">menuitem</span><span class="p">;</span><div class="verbose expandable"><span class="error2">&lt;--- The scope of the variable 'menuitem' can be reduced. <span class="marker">[+]</span></span><div class="content">The scope of the variable &apos;menuitem&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:
+void f(int x)
+{
+    int i = 0;
+    if (x) {
+        // it&apos;s safe to move &apos;int i = 0;&apos; here
+        for (int n = 0; n &lt; 10; ++n) {
+            // it is possible but not safe to move &apos;int i = 0;&apos; here
+            do_something(&amp;i);
+        }
+    }
+}
+When you see this message it is always safe to reduce the variable scope 1 level.</div></div>
+</span><a name="line-300"></a>
+<a name="line-301"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">)</span>
+<a name="line-302"></a>        <span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">);</span>
+<a name="line-303"></a>
+<a name="line-304"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span> <span class="o">=</span> <span class="n">gtk_menu_new</span> <span class="p">();</span>
+<a name="line-305"></a>    <span class="n">menu</span>  <span class="o">=</span> <span class="n">GTK_MENU</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">);</span>
+<a name="line-306"></a>
+<a name="line-307"></a>    <span class="k">while</span> <span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-308"></a>        <span class="n">gchar</span> <span class="o">*</span><span class="n">string</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<a name="line-309"></a>        <span class="n">menuitem</span> <span class="o">=</span> <span class="n">gtk_radio_menu_item_new_with_label</span> <span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">string</span><span class="p">);</span>
+<a name="line-310"></a>        <span class="n">group</span> <span class="o">=</span> <span class="n">gtk_radio_menu_item_get_group</span> <span class="p">(</span><span class="n">GTK_RADIO_MENU_ITEM</span> <span class="p">(</span><span class="n">menuitem</span><span class="p">));</span>
+<a name="line-311"></a>        <span class="n">gtk_widget_show</span> <span class="p">(</span><span class="n">menuitem</span><span class="p">);</span>
+<a name="line-312"></a>        <span class="n">g_object_set_data</span> <span class="p">(</span><span class="n">G_OBJECT</span> <span class="p">(</span><span class="n">menuitem</span><span class="p">),</span> <span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">);</span>
+<a name="line-313"></a>        <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">menuitem</span><span class="p">,</span> <span class="s">&quot;activate&quot;</span><span class="p">,</span>
+<a name="line-314"></a>                          <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">menuitem_activated</span><span class="p">),</span>
+<a name="line-315"></a>                          <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-316"></a>        <span class="n">gtk_menu_shell_append</span> <span class="p">(</span><span class="n">GTK_MENU_SHELL</span> <span class="p">(</span><span class="n">menu</span><span class="p">),</span> <span class="n">menuitem</span><span class="p">);</span>
+<a name="line-317"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">g_ascii_strcasecmp</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-318"></a>            <span class="n">gtk_check_menu_item_set_active</span> <span class="p">(</span><span class="n">GTK_CHECK_MENU_ITEM</span> <span class="p">(</span><span class="n">menuitem</span><span class="p">),</span> <span class="n">TRUE</span><span class="p">);</span>
+<a name="line-319"></a>        <span class="n">list</span> <span class="o">=</span> <span class="n">g_list_next</span> <span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<a name="line-320"></a>    <span class="p">}</span>
+<a name="line-321"></a>    <span class="n">build_table</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-322"></a>
+<a name="line-323"></a>    <span class="cm">/*Set up custom theme and transparency support*/</span>
+<a name="line-324"></a>    <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">toplevel</span> <span class="o">=</span> <span class="n">gtk_widget_get_toplevel</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">menu</span><span class="p">));</span>
+<a name="line-325"></a>    <span class="cm">/* Fix any failures of compiz/other wm&#39;s to communicate with gtk for transparency */</span>
+<a name="line-326"></a>    <span class="n">GdkScreen</span> <span class="o">*</span><span class="n">screen</span> <span class="o">=</span> <span class="n">gtk_widget_get_screen</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">toplevel</span><span class="p">));</span>
+<a name="line-327"></a>    <span class="n">GdkVisual</span> <span class="o">*</span><span class="n">visual</span> <span class="o">=</span> <span class="n">gdk_screen_get_rgba_visual</span> <span class="p">(</span><span class="n">screen</span><span class="p">);</span>
+<a name="line-328"></a>    <span class="n">gtk_widget_set_visual</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">toplevel</span><span class="p">),</span> <span class="n">visual</span><span class="p">);</span>
+<a name="line-329"></a>    <span class="cm">/* Set menu and it&#39;s toplevel window to follow panel theme */</span>
+<a name="line-330"></a>    <span class="n">GtkStyleContext</span> <span class="o">*</span><span class="n">context</span><span class="p">;</span>
+<a name="line-331"></a>    <span class="n">context</span> <span class="o">=</span> <span class="n">gtk_widget_get_style_context</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">toplevel</span><span class="p">));</span>
+<a name="line-332"></a>    <span class="n">gtk_style_context_add_class</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;gnome-panel-menu-bar&quot;</span><span class="p">);</span>
+<a name="line-333"></a>    <span class="n">gtk_style_context_add_class</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;mate-panel-menu-bar&quot;</span><span class="p">);</span>
+<a name="line-334"></a><span class="p">}</span>
+<a name="line-335"></a>
+<a name="line-336"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-337"></a><span class="nf">chooser_button_clicked</span> <span class="p">(</span><span class="n">GtkButton</span>     <span class="o">*</span><span class="n">button</span><span class="p">,</span>
+<a name="line-338"></a>                        <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-339"></a><span class="p">{</span>
+<a name="line-340"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">gtk_widget_get_visible</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">))</span>
+<a name="line-341"></a>        <span class="n">gtk_menu_popdown</span> <span class="p">(</span><span class="n">GTK_MENU</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">));</span>
+<a name="line-342"></a>    <span class="k">else</span> <span class="p">{</span>
+<a name="line-343"></a>        <span class="n">gtk_menu_set_screen</span> <span class="p">(</span><span class="n">GTK_MENU</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">),</span>
+<a name="line-344"></a>                             <span class="n">gtk_widget_get_screen</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">)));</span>
+<a name="line-345"></a>
+<a name="line-346"></a>        <span class="n">gtk_menu_popup_at_widget</span> <span class="p">(</span><span class="n">GTK_MENU</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">),</span>
+<a name="line-347"></a>                                  <span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">button</span><span class="p">),</span>
+<a name="line-348"></a>                                  <span class="n">GDK_GRAVITY_SOUTH_WEST</span><span class="p">,</span>
+<a name="line-349"></a>                                  <span class="n">GDK_GRAVITY_NORTH_WEST</span><span class="p">,</span>
+<a name="line-350"></a>                                  <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-351"></a>    <span class="p">}</span>
+<a name="line-352"></a><span class="p">}</span>
+<a name="line-353"></a>
+<a name="line-354"></a><span class="cm">/* Force the button not to have any focus padding and let the focus</span>
+<a name="line-355"></a><span class="cm">   indication be drawn on the label itself when space is tight. Taken from the clock applet.</span>
+<a name="line-356"></a><span class="cm">   FIXME : This is an Evil Hack and should be fixed when the focus padding can be overridden at the gtk+ level */</span>
+<a name="line-357"></a>
+<a name="line-358"></a><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">force_no_button_padding</span> <span class="p">(</span><span class="n">GtkWidget</span> <span class="o">*</span><span class="n">widget</span><span class="p">)</span>
+<a name="line-359"></a><span class="p">{</span>
+<a name="line-360"></a>    <span class="n">GtkCssProvider</span> <span class="o">*</span><span class="n">provider</span><span class="p">;</span>
+<a name="line-361"></a>
+<a name="line-362"></a>    <span class="n">provider</span> <span class="o">=</span> <span class="n">gtk_css_provider_new</span> <span class="p">();</span>
+<a name="line-363"></a>
+<a name="line-364"></a>    <span class="n">gtk_css_provider_load_from_data</span> <span class="p">(</span><span class="n">provider</span><span class="p">,</span>
+<a name="line-365"></a>                                     <span class="s">&quot;#charpick-applet-button {</span><span class="se">\n</span><span class="s">&quot;</span>
+<a name="line-366"></a>                                     <span class="s">&quot;border-width: 0px;</span><span class="se">\n</span><span class="s">&quot;</span>
+<a name="line-367"></a>                                     <span class="s">&quot;padding: 0px;</span><span class="se">\n</span><span class="s">&quot;</span>
+<a name="line-368"></a>                                     <span class="s">&quot;margin: 0px;</span><span class="se">\n</span><span class="s">&quot;</span>
+<a name="line-369"></a>                                     <span class="s">&quot;}&quot;</span><span class="p">,</span>
+<a name="line-370"></a>                                     <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<a name="line-371"></a>                                     <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-372"></a>
+<a name="line-373"></a>    <span class="n">gtk_style_context_add_provider</span> <span class="p">(</span><span class="n">gtk_widget_get_style_context</span> <span class="p">(</span><span class="n">widget</span><span class="p">),</span>
+<a name="line-374"></a>                                    <span class="n">GTK_STYLE_PROVIDER</span> <span class="p">(</span><span class="n">provider</span><span class="p">),</span>
+<a name="line-375"></a>                                    <span class="n">GTK_STYLE_PROVIDER_PRIORITY_APPLICATION</span><span class="p">);</span>
+<a name="line-376"></a>
+<a name="line-377"></a>    <span class="n">g_object_unref</span> <span class="p">(</span><span class="n">provider</span><span class="p">);</span>
+<a name="line-378"></a>
+<a name="line-379"></a>    <span class="n">gtk_widget_set_name</span> <span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="s">&quot;charpick-applet-button&quot;</span><span class="p">);</span>
+<a name="line-380"></a><span class="p">}</span>
+<a name="line-381"></a>
+<a name="line-382"></a><span class="cm">/* creates table of buttons, sets up their callbacks, and packs the table in</span>
+<a name="line-383"></a><span class="cm">   the event box */</span>
+<a name="line-384"></a>
+<a name="line-385"></a><span class="kt">void</span>
+<a name="line-386"></a><span class="nf">build_table</span> <span class="p">(</span><span class="n">charpick_data</span> <span class="o">*</span><span class="n">p_curr_data</span><span class="p">)</span>
+<a name="line-387"></a><span class="p">{</span>
+<a name="line-388"></a>    <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">box</span><span class="p">,</span> <span class="o">*</span><span class="n">button_box</span><span class="p">,</span> <span class="o">**</span><span class="n">row_box</span><span class="p">;</span>
+<a name="line-389"></a>    <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">button</span><span class="p">,</span> <span class="o">*</span><span class="n">arrow</span><span class="p">;</span>
+<a name="line-390"></a>    <span class="n">gint</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span> <span class="o">=</span> <span class="n">g_utf8_strlen</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<a name="line-391"></a>    <span class="n">GtkWidget</span> <span class="o">**</span><span class="n">toggle_button</span><span class="p">;</span>
+<a name="line-392"></a>    <span class="n">gchar</span> <span class="o">*</span><span class="n">charlist</span><span class="p">;</span>
+<a name="line-393"></a>    <span class="n">gint</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_height</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a name="line-394"></a>    <span class="n">gint</span> <span class="n">size_ratio</span><span class="p">;</span>
+<a name="line-395"></a>
+<a name="line-396"></a>    <span class="n">toggle_button</span> <span class="o">=</span> <span class="n">g_new</span> <span class="p">(</span><span class="n">GtkWidget</span> <span class="o">*</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+<a name="line-397"></a>
+<a name="line-398"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">box</span><span class="p">)</span>
+<a name="line-399"></a>        <span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">box</span><span class="p">);</span>
+<a name="line-400"></a>
+<a name="line-401"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span><span class="p">)</span>
+<a name="line-402"></a>        <span class="n">box</span> <span class="o">=</span> <span class="n">gtk_box_new</span> <span class="p">(</span><span class="n">GTK_ORIENTATION_VERTICAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-403"></a>    <span class="k">else</span>
+<a name="line-404"></a>        <span class="n">box</span> <span class="o">=</span> <span class="n">gtk_box_new</span> <span class="p">(</span><span class="n">GTK_ORIENTATION_HORIZONTAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-405"></a>
+<a name="line-406"></a>    <span class="n">gtk_widget_show</span> <span class="p">(</span><span class="n">box</span><span class="p">);</span>
+<a name="line-407"></a>    <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">box</span> <span class="o">=</span> <span class="n">box</span><span class="p">;</span>
+<a name="line-408"></a>
+<a name="line-409"></a>    <span class="n">button</span> <span class="o">=</span> <span class="n">gtk_button_new</span> <span class="p">();</span>
+<a name="line-410"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">g_list_length</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-411"></a>    <span class="p">{</span>
+<a name="line-412"></a>        <span class="n">gtk_widget_set_tooltip_text</span> <span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">&quot;Available palettes&quot;</span><span class="p">));</span>
+<a name="line-413"></a>
+<a name="line-414"></a>        <span class="k">switch</span> <span class="p">(</span><span class="n">mate_panel_applet_get_orient</span> <span class="p">(</span><span class="n">MATE_PANEL_APPLET</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">)))</span> <span class="p">{</span>
+<a name="line-415"></a>            <span class="k">case</span> <span class="nl">MATE_PANEL_APPLET_ORIENT_DOWN</span><span class="p">:</span>
+<a name="line-416"></a>                <span class="n">arrow</span> <span class="o">=</span> <span class="n">gtk_image_new_from_icon_name</span> <span class="p">(</span><span class="s">&quot;pan-down-symbolic&quot;</span><span class="p">,</span>
+<a name="line-417"></a>                                                      <span class="n">GTK_ICON_SIZE_MENU</span><span class="p">);</span>
+<a name="line-418"></a>                <span class="k">break</span><span class="p">;</span>
+<a name="line-419"></a>            <span class="k">case</span> <span class="nl">MATE_PANEL_APPLET_ORIENT_UP</span><span class="p">:</span>
+<a name="line-420"></a>                <span class="n">arrow</span> <span class="o">=</span> <span class="n">gtk_image_new_from_icon_name</span> <span class="p">(</span><span class="s">&quot;pan-up-symbolic&quot;</span><span class="p">,</span>
+<a name="line-421"></a>                                                      <span class="n">GTK_ICON_SIZE_MENU</span><span class="p">);</span>
+<a name="line-422"></a>                <span class="k">break</span><span class="p">;</span>
+<a name="line-423"></a>            <span class="k">case</span> <span class="nl">MATE_PANEL_APPLET_ORIENT_LEFT</span><span class="p">:</span>
+<a name="line-424"></a>                <span class="n">arrow</span> <span class="o">=</span> <span class="n">gtk_image_new_from_icon_name</span> <span class="p">(</span><span class="s">&quot;pan-start-symbolic&quot;</span><span class="p">,</span>
+<a name="line-425"></a>                                                      <span class="n">GTK_ICON_SIZE_MENU</span><span class="p">);</span>
+<a name="line-426"></a>                <span class="k">break</span><span class="p">;</span>
+<a name="line-427"></a>            <span class="k">case</span> <span class="nl">MATE_PANEL_APPLET_ORIENT_RIGHT</span><span class="p">:</span>
+<a name="line-428"></a>                <span class="n">arrow</span> <span class="o">=</span> <span class="n">gtk_image_new_from_icon_name</span> <span class="p">(</span><span class="s">&quot;pan-end-symbolic&quot;</span><span class="p">,</span>
+<a name="line-429"></a>                                                      <span class="n">GTK_ICON_SIZE_MENU</span><span class="p">);</span>
+<a name="line-430"></a>                <span class="k">break</span><span class="p">;</span>
+<a name="line-431"></a>            <span class="k">default</span><span class="o">:</span>
+<a name="line-432"></a>                <span class="n">g_assert_not_reached</span> <span class="p">();</span>
+<a name="line-433"></a>        <span class="p">}</span>
+<a name="line-434"></a>        <span class="n">gtk_container_add</span> <span class="p">(</span><span class="n">GTK_CONTAINER</span> <span class="p">(</span><span class="n">button</span><span class="p">),</span> <span class="n">arrow</span><span class="p">);</span>
+<a name="line-435"></a>
+<a name="line-436"></a>        <span class="n">gtk_button_set_relief</span> <span class="p">(</span><span class="n">GTK_BUTTON</span> <span class="p">(</span><span class="n">button</span><span class="p">),</span> <span class="n">GTK_RELIEF_NONE</span><span class="p">);</span>
+<a name="line-437"></a>
+<a name="line-438"></a>        <span class="cm">/* FIXME : evil hack (see force_no_button_padding) */</span>
+<a name="line-439"></a>        <span class="n">force_no_button_padding</span> <span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<a name="line-440"></a>
+<a name="line-441"></a>        <span class="n">gtk_box_pack_start</span> <span class="p">(</span><span class="n">GTK_BOX</span> <span class="p">(</span><span class="n">box</span><span class="p">),</span> <span class="n">button</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-442"></a>        <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="s">&quot;clicked&quot;</span><span class="p">,</span>
+<a name="line-443"></a>                          <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">chooser_button_clicked</span><span class="p">),</span>
+<a name="line-444"></a>                          <span class="n">p_curr_data</span><span class="p">);</span>
+<a name="line-445"></a>
+<a name="line-446"></a>        <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="s">&quot;button_press_event&quot;</span><span class="p">,</span>
+<a name="line-447"></a>                          <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">button_press_hack</span><span class="p">),</span>
+<a name="line-448"></a>                          <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-449"></a>    <span class="p">}</span>
+<a name="line-450"></a>
+<a name="line-451"></a>    <span class="n">charlist</span> <span class="o">=</span> <span class="n">g_strdup</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">);</span>
+<a name="line-452"></a>    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-453"></a>        <span class="n">gchar</span> <span class="n">label</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span>
+<a name="line-454"></a>        <span class="n">GtkRequisition</span> <span class="n">req</span><span class="p">;</span>
+<a name="line-455"></a>        <span class="n">gchar</span> <span class="o">*</span><span class="n">atk_desc</span><span class="p">;</span>
+<a name="line-456"></a>        <span class="n">gchar</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<a name="line-457"></a>        <span class="n">g_utf8_strncpy</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">charlist</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-458"></a>        <span class="n">charlist</span> <span class="o">=</span> <span class="n">g_utf8_next_char</span> <span class="p">(</span><span class="n">charlist</span><span class="p">);</span>
+<a name="line-459"></a>
+<a name="line-460"></a><span class="cp">#ifdef HAVE_GUCHARMAP</span>
+<a name="line-461"></a>        <span class="cm">/* TRANSLATOR: This sentance reads something like &#39;Insert &quot;PILCROW SIGN&quot;&#39;</span>
+<a name="line-462"></a><span class="cm">         *             hopefully, the name of the unicode character has already</span>
+<a name="line-463"></a><span class="cm">         *             been translated.</span>
+<a name="line-464"></a><span class="cm">         */</span>
+<a name="line-465"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">g_strdup_printf</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">&quot;Insert </span><span class="se">\&quot;</span><span class="s">%s</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">),</span>
+<a name="line-466"></a>                                <span class="n">gucharmap_get_unicode_name</span> <span class="p">(</span><span class="n">g_utf8_get_char</span> <span class="p">(</span><span class="n">label</span><span class="p">)));</span>
+<a name="line-467"></a><span class="cp">#else</span>
+<a name="line-468"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">g_strdup</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">&quot;Insert special character&quot;</span><span class="p">));</span>
+<a name="line-469"></a><span class="cp">#endif</span>
+<a name="line-470"></a>
+<a name="line-471"></a>        <span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">gtk_toggle_button_new_with_label</span> <span class="p">(</span><span class="n">label</span><span class="p">);</span>
+<a name="line-472"></a>        <span class="n">atk_desc</span> <span class="o">=</span>  <span class="n">g_strdup_printf</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">&quot;insert special character %s&quot;</span><span class="p">),</span> <span class="n">label</span><span class="p">);</span>
+<a name="line-473"></a>
+<a name="line-474"></a>        <span class="n">set_atk_name_description</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">atk_desc</span><span class="p">);</span>
+<a name="line-475"></a>        <span class="n">g_free</span> <span class="p">(</span><span class="n">atk_desc</span><span class="p">);</span>
+<a name="line-476"></a>        <span class="n">gtk_widget_show</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<a name="line-477"></a>        <span class="n">gtk_button_set_relief</span> <span class="p">(</span><span class="n">GTK_BUTTON</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">GTK_RELIEF_NONE</span><span class="p">);</span>
+<a name="line-478"></a>
+<a name="line-479"></a>        <span class="cm">/* FIXME : evil hack (see force_no_button_padding) */</span>
+<a name="line-480"></a>        <span class="n">force_no_button_padding</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<a name="line-481"></a>
+<a name="line-482"></a>        <span class="n">gtk_widget_set_tooltip_text</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">name</span><span class="p">);</span>
+<a name="line-483"></a>        <span class="n">g_free</span> <span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<a name="line-484"></a>
+<a name="line-485"></a>        <span class="n">gtk_widget_get_preferred_size</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">req</span><span class="p">);</span>
+<a name="line-486"></a>
+<a name="line-487"></a>        <span class="n">max_width</span> <span class="o">=</span> <span class="n">MAX</span> <span class="p">(</span><span class="n">max_width</span><span class="p">,</span> <span class="n">req</span><span class="p">.</span><span class="n">width</span><span class="p">);</span>
+<a name="line-488"></a>        <span class="n">max_height</span> <span class="o">=</span> <span class="n">MAX</span> <span class="p">(</span><span class="n">max_height</span><span class="p">,</span> <span class="n">req</span><span class="p">.</span><span class="n">height</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<a name="line-489"></a>
+<a name="line-490"></a>        <span class="n">g_object_set_data</span> <span class="p">(</span><span class="n">G_OBJECT</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="s">&quot;unichar&quot;</span><span class="p">,</span>
+<a name="line-491"></a>                           <span class="n">GINT_TO_POINTER</span> <span class="p">(</span><span class="n">g_utf8_get_char</span> <span class="p">(</span><span class="n">label</span><span class="p">)));</span>
+<a name="line-492"></a>
+<a name="line-493"></a>        <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;toggled&quot;</span><span class="p">,</span>
+<a name="line-494"></a>                          <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">toggle_button_toggled_cb</span><span class="p">),</span>
+<a name="line-495"></a>                          <span class="n">p_curr_data</span><span class="p">);</span>
+<a name="line-496"></a>
+<a name="line-497"></a>        <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;button_press_event&quot;</span><span class="p">,</span>
+<a name="line-498"></a>                          <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">button_press_hack</span><span class="p">),</span>
+<a name="line-499"></a>                          <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-500"></a>    <span class="p">}</span>
+<a name="line-501"></a>
+<a name="line-502"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-503"></a>        <span class="n">size_ratio</span> <span class="o">=</span> <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">/</span> <span class="n">max_width</span><span class="p">;</span>
+<a name="line-504"></a>        <span class="n">button_box</span> <span class="o">=</span> <span class="n">gtk_box_new</span> <span class="p">(</span><span class="n">GTK_ORIENTATION_HORIZONTAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-505"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-506"></a>        <span class="n">size_ratio</span> <span class="o">=</span> <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">/</span> <span class="n">max_height</span><span class="p">;</span>
+<a name="line-507"></a>        <span class="n">button_box</span> <span class="o">=</span> <span class="n">gtk_box_new</span> <span class="p">(</span><span class="n">GTK_ORIENTATION_VERTICAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-508"></a>    <span class="p">}</span>
+<a name="line-509"></a>
+<a name="line-510"></a>    <span class="n">gtk_box_set_homogeneous</span> <span class="p">(</span><span class="n">GTK_BOX</span> <span class="p">(</span><span class="n">button_box</span><span class="p">),</span> <span class="n">TRUE</span><span class="p">);</span>
+<a name="line-511"></a>    <span class="n">gtk_box_pack_start</span> <span class="p">(</span><span class="n">GTK_BOX</span> <span class="p">(</span><span class="n">box</span><span class="p">),</span> <span class="n">button_box</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-512"></a>
+<a name="line-513"></a>    <span class="n">size_ratio</span> <span class="o">=</span> <span class="n">MAX</span> <span class="p">(</span><span class="n">size_ratio</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-514"></a>    <span class="n">row_box</span> <span class="o">=</span> <span class="n">g_new0</span> <span class="p">(</span><span class="n">GtkWidget</span> <span class="o">*</span><span class="p">,</span> <span class="n">size_ratio</span><span class="p">);</span>
+<a name="line-515"></a>    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size_ratio</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-516"></a>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span><span class="p">)</span>
+<a name="line-517"></a>            <span class="n">row_box</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">gtk_box_new</span> <span class="p">(</span><span class="n">GTK_ORIENTATION_HORIZONTAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-518"></a>        <span class="k">else</span>
+<a name="line-519"></a>            <span class="n">row_box</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">gtk_box_new</span> <span class="p">(</span><span class="n">GTK_ORIENTATION_VERTICAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-520"></a>
+<a name="line-521"></a>        <span class="n">gtk_box_set_homogeneous</span> <span class="p">(</span><span class="n">GTK_BOX</span> <span class="p">(</span><span class="n">row_box</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">TRUE</span><span class="p">);</span>
+<a name="line-522"></a>        <span class="n">gtk_box_pack_start</span> <span class="p">(</span><span class="n">GTK_BOX</span> <span class="p">(</span><span class="n">button_box</span><span class="p">),</span> <span class="n">row_box</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-523"></a>    <span class="p">}</span>
+<a name="line-524"></a>
+<a name="line-525"></a>    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span><span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-526"></a>        <span class="kt">int</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">len</span><span class="o">/</span><span class="n">size_ratio</span><span class="p">;</span>
+<a name="line-527"></a>        <span class="kt">int</span> <span class="n">index</span><span class="p">;</span>
+<a name="line-528"></a>
+<a name="line-529"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">delta</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-530"></a>            <span class="n">index</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">delta</span><span class="p">;</span>
+<a name="line-531"></a>        <span class="k">else</span>
+<a name="line-532"></a>            <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<a name="line-533"></a>
+<a name="line-534"></a>        <span class="n">index</span> <span class="o">=</span> <span class="n">CLAMP</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size_ratio</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<a name="line-535"></a>        <span class="n">gtk_box_pack_start</span> <span class="p">(</span><span class="n">GTK_BOX</span> <span class="p">(</span><span class="n">row_box</span><span class="p">[</span><span class="n">index</span><span class="p">]),</span>
+<a name="line-536"></a>                            <span class="n">toggle_button</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+<a name="line-537"></a>                            <span class="n">TRUE</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-538"></a>    <span class="p">}</span>
+<a name="line-539"></a>
+<a name="line-540"></a>    <span class="n">g_free</span> <span class="p">(</span><span class="n">toggle_button</span><span class="p">);</span>
+<a name="line-541"></a>    <span class="n">g_free</span> <span class="p">(</span><span class="n">row_box</span><span class="p">);</span>
+<a name="line-542"></a>
+<a name="line-543"></a>    <span class="n">gtk_container_add</span> <span class="p">(</span><span class="n">GTK_CONTAINER</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">),</span> <span class="n">box</span><span class="p">);</span>
+<a name="line-544"></a>    <span class="n">gtk_widget_show_all</span> <span class="p">(</span><span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">box</span><span class="p">);</span>
+<a name="line-545"></a>
+<a name="line-546"></a>    <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">last_index</span> <span class="o">=</span> <span class="n">NO_LAST_INDEX</span><span class="p">;</span>
+<a name="line-547"></a>    <span class="n">p_curr_data</span><span class="o">-&gt;</span><span class="n">last_toggle_button</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-548"></a><span class="p">}</span>
+<a name="line-549"></a>
+<a name="line-550"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-551"></a><span class="nf">applet_size_allocate</span> <span class="p">(</span><span class="n">MatePanelApplet</span> <span class="o">*</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-552"></a>                      <span class="n">GtkAllocation</span>   <span class="o">*</span><span class="n">allocation</span><span class="p">,</span>
+<a name="line-553"></a>                      <span class="n">gpointer</span>         <span class="n">data</span><span class="p">)</span>
+<a name="line-554"></a><span class="p">{</span>
+<a name="line-555"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-556"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-557"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">==</span> <span class="n">allocation</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">)</span>
+<a name="line-558"></a>            <span class="k">return</span><span class="p">;</span>
+<a name="line-559"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">=</span> <span class="n">allocation</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+<a name="line-560"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-561"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">==</span> <span class="n">allocation</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">)</span>
+<a name="line-562"></a>            <span class="k">return</span><span class="p">;</span>
+<a name="line-563"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">=</span> <span class="n">allocation</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+<a name="line-564"></a>    <span class="p">}</span>
+<a name="line-565"></a>
+<a name="line-566"></a>    <span class="n">build_table</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-567"></a>    <span class="k">return</span><span class="p">;</span>
+<a name="line-568"></a><span class="p">}</span>
+<a name="line-569"></a>
+<a name="line-570"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-571"></a><span class="nf">applet_change_orient</span> <span class="p">(</span><span class="n">MatePanelApplet</span>      <span class="o">*</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-572"></a>                      <span class="n">MatePanelAppletOrient</span> <span class="n">o</span><span class="p">,</span>
+<a name="line-573"></a>                      <span class="n">gpointer</span>              <span class="n">data</span><span class="p">)</span>
+<a name="line-574"></a><span class="p">{</span>
+<a name="line-575"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-576"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">o</span> <span class="o">==</span> <span class="n">MATE_PANEL_APPLET_ORIENT_UP</span> <span class="o">||</span>
+<a name="line-577"></a>        <span class="n">o</span> <span class="o">==</span> <span class="n">MATE_PANEL_APPLET_ORIENT_DOWN</span><span class="p">)</span>
+<a name="line-578"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+<a name="line-579"></a>    <span class="k">else</span>
+<a name="line-580"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+<a name="line-581"></a>
+<a name="line-582"></a>    <span class="n">build_table</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-583"></a>    <span class="k">return</span><span class="p">;</span>
+<a name="line-584"></a><span class="p">}</span>
+<a name="line-585"></a>
+<a name="line-586"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-587"></a><span class="nf">about</span> <span class="p">(</span><span class="n">GtkAction</span>     <span class="o">*</span><span class="n">action</span><span class="p">,</span>
+<a name="line-588"></a>       <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-589"></a><span class="p">{</span>
+<a name="line-590"></a>    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">authors</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-591"></a>            <span class="s">&quot;Alexandre Muñiz &lt;munizao@xprt.net&gt;&quot;</span><span class="p">,</span>
+<a name="line-592"></a>            <span class="s">&quot;Kevin Vandersloot&quot;</span><span class="p">,</span>
+<a name="line-593"></a>            <span class="nb">NULL</span>
+<a name="line-594"></a>    <span class="p">};</span>
+<a name="line-595"></a>
+<a name="line-596"></a>    <span class="k">static</span> <span class="k">const</span> <span class="n">gchar</span><span class="o">*</span> <span class="n">documenters</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-597"></a>            <span class="s">&quot;Dan Mueth &lt;d-mueth@uchicago.edu&gt;&quot;</span><span class="p">,</span>
+<a name="line-598"></a>            <span class="n">N_</span><span class="p">(</span><span class="s">&quot;Sun GNOME Documentation Team &lt;gdocteam@sun.com&gt;&quot;</span><span class="p">),</span>
+<a name="line-599"></a>            <span class="n">N_</span><span class="p">(</span><span class="s">&quot;MATE Documentation Team&quot;</span><span class="p">),</span>
+<a name="line-600"></a>            <span class="nb">NULL</span>
+<a name="line-601"></a>    <span class="p">};</span>
+<a name="line-602"></a>
+<a name="line-603"></a><span class="cp">#ifdef ENABLE_NLS</span>
+<a name="line-604"></a>    <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">p</span><span class="p">;</span>
+<a name="line-605"></a>    <span class="k">for</span> <span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="n">documenters</span><span class="p">;</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span> <span class="o">++</span><span class="n">p</span><span class="p">)</span>
+<a name="line-606"></a>        <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<a name="line-607"></a><span class="cp">#endif</span>
+<a name="line-608"></a>
+<a name="line-609"></a>    <span class="n">gtk_show_about_dialog</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">,</span>
+<a name="line-610"></a>                           <span class="s">&quot;title&quot;</span><span class="p">,</span>              <span class="n">_</span><span class="p">(</span><span class="s">&quot;About Character Palette&quot;</span><span class="p">),</span>
+<a name="line-611"></a>                           <span class="s">&quot;version&quot;</span><span class="p">,</span>            <span class="n">VERSION</span><span class="p">,</span>
+<a name="line-612"></a>                           <span class="s">&quot;copyright&quot;</span><span class="p">,</span>          <span class="n">_</span><span class="p">(</span><span class="s">&quot;Copyright </span><span class="se">\xc2\xa9</span><span class="s"> 1998, 2004-2005 GNOME Applets Maintainers and others</span><span class="se">\n</span><span class="s">&quot;</span>
+<a name="line-613"></a>                                                   <span class="s">&quot;Copyright </span><span class="se">\xc2\xa9</span><span class="s"> 2012-2021 MATE developers&quot;</span><span class="p">),</span>
+<a name="line-614"></a>                           <span class="s">&quot;comments&quot;</span><span class="p">,</span>           <span class="n">_</span><span class="p">(</span><span class="s">&quot;MATE Panel applet for selecting strange &quot;</span>
+<a name="line-615"></a>                                                   <span class="s">&quot;characters that are not on the keyboard. &quot;</span>
+<a name="line-616"></a>                                                   <span class="s">&quot;Released under GNU General Public Licence.&quot;</span><span class="p">),</span>
+<a name="line-617"></a>                           <span class="s">&quot;authors&quot;</span><span class="p">,</span>            <span class="n">authors</span><span class="p">,</span>
+<a name="line-618"></a>                           <span class="s">&quot;documenters&quot;</span><span class="p">,</span>        <span class="n">documenters</span><span class="p">,</span>
+<a name="line-619"></a>                           <span class="s">&quot;translator-credits&quot;</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">&quot;translator-credits&quot;</span><span class="p">),</span>
+<a name="line-620"></a>                           <span class="s">&quot;logo-icon-name&quot;</span><span class="p">,</span>     <span class="s">&quot;accessories-character-map&quot;</span><span class="p">,</span>
+<a name="line-621"></a>                           <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-622"></a><span class="p">}</span>
+<a name="line-623"></a>
+<a name="line-624"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-625"></a><span class="nf">help_cb</span> <span class="p">(</span><span class="n">GtkAction</span>     <span class="o">*</span><span class="n">action</span><span class="p">,</span>
+<a name="line-626"></a>         <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-627"></a><span class="p">{</span>
+<a name="line-628"></a>    <span class="n">GError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-629"></a>
+<a name="line-630"></a>    <span class="n">gtk_show_uri_on_window</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">,</span>
+<a name="line-631"></a>                            <span class="s">&quot;help:mate-char-palette&quot;</span><span class="p">,</span>
+<a name="line-632"></a>                            <span class="n">gtk_get_current_event_time</span> <span class="p">(),</span>
+<a name="line-633"></a>                            <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<a name="line-634"></a>
+<a name="line-635"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* FIXME: the user needs to see this */</span>
+<a name="line-636"></a>        <span class="n">g_warning</span> <span class="p">(</span><span class="s">&quot;help error: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">error</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">);</span>
+<a name="line-637"></a>        <span class="n">g_error_free</span> <span class="p">(</span><span class="n">error</span><span class="p">);</span>
+<a name="line-638"></a>        <span class="n">error</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-639"></a>    <span class="p">}</span>
+<a name="line-640"></a><span class="p">}</span>
+<a name="line-641"></a>
+<a name="line-642"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-643"></a><span class="nf">applet_destroy</span> <span class="p">(</span><span class="n">GtkWidget</span> <span class="o">*</span><span class="n">widget</span><span class="p">,</span>
+<a name="line-644"></a>                <span class="n">gpointer</span>   <span class="n">data</span><span class="p">)</span>
+<a name="line-645"></a><span class="p">{</span>
+<a name="line-646"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-647"></a>
+<a name="line-648"></a>    <span class="n">g_return_if_fail</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-649"></a>
+<a name="line-650"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">about_dialog</span><span class="p">)</span>
+<a name="line-651"></a>        <span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">about_dialog</span><span class="p">);</span>
+<a name="line-652"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">propwindow</span><span class="p">)</span>
+<a name="line-653"></a>        <span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">propwindow</span><span class="p">);</span>
+<a name="line-654"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">box</span><span class="p">)</span>
+<a name="line-655"></a>        <span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">box</span><span class="p">);</span>
+<a name="line-656"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">)</span>
+<a name="line-657"></a>        <span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">menu</span><span class="p">);</span>
+<a name="line-658"></a>    <span class="n">g_free</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span><span class="p">);</span>
+<a name="line-659"></a>    <span class="n">g_free</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-660"></a><span class="p">}</span>
+<a name="line-661"></a>
+<a name="line-662"></a><span class="kt">void</span>
+<a name="line-663"></a><span class="nf">save_chartable</span> <span class="p">(</span><span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-664"></a><span class="p">{</span>
+<a name="line-665"></a>    <span class="n">mate_panel_applet_settings_set_glist</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span><span class="p">,</span>
+<a name="line-666"></a>                                          <span class="s">&quot;chartable&quot;</span><span class="p">,</span>
+<a name="line-667"></a>                                          <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span><span class="p">);</span>
+<a name="line-668"></a><span class="p">}</span>
+<a name="line-669"></a>
+<a name="line-670"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-671"></a><span class="nf">get_chartable</span> <span class="p">(</span><span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">)</span>
+<a name="line-672"></a><span class="p">{</span>
+<a name="line-673"></a>    <span class="n">gint</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
+<a name="line-674"></a>    <span class="n">GList</span> <span class="o">*</span><span class="n">value</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-675"></a>
+<a name="line-676"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">mate_panel_applet_settings_get_glist</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span><span class="p">,</span> <span class="s">&quot;chartable&quot;</span><span class="p">);</span>
+<a name="line-677"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-678"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+<a name="line-679"></a>    <span class="p">}</span>
+<a name="line-680"></a>    <span class="k">else</span> <span class="p">{</span>
+<a name="line-681"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">G_N_ELEMENTS</span> <span class="p">(</span><span class="n">chartable</span><span class="p">);</span>
+<a name="line-682"></a>        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-683"></a>            <span class="n">gchar</span> <span class="o">*</span><span class="n">string</span><span class="p">;</span>
+<a name="line-684"></a>
+<a name="line-685"></a>            <span class="n">string</span> <span class="o">=</span> <span class="n">g_ucs4_to_utf8</span> <span class="p">(</span><span class="n">chartable</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-686"></a>            <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span> <span class="o">=</span> <span class="n">g_list_append</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span><span class="p">,</span> <span class="n">string</span><span class="p">);</span>
+<a name="line-687"></a>        <span class="p">}</span>
+<a name="line-688"></a>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">g_settings_is_writable</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span><span class="p">,</span> <span class="s">&quot;chartable&quot;</span><span class="p">))</span>
+<a name="line-689"></a>            <span class="n">save_chartable</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-690"></a>    <span class="p">}</span>
+<a name="line-691"></a><span class="p">}</span>
+<a name="line-692"></a>
+<a name="line-693"></a><span class="k">static</span> <span class="k">const</span> <span class="n">GtkActionEntry</span> <span class="n">charpick_applet_menu_actions</span> <span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-694"></a>    <span class="p">{</span> <span class="s">&quot;Preferences&quot;</span><span class="p">,</span> <span class="s">&quot;document-properties&quot;</span><span class="p">,</span> <span class="n">N_</span><span class="p">(</span><span class="s">&quot;_Preferences&quot;</span><span class="p">),</span>
+<a name="line-695"></a>      <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span>
+<a name="line-696"></a>      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">show_preferences_dialog</span><span class="p">)</span> <span class="p">},</span>
+<a name="line-697"></a>    <span class="p">{</span> <span class="s">&quot;Help&quot;</span><span class="p">,</span> <span class="s">&quot;help-browser&quot;</span><span class="p">,</span> <span class="n">N_</span><span class="p">(</span><span class="s">&quot;_Help&quot;</span><span class="p">),</span>
+<a name="line-698"></a>      <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span>
+<a name="line-699"></a>      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">help_cb</span><span class="p">)</span> <span class="p">},</span>
+<a name="line-700"></a>    <span class="p">{</span> <span class="s">&quot;About&quot;</span><span class="p">,</span> <span class="s">&quot;help-about&quot;</span><span class="p">,</span> <span class="n">N_</span><span class="p">(</span><span class="s">&quot;_About&quot;</span><span class="p">),</span>
+<a name="line-701"></a>      <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span>
+<a name="line-702"></a>      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">about</span><span class="p">)</span> <span class="p">}</span>
+<a name="line-703"></a><span class="p">};</span>
+<a name="line-704"></a>
+<a name="line-705"></a><span class="kt">void</span>
+<a name="line-706"></a><span class="nf">set_atk_name_description</span> <span class="p">(</span><span class="n">GtkWidget</span>   <span class="o">*</span><span class="n">widget</span><span class="p">,</span>
+<a name="line-707"></a>                          <span class="k">const</span> <span class="n">gchar</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span>
+<a name="line-708"></a>                          <span class="k">const</span> <span class="n">gchar</span> <span class="o">*</span><span class="n">description</span><span class="p">)</span>
+<a name="line-709"></a><span class="p">{</span>
+<a name="line-710"></a>    <span class="n">AtkObject</span> <span class="o">*</span><span class="n">aobj</span><span class="p">;</span>
+<a name="line-711"></a>    <span class="n">aobj</span> <span class="o">=</span> <span class="n">gtk_widget_get_accessible</span> <span class="p">(</span><span class="n">widget</span><span class="p">);</span>
+<a name="line-712"></a>    <span class="cm">/* return if gail is not loaded */</span>
+<a name="line-713"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">GTK_IS_ACCESSIBLE</span> <span class="p">(</span><span class="n">aobj</span><span class="p">)</span> <span class="o">==</span> <span class="n">FALSE</span><span class="p">)</span>
+<a name="line-714"></a>        <span class="k">return</span><span class="p">;</span>
+<a name="line-715"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<a name="line-716"></a>        <span class="n">atk_object_set_name</span> <span class="p">(</span><span class="n">aobj</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+<a name="line-717"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">description</span><span class="p">)</span>
+<a name="line-718"></a>        <span class="n">atk_object_set_description</span> <span class="p">(</span><span class="n">aobj</span><span class="p">,</span> <span class="n">description</span><span class="p">);</span>
+<a name="line-719"></a><span class="p">}</span>
+<a name="line-720"></a>
+<a name="line-721"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-722"></a><span class="nf">make_applet_accessible</span> <span class="p">(</span><span class="n">GtkWidget</span> <span class="o">*</span><span class="n">applet</span><span class="p">)</span>
+<a name="line-723"></a><span class="p">{</span>
+<a name="line-724"></a>    <span class="n">set_atk_name_description</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">&quot;Character Palette&quot;</span><span class="p">),</span> <span class="n">_</span><span class="p">(</span><span class="s">&quot;Insert characters&quot;</span><span class="p">));</span>
+<a name="line-725"></a><span class="p">}</span>
+<a name="line-726"></a>
+<a name="line-727"></a><span class="k">static</span> <span class="n">gboolean</span>
+<a name="line-728"></a><span class="nf">charpicker_applet_fill</span> <span class="p">(</span><span class="n">MatePanelApplet</span> <span class="o">*</span><span class="n">applet</span><span class="p">)</span>
+<a name="line-729"></a><span class="p">{</span>
+<a name="line-730"></a>    <span class="n">MatePanelAppletOrient</span> <span class="n">orientation</span><span class="p">;</span>
+<a name="line-731"></a>    <span class="n">charpick_data</span> <span class="o">*</span><span class="n">curr_data</span><span class="p">;</span>
+<a name="line-732"></a>    <span class="n">GdkAtom</span> <span class="n">utf8_atom</span><span class="p">;</span>
+<a name="line-733"></a>    <span class="n">gchar</span> <span class="o">*</span><span class="n">string</span><span class="p">;</span>
+<a name="line-734"></a>    <span class="n">GtkActionGroup</span> <span class="o">*</span><span class="n">action_group</span><span class="p">;</span>
+<a name="line-735"></a>
+<a name="line-736"></a>    <span class="n">g_set_application_name</span> <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">&quot;Character Palette&quot;</span><span class="p">));</span>
+<a name="line-737"></a>
+<a name="line-738"></a>    <span class="n">gtk_window_set_default_icon_name</span> <span class="p">(</span><span class="s">&quot;accessories-character-map&quot;</span><span class="p">);</span>
+<a name="line-739"></a>
+<a name="line-740"></a>    <span class="n">mate_panel_applet_set_flags</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span> <span class="n">MATE_PANEL_APPLET_EXPAND_MINOR</span><span class="p">);</span>
+<a name="line-741"></a>
+<a name="line-742"></a>    <span class="n">curr_data</span> <span class="o">=</span> <span class="n">g_new0</span> <span class="p">(</span><span class="n">charpick_data</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-743"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">last_index</span> <span class="o">=</span> <span class="n">NO_LAST_INDEX</span><span class="p">;</span>
+<a name="line-744"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span> <span class="o">=</span> <span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-745"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">about_dialog</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-746"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">add_edit_dialog</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-747"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span> <span class="o">=</span> <span class="n">mate_panel_applet_settings_new</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-748"></a>                                                          <span class="s">&quot;org.mate.panel.applet.charpick&quot;</span><span class="p">);</span>
+<a name="line-749"></a>
+<a name="line-750"></a>    <span class="n">get_chartable</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-751"></a>
+<a name="line-752"></a>    <span class="n">string</span>  <span class="o">=</span> <span class="n">g_settings_get_string</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">settings</span><span class="p">,</span> <span class="s">&quot;current-list&quot;</span><span class="p">);</span>
+<a name="line-753"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">string</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">string</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-754"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span> <span class="o">=</span> <span class="n">g_strdup</span> <span class="p">(</span><span class="n">string</span><span class="p">);</span>
+<a name="line-755"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-756"></a>        <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">charlist</span> <span class="o">=</span> <span class="n">g_strdup</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">chartable</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+<a name="line-757"></a>    <span class="p">}</span>
+<a name="line-758"></a>    <span class="n">g_free</span> <span class="p">(</span><span class="n">string</span><span class="p">);</span>
+<a name="line-759"></a>
+<a name="line-760"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_size</span> <span class="o">=</span> <span class="n">mate_panel_applet_get_size</span> <span class="p">(</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-761"></a>
+<a name="line-762"></a>    <span class="n">orientation</span> <span class="o">=</span> <span class="n">mate_panel_applet_get_orient</span> <span class="p">(</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-763"></a>    <span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">panel_vertical</span> <span class="o">=</span> <span class="p">(</span><span class="n">orientation</span> <span class="o">==</span> <span class="n">MATE_PANEL_APPLET_ORIENT_LEFT</span><span class="p">)</span>
+<a name="line-764"></a>                             <span class="o">||</span> <span class="p">(</span><span class="n">orientation</span> <span class="o">==</span> <span class="n">MATE_PANEL_APPLET_ORIENT_RIGHT</span><span class="p">);</span>
+<a name="line-765"></a>    <span class="n">build_table</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-766"></a>
+<a name="line-767"></a>    <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span> <span class="s">&quot;key_press_event&quot;</span><span class="p">,</span>
+<a name="line-768"></a>                      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">key_press_event</span><span class="p">),</span> <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-769"></a>
+<a name="line-770"></a>    <span class="n">utf8_atom</span> <span class="o">=</span> <span class="n">gdk_atom_intern</span> <span class="p">(</span><span class="s">&quot;UTF8_STRING&quot;</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+<a name="line-771"></a>
+<a name="line-772"></a>    <span class="n">gtk_selection_add_target</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-773"></a>                              <span class="n">GDK_SELECTION_PRIMARY</span><span class="p">,</span>
+<a name="line-774"></a>                              <span class="n">utf8_atom</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-775"></a>
+<a name="line-776"></a>    <span class="n">gtk_selection_add_target</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-777"></a>                              <span class="n">GDK_SELECTION_CLIPBOARD</span><span class="p">,</span>
+<a name="line-778"></a>                              <span class="n">utf8_atom</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-779"></a>
+<a name="line-780"></a>    <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span> <span class="s">&quot;selection_get&quot;</span><span class="p">,</span>
+<a name="line-781"></a>                      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">charpick_selection_handler</span><span class="p">),</span>
+<a name="line-782"></a>                      <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-783"></a>
+<a name="line-784"></a>    <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">curr_data</span><span class="o">-&gt;</span><span class="n">applet</span><span class="p">,</span> <span class="s">&quot;selection_clear_event&quot;</span><span class="p">,</span>
+<a name="line-785"></a>                      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">selection_clear_cb</span><span class="p">),</span>
+<a name="line-786"></a>                      <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-787"></a>
+<a name="line-788"></a>    <span class="n">make_applet_accessible</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">applet</span><span class="p">));</span>
+<a name="line-789"></a>
+<a name="line-790"></a>    <span class="cm">/* session save signal */</span>
+<a name="line-791"></a>    <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span> <span class="s">&quot;change_orient&quot;</span><span class="p">,</span>
+<a name="line-792"></a>                      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">applet_change_orient</span><span class="p">),</span> <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-793"></a>
+<a name="line-794"></a>    <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span> <span class="s">&quot;size_allocate&quot;</span><span class="p">,</span>
+<a name="line-795"></a>                      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">applet_size_allocate</span><span class="p">),</span> <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-796"></a>
+<a name="line-797"></a>    <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">applet</span><span class="p">,</span> <span class="s">&quot;destroy&quot;</span><span class="p">,</span>
+<a name="line-798"></a>                      <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">applet_destroy</span><span class="p">),</span> <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-799"></a>
+<a name="line-800"></a>    <span class="n">gtk_widget_show_all</span> <span class="p">(</span><span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">applet</span><span class="p">));</span>
+<a name="line-801"></a>
+<a name="line-802"></a>    <span class="n">action_group</span> <span class="o">=</span> <span class="n">gtk_action_group_new</span> <span class="p">(</span><span class="s">&quot;Charpicker Applet Actions&quot;</span><span class="p">);</span>
+<a name="line-803"></a>    <span class="n">gtk_action_group_set_translation_domain</span> <span class="p">(</span><span class="n">action_group</span><span class="p">,</span> <span class="n">GETTEXT_PACKAGE</span><span class="p">);</span>
+<a name="line-804"></a>    <span class="n">gtk_action_group_add_actions</span> <span class="p">(</span><span class="n">action_group</span><span class="p">,</span>
+<a name="line-805"></a>                                  <span class="n">charpick_applet_menu_actions</span><span class="p">,</span>
+<a name="line-806"></a>                                  <span class="n">G_N_ELEMENTS</span> <span class="p">(</span><span class="n">charpick_applet_menu_actions</span><span class="p">),</span>
+<a name="line-807"></a>                                  <span class="n">curr_data</span><span class="p">);</span>
+<a name="line-808"></a>
+<a name="line-809"></a>    <span class="n">mate_panel_applet_setup_menu_from_resource</span> <span class="p">(</span><span class="n">MATE_PANEL_APPLET</span> <span class="p">(</span><span class="n">applet</span><span class="p">),</span>
+<a name="line-810"></a>                                                <span class="n">CHARPICK_RESOURCE_PATH</span> <span class="s">&quot;charpick-applet-menu.xml&quot;</span><span class="p">,</span>
+<a name="line-811"></a>                                                <span class="n">action_group</span><span class="p">);</span>
+<a name="line-812"></a>
+<a name="line-813"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">mate_panel_applet_get_locked_down</span> <span class="p">(</span><span class="n">MATE_PANEL_APPLET</span> <span class="p">(</span><span class="n">applet</span><span class="p">)))</span> <span class="p">{</span>
+<a name="line-814"></a>        <span class="n">GtkAction</span> <span class="o">*</span><span class="n">action</span><span class="p">;</span>
+<a name="line-815"></a>
+<a name="line-816"></a>        <span class="n">action</span> <span class="o">=</span> <span class="n">gtk_action_group_get_action</span> <span class="p">(</span><span class="n">action_group</span><span class="p">,</span> <span class="s">&quot;Preferences&quot;</span><span class="p">);</span>
+<a name="line-817"></a>        <span class="n">gtk_action_set_visible</span> <span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+<a name="line-818"></a>    <span class="p">}</span>
+<a name="line-819"></a>    <span class="n">g_object_unref</span> <span class="p">(</span><span class="n">action_group</span><span class="p">);</span>
+<a name="line-820"></a>
+<a name="line-821"></a>    <span class="n">register_stock_for_edit</span> <span class="p">();</span>
+<a name="line-822"></a>    <span class="n">populate_menu</span> <span class="p">(</span><span class="n">curr_data</span><span class="p">);</span>
+<a name="line-823"></a>
+<a name="line-824"></a>    <span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<a name="line-825"></a><span class="p">}</span>
+<a name="line-826"></a>
+<a name="line-827"></a><span class="k">static</span> <span class="n">gboolean</span>
+<a name="line-828"></a><span class="nf">charpicker_applet_factory</span> <span class="p">(</span><span class="n">MatePanelApplet</span> <span class="o">*</span><span class="n">applet</span><span class="p">,</span>
+<a name="line-829"></a>                           <span class="k">const</span> <span class="n">gchar</span>     <span class="o">*</span><span class="n">iid</span><span class="p">,</span>
+<a name="line-830"></a>                           <span class="n">gpointer</span>         <span class="n">data</span><span class="p">)</span>
+<a name="line-831"></a><span class="p">{</span>
+<a name="line-832"></a>    <span class="n">gboolean</span> <span class="n">retval</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+<a name="line-833"></a>
+<a name="line-834"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span> <span class="p">(</span><span class="n">iid</span><span class="p">,</span> <span class="s">&quot;CharpickerApplet&quot;</span><span class="p">))</span>
+<a name="line-835"></a>        <span class="n">retval</span> <span class="o">=</span> <span class="n">charpicker_applet_fill</span> <span class="p">(</span><span class="n">applet</span><span class="p">);</span>
+<a name="line-836"></a>
+<a name="line-837"></a>    <span class="k">return</span> <span class="n">retval</span><span class="p">;</span>
+<a name="line-838"></a><span class="p">}</span>
+<a name="line-839"></a>
+<a name="line-840"></a><span class="n">MATE_PANEL_APPLET_OUT_PROCESS_FACTORY</span> <span class="p">(</span><span class="s">&quot;CharpickerAppletFactory&quot;</span><span class="p">,</span>
+<a name="line-841"></a>                                       <span class="n">PANEL_TYPE_APPLET</span><span class="p">,</span>
+<a name="line-842"></a>                                       <span class="s">&quot;char-palette&quot;</span><span class="p">,</span>
+<a name="line-843"></a>                                       <span class="n">charpicker_applet_factory</span><span class="p">,</span>
+<a name="line-844"></a>                                       <span class="nb">NULL</span><span class="p">)</span>
+<a name="line-845"></a>
+</pre></div>
+</td></tr></table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.3 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>
