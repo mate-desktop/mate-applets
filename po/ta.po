@@ -7,16 +7,16 @@
 # Maurious Paul Vincent <paulmaurious@gmail.com>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Mooglie <mooglietech@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Kamala Kannan, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-applets 1.25.1\n"
+"Project-Id-Version: mate-applets 1.25.3\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-12-13 16:35+0100\n"
+"POT-Creation-Date: 2021-06-20 12:41+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Kamala Kannan, 2020\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
 "Language-Team: Tamil (https://www.transifex.com/mate/teams/13566/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgid "Keyboard Accessibility Status Applet Factory"
 msgstr "விசைப்பலகை செயல்பாட்டு நிலைமையின் சிறுநிரலின் நிறுவனம்"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
-#: accessx-status/src/applet.c:1675
+#: accessx-status/src/applet.c:1670
 msgid "Keyboard Accessibility Status"
 msgstr "விசைப்பலகை செயல்பாட்டின் நிலை"
 
@@ -41,17 +41,17 @@ msgstr "விசைப்பலகை செயல்பாட்டின் �
 msgid "Shows the status of keyboard accessibility features"
 msgstr "விசைபலகையின் அணுகுதல் பண்புக்கூற்றின் நிலையை காட்டு"
 
-#: accessx-status/src/applet.c:100 charpick/charpick.c:596
-#: geyes/src/geyes.c:178 mateweather/src/mateweather-about.c:41
-#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:367
+#: accessx-status/src/applet.c:100 charpick/charpick.c:598
+#: geyes/src/geyes.c:175 mateweather/src/mateweather-about.c:41
+#: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:411
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
 msgstr ""
 
-#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:832
-#: charpick/charpick.c:597 cpufreq/src/cpufreq-applet.c:463
-#: drivemount/src/drivemount.c:107 geyes/src/geyes.c:179
+#: accessx-status/src/applet.c:101 battstat/battstat_applet.c:830
+#: charpick/charpick.c:599 cpufreq/src/cpufreq-applet.c:463
+#: drivemount/src/drivemount.c:107 geyes/src/geyes.c:176
 #: mateweather/src/mateweather-about.c:43 multiload/src/main.c:49
-#: stickynotes/stickynotes_applet_callbacks.c:368
+#: stickynotes/stickynotes_applet_callbacks.c:412
 #: trashapplet/src/trashapplet.c:417
 msgid "MATE Documentation Team"
 msgstr ""
@@ -67,15 +67,15 @@ msgstr "அணுகு முறையின்X நிலையின் ப�
 #: accessx-status/src/applet.c:115
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:857
-#: charpick/charpick.c:617 command/src/command.c:131
+#: accessx-status/src/applet.c:119 battstat/battstat_applet.c:855
+#: charpick/charpick.c:619 command/src/command.c:131
 #: cpufreq/src/cpufreq-applet.c:487 drivemount/src/drivemount.c:125
-#: geyes/src/geyes.c:198 mateweather/src/mateweather-about.c:61
-#: multiload/src/main.c:69 netspeed/src/netspeed.c:1034
-#: stickynotes/stickynotes_applet_callbacks.c:388
+#: geyes/src/geyes.c:195 mateweather/src/mateweather-about.c:61
+#: multiload/src/main.c:69 netspeed/src/netspeed.c:1058
+#: stickynotes/stickynotes_applet_callbacks.c:432
 #: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
 msgstr ""
@@ -88,7 +88,7 @@ msgstr ""
 msgid "There was an error launching the help viewer: %s"
 msgstr "உதவி காட்சியாளனை ஏவுவதில் தவறு ஏற்பட்டுள்ளது:%s"
 
-#: accessx-status/src/applet.c:177
+#: accessx-status/src/applet.c:176
 msgid "Open the keyboard preferences dialog"
 msgstr ""
 
@@ -97,16 +97,17 @@ msgstr ""
 msgid "There was an error launching the keyboard preferences dialog: %s"
 msgstr "விசைப்பலகை விருப்பங்கள் உரையாடலை ஏவுவதில் தவறு ஏற்பட்டுள்ளது:%s"
 
-#: accessx-status/src/applet.c:219
+#: accessx-status/src/applet.c:218
 msgid "_Keyboard Accessibility Preferences"
 msgstr "விசைப்பலகை செயல்திறனின் முன்னுரிமைகள் (_K)"
 
-#: accessx-status/src/applet.c:221 battstat/battstat_applet.c:62
-#: battstat/battstat-preferences.ui:37 charpick/charpick.c:694
+#: accessx-status/src/applet.c:220 battstat/battstat_applet.c:62
+#: battstat/battstat-preferences.ui:37 charpick/charpick.c:697
 #: cpufreq/cpufreq-preferences.ui:31 cpufreq/src/cpufreq-applet.c:119
 #: drivemount/src/drivemount.c:163 geyes/data/themes.ui:35
-#: geyes/src/geyes.c:369 mateweather/src/mateweather-applet.c:117
-#: multiload/src/main.c:471 netspeed/data/netspeed-details.ui:31
+#: geyes/src/geyes.c:366 mateweather/src/mateweather-applet.c:119
+#: multiload/data/properties.ui:67 multiload/src/main.c:470
+#: netspeed/data/netspeed-details.ui:31
 #: netspeed/data/netspeed-preferences.ui:33
 #: stickynotes/sticky-notes-preferences.ui:51
 #: stickynotes/sticky-notes-properties.ui:37
@@ -114,51 +115,51 @@ msgstr "விசைப்பலகை செயல்திறனின் ம�
 msgid "_Help"
 msgstr "_உதவி"
 
-#: accessx-status/src/applet.c:223 battstat/battstat_applet.c:65
-#: charpick/charpick.c:697 command/src/command.c:87
+#: accessx-status/src/applet.c:222 battstat/battstat_applet.c:65
+#: charpick/charpick.c:700 command/src/command.c:87
 #: cpufreq/src/cpufreq-applet.c:122 drivemount/src/drivemount.c:166
-#: geyes/src/geyes.c:371 mateweather/src/mateweather-applet.c:120
-#: multiload/src/main.c:474 stickynotes/stickynotes_applet.c:49
+#: geyes/src/geyes.c:368 mateweather/src/mateweather-applet.c:122
+#: multiload/src/main.c:473 stickynotes/stickynotes_applet.c:49
 #: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
 msgstr "பற்றி "
 
-#: accessx-status/src/applet.c:572 accessx-status/src/applet.c:641
+#: accessx-status/src/applet.c:571 accessx-status/src/applet.c:640
 msgid "a"
 msgstr "a"
 
-#: accessx-status/src/applet.c:1243 accessx-status/src/applet.c:1322
-#: accessx-status/src/applet.c:1444 accessx-status/src/applet.c:1678
+#: accessx-status/src/applet.c:1242 accessx-status/src/applet.c:1320
+#: accessx-status/src/applet.c:1442 accessx-status/src/applet.c:1673
 msgid "AccessX Status"
 msgstr "X நிலையின் செயல்திறன்"
 
-#: accessx-status/src/applet.c:1245 accessx-status/src/applet.c:1446
+#: accessx-status/src/applet.c:1244 accessx-status/src/applet.c:1444
 msgid "Shows keyboard status when accessibility features are used."
 msgstr ""
 "அணுகுவதில் ஏற்ப்புத் தன்மை பயன்படுத்தப்பட்டுள்ள போது விசைப்பலகை நிலையை "
 "காட்டுகிறது ."
 
-#: accessx-status/src/applet.c:1281
+#: accessx-status/src/applet.c:1280
 msgid "XKB Extension is not enabled"
 msgstr "XKB விரிவாக்கம் செயல்படுத்தப்படவில்லை"
 
-#: accessx-status/src/applet.c:1286
+#: accessx-status/src/applet.c:1285
 msgid "Unknown error"
 msgstr "தெரியாத பிழை"
 
-#: accessx-status/src/applet.c:1294
+#: accessx-status/src/applet.c:1293
 #, c-format
 msgid "Error: %s"
 msgstr "பிழை: %s"
 
-#: accessx-status/src/applet.c:1680
+#: accessx-status/src/applet.c:1675
 msgid "Displays current state of keyboard accessibility features"
 msgstr "தற்போதைய விசைப்பலகையின் அணுகு தன்மையை காண்பிக்கிறது"
 
-#: battstat/battstat_applet.c:59 charpick/charpick.c:691
+#: battstat/battstat_applet.c:59 charpick/charpick.c:694
 #: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
-#: geyes/src/geyes.c:367 mateweather/src/mateweather-applet.c:114
-#: multiload/src/main.c:465 stickynotes/stickynotes_applet.c:43
+#: geyes/src/geyes.c:364 mateweather/src/mateweather-applet.c:116
+#: multiload/src/main.c:464 stickynotes/stickynotes_applet.c:43
 #: timerapplet/src/timerapplet.c:87
 msgid "_Preferences"
 msgstr "விருப்ப தேர்வுகள் "
@@ -186,28 +187,28 @@ msgstr "தெரியாத நேரம் (%d%%) மீதமுள்ளத
 msgid "Unknown time (%d%%) until charged"
 msgstr "தெரியாத நேரம் (%d%%) முழு மின்சார ஏற்றத்திற்கு"
 
-#: battstat/battstat_applet.c:185
+#: battstat/battstat_applet.c:184
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:190
+#: battstat/battstat_applet.c:189
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:196
+#: battstat/battstat_applet.c:195
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:201
+#: battstat/battstat_applet.c:200
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
@@ -240,20 +241,20 @@ msgstr "%d %s %d %s முழு மின்னேற்றத்திற்�
 msgid "Battery Monitor"
 msgstr "மின்கல கண்காணி"
 
-#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:298
+#: battstat/battstat_applet.c:239 battstat/battstat_applet.c:297
 msgid "Your battery is now fully recharged"
 msgstr "மின்கலம் இப்பொழுது முழுமையாக ஏற்றப்பட்டுள்ளது."
 
-#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:431
+#: battstat/battstat_applet.c:273 battstat/battstat_applet.c:430
 msgid "Battery Notice"
 msgstr "மின்கல அறிவிப்பு"
 
-#: battstat/battstat_applet.c:378
+#: battstat/battstat_applet.c:377
 #, c-format
-msgid "You have %d%% of your total batterycapacity remaining."
-msgstr ""
+msgid "You have %d%% of your total battery capacity remaining."
+msgstr "உங்கள் மொத்த சக்தி கலன் கொள்ளளவில் %d%%  மீதம் உள்ளது"
 
-#: battstat/battstat_applet.c:383
+#: battstat/battstat_applet.c:382
 #, c-format
 msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
@@ -262,7 +263,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: battstat/battstat_applet.c:396
+#: battstat/battstat_applet.c:395
 msgid ""
 "To avoid losing your work:\n"
 " • plug your laptop into external power, or\n"
@@ -272,7 +273,7 @@ msgstr ""
 "உங்கள் மடிக்கணிணியை வெளி மின்சாரத்திற்கு இணைக்கவும். அல்லது\n"
 " திறந்துள்ள ஆவணங்களை சேமித்து விட்டு மடிக்கணிணியை நிறுத்தவும்"
 
-#: battstat/battstat_applet.c:403
+#: battstat/battstat_applet.c:402
 msgid ""
 "To avoid losing your work:\n"
 " • suspend your laptop to save power,\n"
@@ -284,62 +285,62 @@ msgstr ""
 "உங்கள் மடிக்கணிணியை வெளி மின்சாரத்திற்கு இணைக்கவும். அல்லது\n"
 " திறந்துள்ள ஆவணங்களை சேமித்து விட்டு மடிக்கணிணியை நிறுத்தவும்"
 
-#: battstat/battstat_applet.c:409
+#: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
 msgstr "மின்கலம் குறைந்த மின்சாரத்தில் இயங்கிக்கொண்டிருக்கிறது"
 
-#: battstat/battstat_applet.c:512
+#: battstat/battstat_applet.c:510
 msgid "No battery present"
 msgstr "மின்கலம் ஏதும் இல்லை"
 
-#: battstat/battstat_applet.c:515
+#: battstat/battstat_applet.c:513
 msgid "Battery status unknown"
 msgstr "மின்கல நிலை தெரியவில்லை"
 
-#: battstat/battstat_applet.c:545
+#: battstat/battstat_applet.c:543
 msgid "N/A"
 msgstr "கிடைக்கவில்லை"
 
-#: battstat/battstat_applet.c:795 drivemount/src/drivemount.c:151
-#: geyes/src/geyes.c:353 geyes/src/themes.c:226
+#: battstat/battstat_applet.c:793 drivemount/src/drivemount.c:151
+#: geyes/src/geyes.c:350 geyes/src/themes.c:226
 #: mateweather/src/mateweather-applet.c:63
-#: mateweather/src/mateweather-pref.c:745
-#: stickynotes/stickynotes_applet_callbacks.c:345
-#: stickynotes/stickynotes_applet_callbacks.c:540
+#: mateweather/src/mateweather-pref.c:774
+#: stickynotes/stickynotes_applet_callbacks.c:383
+#: stickynotes/stickynotes_applet_callbacks.c:611
 #: trashapplet/src/trashapplet.c:395
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "தொடங்கும் போது பிழை.%s"
 
-#: battstat/battstat_applet.c:837
+#: battstat/battstat_applet.c:835
 msgid "This utility shows the status of your laptop battery."
 msgstr "இதன் பயன்பாடு தங்களின் மடிக்கணினி மின்கல நிலையைக் காட்டும்"
 
-#: battstat/battstat_applet.c:839
+#: battstat/battstat_applet.c:837
 msgid "upower backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:840
+#: battstat/battstat_applet.c:838
 msgid "Legacy backend enabled."
 msgstr ""
 
-#: battstat/battstat_applet.c:849
+#: battstat/battstat_applet.c:847
 msgid "About Battery Charge Monitor"
 msgstr ""
 
-#: battstat/battstat_applet.c:851
+#: battstat/battstat_applet.c:849
 msgid ""
 "Copyright © 2000 The Gnulix Society\n"
 "Copyright © 2002-2005 Free Software Foundation and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: battstat/battstat_applet.c:1138 battstat/battstat_applet.c:1193
+#: battstat/battstat_applet.c:1133 battstat/battstat_applet.c:1188
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
 msgid "Battery Charge Monitor"
 msgstr "மின்கல மின்னூட்ட கண்காணி"
 
-#: battstat/battstat_applet.c:1195
+#: battstat/battstat_applet.c:1190
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
 msgstr "மடிக்கணினியின் எஞ்சிய மின்திறனைக் கண்காணி"
@@ -350,7 +351,7 @@ msgstr "மின்கல மின்னூட்ட கண்காணி ம
 
 #: battstat/battstat-preferences.ui:53 command/data/command-preferences.ui:39
 #: cpufreq/cpufreq-preferences.ui:47 geyes/data/themes.ui:51
-#: mateweather/data/mateweather-dialog.ui:45
+#: mateweather/data/mateweather-dialog.ui:45 multiload/data/properties.ui:83
 #: netspeed/data/netspeed-details.ui:47
 #: netspeed/data/netspeed-preferences.ui:49
 #: stickynotes/sticky-notes-preferences.ui:68
@@ -469,47 +470,47 @@ msgstr "மின்கலத்தின் சக்தி குறைவா�
 msgid "Battery fully re-charged"
 msgstr "மின்கலம் மீண்டும் முழுமையாக ஏற்றப்பட்டுள்ளது."
 
-#: charpick/charpick.c:410
+#: charpick/charpick.c:412
 msgid "Available palettes"
 msgstr "கிடைக்கின்ற வண்ணத்தட்டுக்கள்"
 
-#: charpick/charpick.c:463
+#: charpick/charpick.c:465
 #, c-format
 msgid "Insert \"%s\""
 msgstr "\"%s\"ஐ நுழை"
 
-#: charpick/charpick.c:466
+#: charpick/charpick.c:468
 msgid "Insert special character"
 msgstr "சிறப்பு எழுத்தை சொருகு"
 
-#: charpick/charpick.c:470
+#: charpick/charpick.c:472
 #, c-format
 msgid "insert special character %s"
 msgstr "சிறப்பு எழுத்தை சொருகு %s"
 
-#: charpick/charpick.c:608
+#: charpick/charpick.c:610
 msgid "About Character Palette"
 msgstr ""
 
-#: charpick/charpick.c:610
+#: charpick/charpick.c:612
 msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: charpick/charpick.c:612
+#: charpick/charpick.c:614
 msgid ""
 "MATE Panel applet for selecting strange characters that are not on the "
 "keyboard. Released under GNU General Public Licence."
 msgstr ""
 
-#: charpick/charpick.c:721 charpick/charpick.c:734
+#: charpick/charpick.c:724 charpick/charpick.c:736
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
-#: charpick/properties.c:453
+#: charpick/properties.c:452
 msgid "Character Palette"
 msgstr "எழுத்துக்களின் வண்ணத்தட்டு"
 
-#: charpick/charpick.c:721
+#: charpick/charpick.c:724
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
 msgid "Insert characters"
 msgstr "எழுத்துக்களைச் சொருகு"
@@ -532,7 +533,7 @@ msgstr ""
 "துவக்கும் போது காட்டப் படும்."
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:10
-#: charpick/properties.c:371
+#: charpick/properties.c:370
 msgid "List of available palettes"
 msgstr "இருக்கும் வண்ணத்தட்டின் பட்டியல்கள் "
 
@@ -556,7 +557,7 @@ msgstr "வண்ணத்தட்டு நுழைவு"
 msgid "Modify a palette by adding or removing characters"
 msgstr "எழுத்துருக்களை சேர்த்து அல்லது நீக்கி வண்ணதட்டை மாற்றுக"
 
-#: charpick/properties.c:225
+#: charpick/properties.c:227
 msgid "Add Palette"
 msgstr "வண்ணத்தட்டை சேர்த்திடுக"
 
@@ -564,39 +565,39 @@ msgstr "வண்ணத்தட்டை சேர்த்திடுக"
 msgid "Edit Palette"
 msgstr "வண்ணத்தட்டுகளைத் திருத்தி அமை"
 
-#: charpick/properties.c:370
+#: charpick/properties.c:369
 msgid "Palettes list"
 msgstr "வண்ணப்படத்தின் பட்டியல்"
 
-#: charpick/properties.c:458
+#: charpick/properties.c:457
 msgid "_Palettes:"
 msgstr "_வண்ணத்தட்டு:"
 
-#: charpick/properties.c:481
+#: charpick/properties.c:480
 msgid "Add button"
 msgstr "பட்டனை சேர்"
 
-#: charpick/properties.c:482
+#: charpick/properties.c:481
 msgid "Click to add a new palette"
 msgstr "புதிய வண்ணத்தட்டை கூட்டுவதற்கு சொடுக்கவும்"
 
-#: charpick/properties.c:496
+#: charpick/properties.c:495
 msgid "Edit button"
 msgstr "பொத்தானைத் திருத்து"
 
-#: charpick/properties.c:497
+#: charpick/properties.c:496
 msgid "Click to edit the selected palette"
 msgstr "தேர்தெடுக்கப்பட்ட வண்ணத்தட்டை திருத்த சொடுக்கவும்"
 
-#: charpick/properties.c:511
+#: charpick/properties.c:510
 msgid "Delete button"
 msgstr "பொத்தானை அழிக்கவும்"
 
-#: charpick/properties.c:512
+#: charpick/properties.c:511
 msgid "Click to delete the selected palette"
 msgstr "தேர்தெடுக்கப்பட்ட வண்ணத்தட்டை நீக்குவதற்கு சொடுக்கவும்"
 
-#: charpick/properties.c:566
+#: charpick/properties.c:565
 msgid "Character Palette Preferences"
 msgstr "எழுத்துக்களின் வண்ணப்பட முன்னுரிமைகள்"
 
@@ -659,7 +660,7 @@ msgid "Number of characters to display"
 msgstr ""
 
 #: command/data/org.mate.panel.applet.command.gschema.xml.in:20
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:25
 msgid "Show icon"
 msgstr ""
 
@@ -674,10 +675,10 @@ msgstr ""
 #: command/src/command.c:127
 msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
-"Copyright © 2015-2020 MATE developers"
+"Copyright © 2015-2021 MATE developers"
 msgstr ""
 
-#: command/src/command.c:408
+#: command/src/command.c:411
 msgid "Command Applet"
 msgstr ""
 
@@ -715,7 +716,7 @@ msgstr "காட்சி அமைவுகள்"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:5
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
-#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:845
+#: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
 msgstr "ஸிபியு அலைவரிசை அளவிடும் கண்காணி"
 
@@ -770,14 +771,14 @@ msgstr ""
 #: cpufreq/src/cpufreq-applet.c:480
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr "இந்த பயன்பாடு இப்போதைய ஸிபியு அதிர்வெண் அளவிடுதலை காட்டுகிறது."
 
-#: cpufreq/src/cpufreq-applet.c:846
+#: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
 msgstr "இந்த பயன்பாடு இப்போதைய ஸிபியு அதிர்வெண்ணை காட்டுகிறது."
 
@@ -835,46 +836,46 @@ msgstr "வட்டு ஏற்றி"
 msgid "Mount local disks and devices"
 msgstr "உண்ணிலை தகடு, சாதனத்தில் ஆகியவற்றை ஏற்று"
 
-#: drivemount/src/drive-button.c:280
+#: drivemount/src/drive-button.c:281
 msgid "nothing to mount"
 msgstr ""
 
-#: drivemount/src/drive-button.c:313 drivemount/src/drive-button.c:327
+#: drivemount/src/drive-button.c:314 drivemount/src/drive-button.c:328
 msgid "(mounted)"
 msgstr "( ஏற்றப்பட்டது)"
 
-#: drivemount/src/drive-button.c:320
+#: drivemount/src/drive-button.c:321
 msgid "(not mounted)"
 msgstr "(ஏற்றப்படவில்லை)"
 
-#: drivemount/src/drive-button.c:597
+#: drivemount/src/drive-button.c:599
 msgid "Cannot execute Caja"
 msgstr ""
 
-#: drivemount/src/drive-button.c:935
+#: drivemount/src/drive-button.c:940
 msgid "_Play DVD"
 msgstr "டிவிடி ஐ _இயக்கு"
 
-#: drivemount/src/drive-button.c:939
+#: drivemount/src/drive-button.c:944
 msgid "_Play CD"
 msgstr "ஸிடி ஐ _இயக்கு "
 
-#: drivemount/src/drive-button.c:942
+#: drivemount/src/drive-button.c:947
 #, c-format
 msgid "_Open %s"
 msgstr "%s ஐ _த திற"
 
-#: drivemount/src/drive-button.c:950
+#: drivemount/src/drive-button.c:955
 #, c-format
 msgid "Un_mount %s"
 msgstr "%s ஐ இ_றக்கு"
 
-#: drivemount/src/drive-button.c:956
+#: drivemount/src/drive-button.c:961
 #, c-format
 msgid "_Mount %s"
 msgstr "%s ஐ _ஏற்று"
 
-#: drivemount/src/drive-button.c:964
+#: drivemount/src/drive-button.c:969
 #, c-format
 msgid "_Eject %s"
 msgstr "%s ஐ _வ வெளியேற்று"
@@ -886,7 +887,7 @@ msgstr ""
 #: drivemount/src/drivemount.c:120
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: drivemount/src/drivemount.c:122
@@ -899,7 +900,7 @@ msgid "Eyes Applet Factory"
 msgstr ""
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
-#: geyes/src/geyes.c:399 geyes/src/geyes.c:428 geyes/src/geyes.c:430
+#: geyes/src/geyes.c:396 geyes/src/geyes.c:425 geyes/src/geyes.c:427
 msgid "Eyes"
 msgstr "கண்கள்"
 
@@ -924,21 +925,21 @@ msgstr "_கருத்தை தேர்ந்தெடு:"
 msgid "Themes"
 msgstr "கருத்துகள்"
 
-#: geyes/src/geyes.c:190
+#: geyes/src/geyes.c:187
 msgid "About Eyes"
 msgstr ""
 
-#: geyes/src/geyes.c:192
+#: geyes/src/geyes.c:189
 msgid "A goofy set of eyes for the MATE panel. They follow your mouse."
 msgstr "goofy கண்கள் MATE பலகத்திற்கு. அவை உங்கள் சுட்டியை பின்பற்றும்."
 
-#: geyes/src/geyes.c:194
+#: geyes/src/geyes.c:191
 msgid ""
 "Copyright © 1999 Dave Camp\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: geyes/src/geyes.c:431
+#: geyes/src/geyes.c:428
 msgid "The eyes look in the direction of the mouse pointer"
 msgstr "கண்கள், சுட்டியின் திசையில் நோக்குமாறு அமைக்கப்பட்டுள்ளது"
 
@@ -955,7 +956,7 @@ msgid "Details"
 msgstr "விவரங்கள்"
 
 #: mateweather/data/mateweather-dialog.ui:30
-#: mateweather/src/mateweather-applet.c:111
+#: mateweather/src/mateweather-applet.c:113
 msgid "_Update"
 msgstr "மேம்படுத்தல் (_U)"
 
@@ -1052,7 +1053,7 @@ msgid "Factory for creating the weather applet."
 msgstr "தட்பவெப்பக் குறும்பயனை உருவாக்கும் செயலகம்."
 
 #: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:9
-#: mateweather/src/mateweather-applet.c:340
+#: mateweather/src/mateweather-applet.c:345
 msgid "Weather Report"
 msgstr "தட்பவெப்ப அறிக்கை"
 
@@ -1067,27 +1068,31 @@ msgstr ""
 #: mateweather/src/mateweather-about.c:56
 msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: mateweather/src/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
 msgstr "உள்ளூர் தட்பவெப்பநிலைகளை கண்காணிக்கும் குறும்பயன்."
 
-#: mateweather/src/mateweather-applet.c:108
+#: mateweather/src/mateweather-applet.c:110
 msgid "_Details"
 msgstr "(_D) விவரங்கள்"
 
-#: mateweather/src/mateweather-applet.c:355
-#: mateweather/src/mateweather-applet.c:359
+#: mateweather/src/mateweather-applet.c:165
+msgid "?"
+msgstr "?"
+
+#: mateweather/src/mateweather-applet.c:369
+#: mateweather/src/mateweather-applet.c:373
 msgid "MATE Weather"
 msgstr "நோம் தட்பவெப்பநிலை"
 
-#: mateweather/src/mateweather-applet.c:457
+#: mateweather/src/mateweather-applet.c:466
 msgid "Weather Forecast"
 msgstr "வானிலை முன்னறிக்கை"
 
-#: mateweather/src/mateweather-applet.c:469
+#: mateweather/src/mateweather-applet.c:477
 #, c-format
 msgid ""
 "City: %s\n"
@@ -1098,7 +1103,7 @@ msgstr ""
 "வானம்: %s\n"
 "வானிலை: %s"
 
-#: mateweather/src/mateweather-applet.c:518
+#: mateweather/src/mateweather-applet.c:531
 msgid "Updating..."
 msgstr "இற்றைபடுத்துகிறது..."
 
@@ -1106,174 +1111,174 @@ msgstr "இற்றைபடுத்துகிறது..."
 msgid "Forecast not currently available for this location."
 msgstr "இந்த இடத்திற்கான தட்ப வெப்ப கணிப்பு இப்போது கிடைக்கவில்லை"
 
-#: mateweather/src/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:157
 msgid "Location view"
 msgstr "இடக் காட்சி"
 
-#: mateweather/src/mateweather-pref.c:158
+#: mateweather/src/mateweather-pref.c:157
 msgid "Select Location from the list"
 msgstr "பட்டியலிலிருந்து இடத்தைத் தேர்வு செய்"
 
-#: mateweather/src/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:158
 msgid "Update spin button"
 msgstr "சுழல் பட்டனை புதுப்பி"
 
-#: mateweather/src/mateweather-pref.c:159
+#: mateweather/src/mateweather-pref.c:158
 msgid "Spinbutton for updating"
 msgstr "நிலை புதுப்பித்தலுக்கான சுழல்பொத்தான்"
 
-#: mateweather/src/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:159
 msgid "Address Entry"
 msgstr "முகவரி பதிவிடம்"
 
-#: mateweather/src/mateweather-pref.c:160
+#: mateweather/src/mateweather-pref.c:159
 msgid "Enter the URL"
 msgstr "யுஆர்எல் ஐ நுழைவி"
 
-#: mateweather/src/mateweather-pref.c:281
+#: mateweather/src/mateweather-pref.c:285
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
 msgstr ""
 "இடங்கள் எக்ஸ்எம்எல் ஐ ஏற்றுவதில் தோல்வி. இதை ஒரு பிழையாக தகவல் தரவும்."
 
-#: mateweather/src/mateweather-pref.c:805
+#: mateweather/src/mateweather-pref.c:839
 msgid "Weather Preferences"
 msgstr "வானிலை விருப்பங்கள்"
 
-#: mateweather/src/mateweather-pref.c:829
-#: mateweather/src/mateweather-pref.c:1032
+#: mateweather/src/mateweather-pref.c:863
+#: mateweather/src/mateweather-pref.c:1054
 msgid "_Automatically update every:"
 msgstr "_தானாக புதுப்பி ஒவ்வொரு:"
 
-#: mateweather/src/mateweather-pref.c:845
+#: mateweather/src/mateweather-pref.c:878
 msgid "_Temperature unit:"
 msgstr "_வ வெப்பநிலை அலகு:"
 
-#: mateweather/src/mateweather-pref.c:855
+#: mateweather/src/mateweather-pref.c:888
 msgid "Kelvin"
 msgstr "கெல்வின்"
 
-#: mateweather/src/mateweather-pref.c:857
+#: mateweather/src/mateweather-pref.c:890
 msgid "Celsius"
 msgstr "செல்சியஸ்"
 
-#: mateweather/src/mateweather-pref.c:858
+#: mateweather/src/mateweather-pref.c:891
 msgid "Fahrenheit"
 msgstr "ஃபாரன்ஹீட்"
 
-#: mateweather/src/mateweather-pref.c:867
+#: mateweather/src/mateweather-pref.c:900
 msgid "_Wind speed unit:"
 msgstr "_காற்றின் வேக அலகு:"
 
-#: mateweather/src/mateweather-pref.c:878
+#: mateweather/src/mateweather-pref.c:911
 msgid "m/s"
 msgstr "m/s"
 
-#: mateweather/src/mateweather-pref.c:880
+#: mateweather/src/mateweather-pref.c:913
 msgid "km/h"
 msgstr "km/h"
 
-#: mateweather/src/mateweather-pref.c:882
+#: mateweather/src/mateweather-pref.c:915
 msgid "mph"
 msgstr "mph"
 
-#: mateweather/src/mateweather-pref.c:884
+#: mateweather/src/mateweather-pref.c:917
 msgid "knots"
 msgstr "நாட்ஸ்"
 
-#: mateweather/src/mateweather-pref.c:885
+#: mateweather/src/mateweather-pref.c:918
 msgid "Beaufort scale"
 msgstr "Beaufort அளவு"
 
-#: mateweather/src/mateweather-pref.c:894
+#: mateweather/src/mateweather-pref.c:927
 msgid "_Pressure unit:"
 msgstr "அழுத்த அலகு: (_P)"
 
-#: mateweather/src/mateweather-pref.c:905
+#: mateweather/src/mateweather-pref.c:938
 msgid "kPa"
 msgstr "kPa"
 
-#: mateweather/src/mateweather-pref.c:907
+#: mateweather/src/mateweather-pref.c:940
 msgid "hPa"
 msgstr "hPa"
 
-#: mateweather/src/mateweather-pref.c:909
+#: mateweather/src/mateweather-pref.c:942
 msgid "mb"
 msgstr "mb"
 
-#: mateweather/src/mateweather-pref.c:911
+#: mateweather/src/mateweather-pref.c:944
 msgid "mmHg"
 msgstr "mmHg"
 
-#: mateweather/src/mateweather-pref.c:913
+#: mateweather/src/mateweather-pref.c:946
 msgid "inHg"
 msgstr "inHg"
 
-#: mateweather/src/mateweather-pref.c:915
+#: mateweather/src/mateweather-pref.c:948
 msgid "atm"
 msgstr "atm"
 
-#: mateweather/src/mateweather-pref.c:924
+#: mateweather/src/mateweather-pref.c:957
 msgid "_Visibility unit:"
 msgstr "_காட்சிமை அலகு:"
 
-#: mateweather/src/mateweather-pref.c:935
+#: mateweather/src/mateweather-pref.c:968
 msgid "meters"
 msgstr "மீட்டர்"
 
-#: mateweather/src/mateweather-pref.c:937
+#: mateweather/src/mateweather-pref.c:970
 msgid "km"
 msgstr "km"
 
-#: mateweather/src/mateweather-pref.c:939
+#: mateweather/src/mateweather-pref.c:972
 msgid "miles"
 msgstr "மைல்கள்"
 
-#: mateweather/src/mateweather-pref.c:969
+#: mateweather/src/mateweather-pref.c:996
 msgid "Enable _radar map"
 msgstr "ராடார் வரைபடத்தை முடுக்கு"
 
-#: mateweather/src/mateweather-pref.c:985
+#: mateweather/src/mateweather-pref.c:1011
 msgid "Use _custom address for radar map"
 msgstr "ராடார் வரைபடத்திற்கு _தனிப்பயன் முகவரியை பயன்படுத்து"
 
-#: mateweather/src/mateweather-pref.c:1003
+#: mateweather/src/mateweather-pref.c:1027
 msgid "A_ddress:"
 msgstr "முகவரி: (_d)"
 
-#: mateweather/src/mateweather-pref.c:1018
+#: mateweather/src/mateweather-pref.c:1042
 msgid "Show _notifications"
 msgstr ""
 
-#: mateweather/src/mateweather-pref.c:1028
+#: mateweather/src/mateweather-pref.c:1050
 msgid "Update"
 msgstr "இற்றைபடுத்து"
 
-#: mateweather/src/mateweather-pref.c:1045
+#: mateweather/src/mateweather-pref.c:1066
 msgid "minutes"
 msgstr "நிமிடங்கள்"
 
-#: mateweather/src/mateweather-pref.c:1063
+#: mateweather/src/mateweather-pref.c:1084
 msgid "Display"
 msgstr "காண்பி"
 
-#: mateweather/src/mateweather-pref.c:1082
+#: mateweather/src/mateweather-pref.c:1103
 msgid "General"
 msgstr "பொது"
 
-#: mateweather/src/mateweather-pref.c:1093
+#: mateweather/src/mateweather-pref.c:1114
 msgid "_Select a location:"
 msgstr "_இடத்தை தேர்வுசெய்"
 
-#: mateweather/src/mateweather-pref.c:1115
+#: mateweather/src/mateweather-pref.c:1135
 msgid "_Find:"
 msgstr "தேடு (_F):"
 
-#: mateweather/src/mateweather-pref.c:1121
+#: mateweather/src/mateweather-pref.c:1141
 msgid "Find _Next"
 msgstr "(_N)அடுத்ததை கண்டுபிடி"
 
-#: mateweather/src/mateweather-pref.c:1142
+#: mateweather/src/mateweather-pref.c:1159
 msgid "Location"
 msgstr "இடம்"
 
@@ -1286,7 +1291,7 @@ msgid "Factory for creating the load applet."
 msgstr ""
 
 #: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
-#: multiload/src/main.c:499
+#: multiload/src/main.c:498
 msgid "System Monitor"
 msgstr "அமைப்புக் கண்காணி"
 
@@ -1318,15 +1323,15 @@ msgstr "சராசரி பளு வரைபடத்தை செயல்
 msgid "Enable disk load graph"
 msgstr "இட மாற்று நினைவக பளு வரைபடத்தை செயல்படுத்து"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:29
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:30
 msgid "Applet refresh rate in milliseconds"
 msgstr "சிறுநிரல்களைப் புதுப்பிக்கும் வகையை மில்லி நொடிகளில் அமை"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:33
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:35
 msgid "Graph size"
 msgstr "வரைபட அளவு"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:34
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:36
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
@@ -1334,118 +1339,304 @@ msgstr ""
 "கிடைமட்ட பலகத்தின் அகலம் படத் துணுக்குகளில் செங்குத்து பலகத்தின் உயரம் "
 "வரைபடத்தில் குறிக்கப்படும்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:38
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:40
 msgid "Graph color for user-related CPU activity"
 msgstr " ஸிபியு பயன்படுத்துபவரை சார்ந்த செயலுக்கான வரைப்பட நிறம் "
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:42
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:44
 msgid "Graph color for system-related CPU activity"
 msgstr "ஸிபியு முறைமை சார்ந்த செயலுக்கான வரைப்பட நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:46
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:48
 msgid "Graph color for nice-related CPU activity"
 msgstr "நைஸ் சம்பந்தமான ஸிபியு செயலுக்கான வரைப்பட நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:50
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:52
 msgid "Graph color for iowait related CPU activity"
 msgstr "ஸிபியு சம்பந்தமான ஐஓவெயிட் செயலுக்கான வரைப்பட நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:54
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:56
 msgid "CPU graph background color"
 msgstr "ஸிபியு வரைப்படத்தின் பின்னணி நிறம் "
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:58
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:60
 msgid "Graph color for user-related memory usage"
 msgstr "பயன்படுத்துபவரை சார்ந்த நினைவக பயன் பாட்டுக்கான வரைப்பட நிறம் "
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:62
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:64
 msgid "Graph color for shared memory"
 msgstr "பிரிக்க பட்ட நினைவகத்தின் வரைப்பட நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:66
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:68
 msgid "Graph color for buffer memory"
 msgstr "இடையகம் நினைவகம் வரைப்படத்தின் நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:70
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:72
 msgid "Graph color for cached memory"
 msgstr "கேச் நினைவக வரைப்படத்தின் நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:74
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:76
 msgid "Memory graph background color"
 msgstr "நினைவக வரைப்படம்- பின்னணி நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:78
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:80
 msgid "Graph color for input network activity"
 msgstr "உள்பாடு பிணைய செயல்பாட்டுக்கா வரைபட நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:82
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:84
 msgid "Graph color for output network activity"
 msgstr "வெளிப்பாடு பிணைய செயல்பாட்டுக்கான வரைபட நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:86
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:88
 msgid "Graph color for loopback network usage"
 msgstr "லூப்பேக் பிணைய பயன்படுத்தலுக்கான வரைப்பட நிறம் "
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:90
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:92
 msgid "Network graph background color"
 msgstr "இணைய வரைப்படம்- பின்னணி நிறம் "
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:94
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:133
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:96
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:135
 msgid "Grid line color"
 msgstr ""
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:98
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:100
 msgid "Indicator color"
 msgstr ""
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:103
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:105
 msgid "Network threshold 1 in bytes"
 msgstr ""
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:108
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:110
 msgid "Network threshold 2 in bytes"
 msgstr ""
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:113
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:115
 msgid "Network threshold 3 in bytes"
 msgstr ""
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:117
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:119
 msgid "Graph color for user-related swap usage"
 msgstr "பயன்படுத்துபவரை சார்ந்த இட மாற்று நினைவக வரைப்பட நிறம் "
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:121
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:123
 msgid "Swap graph background color"
 msgstr "இட மாற்று நினைவக வரைப்படம்- பின்னணி நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:125
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:127
 msgid "Graph color for load average"
 msgstr "சராசரி ஏற்று வரைப்படத்தின் நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:129
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:131
 msgid "Load graph background color"
 msgstr "பின்னணி நிறத்திற்கான வரைப்படம் ஏற்று"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:137
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:139
 msgid "Graph color for disk read"
 msgstr "வட்டு படித்தல் வரைப்படத்தின் நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:141
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:143
 msgid "Graph color for disk write"
 msgstr "வட்டு எழுதுதல் வரைப்படத்தின் நிறம்"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:145
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:147
 msgid "Background color for disk load graph"
 msgstr "வட்டு பளு வரைபடத்திற்கு பின்னணியின் வண்ணம்,"
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:149
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:151
 msgid "Uses /proc/diskstats to determine NVMe disk load"
 msgstr ""
 
-#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:153
+#: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:155
 msgid "The desktop description file to execute as the system monitor"
 msgstr "பணிமேடை விவர கோப்பு கணினி கண்காணிப்பாக செயல்படுத்தப்படுகிறது"
+
+#: multiload/data/properties.ui:51
+msgid "System Monitor Preferences"
+msgstr "கணினி திரையக முன்னுரிமைகள்"
+
+#: multiload/data/properties.ui:131
+msgid "_Processor"
+msgstr "_ச செயலகம்"
+
+#: multiload/data/properties.ui:148
+msgid "_Memory"
+msgstr "_ந நினைவகம்"
+
+#: multiload/data/properties.ui:165
+msgid "_Network"
+msgstr "_வலையமைப்பு"
+
+#: multiload/data/properties.ui:182
+msgid "S_wap Space"
+msgstr "_இட மாற்று நினைவகம்"
+
+#: multiload/data/properties.ui:199
+msgid "_Load"
+msgstr "_பளு"
+
+#: multiload/data/properties.ui:216
+msgid "_Harddisk"
+msgstr "_வ நிலைவட்டு"
+
+#: multiload/data/properties.ui:239
+msgid "Monitored Resources"
+msgstr "கண்காணிக்கப்பட்ட வளம்"
+
+#: multiload/data/properties.ui:276 multiload/src/properties.c:601
+msgid "System m_onitor width:"
+msgstr ""
+
+#: multiload/data/properties.ui:304
+msgid "pixels"
+msgstr "படத் துணுக்குகள்"
+
+#: multiload/data/properties.ui:316
+msgid "Sys_tem monitor update interval:"
+msgstr ""
+
+#: multiload/data/properties.ui:344
+msgid "milliseconds"
+msgstr "மில்லி வினாடிகள்"
+
+#: multiload/data/properties.ui:359
+msgid "Options"
+msgstr "தேர்வுகள்"
+
+#: multiload/data/properties.ui:481 multiload/data/properties.ui:583
+msgid "_User"
+msgstr "_பயனர்"
+
+#: multiload/data/properties.ui:494
+msgid "S_ystem"
+msgstr "_கணினி"
+
+#: multiload/data/properties.ui:507
+msgid "N_ice"
+msgstr "_ந நைஸ்"
+
+#: multiload/data/properties.ui:520
+msgid "I_OWait"
+msgstr "_ஐஓவெயிட்"
+
+#: multiload/data/properties.ui:533
+msgid "I_dle"
+msgstr "_ச சும்மாயிருத்தல்"
+
+#: multiload/data/properties.ui:548 multiload/src/main.c:272
+msgid "Processor"
+msgstr "செயலகம்"
+
+#: multiload/data/properties.ui:612
+msgid "Sh_ared"
+msgstr "ப_ங்கிடப்பட்டது"
+
+#: multiload/data/properties.ui:641
+msgid "_Buffers"
+msgstr "_ட இடையகங்கள்"
+
+#: multiload/data/properties.ui:670
+msgid "Cach_ed"
+msgstr "_க கேச்ட்"
+
+#: multiload/data/properties.ui:699
+msgid "F_ree"
+msgstr "_எஞ்சியது"
+
+#: multiload/data/properties.ui:717 multiload/src/main.c:273
+msgid "Memory"
+msgstr "நினைவகம்"
+
+#: multiload/data/properties.ui:753
+msgid "_In"
+msgstr "_In"
+
+#: multiload/data/properties.ui:782
+msgid "_Out"
+msgstr "வெளியே (_O)"
+
+#: multiload/data/properties.ui:811
+msgid "_Local"
+msgstr "இடம் (_L)"
+
+#: multiload/data/properties.ui:840 multiload/data/properties.ui:1064
+#: multiload/data/properties.ui:1211
+msgid "_Background"
+msgstr "_ப பின்னணி"
+
+#: multiload/data/properties.ui:869 multiload/data/properties.ui:1093
+msgid "_Gridline"
+msgstr ""
+
+#: multiload/data/properties.ui:898
+msgid "_Indicator"
+msgstr ""
+
+#: multiload/data/properties.ui:916 multiload/src/main.c:274
+msgid "Network"
+msgstr "பிணையம்"
+
+#: multiload/data/properties.ui:952
+msgid "_Used"
+msgstr "_பயன்படுத்தப்பட்டது"
+
+#: multiload/data/properties.ui:981
+msgid "_Free"
+msgstr "_எஞ்சியது"
+
+#: multiload/data/properties.ui:999 multiload/src/main.c:275
+msgid "Swap Space"
+msgstr "இட மாற்று நினைவக வெளி"
+
+#: multiload/data/properties.ui:1035
+msgid "_Average"
+msgstr "_சராசரி"
+
+#: multiload/data/properties.ui:1111
+msgid "Load"
+msgstr "பளு்றி"
+
+#: multiload/data/properties.ui:1153
+msgid "_Read"
+msgstr "_படி"
+
+#: multiload/data/properties.ui:1182
+msgid "_Write"
+msgstr "_எழுது"
+
+#: multiload/data/properties.ui:1229
+msgid "Use diskstats for _NVMe"
+msgstr ""
+
+#: multiload/data/properties.ui:1253
+msgid "Harddisk"
+msgstr "நிலைவட்டு"
+
+#: multiload/data/properties.ui:1268
+msgid "Colors"
+msgstr "வண்ணங்கள்"
+
+#: multiload/data/properties.ui:1305
+msgid "Threshold _1:"
+msgstr ""
+
+#: multiload/data/properties.ui:1334 multiload/data/properties.ui:1375
+#: multiload/data/properties.ui:1415
+msgid "bytes"
+msgstr ""
+
+#: multiload/data/properties.ui:1346
+msgid "Threshold _2:"
+msgstr ""
+
+#: multiload/data/properties.ui:1387
+msgid "Threshold _3:"
+msgstr ""
+
+#: multiload/data/properties.ui:1430
+msgid "Network speed thresholds"
+msgstr ""
 
 #: multiload/src/main.c:60
 msgid "About System Monitor"
@@ -1454,7 +1645,7 @@ msgstr ""
 #: multiload/src/main.c:62
 msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: multiload/src/main.c:64
@@ -1474,22 +1665,6 @@ msgstr ""
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr " '%s': %sயை செயலாக்குவதில் தவறு ஏற்பட்டுள்ளது"
-
-#: multiload/src/main.c:272 multiload/src/properties.c:625
-msgid "Processor"
-msgstr "செயலகம்"
-
-#: multiload/src/main.c:273 multiload/src/properties.c:633
-msgid "Memory"
-msgstr "நினைவகம்"
-
-#: multiload/src/main.c:274 multiload/src/properties.c:641
-msgid "Network"
-msgstr "பிணையம்"
-
-#: multiload/src/main.c:275 multiload/src/properties.c:650
-msgid "Swap Space"
-msgstr "இட மாற்று நினைவக வெளி"
 
 #: multiload/src/main.c:276 multiload/src/main.c:360
 msgid "Load Average"
@@ -1550,188 +1725,18 @@ msgstr "இட மாற்று நினைவக பளு"
 msgid "Disk Load"
 msgstr "வட்டு பளு"
 
-#: multiload/src/main.c:468
+#: multiload/src/main.c:467
 msgid "_Open System Monitor"
 msgstr "_த அமைப்புக் கண்காணியை திற"
 
-#: multiload/src/netspeed.c:43
+#: multiload/src/netspeed.c:60
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
 
-#: multiload/src/properties.c:383
-msgid "Monitored Resources"
-msgstr "கண்காணிக்கப்பட்ட வளம்"
-
-#: multiload/src/properties.c:408
-msgid "_Processor"
-msgstr "_ச செயலகம்"
-
-#: multiload/src/properties.c:422
-msgid "_Memory"
-msgstr "_ந நினைவகம்"
-
-#: multiload/src/properties.c:435
-msgid "_Network"
-msgstr "_வலையமைப்பு"
-
-#: multiload/src/properties.c:448
-msgid "S_wap Space"
-msgstr "_இட மாற்று நினைவகம்"
-
-#: multiload/src/properties.c:461
-msgid "_Load"
-msgstr "_பளு"
-
-#: multiload/src/properties.c:474
-msgid "_Harddisk"
-msgstr "_வ நிலைவட்டு"
-
-#: multiload/src/properties.c:492
-msgid "Options"
-msgstr "தேர்வுகள்"
-
-#: multiload/src/properties.c:522
-msgid "System m_onitor width: "
-msgstr "_அமைப்புக்கண்காணியின் அகலம்:"
-
-#: multiload/src/properties.c:524
-msgid "System m_onitor height: "
-msgstr "_அமைப்புக்கண்காணியின் உயரம்:"
-
-#: multiload/src/properties.c:555
-msgid "pixels"
-msgstr "படத் துணுக்குகள்"
-
-#: multiload/src/properties.c:563
-msgid "Sys_tem monitor update interval: "
-msgstr "_இ அமைப்புக்கண்காணியை புதுப்பித்தல் இடைவேளை நேரம்:"
-
-#: multiload/src/properties.c:589
-msgid "milliseconds"
-msgstr "மில்லி வினாடிகள்"
-
-#: multiload/src/properties.c:600
-msgid "Colors"
-msgstr "வண்ணங்கள்"
-
-#: multiload/src/properties.c:627 multiload/src/properties.c:635
-msgid "_User"
-msgstr "_பயனர்"
-
-#: multiload/src/properties.c:628
-msgid "S_ystem"
-msgstr "_கணினி"
-
-#: multiload/src/properties.c:629
-msgid "N_ice"
-msgstr "_ந நைஸ்"
-
-#: multiload/src/properties.c:630
-msgid "I_OWait"
-msgstr "_ஐஓவெயிட்"
-
-#: multiload/src/properties.c:631
-msgid "I_dle"
-msgstr "_ச சும்மாயிருத்தல்"
-
-#: multiload/src/properties.c:636
-msgid "Sh_ared"
-msgstr "ப_ங்கிடப்பட்டது"
-
-#: multiload/src/properties.c:637
-msgid "_Buffers"
-msgstr "_ட இடையகங்கள்"
-
-#: multiload/src/properties.c:638
-msgid "Cach_ed"
-msgstr "_க கேச்ட்"
-
-#: multiload/src/properties.c:639
-msgid "F_ree"
-msgstr "_எஞ்சியது"
-
-#: multiload/src/properties.c:643
-msgid "_In"
-msgstr "_In"
-
-#: multiload/src/properties.c:644
-msgid "_Out"
-msgstr "வெளியே (_O)"
-
-#: multiload/src/properties.c:645
-msgid "_Local"
-msgstr "இடம் (_L)"
-
-#: multiload/src/properties.c:646 multiload/src/properties.c:658
-#: multiload/src/properties.c:665
-msgid "_Background"
-msgstr "_ப பின்னணி"
-
-#: multiload/src/properties.c:647 multiload/src/properties.c:659
-msgid "_Gridline"
+#: multiload/src/properties.c:604
+msgid "System m_onitor height:"
 msgstr ""
-
-#: multiload/src/properties.c:648
-msgid "_Indicator"
-msgstr ""
-
-#: multiload/src/properties.c:652
-msgid "_Used"
-msgstr "_பயன்படுத்தப்பட்டது"
-
-#: multiload/src/properties.c:653
-msgid "_Free"
-msgstr "_எஞ்சியது"
-
-#: multiload/src/properties.c:655
-msgid "Load"
-msgstr "பளு்றி"
-
-#: multiload/src/properties.c:657
-msgid "_Average"
-msgstr "_சராசரி"
-
-#: multiload/src/properties.c:661
-msgid "Harddisk"
-msgstr "நிலைவட்டு"
-
-#: multiload/src/properties.c:663
-msgid "_Read"
-msgstr "_படி"
-
-#: multiload/src/properties.c:664
-msgid "_Write"
-msgstr "_எழுது"
-
-#: multiload/src/properties.c:667
-msgid "Use diskstats for NVMe"
-msgstr ""
-
-#: multiload/src/properties.c:677
-msgid "Network speed thresholds"
-msgstr ""
-
-#: multiload/src/properties.c:705
-msgid "Threshold 1: "
-msgstr ""
-
-#: multiload/src/properties.c:736 multiload/src/properties.c:771
-#: multiload/src/properties.c:806
-msgid "bytes"
-msgstr ""
-
-#: multiload/src/properties.c:744
-msgid "Threshold 2: "
-msgstr ""
-
-#: multiload/src/properties.c:779
-msgid "Threshold 3: "
-msgstr ""
-
-#: multiload/src/properties.c:843
-msgid "System Monitor Preferences"
-msgstr "கணினி திரையக முன்னுரிமைகள்"
 
 #: netspeed/data/netspeed-details.ui:101
 msgid "Transfer Rate Graph"
@@ -1754,46 +1759,46 @@ msgid "Netmask:"
 msgstr "நெட் மாஸ்க் "
 
 #: netspeed/data/netspeed-details.ui:262
-msgid "Hardware Address:"
-msgstr "வன்பொருள் முகவரி "
-
-#: netspeed/data/netspeed-details.ui:290
-msgid "P-t-P Address:"
-msgstr ""
-
-#: netspeed/data/netspeed-details.ui:330
-msgid "Bytes in:"
-msgstr ""
-
-#: netspeed/data/netspeed-details.ui:344 netspeed/data/netspeed-details.ui:372
-msgid "0 byte"
-msgstr ""
-
-#: netspeed/data/netspeed-details.ui:358
-msgid "Bytes out:"
-msgstr ""
-
-#: netspeed/data/netspeed-details.ui:398
 msgid "IPv6 Address:"
 msgstr ""
 
-#: netspeed/data/netspeed-details.ui:444
+#: netspeed/data/netspeed-details.ui:304
+msgid "Hardware Address:"
+msgstr "வன்பொருள் முகவரி "
+
+#: netspeed/data/netspeed-details.ui:332
+msgid "P-t-P Address:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:372
+msgid "Bytes in:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:386 netspeed/data/netspeed-details.ui:414
+msgid "0 byte"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:400
+msgid "Bytes out:"
+msgstr ""
+
+#: netspeed/data/netspeed-details.ui:446
 msgid "ESSID:"
 msgstr ""
 
-#: netspeed/data/netspeed-details.ui:472
+#: netspeed/data/netspeed-details.ui:474
 msgid "Signal Strength:"
 msgstr "சிக்னலின்  தரம் "
 
-#: netspeed/data/netspeed-details.ui:516
+#: netspeed/data/netspeed-details.ui:518
 msgid "Station:"
 msgstr ""
 
-#: netspeed/data/netspeed-details.ui:541
+#: netspeed/data/netspeed-details.ui:543
 msgid "Channel:"
 msgstr ""
 
-#: netspeed/data/netspeed-details.ui:578
+#: netspeed/data/netspeed-details.ui:580
 msgid "Connected Time:"
 msgstr ""
 
@@ -1809,23 +1814,27 @@ msgstr ""
 msgid "Show _sum instead of in & out"
 msgstr ""
 
-#: netspeed/data/netspeed-preferences.ui:148
+#: netspeed/data/netspeed-preferences.ui:147
 msgid "Show _bits instead of bytes"
 msgstr ""
 
-#: netspeed/data/netspeed-preferences.ui:165
+#: netspeed/data/netspeed-preferences.ui:163
 msgid "_Change icon according to the selected device"
 msgstr ""
 
-#: netspeed/data/netspeed-preferences.ui:182
+#: netspeed/data/netspeed-preferences.ui:179
 msgid "Show _icon"
 msgstr ""
 
-#: netspeed/data/netspeed-preferences.ui:199
+#: netspeed/data/netspeed-preferences.ui:195
 msgid "Show signal _quality icon for wireless devices"
 msgstr ""
 
-#: netspeed/data/netspeed-preferences.ui:223
+#: netspeed/data/netspeed-preferences.ui:211
+msgid "Show all _IP addresses on tooltip"
+msgstr ""
+
+#: netspeed/data/netspeed-preferences.ui:234
 msgid "General Settings"
 msgstr ""
 
@@ -1853,63 +1862,71 @@ msgstr ""
 msgid "If true, show speed in bits instead of bytes."
 msgstr ""
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:21
-msgid "If true, show main icon."
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
+msgid "Show IPv4 and IPv6 addresses on tooltip"
 msgstr ""
 
-#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:25
-msgid "Change icon"
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:21
+msgid "If true, show both IP addresses if enabled."
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
-msgid "If true, change the icon due to selected device."
+msgid "If true, show main icon."
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
-msgid "Auto change device"
+msgid "Change icon"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
-msgid "If true, change automatically the selected device."
+msgid "If true, change the icon due to selected device."
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
-msgid "In color"
+msgid "Auto change device"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:36
-msgid "The color of the graph of the inbound traffic"
+msgid "If true, change automatically the selected device."
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
-msgid "Out color"
+msgid "In color"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
-msgid "The color of the graph of the outbound traffic"
+msgid "The color of the graph of the inbound traffic"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
-msgid "Up command"
+msgid "Out color"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
-msgid "Command to execute to activate the device"
+msgid "The color of the graph of the outbound traffic"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
-msgid "Down command"
+msgid "Up command"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
-msgid "Command to execute to shut down the device"
+msgid "Command to execute to activate the device"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
-msgid "Show signal quality icon"
+msgid "Down command"
 msgstr ""
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
+msgid "Command to execute to shut down the device"
+msgstr ""
+
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:60
+msgid "Show signal quality icon"
+msgstr ""
+
+#: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:61
 msgid "If true, show signal quality icon for wireless devices."
 msgstr ""
 
@@ -1926,277 +1943,304 @@ msgstr ""
 msgid "Network Monitor"
 msgstr ""
 
-#: netspeed/src/backend.c:448
+#: netspeed/src/backend.c:149
+msgid "link-local"
+msgstr ""
+
+#: netspeed/src/backend.c:151
+msgid "site-local"
+msgstr ""
+
+#: netspeed/src/backend.c:153
+msgid "v4mapped"
+msgstr ""
+
+#: netspeed/src/backend.c:155
+msgid "v4compat"
+msgstr ""
+
+#: netspeed/src/backend.c:157
+msgid "host"
+msgstr ""
+
+#: netspeed/src/backend.c:159
+msgid "unspecified"
+msgstr ""
+
+#: netspeed/src/backend.c:161
+msgid "global"
+msgstr ""
+
+#: netspeed/src/backend.c:588
 #, c-format
 msgid "%d.%d MBit/s"
 msgstr ""
 
-#: netspeed/src/backend.c:450
+#: netspeed/src/backend.c:590
 #, c-format
 msgid "(unknown)"
 msgstr ""
 
-#: netspeed/src/backend.c:454
+#: netspeed/src/backend.c:594
 #, c-format
 msgid " MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:457
+#: netspeed/src/backend.c:597
 #, c-format
 msgid " VHT-MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:459
+#: netspeed/src/backend.c:599
 #, c-format
 msgid " 40MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:461
+#: netspeed/src/backend.c:601
 #, c-format
 msgid " 80MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:463
+#: netspeed/src/backend.c:603
 #, c-format
 msgid " 80P80MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:465
+#: netspeed/src/backend.c:605
 #, c-format
 msgid " 160MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:467
+#: netspeed/src/backend.c:607
 #, c-format
 msgid " short GI)"
 msgstr ""
 
-#: netspeed/src/backend.c:470
+#: netspeed/src/backend.c:610
 #, c-format
 msgid " VHT-NSS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:473
+#: netspeed/src/backend.c:613
 #, c-format
 msgid " HE-MCS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:476
+#: netspeed/src/backend.c:616
 #, c-format
 msgid " HE-NSS %d"
 msgstr ""
 
-#: netspeed/src/backend.c:479
+#: netspeed/src/backend.c:619
 #, c-format
 msgid " HE-GI %d"
 msgstr ""
 
-#: netspeed/src/backend.c:482
+#: netspeed/src/backend.c:622
 #, c-format
 msgid " HE-DCM %d"
 msgstr ""
 
-#: netspeed/src/backend.c:566
+#: netspeed/src/backend.c:706
 msgid "20 MHz (no HT)"
 msgstr ""
 
-#: netspeed/src/backend.c:568
+#: netspeed/src/backend.c:708
 msgid "20 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:570
+#: netspeed/src/backend.c:710
 msgid "40 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:572
+#: netspeed/src/backend.c:712
 msgid "80 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:574
+#: netspeed/src/backend.c:714
 msgid "80+80 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:576
+#: netspeed/src/backend.c:716
 msgid "160 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:578
+#: netspeed/src/backend.c:718
 msgid "5 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:580
+#: netspeed/src/backend.c:720
 msgid "10 MHz"
 msgstr ""
 
-#: netspeed/src/backend.c:582 netspeed/src/netspeed.c:750
-#: netspeed/src/netspeed.c:754 netspeed/src/netspeed.c:1511
-#: netspeed/src/netspeed.c:1520
+#: netspeed/src/backend.c:722 netspeed/src/netspeed.c:772
+#: netspeed/src/netspeed.c:776 netspeed/src/netspeed.c:1422
+#: netspeed/src/netspeed.c:1431
 msgid "unknown"
 msgstr "தெரியாதது"
 
-#: netspeed/src/backend.c:633
+#: netspeed/src/backend.c:773
 #, c-format
 msgid "%d (%d MHz)"
 msgstr ""
 
-#: netspeed/src/backend.c:637
+#: netspeed/src/backend.c:777
 #, c-format
 msgid ", width: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:469
 msgid "bit/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:455
+#: netspeed/src/netspeed.c:469
 msgid "B/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:459
+#: netspeed/src/netspeed.c:473
 msgid "Kibit/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:459
+#: netspeed/src/netspeed.c:473
 msgid "KiB/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:463
+#: netspeed/src/netspeed.c:477
 msgid "Mibit/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:463
+#: netspeed/src/netspeed.c:477
 msgid "MiB/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:467
+#: netspeed/src/netspeed.c:481
 msgid "Gibit/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:467
+#: netspeed/src/netspeed.c:481
 msgid "GiB/s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:629
+#: netspeed/src/netspeed.c:646
 msgid "%'"
 msgid_plural "%'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: netspeed/src/netspeed.c:635
+#: netspeed/src/netspeed.c:652
 #, c-format
 msgid "%'d minute"
 msgid_plural "%'d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: netspeed/src/netspeed.c:636
+#: netspeed/src/netspeed.c:653
 #, c-format
 msgid "%'d secon"
 msgid_plural "%'d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: netspeed/src/netspeed.c:641
+#: netspeed/src/netspeed.c:658
 #, c-format
 msgid "%'d hour"
 msgid_plural "%'d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: netspeed/src/netspeed.c:690 netspeed/src/netspeed.c:698
-#: netspeed/src/netspeed.c:707 netspeed/src/netspeed.c:714
+#: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
+#: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
 msgid "none"
 msgstr "ஒன்றும் இல்லை "
 
-#: netspeed/src/netspeed.c:758 netspeed/src/netspeed.c:870
+#: netspeed/src/netspeed.c:780 netspeed/src/netspeed.c:892
 msgid "na"
 msgstr ""
 
-#: netspeed/src/netspeed.c:988
+#: netspeed/src/netspeed.c:1011
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1026
+#: netspeed/src/netspeed.c:1050
 msgid "About MATE Netspeed"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1028
+#: netspeed/src/netspeed.c:1052
 msgid ""
 "Copyright © 2002-2003 Jörgen Scheibengruber\n"
 "Copyright © 2011-2014 Stefano Karapetsas\n"
-"Copyright © 2015-2020 MATE developers"
+"Copyright © 2015-2021 MATE developers"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1031
+#: netspeed/src/netspeed.c:1055
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1178
-msgid "Default"
-msgstr "முன்னிருப்பு"
-
-#: netspeed/src/netspeed.c:1343
+#: netspeed/src/netspeed.c:1231
 msgid "Device _Details"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1345
+#: netspeed/src/netspeed.c:1233
 msgid "Preferences..."
 msgstr ""
 
-#: netspeed/src/netspeed.c:1347
+#: netspeed/src/netspeed.c:1235
 msgid "Help"
 msgstr "உதவி"
 
-#: netspeed/src/netspeed.c:1349
+#: netspeed/src/netspeed.c:1237
 msgid "About..."
 msgstr ""
 
-#: netspeed/src/netspeed.c:1388
+#: netspeed/src/netspeed.c:1278
 #, c-format
 msgid "Do you want to disconnect %s now?"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1391
+#: netspeed/src/netspeed.c:1281
 #, c-format
 msgid "Do you want to connect %s now?"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1417
+#: netspeed/src/netspeed.c:1307
 #, c-format
 msgid ""
 "<b>Running command %s failed</b>\n"
 "%s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1475
+#: netspeed/src/netspeed.c:1365
 #, c-format
 msgid "%s is down"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1489
-msgid "has no ip"
-msgstr ""
-
-#: netspeed/src/netspeed.c:1495
+#: netspeed/src/netspeed.c:1383 netspeed/src/netspeed.c:1402
 #, c-format
 msgid ""
-"%s: %s\n"
+"\n"
+"%s"
+msgstr ""
+
+#: netspeed/src/netspeed.c:1409
+#, c-format
+msgid ""
+"\n"
 "in: %s out: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1502
+#: netspeed/src/netspeed.c:1414
 #, c-format
 msgid ""
-"%s: %s\n"
+"\n"
 "sum: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1510
+#: netspeed/src/netspeed.c:1421
 #, c-format
 msgid ""
 "\n"
@@ -2206,7 +2250,7 @@ msgid ""
 "TX Bitrate: %s"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1519
+#: netspeed/src/netspeed.c:1430
 #, c-format
 msgid ""
 "\n"
@@ -2214,7 +2258,7 @@ msgid ""
 "Strength: %d %%"
 msgstr ""
 
-#: netspeed/src/netspeed.c:1565
+#: netspeed/src/netspeed.c:1577
 msgid "MATE Netspeed"
 msgstr ""
 
@@ -2224,7 +2268,7 @@ msgid "Sticky Notes Applet Factory"
 msgstr "கடினமான சிறுநிரல் தொழிற்சாலை"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:9
-#: stickynotes/stickynotes_applet.c:170 stickynotes/stickynotes_applet.c:409
+#: stickynotes/stickynotes_applet.c:179 stickynotes/stickynotes_applet.c:427
 msgid "Sticky Notes"
 msgstr "ஒட்டுகின்ற குறிப்புகள்"
 
@@ -2233,16 +2277,17 @@ msgid "Create, view, and manage sticky notes on the desktop"
 msgstr ""
 "மேற்மேசையில் பிடிக் குறிப்புகளை உருவாக்க, காண, மற்றும் நிர்வாகிக்கவும்"
 
-#: stickynotes/stickynotes.c:582
+#: stickynotes/stickynotes.c:702
 msgid "This note is locked."
 msgstr "இந்த குறிப்பு பூட்டப்பட்டுள்ளது."
 
-#: stickynotes/stickynotes.c:586
+#: stickynotes/stickynotes.c:708
 msgid "This note is unlocked."
 msgstr "இந்த குறிப்பு பூட்டப்படவில்லை."
 
 #: stickynotes/sticky-notes-delete-all.ui:36
 #: stickynotes/sticky-notes-delete.ui:37
+#: trashapplet/trashapplet-empty-progress.ui:27
 msgid "_Cancel"
 msgstr "ரத்து (_C)"
 
@@ -2596,29 +2641,29 @@ msgstr "_D குறிப்புகளை நீக்கு"
 msgid "_Lock Notes"
 msgstr "_L குறிப்புகளை பூட்டு"
 
-#: stickynotes/stickynotes_applet.c:588
+#: stickynotes/stickynotes_applet.c:607
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: stickynotes/stickynotes_applet.c:589
+#: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
 msgstr "ஒட்டுகின்ற குறிப்புகளை காட்டு"
 
-#: stickynotes/stickynotes_applet_callbacks.c:379
+#: stickynotes/stickynotes_applet_callbacks.c:423
 msgid "About Sticky Notes"
 msgstr ""
 
-#: stickynotes/stickynotes_applet_callbacks.c:381
+#: stickynotes/stickynotes_applet_callbacks.c:425
 msgid ""
 "Copyright © 2002-2003 Loban A Rahman\n"
 "Copyright © 2005 Davyd Madeley\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
-#: stickynotes/stickynotes_applet_callbacks.c:384
+#: stickynotes/stickynotes_applet_callbacks.c:428
 msgid "Sticky Notes for the MATE Desktop Environment"
 msgstr "ஜினோம் மேற்மேசை சூழலுக்கான ஒட்டு குறிப்புகள்"
 
@@ -2713,10 +2758,10 @@ msgstr ""
 #: timerapplet/src/timerapplet.c:279
 msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
-"Copyright © 2015-2020 MATE developers"
+"Copyright © 2015-2021 MATE developers"
 msgstr ""
 
-#: timerapplet/src/timerapplet.c:366
+#: timerapplet/src/timerapplet.c:369
 msgid "Timer Applet"
 msgstr ""
 
@@ -2769,7 +2814,7 @@ msgstr ""
 msgid ""
 "Copyright © 2004 Michiel Sikkes\n"
 "Copyright © 2008 Ryan Lortie\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: trashapplet/src/trashapplet.c:433
@@ -2823,11 +2868,11 @@ msgstr ""
 "குப்பையை காலி செய்யின் எல்லா உருப்படிகளும் நிரந்தரமாக இழக்கப்படும். அவற்றை "
 "தனியாகவும் நீக்கலாம் என அறியவும்."
 
-#: trashapplet/trashapplet-empty-progress.ui:7
-#: trashapplet/trashapplet-empty-progress.ui:21
+#: trashapplet/trashapplet-empty-progress.ui:13
+#: trashapplet/trashapplet-empty-progress.ui:62
 msgid "Emptying the Trash"
 msgstr "குப்பையை வெறுமையாக்குகிறது"
 
-#: trashapplet/trashapplet-empty-progress.ui:36
+#: trashapplet/trashapplet-empty-progress.ui:83
 msgid "From:"
 msgstr "ஆரம்பம்:"
