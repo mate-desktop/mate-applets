@@ -403,6 +403,22 @@ build_table (charpick_data *p_curr_data)
     else
         box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
+    /* Workaround to fix overlapping bug #372 */
+    /* FIXME: actual bug is probably at a deeper level in GTK */
+    GtkCssProvider *provider;
+    provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (provider,
+                                     "#charpick-applet {\n"
+                                     "background-color:@theme_bg_color;\n"
+                                     "}",
+                                     -1,
+                                     NULL);
+    gtk_style_context_add_provider (gtk_widget_get_style_context (box),
+                                    GTK_STYLE_PROVIDER (provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_object_unref (provider);
+    gtk_widget_set_name (box, "charpick-applet");
+
     gtk_widget_show (box);
     p_curr_data->box = box;
 
