@@ -22,6 +22,7 @@ struct _charpick_data {
     GtkWidget       *box;
     GtkWidget       *frame;
     GtkWidget       *applet;
+    GtkWidget       *invisible;
     GtkToggleButton *last_toggle_button;
     gint             panel_size;
     gboolean         panel_vertical;
@@ -32,6 +33,7 @@ struct _charpick_data {
     GtkWidget       *add_edit_dialog;
     GtkWidget       *add_edit_entry;
     GSettings       *settings;
+    guint           rebuild_id;
 };
 
 typedef struct _charpick_button_cb_data charpick_button_cb_data;
