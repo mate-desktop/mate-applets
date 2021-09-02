@@ -169,10 +169,10 @@ toggle_button_toggled_cb (GtkToggleButton *button,
         unichar = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (button), "unichar"));
         curr_data->selected_unichar = unichar;
         /* set this? widget as the selection owner */
-        gtk_selection_owner_set (curr_data->applet,
+        gtk_selection_owner_set (curr_data->invisible,
                                  GDK_SELECTION_PRIMARY,
                                  GDK_CURRENT_TIME);
-        gtk_selection_owner_set (curr_data->applet,
+        gtk_selection_owner_set (curr_data->invisible,
                                  GDK_SELECTION_CLIPBOARD,
                                  GDK_CURRENT_TIME);
         curr_data->last_index = button_index;
@@ -547,6 +547,31 @@ build_table (charpick_data *p_curr_data)
     p_curr_data->last_toggle_button = NULL;
 }
 
+static gboolean
+rebuild_cb (gpointer user_data)
+{
+    charpick_data *curr_data;
+
+    curr_data = user_data;
+    curr_data->rebuild_id = 0;
+
+    build_table (curr_data);
+
+    return G_SOURCE_REMOVE;
+}
+
+static void
+queue_rebuild (charpick_data *curr_data)
+{
+    if (curr_data->rebuild_id != 0)
+        return;
+
+    curr_data->rebuild_id = g_idle_add (rebuild_cb, curr_data);
+    g_source_set_name_by_id (curr_data->rebuild_id, "[charpick] rebuild_cb");
+}
+
+
+
 static void
 applet_size_allocate (MatePanelApplet *applet,
                       GtkAllocation   *allocation,
@@ -563,7 +588,7 @@ applet_size_allocate (MatePanelApplet *applet,
         curr_data->panel_size = allocation->height;
     }
 
-    build_table (curr_data);
+    queue_rebuild (curr_data);
     return;
 }
 
@@ -647,6 +672,12 @@ applet_destroy (GtkWidget *widget,
 
     g_return_if_fail (curr_data);
 
+    if (curr_data->rebuild_id != 0)
+    {
+        g_source_remove (curr_data->rebuild_id);
+        curr_data->rebuild_id = 0;
+    }
+
     if (curr_data->about_dialog)
         gtk_widget_destroy (curr_data->about_dialog);
     if (curr_data->propwindow)
@@ -655,6 +686,8 @@ applet_destroy (GtkWidget *widget,
         gtk_widget_destroy (curr_data->box);
     if (curr_data->menu)
         gtk_widget_destroy (curr_data->menu);
+    if (curr_data->invisible)
+        gtk_widget_destroy (curr_data->invisible);
     g_free (curr_data->charlist);
     g_free (curr_data);
 }
@@ -729,6 +762,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
 {
     MatePanelAppletOrient orientation;
     charpick_data *curr_data;
+    GdkScreen *screen;
     GdkAtom utf8_atom;
     gchar *string;
     GtkActionGroup *action_group;
@@ -746,6 +780,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
     curr_data->add_edit_dialog = NULL;
     curr_data->settings = mate_panel_applet_settings_new (applet,
                                                           "org.mate.panel.applet.charpick");
+    curr_data->rebuild_id = 0;
 
     get_chartable (curr_data);
 
@@ -769,19 +804,22 @@ charpicker_applet_fill (MatePanelApplet *applet)
 
     utf8_atom = gdk_atom_intern ("UTF8_STRING", FALSE);
 
-    gtk_selection_add_target (curr_data->applet,
+    screen = gtk_widget_get_screen (GTK_WIDGET (applet));
+    curr_data->invisible = gtk_invisible_new_for_screen (screen);
+
+    gtk_selection_add_target (curr_data->invisible,
                               GDK_SELECTION_PRIMARY,
                               utf8_atom, 0);
 
-    gtk_selection_add_target (curr_data->applet,
+    gtk_selection_add_target (curr_data->invisible,
                               GDK_SELECTION_CLIPBOARD,
                               utf8_atom, 0);
 
-    g_signal_connect (curr_data->applet, "selection_get",
+    g_signal_connect (curr_data->invisible, "selection_get",
                       G_CALLBACK (charpick_selection_handler),
                       curr_data);
 
-    g_signal_connect (curr_data->applet, "selection_clear_event",
+    g_signal_connect (curr_data->invisible, "selection_clear_event",
                       G_CALLBACK (selection_clear_cb),
                       curr_data);
 
