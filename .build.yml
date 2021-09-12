@@ -64,7 +64,6 @@ requires:
     - autoconf-archive
     - clang
     - clang-analyzer
-    - cppcheck-htmlreport
     - gcc
     - git
     - gtksourceview3-devel
@@ -89,7 +88,6 @@ requires:
     - redhat-rpm-config
     - startup-notification-devel
     - upower-devel
-    - wireless-tools-devel
 
   ubuntu:
     - autopoint
@@ -142,9 +140,9 @@ variables:
 
 before_scripts:
   - cd ${START_DIR}
-  - '[ -f mate-panel-1.25.2.tar.xz ] || curl -Ls -o mate-panel-1.25.2.tar.xz https://github.com/mate-desktop/mate-panel/releases/download/v1.25.2/mate-panel-1.25.2.tar.xz'
-  - tar xf mate-panel-1.25.2.tar.xz
-  - cd mate-panel-1.25.2
+  - '[ -f mate-panel-1.26.0.tar.xz ] || curl -Ls -o mate-panel-1.26.0.tar.xz https://github.com/mate-desktop/mate-panel/releases/download/v1.26.0/mate-panel-1.26.0.tar.xz'
+  - tar xf mate-panel-1.26.0.tar.xz
+  - cd mate-panel-1.26.0
   - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
   -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
   - else
@@ -154,33 +152,18 @@ before_scripts:
   - make install
 
 build_scripts:
+  - NOCONFIGURE=1 ./autogen.sh
+  - scan-build $CHECKERS ./configure
+  - if [ $CPU_COUNT -gt 1 ]; then
+  -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
+  - else
+  -     scan-build $CHECKERS --keep-cc -o html-report make
+  - fi
   - if [ ${DISTRO_NAME} == "debian" ];then
-  -     export CFLAGS+=" -Wsign-compare -Wunused-parameter"
   -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
   - fi
 
-  - NOCONFIGURE=1 ./autogen.sh
-  - scan-build $CHECKERS ./configure --enable-compile-warnings=maximum
-  - if [ $CPU_COUNT -gt 1 ]; then
-  -     if [ ${DISTRO_NAME} == "debian" ];then
-  -         scan-build $CHECKERS --keep-cc --use-cc=clang --use-c++=clang++ -o html-report make -j $CPU_COUNT
-  -         make clean
-  -     fi
-  -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
-  - else
-  -     if [ ${DISTRO_NAME} == "debian" ];then
-  -         scan-build $CHECKERS --keep-cc --use-cc=clang --use-c++=clang++ -o html-report make
-  -         make clean
-  -     fi
-  -     scan-build $CHECKERS --keep-cc -o html-report make
-  - fi
-
 after_scripts:
-  - if [ ${DISTRO_NAME} == "fedora" ];then
-  -   cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude .
-  -   cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=cppcheck-htmlreport
-  -   ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/mate-applets/raw/master/cpufreq/pixmaps/cpufreq-100.png
-  - fi
   - make distcheck
 
 releases:
