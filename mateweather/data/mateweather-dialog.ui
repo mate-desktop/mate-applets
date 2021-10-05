@@ -86,6 +86,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">City:</property>
+                        <property name="mnemonic-widget">cond_location</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -98,6 +99,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Last update:</property>
+                        <property name="mnemonic-widget">cond_update</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -110,6 +112,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Conditions:</property>
+                        <property name="mnemonic-widget">cond_cond</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -122,6 +125,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Sky:</property>
+                        <property name="mnemonic-widget">cond_sky</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -134,6 +138,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Temperature:</property>
+                        <property name="mnemonic-widget">cond_temp</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -146,6 +151,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Feels like:</property>
+                        <property name="mnemonic-widget">cond_apparent</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -158,6 +164,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Dew point:</property>
+                        <property name="mnemonic-widget">cond_dew</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -170,6 +177,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Relative humidity:</property>
+                        <property name="mnemonic-widget">cond_humidity</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -182,6 +190,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Wind:</property>
+                        <property name="mnemonic-widget">cond_wind</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -194,6 +203,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Pressure:</property>
+                        <property name="mnemonic-widget">cond_pressure</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -206,6 +216,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Visibility:</property>
+                        <property name="mnemonic-widget">cond_vis</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -218,6 +229,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Sunrise:</property>
+                        <property name="mnemonic-widget">cond_sunrise</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -230,6 +242,7 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Sunset:</property>
+                        <property name="mnemonic-widget">cond_sunset</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -238,8 +251,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_location">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -249,8 +262,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_update">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -260,8 +273,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_cond">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -271,8 +284,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_sky">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -282,8 +295,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_temp">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -293,8 +306,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_apparent">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -304,8 +317,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_dew">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -315,8 +328,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_humidity">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -326,8 +339,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_wind">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -337,8 +350,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_pressure">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -348,8 +361,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_vis">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -359,8 +372,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_sunrise">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
@@ -370,8 +383,8 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="cond_sunset">
+                        <property name="selectable">True</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                       </object>
                       <packing>
