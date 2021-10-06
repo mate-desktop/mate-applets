@@ -407,6 +407,7 @@ static gboolean
 command_applet_fill (MatePanelApplet* applet)
 {
     CommandApplet *command_applet;
+    AtkObject *atk_widget;
 
     g_set_application_name (_("Command Applet"));
     gtk_window_set_default_icon_name (APPLET_ICON);
@@ -463,6 +464,14 @@ command_applet_fill (MatePanelApplet* applet)
                      command_applet->image,
                      "visible",
                      G_SETTINGS_BIND_DEFAULT);
+
+    atk_widget = gtk_widget_get_accessible (command_applet->applet);
+    if (GTK_IS_ACCESSIBLE (atk_widget)) {
+        atk_object_set_name (atk_widget,
+                             _("Command applet"));
+        atk_object_set_description (atk_widget,
+                                    _("Shows the output of a command"));
+    }
 
     /* set up context menu */
     GtkActionGroup *action_group = gtk_action_group_new ("Command Applet Actions");
