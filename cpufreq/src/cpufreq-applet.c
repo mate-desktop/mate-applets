@@ -376,7 +376,7 @@ cpufreq_applet_key_press (GtkWidget   *widget,
             break;
         }
 
-    return FALSE;
+    return GTK_WIDGET_CLASS (cpufreq_applet_parent_class)->key_press_event (widget, event);
 }
 
 static void
