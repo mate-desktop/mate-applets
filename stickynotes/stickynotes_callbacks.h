@@ -52,7 +52,7 @@ stickynote_show_popup_menu (GtkWidget      *widget,
 gboolean
 stickynote_keypress_cb (GtkWidget      *widget,
                         GdkEventKey    *event,
-                        StickyNote     *note);
+                        GtkMenu        *popup_menu);
 
 /* Callbacks for the sticky notes popup menu */
 void
