@@ -49,6 +49,10 @@ gboolean
 stickynote_show_popup_menu (GtkWidget      *widget,
                             GdkEventButton *event,
                             GtkWidget      *popup_menu);
+gboolean
+stickynote_keypress_cb (GtkWidget      *widget,
+                        GdkEventKey    *event,
+                        StickyNote     *note);
 
 /* Callbacks for the sticky notes popup menu */
 void
