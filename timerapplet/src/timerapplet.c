@@ -115,6 +115,7 @@ timer_applet_destroy (MatePanelApplet *applet_widget, TimerApplet *applet)
 static gboolean
 timer_callback (TimerApplet *applet)
 {
+    AtkObject *atk_obj;
     gboolean retval = TRUE;
     gchar *label;
     gchar *name;
@@ -125,6 +126,7 @@ timer_callback (TimerApplet *applet)
     tooltip = NULL;
 
     name = g_settings_get_string (applet->settings, NAME_KEY);
+    atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet->applet));
 
     if (!applet->active)
     {
@@ -134,6 +136,7 @@ timer_callback (TimerApplet *applet)
         gtk_label_set_text (applet->label, name);
         gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), "");
         gtk_widget_hide (GTK_WIDGET (applet->pause_image));
+        atk_object_set_name (atk_obj, name);
     }
     else
     {
@@ -154,6 +157,8 @@ timer_callback (TimerApplet *applet)
             gtk_label_set_text (applet->label, label);
             gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), name);
             gtk_widget_hide (GTK_WIDGET (applet->pause_image));
+            atk_object_set_name (atk_obj, label);
+            atk_object_set_description (atk_obj, tooltip);
 
             if (g_settings_get_boolean (applet->settings, SHOW_NOTIFICATION_KEY))
             {
@@ -201,6 +206,7 @@ timer_callback (TimerApplet *applet)
             gtk_label_set_text (applet->label, label);
             gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), tooltip);
             gtk_widget_set_visible (GTK_WIDGET (applet->pause_image), applet->pause);
+            atk_object_set_name (atk_obj, label);
         }
 
         g_free (label);
@@ -365,6 +371,7 @@ static gboolean
 timer_applet_fill (MatePanelApplet* applet_widget)
 {
     TimerApplet *applet;
+    AtkObject   *atk_obj;
 
     g_set_application_name (_("Timer Applet"));
     gtk_window_set_default_icon_name (APPLET_ICON);
@@ -386,6 +393,11 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     applet->pause_image = GTK_IMAGE (gtk_image_new_from_icon_name ("media-playback-pause", GTK_ICON_SIZE_BUTTON));
     applet->label = GTK_LABEL (gtk_label_new (""));
 
+    atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet->applet));
+    if (GTK_IS_ACCESSIBLE (atk_obj)) {
+        atk_object_set_name (atk_obj, _("Timer Applet"));
+        atk_object_set_description (atk_obj, _("Start a timer and receive a notification when it is finished"));
+    }
     /* we add the Gtk label into the applet */
     gtk_box_pack_start (applet->box,
                         GTK_WIDGET (applet->image),
