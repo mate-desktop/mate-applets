@@ -99,6 +99,7 @@
                   <object class="GtkLabel">
                     <property name="can-focus">False</property>
                     <property name="label" translatable="yes">Transfer Rate Graph</property>
+                    <property name="mnemonic-widget">drawingarea</property>
                   </object>
                 </child>
               </object>
@@ -192,6 +193,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">IPv4 Address:</property>
+                        <property name="mnemonic-widget">ip_text</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -220,6 +222,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Netmask:</property>
+                        <property name="mnemonic-widget">netmask_text</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -260,6 +263,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">IPv6 Address:</property>
+                        <property name="mnemonic-widget">ipv6_text</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0</property>
                       </object>
@@ -302,6 +306,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Hardware Address:</property>
+                        <property name="mnemonic-widget">hwaddr_text</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -330,6 +335,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">P-t-P Address:</property>
+                        <property name="mnemonic-widget">ptpip_text</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -370,6 +376,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Bytes in:</property>
+                        <property name="mnemonic-widget">inbytes_text</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -384,6 +391,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">0 byte</property>
+                        <property name="selectable">True</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -398,6 +406,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Bytes out:</property>
+                        <property name="mnemonic-widget">outbytes_text</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -412,6 +421,7 @@
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">0 byte</property>
+                        <property name="selectable">True</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -444,6 +454,7 @@
                             <property name="can-focus">False</property>
                             <property name="halign">start</property>
                             <property name="label" translatable="yes">ESSID:</property>
+                            <property name="mnemonic-widget">essid_text</property>
                             <property name="xalign">0</property>
                           </object>
                           <packing>
@@ -472,6 +483,7 @@
                             <property name="can-focus">False</property>
                             <property name="halign">start</property>
                             <property name="label" translatable="yes">Signal Strength:</property>
+                            <property name="mnemonic-widget">signalbar</property>
                             <property name="xalign">0</property>
                           </object>
                           <packing>
@@ -483,7 +495,7 @@
                         <child>
                           <object class="GtkProgressBar" id="signalbar">
                             <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+                            <property name="can-focus">True</property>
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
                           </object>
@@ -516,6 +528,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">Station:</property>
+                                <property name="mnemonic-widget">station_text</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -528,6 +541,7 @@
                               <object class="GtkLabel" id="station_text">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="selectable">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -541,6 +555,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">Channel:</property>
+                                <property name="mnemonic-widget">channel_label</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -553,6 +568,7 @@
                               <object class="GtkLabel" id="channel_text">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="selectable">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -578,6 +594,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">Connected Time:</property>
+                                <property name="mnemonic-widget">connected_time_text</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -590,6 +607,7 @@
                               <object class="GtkLabel" id="connected_time_text">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="selectable">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
