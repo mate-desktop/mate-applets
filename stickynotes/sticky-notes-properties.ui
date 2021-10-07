@@ -116,6 +116,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Title:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">title_entry</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -157,6 +158,7 @@
                         <property name="margin_left">12</property>
                         <property name="label" translatable="yes">Font C_olor:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">color_label</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -199,6 +201,8 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
+                        <property name="tooltip_text" translatable="yes">Choose a font color for the note</property>
+                        <property name="title" translatable="yes">Pick a font color for the sticky note</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -225,6 +229,7 @@
                         <property name="margin_left">12</property>
                         <property name="label" translatable="yes">_Font:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">note_font</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
