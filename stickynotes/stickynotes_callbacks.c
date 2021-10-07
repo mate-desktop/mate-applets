@@ -163,11 +163,11 @@ popup_destroy_cb (GtkWidget  *widget,
 
 /* Popup Menu Callback : Lock/Unlock selected sticky note */
 void
-popup_toggle_lock_cb (GtkToggleAction *action,
-                      StickyNote      *note)
+popup_toggle_lock_cb (GtkCheckMenuItem *item,
+                      StickyNote       *note)
 {
     stickynote_set_locked (note,
-                           gtk_toggle_action_get_active (action));
+                           gtk_check_menu_item_get_active (item));
 }
 
 /* Popup Menu Callback : Change sticky note properties */

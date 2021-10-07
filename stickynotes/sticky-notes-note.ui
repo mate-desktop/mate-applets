@@ -6,6 +6,42 @@
   <object class="GtkSourceBuffer" id="body_buffer">
     <property name="max_undo_levels">-1</property>
   </object>
+  <object class="GtkMenu" id="stickynote_menu">
+    <child>
+      <object class="GtkMenuItem" id="popup_create">
+        <property name="visible">True</property>
+        <property name="use-underline">True</property>
+        <property name="label" translatable="yes">_New Note</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="popup_destroy">
+        <property name="visible">True</property>
+        <property name="use-underline">True</property>
+        <property name="label" translatable="yes">_Delete Note...</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem"/>
+    </child>
+    <child>
+      <object class="GtkCheckMenuItem" id="popup_toggle_lock">
+        <property name="visible">True</property>
+        <property name="use-underline">True</property>
+        <property name="label" translatable="yes">_Lock Note</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="popup_properties">
+        <property name="visible">True</property>
+        <property name="use-underline">True</property>
+        <property name="label" translatable="yes">_Properties</property>
+      </object>
+    </child>
+  </object>
   <object class="GtkWindow" id="stickynote_window">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Sticky Note</property>

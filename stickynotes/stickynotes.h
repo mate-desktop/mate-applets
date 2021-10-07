@@ -52,7 +52,7 @@ typedef struct
 
     GtkSourceBuffer *buffer;              /* Sticky Note text buffer for undo/redo */
 
-    GtkToggleAction *ta_lock_toggle_item; /* Lock item in the popup menu */
+    GtkCheckMenuItem *w_lock_toggle_item; /* Lock item in the popup menu */
 
     GtkImage *img_lock;                   /* Lock image */
     GtkImage *img_close;                  /* Close image */
