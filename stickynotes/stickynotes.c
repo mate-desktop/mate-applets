@@ -163,9 +163,9 @@ stickynote_new_aux (GdkScreen *screen,
 
     note->w_menu = GTK_WIDGET (gtk_builder_get_object (builder,
                                                        "stickynote_menu"));
-    note->ta_lock_toggle_item =
-        GTK_TOGGLE_ACTION (gtk_builder_get_object (builder,
-                                                   "popup_toggle_lock"));
+    note->w_lock_toggle_item =
+        GTK_CHECK_MENU_ITEM (gtk_builder_get_object (builder,
+                                                     "popup_toggle_lock"));
 
     note->w_properties =
         GTK_WIDGET (gtk_builder_get_object (builder,
@@ -715,8 +715,8 @@ stickynote_set_locked (StickyNote *note,
     gtk_image_set_pixel_size (note->img_lock,
                               STICKYNOTES_ICON_SIZE);
 
-    gtk_toggle_action_set_active (note->ta_lock_toggle_item,
-                                  locked);
+    gtk_check_menu_item_set_active (note->w_lock_toggle_item,
+                                    locked);
 
     stickynotes_applet_update_menus ();
 }

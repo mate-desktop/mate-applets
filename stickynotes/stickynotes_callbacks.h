@@ -62,8 +62,8 @@ void
 popup_destroy_cb (GtkWidget  *widget,
                   StickyNote *note);
 void
-popup_toggle_lock_cb (GtkToggleAction *action,
-                      StickyNote      *note);
+popup_toggle_lock_cb (GtkCheckMenuItem *item,
+                      StickyNote       *note);
 void
 popup_properties_cb (GtkWidget  *widget,
                      StickyNote *note);
