@@ -483,6 +483,7 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
     MultiloadApplet *ma;
     GSettings *lockdown_settings;
     GtkActionGroup *action_group;
+    AtkObject      *atk_obj;
 
     context = gtk_widget_get_style_context (GTK_WIDGET (applet));
     gtk_style_context_add_class (context, "multiload-applet");
@@ -543,6 +544,16 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
                       G_CALLBACK (multiload_button_press_event_cb), ma);
     g_signal_connect (applet, "key_press_event",
                       G_CALLBACK (multiload_key_press_event_cb), ma);
+
+    atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet));
+
+    if (GTK_IS_ACCESSIBLE (atk_obj)) {
+        atk_object_set_name (atk_obj, _("System Monitor"));
+        atk_object_set_description (atk_obj,
+            _("A system load monitor capable of displaying graphs "
+              "for CPU, ram, and swap space use, plus network "
+              "traffic."));
+    }
 
     multiload_applet_refresh (ma);
 
