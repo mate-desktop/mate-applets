@@ -1568,6 +1568,7 @@ netspeed_applet_factory (MatePanelApplet *applet,
     int i;
     GtkWidget *spacer, *spacer_box;
     GtkActionGroup *action_group;
+    AtkObject      *atk_obj;
     char *tmp;
 
     if (strcmp (iid, "NetspeedApplet"))
@@ -1747,6 +1748,14 @@ netspeed_applet_factory (MatePanelApplet *applet,
     mate_panel_applet_setup_menu_from_resource (applet,
                                                 NETSPEED_RESOURCE_PATH "netspeed-menu.xml",
                                                 action_group);
+
+    atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet));
+
+    if (GTK_IS_ACCESSIBLE (atk_obj)) {
+        atk_object_set_name (atk_obj, _("MATE Netspeed"));
+        atk_object_set_description (atk_obj,
+             _("A little applet that displays some information on the traffic on the specified network device"));
+    }
 
     g_object_unref (action_group);
 
