@@ -368,9 +368,9 @@ stickynote_new_aux (GdkScreen *screen,
                       G_CALLBACK (gtk_widget_hide),
                       note);
 
-    g_signal_connect (note->w_window, "key-press-event",
-                      G_CALLBACK (stickynote_keypress_cb),
-                      note);
+    g_signal_connect_after (note->w_window, "key-press-event",
+                            G_CALLBACK (stickynote_keypress_cb),
+                            note->w_menu);
 
     g_object_unref (builder);
 
