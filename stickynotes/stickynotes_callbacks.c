@@ -122,11 +122,12 @@ stickynote_show_popup_menu (GtkWidget      *widget,
     return FALSE;
 }
 
-/* Sticky Window Callback : Exit entry field on key press. */
+/* Sticky Window Callback : Exit entry field on key press or popup
+ * the right click menu. */
 gboolean
-stickynote_keypress_cb (GtkWidget      *widget,
-                        GdkEventKey    *event,
-                        StickyNote     *note)
+stickynote_keypress_cb (GtkWidget    *widget,
+                        GdkEventKey  *event,
+                        GtkMenu      *popup_menu)
 {
     GdkModifierType state = event->state & gtk_accelerator_get_default_mod_mask ();
 
@@ -141,6 +142,22 @@ stickynote_keypress_cb (GtkWidget      *widget,
             return TRUE;
         default:
             break;
+    }
+
+    if ((event->keyval == GDK_KEY_F10 && (state == 0 || state == GDK_SHIFT_MASK)) ||
+        (event->keyval == GDK_KEY_Menu && state == 0)) {
+        GtkWidget *focus_widget = NULL;
+
+        if (GTK_IS_WINDOW (widget))
+            focus_widget = gtk_window_get_focus (GTK_WINDOW (widget));
+        if (! focus_widget)
+            focus_widget = widget;
+
+        gtk_menu_popup_at_widget (popup_menu, focus_widget,
+                                  GDK_GRAVITY_SOUTH_WEST,
+                                  GDK_GRAVITY_NORTH_WEST,
+                                  (const GdkEvent*) event);
+        return TRUE;
     }
 
     return FALSE;
