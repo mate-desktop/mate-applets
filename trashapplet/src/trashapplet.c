@@ -85,12 +85,15 @@ trash_applet_monitor_changed (TrashApplet *applet)
   GError *error = NULL;
   GFileInfo *info;
   GIcon *icon;
+  AtkObject *atk_obj;
   gint items;
 
   info = g_file_query_info (applet->trash,
                             G_FILE_ATTRIBUTE_STANDARD_ICON","
                             G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT,
                             0, NULL, &error);
+
+  atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet));
 
   if (!info)
     {
@@ -120,19 +123,20 @@ trash_applet_monitor_changed (TrashApplet *applet)
 
   if (items != applet->items)
     {
+      char *text;
+
       if (items)
         {
-          char *text;
-
           text = g_strdup_printf (ngettext ("%d Item in Trash",
                                             "%d Items in Trash",
                                             items), items);
-          gtk_widget_set_tooltip_text (GTK_WIDGET (applet), text);
-          g_free (text);
         }
       else
-        gtk_widget_set_tooltip_text (GTK_WIDGET (applet),
-                                     _("No Items in Trash"));
+        text = g_strdup (_("No Items in Trash"));
+
+      gtk_widget_set_tooltip_text (GTK_WIDGET (applet), text);
+      atk_object_set_description (atk_obj, text);
+      g_free (text);
 
       applet->items = items;
     }
@@ -615,6 +619,7 @@ trash_applet_factory (MatePanelApplet *applet,
 
   if (!strcmp (iid, "TrashApplet"))
     {
+      AtkObject *atk_obj;
       GtkActionGroup *action_group;
 
       g_set_application_name (_("Trash Applet"));
@@ -632,6 +637,12 @@ trash_applet_factory (MatePanelApplet *applet,
                                                   GRESOURCE "trashapplet-menu.xml",
                                                   action_group);
       g_object_unref (action_group);
+
+      atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet));
+
+      if (GTK_IS_ACCESSIBLE (atk_obj)) {
+          atk_object_set_name (atk_obj, _("Trash Applet"));
+      }
 
       gtk_widget_show (GTK_WIDGET (applet));
 
