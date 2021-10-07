@@ -130,6 +130,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Width:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">width_spin</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -143,6 +144,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">H_eight:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">height_spin</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -202,6 +204,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Font Co_lor:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">prefs_font_color</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -215,6 +218,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Note C_olor:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">default_color</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -227,6 +231,8 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
+                        <property name="tooltip_text" translatable="yes">Choose a font color to use for all sticky notes</property>
+                        <property name="title" translatable="yes">Pick a default font color</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -268,6 +274,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Font:</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">default_font</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
