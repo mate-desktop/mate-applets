@@ -172,6 +172,12 @@ void install_check_click_on_desktop (void)
     window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (),
                                                      desktop_window);
 
+    /* Avoid crash if the desktop window ID is set but invalid, e.g. if
+     * Caja has set it but quit since then */
+    if (!window) {
+        return;
+    }
+
     /* It may contain an atom to tell us which other window to monitor */
     user_time_window = gdk_x11_get_xatom_by_name ("_NET_WM_USER_TIME_WINDOW");
     user_time = gdk_x11_get_xatom_by_name ("_NET_WM_USER_TIME");
