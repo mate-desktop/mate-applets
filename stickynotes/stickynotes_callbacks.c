@@ -122,6 +122,29 @@ stickynote_show_popup_menu (GtkWidget      *widget,
     return FALSE;
 }
 
+/* Sticky Window Callback : Exit entry field on key press. */
+gboolean
+stickynote_keypress_cb (GtkWidget      *widget,
+                        GdkEventKey    *event,
+                        StickyNote     *note)
+{
+    GdkModifierType state = event->state & gtk_accelerator_get_default_mod_mask ();
+
+    switch (event->keyval) {
+        case GDK_KEY_F6:
+            if (state == 0)
+                gtk_widget_child_focus(widget, GTK_DIR_TAB_FORWARD);
+            else if (state == GDK_SHIFT_MASK)
+                gtk_widget_child_focus(widget, GTK_DIR_TAB_BACKWARD);
+            else
+                break;
+            return TRUE;
+        default:
+            break;
+    }
+
+    return FALSE;
+}
 
 /* Popup Menu Callback : Create a new sticky note */
 void popup_create_cb (GtkWidget  *widget,
