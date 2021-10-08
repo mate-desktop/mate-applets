@@ -353,11 +353,44 @@ Template last modified Mar 12, 2002
     </variablelist>
   </sect2>
 
+  <sect2 id="stickynotes-keyboard">
+    <title>Keyboard navigation</title>
+    <para>Basic keyboard navigation is supported.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Creating Sticky notes with the keyboard</term>
+        <listitem><para>Use
+	<shortcut><keycombo><keysym>Ctrl-Alt-Tab</keysym></keycombo></shortcut>
+	to access the MATE panel, then use <shortcut><keysym>Tab</keysym></shortcut>
+	or the <shortcut><keycombo><keysym>Arrow</keysym></keycombo></shortcut>
+	keys to access the Sticky notes applet. Then open its context menu through either
+	<shortcut><keycombo><keysym>Shift-F10</keysym></keycombo></shortcut> or the
+	<shortcut><keysym>Menu</keysym></shortcut> key, and select
+	 <guimenuitem><guilabel>New Note</guilabel></guimenuitem>.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Accessing Sticky notes with the keyboard</term>
+        <listitem><para>Use
+	<shortcut><keycombo><keysym>Ctrl-Alt-Tab</keysym></keycombo></shortcut>
+	several times to switch between your panels and your existing sticky notes.
+	When a sticky note is focused, you can navigate between the text area and the
+	title bar (where the <guimenuitem><guilabel>Lock</guilabel></guimenuitem> and the
+	<guimenuitem><guilabel>Delete</guilabel></guimenuitem> buttons are located) with the
+	<shortcut><keysym>F6</keysym></shortcut> key.</para>
+	<para>Once in the title bar, use <shortcut><keysym>F10</keysym></shortcut>,
+	<shortcut><keycombo><keysym>Shift-F10</keysym></keycombo></shortcut> or the
+	<shortcut><keysym>Menu</keysym></shortcut> key to open the context menu,
+	which allows to access the individual note’s
+	<guimenuitem><guilabel>Properties</guilabel></guimenuitem> dialog.</para></listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
 </sect1>
 
-<sect1 id="stickynotes-advanced-settings"> 
+<sect1 id="stickynotes-advanced-settings">
   <title>Preferences</title>
-  
+
   <figure id="stickynotes-prefs-fig">
     <title>&applet; Preferences</title>
     <screenshot>
