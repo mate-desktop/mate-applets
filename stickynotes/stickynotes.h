@@ -29,7 +29,6 @@
 typedef struct
 {
     GtkWidget *w_window;                  /* Sticky Note window */
-    GtkWidget *w_menu;                    /* Sticky Note menu */
     GtkWidget *w_properties;              /* Sticky Note properties dialog */
 
     GtkWidget *w_entry;                   /* Sticky Note title entry */
@@ -51,8 +50,6 @@ typedef struct
     GtkWidget *w_resize_sw;               /* Sticky Note resize button (south west) */
 
     GtkSourceBuffer *buffer;              /* Sticky Note text buffer for undo/redo */
-
-    GtkToggleAction *ta_lock_toggle_item; /* Lock item in the popup menu */
 
     GtkImage *img_lock;                   /* Lock image */
     GtkImage *img_close;                  /* Close image */

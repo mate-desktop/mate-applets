@@ -161,12 +161,6 @@ stickynote_new_aux (GdkScreen *screen,
     gtk_widget_set_direction (GTK_WIDGET (gtk_builder_get_object (builder, "resize_bar")),
                               GTK_TEXT_DIR_LTR);
 
-    note->w_menu = GTK_WIDGET (gtk_builder_get_object (builder,
-                                                       "stickynote_menu"));
-    note->ta_lock_toggle_item =
-        GTK_TOGGLE_ACTION (gtk_builder_get_object (builder,
-                                                   "popup_toggle_lock"));
-
     note->w_properties =
         GTK_WIDGET (gtk_builder_get_object (builder,
                                             "stickynote_properties"));
@@ -255,33 +249,6 @@ stickynote_new_aux (GdkScreen *screen,
 
     gtk_widget_realize (note->w_window);
 
-    /* Connect a popup menu to all buttons and title */
-    /* GtkBuilder holds and drops the references to all the widgets it
-     * creates for as long as it exist (GtkBuilder). Hence in our callback
-     * we would have an invalid GtkMenu. We need to ref it.
-     */
-    g_object_ref (note->w_menu);
-
-    g_signal_connect (note->w_window, "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu),
-                      note->w_menu);
-
-    g_signal_connect (note->w_lock, "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu),
-                      note->w_menu);
-
-    g_signal_connect (note->w_close, "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu),
-                      note->w_menu);
-
-    g_signal_connect (note->w_resize_se, "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu),
-                      note->w_menu);
-
-    g_signal_connect (note->w_resize_sw, "button-press-event",
-                      G_CALLBACK (stickynote_show_popup_menu),
-                      note->w_menu);
-
     /* Connect a properties dialog to the note */
     gtk_window_set_transient_for (GTK_WINDOW (note->w_properties),
                                   GTK_WINDOW (note->w_window));
@@ -318,22 +285,6 @@ stickynote_new_aux (GdkScreen *screen,
 
     g_signal_connect (note->w_window, "delete-event",
                       G_CALLBACK (stickynote_delete_cb),
-                      note);
-
-    g_signal_connect (gtk_builder_get_object (builder, "popup_create"), "activate",
-                      G_CALLBACK (popup_create_cb),
-                      note);
-
-    g_signal_connect (gtk_builder_get_object (builder, "popup_destroy"), "activate",
-                      G_CALLBACK (popup_destroy_cb),
-                      note);
-
-    g_signal_connect (gtk_builder_get_object (builder, "popup_toggle_lock"), "toggled",
-                      G_CALLBACK (popup_toggle_lock_cb),
-                      note);
-
-    g_signal_connect (gtk_builder_get_object (builder, "popup_properties"), "activate",
-                      G_CALLBACK (popup_properties_cb),
                       note);
 
     g_signal_connect_swapped (note->w_entry, "changed",
@@ -392,7 +343,6 @@ stickynote_new (GdkScreen *screen)
 void stickynote_free (StickyNote *note)
 {
     gtk_widget_destroy (note->w_properties);
-    gtk_widget_destroy (note->w_menu);
     gtk_widget_destroy (note->w_window);
 
     g_free (note->color);
@@ -710,9 +660,6 @@ stickynote_set_locked (StickyNote *note,
 
     gtk_image_set_pixel_size (note->img_lock,
                               STICKYNOTES_ICON_SIZE);
-
-    gtk_toggle_action_set_active (note->ta_lock_toggle_item,
-                                  locked);
 
     stickynotes_applet_update_menus ();
 }

@@ -45,24 +45,6 @@ gboolean
 stickynote_delete_cb (GtkWidget  *widget,
                       GdkEvent   *event,
                       StickyNote *note);
-gboolean
-stickynote_show_popup_menu (GtkWidget      *widget,
-                            GdkEventButton *event,
-                            GtkWidget      *popup_menu);
-
-/* Callbacks for the sticky notes popup menu */
-void
-popup_create_cb (GtkWidget  *widget,
-                 StickyNote *note);
-void
-popup_destroy_cb (GtkWidget  *widget,
-                  StickyNote *note);
-void
-popup_toggle_lock_cb (GtkToggleAction *action,
-                      StickyNote      *note);
-void
-popup_properties_cb (GtkWidget  *widget,
-                     StickyNote *note);
 
 /* Callbacks for sticky notes properties dialog */
 void

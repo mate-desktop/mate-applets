@@ -108,53 +108,6 @@ stickynote_delete_cb (GtkWidget  *widget,
     return TRUE;
 }
 
-/* Sticky Window Callback : Popup the right click menu. */
-gboolean
-stickynote_show_popup_menu (GtkWidget      *widget,
-                            GdkEventButton *event,
-                            GtkWidget      *popup_menu)
-{
-    if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
-        gtk_menu_popup_at_pointer (GTK_MENU (popup_menu),
-                                   (const GdkEvent*) event);
-    }
-
-    return FALSE;
-}
-
-
-/* Popup Menu Callback : Create a new sticky note */
-void popup_create_cb (GtkWidget  *widget,
-                      StickyNote *note)
-{
-    stickynotes_add (gtk_widget_get_screen (note->w_window));
-}
-
-/* Popup Menu Callback : Destroy selected sticky note */
-void
-popup_destroy_cb (GtkWidget  *widget,
-                  StickyNote *note)
-{
-    stickynotes_remove (note);
-}
-
-/* Popup Menu Callback : Lock/Unlock selected sticky note */
-void
-popup_toggle_lock_cb (GtkToggleAction *action,
-                      StickyNote      *note)
-{
-    stickynote_set_locked (note,
-                           gtk_toggle_action_get_active (action));
-}
-
-/* Popup Menu Callback : Change sticky note properties */
-void
-popup_properties_cb (GtkWidget  *widget,
-                     StickyNote *note)
-{
-    stickynote_change_properties (note);
-}
-
 /* Properties Dialog Callback : Apply title */
 void
 properties_apply_title_cb (StickyNote *note)
