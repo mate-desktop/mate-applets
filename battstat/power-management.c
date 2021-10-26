@@ -394,14 +394,14 @@ power_management_getinfo (BatteryStatus *status)
     return NULL;
   }
 
-  #ifdef HAVE_UPOWER
-    if (using_upower)
-    {
-      battstat_upower_get_battery_info (status);
-      return NULL;
-    }
-  #endif
-  
+#ifdef HAVE_UPOWER
+  if (using_upower)
+  {
+    battstat_upower_get_battery_info (status);
+    return NULL;
+  }
+#endif
+
   retval = apm_readinfo (status);
 
   if (status->percent == -1) {
