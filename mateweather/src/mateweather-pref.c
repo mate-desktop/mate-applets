@@ -1035,15 +1035,15 @@ mateweather_pref_create (MateWeatherPref* pref)
 		}
 	#endif /* RADARMAP */
 
-    #ifdef HAVE_LIBNOTIFY
-		/* setup show-notifications button */
-		pref->priv->basic_show_notifications_btn = gtk_check_button_new_with_mnemonic (_("Show _notifications"));
+#ifdef HAVE_LIBNOTIFY
+	/* setup show-notifications button */
+	pref->priv->basic_show_notifications_btn = gtk_check_button_new_with_mnemonic (_("Show _notifications"));
 
-		if (!g_settings_is_writable (pref->priv->applet->settings, "show-notifications"))
-		{
-			hard_set_sensitive (pref->priv->basic_show_notifications_btn, FALSE);
-		}
-    #endif
+	if (!g_settings_is_writable (pref->priv->applet->settings, "show-notifications"))
+	{
+		hard_set_sensitive (pref->priv->basic_show_notifications_btn, FALSE);
+	}
+#endif
 
 	frame = create_hig_category (pref_basic_vbox, _("Update"));
 
