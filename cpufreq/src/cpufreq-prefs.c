@@ -68,7 +68,6 @@ static void cpufreq_prefs_get_property (GObject      *object,
 
 static void cpufreq_prefs_dialog_update_sensitivity (CPUFreqPrefs *prefs);
 
-
 G_DEFINE_TYPE_WITH_PRIVATE (CPUFreqPrefs, cpufreq_prefs, G_TYPE_OBJECT)
 
 static void

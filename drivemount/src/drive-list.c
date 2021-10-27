@@ -464,7 +464,6 @@ set_icon_size (gpointer key,
     drive_button_set_size (button, self->icon_size);
 }
 
-
 void
 drive_list_set_panel_size (DriveList *self,
                            int        panel_size)

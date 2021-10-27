@@ -222,7 +222,6 @@ multiload_destroy_cb(GtkWidget *widget, gpointer data)
     return;
 }
 
-
 static gboolean
 multiload_button_press_event_cb (GtkWidget *widget, GdkEventButton *event, MultiloadApplet *ma)
 {

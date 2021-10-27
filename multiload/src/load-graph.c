@@ -43,7 +43,6 @@ shift_right(LoadGraph *g)
     g->data[0] = last_data;
 }
 
-
 /* Redraws the backing pixmap for the load graph and updates the window */
 static void
 load_graph_draw (LoadGraph *g)

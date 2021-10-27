@@ -26,7 +26,6 @@
 #include "mateweather-dialog.h"
 #include "mateweather-applet.h"
 
-
 static gboolean mateweather_applet_new(MatePanelApplet* applet, const gchar* iid, gpointer data)
 {
 	MateWeatherApplet* gw_applet;

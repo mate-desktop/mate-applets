@@ -88,7 +88,6 @@ is_dummy_device (const char* device)
     return FALSE;
 }
 
-
 /* Check for all available devices. This really should be
  * portable for at least all plattforms using the gnu c lib
  * TODO: drop it, use glibtop_get_netlist directly / gchar**
@@ -504,7 +503,6 @@ out_handle_destroy:
     nl_socket_free (state->sock);
     return err;
 }
-
 
 static void
 nl80211_cleanup (struct nl80211_state *state)

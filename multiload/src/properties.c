@@ -32,7 +32,6 @@ hard_set_sensitive (GtkWidget *w, gboolean sensitivity)
                        GINT_TO_POINTER ( ! sensitivity));
 }
 
-
 /* set sensitive, but always insensitive if NEVER_SENSITIVE is set */
 static void
 soft_set_sensitive (GtkWidget *w, gboolean sensitivity)
@@ -147,7 +146,6 @@ on_net_threshold1_spin_button_value_changed (GtkSpinButton *spin_button,
     g_settings_set_uint64 (ma->settings, KEY_NET_THRESHOLD1, ma->net_threshold1);
 }
 
-
 static void
 on_net_threshold2_spin_button_value_changed (GtkSpinButton *spin_button,
                                              gpointer       user_data)
@@ -166,7 +164,6 @@ on_net_threshold2_spin_button_value_changed (GtkSpinButton *spin_button,
     }
     g_settings_set_uint64 (ma->settings, KEY_NET_THRESHOLD2, ma->net_threshold2);
 }
-
 
 static void
 on_net_threshold3_spin_button_value_changed (GtkSpinButton *spin_button,

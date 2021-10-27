@@ -22,7 +22,6 @@
 
 #include "xstuff.h"
 
-
 /* Zoom animation */
 #define MINIATURIZE_ANIMATION_FRAMES_Z   1
 #define MINIATURIZE_ANIMATION_STEPS_Z    6

@@ -720,7 +720,6 @@ cpufreq_applet_refresh (CPUFreqApplet *applet)
     horizontal = ((applet->orient == MATE_PANEL_APPLET_ORIENT_UP) ||
                   (applet->orient == MATE_PANEL_APPLET_ORIENT_DOWN));
 
-
     /* We want a fixed label size, the biggest */
 
     gtk_widget_get_preferred_width (GTK_WIDGET (applet->label), &label_size, NULL);

@@ -78,7 +78,6 @@ static int using_upower;
  * the problem might be.  This error message is not to be freed.
  */
 
-
 /* Uncomment the following to enable a 'testing' backend.  When you add the
    applet to the panel a window will appear that allows you to manually
    change the battery status values for testing purposes.
@@ -132,7 +131,6 @@ initialise_test (void)
   g_signal_connect (w, "value-changed",
                     G_CALLBACK (test_update_integer), &test_status.minutes);
   gtk_box_pack_start (box, w, TRUE, TRUE, 0);
-
 
   w = gtk_toggle_button_new_with_label ("on_ac_power");
   g_signal_connect (w, "toggled",

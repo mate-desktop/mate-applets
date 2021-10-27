@@ -33,7 +33,6 @@
 static UpClient *upc;
 static void (*status_updated_callback) (void);
 
-
 /* status_updated_callback () can not be called directly because at the time of
  * the device-remove signal, the device is not actually removed from the list
  * of devices known to the up_client object (see libupower-glib/up-client.c in

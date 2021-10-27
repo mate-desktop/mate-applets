@@ -105,7 +105,6 @@ static void update_cb (GtkAction      *action,
     mateweather_update (gw_applet);
 }
 
-
 static const GtkActionEntry weather_applet_menu_actions [] = {
 	{ "Details", NULL, N_("_Details"),
 	  NULL, NULL,
@@ -522,7 +521,6 @@ gint suncalc_timeout_cb (gpointer data)
     update_finish(info, data);
     return 0;  /* Do not repeat timeout (will be reset by update_finish) */
 }
-
 
 void mateweather_update (MateWeatherApplet *gw_applet)
 {

@@ -648,7 +648,6 @@ check_for_updates (gpointer data)
       }
     }
 
-
     possibly_update_status_icon (battstat, &info);
 
     if (!info.on_ac_power &&
@@ -797,7 +796,6 @@ battstat_show_help (ProgressData *battstat,
         g_free (message);
     }
 }
-
 
 /* Called when the user selects the 'help' menu item.
  */
@@ -1209,7 +1207,6 @@ battstat_applet_factory (MatePanelApplet *applet,
 
     return retval;
 }
-
 
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("BattstatAppletFactory",
                                        PANEL_TYPE_APPLET,

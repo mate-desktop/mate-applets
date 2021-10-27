@@ -47,7 +47,6 @@ apm_exists (void)
     return apm_read (&i);
 }
 
-
 /* Read information from /proc/apm.  Return 0 on success, 1 if APM not
  * installed, 2 if APM installed, but old version. 
  */
@@ -167,7 +166,6 @@ apm_read (apm_info * i)
     return retcode;
 }
 
-
 /* Lookup the device number for the apm_bios device. */
 dev_t apm_dev (void)
 {
@@ -207,7 +205,6 @@ dev_t apm_dev (void)
     return cached = -1;
 }
 
-
 /* Return a file descriptor for the apm_bios device, or -1 if there is an
  * error.  Is this method secure?  Should we make the device in /dev
  * instead of /tmp? 
@@ -241,7 +238,6 @@ apm_open (void)
     }
     return -1;
 }
-
 
 /* Given a file descriptor for the apm_bios device, close it. */
 int
@@ -278,7 +274,6 @@ apm_get_events (int fd, int timeout, apm_event_t * events, int n)
     return read (fd, events, n * sizeof (apm_event_t)) / sizeof (apm_event_t);
 }
 
-
 /* Try to set the Power State to Suspend. */
 int
 apm_suspend (int fd)
@@ -286,7 +281,6 @@ apm_suspend (int fd)
     sync ();
     return ioctl (fd, APM_IOC_SUSPEND, NULL);
 }
-
 
 /* Try to set the Power State to Standby. */
 int
@@ -424,7 +418,6 @@ apm_event_name (apm_event_t event)
     }
     return "Unknown";
 }
-
 
 /* This is a convenience function that has nothing to do with APM.  It just
  * formats a time nicely.  If you don't like this format, then write your

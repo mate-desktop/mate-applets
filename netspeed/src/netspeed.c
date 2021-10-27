@@ -1438,7 +1438,6 @@ update_tooltip (NetspeedApplet *netspeed)
     g_string_free (tooltip, TRUE);
 }
 
-
 static gboolean
 netspeed_applet_enter_notify_event (GtkWidget        *widget,
                                     GdkEventCrossing *event)
