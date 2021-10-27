@@ -52,7 +52,6 @@ struct _CPUFreqSelectorLibcpufreqClass {
     CPUFreqSelectorClass parent_class;
 };
 
-
 GType            cpufreq_selector_libcpufreq_get_type (void) G_GNUC_CONST;
 CPUFreqSelector *cpufreq_selector_libcpufreq_new      (guint cpu);
 

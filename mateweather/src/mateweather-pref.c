@@ -798,7 +798,6 @@ on_response (GtkDialog       *dialog,
 	}
 }
 
-
 static void
 mateweather_pref_create (MateWeatherPref* pref)
 {
@@ -833,7 +832,6 @@ mateweather_pref_create (MateWeatherPref* pref)
 	GtkWidget* pref_find_label;
 	GtkWidget* pref_find_hbox;
 	GtkWidget* image;
-
 
 	g_object_set (pref, "destroy-with-parent", TRUE, NULL);
 	gtk_window_set_title (GTK_WINDOW (pref), _("Weather Preferences"));

@@ -438,7 +438,6 @@ cpufreq_selector_service_set_governor (CPUFreqSelectorService *service,
     return TRUE;
 }
 
-
 gboolean
 cpufreq_selector_service_can_set (CPUFreqSelectorService *service,
                                   DBusGMethodInvocation  *context)

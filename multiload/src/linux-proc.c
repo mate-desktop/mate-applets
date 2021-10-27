@@ -109,7 +109,6 @@ GetDiskLoad (guint64    Maximum,
 
     multiload = g->multiload;
 
-
     if(first_call)
     {
         autoscaler_init (&scaler, g->speed, 500);

@@ -40,7 +40,6 @@ struct _MateWeatherPref
 	MateWeatherPrefPrivate *priv;
 };
 
-
 struct _MateWeatherPrefClass
 {
 	GtkDialogClass parent_class;
@@ -49,9 +48,7 @@ struct _MateWeatherPrefClass
 GType		 mateweather_pref_get_type	(void);
 GtkWidget	*mateweather_pref_new	(MateWeatherApplet *applet);
 
-
 void set_access_namedesc (GtkWidget *widget, const gchar *name, const gchar *desc);
-
 
 G_END_DECLS
 

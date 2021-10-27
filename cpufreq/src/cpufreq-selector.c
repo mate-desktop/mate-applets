@@ -118,7 +118,6 @@ cpufreq_selector_connect_to_system_bus (CPUFreqSelector *selector,
     return (selector->system_bus != NULL);
 }
 
-
 static gboolean
 cpufreq_selector_create_proxy (CPUFreqSelector  *selector,
                                GError          **error)

@@ -60,7 +60,6 @@ struct _CPUFreqSelectorClass {
                                 GError         **error);
 };
 
-
 GType    cpufreq_selector_get_type      (void) G_GNUC_CONST;
 GQuark   cpufreq_selector_error_quark   (void) G_GNUC_CONST;
 

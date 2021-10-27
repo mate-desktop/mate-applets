@@ -247,7 +247,6 @@ update_battery_info (struct acpi_info* acpiinfo)
     return TRUE;
 }
 
-
 /* Initializes the ACPI-reading subsystem by opening a file
  * descriptor to the ACPI event file.  This can either be the
  * /proc/acpi/event exported by the kernel, or if it's already

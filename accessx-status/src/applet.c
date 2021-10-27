@@ -170,7 +170,6 @@ dialog_cb (GtkAction*           action,
         return;
     }
 
-
     screen = gtk_widget_get_screen (GTK_WIDGET (sapplet->applet));
     appinfo = g_app_info_create_from_commandline ("mate-keyboard-properties --a11y",
                                                   _("Open the keyboard preferences dialog"),

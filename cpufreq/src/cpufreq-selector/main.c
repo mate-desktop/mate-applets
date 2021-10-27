@@ -33,7 +33,6 @@
 #endif
 #include "cpufreq-selector-factory.h"
 
-
 static gint    cpu = 0;
 static gchar  *governor = NULL;
 static gulong  frequency = 0;

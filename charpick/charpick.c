@@ -15,7 +15,6 @@
 /* The comment for each char list has the html entity names of the chars */
 /* All gunicar codes should end in 0 */
 
-
 /* This is the default list used when starting charpick the first time */
 /* aacute, agrave, eacute, iacute, oacute, frac12, copy*/
 /* static const gchar *def_list = "áàéíñóœ©"; */
@@ -569,8 +568,6 @@ queue_rebuild (charpick_data *curr_data)
     curr_data->rebuild_id = g_idle_add (rebuild_cb, curr_data);
     g_source_set_name_by_id (curr_data->rebuild_id, "[charpick] rebuild_cb");
 }
-
-
 
 static void
 applet_size_allocate (MatePanelApplet *applet,

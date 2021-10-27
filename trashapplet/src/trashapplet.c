@@ -402,7 +402,6 @@ trash_applet_show_help (GtkAction   *action,
     }
 }
 
-
 static void
 trash_applet_show_about (GtkAction   *action,
                          TrashApplet *applet)

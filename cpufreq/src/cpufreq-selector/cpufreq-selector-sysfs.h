@@ -49,7 +49,6 @@ struct _CPUFreqSelectorSysfsClass {
     CPUFreqSelectorClass parent_class;
 };
 
-
 GType            cpufreq_selector_sysfs_get_type (void) G_GNUC_CONST;
 CPUFreqSelector *cpufreq_selector_sysfs_new      (guint cpu);
 
