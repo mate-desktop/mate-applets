@@ -817,7 +817,7 @@ get_wireless_info (DevInfo *devinfo)
     ret = nl_recvmsgs_default (nlstate.sock);
     nlmsg_free (msg);
     if (ret < 0) {
-        g_warning ("failed to recive netlink message");
+        g_warning ("failed to receive netlink message");
     }
 
     if (!devinfo->running)
@@ -841,7 +841,7 @@ get_wireless_info (DevInfo *devinfo)
     ret = nl_recvmsgs_default (nlstate.sock);
     nlmsg_free (msg);
     if (ret < 0) {
-        g_warning ("failed to recive netlink message");
+        g_warning ("failed to receive netlink message");
         goto cleanup;
     }
 
@@ -867,7 +867,7 @@ get_wireless_info (DevInfo *devinfo)
     ret = nl_recvmsgs_default (nlstate.sock);
     nlmsg_free (msg);
     if (ret < 0) {
-        g_warning ("failed to recive netlink message");
+        g_warning ("failed to receive netlink message");
     }
 
  cleanup:
