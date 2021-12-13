@@ -444,18 +444,26 @@ menu_about_cb (GtkAction         *action,
 void
 preferences_save_cb (gpointer data)
 {
-    gint width = gtk_adjustment_get_value (stickynotes->w_prefs_width);
-    gint height = gtk_adjustment_get_value (stickynotes->w_prefs_height);
-    gboolean sys_color =
-        gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sys_color));
-    gboolean sys_font =
-        gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sys_font));
-    gboolean sticky =
-        gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sticky));
-    gboolean force_default =
-        gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_force));
-    gboolean desktop_hide =
-        gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_desktop));
+    gint     width;
+    gint     height;
+    gboolean sys_color;
+    gboolean sys_font;
+    gboolean sticky;
+    gboolean force_default;
+    gboolean desktop_hide;
+    gdouble  adjustment_value;
+
+    adjustment_value = gtk_adjustment_get_value (stickynotes->w_prefs_width);
+    width = (gint) adjustment_value;
+
+    adjustment_value = gtk_adjustment_get_value (stickynotes->w_prefs_height);
+    height = (gint) adjustment_value;
+
+    sys_color     = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sys_color));
+    sys_font      = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sys_font));
+    sticky        = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sticky));
+    force_default = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_force));
+    desktop_hide  = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_desktop));
 
     if (g_settings_is_writable (stickynotes->settings,
                                 "default-width"))

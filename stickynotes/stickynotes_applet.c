@@ -166,6 +166,7 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 {
     cairo_t *cr;
     gint size, scale;
+    int screen_height;
 
     stickynotes = g_new (StickyNotes, 1);
 
@@ -208,8 +209,8 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
                       G_CALLBACK (preferences_apply_cb), NULL);
 
     /* Max height for large notes*/
-    stickynotes->max_height =
-        0.8 * HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
+    screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
+    stickynotes->max_height = (int) (0.8 * (double) screen_height);
 
     /* Load sticky notes */
     stickynotes_load (gtk_widget_get_screen (GTK_WIDGET (mate_panel_applet)));

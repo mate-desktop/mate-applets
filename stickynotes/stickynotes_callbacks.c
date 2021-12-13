@@ -49,13 +49,17 @@ gboolean stickynote_resize_cb (GtkWidget      *widget,
         if (widget == note->w_resize_se)
             gtk_window_begin_resize_drag (GTK_WINDOW (note->w_window),
                                           GDK_WINDOW_EDGE_SOUTH_EAST,
-                                          event->button, event->x_root,
-                                          event->y_root, event->time);
+                                          event->button,
+                                          (gint) event->x_root,
+                                          (gint) event->y_root,
+                                          event->time);
         else /* if (widget == note->w_resize_sw) */
             gtk_window_begin_resize_drag (GTK_WINDOW (note->w_window),
                                           GDK_WINDOW_EDGE_SOUTH_WEST,
-                                          event->button, event->x_root,
-                                          event->y_root, event->time);
+                                          event->button,
+                                          (gint) event->x_root,
+                                          (gint) event->y_root,
+                                          event->time);
     }
     else
         return FALSE;

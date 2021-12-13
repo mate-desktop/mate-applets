@@ -383,13 +383,12 @@ drive_button_update (gpointer user_data)
         g_free (color_string);
         g_object_unref (settings);
 
-        guchar red = color.red*255;
-        guchar green = color.green*255;
-        guchar blue = color.blue*255;
+        guchar red   = (guchar) (color.red   * 255.0);
+        guchar green = (guchar) (color.green * 255.0);
+        guchar blue  = (guchar) (color.blue  * 255.0);
 
-        const gdouble ratio = 0.65;
-        gdouble y_start = icon_height * ratio;
-        gdouble x_start = icon_height * (1 + ratio);
+        int y_start = (int) (0.65 * (gdouble) icon_height);
+        int x_start = (int) (1.65 * (gdouble) icon_height);
 
         for (y = y_start; y < icon_height; y++)
             for (x = x_start - y; x < icon_width; x++)
