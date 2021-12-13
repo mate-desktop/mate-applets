@@ -91,15 +91,16 @@ spin_ptr_cb (GtkWidget *spin_ptr,
              gpointer   data)
 {
   BattstatPreferences *dialog = data;
+  gdouble red_val = gtk_spin_button_get_value (GTK_SPIN_BUTTON (spin_ptr));
 
-  dialog->battstat->red_val = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spin_ptr));
+  dialog->battstat->red_val = (guint) red_val;
   /* automatically calculate orangle and yellow values from the
    * red value
    */
-  dialog->battstat->orange_val = dialog->battstat->red_val * ORANGE_MULTIPLIER;
+  dialog->battstat->orange_val = (guint) (ORANGE_MULTIPLIER * red_val);
   dialog->battstat->orange_val = MIN (dialog->battstat->orange_val, 100);
 
-  dialog->battstat->yellow_val = dialog->battstat->red_val * YELLOW_MULTIPLIER;
+  dialog->battstat->yellow_val = (guint) (YELLOW_MULTIPLIER * red_val);
   dialog->battstat->yellow_val = MIN (dialog->battstat->yellow_val, 100);
 
   g_settings_set_int (dialog->battstat->settings,
