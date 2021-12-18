@@ -1633,16 +1633,16 @@ accessx_status_applet_fill (MatePanelApplet* applet)
     }
 
     g_object_connect (sapplet->applet,
-                      "signal::destroy", accessx_status_applet_destroy, sapplet,
-                      "signal::change_orient", accessx_status_applet_reorient, sapplet,
-                      "signal::change_size", accessx_status_applet_resize, sapplet,
+                      "destroy", accessx_status_applet_destroy, sapplet,
+                      "change-orient", accessx_status_applet_reorient, sapplet,
+                      "change-size", accessx_status_applet_resize, sapplet,
                       NULL);
 
-    g_signal_connect (sapplet->applet, "button_press_event",
+    g_signal_connect (sapplet->applet, "button-press-event",
                       G_CALLBACK (button_press_cb),
                       sapplet);
 
-    g_signal_connect (sapplet->applet, "key_press_event",
+    g_signal_connect (sapplet->applet, "key-press-event",
                       G_CALLBACK (key_press_cb),
                       sapplet);
 

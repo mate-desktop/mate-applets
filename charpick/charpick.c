@@ -442,7 +442,7 @@ build_table (charpick_data *p_curr_data)
                           G_CALLBACK (chooser_button_clicked),
                           p_curr_data);
 
-        g_signal_connect (button, "button_press_event",
+        g_signal_connect (button, "button-press-event",
                           G_CALLBACK (button_press_hack),
                           p_curr_data->applet);
     }
@@ -493,7 +493,7 @@ build_table (charpick_data *p_curr_data)
                           G_CALLBACK (toggle_button_toggled_cb),
                           p_curr_data);
 
-        g_signal_connect (toggle_button[i], "button_press_event",
+        g_signal_connect (toggle_button[i], "button-press-event",
                           G_CALLBACK (button_press_hack),
                           p_curr_data->applet);
     }
@@ -796,7 +796,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
                              || (orientation == MATE_PANEL_APPLET_ORIENT_RIGHT);
     build_table (curr_data);
 
-    g_signal_connect (curr_data->applet, "key_press_event",
+    g_signal_connect (curr_data->applet, "key-press-event",
                       G_CALLBACK (key_press_event), curr_data);
 
     utf8_atom = gdk_atom_intern ("UTF8_STRING", FALSE);
@@ -812,21 +812,21 @@ charpicker_applet_fill (MatePanelApplet *applet)
                               GDK_SELECTION_CLIPBOARD,
                               utf8_atom, 0);
 
-    g_signal_connect (curr_data->invisible, "selection_get",
+    g_signal_connect (curr_data->invisible, "selection-get",
                       G_CALLBACK (charpick_selection_handler),
                       curr_data);
 
-    g_signal_connect (curr_data->invisible, "selection_clear_event",
+    g_signal_connect (curr_data->invisible, "selection-clear-event",
                       G_CALLBACK (selection_clear_cb),
                       curr_data);
 
     make_applet_accessible (GTK_WIDGET (applet));
 
     /* session save signal */
-    g_signal_connect (applet, "change_orient",
+    g_signal_connect (applet, "change-orient",
                       G_CALLBACK (applet_change_orient), curr_data);
 
-    g_signal_connect (applet, "size_allocate",
+    g_signal_connect (applet, "size-allocate",
                       G_CALLBACK (applet_size_allocate), curr_data);
 
     g_signal_connect (applet, "destroy",

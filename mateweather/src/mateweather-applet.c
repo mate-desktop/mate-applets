@@ -345,11 +345,11 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
 
     gtk_window_set_default_icon_name ("weather-storm");
 
-    g_signal_connect (gw_applet->applet, "change_orient",
+    g_signal_connect (gw_applet->applet, "change-orient",
                       G_CALLBACK (change_orient_cb),
                       gw_applet);
 
-    g_signal_connect (gw_applet->applet, "size_allocate",
+    g_signal_connect (gw_applet->applet, "size-allocate",
                       G_CALLBACK (size_allocate_cb),
                       gw_applet);
 
@@ -357,11 +357,11 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
                       G_CALLBACK (applet_destroy),
                       gw_applet);
 
-    g_signal_connect (gw_applet->applet, "button_press_event",
+    g_signal_connect (gw_applet->applet, "button-press-event",
                       G_CALLBACK(clicked_cb),
                       gw_applet);
 
-    g_signal_connect (gw_applet->applet, "key_press_event",
+    g_signal_connect (gw_applet->applet, "key-press-event",
                       G_CALLBACK (key_press_cb),
                       gw_applet);
 
