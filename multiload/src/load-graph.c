@@ -472,7 +472,7 @@ load_graph_new (MultiloadApplet *ma, guint n, const gchar *label,
 
     g_signal_connect (g->disp, "draw",
                       G_CALLBACK (load_graph_expose), g);
-    g_signal_connect (g->disp, "configure_event",
+    g_signal_connect (g->disp, "configure-event",
                       G_CALLBACK (load_graph_configure), g);
     g_signal_connect (g->disp, "destroy",
                       G_CALLBACK (load_graph_destroy), g);

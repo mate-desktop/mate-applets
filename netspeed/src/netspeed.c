@@ -1681,7 +1681,7 @@ netspeed_applet_factory (MatePanelApplet *applet,
                                          (GSourceFunc)timeout_function,
                                          netspeed);
 
-    g_signal_connect (applet, "change_size",
+    g_signal_connect (applet, "change-size",
                       G_CALLBACK (applet_change_size_or_orient),
                       netspeed);
 
@@ -1689,19 +1689,19 @@ netspeed_applet_factory (MatePanelApplet *applet,
                       G_CALLBACK (icon_theme_changed_cb),
                       netspeed);
 
-    g_signal_connect (applet, "change_orient",
+    g_signal_connect (applet, "change-orient",
                       G_CALLBACK (applet_change_size_or_orient),
                       netspeed);
 
-    g_signal_connect (netspeed->in_label, "size_allocate",
+    g_signal_connect (netspeed->in_label, "size-allocate",
                       G_CALLBACK (label_size_allocate_cb),
                       netspeed);
 
-    g_signal_connect (netspeed->out_label, "size_allocate",
+    g_signal_connect (netspeed->out_label, "size-allocate",
                       G_CALLBACK (label_size_allocate_cb),
                       netspeed);
 
-    g_signal_connect (netspeed->sum_label, "size_allocate",
+    g_signal_connect (netspeed->sum_label, "size-allocate",
                       G_CALLBACK (label_size_allocate_cb),
                       netspeed);
 

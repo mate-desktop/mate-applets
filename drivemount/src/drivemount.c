@@ -189,11 +189,11 @@ applet_factory (MatePanelApplet *applet,
 
         gtk_container_add (GTK_CONTAINER (applet), drive_list);
 
-        g_signal_connect_object (applet, "change_orient",
+        g_signal_connect_object (applet, "change-orient",
                                  G_CALLBACK (change_orient), drive_list, 0);
-        g_signal_connect_object (applet, "size_allocate",
+        g_signal_connect_object (applet, "size-allocate",
                                  G_CALLBACK (size_allocate), drive_list, 0);
-        g_signal_connect (applet, "change_background",
+        g_signal_connect (applet, "change-background",
                           G_CALLBACK (change_background), drive_list);
 
         /* set initial state */

@@ -87,17 +87,17 @@ drive_list_init (DriveList *self)
     if (!volume_monitor)
         volume_monitor = g_volume_monitor_get ();
 
-    g_signal_connect_object (volume_monitor, "mount_added",
+    g_signal_connect_object (volume_monitor, "mount-added",
                              G_CALLBACK (mount_added), self, 0);
-    g_signal_connect_object (volume_monitor, "mount_changed",
+    g_signal_connect_object (volume_monitor, "mount-changed",
                              G_CALLBACK (mount_changed), self, 0);
-    g_signal_connect_object (volume_monitor, "mount_removed",
+    g_signal_connect_object (volume_monitor, "mount-removed",
                              G_CALLBACK (mount_removed), self, 0);
-    g_signal_connect_object (volume_monitor, "volume_added",
+    g_signal_connect_object (volume_monitor, "volume-added",
                              G_CALLBACK (volume_added), self, 0);
-    g_signal_connect_object (volume_monitor, "volume_changed",
+    g_signal_connect_object (volume_monitor, "volume-changed",
                              G_CALLBACK (volume_changed), self, 0);
-    g_signal_connect_object (volume_monitor, "volume_removed",
+    g_signal_connect_object (volume_monitor, "volume-removed",
                              G_CALLBACK (volume_removed), self, 0);
     volumes = g_volume_monitor_get_volumes (volume_monitor);
     for (tmp = volumes; tmp != NULL; tmp = tmp->next) {

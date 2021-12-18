@@ -1091,11 +1091,11 @@ create_layout (ProgressData *battstat)
                       G_CALLBACK (destroy_applet),
                       battstat);
 
-    g_signal_connect (battstat->applet, "change_orient",
+    g_signal_connect (battstat->applet, "change-orient",
                       G_CALLBACK (change_orient),
                       battstat);
 
-    g_signal_connect (battstat->applet, "size_allocate",
+    g_signal_connect (battstat->applet, "size-allocate",
                       G_CALLBACK (size_allocate),
                       battstat);
 

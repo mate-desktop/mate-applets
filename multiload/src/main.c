@@ -533,15 +533,15 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
 
     g_object_unref (action_group);
 
-    g_signal_connect (applet, "change_size",
+    g_signal_connect (applet, "change-size",
                       G_CALLBACK (multiload_change_size_cb), ma);
-    g_signal_connect (applet, "change_orient",
+    g_signal_connect (applet, "change-orient",
                       G_CALLBACK (multiload_change_orient_cb), ma);
     g_signal_connect (applet, "destroy",
                       G_CALLBACK (multiload_destroy_cb), ma);
-    g_signal_connect (applet, "button_press_event",
+    g_signal_connect (applet, "button-press-event",
                       G_CALLBACK (multiload_button_press_event_cb), ma);
-    g_signal_connect (applet, "key_press_event",
+    g_signal_connect (applet, "key-press-event",
                       G_CALLBACK (multiload_key_press_event_cb), ma);
 
     atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet));

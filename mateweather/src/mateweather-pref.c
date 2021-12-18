@@ -1174,7 +1174,7 @@ mateweather_pref_create (MateWeatherPref* pref)
 #ifdef RADARMAP
     g_signal_connect (pref->priv->basic_radar_btn, "toggled", G_CALLBACK (on_radar_toggled), pref);
     g_signal_connect (pref->priv->basic_radar_url_btn, "toggled", G_CALLBACK (on_use_radar_url_toggled), pref);
-    g_signal_connect (pref->priv->basic_radar_url_entry, "focus_out_event", G_CALLBACK (on_radar_url_changed), pref);
+    g_signal_connect (pref->priv->basic_radar_url_entry, "focus-out-event", G_CALLBACK (on_radar_url_changed), pref);
 #endif /* RADARMAP */
 #ifdef HAVE_LIBNOTIFY
     g_signal_connect (pref->priv->basic_show_notifications_btn, "toggled", G_CALLBACK (on_show_notifications_toggled), pref);
