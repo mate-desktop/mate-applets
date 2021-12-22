@@ -726,10 +726,10 @@ check_for_updates (gpointer data)
         battstat->refresh_label = FALSE;
     }
 
-    battstat->last_charging = info.charging;
+    battstat->last_charging = (info.charging != FALSE);
     battstat->last_batt_life = info.percent;
     battstat->last_minutes = info.minutes;
-    battstat->last_acline_status = info.on_ac_power;
+    battstat->last_acline_status = (info.on_ac_power != FALSE);
     battstat->last_present = info.present;
 
     return TRUE;
