@@ -62,9 +62,9 @@
                            "ACPI subsystem is properly loaded.")
 
 static const char *apm_readinfo (BatteryStatus *status);
-static int pm_initialised;
+static gboolean pm_initialised = FALSE;
 #ifdef HAVE_UPOWER
-static int using_upower;
+static gboolean using_upower = FALSE;
 #endif
 
 /*
@@ -263,7 +263,7 @@ apm_readinfo (BatteryStatus *status)
   fd = open(APMDEVICE, O_RDONLY);
   if (fd == -1)
   {
-    pm_initialised = 0;
+    pm_initialised = FALSE;
     return ERR_OPEN_APMDEV;
   }
   if (ioctl (fd, APM_IOC_GETPOWER, &apminfo) == -1)
@@ -442,7 +442,7 @@ power_management_initialise (void (*callback) (void))
 
   if (err == NULL) /* UPOWER is up */
   {
-    pm_initialised = 1;
+    pm_initialised = TRUE;
     using_upower = TRUE;
     return NULL;
   }
@@ -483,7 +483,7 @@ power_management_initialise (void (*callback) (void))
   else
     using_acpi = FALSE;
 #endif
-  pm_initialised = 1;
+  pm_initialised = TRUE;
 
   return NULL;
 }
@@ -500,7 +500,7 @@ power_management_cleanup (void)
   if (using_upower)
   {
     battstat_upower_cleanup ();
-    pm_initialised = 1;
+    pm_initialised = TRUE;
     return;
   }
 #endif
@@ -519,16 +519,16 @@ power_management_cleanup (void)
   }
 #endif
 
-  pm_initialised = 0;
+  pm_initialised = FALSE;
 }
 
-int
+gboolean
 power_management_using_upower (void)
 {
 #ifdef HAVE_UPOWER
  return using_upower;
 #else
- return 0;
+ return FALSE;
 #endif
 }
 
