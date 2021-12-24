@@ -26,6 +26,7 @@
 
 char *battstat_upower_initialise (void (*) (void));
 void battstat_upower_cleanup (void);
+void error_dialog (const char *fmt , ...);
 
 #include "battstat.h"
 void battstat_upower_get_battery_info (BatteryStatus *status);
