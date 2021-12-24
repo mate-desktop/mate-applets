@@ -151,6 +151,6 @@ const char *power_management_getinfo (BatteryStatus *status);
 const char *power_management_initialise (void (*callback) (void));
 void power_management_cleanup (void);
 
-int power_management_using_upower (void);
+gboolean power_management_using_upower (void);
 
 #endif /* _battstat_h_ */
