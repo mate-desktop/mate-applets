@@ -675,8 +675,7 @@ check_for_updates (gpointer data)
     }
 
     if (battstat->last_charging &&
-        battstat->last_acline_status &&
-        battstat->last_acline_status!=1000 &&
+        battstat->last_acline_status == POWER_STATUS_ON &&
         !info.charging &&
         info.on_ac_power &&
         info.present &&
@@ -726,10 +725,10 @@ check_for_updates (gpointer data)
         battstat->refresh_label = FALSE;
     }
 
-    battstat->last_charging = (info.charging != FALSE);
+    battstat->last_charging = info.charging;
     battstat->last_batt_life = info.percent;
     battstat->last_minutes = info.minutes;
-    battstat->last_acline_status = (info.on_ac_power != FALSE);
+    battstat->last_acline_status = info.on_ac_power;
     battstat->last_present = info.present;
 
     return TRUE;
@@ -1146,8 +1145,8 @@ battstat_applet_fill (MatePanelApplet *applet)
     battstat->applet = GTK_WIDGET (applet);
     battstat->refresh_label = TRUE;
     battstat->last_batt_life = 1000;
-    battstat->last_acline_status = 1000;
-    battstat->last_charging = 1000;
+    battstat->last_acline_status = POWER_STATUS_UNKNOWN;
+    battstat->last_charging = POWER_STATUS_UNKNOWN;
     battstat->orienttype = mate_panel_applet_get_orient (applet);
     battstat->battery_low_dialog = NULL;
     battstat->battery_low_label = NULL;

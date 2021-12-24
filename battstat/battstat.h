@@ -56,13 +56,20 @@ typedef enum
   STATUS_PIXMAP_NUM
 } StatusPixmapIndex;
 
+typedef enum
+{
+  POWER_STATUS_OFF = 0,
+  POWER_STATUS_ON,
+  POWER_STATUS_UNKNOWN
+} PowerStatus;
+
 typedef struct
 {
-  gboolean on_ac_power;
-  gboolean charging;
-  gboolean present;
-  gint minutes;
-  gint percent;
+  PowerStatus on_ac_power;
+  PowerStatus charging;
+  gboolean    present;
+  gint        minutes;
+  gint        percent;
 } BatteryStatus;
 
 typedef enum
@@ -133,12 +140,12 @@ typedef struct _ProgressData {
   int timeout;
 
   /* last_* for the benefit of the check_for_updates function */
-  guint last_batt_life;
-  guint last_acline_status;
+  guint             last_batt_life;
   StatusPixmapIndex last_pixmap_index;
-  guint last_charging;
-  guint last_minutes;
-  gboolean last_present;
+  PowerStatus       last_acline_status;
+  PowerStatus       last_charging;
+  gboolean          last_present;
+  guint             last_minutes;
 } ProgressData;
 
 /* battstat_applet.c */
