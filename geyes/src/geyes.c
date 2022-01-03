@@ -132,7 +132,7 @@ timer_cb (EyesApplet *eyes_applet)
 {
     GdkDisplay *display;
     GdkSeat *seat;
-    gint x, y;
+    gint x, y, dx, dy;
     gint pupil_x, pupil_y;
     gsize i;
 
@@ -144,6 +144,11 @@ timer_cb (EyesApplet *eyes_applet)
             gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]),
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);
+            gtk_widget_translate_coordinates (eyes_applet->eyes[i],
+                                              gtk_widget_get_toplevel(eyes_applet->eyes[i]),
+                                              0, 0, &dx, &dy);
+            x -= dx;
+            y -= dy;
 
             if ((x != eyes_applet->pointer_last_x[i]) ||
                 (y != eyes_applet->pointer_last_y[i])) {
