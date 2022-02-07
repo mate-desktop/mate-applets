@@ -526,12 +526,13 @@ read_color_button (GtkWidget    *widget,
     GdkRGBA color;
     gchar *color_string;
 
-    if ((color_string = g_settings_get_string (settings, key)) != NULL) {
+    color_string = g_settings_get_string (settings, key);
+    if (*color_string != '\0') {
         gdk_rgba_parse (&color, color_string);
-        g_free (color_string);
     } else {
         gdk_rgba_parse (&color, "#000000");
     }
+    g_free (color_string);
     gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (widget), &color);
 
     if (!g_settings_is_writable (settings, key))
