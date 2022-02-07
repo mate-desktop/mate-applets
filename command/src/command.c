@@ -225,12 +225,16 @@ settings_command_changed (GSettings *settings, gchar *key, CommandApplet *comman
 
     cmdline = g_settings_get_string (command_applet->settings, COMMAND_KEY);
     if (strlen (cmdline) == 0 || g_strcmp0(command_applet->cmdline, cmdline) == 0)
+    {
+        g_free (cmdline);
         return;
+    }
 
     if (!g_shell_parse_argv (cmdline, NULL, &argv, &error))
     {
         gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
         g_clear_error (&error);
+        g_free (cmdline);
         return;
     }
     g_strfreev(argv);
