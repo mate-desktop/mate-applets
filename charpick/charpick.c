@@ -448,7 +448,7 @@ build_table (charpick_data *p_curr_data)
                           p_curr_data->applet);
     }
 
-    charlist = g_strdup (p_curr_data->charlist);
+    charlist = p_curr_data->charlist;
     for (i = 0; i < len; i++) {
         gchar label[7];
         GtkRequisition req;
