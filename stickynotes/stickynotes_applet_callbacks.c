@@ -67,6 +67,10 @@ stickynote_show_notes (gboolean visible)
     GList *l;
 
     if (stickynotes->visible == visible) return;
+
+    if (g_settings_get_boolean (stickynotes->settings, "click-hide") && !visible)
+        return;
+
     stickynotes->visible = visible;
 
     for (l = stickynotes->notes; l; l = l->next) {
