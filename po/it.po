@@ -4,35 +4,36 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Emilio Bologna <io@emilio.i5-my.name>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Marco Z. <minaz666@gmail.com>, 2018
-# Marco Bartolucci <nap.84@live.it>, 2018
-# Mat V <enthusedquill6@gmail.com>, 2018
-# l3nn4rt, 2018
-# Enrico B. <enricobe@hotmail.com>, 2020
-# Dario Di Nucci <linkin88mail@gmail.com>, 2020
-# Giuseppe Pignataro <rogepix@gmail.com>, 2020
+# Emilio Bologna <io@emilio.i5-my.name>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# Marco Z. <minaz666@gmail.com>, 2021
+# 6d1bb5d393520b00f70a137a58397ea1_b5ba1e2 <22cc5e560e0d5b6554809bfb51b90403_882095>, 2021
+# Dario Di Nucci <linkin88mail@gmail.com>, 2021
+# Giuseppe Pignataro <rogepix@gmail.com>, 2021
+# Enrico B. <enricobe@hotmail.com>, 2021
+# Marco Bartolucci, 2021
+# Mat V <enthusedquill6@gmail.com>, 2021
+# l3nn4rt, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-applets 1.25.3\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2021-06-20 12:41+0200\n"
-"PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"PO-Revision-Date: 2021-09-18 20:12+0000\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
 msgid "AccessX Status Applet Factory"
-msgstr "Fabbrica applet di Stato AccessX"
+msgstr "AccessX Status Applet Factory"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
 msgid "Keyboard Accessibility Status Applet Factory"
@@ -61,11 +62,11 @@ msgstr "Team Documentazione GNOME Sun <gdocteam@sun.com>"
 #: stickynotes/stickynotes_applet_callbacks.c:412
 #: trashapplet/src/trashapplet.c:417
 msgid "MATE Documentation Team"
-msgstr "Team Documentazione di MATE"
+msgstr "Team della documentazione MATE"
 
 #: accessx-status/src/applet.c:112
 msgid "About AccessX Status"
-msgstr "Info su Stato AccessX"
+msgstr "Info su AccessX Status"
 
 #: accessx-status/src/applet.c:114
 msgid "Shows the state of AccessX features such as latched modifiers"
@@ -89,9 +90,7 @@ msgstr ""
 #: stickynotes/stickynotes_applet_callbacks.c:432
 #: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
-msgstr ""
-" Enrico Bella, 2020\n"
-"Alessandro Volturno, 2020"
+msgstr "Alessandro Volturno, 2021"
 
 #: accessx-status/src/applet.c:143
 #, c-format
@@ -125,7 +124,7 @@ msgstr "Preferen_ze di accessibilità alla tastiera"
 #: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
-msgstr "_Aiuto"
+msgstr "Aiuto"
 
 #: accessx-status/src/applet.c:222 battstat/battstat_applet.c:65
 #: charpick/charpick.c:700 command/src/command.c:87
@@ -134,7 +133,7 @@ msgstr "_Aiuto"
 #: multiload/src/main.c:473 stickynotes/stickynotes_applet.c:49
 #: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
-msgstr "Inform_azioni"
+msgstr "Informazioni"
 
 #: accessx-status/src/applet.c:571 accessx-status/src/applet.c:640
 msgid "a"
@@ -143,7 +142,7 @@ msgstr "a"
 #: accessx-status/src/applet.c:1242 accessx-status/src/applet.c:1320
 #: accessx-status/src/applet.c:1442 accessx-status/src/applet.c:1673
 msgid "AccessX Status"
-msgstr "Stato AccessX"
+msgstr "AccessX Status"
 
 #: accessx-status/src/applet.c:1244 accessx-status/src/applet.c:1444
 msgid "Shows keyboard status when accessibility features are used."
@@ -205,8 +204,9 @@ msgstr "Tempo sconosciuto (%d%%) per completare la carica"
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] "%d minuto (%d%%) rimanente"
+msgstr[0] "%d minuto (%d%%) rimanenti"
 msgstr[1] "%d minuti (%d%%) rimanenti"
+msgstr[2] "%d minuti (%d%%) rimanenti"
 
 #: battstat/battstat_applet.c:189
 #, c-format
@@ -214,13 +214,15 @@ msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] "%d minuto alla carica completa (%d%%)"
 msgstr[1] "%d minuti alla carica completa (%d%%)"
+msgstr[2] "%d minuti alla carica completa (%d%%)"
 
 #: battstat/battstat_applet.c:195
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] "%d ora (%d%%) rimanente"
+msgstr[0] "%d ora (%d%%) rimanenti"
 msgstr[1] "%d ore (%d%%) rimanenti"
+msgstr[2] "%d ore (%d%%) rimanenti"
 
 #: battstat/battstat_applet.c:200
 #, c-format
@@ -228,6 +230,7 @@ msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] "%d ora alla carica completa (%d%%)"
 msgstr[1] "%d ore alla carica completa (%d%%)"
+msgstr[2] "%d ore alla carica completa (%d%%)"
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -239,12 +242,14 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "ora"
 msgstr[1] "ore"
+msgstr[2] "ore"
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minuto"
 msgstr[1] "minuti"
+msgstr[2] "minuti"
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -275,10 +280,13 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
-"%d minuto di alimentazione da batteria rimanente (%d%% della capacità "
+"%d minuto di alimentazione a batteria rimanente (%d%% della capacità "
 "totale)."
 msgstr[1] ""
-"%d minuti di alimentazione da batteria rimanenti (%d%% della capacità "
+"%d minuti di alimentazione a batteria rimanenti (%d%% della capacità "
+"totale)."
+msgstr[2] ""
+"%d minuti di alimentazione a batteria rimanenti (%d%% della capacità "
 "totale)."
 
 #: battstat/battstat_applet.c:395
@@ -536,7 +544,7 @@ msgstr ""
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:9
 #: charpick/properties.c:452
 msgid "Character Palette"
-msgstr "Tavolozza caratteri"
+msgstr "Tavolozza dei caratteri"
 
 #: charpick/charpick.c:724
 #: charpick/org.mate.applets.CharpickerApplet.mate-panel-applet.desktop.in.in:10
@@ -571,7 +579,7 @@ msgstr "Elenco delle stringhe contenute nelle tavolozze disponibili."
 
 #: charpick/properties.c:28
 msgid "_Edit"
-msgstr "_Modifica"
+msgstr "Modifica"
 
 #: charpick/properties.c:94
 msgid "_Palette:"
@@ -627,7 +635,7 @@ msgstr "Fare clic per eliminare la tavolozza selezionata"
 
 #: charpick/properties.c:565
 msgid "Character Palette Preferences"
-msgstr "Preferenze della Tavolozza caratteri"
+msgstr "Preferenze di Tavolozza dei caratteri"
 
 #: command/data/command-preferences.ui:25
 msgid "Command Applet Preferences"
@@ -748,7 +756,7 @@ msgstr "Impostazioni di visualizzazione"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
 #: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
-msgstr "Monitor Variazione della frequenza CPU"
+msgstr "Monitor Variazione frequenza della CPU"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:6
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
@@ -1310,7 +1318,7 @@ msgstr "minuti"
 
 #: mateweather/src/mateweather-pref.c:1084
 msgid "Display"
-msgstr "Display"
+msgstr "Schermata"
 
 #: mateweather/src/mateweather-pref.c:1103
 msgid "General"
@@ -1686,11 +1694,11 @@ msgstr "Soglia _3:"
 
 #: multiload/data/properties.ui:1430
 msgid "Network speed thresholds"
-msgstr "Soglia velocità di rete"
+msgstr "Soglia della velocità di rete"
 
 #: multiload/src/main.c:60
 msgid "About System Monitor"
-msgstr "Info su Monitor di Sistema"
+msgstr "Info su Monitor di sistema"
 
 #: multiload/src/main.c:62
 msgid ""
@@ -2189,6 +2197,7 @@ msgid "%'"
 msgid_plural "%'"
 msgstr[0] "%'"
 msgstr[1] "%'"
+msgstr[2] "%'"
 
 #: netspeed/src/netspeed.c:652
 #, c-format
@@ -2196,6 +2205,7 @@ msgid "%'d minute"
 msgid_plural "%'d minutes"
 msgstr[0] "%'d minuto"
 msgstr[1] "%'d minuti"
+msgstr[2] "%'d minuti"
 
 #: netspeed/src/netspeed.c:653
 #, c-format
@@ -2203,6 +2213,7 @@ msgid "%'d secon"
 msgid_plural "%'d seconds"
 msgstr[0] "%'d secondo"
 msgstr[1] "%'d secondi"
+msgstr[2] "%'d secondi"
 
 #: netspeed/src/netspeed.c:658
 #, c-format
@@ -2210,6 +2221,7 @@ msgid "%'d hour"
 msgid_plural "%'d hours"
 msgstr[0] "%'d ora"
 msgstr[1] "%'d ore"
+msgstr[2] "%'d ore"
 
 #: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
 #: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
@@ -2374,7 +2386,7 @@ msgstr "Questa nota non è bloccata."
 #: stickynotes/sticky-notes-delete.ui:37
 #: trashapplet/trashapplet-empty-progress.ui:27
 msgid "_Cancel"
-msgstr "A_nnulla"
+msgstr "Annulla"
 
 #: stickynotes/sticky-notes-delete-all.ui:53
 msgid "_Delete All"
@@ -2391,7 +2403,7 @@ msgstr "Questa azione non può essere annullata."
 
 #: stickynotes/sticky-notes-delete.ui:54
 msgid "_Delete"
-msgstr "_Elimina"
+msgstr "Elimina"
 
 #: stickynotes/sticky-notes-delete.ui:107
 msgid "Delete this sticky note?"
@@ -2727,6 +2739,7 @@ msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d nota"
 msgstr[1] "%d note"
+msgstr[2] "%d note"
 
 #: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
@@ -2875,8 +2888,9 @@ msgstr "_Apri cestino"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] "%d oggetto nel cestino"
-msgstr[1] "%d oggetti nel cestino"
+msgstr[0] "%d elemento nel cestino"
+msgstr[1] "%d elementi nel cestino"
+msgstr[2] "%d elementi nel cestino"
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
@@ -2943,7 +2957,7 @@ msgstr "Rimozione oggetto %s di %s"
 #: trashapplet/src/trash-empty.c:98
 #, c-format
 msgid "Removing: %s"
-msgstr "Rimozione: %s"
+msgstr "Rimozione di: %s"
 
 #: trashapplet/src/trash-empty.c:321
 msgid "Empty all of the items from the trash?"

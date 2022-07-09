@@ -4,33 +4,37 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Christopher Schramm <transifex@cschramm.eu>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Dmitry Mandryk <dmandryk@gmail.com>, 2018
-# theirix <theirix@gmail.com>, 2018
-# Aleksandr <pc01.alex@yandex.ru>, 2018
-# Ivan Kuzmenko, 2018
-# Дмитрий Михирев, 2018
-# Alexander <alex.grushetskiy@gmail.com>, 2018
-# monsta <monsta@inbox.ru>, 2018
-# Oldboy Boyold <boyoldboyold@gmail.com>, 2018
-# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
-# Alex Putz, 2018
-# Aleksey Kabanov <ak099@mail.ru>, 2019
-# Olesya Gerasimenko <gammaray@basealt.ru>, 2019
-# Anna Vyalkova <cybertailor@gmail.com>, 2020
-# Den Arefyev <>, 2020
-# AlexL <loginov.alex.valer@gmail.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# theirix <theirix@gmail.com>, 2021
+# Alexey Rodionov <melenki@yandex.ru>, 2021
+# Aleksey Kabanov <ak099@mail.ru>, 2021
+# Aleksandr <pc01.alex@yandex.ru>, 2021
+# Christopher Schramm <transifex@cschramm.eu>, 2021
+# Dmitry Mandryk <dmandryk@gmail.com>, 2021
+# Olesya Gerasimenko <gammaray@basealt.ru>, 2021
+# XRevan86, 2021
+# Den Arefyev <>, 2021
+# Alexander <alex.grushetskiy@gmail.com>, 2021
+# AlexL <loginov.alex.valer@gmail.com>, 2021
+# Cyber Tailor <cyber@sysrq.in>, 2021
+# monsta <monsta@inbox.ru>, 2021
+# Ivan Kuzmenko, 2021
+# Oldboy Boyold <boyoldboyold@gmail.com>, 2021
+# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2021
+# Alex Putz, 2021
+# Дмитрий Астанков <mornie@basealt.ru>, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Alexei Sorokin, 2021
+# Дмитрий Михирев, 2021
+# DrSheppard <georg.b2012@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-applets 1.25.3\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2021-06-20 12:41+0200\n"
-"PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Alexei Sorokin, 2021\n"
+"PO-Revision-Date: 2021-09-18 20:12+0000\n"
+"Last-Translator: DrSheppard <georg.b2012@gmail.com>, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,6 +87,8 @@ msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 2003 Sun Microsystems\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: accessx-status/src/applet.c:119 battstat/battstat_applet.c:855
 #: charpick/charpick.c:619 command/src/command.c:131
@@ -97,6 +103,7 @@ msgstr ""
 "Александр Сигачёв <ajvol2@gmail.com>\n"
 "Александр Соколов\n"
 "Александр Хромин\n"
+"Алексей Родионов <alexey.rodionov@red-soft.ru>\n"
 "Алексей Рочев <equeim@gmail.com>\n"
 "Алексей Сорокин <sor.alexei@meowr.ru>\n"
 "Андрей Иванков\n"
@@ -155,7 +162,7 @@ msgstr "_Параметры специальных возможностей кл
 #: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
-msgstr "_Помощь"
+msgstr "С_правка"
 
 #: accessx-status/src/applet.c:222 battstat/battstat_applet.c:65
 #: charpick/charpick.c:700 command/src/command.c:87
@@ -164,7 +171,7 @@ msgstr "_Помощь"
 #: multiload/src/main.c:473 stickynotes/stickynotes_applet.c:49
 #: timerapplet/src/timerapplet.c:88 trashapplet/src/trashapplet.c:77
 msgid "_About"
-msgstr "_Об апплете"
+msgstr "_О приложении"
 
 #: accessx-status/src/applet.c:571 accessx-status/src/applet.c:640
 msgid "a"
@@ -203,7 +210,7 @@ msgstr "Кнопка вызова настроек специальных воз
 #: multiload/src/main.c:464 stickynotes/stickynotes_applet.c:43
 #: timerapplet/src/timerapplet.c:87
 msgid "_Preferences"
-msgstr "Н_астройка"
+msgstr "П_араметры"
 
 #: battstat/battstat_applet.c:70
 msgid "System is running on AC power"
@@ -232,37 +239,37 @@ msgstr "Оставшееся до полного заряда время (%d%%) 
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] "Осталась %d минута (%d%%)"
-msgstr[1] "Осталось %d минут (%d%%)"
-msgstr[2] "Осталось %d минут (%d%%)"
-msgstr[3] "Осталось %d минут (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:189
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] "До полного заряда осталась %d минута (%d%%)"
-msgstr[1] "До полного заряда осталось %d минут (%d%%)"
-msgstr[2] "До полного заряда осталось %d минут (%d%%)"
-msgstr[3] "До полного заряда осталось %d минут (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:195
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] "Остался %d час (%d%%)"
-msgstr[1] "Осталось %d часов (%d%%)"
-msgstr[2] "Осталось %d часов (%d%%)"
-msgstr[3] "Осталось %d часов (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:200
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] "До полного заряда %d час (%d%%)"
-msgstr[1] "До полного заряда %d часов (%d%%)"
-msgstr[2] "До полного заряда %d часов (%d%%)"
-msgstr[3] "До полного заряда %d часов (%d%%)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -272,18 +279,18 @@ msgstr "Осталось %d %s %d %s (%d%%)"
 #: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "час"
-msgstr[1] "часов"
-msgstr[2] "часов"
-msgstr[3] "часов"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] "минута"
-msgstr[1] "минут"
-msgstr[2] "минут"
-msgstr[3] "минут"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -314,13 +321,9 @@ msgid ""
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
-"Оставшееся время работы на батарее - %d минута (%d%% от общей емкости)."
 msgstr[1] ""
-"Оставшееся время работы на батарее - %d минут (%d%% от общей емкости)."
 msgstr[2] ""
-"Оставшееся время работы на батарее - %d минут (%d%% от общей емкости)."
 msgstr[3] ""
-"Оставшееся время работы на батарее - %d минут (%d%% от общей емкости)."
 
 #: battstat/battstat_applet.c:395
 msgid ""
@@ -393,6 +396,9 @@ msgid ""
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 2000 The Gnulix Society\n"
+"Все права защищены © 2002-2005 Free Software Foundation and others\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: battstat/battstat_applet.c:1133 battstat/battstat_applet.c:1188
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
@@ -417,7 +423,7 @@ msgstr "Параметры индикатора состояния батаре�
 #: stickynotes/sticky-notes-properties.ui:54
 #: timerapplet/data/timerapplet-preferences.ui:41
 msgid "_Close"
-msgstr "_Закрыть"
+msgstr "З_акрыть"
 
 #: battstat/battstat-preferences.ui:102
 msgid "_Show time/percentage:"
@@ -556,6 +562,8 @@ msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены  © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
+"Все права защищены  © 2012-2021 MATE developers"
 
 #: charpick/charpick.c:614
 msgid ""
@@ -602,7 +610,7 @@ msgstr "Список строк, содержащих доступные шаб�
 
 #: charpick/properties.c:28
 msgid "_Edit"
-msgstr "_Правка"
+msgstr "_Изменить"
 
 #: charpick/properties.c:94
 msgid "_Palette:"
@@ -666,7 +674,7 @@ msgstr "Параметры командного апплета"
 
 #: command/data/command-preferences.ui:77
 msgid "C_ommand:"
-msgstr "Коман_да:"
+msgstr "_Команда:"
 
 #: command/data/command-preferences.ui:91
 msgid "_Interval (seconds):"
@@ -736,6 +744,8 @@ msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
+"Все права защищены © 2013-2014 Stefano Karapetsas\n"
+"Все права защищены © 2015-2021 MATE developers"
 
 #: command/src/command.c:411
 msgid "Command Applet"
@@ -835,6 +845,8 @@ msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 2004 Carlos Garcia Campos\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
@@ -901,7 +913,7 @@ msgstr "Подключает локальные диски и устройств
 
 #: drivemount/src/drive-button.c:281
 msgid "nothing to mount"
-msgstr ""
+msgstr "Отсутствует устройство для монтажа"
 
 #: drivemount/src/drive-button.c:314 drivemount/src/drive-button.c:328
 msgid "(mounted)"
@@ -952,6 +964,8 @@ msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 2004 Canonical Ltd\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: drivemount/src/drivemount.c:122
 msgid "Applet for mounting and unmounting block volumes."
@@ -1001,6 +1015,8 @@ msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 1999 Dave Camp\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: geyes/src/geyes.c:428
 msgid "The eyes look in the direction of the mouse pointer"
@@ -1016,7 +1032,7 @@ msgstr "Произошла ошибка при попытке загрузки �
 
 #: mateweather/data/mateweather-dialog.ui:13
 msgid "Details"
-msgstr "Подробно"
+msgstr "Подробности"
 
 #: mateweather/data/mateweather-dialog.ui:30
 #: mateweather/src/mateweather-applet.c:113
@@ -1133,6 +1149,8 @@ msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 1999-2005 by S. Papadimitriou and others\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: mateweather/src/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
@@ -1320,7 +1338,7 @@ msgstr "Заменить"
 
 #: mateweather/src/mateweather-pref.c:1066
 msgid "minutes"
-msgstr "минут"
+msgstr "минута"
 
 #: mateweather/src/mateweather-pref.c:1084
 msgid "Display"
@@ -1344,7 +1362,7 @@ msgstr "Найти _следующее"
 
 #: mateweather/src/mateweather-pref.c:1159
 msgid "Location"
-msgstr "Местоположение"
+msgstr "Расположение"
 
 #: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:5
 msgid "MultiLoad Applet Factory"
@@ -1554,7 +1572,7 @@ msgstr ""
 
 #: multiload/data/properties.ui:304
 msgid "pixels"
-msgstr "пикселей"
+msgstr "пикселов"
 
 #: multiload/data/properties.ui:316
 msgid "Sys_tem monitor update interval:"
@@ -1711,6 +1729,8 @@ msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Все права защищены © 1999-2005 Free Software Foundation and others\n"
+"Все права защищены © 2012-2021 MATE developers"
 
 #: multiload/src/main.c:64
 msgid ""
@@ -1815,7 +1835,7 @@ msgstr "Цвет графика _исходящих данных"
 
 #: netspeed/data/netspeed-details.ui:194
 msgid "IPv4 Address:"
-msgstr ""
+msgstr "Адрес IPv4:"
 
 #: netspeed/data/netspeed-details.ui:222
 msgid "Netmask:"
@@ -1823,7 +1843,7 @@ msgstr "Маска подсети:"
 
 #: netspeed/data/netspeed-details.ui:262
 msgid "IPv6 Address:"
-msgstr ""
+msgstr "Адрес IPv6:"
 
 #: netspeed/data/netspeed-details.ui:304
 msgid "Hardware Address:"
@@ -2718,10 +2738,10 @@ msgstr "_Зафиксировать записки"
 #, c-format
 msgid "%d note"
 msgid_plural "%d notes"
-msgstr[0] "%d записка"
-msgstr[1] "%d записок"
-msgstr[2] "%d записок"
-msgstr[3] "%d записок"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
@@ -2778,7 +2798,7 @@ msgstr "Настройки апплета таймера"
 
 #: timerapplet/data/timerapplet-preferences.ui:79
 msgid "_Name:"
-msgstr "_Имя:"
+msgstr "_Название:"
 
 #: timerapplet/data/timerapplet-preferences.ui:93
 msgid "_Hours:"
@@ -2865,10 +2885,10 @@ msgstr "_Открыть корзину"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] "%d элемент в корзине"
-msgstr[1] "%d элементов в корзине"
-msgstr[2] "%d элементов в корзине"
-msgstr[3] "%d элементов в корзине"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

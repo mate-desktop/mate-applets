@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Rockers <sumorock@hotmail.com>, 2018
-# ふうせん Fu-sen. | BALLOON a.k.a. Fu-sen., 2018
-# IWAI, Masaharu <iwaim.sub@gmail.com>, 2018
-# Mika Kobayashi, 2018
-# shinmili <rmsk.pl.ur.lpt@gmail.com>, 2018
-# Ikuru K <kanumaiku@gmail.com>, 2018
-# semicolon <mail@semicln.com>, 2018
-# ABE Tsunehiko, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# shinmili <rmsk.pl.ur.lpt@gmail.com>, 2021
+# Rockers <sumorock@hotmail.com>, 2021
+# ふうせん Fu-sen. | BALLOON a.k.a. Fu-sen., 2021
+# IWAI, Masaharu <iwaim.sub@gmail.com>, 2021
+# ABE Tsunehiko, 2021
 # あわしろいくや <ikunya@gmail.com>, 2021
+# fbc955180bc2b956cb4ef52d00eb80a0_91487f8, 2021
+# Ikuru K <kanumaiku@gmail.com>, 2021
+# semicolon <mail@semicln.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Green, 2021
 # 
 msgid ""
@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: mate-applets 1.25.3\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2021-06-20 12:41+0200\n"
-"PO-Revision-Date: 2018-03-11 16:20+0000\n"
+"PO-Revision-Date: 2021-09-18 20:12+0000\n"
 "Last-Translator: Green, 2021\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "キーボード操作性の設定値を表示します"
 #: geyes/src/geyes.c:175 mateweather/src/mateweather-about.c:41
 #: multiload/src/main.c:48 stickynotes/stickynotes_applet_callbacks.c:411
 msgid "Sun GNOME Documentation Team <gdocteam@sun.com>"
-msgstr "Sun GNOME 文書化チーム"
+msgstr "Sun GNOME 文書化チーム <gdocteam@sun.com>"
 
 #: accessx-status/src/applet.c:101 battstat/battstat_applet.c:830
 #: charpick/charpick.c:599 cpufreq/src/cpufreq-applet.c:463
@@ -88,19 +88,19 @@ msgstr ""
 #: timerapplet/src/timerapplet.c:283 trashapplet/src/trashapplet.c:438
 msgid "translator-credits"
 msgstr ""
-"相花 毅 \n"
-"佐藤 暁 \n"
-"KAMAGASAKO Masatoshi \n"
-"Akira TAGOH \n"
-"Yukihiro Nakai \n"
-"Yuusuke Tahara \n"
-"Akira Higuchi \n"
-"やまね ひでき \n"
-"草野 貴之 \n"
-"松澤 二郎 \n"
+"相花 毅 <takeshi.aihana@gmail.com>\n"
+"佐藤 暁 <ss@gnome.gr.jp>\n"
+"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"Akira TAGOH <tagoh@gnome.gr.jp>\n"
+"Yukihiro Nakai <nakai@gnome.gr.jp>\n"
+"Yuusuke Tahara <tahara@gnome.gr.jp>\n"
+"Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
+"やまね ひでき <henrich@debian.or.jp>\n"
+"草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "Green, alias usergreen\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/\n"
-"MATE 文書化チーム https://www.transifex.com/mate/ "
+"MATE文書化チーム https://www.transifex.com/mate/"
 
 #: accessx-status/src/applet.c:143
 #, c-format
@@ -271,7 +271,7 @@ msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] "バッテリ残量（総容量のうち%d%%）は%d分間分です。"
+msgstr[0] "バッテリ残量（全容量の %d%%）は %d 分間分です。"
 
 #: battstat/battstat_applet.c:395
 msgid ""
@@ -336,7 +336,7 @@ msgstr "使用中のバックエンド: 旧式"
 
 #: battstat/battstat_applet.c:847
 msgid "About Battery Charge Monitor"
-msgstr "バッテリー充電モニターについて"
+msgstr "バッテリー充電モニタについて"
 
 #: battstat/battstat_applet.c:849
 msgid ""
@@ -728,7 +728,7 @@ msgstr "表示の設定"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
 #: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
-msgstr "CPU 周波数の計測モニタ"
+msgstr "CPU 周波数計測モニター"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:6
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
@@ -913,11 +913,11 @@ msgstr "Eyes アプレットファクトリ"
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
 #: geyes/src/geyes.c:396 geyes/src/geyes.c:425 geyes/src/geyes.c:427
 msgid "Eyes"
-msgstr "MATE 目玉"
+msgstr "MATE お目め"
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:10
 msgid "A set of eyeballs for your panel"
-msgstr "パネル用の目玉アプレットです"
+msgstr "パネル用のお目めアプレットです"
 
 #: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:5
 #: geyes/data/org.mate.panel.applet.geyes.gschema.xml.in:6
@@ -954,11 +954,11 @@ msgstr ""
 
 #: geyes/src/geyes.c:428
 msgid "The eyes look in the direction of the mouse pointer"
-msgstr "目玉がマウスのポインタの方向を向きます"
+msgstr "お目めがマウスのポインタの方向を向きます"
 
 #: geyes/src/themes.c:123
 msgid "Can not launch the eyes applet."
-msgstr "MATE 目玉アプレットを起動できません。"
+msgstr "MATE Eyes アプレットを起動できません。"
 
 #: geyes/src/themes.c:124
 msgid "There was a fatal error while trying to load the theme."
@@ -1027,7 +1027,7 @@ msgstr "日入時刻:"
 
 #: mateweather/data/mateweather-dialog.ui:409
 msgid "Current Conditions"
-msgstr "現在の状態"
+msgstr "現在の状況"
 
 #: mateweather/data/mateweather-dialog.ui:434
 msgid "Forecast Report"
@@ -1157,7 +1157,7 @@ msgstr "場所を定義した XML データベースの読み込みに失敗し�
 
 #: mateweather/src/mateweather-pref.c:839
 msgid "Weather Preferences"
-msgstr "お天気 MATE のプロパティ"
+msgstr "お天気の設定"
 
 #: mateweather/src/mateweather-pref.c:863
 #: mateweather/src/mateweather-pref.c:1054
@@ -1307,7 +1307,7 @@ msgstr "ロード・アプレットを作成するためのファクトリーで
 #: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:9
 #: multiload/src/main.c:498
 msgid "System Monitor"
-msgstr "システムモニター"
+msgstr "システムモニタ"
 
 #: multiload/data/org.mate.applets.MultiLoadApplet.mate-panel-applet.desktop.in.in:10
 msgid "A system load indicator"
@@ -1558,7 +1558,7 @@ msgstr "未使用(_R)"
 
 #: multiload/data/properties.ui:717 multiload/src/main.c:273
 msgid "Memory"
-msgstr "メモリー"
+msgstr "メモリ"
 
 #: multiload/data/properties.ui:753
 msgid "_In"
@@ -1953,7 +1953,7 @@ msgstr "ネットスピード・アプレットのファクトリ"
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:6
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:10
 msgid "Netspeed Applet"
-msgstr "通信速度測定アプレット"
+msgstr "通信速度表示アプレット"
 
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:9
 msgid "Network Monitor"
@@ -2158,7 +2158,7 @@ msgstr[0] "%'d 秒"
 #, c-format
 msgid "%'d hour"
 msgid_plural "%'d hours"
-msgstr[0] "%'d 時"
+msgstr[0] "%'d 時間"
 
 #: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
 #: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
@@ -2180,7 +2180,7 @@ msgstr ""
 
 #: netspeed/src/netspeed.c:1050
 msgid "About MATE Netspeed"
-msgstr "MATE ネットスピードについて"
+msgstr "MATE 通信速度表示アプレットについて"
 
 #: netspeed/src/netspeed.c:1052
 msgid ""
@@ -2208,7 +2208,7 @@ msgstr "設定"
 
 #: netspeed/src/netspeed.c:1235
 msgid "Help"
-msgstr "ヘルプ"
+msgstr "ヘルプ (ユーザーガイド)"
 
 #: netspeed/src/netspeed.c:1237
 msgid "About..."
@@ -2293,7 +2293,7 @@ msgstr ""
 
 #: netspeed/src/netspeed.c:1577
 msgid "MATE Netspeed"
-msgstr "MATE 通信速度測定アプレット"
+msgstr "MATE 通信速度表示アプレット"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
@@ -2798,7 +2798,7 @@ msgstr "ゴミ箱を開く(_O)"
 #, c-format
 msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
-msgstr[0] "ゴミ箱に%d個あります"
+msgstr[0] "ゴミ箱には %d 個あります"
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
