@@ -469,7 +469,7 @@ command_applet_fill (MatePanelApplet* applet)
                      "visible",
                      G_SETTINGS_BIND_DEFAULT);
 
-    atk_widget = gtk_widget_get_accessible (command_applet->applet);
+    atk_widget = gtk_widget_get_accessible (GTK_WIDGET (command_applet->applet));
     if (GTK_IS_ACCESSIBLE (atk_widget)) {
         atk_object_set_name (atk_widget,
                              _("Command applet"));
