@@ -59,10 +59,10 @@ battstat_applet_LDADD =		\
 	-lm			\
 	$(NULL)
 
-battstat-resources.c: battstat-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/battstat-resources.gresource.xml)
+battstat-resources.c: battstat-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/battstat-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name battstat $<
 
-battstat-resources.h: battstat-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/battstat-resources.gresource.xml)
+battstat-resources.h: battstat-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/battstat-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name battstat $<
 
 batstat_gschema_in_files = org.mate.panel.applet.battstat.gschema.xml.in

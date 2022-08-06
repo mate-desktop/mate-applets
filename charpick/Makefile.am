@@ -26,10 +26,10 @@ mate_charpick_applet_LDADD =	\
 	$(GUCHARMAP_LIBS)	\
 	$(NULL)
 
-charpick-resources.c: charpick-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/charpick-resources.gresource.xml)
+charpick-resources.c: charpick-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/charpick-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name charpick $<
 
-charpick-resources.h: charpick-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/charpick-resources.gresource.xml)
+charpick-resources.h: charpick-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/charpick-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name charpick $<
 
 appletdir       = $(datadir)/mate-panel/applets

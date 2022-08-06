@@ -45,10 +45,10 @@ stickynotes_gschema_in_files = org.mate.stickynotes.gschema.xml.in
 gsettings_SCHEMAS = $(stickynotes_gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
-sticky-notes-resources.c: sticky-notes-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/sticky-notes-resources.gresource.xml)
+sticky-notes-resources.c: sticky-notes-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/sticky-notes-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name sticky_notes $<
 
-sticky-notes-resources.h: sticky-notes-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/sticky-notes-resources.gresource.xml)
+sticky-notes-resources.h: sticky-notes-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/sticky-notes-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name sticky_notes $<
 
 appletdir   = $(datadir)/mate-panel/applets

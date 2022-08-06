@@ -20,10 +20,10 @@ accessx_status_applet_LDADD = \
 	$(GIO_LIBS) \
 	$(X_LIBS)
 
-accessx-status-resources.c: $(srcdir)/../data/accessx-status-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/accessx-status-resources.gresource.xml)
+accessx-status-resources.c: $(srcdir)/../data/accessx-status-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/accessx-status-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name accessx $<
 
-accessx-status-resources.h: $(srcdir)/../data/accessx-status-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/accessx-status-resources.gresource.xml)
+accessx-status-resources.h: $(srcdir)/../data/accessx-status-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/accessx-status-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name accessx $<
 
 CLEANFILES = \

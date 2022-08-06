@@ -25,11 +25,12 @@ mateweather_applet_LDADD = 	\
 	$(MATE_LIBS2_LIBS)	\
 	$(LIBMATEWEATHER_LIBS)
 
-mateweather-resources.c: ../data/mateweather-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/mateweather-resources.gresource.xml)
+mateweather-resources.c: ../data/mateweather-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/mateweather-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name mateweather $<
 
-mateweather-resources.h: ../data/mateweather-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/mateweather-resources.gresource.xml)
+mateweather-resources.h: ../data/mateweather-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/mateweather-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name mateweather $<
+
 
 CLEANFILES =			\
 	$(BUILT_SOURCES)

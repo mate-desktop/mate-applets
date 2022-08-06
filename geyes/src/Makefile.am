@@ -23,10 +23,10 @@ mate_geyes_applet_LDADD =	\
 	$(MATE_APPLETS4_LIBS)	\
 	-lm
 
-geyes-resources.c: $(srcdir)/../data/geyes-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/geyes-resources.gresource.xml)
+geyes-resources.c: $(srcdir)/../data/geyes-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/geyes-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name eyes $<
 
-geyes-resources.h: $(srcdir)/../data/geyes-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/geyes-resources.gresource.xml)
+geyes-resources.h: $(srcdir)/../data/geyes-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/geyes-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name eyes $<
 
 CLEANFILES =			\

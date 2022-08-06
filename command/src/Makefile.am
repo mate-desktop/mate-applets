@@ -31,10 +31,10 @@ command_applet_CFLAGS =		\
 	$(WARN_CFLAGS)		\
 	$(NULL)
 
-command-resources.c: $(srcdir)/../data/command-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/command-resources.gresource.xml)
+command-resources.c: $(srcdir)/../data/command-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/command-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name command $<
 
-command-resources.h: $(srcdir)/../data/command-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/command-resources.gresource.xml)
+command-resources.h: $(srcdir)/../data/command-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/command-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name command $<
 
 CLEANFILES =			\

@@ -30,10 +30,10 @@ mate_drivemount_applet_SOURCES =	\
 mate_drivemount_applet_LDADD =		\
 	$(MATE_APPLETS4_LIBS)
 
-drivemount-resources.c: ../data/drivemount-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/drivemount-resources.gresource.xml)
+drivemount-resources.c: ../data/drivemount-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/drivemount-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name drivemount $<
 
-drivemount-resources.h: ../data/drivemount-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/drivemount-resources.gresource.xml)
+drivemount-resources.h: ../data/drivemount-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/drivemount-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name drivemount $<
 
 CLEANFILES =				\

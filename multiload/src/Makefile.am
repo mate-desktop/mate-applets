@@ -30,10 +30,10 @@ mate_multiload_applet_LDADD = \
 	$(GIO_LIBS) \
 	-lm
 
-multiload-resources.c: $(srcdir)/../data/multiload-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/multiload-resources.gresource.xml)
+multiload-resources.c: $(srcdir)/../data/multiload-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/multiload-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name multiload $<
 
-multiload-resources.h: $(srcdir)/../data/multiload-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/multiload-resources.gresource.xml)
+multiload-resources.h: $(srcdir)/../data/multiload-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/multiload-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name multiload $<
 
 CLEANFILES = \

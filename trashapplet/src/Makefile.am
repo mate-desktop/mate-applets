@@ -23,10 +23,10 @@ trashapplet_LDADD = 		\
 	$(GIO_LIBS) \
 	-lX11
 
-trashapplet-resources.c: ../trashapplet-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../ --generate-dependencies $(srcdir)/../trashapplet-resources.gresource.xml)
+trashapplet-resources.c: ../trashapplet-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../ --generate-dependencies $(srcdir)/../trashapplet-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../ --generate --c-name trashapplet $<
 
-trashapplet-resources.h: ../trashapplet-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../ --generate-dependencies $(srcdir)/../trashapplet-resources.gresource.xml)
+trashapplet-resources.h: ../trashapplet-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../ --generate-dependencies $(srcdir)/../trashapplet-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../ --generate --c-name trashapplet $<
 
 CLEANFILES = \

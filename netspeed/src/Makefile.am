@@ -44,10 +44,10 @@ if HAVE_NL
 mate_netspeed_applet_LDADD += $(NL_LIBS)
 endif
 
-netspeed-resources.c: $(srcdir)/../data/netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/netspeed-resources.gresource.xml)
+netspeed-resources.c: $(srcdir)/../data/netspeed-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/netspeed-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name netspeed $<
 
-netspeed-resources.h: $(srcdir)/../data/netspeed-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/netspeed-resources.gresource.xml)
+netspeed-resources.h: $(srcdir)/../data/netspeed-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/netspeed-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name netspeed $<
 
 CLEANFILES =			\

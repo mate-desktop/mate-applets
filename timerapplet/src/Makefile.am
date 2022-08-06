@@ -22,10 +22,10 @@ timer_applet_LDADD =		\
 
 timer_applet_CFLAGS = $(WARN_CFLAGS)
 
-timerapplet-resources.c: $(srcdir)/../data/timerapplet-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/timerapplet-resources.gresource.xml)
+timerapplet-resources.c: $(srcdir)/../data/timerapplet-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/timerapplet-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name timerapplet $<
 
-timerapplet-resources.h: $(srcdir)/../data/timerapplet-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/timerapplet-resources.gresource.xml)
+timerapplet-resources.h: $(srcdir)/../data/timerapplet-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/timerapplet-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name timerapplet $<
 
 CLEANFILES =			\

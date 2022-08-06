@@ -44,10 +44,10 @@ mate_cpufreq_applet_LDADD =		\
 	$(MATE_APPLETS4_LIBS)   	\
 	$(LIBCPUFREQ_LIBS)
 
-cpufreq-resources.c: $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/cpufreq --generate-dependencies $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml)
+cpufreq-resources.c: $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/cpufreq --generate-dependencies $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(top_srcdir)/cpufreq --generate --c-name cpufreq $<
 
-cpufreq-resources.h: $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/cpufreq --generate-dependencies $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml)
+cpufreq-resources.h: $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml `$(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/cpufreq --generate-dependencies $(top_srcdir)/cpufreq/cpufreq-resources.gresource.xml`
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(top_srcdir)/cpufreq --generate --c-name cpufreq $<
 
 CLEANFILES = \
