@@ -31,8 +31,8 @@ CLEANFILES = \
 EXTRA_DIST = \
 	$(applet_in_files).in \
 	$(service_in_files) \
-	accessx-status-applet-menu.xml \
-	accessx-status-resources.gresource.xml \
+	menu.xml \
+	accessx-status-resources.gresource.xml.in \
 	$(NULL)
 
 

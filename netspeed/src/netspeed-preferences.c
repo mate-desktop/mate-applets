@@ -172,7 +172,7 @@ netspeed_preferences_class_init (NetspeedPreferencesClass *klass)
                                                          "The Netspeed Applet",
                                                          G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 
-  gtk_widget_class_set_template_from_resource (widget_class, NETSPEED_RESOURCE_PATH "netspeed-preferences.ui");
+  gtk_widget_class_set_template_from_resource (widget_class, GRESOURCE_PREFIX "/netspeed/preferences.ui");
 
   gtk_widget_class_bind_template_child (widget_class, NetspeedPreferences, network_device_combo);
   gtk_widget_class_bind_template_child (widget_class, NetspeedPreferences, show_all_addresses_checkbutton);

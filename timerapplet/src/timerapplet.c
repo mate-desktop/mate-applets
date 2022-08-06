@@ -312,7 +312,7 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
     GtkDialog *dialog;
     gint duration, hours, minutes, seconds;
 
-    builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/timerapplet/timerapplet-preferences.ui");
+    builder = gtk_builder_new_from_resource (GRESOURCE_PREFIX "/timerapplet/preferences.ui");
 
     dialog = GET_DIALOG ("preferences_dialog");
     applet->hours = GET_SPIN_BUTTON ("hours_spinbutton");

@@ -343,7 +343,7 @@ mateweather_dialog_class_init (MateWeatherDialogClass *klass)
                                                            G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 
     gtk_widget_class_set_template_from_resource (widget_class,
-                                                 WEATHER_RESOURCE_PATH "mateweather-dialog.ui");
+                                                 GRESOURCE_PREFIX "/mateweather/dialog.ui");
 
     gtk_widget_class_bind_template_child (widget_class, MateWeatherDialog, weather_notebook);
     gtk_widget_class_bind_template_child (widget_class, MateWeatherDialog, cond_location);

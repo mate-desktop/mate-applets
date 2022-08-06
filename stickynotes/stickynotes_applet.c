@@ -225,7 +225,7 @@ stickynotes_applet_init_prefs (void)
     stickynotes->builder = gtk_builder_new ();
 
     gtk_builder_add_from_resource (stickynotes->builder,
-                                   GRESOURCE "sticky-notes-preferences.ui",
+                                   GRESOURCE_PREFIX "/sticky-notes/preferences.ui",
                                    NULL);
 
     stickynotes->w_prefs =
@@ -391,7 +391,7 @@ stickynotes_applet_new (MatePanelApplet *mate_panel_applet)
                                          G_N_ELEMENTS (stickynotes_applet_menu_toggle_actions),
                                          applet);
     mate_panel_applet_setup_menu_from_resource (mate_panel_applet,
-                                                GRESOURCE "menu.xml",
+                                                GRESOURCE_PREFIX "/sticky-notes/menu.xml",
                                                 applet->action_group);
 
     if (mate_panel_applet_get_locked_down (mate_panel_applet)) {

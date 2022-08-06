@@ -40,9 +40,9 @@ EXTRA_DIST =				\
 	$(applet_in_files).in		\
 	$(service_in_files)		\
 	$(cpufreq_gschema_in_files)	\
-	cpufreq-applet-menu.xml		\
-	cpufreq-preferences.ui		\
-	cpufreq-resources.gresource.xml	\
+	cpufreq-resources.gresource.xml.in \
+	menu.xml			\
+	preferences.ui			\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk

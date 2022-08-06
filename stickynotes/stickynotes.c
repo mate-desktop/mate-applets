@@ -111,10 +111,10 @@ stickynote_new_aux (GdkScreen *screen,
 
     builder = gtk_builder_new ();
     gtk_builder_add_from_resource (builder,
-                                   GRESOURCE "sticky-notes-note.ui",
+                                   GRESOURCE_PREFIX "/sticky-notes/note.ui",
                                    NULL);
     gtk_builder_add_from_resource (builder,
-                                   GRESOURCE "sticky-notes-properties.ui",
+                                   GRESOURCE_PREFIX "/sticky-notes/properties.ui",
                                    NULL);
 
     note->w_window = GTK_WIDGET (gtk_builder_get_object (builder,
@@ -775,7 +775,7 @@ stickynotes_remove (StickyNote *note)
 
     builder = gtk_builder_new ();
     gtk_builder_add_from_resource (builder,
-                                   GRESOURCE "sticky-notes-delete.ui",
+                                   GRESOURCE_PREFIX "/sticky-notes/delete.ui",
                                    NULL);
 
     dialog = GTK_WIDGET (gtk_builder_get_object (builder,

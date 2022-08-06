@@ -208,7 +208,7 @@ applet_factory (MatePanelApplet *applet,
                                       G_N_ELEMENTS (applet_menu_actions),
                                       drive_list);
         mate_panel_applet_setup_menu_from_resource (applet,
-                                                    DRIVEMOUNT_RESOURCE_PATH "drivemount-applet-menu.xml",
+                                                    GRESOURCE_PREFIX "/drivemount/menu.xml",
                                                     action_group);
         g_object_unref (action_group);
 

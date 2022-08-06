@@ -38,8 +38,8 @@ EXTRA_DIST =				\
 	$(applet_in_files:=.in)		\
 	$(drivemount_gschema_in_files)	\
 	$(service_in_files)		\
-	drivemount-applet-menu.xml	\
-	drivemount-resources.gresource.xml \
+	menu.xml			\
+	drivemount-resources.gresource.xml.in \
 	$(NULL)
 
 -include $(top_srcdir)/git.mk

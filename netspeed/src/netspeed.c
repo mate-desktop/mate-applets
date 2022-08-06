@@ -1185,7 +1185,7 @@ showinfo_cb (GtkAction      *action,
         return;
     }
 
-    builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-details.ui");
+    builder = gtk_builder_new_from_resource (GRESOURCE_PREFIX "/netspeed/details.ui");
 
     netspeed->details       = GET_WIDGET ("dialog");
     netspeed->drawingarea   = GET_DRAWING_AREA ("drawingarea");
@@ -1745,7 +1745,7 @@ netspeed_applet_factory (MatePanelApplet *applet,
                                   netspeed);
 
     mate_panel_applet_setup_menu_from_resource (applet,
-                                                NETSPEED_RESOURCE_PATH "netspeed-menu.xml",
+                                                GRESOURCE_PREFIX "/netspeed/menu.xml",
                                                 action_group);
 
     atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet));

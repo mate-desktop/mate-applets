@@ -1,7 +1,6 @@
 AM_CPPFLAGS =					\
 	-I$(srcdir)				\
 	-I$(top_srcdir)				\
-	-DWEATHER_RESOURCE_PATH=\""/org/mate/mate-applets/mateweather/"\" \
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(LIBNOTIFY_CFLAGS)			\
 	$(LIBMATEWEATHER_CFLAGS)		\

@@ -30,7 +30,6 @@ AM_CPPFLAGS =					\
 	$(APMINC)				\
 	$(ACPIINC)				\
 	-DG_LOG_DOMAIN=\"battstat_applet\"	\
-	-DBATTSTAT_RESOURCE_PATH=\""/org/mate/mate-applets/battstat/"\" \
 	$(NULL)
 
 libexec_PROGRAMS = battstat-applet
@@ -101,9 +100,9 @@ CLEANFILES =			\
 	$(NULL)
 
 EXTRA_DIST =					\
-	battstat-applet-menu.xml		\
-	battstat-preferences.ui			\
-	battstat-resources.gresource.xml	\
+	battstat-resources.gresource.xml.in	\
+	menu.xml				\
+	preferences.ui				\
 	$(applet_in_files).in			\
 	$(service_in_files)			\
 	$(batstat_gschema_in_files)		\

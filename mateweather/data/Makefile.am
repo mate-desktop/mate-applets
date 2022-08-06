@@ -26,9 +26,9 @@ CLEANFILES =			\
 	$(service_DATA)
 
 EXTRA_DIST =					\
-	mateweather-applet-menu.xml		\
-	mateweather-dialog.ui			\
-	mateweather-resources.gresource.xml	\
+	dialog.ui				\
+	mateweather-resources.gresource.xml.in	\
+	menu.xml				\
 	$(applet_in_files:=.in)			\
 	$(service_in_files)			\
 	$(ui_DATA)

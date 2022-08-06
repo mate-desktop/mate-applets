@@ -35,8 +35,8 @@ CLEANFILES = \
 	$(NULL)
 
 EXTRA_DIST = \
-	geyes-applet-menu.xml		\
-	geyes-resources.gresource.xml	\
+	geyes-resources.gresource.xml.in \
+	menu.xml			\
 	themes.ui			\
 	$(applet_in_files).in		\
 	$(service_in_files)		\

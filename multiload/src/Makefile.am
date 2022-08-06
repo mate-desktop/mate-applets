@@ -2,7 +2,6 @@ NULL =
 
 AM_CPPFLAGS = \
 	-I$(srcdir) \
-	-DMULTILOAD_RESOURCE_PATH=\""/org/mate/mate-applets/multiload/"\" \
 	$(MATE_APPLETS4_CFLAGS) \
 	$(GTOP_APPLETS_CFLAGS) \
 	$(GIO_CFLAGS) \

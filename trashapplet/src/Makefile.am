@@ -1,7 +1,6 @@
 AM_CPPFLAGS = -I$(top_srcdir)	\
 	$(MATE_APPLETS4_CFLAGS)	\
 	$(GIO_CFLAGS)		\
-	-DGRESOURCE=\""/org/mate/mate-applets/trash/\"" \
 	${WARN_CFLAGS}
 
 libexec_PROGRAMS = trashapplet

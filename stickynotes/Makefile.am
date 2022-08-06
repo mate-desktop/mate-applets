@@ -12,7 +12,6 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
-	-DGRESOURCE=\""/org/mate/mate-applets/sticky-notes/\"" \
 	${WARN_CFLAGS}				\
 	$(NULL)
 
@@ -87,13 +86,13 @@ EXTRA_DIST =					\
 	$(stickynotes_gschema_in_files)		\
 	$(service_in_files)			\
 	$(applet_in_files:=.in)			\
-	sticky-notes-delete.ui                  \
-	sticky-notes-delete-all.ui              \
-	sticky-notes-note.ui                    \
-	sticky-notes-preferences.ui             \
-	sticky-notes-properties.ui              \
-	sticky-notes-resources.gresource.xml    \
-	stickynotes-applet-menu.xml		\
+	delete.ui                               \
+	delete-all.ui                           \
+	menu.xml                                \
+	note.ui                                 \
+	preferences.ui                          \
+	properties.ui                           \
+	sticky-notes-resources.gresource.xml.in \
 	$(NULL)
 
 -include $(top_srcdir)/git.mk

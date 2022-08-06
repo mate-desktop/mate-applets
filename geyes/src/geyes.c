@@ -416,7 +416,7 @@ geyes_applet_fill (MatePanelApplet *applet)
                                   eyes_applet);
 
     mate_panel_applet_setup_menu_from_resource (eyes_applet->applet,
-                                                GEYES_RESOURCE_PATH "geyes-applet-menu.xml",
+                                                GRESOURCE_PREFIX "/eyes/menu.xml",
                                                 action_group);
 
     if (mate_panel_applet_get_locked_down (eyes_applet->applet)) {

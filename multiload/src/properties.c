@@ -559,7 +559,7 @@ multiload_properties_cb (GtkAction       *action,
         return;
     }
 
-    builder = gtk_builder_new_from_resource (MULTILOAD_RESOURCE_PATH "properties.ui");
+    builder = gtk_builder_new_from_resource (GRESOURCE_PREFIX "/multiload/properties.ui");
     gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
 
     #define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))

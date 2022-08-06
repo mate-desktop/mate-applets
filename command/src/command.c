@@ -189,7 +189,7 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     GtkDialog *dialog;
     GtkBuilder *builder;
 
-    builder = gtk_builder_new_from_resource ("/org/mate/mate-applets/command/command-preferences.ui");
+    builder = gtk_builder_new_from_resource (GRESOURCE_PREFIX "/command/preferences.ui");
 
     dialog = GET_DIALOG ("preferences_dialog");
 

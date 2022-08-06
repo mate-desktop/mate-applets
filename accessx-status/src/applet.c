@@ -1654,7 +1654,7 @@ accessx_status_applet_fill (MatePanelApplet* applet)
                                   sapplet);
 
     mate_panel_applet_setup_menu_from_resource (sapplet->applet,
-                                                ACCESSX_RESOURCE_PATH "accessx-status-applet-menu.xml",
+                                                GRESOURCE_PREFIX "/accessx-status/menu.xml",
                                                 action_group);
 
     if (mate_panel_applet_get_locked_down (sapplet->applet))

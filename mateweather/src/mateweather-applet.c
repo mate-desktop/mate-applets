@@ -382,7 +382,7 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
 				  G_N_ELEMENTS (weather_applet_menu_actions),
 				  gw_applet);
     mate_panel_applet_setup_menu_from_resource (gw_applet->applet,
-                                                WEATHER_RESOURCE_PATH "mateweather-applet-menu.xml",
+                                                GRESOURCE_PREFIX "/mateweather/menu.xml",
                                                 action_group);
 
     if (mate_panel_applet_get_locked_down (gw_applet->applet)) {

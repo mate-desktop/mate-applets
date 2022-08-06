@@ -4,7 +4,6 @@ AM_CPPFLAGS = \
 	${WARN_CFLAGS} \
 	$(MATE_APPLETS4_CFLAGS) \
 	$(GIO_CFLAGS) \
-	-DACCESSX_RESOURCE_PATH=\""/org/mate/mate-applets/accessx-status/"\" \
 	$(NULL)
 
 libexec_PROGRAMS = accessx-status-applet

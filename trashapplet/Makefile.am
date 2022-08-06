@@ -25,9 +25,9 @@ org.mate.panel.applet.TrashAppletFactory.service: $(service_in_files)
 EXTRA_DIST = \
 	$(applet_in_files).in	\
 	$(service_in_files) \
-	trashapplet-empty-progress.ui \
-	trashapplet-menu.xml \
-	trashapplet-resources.gresource.xml
+	empty-progress.ui \
+	menu.xml \
+	trashapplet-resources.gresource.xml.in
 
 CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA)
 

@@ -36,8 +36,8 @@ EXTRA_DIST = \
 	$(applet_in_in_files) \
 	$(service_in_files) \
 	$(multiload_gschema_in_files) \
-	multiload-applet-menu.xml \
-	multiload-resources.gresource.xml \
+	menu.xml \
+	multiload-resources.gresource.xml.in \
 	properties.ui
 
 -include $(top_srcdir)/git.mk

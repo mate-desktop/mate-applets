@@ -30,8 +30,8 @@ EXTRA_DIST =					\
 	$(applets_in_files).in			\
 	$(service_in_files)			\
 	$(timer_gschema_in_files)		\
-	timerapplet-preferences.ui		\
-	timerapplet-resources.gresource.xml	\
+	preferences.ui				\
+	timerapplet-resources.gresource.xml.in	\
 	$(NULL)
 
 CLEANFILES =			\

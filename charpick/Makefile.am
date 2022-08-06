@@ -5,7 +5,6 @@ SUBDIRS = help
 AM_CPPFLAGS =			\
 	-I.			\
 	-I$(srcdir)		\
-	-DCHARPICK_RESOURCE_PATH=\""/org/mate/mate-applets/charpick/"\"	\
 	${WARN_CFLAGS}		\
 	$(MATE_APPLETS4_CFLAGS)	\
 	$(GUCHARMAP_CFLAGS)	\
@@ -71,8 +70,8 @@ EXTRA_DIST =					\
 	$(applet_in_files).in			\
 	$(service_in_files)			\
 	$(charpick_gschema_in_files)		\
-	charpick-applet-menu.xml		\
-	charpick-resources.gresource.xml	\
+	menu.xml				\
+	charpick-resources.gresource.xml.in	\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk

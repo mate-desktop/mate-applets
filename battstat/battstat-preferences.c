@@ -323,7 +323,7 @@ battstat_preferences_class_init (BattstatPreferencesClass *klass)
                                                          G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 
   gtk_widget_class_set_template_from_resource (widget_class,
-                                               BATTSTAT_RESOURCE_PATH "battstat-preferences.ui");
+                                               GRESOURCE_PREFIX "/battstat/preferences.ui");
 
   gtk_widget_class_bind_template_child (widget_class, BattstatPreferences, check_text);
   gtk_widget_class_bind_template_child (widget_class, BattstatPreferences, check_text_ptr);

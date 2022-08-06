@@ -828,7 +828,7 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
                                   G_N_ELEMENTS (cpufreq_applet_menu_actions),
                                   applet);
     mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
-                                                CPUFREQ_RESOURCE_PATH "cpufreq-applet-menu.xml",
+                                                GRESOURCE_PREFIX "/cpufreq/menu.xml",
                                                 action_group);
 
     if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (applet))) {

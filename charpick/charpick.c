@@ -842,7 +842,7 @@ charpicker_applet_fill (MatePanelApplet *applet)
                                   curr_data);
 
     mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
-                                                CHARPICK_RESOURCE_PATH "charpick-applet-menu.xml",
+                                                GRESOURCE_PREFIX "/charpick/menu.xml",
                                                 action_group);
 
     if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (applet))) {

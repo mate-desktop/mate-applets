@@ -6,7 +6,6 @@ AM_CPPFLAGS =						\
 	$(MATE_APPLETS4_CFLAGS)				\
 	-I$(includedir) 				\
 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
-	-DGEYES_RESOURCE_PATH=\""/org/mate/mate-applets/eyes/"\" \
 	${WARN_CFLAGS}
 
 libexec_PROGRAMS = mate-geyes-applet

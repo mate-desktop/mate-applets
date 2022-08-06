@@ -31,10 +31,10 @@ EXTRA_DIST = \
 	$(applet_in_files).in	\
 	$(service_in_files) \
 	$(netspeed_gschema_in_files) \
-	netspeed-details.ui \
-	netspeed-menu.xml \
-	netspeed-preferences.ui \
-	netspeed-resources.gresource.xml \
+	details.ui \
+	menu.xml \
+	netspeed-resources.gresource.xml.in \
+	preferences.ui \
 	$(NULL)
 
 CLEANFILES = \

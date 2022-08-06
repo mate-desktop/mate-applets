@@ -5,7 +5,6 @@ endif
 SUBDIRS = $(selector_SUBDIR)
 
 AM_CPPFLAGS = \
-	-DCPUFREQ_RESOURCE_PATH=\""/org/mate/mate-applets/cpufreq/"\" \
 	$(MATE_APPLETS4_CFLAGS)
 
 libexec_PROGRAMS = mate-cpufreq-applet

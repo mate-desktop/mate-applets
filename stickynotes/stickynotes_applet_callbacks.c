@@ -321,7 +321,7 @@ menu_destroy_all_cb (GtkAction         *action,
 
     builder = gtk_builder_new ();
     gtk_builder_add_from_resource (builder,
-                                   GRESOURCE "sticky-notes-delete-all.ui",
+                                   GRESOURCE_PREFIX "/sticky-notes/delete-all.ui",
                                    NULL);
 
     if (applet->destroy_all_dialog != NULL) {

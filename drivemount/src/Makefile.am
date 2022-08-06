@@ -3,7 +3,6 @@ NULL =
 AM_CPPFLAGS =				\
 	-I.				\
 	-I$(srcdir)			\
-	-DDRIVEMOUNT_RESOURCE_PATH=\""/org/mate/mate-applets/drivemount/"\" \
 	${WARN_CFLAGS}			\
 	$(MATE_APPLETS4_CFLAGS)		\
 	$(NULL)

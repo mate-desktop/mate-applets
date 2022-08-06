@@ -633,7 +633,7 @@ trash_applet_factory (MatePanelApplet *applet,
 				    G_N_ELEMENTS (trash_applet_menu_actions),
 				    applet);
       mate_panel_applet_setup_menu_from_resource (applet,
-                                                  GRESOURCE "trashapplet-menu.xml",
+                                                  GRESOURCE_PREFIX "/trash/menu.xml",
                                                   action_group);
       g_object_unref (action_group);
 

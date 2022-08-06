@@ -1170,7 +1170,7 @@ battstat_applet_fill (MatePanelApplet *applet)
                                   battstat);
 
     mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (battstat->applet),
-                                                BATTSTAT_RESOURCE_PATH "battstat-applet-menu.xml",
+                                                GRESOURCE_PREFIX "/battstat/menu.xml",
                                                 action_group);
 
     if (mate_panel_applet_get_locked_down (MATE_PANEL_APPLET (battstat->applet))) {

@@ -29,8 +29,8 @@ EXTRA_DIST = \
 	$(applets_in_files).in \
 	$(service_in_files) \
 	$(command_gschema_in_files) \
-	command-preferences.ui \
-	command-resources.gresource.xml
+	command-resources.gresource.xml.in \
+	preferences.ui
 
 CLEANFILES = \
 	$(applets_DATA) \
