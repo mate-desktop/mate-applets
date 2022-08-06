@@ -296,7 +296,7 @@ AC_ARG_ENABLE([stickynotes],
     enable_stickynotes=$enableval,
     enable_stickynotes=yes)
 if test "x$enable_stickynotes" = "xyes"; then
-    PKG_CHECK_MODULES(STICKYNOTES, gtksourceview-3.0,
+    PKG_CHECK_MODULES(STICKYNOTES, gtksourceview-4,
                       have_gtksourceview=yes, have_gtksourceview=no)
 
     if test "x$enable_stickynotes" = "xyes" -a "x$have_gtksourceview" = "xno"; then

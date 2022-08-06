@@ -27,8 +27,6 @@
 #include <string.h>
 #include <sys/stat.h>
 
-#include <gtksourceview/gtksource.h>
-
 #include "stickynotes.h"
 #include "stickynotes_callbacks.h"
 #include "util.h"
