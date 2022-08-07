@@ -597,8 +597,9 @@ trashapplet/Makefile
 trashapplet/src/Makefile
 trashapplet/docs/Makefile
 cpufreq/Makefile
+cpufreq/data/Makefile
+cpufreq/data/org.mate.panel.applet.cpufreq.gschema.xml
 cpufreq/src/Makefile
-cpufreq/org.mate.panel.applet.cpufreq.gschema.xml
 cpufreq/src/cpufreq-selector/Makefile
 cpufreq/pixmaps/Makefile
 cpufreq/help/Makefile
