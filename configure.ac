@@ -594,6 +594,7 @@ stickynotes/org.mate.stickynotes.gschema.xml
 stickynotes/pixmaps/Makefile
 stickynotes/docs/Makefile
 trashapplet/Makefile
+trashapplet/data/Makefile
 trashapplet/src/Makefile
 trashapplet/docs/Makefile
 cpufreq/Makefile
