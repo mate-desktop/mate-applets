@@ -283,6 +283,9 @@ stickynotes_applet_init_prefs (void)
     stickynotes->w_prefs_desktop =
         GTK_WIDGET (&GTK_CHECK_BUTTON (gtk_builder_get_object (stickynotes->builder,
                                                                "desktop_hide_check"))->toggle_button);
+    stickynotes->w_prefs_fixed_size =
+        GTK_WIDGET (&GTK_CHECK_BUTTON (gtk_builder_get_object (stickynotes->builder,
+                                                               "fixed_size_check"))->toggle_button);
 
     g_signal_connect (stickynotes->w_prefs, "response",
                       G_CALLBACK (preferences_response_cb), NULL);
@@ -307,6 +310,8 @@ stickynotes_applet_init_prefs (void)
     g_signal_connect_swapped (stickynotes->w_prefs_force, "toggled",
                               G_CALLBACK (preferences_save_cb), NULL);
     g_signal_connect_swapped (stickynotes->w_prefs_desktop, "toggled",
+                              G_CALLBACK (preferences_save_cb), NULL);
+    g_signal_connect_swapped (stickynotes->w_prefs_fixed_size, "toggled",
                               G_CALLBACK (preferences_save_cb), NULL);
 
     {
@@ -367,6 +372,8 @@ stickynotes_applet_init_prefs (void)
         gtk_widget_set_sensitive (stickynotes->w_prefs_sticky, FALSE);
     if (!g_settings_is_writable (stickynotes->settings, "force-default"))
         gtk_widget_set_sensitive (stickynotes->w_prefs_force, FALSE);
+    if (!g_settings_is_writable (stickynotes->settings, "fixed-size"))
+        gtk_widget_set_sensitive (stickynotes->w_prefs_fixed_size, FALSE);
 
     stickynotes_applet_update_prefs ();
 }
@@ -489,7 +496,7 @@ void
 stickynotes_applet_update_prefs (void)
 {
     gint width, height;
-    gboolean sys_color, sys_font, sticky, force_default, desktop_hide;
+    gboolean sys_color, sys_font, sticky, force_default, desktop_hide, fixed_size;
     char *font_str;
     char *color_str, *font_color_str;
     GdkRGBA color, font_color;
@@ -511,6 +518,8 @@ stickynotes_applet_update_prefs (void)
                                             "force-default");
     desktop_hide = g_settings_get_boolean (stickynotes->settings,
                                            "desktop-hide");
+    fixed_size = g_settings_get_boolean (stickynotes->settings,
+                                         "fixed-size");
 
     font_str = g_settings_get_string (stickynotes->settings,
                                       "default-font");
@@ -545,6 +554,9 @@ stickynotes_applet_update_prefs (void)
                                   force_default);
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_desktop),
                                   desktop_hide);
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_fixed_size),
+                                  fixed_size);
+    stickynotes->force_fixed_size = fixed_size;
 
     gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (stickynotes->w_prefs_color),
                                 &color);
