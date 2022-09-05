@@ -81,7 +81,7 @@ static void
 buffer_changed (GtkTextBuffer *buffer,
                 StickyNote    *note)
 {
-    if ( (note->h + note->y) > stickynotes->max_height )
+    if ( (note->h + note->y) > stickynotes->max_height && (!note->force_fixed_size) )
         gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (note->w_scroller),
                                         GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 
@@ -250,6 +250,8 @@ stickynote_new_aux (GdkScreen *screen,
     stickynote_set_color (note, NULL, NULL, TRUE);
     stickynote_set_font (note, NULL, TRUE);
     stickynote_set_locked (note, FALSE);
+
+    stickynote_set_fixed_size(note, stickynotes->force_fixed_size);
 
     gtk_widget_realize (note->w_window);
 
@@ -747,6 +749,46 @@ stickynote_set_visible (StickyNote *note,
         set_icon_geometry (gtk_widget_get_window (GTK_WIDGET (note->w_window)),
                            x, y, width, height);
         gtk_window_iconify (GTK_WINDOW (note->w_window));
+    }
+}
+
+/* Set forced fixed size */
+void stickynote_set_fixed_size (StickyNote *note,
+                                gboolean    force_fixed_size)
+{
+    note->force_fixed_size = force_fixed_size;
+
+    if (force_fixed_size) {
+        gint w, h;
+        gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (note->w_scroller),
+                                        GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+        gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW (note->w_body),
+                                    GTK_WRAP_CHAR);
+        gtk_widget_set_visible (note->w_resize_se, FALSE);
+        gtk_widget_set_visible (note->w_resize_sw, FALSE);
+        if (note->w == 0 || note->h == 0) {
+            w = g_settings_get_int (stickynotes->settings, "default-width");
+            h = g_settings_get_int (stickynotes->settings, "default-height");
+        }
+        else {
+            w = note->w;
+            h = note->h;
+        }
+        gtk_window_set_default_size (GTK_WINDOW (note->w_window), w, h);
+        gtk_window_resize (GTK_WINDOW (note->w_window), w, h);
+        gtk_window_set_resizable(GTK_WINDOW (note->w_window), FALSE);
+    }
+    else {
+        GtkScrollablePolicy vscroll_pol = GTK_POLICY_NEVER;
+        if ( (note->h + note->y) > stickynotes->max_height )
+            vscroll_pol = GTK_POLICY_AUTOMATIC;
+        gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (note->w_scroller),
+                                        GTK_POLICY_NEVER, vscroll_pol);
+        gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW (note->w_body),
+                                    GTK_WRAP_WORD);
+        gtk_widget_set_visible (note->w_resize_se, TRUE);
+        gtk_widget_set_visible (note->w_resize_sw, TRUE);
+        gtk_window_set_resizable(GTK_WINDOW (note->w_window), TRUE);
     }
 }
 
