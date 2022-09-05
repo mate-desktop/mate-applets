@@ -50,6 +50,7 @@ typedef struct
     GtkWidget *w_prefs_sticky;
     GtkWidget *w_prefs_force;
     GtkWidget *w_prefs_desktop;
+    GtkWidget *w_prefs_fixed_size;
 
     GList *notes;     /* Linked-List of all the sticky notes */
     GList *applets;   /* Linked-List of all the applets */
@@ -63,6 +64,7 @@ typedef struct
     guint last_timeout_data;
 
     gboolean visible;    /* Toggle show/hide notes */
+    gboolean force_fixed_size;  /* Force fixed size notes */
 } StickyNotes;
 
 /* Sticky Notes Applet */
