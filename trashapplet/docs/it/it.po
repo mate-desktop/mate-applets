@@ -1,41 +1,39 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Wolfgang Ulbrich <mate@raveit.de>, 2018
 # Marco Z. <minaz666@gmail.com>, 2018
+# Wolfgang Ulbrich <mate@raveit.de>, 2018
 # Giuseppe Pignataro <rogepix@gmail.com>, 2018
 # andrea pittaro <transifex@andreapittaro.it>, 2019
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-01-16 12:31+0100\n"
 "PO-Revision-Date: 2018-09-27 15:25+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Alessandro Volturno, 2020"
+msgstr "Alessandro Volturno, 2020, 2022"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:14
 msgid "Panel Trash Manual"
-msgstr "Manuale di Cestino sul pannello"
+msgstr "Manuale di Panel Trash"
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:16
 msgid "Panel Trash lets you manage your trash from the panel."
-msgstr ""
-"Il Cestino sul pannello ti permette di gestire il Cestino dal pannello "
-"stesso."
+msgstr "Panel Trash permette di gestire il Cestino dal pannello."
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:18
@@ -112,7 +110,7 @@ msgid ""
 "<revnumber>Panel Trash V2.12</revnumber> <date>July 2015</date> "
 "<_:revdescription-1/>"
 msgstr ""
-"<revnumber>Cestino sul Pannello V2.12</revnumber> <date>Luglio 2015</date> "
+"<revnumber>Panel Trash V2.12</revnumber> <date>Luglio 2015</date> "
 "<_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
@@ -126,7 +124,7 @@ msgid ""
 "<revnumber>Panel Trash 2.10</revnumber> <date>March 2005</date> "
 "<_:revdescription-1/>"
 msgstr ""
-"<revnumber>Cestino sul Pannello 2.10</revnumber> <date>March 2005</date> "
+"<revnumber>Panel Trash 2.10</revnumber> <date>March 2005</date> "
 "<_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
@@ -140,15 +138,14 @@ msgid ""
 "<revnumber>Panel Trash V2.8</revnumber> <date>July 2004</date> "
 "<_:revdescription-1/>"
 msgstr ""
-"<revnumber>Cestino sul Pannello V2.8</revnumber> <date>Luglio 2004</date> "
+"<revnumber>Panel Trash V2.8</revnumber> <date>Luglio 2004</date> "
 "<_:revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:119
 msgid "This manual describes version 1.10.2 of the Panel Trash applet."
 msgstr ""
-"Questo manuale descrive la versione 1.10.2 dell'applet del Cestino sul "
-"Pannello."
+"Questo manuale descrive la versione 1.10.2 dell'applet del Panel Trash."
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:122
@@ -163,8 +160,9 @@ msgid ""
 "guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 "Per segnalare un bug o proporre suggerimenti per l'applet del Cestino sul "
-"Pannello o su questo manuale, seguire la procedura nella <ulink url=\"help"
-":mate-user-guide/feedback\" type=\"help\">Pagina di feedback di MATE</ulink>"
+"Pannello o su questo manuale, seguire la procedura nella <ulink "
+"url=\"help:mate-user-guide/feedback\" type=\"help\">Pagina di feedback di "
+"MATE</ulink>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:127
@@ -182,8 +180,8 @@ msgid ""
 "The <application>Panel Trash</application> applet lets you manage your Trash"
 " from the panel."
 msgstr ""
-"L'applet <application>Cestino sul Pannello</application> permette di gestire"
-" il Cestino dal pannello stesso."
+"L'applet <application>Panel Trash</application> permette di gestire il "
+"Cestino dal pannello."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:136
@@ -192,12 +190,12 @@ msgid ""
 "however it is useful because your panels are always visible."
 msgstr ""
 "Il cestino sul pannello si comporta esattamente come il cestino sul desktop,"
-" ma è comodo perché i tuoi pannelli sono sempre visibili."
+" ma è utile perché i pannelli sono sempre visibili."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:141
 msgid "Adding Panel Trash to a Panel"
-msgstr "Aggiungere Cestino sul pannello al pannello"
+msgstr "Aggiungere Panel Trash al pannello"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:142
@@ -205,15 +203,15 @@ msgid ""
 "To add the <application>Panel Trash</application> applet to a panel, perform"
 " the following steps:"
 msgstr ""
-"Per aggiungere l'applet <application>Cestino sul Pannello</application>, "
-"seguire questi passi:"
+"Per aggiungere l'applet <application>Panel Trash</application>, seguire "
+"questi passi:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:145
 msgid "Right-click on the panel at the place you want to add the applet."
 msgstr ""
-"Fare clic col tasto destro del mouse nella posizione dove vuoi aggiungere "
-"l'applet."
+"Fare clic col tasto destro del mouse nella posizione dove si vuole "
+"aggiungere l'applet."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:150
@@ -240,19 +238,19 @@ msgid ""
 "For more information on working with the panel, see the <ulink type=\"help\""
 " url=\"help:mate-user-guide/panels\">Desktop User Guide</ulink>."
 msgstr ""
-"Per maggiori informazioni sul funzionamento del pannello, guarda la <ulink "
-"type=\"help\" url=\"help:mate-user-guide/panels\">Guida utente del "
+"Per maggiori informazioni sul funzionamento del pannello, consultare la "
+"<ulink type=\"help\" url=\"help:mate-user-guide/panels\">Guida utente del "
 "Desktop</ulink>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:171
 msgid "Usage"
-msgstr "Uso"
+msgstr "Utilizzo"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:173
 msgid "Panel Trash"
-msgstr "Cestino sul pannello"
+msgstr "Panel Trash"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -280,7 +278,7 @@ msgid ""
 "<application>Panel Trash</application> applet."
 msgstr ""
 "Per spostare degli elementi nel Cestino, trascinali dal File Manager sopra "
-"l'applet del <application>Cestino sul Pannello</application>"
+"l'applet <application>Panel Trash</application>"
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:190
@@ -294,9 +292,9 @@ msgid ""
 " then choose <menuchoice> <guimenuitem>Empty Trash</guimenuitem> "
 "</menuchoice>."
 msgstr ""
-"Per rimuovere definitivamente tutti gli elementi nel cestino, fare clic col "
-"tasto destro del mouse sull'applet e selezionare "
-"<menuchoice><guimenuitem>Svuota cestino</guimenuitem></menuchoice>"
+"Per rimuovere definitivamente gli elementi nel cestino, fare clic col tasto "
+"destro del mouse sull'applet e selezionare <menuchoice><guimenuitem>Svuota "
+"cestino</guimenuitem></menuchoice>"
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:199
@@ -311,7 +309,7 @@ msgid ""
 "in <application>Caja</application> file manager."
 msgstr ""
 "Per aprire il Cestino, fare clic col tasto destro del mouse sull'applet, "
-"quindi scegli <menuchoice><guimenuitem>Apri "
+"quindi selezionare <menuchoice><guimenuitem>Apri "
 "Cestino</guimenuitem></menuchoice>. La finestra del Cestino si aprirà "
 "all'interno del file manager <application>Caja</application>."
 
@@ -332,10 +330,10 @@ msgid ""
 msgstr ""
 "È concesso il permesso di copiare, distribuire e/o modificare questo "
 "documento in base ai termini della GNU Free Documentation License (GFDL), "
-"Versione 1.1 o qualsiasi versione successiva pubblicata dalla Free Software "
-"Foundation senza sezioni invarianti, senza testi di copertina e nessun testo"
-" di retro copertina. Puoi trovare una copia del GFDL qui <_:ulink-1/> o nel "
-"file COPYING-DOCS distribuito con questo manuale."
+"Versione 1.1 o una qualsiasi versione successiva pubblicata dalla Free "
+"Software Foundation senza sezioni invarianti, senza testi di copertina e "
+"nessun testo di retro copertina. Puoi trovare una copia del GFDL qui "
+"<_:ulink-1/> o nel file COPYING-DOCS distribuito con questo manuale."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:12
@@ -392,7 +390,7 @@ msgstr ""
 "REDATTORE INIZIALE, DELL'AUTORE O DI ALTRI COLLABORATORI). QUESTA "
 "LIMITAZIONE DELLA GARANZIA COSTITUISCE PARTE ESSENZIALE DELLA LICENZA. L'USO"
 " DEL DOCUMENTO O DELLE SUE VERSIONI MODIFICATE È CONSENTITO SOLO ENTRO I "
-"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA;"
+"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA; E"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:55

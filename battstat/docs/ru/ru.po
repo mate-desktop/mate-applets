@@ -5,18 +5,19 @@
 # AlexL <loginov.alex.valer@gmail.com>, 2018
 # Wolfgang Ulbrich <mate@raveit.de>, 2018
 # Михаил Ильинский <mail@milinsky.com>, 2018
-# Alex Putz, 2018
+# Alex Puts, 2018
 # Артур Мальцев <arturiosboss@gmail.com>, 2019
 # Александр Кураченко <alexander@basealt.ru>, 2019
 # Aleksey Kabanov <ak099@mail.ru>, 2020
 # Иван Л. <lukyanenkoiv@bk.ru>, 2021
+# Ser82, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-01-16 12:30+0100\n"
 "PO-Revision-Date: 2018-09-27 15:09+0000\n"
-"Last-Translator: Иван Л. <lukyanenkoiv@bk.ru>, 2021\n"
+"Last-Translator: Ser82, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,7 +78,7 @@ msgstr ""
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:27
 msgid "<year>2015-2021</year> <holder>MATE Documentation Project</holder>"
-msgstr ""
+msgstr "<year>2015-2021</year> <holder>Проект документирования MATE</holder>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:31
@@ -149,6 +150,9 @@ msgid ""
 "<orgname>GNOME Documentation Project</orgname> <address> "
 "<email>jp@spektr.eu.org</email> </address> </affiliation>"
 msgstr ""
+"<firstname>Jorgen </firstname> <surname> Pehrson</surname> <affiliation> "
+"<orgname>Проект документирования GNOME</orgname> <address> "
+"<email>jp@spektr.eu.org</email> </address> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:96
@@ -165,6 +169,8 @@ msgid ""
 "<firstname>Davyd</firstname> <surname>Madeley</surname> <affiliation> "
 "<orgname>GNOME Project</orgname> </affiliation>"
 msgstr ""
+"<firstname>Davyd</firstname> <surname>Madeley</surname> <affiliation> "
+"<orgname>Проект GNOME</orgname> </affiliation>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:132
@@ -234,12 +240,12 @@ msgstr ""
 #. (itstool) path: revdescription/para
 #: C/index.docbook:170
 msgid "Trevor Curtis <email>tcurtis@somaradio.ca</email>"
-msgstr ""
+msgstr "Trevor Curtis <email>tcurtis@somaradio.ca</email>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:173
 msgid "Jorgen Pehrson <email>jp@spektr.eu.org</email>"
-msgstr ""
+msgstr "Jorgen Pehrson <email>jp@spektr.eu.org</email>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:166
@@ -280,7 +286,7 @@ msgstr "<primary>Апплет индикатора заряда батареи</
 #. (itstool) path: article/indexterm
 #: C/index.docbook:198
 msgid "<primary>Battstat Applet</primary>"
-msgstr ""
+msgstr "<primary>Апплет Battstat</primary>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:205
@@ -341,6 +347,8 @@ msgid ""
 "To add <application>Battery Charge Monitor</application> to a panel, perform"
 " the following steps:"
 msgstr ""
+"Чтобы добавить апплет <application>Индикатор состояния батареи</application>"
+" на панель, выполните следующие действия:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:236
@@ -358,6 +366,9 @@ msgid ""
 "Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
 "dialog, then select <guilabel>Battery Charge Monitor</guilabel>."
 msgstr ""
+"Прокрутите список элементов в диалоговом окне <guilabel>Добавить на "
+"панель</guilabel> и выберите <guilabel>Индикатор состояния "
+"батареи</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:252
@@ -390,6 +401,13 @@ msgid ""
 "(Hardware Abstraction Layer)</ulink>. If that is also not available, the "
 "battery monitor will attempt direct access to the power management system"
 msgstr ""
+"Монитор батареи поддерживает несколько бэкендов управления питанием. Если он"
+" доступен, монитор попытается использовать интерфейс <ulink "
+"url=\"http://upower.freedesktop.org/\">upower</ulink> freedesktop.org. Если "
+"он недоступен или не поддерживается на вашей платформе, то вернется к  "
+"<ulink url=\"http://freedesktop.org/Software/hal\">HAL (слой аппаратных "
+"абстракций)</ulink> freedesktop.org. Если это также недоступно, то монитор "
+"батареи попытается получить прямой доступ к системе управления питанием"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:276
@@ -402,8 +420,8 @@ msgstr ""
 "Не все бэкенды управления питанием доступны для всех производителей, и "
 "некоторые производители добавляют собственные дополнительные бэкенды для "
 "специфических платформ и устройств. Если индикатор состояния батареи "
-"получает неправильную информацию об аккумуляторе, смотрите <xref linkend"
-"=\"battstat-troubleshooting\"/>."
+"получает неправильную информацию об аккумуляторе, смотрите <xref "
+"linkend=\"battstat-troubleshooting\"/>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:285
@@ -444,7 +462,7 @@ msgid ""
 "the panel and then choose <guimenuitem>Preferences</guimenuitem>"
 msgstr ""
 "Чтобы получить доступ к параметрам индикатора, щёлкните правой кнопкой на "
-"нём в панели и выберите <guimenuitem>Параметры</guimenuitem>"
+"нём в панели и выберите <guimenuitem>Настройка</guimenuitem>"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:311
@@ -748,6 +766,10 @@ msgid ""
 "ACPI as the backend. This is also the backend with the largest number of "
 "inconsistencies."
 msgstr ""
+"Другие бэкенды в настоящее время не информируют о своей активности, поэтому "
+"вам придется догадываться об этом, исходя из компоновки своего оборудования."
+" Большинство современных ноутбуков используют ACPI в качестве бэкенда. Также"
+" этот бэкенд с наибольшим количеством несоответствий."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:482
@@ -864,6 +886,10 @@ msgid ""
 "<prompt>OAFIID:MATE_BattstatApplet</prompt> which should be located in the "
 "path <filename>/apps/panel/applets</filename>."
 msgstr ""
+"Выберите <guimenuitem>Редактор конфигурации</guimenuitem> в меню "
+"<guimenu>Приложения</guimenu>, в разделе <guisubmenu>Системные</guisubmenu>."
+" Найдите значения ключа <prompt>OAFIID:MATE_BattstatApplet</prompt> который "
+"должен находиться в <filename>/apps/panel/applets</filename>."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:537
@@ -875,6 +901,12 @@ msgid ""
 "(see <xref linkend=\"battstat-troubleshooting-backends\"/> to learn how to "
 "check this)."
 msgstr ""
+"Предположим, что путь <filename>/apps/panel/applets/applet_1</filename>. В "
+"<filename>/apps/panel/applets/applet_1/prefs</filename> добавьте "
+"<guimenuitem>Новый ключ...</guimenuitem> <guilabel>no_hal</guilabel> и "
+"установите для него значение «true». Это отключит использование HAL (чтобы "
+"узнать, как это проверить смотрите <xref linkend=\"battstat-troubleshooting-"
+"backends\"/>)."
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9

@@ -15,7 +15,7 @@
 # Lluís Tusquellas <lutusq@gmail.com>, 2020
 # Emiliano Fascetti, 2020
 # Joel Barrios <darkshram@gmail.com>, 2020
-# Adolfo Jayme Barrientos, 2021
+# Adolfo Jayme-Barrientos, 2021
 # Toni Estévez <toni.estevez@gmail.com>, 2021
 # 
 msgid ""
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
 msgid "AccessX Status Applet Factory"
@@ -209,6 +209,7 @@ msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] "%d minuto (%d%%) restante"
 msgstr[1] "%d minutos (%d%%) restantes"
+msgstr[2] "%d minutos (%d%%) restantes"
 
 #: battstat/battstat_applet.c:189
 #, c-format
@@ -216,6 +217,7 @@ msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] "%d minuto hasta completar carga (%d%%)"
 msgstr[1] "%d minutos hasta completar carga (%d%%)"
+msgstr[2] "%d minutos hasta completar carga (%d%%)"
 
 #: battstat/battstat_applet.c:195
 #, c-format
@@ -223,6 +225,7 @@ msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] "%d hora (%d%%) restante"
 msgstr[1] "%d horas (%d%%) restantes"
+msgstr[2] "%d horas (%d%%) restantes"
 
 #: battstat/battstat_applet.c:200
 #, c-format
@@ -230,6 +233,7 @@ msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] "%d hora hasta completar carga (%d%%)"
 msgstr[1] "%d horas hasta completar carga (%d%%)"
+msgstr[2] "%d horas hasta completar carga (%d%%)"
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -241,12 +245,14 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "hora"
 msgstr[1] "horas"
+msgstr[2] "horas"
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minuto"
 msgstr[1] "minutos"
+msgstr[2] "minutos"
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -278,6 +284,8 @@ msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] "Tiene %d minuto de batería restante (%d%% del total de capacidad)."
 msgstr[1] ""
+"Tiene %d minutos de batería restante (%d%% del total de capacidad)."
+msgstr[2] ""
 "Tiene %d minutos de batería restante (%d%% del total de capacidad)."
 
 #: battstat/battstat_applet.c:395
@@ -331,7 +339,7 @@ msgstr "Se ha producido un error al mostrar ayuda: %s"
 
 #: battstat/battstat_applet.c:835
 msgid "This utility shows the status of your laptop battery."
-msgstr "Esta utilidad muestra el estado de la batería del portátil."
+msgstr "Esta herramienta muestra el estado de la batería del portátil."
 
 #: battstat/battstat_applet.c:837
 msgid "upower backend enabled."
@@ -479,7 +487,7 @@ msgstr "0 para ninguna etiqueta, 1 para porcentaje y 2 para tiempo restante."
 
 #: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:3
 msgid "Battery Status Utility"
-msgstr "Utilidad del estado de la batería"
+msgstr "Herramienta del estado de la batería"
 
 #: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:7
 msgid "Battery power low"
@@ -711,11 +719,11 @@ msgstr "Miniaplicación de órdenes"
 
 #: cpufreq/cpufreq-preferences.ui:18
 msgid "CPU Frequency Monitor Preferences"
-msgstr "Preferencias del monitor de la frecuencia de la CPU"
+msgstr "Preferencias del monitor de la frecuencia del procesador"
 
 #: cpufreq/cpufreq-preferences.ui:97
 msgid "_Monitored CPU:"
-msgstr "CPU _monitorizada:"
+msgstr "Procesador _monitoreado:"
 
 #: cpufreq/cpufreq-preferences.ui:127
 msgid "Monitor Settings"
@@ -727,7 +735,7 @@ msgstr "_Apariencia:"
 
 #: cpufreq/cpufreq-preferences.ui:199
 msgid "Show CPU frequency as _frequency"
-msgstr "Mostrar la frecuencia de la CPU como _frecuencia"
+msgstr "Mostrar la frecuencia del procesador como _frecuencia"
 
 #: cpufreq/cpufreq-preferences.ui:216
 msgid "Show frequency _units"
@@ -735,7 +743,7 @@ msgstr "Mostrar las _unidades de la frecuencia"
 
 #: cpufreq/cpufreq-preferences.ui:233
 msgid "Show CPU frequency as _percentage"
-msgstr "Mostrar la frecuencia de la CPU como _porcentaje"
+msgstr "Mostrar la frecuencia del procesador como _porcentaje"
 
 #: cpufreq/cpufreq-preferences.ui:256
 msgid "Display Settings"
@@ -745,28 +753,28 @@ msgstr "Ajustes del visor"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
 #: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
-msgstr "Monitor de la frecuencia de la CPU"
+msgstr "Monitor de la frecuencia del procesador"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:6
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
-msgstr "Monitoriza el escalado de frecuencia de la CPU"
+msgstr "Monitorea el escalado de la frecuencia del procesador"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
-msgstr "CPU que monitorear"
+msgstr "Procesador que monitorear"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:7
 msgid ""
 "Set the CPU to monitor. In a single processor system you don't have to "
 "change it."
 msgstr ""
-"Configura la CPU que monitorear. En un sistema monoprocesador, no tiene que "
-"cambiarlo."
+"Configura el procesador que monitorear. En un sistema monoprocesador, no "
+"tiene que cambiarlo."
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:11
 msgid "Mode to show CPU usage"
-msgstr "Modo para mostrar el uso de CPU"
+msgstr "Modo para mostrar el uso del procesador"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:12
 msgid ""
@@ -787,8 +795,8 @@ msgid ""
 "A 0 value means to show CPU frequency, 1 to show frequency and units, and 2 "
 "to show percentage instead of frequency."
 msgstr ""
-"Un valor 0 para indicar la frecuencia de la CPU, 1 para mostrar la "
-"frecuencia y unidades y 2 para mostrar porcentaje en vez de frecuencia."
+"0 para mostrar la frecuencia del procesador, 1 para mostrar la frecuencia y "
+"las unidades, y 2 para mostrar el porcentaje en vez de la frecuencia."
 
 #: cpufreq/src/cpufreq-applet.c:446 cpufreq/src/cpufreq-prefs.c:364
 msgid "Could not open help document"
@@ -796,7 +804,7 @@ msgstr "No se ha podido abrir el documento de ayuda"
 
 #: cpufreq/src/cpufreq-applet.c:478
 msgid "About CPU Frequency Scaling Monitor"
-msgstr "Acerca de Monitor de la frecuencia de la CPU"
+msgstr "Acerca de Monitor de la frecuencia del procesador"
 
 #: cpufreq/src/cpufreq-applet.c:480
 msgid ""
@@ -809,11 +817,12 @@ msgstr ""
 #: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
 msgstr ""
-"Esta utilidad muestra el estado actual del escalado de frecuencia de la CPU."
+"Esta herramienta muestra el estado actual del escalado de frecuencia del "
+"procesador."
 
 #: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
-msgstr "Esta utilidad muestra la frecuencia actual de la CPU"
+msgstr "Esta herramienta muestra la frecuencia actual del procesador"
 
 #: cpufreq/src/cpufreq-prefs.c:504
 msgid "Graphic"
@@ -833,24 +842,26 @@ msgstr "Escalado de frecuencia no compatible"
 
 #: cpufreq/src/cpufreq-monitor-factory.c:55
 msgid "CPU frequency scaling unsupported"
-msgstr "Escalado de frecuencia de la CPU no compatible"
+msgstr "No se admite el escalado de la frecuencia del procesador"
 
 #: cpufreq/src/cpufreq-monitor-factory.c:56
 msgid ""
 "You will not be able to modify the frequency of your machine.  Your machine "
 "may be misconfigured or not have hardware support for CPU frequency scaling."
 msgstr ""
-"No podrá modificar la frecuencia de su máquina. Su máquina puede estar mal "
-"configurada o o no ser compatible con el escalado de frecuencia de la CPU."
+"No podrá modificar la frecuencia del equipo. Es posible que esté mal "
+"configurado o que el hardware no sea compatible con el escalado de la "
+"frecuencia del procesador."
 
 #: cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in:14
 msgid "Change CPU Frequency scaling"
-msgstr "Cambiar la frecuencia de escalado de la CPU"
+msgstr "Cambiar la frecuencia de escalado del procesador"
 
 #: cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in:15
 msgid "Privileges are required to change the CPU Frequency scaling."
 msgstr ""
-"Se necesitan privilegios para cambiar la frecuencia de escalado de la CPU"
+"Se necesitan privilegios para cambiar la frecuencia de escalado del "
+"procesador"
 
 #: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
 msgid "Drive Mount Applet Factory"
@@ -1344,7 +1355,7 @@ msgstr "Un indicador de carga del sistema"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:5
 msgid "Enable CPU load graph"
-msgstr "Activar el gráfico de carga de CPU"
+msgstr "Activar el gráfico de carga del procesador"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:9
 msgid "Enable memory load graph"
@@ -1385,28 +1396,30 @@ msgstr ""
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:40
 msgid "Graph color for user-related CPU activity"
 msgstr ""
-"El color del gráfico para la actividad de la CPU relacionada con el usuario"
+"El color del gráfico para la actividad del procesador relacionada con el "
+"usuario"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:44
 msgid "Graph color for system-related CPU activity"
 msgstr ""
-"El color del gráfico para la actividad de la CPU relacionada con el sistema"
+"El color del gráfico para la actividad del procesador relacionada con el "
+"sistema"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:48
 msgid "Graph color for nice-related CPU activity"
 msgstr ""
-"El color del gráfico para la actividad de la CPU relacionada con la "
+"El color del gráfico para la actividad del procesador relacionada con la "
 "prioridad"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:52
 msgid "Graph color for iowait related CPU activity"
 msgstr ""
-"El color del gráfico para la espera de E/S relacionada con la actividad de "
-"la CPU"
+"El color del gráfico para la actividad del procesador relacionada con la "
+"espera de las operaciones de E/S"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:56
 msgid "CPU graph background color"
-msgstr "Color de fondo del gráfico de carga de CPU"
+msgstr "Color de fondo del gráfico del procesador"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:60
 msgid "Graph color for user-related memory usage"
@@ -1707,8 +1720,9 @@ msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
 msgstr ""
-"Un monitor de la carga del sistema capaz de mostrar gráficos para la CPU, "
-"RAM y del uso del espacio intercambio, además del tráfico de red."
+"Un monitor de la carga del sistema que permite mostrar gráficos del uso del "
+"procesador, la memoria RAM y el espacio intercambio, además del tráfico de "
+"red."
 
 #: multiload/src/main.c:124
 msgid "Start system-monitor"
@@ -1765,7 +1779,7 @@ msgstr ""
 
 #: multiload/src/main.c:356
 msgid "CPU Load"
-msgstr "Carga de la CPU"
+msgstr "Carga del procesador"
 
 #: multiload/src/main.c:357
 msgid "Memory Load"
@@ -2188,6 +2202,7 @@ msgid "%'"
 msgid_plural "%'"
 msgstr[0] "%'"
 msgstr[1] "%'"
+msgstr[2] "%'"
 
 #: netspeed/src/netspeed.c:652
 #, c-format
@@ -2195,6 +2210,7 @@ msgid "%'d minute"
 msgid_plural "%'d minutes"
 msgstr[0] "%'d minuto"
 msgstr[1] "%'d minutos"
+msgstr[2] "%'d minutos"
 
 #: netspeed/src/netspeed.c:653
 #, c-format
@@ -2202,6 +2218,7 @@ msgid "%'d secon"
 msgid_plural "%'d seconds"
 msgstr[0] "%'d segundo"
 msgstr[1] "%'d segundos"
+msgstr[2] "%'d segundos"
 
 #: netspeed/src/netspeed.c:658
 #, c-format
@@ -2209,6 +2226,7 @@ msgid "%'d hour"
 msgid_plural "%'d hours"
 msgstr[0] "%'d hora"
 msgstr[1] "%'d horas"
+msgstr[2] "%'d horas"
 
 #: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
 #: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
@@ -2727,6 +2745,7 @@ msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d nota"
 msgstr[1] "%d notas"
+msgstr[2] "%d notas"
 
 #: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
@@ -2877,6 +2896,7 @@ msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
 msgstr[0] "%d elemento en la papelera"
 msgstr[1] "%d elementos en la papelera"
+msgstr[2] "%d elementos en la papelera"
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

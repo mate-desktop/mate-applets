@@ -19,7 +19,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Tubuntu, 2021
 # Stéphane PETRUS <stephane.petrus@posteo.net>, 2021
-# David D, 2021
+# David D, 2022
 # 
 msgid ""
 msgstr ""
@@ -27,13 +27,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2021-06-20 12:41+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: David D, 2021\n"
+"Last-Translator: David D, 2022\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
 msgid "AccessX Status Applet Factory"
@@ -219,6 +219,7 @@ msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] "%d minute (%d %%) restante"
 msgstr[1] "%d minutes (%d %%) restantes"
+msgstr[2] "%d minutes (%d %%) restantes"
 
 #: battstat/battstat_applet.c:189
 #, c-format
@@ -226,6 +227,7 @@ msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] "%d minute avant la fin de la charge (%d %%)"
 msgstr[1] "%d minutes avant la fin de la charge (%d %%)"
+msgstr[2] "%d minutes avant la fin de la charge (%d %%)"
 
 #: battstat/battstat_applet.c:195
 #, c-format
@@ -233,6 +235,7 @@ msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] "%d heure (%d %%) restante"
 msgstr[1] "%d heures (%d %%) restantes"
+msgstr[2] "%d heures (%d %%) restantes"
 
 #: battstat/battstat_applet.c:200
 #, c-format
@@ -240,6 +243,7 @@ msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] "%d heure avant la fin de la charge (%d %%)"
 msgstr[1] "%d heures avant la fin de la charge (%d %%)"
+msgstr[2] "%d heures avant la fin de la charge (%d %%)"
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -251,12 +255,14 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "heure"
 msgstr[1] "heures"
+msgstr[2] "heures"
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minute"
 msgstr[1] "minutes"
+msgstr[2] "minutes"
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -288,6 +294,8 @@ msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] "Il vous reste %d minute de batterie (%d %% de la capacité totale)."
 msgstr[1] ""
+"Il vous reste %d minutes de batterie (%d %% de la capacité totale)."
+msgstr[2] ""
 "Il vous reste %d minutes de batterie (%d %% de la capacité totale)."
 
 #: battstat/battstat_applet.c:395
@@ -2021,7 +2029,7 @@ msgstr ""
 
 #: netspeed/src/backend.c:151
 msgid "site-local"
-msgstr ""
+msgstr "site-local"
 
 #: netspeed/src/backend.c:153
 msgid "v4mapped"
@@ -2041,7 +2049,7 @@ msgstr "non spécifié"
 
 #: netspeed/src/backend.c:161
 msgid "global"
-msgstr ""
+msgstr "global"
 
 #: netspeed/src/backend.c:588
 #, c-format
@@ -2066,7 +2074,7 @@ msgstr ""
 #: netspeed/src/backend.c:599
 #, c-format
 msgid " 40MHz"
-msgstr ""
+msgstr " 40MHz"
 
 #: netspeed/src/backend.c:601
 #, c-format
@@ -2081,7 +2089,7 @@ msgstr ""
 #: netspeed/src/backend.c:605
 #, c-format
 msgid " 160MHz"
-msgstr ""
+msgstr " 160MHz"
 
 #: netspeed/src/backend.c:607
 #, c-format
@@ -2119,31 +2127,31 @@ msgstr ""
 
 #: netspeed/src/backend.c:708
 msgid "20 MHz"
-msgstr ""
+msgstr "20 MHz"
 
 #: netspeed/src/backend.c:710
 msgid "40 MHz"
-msgstr ""
+msgstr "40 MHz"
 
 #: netspeed/src/backend.c:712
 msgid "80 MHz"
-msgstr ""
+msgstr "80 MHz"
 
 #: netspeed/src/backend.c:714
 msgid "80+80 MHz"
-msgstr ""
+msgstr "80+80 MHz"
 
 #: netspeed/src/backend.c:716
 msgid "160 MHz"
-msgstr ""
+msgstr "160 MHz"
 
 #: netspeed/src/backend.c:718
 msgid "5 MHz"
-msgstr ""
+msgstr "5 MHz"
 
 #: netspeed/src/backend.c:720
 msgid "10 MHz"
-msgstr ""
+msgstr "10 MHz"
 
 #: netspeed/src/backend.c:722 netspeed/src/netspeed.c:772
 #: netspeed/src/netspeed.c:776 netspeed/src/netspeed.c:1422
@@ -2154,7 +2162,7 @@ msgstr "inconnu"
 #: netspeed/src/backend.c:773
 #, c-format
 msgid "%d (%d MHz)"
-msgstr ""
+msgstr "%d (%d MHz)"
 
 #: netspeed/src/backend.c:777
 #, c-format
@@ -2196,8 +2204,9 @@ msgstr "GiB/s"
 #: netspeed/src/netspeed.c:646
 msgid "%'"
 msgid_plural "%'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'"
+msgstr[1] "%'"
+msgstr[2] "%'"
 
 #: netspeed/src/netspeed.c:652
 #, c-format
@@ -2205,6 +2214,7 @@ msgid "%'d minute"
 msgid_plural "%'d minutes"
 msgstr[0] "%'d minute"
 msgstr[1] "%'d minutes"
+msgstr[2] "%'d minutes"
 
 #: netspeed/src/netspeed.c:653
 #, c-format
@@ -2212,6 +2222,7 @@ msgid "%'d secon"
 msgid_plural "%'d seconds"
 msgstr[0] "%'d seconde"
 msgstr[1] "%'d secondes"
+msgstr[2] "%'d secondes"
 
 #: netspeed/src/netspeed.c:658
 #, c-format
@@ -2219,6 +2230,7 @@ msgid "%'d hour"
 msgid_plural "%'d hours"
 msgstr[0] "%'d heure"
 msgstr[1] "%'d heures"
+msgstr[2] "%'d heures"
 
 #: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
 #: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
@@ -2227,7 +2239,7 @@ msgstr "aucun"
 
 #: netspeed/src/netspeed.c:780 netspeed/src/netspeed.c:892
 msgid "na"
-msgstr ""
+msgstr "nd"
 
 #: netspeed/src/netspeed.c:1011
 #, c-format
@@ -2306,6 +2318,8 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"\n"
+"%s"
 
 #: netspeed/src/netspeed.c:1409
 #, c-format
@@ -2334,6 +2348,11 @@ msgid ""
 "RX Bitrate: %s\n"
 "TX Bitrate: %s"
 msgstr ""
+"\n"
+"ESSID: %s\n"
+"RSSI: %d dBm\n"
+"RX Bitrate: %s\n"
+"TX Bitrate: %s"
 
 #: netspeed/src/netspeed.c:1430
 #, c-format
@@ -2733,6 +2752,7 @@ msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] "%d pense-bête"
 msgstr[1] "%d pense-bêtes"
+msgstr[2] "%d pense-bêtes"
 
 #: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
@@ -2884,6 +2904,7 @@ msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
 msgstr[0] "%d élément dans la corbeille"
 msgstr[1] "%d éléments dans la corbeille"
+msgstr[2] "%d éléments dans la corbeille"
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

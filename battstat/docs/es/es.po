@@ -5,8 +5,8 @@
 # elio <micta2003@hotmail.com>, 2018
 # Wolfgang Ulbrich <mate@raveit.de>, 2018
 # Joel Barrios <darkshram@gmail.com>, 2018
-# Adolfo Jayme Barrientos, 2018
 # Luis Zárate <luisza@visualcon.net>, 2019
+# Adolfo Jayme-Barrientos, 2021
 # Toni Estévez <toni.estevez@gmail.com>, 2021
 # 
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -145,6 +145,8 @@ msgid ""
 "<revnumber>Version 2.13</revnumber> <date>July 2015</date> "
 "<_:revdescription-1/>"
 msgstr ""
+"<revnumber>Versión 2.13</revnumber> <date>Julio de 2015</date> "
+"<_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:140 C/index.docbook:147
@@ -157,6 +159,8 @@ msgid ""
 "<revnumber>Version 2.12</revnumber> <date>September 2005</date> "
 "<_:revdescription-1/>"
 msgstr ""
+"<revnumber>Versión 2.12</revnumber> <date>Septiembre de 2005</date> "
+"<_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:143
@@ -164,11 +168,13 @@ msgid ""
 "<revnumber>Version 2.10</revnumber> <date>March 2005</date> "
 "<_:revdescription-1/>"
 msgstr ""
+"<revnumber>Versión 2.10</revnumber> <date>Marzo de 2005</date> "
+"<_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:154
 msgid "Angela Boyle"
-msgstr ""
+msgstr "Angela Boyle"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:150
@@ -176,6 +182,8 @@ msgid ""
 "<revnumber>Version 2.8</revnumber> <date>September 2004</date> "
 "<_:revdescription-1/>"
 msgstr ""
+"<revnumber>Version 2.8</revnumber> <date>Septiembre de 2004</date> "
+"<_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:162
@@ -227,7 +235,7 @@ msgstr ""
 #. (itstool) path: article/indexterm
 #: C/index.docbook:194
 msgid "<primary>Battery Charge Monitor Applet</primary>"
-msgstr ""
+msgstr "<primary>Miniaplicación Monitor de carga de batería</primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:198
@@ -242,7 +250,7 @@ msgstr "Introducción"
 #. (itstool) path: figure/title
 #: C/index.docbook:208
 msgid "Battery Charge Monitor Applet"
-msgstr ""
+msgstr "Miniaplicación Monitor de carga de batería"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -278,7 +286,7 @@ msgstr ""
 #. (itstool) path: sect2/title
 #: C/index.docbook:229
 msgid "To Add Battery Charge Monitor to a Panel"
-msgstr ""
+msgstr "Para añadir el Monitor de carga de batería a un panel"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:230
@@ -286,6 +294,8 @@ msgid ""
 "To add <application>Battery Charge Monitor</application> to a panel, perform"
 " the following steps:"
 msgstr ""
+"Siga estos pasos para añadir <application>Monitor de carga de "
+"batería</application> a un panel:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:236
@@ -407,7 +417,7 @@ msgstr ""
 #. (itstool) path: figure/title
 #: C/index.docbook:324
 msgid "Preferences Dialog"
-msgstr ""
+msgstr "Cuadro de diálogo Preferencias"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -434,17 +444,17 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:338
 msgid "<guilabel>Appearance</guilabel>"
-msgstr ""
+msgstr "<guilabel>Apariencia</guilabel>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:342
 msgid "<guilabel>Compact view</guilabel>"
-msgstr ""
+msgstr "<guilabel>Vista compacta</guilabel>"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:348
 msgid "Compact view"
-msgstr ""
+msgstr "Vista compacta"
 
 #. (itstool) path: screenshot/mediaobject
 #: C/index.docbook:350
@@ -470,12 +480,12 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:367
 msgid "<guilabel>Expanded view</guilabel>"
-msgstr ""
+msgstr "<guilabel>Vista ampliada</guilabel>"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:373
 msgid "Expanded view"
-msgstr ""
+msgstr "Vista ampliada"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -498,6 +508,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Expanded View</phrase> "
 "</textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-applet-expanded.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Vista ampliada</phrase>"
+" </textobject>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:368
@@ -506,6 +519,9 @@ msgid ""
 "larger graphic for the battery as well as a separate graphic to indicate "
 "what state the battery is in. <_:figure-1/>"
 msgstr ""
+"La vista ampliada es el aspecto antiguo, heredado de versiones anteriores de"
+" MATE. Incluye un icono más grande para la batería y un gráfico separado "
+"para indicar el estado de esta. <_:figure-1/>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:388
@@ -559,7 +575,7 @@ msgstr ""
 #. (itstool) path: sect1/title
 #: C/index.docbook:435
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solución de problemas"
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:437
@@ -612,6 +628,8 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Expanded View</phrase> "
 "</textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-credits-hal.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> Vista ampliada </textobject>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:453
@@ -634,7 +652,7 @@ msgstr ""
 #. (itstool) path: sect2/title
 #: C/index.docbook:482
 msgid "Checking the ACPI information"
-msgstr ""
+msgstr "Comprobar la información de ACPI"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:483
@@ -648,7 +666,7 @@ msgstr ""
 #. (itstool) path: example/title
 #: C/index.docbook:489
 msgid "Example ACPI output"
-msgstr ""
+msgstr "Ejemplo de salida de ACPI"
 
 #. (itstool) path: example/screen
 #: C/index.docbook:490
@@ -767,9 +785,9 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"Muchos de los nombres utilizados por las empresas para distinguir sus "
-"productos y servicios se consideran marcas comerciales. Cuando esos nombres "
-"aparecen en cualquier documentación de MATE y los miembros del proyecto de "
+"Muchos de los nombres usados por las empresas para distinguir sus productos "
+"y servicios se consideran marcas comerciales. Cuando esos nombres aparecen "
+"en cualquier documentación de MATE y los miembros del proyecto de "
 "documentación de MATE son conscientes de que se trata de marcas registradas,"
 " dichos nombres se escriben en letras mayúsculas o con inical mayúscula."
 

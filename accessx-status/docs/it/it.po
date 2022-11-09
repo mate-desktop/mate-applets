@@ -5,30 +5,30 @@
 # Marco Z. <minaz666@gmail.com>, 2018
 # talorno <giovanni.talorno@gmail.com>, 2018
 # Enrico B. <enricobe@hotmail.com>, 2019
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-01-16 12:30+0100\n"
 "PO-Revision-Date: 2018-09-27 15:08+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Alessandro Volturno, 2020"
+msgstr "Alessandro Volturno, 2020 - 2022"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:20
 msgid "Keyboard Accessibility Monitor Manual"
-msgstr "Manuale del Monitor di accessibilità della tastiera"
+msgstr "Manuale di Monitor di accessibilità della tastiera"
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:22
@@ -36,8 +36,8 @@ msgid ""
 "The <application>Keyboard Accessibility Monitor</application> shows the "
 "status of the keyboard accessibility features."
 msgstr ""
-"Il <application>Monitor di accessibilità della tastiera</application> mostra"
-" lo stato delle funzionalità di accessibilità della tastiera"
+"<application>Keyboard Accessibility Monitor</application> mostra lo stato "
+"delle funzionalità di accessibilità della tastiera"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:24
@@ -93,9 +93,8 @@ msgid ""
 "<firstname>Sun</firstname> <surname>GNOME Documentation Team</surname> "
 "<affiliation> <orgname>Sun Microsystems</orgname> </affiliation>"
 msgstr ""
-"<firstname>Sun</firstname> <surname>Team della Documentazione di "
-"GNOME</surname> <affiliation> <orgname>Sun Microsystems</orgname> "
-"</affiliation>"
+"<firstname>Sun</firstname> <surname>Team Documentazione di GNOME</surname> "
+"<affiliation> <orgname>Sun Microsystems</orgname> </affiliation>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:96
@@ -174,19 +173,19 @@ msgid ""
 "url=\"help:mate-user-guide/feedback\" type=\"help\">MATE Feedback "
 "Page</ulink>."
 msgstr ""
-"Per segnalare un bug o dare un suggerimento riguardante l'applet Monitor di "
-"accessibilità della tastiera, seguire le istruzioni nella <ulink url=\"help"
-":mate-user-guide/feedback\" type=\"help\">pagina feedback di MATE</ulink>."
+"Per segnalare un bug o dare un suggerimento riguardante l'applet Keyboard "
+"Accessibility Monitor, seguire le istruzioni nella <ulink url=\"help:mate-"
+"user-guide/feedback\" type=\"help\">pagina feedback di MATE</ulink>."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:139
 msgid "<primary>Keyboard Accessibility Status</primary>"
-msgstr "<primary>Stato accessibilità della tastiera</primary>"
+msgstr "<primary>Stato di accessibilità della tastiera</primary>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:146
 msgid "Usage"
-msgstr "Uso"
+msgstr "Utilizzo"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:149
@@ -228,19 +227,20 @@ msgid ""
 "example, you can see which modifier keys are currently active, and which "
 "mouse buttons are being pressed via the keyboard."
 msgstr ""
-"Il <application>Monitor di accessibilità della tastiera</application> mostra"
-" lo stato delle funzionalità di accessibilità della tastiera quando queste "
-"sono in uso. Ad esempio, mostra quali tasti modificatori sono attivi e quali"
-" tasti del mouse vengono premuti tramite la tastiera."
+"<application>Keyboard Accessibility Monitor</application> mostra lo stato "
+"delle funzionalità di accessibilità della tastiera quando queste sono in "
+"uso. Ad esempio, è possibile visualizzare quali tasti modificatori sono "
+"attivi e quali tasti del mouse vengono premuti tramite la tastiera."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:163
 msgid ""
-"For more on using keyboard accessibility features, see the <ulink url=\"help"
-":mate-access-guide\">Desktop Accessibility Guide</ulink>."
+"For more on using keyboard accessibility features, see the <ulink "
+"url=\"help:mate-access-guide\">Desktop Accessibility Guide</ulink>."
 msgstr ""
-"Per maggior informazioni sulle funzionalità di accessibilità, vedi la <ulink"
-" url=\"help:mate-access-guide\">Guida di accessibilità del Desktop</ulink>."
+"Per maggior informazioni sulle funzionalità di accessibilità, si veda la "
+"<ulink url=\"help:mate-access-guide\">Guida di accessibilità del "
+"Desktop</ulink>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:167
@@ -287,7 +287,7 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:197
 msgid "Accessibility Features are currently disabled."
-msgstr "Funzioni di Accessibilità attualmente disattivate."
+msgstr "Le funzioni di Accessibilità sono attualmente disattivate."
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -306,13 +306,13 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:204
 msgid ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_bounce-keys.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_bounce-keys.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Bounce Keys</phrase> "
 "</textobject></inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_bounce-keys.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_bounce-keys.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Tasti Bounce</phrase> "
 "</textobject></inlinemediaobject>"
 
@@ -398,13 +398,13 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:249
 msgid ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-keys.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-keys.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Sticky Keys</phrase> "
 "</textobject></inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-keys.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-keys.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Tasti Permanenti</phrase> "
 "</textobject></inlinemediaobject>"
 
@@ -435,15 +435,15 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:264
 msgid ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-altGr-key.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-altGr-key.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase><keycap>AltGr</keycap> Key Symbol</phrase>"
 " </textobject></inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-altGr-key.png\" format=\"PNG\"/> "
-"</imageobject><textobject><phrase><keycap>Simbolo del </keycap>Tasto "
-"AltGr</phrase> </textobject></inlinemediaobject>"
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-altGr-key.png\" format=\"PNG\"/> "
+"</imageobject><textobject><phrase>Simbolo del <keycap>Tasto "
+"AltGr</keycap></phrase> </textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:272
@@ -467,15 +467,15 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:279
 msgid ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-meta-key.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-meta-key.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase><keycap>Meta</keycap> Key Symbol</phrase> "
 "</textobject></inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-meta-key.png\" format=\"PNG\"/> "
-"</imageobject><textobject><phrase><keycap>Simbolo del </keycap>Tasto "
-"Meta</phrase> </textobject></inlinemediaobject>"
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-meta-key.png\" format=\"PNG\"/> "
+"</imageobject><textobject><phrase>Simbolo del <keycap>Tasto "
+"Meta</keycap></phrase></textobject></inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:287
@@ -499,13 +499,13 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:294
 msgid ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-windows-key.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-windows-key.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase><keycap>Windows</keycap> logo key</phrase>"
 " </textobject></inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-windows-key.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-windows-key.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Tasto logo "
 "di<keycap>Windows</keycap></phrase> </textobject></inlinemediaobject>"
 
@@ -531,13 +531,13 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:309
 msgid ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-shift-key.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-shift-key.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Shift Symbol</phrase> "
 "</textobject></inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject><imageobject> <imagedata fileref=\"figures"
-"/accessx_sticky-shift-key.png\" format=\"PNG\"/> "
+"<inlinemediaobject><imageobject> <imagedata "
+"fileref=\"figures/accessx_sticky-shift-key.png\" format=\"PNG\"/> "
 "</imageobject><textobject><phrase>Simbolo del tasto Shift</phrase> "
 "</textobject></inlinemediaobject>"
 
@@ -565,8 +565,8 @@ msgstr ""
 "documento in base ai termini della GNU Free Documentation License (GFDL), "
 "Versione 1.1 o qualsiasi versione successiva pubblicata dalla Free Software "
 "Foundation senza sezioni invarianti, senza testi di copertina e nessun testo"
-" di retro copertina. Puoi trovare una copia del GFDL qui <_:ulink-1/> o nel "
-"file COPYING-DOCS distribuito con questo manuale."
+" di retro copertina. Potete trovare una copia della GFDL qui <_:ulink-1/> o "
+"nel file COPYING-DOCS distribuito con questo manuale."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:12
@@ -591,10 +591,10 @@ msgid ""
 "capital letters."
 msgstr ""
 "Molti dei nomi usati dalle aziende per distinguere i propri prodotti e "
-"servizi sono rivendicati come marchi. Quando questi nomi compaiono nella "
-"documentazione di MATE, e i partecipanti al MATE Documentation Project sono "
-"consapevoli del loro utilizzo, essi vengono scritti in lettere maiuscole o "
-"con l'iniziale maiuscola."
+"servizi sono rivendicati come marchi registrati. Quando questi nomi "
+"compaiono nella documentazione di MATE, e i partecipanti al MATE "
+"Documentation Project sono consapevoli del loro utilizzo, essi vengono "
+"scritti in lettere maiuscole o con l'iniziale maiuscola."
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:35
@@ -623,7 +623,7 @@ msgstr ""
 "REDATTORE INIZIALE, DELL'AUTORE O DI ALTRI COLLABORATORI). QUESTA "
 "LIMITAZIONE DELLA GARANZIA COSTITUISCE PARTE ESSENZIALE DELLA LICENZA. L'USO"
 " DEL DOCUMENTO O DELLE SUE VERSIONI MODIFICATE È CONSENTITO SOLO ENTRO I "
-"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA;"
+"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA; E"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:55

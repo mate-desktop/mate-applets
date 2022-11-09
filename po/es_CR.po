@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_CR\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:5
 msgid "AccessX Status Applet Factory"
@@ -192,6 +192,7 @@ msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:189
 #, c-format
@@ -199,6 +200,7 @@ msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:195
 #, c-format
@@ -206,6 +208,7 @@ msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:200
 #, c-format
@@ -213,6 +216,7 @@ msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:208
 #, c-format
@@ -224,12 +228,14 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:210 battstat/battstat_applet.c:217
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:215
 #, c-format
@@ -261,6 +267,7 @@ msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: battstat/battstat_applet.c:395
 msgid ""
@@ -2129,6 +2136,7 @@ msgid "%'"
 msgid_plural "%'"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: netspeed/src/netspeed.c:652
 #, c-format
@@ -2136,6 +2144,7 @@ msgid "%'d minute"
 msgid_plural "%'d minutes"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: netspeed/src/netspeed.c:653
 #, c-format
@@ -2143,6 +2152,7 @@ msgid "%'d secon"
 msgid_plural "%'d seconds"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: netspeed/src/netspeed.c:658
 #, c-format
@@ -2150,6 +2160,7 @@ msgid "%'d hour"
 msgid_plural "%'d hours"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: netspeed/src/netspeed.c:699 netspeed/src/netspeed.c:707
 #: netspeed/src/netspeed.c:716 netspeed/src/netspeed.c:723
@@ -2642,6 +2653,7 @@ msgid "%d note"
 msgid_plural "%d notes"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
@@ -2787,6 +2799,7 @@ msgid "%d Item in Trash"
 msgid_plural "%d Items in Trash"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"

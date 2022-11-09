@@ -5,20 +5,19 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Mingye Wang <arthur200126@gmail.com>, 2018
 # zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2018
+# Mingye Wang <arthur200126@gmail.com>, 2018
 # shuyu liu <liushuyu011@gmail.com>, 2018
 # Mingcong Bai <jeffbai@aosc.xyz>, 2019
 # CNAmira <forucial@icloud.com>, 2019
-# 敏超 马 <mcjoys@163.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Dianjin Wang <1132321739qq@gmail.com>, 2020
 # 玉堂白鹤 <yjwork@qq.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# liu lizhi <xingzuo88@qq.com>, 2020
 # e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2021
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# liulitchi <xingzuo88@qq.com>, 2021
-# Wenbin Lv <wenbin816@gmail.com>, 2021
 # Zkdc, 2021
+# Wenbin Lv <wenbin816@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -26,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2021-06-20 12:41+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Zkdc, 2021\n"
+"Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,15 +71,15 @@ msgstr "关于 AccessX 状态"
 
 #: accessx-status/src/applet.c:114
 msgid "Shows the state of AccessX features such as latched modifiers"
-msgstr "显示 AccessX 特性的状态，如插销修饰"
+msgstr "显示 AccessX 特性的状态，如粘滞键"
 
 #: accessx-status/src/applet.c:115
 msgid ""
 "Copyright © 2003 Sun Microsystems\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 2003 Sun Microsystems\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 2003 Sun Microsystems\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: accessx-status/src/applet.c:119 battstat/battstat_applet.c:855
 #: charpick/charpick.c:619 command/src/command.c:131
@@ -100,12 +99,13 @@ msgstr ""
 "玉堂白鹤 <yjwork@qq.com>, 2015\n"
 "Mingye Wang <arthur200126@gmail.com>, 2015-2016\n"
 "白铭骢 <jeffbai@aosc.xyz>, 2015-2016\n"
-"刘子兴 <liushuyu@aosc.xyz>, 2015-2016"
+"刘子兴 <liushuyu@aosc.xyz>, 2015-2016\n"
+"Wenbin Lv <wenbin816@gmail.com>, 2021-2022"
 
 #: accessx-status/src/applet.c:143
 #, c-format
 msgid "There was an error launching the help viewer: %s"
-msgstr "调用帮助查看器时出错：%s"
+msgstr "启动帮助查看器时出错：%s"
 
 #: accessx-status/src/applet.c:176
 msgid "Open the keyboard preferences dialog"
@@ -114,7 +114,7 @@ msgstr "打开键盘首选项对话框"
 #: accessx-status/src/applet.c:199
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
-msgstr "调用键盘首选项对话框时出错：%s"
+msgstr "打开键盘首选项对话框时出错：%s"
 
 #: accessx-status/src/applet.c:218
 msgid "_Keyboard Accessibility Preferences"
@@ -132,7 +132,7 @@ msgstr "键盘辅助功能首选项(_K)"
 #: stickynotes/sticky-notes-properties.ui:37
 #: stickynotes/stickynotes_applet.c:46 trashapplet/src/trashapplet.c:74
 msgid "_Help"
-msgstr "帮助（_H）"
+msgstr "帮助(_H)"
 
 #: accessx-status/src/applet.c:222 battstat/battstat_applet.c:65
 #: charpick/charpick.c:700 command/src/command.c:87
@@ -183,55 +183,55 @@ msgstr "属性(_P)"
 
 #: battstat/battstat_applet.c:70
 msgid "System is running on AC power"
-msgstr "系统正使用交流电源运行"
+msgstr "系统正使用交流电源"
 
 #: battstat/battstat_applet.c:71
 msgid "System is running on battery power"
-msgstr "系统正使用电池运行"
+msgstr "系统正使用电池"
 
 #: battstat/battstat_applet.c:176
 #, c-format
 msgid "Battery charged (%d%%)"
-msgstr "电池已充满 (%d%%)"
+msgstr "电池已充满（%d%%）"
 
 #: battstat/battstat_applet.c:178
 #, c-format
 msgid "Unknown time (%d%%) remaining"
-msgstr "剩余时间未知 (%d%%)"
+msgstr "剩余时间未知（%d%%）"
 
 #: battstat/battstat_applet.c:180
 #, c-format
 msgid "Unknown time (%d%%) until charged"
-msgstr "剩余充电时间未知 (%d%%)"
+msgstr "剩余充电时间未知（%d%%）"
 
 #: battstat/battstat_applet.c:184
 #, c-format
 msgid "%d minute (%d%%) remaining"
 msgid_plural "%d minutes (%d%%) remaining"
-msgstr[0] "还剩 %d 分钟 (%d%%)"
+msgstr[0] "剩余 %d 分钟（%d%%）"
 
 #: battstat/battstat_applet.c:189
 #, c-format
 msgid "%d minute until charged (%d%%)"
 msgid_plural "%d minutes until charged (%d%%)"
-msgstr[0] "离充满还剩 %d 分钟 (%d%%)"
+msgstr[0] "离充满还剩 %d 分钟（%d%%）"
 
 #: battstat/battstat_applet.c:195
 #, c-format
 msgid "%d hour (%d%%) remaining"
 msgid_plural "%d hours (%d%%) remaining"
-msgstr[0] "还剩 %d 小时 (%d%%)"
+msgstr[0] "剩余 %d 小时（%d%%）"
 
 #: battstat/battstat_applet.c:200
 #, c-format
 msgid "%d hour until charged (%d%%)"
 msgid_plural "%d hours until charged (%d%%)"
-msgstr[0] "离充满还剩 %d 小时 (%d%%)"
+msgstr[0] "离充满还剩 %d 小时（%d%%）"
 
 #: battstat/battstat_applet.c:208
 #, c-format
 msgid "%d %s %d %s (%d%%) remaining"
-msgstr "还剩 %d %s %d %s (%d%%)"
+msgstr "剩余 %d %s %d %s（%d%%）"
 
 #: battstat/battstat_applet.c:209 battstat/battstat_applet.c:216
 msgid "hour"
@@ -246,7 +246,7 @@ msgstr[0] "分钟"
 #: battstat/battstat_applet.c:215
 #, c-format
 msgid "%d %s %d %s until charged (%d%%)"
-msgstr "离充满还剩 %d %s %d %s (%d%%)"
+msgstr "离充满还剩 %d %s %d %s（%d%%）"
 
 #: battstat/battstat_applet.c:229
 msgid "Battery Monitor"
@@ -263,7 +263,7 @@ msgstr "电量提示"
 #: battstat/battstat_applet.c:377
 #, c-format
 msgid "You have %d%% of your total battery capacity remaining."
-msgstr "您的电池容量还剩 %d%%。"
+msgstr "您的电池电量还剩 %d%%。"
 
 #: battstat/battstat_applet.c:382
 #, c-format
@@ -271,7 +271,7 @@ msgid ""
 "You have %d minute of battery power remaining (%d%% of the total capacity)."
 msgid_plural ""
 "You have %d minutes of battery power remaining (%d%% of the total capacity)."
-msgstr[0] "电池还剩 %d 分钟(总容量的 %d%%)。"
+msgstr[0] "电池还剩 %d 分钟（总容量的 %d%%）。"
 
 #: battstat/battstat_applet.c:395
 msgid ""
@@ -279,9 +279,9 @@ msgid ""
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
 msgstr ""
-"为了避免丢掉数据：\n"
-" * 将您的笔记本电脑接入外部电源，\n"
-" * 或者保存文档并关闭您的笔记本电脑。"
+"为了避免丢失数据：\n"
+" • 将您的笔记本电脑接入外部电源，或者\n"
+" • 保存打开的文档并关闭您的笔记本电脑。"
 
 #: battstat/battstat_applet.c:402
 msgid ""
@@ -290,10 +290,10 @@ msgid ""
 " • plug your laptop into external power, or\n"
 " • save open documents and shut your laptop down."
 msgstr ""
-"为了避免丢掉数据：\n"
-" * 请将笔记本电脑挂起，\n"
-" * 将您的笔记本电脑接入外部电源，\n"
-" * 或者保存文档并关闭您的笔记本电脑。"
+"为了避免丢失数据：\n"
+" • 请将笔记本电脑挂起以节约电量，\n"
+" • 将您的笔记本电脑接入外部电源，或者\n"
+" • 保存打开的文档并关闭您的笔记本电脑。"
 
 #: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
@@ -301,7 +301,7 @@ msgstr "您的电池电量不足"
 
 #: battstat/battstat_applet.c:510
 msgid "No battery present"
-msgstr "不存在电池"
+msgstr "没有电池"
 
 #: battstat/battstat_applet.c:513
 msgid "Battery status unknown"
@@ -324,7 +324,7 @@ msgstr "显示帮助时出错：%s"
 
 #: battstat/battstat_applet.c:835
 msgid "This utility shows the status of your laptop battery."
-msgstr "该工具显示您的笔记本电脑电池的状态。"
+msgstr "本实用工具显示您的笔记本电脑电池的状态。"
 
 #: battstat/battstat_applet.c:837
 msgid "upower backend enabled."
@@ -344,9 +344,9 @@ msgid ""
 "Copyright © 2002-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 2000 The Gnulix Society\n"
-"版权所有 © 2002-2005 自由软件基金会与其他人\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 2000 The Gnulix Society\n"
+"Copyright © 2002-2005 自由软件基金会与其他人\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: battstat/battstat_applet.c:1133 battstat/battstat_applet.c:1188
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:9
@@ -356,7 +356,7 @@ msgstr "电池电量监视器"
 #: battstat/battstat_applet.c:1190
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
-msgstr "监视笔记本计算机电池的剩余电量"
+msgstr "监视笔记本电脑电池的剩余电量"
 
 #: battstat/battstat-preferences.ui:23
 msgid "Battery Charge Monitor Preferences"
@@ -375,7 +375,7 @@ msgstr "关闭(_C)"
 
 #: battstat/battstat-preferences.ui:102
 msgid "_Show time/percentage:"
-msgstr "显示时间/百分比(_S)："
+msgstr "显示时间还是百分比(_S)："
 
 #: battstat/battstat-preferences.ui:125
 msgid "Show _time remaining"
@@ -391,15 +391,15 @@ msgstr "外观"
 
 #: battstat/battstat-preferences.ui:214
 msgid "_Warn when battery charge drops to:"
-msgstr "警告当电池电量下降到(_W)："
+msgstr "当剩余电池电量低于此值时警告(_W)："
 
 #: battstat/battstat-preferences.ui:255
 msgid "Percent"
-msgstr "百分比"
+msgstr "%"
 
 #: battstat/battstat-preferences.ui:256
 msgid "Minutes Remaining"
-msgstr "分钟时提醒我"
+msgstr "分钟"
 
 #: battstat/battstat-preferences.ui:282
 msgid "_Notify when battery is fully recharged"
@@ -416,13 +416,13 @@ msgstr "电池状态工厂"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:5
 msgid "Red value level"
-msgstr "红色值级别"
+msgstr "红色值水平"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:6
 msgid ""
 "The battery level below which the battery is displayed as red. Also the "
 "value at which the low battery warning is displayed."
-msgstr "当电量低于此级别时，电池显示为红色，同时也会显示低电量警告。"
+msgstr "当电量低于此水平时，电池显示为红色，同时也会显示低电量警告。"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:10
 msgid "Warn on low time rather than low percentage"
@@ -432,7 +432,7 @@ msgstr "根据剩余时间而非剩余百分比给出警告"
 msgid ""
 "Use the value defined in red_value as a time remaining to show the warning "
 "dialog rather than a percentage."
-msgstr "使用 red_value 中定义的值作为显示警告对话框的剩余时间，而非剩余百分比"
+msgstr "将 red_value 中定义的值视为显示警告对话框的剩余时间，而非剩余百分比"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:15
 msgid "Low Battery Notification"
@@ -460,7 +460,7 @@ msgstr "显示警告时响铃"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:30
 msgid "Show the time/percent label"
-msgstr "显示时间/百分比标签"
+msgstr "显示时间还是百分比标签"
 
 #: battstat/org.mate.panel.applet.battstat.gschema.xml.in:31
 msgid "0 for no label, 1 for percentage and 2 for time remaining."
@@ -505,8 +505,8 @@ msgid ""
 "Copyright © 1998, 2004-2005 GNOME Applets Maintainers and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 1998, 2004-2005 GNOME 小程序维护者与其他人\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 1998, 2004-2005 GNOME 小程序维护者与其他人\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: charpick/charpick.c:614
 msgid ""
@@ -547,11 +547,11 @@ msgstr "可用字符板列表"
 
 #: charpick/org.mate.panel.applet.charpick.gschema.xml.in:11
 msgid "List of strings containing the available palettes."
-msgstr "包含可用字符板的字符串列表"
+msgstr "包含可用字符板的字符串列表。"
 
 #: charpick/properties.c:28
 msgid "_Edit"
-msgstr "编辑（_E）"
+msgstr "编辑(_E)"
 
 #: charpick/properties.c:94
 msgid "_Palette:"
@@ -563,7 +563,7 @@ msgstr "字符板项"
 
 #: charpick/properties.c:103
 msgid "Modify a palette by adding or removing characters"
-msgstr "添加/删除字符来修改字符板"
+msgstr "添加或删除字符以修改字符板"
 
 #: charpick/properties.c:227
 msgid "Add Palette"
@@ -595,7 +595,7 @@ msgstr "编辑按钮"
 
 #: charpick/properties.c:496
 msgid "Click to edit the selected palette"
-msgstr "单击以编辑选中字符板"
+msgstr "单击以编辑选中的字符板"
 
 #: charpick/properties.c:510
 msgid "Delete button"
@@ -603,7 +603,7 @@ msgstr "删除按钮"
 
 #: charpick/properties.c:511
 msgid "Click to delete the selected palette"
-msgstr "单击以删除选中字符板"
+msgstr "单击以删除选中的字符板"
 
 #: charpick/properties.c:565
 msgid "Character Palette Preferences"
@@ -649,7 +649,7 @@ msgstr "要执行的命令"
 
 #: command/data/org.mate.panel.applet.command.gschema.xml.in:6
 msgid "Command/script to execute to get the output"
-msgstr "获取输出所执行的命令/脚本"
+msgstr "获取输出所执行的命令或脚本"
 
 #: command/data/org.mate.panel.applet.command.gschema.xml.in:10
 msgid "Interval for the command"
@@ -657,7 +657,7 @@ msgstr "命令间隔"
 
 #: command/data/org.mate.panel.applet.command.gschema.xml.in:11
 msgid "Interval to execute the command (in seconds)"
-msgstr "执行命令的间隔(秒:)"
+msgstr "执行命令的间隔（秒）："
 
 #: command/data/org.mate.panel.applet.command.gschema.xml.in:15
 msgid "Width of output"
@@ -685,8 +685,8 @@ msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
-"版权所有 © 2013-2014 Stefano Karapetsas\n"
-"版权所有 © 2015-2021 MATE 开发者"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE 开发者"
 
 #: command/src/command.c:411
 msgid "Command Applet"
@@ -698,11 +698,11 @@ msgstr "CPU 频率监视器首选项"
 
 #: cpufreq/cpufreq-preferences.ui:97
 msgid "_Monitored CPU:"
-msgstr "监视中的 CPU(_M)："
+msgstr "监视的 CPU(_M)："
 
 #: cpufreq/cpufreq-preferences.ui:127
 msgid "Monitor Settings"
-msgstr "显示器设置"
+msgstr "监视器设置"
 
 #: cpufreq/cpufreq-preferences.ui:168
 msgid "_Appearance:"
@@ -710,7 +710,7 @@ msgstr "外观(_A)"
 
 #: cpufreq/cpufreq-preferences.ui:199
 msgid "Show CPU frequency as _frequency"
-msgstr "显示 CPU 频率为频率(_F)"
+msgstr "以频率显示 CPU 频率(_F)"
 
 #: cpufreq/cpufreq-preferences.ui:216
 msgid "Show frequency _units"
@@ -718,7 +718,7 @@ msgstr "显示频率单位(_U)"
 
 #: cpufreq/cpufreq-preferences.ui:233
 msgid "Show CPU frequency as _percentage"
-msgstr "显示 CPU 频率为百分比"
+msgstr "以百分比显示 CPU 频率(_P)"
 
 #: cpufreq/cpufreq-preferences.ui:256
 msgid "Display Settings"
@@ -728,12 +728,12 @@ msgstr "显示设置"
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:9
 #: cpufreq/src/cpufreq-applet.c:791 cpufreq/src/cpufreq-applet.c:846
 msgid "CPU Frequency Scaling Monitor"
-msgstr "CPU 频率范围监视器"
+msgstr "CPU 频率调节监视器"
 
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:6
 #: cpufreq/org.mate.applets.CPUFreqApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the CPU Frequency Scaling"
-msgstr "监视 CPU 频率范围"
+msgstr "监视 CPU 频率调节"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:6
 msgid "CPU to Monitor"
@@ -747,18 +747,18 @@ msgstr "设置要监视的 CPU。在单处理器系统中，您无需进行更�
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:11
 msgid "Mode to show CPU usage"
-msgstr "显示 CPU 的模式"
+msgstr "CPU 使用量的显示模式"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:12
 msgid ""
 "A 0 value means to show the applet in graphic mode (pixmap only), 1 to show "
 "the applet in text mode (not to show the pixmap) and 2 to show the applet in"
 " graphic and text mode."
-msgstr "0 值意味着以图形方式显示小程序（仅像素映射），1 意味着以文字方式显示小程序（无像素映射），2 意味着同时显示图形和文本。"
+msgstr "0 值意味着以图形方式显示小程序（仅像素图），1 意味着以文本方式显示小程序（无像素图），2 意味着同时显示图形和文本。"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:16
 msgid "The type of text to display (if the text is enabled)."
-msgstr "要显示的文本类型 (如已启用文本) 。"
+msgstr "要显示的文本类型（假如已启用文本显示）。"
 
 #: cpufreq/org.mate.panel.applet.cpufreq.gschema.xml.in:17
 msgid ""
@@ -772,19 +772,19 @@ msgstr "无法打开帮助文档"
 
 #: cpufreq/src/cpufreq-applet.c:478
 msgid "About CPU Frequency Scaling Monitor"
-msgstr "关于 CPU 频率范围监视器"
+msgstr "关于 CPU 频率调节监视器"
 
 #: cpufreq/src/cpufreq-applet.c:480
 msgid ""
 "Copyright © 2004 Carlos Garcia Campos\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 2004 Carlos Garcia Campos\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 2004 Carlos Garcia Campos\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: cpufreq/src/cpufreq-applet.c:482
 msgid "This utility shows the current CPU Frequency Scaling."
-msgstr "此工具显示目前的 CPU 频率范围。"
+msgstr "此工具显示当前的 CPU 频率调节情况。"
 
 #: cpufreq/src/cpufreq-applet.c:847
 msgid "This utility shows the current CPU Frequency"
@@ -804,11 +804,11 @@ msgstr "图形和文本"
 
 #: cpufreq/src/cpufreq-monitor-cpuinfo.c:119
 msgid "Frequency Scaling Unsupported"
-msgstr "频率调节不支持"
+msgstr "不支持频率调节"
 
 #: cpufreq/src/cpufreq-monitor-factory.c:55
 msgid "CPU frequency scaling unsupported"
-msgstr "CPU 频率调节不支持"
+msgstr "不支持 CPU 频率调节"
 
 #: cpufreq/src/cpufreq-monitor-factory.c:56
 msgid ""
@@ -818,11 +818,11 @@ msgstr "您可能无法修改您计算机的频率。您的计算机可能配置
 
 #: cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in:14
 msgid "Change CPU Frequency scaling"
-msgstr "更改 CPU 频率范围"
+msgstr "更改 CPU 频率调节"
 
 #: cpufreq/src/cpufreq-selector/org.mate.cpufreqselector.policy.in:15
 msgid "Privileges are required to change the CPU Frequency scaling."
-msgstr "要更改 CPU 频率范围，需要一定特权。"
+msgstr "更改 CPU 频率调节需要权限。"
 
 #: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:5
 msgid "Drive Mount Applet Factory"
@@ -835,23 +835,23 @@ msgstr "用于驱动器挂载小程序的工厂"
 #: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:9
 #: drivemount/src/drivemount.c:182 drivemount/src/drivemount.c:216
 msgid "Disk Mounter"
-msgstr "磁盘挂载者"
+msgstr "磁盘挂载器"
 
 #: drivemount/data/org.mate.applets.DriveMountApplet.mate-panel-applet.desktop.in.in:10
 msgid "Mount local disks and devices"
-msgstr "加载本地磁盘和设备"
+msgstr "挂载本地磁盘和设备"
 
 #: drivemount/src/drive-button.c:281
 msgid "nothing to mount"
-msgstr "无可挂载盘"
+msgstr "没有可挂载的磁盘"
 
 #: drivemount/src/drive-button.c:314 drivemount/src/drive-button.c:328
 msgid "(mounted)"
-msgstr "(已挂载)"
+msgstr "（已挂载）"
 
 #: drivemount/src/drive-button.c:321
 msgid "(not mounted)"
-msgstr "(未挂载)"
+msgstr "（未挂载）"
 
 #: drivemount/src/drive-button.c:599
 msgid "Cannot execute Caja"
@@ -887,15 +887,15 @@ msgstr "弹出 %s(_E)"
 
 #: drivemount/src/drivemount.c:118
 msgid "About Disk Mounter"
-msgstr "磁盘挂载器"
+msgstr "关于磁盘挂载器"
 
 #: drivemount/src/drivemount.c:120
 msgid ""
 "Copyright © 2004 Canonical Ltd\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 2004 Canonical Ltd\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 2004 Canonical Ltd\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: drivemount/src/drivemount.c:122
 msgid "Applet for mounting and unmounting block volumes."
@@ -904,7 +904,7 @@ msgstr "用于挂载和卸载块设备的小程序。"
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:5
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:6
 msgid "Eyes Applet Factory"
-msgstr "眼睛小程序工厂"
+msgstr "Eyes 小程序工厂"
 
 #: geyes/data/org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in.in:9
 #: geyes/src/geyes.c:396 geyes/src/geyes.c:425 geyes/src/geyes.c:427
@@ -922,7 +922,7 @@ msgstr "主题所在的目录"
 
 #: geyes/data/themes.ui:18
 msgid "Eyes Preferences"
-msgstr "眼睛小程序首选项"
+msgstr "Eyes 首选项"
 
 #: geyes/data/themes.ui:100
 msgid "_Select a theme:"
@@ -945,8 +945,8 @@ msgid ""
 "Copyright © 1999 Dave Camp\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 1999 Dave Camp\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 1999 Dave Camp\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: geyes/src/geyes.c:428
 msgid "The eyes look in the direction of the mouse pointer"
@@ -954,11 +954,11 @@ msgstr "一双凝视着鼠标指针方向的眼睛"
 
 #: geyes/src/themes.c:123
 msgid "Can not launch the eyes applet."
-msgstr "无法调用 eyes 小程序。"
+msgstr "无法启动 eyes 小程序。"
 
 #: geyes/src/themes.c:124
 msgid "There was a fatal error while trying to load the theme."
-msgstr "试图装入主题时发生了严重错误。"
+msgstr "载入主题时发生了致命错误。"
 
 #: mateweather/data/mateweather-dialog.ui:13
 msgid "Details"
@@ -1068,7 +1068,7 @@ msgstr "气象报告"
 
 #: mateweather/data/org.mate.applets.MateWeatherApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor the current weather conditions, and forecasts"
-msgstr "当前气象条件和气象预报监视器"
+msgstr "监视当前天气状况和天气预报"
 
 #: mateweather/src/mateweather-about.c:54
 msgid "About Weather Report"
@@ -1079,12 +1079,12 @@ msgid ""
 "Copyright © 1999-2005 by S. Papadimitriou and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 1999-2005 S. Papadimitriou 与其他人\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 1999-2005 S. Papadimitriou 与其他人\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: mateweather/src/mateweather-about.c:58
 msgid "A panel application for monitoring local weather conditions."
-msgstr "用于监视本地天气情况的面板小程序。"
+msgstr "用于监视本地天气状况的面板小程序。"
 
 #: mateweather/src/mateweather-applet.c:110
 msgid "_Details"
@@ -1149,7 +1149,7 @@ msgstr "输入 URL"
 #: mateweather/src/mateweather-pref.c:285
 msgid ""
 "Failed to load the Locations XML database.  Please report this as a bug."
-msgstr "装入位置 XML 数据库失败。请报告此错误。"
+msgstr "载入位置 XML 数据库失败。请报告此错误。"
 
 #: mateweather/src/mateweather-pref.c:839
 msgid "Weather Preferences"
@@ -1198,7 +1198,7 @@ msgstr "节"
 
 #: mateweather/src/mateweather-pref.c:918
 msgid "Beaufort scale"
-msgstr "蒲福级"
+msgstr "蒲福风级"
 
 #: mateweather/src/mateweather-pref.c:927
 msgid "_Pressure unit:"
@@ -1214,7 +1214,7 @@ msgstr "百帕"
 
 #: mateweather/src/mateweather-pref.c:942
 msgid "mb"
-msgstr "mb"
+msgstr "毫巴"
 
 #: mateweather/src/mateweather-pref.c:944
 msgid "mmHg"
@@ -1222,7 +1222,7 @@ msgstr "毫米汞柱"
 
 #: mateweather/src/mateweather-pref.c:946
 msgid "inHg"
-msgstr "英尺汞柱"
+msgstr "英寸汞柱"
 
 #: mateweather/src/mateweather-pref.c:948
 msgid "atm"
@@ -1258,7 +1258,7 @@ msgstr "地址(_D)："
 
 #: mateweather/src/mateweather-pref.c:1042
 msgid "Show _notifications"
-msgstr "显示通知:(_N)"
+msgstr "显示通知(_N)"
 
 #: mateweather/src/mateweather-pref.c:1050
 msgid "Update"
@@ -1327,7 +1327,7 @@ msgstr "启用交换空间负载图表"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:21
 msgid "Enable load average graph"
-msgstr "启用负载均衡图表"
+msgstr "启用负载平均值图表"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:25
 msgid "Enable disk load graph"
@@ -1345,7 +1345,7 @@ msgstr "图表大小"
 msgid ""
 "For horizontal panels, the width of the graphs in pixels. For vertical "
 "panels, this is the height of the graphs."
-msgstr "对于水平面板，对应图像的宽度。对于垂直面板，对应图像的高度。"
+msgstr "对于水平面板，对应图像的宽度（像素）。对于垂直面板，对应图像的高度。"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:40
 msgid "Graph color for user-related CPU activity"
@@ -1381,7 +1381,7 @@ msgstr "缓冲内存的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:72
 msgid "Graph color for cached memory"
-msgstr "缓存的图表颜色"
+msgstr "缓存内存的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:76
 msgid "Memory graph background color"
@@ -1389,15 +1389,15 @@ msgstr "内存图表的背景色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:80
 msgid "Graph color for input network activity"
-msgstr "网络输入活动的图表颜色"
+msgstr "网络接收活动的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:84
 msgid "Graph color for output network activity"
-msgstr "网络输出活动的图表颜色"
+msgstr "网络发送活动的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:88
 msgid "Graph color for loopback network usage"
-msgstr "网络回环设备的图表颜色"
+msgstr "网络回环设备使用量的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:92
 msgid "Network graph background color"
@@ -1414,19 +1414,19 @@ msgstr "指示器颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:105
 msgid "Network threshold 1 in bytes"
-msgstr "网络阈值1（以字节为单位）"
+msgstr "网络阈值 1（字节）"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:110
 msgid "Network threshold 2 in bytes"
-msgstr "网络阈值2（以字节为单位）"
+msgstr "网络阈值 2（字节）"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:115
 msgid "Network threshold 3 in bytes"
-msgstr "网络阈值3（以字节为单位）"
+msgstr "网络阈值 3（字节）"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:119
 msgid "Graph color for user-related swap usage"
-msgstr "用户相关的交换空间使用的图表颜色"
+msgstr "用户相关的交换空间使用量的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:123
 msgid "Swap graph background color"
@@ -1434,7 +1434,7 @@ msgstr "交换空间图表的背景色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:127
 msgid "Graph color for load average"
-msgstr "负载均衡的图表颜色"
+msgstr "负载平均值的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:131
 msgid "Load graph background color"
@@ -1450,15 +1450,15 @@ msgstr "磁盘写入的图表颜色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:147
 msgid "Background color for disk load graph"
-msgstr "磁盘负载图形的背景色"
+msgstr "磁盘负载图表的背景色"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:151
 msgid "Uses /proc/diskstats to determine NVMe disk load"
-msgstr "使用磁盘统计确定NVMe磁盘负载 "
+msgstr "使用 /proc/diskstats 确定 NVMe 磁盘负载"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:155
 msgid "The desktop description file to execute as the system monitor"
-msgstr "用于执行系统监视器的桌面描述文件"
+msgstr "作为系统监视器执行的桌面描述文件"
 
 #: multiload/data/properties.ui:51
 msgid "System Monitor Preferences"
@@ -1526,7 +1526,7 @@ msgstr "优先级(_I)"
 
 #: multiload/data/properties.ui:520
 msgid "I_OWait"
-msgstr "IO 等候(_O)"
+msgstr "IO 等待(_O)"
 
 #: multiload/data/properties.ui:533
 msgid "I_dle"
@@ -1554,15 +1554,15 @@ msgstr "空闲(_R)"
 
 #: multiload/data/properties.ui:717 multiload/src/main.c:273
 msgid "Memory"
-msgstr "记忆"
+msgstr "内存"
 
 #: multiload/data/properties.ui:753
 msgid "_In"
-msgstr "进(_I)"
+msgstr "接收(_I)"
 
 #: multiload/data/properties.ui:782
 msgid "_Out"
-msgstr "出(_O)"
+msgstr "发送(_O)"
 
 #: multiload/data/properties.ui:811
 msgid "_Local"
@@ -1644,7 +1644,7 @@ msgstr "阈值 3(_3)："
 
 #: multiload/data/properties.ui:1430
 msgid "Network speed thresholds"
-msgstr "网络速度阈值"
+msgstr "网速阈值"
 
 #: multiload/src/main.c:60
 msgid "About System Monitor"
@@ -1655,18 +1655,18 @@ msgid ""
 "Copyright © 1999-2005 Free Software Foundation and others\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 1999-2005 自由软件基金会与其他人\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 1999-2005 自由软件基金会与其他人\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: multiload/src/main.c:64
 msgid ""
 "A system load monitor capable of displaying graphs for CPU, ram, and swap "
 "space use, plus network traffic."
-msgstr "一个能够以图形方式显示 CPU、内存、对换文件使用情况，以及网络流量的系统监视器。"
+msgstr "一个能够以图表方式显示 CPU、内存、交换空间使用情况，以及网络流量的系统监视器。"
 
 #: multiload/src/main.c:124
 msgid "Start system-monitor"
-msgstr "启用系统监视器"
+msgstr "启动系统监视器"
 
 #: multiload/src/main.c:146
 #, c-format
@@ -1675,7 +1675,7 @@ msgstr "执行“%s”时发生错误：%s"
 
 #: multiload/src/main.c:276 multiload/src/main.c:360
 msgid "Load Average"
-msgstr "负载均值"
+msgstr "负载平均值"
 
 #: multiload/src/main.c:277
 msgid "Disk"
@@ -1695,7 +1695,7 @@ msgstr ""
 #: multiload/src/main.c:303
 #, c-format
 msgid "The system load average is %0.02f"
-msgstr "系统平均负载为 %0.02f"
+msgstr "系统负载平均值为 %0.02f"
 
 #: multiload/src/main.c:313
 #, c-format
@@ -1704,7 +1704,7 @@ msgid ""
 "Receiving %s\n"
 "Sending %s"
 msgstr ""
-"%s:\n"
+"%s：\n"
 "正在接收 %s\n"
 "正在发送 %s"
 
@@ -1731,7 +1731,7 @@ msgstr "网络负载"
 
 #: multiload/src/main.c:359
 msgid "Swap Load"
-msgstr "交换区负载"
+msgstr "交换空间用量"
 
 #: multiload/src/main.c:361
 msgid "Disk Load"
@@ -1756,11 +1756,11 @@ msgstr "传输速率图"
 
 #: netspeed/data/netspeed-details.ui:133
 msgid "_In graph color"
-msgstr "接收图像颜色(_I)"
+msgstr "接收图表颜色(_I)"
 
 #: netspeed/data/netspeed-details.ui:160
 msgid "_Out graph color"
-msgstr "发送图像颜色(_O)"
+msgstr "发送图表颜色(_O)"
 
 #: netspeed/data/netspeed-details.ui:194
 msgid "IPv4 Address:"
@@ -1796,7 +1796,7 @@ msgstr "发送字节："
 
 #: netspeed/data/netspeed-details.ui:446
 msgid "ESSID:"
-msgstr "ESSID:"
+msgstr "ESSID："
 
 #: netspeed/data/netspeed-details.ui:474
 msgid "Signal Strength:"
@@ -1824,11 +1824,11 @@ msgstr "网络设备(_D)："
 
 #: netspeed/data/netspeed-preferences.ui:131
 msgid "Show _sum instead of in & out"
-msgstr "只显示接受发送流量总和(_S)"
+msgstr "只显示接收发送流量总和(_S)"
 
 #: netspeed/data/netspeed-preferences.ui:147
 msgid "Show _bits instead of bytes"
-msgstr "使用 _bits 替代字节显示"
+msgstr "使用比特数而不是字节数(_B)"
 
 #: netspeed/data/netspeed-preferences.ui:163
 msgid "_Change icon according to the selected device"
@@ -1844,15 +1844,15 @@ msgstr "为无线设备显示信号质量图标(_Q)"
 
 #: netspeed/data/netspeed-preferences.ui:211
 msgid "Show all _IP addresses on tooltip"
-msgstr "在工具提示中显示所有 IP 地址(_I)"
+msgstr "在工具提示中显示所有 _IP 地址"
 
 #: netspeed/data/netspeed-preferences.ui:234
 msgid "General Settings"
-msgstr "普通设置："
+msgstr "通用设置"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:5
 msgid "Device to monitor"
-msgstr "要监测的装置"
+msgstr "要监视的设备"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:6
 msgid "The name of the device to monitor"
@@ -1868,11 +1868,11 @@ msgstr "如果为 true，则显示入站/出站速度的总和而不是分开显
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:15
 msgid "Show bits"
-msgstr "以位显示"
+msgstr "以比特显示"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:16
 msgid "If true, show speed in bits instead of bytes."
-msgstr "如果为 true，使用位而不是字节显示速度。"
+msgstr "如果为 true，使用比特而不是字节显示速度。"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:20
 msgid "Show IPv4 and IPv6 addresses on tooltip"
@@ -1884,7 +1884,7 @@ msgstr "如果设定为 true，会在可用的情况下显示两种 IP 地址。
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:26
 msgid "If true, show main icon."
-msgstr "如果为 true，则显示主要图标。"
+msgstr "如果为 true，则显示主图标。"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:30
 msgid "Change icon"
@@ -1892,7 +1892,7 @@ msgstr "更换图标"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:31
 msgid "If true, change the icon due to selected device."
-msgstr "如果为 true，更改所选装置的图标。"
+msgstr "如果为 true，更改所选设备的图标。"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:35
 msgid "Auto change device"
@@ -1904,35 +1904,35 @@ msgstr "如果为 true，则自动更改所选的设备。"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:40
 msgid "In color"
-msgstr "输入颜色"
+msgstr "接收颜色"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
 msgid "The color of the graph of the inbound traffic"
-msgstr "入站通信图表的颜色"
+msgstr "入站流量图表的颜色"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
 msgid "Out color"
-msgstr "输出颜色"
+msgstr "发送颜色"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:46
 msgid "The color of the graph of the outbound traffic"
-msgstr "出站通信图表的的颜色"
+msgstr "出站流量图表的颜色"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:50
 msgid "Up command"
-msgstr "激活命令"
+msgstr "上线命令"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:51
 msgid "Command to execute to activate the device"
-msgstr "用于激活设备的命令"
+msgstr "用于上线设备的命令"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:55
 msgid "Down command"
-msgstr "关停命令"
+msgstr "下线命令"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:56
 msgid "Command to execute to shut down the device"
-msgstr "用于关停设备的命令"
+msgstr "用于下线设备的命令"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:60
 msgid "Show signal quality icon"
@@ -1944,12 +1944,12 @@ msgstr "如果为 true，则显示无线设备信号质量的图标。"
 
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:5
 msgid "Netspeed Applet Factory"
-msgstr "Netspeed 小程序组件"
+msgstr "网速小程序组件"
 
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:6
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:10
 msgid "Netspeed Applet"
-msgstr "Netspeed"
+msgstr "网速小程序"
 
 #: netspeed/data/org.mate.applets.NetspeedApplet.mate-panel-applet.desktop.in.in:9
 msgid "Network Monitor"
@@ -1957,19 +1957,19 @@ msgstr "网络监视器"
 
 #: netspeed/src/backend.c:149
 msgid "link-local"
-msgstr ""
+msgstr "链路本地"
 
 #: netspeed/src/backend.c:151
 msgid "site-local"
-msgstr ""
+msgstr "站点本地"
 
 #: netspeed/src/backend.c:153
 msgid "v4mapped"
-msgstr ""
+msgstr "v4 映射"
 
 #: netspeed/src/backend.c:155
 msgid "v4compat"
-msgstr ""
+msgstr "v4 兼容"
 
 #: netspeed/src/backend.c:157
 msgid "host"
@@ -1996,12 +1996,12 @@ msgstr "（未知）"
 #: netspeed/src/backend.c:594
 #, c-format
 msgid " MCS %d"
-msgstr ""
+msgstr " MCS %d"
 
 #: netspeed/src/backend.c:597
 #, c-format
 msgid " VHT-MCS %d"
-msgstr ""
+msgstr " VHT-MCS %d"
 
 #: netspeed/src/backend.c:599
 #, c-format
@@ -2016,7 +2016,7 @@ msgstr " 80MHz"
 #: netspeed/src/backend.c:603
 #, c-format
 msgid " 80P80MHz"
-msgstr ""
+msgstr " 80P80MHz"
 
 #: netspeed/src/backend.c:605
 #, c-format
@@ -2026,36 +2026,36 @@ msgstr " 160MHz"
 #: netspeed/src/backend.c:607
 #, c-format
 msgid " short GI)"
-msgstr ""
+msgstr " 短 GI）"
 
 #: netspeed/src/backend.c:610
 #, c-format
 msgid " VHT-NSS %d"
-msgstr ""
+msgstr " VHT-NSS %d"
 
 #: netspeed/src/backend.c:613
 #, c-format
 msgid " HE-MCS %d"
-msgstr ""
+msgstr " HE-MCS %d"
 
 #: netspeed/src/backend.c:616
 #, c-format
 msgid " HE-NSS %d"
-msgstr ""
+msgstr " HE-NSS %d"
 
 #: netspeed/src/backend.c:619
 #, c-format
 msgid " HE-GI %d"
-msgstr ""
+msgstr " HE-GI %d"
 
 #: netspeed/src/backend.c:622
 #, c-format
 msgid " HE-DCM %d"
-msgstr ""
+msgstr " HE-DCM %d"
 
 #: netspeed/src/backend.c:706
 msgid "20 MHz (no HT)"
-msgstr ""
+msgstr "20 MHz（无 HT）"
 
 #: netspeed/src/backend.c:708
 msgid "20 MHz"
@@ -2071,7 +2071,7 @@ msgstr "80 MHz"
 
 #: netspeed/src/backend.c:714
 msgid "80+80 MHz"
-msgstr ""
+msgstr "80+80 MHz"
 
 #: netspeed/src/backend.c:716
 msgid "160 MHz"
@@ -2094,7 +2094,7 @@ msgstr "未知"
 #: netspeed/src/backend.c:773
 #, c-format
 msgid "%d (%d MHz)"
-msgstr ""
+msgstr "%d（%d MHz）"
 
 #: netspeed/src/backend.c:777
 #, c-format
@@ -2103,7 +2103,7 @@ msgstr "，宽度：%s"
 
 #: netspeed/src/netspeed.c:469
 msgid "bit/s"
-msgstr ""
+msgstr "bit/s"
 
 #: netspeed/src/netspeed.c:469
 msgid "B/s"
@@ -2111,7 +2111,7 @@ msgstr "B/s"
 
 #: netspeed/src/netspeed.c:473
 msgid "Kibit/s"
-msgstr ""
+msgstr "Kibit/s"
 
 #: netspeed/src/netspeed.c:473
 msgid "KiB/s"
@@ -2119,7 +2119,7 @@ msgstr "KiB/s"
 
 #: netspeed/src/netspeed.c:477
 msgid "Mibit/s"
-msgstr ""
+msgstr "Mibit/s"
 
 #: netspeed/src/netspeed.c:477
 msgid "MiB/s"
@@ -2127,22 +2127,22 @@ msgstr "MiB/s"
 
 #: netspeed/src/netspeed.c:481
 msgid "Gibit/s"
-msgstr ""
+msgstr "Gibit/s"
 
 #: netspeed/src/netspeed.c:481
 msgid "GiB/s"
-msgstr ""
+msgstr "GiB/s"
 
 #: netspeed/src/netspeed.c:646
 msgid "%'"
 msgid_plural "%'"
-msgstr[0] ""
+msgstr[0] "%'"
 
 #: netspeed/src/netspeed.c:652
 #, c-format
 msgid "%'d minute"
 msgid_plural "%'d minutes"
-msgstr[0] "%'d 分"
+msgstr[0] "%'d 分钟"
 
 #: netspeed/src/netspeed.c:653
 #, c-format
@@ -2163,7 +2163,7 @@ msgstr "无"
 
 #: netspeed/src/netspeed.c:780 netspeed/src/netspeed.c:892
 msgid "na"
-msgstr ""
+msgstr "不可用"
 
 #: netspeed/src/netspeed.c:1011
 #, c-format
@@ -2171,7 +2171,7 @@ msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"显示帮助时出错了：\n"
+"显示帮助时出错：\n"
 "%s"
 
 #: netspeed/src/netspeed.c:1050
@@ -2184,15 +2184,15 @@ msgid ""
 "Copyright © 2011-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
-"版权所有 © 2002-2003 Jörgen Scheibengruber\n"
-"版权所有 © 2011-2014 Stefano Karapetsas\n"
-"版权所有 © 2015-2021 MATE 开发者"
+"Copyright © 2002-2003 Jörgen Scheibengruber\n"
+"Copyright © 2011-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE 开发者"
 
 #: netspeed/src/netspeed.c:1055
 msgid ""
 "A little applet that displays some information on the traffic on the "
 "specified network device"
-msgstr "Netspeed显示指定网络设备上的流量信息."
+msgstr "显示指定网络设备上的流量信息的小程序"
 
 #: netspeed/src/netspeed.c:1231
 msgid "Device _Details"
@@ -2200,7 +2200,7 @@ msgstr "设备详细信息(_D)"
 
 #: netspeed/src/netspeed.c:1233
 msgid "Preferences..."
-msgstr "首选项…"
+msgstr "首选项..."
 
 #: netspeed/src/netspeed.c:1235
 msgid "Help"
@@ -2218,7 +2218,7 @@ msgstr "您想要断开 %s 的连接吗？"
 #: netspeed/src/netspeed.c:1281
 #, c-format
 msgid "Do you want to connect %s now?"
-msgstr "你要现在就连接到 %s 吗？"
+msgstr "您要现在就连接到 %s 吗？"
 
 #: netspeed/src/netspeed.c:1307
 #, c-format
@@ -2250,7 +2250,7 @@ msgid ""
 "in: %s out: %s"
 msgstr ""
 "\n"
-"收到：%s 发出：%s"
+"接收：%s 发送：%s"
 
 #: netspeed/src/netspeed.c:1414
 #, c-format
@@ -2294,16 +2294,16 @@ msgstr "MATE 网速"
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:5
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:6
 msgid "Sticky Notes Applet Factory"
-msgstr "置顶便笺小程序工厂"
+msgstr "便笺小程序工厂"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:9
 #: stickynotes/stickynotes_applet.c:179 stickynotes/stickynotes_applet.c:427
 msgid "Sticky Notes"
-msgstr "置顶便笺"
+msgstr "便笺"
 
 #: stickynotes/org.mate.applets.StickyNotesApplet.mate-panel-applet.desktop.in.in:10
 msgid "Create, view, and manage sticky notes on the desktop"
-msgstr "在桌面上创建、查看和管理置顶便笺"
+msgstr "在桌面上创建、查看和管理便笺"
 
 #: stickynotes/stickynotes.c:702
 msgid "This note is locked."
@@ -2325,12 +2325,12 @@ msgstr "全部删除(_D)"
 
 #: stickynotes/sticky-notes-delete-all.ui:106
 msgid "Delete all sticky notes?"
-msgstr "删除所有的置顶便签？"
+msgstr "删除所有的便签？"
 
 #: stickynotes/sticky-notes-delete-all.ui:123
 #: stickynotes/sticky-notes-delete.ui:124
 msgid "This cannot be undone."
-msgstr "这不能撤销。"
+msgstr "此操作无法撤销。"
 
 #: stickynotes/sticky-notes-delete.ui:54
 msgid "_Delete"
@@ -2338,15 +2338,15 @@ msgstr "删除(_D)"
 
 #: stickynotes/sticky-notes-delete.ui:107
 msgid "Delete this sticky note?"
-msgstr "删除此置顶便签？"
+msgstr "删除此便笺？"
 
 #: stickynotes/sticky-notes-note.ui:11
 msgid "Sticky Note"
-msgstr "记事贴"
+msgstr "便笺"
 
 #: stickynotes/sticky-notes-note.ui:28
 msgid "Lock/Unlock note"
-msgstr "锁定/解除锁定便笺"
+msgstr "锁定/解锁便笺"
 
 #: stickynotes/sticky-notes-note.ui:66
 msgid "Delete note"
@@ -2358,7 +2358,7 @@ msgstr "调整便笺大小"
 
 #: stickynotes/sticky-notes-preferences.ui:32
 msgid "Sticky Notes Preferences"
-msgstr "记事贴首选项"
+msgstr "便笺首选项"
 
 #: stickynotes/sticky-notes-preferences.ui:108
 msgid "Default Note Properties"
@@ -2374,7 +2374,7 @@ msgstr "高度(_E)："
 
 #: stickynotes/sticky-notes-preferences.ui:157
 msgid "Specify the default width (in pixels) of new notes"
-msgstr "指定新便笺的默认宽度(以像素为单位)"
+msgstr "指定新便笺的默认宽度（以像素为单位）"
 
 #: stickynotes/sticky-notes-preferences.ui:158
 msgid "1"
@@ -2382,7 +2382,7 @@ msgstr "1"
 
 #: stickynotes/sticky-notes-preferences.ui:172
 msgid "Specify the default height (in pixels) of new notes"
-msgstr "指定新便笺的默认高度(以像素为单位)"
+msgstr "指定新便笺的默认高度（以像素为单位）"
 
 #: stickynotes/sticky-notes-preferences.ui:173
 msgid "0"
@@ -2402,11 +2402,11 @@ msgstr "便笺颜色(_O)："
 
 #: stickynotes/sticky-notes-preferences.ui:241
 msgid "Choose a base color to use for all sticky notes"
-msgstr "为全部记事贴选择某个基本颜色"
+msgstr "为全部便笺选择某个底色"
 
 #: stickynotes/sticky-notes-preferences.ui:242
 msgid "Pick a default sticky note color"
-msgstr "为记事贴挑选默认颜色"
+msgstr "为便笺挑选默认颜色"
 
 #: stickynotes/sticky-notes-preferences.ui:251
 msgid "Use fo_nt from the system theme"
@@ -2419,11 +2419,11 @@ msgstr "字体(_F)："
 
 #: stickynotes/sticky-notes-preferences.ui:283
 msgid "Choose a font to use for all sticky notes"
-msgstr "为全部记事贴选择一个要使用的字体"
+msgstr "为全部便笺选择一个要使用的字体"
 
 #: stickynotes/sticky-notes-preferences.ui:285
 msgid "Pick a default sticky note font"
-msgstr "挑选一个默认的记事贴字体"
+msgstr "挑选一个默认的便笺字体"
 
 #: stickynotes/sticky-notes-preferences.ui:316
 msgid "Behavior"
@@ -2435,7 +2435,7 @@ msgstr "将便笺放置在所有工作区(_P)"
 
 #: stickynotes/sticky-notes-preferences.ui:341
 msgid "Choose if notes are visible on all workspaces"
-msgstr "选择是否便笺在所有工作区均可见"
+msgstr "选择便笺是否在所有工作区均可见"
 
 #: stickynotes/sticky-notes-preferences.ui:354
 msgid "Force _default color and font on notes"
@@ -2447,15 +2447,15 @@ msgstr "选择是否强制对全部便笺使用默认风格"
 
 #: stickynotes/sticky-notes-preferences.ui:371
 msgid "Hide notes when the des_ktop is clicked on"
-msgstr "在桌面被选择时隐藏提示(_K)"
+msgstr "在点击桌面时隐藏便笺(_K)"
 
 #: stickynotes/sticky-notes-preferences.ui:375
 msgid "Choose whether to hide all notes when selecting on the desktop"
-msgstr "在选择桌面时选择是否隐藏所有提示"
+msgstr "在桌面上进行选择时是否隐藏所有便笺"
 
 #: stickynotes/sticky-notes-properties.ui:18
 msgid "Sticky Note Properties"
-msgstr "记事贴属性"
+msgstr "便笺属性"
 
 #: stickynotes/sticky-notes-properties.ui:94
 msgid "Properties"
@@ -2463,11 +2463,11 @@ msgstr "属性"
 
 #: stickynotes/sticky-notes-properties.ui:117
 msgid "_Title:"
-msgstr "称谓(_T)："
+msgstr "标题(_T)："
 
 #: stickynotes/sticky-notes-properties.ui:130
 msgid "Specify a title for the note"
-msgstr "为记事贴指定某个标题"
+msgstr "为便笺指定一个标题"
 
 #: stickynotes/sticky-notes-properties.ui:139
 msgid "Use default co_lor"
@@ -2487,19 +2487,19 @@ msgstr "使用默认字体(_N)"
 
 #: stickynotes/sticky-notes-properties.ui:213
 msgid "Choose a color for the note"
-msgstr "为便笺选择某个颜色"
+msgstr "为便笺选择一个颜色"
 
 #: stickynotes/sticky-notes-properties.ui:214
 msgid "Pick a color for the sticky note"
-msgstr "为记事贴挑选某个颜色"
+msgstr "为便笺选择一个颜色"
 
 #: stickynotes/sticky-notes-properties.ui:240
 msgid "Choose a font for the note"
-msgstr "为便笺选择某个字体"
+msgstr "为便笺选择一个字体"
 
 #: stickynotes/sticky-notes-properties.ui:242
 msgid "Pick a font for the sticky note"
-msgstr "为该记事贴挑选一个字体"
+msgstr "为便笺选择一个字体"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:5
 msgid "Default width for new notes"
@@ -2507,7 +2507,7 @@ msgstr "新便笺的默认宽度"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:6
 msgid "Default width for new sticky notes in pixels."
-msgstr "以像素为单位的新置顶便笺默认宽度。"
+msgstr "新便笺的默认宽度，单位为像素。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:10
 msgid "Default height for new notes"
@@ -2515,7 +2515,7 @@ msgstr "新便笺的默认高度"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:11
 msgid "Default height for new sticky notes in pixels."
-msgstr "以像素为单位的新置顶便笺的默认高度。"
+msgstr "新便笺的默认高度，单位为像素。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:15
 msgid "Default color for new notes"
@@ -2525,7 +2525,7 @@ msgstr "新便笺的默认颜色"
 msgid ""
 "Default color for new sticky notes. This should be in html hex "
 "specification, for example \"#30FF50\"."
-msgstr "新置顶便笺的默认颜色。应该是十六进制 HTML 规范格式，如“#30FF50”。"
+msgstr "新便笺的默认颜色。应使用十六进制 HTML 颜色格式，如“#30FF50”。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:20
 msgid "Default color for font"
@@ -2535,7 +2535,7 @@ msgstr "字体的默认颜色"
 msgid ""
 "Default font color for new sticky notes. This should be in html hex "
 "specification, for example \"#000000\"."
-msgstr "新置顶便笺的默认字体颜色。应该是十六进制 HTML 规范格式，如“#000000”。"
+msgstr "新便笺的默认字体颜色。应使用十六进制 HTML 颜色格式，如“#000000”。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:25
 msgid "Default font for new notes"
@@ -2545,25 +2545,25 @@ msgstr "新便笺的默认字体"
 msgid ""
 "Default font for new sticky notes. This should be a Pango Font Name, for "
 "example \"Sans Italic 10\"."
-msgstr "新置顶便笺的默认字体。应该是 Pango 字体名称，如“Sans Italic 10”。"
+msgstr "新便笺的默认字体。应使用 Pango 字体名称，如“Sans Italic 10”。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:30
 msgid "Sticky notes' workspace stickyness"
-msgstr "置顶便笺的工作区置顶属性"
+msgstr "便笺在各工作区可见"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:31
 msgid ""
 "Specifies whether the sticky notes are visible on ALL workspaces on the "
 "desktop, or not."
-msgstr "指定置顶便笺是否在所有工作空间中可见。"
+msgstr "指定便笺是否在所有工作区可见。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:35
 msgid "Sticky notes' locked state"
-msgstr "置顶便笺的锁定状态"
+msgstr "便笺的锁定状态"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:36
 msgid "Specifies whether the sticky notes are locked (non-editable) or not."
-msgstr "指定置顶便笺是否被锁定(无法编辑)。"
+msgstr "指定便笺是否被锁定（无法编辑）。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:40
 msgid "Date format of note's title"
@@ -2574,7 +2574,7 @@ msgid ""
 "By default, sticky notes are given the current date as the title when they "
 "are created. This format is used; anything that can be parsed by strftime() "
 "is valid."
-msgstr "在默认情况下，置顶便笺会以创建日期作为其标题。这里指定了格式，任何可由 strftime() 解析的格式都是合法的。"
+msgstr "在默认情况下，便笺会以创建日期作为其标题。这里指定了格式，任何可由 strftime() 解析的格式都是合法的。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:45
 msgid "Whether to use the default system color"
@@ -2584,7 +2584,7 @@ msgstr "是否使用系统默认颜色"
 msgid ""
 "If this option is disabled, a custom color can be used as the default color "
 "for all sticky notes."
-msgstr "如果禁用了此选项，将会使用自定义颜色作为全部置顶便笺的默认颜色。"
+msgstr "如果禁用了此选项，将会使用自定义颜色作为全部便笺的默认颜色。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:50
 msgid "Whether to use the default system font"
@@ -2594,7 +2594,7 @@ msgstr "是否使用系统默认字体"
 msgid ""
 "If this option is disabled, a custom font can be used as the default font "
 "for all sticky notes."
-msgstr "如果禁用了此选项，将会使用自定义字体作为全部置顶便笺的默认字体。"
+msgstr "如果禁用了此选项，将会使用自定义字体作为全部便笺的默认字体。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:55
 msgid "Whether to force the default color and font on all notes"
@@ -2604,17 +2604,17 @@ msgstr "是否强制对全部便笺使用默认颜色和字体"
 msgid ""
 "If this option is enabled, the custom colors and fonts that have been "
 "assigned to individual notes will be ignored."
-msgstr "如果禁用了此选项，将忽略指定给单个便笺的自定义颜色和字体。"
+msgstr "如果启用了此选项，将忽略指定给单个便笺的自定义颜色和字体。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:60
 msgid "Whether to hide all notes when the desktop is selected"
-msgstr "在选择桌面时是否隐藏所有提示"
+msgstr "在选择桌面时是否隐藏所有便笺"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:61
 msgid ""
 "If this option is enabled, selecting the desktop in any way will "
 "automatically hide all the open notes."
-msgstr "如果启用此选项，以任何方式选择桌面都将自动隐藏提示。"
+msgstr "如果启用此选项，以任何方式选择桌面都将自动隐藏所有打开的便笺。"
 
 #: stickynotes/org.mate.stickynotes.gschema.xml.in:65
 msgid "Whether to ask for confirmation when deleting a note"
@@ -2648,11 +2648,11 @@ msgstr[0] "%d 个便笺"
 
 #: stickynotes/stickynotes_applet.c:613
 msgid "Show sticky notes"
-msgstr "显示记事贴"
+msgstr "显示便笺"
 
 #: stickynotes/stickynotes_applet_callbacks.c:423
 msgid "About Sticky Notes"
-msgstr "关于记事贴"
+msgstr "关于便笺"
 
 #: stickynotes/stickynotes_applet_callbacks.c:425
 msgid ""
@@ -2660,13 +2660,13 @@ msgid ""
 "Copyright © 2005 Davyd Madeley\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 2002-2003 Loban A Rahman\n"
-"版权所有 © 2005 Davyd Madeley\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 2002-2003 Loban A Rahman\n"
+"Copyright © 2005 Davyd Madeley\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: stickynotes/stickynotes_applet_callbacks.c:428
 msgid "Sticky Notes for the MATE Desktop Environment"
-msgstr "用于 MATE 桌面环境的置顶便笺"
+msgstr "用于 MATE 桌面环境的便笺"
 
 #: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:5
 #: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:6
@@ -2680,7 +2680,7 @@ msgstr "定时器"
 #: timerapplet/data/org.mate.applets.TimerApplet.mate-panel-applet.desktop.in.in:10
 #: timerapplet/src/timerapplet.c:282
 msgid "Start a timer and receive a notification when it is finished"
-msgstr "开始计时并在结束时收到通知"
+msgstr "启动一个定时器并在时间到的时候收到通知"
 
 #: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:5
 msgid "Name of timer"
@@ -2688,7 +2688,7 @@ msgstr "定时器名称"
 
 #: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:9
 msgid "Duration of timer in seconds"
-msgstr "定时长度(秒)"
+msgstr "定时长度（秒）"
 
 #: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:13
 msgid "Show notification popup when timer finish"
@@ -2732,15 +2732,15 @@ msgstr "启动定时器(_S)"
 
 #: timerapplet/src/timerapplet.c:84
 msgid "P_ause timer"
-msgstr "暂停计时:(_A)"
+msgstr "暂停定时器(_A)"
 
 #: timerapplet/src/timerapplet.c:85
 msgid "S_top timer"
-msgstr "停止计时(_S)"
+msgstr "停止定时器(_S)"
 
 #: timerapplet/src/timerapplet.c:86
 msgid "R_eset"
-msgstr "重置(_E)"
+msgstr "复位(_E)"
 
 #. Translators: %s is a placeholder for the timer name, 'Timer' by default
 #: timerapplet/src/timerapplet.c:153
@@ -2750,7 +2750,7 @@ msgstr "%s 已到期"
 
 #: timerapplet/src/timerapplet.c:161 timerapplet/src/timerapplet.c:173
 msgid "Timer finished!"
-msgstr "时间到！"
+msgstr "定时器时间到！"
 
 #: timerapplet/src/timerapplet.c:277
 msgid "About Timer Applet"
@@ -2761,8 +2761,8 @@ msgid ""
 "Copyright © 2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
-"版权所有 © 2014 Stefano Karapetsas\n"
-"版权所有 © 2015-2021 MATE 开发者"
+"Copyright © 2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE 开发者"
 
 #: timerapplet/src/timerapplet.c:369
 msgid "Timer Applet"
@@ -2797,7 +2797,7 @@ msgstr[0] "回收站中有 %d 项"
 
 #: trashapplet/src/trashapplet.c:135
 msgid "No Items in Trash"
-msgstr "回收站中无项目"
+msgstr "回收站中没有项目"
 
 #: trashapplet/src/trashapplet.c:374
 #, c-format
@@ -2818,9 +2818,9 @@ msgid ""
 "Copyright © 2008 Ryan Lortie\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
-"版权所有 © 2004 Michiel Sikkes\n"
-"版权所有 © 2008 Ryan Lortie\n"
-"版权所有 © 2012-2021 MATE 开发者"
+"Copyright © 2004 Michiel Sikkes\n"
+"Copyright © 2008 Ryan Lortie\n"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: trashapplet/src/trashapplet.c:433
 msgid ""
@@ -2834,12 +2834,12 @@ msgstr "立即删除吗？"
 
 #: trashapplet/src/trashapplet.c:488
 msgid "Cannot move items to trash, do you want to delete them immediately?"
-msgstr "无法将项目移至回收站，您想要立即删除吗？"
+msgstr "无法将项目移动到回收站。您要立即删除吗？"
 
 #: trashapplet/src/trashapplet.c:493
 msgid ""
 "Cannot move some items to trash, do you want to delete these immediately?"
-msgstr "无法将某些项目移至回收站，您想要立即删除这些项目吗？"
+msgstr "无法将某些项目移动到回收站，您想要立即删除这些项目吗？"
 
 #: trashapplet/src/trashapplet.c:620
 msgid "Trash Applet"
@@ -2849,7 +2849,7 @@ msgstr "回收站小程序"
 #: trashapplet/src/trash-empty.c:72
 #, c-format
 msgid "Removing item %s of %s"
-msgstr "正在删除第%s项，共%s项"
+msgstr "正在删除第 %s 项，共 %s 项"
 
 #. Translators: %s is a file name
 #: trashapplet/src/trash-empty.c:98
@@ -2865,12 +2865,12 @@ msgstr "清空回收站中的全部项目吗？"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "如果您选择清空回收站，其中的项目将被永久删除。请注意，您还可以单个删除其中的项目。"
+msgstr "如果您选择清空回收站，其中的所有项目将被永久删除。请注意，您也可以单独删除其中的项目。"
 
 #: trashapplet/trashapplet-empty-progress.ui:13
 #: trashapplet/trashapplet-empty-progress.ui:62
 msgid "Emptying the Trash"
-msgstr "清空回收站"
+msgstr "正在清空回收站"
 
 #: trashapplet/trashapplet-empty-progress.ui:83
 msgid "From:"

@@ -6,30 +6,30 @@
 # talorno <giovanni.talorno@gmail.com>, 2018
 # Giuseppe Pignataro <rogepix@gmail.com>, 2019
 # Enrico B. <enricobe@hotmail.com>, 2019
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-01-16 12:30+0100\n"
 "PO-Revision-Date: 2018-09-27 15:09+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr " Alessandro Volturno, 2020"
+msgstr " Alessandro Volturno, 2020, 2022"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:21
 msgid "Battery Charge Monitor Manual"
-msgstr "Manuale di Monitor della Carica della batteria"
+msgstr "Manuale di Battery Charge Monitor"
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:23
@@ -37,9 +37,9 @@ msgid ""
 "Battery Charge Monitor shows the current charge of the battery and provides "
 "notifications if charge drops below a certain threshold."
 msgstr ""
-"Il monitor della carica della batteria mostra la carica della batteria "
-"attuale e visualizza alcune notifiche nel caso in cui la carica scenda sotto"
-" un certo livello."
+"Battery Charge Monitor mostra la carica della batteria attuale e visualizza "
+"alcune notifiche nel caso in cui la carica scenda al di sotto un certo "
+"livello."
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:27
@@ -201,8 +201,8 @@ msgid ""
 "<revnumber>Battery Charge Monitor Applet Manual V2.2</revnumber> "
 "<date>August 2004</date> <_:revdescription-1/>"
 msgstr ""
-"<revnumber>Manuale di Monitor della caricadella batteria V2.2</revnumber> "
-"<date>Agosto 2004</date> <_:revdescription-1/>"
+"<revnumber>Manuale di Battery Charge Monitor V2.2</revnumber> <date>Agosto "
+"2004</date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:170
@@ -220,15 +220,15 @@ msgid ""
 "<revnumber>Battery Charge Monitor Applet Manual V2.0</revnumber> <date>May "
 "2002</date> <_:revdescription-1/>"
 msgstr ""
-"<revnumber>Manuale Monitor della carica della batteria V2.0</revnumber> "
-"<date>Maggio 2002</date> <_:revdescription-1/>"
+"<revnumber>Manuale di Battery Charge Monitor V2.0</revnumber> <date>Maggio "
+"2002</date> <_:revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:181
 msgid "This manual describes version 1.10.2 of Battery Charge Monitor."
 msgstr ""
-"Questo manuale fa riferimento alla versione 1.10.2 di Monitor della carica "
-"della batteria."
+"Questo manuale fa riferimento alla versione 1.10.2 di Battery Charge "
+"Monitor."
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:185
@@ -242,15 +242,15 @@ msgid ""
 "applet or this manual, follow the directions in the <ulink url=\"help:mate-"
 "user-guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
-"Per segnalare un malfunzionamento o un suggerimento su Monitor della carica "
-"della batteria o su questo manuale, segui le istruzioni nella <ulink "
+"Per segnalare un malfunzionamento o un suggerimento su Battery Charge "
+"Monitor o su questo manuale, seguire le istruzioni nella <ulink "
 "url=\"help:mate-user-guide/feedback\" type=\"help\">pagina di feedback di "
 "MATE</ulink>."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:194
 msgid "<primary>Battery Charge Monitor Applet</primary>"
-msgstr "<primary>Applet Monitor della carica della batteria</primary>"
+msgstr "<primary>Applet Battery Charge Monitor</primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:198
@@ -265,7 +265,7 @@ msgstr "Introduzione"
 #. (itstool) path: figure/title
 #: C/index.docbook:208
 msgid "Battery Charge Monitor Applet"
-msgstr "Applet Monitor della carica della batteria"
+msgstr "Applet Battery Charge Monitor"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -289,8 +289,8 @@ msgid ""
 "Monitor applet.</phrase> </textobject>"
 msgstr ""
 "<imageobject><imagedata fileref=\"figures/battstat-applet.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>L'applet Monitor della "
-"carica della batteria.</phrase> </textobject>"
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>L'applet Battery Charge"
+" Monitor</phrase> </textobject>"
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:221
@@ -300,15 +300,15 @@ msgid ""
 " remaining both visually and as a percentage, as well as offer you an "
 "estimate of the time remaining based off the current usage rate."
 msgstr ""
-"Il <application>Monitor della carica della batteria</application> mostra lo "
-"stato di qualsiasi batteria nel computer.  Mostra la capacità di carica "
-"residua sia visivamente che come percentuale e offre una stima della durata "
-"residua, basato sul consumo energetico attuale."
+"<application>Battery Charge Monitor</application> mostra lo stato di "
+"qualsiasi batteria nel computer.  Il monitor può mostrare la capacità di "
+"carica residua sia in modo visuale che come percentuale e fornisce una stima"
+" della durata residua, basata sul consumo energetico attuale."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:229
 msgid "To Add Battery Charge Monitor to a Panel"
-msgstr "Aggiungere Monitor della carica della batteria ad un pannello"
+msgstr "Aggiungere Battery Charge Monitor ad un pannello"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:230
@@ -316,13 +316,13 @@ msgid ""
 "To add <application>Battery Charge Monitor</application> to a panel, perform"
 " the following steps:"
 msgstr ""
-"Per aggiungere <application>Monitor della carica della "
-"batteria</application>ad un pannello, procedere come segue:"
+"Per aggiungere <application>Battery Charge Monitor</application>ad un "
+"pannello, procedere come segue:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:236
 msgid "Right-click on the panel."
-msgstr "Clic destro sul pannello."
+msgstr "Fare clic destro sul pannello."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:241
@@ -336,8 +336,8 @@ msgid ""
 "dialog, then select <guilabel>Battery Charge Monitor</guilabel>."
 msgstr ""
 "Scorrere in basso la lista degli elementi nella finestra <guilabel>Aggiungi "
-"al pannello</guilabel> e selezionare <guilabel>Carica della "
-"batteria</guilabel>."
+"al pannello</guilabel> e selezionare <guilabel>Battery Charge "
+"Monitor</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:252
@@ -350,14 +350,14 @@ msgid ""
 "The layout of the <application>Battery Charge Monitor</application> applet "
 "varies depending on the size and type of panel in which the applet resides."
 msgstr ""
-"Il layout della applet<application>Carica batteria</application> varia a "
-"seconda della dimensione e del tipo di pannello su cui l'applet viene "
-"posizionata."
+"Il layout della applet<application>Battery Charge Monitor</application> "
+"varia a seconda della dimensione e del tipo di pannello su cui l'applet "
+"viene posizionata."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:264
 msgid "Power Management Backends"
-msgstr "Backend di gestione dell'alimentazione"
+msgstr "I backend Power Management"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:266
@@ -375,8 +375,8 @@ msgstr ""
 "l'interfaccia <ulink url=\"http://upower.freedesktop.org/\">upower</ulink> "
 "di freedesktop.org. Se non è disponibile o non è supportata, ripiegherà su "
 "<ulink url=\"http://freedesktop.org/Software/hal\">HAL (Hardware Abstraction"
-" Layer)</ulink> di freedesktop.org. Se anche questo non fosse disponibile, "
-"il monitor della batteria tenterà di accedere direttamente al sistema di  "
+" Layer)</ulink> di freedesktop.org. Se anche questa non fosse disponibile, "
+"il monitor della batteria tenterà di accedere direttamente al sistema di "
 "gestione dell'alimentazione."
 
 #. (itstool) path: sect2/para
@@ -388,9 +388,10 @@ msgid ""
 "battery see <xref linkend=\"battstat-troubleshooting\"/>."
 msgstr ""
 "Non tutti i backend per la gestione dell'alimentazione sono disponibili per "
-"tutti i produttori e alcuni di questi sviluppano propri backend aggiuntivi "
-"per piattaforme e hardware specifici. Se il monitor della batteria riporta "
-"informazioni errate, si veda <xref linkend=\"battstat-troubleshooting\"/>."
+"tutti i produttori e alcuni di essi sviluppano propri backend aggiuntivi per"
+" piattaforme e hardware specifici. Se il monitor della batteria dovesse "
+"riportare informazioni errate, si veda <xref linkend=\"battstat-"
+"troubleshooting\"/>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:285
@@ -430,13 +431,13 @@ msgid ""
 "To bring up the preferences for the monitor, right-click on the monitor in "
 "the panel and then choose <guimenuitem>Preferences</guimenuitem>"
 msgstr ""
-"Per aprire le impostazioni dell'applet, fare clic-destro sull'icona nel "
+"Per aprire le impostazioni dell'applet, fare clic destro sull'icona nel "
 "pannello e selezionare <guimenuitem>Preferenze</guimenuitem>"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:311
 msgid "Battery Charge Monitor context (right-click) menu"
-msgstr "Menu contestuale (clic destro) di Monitor della carica della batteria"
+msgstr "Menu contestuale (clic destro) di Battery Charge Monitor"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -461,12 +462,12 @@ msgid ""
 msgstr ""
 "<imageobject><imagedata fileref=\"figures/context-menu.png\" "
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Menu contestuale di "
-"Monitor della carica della batteria</phrase> </textobject>"
+"Battery Charge Monitor</phrase> </textobject>"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:324
 msgid "Preferences Dialog"
-msgstr "Finestra delle preferenze"
+msgstr "Finestra di dialogo delle preferenze"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -490,8 +491,8 @@ msgid ""
 "Dialog</phrase> </textobject>"
 msgstr ""
 "<imageobject><imagedata fileref=\"figures/battstat-preferences.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>Finestra delle "
-"preferenze</phrase> </textobject>"
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Finestra di dialogo "
+"delle preferenze</phrase> </textobject>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:338
@@ -527,7 +528,7 @@ msgid ""
 "connected to an external power source. <_:figure-1/>"
 msgstr ""
 "Questa visualizzazione mostra una singola icona nel pannello, una batteria "
-"verticale per indicare la capacità residua o una spina elettrica per "
+"verticale per indicare la capacità residua oppure una spina elettrica per "
 "indicare che il portatile è collegato a una fonte di alimentazione esterna. "
 "<_:figure-1/>"
 
@@ -580,9 +581,9 @@ msgid ""
 "larger graphic for the battery as well as a separate graphic to indicate "
 "what state the battery is in. <_:figure-1/>"
 msgstr ""
-"La visualizzazione estesa veniva usata nelle versioni precedenti di MATE. Il"
-" grafico per la batteria era più grande e disponeva di un grafico separato "
-"per indicare in quale stato si trova la batteria. <_:figure-1/>"
+"La visualizzazione estesa veniva impiegata nelle versioni precedenti di "
+"MATE. Il grafico per la batteria è più grande e dispone di un grafico "
+"separato per indicare in quale stato si trova la batteria. <_:figure-1/>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:388
@@ -599,9 +600,9 @@ msgid ""
 "remaining in the battery."
 msgstr ""
 "Questa opzione permette di scegliere quale tipo di informazione "
-"visualizzare. <guilabel>Mostra il tempo rimanente</guilabel> visualizza le "
-"ore e i minuti residui alla scarica o alla carica completa della batteria. "
-"<guilabel>Mostra la percentuale rimanente</guilabel> visualizza la "
+"visualizzare. <guilabel>Mostra il tempo rimanente</guilabel> visualizzerà le"
+" ore e i minuti residui alla scarica o alla carica completa della batteria. "
+"<guilabel>Mostra la percentuale rimanente</guilabel> visualizzerà invece la "
 "percentuale di carica residua della batteria."
 
 #. (itstool) path: varlistentry/term
@@ -613,7 +614,7 @@ msgstr "<guilabel>Notifiche</guilabel>"
 #: C/index.docbook:403
 msgid "<guilabel> Warn when battery charge drops to </guilabel>"
 msgstr ""
-"<guilabel> Avverti quando la carica della batteria scende sotto: </guilabel>"
+"<guilabel> Avverti quando la carica della batteria scende a </guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:406
@@ -647,8 +648,8 @@ msgid ""
 msgstr ""
 "Selezionare questa opzione mostrerà una notifica quando la batteria è "
 "completamente carica. Se Monitor della carica della batteria è stato "
-"compilato con il supporto a libnotify appariranno delle notifica dall'applet"
-" sul pannello."
+"compilato con il supporto a libnotify appariranno delle notifiche "
+"dall'applet sul pannello."
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:435
@@ -665,9 +666,9 @@ msgid ""
 "by your machine."
 msgstr ""
 "A causa della complessità della gestione dell'alimentazione e alle notevoli "
-"differenze tra i sistemi di  gestione disponibili, la risoluzione dei "
-"problemi di Monitor della carica della batteria può essere difficoltosa. "
-"Sarà necessario determinare se l'errore è nell'applet o nelle informazioni "
+"differenze tra i sistemi di gestione disponibili, la risoluzione dei "
+"problemi di Battery Charge Monitor può risultare difficoltosa. Sarà "
+"necessario determinare se l'errore è nell'applet o nelle informazioni "
 "fornite dalla vostra macchina."
 
 #. (itstool) path: sect1/para
@@ -680,9 +681,9 @@ msgid ""
 "it</ulink>."
 msgstr ""
 "Le seguenti informazioni potrebbero essere utili per la risoluzione dei "
-"problemi in Monitor della carica della batteria. Non sono assolutamente "
-"esaustive. Se si trova un bug con Monitor della carica della batteria (non "
-"causato da informazioni errate inviate da ACPI), per favore <ulink "
+"problemi in Battery Charge Monitor. Non sono assolutamente esaustive. Se si "
+"trova un bug in Battery Charge Monitor (non causato da informazioni errate "
+"inviate da ACPI), per favore <ulink "
 "url=\"http://bugzilla.mate.org/\">segnalatelo</ulink>."
 
 #. (itstool) path: sect2/title
@@ -759,10 +760,10 @@ msgid ""
 "isn't, then you will need to look into upgrading your DSDT or something else"
 " related to ACPI."
 msgstr ""
-"Se si sta utilizzando il backend di ACPI per il monitor della carica della "
-"batteria, è importante verificare che ACPI stia fornendo informazioni "
-"corrette. Se non è così bisogna considerare l'aggiornamento del vostro DSDT "
-"o degli altri componenti correlati ad ACPI."
+"Se si sta utilizzando il backend di ACPI per Battery Charge Monitor, è "
+"importante verificare che ACPI stia fornendo informazioni corrette. Se non è"
+" così bisogna considerare l'aggiornamento del vostro DSDT o degli altri "
+"componenti correlati ad ACPI."
 
 #. (itstool) path: example/title
 #: C/index.docbook:489
@@ -830,10 +831,10 @@ msgid ""
 "capacity</guilabel> divided by <guilabel>present rate</guilabel>."
 msgstr ""
 "È possibile calcolare agevolmente la percentuale residua utilizzando la "
-"<guilabel>capacità residua</guilabel> diviso l'<guilabel>ultima capacità "
-"totale</guilabel> o calcolare il tempo residuo utilizzando la "
-"<guilabel>capacità residua</guilabel> diviso il <guilabel>tasso "
-"attuale</guilabel>."
+"<guilabel>remaining capacity</guilabel> dividendo per il valore indicato da "
+"<guilabel>last full capacity</guilabel> o calcolare il tempo residuo "
+"utilizzando <guilabel>remaining capacity</guilabel> dividendo per il valore "
+"<guilabel>present rate</guilabel>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:523
@@ -848,7 +849,7 @@ msgid ""
 "HAL or the wrong information is being reported, you can attempt to disable "
 "the HAL backend by setting a GSettings key."
 msgstr ""
-"E possibile verificare che la batteria sia rilevata da HAL usando il "
+"È possibile verificare che la batteria sia rilevata da HAL utilizzando il "
 "comando: <command>hal-device-manager</command>. Se la batteria non viene "
 "rilevata o se vengono riportate informazioni errate, è possibile tentare di "
 "disattivare il backend HAL impostando una chiave di GSettings."
@@ -882,8 +883,8 @@ msgstr ""
 "<filename>/apps/panel/applets/applet_1</filename>. Aggiungere in "
 "<filename>/apps/panel/applets/applet_1/prefs</filename> una "
 "<guimenuitem>Nuova Chiave...</guimenuitem> chiamata "
-"<guilabel>no_hal</guilabel> e impostarla al valore booleano \"vero\" (true)."
-" Ciò disabiliterà l'utilizzo di HAL (vededere <xref linkend=\"battstat-"
+"<guilabel>no_hal</guilabel> e impostarla al valore booleano \"true\". Ciò "
+"disabiliterà l'utilizzo di HAL (vededere <xref linkend=\"battstat-"
 "troubleshooting-backends\"/> per imparare come controllarlo)."
 
 #. (itstool) path: para/ulink
@@ -903,10 +904,10 @@ msgid ""
 msgstr ""
 "È concesso il permesso di copiare, distribuire e/o modificare questo "
 "documento in base ai termini della GNU Free Documentation License (GFDL), "
-"Versione 1.1 o qualsiasi versione successiva pubblicata dalla Free Software "
-"Foundation senza sezioni invarianti, senza testi di copertina e nessun testo"
-" di retro copertina. Puoi trovare una copia del GFDL qui <_:ulink-1/> o nel "
-"file COPYING-DOCS distribuito con questo manuale."
+"Versione 1.1 o una qualsiasi versione successiva pubblicata dalla Free "
+"Software Foundation senza sezioni invarianti, senza testi di copertina e "
+"nessun testo di retro copertina. si può trovare una copia del GFDL qui "
+"<_:ulink-1/> o nel file COPYING-DOCS distribuito con questo manuale."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:12
@@ -963,7 +964,7 @@ msgstr ""
 "REDATTORE INIZIALE, DELL'AUTORE O DI ALTRI COLLABORATORI). QUESTA "
 "LIMITAZIONE DELLA GARANZIA COSTITUISCE PARTE ESSENZIALE DELLA LICENZA. L'USO"
 " DEL DOCUMENTO O DELLE SUE VERSIONI MODIFICATE È CONSENTITO SOLO ENTRO I "
-"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA;"
+"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA; E"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:55
