@@ -1,3 +1,45 @@
+### mate-applets 1.27.0
+
+  * tx: sync with transifex
+  * tx: migrate config file
+  * configure.ac: The macro 'AC_HELP_STRING' is obsolete
+  * stickynotes: bump gtksourceview 4
+  * cpufreq: Add data dir
+  * trashapplet: Add data dir
+  * command: fix -Wincompatible-pointer-types warning (#631)
+  * Use dashes instead of underscores in signal names
+  * travis: drop wireless-tools-devel
+  * build warning: AC_OUTPUT should be used without arguments (#630)
+  * battstat: present is bistate, charging and acline_status are tristate
+  * battstat/battstat-upower.h: missing error_dialog
+  * battstat/power-management.c: use gboolean for pm_initialised, using_upower
+  * battstat: implicit conversion changes signedness: 'gboolean' to 'guint'
+  * command: fix memory leak
+  * charpick: fix memory leak
+  * multiload: fix memory leak
+  * Fix some -Wfloat-conversion warnings
+  * ci: drop -Wunused-parameter compiler cflag from debian build
+  * ci: build mate-panel from debian testing repo
+  * geyes: consider the offset widget <-> window
+  * netspeed/src/backend.c: Typo fix.
+  * Remove whitespaces before #ifdef, and #endif
+  * Use a blank line at most
+  * Sticky Notes applet: add documentation
+  * stickynotes: Popup the note menu with the keyboard
+  * stickynotes: Restore note popup menu that got lost in 37a85e35448f8
+  * Mate Trash applet: add accessible Atk object with proper label.
+  * Mate Timer applet: add accessible Atk object with proper label.
+  * Mate Sticky notes applet: enable keyboard navigation through F6
+  * Mate Sticky notes applet: make dialogs accessible.
+  * Mate Sticky notes applet: fix segfault when Caja is not running
+  * Mate Netspeed applet: make dialog accessible.
+  * Mate Netspeed applet: add accessible Atk object with proper label.
+  * Mate Multiload applet: add accessible Atk object with proper label.
+  * Mate Cpufreq applet: enable standard keyboard navigation
+  * Mate Command applet: add accessible Atk object with proper label.
+  * Mate Weather applet: make dialog accessible.
+  * Charpick-applet: use GtkInvisible widget
+
 ### mate-applets 1.26.0
 
   * update translations
