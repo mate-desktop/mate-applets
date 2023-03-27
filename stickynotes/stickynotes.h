@@ -63,6 +63,7 @@ typedef struct
     gchar *font_color;                    /* Font color */
     gchar *font;                          /* Note font */
     gboolean locked;                      /* Note locked state */
+    gboolean force_fixed_size;            /* Note resizing is restricted */
 
     gint x;                               /* Note x-coordinate */
     gint y;                               /* Note y-coordinate */
@@ -91,6 +92,8 @@ void stickynote_set_locked (StickyNote *note,
                             gboolean    locked);
 void stickynote_set_visible (StickyNote *note,
                              gboolean    visible);
+void stickynote_set_fixed_size (StickyNote *note,
+                                gboolean    force_fixed_size);
 
 void stickynote_change_properties (StickyNote *note);
 

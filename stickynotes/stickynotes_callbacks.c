@@ -45,6 +45,9 @@ gboolean stickynote_resize_cb (GtkWidget      *widget,
                                GdkEventButton *event,
                                StickyNote     *note)
 {
+    if (note->force_fixed_size)
+      return FALSE;
+
     if (event->type == GDK_BUTTON_PRESS && event->button == 1) {
         if (widget == note->w_resize_se)
             gtk_window_begin_resize_drag (GTK_WINDOW (note->w_window),

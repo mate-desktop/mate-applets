@@ -451,6 +451,7 @@ preferences_save_cb (gpointer data)
     gboolean sticky;
     gboolean force_default;
     gboolean desktop_hide;
+    gboolean fixed_size;
     gdouble  adjustment_value;
 
     adjustment_value = gtk_adjustment_get_value (stickynotes->w_prefs_width);
@@ -464,6 +465,7 @@ preferences_save_cb (gpointer data)
     sticky        = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_sticky));
     force_default = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_force));
     desktop_hide  = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_desktop));
+    fixed_size    = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (stickynotes->w_prefs_fixed_size));
 
     if (g_settings_is_writable (stickynotes->settings,
                                 "default-width"))
@@ -493,6 +495,10 @@ preferences_save_cb (gpointer data)
                                 "desktop-hide"))
         g_settings_set_boolean (stickynotes->settings,
                                 "desktop-hide", desktop_hide);
+    if (g_settings_is_writable (stickynotes->settings,
+                                "fixed-size"))
+        g_settings_set_boolean (stickynotes->settings,
+                                "fixed-size", fixed_size);
 }
 
 /* Preferences Callback : Change color. */
@@ -596,6 +602,14 @@ preferences_apply_cb (GSettings *settings,
             stickynote_set_font (note,
                                  note->font,
                                  FALSE);
+        }
+    }
+
+    else if (!strcmp (key, "fixed-size")) {
+        for (l = stickynotes->notes; l; l = l->next) {
+            note = l->data;
+            stickynote_set_fixed_size (note,
+                                       stickynotes->force_fixed_size);
         }
     }
 
