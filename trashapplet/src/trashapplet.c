@@ -28,6 +28,7 @@
 #include <string.h>
 
 #include <glib/gi18n.h>
+#include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 #include <gio/gio.h>
@@ -255,21 +256,25 @@ trash_applet_button_release (GtkWidget      *widget,
   if (settings == NULL)
     settings = g_settings_new (PANEL_SCHEMA);
 
-  if (event->button == 1)
+  if (event->button == 2)
+    return FALSE;
+
+  if ((event->button == 1) &&
+      (event->type != GDK_2BUTTON_PRESS) &&
+      (event->type != GDK_3BUTTON_PRESS))
     {
-      if (g_settings_get_boolean (settings, PANEL_ENABLE_ANIMATIONS))
+#ifdef GDK_WINDOWING_X11
+      if (GDK_IS_X11_DISPLAY (gtk_widget_get_display (widget)) &&
+	  g_settings_get_boolean (settings, PANEL_ENABLE_ANIMATIONS))
         xstuff_zoom_animate (widget, NULL);
+#endif
 
       trash_applet_open_folder (NULL, applet);
 
       return TRUE;
     }
 
-  if (GTK_WIDGET_CLASS (trash_applet_parent_class)->button_release_event)
-    return GTK_WIDGET_CLASS (trash_applet_parent_class)
-        ->button_release_event (widget, event);
-  else
-    return FALSE;
+  return GTK_WIDGET_CLASS (trash_applet_parent_class)->button_press_event (widget, event);
 }
 static gboolean
 trash_applet_key_press (GtkWidget   *widget,
@@ -603,7 +608,12 @@ trash_applet_class_init (TrashAppletClass *class)
 
   gobject_class->dispose = trash_applet_dispose;
   widget_class->size_allocate = trash_applet_size_allocate;
-  widget_class->button_release_event = trash_applet_button_release;
+#ifdef GDK_WINDOWING_X11
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    widget_class->button_release_event = trash_applet_button_release;
+  else /* for Wayland we need to watch button press rather than release */
+#endif
+  widget_class->button_press_event = trash_applet_button_release;
   widget_class->key_press_event = trash_applet_key_press;
   widget_class->drag_motion = trash_applet_drag_motion;
   widget_class->drag_data_received = trash_applet_drag_data_received;
@@ -620,8 +630,6 @@ trash_applet_factory (MatePanelApplet *applet,
     {
       AtkObject *atk_obj;
       GtkActionGroup *action_group;
-
-      g_set_application_name (_("Trash Applet"));
 
       gtk_window_set_default_icon_name ("user-trash");
 
@@ -651,7 +659,7 @@ trash_applet_factory (MatePanelApplet *applet,
   return retval;
 }
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("TrashAppletFactory",
+MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("TrashAppletFactory",
 				  TRASH_TYPE_APPLET,
 				  "TrashApplet",
 				  trash_applet_factory,

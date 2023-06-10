@@ -4,21 +4,20 @@ AM_CPPFLAGS = -I$(top_srcdir)	\
 	-DGRESOURCE=\""/org/mate/mate-applets/trash/\"" \
 	${WARN_CFLAGS}
 
-libexec_PROGRAMS = trashapplet
+trashapplet_libdir= $(pkglibdir)
+trashapplet_lib_LTLIBRARIES=libtrashapplet.la
 
-BUILT_SOURCES = \
-	trashapplet-resources.c \
-	trashapplet-resources.h
-
-nodist_trashapplet_SOURCES = $(BUILT_SOURCES)
-trashapplet_SOURCES = \
+libtrashapplet_la_SOURCES = \
 	trashapplet.c \
 	trash-empty.h \
 	trash-empty.c \
 	xstuff.c \
-	xstuff.h
+	xstuff.h \
+	trashapplet-resources.c \
+	trashapplet-resources.h \
+	$(NULL)
 
-trashapplet_LDADD = 		\
+libtrashapplet_la_LIBADD = 		\
 	$(MATE_APPLETS4_LIBS) 	\
 	$(GIO_LIBS) \
 	-lX11
@@ -30,6 +29,6 @@ trashapplet-resources.h: ../data/trashapplet-resources.gresource.xml $(shell $(G
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name trashapplet $<
 
 CLEANFILES = \
-	$(BUILT_SOURCES)
+	$(NULL)
 
 -include $(top_srcdir)/git.mk
