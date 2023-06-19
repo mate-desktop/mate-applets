@@ -1,6 +1,7 @@
 [Applet Factory]
 Id=NetspeedAppletFactory
-Location=@LOCATION@
+Location=@APPLET_LOCATION@
+InProcess=true
 Name=Netspeed Applet Factory
 Description=Netspeed Applet
 
@@ -10,6 +11,7 @@ Description=Netspeed Applet
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=mate-netspeed-applet
 MateComponentId=OAFIID:MATE_NetspeedApplet
+Platforms=X11;Wayland;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=mate-netspeed
 X-MATE-Bugzilla-Component=netspeed
