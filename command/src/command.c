@@ -90,10 +90,46 @@ static const GtkActionEntry applet_menu_actions [] = {
 static char *ui = "<menuitem name='Item 1' action='Preferences' />"
                   "<menuitem name='Item 2' action='About' />";
 
+/* GSettings signal callbacks */
+static void
+settings_command_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
+{
+    GError *error = NULL;
+    gchar *cmdline;
+    gchar **argv;
+
+    cmdline = g_settings_get_string (command_applet->settings, COMMAND_KEY);
+    if (strlen (cmdline) == 0 || g_strcmp0(command_applet->cmdline, cmdline) == 0)
+    {
+        g_free (cmdline);
+        return;
+    }
+
+    if (!g_shell_parse_argv (cmdline, NULL, &argv, &error))
+    {
+        gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
+        g_clear_error (&error);
+        g_free (cmdline);
+        return;
+    }
+    g_strfreev(argv);
+
+    if (command_applet->cmdline)
+        g_free (command_applet->cmdline);
+    command_applet->cmdline = cmdline;
+
+    command_execute (command_applet);
+}
+
 static void
 command_applet_destroy (MatePanelApplet *applet_widget, CommandApplet *command_applet)
 {
     g_assert (command_applet);
+
+    g_signal_handlers_disconnect_by_func (command_applet->settings,
+                      G_CALLBACK (settings_command_changed),
+                      command_applet);
+
 
     if (command_applet->timeout_id != 0)
     {
@@ -213,37 +249,6 @@ command_settings_callback (GtkAction *action, CommandApplet *command_applet)
     g_object_unref (builder);
 
     gtk_widget_show_all (GTK_WIDGET (dialog));
-}
-
-/* GSettings signal callbacks */
-static void
-settings_command_changed (GSettings *settings, gchar *key, CommandApplet *command_applet)
-{
-    GError *error = NULL;
-    gchar *cmdline;
-    gchar **argv;
-
-    cmdline = g_settings_get_string (command_applet->settings, COMMAND_KEY);
-    if (strlen (cmdline) == 0 || g_strcmp0(command_applet->cmdline, cmdline) == 0)
-    {
-        g_free (cmdline);
-        return;
-    }
-
-    if (!g_shell_parse_argv (cmdline, NULL, &argv, &error))
-    {
-        gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
-        g_clear_error (&error);
-        g_free (cmdline);
-        return;
-    }
-    g_strfreev(argv);
-
-    if (command_applet->cmdline)
-        g_free (command_applet->cmdline);
-    command_applet->cmdline = cmdline;
-
-    command_execute (command_applet);
 }
 
 static void
@@ -413,7 +418,6 @@ command_applet_fill (MatePanelApplet* applet)
     CommandApplet *command_applet;
     AtkObject *atk_widget;
 
-    g_set_application_name (_("Command Applet"));
     gtk_window_set_default_icon_name (APPLET_ICON);
 
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
@@ -502,7 +506,7 @@ command_factory (MatePanelApplet* applet, const char* iid, gpointer data)
 }
 
 /* needed by mate-panel applet library */
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY("CommandAppletFactory",
+MATE_PANEL_APPLET_IN_PROCESS_FACTORY("CommandAppletFactory",
                                       PANEL_TYPE_APPLET,
                                       "Command applet",
                                       command_factory,
