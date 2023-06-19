@@ -1,6 +1,11 @@
 NULL =
 
+APPLET_LOCATION = $(libdir)/mate-applets/libmate-charpick-applet.so
+
 SUBDIRS = help
+
+mate_charpick_applet_libdir= $(pkglibdir)
+mate_charpick_applet_lib_LTLIBRARIES=libmate-charpick-applet.la
 
 AM_CPPFLAGS =			\
 	-I.			\
@@ -11,17 +16,15 @@ AM_CPPFLAGS =			\
 	$(GUCHARMAP_CFLAGS)	\
 	$(NULL)
 
-libexec_PROGRAMS = mate-charpick-applet
-
-BUILT_SOURCES = charpick-resources.c charpick-resources.h
-nodist_mate_charpick_applet_SOURCES = $(BUILT_SOURCES)
-mate_charpick_applet_SOURCES = 	\
+libmate_charpick_applet_la_SOURCES = 	\
 	charpick.c		\
 	charpick.h		\
 	properties.c		\
+	charpick-resources.c \
+	charpick-resources.h \
 	$(NULL)
 
-mate_charpick_applet_LDADD =	\
+libmate_charpick_applet_la_LIBADD =	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(GUCHARMAP_LIBS)	\
 	$(NULL)
@@ -38,21 +41,12 @@ applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-ap
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
-            -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
-            $< > $@
+		-e "s|\@APPLET_LOCATION\@|$(APPLET_LOCATION)|" \
+		-e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
+		$< > $@
 
 $(applet_DATA): $(applet_in_files) Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
-
-servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.CharpickerAppletFactory.service.in
-service_DATA     = $(service_in_files:.service.in=.service)
-
-org.mate.panel.applet.CharpickerAppletFactory.service: $(service_in_files)
-	$(AM_V_GEN)sed \
-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
-            $< > $@
 
 charpick_gschema_in_files = org.mate.panel.applet.charpick.gschema.xml.in
 gsettings_SCHEMAS = $(charpick_gschema_in_files:.xml.in=.xml)
@@ -61,15 +55,12 @@ gsettings_SCHEMAS = $(charpick_gschema_in_files:.xml.in=.xml)
 CLEANFILES =			\
 	$(applet_DATA)		\
 	$(applet_in_files)	\
-	$(service_DATA)		\
 	$(gsettings_SCHEMAS)	\
-	$(BUILT_SOURCES)	\
 	*.gschema.valid		\
 	$(NULL)
 
 EXTRA_DIST =					\
 	$(applet_in_files).in			\
-	$(service_in_files)			\
 	$(charpick_gschema_in_files)		\
 	charpick-applet-menu.xml		\
 	charpick-resources.gresource.xml	\
