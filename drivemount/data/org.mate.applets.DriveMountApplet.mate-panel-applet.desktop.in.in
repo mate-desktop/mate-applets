@@ -1,6 +1,7 @@
 [Applet Factory]
 Id=DriveMountAppletFactory
-Location=@LIBEXECDIR@/mate-drivemount-applet
+Location=@APPLET_LOCATION@
+InProcess=true
 Name=Drive Mount Applet Factory
 Description=Factory for drive mount applet
 
@@ -10,6 +11,7 @@ Description=Mount local disks and devices
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=media-floppy
 MateComponentId=OAFIID:MATE_DriveMountApplet
+Platforms=X11;Wayland;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=mate-applets
 X-MATE-Bugzilla-Component=Disk Mounter (drivemount)

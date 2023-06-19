@@ -1,5 +1,8 @@
 NULL =
 
+mate_drivemount_applet_libdir= $(pkglibdir)
+mate_drivemount_applet_lib_LTLIBRARIES=libmate-drivemount-applet.la
+
 AM_CPPFLAGS =				\
 	-I.				\
 	-I$(srcdir)			\
@@ -8,26 +11,17 @@ AM_CPPFLAGS =				\
 	$(MATE_APPLETS4_CFLAGS)		\
 	$(NULL)
 
-libexec_PROGRAMS = mate-drivemount-applet
-
-BUILT_SOURCES =				\
-	drivemount-resources.c		\
-	drivemount-resources.h		\
-	$(NULL)
-
-nodist_mate_drivemount_applet_SOURCES =	\
-	$(BUILT_SOURCES)		\
-	$(NULL)
-
-mate_drivemount_applet_SOURCES =	\
+libmate_drivemount_applet_la_SOURCES =	\
 	drivemount.c			\
 	drive-list.c			\
 	drive-list.h			\
 	drive-button.c			\
 	drive-button.h			\
+	drivemount-resources.c		\
+	drivemount-resources.h		\
 	$(NULL)
 
-mate_drivemount_applet_LDADD =		\
+libmate_drivemount_applet_la_LIBADD =		\
 	$(MATE_APPLETS4_LIBS)
 
 drivemount-resources.c: ../data/drivemount-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/drivemount-resources.gresource.xml)
@@ -37,7 +31,6 @@ drivemount-resources.h: ../data/drivemount-resources.gresource.xml $(shell $(GLI
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name drivemount $<
 
 CLEANFILES =				\
-	$(BUILT_SOURCES)		\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk
