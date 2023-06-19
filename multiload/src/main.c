@@ -495,8 +495,6 @@ multiload_applet_new(MatePanelApplet *applet, const gchar *iid, gpointer data)
     ma->prop_dialog = NULL;
         ma->last_clicked = 0;
 
-    g_set_application_name (_("System Monitor"));
-
     gtk_window_set_default_icon_name ("utilities-system-monitor");
 
     ma->settings = mate_panel_applet_settings_new (applet, "org.mate.panel.applet.multiload");
@@ -575,7 +573,7 @@ multiload_factory (MatePanelApplet *applet,
     return retval;
 }
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("MultiLoadAppletFactory",
+MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("MultiLoadAppletFactory",
                                        PANEL_TYPE_APPLET,
                                        "multiload",
                                        multiload_factory,

@@ -1,5 +1,8 @@
 NULL =
 
+mate_multiload_applet_libdir= $(pkglibdir)
+mate_multiload_applet_lib_LTLIBRARIES=libmate-multiload-applet.la
+
 AM_CPPFLAGS = \
 	-I$(srcdir) \
 	-DMULTILOAD_RESOURCE_PATH=\""/org/mate/mate-applets/multiload/"\" \
@@ -8,11 +11,7 @@ AM_CPPFLAGS = \
 	$(GIO_CFLAGS) \
 	${WARN_CFLAGS}
 
-libexec_PROGRAMS = mate-multiload-applet
-
-BUILT_SOURCES = multiload-resources.c multiload-resources.h
-nodist_mate_multiload_applet_SOURCES = $(BUILT_SOURCES)
-mate_multiload_applet_SOURCES = \
+libmate_multiload_applet_la_SOURCES = \
 	global.h \
 	linux-proc.h \
 	load-graph.h \
@@ -22,9 +21,12 @@ mate_multiload_applet_SOURCES = \
 	properties.c \
 	netspeed.c netspeed.h \
 	autoscaler.c \
-	autoscaler.h
+	autoscaler.h \
+	multiload-resources.c \
+	multiload-resources.h \
+	$(NULL)
 
-mate_multiload_applet_LDADD = \
+libmate_multiload_applet_la_LIBADD = \
 	$(MATE_APPLETS4_LIBS) \
 	$(GTOP_APPLETS_LIBS) \
 	$(GIO_LIBS) \
@@ -37,7 +39,6 @@ multiload-resources.h: $(srcdir)/../data/multiload-resources.gresource.xml $(she
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name multiload $<
 
 CLEANFILES = \
-	$(BUILT_SOURCES) \
 	$(NULL)
 
 -include $(top_srcdir)/git.mk
