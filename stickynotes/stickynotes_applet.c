@@ -84,7 +84,7 @@ stickynotes_applet_factory (MatePanelApplet *mate_panel_applet,
 }
 
 /* Sticky Notes applet factory */
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("StickyNotesAppletFactory",
+MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("StickyNotesAppletFactory",
                                        PANEL_TYPE_APPLET,
                                        "stickynotes_applet",
                                        stickynotes_applet_factory,
@@ -167,6 +167,7 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
     cairo_t *cr;
     gint size, scale;
     int screen_height;
+    GdkScreen *screen;
 
     stickynotes = g_new (StickyNotes, 1);
 
@@ -177,7 +178,6 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
     size = mate_panel_applet_get_size (mate_panel_applet);
     scale = gtk_widget_get_scale_factor (GTK_WIDGET (mate_panel_applet));
 
-    g_set_application_name (_("Sticky Notes"));
     gtk_window_set_default_icon_name ("mate-sticky-notes-applet");
 
     stickynotes->icon_normal =
@@ -208,14 +208,22 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
     g_signal_connect (stickynotes->settings, "changed",
                       G_CALLBACK (preferences_apply_cb), NULL);
 
-    /* Max height for large notes*/
-    screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ()));
+    /* Max height for large notes in x11 only
+     * In wayland we do not have access to global screen dimensions
+     */
+
+    screen = gtk_widget_get_screen (GTK_WIDGET (mate_panel_applet));
+#ifdef GDK_WINDOWING_X11
+    if (GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen)))
+        screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
+#endif
+
     stickynotes->max_height = (int) (0.8 * (double) screen_height);
 
     /* Load sticky notes */
-    stickynotes_load (gtk_widget_get_screen (GTK_WIDGET (mate_panel_applet)));
+    stickynotes_load (screen);
 
-    install_check_click_on_desktop ();
+    install_check_click_on_desktop (screen);
 }
 
 void

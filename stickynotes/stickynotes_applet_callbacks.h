@@ -41,7 +41,7 @@ applet_focus_cb (GtkWidget         *widget,
                  StickyNotesApplet *applet);
 
 void
-install_check_click_on_desktop (void);
+install_check_click_on_desktop (GdkScreen *screen);
 void
 applet_change_orient_cb (MatePanelApplet       *mate_panel_applet,
                          MatePanelAppletOrient  orient,

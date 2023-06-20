@@ -57,6 +57,7 @@ xstuff_atom_get (const char *atom_name)
 int
 xstuff_get_current_workspace (GtkWindow *window)
 {
+#ifdef GDK_WINDOWING_X11
     Window      root_window;
     Atom        type = None;
     gulong      nitems;
@@ -68,8 +69,11 @@ xstuff_get_current_workspace (GtkWindow *window)
     GdkDisplay *gdk_display;
     Display    *xdisplay;
 
-    root_window = GDK_WINDOW_XID (gtk_widget_get_window (GTK_WIDGET (window)));
     gdk_display = gdk_display_get_default ();
+    if  (!GDK_IS_X11_DISPLAY (gdk_display))
+        return -1;
+
+    root_window = GDK_WINDOW_XID (gtk_widget_get_window (GTK_WIDGET (window)));
     xdisplay = GDK_DISPLAY_XDISPLAY (gdk_display);
 
     gdk_x11_display_error_trap_push (gdk_display);
@@ -93,6 +97,9 @@ xstuff_get_current_workspace (GtkWindow *window)
     XFree (num);
 
     return retval;
+#else
+    return -1;
+#endif
 }
 void
 xstuff_change_workspace (GtkWindow *window,

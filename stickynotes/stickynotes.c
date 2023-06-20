@@ -809,12 +809,10 @@ stickynotes_remove (StickyNote *note)
 gboolean
 stickynotes_save_now (void)
 {
-    WnckScreen *wnck_screen;
     const gchar *title;
     GtkTextBuffer *buffer;
     GtkTextIter start, end;
     gchar *body;
-
     gint i;
 
     /* Create a new XML document */
@@ -823,14 +821,16 @@ stickynotes_save_now (void)
 
     xmlDocSetRootElement (doc, root);
     xmlNewProp (root, XML_CHAR ("version"), XML_CHAR (VERSION));
-
-    wnck_screen = wnck_screen_get_default ();
-    wnck_screen_force_update (wnck_screen);
-
+#ifdef GDK_WINDOWING_X11
+    GdkDisplay *display = gdk_screen_get_display(gdk_screen_get_default());
+    if (GDK_IS_X11_DISPLAY(display))
+    {
+        WnckScreen *wnck_screen = wnck_screen_get_default ();
+        wnck_screen_force_update (wnck_screen);
+    }
+#endif
     /* For all sticky notes */
     for (i = 0; i < g_list_length (stickynotes->notes); i++) {
-        WnckWindow *wnck_win;
-        gulong xid = 0;
 
         /* Access the current note in the list */
         StickyNote *note = g_list_nth_data (stickynotes->notes, i);
@@ -842,16 +842,19 @@ stickynotes_save_now (void)
         /* Retrieve the window position of the note */
         gchar *x_str = g_strdup_printf ("%d", note->x);
         gchar *y_str = g_strdup_printf ("%d", note->y);
+#ifdef GDK_WINDOWING_X11
+        if (GDK_IS_X11_DISPLAY(display))
+        {
+            gulong xid = GDK_WINDOW_XID (gtk_widget_get_window (note->w_window));
+            WnckWindow *wnck_win = wnck_window_get (xid);
 
-        xid = GDK_WINDOW_XID (gtk_widget_get_window (note->w_window));
-        wnck_win = wnck_window_get (xid);
-
-        if (!g_settings_get_boolean (stickynotes->settings, "sticky") && wnck_win)
-            note->workspace = 1 +
-                wnck_workspace_get_number (wnck_window_get_workspace (wnck_win));
-        else
-            note->workspace = 0;
-
+            if (!g_settings_get_boolean (stickynotes->settings, "sticky") && wnck_win)
+                note->workspace = 1 +
+                    wnck_workspace_get_number (wnck_window_get_workspace (wnck_win));
+            else
+                note->workspace = 0;
+        }
+#endif
         /* Retrieve the title of the note */
         title = gtk_label_get_text (GTK_LABEL (note->w_title));
 
@@ -948,10 +951,12 @@ stickynotes_load (GdkScreen *screen)
     xmlDocPtr doc = NULL;
     xmlNodePtr root;
     xmlNodePtr node;
-    /* WnckScreen *wnck_screen; */
     GList *new_notes, *tmp1;  /* Lists of StickyNote*'s */
     GList *new_nodes; /* Lists of xmlNodePtr's */
     int x, y, w, h;
+#ifdef GDK_WINDOWING_X11
+    GdkDisplay *display = gdk_screen_get_display(gdk_screen_get_default());
+#endif
 
     /* The XML file is $HOME/.config/mate/stickynotes-applet, most probably */
     gchar* file = g_build_filename (g_get_user_config_dir (),
@@ -1123,11 +1128,14 @@ stickynotes_load (GdkScreen *screen)
     }
 
     tmp1 = new_notes;
-    /*
-    wnck_screen = wnck_screen_get_default ();
-    wnck_screen_force_update (wnck_screen);
-    */
 
+#ifdef GDK_WINDOWING_X11
+    if (GDK_IS_X11_DISPLAY(display))
+    {
+        WnckScreen *wnck_screen = wnck_screen_get_default ();
+        wnck_screen_force_update (wnck_screen);
+    }
+#endif
     while (tmp1) {
         StickyNote *note = tmp1->data;
 

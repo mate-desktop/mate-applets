@@ -25,34 +25,6 @@
 #include <X11/Xatom.h>
 #include <gdk/gdkx.h>
 
-static gboolean get_desktop_window (Window *window)
-{
-    Window *desktop_window;
-    GdkWindow *root_window;
-    GdkAtom type_returned;
-    int format_returned;
-    int length_returned;
-
-    root_window = gdk_screen_get_root_window (gdk_screen_get_default ());
-
-    if (gdk_property_get (root_window,
-                          gdk_atom_intern ("CAJA_DESKTOP_WINDOW_ID", FALSE),
-                          gdk_x11_xatom_to_atom (XA_WINDOW),
-                          0, 4, FALSE,
-                          &type_returned,
-                          &format_returned,
-                          &length_returned,
-                          (guchar**) &desktop_window)) {
-        *window = *desktop_window;
-        g_free (desktop_window);
-        return TRUE;
-    }
-    else {
-        *window = 0;
-        return FALSE;
-    }
-}
-
 static void
 popup_add_note (StickyNotesApplet *applet,
                 GtkWidget         *item)
@@ -145,6 +117,35 @@ applet_focus_cb (GtkWidget         *widget,
     return FALSE;
 }
 
+#ifdef GDK_WINDOWING_X11
+static gboolean get_desktop_window (GdkScreen *screen, Window *window)
+{
+    Window *desktop_window;
+    GdkWindow *root_window;
+    GdkAtom type_returned;
+    int format_returned;
+    int length_returned;
+
+    root_window = gdk_screen_get_root_window (screen);
+
+    if (gdk_property_get (root_window,
+                          gdk_atom_intern ("CAJA_DESKTOP_WINDOW_ID", FALSE),
+                          gdk_x11_xatom_to_atom (XA_WINDOW),
+                          0, 4, FALSE,
+                          &type_returned,
+                          &format_returned,
+                          &length_returned,
+                          (guchar**) &desktop_window)) {
+        *window = *desktop_window;
+        g_free (desktop_window);
+        return TRUE;
+    }
+    else {
+        *window = 0;
+        return FALSE;
+    }
+}
+
 static GdkFilterReturn
 desktop_window_event_filter (GdkXEvent *xevent,
                              GdkEvent  *event,
@@ -159,22 +160,31 @@ desktop_window_event_filter (GdkXEvent *xevent,
     }
     return GDK_FILTER_CONTINUE;
 }
+#endif /* GDK_WINDOWING_X11 */
 
-void install_check_click_on_desktop (void)
+void install_check_click_on_desktop (GdkScreen *screen)
 {
+#ifdef GDK_WINDOWING_X11
     Window desktop_window;
     GdkWindow *window;
     Atom user_time_window;
     Atom user_time;
+    GdkDisplay *display;
 
-    if (!get_desktop_window (&desktop_window)) {
+    display = gdk_screen_get_display (screen);
+    /* All this uses X11-only APIs and features */
+    if (!GDK_IS_X11_DISPLAY (display))
+        return;
+
+    if (!get_desktop_window (screen, &desktop_window)) {
         return;
     }
 
     /* Access the desktop window. desktop_window is the root window for the
-     * default screen, so we know using gdk_display_get_default () is correct. */
-    window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (),
-                                                     desktop_window);
+     * default screen, so we know using gdk_display_get_default () is correct.
+     * This code should not be reached if running in wayland
+     */
+    window = gdk_x11_window_foreign_new_for_display (display, desktop_window);
 
     /* Avoid crash if the desktop window ID is set but invalid, e.g. if
      * Caja has set it but quit since then */
@@ -217,6 +227,7 @@ void install_check_click_on_desktop (void)
 
     gdk_window_set_events (window, GDK_PROPERTY_CHANGE_MASK);
     gdk_window_add_filter (window, desktop_window_event_filter, NULL);
+#endif
 }
 
 /* Applet Callback : Change the panel orientation. */

@@ -1,6 +1,7 @@
 [Applet Factory]
 Id=StickyNotesAppletFactory
-Location=@LIBEXECDIR@/stickynotes-applet
+Location=@APPLET_LOCATION@
+InProcess=true
 Name=Sticky Notes Applet Factory
 Description=Sticky Notes Applet Factory
 
@@ -10,6 +11,7 @@ Description=Create, view, and manage sticky notes on the desktop
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=mate-sticky-notes-applet
 MateComponentId=OAFIID:MATE_StickyNotesApplet
+Platforms=X11;Wayland;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=mate-applets
 X-MATE-Bugzilla-Component=stickynotes
