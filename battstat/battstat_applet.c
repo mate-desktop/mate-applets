@@ -1130,8 +1130,6 @@ battstat_applet_fill (MatePanelApplet *applet)
 
     if (DEBUG) g_print ("main ()\n");
 
-    g_set_application_name (_("Battery Charge Monitor"));
-
     gtk_window_set_default_icon_name ("battery");
 
     mate_panel_applet_set_flags (applet,
@@ -1210,7 +1208,7 @@ battstat_applet_factory (MatePanelApplet *applet,
     return retval;
 }
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("BattstatAppletFactory",
+MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("BattstatAppletFactory",
                                        PANEL_TYPE_APPLET,
                                        "battstat",
                                        battstat_applet_factory,

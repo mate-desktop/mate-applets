@@ -1,5 +1,7 @@
 NULL =
 
+APPLET_LOCATION = $(libdir)/mate-applets/libmate-battstat-applet.so
+
 ACPIINC= @ACPIINC@
 
 if NEED_LIBAPM
@@ -22,6 +24,9 @@ SUBDIRS = docs sounds $(APMDIR)
 
 DIST_SUBDIRS = docs sounds apmlib
 
+mate_battstat_applet_libdir= $(pkglibdir)
+mate_battstat_applet_lib_LTLIBRARIES=libmate-battstat-applet.la
+
 AM_CPPFLAGS =					\
 	${WARN_CFLAGS}				\
 	$(MATE_APPLETS4_CFLAGS)			\
@@ -33,11 +38,8 @@ AM_CPPFLAGS =					\
 	-DBATTSTAT_RESOURCE_PATH=\""/org/mate/mate-applets/battstat/"\" \
 	$(NULL)
 
-libexec_PROGRAMS = battstat-applet
 
-BUILT_SOURCES = battstat-resources.c battstat-resources.h
-nodist_battstat_applet_SOURCES = $(BUILT_SOURCES)
-battstat_applet_SOURCES =	\
+libmate_battstat_applet_la_SOURCES =	\
 	battstat.h		\
 	battstat_applet.c	\
 	battstat-preferences.c  \
@@ -49,9 +51,11 @@ battstat_applet_SOURCES =	\
 	acpi-freebsd.h		\
 	battstat-upower.c	\
 	battstat-upower.h	\
+	battstat-resources.c \
+	battstat-resources.h  \
 	$(NULL)
 
-battstat_applet_LDADD =		\
+libmate_battstat_applet_la_LIBADD =		\
 	$(MATE_APPLETS4_LIBS)	\
 	$(LIBNOTIFY_LIBS)	\
 	$(APMLIB)		\
@@ -75,26 +79,17 @@ applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-ap
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+            -e "s|\@APPLET_LOCATION\@|$(APPLET_LOCATION)|" \
             -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
             $< > $@
 
 $(applet_DATA): $(applet_in_files) Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
-servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.BattstatAppletFactory.service.in
-service_DATA     = $(service_in_files:.service.in=.service)
-
-org.mate.panel.applet.BattstatAppletFactory.service: $(service_in_files)
-	$(AM_V_GEN)sed \
-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
-            $< > $@
 
 CLEANFILES =			\
 	$(applet_DATA)		\
 	$(applet_in_files)	\
-	$(service_DATA)		\
 	$(gsettings_SCHEMAS)	\
 	$(BUILT_SOURCES)	\
 	*.gschema.valid		\
@@ -105,7 +100,6 @@ EXTRA_DIST =					\
 	battstat-preferences.ui			\
 	battstat-resources.gresource.xml	\
 	$(applet_in_files).in			\
-	$(service_in_files)			\
 	$(batstat_gschema_in_files)		\
 	$(NULL)
 
