@@ -125,6 +125,9 @@ timer_callback (TimerApplet *applet)
     label = NULL;
     tooltip = NULL;
 
+    if (!GTK_IS_WIDGET (applet->label))
+        return FALSE;
+
     name = g_settings_get_string (applet->settings, NAME_KEY);
     atk_obj = gtk_widget_get_accessible (GTK_WIDGET (applet->applet));
 
@@ -373,7 +376,6 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     TimerApplet *applet;
     AtkObject   *atk_obj;
 
-    g_set_application_name (_("Timer Applet"));
     gtk_window_set_default_icon_name (APPLET_ICON);
 
     if (!notify_is_initted ())
@@ -454,7 +456,7 @@ timer_factory (MatePanelApplet* applet, const char* iid, gpointer data)
 }
 
 /* needed by mate-panel applet library */
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY("TimerAppletFactory",
+MATE_PANEL_APPLET_IN_PROCESS_FACTORY("TimerAppletFactory",
                                       PANEL_TYPE_APPLET,
                                       "Timer applet",
                                       timer_factory,
