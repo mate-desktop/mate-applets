@@ -8,7 +8,7 @@ APMLIB = -lapm
 APMDIR =
 APMINC =
 else
-APMLIB = apmlib/libapm.a
+APMLIB = apmlib/libapm.la
 APMDIR = apmlib
 APMINC = -I$(srcdir)/apmlib/
 endif
