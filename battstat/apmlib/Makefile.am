@@ -10,9 +10,9 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS_CFLAGS)			\
 	-DG_LOG_DOMAIN=\"battstat_applet\"
 
-noinst_LIBRARIES = libapm.a
+noinst_LTLIBRARIES = libapm.la
 
-libapm_a_SOURCES = apmlib.c apm.h
+libapm_la_SOURCES = apmlib.c apm.h
 
 
 -include $(top_srcdir)/git.mk
