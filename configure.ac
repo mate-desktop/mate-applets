@@ -249,10 +249,6 @@ if test x$disable_battstat = xno; then
    build_battstat_applet=yes
    AC_CHECK_HEADERS([err.h sys/sysctl.h])
    case "${host}" in
-       powerpc-*-linux*)
-           NEED_LIBAPM=yes
-           AC_CHECK_LIB(apm,apm_read,[HAVE_LIBAPM=yes],[HAVE_LIBAPM=no])
-	   ;;
        # list of supported OS cores that use libapm
        *-*-linux*)
 	   NEED_LIBAPM=yes
