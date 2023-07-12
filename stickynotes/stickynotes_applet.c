@@ -84,11 +84,11 @@ stickynotes_applet_factory (MatePanelApplet *mate_panel_applet,
 }
 
 /* Sticky Notes applet factory */
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("StickyNotesAppletFactory",
-                                       PANEL_TYPE_APPLET,
-                                       "stickynotes_applet",
-                                       stickynotes_applet_factory,
-                                       NULL)
+PANEL_APPLET_FACTORY ("StickyNotesAppletFactory",
+                      PANEL_TYPE_APPLET,
+                      "stickynotes_applet",
+                      stickynotes_applet_factory,
+                      NULL)
 
 /* colorshift a surface */
 static void
@@ -178,6 +178,9 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
     size = mate_panel_applet_get_size (mate_panel_applet);
     scale = gtk_widget_get_scale_factor (GTK_WIDGET (mate_panel_applet));
 
+#ifndef ENABLE_IN_PROCESS
+    g_set_application_name (_("Sticky Notes"));
+#endif
     gtk_window_set_default_icon_name ("mate-sticky-notes-applet");
 
     stickynotes->icon_normal =

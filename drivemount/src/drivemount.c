@@ -179,6 +179,10 @@ applet_factory (MatePanelApplet *applet,
     GtkActionGroup *action_group;
 
     if (!strcmp (iid, drivemount_iid)) {
+#ifndef ENABLE_IN_PROCESS
+        g_set_application_name (_("Disk Mounter"));
+#endif
+
         gtk_window_set_default_icon_name ("media-floppy");
 
         mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
@@ -221,8 +225,7 @@ applet_factory (MatePanelApplet *applet,
     return ret;
 }
 
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY (factory_iid,
-                                       PANEL_TYPE_APPLET,
-                                       "Drive-Mount-Applet",
-                                       applet_factory, NULL)
-
+PANEL_APPLET_FACTORY (factory_iid,
+                      PANEL_TYPE_APPLET,
+                      "Drive-Mount-Applet",
+                      applet_factory, NULL)

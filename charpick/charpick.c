@@ -764,6 +764,10 @@ charpicker_applet_fill (MatePanelApplet *applet)
     gchar *string;
     GtkActionGroup *action_group;
 
+#ifndef ENABLE_IN_PROCESS
+    g_set_application_name (_("Character Palette"));
+#endif
+
     gtk_window_set_default_icon_name ("accessories-character-map");
 
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
@@ -870,9 +874,9 @@ charpicker_applet_factory (MatePanelApplet *applet,
     return retval;
 }
 
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("CharpickerAppletFactory",
-                                       PANEL_TYPE_APPLET,
-                                       "char-palette",
-                                       charpicker_applet_factory,
-                                       NULL)
+PANEL_APPLET_FACTORY ("CharpickerAppletFactory",
+                      PANEL_TYPE_APPLET,
+                      "char-palette",
+                      charpicker_applet_factory,
+                      NULL)
 

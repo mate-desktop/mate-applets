@@ -787,6 +787,10 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
     AtkObject      *atk_obj;
     GSettings      *settings;
 
+#ifndef ENABLE_IN_PROCESS
+    g_set_application_name  (_("CPU Frequency Scaling Monitor"));
+#endif
+
     gtk_window_set_default_icon_name ("mate-cpu-frequency-applet");
 
     /* Preferences */
@@ -865,8 +869,8 @@ cpufreq_applet_factory (CPUFreqApplet *applet,
     return retval;
 }
 
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("CPUFreqAppletFactory",
-                                       CPUFREQ_TYPE_APPLET,
-                                       "cpufreq-applet",
-                                       (MatePanelAppletFactoryCallback) cpufreq_applet_factory,
-                                       NULL)
+PANEL_APPLET_FACTORY ("CPUFreqAppletFactory",
+                      CPUFREQ_TYPE_APPLET,
+                      "cpufreq-applet",
+                      (MatePanelAppletFactoryCallback) cpufreq_applet_factory,
+                      NULL)

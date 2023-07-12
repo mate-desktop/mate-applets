@@ -1,8 +1,5 @@
 NULL =
 
-mateweather_applet_libdir= $(pkglibdir)
-mateweather_applet_lib_LTLIBRARIES=libmateweather-applet.la
-
 AM_CPPFLAGS =					\
 	-I$(srcdir)				\
 	-I$(top_srcdir)				\
@@ -12,23 +9,40 @@ AM_CPPFLAGS =					\
 	$(LIBMATEWEATHER_CFLAGS)		\
 	${WARN_CFLAGS}
 
-libmateweather_applet_la_SOURCES = \
-	mateweather.h \
-	main.c \
-	mateweather-about.c mateweather-about.h \
-	mateweather-pref.c mateweather-pref.h \
-	mateweather-dialog.c mateweather-dialog.h \
-	mateweather-applet.c mateweather-applet.h \
-	mateweather-resources.c \
-	mateweather-resources.h \
+BUILT_SOURCES =			\
+	mateweather-resources.c	\
+	mateweather-resources.h	\
+	$(NULL)
+APPLET_SOURCES =					\
+	mateweather.h					\
+	main.c						\
+	mateweather-about.c mateweather-about.h		\
+	mateweather-pref.c mateweather-pref.h		\
+	mateweather-dialog.c mateweather-dialog.h	\
+	mateweather-applet.c mateweather-applet.h	\
 	$(NULL)
 
-libmateweather_applet_la_LIBADD = 	\
+APPLET_LIBS =			\
 	$(LIBNOTIFY_LIBS) 	\
 	$(MATE_APPLETS4_LIBS)	\
 	$(MATE_LIBS2_LIBS)	\
-	$(LIBMATEWEATHER_LIBS) \
+	$(LIBMATEWEATHER_LIBS)	\
 	$(NULL)
+
+if ENABLE_IN_PROCESS
+pkglib_LTLIBRARIES = libmateweather-applet.la
+nodist_libmateweather_applet_la_SOURCES = $(BUILT_SOURCES)
+libmateweather_applet_la_SOURCES = $(APPLET_SOURCES)
+libmateweather_applet_la_CFLAGS = $(AM_CFLAGS)
+libmateweather_applet_la_LDFLAGS = -module -avoid-version
+libmateweather_applet_la_LIBADD = $(APPLET_LIBS)
+else !ENABLE_IN_PROCESS
+libexec_PROGRAMS = mateweather-applet
+nodist_mateweather_applet_SOURCES = $(BUILT_SOURCES)
+mateweather_applet_SOURCES = $(APPLET_SOURCES)
+mateweather_applet_CFLAGS = $(AM_CFLAGS)
+mateweather_applet_LDADD = $(APPLET_LIBS)
+endif !ENABLE_IN_PROCESS
 
 mateweather-resources.c: ../data/mateweather-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/mateweather-resources.gresource.xml)
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data/ --generate --c-name mateweather $<

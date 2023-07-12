@@ -1316,7 +1316,9 @@ create_applet (MatePanelApplet* applet)
     GtkIconTheme *icon_theme;
     gint icon_size, icon_scale;
 
+#ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("AccessX Status"));
+#endif
 
     sapplet->xkb = NULL;
     sapplet->xkb_display = NULL;
@@ -1633,9 +1635,9 @@ accessx_status_applet_fill (MatePanelApplet* applet)
     }
 
     g_object_connect (sapplet->applet,
-                      "destroy", accessx_status_applet_destroy, sapplet,
-                      "change-orient", accessx_status_applet_reorient, sapplet,
-                      "change-size", accessx_status_applet_resize, sapplet,
+                      "signal::destroy", accessx_status_applet_destroy, sapplet,
+                      "signal::change-orient", accessx_status_applet_reorient, sapplet,
+                      "signal::change-size", accessx_status_applet_resize, sapplet,
                       NULL);
 
     g_signal_connect (sapplet->applet, "button-press-event",
@@ -1697,9 +1699,9 @@ accessx_status_applet_factory (MatePanelApplet* applet,
     return retval;
 }
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("AccessxStatusAppletFactory",
-                                       PANEL_TYPE_APPLET,
-                                       "accessx-status",
-                                       accessx_status_applet_factory,
-                                       NULL)
+PANEL_APPLET_FACTORY ("AccessxStatusAppletFactory",
+                      PANEL_TYPE_APPLET,
+                      "accessx-status",
+                      accessx_status_applet_factory,
+                      NULL)
 

@@ -1,13 +1,13 @@
 [Applet Factory]
 Id=TimerAppletFactory
 Location=@APPLET_LOCATION@
-InProcess=true
+InProcess=@APPLET_IN_PROCESS@
 Name=Timer Factory
 Description=Timer Factory
 
 [TimerApplet]
 Name=Timer
 Description=Start a timer and receive a notification when it is finished
-Platforms=X11;Wayland
+Platforms=X11;Wayland;
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=mate-panel-clock

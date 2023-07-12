@@ -418,6 +418,10 @@ command_applet_fill (MatePanelApplet* applet)
     CommandApplet *command_applet;
     AtkObject *atk_widget;
 
+#ifndef ENABLE_IN_PROCESS
+    g_set_application_name (_("Command Applet"));
+#endif
+
     gtk_window_set_default_icon_name (APPLET_ICON);
 
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
@@ -506,8 +510,8 @@ command_factory (MatePanelApplet* applet, const char* iid, gpointer data)
 }
 
 /* needed by mate-panel applet library */
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY("CommandAppletFactory",
-                                      PANEL_TYPE_APPLET,
-                                      "Command applet",
-                                      command_factory,
-                                      NULL)
+PANEL_APPLET_FACTORY ("CommandAppletFactory",
+                      PANEL_TYPE_APPLET,
+                      "Command applet",
+                      command_factory,
+                      NULL)

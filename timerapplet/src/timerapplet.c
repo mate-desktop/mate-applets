@@ -376,6 +376,9 @@ timer_applet_fill (MatePanelApplet* applet_widget)
     TimerApplet *applet;
     AtkObject   *atk_obj;
 
+#ifndef ENABLE_IN_PROCESS
+    g_set_application_name (_("Timer Applet"));
+#endif
     gtk_window_set_default_icon_name (APPLET_ICON);
 
     if (!notify_is_initted ())
@@ -456,8 +459,8 @@ timer_factory (MatePanelApplet* applet, const char* iid, gpointer data)
 }
 
 /* needed by mate-panel applet library */
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY("TimerAppletFactory",
-                                      PANEL_TYPE_APPLET,
-                                      "Timer applet",
-                                      timer_factory,
-                                      NULL)
+PANEL_APPLET_FACTORY ("TimerAppletFactory",
+                      PANEL_TYPE_APPLET,
+                      "Timer applet",
+                      timer_factory,
+                      NULL)

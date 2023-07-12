@@ -1575,6 +1575,10 @@ netspeed_applet_factory (MatePanelApplet *applet,
 
     glibtop_init ();
 
+#ifndef ENABLE_IN_PROCESS
+    g_set_application_name (_("MATE Netspeed"));
+#endif
+
     netspeed = NETSPEED_APPLET (applet);
     netspeed->icon_theme = gtk_icon_theme_get_default ();
 
@@ -1680,60 +1684,60 @@ netspeed_applet_factory (MatePanelApplet *applet,
                                          (GSourceFunc)timeout_function,
                                          netspeed);
     g_signal_connect_object (applet, "change-size",
-                      G_CALLBACK (applet_change_size_or_orient),
-                      netspeed, 0);
+                             G_CALLBACK (applet_change_size_or_orient),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->icon_theme, "changed",
-                      G_CALLBACK (icon_theme_changed_cb),
-                      netspeed, 0);
+                             G_CALLBACK (icon_theme_changed_cb),
+                             netspeed, 0);
 
     g_signal_connect_object (applet, "change-orient",
-                      G_CALLBACK (applet_change_size_or_orient),
-                      netspeed, 0);
+                             G_CALLBACK (applet_change_size_or_orient),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->in_label, "size-allocate",
-                      G_CALLBACK (label_size_allocate_cb),
-                      netspeed, 0);
+                             G_CALLBACK (label_size_allocate_cb),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->out_label, "size-allocate",
-                      G_CALLBACK (label_size_allocate_cb),
-                      netspeed, 0);
+                             G_CALLBACK (label_size_allocate_cb),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->sum_label, "size-allocate",
-                      G_CALLBACK (label_size_allocate_cb),
-                      netspeed, 0);
+                             G_CALLBACK (label_size_allocate_cb),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::auto-change-device",
-                      G_CALLBACK (auto_change_device_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (auto_change_device_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::device",
-                      G_CALLBACK (device_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (device_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::show-all-addresses",
-                      G_CALLBACK (showalladdresses_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (showalladdresses_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::show-sum",
-                      G_CALLBACK (showsum_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (showsum_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::show-bits",
-                      G_CALLBACK (showbits_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (showbits_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::change-icon",
-                      G_CALLBACK (changeicon_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (changeicon_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::show-icon",
-                      G_CALLBACK (showicon_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (showicon_settings_changed),
+                             netspeed, 0);
 
     g_signal_connect_object (netspeed->settings, "changed::show-quality-icon",
-                      G_CALLBACK (showqualityicon_settings_changed),
-                      netspeed, 0);
+                             G_CALLBACK (showqualityicon_settings_changed),
+                             netspeed, 0);
 
     action_group = gtk_action_group_new ("Netspeed Applet Actions");
     gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
@@ -1759,8 +1763,8 @@ netspeed_applet_factory (MatePanelApplet *applet,
     return TRUE;
 }
 
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("NetspeedAppletFactory",
-                                       NETSPEED_TYPE_APPLET,
-                                       "NetspeedApplet",
-                                       netspeed_applet_factory,
-                                       NULL)
+PANEL_APPLET_FACTORY ("NetspeedAppletFactory",
+                      NETSPEED_TYPE_APPLET,
+                      "NetspeedApplet",
+                      netspeed_applet_factory,
+                      NULL)

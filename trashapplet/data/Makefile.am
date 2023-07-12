@@ -1,25 +1,42 @@
-APPLET_LOCATION = $(libdir)/mate-applets/libtrashapplet.so
+applet_in_files = org.mate.applets.TrashApplet.mate-panel-applet.desktop.in
+service_in_files = org.mate.panel.applet.TrashAppletFactory.service.in
+
+if ENABLE_IN_PROCESS
+APPLET_LOCATION = $(pkglibdir)/libmate-trash-applet.so
+else !ENABLE_IN_PROCESS
+APPLET_LOCATION = $(libexecdir)/trashapplet
+endif !ENABLE_IN_PROCESS
 
 appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.applets.TrashApplet.mate-panel-applet.desktop.in
 applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
 		-e "s|\@APPLET_LOCATION\@|$(APPLET_LOCATION)|" \
+		-e "s|\@APPLET_IN_PROCESS\@|$(APPLET_IN_PROCESS)|" \
 		-e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
 		$< > $@
 
 $(applet_DATA): $(applet_in_files) Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
+if !ENABLE_IN_PROCESS
+servicedir = $(datadir)/dbus-1/services
+service_DATA = $(service_in_files:.service.in=.service)
 
-EXTRA_DIST = \
-	$(applet_in_files).in	\
-	trashapplet-empty-progress.ui \
-	trashapplet-menu.xml \
+$(service_DATA): $(service_in_files) Makefile
+	$(AM_V_GEN)sed \
+		-e "s|\@APPLET_LOCATION\@|$(APPLET_LOCATION)|" \
+		$< > $@
+endif !ENABLE_IN_PROCESS
+
+EXTRA_DIST =					\
+	$(applet_in_files).in			\
+	$(service_in_files)			\
+	trashapplet-empty-progress.ui		\
+	trashapplet-menu.xml			\
 	trashapplet-resources.gresource.xml
 
-CLEANFILES = $(applet_DATA) $(applet_in_files)
+CLEANFILES = $(applet_DATA) $(applet_in_files) $(service_DATA)
 
 -include $(top_srcdir)/git.mk

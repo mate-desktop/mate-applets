@@ -822,8 +822,8 @@ stickynotes_save_now (void)
     xmlDocSetRootElement (doc, root);
     xmlNewProp (root, XML_CHAR ("version"), XML_CHAR (VERSION));
 #ifdef GDK_WINDOWING_X11
-    GdkDisplay *display = gdk_screen_get_display(gdk_screen_get_default());
-    if (GDK_IS_X11_DISPLAY(display))
+    GdkDisplay *display = gdk_screen_get_display (gdk_screen_get_default());
+    if (GDK_IS_X11_DISPLAY (display))
     {
         WnckScreen *wnck_screen = wnck_screen_get_default ();
         wnck_screen_force_update (wnck_screen);
@@ -955,7 +955,7 @@ stickynotes_load (GdkScreen *screen)
     GList *new_nodes; /* Lists of xmlNodePtr's */
     int x, y, w, h;
 #ifdef GDK_WINDOWING_X11
-    GdkDisplay *display = gdk_screen_get_display(gdk_screen_get_default());
+    GdkDisplay *display = gdk_screen_get_display (gdk_screen_get_default());
 #endif
 
     /* The XML file is $HOME/.config/mate/stickynotes-applet, most probably */

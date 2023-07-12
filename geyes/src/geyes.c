@@ -140,8 +140,10 @@ timer_cb (EyesApplet *eyes_applet)
     display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
     seat = gdk_display_get_default_seat (display);
 
-    for (i = 0; i < eyes_applet->num_eyes; i++) {
-        if (gtk_widget_get_realized (eyes_applet->eyes[i])) {
+    for (i = 0; i < eyes_applet->num_eyes; i++)
+    {
+        if (gtk_widget_get_realized (eyes_applet->eyes[i]))
+        {
             gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]),
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);

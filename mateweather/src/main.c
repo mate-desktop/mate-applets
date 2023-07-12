@@ -54,4 +54,4 @@ static gboolean mateweather_applet_factory(MatePanelApplet* applet, const gchar*
 	return retval;
 }
 
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY("MateWeatherAppletFactory", PANEL_TYPE_APPLET, "mateweather", mateweather_applet_factory, NULL)
+PANEL_APPLET_FACTORY("MateWeatherAppletFactory", PANEL_TYPE_APPLET, "mateweather", mateweather_applet_factory, NULL)
