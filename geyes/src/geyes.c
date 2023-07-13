@@ -135,6 +135,7 @@ timer_cb (EyesApplet *eyes_applet)
     gint x, y, dx, dy;
     gint pupil_x, pupil_y;
     gsize i;
+    int applet_x,applet_y;
 
     display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
     seat = gdk_display_get_default_seat (display);
@@ -144,9 +145,17 @@ timer_cb (EyesApplet *eyes_applet)
             gdk_window_get_device_position (gtk_widget_get_window (eyes_applet->eyes[i]),
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);
+
+#ifdef ENABLE_IN_PROCESS
+            gdk_window_get_origin (gtk_widget_get_window (GTK_WIDGET(eyes_applet->applet)),
+                                       &applet_x, &applet_y);
+#else
+            applet_x = 0;
+            applet_y = 0;
+#endif
             gtk_widget_translate_coordinates (eyes_applet->eyes[i],
                                               gtk_widget_get_toplevel(eyes_applet->eyes[i]),
-                                              0, 0, &dx, &dy);
+                                              -applet_x, -applet_y, &dx, &dy);
             x -= dx;
             y -= dy;
 
@@ -257,8 +266,6 @@ setup_eyes (EyesApplet *eyes_applet)
             gtk_widget_set_halign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
             gtk_widget_set_valign (eyes_applet->eyes[i], GTK_ALIGN_CENTER);
         }
-
-        gtk_widget_realize (eyes_applet->eyes[i]);
 
         eyes_applet->pointer_last_x[i] = G_MAXINT;
         eyes_applet->pointer_last_y[i] = G_MAXINT;
@@ -398,7 +405,9 @@ geyes_applet_fill (MatePanelApplet *applet)
     GtkActionGroup *action_group;
     gboolean result;
 
+#ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("Eyes"));
+#endif
     gtk_window_set_default_icon_name ("mate-eyes-applet");
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
@@ -466,8 +475,8 @@ geyes_applet_factory (MatePanelApplet *applet,
     return retval;
 }
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("GeyesAppletFactory",
-                                       PANEL_TYPE_APPLET,
-                                       "geyes",
-                                       geyes_applet_factory,
-                                       NULL)
+PANEL_APPLET_FACTORY ("GeyesAppletFactory",
+                      PANEL_TYPE_APPLET,
+                      "geyes",
+                      geyes_applet_factory,
+                      NULL)

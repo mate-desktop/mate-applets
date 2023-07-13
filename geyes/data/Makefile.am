@@ -1,29 +1,39 @@
 NULL =
 
-appletdir       = $(datadir)/mate-panel/applets
 applet_in_files = org.mate.applets.GeyesApplet.mate-panel-applet.desktop.in
+service_in_files = org.mate.panel.applet.GeyesAppletFactory.service.in
+gschema_in_files = org.mate.panel.applet.geyes.gschema.xml.in
+
+if ENABLE_IN_PROCESS
+APPLET_LOCATION = $(pkglibdir)/libmate-geyes-applet.so
+else !ENABLE_IN_PROCESS
+APPLET_LOCATION = $(libexecdir)/mate-geyes-applet
+endif !ENABLE_IN_PROCESS
+
+appletdir       = $(datadir)/mate-panel/applets
 applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+            -e "s|\@APPLET_LOCATION\@|$(APPLET_LOCATION)|" \
+            -e "s|\@APPLET_IN_PROCESS\@|$(APPLET_IN_PROCESS)|" \
             -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
             $< > $@
 
 $(applet_DATA): $(applet_in_files) Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
+if !ENABLE_IN_PROCESS
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.GeyesAppletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.mate.panel.applet.GeyesAppletFactory.service: $(service_in_files)
+$(service_DATA): $(service_in_files) Makefile
 	$(AM_V_GEN)sed \
-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+            -e "s|\@APPLET_LOCATION\@|$(APPLET_LOCATION)|" \
             $< > $@
+endif !ENABLE_IN_PROCESS
 
-geyes_gschema_in_files = org.mate.panel.applet.geyes.gschema.xml.in
-gsettings_SCHEMAS = $(geyes_gschema_in_files:.xml.in=.xml)
+gsettings_SCHEMAS = $(gschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
 CLEANFILES = \
@@ -40,7 +50,7 @@ EXTRA_DIST = \
 	themes.ui			\
 	$(applet_in_files).in		\
 	$(service_in_files)		\
-	$(geyes_gschema_in_files)	\
+	$(gschema_in_files)	\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk

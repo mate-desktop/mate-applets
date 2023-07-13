@@ -1,6 +1,7 @@
 [Applet Factory]
 Id=GeyesAppletFactory
-Location=@LIBEXECDIR@/mate-geyes-applet
+Location=@APPLET_LOCATION@
+InProcess=@APPLET_IN_PROCESS@
 Name=Eyes Applet Factory
 Description=Eyes Applet Factory
 
@@ -10,6 +11,7 @@ Description=A set of eyeballs for your panel
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=mate-eyes-applet
 MateComponentId=OAFIID:MATE_GeyesApplet
+Platforms=X11;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=mate-applets
 X-MATE-Bugzilla-Component=geyes
