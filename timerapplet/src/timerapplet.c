@@ -27,6 +27,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
+#include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 
 #include <libnotify/notify.h>
@@ -353,15 +354,20 @@ timer_preferences_callback (GtkAction *action, TimerApplet *applet)
 }
 
 static gboolean
-timer_applet_click (TimerApplet *applet)
+timer_applet_click (TimerApplet *applet,  GdkEventButton *event)
 {
-    if (!applet->active && !applet->pause && applet->elapsed)
-        timer_reset_callback (NULL, applet);
-    else if (applet->active && !applet->pause)
-        timer_pause_callback (NULL, applet);
-    else if (!applet->active || applet->pause)
-        timer_start_callback (NULL, applet);
-    return FALSE;
+    if (  event->button == 1)
+    {
+        if (!applet->active && !applet->pause && applet->elapsed)
+            timer_reset_callback (NULL, applet);
+        else if (applet->active && !applet->pause)
+            timer_pause_callback (NULL, applet);
+        else if (!applet->active || applet->pause)
+            timer_start_callback (NULL, applet);
+    return TRUE;
+    }
+    else
+        return FALSE;
 }
 
 static void
@@ -424,7 +430,14 @@ timer_applet_fill (MatePanelApplet* applet_widget)
                       G_CALLBACK (timer_applet_destroy),
                       applet);
 
+#ifdef GDK_WINDOWING_X11
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
     g_signal_connect_swapped (applet->applet, "button-release-event",
+                              G_CALLBACK (timer_applet_click),
+                              applet);
+  else
+#endif
+    g_signal_connect_swapped (applet->applet, "button_press_event",
                               G_CALLBACK (timer_applet_click),
                               applet);
 
