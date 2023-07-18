@@ -162,7 +162,7 @@ timer_callback (TimerApplet *applet)
             gtk_widget_set_tooltip_text (GTK_WIDGET (applet->label), name);
             gtk_widget_hide (GTK_WIDGET (applet->pause_image));
             atk_object_set_name (atk_obj, label);
-            atk_object_set_description (atk_obj, tooltip);
+            atk_object_set_description (atk_obj, "");
 
             if (g_settings_get_boolean (applet->settings, SHOW_NOTIFICATION_KEY))
             {
