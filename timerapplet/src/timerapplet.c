@@ -430,13 +430,6 @@ timer_applet_fill (MatePanelApplet* applet_widget)
                       G_CALLBACK (timer_applet_destroy),
                       applet);
 
-#ifdef GDK_WINDOWING_X11
-  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
-    g_signal_connect_swapped (applet->applet, "button-release-event",
-                              G_CALLBACK (timer_applet_click),
-                              applet);
-  else
-#endif
     g_signal_connect_swapped (applet->applet, "button_press_event",
                               G_CALLBACK (timer_applet_click),
                               applet);
