@@ -430,7 +430,7 @@ timer_applet_fill (MatePanelApplet* applet_widget)
                       G_CALLBACK (timer_applet_destroy),
                       applet);
 
-    g_signal_connect_swapped (applet->applet, "button_press_event",
+    g_signal_connect_swapped (applet->applet, "button-press-event",
                               G_CALLBACK (timer_applet_click),
                               applet);
 
