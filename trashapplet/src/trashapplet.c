@@ -35,7 +35,6 @@
 #include <mate-panel-applet.h>
 
 #include "trash-empty.h"
-#include "xstuff.h"
 
 #define TRASH_TYPE_APPLET (trash_applet_get_type ())
 
@@ -263,14 +262,7 @@ trash_applet_button_release (GtkWidget      *widget,
       (event->type != GDK_2BUTTON_PRESS) &&
       (event->type != GDK_3BUTTON_PRESS))
     {
-#if defined(GDK_WINDOWING_X11) && !defined(ENABLE_IN_PROCESS)
-      if (GDK_IS_X11_DISPLAY (gtk_widget_get_display (widget)) &&
-	  g_settings_get_boolean (settings, PANEL_ENABLE_ANIMATIONS))
-        xstuff_zoom_animate (widget, NULL);
-#endif
-
       trash_applet_open_folder (NULL, applet);
-
       return TRUE;
     }
 

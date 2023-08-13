@@ -12,8 +12,6 @@ APPLET_SOURCES =	\
 	trashapplet.c	\
 	trash-empty.h	\
 	trash-empty.c	\
-	xstuff.c	\
-	xstuff.h	\
 	$(NULL)
 
 APPLET_LIBS = 			\
