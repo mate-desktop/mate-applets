@@ -263,7 +263,7 @@ trash_applet_button_release (GtkWidget      *widget,
       (event->type != GDK_2BUTTON_PRESS) &&
       (event->type != GDK_3BUTTON_PRESS))
     {
-#ifdef GDK_WINDOWING_X11
+#if defined(GDK_WINDOWING_X11) && !defined(ENABLE_IN_PROCESS)
       if (GDK_IS_X11_DISPLAY (gtk_widget_get_display (widget)) &&
 	  g_settings_get_boolean (settings, PANEL_ENABLE_ANIMATIONS))
         xstuff_zoom_animate (widget, NULL);
