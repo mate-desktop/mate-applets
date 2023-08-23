@@ -10,11 +10,12 @@
 # 8368efb4263ae7005ba7cc0c0f943bdd_16f29c1, 2018
 # Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018
 # Vlad - <priv4417@gmail.com>, 2019
-# Юрій Яновський <lytvyn349@ukr.net>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # zubr139, 2020
 # Микола Ткач <chistomov@gmail.com>, 2021
 # Sergiy <sergiy@gorichenko.com>, 2022
+# Anton Gladky <gladk@debian.org>, 2022
+# Wolfgang Ulbrich <mate@raveit.de>, 2023
 # 
 msgid ""
 msgstr ""
@@ -22,8 +23,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2021-06-20 12:41+0200\n"
 "PO-Revision-Date: 2018-03-11 16:20+0000\n"
-"Last-Translator: Sergiy <sergiy@gorichenko.com>, 2022\n"
-"Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2023\n"
+"Language-Team: Ukrainian (https://app.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,16 +37,16 @@ msgstr "Фабрика аплету стану AccessX"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:6
 msgid "Keyboard Accessibility Status Applet Factory"
-msgstr "Фабрика стану спеціяльних можливостей набірниці"
+msgstr "Фабрика стану спеціальних можливостей клавіатури"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:9
 #: accessx-status/src/applet.c:1670
 msgid "Keyboard Accessibility Status"
-msgstr "Стан спеціяльних можливостей набірниці"
+msgstr "Стан спеціальних можливостей клавіатури"
 
 #: accessx-status/data/org.mate.applets.AccessxStatusApplet.mate-panel-applet.desktop.in.in:10
 msgid "Shows the status of keyboard accessibility features"
-msgstr "Показує стан спеціяльних можливостей набірниці"
+msgstr "Показує стан спеціальних можливостей клавіатури"
 
 #: accessx-status/src/applet.c:100 charpick/charpick.c:598
 #: geyes/src/geyes.c:175 mateweather/src/mateweather-about.c:41
@@ -91,7 +92,8 @@ msgstr ""
 "Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
 "Микола Ткач <Stuartlittle1970@gmail.com>,\n"
 "Oleh Tsyupka <myr4yk@gmail.com>\n"
-"Юрій Яновський <lytvyn349@ukr.net>"
+"Юрій Яновський <lytvyn349@ukr.net>\n"
+"Anton Gladky <gladk@debian.org>"
 
 #: accessx-status/src/applet.c:143
 #, c-format
@@ -100,16 +102,16 @@ msgstr "Помилка при запуску переглядача довідк
 
 #: accessx-status/src/applet.c:176
 msgid "Open the keyboard preferences dialog"
-msgstr "Відкрити діалог налаштування набірниці"
+msgstr "Відкрити діалог налаштування клавіатури"
 
 #: accessx-status/src/applet.c:199
 #, c-format
 msgid "There was an error launching the keyboard preferences dialog: %s"
-msgstr "Помилка під час запуску діалогу параметрів набірниці: %s"
+msgstr "Помилка під час запуску діалогу параметрів клавіатури: %s"
 
 #: accessx-status/src/applet.c:218
 msgid "_Keyboard Accessibility Preferences"
-msgstr "Параметри спеціяльних можливостей _набірниці"
+msgstr "Параметри спеціальних можливостей _клавіатури"
 
 #: accessx-status/src/applet.c:220 battstat/battstat_applet.c:62
 #: battstat/battstat-preferences.ui:37 charpick/charpick.c:697
@@ -145,7 +147,7 @@ msgstr "Стан AccessX"
 
 #: accessx-status/src/applet.c:1244 accessx-status/src/applet.c:1444
 msgid "Shows keyboard status when accessibility features are used."
-msgstr "Показує стан набірниці при використанні спеціяльних можливостей"
+msgstr "Показує стан клавіатури при використанні спеціальних можливостей"
 
 #: accessx-status/src/applet.c:1280
 msgid "XKB Extension is not enabled"
@@ -162,7 +164,7 @@ msgstr "Помилка: %s"
 
 #: accessx-status/src/applet.c:1675
 msgid "Displays current state of keyboard accessibility features"
-msgstr "Показує поточний стан спеціяльних можливостей набірниці"
+msgstr "Показує поточний стан спеціальних можливостей клавіатури"
 
 #: battstat/battstat_applet.c:59 charpick/charpick.c:694
 #: command/src/command.c:86 cpufreq/src/cpufreq-applet.c:116
@@ -263,7 +265,7 @@ msgstr "Індикатор заряду акумулятора"
 
 #: battstat/battstat_applet.c:239 battstat/battstat_applet.c:297
 msgid "Your battery is now fully recharged"
-msgstr "Акумулятор повністю заряджено"
+msgstr "Акумулятор зараз повністю заряджено"
 
 #: battstat/battstat_applet.c:273 battstat/battstat_applet.c:430
 msgid "Battery Notice"
@@ -301,7 +303,7 @@ msgid ""
 msgstr ""
 "Щоб запобігти втраті Вашої роботи:\n"
 " • під’єднайте ноутбук до зовнішнього джерела живлення, або\n"
-" • збережіть відкриті документи та завершіть роботу комп'ютера."
+" • збережіть відкриті документи та завершіть роботу ноутбука."
 
 #: battstat/battstat_applet.c:402
 msgid ""
@@ -313,7 +315,7 @@ msgstr ""
 "Щоб запобігти втраті Вашої роботи:\n"
 " • переведіть ноутбук у режим сну,\n"
 " • під’єднайте ноутбук до зовнішнього джерела живлення, або\n"
-" • збережіть відкриті документи та завершіть роботу комп'ютера."
+" • збережіть відкриті документи та завершіть роботу ноутбука."
 
 #: battstat/battstat_applet.c:408
 msgid "Your battery is running low"
@@ -344,7 +346,7 @@ msgstr "Помилка показу довідки: %s"
 
 #: battstat/battstat_applet.c:835
 msgid "This utility shows the status of your laptop battery."
-msgstr "Цей засіб показує стан акумулятора Вашого комп'ютера."
+msgstr "Цей засіб показує стан акумулятора Вашого ноутбука."
 
 #: battstat/battstat_applet.c:837
 msgid "upower backend enabled."
@@ -376,7 +378,7 @@ msgstr "Індикатор зарядження акумулятора"
 #: battstat/battstat_applet.c:1190
 #: battstat/org.mate.applets.BattstatApplet.mate-panel-applet.desktop.in.in:10
 msgid "Monitor a laptop's remaining power"
-msgstr "Стежить за зарядом акумулятора портативного комп'ютера"
+msgstr "Стежить за зарядом акумулятора ноутбука"
 
 #: battstat/battstat-preferences.ui:23
 msgid "Battery Charge Monitor Preferences"
@@ -419,11 +421,11 @@ msgstr "Відсоток"
 
 #: battstat/battstat-preferences.ui:256
 msgid "Minutes Remaining"
-msgstr "Залишилося часу"
+msgstr "Залишилося хвилин"
 
 #: battstat/battstat-preferences.ui:282
 msgid "_Notify when battery is fully recharged"
-msgstr "_Сповіщати про повний заряд акумулятора"
+msgstr "_Сповіщати про повний перезаряд акумулятора"
 
 #: battstat/battstat-preferences.ui:305
 msgid "Notifications"
@@ -500,7 +502,7 @@ msgstr "Акумулятор розряджений"
 
 #: battstat/sounds/mate-battstat_applet.soundlist.desktop.in:11
 msgid "Battery fully re-charged"
-msgstr "Акумулятор повністю заряджено"
+msgstr "Акумулятор повністю перезаряджено"
 
 #: charpick/charpick.c:412
 msgid "Available palettes"
@@ -513,12 +515,12 @@ msgstr "Вставити \"%s\""
 
 #: charpick/charpick.c:468
 msgid "Insert special character"
-msgstr "Вставити спеціяльний символ"
+msgstr "Вставити спеціальний символ"
 
 #: charpick/charpick.c:472
 #, c-format
 msgid "insert special character %s"
-msgstr "вставити спеціяльний символ %s"
+msgstr "вставити спеціальний символ %s"
 
 #: charpick/charpick.c:610
 msgid "About Character Palette"
@@ -579,7 +581,7 @@ msgstr "Перелік рядків, що містять доступні шаб
 
 #: charpick/properties.c:28
 msgid "_Edit"
-msgstr "_Зміни"
+msgstr "_Змінити:"
 
 #: charpick/properties.c:94
 msgid "_Palette:"
@@ -587,7 +589,7 @@ msgstr "_Палітра:"
 
 #: charpick/properties.c:102
 msgid "Palette entry"
-msgstr "Поле палітри"
+msgstr "Елемент палітри"
 
 #: charpick/properties.c:103
 msgid "Modify a palette by adding or removing characters"
@@ -627,11 +629,11 @@ msgstr "Клацніть для зміни вибраної палітри"
 
 #: charpick/properties.c:510
 msgid "Delete button"
-msgstr "Кнопка вилучення"
+msgstr "Кнопка видалення"
 
 #: charpick/properties.c:511
 msgid "Click to delete the selected palette"
-msgstr "Клацніть для вилучення вибраної палітри"
+msgstr "Клацніть для видалення вибраної палітри"
 
 #: charpick/properties.c:565
 msgid "Character Palette Preferences"
@@ -639,7 +641,7 @@ msgstr "Параметри палітри символів"
 
 #: command/data/command-preferences.ui:25
 msgid "Command Applet Preferences"
-msgstr "Уподобання команди Applet"
+msgstr "Параметри команди Applet"
 
 #: command/data/command-preferences.ui:77
 msgid "C_ommand:"
@@ -647,7 +649,7 @@ msgstr "К_оманда:"
 
 #: command/data/command-preferences.ui:91
 msgid "_Interval (seconds):"
-msgstr "Інтервал (секунд):"
+msgstr "_Інтервал (секунд):"
 
 #: command/data/command-preferences.ui:105
 msgid "Maximum _width (chars):"
@@ -901,7 +903,7 @@ msgstr "_Грати DVD"
 
 #: drivemount/src/drive-button.c:944
 msgid "_Play CD"
-msgstr "_Грати КД"
+msgstr "_Грати CD"
 
 #: drivemount/src/drive-button.c:947
 #, c-format
@@ -1308,7 +1310,7 @@ msgstr "хвилин"
 
 #: mateweather/src/mateweather-pref.c:1084
 msgid "Display"
-msgstr "Зовнішній вигляд"
+msgstr "Дісплей"
 
 #: mateweather/src/mateweather-pref.c:1103
 msgid "General"
@@ -1446,7 +1448,7 @@ msgstr "Колір тла графіку мережі"
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:96
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:135
 msgid "Grid line color"
-msgstr "Колір ґратки"
+msgstr "Колір лінії сітки"
 
 #: multiload/data/org.mate.panel.applet.multiload.gschema.xml.in:100
 msgid "Indicator color"
@@ -1547,7 +1549,7 @@ msgstr "Інтервал оновлення сис_темного монітор
 
 #: multiload/data/properties.ui:344
 msgid "milliseconds"
-msgstr "мс"
+msgstr "мілісекунди"
 
 #: multiload/data/properties.ui:359
 msgid "Options"
@@ -1616,7 +1618,7 @@ msgstr "_Тло"
 
 #: multiload/data/properties.ui:869 multiload/data/properties.ui:1093
 msgid "_Gridline"
-msgstr "_Лінія ґратки"
+msgstr "_Сітка"
 
 #: multiload/data/properties.ui:898
 msgid "_Indicator"
@@ -1867,7 +1869,7 @@ msgstr "Мережевий _пристрій:"
 
 #: netspeed/data/netspeed-preferences.ui:131
 msgid "Show _sum instead of in & out"
-msgstr "Показувати _сумарну швидкість вхідного та вихідного трафіку"
+msgstr "Показувати _сумарну швидкість замість вхідного та вихідного трафіку"
 
 #: netspeed/data/netspeed-preferences.ui:147
 msgid "Show _bits instead of bytes"
@@ -1958,7 +1960,7 @@ msgstr "Вхідний колір"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:41
 msgid "The color of the graph of the inbound traffic"
-msgstr "Колір діяграми для вхідного трафіку"
+msgstr "Колір діаграми для вхідного трафіку"
 
 #: netspeed/data/org.mate.panel.applet.netspeed.gschema.xml.in:45
 msgid "Out color"
@@ -2009,19 +2011,19 @@ msgstr "Мережевий монітор"
 
 #: netspeed/src/backend.c:149
 msgid "link-local"
-msgstr ""
+msgstr "link-local"
 
 #: netspeed/src/backend.c:151
 msgid "site-local"
-msgstr ""
+msgstr "site-local"
 
 #: netspeed/src/backend.c:153
 msgid "v4mapped"
-msgstr ""
+msgstr "v4mapped"
 
 #: netspeed/src/backend.c:155
 msgid "v4compat"
-msgstr ""
+msgstr "v4compat"
 
 #: netspeed/src/backend.c:157
 msgid "host"
@@ -2033,7 +2035,7 @@ msgstr "не вказано"
 
 #: netspeed/src/backend.c:161
 msgid "global"
-msgstr ""
+msgstr "Глобальний"
 
 #: netspeed/src/backend.c:588
 #, c-format
@@ -2048,12 +2050,12 @@ msgstr "(невідомо)"
 #: netspeed/src/backend.c:594
 #, c-format
 msgid " MCS %d"
-msgstr ""
+msgstr " MCS %d"
 
 #: netspeed/src/backend.c:597
 #, c-format
 msgid " VHT-MCS %d"
-msgstr ""
+msgstr " VHT-MCS %d"
 
 #: netspeed/src/backend.c:599
 #, c-format
@@ -2068,7 +2070,7 @@ msgstr " 80МГц"
 #: netspeed/src/backend.c:603
 #, c-format
 msgid " 80P80MHz"
-msgstr ""
+msgstr " 80P80Мгц"
 
 #: netspeed/src/backend.c:605
 #, c-format
@@ -2078,36 +2080,36 @@ msgstr " 160МГц"
 #: netspeed/src/backend.c:607
 #, c-format
 msgid " short GI)"
-msgstr ""
+msgstr " short GI)"
 
 #: netspeed/src/backend.c:610
 #, c-format
 msgid " VHT-NSS %d"
-msgstr ""
+msgstr " VHT-NSS %d"
 
 #: netspeed/src/backend.c:613
 #, c-format
 msgid " HE-MCS %d"
-msgstr ""
+msgstr " HE-MCS %d"
 
 #: netspeed/src/backend.c:616
 #, c-format
 msgid " HE-NSS %d"
-msgstr ""
+msgstr " HE-NSS %d"
 
 #: netspeed/src/backend.c:619
 #, c-format
 msgid " HE-GI %d"
-msgstr ""
+msgstr " HE-GI %d"
 
 #: netspeed/src/backend.c:622
 #, c-format
 msgid " HE-DCM %d"
-msgstr ""
+msgstr " HE-DCM %d"
 
 #: netspeed/src/backend.c:706
 msgid "20 MHz (no HT)"
-msgstr ""
+msgstr "20 МГц (ні HT)"
 
 #: netspeed/src/backend.c:708
 msgid "20 MHz"
@@ -2141,7 +2143,7 @@ msgstr "10 МГц"
 #: netspeed/src/netspeed.c:776 netspeed/src/netspeed.c:1422
 #: netspeed/src/netspeed.c:1431
 msgid "unknown"
-msgstr "Невідомо"
+msgstr "невідомо"
 
 #: netspeed/src/backend.c:773
 #, c-format
@@ -2163,7 +2165,7 @@ msgstr "Б/с"
 
 #: netspeed/src/netspeed.c:473
 msgid "Kibit/s"
-msgstr ""
+msgstr "Кбіт/с"
 
 #: netspeed/src/netspeed.c:473
 msgid "KiB/s"
@@ -2171,7 +2173,7 @@ msgstr "КіБ/с"
 
 #: netspeed/src/netspeed.c:477
 msgid "Mibit/s"
-msgstr ""
+msgstr "Мбіт/с"
 
 #: netspeed/src/netspeed.c:477
 msgid "MiB/s"
@@ -2179,11 +2181,11 @@ msgstr "МіБ/с"
 
 #: netspeed/src/netspeed.c:481
 msgid "Gibit/s"
-msgstr ""
+msgstr "Гбіт/с"
 
 #: netspeed/src/netspeed.c:481
 msgid "GiB/s"
-msgstr "ҐіБ/с"
+msgstr "ГіБ/с"
 
 #: netspeed/src/netspeed.c:646
 msgid "%'"
@@ -2235,7 +2237,7 @@ msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Сталася помилка під час перегляду за допомогою:\n"
+"Помилка показу довідки:\n"
 "%s"
 
 #: netspeed/src/netspeed.c:1050
@@ -2777,7 +2779,8 @@ msgstr "Тривалість таймера у секундах"
 
 #: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:13
 msgid "Show notification popup when timer finish"
-msgstr "Показати виринне повідомлення про сповіщення після завершення таймера"
+msgstr ""
+"Показати виринаюче повідомлення про сповіщення після завершення таймера"
 
 #: timerapplet/data/org.mate.panel.applet.timer.gschema.xml.in:17
 msgid "Show dialog window when timer finish"
@@ -2831,7 +2834,7 @@ msgstr "Ск_инути"
 #: timerapplet/src/timerapplet.c:153
 #, c-format
 msgid "Finished %s"
-msgstr "Готово %s"
+msgstr "Завершено %s"
 
 #: timerapplet/src/timerapplet.c:161 timerapplet/src/timerapplet.c:173
 msgid "Timer finished!"

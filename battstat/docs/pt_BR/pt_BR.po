@@ -15,14 +15,15 @@
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Marco Novaes <marco-novaes@uol.com.br>, 2021
 # Luciano Luck, 2022
+# Vitor Henrique, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-01-16 12:30+0100\n"
 "PO-Revision-Date: 2018-09-27 15:09+0000\n"
-"Last-Translator: Luciano Luck, 2022\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
+"Last-Translator: Vitor Henrique, 2023\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -515,6 +516,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Preferences "
 "Dialog</phrase> </textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-preferences.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Janela de "
+"preferências</phrase> </textobject>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:338
@@ -549,6 +553,10 @@ msgid ""
 "battery to indicate remaining capacity or a plug to indicate your laptop is "
 "connected to an external power source. <_:figure-1/>"
 msgstr ""
+"Essa visão mostra apenas um gráfico no painel, seja uma bateria vertical "
+"para indicar a capacidade restante ou um pluge para indicar que seu "
+"computador portátil está conectado a uma fonte externa de energia. "
+"<_:figure-1/>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:361
@@ -734,6 +742,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Expanded View</phrase> "
 "</textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-credits-hal.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Visão "
+"expandida</phrase> </textobject>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:453
@@ -743,6 +754,10 @@ msgid ""
 "indicated in the about dialog by placing a star next to the author of the "
 "HAL backend. <_:figure-1/>"
 msgstr ""
+"Se você está usando a interface upower ou a camada de abstração de hardware "
+"(consulte <xref linkend=\"battstat-power-backends\"/>) isso será indicado no"
+" diálogo sobre, colocando uma estrela ao lado do autor do backend HAL.. "
+"<_:figure-1/>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:473
@@ -859,6 +874,10 @@ msgid ""
 "HAL or the wrong information is being reported, you can attempt to disable "
 "the HAL backend by setting a GSettings key."
 msgstr ""
+"Você pode verificar se sua bateria foi detectada pelo HAL usando o "
+"comando<command>hal-device-manager</command>. Se sua bateria não for "
+"detectada pelo HAL ou as informações reportadas estiverem erradas, você pode"
+" tentar desativar o backend do HAL definindo uma chave GSettings."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:530
