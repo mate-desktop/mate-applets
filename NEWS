@@ -1,6 +1,33 @@
+### mate-applets 1.27.1
+
+  * update translations
+  * trashapplet: Remove animation that hasn't worked in years
+  * trash, in-process: fix segfault with glib2.77.1
+  * use button-press-event as signal name
+  * timerapplet: fix build warning
+  * timer: fix in-process ATK warning
+  * Timer-catch the left click when under wayland
+  * Allow building all applets in or out of process
+  * Battstat: Port to in-process for wayland compatability
+  * timerapplet: port to in-process for wayland
+  * netspeed: port to in-process for wayland
+  * stickynotes: port to in-process for wayland
+  * multiload: port to in-process for wayland
+  * mate-weather-applet: port to in-process for wayland support
+  * drivemount-applet: port to in-process for wayland
+  * command: Port to in-process for wayland compatability
+  * charpick: port to in-process for wayland compatability
+  * geyes: Add support for building in-process
+  * cpufreq: port to in-process for wayland compatablity
+  * trash: port to in-process for wayland support
+  * battstat: Use libtool to build libapm
+  * Remove redundant case
+  * Add click-hide key to the stickynotes GSettings
+  * trashapplet: Replace the deprecated function (g_io_scheduler...) and remove the compilation warning
+
 ### mate-applets 1.27.0
 
-  * tx: sync with transifex
+  * update translations
   * tx: migrate config file
   * configure.ac: The macro 'AC_HELP_STRING' is obsolete
   * stickynotes: bump gtksourceview 4
