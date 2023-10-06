@@ -25,6 +25,7 @@ LIBXML_REQUIRED=2.5.0
 POLKIT_REQUIRED=0.97
 LIBWNCK_REQUIRED=3.0.0
 GUCHARMAP_REQUIRED=3.0.0
+MATE_DESKTOP_REQUIRED=1.27.1
 dnl ***************************************************************************
 
 AM_MAINTAINER_MODE
@@ -62,6 +63,11 @@ dnl -- check for libmatepanelapplet4 (required) --------------------------------
 PKG_CHECK_MODULES(MATE_APPLETS4, libmatepanelapplet-4.0 >= $LIBPANEL4_REQUIRED)
 AC_SUBST(MATE_APPLETS4_CFLAGS)
 AC_SUBST(MATE_APPLETS4_LIBS)
+
+dnl -- check for mate-desktop-2.0 (required) ------------------------------------
+PKG_CHECK_MODULES(MATE_DESKTOP, mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED)
+AC_SUBST(MATE_DESKTOP_CFLAGS)
+AC_SUBST(MATE_DESKTOP_LIBS)
 
 dnl -- check for libgtop (optional) -------------------------------------------
 build_gtop_applets=false
