@@ -31,6 +31,8 @@
 #include <gdk/gdkkeysyms.h>
 #include <gio/gdesktopappinfo.h>
 
+#include <libmate-desktop/mate-image-menu-item.h>
+
 #include <string.h>
 
 enum {
@@ -531,10 +533,10 @@ create_menu_item (DriveButton *self,
 {
     GtkWidget *item, *image;
 
-    item = gtk_image_menu_item_new_with_mnemonic (label);
+    item = mate_image_menu_item_new_with_mnemonic (label);
     if (icon_name) {
         image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
-        gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
+        mate_image_menu_item_set_image (MATE_IMAGE_MENU_ITEM (item), image);
         gtk_widget_show (image);
     }
     if (callback)

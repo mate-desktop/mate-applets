@@ -6,6 +6,7 @@ AM_CPPFLAGS =				\
 	-DDRIVEMOUNT_RESOURCE_PATH=\""/org/mate/mate-applets/drivemount/"\" \
 	${WARN_CFLAGS}			\
 	$(MATE_APPLETS4_CFLAGS)		\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(NULL)
 
 BUILT_SOURCES =				\
@@ -28,13 +29,15 @@ nodist_libmate_drivemount_applet_la_SOURCES = $(BUILT_SOURCES)
 libmate_drivemount_applet_la_SOURCES = $(APPLET_SOURCES)
 libmate_drivemount_applet_la_CFLAGS = $(AM_CFLAGS)
 libmate_drivemount_applet_la_LDFLAGS = -module -avoid-version
-libmate_drivemount_applet_la_LIBADD = $(APPLET_LIBS)
+libmate_drivemount_applet_la_LIBADD = $(APPLET_LIBS) \
+									  $(MATE_DESKTOP_LIBS)
 else !ENABLE_IN_PROCESS
 libexec_PROGRAMS = mate-drivemount-applet
 nodist_mate_drivemount_applet_SOURCES = $(BUILT_SOURCES)
 mate_drivemount_applet_SOURCES = $(APPLET_SOURCES)
 mate_drivemount_applet_CFLAGS = $(AM_CFLAGS)
-mate_drivemount_applet_LDADD = $(APPLET_LIBS)
+mate_drivemount_applet_LDADD = $(APPLET_LIBS) \
+							   $(MATE_DESKTOP_LIBS)
 endif !ENABLE_IN_PROCESS
 
 drivemount-resources.c: ../data/drivemount-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data/ --generate-dependencies $(srcdir)/../data/drivemount-resources.gresource.xml)

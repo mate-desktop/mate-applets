@@ -24,6 +24,9 @@ requires:
     - which
     - wireless_tools
     - yelp-tools
+    # mate-desktop dependencies
+    - iso-codes
+    - gobject-introspection
 
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
@@ -58,6 +61,10 @@ requires:
     - mate-common
     - x11proto-kb-dev
     - yelp-tools
+    # mate-desktop dependencies
+    - iso-codes
+    - gobject-introspection
+    - libgirepository1.0-dev
 
   fedora:
     # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-applets.git
@@ -89,6 +96,9 @@ requires:
     - redhat-rpm-config
     - startup-notification-devel
     - upower-devel
+    # mate-desktop dependencies
+    - iso-codes-devel
+    - gobject-introspection-devel
 
   ubuntu:
     - autopoint
@@ -120,6 +130,10 @@ requires:
     - mate-common
     - x11proto-kb-dev
     - yelp-tools
+    # mate-desktop dependencies
+    - iso-codes
+    - gobject-introspection
+    - libgirepository1.0-dev
 
 variables:
   - 'CHECKERS="
@@ -138,10 +152,29 @@ variables:
     -enable-checker alpha.unix.cstring.OutOfBounds
     -enable-checker alpha.core.FixedAddr
     -enable-checker security.insecureAPI.strcpy"'
+  - MATE_DESKTOP_VERSION=1.27.1
 
 before_scripts:
 
 build_scripts:
+  - cd ${START_DIR}
+  - if [ ! -f mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz ];then
+  -     curl -Ls -o mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz https://github.com/mate-desktop/mate-desktop/releases/download/v${MATE_DESKTOP_VERSION}/mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz
+  - fi
+  - tar xf mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz
+  - cd mate-desktop-${MATE_DESKTOP_VERSION}
+  - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
+  -     ./autogen.sh --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
+  - else
+  -     ./autogen.sh --prefix=/usr
+  - fi
+  - if [ ${TRAVIS} == "false" ]; then
+  -     make clean
+  - fi
+  - make
+  - make install
+
+  - cd ${START_DIR}
   - if [ ${DISTRO_NAME} == "debian" ];then
   -     export CFLAGS+=" -Wsign-compare"
   -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
