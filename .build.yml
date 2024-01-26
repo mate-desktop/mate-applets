@@ -139,17 +139,6 @@ variables:
     -enable-checker security.insecureAPI.strcpy"'
 
 before_scripts:
-  - cd ${START_DIR}
-  - '[ -f mate-panel-1.26.0.tar.xz ] || curl -Ls -o mate-panel-1.26.0.tar.xz https://github.com/mate-desktop/mate-panel/releases/download/v1.26.0/mate-panel-1.26.0.tar.xz'
-  - tar xf mate-panel-1.26.0.tar.xz
-  - cd mate-panel-1.26.0
-  - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
-  -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
-  - else
-  -     ./configure --prefix=/usr
-  - fi
-  - make
-  - make install
 
 build_scripts:
   - NOCONFIGURE=1 ./autogen.sh
