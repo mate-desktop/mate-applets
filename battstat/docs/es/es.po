@@ -8,13 +8,14 @@
 # Luis Zárate <luisza@visualcon.net>, 2019
 # Adolfo Jayme-Barrientos, 2021
 # Toni Estévez <toni.estevez@gmail.com>, 2021
+# Francisco Serrador, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-01-16 12:30+0100\n"
 "PO-Revision-Date: 2018-09-27 15:09+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021\n"
+"Last-Translator: Francisco Serrador, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,6 +110,9 @@ msgid ""
 "<orgname>GNOME Documentation Project</orgname> <address> "
 "<email>tcurtis@somaradio.ca</email> </address> </affiliation>"
 msgstr ""
+"<firstname>Trevor</firstname> <surname>Curtis</surname> <affiliation> "
+"<orgname>Proyecto de Documentacióń de GNOME</orgname> <address> "
+"<email>tcurtis@somaradio.ca</email> </address> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:88
@@ -117,6 +121,9 @@ msgid ""
 "<orgname>GNOME Documentation Project</orgname> <address> "
 "<email>jp@spektr.eu.org</email> </address> </affiliation>"
 msgstr ""
+"<firstname>Jorgen </firstname> <surname> Pehrson</surname> <affiliation> "
+"<orgname>Proyecto de Documentación de GNOME</orgname> <address> "
+"<email>jp@spektr.eu.org</email> </address> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:96
@@ -133,6 +140,8 @@ msgid ""
 "<firstname>Davyd</firstname> <surname>Madeley</surname> <affiliation> "
 "<orgname>GNOME Project</orgname> </affiliation>"
 msgstr ""
+"<firstname>Davyd</firstname> <surname>Madeley</surname> <affiliation> "
+"<orgname>Proyecto GNOME</orgname> </affiliation>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:132
@@ -196,16 +205,18 @@ msgid ""
 "<revnumber>Battery Charge Monitor Applet Manual V2.2</revnumber> "
 "<date>August 2004</date> <_:revdescription-1/>"
 msgstr ""
+"<revnumber>Manual del Applet del Monitor de Carga de Batería "
+"V2.2</revnumber> <date>Agosto 2004</date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:170
 msgid "Trevor Curtis <email>tcurtis@somaradio.ca</email>"
-msgstr ""
+msgstr "Trevor Curtis <email>tcurtis@somaradio.ca</email>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:173
 msgid "Jorgen Pehrson <email>jp@spektr.eu.org</email>"
-msgstr ""
+msgstr "Jorgen Pehrson <email>jp@spektr.eu.org</email>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:166
@@ -213,11 +224,14 @@ msgid ""
 "<revnumber>Battery Charge Monitor Applet Manual V2.0</revnumber> <date>May "
 "2002</date> <_:revdescription-1/>"
 msgstr ""
+"<revnumber>Manual del Applet del Monitor de Carga de Batería "
+"V2.0</revnumber> <date>May 2002</date> <_:revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:181
 msgid "This manual describes version 1.10.2 of Battery Charge Monitor."
 msgstr ""
+"Este manual describe la versión 1.10.2 del Monitor de Carga de Batería."
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:185
@@ -231,6 +245,10 @@ msgid ""
 "applet or this manual, follow the directions in the <ulink url=\"help:mate-"
 "user-guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
+"Para informar un error o hacer una sugerencia respecto al applet de Monitor "
+"de Carga de Batería o este manual, siga las direcciones en esta <ulink "
+"url=\"help:mate-user-guide/feedback\" type=\"help\">Página de Recursos de "
+"MATE</ulink>."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:194
@@ -240,7 +258,7 @@ msgstr "<primary>Miniaplicación Monitor de carga de batería</primary>"
 #. (itstool) path: article/indexterm
 #: C/index.docbook:198
 msgid "<primary>Battstat Applet</primary>"
-msgstr ""
+msgstr "<primary>Applet Battstat</primary>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:205
@@ -273,6 +291,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>The Battery Charge "
 "Monitor applet.</phrase> </textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-applet.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>El applet del Monitor "
+"de Carga dela Batería.</phrase> </textobject>"
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:221
@@ -282,6 +303,11 @@ msgid ""
 " remaining both visually and as a percentage, as well as offer you an "
 "estimate of the time remaining based off the current usage rate."
 msgstr ""
+"El <application>Monitor de Carga de Batería</application> muestra el estado "
+"de cualquier baterías en su equipo portátil. El monitor puede decirla la "
+"capacidad restante ambos visualmente y por porcentaje, así como ofrece un "
+"tiempo estimado restante basado en la proporción de utilización de la "
+"batería que queda.."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:229
@@ -313,6 +339,9 @@ msgid ""
 "Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
 "dialog, then select <guilabel>Battery Charge Monitor</guilabel>."
 msgstr ""
+"Arrastre hacia abajo el listado de elementos en el diálogo <guilabel>Añadir "
+"al Panel</guilabel>, después seleccione <guilabel>Monitor de Carga de la "
+"Batería</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:252
@@ -325,6 +354,9 @@ msgid ""
 "The layout of the <application>Battery Charge Monitor</application> applet "
 "varies depending on the size and type of panel in which the applet resides."
 msgstr ""
+"La representación del applet de <application>Monitor de Carga de "
+"Batería</application> varía dependiendo en el tamaño y tipo del panel en el "
+"cual reside la applet."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:264
@@ -342,6 +374,14 @@ msgid ""
 "(Hardware Abstraction Layer)</ulink>. If that is also not available, the "
 "battery monitor will attempt direct access to the power management system"
 msgstr ""
+"El monitor de batería admite un número de backends de gestión de energía. "
+"Está disponible, el monitor intentará utilizar el interfaz <ulink "
+"url=\"http://upower.freedesktop.org/\">upower</ulink> de freedesktop.org. Si"
+" no está disponible o no admitido en su plataforma, volverá al <ulink "
+"url=\"http://freedesktop.org/Software/hal\">HAL (Hardware Abstraction Layer)"
+" o Capa de abstracción de Hardware</ulink> de freedesktop.org. Si eso "
+"también no está disponible, el monitor de batería intentará acceder "
+"directamente al sistema de gestión de energía."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:276
@@ -351,22 +391,28 @@ msgid ""
 "hardware. If the battery monitor is misreporting information from your "
 "battery see <xref linkend=\"battstat-troubleshooting\"/>."
 msgstr ""
+"No están disponibles todos los backend de gestión de energía para todos los "
+"proveedores, y algunos proveedores añaden sus propios backends para "
+"plataformas específicas y hardware. Si el monitor de batería tiene "
+"información parcial o mal informada desde su batería vea <xref "
+"linkend=\"battstat-troubleshooting\"/>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:285
 msgid "Getting Help"
-msgstr ""
+msgstr "Obtener Ayuda"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:286
 msgid ""
 "If the battery monitor doesn't work for you, see these additional resources:"
 msgstr ""
+"Si el monitor de batería no le funciona, vea estos recursos adicionales:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:291
 msgid "<xref linkend=\"battstat-troubleshooting\"/>;"
-msgstr ""
+msgstr "<xref linkend=\"battstat-troubleshooting\"/>;"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:294
@@ -374,6 +420,8 @@ msgid ""
 "<ulink url=\"http://ml.mate-desktop.org/listinfo/\">MATE mailing "
 "lists</ulink>"
 msgstr ""
+"<ulink url=\"http://ml.mate-desktop.org/listinfo/\">Listados de correo "
+"MATE</ulink>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:306
@@ -386,11 +434,15 @@ msgid ""
 "To bring up the preferences for the monitor, right-click on the monitor in "
 "the panel and then choose <guimenuitem>Preferences</guimenuitem>"
 msgstr ""
+"Para traer a colación las preferencias para el monitor, pulse el botón "
+"secundario en el monitor dentro del panel y después elija "
+"<guimenuitem>Preferencias</guimenuitem>."
 
 #. (itstool) path: figure/title
 #: C/index.docbook:311
 msgid "Battery Charge Monitor context (right-click) menu"
 msgstr ""
+"Menú contextual del Monitor de Carga de Batería (pulsación secundaria)"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -413,6 +465,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Battery Charge Monitor "
 "context menu</phrase> </textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/context-menu.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Menú de contexto del "
+"Monitor de Carga de Batería</phrase> </textobject>"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:324
@@ -440,6 +495,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Preferences "
 "Dialog</phrase> </textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-preferences.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Diálogo de "
+"Preferencias</phrase> </textobject>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:338
@@ -463,6 +521,9 @@ msgid ""
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Compact View</phrase> "
 "</textobject>"
 msgstr ""
+"<imageobject><imagedata fileref=\"figures/battstat-applet.png\" "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Vista Compacta</phrase>"
+" </textobject>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:343
@@ -471,11 +532,17 @@ msgid ""
 "battery to indicate remaining capacity or a plug to indicate your laptop is "
 "connected to an external power source. <_:figure-1/>"
 msgstr ""
+"Esta vista muestra solamente un gráfico simple en el panel, ya sea una "
+"batería vertical para indicar la capacidad restante o un enchufe que indica "
+"a su portátil si está conectado a una fuente de energía "
+"externa.<_:figure-1/>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:361
 msgid "The compact view is the default view for the monitor as of MATE 2.12."
 msgstr ""
+"La vista compacta es la vista predeterminada para el monitor como el de MATE"
+" 2.12."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:367
@@ -526,7 +593,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:388
 msgid "<guilabel>Show time/percentage</guilabel>"
-msgstr ""
+msgstr "<guilabel>Muestra tiempo/porcentaje</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:389
@@ -537,16 +604,22 @@ msgid ""
 "percentage remaining</guilabel> will tell you the percentage charge "
 "remaining in the battery."
 msgstr ""
+"Seleccionando esta opción representará una de dos piezas de información. "
+"<guilabel>Mostrar tiempo remanente</guilabel>le dirá cuantas horas y minutos"
+" hasta que la batería esté completamente descargada o recargada. "
+"<guilabel>Muestra el porcentaje remanente</guilabel> le dirá el porcentaje "
+"de carga remanente en la batería."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:400
 msgid "<guilabel>Notifications</guilabel>"
-msgstr ""
+msgstr "<guilabel>Notificaciones</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:403
 msgid "<guilabel> Warn when battery charge drops to </guilabel>"
 msgstr ""
+"<guilabel> Advierte cuando la carga de batería descienda a </guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:406
@@ -558,11 +631,19 @@ msgid ""
 "dismiss this warning dialog yourself, otherwise it will vanish automatically"
 " when you plug your laptop into mains power."
 msgstr ""
+"Seleccionando esta opción causará un diálogo de advertencia a ser "
+"representado cuando su portátil alcance un valor especificado, o bien como "
+"un porcentaje remanente o un número de minutos remanentes. Esto indica que "
+"la cantidad de carga remanente en su batería es críticamente baja. Puede no "
+"hacer caso de este diálogo de advertencia usted mismo, en otro caso "
+"desaparece automáticamente cuando enchufe su portátil."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:418
 msgid "<guilabel> Notify when the battery is fully recharged </guilabel>"
 msgstr ""
+"<guilabel> Notifica cuando la batería está completamente recargada "
+"</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:421
@@ -571,6 +652,10 @@ msgid ""
 "have compiled the Battery Charge Monitor with libnotify support a non-"
 "intrusive notification will popup from the monitor on the panel."
 msgstr ""
+"Seleccionando esta opción notifica cuando su batería está recargada "
+"completamente. Si ha compilado el Monitor de Carga de Batería con "
+"mantenimiento de libnotify aparecerá una notificación no intrusiva desde el "
+"monitor encima del panel."
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:435
@@ -586,6 +671,11 @@ msgid ""
 "error exists in the battery monitor or is a bug in the information provided "
 "by your machine."
 msgstr ""
+"Debido a las complicaciones de la gestión de energía y las vastas "
+"diferencias disponibles entre cada uno de los sistemas de gestiones de "
+"energía, errores de depuración en el monitor de la batería pude ser "
+"dificultoso. Necesitará determinar si el error existe en el monitor de "
+"batería o es un defecto en la información proporcionada por su máquina."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:444
@@ -596,16 +686,21 @@ msgid ""
 " reported by ACPI), please <ulink url=\"http://bugzilla.mate.org/\">report "
 "it</ulink>."
 msgstr ""
+"La información siguiente puede ser útil para solucionar que es erróneo con "
+"su monitor de batería. De ninguna manera es exhaustivo. Si encuentra un "
+"fallo con el Monitor de Carga de Batería (eso es no causado por información "
+"mala siendo informada por ACPI), por favor <ulink "
+"url=\"http://bugzilla.mate.org/\">infórmela</ulink>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:452
 msgid "Determining the backend"
-msgstr ""
+msgstr "Determinando el backend"
 
 #. (itstool) path: figure/title
 #: C/index.docbook:459
 msgid "Check you're using the HAL backend"
-msgstr ""
+msgstr "Marque que está utilizando el backend"
 
 #. (itstool) path: imageobject/imagedata
 #. This is a reference to an external file such as an image or video. When
@@ -639,6 +734,10 @@ msgid ""
 "indicated in the about dialog by placing a star next to the author of the "
 "HAL backend. <_:figure-1/>"
 msgstr ""
+"Si está utilizando el interfaz upower, o el HAL (vea<xref "
+"linkend=\"battstat-power-backends\"/>) entonces eso será indicado dentro del"
+" diálogo indicado referido colocando una estrella siguiente el autor del "
+"backend de HAL. <_:figure-1/>"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:473
@@ -648,6 +747,10 @@ msgid ""
 "ACPI as the backend. This is also the backend with the largest number of "
 "inconsistencies."
 msgstr ""
+"Otros backends no proporcionan actualmente indicación acerca de como son "
+"utilizados, por tanto tendrá que adivinar basándose en su hardware. Muchos "
+"portátiles modernos utilizan ACPI como el backend. Esto es también el "
+"backend con el número más grande de inconsistencias."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:482
@@ -662,6 +765,10 @@ msgid ""
 "isn't, then you will need to look into upgrading your DSDT or something else"
 " related to ACPI."
 msgstr ""
+"Si está utilizando el backend de ACPI para el Monitor de Carga de Batería, "
+"es importante comprobar que el ACPI esté dando la información correcta. Si "
+"no, entonces necesitará mirar modernizar su DSDT o algo más relacionado al "
+"ACPI."
 
 #. (itstool) path: example/title
 #: C/index.docbook:489
@@ -696,6 +803,29 @@ msgid ""
 "present voltage:         11400 mV\n"
 "[rupert@laptop ~]$"
 msgstr ""
+"\n"
+"[rupert@laptop ~]$ cat /proc/acpi/battery/BAT1/info\n"
+"present:                 yes\n"
+"design capacity:         41040 mWh\n"
+"last full capacity:      37044 mWh\n"
+"battery technology:      rechargeable\n"
+"design voltage:          10800 mV\n"
+"design capacity warning: 745 mWh\n"
+"design capacity low:     0 mWh\n"
+"capacity granularity 1:  10 mWh\n"
+"capacity granularity 2:  10 mWh\n"
+"model number:            G71C00056110\n"
+"serial number:           0000000008\n"
+"battery type:            Li-ION\n"
+"OEM info:\n"
+"[rupert@laptop ~]$ cat /proc/acpi/battery/BAT1/state\n"
+"present:                 yes\n"
+"capacity state:          ok\n"
+"charging state:          discharging\n"
+"present rate:            11232 mW\n"
+"remaining capacity:      27140 mWh\n"
+"present voltage:         11400 mV\n"
+"[rupert@laptop ~]$"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:514
@@ -705,11 +835,16 @@ msgid ""
 " can calculate the time remaining by taking <guilabel>remaining "
 "capacity</guilabel> divided by <guilabel>present rate</guilabel>."
 msgstr ""
+"Puede calcular rápidamente el porcentaje remanente utilizando "
+"<guilabel>capacidad remanente</guilabel> dividida por <guilabel>última "
+"capacidad completa</guilabel>, puede calcular el tiempo que queda tomando la"
+" <guilabel>capacidad remanente</guilabel> dividida entre la "
+"<guilabel>proporción presente</guilabel>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:523
 msgid "Hardware Abstraction Layer"
-msgstr ""
+msgstr "Capa de Abstracción del Hardware"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:524
@@ -719,6 +854,10 @@ msgid ""
 "HAL or the wrong information is being reported, you can attempt to disable "
 "the HAL backend by setting a GSettings key."
 msgstr ""
+"Puede comprobar que su batería está detectada por HAL utilizando la "
+"instrucción <command>hal-device-manager</command>. Si su batería no está "
+"detectada por HAL o está siendo comunicada la información errónea, puede "
+"intentar desactivar el backend de HAL fijando la clave GSettings."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:530
@@ -729,6 +868,11 @@ msgid ""
 "<prompt>OAFIID:MATE_BattstatApplet</prompt> which should be located in the "
 "path <filename>/apps/panel/applets</filename>."
 msgstr ""
+"Seleccione <guimenuitem>Editor de Configuración</guimenuitem> desde el menú "
+"de <guimenu>Aplicaciones</guimenu>, debajo de <guisubmenu>Herramientas del "
+"Sistema</guisubmenu>. Busque el valor de la clave "
+"<prompt>OAFIID:MATE_BattstatApplet</prompt> la cual estaría localizada en la"
+" ruta <filename>/apps/panel/applets</filename>."
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:537
@@ -740,6 +884,12 @@ msgid ""
 "(see <xref linkend=\"battstat-troubleshooting-backends\"/> to learn how to "
 "check this)."
 msgstr ""
+"Asumiendo que la ruta es <filename>/apps/panel/applets/applet_1</filename>. "
+"En <filename>/apps/panel/applets/applet_1/prefs</filename> agregue una "
+"<guimenuitem>Tecla nueva...</guimenuitem> llamada "
+"<guilabel>no_hal</guilabel> y fíjelo al valor booleano verdadero. Esto "
+"desactivará el empleo de HAL (vea <xref linkend=\"battstat-troubleshooting-"
+"backends\"/> para aprender como marcar esto)."
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9

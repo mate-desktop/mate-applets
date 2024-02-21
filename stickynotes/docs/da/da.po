@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Joe Hansen <joedalton2@yahoo.dk>, 2021
+# Joe Hansen <joedalton2@yahoo.dk>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-01-16 12:31+0100\n"
+"POT-Creation-Date: 2023-09-02 16:40+0200\n"
 "PO-Revision-Date: 2018-09-27 15:24+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2021\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2023\n"
 "Language-Team: Danish (https://app.transifex.com/mate/teams/13566/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -582,13 +582,87 @@ msgstr ""
 "<guimenuitem>Slet note</guimenuitem> fra pop op-menuen. Du kan også slette "
 "en note ved at klikke på <guibutton>x</guibutton> i øverste højre hjørne."
 
+#. (itstool) path: sect2/title
+#: C/index.docbook:357
+msgid "Keyboard navigation"
+msgstr "Tastaturnavigation"
+
+#. (itstool) path: sect2/para
+#: C/index.docbook:358
+msgid "Basic keyboard navigation is supported."
+msgstr "Grundlæggende tastaturnavigation er understøttet."
+
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:361
+msgid "Creating Sticky notes with the keyboard"
+msgstr "Oprettelse af klæbende noter med tastaturet"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:362
+msgid ""
+"Use <shortcut><keycombo><keysym>Ctrl-Alt-Tab</keysym></keycombo></shortcut> "
+"to access the MATE panel, then use <shortcut><keysym>Tab</keysym></shortcut>"
+" or the <shortcut><keycombo><keysym>Arrow</keysym></keycombo></shortcut> "
+"keys to access the Sticky notes applet. Then open its context menu through "
+"either <shortcut><keycombo><keysym>Shift-F10</keysym></keycombo></shortcut> "
+"or the <shortcut><keysym>Menu</keysym></shortcut> key, and select "
+"<guimenuitem><guilabel>New Note</guilabel></guimenuitem>."
+msgstr ""
+"Brug <shortcut><keycombo><keysym>Ctrl-Alt-"
+"Indryk</keysym></keycombo></shortcut> for at tilgå MATE-panelet, brug så "
+"<shortcut><keysym>Indryk</keysym></shortcut> eller "
+"<shortcut><keycombo><keysym>Pile</keysym></keycombo></shortcut>-tasterne for"
+" at tilgå panelprogrammet Klæbende noter. Åbn så kontekstmenuen enten via "
+"<shortcut><keycombo><keysym>Skift-F10</keysym></keycombo></shortcut> eller "
+"<shortcut><keysym>Menu</keysym></shortcut>-tasten, og vælg "
+"<guimenuitem><guilabel>Ny note</guilabel></guimenuitem>."
+
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:372
+msgid "Accessing Sticky notes with the keyboard"
+msgstr "Tilgå klæbende noter via tastaturet"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:373
+msgid ""
+"Use <shortcut><keycombo><keysym>Ctrl-Alt-Tab</keysym></keycombo></shortcut> "
+"several times to switch between your panels and your existing sticky notes. "
+"When a sticky note is focused, you can navigate between the text area and "
+"the title bar (where the "
+"<guimenuitem><guilabel>Lock</guilabel></guimenuitem> and the "
+"<guimenuitem><guilabel>Delete</guilabel></guimenuitem> buttons are located) "
+"with the <shortcut><keysym>F6</keysym></shortcut> key."
+msgstr ""
+"Brug <shortcut><keycombo><keysym>Ctrl-Alt-Tab</keysym></keycombo></shortcut>"
+" flere gange for at skifte mellem dine paneler og dine eksisterende klæbende"
+" noter. Når en klæbende note er i fokus, så kan du navigere mellem "
+"tekstområdet og titellinjen (hvor "
+"<guimenuitem><guilabel>Lock</guilabel></guimenuitem>- og "
+"<guimenuitem><guilabel>Slet</guilabel></guimenuitem>-knapperne er placeret) "
+"med <shortcut><keysym>F6</keysym></shortcut>-tasten."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:380
+msgid ""
+"Once in the title bar, use <shortcut><keysym>F10</keysym></shortcut>, "
+"<shortcut><keycombo><keysym>Shift-F10</keysym></keycombo></shortcut> or the "
+"<shortcut><keysym>Menu</keysym></shortcut> key to open the context menu, "
+"which allows to access the individual note’s "
+"<guimenuitem><guilabel>Properties</guilabel></guimenuitem> dialog."
+msgstr ""
+"I titellinjen, brug <shortcut><keysym>F10</keysym></shortcut>, "
+"<shortcut><keycombo><keysym>Skift-F10</keysym></keycombo></shortcut> eller "
+"<shortcut><keysym>Menu</keysym></shortcut>-tasten for at åbne "
+"kontekstmenuen, der tillader adgang til de individuelle noters "
+"<guimenuitem><guilabel>Egenskaber</guilabel></guimenuitem>-dialog."
+
 #. (itstool) path: sect1/title
-#: C/index.docbook:359
+#: C/index.docbook:392
 msgid "Preferences"
 msgstr "Præferencer"
 
 #. (itstool) path: figure/title
-#: C/index.docbook:362
+#: C/index.docbook:395
 msgid "Sticky Notes Preferences"
 msgstr "Indstillinger for notessedler"
 
@@ -597,7 +671,7 @@ msgstr "Indstillinger for notessedler"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:366
+#: C/index.docbook:399
 msgctxt "_"
 msgid ""
 "external ref='figures/stickynotes-prefs.png' "
@@ -607,7 +681,7 @@ msgstr ""
 "md5='0263f6ed6b0242d2d24a45b5d403e007'"
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:364
+#: C/index.docbook:397
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/stickynotes-prefs.png\" "
 "format=\"PNG\"/> </imageobject> <textobject><phrase>Shows Sticky Notes "
@@ -618,12 +692,12 @@ msgstr ""
 "præferencer</phrase></textobject>"
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:374
+#: C/index.docbook:407
 msgid "Adjusting Size"
 msgstr "Justering af størrelse"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:375
+#: C/index.docbook:408
 msgid ""
 "To configure the default size for all sticky notes, right-click on the "
 "sticky notes icon, then choose <guimenu>Preferences</guimenu> from the popup"
@@ -635,12 +709,12 @@ msgstr ""
 "Dialogen <application>Blivende Noter-præferencer</application> vises."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:380
+#: C/index.docbook:413
 msgid "<guilabel>Width</guilabel>"
 msgstr "<guilabel>Bredde</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:381
+#: C/index.docbook:414
 msgid ""
 "Use this spin box to specify the default width of new sticky notes, in "
 "pixels."
@@ -649,12 +723,12 @@ msgstr ""
 "billedpunkter."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:385
+#: C/index.docbook:418
 msgid "<guilabel>Height</guilabel>"
 msgstr "<guilabel>Højde</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:386
+#: C/index.docbook:419
 msgid ""
 "Use this spin box to specify the default height of new sticky notes, in "
 "pixels."
@@ -663,12 +737,12 @@ msgstr ""
 "billedpunkter."
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:393
+#: C/index.docbook:426
 msgid "Changing Color and Font"
 msgstr "Ændre farve og skrifttype"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:394
+#: C/index.docbook:427
 msgid ""
 "To configure the color and font for all sticky notes, right-click on the "
 "icon, then choose <guimenu>Preferences</guimenu> from the popup menu. The "
@@ -679,12 +753,12 @@ msgstr ""
 "Dialogen <application>Blivende noter-præferencer</application> vises."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:400 C/index.docbook:496
+#: C/index.docbook:433 C/index.docbook:529
 msgid "<guilabel>Font Color</guilabel>"
 msgstr "<guilabel>Skriftfarve</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:402
+#: C/index.docbook:435
 msgid ""
 "Click on the color selector button to display the color selector dialog. On "
 "the color selector dialog, use the color wheel or spin boxes to choose the "
@@ -695,7 +769,7 @@ msgstr ""
 "standardfarven for noterne."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:407
+#: C/index.docbook:440
 msgid ""
 "If you have selected, <guilabel>Use color from the system theme</guilabel>, "
 "then the current theme colors will be used and you will not be able to "
@@ -706,12 +780,12 @@ msgstr ""
 "standarder."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:415 C/index.docbook:504
+#: C/index.docbook:448 C/index.docbook:537
 msgid "<guilabel>Note Color</guilabel>"
 msgstr "<guilabel>Notefarve</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:417
+#: C/index.docbook:450
 msgid ""
 "Click on the color selector button to display the color selector dialog. On "
 "the color selector dialog, use the color wheel or spin boxes to choose the "
@@ -722,7 +796,7 @@ msgstr ""
 "standardfarven for blivende noter."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:420
+#: C/index.docbook:453
 msgid ""
 "If you have selected, <guilabel>Use color from the system theme</guilabel>, "
 "then the current theme colors will be used and you will not able to select "
@@ -733,12 +807,12 @@ msgstr ""
 "standarder."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:427 C/index.docbook:517
+#: C/index.docbook:460 C/index.docbook:550
 msgid "<guilabel>Font</guilabel>"
 msgstr "<guilabel>Skrifttype</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:429
+#: C/index.docbook:462
 msgid ""
 "Click on the font selector button to display the font selector dialog. On "
 "the font selector dialog, use the list boxes to choose the default font for "
@@ -749,7 +823,7 @@ msgstr ""
 "blivende noter."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:432
+#: C/index.docbook:465
 msgid ""
 "If you have selected, <guilabel>Use font from the system theme</guilabel>, "
 "then the current Application Font set in Font Preferences will be used and "
@@ -760,12 +834,12 @@ msgstr ""
 "brugt, og du vil ikke kunne vælge nye standarder."
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:443
+#: C/index.docbook:476
 msgid "Customizing Behavior"
 msgstr "Tilpasse opførsel"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:444
+#: C/index.docbook:477
 msgid ""
 "To customize the behavior of <application>Sticky Notes</application>, right-"
 "click on the icon, then choose <guimenu>Preferences</guimenu> from the popup"
@@ -778,7 +852,7 @@ msgstr ""
 "vises."
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:448
+#: C/index.docbook:481
 msgid ""
 "To specify that sticky notes are visible on all workspaces on the desktop, "
 "select <guilabel>Put notes on all workspaces</guilabel> in the "
@@ -792,7 +866,7 @@ msgstr ""
 "arbejdsrum, så bliver alle noter synlige på alle arbejdsrum."
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:454
+#: C/index.docbook:487
 msgid ""
 "The option, <guilabel>Force default color and font on notes</guilabel>, will"
 " force all sticky notes on your desktop to use the color and font settings "
@@ -806,12 +880,12 @@ msgstr ""
 "linkend=\"stickynotes-color\"/>)."
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:465
+#: C/index.docbook:498
 msgid "Customizing Individual Notes"
 msgstr "Tilpasning af individuelle noter"
 
 #. (itstool) path: figure/title
-#: C/index.docbook:467
+#: C/index.docbook:500
 msgid "Sticky Note Preferences"
 msgstr "Præferencer for blivende noter"
 
@@ -820,7 +894,7 @@ msgstr "Præferencer for blivende noter"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:471
+#: C/index.docbook:504
 msgctxt "_"
 msgid ""
 "external ref='figures/stickynotes-note-prefs.png' "
@@ -830,7 +904,7 @@ msgstr ""
 "md5='e2214cbb04d62d60ea0385a5dfa1630c'"
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:469
+#: C/index.docbook:502
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/stickynotes-note-prefs.png\" "
 "format=\"PNG\"/> </imageobject> <textobject><phrase>a Sticky Note's "
@@ -841,7 +915,7 @@ msgstr ""
 " noter</phrase></textobject>"
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:477
+#: C/index.docbook:510
 msgid ""
 "You can customize the look of each individual sticky note. This can be "
 "useful for visually distinguishing different types of notes quickly. To "
@@ -856,22 +930,22 @@ msgstr ""
 "<application>Blivende noters egenskaber</application> bliver vist."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:485
+#: C/index.docbook:518
 msgid "<guilabel>Title</guilabel>"
 msgstr "<guilabel>Titel</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:486
+#: C/index.docbook:519
 msgid "Use this text box to specify the title of the sticky note."
 msgstr "Brug denne tekstboks til at angive titlen for noten."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:490
+#: C/index.docbook:523
 msgid "<guilabel>Use default color</guilabel>"
 msgstr "<guilabel>Brug standardfarve</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:491
+#: C/index.docbook:524
 msgid ""
 "Select this option to use the default base color for this sticky note. For "
 "information on setting the default base color, see <xref "
@@ -882,7 +956,7 @@ msgstr ""
 "color\"/>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:498
+#: C/index.docbook:531
 msgid ""
 "Click on the color selector button to display the color selector dialog. On "
 "the color selector dialog, use the color wheel or spin boxes to choose the "
@@ -893,7 +967,7 @@ msgstr ""
 "skriftfarven for denne note."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:505
+#: C/index.docbook:538
 msgid ""
 "Click on the color selector button to display the color selector dialog. On "
 "the color selector dialog, use the color wheel or spin boxes to choose the "
@@ -904,12 +978,12 @@ msgstr ""
 "grundfarven for denne note."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:511
+#: C/index.docbook:544
 msgid "<guilabel>Use default font</guilabel>"
 msgstr "<guilabel>Brug standardskrifttypen</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:512
+#: C/index.docbook:545
 msgid ""
 "Select this option to use the default font for this sticky note. For "
 "information on setting the default font, see <xref linkend=\"stickynotes-"
@@ -920,7 +994,7 @@ msgstr ""
 "linkend=\"stickynotes-color\"/>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:518
+#: C/index.docbook:551
 msgid ""
 "Click on the font selector button to display the font selector dialog. On "
 "the font selector dialog, use the list boxes to choose the font for this "
