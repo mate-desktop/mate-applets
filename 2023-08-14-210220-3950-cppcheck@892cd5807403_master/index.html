@@ -1,0 +1,429 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-applets</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-applets</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"checked/>warning</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"disabled/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="text" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="text" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedStructMember" name="unusedStructMember" checked></td><td>59</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>29</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>16</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="ConfigurationNotChecked" name="ConfigurationNotChecked" checked></td><td>6</td><td>ConfigurationNotChecked</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="clarifyCalculation" name="clarifyCalculation" checked></td><td>2</td><td>clarifyCalculation</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="duplicateConditionalAssign" name="duplicateConditionalAssign" checked></td><td>2</td><td>duplicateConditionalAssign</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="legacyUninitvar" name="legacyUninitvar" checked></td><td>2</td><td>legacyUninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>2</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameter" name="constParameter" checked></td><td>1</td><td>constParameter</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="invalidscanf" name="invalidscanf" checked></td><td>1</td><td>invalidscanf</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="nullPointerRedundantCheck" name="nullPointerRedundantCheck" checked></td><td>1</td><td>nullPointerRedundantCheck</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>1</td><td>uninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>1</td><td>unreadVariable</td></tr>
+           <tr><td></td><td>124</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="50.html"></a></td></tr>
+         <tr class="missingInclude sev_information issue"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">accessx-status/src/accessx-status-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="0.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="0.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">accessx-status/src/applet.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="1.html#line-60">60</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;ModifierStruct::icon_name&apos; is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="1.html#line-164">164</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;launch_context&apos; can be reduced.</td></tr>
+         <tr class="nullPointerRedundantCheck sev_warning issue"><td><a href="1.html#line-271">271</a></td><td>nullPointerRedundantCheck</td><td><a href="https://cwe.mitre.org/data/definitions/476.html">476</a></td><td>warning</td><td class="warning">Either the condition &apos;sapplet&apos; is redundant or there is possible null pointer dereference: sapplet.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="1.html#line-525">525</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;window&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="1.html#line-731">731</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;button_pixbuf&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="1.html#line-819">819</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;icon_theme&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">battstat/acpi-freebsd.c</a></td></tr>
+         <tr class="legacyUninitvar sev_error issue"><td><a href="2.html#line-162">162</a></td><td>legacyUninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: remain</td></tr>
+         <tr class="legacyUninitvar sev_error issue"><td><a href="2.html#line-163">163</a></td><td>legacyUninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: rate</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">battstat/apmlib/apmlib.c</a></td></tr>
+         <tr class="invalidscanf sev_warning issue"><td><a href="3.html#line-72">72</a></td><td>invalidscanf</td><td><a href="https://cwe.mitre.org/data/definitions/119.html">119</a></td><td>warning</td><td class="warning">sscanf() without field width limits can crash with huge input data.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="3.html#line-218">218</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;fd&apos; can be reduced.</td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="3.html#line-301">301</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;APM_IOC_LAST_ERROR&apos; since the value of &apos;APM_IOC_LAST_ERROR&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="3.html#line-327">327</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;APM_BAD_FUNCTION&apos; since the value of &apos;APM_BAD_FUNCTION&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="3.html#line-330">330</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;APM_RESUME_DISABLED&apos; since the value of &apos;APM_RESUME_DISABLED&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="3.html#line-354">354</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;APM_IOC_REJECT&apos; since the value of &apos;APM_IOC_REJECT&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="3.html#line-369">369</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;APM_IOC_IGNORE&apos; since the value of &apos;APM_IOC_IGNORE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="3.html#line-415">415</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;APM_CAPABILITY_CHANGE&apos; since the value of &apos;APM_CAPABILITY_CHANGE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">battstat/battstat-preferences.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-58">58</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::radio_text_1&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-59">59</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::radio_text_2&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-60">60</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::check_text&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-61">61</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::check_text_ptr&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-62">62</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::lowbatt_toggle&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-63">63</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::full_toggle&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-64">64</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::hbox_ptr&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-65">65</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::combo_ptr&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-66">66</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::spin_ptr&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="4.html#line-68">68</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_BattstatPreferences::battstat&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">battstat/battstat-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="5.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="5.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">battstat/battstat_applet.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="6.html#line-490">490</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;powerstring&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="6.html#line-491">491</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;remaining&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">battstat/power-management.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="7.html#line-188">188</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;fd&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">charpick/charpick-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="8.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="8.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">charpick/charpick.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="9.html#line-298">298</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;menuitem&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">charpick/properties.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="10.html#line-250">250</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;selection&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">command/src/command-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="11.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="11.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">command/src/command.c</a></td></tr>
+         <tr class="duplicateConditionalAssign sev_style issue"><td><a href="12.html#line-261">261</a></td><td>duplicateConditionalAssign</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The statement &apos;if (command_applet-&gt;width!=width) command_applet-&gt;width=width&apos; is logically equivalent to &apos;command_applet-&gt;width=width&apos;.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">command/src/ma-command.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="13.html#line-56">56</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_CODE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">cpufreq/src/cpufreq-applet.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="14.html#line-127">127</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">cpufreq/src/cpufreq-monitor-cpuinfo.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="15.html#line-37">37</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">cpufreq/src/cpufreq-monitor-libcpufreq.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="16.html#line-38">38</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">cpufreq/src/cpufreq-monitor-sysfs.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="17.html#line-67">67</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">cpufreq/src/cpufreq-monitor.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="18.html#line-68">68</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">cpufreq/src/cpufreq-popup.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="19.html#line-53">53</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">cpufreq/src/cpufreq-prefs.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="20.html#line-71">71</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">cpufreq/src/cpufreq-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="21.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="21.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">cpufreq/src/cpufreq-selector.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="22.html#line-42">42</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">cpufreq/src/cpufreq-selector/cpufreq-selector-libcpufreq.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="23.html#line-44">44</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">cpufreq/src/cpufreq-selector/cpufreq-selector-service.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="24.html#line-47">47</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">cpufreq/src/cpufreq-selector/cpufreq-selector-sysfs.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="25.html#line-49">49</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">cpufreq/src/cpufreq-selector/cpufreq-selector.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="26.html#line-46">46</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">drivemount/src/drive-button.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="27.html#line-44">44</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">drivemount/src/drivemount-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="28.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="28.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">geyes/src/geyes-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="29.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="29.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">geyes/src/themes.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="30.html#line-58">58</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;token&apos; can be reduced.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="30.html#line-81">81</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;token&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="30.html#line-88">88</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;token&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="30.html#line-103">103</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dialog&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="30.html#line-266">266</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dfd&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html">mateweather/src/mateweather-applet.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="31.html#line-463">463</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;n&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="32.html">mateweather/src/mateweather-dialog.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-33">33</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::weather_notebook&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-34">34</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_location&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-35">35</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_update&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-36">36</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_cond&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-37">37</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_sky&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-38">38</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_temp&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-39">39</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_dew&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-40">40</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_humidity&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-41">41</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_wind&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-42">42</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_pressure&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-43">43</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_vis&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-44">44</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_apparent&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-45">45</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_sunrise&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-46">46</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_sunset&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-47">47</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::cond_image&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-48">48</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::forecast_text&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-49">49</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::radar_image&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="32.html#line-51">51</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_MateWeatherDialog::applet&apos; is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="32.html#line-185">185</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;forecast&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="32.html#line-186">186</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;buffer&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="32.html#line-187">187</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;font_desc&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="33.html">mateweather/src/mateweather-pref.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-672">672</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-728">728</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="34.html">mateweather/src/mateweather-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="34.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="34.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="35.html">multiload/src/load-graph.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="35.html#line-81">81</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;spacing&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="35.html#line-197">197</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;spacing&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="35.html#line-391">391</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;name&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="35.html#line-391">391</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;temp&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="36.html">multiload/src/main.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="36.html#line-100">100</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;launch_context&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="36.html#line-102">102</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app_info&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="37.html">multiload/src/multiload-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="37.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="37.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="38.html">netspeed/src/backend.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-139">139</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;ip6_netmask&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="38.html#line-139">139</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;ip6_netmask&apos; is assigned a value that is never used.</td></tr>
+         <tr class="clarifyCalculation sev_style issue"><td><a href="38.html#line-337">337</a></td><td>clarifyCalculation</td><td><a href="https://cwe.mitre.org/data/definitions/783.html">783</a></td><td>style</td><td>Clarify calculation precedence for &apos;&amp;&apos; and &apos;?&apos;.</td></tr>
+         <tr class="clarifyCalculation sev_style issue"><td><a href="38.html#line-338">338</a></td><td>clarifyCalculation</td><td><a href="https://cwe.mitre.org/data/definitions/783.html">783</a></td><td>style</td><td>Clarify calculation precedence for &apos;&amp;&apos; and &apos;?&apos;.</td></tr>
+         <tr class="duplicateConditionalAssign sev_style issue"><td><a href="38.html#line-452">452</a></td><td>duplicateConditionalAssign</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The statement &apos;if (devinfo-&gt;qual!=newqual) devinfo-&gt;qual=newqual&apos; is logically equivalent to &apos;devinfo-&gt;qual=newqual&apos;.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="40.html">netspeed/src/netspeed-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="40.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="40.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="39.html">netspeed/src/netspeed.h</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="39.html#line-28">28</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DECLARE_FINAL_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="41.html">stickynotes/sticky-notes-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="41.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="41.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="42.html">stickynotes/stickynotes_applet.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="42.html#line-87">87</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If PANEL_APPLET_FACTORY is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="43.html">stickynotes/stickynotes_applet_callbacks.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="43.html#line-38">38</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;note&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="44.html">stickynotes/stickynotes_callbacks.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="44.html#line-44">44</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;widget&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="45.html">stickynotes/util.c</a></td></tr>
+         <tr class="uninitvar sev_error issue"><td><a href="45.html#line-86">86</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: num</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="46.html">timerapplet/src/timerapplet-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="46.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="46.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="47.html">trashapplet/src/trash-empty.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="47.html#line-151">151</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;info&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="47.html#line-152">152</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;child&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="48.html">trashapplet/src/trashapplet-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="48.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="48.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="49.html">trashapplet/src/trashapplet.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="49.html#line-48">48</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_TrashApplet::trash_monitor&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="49.html#line-49">49</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_TrashApplet::trash&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="49.html#line-51">51</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_TrashApplet::image&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="49.html#line-52">52</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_TrashApplet::icon&apos; is never used.</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.9 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>
