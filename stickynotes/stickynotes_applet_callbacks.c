@@ -126,6 +126,10 @@ static gboolean get_desktop_window (GdkScreen *screen, Window *window)
     int format_returned;
     int length_returned;
 
+    /*This is x11-only, so return FALSE in wayland or anything else*/
+    if (!(GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen))))
+        return FALSE;
+
     root_window = gdk_screen_get_root_window (screen);
 
     if (gdk_property_get (root_window,
@@ -151,7 +155,15 @@ desktop_window_event_filter (GdkXEvent *xevent,
                              GdkEvent  *event,
                              gpointer   data)
 {
-    gboolean desktop_hide = g_settings_get_boolean (stickynotes->settings,
+    gboolean desktop_hide;
+
+    GdkScreen *screen = gdk_screen_get_default();
+    if (!(GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen))))
+    {
+        desktop_hide = FALSE;
+        return GDK_FILTER_CONTINUE;
+    }
+    desktop_hide = g_settings_get_boolean (stickynotes->settings,
                                                     "desktop-hide");
     if (desktop_hide &&
         (((XEvent*)xevent)->xany.type == PropertyNotify) &&
