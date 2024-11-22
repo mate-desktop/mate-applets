@@ -20,10 +20,11 @@ before_install:
   - chmod +x docker-build gen-index
 
 install:
-  - sudo apt-get install -y python3-pip python3-setuptools
-  - sudo pip3 install --upgrade pip
   - pip3 install PyGithub
   - ./docker-build --name ${DISTRO} --config .build.yml --install
+
+script:
+  - ./docker-build --name ${DISTRO} --verbose --config .build.yml --build scripts
 
 script:
   - ./docker-build --name ${DISTRO} --verbose --config .build.yml --build scripts
