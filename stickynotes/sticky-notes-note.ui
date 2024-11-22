@@ -2,9 +2,8 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.22"/>
-  <requires lib="gtksourceview" version="4.0"/>
-  <object class="GtkSourceBuffer" id="body_buffer">
-    <property name="max_undo_levels">-1</property>
+  <requires lib="GtkTextView" version="4.0"/>
+  <object class="GtkTextBuffer" id="body_buffer">
   </object>
   <object class="GtkMenu" id="stickynote_menu">
     <child>
@@ -129,7 +128,7 @@
             <property name="hscrollbar_policy">never</property>
             <property name="vscrollbar_policy">never</property>
             <child>
-              <object class="GtkSourceView" id="body_text">
+              <object class="GtkTextView" id="body_text">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="wrap_mode">word</property>

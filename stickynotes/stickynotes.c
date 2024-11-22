@@ -139,7 +139,7 @@ stickynote_new_aux (GdkScreen *screen,
     gtk_widget_add_events (note->w_lock, GDK_BUTTON_PRESS_MASK);
 
     note->buffer =
-        GTK_SOURCE_BUFFER (gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body)));
+        GTK_TEXT_BUFFER (gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body)));
 
     note->w_close =
         GTK_WIDGET (gtk_builder_get_object (builder, "close_button"));
