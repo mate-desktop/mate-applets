@@ -219,6 +219,16 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 #ifdef GDK_WINDOWING_X11
     if (GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen)))
         screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
+
+    else
+    {
+        /*No root window or primary monitor in wayland unless compositors add it back*/
+        GdkRectangle geometry = {0};
+        GdkMonitor *monitor;
+        monitor = gdk_display_get_monitor (gdk_screen_get_display (screen), 0);
+        gdk_monitor_get_geometry (monitor, &geometry);
+        screen_height = geometry.height;
+    }
 #endif
 
     stickynotes->max_height = (int) (0.8 * (double) screen_height);
