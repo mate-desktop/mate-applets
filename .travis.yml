@@ -38,9 +38,16 @@ notifications:
     on_success: never
     on_failure: always
 
+before_deploy:
+  - yes | gem update --system --force
+  - gem install bundler
+  - gem install uri
+  - gem install logger
+
 deploy:
   - provider: pages
-    edge: true
+    edge:
+      branch: v2.0.5
     token: $GITHUB_TOKEN
     keep_history: false
     committer_from_gh: true
@@ -51,7 +58,8 @@ deploy:
       all_branches: true
       condition: ${DISTRO} =~ ^fedora.*$
   - provider: script
-    edge: true
+    edge:
+      branch: v2.0.5
     script: ./docker-build --verbose --config .build.yml --release github
     on:
       tags: true
