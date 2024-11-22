@@ -24,8 +24,6 @@
 #include <libwnck/libwnck.h>
 #include <stickynotes_applet.h>
 
-#include <gtksourceview/gtksource.h>
-
 typedef struct
 {
     GtkWidget *w_window;                  /* Sticky Note window */
@@ -50,7 +48,7 @@ typedef struct
     GtkWidget *w_resize_se;               /* Sticky Note resize button (south east) */
     GtkWidget *w_resize_sw;               /* Sticky Note resize button (south west) */
 
-    GtkSourceBuffer *buffer;              /* Sticky Note text buffer for undo/redo */
+    GtkTextBuffer *buffer;              /* Sticky Note text buffer for undo/redo */
 
     GtkCheckMenuItem *w_lock_toggle_item; /* Lock item in the popup menu */
 

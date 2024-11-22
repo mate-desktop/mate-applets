@@ -48,6 +48,11 @@ set_icon_geometry (GdkWindow *window,
                    int        width,
                    int        height)
 {
+    /*This is x11-only, so return in wayland or anything else*/
+    GdkScreen *screen = gdk_screen_get_default();
+    if (!(GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen))))
+        return;
+
     gulong data[4];
     Display *dpy;
 
@@ -134,7 +139,7 @@ stickynote_new_aux (GdkScreen *screen,
     gtk_widget_add_events (note->w_lock, GDK_BUTTON_PRESS_MASK);
 
     note->buffer =
-        GTK_SOURCE_BUFFER (gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body)));
+        GTK_TEXT_BUFFER (gtk_text_view_get_buffer (GTK_TEXT_VIEW (note->w_body)));
 
     note->w_close =
         GTK_WIDGET (gtk_builder_get_object (builder, "close_button"));
@@ -731,7 +736,15 @@ stickynote_set_visible (StickyNote *note,
             gtk_window_move (GTK_WINDOW (note->w_window),
                              note->x, note->y);
 
-        /* Put the note on all workspaces if necessary. */
+
+
+        /*On x11, Put the note on all workspaces or move it if necessary.
+         *We can't yet change workspace on wayland
+         */
+        GdkScreen *screen = gdk_screen_get_default();
+        if (!(GDK_IS_X11_DISPLAY (gdk_screen_get_display (screen))))
+            return;
+
         if (g_settings_get_boolean (stickynotes->settings, "sticky"))
             gtk_window_stick (GTK_WINDOW (note->w_window));
 

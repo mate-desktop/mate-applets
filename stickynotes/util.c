@@ -110,6 +110,9 @@ xstuff_change_workspace (GtkWindow *window,
     Display *gdk_display;
     Screen *screen;
 
+    if  (!GDK_IS_X11_DISPLAY (gdk_display_get_default()))
+        return;
+
     gdk_display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
     xwindow = GDK_WINDOW_XID (GDK_WINDOW (gtk_widget_get_window (GTK_WIDGET (window))));
     screen = GDK_SCREEN_XSCREEN (gtk_widget_get_screen (GTK_WIDGET (window)));
