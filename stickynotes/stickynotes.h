@@ -24,8 +24,6 @@
 #include <libwnck/libwnck.h>
 #include <stickynotes_applet.h>
 
-#include <gtksourceview/gtksource.h>
-
 typedef struct
 {
     GtkWidget *w_window;                  /* Sticky Note window */
