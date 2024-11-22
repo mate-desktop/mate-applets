@@ -297,15 +297,8 @@ AC_ARG_ENABLE([stickynotes],
     AS_HELP_STRING([--enable-stickynotes], [Enable stickynotes applet.]),
     enable_stickynotes=$enableval,
     enable_stickynotes=yes)
-if test "x$enable_stickynotes" = "xyes"; then
-    PKG_CHECK_MODULES(STICKYNOTES, gtksourceview-4,
-                      have_gtksourceview=yes, have_gtksourceview=no)
 
-    if test "x$enable_stickynotes" = "xyes" -a "x$have_gtksourceview" = "xno"; then
-        AC_MSG_ERROR([Stickynotes explicitly requested but gtksourceview not found])
-    fi
-fi
-AM_CONDITIONAL(BUILD_STICKYNOTES_APPLET, test "x$have_gtksourceview" = "xyes")
+AM_CONDITIONAL(BUILD_STICKYNOTES_APPLET, test "x$enable_stickynotes" = "xyes")
 
 dnl ***************************************************************************
 dnl *** keyboard accessibility status applet check                          ***
