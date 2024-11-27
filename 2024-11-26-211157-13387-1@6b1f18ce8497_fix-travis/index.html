@@ -1,0 +1,206 @@
+<html>
+<head>
+<title>rootdir - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>rootdir - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>root@cfcb2d75236f</td></tr>
+<tr><th>Working Directory:</th><td>/rootdir</td></tr>
+<tr><th>Command Line:</th><td>make -j 2</td></tr>
+<tr><th>Clang Version:</th><td>clang version 19.1.0 (Fedora 19.1.0-1.fc41)
+</td></tr>
+<tr><th>Date:</th><td>Tue Nov 26 21:11:57 2024</td></tr>
+</table>
+<h2>Analyzer Failures</h2>
+<p>The analyzer had problems processing the following files:</p>
+<table>
+<thead><tr><td>Problem</td><td>Source File</td><td>Preprocessed File</td><td>STDERR Output</td></tr></thead>
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-selector.c</td><td><a href="failures/clang_other_error_0MMMpt.i">clang_other_error_0MMMpt.i</a></td><td><a href="failures/clang_other_error_0MMMpt.i.stderr.txt">clang_other_error_0MMMpt.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-selector.c" file="failures/clang_other_error_0MMMpt.i" clangfile="failures/clang_other_error_0MMMpt.clang.i" stderr="failures/clang_other_error_0MMMpt.i.stderr.txt" info="failures/clang_other_error_0MMMpt.i.info.txt" -->
+<tr><td>Other Error</td><td>netspeed/src/netspeed.c</td><td><a href="failures/clang_other_error_0UWtJk.i">clang_other_error_0UWtJk.i</a></td><td><a href="failures/clang_other_error_0UWtJk.i.stderr.txt">clang_other_error_0UWtJk.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="netspeed/src/netspeed.c" file="failures/clang_other_error_0UWtJk.i" clangfile="failures/clang_other_error_0UWtJk.clang.i" stderr="failures/clang_other_error_0UWtJk.i.stderr.txt" info="failures/clang_other_error_0UWtJk.i.info.txt" -->
+<tr><td>Other Error</td><td>mateweather/src/mateweather-applet.c</td><td><a href="failures/clang_other_error_0oJp4L.i">clang_other_error_0oJp4L.i</a></td><td><a href="failures/clang_other_error_0oJp4L.i.stderr.txt">clang_other_error_0oJp4L.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="mateweather/src/mateweather-applet.c" file="failures/clang_other_error_0oJp4L.i" clangfile="failures/clang_other_error_0oJp4L.clang.i" stderr="failures/clang_other_error_0oJp4L.i.stderr.txt" info="failures/clang_other_error_0oJp4L.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-monitor-libcpufreq.c</td><td><a href="failures/clang_other_error_1HlXv4.i">clang_other_error_1HlXv4.i</a></td><td><a href="failures/clang_other_error_1HlXv4.i.stderr.txt">clang_other_error_1HlXv4.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-monitor-libcpufreq.c" file="failures/clang_other_error_1HlXv4.i" clangfile="failures/clang_other_error_1HlXv4.clang.i" stderr="failures/clang_other_error_1HlXv4.i.stderr.txt" info="failures/clang_other_error_1HlXv4.i.info.txt" -->
+<tr><td>Other Error</td><td>netspeed/src/backend.c</td><td><a href="failures/clang_other_error_1IL11Z.i">clang_other_error_1IL11Z.i</a></td><td><a href="failures/clang_other_error_1IL11Z.i.stderr.txt">clang_other_error_1IL11Z.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="netspeed/src/backend.c" file="failures/clang_other_error_1IL11Z.i" clangfile="failures/clang_other_error_1IL11Z.clang.i" stderr="failures/clang_other_error_1IL11Z.i.stderr.txt" info="failures/clang_other_error_1IL11Z.i.info.txt" -->
+<tr><td>Other Error</td><td>timerapplet/src/timerapplet.c</td><td><a href="failures/clang_other_error_1VShz1.i">clang_other_error_1VShz1.i</a></td><td><a href="failures/clang_other_error_1VShz1.i.stderr.txt">clang_other_error_1VShz1.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="timerapplet/src/timerapplet.c" file="failures/clang_other_error_1VShz1.i" clangfile="failures/clang_other_error_1VShz1.clang.i" stderr="failures/clang_other_error_1VShz1.i.stderr.txt" info="failures/clang_other_error_1VShz1.i.info.txt" -->
+<tr><td>Other Error</td><td>mateweather/src/mateweather-dialog.c</td><td><a href="failures/clang_other_error_1sdiGU.i">clang_other_error_1sdiGU.i</a></td><td><a href="failures/clang_other_error_1sdiGU.i.stderr.txt">clang_other_error_1sdiGU.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="mateweather/src/mateweather-dialog.c" file="failures/clang_other_error_1sdiGU.i" clangfile="failures/clang_other_error_1sdiGU.clang.i" stderr="failures/clang_other_error_1sdiGU.i.stderr.txt" info="failures/clang_other_error_1sdiGU.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/autoscaler.c</td><td><a href="failures/clang_other_error_2mEvEb.i">clang_other_error_2mEvEb.i</a></td><td><a href="failures/clang_other_error_2mEvEb.i.stderr.txt">clang_other_error_2mEvEb.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/autoscaler.c" file="failures/clang_other_error_2mEvEb.i" clangfile="failures/clang_other_error_2mEvEb.clang.i" stderr="failures/clang_other_error_2mEvEb.i.stderr.txt" info="failures/clang_other_error_2mEvEb.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/apmlib/apmlib.c</td><td><a href="failures/clang_other_error_3BGeqT.i">clang_other_error_3BGeqT.i</a></td><td><a href="failures/clang_other_error_3BGeqT.i.stderr.txt">clang_other_error_3BGeqT.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/apmlib/apmlib.c" file="failures/clang_other_error_3BGeqT.i" clangfile="failures/clang_other_error_3BGeqT.clang.i" stderr="failures/clang_other_error_3BGeqT.i.stderr.txt" info="failures/clang_other_error_3BGeqT.i.info.txt" -->
+<tr><td>Other Error</td><td>netspeed/src/netspeed-preferences.c</td><td><a href="failures/clang_other_error_4cEJEA.i">clang_other_error_4cEJEA.i</a></td><td><a href="failures/clang_other_error_4cEJEA.i.stderr.txt">clang_other_error_4cEJEA.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="netspeed/src/netspeed-preferences.c" file="failures/clang_other_error_4cEJEA.i" clangfile="failures/clang_other_error_4cEJEA.clang.i" stderr="failures/clang_other_error_4cEJEA.i.stderr.txt" info="failures/clang_other_error_4cEJEA.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-resources.c</td><td><a href="failures/clang_other_error_5pJ6QH.i">clang_other_error_5pJ6QH.i</a></td><td><a href="failures/clang_other_error_5pJ6QH.i.stderr.txt">clang_other_error_5pJ6QH.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-resources.c" file="failures/clang_other_error_5pJ6QH.i" clangfile="failures/clang_other_error_5pJ6QH.clang.i" stderr="failures/clang_other_error_5pJ6QH.i.stderr.txt" info="failures/clang_other_error_5pJ6QH.i.info.txt" -->
+<tr><td>Other Error</td><td>stickynotes/stickynotes_applet.c</td><td><a href="failures/clang_other_error_67F_yA.i">clang_other_error_67F_yA.i</a></td><td><a href="failures/clang_other_error_67F_yA.i.stderr.txt">clang_other_error_67F_yA.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="stickynotes/stickynotes_applet.c" file="failures/clang_other_error_67F_yA.i" clangfile="failures/clang_other_error_67F_yA.clang.i" stderr="failures/clang_other_error_67F_yA.i.stderr.txt" info="failures/clang_other_error_67F_yA.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/load-graph.c</td><td><a href="failures/clang_other_error_6hn2y8.i">clang_other_error_6hn2y8.i</a></td><td><a href="failures/clang_other_error_6hn2y8.i.stderr.txt">clang_other_error_6hn2y8.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/load-graph.c" file="failures/clang_other_error_6hn2y8.i" clangfile="failures/clang_other_error_6hn2y8.clang.i" stderr="failures/clang_other_error_6hn2y8.i.stderr.txt" info="failures/clang_other_error_6hn2y8.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-prefs.c</td><td><a href="failures/clang_other_error_7tfICe.i">clang_other_error_7tfICe.i</a></td><td><a href="failures/clang_other_error_7tfICe.i.stderr.txt">clang_other_error_7tfICe.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-prefs.c" file="failures/clang_other_error_7tfICe.i" clangfile="failures/clang_other_error_7tfICe.clang.i" stderr="failures/clang_other_error_7tfICe.i.stderr.txt" info="failures/clang_other_error_7tfICe.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-selector/cpufreq-selector-service.c</td><td><a href="failures/clang_other_error_9qCi9i.i">clang_other_error_9qCi9i.i</a></td><td><a href="failures/clang_other_error_9qCi9i.i.stderr.txt">clang_other_error_9qCi9i.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-selector/cpufreq-selector-service.c" file="failures/clang_other_error_9qCi9i.i" clangfile="failures/clang_other_error_9qCi9i.clang.i" stderr="failures/clang_other_error_9qCi9i.i.stderr.txt" info="failures/clang_other_error_9qCi9i.i.info.txt" -->
+<tr><td>Other Error</td><td>charpick/properties.c</td><td><a href="failures/clang_other_error_Bes9bM.i">clang_other_error_Bes9bM.i</a></td><td><a href="failures/clang_other_error_Bes9bM.i.stderr.txt">clang_other_error_Bes9bM.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="charpick/properties.c" file="failures/clang_other_error_Bes9bM.i" clangfile="failures/clang_other_error_Bes9bM.clang.i" stderr="failures/clang_other_error_Bes9bM.i.stderr.txt" info="failures/clang_other_error_Bes9bM.i.info.txt" -->
+<tr><td>Other Error</td><td>trashapplet/src/trashapplet-resources.c</td><td><a href="failures/clang_other_error_CXxJEU.i">clang_other_error_CXxJEU.i</a></td><td><a href="failures/clang_other_error_CXxJEU.i.stderr.txt">clang_other_error_CXxJEU.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="trashapplet/src/trashapplet-resources.c" file="failures/clang_other_error_CXxJEU.i" clangfile="failures/clang_other_error_CXxJEU.clang.i" stderr="failures/clang_other_error_CXxJEU.i.stderr.txt" info="failures/clang_other_error_CXxJEU.i.info.txt" -->
+<tr><td>Other Error</td><td>charpick/charpick-resources.c</td><td><a href="failures/clang_other_error_FTVIfP.i">clang_other_error_FTVIfP.i</a></td><td><a href="failures/clang_other_error_FTVIfP.i.stderr.txt">clang_other_error_FTVIfP.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="charpick/charpick-resources.c" file="failures/clang_other_error_FTVIfP.i" clangfile="failures/clang_other_error_FTVIfP.clang.i" stderr="failures/clang_other_error_FTVIfP.i.stderr.txt" info="failures/clang_other_error_FTVIfP.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-popup.c</td><td><a href="failures/clang_other_error_FcSGYX.i">clang_other_error_FcSGYX.i</a></td><td><a href="failures/clang_other_error_FcSGYX.i.stderr.txt">clang_other_error_FcSGYX.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-popup.c" file="failures/clang_other_error_FcSGYX.i" clangfile="failures/clang_other_error_FcSGYX.clang.i" stderr="failures/clang_other_error_FcSGYX.i.stderr.txt" info="failures/clang_other_error_FcSGYX.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/main.c</td><td><a href="failures/clang_other_error_HRhurX.i">clang_other_error_HRhurX.i</a></td><td><a href="failures/clang_other_error_HRhurX.i.stderr.txt">clang_other_error_HRhurX.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/main.c" file="failures/clang_other_error_HRhurX.i" clangfile="failures/clang_other_error_HRhurX.clang.i" stderr="failures/clang_other_error_HRhurX.i.stderr.txt" info="failures/clang_other_error_HRhurX.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/apmlib/apmlib.c</td><td><a href="failures/clang_other_error_HSKsB8.i">clang_other_error_HSKsB8.i</a></td><td><a href="failures/clang_other_error_HSKsB8.i.stderr.txt">clang_other_error_HSKsB8.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/apmlib/apmlib.c" file="failures/clang_other_error_HSKsB8.i" clangfile="failures/clang_other_error_HSKsB8.clang.i" stderr="failures/clang_other_error_HSKsB8.i.stderr.txt" info="failures/clang_other_error_HSKsB8.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/power-management.c</td><td><a href="failures/clang_other_error_HUc61j.i">clang_other_error_HUc61j.i</a></td><td><a href="failures/clang_other_error_HUc61j.i.stderr.txt">clang_other_error_HUc61j.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/power-management.c" file="failures/clang_other_error_HUc61j.i" clangfile="failures/clang_other_error_HUc61j.clang.i" stderr="failures/clang_other_error_HUc61j.i.stderr.txt" info="failures/clang_other_error_HUc61j.i.info.txt" -->
+<tr><td>Other Error</td><td>geyes/src/geyes-resources.c</td><td><a href="failures/clang_other_error_I20MoI.i">clang_other_error_I20MoI.i</a></td><td><a href="failures/clang_other_error_I20MoI.i.stderr.txt">clang_other_error_I20MoI.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="geyes/src/geyes-resources.c" file="failures/clang_other_error_I20MoI.i" clangfile="failures/clang_other_error_I20MoI.clang.i" stderr="failures/clang_other_error_I20MoI.i.stderr.txt" info="failures/clang_other_error_I20MoI.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-selector/cpufreq-selector.c</td><td><a href="failures/clang_other_error_KeADdl.i">clang_other_error_KeADdl.i</a></td><td><a href="failures/clang_other_error_KeADdl.i.stderr.txt">clang_other_error_KeADdl.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-selector/cpufreq-selector.c" file="failures/clang_other_error_KeADdl.i" clangfile="failures/clang_other_error_KeADdl.clang.i" stderr="failures/clang_other_error_KeADdl.i.stderr.txt" info="failures/clang_other_error_KeADdl.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/battstat-upower.c</td><td><a href="failures/clang_other_error_M7CTWB.i">clang_other_error_M7CTWB.i</a></td><td><a href="failures/clang_other_error_M7CTWB.i.stderr.txt">clang_other_error_M7CTWB.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/battstat-upower.c" file="failures/clang_other_error_M7CTWB.i" clangfile="failures/clang_other_error_M7CTWB.clang.i" stderr="failures/clang_other_error_M7CTWB.i.stderr.txt" info="failures/clang_other_error_M7CTWB.i.info.txt" -->
+<tr><td>Other Error</td><td>stickynotes/stickynotes.c</td><td><a href="failures/clang_other_error_MwOCqk.i">clang_other_error_MwOCqk.i</a></td><td><a href="failures/clang_other_error_MwOCqk.i.stderr.txt">clang_other_error_MwOCqk.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="stickynotes/stickynotes.c" file="failures/clang_other_error_MwOCqk.i" clangfile="failures/clang_other_error_MwOCqk.clang.i" stderr="failures/clang_other_error_MwOCqk.i.stderr.txt" info="failures/clang_other_error_MwOCqk.i.info.txt" -->
+<tr><td>Other Error</td><td>drivemount/src/drive-list.c</td><td><a href="failures/clang_other_error_PK2_Bo.i">clang_other_error_PK2_Bo.i</a></td><td><a href="failures/clang_other_error_PK2_Bo.i.stderr.txt">clang_other_error_PK2_Bo.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="drivemount/src/drive-list.c" file="failures/clang_other_error_PK2_Bo.i" clangfile="failures/clang_other_error_PK2_Bo.clang.i" stderr="failures/clang_other_error_PK2_Bo.i.stderr.txt" info="failures/clang_other_error_PK2_Bo.i.info.txt" -->
+<tr><td>Other Error</td><td>mateweather/src/main.c</td><td><a href="failures/clang_other_error_Q2d6QH.i">clang_other_error_Q2d6QH.i</a></td><td><a href="failures/clang_other_error_Q2d6QH.i.stderr.txt">clang_other_error_Q2d6QH.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="mateweather/src/main.c" file="failures/clang_other_error_Q2d6QH.i" clangfile="failures/clang_other_error_Q2d6QH.clang.i" stderr="failures/clang_other_error_Q2d6QH.i.stderr.txt" info="failures/clang_other_error_Q2d6QH.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/acpi-freebsd.c</td><td><a href="failures/clang_other_error_QEYsfq.i">clang_other_error_QEYsfq.i</a></td><td><a href="failures/clang_other_error_QEYsfq.i.stderr.txt">clang_other_error_QEYsfq.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/acpi-freebsd.c" file="failures/clang_other_error_QEYsfq.i" clangfile="failures/clang_other_error_QEYsfq.clang.i" stderr="failures/clang_other_error_QEYsfq.i.stderr.txt" info="failures/clang_other_error_QEYsfq.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/battstat-resources.c</td><td><a href="failures/clang_other_error_QS_ibz.i">clang_other_error_QS_ibz.i</a></td><td><a href="failures/clang_other_error_QS_ibz.i.stderr.txt">clang_other_error_QS_ibz.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/battstat-resources.c" file="failures/clang_other_error_QS_ibz.i" clangfile="failures/clang_other_error_QS_ibz.clang.i" stderr="failures/clang_other_error_QS_ibz.i.stderr.txt" info="failures/clang_other_error_QS_ibz.i.info.txt" -->
+<tr><td>Other Error</td><td>trashapplet/src/trash-empty.c</td><td><a href="failures/clang_other_error_R0Ga9n.i">clang_other_error_R0Ga9n.i</a></td><td><a href="failures/clang_other_error_R0Ga9n.i.stderr.txt">clang_other_error_R0Ga9n.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="trashapplet/src/trash-empty.c" file="failures/clang_other_error_R0Ga9n.i" clangfile="failures/clang_other_error_R0Ga9n.clang.i" stderr="failures/clang_other_error_R0Ga9n.i.stderr.txt" info="failures/clang_other_error_R0Ga9n.i.info.txt" -->
+<tr><td>Other Error</td><td>mateweather/src/mateweather-resources.c</td><td><a href="failures/clang_other_error_TXZtdP.i">clang_other_error_TXZtdP.i</a></td><td><a href="failures/clang_other_error_TXZtdP.i.stderr.txt">clang_other_error_TXZtdP.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="mateweather/src/mateweather-resources.c" file="failures/clang_other_error_TXZtdP.i" clangfile="failures/clang_other_error_TXZtdP.clang.i" stderr="failures/clang_other_error_TXZtdP.i.stderr.txt" info="failures/clang_other_error_TXZtdP.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-utils.c</td><td><a href="failures/clang_other_error_USR_N1.i">clang_other_error_USR_N1.i</a></td><td><a href="failures/clang_other_error_USR_N1.i.stderr.txt">clang_other_error_USR_N1.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-utils.c" file="failures/clang_other_error_USR_N1.i" clangfile="failures/clang_other_error_USR_N1.clang.i" stderr="failures/clang_other_error_USR_N1.i.stderr.txt" info="failures/clang_other_error_USR_N1.i.info.txt" -->
+<tr><td>Other Error</td><td>accessx-status/src/applet.c</td><td><a href="failures/clang_other_error_XiNCkF.i">clang_other_error_XiNCkF.i</a></td><td><a href="failures/clang_other_error_XiNCkF.i.stderr.txt">clang_other_error_XiNCkF.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="accessx-status/src/applet.c" file="failures/clang_other_error_XiNCkF.i" clangfile="failures/clang_other_error_XiNCkF.clang.i" stderr="failures/clang_other_error_XiNCkF.i.stderr.txt" info="failures/clang_other_error_XiNCkF.i.info.txt" -->
+<tr><td>Other Error</td><td>accessx-status/src/accessx-status-resources.c</td><td><a href="failures/clang_other_error_Xod8H_.i">clang_other_error_Xod8H_.i</a></td><td><a href="failures/clang_other_error_Xod8H_.i.stderr.txt">clang_other_error_Xod8H_.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="accessx-status/src/accessx-status-resources.c" file="failures/clang_other_error_Xod8H_.i" clangfile="failures/clang_other_error_Xod8H_.clang.i" stderr="failures/clang_other_error_Xod8H_.i.stderr.txt" info="failures/clang_other_error_Xod8H_.i.info.txt" -->
+<tr><td>Other Error</td><td>command/src/ma-command.c</td><td><a href="failures/clang_other_error_Y02yIW.i">clang_other_error_Y02yIW.i</a></td><td><a href="failures/clang_other_error_Y02yIW.i.stderr.txt">clang_other_error_Y02yIW.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="command/src/ma-command.c" file="failures/clang_other_error_Y02yIW.i" clangfile="failures/clang_other_error_Y02yIW.clang.i" stderr="failures/clang_other_error_Y02yIW.i.stderr.txt" info="failures/clang_other_error_Y02yIW.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/acpi-linux.c</td><td><a href="failures/clang_other_error_YIN2iL.i">clang_other_error_YIN2iL.i</a></td><td><a href="failures/clang_other_error_YIN2iL.i.stderr.txt">clang_other_error_YIN2iL.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/acpi-linux.c" file="failures/clang_other_error_YIN2iL.i" clangfile="failures/clang_other_error_YIN2iL.clang.i" stderr="failures/clang_other_error_YIN2iL.i.stderr.txt" info="failures/clang_other_error_YIN2iL.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/multiload-resources.c</td><td><a href="failures/clang_other_error__MQMVG.i">clang_other_error__MQMVG.i</a></td><td><a href="failures/clang_other_error__MQMVG.i.stderr.txt">clang_other_error__MQMVG.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/multiload-resources.c" file="failures/clang_other_error__MQMVG.i" clangfile="failures/clang_other_error__MQMVG.clang.i" stderr="failures/clang_other_error__MQMVG.i.stderr.txt" info="failures/clang_other_error__MQMVG.i.info.txt" -->
+<tr><td>Other Error</td><td>geyes/src/themes.c</td><td><a href="failures/clang_other_error__zzfZW.i">clang_other_error__zzfZW.i</a></td><td><a href="failures/clang_other_error__zzfZW.i.stderr.txt">clang_other_error__zzfZW.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="geyes/src/themes.c" file="failures/clang_other_error__zzfZW.i" clangfile="failures/clang_other_error__zzfZW.clang.i" stderr="failures/clang_other_error__zzfZW.i.stderr.txt" info="failures/clang_other_error__zzfZW.i.info.txt" -->
+<tr><td>Other Error</td><td>mateweather/src/mateweather-about.c</td><td><a href="failures/clang_other_error_b174Y2.i">clang_other_error_b174Y2.i</a></td><td><a href="failures/clang_other_error_b174Y2.i.stderr.txt">clang_other_error_b174Y2.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="mateweather/src/mateweather-about.c" file="failures/clang_other_error_b174Y2.i" clangfile="failures/clang_other_error_b174Y2.clang.i" stderr="failures/clang_other_error_b174Y2.i.stderr.txt" info="failures/clang_other_error_b174Y2.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-monitor.c</td><td><a href="failures/clang_other_error_cmSwvc.i">clang_other_error_cmSwvc.i</a></td><td><a href="failures/clang_other_error_cmSwvc.i.stderr.txt">clang_other_error_cmSwvc.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-monitor.c" file="failures/clang_other_error_cmSwvc.i" clangfile="failures/clang_other_error_cmSwvc.clang.i" stderr="failures/clang_other_error_cmSwvc.i.stderr.txt" info="failures/clang_other_error_cmSwvc.i.info.txt" -->
+<tr><td>Other Error</td><td>drivemount/src/drivemount.c</td><td><a href="failures/clang_other_error_epAZR4.i">clang_other_error_epAZR4.i</a></td><td><a href="failures/clang_other_error_epAZR4.i.stderr.txt">clang_other_error_epAZR4.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="drivemount/src/drivemount.c" file="failures/clang_other_error_epAZR4.i" clangfile="failures/clang_other_error_epAZR4.clang.i" stderr="failures/clang_other_error_epAZR4.i.stderr.txt" info="failures/clang_other_error_epAZR4.i.info.txt" -->
+<tr><td>Other Error</td><td>mateweather/src/mateweather-pref.c</td><td><a href="failures/clang_other_error_f14EOx.i">clang_other_error_f14EOx.i</a></td><td><a href="failures/clang_other_error_f14EOx.i.stderr.txt">clang_other_error_f14EOx.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="mateweather/src/mateweather-pref.c" file="failures/clang_other_error_f14EOx.i" clangfile="failures/clang_other_error_f14EOx.clang.i" stderr="failures/clang_other_error_f14EOx.i.stderr.txt" info="failures/clang_other_error_f14EOx.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/linux-proc.c</td><td><a href="failures/clang_other_error_fpAp3a.i">clang_other_error_fpAp3a.i</a></td><td><a href="failures/clang_other_error_fpAp3a.i.stderr.txt">clang_other_error_fpAp3a.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/linux-proc.c" file="failures/clang_other_error_fpAp3a.i" clangfile="failures/clang_other_error_fpAp3a.clang.i" stderr="failures/clang_other_error_fpAp3a.i.stderr.txt" info="failures/clang_other_error_fpAp3a.i.info.txt" -->
+<tr><td>Other Error</td><td>stickynotes/sticky-notes-resources.c</td><td><a href="failures/clang_other_error_gwlsk5.i">clang_other_error_gwlsk5.i</a></td><td><a href="failures/clang_other_error_gwlsk5.i.stderr.txt">clang_other_error_gwlsk5.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="stickynotes/sticky-notes-resources.c" file="failures/clang_other_error_gwlsk5.i" clangfile="failures/clang_other_error_gwlsk5.clang.i" stderr="failures/clang_other_error_gwlsk5.i.stderr.txt" info="failures/clang_other_error_gwlsk5.i.info.txt" -->
+<tr><td>Other Error</td><td>stickynotes/util.c</td><td><a href="failures/clang_other_error_hxcHA8.i">clang_other_error_hxcHA8.i</a></td><td><a href="failures/clang_other_error_hxcHA8.i.stderr.txt">clang_other_error_hxcHA8.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="stickynotes/util.c" file="failures/clang_other_error_hxcHA8.i" clangfile="failures/clang_other_error_hxcHA8.clang.i" stderr="failures/clang_other_error_hxcHA8.i.stderr.txt" info="failures/clang_other_error_hxcHA8.i.info.txt" -->
+<tr><td>Other Error</td><td>command/src/command-resources.c</td><td><a href="failures/clang_other_error_iUlH6H.i">clang_other_error_iUlH6H.i</a></td><td><a href="failures/clang_other_error_iUlH6H.i.stderr.txt">clang_other_error_iUlH6H.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="command/src/command-resources.c" file="failures/clang_other_error_iUlH6H.i" clangfile="failures/clang_other_error_iUlH6H.clang.i" stderr="failures/clang_other_error_iUlH6H.i.stderr.txt" info="failures/clang_other_error_iUlH6H.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-applet.c</td><td><a href="failures/clang_other_error_jJmn9N.i">clang_other_error_jJmn9N.i</a></td><td><a href="failures/clang_other_error_jJmn9N.i.stderr.txt">clang_other_error_jJmn9N.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-applet.c" file="failures/clang_other_error_jJmn9N.i" clangfile="failures/clang_other_error_jJmn9N.clang.i" stderr="failures/clang_other_error_jJmn9N.i.stderr.txt" info="failures/clang_other_error_jJmn9N.i.info.txt" -->
+<tr><td>Other Error</td><td>timerapplet/src/timerapplet-resources.c</td><td><a href="failures/clang_other_error_jPUBOK.i">clang_other_error_jPUBOK.i</a></td><td><a href="failures/clang_other_error_jPUBOK.i.stderr.txt">clang_other_error_jPUBOK.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="timerapplet/src/timerapplet-resources.c" file="failures/clang_other_error_jPUBOK.i" clangfile="failures/clang_other_error_jPUBOK.clang.i" stderr="failures/clang_other_error_jPUBOK.i.stderr.txt" info="failures/clang_other_error_jPUBOK.i.info.txt" -->
+<tr><td>Other Error</td><td>netspeed/src/netspeed-resources.c</td><td><a href="failures/clang_other_error_lEDjjj.i">clang_other_error_lEDjjj.i</a></td><td><a href="failures/clang_other_error_lEDjjj.i.stderr.txt">clang_other_error_lEDjjj.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="netspeed/src/netspeed-resources.c" file="failures/clang_other_error_lEDjjj.i" clangfile="failures/clang_other_error_lEDjjj.clang.i" stderr="failures/clang_other_error_lEDjjj.i.stderr.txt" info="failures/clang_other_error_lEDjjj.i.info.txt" -->
+<tr><td>Other Error</td><td>charpick/charpick.c</td><td><a href="failures/clang_other_error_lOV4FH.i">clang_other_error_lOV4FH.i</a></td><td><a href="failures/clang_other_error_lOV4FH.i.stderr.txt">clang_other_error_lOV4FH.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="charpick/charpick.c" file="failures/clang_other_error_lOV4FH.i" clangfile="failures/clang_other_error_lOV4FH.clang.i" stderr="failures/clang_other_error_lOV4FH.i.stderr.txt" info="failures/clang_other_error_lOV4FH.i.info.txt" -->
+<tr><td>Other Error</td><td>stickynotes/stickynotes_callbacks.c</td><td><a href="failures/clang_other_error_ntNj5A.i">clang_other_error_ntNj5A.i</a></td><td><a href="failures/clang_other_error_ntNj5A.i.stderr.txt">clang_other_error_ntNj5A.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="stickynotes/stickynotes_callbacks.c" file="failures/clang_other_error_ntNj5A.i" clangfile="failures/clang_other_error_ntNj5A.clang.i" stderr="failures/clang_other_error_ntNj5A.i.stderr.txt" info="failures/clang_other_error_ntNj5A.i.info.txt" -->
+<tr><td>Other Error</td><td>drivemount/src/drive-button.c</td><td><a href="failures/clang_other_error_ocaZIi.i">clang_other_error_ocaZIi.i</a></td><td><a href="failures/clang_other_error_ocaZIi.i.stderr.txt">clang_other_error_ocaZIi.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="drivemount/src/drive-button.c" file="failures/clang_other_error_ocaZIi.i" clangfile="failures/clang_other_error_ocaZIi.clang.i" stderr="failures/clang_other_error_ocaZIi.i.stderr.txt" info="failures/clang_other_error_ocaZIi.i.info.txt" -->
+<tr><td>Other Error</td><td>trashapplet/src/trashapplet.c</td><td><a href="failures/clang_other_error_ovftAM.i">clang_other_error_ovftAM.i</a></td><td><a href="failures/clang_other_error_ovftAM.i.stderr.txt">clang_other_error_ovftAM.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="trashapplet/src/trashapplet.c" file="failures/clang_other_error_ovftAM.i" clangfile="failures/clang_other_error_ovftAM.clang.i" stderr="failures/clang_other_error_ovftAM.i.stderr.txt" info="failures/clang_other_error_ovftAM.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/battstat_applet.c</td><td><a href="failures/clang_other_error_q1jWG1.i">clang_other_error_q1jWG1.i</a></td><td><a href="failures/clang_other_error_q1jWG1.i.stderr.txt">clang_other_error_q1jWG1.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/battstat_applet.c" file="failures/clang_other_error_q1jWG1.i" clangfile="failures/clang_other_error_q1jWG1.clang.i" stderr="failures/clang_other_error_q1jWG1.i.stderr.txt" info="failures/clang_other_error_q1jWG1.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-selector/cpufreq-selector-libcpufreq.c</td><td><a href="failures/clang_other_error_q3Vz7Q.i">clang_other_error_q3Vz7Q.i</a></td><td><a href="failures/clang_other_error_q3Vz7Q.i.stderr.txt">clang_other_error_q3Vz7Q.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-selector/cpufreq-selector-libcpufreq.c" file="failures/clang_other_error_q3Vz7Q.i" clangfile="failures/clang_other_error_q3Vz7Q.clang.i" stderr="failures/clang_other_error_q3Vz7Q.i.stderr.txt" info="failures/clang_other_error_q3Vz7Q.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/properties.c</td><td><a href="failures/clang_other_error_r__2DF.i">clang_other_error_r__2DF.i</a></td><td><a href="failures/clang_other_error_r__2DF.i.stderr.txt">clang_other_error_r__2DF.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/properties.c" file="failures/clang_other_error_r__2DF.i" clangfile="failures/clang_other_error_r__2DF.clang.i" stderr="failures/clang_other_error_r__2DF.i.stderr.txt" info="failures/clang_other_error_r__2DF.i.info.txt" -->
+<tr><td>Other Error</td><td>stickynotes/stickynotes_applet_callbacks.c</td><td><a href="failures/clang_other_error_rbpmSs.i">clang_other_error_rbpmSs.i</a></td><td><a href="failures/clang_other_error_rbpmSs.i.stderr.txt">clang_other_error_rbpmSs.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="stickynotes/stickynotes_applet_callbacks.c" file="failures/clang_other_error_rbpmSs.i" clangfile="failures/clang_other_error_rbpmSs.clang.i" stderr="failures/clang_other_error_rbpmSs.i.stderr.txt" info="failures/clang_other_error_rbpmSs.i.info.txt" -->
+<tr><td>Other Error</td><td>battstat/battstat-preferences.c</td><td><a href="failures/clang_other_error_sCOjIH.i">clang_other_error_sCOjIH.i</a></td><td><a href="failures/clang_other_error_sCOjIH.i.stderr.txt">clang_other_error_sCOjIH.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="battstat/battstat-preferences.c" file="failures/clang_other_error_sCOjIH.i" clangfile="failures/clang_other_error_sCOjIH.clang.i" stderr="failures/clang_other_error_sCOjIH.i.stderr.txt" info="failures/clang_other_error_sCOjIH.i.info.txt" -->
+<tr><td>Other Error</td><td>multiload/src/netspeed.c</td><td><a href="failures/clang_other_error_tC_jfD.i">clang_other_error_tC_jfD.i</a></td><td><a href="failures/clang_other_error_tC_jfD.i.stderr.txt">clang_other_error_tC_jfD.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="multiload/src/netspeed.c" file="failures/clang_other_error_tC_jfD.i" clangfile="failures/clang_other_error_tC_jfD.clang.i" stderr="failures/clang_other_error_tC_jfD.i.stderr.txt" info="failures/clang_other_error_tC_jfD.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-selector/main.c</td><td><a href="failures/clang_other_error_tT8d7c.i">clang_other_error_tT8d7c.i</a></td><td><a href="failures/clang_other_error_tT8d7c.i.stderr.txt">clang_other_error_tT8d7c.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-selector/main.c" file="failures/clang_other_error_tT8d7c.i" clangfile="failures/clang_other_error_tT8d7c.clang.i" stderr="failures/clang_other_error_tT8d7c.i.stderr.txt" info="failures/clang_other_error_tT8d7c.i.info.txt" -->
+<tr><td>Other Error</td><td>command/src/command.c</td><td><a href="failures/clang_other_error_tceLD9.i">clang_other_error_tceLD9.i</a></td><td><a href="failures/clang_other_error_tceLD9.i.stderr.txt">clang_other_error_tceLD9.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="command/src/command.c" file="failures/clang_other_error_tceLD9.i" clangfile="failures/clang_other_error_tceLD9.clang.i" stderr="failures/clang_other_error_tceLD9.i.stderr.txt" info="failures/clang_other_error_tceLD9.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-selector/cpufreq-selector-factory.c</td><td><a href="failures/clang_other_error_uElD40.i">clang_other_error_uElD40.i</a></td><td><a href="failures/clang_other_error_uElD40.i.stderr.txt">clang_other_error_uElD40.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-selector/cpufreq-selector-factory.c" file="failures/clang_other_error_uElD40.i" clangfile="failures/clang_other_error_uElD40.clang.i" stderr="failures/clang_other_error_uElD40.i.stderr.txt" info="failures/clang_other_error_uElD40.i.info.txt" -->
+<tr><td>Other Error</td><td>geyes/src/geyes.c</td><td><a href="failures/clang_other_error_uIsWpx.i">clang_other_error_uIsWpx.i</a></td><td><a href="failures/clang_other_error_uIsWpx.i.stderr.txt">clang_other_error_uIsWpx.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="geyes/src/geyes.c" file="failures/clang_other_error_uIsWpx.i" clangfile="failures/clang_other_error_uIsWpx.clang.i" stderr="failures/clang_other_error_uIsWpx.i.stderr.txt" info="failures/clang_other_error_uIsWpx.i.info.txt" -->
+<tr><td>Other Error</td><td>drivemount/src/drivemount-resources.c</td><td><a href="failures/clang_other_error_vVATGv.i">clang_other_error_vVATGv.i</a></td><td><a href="failures/clang_other_error_vVATGv.i.stderr.txt">clang_other_error_vVATGv.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="drivemount/src/drivemount-resources.c" file="failures/clang_other_error_vVATGv.i" clangfile="failures/clang_other_error_vVATGv.clang.i" stderr="failures/clang_other_error_vVATGv.i.stderr.txt" info="failures/clang_other_error_vVATGv.i.info.txt" -->
+<tr><td>Other Error</td><td>cpufreq/src/cpufreq-monitor-factory.c</td><td><a href="failures/clang_other_error_zukS3a.i">clang_other_error_zukS3a.i</a></td><td><a href="failures/clang_other_error_zukS3a.i.stderr.txt">clang_other_error_zukS3a.i.stderr.txt</a></td></tr>
+  <!-- REPORTPROBLEM src="cpufreq/src/cpufreq-monitor-factory.c" file="failures/clang_other_error_zukS3a.i" clangfile="failures/clang_other_error_zukS3a.clang.i" stderr="failures/clang_other_error_zukS3a.i.stderr.txt" info="failures/clang_other_error_zukS3a.i.info.txt" -->
+</table>
+<p>Please consider submitting preprocessed files as <a href="http://clang-analyzer.llvm.org/filing_bugs.html">bug reports</a>. <!-- REPORTCRASHES --> </p>
+</body></html>
