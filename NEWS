@@ -1,3 +1,17 @@
+### mate-applets 1.28.1
+
+  * Compute screen height properly when not in X11
+  * Remove GtkSourceView dependency as we no longer use it
+  * Replace GtkSourceView with GtkTextView
+  * Do not call x11 functions when not in x11
+  * ci: try to fix cannot load such file -- faraday/net_http (LoadError)
+  * ci: use pip3 install not pip install for Travis
+  * CI: sudo was not used in prior attempt
+  * CI: 3ed try to fix start of jobs
+  * CI: 2nd attempt to fix start of builds
+  * ci: fix starting the builds as per error message
+  * CI: travis fixes needed elsewhere also needed here
+
 ### mate-applets 1.28.0
 
   * update translations
