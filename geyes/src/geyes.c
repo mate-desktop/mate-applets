@@ -132,10 +132,15 @@ timer_cb (EyesApplet *eyes_applet)
 {
     GdkDisplay *display;
     GdkSeat *seat;
-    gint x, y, dx, dy;
+    gint x, y;
     gint pupil_x, pupil_y;
     gsize i;
+#ifdef ENABLE_IN_PROCESS
+    GtkAllocation allocation;
+#else
     int applet_x,applet_y;
+    gint dx, dy;
+#endif
 
     display = gtk_widget_get_display (GTK_WIDGET (eyes_applet->applet));
     seat = gdk_display_get_default_seat (display);
@@ -148,18 +153,20 @@ timer_cb (EyesApplet *eyes_applet)
                                             gdk_seat_get_pointer (seat),
                                             &x, &y, NULL);
 
+            /*correct for the positon of each eye, this is done differently in-process or out*/
 #ifdef ENABLE_IN_PROCESS
-            gdk_window_get_origin (gtk_widget_get_window (GTK_WIDGET(eyes_applet->applet)),
-                                       &applet_x, &applet_y);
+            gtk_widget_get_allocation(GTK_WIDGET(eyes_applet->eyes[i]), &allocation);
+            x -= i * allocation.width;
+            /*eyes are always drawn in a horizontal row
+             *so we don't need to correct anything in the value of y
+             */
 #else
-            applet_x = 0;
-            applet_y = 0;
-#endif
             gtk_widget_translate_coordinates (eyes_applet->eyes[i],
                                               gtk_widget_get_toplevel(eyes_applet->eyes[i]),
-                                              -applet_x, -applet_y, &dx, &dy);
+                                              0, 0, &dx, &dy);
             x -= dx;
             y -= dy;
+#endif
 
             if ((x != eyes_applet->pointer_last_x[i]) ||
                 (y != eyes_applet->pointer_last_y[i])) {
