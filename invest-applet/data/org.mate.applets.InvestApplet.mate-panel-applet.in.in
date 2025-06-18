@@ -1,0 +1,17 @@
+[Applet Factory]
+Id=InvestAppletFactory
+Location=@APPLET_LOCATION@
+InProcess=@APPLET_IN_PROCESS@
+Name=Invest Applet Factory
+Description=Factory for creating the invest applet.
+
+[InvestApplet]
+Name=Invest
+Description=Track your invested money.
+Icon=mate-invest-applet
+BonoboId=OAFIID:Invest_Applet_Factory
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=mate-applets
+X-MATE-Bugzilla-Component=invest
+X-MATE-Bugzilla-Version=@VERSION@
+X-MATE-Bugzilla-OtherBinaries=invest-applet

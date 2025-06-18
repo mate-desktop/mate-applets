@@ -19,6 +19,8 @@ GTK_REQUIRED=3.22.0
 LIBPANEL4_REQUIRED=1.25.2
 LIBGTOP_REQUIRED=2.12.0
 LIBNOTIFY_REQUIRED=0.7.0
+LIBSOUP_REQUIRED=2.42.0
+JSON_GLIB_REQUIRED=1.0.0
 UPOWER_REQUIRED=0.99.8
 DBUS_GLIB_REQUIRED=0.74
 LIBXML_REQUIRED=2.5.0
@@ -98,6 +100,13 @@ fi
 
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
+
+dnl -- check for libsoup (optional) -----------------------------------------
+PKG_CHECK_MODULES(LIBSOUP, libsoup-2.4 >= $LIBSOUP_REQUIRED,
+                  HAVE_LIBSOUP="yes", HAVE_LIBSOUP="no")
+
+PKG_CHECK_MODULES(JSON_GLIB, json-glib-1.0 >= $JSON_GLIB_REQUIRED,
+                  HAVE_JSON_GLIB="yes", HAVE_JSON_GLIB="no")
 
 dnl -- Check for D-Bus -----------------------------------------
 AC_ARG_WITH(dbus-sys,
@@ -395,6 +404,17 @@ dnl ***************************************************************************
 AM_CONDITIONAL(BUILD_TIMERAPPLET, test "x$HAVE_LIBNOTIFY" = "xyes")
 
 dnl ***************************************************************************
+dnl *** invest-applet specific checks                                       ***
+dnl ***************************************************************************
+
+build_invest_applet=no
+if test "x$HAVE_LIBSOUP" = "xyes" -a "x$HAVE_JSON_GLIB" = "xyes"; then
+  build_invest_applet=yes
+fi
+
+AM_CONDITIONAL(BUILD_INVEST_APPLET, test "x$build_invest_applet" = "xyes")
+
+dnl ***************************************************************************
 dnl *** iwlib/netfilter support for netspeed applet                         ***
 dnl ***************************************************************************
 
@@ -588,6 +608,12 @@ multiload/src/Makefile
 charpick/Makefile
 charpick/org.mate.panel.applet.charpick.gschema.xml
 charpick/help/Makefile
+invest-applet/Makefile
+invest-applet/docs/Makefile
+invest-applet/invest/Makefile
+invest-applet/data/Makefile
+invest-applet/data/org.mate.panel.applet.invest.gschema.xml
+invest-applet/data/art/Makefile
 mateweather/Makefile
 mateweather/data/Makefile
 mateweather/docs/Makefile
@@ -664,6 +690,7 @@ Configure summary:
         - drivemount               always
         - geyes                    always
         - mateweather              $build_libmateweather_applets
+        - invest-applet            $build_invest_applet
         - multiload                $build_gtop_applets
         - netspeed                 $build_gtop_applets
             - iwlib support        $have_iwevgenie

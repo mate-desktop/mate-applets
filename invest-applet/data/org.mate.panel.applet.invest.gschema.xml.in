@@ -1,0 +1,19 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.invest">
+    <key name="stock-symbols" type="as">
+      <default>['AAPL', 'GOOG', 'IBM']</default>
+      <summary>Stock symbols to track</summary>
+      <description>List of stock symbols to monitor in the investment portfolio</description>
+    </key>
+    <key name="refresh-interval" type="i">
+      <default>15</default>
+      <summary>Refresh interval</summary>
+      <description>Number of minutes between automatic data refreshes</description>
+    </key>
+    <key name="cycle-interval" type="i">
+      <default>5</default>
+      <summary>Cycle interval</summary>
+      <description>Number of seconds between stock cycling in the display</description>
+    </key>
+  </schema>
+</schemalist>

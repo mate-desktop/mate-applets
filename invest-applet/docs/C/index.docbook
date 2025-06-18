@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "1.10.2">
+  <!ENTITY manrevision "1.1">
+  <!ENTITY date "July 2015">
+  <!ENTITY app "Invest">
+  <!ENTITY panel-help SYSTEM "/usr/share/mate/help/mate-user-guide/C/gospanel.xml">
+]>
+
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the MATE Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+
+
+<!-- =============Document Header ============================= -->
+<article id="index" lang="en">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>&app; Manual</title>       
+
+    <copyright>
+      <year>2015</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
+    <copyright>
+      <year>2004</year>
+      <year>2005</year>
+      <holder>Raphael Slinckx</holder>
+    </copyright>
+    <copyright> 
+      <year>2007</year>
+      <holder>Terrence Hall</holder> 
+    </copyright> 
+    <copyright>
+      <year>2010</year>
+      <holder>Enrico Minack</holder>
+    </copyright>
+
+
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+      <publishername> MATE Documentation Project </publishername> 
+    </publisher> 
+    <publisher>
+      <publishername> GNOME Documentation Project </publishername>
+    </publisher>
+
+   &legal;
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+  <authorgroup> 
+    <author>
+      <firstname></firstname>
+      <surname>MATE Documentation Team</surname>
+    </author>
+    <author>
+      <firstname></firstname>
+      <surname>GNOME Documentation Team</surname>
+    </author>
+    <author> 
+      <firstname>Terrence</firstname> 
+      <surname>Hall</surname> 
+      <affiliation><address><email>teebob21@gmail.com</email></address></affiliation> 
+    </author> 
+    <author>
+      <firstname>Enrico</firstname>
+      <surname>Minack</surname>
+      <affiliation><address><email>enrico-minack@gmx.de</email></address></affiliation>
+    </author>
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+    <othercredit role="translator">
+      <firstname>Latin</firstname> 
+      <surname>Translator 1</surname> 
+      <affiliation> 
+	<orgname>Latin Translation Team</orgname> 
+	<address> <email>translator@gnome.org</email> </address> 
+      </affiliation>
+      <contrib>Latin translation</contrib>
+    </othercredit>
+-->
+    </authorgroup>
+	
+    <revhistory>
+      <revision> 
+	<revnumber>&app; V&manrevision;</revnumber>
+	<date>&date;</date>
+	   <revdescription>
+	      <para role="author">MATE Documentation Team</para>
+	      <para role="publisher">MATE Documentation Project</para>
+	   </revdescription>
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>This manual describes version &appversion; of &app;.
+    </releaseinfo> 
+
+    <legalnotice>
+      <title>Feedback</title>
+      <para>
+
+        To report a bug or make a suggestion regarding the &app; application or this manual, follow the directions in the <ulink url="help:mate-user-guide/feedback" type="help">MATE Feedback Page</ulink>.
+      </para>
+
+<!-- Translators may also add here feedback address for translations -->
+
+    </legalnotice>
+    <abstract role="description">
+      <para>User manual for &app;</para>
+
+    </abstract>
+
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Invest</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>invest-applet</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+ <!-- ============= Introduction ============================== -->
+
+  <sect1 id="invest-applet-intro">
+    <title>Introduction</title>
+
+    <para>
+      The <application>&app;</application> MATE panel applet downloads current quotes for stocks, stock indices, currencies and precious metals. Quotes are downloaded from <ulink url="http://finance.yahoo.com">Yahoo! Finance</ulink> and are displayed directly in the panel with automatic cycling through multiple stocks.
+    </para>
+    <para>
+      <application>&app;</application> provides the following features:
+    </para>
+	<itemizedlist>
+            <listitem>
+              <para>
+                Retrieve quotes for any stock, stock index, currency or precious metal known by <ulink url="http://finance.yahoo.com">Yahoo! Finance</ulink>
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Quotes are automatically updated every 15 minutes (configurable from 1-60 minutes)
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Current stock symbol, price, and percentage change are displayed directly in the panel
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Direction indicator icons show whether stocks are up, down, or neutral
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Multiple stocks automatically cycle through the display every 5 seconds (configurable from 1-60 seconds)
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Click on the applet to manually cycle to the next configured stock
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Tooltip shows summary of all configured stocks with current prices and changes
+              </para>
+            </listitem>
+	</itemizedlist>
+  </sect1>
+
+<!-- ============= Getting Started =========================== -->
+  <sect1 id="invest-applet-getting-started">
+    <title>Getting Started</title>
+
+                                                                                
+<!-- ============= To Start Invest ============================ -->
+    <sect2 id="invest-applet-to-add">
+      <title>Add &app; to a Panel</title>
+      <para>To add <application>&app;</application> to a MATE panel, right-click on the panel, then choose <guilabel>Add to Panel</guilabel>. Select <application>&app;</application> in the <guilabel>Add to Panel</guilabel> dialog, then click <guilabel>OK</guilabel>. Click <guilabel>Close</guilabel> when finished.</para>
+    </sect2>
+    <sect2 id="invest-applet-to-remove">
+      <title>Remove &app; From a Panel</title>
+      <para>To remove <application>&app;</application> from a MATE panel, right-click on the icon, then choose <guilabel>Remove From Panel</guilabel>. </para>
+    </sect2>
+    <sect2 id="additional-applet-help">
+      <title>More Information</title>
+      <para>More information about the MATE panel can be found in the <ulink url="help:mate-user-guide/panels" type="help">MATE Panel documentation</ulink>.</para>
+    </sect2>
+  </sect1>
+
+
+ <!-- ================ Usage ================================ -->
+ <!-- This section should describe basic usage of the application. -->
+
+  <sect1 id="invest-applet-usage">
+    <title>Using &app; </title>
+    <para>Before the applet can provide you with recent quotes, you have
+	to configure it with stock symbols. Once configured, the applet will 
+	display stock information directly in the panel and automatically cycle 
+	through multiple stocks. You can click on the applet to manually advance 
+	to the next stock, or right-click for options to refresh data and configure preferences.
+    </para>
+
+    <sect2 id="invest-applet-configure-quotes">
+      <title>Configure your Quotes</title>
+
+    <sect3 id="invest-applet-add-stocks">
+
+      <title>Add New Quotes to the Applet</title>
+
+      <para>
+        To add new quotes to <application>&app;</application>, perform the following steps:
+      </para>
+      <orderedlist>
+        <listitem>
+          <para>
+            Right-click on the applet icon, and select <guilabel>Preferences</guilabel>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            In the <guilabel>Stock symbols</guilabel> field, enter the symbols of the stocks you want to track, separated by commas. For example: AAPL,GOOGL,MSFT
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Optionally, configure the <guilabel>Refresh interval</guilabel> (how often to download new quotes, in seconds).
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Optionally, configure the <guilabel>Cycle interval</guilabel> (how often to cycle through different stocks in the display, in seconds).
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Click <guilabel>OK</guilabel> when you are finished configuring.
+          </para>
+        </listitem>
+      </orderedlist>
+	<para>
+	If you do not know the actual symbol of your quote, go to <ulink url="http://finance.yahoo.com/">http://finance.yahoo.com/</ulink>.
+	Enter the name of the quote in the text field in the upper-left corner of the screen. While typing, it will list
+	you matching quotes. The first column depicts the symbol of the quote, the second column shows the name,
+	and in the third column, the stock exchange of the quote is listed. The currency of the quote may vary among
+	different stock exchange centers, depending on their respective countries. Below, you can see a screenshot of
+	searching for the "yahoo" quote.
+	</para>
+
+	<para>
+	<mediaobject><imageobject>
+	  <imagedata format="PNG" fileref="figures/symbol-search.png"/>
+	</imageobject></mediaobject>
+	Screenshot of Yahoo! Finance when searching a quote.
+	</para>
+
+	<para>
+	&app; supports all quotes that can be found at <ulink url="http://finance.yahoo.com/">Yahoo! Finance</ulink>.
+	In particular, these are of the following type.
+	</para>
+	<formalpara>
+	  <title>Stocks, Bonds and Securities</title>
+          <para> These are the majority of quotes that are available. Search or browse on
+		<ulink url="http://finance.yahoo.com/">Yahoo! Finance</ulink> to find out what is there.
+          </para>
+	</formalpara>
+	<formalpara>
+	  <title>Stock Indices</title>
+          <para> All quotes that start with an ^ are actually indices, a quote that represents a number of other quotes' performance.
+		Examples are the Dow Jones Industrial Average (<ulink url="http://finance.yahoo.com/q?s=^DJI">^DJI</ulink>) and the
+		NASDAQ Composite (<ulink url="http://finance.yahoo.com/q?s=^IXIC">^IXIC</ulink>).
+          </para>
+	</formalpara>
+	<formalpara>
+	  <title>Currencie rates</title>
+          <para> Exchange rates between any two currencies are also available. The respective symbol is constructured as follows.
+		Currency AAA in currency BBB, or in other words, how much does currency AAA cost in currency BBB, has the symbol AAABBB=X.
+		If you want to know how much EUR you get for one USD (how much does one USD cost in EUR),
+		you choose <ulink url="http://finance.yahoo.com/q?s=usdeur%3DX">USDEUR=X</ulink>.
+		You can find more information at the <ulink url="http://finance.yahoo.com/currency-investing">currency page of Yahoo! Finance</ulink>.
+		Currencies are represented using their <ulink url="http://en.wikipedia.org/wiki/Currency_code">ISO 4217 currency code</ulink>.
+          </para>
+	</formalpara>
+	<formalpara>
+	  <title>Precious Metals</title>
+          <para>
+		The <ulink url="http://en.wikipedia.org/wiki/Currency_code">ISO 4217 currency code</ulink> also
+		lists precious metals as currencies. These are Gold, Silver, Palladium and Platinum. Their
+		currency code starts with X, followed by their chemical symbol: XAU, XAG, XPD, and XPT, respectively.
+		With those currency codes, the rate of precious metals in any currency are available via the currency rates described above.
+		To give an example, Gold in USD has the symbol <ulink url="http://finance.yahoo.com/q?s=XAUUSD%3DX">XAUUSD=X</ulink>.
+		You can even get the reverse (<ulink url="http://finance.yahoo.com/q?s=USDXAU%3DX">USDXAU=X</ulink>):
+		how much Gold measured in troy ounce do you get for one USD?
+          </para>
+	</formalpara>
+    </sect3>
+    <sect3 id="invest-applet-to-view-stocks">
+      <title>View Configured Quotes</title>
+      <para>Your configured quotes are displayed directly in the panel next to the direction indicator icon. The display shows the current stock symbol and price (e.g., "AAPL: $150.25"). If you have multiple stocks configured, they will automatically cycle through the display. You can also click on the applet to manually advance to the next stock. Hover over the applet to see a tooltip with all configured stocks and their current prices and changes.
+      </para>
+    </sect3>
+
+    <sect3 id="invest-applet-to-refresh-stocks">
+
+      <title>Update the Display</title>
+      <para>To immediately update the information that is displayed in the applet, right-click on the applet, then choose <guilabel>Refresh</guilabel>.
+      </para>
+    </sect3>
+    <sect3 id="invest-applet-to-remove-stocks">
+       <title>Remove Quotes from the Applet</title>
+      <para>
+        To remove quotes from <application>&app;</application>, perform the following steps:
+      </para>
+      <orderedlist>
+        <listitem>
+          <para>
+            Right-click on the applet icon, and select <guilabel>Preferences</guilabel>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            In the <guilabel>Stock symbols</guilabel> field, edit the comma-separated list to remove the symbols you no longer want to track.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Click <guilabel>OK</guilabel> when you are finished.
+          </para>
+        </listitem>
+      </orderedlist> 
+    </sect3>
+   </sect2>
+
+    <sect2 id="invest-applet-display-behavior">
+      <title>Display Behavior</title>
+      <para>&app; displays quotes directly in the panel and automatically cycles through multiple stocks if configured. The applet shows:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <guilabel>Direction Icon</guilabel> - Shows an up arrow (green) for positive change, down arrow (red) for negative change, or neutral icon for no change
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <guilabel>Stock Information</guilabel> - Displays the current stock symbol and price (e.g., "AAPL: $150.25")
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <guilabel>Automatic Cycling</guilabel> - If multiple stocks are configured, the display automatically cycles through them every few seconds
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <guilabel>Manual Cycling</guilabel> - Click on the applet to manually advance to the next stock
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <guilabel>Tooltip Summary</guilabel> - Hover over the applet to see a tooltip with all configured stocks, their current prices, and percentage changes
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>Quotes are displayed in their original currency as retrieved from Yahoo! Finance. The current version does not support currency conversion or portfolio tracking features.</para>
+   </sect2>
+  </sect1>
+</article>
+

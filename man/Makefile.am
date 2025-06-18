@@ -3,6 +3,7 @@ man_MANS = \
     mate-cpufreq-selector.1   \
     mate-drivemount-applet.1  \
     mate-geyes-applet.1       \
+    mate-invest-applet.1      \
     mateweather.1             \
     mate-multiload-applet.1
 

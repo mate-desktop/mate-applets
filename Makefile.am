@@ -1,4 +1,3 @@
-
 gtop_applets = multiload netspeed
 
 if BUILD_GTOP_APPLETS
@@ -28,6 +27,10 @@ if BUILD_TIMERAPPLET
 timerapplet_SUBDIR = timerapplet
 endif
 
+if BUILD_INVEST_APPLET
+invest_applet_SUBDIR = invest-applet
+endif
+
 always_built_SUBDIRS = \
 	charpick \
 	drivemount \
@@ -44,6 +47,7 @@ SUBDIRS = \
 	man	\
 	$(battstat_SUBDIR) \
 	$(accessx_status_SUBDIR) \
+	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
 	$(timerapplet_SUBDIR)
 
@@ -61,6 +65,7 @@ DIST_SUBDIRS = \
 	timerapplet \
 	trashapplet \
 	cpufreq \
+	invest-applet \
 	command \
 	netspeed
 
