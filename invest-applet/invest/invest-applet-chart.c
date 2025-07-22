@@ -538,10 +538,7 @@ chart_draw_cb (GtkWidget *widget, cairo_t *cr, InvestChart *chart)
                 chart->chart_data[stock_index].timestamps[j] > 0 &&
                 chart->chart_data[stock_index].timestamps[j] < 9999999999) { /* Just to be safe... */
 
-                gint64 current_timestamp = chart->chart_data[stock_index].timestamps[j];
-
-                gdouble x = 50 + (current_timestamp - min_time) * x_scale;
-
+                gdouble x = 50 + (gdouble)j * (width - 100) / (chart->chart_data[stock_index].data_count - 1);
                 gdouble y = 50 + (max_price - chart->chart_data[stock_index].prices[j]) * y_scale;
 
                 if (first_point) {
