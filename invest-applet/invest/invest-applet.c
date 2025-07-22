@@ -28,9 +28,8 @@
 #include <libsoup/soup.h>
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
-
-typedef struct _InvestApplet InvestApplet;
-typedef struct _InvestAppletClass InvestAppletClass;
+#include "invest-applet.h"
+#include "invest-applet-chart.h"
 
 static gchar* create_stock_tooltip (InvestApplet *applet);
 static void free_stock_data (InvestApplet *applet);
@@ -39,39 +38,6 @@ static void update_applet_text (InvestApplet *applet, const gchar *message, gdou
 static gboolean invest_applet_cycle_stocks (InvestApplet *applet);
 static void display_stock_at_index (InvestApplet *applet, gint stock_index);
 static void clear_timeout (guint *timeout_id);
-
-#define INVEST_TYPE_APPLET (invest_applet_get_type ())
-#define INVEST_APPLET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), INVEST_TYPE_APPLET, InvestApplet))
-
-struct _InvestApplet {
-    MatePanelApplet parent;
-
-    GtkWidget *label;
-    GtkWidget *direction_icon; /* icon for stock price going up/down/neutral */
-    GSettings *settings;
-    SoupSession *soup_session;
-
-    guint update_timeout_id;
-    gchar *stock_summary;
-    gdouble change_percent;
-    gint refresh_interval;
-    gint cycle_interval;
-
-    gint pending_requests;
-    gint total_symbols;
-    gchar **stock_symbols;
-    gdouble *stock_prices;
-    gdouble *stock_changes;
-    gboolean *stock_valid;
-
-    /* for cycling throuhg multiple stocks */
-    gint cycle_position;
-    guint cycle_timeout_id;
-};
-
-struct _InvestAppletClass {
-    MatePanelAppletClass parent_class;
-};
 
 G_DEFINE_TYPE (InvestApplet, invest_applet, PANEL_TYPE_APPLET);
 
@@ -392,6 +358,9 @@ invest_applet_preferences_cb (GtkAction    *action,
 
         /* Trigger update */
         invest_applet_update_stocks (applet);
+
+        /* Refresh chart data if chart is visible */
+        invest_chart_refresh_data (applet->chart);
     }
 
     gtk_widget_destroy (dialog);
@@ -402,6 +371,17 @@ invest_applet_refresh_cb (GtkAction    *action,
                           InvestApplet *applet)
 {
     invest_applet_update_stocks (applet);
+}
+
+static void
+invest_applet_show_chart_cb (GtkAction    *action,
+                             InvestApplet *applet)
+{
+    if (invest_chart_is_visible (applet->chart)) {
+        invest_chart_hide (applet->chart);
+    } else {
+        invest_chart_show (applet->chart);
+    }
 }
 
 static void
@@ -483,8 +463,11 @@ invest_applet_button_press (GtkWidget      *widget,
                             InvestApplet   *applet)
 {
     if (event->button == 1 && event->type == GDK_BUTTON_PRESS) {
-        /* cycle to next stock */
-        invest_applet_cycle_stocks (applet);
+        if (invest_chart_is_visible (applet->chart)) {
+            invest_chart_hide (applet->chart);
+        } else {
+            invest_chart_show (applet->chart);
+        }
         return TRUE;
     }
 
@@ -498,6 +481,10 @@ invest_applet_destroy (GtkWidget    *widget,
     clear_timeout (&applet->update_timeout_id);
     clear_timeout (&applet->cycle_timeout_id);
 
+    if (invest_chart_is_visible (applet->chart)) {
+        invest_chart_hide (applet->chart);
+    }
+
     if (applet->soup_session) {
         g_object_unref (applet->soup_session);
         applet->soup_session = NULL;
@@ -509,6 +496,7 @@ invest_applet_destroy (GtkWidget    *widget,
     }
 
     free_stock_data (applet);
+    invest_chart_free (applet->chart);
 }
 
 static void
@@ -532,6 +520,9 @@ invest_applet_init (InvestApplet *applet)
     applet->cycle_position = 0;
     applet->cycle_timeout_id = 0;
 
+    /* init chart functionality */
+    applet->chart = invest_chart_new (applet);
+
     /* init networking */
     applet->soup_session = soup_session_new ();
 
@@ -553,6 +544,7 @@ invest_applet_init (InvestApplet *applet)
 
     const GtkActionEntry menu_actions[] = {
         { "InvestRefresh", "view-refresh", N_("_Refresh"), NULL, NULL, G_CALLBACK (invest_applet_refresh_cb) },
+        { "InvestShowChart", "invest_neutral", N_("_Show Chart"), NULL, NULL, G_CALLBACK (invest_applet_show_chart_cb) },
         { "InvestPreferences", "preferences-system", N_("_Preferences"), NULL, NULL, G_CALLBACK (invest_applet_preferences_cb) },
         { "InvestHelp", "help-browser", N_("_Help"), NULL, NULL, G_CALLBACK (invest_applet_help_cb) },
         { "InvestAbout", "help-about", N_("_About"), NULL, NULL, G_CALLBACK (invest_applet_about_cb) }
@@ -563,6 +555,7 @@ invest_applet_init (InvestApplet *applet)
     gtk_action_group_add_actions (action_group, menu_actions, G_N_ELEMENTS (menu_actions), applet);
 
     const gchar *ui = "<menuitem name=\"Invest Refresh\" action=\"InvestRefresh\" />"
+                      "<menuitem name=\"Invest Show Chart\" action=\"InvestShowChart\" />"
                       "<separator />"
                       "<menuitem name=\"Invest Preferences\" action=\"InvestPreferences\" />"
                       "<menuitem name=\"Invest Help\" action=\"InvestHelp\" />"
@@ -647,7 +640,6 @@ create_stock_tooltip (InvestApplet *applet)
 
     return g_string_free (tooltip, FALSE);
 }
-
 
 static void
 free_stock_data (InvestApplet *applet)
