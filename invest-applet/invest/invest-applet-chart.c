@@ -56,6 +56,7 @@ static void chart_range_button_clicked (GtkWidget *widget, InvestChart *chart);
 static void create_chart_toolbar (InvestChart *chart, GtkWidget *parent);
 static void free_chart_data (InvestChart *chart);
 static void draw_loading_message (cairo_t *cr, gint width, gint height, const gchar *message);
+static void on_chart_window_destroy (GtkWidget *widget, InvestChart *chart);
 
 InvestChart*
 invest_chart_new (InvestApplet *applet)
@@ -76,7 +77,7 @@ invest_chart_free (InvestChart *chart)
         return;
     }
 
-    if (chart->window && gtk_widget_get_visible (chart->window)) {
+    if (chart->window) {
         invest_chart_hide (chart);
     }
 
@@ -84,6 +85,13 @@ invest_chart_free (InvestChart *chart)
     g_free (chart->chart_range);
     g_free (chart->chart_interval);
     g_free (chart);
+}
+
+static void
+on_chart_window_destroy (GtkWidget *widget, InvestChart *chart)
+{
+    chart->window = NULL;
+    chart->drawing_area = NULL;
 }
 
 void
@@ -107,6 +115,8 @@ invest_chart_show (InvestChart *chart)
     gtk_window_set_default_size (GTK_WINDOW (chart->window), 800, 500);
     gtk_window_set_resizable (GTK_WINDOW (chart->window), TRUE);
     gtk_window_set_modal (GTK_WINDOW (chart->window), FALSE);
+
+    g_signal_connect (chart->window, "destroy", G_CALLBACK (on_chart_window_destroy), chart);
 
     /* Create main vertical box */
     GtkWidget *main_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
@@ -136,7 +146,7 @@ invest_chart_show (InvestChart *chart)
 void
 invest_chart_hide (InvestChart *chart)
 {
-    if (!chart->window || !gtk_widget_get_visible (chart->window)) {
+    if (!chart->window) {
         return;
     }
 
@@ -148,14 +158,17 @@ invest_chart_hide (InvestChart *chart)
 gboolean
 invest_chart_is_visible (InvestChart *chart)
 {
-    return chart->window && gtk_widget_get_visible (chart->window);
+    if (!chart || !chart->window) {
+        return FALSE;
+    }
+    return gtk_widget_get_visible (chart->window);
 }
 
 void
 invest_chart_refresh_data (InvestChart *chart)
 {
     /* Only refresh if chart is visible */
-    if (chart->window && gtk_widget_get_visible (chart->window)) {
+    if (chart && chart->window && gtk_widget_get_visible (chart->window)) {
         fetch_chart_data (chart);
     }
 }

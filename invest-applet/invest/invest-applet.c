@@ -481,8 +481,12 @@ invest_applet_destroy (GtkWidget    *widget,
     clear_timeout (&applet->update_timeout_id);
     clear_timeout (&applet->cycle_timeout_id);
 
-    if (invest_chart_is_visible (applet->chart)) {
-        invest_chart_hide (applet->chart);
+    if (applet->chart) {
+        if (invest_chart_is_visible (applet->chart)) {
+            invest_chart_hide (applet->chart);
+        }
+        invest_chart_free (applet->chart);
+        applet->chart = NULL;
     }
 
     if (applet->soup_session) {
@@ -496,7 +500,6 @@ invest_applet_destroy (GtkWidget    *widget,
     }
 
     free_stock_data (applet);
-    invest_chart_free (applet->chart);
 }
 
 static void
