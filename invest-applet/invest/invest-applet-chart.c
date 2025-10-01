@@ -49,7 +49,7 @@ struct _InvestChart {
 };
 
 static void fetch_chart_data (InvestChart *chart);
-static void on_chart_data_received (SoupSession *session, SoupMessage *msg, gpointer user_data);
+static void on_chart_data_received (GObject *source_object, GAsyncResult *result, gpointer user_data);
 static gboolean chart_draw_cb (GtkWidget *widget, cairo_t *cr, InvestChart *chart);
 static gboolean chart_window_key_press (GtkWidget *widget, GdkEventKey *event, InvestChart *chart);
 static void chart_range_button_clicked (GtkWidget *widget, InvestChart *chart);
@@ -221,15 +221,17 @@ fetch_chart_data (InvestChart *chart)
         SoupMessage *msg = soup_message_new ("GET", url);
 
         /* HACK: avoid rate limiting */
-        soup_message_headers_replace (msg->request_headers, "User-Agent",
+        SoupMessageHeaders *headers = soup_message_get_request_headers (msg);
+        soup_message_headers_replace (headers, "User-Agent",
                                       "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36");
 
-        gpointer *user_data_with_index = g_malloc (2 * sizeof (gpointer));
+        gpointer *user_data_with_index = g_malloc (3 * sizeof (gpointer));
         user_data_with_index[0] = chart;
         user_data_with_index[1] = GINT_TO_POINTER (i);
+        user_data_with_index[2] = msg;
 
         /* Queue the actual request to the Yahoo Finance API */
-        soup_session_queue_message (chart->applet->soup_session, msg, on_chart_data_received, user_data_with_index);
+        soup_session_send_and_read_async (chart->applet->soup_session, msg, G_PRIORITY_DEFAULT, NULL, on_chart_data_received, user_data_with_index);
         g_free (url);
     }
 
@@ -237,29 +239,42 @@ fetch_chart_data (InvestChart *chart)
 }
 
 static void
-on_chart_data_received (SoupSession *session, SoupMessage *msg, gpointer user_data)
+on_chart_data_received (GObject *source_object, GAsyncResult *result, gpointer user_data)
 {
     gpointer *user_data_with_index = (gpointer *)user_data;
     InvestChart *chart = (InvestChart *)user_data_with_index[0];
     gint symbol_index = GPOINTER_TO_INT (user_data_with_index[1]);
+    SoupMessage *msg = SOUP_MESSAGE (user_data_with_index[2]);
 
     JsonParser *parser = NULL;
     JsonNode *root;
     JsonObject *root_obj;
     GError *error = NULL;
+    GBytes *response_body;
 
-    if (msg->status_code != SOUP_STATUS_OK) {
-        g_warning ("Failed to fetch chart data for symbol %d: %s", symbol_index, msg->reason_phrase);
+    response_body = soup_session_send_and_read_finish (SOUP_SESSION (source_object), result, &error);
+    if (error) {
+        g_warning ("Failed to fetch chart data for symbol %d: %s", symbol_index, error->message);
+        g_error_free (error);
+        goto cleanup;
+    }
+
+    if (soup_message_get_status (msg) != SOUP_STATUS_OK) {
+        g_warning ("Failed to fetch chart data for symbol %d: %s", symbol_index, soup_message_get_reason_phrase (msg));
+        g_bytes_unref (response_body);
         goto cleanup;
     }
 
     parser = json_parser_new ();
-    if (!json_parser_load_from_data (parser, msg->response_body->data,
-                                     msg->response_body->length, &error)) {
+    gsize data_length;
+    const gchar *data = g_bytes_get_data (response_body, &data_length);
+    if (!json_parser_load_from_data (parser, data, data_length, &error)) {
         g_warning ("Failed to parse chart JSON for symbol %d: %s", symbol_index, error->message);
         g_error_free (error);
+        g_bytes_unref (response_body);
         goto cleanup;
     }
+    g_bytes_unref (response_body);
 
     root = json_parser_get_root (parser);
     root_obj = json_node_get_object (root);
@@ -348,6 +363,9 @@ on_chart_data_received (SoupSession *session, SoupMessage *msg, gpointer user_da
 cleanup:
     if (parser) {
         g_object_unref (parser);
+    }
+    if (msg) {
+        g_object_unref (msg);
     }
 
     /* Redraw chart if window is still visible */
