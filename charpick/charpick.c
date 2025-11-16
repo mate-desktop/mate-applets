@@ -270,10 +270,27 @@ key_press_event (GtkWidget   *widget,
 }
 
 static void
+menu_deactivated (GtkMenu   *menu,
+                  charpick_data *curr_data)
+{
+    GList *children = gtk_container_get_children (GTK_CONTAINER (curr_data->box));
+    if (children != NULL) {
+        gtk_widget_unset_state_flags (GTK_WIDGET (children->data), GTK_STATE_FLAG_CHECKED);
+        g_list_free (children);
+    }
+}
+
+static void
 menuitem_activated (GtkMenuItem   *menuitem,
                     charpick_data *curr_data)
 {
     gchar *string;
+
+    GList *children = gtk_container_get_children (GTK_CONTAINER (curr_data->box));
+    if (children != NULL) {
+        gtk_widget_unset_state_flags (GTK_WIDGET (children->data), GTK_STATE_FLAG_CHECKED);
+        g_list_free (children);
+    }
 
     string = g_object_get_data (G_OBJECT (menuitem), "string");
     if (g_ascii_strcasecmp (curr_data->charlist, string) == 0)
@@ -302,6 +319,7 @@ populate_menu (charpick_data *curr_data)
 
     curr_data->menu = gtk_menu_new ();
     menu  = GTK_MENU (curr_data->menu);
+    g_signal_connect (menu, "deactivate", G_CALLBACK (menu_deactivated), curr_data);
 
     while (list) {
         gchar *string = list->data;
@@ -336,6 +354,8 @@ static void
 chooser_button_clicked (GtkButton     *button,
                         charpick_data *curr_data)
 {
+    gtk_widget_set_state_flags (GTK_WIDGET (button), GTK_STATE_FLAG_CHECKED, FALSE);
+
     if (gtk_widget_get_visible (curr_data->menu))
         gtk_menu_popdown (GTK_MENU (curr_data->menu));
     else {
@@ -362,9 +382,9 @@ static inline void force_no_button_padding (GtkWidget *widget)
 
     gtk_css_provider_load_from_data (provider,
                                      "#charpick-applet-button {\n"
-                                     "border-width: 0px;\n"
-                                     "padding: 0px;\n"
-                                     "margin: 0px;\n"
+                                     "border-width: 0;\n"
+                                     "padding: 0;\n"
+                                     "margin: 0;\n"
                                      "}",
                                      -1,
                                      NULL);
@@ -403,6 +423,7 @@ build_table (charpick_data *p_curr_data)
         box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
     gtk_widget_show (box);
+    gtk_style_context_add_class (gtk_widget_get_style_context (box), "mate-charpick-applet");
     p_curr_data->box = box;
 
     button = gtk_button_new ();
@@ -430,8 +451,9 @@ build_table (charpick_data *p_curr_data)
             default:
                 g_assert_not_reached ();
         }
-        gtk_container_add (GTK_CONTAINER (button), arrow);
 
+        gtk_container_add (GTK_CONTAINER (button), arrow);
+        gtk_style_context_add_class (gtk_widget_get_style_context (button), "menu-button");
         gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
 
         /* FIXME : evil hack (see force_no_button_padding) */
