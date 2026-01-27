@@ -11,7 +11,9 @@ AM_CPPFLAGS =			\
 
 APPLET_SOURCES =	\
 	invest-applet.c	\
+	invest-applet.h	\
 	invest-applet-chart.c	\
+	invest-applet-chart.h	\
 	$(NULL)
 
 APPLET_LIBS =			\

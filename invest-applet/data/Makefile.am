@@ -18,6 +18,8 @@ gsettings_SCHEMAS = $(gschema_in_files:.xml.in=.xml)
 
 investbindir = $(libdir)/invest-applet
 
+service_in_files = org.mate.panel.applet.InvestAppletFactory.service.in
+
 # ******************************************************************************
 # Build rules
 # ******************************************************************************
