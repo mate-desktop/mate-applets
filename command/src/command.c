@@ -49,6 +49,7 @@
 #define GK_COMMAND_GROUP   "Command"
 #define GK_COMMAND_OUTPUT  "Output"
 #define GK_COMMAND_ICON    "Icon"
+#define GK_COMMAND_TOOLTIP "Tooltip"
 
 #define GET_WIDGET(x) (GTK_WIDGET (gtk_builder_get_object (builder, (x))))
 #define GET_DIALOG(x) (GTK_DIALOG (gtk_builder_get_object (builder, (x))))
@@ -301,6 +302,7 @@ process_command_output (CommandApplet *command_applet, gchar *output)
         {
             gchar *goutput = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_OUTPUT, NULL);
             gchar *icon = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_ICON, NULL);
+            gchar *tooltip = g_key_file_get_string (file, GK_COMMAND_GROUP, GK_COMMAND_TOOLTIP, NULL);
 
             if (goutput)
             {
@@ -311,8 +313,12 @@ process_command_output (CommandApplet *command_applet, gchar *output)
             if (icon)
                 gtk_image_set_from_icon_name (command_applet->image, icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
 
+            if (tooltip)
+                gtk_widget_set_tooltip_text (GTK_WIDGET (command_applet->label), tooltip);
+
             g_free (goutput);
             g_free (icon);
+            g_free (tooltip);
         }
         else
             gtk_label_set_text (command_applet->label, ERROR_OUTPUT);
