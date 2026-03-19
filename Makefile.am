@@ -31,6 +31,14 @@ if BUILD_INVEST_APPLET
 invest_applet_SUBDIR = invest-applet
 endif
 
+if BUILD_INDICATOR_APPLET
+indicator_applet_SUBDIR = indicator-applet
+endif
+
+if BUILD_SENSORS_APPLET
+sensors_applet_SUBDIR = sensors-applet
+endif
+
 always_built_SUBDIRS = \
 	charpick \
 	drivemount \
@@ -49,7 +57,9 @@ SUBDIRS = \
 	$(accessx_status_SUBDIR) \
 	$(invest_applet_SUBDIR) \
 	$(cpufreq_SUBDIR) \
-	$(timerapplet_SUBDIR)
+	$(timerapplet_SUBDIR) \
+	$(indicator_applet_SUBDIR) \
+	$(sensors_applet_SUBDIR)
 
 DIST_SUBDIRS = \
 	po \
@@ -67,7 +77,9 @@ DIST_SUBDIRS = \
 	cpufreq \
 	invest-applet \
 	command \
-	netspeed
+	netspeed \
+	indicator-applet \
+	sensors-applet
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-compile-warnings=no \
