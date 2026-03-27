@@ -35,6 +35,7 @@ enum {
     PROP_CPU,
     PROP_SHOW_MODE,
     PROP_SHOW_TEXT_MODE,
+    PROP_DECIMAL_PLACES,
 };
 
 struct _CPUFreqPrefsPrivate {
@@ -43,6 +44,7 @@ struct _CPUFreqPrefsPrivate {
     guint               cpu;
     CPUFreqShowMode     show_mode;
     CPUFreqShowTextMode show_text_mode;
+    guint               decimal_places;
 
     /* Preferences dialog */
     GtkWidget *dialog;
@@ -52,6 +54,8 @@ struct _CPUFreqPrefsPrivate {
     GtkWidget *cpu_combo;
     GtkWidget *monitor_settings_frame;
     GtkWidget *show_mode_combo;
+    GtkWidget *decimal_places_combo;
+    GtkWidget *decimal_places_label;
 };
 
 static void cpufreq_prefs_finalize     (GObject      *object);
@@ -113,6 +117,15 @@ cpufreq_prefs_class_init (CPUFreqPrefsClass *klass)
                                                         "The applet show text mode",
                                                         CPUFREQ_TYPE_SHOW_TEXT_MODE,
                                                         CPUFREQ_MODE_TEXT_FREQUENCY_UNIT,
+                                                        G_PARAM_READWRITE));
+    g_object_class_install_property (g_object_class,
+                                     PROP_DECIMAL_PLACES,
+                                     g_param_spec_uint ("decimal-places",
+                                                        "DecimalPlaces",
+                                                        "The monitored cpu",
+                                                        0,
+                                                        MAX_DECIMAL_PLACES,
+                                                        MAX_DECIMAL_PLACES,
                                                         G_PARAM_READWRITE));
 
     g_object_class->finalize = cpufreq_prefs_finalize;
@@ -181,6 +194,17 @@ cpufreq_prefs_set_property (GObject      *object,
         }
         break;
     }
+    case PROP_DECIMAL_PLACES: {
+        guint decimal_places;
+
+        decimal_places = g_value_get_uint (value);
+        if (prefs->priv->decimal_places != decimal_places) {
+            prefs->priv->decimal_places = decimal_places;
+            g_settings_set_int (prefs->priv->settings,
+                                "decimal-places", decimal_places);
+        }
+        break;
+    }
     default:
         G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
     }
@@ -207,6 +231,9 @@ cpufreq_prefs_get_property (GObject    *object,
     case PROP_SHOW_TEXT_MODE:
         g_value_set_enum (value, prefs->priv->show_text_mode);
         break;
+    case PROP_DECIMAL_PLACES:
+        g_value_set_uint (value, prefs->priv->decimal_places);
+        break;
     default:
         G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
     }
@@ -220,6 +247,7 @@ cpufreq_prefs_setup (CPUFreqPrefs *prefs)
     prefs->priv->cpu = g_settings_get_int (prefs->priv->settings, "cpu");
     prefs->priv->show_mode = g_settings_get_int (prefs->priv->settings, "show-mode");
     prefs->priv->show_text_mode = g_settings_get_int (prefs->priv->settings, "show-text-mode");
+    prefs->priv->decimal_places = g_settings_get_int (prefs->priv->settings, "decimal-places");
 }
 
 CPUFreqPrefs *
@@ -262,6 +290,14 @@ cpufreq_prefs_get_show_text_mode (CPUFreqPrefs *prefs)
                           CPUFREQ_MODE_TEXT_FREQUENCY_UNIT);
 
     return prefs->priv->show_text_mode;
+}
+
+guint
+cpufreq_prefs_get_decimal_places (CPUFreqPrefs *prefs)
+{
+    g_return_val_if_fail (CPUFREQ_IS_PREFS (prefs), 0);
+
+    return MIN (prefs->priv->decimal_places, MAX_DECIMAL_PLACES);
 }
 
 /* Preferences Dialog */
@@ -335,6 +371,21 @@ cpufreq_prefs_dialog_cpu_number_changed (GtkWidget    *cpu_combo,
 }
 
 static void
+cpufreq_prefs_dialog_decimal_places_changed (GtkWidget    *decimal_places_combo,
+                                             CPUFreqPrefs *prefs)
+{
+    gint decimal_places;
+
+    decimal_places = gtk_combo_box_get_active (GTK_COMBO_BOX (prefs->priv->decimal_places_combo));
+
+    if (decimal_places >= 0) {
+        g_object_set (G_OBJECT (prefs),
+                      "decimal-places", decimal_places,
+                      NULL);
+    }
+}
+
+static void
 cpufreq_prefs_dialog_show_mode_changed (GtkWidget    *show_mode_combo,
                                         CPUFreqPrefs *prefs)
 {
@@ -396,17 +447,33 @@ cpufreq_prefs_dialog_update_sensitivity (CPUFreqPrefs *prefs)
                                   (TRUE && key_writable));
         gtk_widget_set_sensitive (prefs->priv->show_perc,
                                   (TRUE && key_writable));
+        gtk_widget_set_sensitive (prefs->priv->decimal_places_combo,
+                                  (TRUE && key_writable));
+        gtk_widget_set_sensitive (prefs->priv->decimal_places_label,
+                                  (TRUE && key_writable));
 
-        if (prefs->priv->show_text_mode == CPUFREQ_MODE_TEXT_PERCENTAGE)
+        if (prefs->priv->show_text_mode == CPUFREQ_MODE_TEXT_PERCENTAGE) {
             gtk_widget_set_sensitive (prefs->priv->show_unit,
                                       FALSE);
-        else
+            gtk_widget_set_sensitive (prefs->priv->decimal_places_combo,
+                                      FALSE);
+            gtk_widget_set_sensitive (prefs->priv->decimal_places_label,
+                                      FALSE);
+        }
+        else {
             gtk_widget_set_sensitive (prefs->priv->show_unit,
                                       (TRUE && key_writable));
+            gtk_widget_set_sensitive (prefs->priv->decimal_places_combo,
+                                      (TRUE && key_writable));
+            gtk_widget_set_sensitive (prefs->priv->decimal_places_label,
+                                      (TRUE && key_writable));
+        }
     } else {
         gtk_widget_set_sensitive (prefs->priv->show_freq, FALSE);
         gtk_widget_set_sensitive (prefs->priv->show_unit, FALSE);
         gtk_widget_set_sensitive (prefs->priv->show_perc, FALSE);
+        gtk_widget_set_sensitive (prefs->priv->decimal_places_combo, FALSE);
+        gtk_widget_set_sensitive (prefs->priv->decimal_places_label, FALSE);
     }
 }
 
@@ -428,12 +495,16 @@ cpufreq_prefs_dialog_update (CPUFreqPrefs *prefs)
                                       TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_unit),
                                       FALSE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->decimal_places_combo),
+                                      FALSE);
 
         break;
     case CPUFREQ_MODE_TEXT_FREQUENCY_UNIT:
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_freq),
                                       TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_unit),
+                                      TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->decimal_places_combo),
                                       TRUE);
 
         break;
@@ -485,6 +556,74 @@ cpufreq_prefs_dialog_cpu_combo_setup (CPUFreqPrefs *prefs)
                                     renderer,
                                     "text", 0,
                                     NULL);
+}
+
+static void
+decimal_places_combo_changed_cb (GtkComboBox *combo, CPUFreqPrefs *prefs)
+{
+    GtkTreeIter iter;
+    GtkTreeModel *model;
+
+    if (gtk_combo_box_get_active_iter (combo, &iter)) {
+        gint value;
+        model = gtk_combo_box_get_model (combo);
+        gtk_tree_model_get (model, &iter, 0, &value, -1);
+        g_settings_set_int (prefs->priv->settings, "decimal-places", value);
+    }
+}
+
+static void
+cpufreq_prefs_dialog_decimal_places_combo_setup (CPUFreqPrefs *prefs)
+{
+    GtkListStore    *model;
+    GtkTreeIter      iter;
+    GtkCellRenderer *renderer;
+    gint             i;
+    gint             current_decimal_places;
+
+    model = gtk_list_store_new (1, G_TYPE_INT);
+    gtk_combo_box_set_model (GTK_COMBO_BOX (prefs->priv->decimal_places_combo),
+                             GTK_TREE_MODEL (model));
+
+    // Populate with 0, 1, 2...
+    for (i = 0; i <= MAX_DECIMAL_PLACES; i++) {
+        gtk_list_store_append (model, &iter);
+        gtk_list_store_set (model, &iter,
+                            0, i,
+                            -1);
+    }
+
+    g_object_unref (model);
+
+    // Render numbers
+    renderer = gtk_cell_renderer_text_new ();
+    gtk_cell_layout_clear (GTK_CELL_LAYOUT (prefs->priv->decimal_places_combo));
+    gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (prefs->priv->decimal_places_combo),
+                                renderer, TRUE);
+    gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (prefs->priv->decimal_places_combo),
+                                    renderer,
+                                    "text", 0,
+                                    NULL);
+
+    // Load current value from settings
+    current_decimal_places = g_settings_get_int (prefs->priv->settings, "decimal-places");
+
+    // Select the right row
+    GtkTreeModel *tree_model = gtk_combo_box_get_model (GTK_COMBO_BOX (prefs->priv->decimal_places_combo));
+    if (gtk_tree_model_get_iter_first (tree_model, &iter)) {
+        do {
+            gint value;
+            gtk_tree_model_get (tree_model, &iter, 0, &value, -1);
+            if (value == current_decimal_places) {
+                gtk_combo_box_set_active_iter (GTK_COMBO_BOX (prefs->priv->decimal_places_combo), &iter);
+                break;
+            }
+        } while (gtk_tree_model_iter_next (tree_model, &iter));
+    }
+
+    // Keep settings updated when user changes selection
+    g_signal_connect (prefs->priv->decimal_places_combo, "changed",
+                      G_CALLBACK (decimal_places_combo_changed_cb), prefs);
 }
 
 static void
@@ -540,6 +679,8 @@ cpufreq_prefs_dialog_create (CPUFreqPrefs *prefs)
 
     prefs->priv->show_freq = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_show_freq"));
     prefs->priv->show_unit = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_show_unit"));
+    prefs->priv->decimal_places_combo = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_decimal_places"));
+    prefs->priv->decimal_places_label = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_decimal_places_label"));
     prefs->priv->show_perc = GTK_WIDGET (gtk_builder_get_object (builder, "prefs_show_perc"));
 
     prefs->priv->monitor_settings_frame = GTK_WIDGET (gtk_builder_get_object (builder,
@@ -551,6 +692,8 @@ cpufreq_prefs_dialog_create (CPUFreqPrefs *prefs)
 
     if (cpufreq_utils_get_n_cpus () > 1)
         cpufreq_prefs_dialog_cpu_combo_setup (prefs);
+
+    cpufreq_prefs_dialog_decimal_places_combo_setup (prefs);
 
     g_signal_connect_swapped (prefs->priv->dialog, "response",
                               G_CALLBACK (cpufreq_prefs_dialog_response_cb),
@@ -574,6 +717,10 @@ cpufreq_prefs_dialog_create (CPUFreqPrefs *prefs)
 
     g_signal_connect (prefs->priv->show_mode_combo, "changed",
                       G_CALLBACK (cpufreq_prefs_dialog_show_mode_changed),
+                      prefs);
+
+    g_signal_connect (prefs->priv->decimal_places_combo, "changed",
+                      G_CALLBACK (cpufreq_prefs_dialog_decimal_places_changed),
                       prefs);
 }
 

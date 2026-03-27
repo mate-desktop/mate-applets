@@ -273,11 +273,14 @@ frequencies_menu_create_actions (CPUFreqPopup *popup)
         gchar       *label;
         gchar       *unit;
         gint         freq;
+        gint         decimal_places = 2;
 
         text = (const gchar *) available_freqs->data;
         freq = atoi (text);
 
-        freq_text = cpufreq_utils_get_frequency_label (freq);
+        // decimal_places = cpufreq_monitor_get_decimal_places (popup->priv->monitor);
+        // ^^^ if you want the freq selector to also use the same number of decimal places as for display
+        freq_text = cpufreq_utils_get_frequency_label (freq, decimal_places);
         unit = cpufreq_utils_get_frequency_unit (freq);
 
         label = g_strdup_printf ("%s %s", freq_text, unit);
