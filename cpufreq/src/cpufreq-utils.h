@@ -24,6 +24,8 @@
 
 #include <glib.h>
 
+#define MAX_DECIMAL_PLACES 2
+
 G_BEGIN_DECLS
 
 /* Useful global methods */
@@ -31,7 +33,8 @@ guint    cpufreq_utils_get_n_cpus            (void);
 void     cpufreq_utils_display_error         (const gchar *message,
                                               const gchar *secondary);
 gboolean cpufreq_utils_selector_is_available (void);
-gchar   *cpufreq_utils_get_frequency_label   (guint        freq);
+gchar   *cpufreq_utils_get_frequency_label   (guint        freq,
+                                              gint         decimal_places);
 gchar   *cpufreq_utils_get_frequency_unit    (guint        freq);
 gboolean cpufreq_utils_governor_is_automatic (const gchar *governor);
 gboolean cpufreq_file_get_contents           (const gchar *filename,

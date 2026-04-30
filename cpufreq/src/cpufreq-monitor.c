@@ -19,6 +19,7 @@
  * Authors : Carlos García Campos <carlosgc@gnome.org>
  */
 
+#include "cpufreq-utils.h"
 #include "cpufreq-monitor.h"
 
 #define CPUFREQ_MONITOR_INTERVAL 1
@@ -30,7 +31,8 @@ enum {
     PROP_ONLINE,
     PROP_FREQUENCY,
     PROP_MAX_FREQUENCY,
-    PROP_GOVERNOR
+    PROP_GOVERNOR,
+    PROP_DECIMAL_PLACES
 };
 
 /* Signals */
@@ -44,6 +46,7 @@ struct _CPUFreqMonitorPrivate {
     gboolean online;
     gint     cur_freq;
     gint     max_freq;
+    gint     decimal_places;
     gchar   *governor;
     GList   *available_freqs;
     GList   *available_govs;
@@ -129,6 +132,16 @@ cpufreq_monitor_class_init (CPUFreqMonitorClass *klass)
                                                        G_MAXINT,
                                                        0,
                                                        G_PARAM_READWRITE));
+    g_object_class_install_property (object_class,
+                                     PROP_DECIMAL_PLACES,
+                                     g_param_spec_int ("decimal-places",
+                                                        "Decimal Places",
+                                                        "The number of decimal places to show for the cpu frequency",
+                                                        0,
+                                                        MAX_DECIMAL_PLACES,
+                                                        MAX_DECIMAL_PLACES,
+                                                        G_PARAM_CONSTRUCT |
+                                                        G_PARAM_READWRITE));
     g_object_class_install_property (object_class,
                                      PROP_GOVERNOR,
                                      g_param_spec_string ("governor",
@@ -222,6 +235,15 @@ cpufreq_monitor_set_property (GObject      *object,
         }
         break;
     }
+    case PROP_DECIMAL_PLACES: {
+        gint decimal_places = g_value_get_int (value);
+
+        if (decimal_places != monitor->priv->decimal_places) {
+            monitor->priv->decimal_places = decimal_places;
+            monitor->priv->changed = TRUE;
+        }
+        break;
+    }
     case PROP_GOVERNOR: {
         const gchar *gov = g_value_get_string (value);
 
@@ -264,6 +286,9 @@ cpufreq_monitor_get_property (GObject    *object,
         break;
     case PROP_MAX_FREQUENCY:
         g_value_set_int (value, monitor->priv->max_freq);
+        break;
+    case PROP_DECIMAL_PLACES:
+        g_value_set_int (value, monitor->priv->decimal_places);
         break;
     case PROP_GOVERNOR:
         g_value_set_string (value, monitor->priv->governor);
@@ -392,4 +417,21 @@ cpufreq_monitor_get_percentage (CPUFreqMonitor *monitor)
     }
 
     return -1;
+}
+
+gint
+cpufreq_monitor_get_decimal_places (CPUFreqMonitor *monitor)
+{
+    g_return_val_if_fail (CPUFREQ_IS_MONITOR (monitor), -1);
+
+    return monitor->priv->decimal_places;
+}
+
+void
+cpufreq_monitor_set_decimal_places (CPUFreqMonitor *monitor, gint decimal_places)
+{
+    g_return_if_fail (CPUFREQ_IS_MONITOR (monitor));
+
+    g_object_set (G_OBJECT (monitor),
+                  "decimal-places", decimal_places, NULL);
 }
