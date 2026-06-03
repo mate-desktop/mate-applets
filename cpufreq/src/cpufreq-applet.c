@@ -630,6 +630,7 @@ cpufreq_applet_update (CPUFreqApplet  *applet,
    gint            freq;
    gint            perc;
    guint           cpu;
+   guint           decimal_places;
    GtkRequisition  req;
    const gchar    *governor;
 
@@ -637,8 +638,8 @@ cpufreq_applet_update (CPUFreqApplet  *applet,
    freq = cpufreq_monitor_get_frequency (monitor);
    perc = cpufreq_monitor_get_percentage (monitor);
    governor = cpufreq_monitor_get_governor (monitor);
-
-   freq_label = cpufreq_utils_get_frequency_label (freq);
+   decimal_places = cpufreq_monitor_get_decimal_places (monitor);
+   freq_label = cpufreq_utils_get_frequency_label (freq, decimal_places);
    unit_label = cpufreq_utils_get_frequency_unit (freq);
 
    if (applet->show_freq) {
@@ -678,6 +679,7 @@ cpufreq_applet_update (CPUFreqApplet  *applet,
 
         gov_text = g_strdup (governor);
         gov_text[0] = g_ascii_toupper (gov_text[0]);
+        freq_label = cpufreq_utils_get_frequency_label (freq, MAX_DECIMAL_PLACES); // show max decimals in tooltip
         text_mode = g_strdup_printf ("%s\n%s %s (%d%%)",
                                      gov_text, freq_label,
                                      unit_label, perc);
@@ -781,6 +783,15 @@ cpufreq_applet_prefs_show_mode_changed (CPUFreqPrefs  *prefs,
 }
 
 static void
+cpufreq_applet_prefs_decimal_places_changed (CPUFreqPrefs  *prefs,
+                                             GParamSpec    *arg1,
+                                             CPUFreqApplet *applet)
+{
+    cpufreq_monitor_set_decimal_places (applet->monitor,
+                                        cpufreq_prefs_get_decimal_places (applet->prefs));
+}
+
+static void
 cpufreq_applet_setup (CPUFreqApplet *applet)
 {
     GtkActionGroup *action_group;
@@ -812,10 +823,16 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
                       G_CALLBACK (cpufreq_applet_prefs_show_mode_changed),
                       applet);
 
+    g_signal_connect (applet->prefs, "notify::decimal-places",
+                      G_CALLBACK (cpufreq_applet_prefs_decimal_places_changed),
+                      applet);
+
     /* Monitor */
     applet->monitor =
         cpufreq_monitor_factory_create_monitor (cpufreq_prefs_get_cpu (applet->prefs));
 
+    cpufreq_monitor_set_decimal_places (applet->monitor,
+                                        cpufreq_prefs_get_decimal_places (applet->prefs));
     cpufreq_monitor_run (applet->monitor);
 
     g_signal_connect_swapped (applet->monitor, "changed",

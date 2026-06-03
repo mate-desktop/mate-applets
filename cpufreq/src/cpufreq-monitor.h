@@ -66,6 +66,8 @@ void         cpufreq_monitor_set_cpu                   (CPUFreqMonitor *monitor,
 const gchar *cpufreq_monitor_get_governor              (CPUFreqMonitor *monitor);
 gint         cpufreq_monitor_get_frequency             (CPUFreqMonitor *monitor);
 gint         cpufreq_monitor_get_percentage            (CPUFreqMonitor *monitor);
+gint         cpufreq_monitor_get_decimal_places        (CPUFreqMonitor *monitor);
+void         cpufreq_monitor_set_decimal_places        (CPUFreqMonitor *monitor, gint decimal_places);
 
 G_END_DECLS
 
