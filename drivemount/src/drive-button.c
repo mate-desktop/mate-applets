@@ -144,6 +144,15 @@ drive_button_dispose (GObject *object)
 {
     DriveButton *self = DRIVE_BUTTON (object);
 
+    /* The "changed" handler was connected to the process-global default icon
+     * theme (see drive_button_new / drive_button_new_from_mount), which
+     * outlives this button.  If we don't disconnect it, the theme keeps a
+     * dangling pointer to the freed button and a later "changed" emission
+     * schedules drive_button_update() on freed memory -> use-after-free crash. */
+    g_signal_handlers_disconnect_by_func (gtk_icon_theme_get_default (),
+                                          G_CALLBACK (drive_button_theme_change),
+                                          self);
+
     drive_button_set_volume (self, NULL);
 
     if (self->update_tag)
