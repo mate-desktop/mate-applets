@@ -215,7 +215,7 @@ cpufreq_utils_selector_is_available (void)
 #endif /* HAVE_POLKIT_MATE */
 
 gchar *
-cpufreq_utils_get_frequency_label (guint freq)
+cpufreq_utils_get_frequency_label (guint freq, gint decimal_places)
 {
     gint divisor;
 
@@ -226,8 +226,12 @@ cpufreq_utils_get_frequency_label (guint freq)
 
     if (((freq % divisor) == 0) || divisor == 1000) /* integer */
         return g_strdup_printf ("%d", freq / divisor);
-    else /* float */
-        return g_strdup_printf ("%3.2f", ((gfloat)freq / divisor));
+    else { /* float */
+        gchar format[16];
+        g_snprintf (format, sizeof (format), "%%3.%df", decimal_places);
+
+        return g_strdup_printf (format, ((gfloat)freq / divisor));
+    }
 }
 
 gchar *
