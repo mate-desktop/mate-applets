@@ -37,7 +37,8 @@ always_built_SUBDIRS = \
 	geyes \
 	stickynotes \
 	trashapplet \
-	command
+	command \
+	hwmonitor
 
 SUBDIRS = \
 	po \
@@ -67,6 +68,7 @@ DIST_SUBDIRS = \
 	cpufreq \
 	invest-applet \
 	command \
+	hwmonitor \
 	netspeed
 
 DISTCHECK_CONFIGURE_FLAGS = \
@@ -133,4 +135,3 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 DISTCLEANFILES =
 
 -include $(top_srcdir)/git.mk
-
