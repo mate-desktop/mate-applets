@@ -1,0 +1,59 @@
+SUMMARY
+-------
+
+MATE Command Applet diplays the output of a commnd on the MATE Panel.
+
+   
+PREFERENCES
+-----------
+
+- Command: command to execute. The command is executed without a
+           shell. If you need shell functionality (pipes, ENV vars,
+           etc) use /bin/sh -c 'some shell command'
+
+- Interval: interval in seconds after which the command will be
+            executed again
+
+- Maximum width: command output will be truncated to this number of
+                 characters (see COMMAND OUTPUT)
+
+- Show icon: enable display of an icon near the command output
+
+COMMAND OUTPUT
+--------------
+
+Simple:
+
+The command outputs a single line of text. The text is truncated to
+"Maximum width" characters and displayed on the panel.
+
+GKeyFile:
+
+If the output starts with "[Command]", the output is interpreted as
+GKeyFile. Valid keys are:
+
+- Output
+  Required. Value will be parsed as pango markup and displayed on the
+  panel. Truncation to "Maximum Width" is not applied.
+
+- Tooltip
+  Optional: When set, the value will be used as tooltip instead of
+  the default (the command) and will be displayed, when cursor is
+  moved over the applet.
+
+- Icon
+  Optional: Filename of an icon to show, when "Show icon" is enabled.
+  
+EXAMPLES
+--------
+
+- Commands with simple output:
+  date +%T
+  /bin/sh -c 'vmstat -s | grep free.memory'
+
+- GKeyFile command output:
+
+  [Command]
+  Output=<span foreground="red">3</span> Warnings
+  Tooltip=7 checks ok\n3 checks failed
+  Icon=dialog-error

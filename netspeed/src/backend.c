@@ -64,10 +64,20 @@ struct nl80211_state {
 
 #endif /* HAVE_NL */
 
+static gboolean
+device_exists (const char *device)
+{
+    return (if_nametoindex (device) != 0);
+}
+
 gboolean
 is_dummy_device (const char* device)
 {
     glibtop_netload netload;
+
+    if (!device_exists (device))
+        return TRUE;
+
     glibtop_get_netload (&netload, device);
 
     if (netload.if_flags & (1 << GLIBTOP_IF_FLAGS_LOOPBACK))
@@ -331,6 +341,11 @@ get_device_info (const char  *device,
 
     devinfo->name = g_strdup (device);
     devinfo->type = DEV_UNKNOWN;
+
+    /* Device doesn't exist.
+     * Return so the auto-change logic can find an active device. */
+    if (!device_exists (device))
+        return;
 
     glibtop_get_netload (&netload, device);
 
