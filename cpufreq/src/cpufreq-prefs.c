@@ -122,7 +122,7 @@ cpufreq_prefs_class_init (CPUFreqPrefsClass *klass)
                                      PROP_DECIMAL_PLACES,
                                      g_param_spec_uint ("decimal-places",
                                                         "DecimalPlaces",
-                                                        "The monitored cpu",
+                                                        "The number of decimal places to show",
                                                         0,
                                                         MAX_DECIMAL_PLACES,
                                                         MAX_DECIMAL_PLACES,
@@ -489,13 +489,15 @@ cpufreq_prefs_dialog_update (CPUFreqPrefs *prefs)
     gtk_combo_box_set_active (GTK_COMBO_BOX (prefs->priv->show_mode_combo),
                               prefs->priv->show_mode);
 
+    gtk_combo_box_set_active (GTK_COMBO_BOX (prefs->priv->decimal_places_combo),
+                              (gint) CLAMP (prefs->priv->decimal_places,
+                                     0, MAX_DECIMAL_PLACES));
+
     switch (prefs->priv->show_text_mode) {
     case CPUFREQ_MODE_TEXT_FREQUENCY:
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_freq),
                                       TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_unit),
-                                      FALSE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->decimal_places_combo),
                                       FALSE);
 
         break;
@@ -503,8 +505,6 @@ cpufreq_prefs_dialog_update (CPUFreqPrefs *prefs)
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_freq),
                                       TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->show_unit),
-                                      TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs->priv->decimal_places_combo),
                                       TRUE);
 
         break;
