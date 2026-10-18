@@ -643,19 +643,19 @@ format_time (guint32 sec)
     int hours;
 
     if (sec < 60)
-        return g_strdup_printf (ngettext ("%'" G_GUINT32_FORMAT " second","%'" G_GUINT32_FORMAT " seconds", sec), sec);
+        return g_strdup_printf (dngettext (GETTEXT_PACKAGE, "%'" G_GUINT32_FORMAT " second","%'" G_GUINT32_FORMAT " seconds", sec), sec);
 
     hours = (sec/3600);
     minutes = (sec -(3600*hours))/60;
     seconds = (sec -(3600*hours)-(minutes*60));
 
-    m = g_strdup_printf (ngettext ("%'d minute", "%'d minutes", minutes), minutes);
-    s = g_strdup_printf (ngettext ("%'d secon", "%'d seconds", seconds), seconds);
+    m = g_strdup_printf (dngettext (GETTEXT_PACKAGE, "%'d minute", "%'d minutes", minutes), minutes);
+    s = g_strdup_printf (dngettext (GETTEXT_PACKAGE, "%'d secon", "%'d seconds", seconds), seconds);
     if (sec < 60*60) {
         res = g_strconcat (m, ", ", s, NULL);
     } else {
         char *h;
-        h = g_strdup_printf (ngettext ("%'d hour", "%'d hours", hours), hours);
+        h = g_strdup_printf (dngettext (GETTEXT_PACKAGE, "%'d hour", "%'d hours", hours), hours);
         res = g_strconcat (h, ", ", m, ", ", s, NULL);
         g_free (h);
     }
