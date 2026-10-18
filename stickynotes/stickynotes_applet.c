@@ -244,7 +244,7 @@ stickynotes_applet_init_prefs (void)
 {
 
     stickynotes->builder = gtk_builder_new ();
-
+    gtk_builder_set_translation_domain (stickynotes->builder, GETTEXT_PACKAGE);
     gtk_builder_add_from_resource (stickynotes->builder,
                                    GRESOURCE "sticky-notes-preferences.ui",
                                    NULL);

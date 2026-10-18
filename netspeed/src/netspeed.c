@@ -1185,7 +1185,11 @@ showinfo_cb (GtkAction      *action,
         return;
     }
 
-    builder = gtk_builder_new_from_resource (NETSPEED_RESOURCE_PATH "netspeed-details.ui");
+    builder = gtk_builder_new ();
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+    gtk_builder_add_from_resource (builder,
+                                   NETSPEED_RESOURCE_PATH "netspeed-details.ui",
+                                   NULL);
 
     netspeed->details       = GET_WIDGET ("dialog");
     netspeed->drawingarea   = GET_DRAWING_AREA ("drawingarea");

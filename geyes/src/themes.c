@@ -276,7 +276,11 @@ properties_cb (GtkAction  *action,
         return;
     }
 
-    builder = gtk_builder_new_from_resource (GEYES_RESOURCE_PATH "themes.ui");
+    builder = gtk_builder_new ();
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+    gtk_builder_add_from_resource (builder,
+                                   GEYES_RESOURCE_PATH "themes.ui",
+                                   NULL);
 
     eyes_applet->prop_box.pbox = GET_WIDGET("preferences_dialog");
     tree = GET_WIDGET("themes_treeview");
