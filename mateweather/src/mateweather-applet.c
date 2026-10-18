@@ -482,7 +482,7 @@ update_finish (WeatherInfo *info, gpointer data)
 
 			 icon = weather_info_get_icon_name (gw_applet->mateweather_info);
 			 if (icon == NULL)
-				 icon = "stock-unknown";
+				 icon = "image-missing";
 
 			 n = notify_notification_new (message, detail, icon);
 
