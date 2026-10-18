@@ -113,6 +113,7 @@ stickynote_new_aux (GdkScreen *screen,
     note = g_new (StickyNote, 1);
 
     builder = gtk_builder_new ();
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
     gtk_builder_add_from_resource (builder,
                                    GRESOURCE "sticky-notes-note.ui",
                                    NULL);
@@ -828,6 +829,7 @@ stickynotes_remove (StickyNote *note)
     GtkWidget  *dialog;
 
     builder = gtk_builder_new ();
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
     gtk_builder_add_from_resource (builder,
                                    GRESOURCE "sticky-notes-delete.ui",
                                    NULL);
