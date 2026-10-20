@@ -20,7 +20,7 @@
 #ifndef __STICKYNOTES_APPLET_H__
 #define __STICKYNOTES_APPLET_H__
 
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gdk/gdk.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
