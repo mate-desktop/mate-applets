@@ -603,8 +603,8 @@ invest_applet_factory (MatePanelApplet *applet,
 
 #ifndef ENABLE_IN_PROCESS
         g_set_application_name (_("Investment Applet"));
-#endif
         gtk_window_set_default_icon_name ("mate-invest-applet");
+#endif
 
         /* Set applet flags first */
         mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);

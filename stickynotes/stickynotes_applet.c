@@ -180,8 +180,8 @@ stickynotes_applet_init (MatePanelApplet *mate_panel_applet)
 
 #ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("Sticky Notes"));
-#endif
     gtk_window_set_default_icon_name ("mate-sticky-notes-applet");
+#endif
 
     stickynotes->icon_normal =
         gtk_icon_theme_load_surface (gtk_icon_theme_get_default (),

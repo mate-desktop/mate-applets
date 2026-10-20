@@ -218,9 +218,6 @@ change_icons (NetspeedApplet *netspeed)
                                              OUT_ICON,
                                              16, icon_scale, NULL, 0, NULL);
 
-    /* Set the windowmanager icon for the applet */
-    gtk_window_set_default_icon_name (LOGO_ICON);
-
     gtk_image_set_from_surface (GTK_IMAGE (netspeed->out_pix), out_arrow);
     gtk_image_set_from_surface (GTK_IMAGE (netspeed->in_pix), in_arrow);
     cairo_surface_destroy (in_arrow);
@@ -1581,6 +1578,7 @@ netspeed_applet_factory (MatePanelApplet *applet,
 
 #ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("MATE Netspeed"));
+    gtk_window_set_default_icon_name (LOGO_ICON);
 #endif
 
     netspeed = NETSPEED_APPLET (applet);

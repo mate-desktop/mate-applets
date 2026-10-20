@@ -766,9 +766,8 @@ charpicker_applet_fill (MatePanelApplet *applet)
 
 #ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("Character Palette"));
-#endif
-
     gtk_window_set_default_icon_name ("accessories-character-map");
+#endif
 
     mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 

@@ -388,8 +388,8 @@ timer_applet_fill (MatePanelApplet* applet_widget)
 
 #ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("Timer Applet"));
-#endif
     gtk_window_set_default_icon_name (APPLET_ICON);
+#endif
 
     if (!notify_is_initted ())
         notify_init ("timer-applet");

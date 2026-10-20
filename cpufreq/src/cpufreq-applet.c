@@ -789,9 +789,8 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
 
 #ifndef ENABLE_IN_PROCESS
     g_set_application_name  (_("CPU Frequency Scaling Monitor"));
-#endif
-
     gtk_window_set_default_icon_name ("mate-cpu-frequency-applet");
+#endif
 
     /* Preferences */
     if (applet->prefs)
