@@ -114,7 +114,8 @@ display_about_dialog (GtkAction *action,
         *p = _(*p);
 #endif
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                           "program-name",       _("Disk Mounter"),
                            "title",              _("About Disk Mounter"),
                            "version",            VERSION,
                            "copyright",          _("Copyright \xC2\xA9 2004 Canonical Ltd\n"
@@ -125,6 +126,10 @@ display_about_dialog (GtkAction *action,
                            "translator-credits", _("translator-credits"),
                            "logo_icon_name",     "media-floppy",
                            NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static void

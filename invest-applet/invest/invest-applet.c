@@ -435,7 +435,7 @@ invest_applet_about_cb (GtkAction    *action,
         NULL
     };
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
                            "program-name", _("Invest"),
                            "logo-icon-name", "mate-invest-applet",
                            "version", VERSION,
@@ -443,6 +443,10 @@ invest_applet_about_cb (GtkAction    *action,
                            "copyright", "Copyright \xc2\xa9 2004-2005 Raphael Slinckx\nCopyright \xc2\xa9 2009-2010 Enrico Minack\nCopyright \xc2\xa9 2012-2025 MATE developers",
                            "authors", authors,
                            NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static gboolean

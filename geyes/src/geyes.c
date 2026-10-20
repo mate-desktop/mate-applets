@@ -206,7 +206,8 @@ about_cb (GtkAction  *action,
         *p = _(*p);
 #endif
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                           "program-name",       _("Eyes"),
                            "title",              _("About Eyes"),
                            "version",            VERSION,
                            "comments",           _("A goofy set of eyes for the MATE "
@@ -218,6 +219,10 @@ about_cb (GtkAction  *action,
                            "translator-credits", _("translator-credits"),
                            "logo-icon-name",     "mate-eyes-applet",
                            NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static gboolean
