@@ -263,6 +263,9 @@ battstat_preferences_init (BattstatPreferences *dialog)
 {
   gtk_widget_init_template (GTK_WIDGET (dialog));
 
+  g_signal_connect (dialog, "delete-event",
+                    G_CALLBACK (gtk_widget_hide_on_delete), NULL);
+
   g_object_bind_property (dialog->check_text, "active",
                           dialog->check_text_ptr, "sensitive",
                           G_BINDING_DEFAULT);
