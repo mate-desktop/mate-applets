@@ -372,7 +372,7 @@ stickynote_new_aux (GdkScreen *screen,
                       note);
 
     g_signal_connect (note->w_properties, "delete-event",
-                      G_CALLBACK (gtk_widget_hide),
+                      G_CALLBACK (gtk_widget_hide_on_delete),
                       note);
 
     g_signal_connect_after (note->w_window, "key-press-event",
