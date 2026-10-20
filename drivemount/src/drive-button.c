@@ -27,7 +27,7 @@
 
 #include <gio/gio.h>
 #include "drive-button.h"
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gdk/gdkkeysyms.h>
 #include <gio/gdesktopappinfo.h>
 

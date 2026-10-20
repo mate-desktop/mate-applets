@@ -28,7 +28,7 @@
 #include <gio/gio.h>
 #include "drive-list.h"
 #include "drive-button.h"
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 
 G_DEFINE_TYPE (DriveList, drive_list, GTK_TYPE_GRID);
 
