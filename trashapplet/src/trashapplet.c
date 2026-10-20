@@ -625,9 +625,8 @@ trash_applet_factory (MatePanelApplet *applet,
 
 #ifndef ENABLE_IN_PROCESS
       g_set_application_name (_("Trash Applet"));
-#endif
-
       gtk_window_set_default_icon_name ("user-trash");
+#endif
 
       /* Set up the menu */
       action_group = gtk_action_group_new ("Trash Applet Actions");

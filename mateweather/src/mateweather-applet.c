@@ -343,9 +343,8 @@ void mateweather_applet_create (MateWeatherApplet *gw_applet)
 
 #ifndef ENABLE_IN_PROCESS
     g_set_application_name (_("Weather Report"));
-#endif
-
     gtk_window_set_default_icon_name ("weather-storm");
+#endif
 
     g_signal_connect (gw_applet->applet, "change-orient",
                       G_CALLBACK (change_orient_cb),

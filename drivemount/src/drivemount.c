@@ -181,9 +181,8 @@ applet_factory (MatePanelApplet *applet,
     if (!strcmp (iid, drivemount_iid)) {
 #ifndef ENABLE_IN_PROCESS
         g_set_application_name (_("Disk Mounter"));
-#endif
-
         gtk_window_set_default_icon_name ("media-floppy");
+#endif
 
         mate_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
