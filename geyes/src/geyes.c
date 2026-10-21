@@ -229,8 +229,11 @@ properties_load (EyesApplet *eyes_applet)
     theme_path = g_settings_get_string (eyes_applet->settings,
                                         GEYES_SETTINGS_THEME_PATH_KEY);
 
-    if (theme_path == NULL)
+    /* An unset key reads back as "", never NULL. */
+    if (theme_path == NULL || *theme_path == '\0') {
+        g_free (theme_path);
         theme_path = g_strdup (GEYES_THEMES_DIR "Default-tiny");
+    }
 
     result = load_theme (eyes_applet, theme_path);
     g_free (theme_path);

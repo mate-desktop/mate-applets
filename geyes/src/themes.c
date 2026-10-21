@@ -18,7 +18,6 @@
 
 #include <config.h>
 #include <string.h>
-#include <ctype.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 #include "geyes.h"
@@ -57,28 +56,26 @@ parse_theme_file (EyesApplet *eyes_applet,
     gchar line_buf[512]; /* prolly overkill */
     gchar *token;
 
-    if (fgets (line_buf, 512, theme_file) == NULL)
-        g_debug ("fgets error");
-
-    while (!feof (theme_file)) {
+    /* A read error does not set EOF and leaves line_buf undefined. */
+    while (fgets (line_buf, sizeof (line_buf), theme_file) != NULL) {
         token = strtok (line_buf, "=");
+        if (token == NULL)
+            continue;
         if (strncmp (token, "wall-thickness", strlen ("wall-thickness")) == 0) {
-            token += strlen ("wall-thickness");
-            while (!isdigit (*token)) {
-                token++;
-            }
-            sscanf (token, "%d", &eyes_applet->wall_thickness);
+            token = strtok (NULL, "=");
+            if (token != NULL)
+                sscanf (token, "%d", &eyes_applet->wall_thickness);
         } else if (strncmp (token, "num-eyes", strlen ("num-eyes")) == 0) {
-            token += strlen ("num-eyes");
-            while (!isdigit (*token)) {
-                token++;
-            }
-            sscanf (token, "%" G_GSIZE_FORMAT, &eyes_applet->num_eyes);
+            token = strtok (NULL, "=");
+            if (token != NULL)
+                sscanf (token, "%" G_GSIZE_FORMAT, &eyes_applet->num_eyes);
             if (eyes_applet->num_eyes > MAX_EYES)
                 eyes_applet->num_eyes = MAX_EYES;
         } else if (strncmp (token, "eye-pixmap", strlen ("eye-pixmap")) == 0) {
             token = strtok (NULL, "\"");
             token = strtok (NULL, "\"");
+            if (token == NULL)
+                continue;
             if (eyes_applet->eye_filename != NULL)
                 g_free (eyes_applet->eye_filename);
             eyes_applet->eye_filename
@@ -86,13 +83,13 @@ parse_theme_file (EyesApplet *eyes_applet,
         } else if (strncmp (token, "pupil-pixmap", strlen ("pupil-pixmap")) == 0) {
             token = strtok (NULL, "\"");
             token = strtok (NULL, "\"");
+            if (token == NULL)
+                continue;
             if (eyes_applet->pupil_filename != NULL)
                 g_free (eyes_applet->pupil_filename);
             eyes_applet->pupil_filename
                 = g_build_filename (eyes_applet->theme_dir, token, NULL);
         }
-        if (fgets (line_buf, 512, theme_file) == NULL)
-            g_debug ("fgets error");
     }
 }
 
@@ -101,13 +98,15 @@ load_theme (EyesApplet  *eyes_applet,
             const gchar *theme_dir)
 {
     GtkWidget *dialog;
-    FILE      *theme_file;
+    FILE      *theme_file = NULL;
     gchar     *file_name;
 
     eyes_applet->theme_dir = g_strdup (theme_dir);
 
     file_name = g_build_filename (theme_dir, "config", NULL);
-    if ((theme_file = fopen (file_name, "r")) == NULL) {
+    /* fopen() succeeds on a directory. */
+    if (!g_file_test (file_name, G_FILE_TEST_IS_REGULAR) ||
+        (theme_file = fopen (file_name, "r")) == NULL) {
         g_free (eyes_applet->theme_dir);
         eyes_applet->theme_dir = g_build_filename (GEYES_THEMES_DIR, "Default-tiny", NULL);
         theme_file = fopen (GEYES_THEMES_DIR "Default-tiny/config", "r");
