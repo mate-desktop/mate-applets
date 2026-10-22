@@ -127,9 +127,10 @@ trash_applet_monitor_changed (TrashApplet *applet)
 
       if (items)
         {
-          text = g_strdup_printf (ngettext ("%d Item in Trash",
-                                            "%d Items in Trash",
-                                            items), items);
+          text = g_strdup_printf (dngettext (GETTEXT_PACKAGE,
+                                             "%d Item in Trash",
+                                             "%d Items in Trash",
+                                             items), items);
         }
       else
         text = g_strdup (_("No Items in Trash"));

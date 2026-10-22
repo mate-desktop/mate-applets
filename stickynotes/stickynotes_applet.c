@@ -638,9 +638,10 @@ stickynotes_applet_update_tooltips (void)
 
     num = g_list_length (stickynotes->notes);
 
-    no_notes = g_strdup_printf (ngettext ("%d note",
-                                          "%d notes",
-                                          num),
+    no_notes = g_strdup_printf (dngettext (GETTEXT_PACKAGE,
+                                           "%d note",
+                                           "%d notes",
+                                           num),
                                 num);
 
     tooltip = g_strdup_printf ("%s\n%s",
