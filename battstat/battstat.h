@@ -22,7 +22,7 @@
 #define _battstat_h_
 
 #include <glib.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
