@@ -40,6 +40,12 @@
 #include "cpufreq-monitor-factory.h"
 #include "cpufreq-utils.h"
 
+
+/* Properties */
+enum {
+    PROP_DECIMAL_PLACES
+};
+
 struct _CPUFreqApplet {
     MatePanelApplet        base;
 
@@ -229,6 +235,17 @@ cpufreq_applet_class_init (CPUFreqAppletClass *klass)
     widget_class->key_press_event = cpufreq_applet_key_press;
 
     applet_class->change_orient = cpufreq_applet_change_orient;
+
+    g_object_class_install_property (gobject_class,
+                                     PROP_DECIMAL_PLACES,
+                                     g_param_spec_int ("decimal-places",
+                                                        "Decimal Places",
+                                                        "The number of decimal places to show for the cpu frequency",
+                                                        0,
+                                                        MAX_DECIMAL_PLACES,
+                                                        MAX_DECIMAL_PLACES,
+                                                        G_PARAM_CONSTRUCT |
+                                                        G_PARAM_READWRITE));
 }
 
 static void
@@ -630,6 +647,7 @@ cpufreq_applet_update (CPUFreqApplet  *applet,
    gint            freq;
    gint            perc;
    guint           cpu;
+   guint           decimal_places;
    GtkRequisition  req;
    const gchar    *governor;
 
@@ -637,8 +655,8 @@ cpufreq_applet_update (CPUFreqApplet  *applet,
    freq = cpufreq_monitor_get_frequency (monitor);
    perc = cpufreq_monitor_get_percentage (monitor);
    governor = cpufreq_monitor_get_governor (monitor);
-
-   freq_label = cpufreq_utils_get_frequency_label (freq);
+   decimal_places = cpufreq_prefs_get_decimal_places (applet->prefs);
+   freq_label = cpufreq_utils_get_frequency_label (freq, decimal_places);
    unit_label = cpufreq_utils_get_frequency_unit (freq);
 
    if (applet->show_freq) {
@@ -678,6 +696,8 @@ cpufreq_applet_update (CPUFreqApplet  *applet,
 
         gov_text = g_strdup (governor);
         gov_text[0] = g_ascii_toupper (gov_text[0]);
+        g_free (freq_label);
+        freq_label = cpufreq_utils_get_frequency_label (freq, MAX_DECIMAL_PLACES); // show max decimals in tooltip
         text_mode = g_strdup_printf ("%s\n%s %s (%d%%)",
                                      gov_text, freq_label,
                                      unit_label, perc);
@@ -780,6 +800,8 @@ cpufreq_applet_prefs_show_mode_changed (CPUFreqPrefs  *prefs,
     cpufreq_applet_update_visibility (applet);
 }
 
+
+
 static void
 cpufreq_applet_setup (CPUFreqApplet *applet)
 {
@@ -808,6 +830,10 @@ cpufreq_applet_setup (CPUFreqApplet *applet)
                       applet);
 
     g_signal_connect (applet->prefs, "notify::show-text-mode",
+                      G_CALLBACK (cpufreq_applet_prefs_show_mode_changed),
+                      applet);
+
+    g_signal_connect (applet->prefs, "notify::decimal-places",
                       G_CALLBACK (cpufreq_applet_prefs_show_mode_changed),
                       applet);
 

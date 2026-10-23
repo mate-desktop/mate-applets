@@ -19,6 +19,7 @@
  * Authors : Carlos García Campos <carlosgc@gnome.org>
  */
 
+#include "cpufreq-utils.h"
 #include "cpufreq-monitor.h"
 
 #define CPUFREQ_MONITOR_INTERVAL 1
