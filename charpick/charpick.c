@@ -628,7 +628,8 @@ about (GtkAction     *action,
         *p = _(*p);
 #endif
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                           "program-name",       _("Character Palette"),
                            "title",              _("About Character Palette"),
                            "version",            VERSION,
                            "copyright",          _("Copyright \xc2\xa9 1998, 2004-2005 GNOME Applets Maintainers and others\n"
@@ -641,6 +642,10 @@ about (GtkAction     *action,
                            "translator-credits", _("translator-credits"),
                            "logo-icon-name",     "accessories-character-map",
                            NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static void

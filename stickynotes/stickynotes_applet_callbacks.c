@@ -453,7 +453,8 @@ menu_about_cb (GtkAction         *action,
         *p = _(*p);
 #endif
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                           "program-name",       _("Sticky Notes"),
                            "title",              _("About Sticky Notes"),
                            "version",            VERSION,
                            "copyright",          _("Copyright \xc2\xa9 2002-2003 Loban A Rahman\n"
@@ -466,6 +467,10 @@ menu_about_cb (GtkAction         *action,
                            "translator-credits", _("translator-credits"),
                            "logo-icon-name",     "mate-sticky-notes-applet",
                            NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 /* Preferences Callback : Save. */

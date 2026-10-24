@@ -158,7 +158,8 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
 {
     const char* authors[] = { "Stefano Karapetsas <stefano@karapetsas.com>", NULL };
 
-    gtk_show_about_dialog(NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                          "program-name", _("Command Applet"),
                           "title", _("About Command Applet"),
                           "version", VERSION,
                           "copyright", _("Copyright \xc2\xa9 2013-2014 Stefano Karapetsas\n"
@@ -168,6 +169,10 @@ command_about_callback (GtkAction *action, CommandApplet *command_applet)
                           "translator-credits", _("translator-credits"),
                           "logo-icon-name", APPLET_ICON,
                           NULL );
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static gboolean
