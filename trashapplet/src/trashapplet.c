@@ -65,7 +65,7 @@ static void trash_applet_show_help   (GtkAction   *action,
                                       TrashApplet *applet);
 
 static const GtkActionEntry trash_applet_menu_actions [] = {
-	{ "EmptyTrash", "edit-clear", N_("_Empty Trash"),
+	{ "EmptyTrash", "edit-clear-all", N_("_Empty Trash"),
 	  NULL, NULL,
 	  G_CALLBACK (trash_applet_do_empty) },
 	{ "OpenTrash", "document-open", N_("_Open Trash"),
