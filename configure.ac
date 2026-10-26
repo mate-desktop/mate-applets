@@ -98,6 +98,7 @@ if test "x$HAVE_LIBNOTIFY" = "xyes"; then
 	AC_DEFINE(HAVE_LIBNOTIFY, 1, [libnotify available])
 fi
 
+AM_CONDITIONAL(LIBNOTIFY, test -n "$LIBNOTIFY_LIBS")
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
 
@@ -204,6 +205,290 @@ PKG_CHECK_MODULES(LIBMATEWEATHER, mateweather >= 1.17.0,
 AC_SUBST(LIBMATEWEATHER_CFLAGS)
 AC_SUBST(LIBMATEWEATHER_LIBS)
 AM_CONDITIONAL(BUILD_LIBMATEWEATHER_APPLETS, $build_libmateweather_applets)
+
+dnl ***************************************************************************
+dnl *** indicator-applet specific checks                                    ***
+dnl ***************************************************************************
+
+AC_ARG_ENABLE(indicator-applet,
+	      AS_HELP_STRING([--enable-indicator-applet],
+			     [Enable indicator applet @<:@default=auto@:>@]),
+	      enable_indicator_applet=$enableval,
+	      enable_indicator_applet=auto)
+
+UBUNTU_INDICATOR_REQUIRED_VERSION=0.3.90
+UBUNTU_INDICATOR_NG_VERSION=12.10.2
+AYATANA_INDICATOR_REQUIRED_VERSION=0.6.0
+AYATANA_INDICATOR_NG_VERSION=0.6.0
+
+AC_ARG_WITH([ayatana-indicators],
+             [AS_HELP_STRING([--with-ayatana-indicators],
+                             [build against Ayatana Indicators])],
+             [with_ayatana_indicators='yes'],
+             [with_ayatana_indicators='no']
+)
+
+AC_ARG_WITH([ubuntu-indicators],
+             [AS_HELP_STRING([--with-ubuntu-indicators],
+             [build against Ubuntu Indicators])],
+             [with_ubuntu_indicators='yes'],
+             [with_ubuntu_indicators='no']
+)
+
+dnl Look for Ayatana Indicators
+PKG_CHECK_EXISTS(ayatana-indicator3-0.4,
+                 [have_ayatanaindicator="yes"],
+                 [have_ayatanaindicator="no"])
+
+PKG_CHECK_EXISTS(ayatana-indicator3-0.4 >= $AYATANA_INDICATOR_NG_VERSION,
+                 [have_ayatanaindicator_ng="yes"],
+                 [have_ayatanaindicator_ng="no"])
+
+dnl Look for Ubuntu Indicators
+PKG_CHECK_EXISTS(indicator3-0.4,
+                 [have_ubuntuindicator="yes"],
+                 [have_ubuntuindicator="no"])
+
+PKG_CHECK_EXISTS(indicator3-0.4 >= $UBUNTU_INDICATOR_NG_VERSION,
+                 [have_ubuntuindicator_ng="yes"],
+                 [have_ubuntuindicator_ng="no"])
+
+dnl Decide on what Indicators implementation to use
+build_indicator_applet=no
+use_ayatanaindicator=no
+use_ubuntuindicator=no
+
+if test "x$enable_indicator_applet" != "xno"; then
+    if   test "x$have_ayatanaindicator" = "xyes" &&
+         test "x$have_ubuntuindicator" != "xyes" &&
+         test "x$with_ubuntu_indicators" != "xyes"; then
+        use_ayatanaindicator="yes"
+        build_indicator_applet=yes
+    elif test "x$have_ubuntuindicator" = "xyes" &&
+         test "x$have_ayatanaindicator" != "xyes" &&
+         test "x$with_ayatana_indicators" != "xyes"; then
+        use_ubuntuindicator="yes"
+        build_indicator_applet=yes
+    elif test "x$have_ubuntuindicator" = "xyes" &&
+         test "x$have_ayatanaindicator" = "xyes" &&
+         test "x$with_ayatana_indicators" = "xyes"; then
+        use_ayatanaindicator=yes
+        build_indicator_applet=yes
+    elif test "x$have_ubuntuindicator" = "xyes" &&
+         test "x$have_ayatanaindicator" = "xyes" &&
+         test "x$with_ubuntu_indicators" = "xyes"; then
+        use_ubuntuindicator=yes
+        build_indicator_applet=yes
+    elif test "x$enable_indicator_applet" = "xyes"; then
+        AC_MSG_ERROR([indicator-applet requested but neither Ayatana nor Ubuntu Indicators found])
+    else
+        AC_MSG_WARN([Neither Ayatana nor Ubuntu Indicators found. Not building indicator-applet.])
+    fi
+fi
+
+if test "x$use_ayatanaindicator" = "xyes"; then
+    AM_CONDITIONAL(WITH_AYATANA_INDICATOR, true)
+    AM_CONDITIONAL(WITH_UBUNTU_INDICATOR, false)
+    AC_DEFINE(HAVE_AYATANA_INDICATOR, 1, "Ayatana Indicators Support")
+
+    if test "x$have_ayatanaindicator_ng" = "xyes"; then
+        PKG_CHECK_MODULES(AYATANA_INDICATOR_NG, ayatana-indicator3-0.4 >= $AYATANA_INDICATOR_NG_VERSION
+                          libayatana-ido3-0.4 >= 0.4.0,
+                          [AC_DEFINE(HAVE_AYATANA_INDICATOR_NG, 1, "New style indicators support")])
+    else
+        PKG_CHECK_MODULES(AYATANA_INDICATOR, ayatana-indicator3-0.4 >= $AYATANA_INDICATOR_REQUIRED_VERSION)
+    fi
+
+    AC_SUBST(AYATANA_INDICATOR_CFLAGS)
+    AC_SUBST(AYATANA_INDICATOR_LIBS)
+
+    dnl Get indicator directories
+    INDICATORDIR=`$PKG_CONFIG --variable=indicatordir ayatana-indicator3-0.4`
+    INDICATORICONSDIR=`$PKG_CONFIG --variable=iconsdir ayatana-indicator3-0.4`
+
+elif test "x$use_ubuntuindicator" = "xyes"; then
+    AM_CONDITIONAL(WITH_UBUNTU_INDICATOR, true)
+    AM_CONDITIONAL(WITH_AYATANA_INDICATOR, false)
+    AC_DEFINE(HAVE_UBUNTU_INDICATOR, 1, "Ubuntu Indicators Support")
+
+    if test "x$have_ubuntuindicator_ng" = "xyes"; then
+        PKG_CHECK_MODULES(UBUNTU_INDICATOR_NG, indicator3-0.4 >= $UBUNTU_INDICATOR_NG_VERSION
+                          libido3-0.1 >= 13.10,
+                          [AC_DEFINE(HAVE_UBUNTU_INDICATOR_NG, 1, "New style indicators support")])
+    else
+        PKG_CHECK_MODULES(UBUNTU_INDICATOR, indicator3-0.4 >= $UBUNTU_INDICATOR_REQUIRED_VERSION)
+    fi
+
+    AC_SUBST(UBUNTU_INDICATOR_CFLAGS)
+    AC_SUBST(UBUNTU_INDICATOR_LIBS)
+
+    dnl Get indicator directories
+    INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator3-0.4`
+    INDICATORICONSDIR=`$PKG_CONFIG --variable=iconsdir indicator3-0.4`
+
+else
+    AM_CONDITIONAL(WITH_AYATANA_INDICATOR, false)
+    AM_CONDITIONAL(WITH_UBUNTU_INDICATOR, false)
+fi
+
+AC_SUBST(INDICATORDIR)
+AC_SUBST(INDICATORICONSDIR)
+
+dnl Set up INDICATOR_APPLET_CFLAGS/LIBS for indicator-applet (uses same panel libs)
+INDICATOR_APPLET_CFLAGS="$GTK_CFLAGS $MATE_APPLETS4_CFLAGS"
+INDICATOR_APPLET_LIBS="$GTK_LIBS $MATE_APPLETS4_LIBS"
+AC_SUBST(INDICATOR_APPLET_CFLAGS)
+AC_SUBST(INDICATOR_APPLET_LIBS)
+
+AM_CONDITIONAL(BUILD_INDICATOR_APPLET, test "x$build_indicator_applet" = "xyes")
+
+dnl ***************************************************************************
+dnl *** sensors-applet specific checks                                      ***
+dnl ***************************************************************************
+
+AC_ARG_ENABLE(sensors-applet,
+	      AS_HELP_STRING([--enable-sensors-applet],
+			     [Enable sensors applet @<:@default=yes@:>@]),
+	      enable_sensors_applet=$enableval,
+	      enable_sensors_applet=yes)
+
+build_sensors_applet=no
+if test "x$enable_sensors_applet" = "xyes"; then
+    build_sensors_applet=yes
+
+    dnl Check for headers needed for sensors-applet plugins
+    AC_CHECK_HEADERS([
+        stdlib.h
+        string.h
+        sys/types.h
+        sys/socket.h
+        netinet/in.h
+        arpa/inet.h
+        fcntl.h
+        sys/ioctl.h
+        unistd.h
+        dlfcn.h
+    ])
+
+    dnl Check for glib (required for sensors-applet)
+    PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED gio-2.0)
+    AC_SUBST(GLIB_CFLAGS)
+    AC_SUBST(GLIB_LIBS)
+
+    dnl Check for cairo (required for sensors-applet)
+    LIBCAIRO_REQUIRED=1.0.4
+    PKG_CHECK_MODULES(CAIRO, cairo >= $LIBCAIRO_REQUIRED)
+    AC_SUBST(CAIRO_CFLAGS)
+    AC_SUBST(CAIRO_LIBS)
+
+    dnl Check for libsensors (optional)
+    AC_ARG_WITH(libsensors,
+    [  --with-libsensors[=DIR]   use libsensors in DIR],[
+            if test "$withval" != "no" -a "$withval" != "yes"; then
+                    SENSORS_DIR=$withval
+                    CPPFLAGS="${CPPFLAGS} -I${SENSORS_DIR}/include/sensors"
+                    LIBS="${LIBS} -L${SENSORS_DIR}/lib"
+            fi
+            with_libsensors=$withval],[
+            with_libsensors="yes"
+    ])
+
+    if test "$with_libsensors" = "no"; then
+            AC_MSG_NOTICE([Disabling lmsensors support for sensors-applet])
+    else
+            AC_CHECK_HEADERS(sensors/sensors.h,
+                    AC_CHECK_LIB(sensors, sensors_init,[
+                            AC_DEFINE(HAVE_LIBSENSORS,1,[libsensors is available])
+                            if test "x${SENSORS_DIR}" != "x"; then
+                                    LIBSENSORS_CFLAGS="-I${SENSORS_DIR}/include"
+                                    LIBSENSORS_LIBS="-L${SENSORS_DIR}/lib -lsensors"
+                            else
+                                    LIBSENSORS_LIBS="-lsensors"
+                            fi]))
+    fi
+
+    AM_CONDITIONAL(LIBSENSORS, test -n "$LIBSENSORS_LIBS")
+    AC_SUBST(LIBSENSORS_CFLAGS)
+    AC_SUBST(LIBSENSORS_LIBS)
+
+    dnl Check for nvidia support (optional)
+    AC_ARG_WITH(nvidia,
+    [  --with-nvidia[=DIR]       use nvidia in DIR],[
+            if test "$withval" != "no" -a "$withval" != "yes"; then
+                    NVIDIA_DIR=$withval
+                    CFLAGS="${CFLAGS} -I${NVIDIA_DIR}/include"
+                    LIBS="${LIBS} -L${NVIDIA_DIR}/lib"
+            fi
+            with_nvidia=$withval],[
+            with_nvidia="yes"
+    ])
+
+    if test "$with_nvidia" = "no"; then
+            AC_MSG_NOTICE([Disabling nvidia support for sensors-applet])
+    else
+            AC_CHECK_HEADERS(X11/Xlib.h,
+                    AC_CHECK_LIB(X11, XOpenDisplay, [ HAVE_X11=true ]))
+            if test "${HAVE_X11}" = "true"; then
+                    AC_CHECK_HEADERS(NVCtrl/NVCtrl.h NVCtrl/NVCtrlLib.h, [ HAVE_NVIDIA=true ], [],
+                    [
+                    #include <X11/Xlib.h>
+                    ])
+                    if test "${HAVE_NVIDIA}" = "true"; then
+                            AC_CHECK_LIB(XNVCtrl, XNVCTRLQueryExtension, [
+                            NVIDIA_LIBS="-lXNVCtrl -lX11 -lXext"
+                            AC_DEFINE(HAVE_NVIDIA,1,[nvidia sensors available])
+                            ])
+                    fi
+            fi
+    fi
+    AM_CONDITIONAL(NVIDIA, test -n "$NVIDIA_LIBS")
+    AC_SUBST(NVIDIA_CFLAGS)
+    AC_SUBST(NVIDIA_LIBS)
+
+    dnl Check for udisks2 support (optional)
+    AC_ARG_ENABLE(udisks2,
+              AS_HELP_STRING([--disable-udisks2],
+                             [Disable support for udisks2 sensor readings via DBUS.]),
+                             enable_udisks2=$enableval, enable_udisks2="yes")
+
+    if test "x$enable_udisks2" = "xno" ; then
+            AC_MSG_NOTICE([Disabling udisks2 support for sensors-applet])
+    fi
+    AM_CONDITIONAL(UDISKS2, test "x$enable_udisks2" = "xyes")
+
+    dnl Enable dummy plugin for debug
+    AC_ARG_ENABLE(dummyplugin,
+              AS_HELP_STRING([--enable-dummyplugin],
+                             [Enable dummy plugin for debug.]),
+                             enable_dummyplugin=$enableval, enable_dummyplugin="no")
+    AM_CONDITIONAL(DUMMYPLUGIN, test "x$enable_dummyplugin" = "xyes")
+
+    dnl Enable netbsd plugin
+    AC_ARG_ENABLE(netbsd,
+              AS_HELP_STRING([--enable-netbsd],
+                             [Enable NetBSD plugin for sensors-applet.]),
+                             enable_netbsd=$enableval, enable_netbsd="no")
+    AM_CONDITIONAL(NETBSD, test "x$enable_netbsd" = "xyes")
+
+    dnl Plugin libtool flags
+    PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
+    AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
+
+    dnl Set up MATE/GLIB/GTK vars for sensors-applet (reuse existing)
+    MATE_CFLAGS="$MATE_APPLETS4_CFLAGS"
+    MATE_LIBS="$MATE_APPLETS4_LIBS"
+    AC_SUBST(MATE_CFLAGS)
+    AC_SUBST(MATE_LIBS)
+else
+    dnl Define empty conditionals when sensors-applet is disabled
+    AM_CONDITIONAL(LIBSENSORS, false)
+    AM_CONDITIONAL(NVIDIA, false)
+    AM_CONDITIONAL(UDISKS2, false)
+    AM_CONDITIONAL(DUMMYPLUGIN, false)
+    AM_CONDITIONAL(NETBSD, false)
+fi
+
+AM_CONDITIONAL(BUILD_SENSORS_APPLET, test "x$build_sensors_applet" = "xyes")
 
 dnl ***************************************************************************
 dnl *** GSettings                                                           ***
@@ -660,6 +945,33 @@ netspeed/data/org.mate.panel.applet.netspeed.gschema.xml
 netspeed/icons/Makefile
 netspeed/src/Makefile
 netspeed/help/Makefile
+indicator-applet/Makefile
+indicator-applet/src/Makefile
+indicator-applet/data/Makefile
+sensors-applet/Makefile
+sensors-applet/sensors-applet/Makefile
+sensors-applet/lib/Makefile
+sensors-applet/plugins/Makefile
+sensors-applet/plugins/acpi/Makefile
+sensors-applet/plugins/dummy/Makefile
+sensors-applet/plugins/udisks2/Makefile
+sensors-applet/plugins/hddtemp/Makefile
+sensors-applet/plugins/i2c-proc/Makefile
+sensors-applet/plugins/i2c-sys/Makefile
+sensors-applet/plugins/i8k/Makefile
+sensors-applet/plugins/ibm-acpi/Makefile
+sensors-applet/plugins/libsensors/Makefile
+sensors-applet/plugins/mbmon/Makefile
+sensors-applet/plugins/netbsd/Makefile
+sensors-applet/plugins/nvidia/Makefile
+sensors-applet/plugins/omnibook/Makefile
+sensors-applet/plugins/pmu-sys/Makefile
+sensors-applet/plugins/smu-sys/Makefile
+sensors-applet/plugins/sonypi/Makefile
+sensors-applet/pixmaps/Makefile
+sensors-applet/help/Makefile
+sensors-applet/org.mate.sensors-applet.gschema.xml
+sensors-applet/org.mate.sensors-applet.sensor.gschema.xml
 ])
 AC_OUTPUT
 
@@ -690,7 +1002,9 @@ Configure summary:
         - drivemount               always
         - geyes                    always
         - mateweather              $build_libmateweather_applets
+        - indicator-applet         $build_indicator_applet
         - invest-applet            $build_invest_applet
+        - sensors-applet           $build_sensors_applet
         - multiload                $build_gtop_applets
         - netspeed                 $build_gtop_applets
             - iwlib support        $have_iwevgenie

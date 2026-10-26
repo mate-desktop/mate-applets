@@ -1,0 +1,40 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.sensors-applet">
+    <key name="font-size" type="i">
+      <default>0</default>
+      <summary>Font size in points</summary>
+    </key>
+    <key name="hide-units" type="b">
+      <default>false</default>
+      <summary>Specify if show or hide sensor units</summary>
+    </key>
+    <key name="display-mode" type="i">
+      <default>1</default>
+      <summary>Set if display icons or text labels</summary>
+    </key>
+    <key name="layout-mode" type="i">
+      <default>0</default>
+      <summary>Set value beside or below label</summary>
+    </key>
+    <key name="temperature-scale" type="i">
+      <default>1</default>
+      <summary>Show temperature in Kelvin, Celsius or Fahrenheit </summary>
+    </key>
+    <key name="display-notifications" type="b">
+      <default>true</default>
+      <summary>Whether to display notifications</summary>
+    </key>
+    <key name="timeout-delay" type="i">
+      <default>2000</default>
+      <summary>Delay (in ms) between refreshes</summary>
+    </key>
+    <key name="graph-size" type="i">
+      <default>42</default>
+      <summary>The size of the graph in pixels (width if horizontal, height if vertical)</summary>
+    </key>
+    <key name="sensors-list" type="as">
+      <default>[]</default>
+      <summary>List of sensors</summary>
+    </key>
+  </schema>
+</schemalist>
