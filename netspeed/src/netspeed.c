@@ -1043,7 +1043,8 @@ about_cb (GtkAction *action,
         NULL
     };
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+                           "program-name", _("MATE Netspeed"),
                            "title", _("About MATE Netspeed"),
                            "version", VERSION,
                            "copyright", _("Copyright \xc2\xa9 2002-2003 Jörgen Scheibengruber\n"
@@ -1056,6 +1057,10 @@ about_cb (GtkAction *action,
                            "website", PACKAGE_URL,
                            "logo-icon-name", LOGO_ICON,
                             NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static void

@@ -108,7 +108,8 @@ about_cb (GtkAction*           action,
         *p = _(*p);
 #endif
 
-    gtk_show_about_dialog (NULL,
+    GtkWidget *about = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+        "program-name", _("AccessX Status"),
         "title", _("About AccessX Status"),
         "version", VERSION,
         "comments", _("Shows the state of AccessX features such as latched modifiers"),
@@ -119,6 +120,10 @@ about_cb (GtkAction*           action,
         "translator-credits", _("translator-credits"),
         "logo-icon-name", ACCESSX_APPLET,
         NULL);
+
+    g_signal_connect_swapped (about, "response",
+                              G_CALLBACK (gtk_widget_destroy), about);
+    gtk_widget_show (about);
 }
 
 static void
