@@ -19,8 +19,12 @@
  * 02110-1301, USA.
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <gio/gio.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 
 #include "trash-empty.h"
 #include "config.h"
