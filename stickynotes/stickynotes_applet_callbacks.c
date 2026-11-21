@@ -40,9 +40,6 @@ stickynote_show_notes (gboolean visible)
 
     if (stickynotes->visible == visible) return;
 
-    if (g_settings_get_boolean (stickynotes->settings, "click-hide") && !visible)
-        return;
-
     stickynotes->visible = visible;
 
     for (l = stickynotes->notes; l; l = l->next) {
@@ -54,6 +51,19 @@ stickynote_show_notes (gboolean visible)
 static void
 stickynote_toggle_notes_visible (void)
 {
+    StickyNote *note;
+    GList *l;
+
+    if (stickynotes->visible) {
+        if (!g_settings_get_boolean (stickynotes->settings, "click-hide")) {
+            for (l = stickynotes->notes; l; l = l->next) {
+                note = l->data;
+                gtk_window_present (GTK_WINDOW (note->w_window));
+            }
+            return;
+        }
+    }
+
     stickynote_show_notes (!stickynotes->visible);
 }
 
