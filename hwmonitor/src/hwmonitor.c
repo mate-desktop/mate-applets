@@ -98,7 +98,9 @@ static void hardware_monitor_render (HardwareMonitorApplet *monitor)
         g_free (metric);
     }
     if (g_settings_get_boolean (monitor->settings, "show-memory-available")) {
-        metric = monitor->snapshot.have_memory ? g_strdup_printf ("RAM libre %.1fG", monitor->snapshot.memory_available_mib / 1024.0) : g_strdup_printf ("RAM libre --");
+        metric = monitor->snapshot.have_memory ?
+            g_strdup_printf (_("RAM %.1fG"), monitor->snapshot.memory_available_mib / 1024.0) :
+            g_strdup (_("RAM --"));
         append_metric (text, metric);
         g_free (metric);
     }
@@ -196,6 +198,9 @@ static void hardware_monitor_destroy (MatePanelApplet *applet, HardwareMonitorAp
 {
     if (monitor->timeout_id != 0)
         g_source_remove (monitor->timeout_id);
+    g_signal_handlers_disconnect_by_func (monitor->settings,
+                                          G_CALLBACK (hardware_monitor_settings_changed),
+                                          monitor);
     g_clear_object (&monitor->settings);
     g_free (monitor);
 }
@@ -223,6 +228,7 @@ static gboolean hardware_monitor_fill (MatePanelApplet *applet)
     gtk_action_group_set_translation_domain (actions, GETTEXT_PACKAGE);
     gtk_action_group_add_actions (actions, applet_menu_actions, G_N_ELEMENTS (applet_menu_actions), monitor);
     mate_panel_applet_setup_menu (applet, menu_ui, actions);
+    g_object_unref (actions);
     accessible = gtk_widget_get_accessible (GTK_WIDGET (applet));
     if (GTK_IS_ACCESSIBLE (accessible)) {
         atk_object_set_name (accessible, _("Hardware Monitor applet"));

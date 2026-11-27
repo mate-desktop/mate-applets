@@ -232,11 +232,12 @@ read_gpu_temperature (const gchar *device_path, gdouble *temperature)
     return found;
 }
 
-static void
+static gboolean
 read_sysfs_gpus (HwMonitorSnapshot *snapshot)
 {
     guint card;
     guint found = 0;
+    gboolean have_metrics = FALSE;
 
     for (card = 0; card < 8 && found < 2; card++) {
         gchar *device = g_strdup_printf ("/sys/class/drm/card%u/device", card);
@@ -270,8 +271,10 @@ read_sysfs_gpus (HwMonitorSnapshot *snapshot)
         }
         if (read_gpu_temperature (device, &gpu->temperature_c))
             gpu->have_temperature = TRUE;
+        have_metrics = have_metrics || gpu->have_usage || gpu->have_vram || gpu->have_temperature;
         g_free (vram_total); g_free (vram_used); g_free (busy); g_free (device);
     }
+    return have_metrics;
 }
 
 static void
@@ -319,6 +322,7 @@ hwmonitor_collect (HwMonitorSnapshot *snapshot, guint64 *previous_total, guint64
 {
     gchar *meminfo;
     guint64 available_kib;
+    HwMonitorSnapshot sysfs_snapshot = { 0 };
 
     memset (snapshot, 0, sizeof (*snapshot));
     snapshot->have_cpu_usage = read_cpu_usage (previous_total, previous_idle, &snapshot->cpu_usage_percent);
@@ -329,6 +333,8 @@ hwmonitor_collect (HwMonitorSnapshot *snapshot, guint64 *previous_total, guint64
         snapshot->have_memory = TRUE;
     }
     g_free (meminfo);
-    read_sysfs_gpus (snapshot);
-    read_nvidia_fallback (snapshot);
+    if (read_sysfs_gpus (&sysfs_snapshot))
+        memcpy (snapshot->gpu, sysfs_snapshot.gpu, sizeof (snapshot->gpu));
+    else
+        read_nvidia_fallback (snapshot);
 }
