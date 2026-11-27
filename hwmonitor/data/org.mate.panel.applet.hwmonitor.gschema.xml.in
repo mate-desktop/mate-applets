@@ -1,0 +1,21 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.hwmonitor">
+    <key name="update-interval" type="u">
+      <default>1000</default><range min="250" max="10000"/>
+      <summary>Update interval</summary><description>Milliseconds between sensor updates</description>
+    </key>
+    <key name="temperature-unit" type="s">
+      <default>'celsius'</default><choices><choice value="celsius"/><choice value="fahrenheit"/></choices>
+      <summary>Temperature unit</summary><description>Unit used for temperatures</description>
+    </key>
+    <key name="show-cpu-temperature" type="b"><default>true</default><summary>Show CPU temperature</summary><description>Display CPU temperature</description></key>
+    <key name="show-cpu-usage" type="b"><default>true</default><summary>Show CPU usage</summary><description>Display CPU usage</description></key>
+    <key name="show-memory-available" type="b"><default>true</default><summary>Show available memory</summary><description>Display available RAM</description></key>
+    <key name="show-gpu0-temperature" type="b"><default>true</default><summary>Show GPU 0 temperature</summary><description>Display GPU 0 temperature</description></key>
+    <key name="show-gpu0-usage" type="b"><default>true</default><summary>Show GPU 0 usage</summary><description>Display GPU 0 usage</description></key>
+    <key name="show-gpu0-vram" type="b"><default>true</default><summary>Show GPU 0 free VRAM</summary><description>Display GPU 0 free VRAM</description></key>
+    <key name="show-gpu1-temperature" type="b"><default>true</default><summary>Show GPU 1 temperature</summary><description>Display GPU 1 temperature</description></key>
+    <key name="show-gpu1-usage" type="b"><default>true</default><summary>Show GPU 1 usage</summary><description>Display GPU 1 usage</description></key>
+    <key name="show-gpu1-vram" type="b"><default>true</default><summary>Show GPU 1 free VRAM</summary><description>Display GPU 1 free VRAM</description></key>
+  </schema>
+</schemalist>

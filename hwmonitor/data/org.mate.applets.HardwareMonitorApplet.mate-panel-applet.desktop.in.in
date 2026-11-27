@@ -1,0 +1,13 @@
+[Applet Factory]
+Id=HardwareMonitorAppletFactory
+Location=@APPLET_LOCATION@
+InProcess=@APPLET_IN_PROCESS@
+Name=Hardware Monitor Factory
+Description=Hardware Monitor Factory
+
+[HardwareMonitorApplet]
+Name=Hardware Monitor
+Description=Shows CPU, memory and GPU telemetry
+Platforms=X11;Wayland;
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=utilities-system-monitor

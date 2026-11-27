@@ -654,6 +654,10 @@ command/Makefile
 command/data/Makefile
 command/data/org.mate.panel.applet.command.gschema.xml
 command/src/Makefile
+hwmonitor/Makefile
+hwmonitor/data/Makefile
+hwmonitor/data/org.mate.panel.applet.hwmonitor.gschema.xml
+hwmonitor/src/Makefile
 netspeed/Makefile
 netspeed/data/Makefile
 netspeed/data/org.mate.panel.applet.netspeed.gschema.xml
