@@ -1,0 +1,68 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.sensors-applet.sensor">
+    <key name="path" type="s">
+      <default>''</default>
+      <summary>Path to filename</summary>
+    </key>
+    <key name="id" type="s">
+      <default>''</default>
+      <summary>Sensor device ids</summary>
+    </key>
+    <key name="interface" type="s">
+      <default>''</default>
+      <summary>The sensor device interface</summary>
+    </key>
+    <key name="label" type="s">
+      <default>''</default>
+      <summary>User defined label</summary>
+    </key>
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Whether a sensor is enabled or not</summary>
+    </key>
+    <key name="low-value" type="d">
+      <default>0</default>
+      <summary>Low value</summary>
+    </key>
+    <key name="high-value" type="d">
+      <default>0</default>
+      <summary>High value</summary>
+    </key>
+    <key name="alarm-enabled" type="b">
+      <default>false</default>
+      <summary>Whether the sensor has its alarm enabled</summary>
+    </key>
+    <key name="low-alarm-command" type="s">
+      <default>''</default>
+      <summary>Command to execute when the alarm is activated</summary>
+    </key>
+    <key name="high-alarm-command" type="s">
+      <default>''</default>
+      <summary>Command to execute when the alarm is activated</summary>
+    </key>
+    <key name="alarm-timeout" type="i">
+      <default>0</default>
+      <summary>How often each alarm should be sounded (in seconds)</summary>
+    </key>
+    <key name="sensor-type" type="i">
+      <default>0</default>
+      <summary>Used to identify a sensor in a list</summary>
+    </key>
+    <key name="multiplier" type="d">
+      <default>1</default>
+      <summary>Multiplier</summary>
+    </key>
+    <key name="offset" type="d">
+      <default>0</default>
+      <summary>Offset</summary>
+    </key>
+    <key name="icon-type" type="i">
+      <default>0</default>
+      <summary>Icon type</summary>
+    </key>
+    <key name="graph-color" type="s">
+      <default>'#ff0000'</default>
+      <summary>Color of the graph for the sensor</summary>
+    </key>
+  </schema>
+</schemalist>
